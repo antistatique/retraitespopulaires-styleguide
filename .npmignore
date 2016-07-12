@@ -1,3 +1,4 @@
+# From .gitignore
 node_modules
 .sass-cache
 *.DS_Store
@@ -5,10 +6,11 @@ node_modules
 .env
 
 /dist
-/build
 /styleguide
 
 tests/regression/compare
 tests/regression/temp
 
+# npm specific
+/tasks
 /npm-debug.log

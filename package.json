@@ -1,7 +1,19 @@
 {
-  "name": "retraitespopulaires-styleguide",
-  "version": "0.0.0",
+  "name": "@antistatique/retraitespopulaires-styleguide",
+  "version": "0.0.2",
   "main": "index.html",
+  "author": {
+    "name": "Antistatique",
+    "email": "dev@antistatique.net",
+    "url": "http://antistatique.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antistatique/retraitespopulaires-styleguide.git"
+  },
+  "scripts": {
+    "build": "npm install && gulp --production"
+  },
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "html5shiv": "^3.7.3",
