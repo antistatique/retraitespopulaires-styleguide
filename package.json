@@ -12,6 +12,6 @@
   },
   "homepage": "https://github.com/antistatique/retraitespopulaires#readme",
   "dependencies": {
-    "@antistatique/retraitespopulaires-styleguide": "0.0.2"
+    "@antistatique/retraitespopulaires-styleguide": "*"
   }
 }
