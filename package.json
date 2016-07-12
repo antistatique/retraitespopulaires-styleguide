@@ -1,0 +1,17 @@
+{
+  "name": "retraitespopulaires",
+  "version": "0.0.1",
+  "description": "Retraites Populaires website. Drupal 8 powered.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antistatique/retraitespopulaires.git"
+  },
+  "author": "Antistatique",
+  "bugs": {
+    "url": "https://github.com/antistatique/retraitespopulaires/issues"
+  },
+  "homepage": "https://github.com/antistatique/retraitespopulaires#readme",
+  "dependencies": {
+    "@antistatique/retraitespopulaires-styleguide": "0.0.2"
+  }
+}
