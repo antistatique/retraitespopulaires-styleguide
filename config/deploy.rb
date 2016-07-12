@@ -11,6 +11,7 @@ set :repo_url, 'git@github.com:antistatique/retraitespopulaires.git'
 server 'antistatique.alwaysdata.net', user: 'rp', roles: %w{app db web}
 
 set :app_path, "web"
+set :styleguide_path, "node_modules/@antistatique/retraitespopulaires"
 set :theme_path, "themes/retraitespopulaires"
 set :build_path, "build"
 
@@ -46,11 +47,11 @@ set :slack_webhook, "https://hooks.slack.com/services/T04D665PJ/B0P1YBHS4/LQqgyG
 set :slack_username, -> { 'Slackistrano' }
 set :slack_run_updating, -> { false } # Set to false to disable deploy starting message.
 
-# Used only if composer.json isn't on root
+# Used only if composer.json isn't on root
 # set :composer_working_dir, -> { fetch(:release_path).join(fetch(:app_path)) }
 
 # Remove default composer install task on deploy:updated
-# Rake::Task['deploy:updated'].prerequisites.delete('composer:install')
+# Rake::Task['deploy:updated'].prerequisites.delete('composer:install')
 # Rake::Task['deploy:updated'];
 
 namespace :deploy do
