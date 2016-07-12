@@ -1,13 +1,13 @@
-uuid: cda1a4f5-e2b4-4b7f-a113-981433b1abeb
+uuid: c90c75a4-9330-4a8f-b9f2-790ff3c18cf7
 langcode: en
 status: false
 dependencies:
   theme:
-    - bartik
+    - retraitespopulaires
 _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
-id: bartik_local_actions
-theme: bartik
+id: retraitespopulaires_local_actions
+theme: retraitespopulaires
 region: '-1'
 weight: -6
 provider: null

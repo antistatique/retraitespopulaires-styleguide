@@ -1,15 +1,15 @@
-uuid: 32285318-edc8-49cc-9a70-fa3b37380f18
+uuid: f3595619-70bb-417c-9213-a217d3318a65
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bartik
+    - retraitespopulaires
 _core:
   default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
-id: bartik_content
-theme: bartik
+id: retraitespopulaires_content
+theme: retraitespopulaires
 region: content
 weight: -6
 provider: null
