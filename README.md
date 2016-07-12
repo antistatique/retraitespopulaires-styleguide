@@ -1,6 +1,14 @@
 # RP - Retraites Populaires - Styleguide
 Retraites Populaires Styleguide.
 
+## Prerequisites
+
+First of all, you need to have the following tools installed globally on your environment:
+
+  * node
+  * npm
+  * gulp
+
 ## Install
 
   ````shell
