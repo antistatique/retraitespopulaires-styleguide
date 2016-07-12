@@ -20,14 +20,14 @@ require('./filters.js')();
 
 var contentful_key = '';
 
-if (process.env.CONTENTFUL_KEY) {
-  contentful_key = process.env.CONTENTFUL_KEY;
-} else {
-  dotenv.load();
-  if (process.env.CONTENTFUL_KEY) {
-    contentful_key = process.env.CONTENTFUL_KEY;
-  }
-}
+// if (process.env.CONTENTFUL_KEY) {
+//   contentful_key = process.env.CONTENTFUL_KEY;
+// } else {
+//   dotenv.load();
+//   if (process.env.CONTENTFUL_KEY) {
+//     contentful_key = process.env.CONTENTFUL_KEY;
+//   }
+// }
 
 module.exports = function() {
 
