@@ -1,6 +1,24 @@
 # RP - Retraites Populaires
 Retraites Populaires website. Drupal 8 powered.
 
+
+## Prerequisites
+
+First of all, you need to have the following tools installed globally on your environment:
+
+  * composer
+  * drush
+
+### Tips
+
+To run any drush command, you need to be on a hight bootstrapped drupal directory, such `/web`.
+
+  ```bash
+  $ cd /web
+  ```
+
+On common errors, see the Troubleshootings section.
+
 ## Install
 
 1. Setup your virtualhost (like `http://rp.dev`) to serve `/web`.
@@ -20,19 +38,28 @@ Retraites Populaires website. Drupal 8 powered.
 
 4. Use the same site UUID than your collegue:
 
-```bash
-$ drush config-set system.site uuid "178593ac-4188-4313-8826-c15c99d64cc4"
-```
+  ```bash
+  $ drush config-set system.site uuid "178593ac-4188-4313-8826-c15c99d64cc4"
+  ```
 
-(This is certainly a bad idea, [follow this drupal issue](https://www.drupal.org/node/1613424)).
+  (This is certainly a bad idea, [follow this drupal issue](https://www.drupal.org/node/1613424)).
 
-5. Update your  `sites/default/settings.php`:
+5. Update your  `web/sites/default/settings.php`:
+
+  ```bash
+  $ vim web/sites/default/settings.php
+  ```
 
   ```php
   $config_directories['sync'] = '../config/d8/sync';
   ```
 
-6. Update your `sites/default/drushrc.php`:
+6. Update your `web/sites/default/drushrc.php`:
+
+  ```bash
+  $ cp web/sites/default/default.drushrc.php web/sites/default/drushrc.php
+  $ vim web/sites/default/drushrc.php
+  ```
 
   ```php
   $options['uri'] = "http://rp.dev";
@@ -51,10 +78,11 @@ $ drush config-set system.site uuid "178593ac-4188-4313-8826-c15c99d64cc4"
   ```
 
 ## After a git pull/merge
-    ```bash
-    $ drush cim
-    $ drush cr
-    ```
+
+  ```bash
+  $ drush cim
+  $ drush cr
+  ```
 
 ## Build the theme
 
@@ -84,6 +112,16 @@ We use Capistrano to deploy:
     $ bundle exec cap staging deploy
 
 ## Troubleshootings
+
+### Error while importing config ?
+
+```
+The import failed due for the following reasons:                                                                                                   [error]
+Entities exist of type <em class="placeholder">Shortcut link</em> and <em class="placeholder"></em> <em class="placeholder">Default</em>. These
+entities need to be deleted before importing.
+```
+
+Solution: Delete all your shortcuts from the Drupal Admin on [admin/config/user-interface/shortcut/manage/default/customize](admin/config/user-interface/shortcut/manage/default/customize).
 
 ### How to disable the Drupal Cache for dev ?
 The tricks is to add this two lines in your `settings.php`:
