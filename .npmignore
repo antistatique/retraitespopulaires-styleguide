@@ -13,3 +13,4 @@ tests/regression/temp
 
 # npm specific
 /tasks
+/npm-debug.log
