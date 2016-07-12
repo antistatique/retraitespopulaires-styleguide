@@ -60,21 +60,12 @@ $ drush config-set system.site uuid "178593ac-4188-4313-8826-c15c99d64cc4"
 
 You first need to setup the work environment by running `$ npm install`.
 
-To build the theme, you then need to clone the `retraitespopulaires-styleguide` repo and put it as a sibling of this repo in your local directory.
-
-In the styleguide (once it is set up, cf its README file):
-
-    # build all assets
-    $ gulp build
-    # or build all assets, serve the styleguide and watch changes
-    $ gulp serve
+To build the theme, the styleguide is a npm dependecies of this package `@antistatique/retraitespopulaires-styleguide`.
 
 In the drupal project:
 
     # copy all built files from the styleguide
-    $ gulp build
-    # or watch changes in styleguide build folder
-    $ gulp watch
+    $ styleguide.sh
 
 ## Deploy
 The deployment of branch `dev` and `master` is automatically managed by Codeship!
