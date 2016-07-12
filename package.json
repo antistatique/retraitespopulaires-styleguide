@@ -1,7 +1,6 @@
 {
   "name": "@antistatique/retraitespopulaires-styleguide",
   "version": "0.0.1",
-  "private": true,
   "main": "index.html",
   "author": {
     "name" : "Antistatique",
