@@ -12,6 +12,9 @@
     "type" : "git",
     "url" : "https://github.com/antistatique/retraitespopulaires-styleguide.git"
   },
+  "scripts": {
+    "build": "npm install && gulp --production"
+  },
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "html5shiv": "^3.7.3",
