@@ -1,0 +1,23 @@
+name: Retraites Populaires
+type: theme
+description: The Official Theme for Retraites Populaires
+core: 8.x
+screenshot: screenshot.png
+
+libraries:
+  - retraitespopulaires/global-styling
+  - retraitespopulaires/head-styling
+
+stylesheets-remove:
+  - core/assets/vendor/normalize-css/normalize.css
+  - core/modules/system/css/system.module.css
+  - core/modules/system/css/system.theme.css
+  - core/modules/views/css/views.module.css
+
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+
+ckeditor_stylesheets:
+  - build/css/ckeditor.css

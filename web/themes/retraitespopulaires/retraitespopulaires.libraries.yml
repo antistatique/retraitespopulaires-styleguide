@@ -1,0 +1,17 @@
+global-styling:
+  css:
+    theme:
+      build/css/vendors.min.css: {}
+      build/css/main.css: {}
+  js:
+    build/js/vendors.min.js: {}
+    build/js/main.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+head-styling:
+  header: true
+  js:
+    build/js/polyfills.min.js: { browsers: { IE: 'lte IE 9', '!IE': false } }
