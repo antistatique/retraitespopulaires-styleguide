@@ -86,22 +86,44 @@ On common errors, see the Troubleshootings section.
 
 ## Build the theme
 
+**Production workflow:**
 
-To build the theme, the styleguide is a npm dependecies of this package `@antistatique/retraitespopulaires-styleguide`.
+The first solution is to retrieve *styleguide as `npm` dependency* .
+To build the theme from vendor, `npm`, you should publish it. You then need to setup the work environment by running `$ npm install`.
 
-You first need to setup the work environment by running `$ npm install`.
+**Development workflow:**
 
-In the drupal project:
-
-    # copy all built files from the styleguide
-    $ ./sh/styleguide.sh
-
-### Development process
-
+The second solution is to retrieve *styleguide from `git` repo*.
 To build the theme from the repository whitout publishing on `npm`, you then need to clone the `retraitespopulaires-styleguide` repo and put it as a sibling of this repo in your local directory.
-Then, run the following command to build and copy the styleguide in your Drupal theme.
 
-    $ ./sh/styleguide-dev.sh
+### For windows
+
+**Production workflow:**
+
+    # copy all built files from the vendor styleguide
+    $ ./bin/styleguide.bat
+
+**Development workflow:**
+
+    # copy all built files from the repo styleguide
+    $ ./bin/styleguide-dev.bat
+
+### For Unix
+
+**Production workflow:**
+
+    # copy all built files from the vendor styleguide
+    $ ./bin/styleguide.sh
+
+**Development workflow:**
+
+    # create a symlink
+    $ ln -s /path/to/retraitespopulaires-styleguide/build /web/themes/retraitespopulaires/build
+
+    Or
+
+    # copy all built files from the repo styleguide
+    $ ./bin/styleguide-dev.sh
 
 ## Deploy
 The deployment of branch `dev` and `master` is automatically managed by Codeship!
