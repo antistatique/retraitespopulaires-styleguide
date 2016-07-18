@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.faq.body
+    - field.field.node.faq.field_contact
     - field.field.node.faq.field_file
     - field.field.node.faq.field_profession
+    - field.field.node.faq.field_profil
     - node.type.faq
   module:
     - file
@@ -22,6 +24,13 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_contact:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_file:
     weight: 103
     label: above
@@ -30,6 +39,13 @@ content:
     type: file_default
   field_profession:
     weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_profil:
+    weight: 106
     label: above
     settings:
       link: true

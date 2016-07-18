@@ -1,0 +1,28 @@
+uuid: 8c5d5a74-597b-45e0-afca-1be2b1857d3d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profil
+    - node.type.faq
+    - taxonomy.vocabulary.profil
+id: node.faq.field_profil
+field_name: field_profil
+entity_type: node
+bundle: faq
+label: Profil
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      profil: profil
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
