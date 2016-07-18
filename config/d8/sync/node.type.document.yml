@@ -1,0 +1,17 @@
+uuid: 11e242ef-0ca2-4110-8a1e-ad912e3664d8
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Document
+type: document
+description: 'Useful document'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

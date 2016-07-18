@@ -24,4 +24,7 @@ content:
   links:
     weight: 100
 hidden:
+  field_contact: true
+  field_logo: true
+  field_web_site: true
   langcode: true

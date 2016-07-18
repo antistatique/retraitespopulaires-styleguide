@@ -24,4 +24,11 @@ content:
   links:
     weight: 100
 hidden:
+  field_cover: true
+  field_date: true
+  field_file_news: true
+  field_present_end_date: true
+  field_profil: true
+  field_reference: true
+  field_video: true
   langcode: true
