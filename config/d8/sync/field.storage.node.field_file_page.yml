@@ -1,0 +1,23 @@
+uuid: 8f144d1b-698b-48b5-94f1-d2e04cce682b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_file_page
+field_name: field_file_page
+entity_type: node
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

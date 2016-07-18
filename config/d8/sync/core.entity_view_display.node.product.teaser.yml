@@ -24,4 +24,10 @@ content:
   links:
     weight: 100
 hidden:
+  field_advisor: true
+  field_contact: true
+  field_cover: true
+  field_faq: true
+  field_file_product: true
+  field_profil: true
   langcode: true
