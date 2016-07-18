@@ -1,0 +1,9 @@
+uuid: 2a82a113-c6c2-4b1c-9977-96c5e6166dc0
+langcode: fr
+status: true
+dependencies: {  }
+name: Profil
+vid: profil
+description: ''
+hierarchy: 0
+weight: 0
