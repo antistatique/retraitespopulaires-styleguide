@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - taxonomy.vocabulary.profil
+third_party_settings:
+  content_translation:
+    enabled: false
 id: taxonomy_term.profil
 target_entity_type_id: taxonomy_term
 target_bundle: profil

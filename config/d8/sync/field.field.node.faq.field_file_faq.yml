@@ -1,24 +1,24 @@
-uuid: b6bd95a7-c0d2-4105-97bc-0127451a8336
-langcode: en
+uuid: 44d39849-a1c1-454f-8554-b3990f09c0d0
+langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_file
+    - field.storage.node.field_file_faq
     - node.type.faq
   module:
     - file
-id: node.faq.field_file
-field_name: field_file
+id: node.faq.field_file_faq
+field_name: field_file_faq
 entity_type: node
 bundle: faq
-label: File
+label: 'File FAQ'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: 'resources/[date:custom:Y]-[date:custom:m]'
+  file_directory: 'files-faq/[date:custom:Y]-[date:custom:m]'
   file_extensions: 'txt pdf doc docx xls xlsx'
   max_filesize: ''
   description_field: false

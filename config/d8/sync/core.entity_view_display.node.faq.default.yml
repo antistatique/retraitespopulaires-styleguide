@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.faq.body
     - field.field.node.faq.field_contact
-    - field.field.node.faq.field_file
+    - field.field.node.faq.field_file_faq
     - field.field.node.faq.field_profession
     - field.field.node.faq.field_profil
     - node.type.faq
@@ -31,8 +31,8 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_file:
-    weight: 103
+  field_file_faq:
+    weight: 107
     label: above
     settings: {  }
     third_party_settings: {  }

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.faq.body
     - field.field.node.faq.field_contact
-    - field.field.node.faq.field_file
+    - field.field.node.faq.field_file_faq
     - field.field.node.faq.field_profession
     - field.field.node.faq.field_profil
     - node.type.faq
@@ -91,8 +91,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-  field_file:
-    weight: 13
+  field_file_faq:
+    weight: 26
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -114,6 +114,8 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
 hidden:
   created: true
   langcode: true

@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - node.type.page
+third_party_settings:
+  content_translation:
+    enabled: false
 id: node.page
 target_entity_type_id: node
 target_bundle: page
