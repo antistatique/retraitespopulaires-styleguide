@@ -7,6 +7,9 @@ dependencies:
     - field.field.node.news.field_cover
     - field.field.node.news.field_date
     - field.field.node.news.field_file_news
+    - field.field.node.news.field_firstname
+    - field.field.node.news.field_function
+    - field.field.node.news.field_lastname
     - field.field.node.news.field_present_end_date
     - field.field.node.news.field_profil
     - field.field.node.news.field_reference
@@ -52,6 +55,27 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: file_default
+  field_firstname:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_function:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_lastname:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_present_end_date:
     weight: 108
     label: above
