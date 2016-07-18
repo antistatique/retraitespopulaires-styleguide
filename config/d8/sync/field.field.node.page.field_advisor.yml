@@ -1,0 +1,28 @@
+uuid: e07b3a31-a03c-4385-b25e-fce68222690e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_advisor
+    - node.type.advisor
+    - node.type.page
+id: node.page.field_advisor
+field_name: field_advisor
+entity_type: node
+bundle: page
+label: Advisor
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      advisor: advisor
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

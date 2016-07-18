@@ -4,8 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_advisor
+    - field.field.node.page.field_contact
+    - field.field.node.page.field_cover
+    - field.field.node.page.field_document
+    - field.field.node.page.field_faq
+    - field.field.node.page.field_file_page
+    - field.field.node.page.field_profil
     - node.type.page
   module:
+    - file
+    - image
     - text
     - user
 _core:
@@ -21,6 +30,55 @@ content:
     weight: 100
     settings: {  }
     third_party_settings: {  }
+  field_advisor:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_contact:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_cover:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_document:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_faq:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_file_page:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  field_profil:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   links:
     weight: 101
 hidden:
