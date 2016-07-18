@@ -5,8 +5,19 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_advisor
+    - field.field.node.page.field_contact
+    - field.field.node.page.field_cover
+    - field.field.node.page.field_document
+    - field.field.node.page.field_faq
+    - field.field.node.page.field_file_page
+    - field.field.node.page.field_management_contracts
+    - field.field.node.page.field_products
+    - field.field.node.page.field_profession
+    - field.field.node.page.field_profil
     - node.type.page
   module:
+    - image
     - text
     - user
 _core:
@@ -19,11 +30,44 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 100
+    weight: 0
     settings:
       trim_length: 600
     third_party_settings: {  }
+  field_cover:
+    type: image
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_products:
+    type: entity_reference_entity_view
+    weight: 3
+    label: above
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+  field_profession:
+    type: entity_reference_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
   links:
-    weight: 101
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_advisor: true
+  field_contact: true
+  field_document: true
+  field_faq: true
+  field_file_page: true
+  field_management_contracts: true
+  field_profil: true
   langcode: true

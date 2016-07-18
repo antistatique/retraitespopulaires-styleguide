@@ -24,4 +24,10 @@ content:
   links:
     weight: 100
 hidden:
+  field_contact: true
+  field_cover: true
+  field_date: true
+  field_latitude: true
+  field_longitude: true
+  field_web_site: true
   langcode: true

@@ -10,6 +10,9 @@ dependencies:
     - field.field.node.page.field_document
     - field.field.node.page.field_faq
     - field.field.node.page.field_file_page
+    - field.field.node.page.field_management_contracts
+    - field.field.node.page.field_products
+    - field.field.node.page.field_profession
     - field.field.node.page.field_profil
     - image.style.thumbnail
     - node.type.page
@@ -35,7 +38,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 13
+    weight: 16
     settings: {  }
     third_party_settings: {  }
   field_advisor:
@@ -83,6 +86,27 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+  field_management_contracts:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_products:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_profession:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
   field_profil:
     weight: 9
     settings:
@@ -98,20 +122,20 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 17
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 13
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
+    weight: 14
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -122,7 +146,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
