@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.product.field_advisor
     - field.field.node.product.field_contact
     - field.field.node.product.field_cover
+    - field.field.node.product.field_document
     - field.field.node.product.field_faq
     - field.field.node.product.field_file_product
     - field.field.node.product.field_profil
@@ -53,6 +54,7 @@ third_party_settings:
       children:
         - field_file_product
         - field_advisor
+        - field_document
         - field_contact
         - field_faq
       parent_name: group_tabs
@@ -87,7 +89,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_contact:
-    weight: 38
+    weight: 39
     settings:
       match_operator: CONTAINS
       size: 60
@@ -101,8 +103,16 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+  field_document:
+    weight: 38
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_faq:
-    weight: 39
+    weight: 40
     settings:
       match_operator: CONTAINS
       size: 60
