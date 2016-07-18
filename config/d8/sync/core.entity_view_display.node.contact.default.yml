@@ -1,0 +1,31 @@
+uuid: e9794feb-db0c-4bd2-ae1d-3638f8f867b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.contact.field_email
+    - field.field.node.contact.field_phone
+    - node.type.contact
+  module:
+    - user
+id: node.contact.default
+targetEntityType: node
+bundle: contact
+mode: default
+content:
+  field_email:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_phone:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  links:
+    weight: 100
+hidden:
+  langcode: true

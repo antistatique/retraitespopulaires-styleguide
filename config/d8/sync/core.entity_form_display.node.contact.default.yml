@@ -1,0 +1,71 @@
+uuid: a2df818c-acdb-44cc-b3e8-24254e0261a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.contact.field_email
+    - field.field.node.contact.field_phone
+    - node.type.contact
+  module:
+    - field_group
+    - telephone
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_info
+      parent_name: ''
+      weight: 3
+      label: Tabs
+      format_type: tabs
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
+    group_info:
+      children:
+        - title
+        - field_email
+        - field_phone
+      parent_name: group_tabs
+      weight: 4
+      label: Info
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+id: node.contact.default
+targetEntityType: node
+bundle: contact
+mode: default
+content:
+  field_email:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+  field_phone:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true
