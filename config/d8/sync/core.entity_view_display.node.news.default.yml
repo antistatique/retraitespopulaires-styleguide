@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.news.field_cover
     - field.field.node.news.field_date
     - field.field.node.news.field_file_news
+    - field.field.node.news.field_present_end_date
     - field.field.node.news.field_profil
     - field.field.node.news.field_reference
     - field.field.node.news.field_video
@@ -51,6 +52,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: file_default
+  field_present_end_date:
+    weight: 108
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
   field_profil:
     weight: 102
     label: above

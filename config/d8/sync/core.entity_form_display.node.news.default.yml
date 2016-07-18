@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.news.field_cover
     - field.field.node.news.field_date
     - field.field.node.news.field_file_news
+    - field.field.node.news.field_present_end_date
     - field.field.node.news.field_profil
     - field.field.node.news.field_reference
     - field.field.node.news.field_video
@@ -68,6 +69,7 @@ third_party_settings:
     group_schedule:
       children:
         - field_date
+        - field_present_end_date
       parent_name: group_tabs
       weight: 112
       label: Schedule
@@ -109,6 +111,11 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+  field_present_end_date:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
   field_profil:
     weight: -2
     settings:
