@@ -1,0 +1,28 @@
+uuid: c80f973b-aa96-4243-a6db-60cf420fe9b5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profil
+    - node.type.contact
+    - taxonomy.vocabulary.profil
+id: node.contact.field_profil
+field_name: field_profil
+entity_type: node
+bundle: contact
+label: Profil
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      profil: profil
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
