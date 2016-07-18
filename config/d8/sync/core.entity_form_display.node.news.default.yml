@@ -1,0 +1,147 @@
+uuid: 18fe9c11-fc00-4594-8352-84a678440272
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.news.body
+    - field.field.node.news.field_cover
+    - field.field.node.news.field_date
+    - field.field.node.news.field_file_news
+    - field.field.node.news.field_profil
+    - field.field.node.news.field_reference
+    - field.field.node.news.field_video
+    - image.style.thumbnail
+    - node.type.news
+  module:
+    - datetime
+    - field_group
+    - file
+    - image
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_info:
+      children:
+        - title
+        - field_cover
+        - body
+        - field_profil
+      parent_name: group_tabs
+      weight: 111
+      label: Info
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_tabs:
+      children:
+        - group_info
+        - group_schedule
+        - group_attachments
+      parent_name: ''
+      weight: 5
+      label: Tabs
+      format_type: tabs
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
+    group_attachments:
+      children:
+        - field_video
+        - field_reference
+        - field_file_news
+      parent_name: group_tabs
+      weight: 113
+      label: Attachments
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_schedule:
+      children:
+        - field_date
+      parent_name: group_tabs
+      weight: 112
+      label: Schedule
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+id: node.news.default
+targetEntityType: node
+bundle: news
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: -3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_cover:
+    weight: -4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_date:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+  field_file_news:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_profil:
+    weight: -2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_reference:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_video:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true
