@@ -1,0 +1,27 @@
+uuid: 17dc1e66-a00b-4b60-b481-81658e63126d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_building
+    - node.type.building
+  module:
+    - file
+id: node.building.field_file_building
+field_name: field_file_building
+entity_type: node
+bundle: building
+label: 'File Building'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'file-buildings/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx xls xlsx'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

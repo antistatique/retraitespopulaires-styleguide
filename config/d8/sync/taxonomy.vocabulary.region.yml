@@ -1,9 +1,9 @@
-uuid: fa32ea13-cc1c-4af4-a05e-d4de3b6aeb3c
+uuid: a578f4a2-939a-4661-bb89-9c5ebeed92c9
 langcode: fr
 status: true
 dependencies: {  }
-name: 'FAQ Category'
-vid: faq_category
+name: Region
+vid: region
 description: ''
 hierarchy: 0
 weight: 0

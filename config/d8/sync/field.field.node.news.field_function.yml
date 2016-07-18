@@ -1,0 +1,19 @@
+uuid: acfda53c-2541-4ee4-b3e5-34944c6d3f9d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_function
+    - node.type.news
+id: node.news.field_function
+field_name: field_function
+entity_type: node
+bundle: news
+label: Function
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

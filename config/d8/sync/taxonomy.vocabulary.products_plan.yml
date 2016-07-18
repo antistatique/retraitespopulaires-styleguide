@@ -1,0 +1,9 @@
+uuid: 93d17d39-96d6-4b6f-ac34-284173f480c5
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Products Plan'
+vid: products_plan
+description: ''
+hierarchy: 0
+weight: 0

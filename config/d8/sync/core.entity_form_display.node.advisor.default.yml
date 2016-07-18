@@ -1,0 +1,107 @@
+uuid: 1014ca46-1009-4746-b31f-f3edff5868dc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.advisor.field_cover
+    - field.field.node.advisor.field_firstname
+    - field.field.node.advisor.field_function
+    - field.field.node.advisor.field_lastname
+    - field.field.node.advisor.field_region
+    - field.field.node.advisor.field_specialty
+    - image.style.thumbnail
+    - node.type.advisor
+  module:
+    - field_group
+    - image
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - title
+        - field_cover
+        - field_firstname
+        - field_lastname
+        - field_specialty
+        - field_function
+        - field_region
+      parent_name: group_info
+      weight: 109
+      label: Tabs
+      format_type: tabs
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
+    group_info:
+      children:
+        - group_tabs
+      parent_name: ''
+      weight: 109
+      label: Info
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+id: node.advisor.default
+targetEntityType: node
+bundle: advisor
+mode: default
+content:
+  field_cover:
+    weight: 111
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_firstname:
+    weight: 112
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_function:
+    weight: 115
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_lastname:
+    weight: 113
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_region:
+    weight: 116
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_specialty:
+    weight: 114
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  title:
+    type: string_textfield
+    weight: 110
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

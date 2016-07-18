@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.contact.field_email
     - field.field.node.contact.field_phone
+    - field.field.node.contact.field_profil
     - node.type.contact
   module:
     - field_group
@@ -14,6 +15,7 @@ third_party_settings:
     group_tabs:
       children:
         - group_info
+        - group_categories
       parent_name: ''
       weight: 3
       label: Tabs
@@ -30,6 +32,19 @@ third_party_settings:
       parent_name: group_tabs
       weight: 4
       label: Info
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_categories:
+      children:
+        - field_profil
+      parent_name: group_tabs
+      weight: 5
+      label: Categories
       format_type: tab
       format_settings:
         formatter: closed
@@ -55,6 +70,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
+  field_profil:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   title:
     type: string_textfield
     weight: 0

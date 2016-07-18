@@ -1,0 +1,14 @@
+uuid: 3e0fc819-487f-4987-b6e5-29ca546e7dfc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.advisor
+third_party_settings:
+  content_translation:
+    enabled: false
+id: node.advisor
+target_entity_type_id: node
+target_bundle: advisor
+default_langcode: site_default
+language_alterable: false

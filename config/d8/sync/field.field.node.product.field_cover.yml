@@ -1,0 +1,45 @@
+uuid: d57783f8-5373-4538-881c-4d36bf9c43c7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cover
+    - node.type.product
+  module:
+    - content_translation
+    - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: '0'
+      alt: '0'
+      title: '0'
+id: node.product.field_cover
+field_name: field_cover
+entity_type: node
+bundle: product
+label: 'Cover Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'cover-products/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

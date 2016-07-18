@@ -1,0 +1,19 @@
+uuid: 29ba2b01-544b-4e42-8555-8aaf8f9b9928
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lastname
+    - node.type.news
+id: node.news.field_lastname
+field_name: field_lastname
+entity_type: node
+bundle: news
+label: Lastname
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

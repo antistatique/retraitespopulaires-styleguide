@@ -1,0 +1,67 @@
+uuid: f32fbb79-d5bf-4d5c-a786-67ae5c7258dc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.advisor.field_cover
+    - field.field.node.advisor.field_firstname
+    - field.field.node.advisor.field_function
+    - field.field.node.advisor.field_lastname
+    - field.field.node.advisor.field_region
+    - field.field.node.advisor.field_specialty
+    - node.type.advisor
+  module:
+    - image
+    - user
+id: node.advisor.default
+targetEntityType: node
+bundle: advisor
+mode: default
+content:
+  field_cover:
+    weight: 101
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_firstname:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_function:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_lastname:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_region:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_specialty:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 100
+hidden:
+  langcode: true

@@ -15,4 +15,7 @@ content:
   links:
     weight: 100
 hidden:
+  field_email: true
+  field_phone: true
+  field_profil: true
   langcode: true

@@ -1,0 +1,19 @@
+uuid: 56f28a55-5918-4937-9b82-7c226f1a64b4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_products
+field_name: field_products
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

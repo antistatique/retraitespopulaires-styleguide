@@ -1,0 +1,27 @@
+uuid: 22375463-51d2-4062-ac4d-73032c85b6f3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_product
+    - node.type.product
+  module:
+    - file
+id: node.product.field_file_product
+field_name: field_file_product
+entity_type: node
+bundle: product
+label: 'File Product'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'file-products/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx xls xlsx'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

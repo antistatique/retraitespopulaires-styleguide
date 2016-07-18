@@ -1,0 +1,88 @@
+uuid: 7c7539d6-bb8d-49f0-b98b-23b0bc887916
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.partnership.body
+    - field.field.node.partnership.field_contact
+    - field.field.node.partnership.field_cover
+    - field.field.node.partnership.field_date
+    - field.field.node.partnership.field_latitude
+    - field.field.node.partnership.field_longitude
+    - field.field.node.partnership.field_web_site
+    - node.type.partnership
+  module:
+    - datetime
+    - image
+    - link
+    - text
+    - user
+id: node.partnership.default
+targetEntityType: node
+bundle: partnership
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_contact:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_cover:
+    weight: 104
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_date:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+  field_latitude:
+    weight: 106
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+  field_longitude:
+    weight: 107
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+  field_web_site:
+    weight: 105
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  links:
+    weight: 100
+hidden:
+  langcode: true

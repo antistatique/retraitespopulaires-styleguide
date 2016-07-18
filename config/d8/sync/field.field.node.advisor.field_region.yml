@@ -1,0 +1,28 @@
+uuid: ea33be23-41f3-42b5-9883-f3071496ecf2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_region
+    - node.type.advisor
+    - taxonomy.vocabulary.region
+id: node.advisor.field_region
+field_name: field_region
+entity_type: node
+bundle: advisor
+label: Region
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      region: region
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

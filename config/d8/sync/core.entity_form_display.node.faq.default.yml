@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.faq.body
-    - field.field.node.faq.field_faq_category
-    - field.field.node.faq.field_file
+    - field.field.node.faq.field_contact
+    - field.field.node.faq.field_file_faq
+    - field.field.node.faq.field_profession
+    - field.field.node.faq.field_profil
     - node.type.faq
   module:
     - field_group
@@ -16,6 +18,8 @@ third_party_settings:
     group_tabs:
       children:
         - group_info
+        - group_categories
+        - group_attachments
       parent_name: ''
       weight: 0
       label: Tabs
@@ -27,12 +31,38 @@ third_party_settings:
     group_info:
       children:
         - title
-        - field_faq_category
         - body
         - field_file
       parent_name: group_tabs
       weight: 10
       label: Info
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_categories:
+      children:
+        - field_profession
+        - field_profil
+      parent_name: group_tabs
+      weight: 11
+      label: Categories
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_attachments:
+      children:
+        - field_contact
+      parent_name: group_tabs
+      weight: 12
+      label: Attachments
       format_type: tab
       format_settings:
         formatter: closed
@@ -47,23 +77,36 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 13
+    weight: 12
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
-  field_faq_category:
-    weight: 12
-    settings: {  }
+  field_contact:
+    weight: 16
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
-  field_file:
-    weight: 14
+    type: entity_reference_autocomplete
+  field_file_faq:
+    weight: 26
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+  field_profession:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_profil:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   title:
     type: string_textfield
     weight: 11
@@ -71,6 +114,8 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
 hidden:
   created: true
   langcode: true

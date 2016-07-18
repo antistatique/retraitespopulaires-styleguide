@@ -1,0 +1,24 @@
+uuid: 8f2e6aac-4848-4740-8cd2-f6905113f37b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_present_end_date
+    - node.type.news
+  module:
+    - datetime
+id: node.news.field_present_end_date
+field_name: field_present_end_date
+entity_type: node
+bundle: news
+label: 'Present - End Date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+7 days'
+default_value_callback: ''
+settings: {  }
+field_type: datetime

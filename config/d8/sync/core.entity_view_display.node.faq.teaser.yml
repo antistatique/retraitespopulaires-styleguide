@@ -24,4 +24,8 @@ content:
   links:
     weight: 100
 hidden:
+  field_contact: true
+  field_file_faq: true
+  field_profession: true
+  field_profil: true
   langcode: true

@@ -1,0 +1,28 @@
+uuid: 211e0f6f-4fb3-49af-bc5e-3ee699d20132
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profession
+    - node.type.page
+    - taxonomy.vocabulary.profession
+id: node.page.field_profession
+field_name: field_profession
+entity_type: node
+bundle: page
+label: Profession
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      profession: profession
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

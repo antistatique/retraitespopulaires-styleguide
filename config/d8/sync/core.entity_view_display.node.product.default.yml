@@ -1,0 +1,83 @@
+uuid: de59a66d-5a42-4435-a26c-bc242c2b3bd9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.product.body
+    - field.field.node.product.field_advisor
+    - field.field.node.product.field_contact
+    - field.field.node.product.field_cover
+    - field.field.node.product.field_document
+    - field.field.node.product.field_faq
+    - field.field.node.product.field_file_product
+    - field.field.node.product.field_profil
+    - node.type.product
+  module:
+    - file
+    - image
+    - text
+    - user
+id: node.product.default
+targetEntityType: node
+bundle: product
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_advisor:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_contact:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_cover:
+    weight: 105
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_document:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_faq:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_file_product:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  field_profil:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+hidden:
+  langcode: true

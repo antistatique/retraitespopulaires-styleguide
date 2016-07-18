@@ -1,0 +1,28 @@
+uuid: 5db31453-40d7-46e2-8a86-0238eaf66ac4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profil
+    - node.type.product
+    - taxonomy.vocabulary.profil
+id: node.product.field_profil
+field_name: field_profil
+entity_type: node
+bundle: product
+label: Profil
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      profil: profil
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
