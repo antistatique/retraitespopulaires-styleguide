@@ -1,0 +1,27 @@
+uuid: 7054eade-9532-463e-99d9-e0078b91366f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.partnership.body
+    - node.type.partnership
+  module:
+    - text
+    - user
+id: node.partnership.teaser
+targetEntityType: node
+bundle: partnership
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

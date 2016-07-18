@@ -1,0 +1,22 @@
+uuid: 63c9fe85-3e1f-42f5-ae13-d536b22cffc8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.partnership
+  module:
+    - text
+id: node.partnership.body
+field_name: body
+entity_type: node
+bundle: partnership
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary
