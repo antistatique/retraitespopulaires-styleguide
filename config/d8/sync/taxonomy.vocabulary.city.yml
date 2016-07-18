@@ -1,0 +1,9 @@
+uuid: ace43c0c-20af-4ffd-ab13-7508357372ac
+langcode: fr
+status: true
+dependencies: {  }
+name: City
+vid: city
+description: ''
+hierarchy: 0
+weight: 0

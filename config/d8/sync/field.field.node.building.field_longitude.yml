@@ -1,0 +1,23 @@
+uuid: c4657f44-5eeb-4c9d-a04e-ad4220294ae3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_longitude
+    - node.type.building
+id: node.building.field_longitude
+field_name: field_longitude
+entity_type: node
+bundle: building
+label: Longitude
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float -180
+  max: !!float 180
+  prefix: ''
+  suffix: ''
+field_type: float

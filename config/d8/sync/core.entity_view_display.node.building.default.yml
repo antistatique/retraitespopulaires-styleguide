@@ -1,0 +1,116 @@
+uuid: dea4ef47-db78-4887-9dae-761eb6c933d1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.building.body
+    - field.field.node.building.field_city
+    - field.field.node.building.field_contact
+    - field.field.node.building.field_cover
+    - field.field.node.building.field_file_building
+    - field.field.node.building.field_file_plan
+    - field.field.node.building.field_latitude
+    - field.field.node.building.field_longitude
+    - field.field.node.building.field_profil
+    - field.field.node.building.field_situation
+    - field.field.node.building.field_virtual_visit
+    - node.type.building
+  module:
+    - file
+    - image
+    - link
+    - text
+    - user
+id: node.building.default
+targetEntityType: node
+bundle: building
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_city:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_contact:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_cover:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_file_building:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  field_file_plan:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  field_latitude:
+    weight: 109
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+  field_longitude:
+    weight: 108
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+  field_profil:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_situation:
+    weight: 111
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_virtual_visit:
+    weight: 110
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  links:
+    weight: 100
+hidden:
+  langcode: true

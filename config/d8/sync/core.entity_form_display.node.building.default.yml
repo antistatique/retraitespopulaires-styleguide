@@ -1,0 +1,173 @@
+uuid: 40bc3435-2713-4683-91e2-6386cddab207
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.building.body
+    - field.field.node.building.field_city
+    - field.field.node.building.field_contact
+    - field.field.node.building.field_cover
+    - field.field.node.building.field_file_building
+    - field.field.node.building.field_file_plan
+    - field.field.node.building.field_latitude
+    - field.field.node.building.field_longitude
+    - field.field.node.building.field_profil
+    - field.field.node.building.field_situation
+    - field.field.node.building.field_virtual_visit
+    - image.style.thumbnail
+    - node.type.building
+  module:
+    - field_group
+    - file
+    - image
+    - link
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_info
+        - group_attachments
+      parent_name: ''
+      weight: 5
+      label: Tabs
+      format_type: tabs
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
+    group_info:
+      children:
+        - title
+        - field_cover
+        - body
+        - field_situation
+        - field_latitude
+        - field_longitude
+        - field_profil
+        - path
+      parent_name: group_tabs
+      weight: 19
+      label: Info
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_attachments:
+      children:
+        - field_virtual_visit
+        - field_city
+        - field_file_plan
+        - field_file_building
+        - field_contact
+      parent_name: group_tabs
+      weight: 20
+      label: Attachments
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+id: node.building.default
+targetEntityType: node
+bundle: building
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_city:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_contact:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_cover:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_file_building:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_file_plan:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_latitude:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_longitude:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_profil:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_situation:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_virtual_visit:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  path:
+    type: path
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  promote: true
+  sticky: true
+  uid: true

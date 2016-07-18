@@ -1,0 +1,22 @@
+uuid: d49045ad-d5ef-4890-b418-8fd799ef934d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.building
+  module:
+    - text
+id: node.building.body
+field_name: body
+entity_type: node
+bundle: building
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary
