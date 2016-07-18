@@ -1,0 +1,17 @@
+uuid: babeb2f9-8139-4f5c-bf34-8346af906a0e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Building
+type: building
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

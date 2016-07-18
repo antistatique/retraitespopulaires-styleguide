@@ -7,6 +7,9 @@ dependencies:
     - field.field.node.news.field_cover
     - field.field.node.news.field_date
     - field.field.node.news.field_file_news
+    - field.field.node.news.field_firstname
+    - field.field.node.news.field_function
+    - field.field.node.news.field_lastname
     - field.field.node.news.field_present_end_date
     - field.field.node.news.field_profil
     - field.field.node.news.field_reference
@@ -43,6 +46,7 @@ third_party_settings:
         - group_info
         - group_schedule
         - group_attachments
+        - group_author
       parent_name: ''
       weight: 5
       label: Tabs
@@ -73,6 +77,21 @@ third_party_settings:
       parent_name: group_tabs
       weight: 112
       label: Schedule
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_author:
+      children:
+        - field_firstname
+        - field_lastname
+        - field_function
+      parent_name: group_tabs
+      weight: 114
+      label: Author
       format_type: tab
       format_settings:
         formatter: closed
@@ -111,6 +130,27 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+  field_firstname:
+    weight: 114
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_function:
+    weight: 116
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_lastname:
+    weight: 115
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_present_end_date:
     weight: 4
     settings: {  }
