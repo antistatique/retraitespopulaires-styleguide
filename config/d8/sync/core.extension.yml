@@ -33,6 +33,9 @@ module:
   page_cache: 0
   path: 0
   rdf: 0
+  search_api: 0
+  search_api_attachments: 0
+  search_api_solr: 0
   shortcut: 0
   system: 0
   taxonomy: 0
