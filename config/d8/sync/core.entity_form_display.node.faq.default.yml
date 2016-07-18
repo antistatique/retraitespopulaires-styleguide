@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.faq.body
-    - field.field.node.faq.field_faq_category
     - field.field.node.faq.field_file
+    - field.field.node.faq.field_profession
     - node.type.faq
   module:
     - field_group
@@ -53,17 +53,20 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
-  field_faq_category:
-    weight: 12
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
   field_file:
     weight: 14
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+  field_profession:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   title:
     type: string_textfield
     weight: 11

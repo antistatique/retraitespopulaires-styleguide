@@ -1,12 +1,12 @@
-uuid: 45fc0101-c16d-4f34-9b66-e0a73df72d61
-langcode: en
+uuid: 6ed9f5fc-453b-473e-859d-18ad8e8688be
+langcode: fr
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_faq_category
-field_name: field_faq_category
+id: node.field_profession
+field_name: field_profession
 entity_type: node
 type: entity_reference
 settings:

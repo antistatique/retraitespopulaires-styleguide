@@ -1,18 +1,18 @@
-uuid: 693a84b5-cc93-482d-8cc2-19eaaf6c102a
-langcode: en
+uuid: 269d35b7-b86f-49bf-a669-5e018e0f3e23
+langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_faq_category
+    - field.storage.node.field_profession
     - node.type.faq
-    - taxonomy.vocabulary.faq_category
-id: node.faq.field_faq_category
-field_name: field_faq_category
+    - taxonomy.vocabulary.profession
+id: node.faq.field_profession
+field_name: field_profession
 entity_type: node
 bundle: faq
-label: Category
+label: Profession
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      faq_category: faq_category
+      profession: profession
     sort:
       field: _none
     auto_create: false

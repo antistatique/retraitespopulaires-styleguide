@@ -1,0 +1,17 @@
+uuid: f32fbb79-d5bf-4d5c-a786-67ae5c7258dc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.advisor
+  module:
+    - user
+id: node.advisor.default
+targetEntityType: node
+bundle: advisor
+mode: default
+content:
+  links:
+    weight: 100
+hidden:
+  langcode: true
