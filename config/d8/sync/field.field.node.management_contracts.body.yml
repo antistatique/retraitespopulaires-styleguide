@@ -1,0 +1,22 @@
+uuid: a2ddc0fe-8642-48f6-a0f3-55be5f20775b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.management_contracts
+  module:
+    - text
+id: node.management_contracts.body
+field_name: body
+entity_type: node
+bundle: management_contracts
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

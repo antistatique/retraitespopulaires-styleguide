@@ -1,0 +1,27 @@
+uuid: 62f16dda-f356-450f-b5c6-10718bbae900
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.management_contracts.body
+    - node.type.management_contracts
+  module:
+    - text
+    - user
+id: node.management_contracts.teaser
+targetEntityType: node
+bundle: management_contracts
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

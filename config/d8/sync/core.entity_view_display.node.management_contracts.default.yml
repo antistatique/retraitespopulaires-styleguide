@@ -1,0 +1,56 @@
+uuid: 88cda586-94ec-4db9-aa9a-aed2edd7c76d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.management_contracts.body
+    - field.field.node.management_contracts.field_contact
+    - field.field.node.management_contracts.field_logo
+    - field.field.node.management_contracts.field_web_site
+    - node.type.management_contracts
+  module:
+    - image
+    - link
+    - text
+    - user
+id: node.management_contracts.default
+targetEntityType: node
+bundle: management_contracts
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_contact:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_logo:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_web_site:
+    weight: 103
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  links:
+    weight: 100
+hidden:
+  langcode: true
