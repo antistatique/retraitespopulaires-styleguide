@@ -24,4 +24,14 @@ content:
   links:
     weight: 100
 hidden:
+  field_city: true
+  field_contact: true
+  field_cover: true
+  field_file_building: true
+  field_file_plan: true
+  field_latitude: true
+  field_longitude: true
+  field_profil: true
+  field_situation: true
+  field_virtual_visit: true
   langcode: true

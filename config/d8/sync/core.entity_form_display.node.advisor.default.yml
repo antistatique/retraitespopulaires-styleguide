@@ -12,40 +12,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.advisor
   module:
-    - field_group
     - image
-third_party_settings:
-  field_group:
-    group_tabs:
-      children:
-        - title
-        - field_cover
-        - field_firstname
-        - field_lastname
-        - field_specialty
-        - field_function
-        - field_region
-      parent_name: group_info
-      weight: 109
-      label: Tabs
-      format_type: tabs
-      format_settings:
-        direction: vertical
-        classes: ''
-        id: ''
-    group_info:
-      children:
-        - group_tabs
-      parent_name: ''
-      weight: 109
-      label: Info
-      format_type: tab
-      format_settings:
-        formatter: closed
-        description: ''
-        classes: ''
-        id: ''
-        required_fields: true
 id: node.advisor.default
 targetEntityType: node
 bundle: advisor
