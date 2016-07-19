@@ -35,6 +35,7 @@ module:
   rdf: 0
   search_api: 0
   search_api_attachments: 0
+  search_api_db: 0
   search_api_solr: 0
   shortcut: 0
   system: 0
