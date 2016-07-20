@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+.organic-lines {
+  .organicjs-container {
+    position: relative;
+
+    .path-small,
+    .path-big {
+      position: absolute;
+    }
+
+    .path-small {
+      top: 20px;
+    }
+  }
+}
