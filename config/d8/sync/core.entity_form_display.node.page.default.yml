@@ -26,6 +26,7 @@ third_party_settings:
   field_group:
     group_attachments:
       children:
+        - field_profession
         - field_file_page
         - field_contact
         - field_advisor
@@ -33,7 +34,6 @@ third_party_settings:
         - field_products
         - field_management_contracts
         - field_document
-        - field_profession
       parent_name: ''
       weight: 5
       label: 'Linked Contents'
@@ -59,12 +59,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_advisor:
-    weight: 6
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_contact:
-    weight: 5
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -76,7 +76,7 @@ content:
     third_party_settings: {  }
     type: image_image
   field_document:
-    weight: 10
+    weight: 18
     settings:
       match_operator: CONTAINS
       size: 60
@@ -84,7 +84,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_faq:
-    weight: 7
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -92,13 +92,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_file_page:
-    weight: 4
+    weight: 12
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
   field_management_contracts:
-    weight: 9
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: 60
@@ -106,7 +106,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_products:
-    weight: 8
+    weight: 16
     settings: {  }
     third_party_settings: {  }
     type: options_buttons

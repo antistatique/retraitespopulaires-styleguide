@@ -23,14 +23,13 @@ third_party_settings:
         - field_file_faq
       parent_name: ''
       weight: 3
-      label: Attachments
+      label: 'Linked Contents'
       format_type: details
       format_settings:
-        formatter: closed
-        description: ''
-        classes: ''
-        id: ''
+        label: 'Linked Contents'
         required_fields: true
+        id: ''
+        classes: ''
         open: false
 id: node.faq.default
 targetEntityType: node
