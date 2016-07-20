@@ -7,3 +7,4 @@ notes: |
 ---
 
 <div class="organic-lines"></div>
+<div class="clearfix"></div>
