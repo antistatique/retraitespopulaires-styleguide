@@ -40,6 +40,7 @@
       </div>
     {% endif %}
 
+    <script src="/build/js/jquery.js"></script>
     <script src="/build/js/vendors.min.js"></script>
     <script src="/build/js/main.js"></script>
 

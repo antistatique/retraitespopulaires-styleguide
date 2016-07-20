@@ -22,6 +22,9 @@
       "node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js",
       "node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js"
     ],
+    "singlejs": [
+      "node_modules/jquery/dist/jquery.js"
+    ],
     "fonts": [
       "node_modules/bootstrap-sass/assets/fonts/bootstrap/*",
       "assets/fonts/*"
