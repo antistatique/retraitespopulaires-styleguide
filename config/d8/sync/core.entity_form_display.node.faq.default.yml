@@ -10,8 +10,28 @@ dependencies:
     - field.field.node.faq.field_profil
     - node.type.faq
   module:
+    - field_group
     - file
     - text
+third_party_settings:
+  field_group:
+    group_attachments:
+      children:
+        - field_contact
+        - field_profil
+        - field_profession
+        - field_file_faq
+      parent_name: ''
+      weight: 3
+      label: Attachments
+      format_type: details
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+        open: false
 id: node.faq.default
 targetEntityType: node
 bundle: faq
@@ -27,25 +47,22 @@ content:
     third_party_settings: {  }
   field_contact:
     weight: 7
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   field_file_faq:
-    weight: 5
+    weight: 10
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
   field_profession:
-    weight: 2
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_profil:
-    weight: 3
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -56,14 +73,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  translation:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   created: true
   langcode: true
   path: true
   promote: true
   sticky: true
+  translation: true
   uid: true

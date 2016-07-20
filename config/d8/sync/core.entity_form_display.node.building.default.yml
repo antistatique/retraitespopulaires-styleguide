@@ -17,11 +17,30 @@ dependencies:
     - image.style.thumbnail
     - node.type.building
   module:
+    - field_group
     - file
     - image
     - link
     - path
     - text
+third_party_settings:
+  field_group:
+    group_attachments:
+      children:
+        - field_virtual_visit
+        - field_city
+        - field_file_plan
+        - field_file_building
+        - field_contact
+      parent_name: ''
+      weight: 9
+      label: Attachments
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
 id: node.building.default
 targetEntityType: node
 bundle: building
@@ -29,7 +48,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 2
+    weight: 3
     settings:
       rows: 9
       summary_rows: 3
@@ -49,7 +68,7 @@ content:
     third_party_settings: {  }
     type: options_select
   field_cover:
-    weight: 1
+    weight: 2
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -88,7 +107,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_situation:
-    weight: 3
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -108,7 +127,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     settings:
       size: 60
       placeholder: ''

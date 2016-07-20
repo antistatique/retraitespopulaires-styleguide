@@ -32,14 +32,14 @@ third_party_settings:
         - field_file_news
       parent_name: ''
       weight: 113
-      label: Attachments
-      format_type: fieldset
+      label: 'Linked Contents'
+      format_type: details
       format_settings:
-        formatter: closed
-        description: ''
-        classes: ''
-        id: ''
+        label: 'Linked Contents'
         required_fields: true
+        id: ''
+        classes: ''
+        open: false
     group_author:
       children:
         - field_firstname
@@ -48,12 +48,13 @@ third_party_settings:
       parent_name: ''
       weight: 114
       label: Author
-      format_type: fieldset
+      format_type: details
       format_settings:
-        description: ''
-        classes: ''
-        id: ''
+        label: Author
         required_fields: true
+        id: ''
+        classes: ''
+        open: null
 id: node.news.default
 targetEntityType: node
 bundle: news

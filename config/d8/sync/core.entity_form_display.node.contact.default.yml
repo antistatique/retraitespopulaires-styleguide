@@ -28,7 +28,7 @@ content:
     third_party_settings: {  }
     type: telephone_default
   field_profil:
-    weight: 26
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
