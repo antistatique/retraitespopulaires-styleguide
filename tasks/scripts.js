@@ -34,49 +34,61 @@ module.exports = function() {
    * With error reporting on compiling (so that there's no crash)
    * And jshint check to highlight errors as we go.
    */
-  gulp.task('scripts', ['scripts-lint'], function() {
-    if (argv.local) {
-      return browserify(
-        {
-          entries: ['./' + config.assets + 'js/index.js'],
-          debug: true
-        })
-        .transform(babelify.configure({
-          presets: ['es2015'],
-          sourceMaps: true
-        }))
-        .bundle()
-        .on('error', errorAlert)
-        .pipe(source('bundle.js'))
-        .pipe(buffer())
-        .pipe($.sourcemaps.init({loadMaps: true}))
-            .pipe($.if(argv.production, $.uglify()))
-            .on('error', errorAlert)
-        .pipe(argv.production ? $.util.noop() : $.sourcemaps.write('./'))
-        .pipe(gulp.dest(config.build + '/js'));
-    } else {
-      return browserify(
-        {
-          entries: ['./' + config.assets + 'js/index.js'],
-          debug: true
-        })
-        .transform(babelify.configure({
-          presets: ['es2015'],
-          sourceMaps: true
-        }))
-        .transform(browserifyshim)
-        .bundle()
-        .on('error', errorAlert)
-        .pipe(source('bundle.js'))
-        .pipe(buffer())
-        .pipe($.sourcemaps.init({loadMaps: true}))
-            .pipe($.if(argv.production, $.uglify()))
-            .on('error', errorAlert)
-        .pipe(argv.production ? $.util.noop() : $.sourcemaps.write('./'))
-        .pipe($.size({title: 'BUNDLE SIZE', showFiles: true}))
-        .pipe(gulp.dest(config.build + '/js'));
-    }
+  gulp.task('scripts', function() {
+    return gulp.src(config.assets + 'js/*.js')
+      .pipe($.plumber({errorHandler: errorAlert}))
+      .pipe($.eslint())
+      .pipe($.eslint.format())
+      .pipe($.babel({presets: ['es2015'], sourceMaps: true}))
+      .pipe($.concat('main.js'))
+      .pipe($.if(argv.production, $.uglify()))
+      .pipe($.size({title: 'JS SCRIPTS', showFiles: true}))
+      .pipe(gulp.dest(config.build + 'js'));
   });
+
+  // gulp.task('scripts', ['scripts-lint'], function() {
+  //   if (argv.local) {
+  //     return browserify(
+  //       {
+  //         entries: ['./' + config.assets + 'js/index.js'],
+  //         debug: true
+  //       })
+  //       .transform(babelify.configure({
+  //         presets: ['es2015'],
+  //         sourceMaps: true
+  //       }))
+  //       .bundle()
+  //       .on('error', errorAlert)
+  //       .pipe(source('bundle.js'))
+  //       .pipe(buffer())
+  //       .pipe($.sourcemaps.init({loadMaps: true}))
+  //           .pipe($.if(argv.production, $.uglify()))
+  //           .on('error', errorAlert)
+  //       .pipe(argv.production ? $.util.noop() : $.sourcemaps.write('./'))
+  //       .pipe(gulp.dest(config.build + '/js'));
+  //   } else {
+  //     return browserify(
+  //       {
+  //         entries: ['./' + config.assets + 'js/index.js'],
+  //         debug: true
+  //       })
+  //       .transform(babelify.configure({
+  //         presets: ['es2015'],
+  //         sourceMaps: true
+  //       }))
+  //       .transform(browserifyshim)
+  //       .bundle()
+  //       .on('error', errorAlert)
+  //       .pipe(source('bundle.js'))
+  //       .pipe(buffer())
+  //       .pipe($.sourcemaps.init({loadMaps: true}))
+  //           .pipe($.if(argv.production, $.uglify()))
+  //           .on('error', errorAlert)
+  //       .pipe(argv.production ? $.util.noop() : $.sourcemaps.write('./'))
+  //       .pipe($.size({title: 'BUNDLE SIZE', showFiles: true}))
+  //       .pipe(gulp.dest(config.build + '/js'));
+  //   }
+  // });
 
   /**
    * Lint JS
