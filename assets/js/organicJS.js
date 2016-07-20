@@ -61,7 +61,7 @@
     * @return {[type]}       [description]
     */
     base.generate = function(size, start, end){
-      const $svg = _svg('svg', {viewBox: '0 0 1440 220', class:'path-'+size});
+      const $svg = _svg('svg', {viewBox: '0 0 1920 220', class:'path-'+size});
 
       const $path = _svg('path', {fill: 'none', stroke: base.options.color, 'stroke-width':styles[size].size, 'vector-effect':'non-scaling-stroke', 'd': start});
 
