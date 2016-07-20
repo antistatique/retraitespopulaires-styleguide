@@ -1,0 +1,44 @@
+@charset 'UTF-8';
+
+.wrapper-funky-waves {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .funky-waves-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    padding-top: 10.239583%;
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .mask {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 55px;
+      background: $white;
+    }
+
+    .wave-1 {
+      bottom: 50px;
+    }
+
+    .wave-2 {
+      bottom: 50px;
+    }
+
+    .wave-3 {
+      bottom: 60px;
+    }
+  }
+}
