@@ -1,17 +1,16 @@
 # config valid only for current version of Capistrano
 lock '3.4.1'
 
-
-set :application, 'rp'
+set :application, 'retraites-populaires'
 set :repo_url, 'git@github.com:antistatique/retraitespopulaires.git'
 
 # Used only if styleguide is external of the repository
 # set :styleguide_repo, 'git@github.com:antistatique/retraitespopulaires-styleguide.git'
 
-server 'antistatique.alwaysdata.net', user: 'rp', roles: %w{app db web}
+server 'antistatique.alwaysdata.net', user: 'retraites-populaires', roles: %w{app db web}
 
 set :app_path, "web"
-set :styleguide_path, "node_modules/@antistatique/retraitespopulaires"
+set :styleguide_path, "node_modules/@antistatique/retraitespopulaires-styleguide"
 set :theme_path, "themes/retraitespopulaires"
 set :build_path, "build"
 
@@ -62,8 +61,8 @@ namespace :deploy do
 
   # Used only if styleguide is internal of the repository
   after :updated, "styleguide:build"
-
   after :updated, "styleguide:deploy_build"
+
   after :updated, "drupal:config:import"
   after :updated, "drupal:updatedb"
   after :updated, "drupal:cache:clear"

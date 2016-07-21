@@ -1,5 +1,5 @@
 # overwrite deploy_to
-set :deploy_to, '/home/rp/www/staging.retraitespopulaires.ch'
+set :deploy_to, '/home/retraites-populaires/www/retraites-populaires.staging.antistatique.net'
 
 # set a branch for this release
 set :branch, 'dev'

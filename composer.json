@@ -27,7 +27,8 @@
         "drupal/field_group": "^8",
         "drupal/search_api": "^8",
         "drupal/search_api_attachments": "^8",
-        "drupal/search_api_solr": "^8"
+        "drupal/search_api_solr": "^8",
+        "drupal/devel": "^8.0"
     },
     "require-dev": {
        "behat/mink": "~1.7",
@@ -37,7 +38,6 @@
         "mikey179/vfsStream": "~1.2",
         "phpunit/phpunit": "~4.8",
         "symfony/css-selector": "~2.8",
-        "drupal/devel": "^8.0"
     },
     "conflict": {
         "drupal/drupal": "*"

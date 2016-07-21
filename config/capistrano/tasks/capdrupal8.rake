@@ -11,7 +11,7 @@ namespace :drush do
   task :install do
     on roles(:app) do
       within shared_path do
-        execute :composer, 'require drush/drush:dev-master'
+        execute :composer, 'require drush/drush'
       end
     end
   end

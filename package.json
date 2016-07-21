@@ -13,5 +13,8 @@
   "homepage": "https://github.com/antistatique/retraitespopulaires#readme",
   "dependencies": {
     "@antistatique/retraitespopulaires-styleguide": "*"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
   }
 }
