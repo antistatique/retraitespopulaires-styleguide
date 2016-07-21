@@ -1,0 +1,17 @@
+@charset 'UTF-8';
+
+.square {
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 210px;
+  background-color: $white;
+  border: 1px solid $light-grey;
+  text-align: center;
+}
+
+.thebox {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

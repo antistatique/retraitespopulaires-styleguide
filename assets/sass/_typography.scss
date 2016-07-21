@@ -1,0 +1,70 @@
+@charset 'UTF-8';
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  word-wrap: break-word;
+}
+
+p {
+  font-family: Frutiger Neue;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-light {
+  font-weight: 200;
+}
+
+/**
+* Fonts
+*/
+
+$font-frutiger: 'Frutiger Neue', helvetica, arial, sans-serif;
+
+@font-face {
+  font-family: Frutiger Neue;
+  src: url('../fonts/FrutigerNeueLTW1G-Bold.eot');
+  src:
+    url('../fonts/FrutigerNeueLTW1G-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/FrutigerNeueLTW1G-Bold.woff') format('woff'),
+    url('../fonts/FrutigerNeueLTW1G-Bold.ttf') format('truetype'),
+    url('../fonts/FrutigerNeueLTW1G-Bold.svg#frutigernewbold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Frutiger Neue;
+  src: url('../fonts/FrutigerNeueLTW1G-regular.eot');
+  src:
+    url('../fonts/FrutigerNeueLTW1G-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/FrutigerNeueLTW1G-regular.woff') format('woff'),
+    url('../fonts/FrutigerNeueLTW1G-regular.ttf') format('truetype'),
+    url('../fonts/FrutigerNeueLTW1G-regular.svg#frutigernewregular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Frutiger Neue;
+  src: url('../fonts/FrutigerNeueLTW1G-Light.eot');
+  src:
+    url('../fonts/FrutigerNeueLTW1G-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/FrutigerNeueLTW1G-Light.woff') format('woff'),
+    url('../fonts/FrutigerNeueLTW1G-Light.ttf') format('truetype'),
+    url('../fonts/FrutigerNeueLTW1G-Light.svg#frutigernewlight') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}

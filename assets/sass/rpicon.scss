@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "rpicon";
+  src: url('../fonts/rpicon.eot');
+  src: url('../fonts/rpicon.eot?#iefix') format('eot'),
+    url('../fonts/rpicon.woff') format('woff'),
+    url('../fonts/rpicon.ttf') format('truetype'),
+    url('../fonts/rpicon.svg#rpicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.rpicon:before {
+  display: inline-block;
+  font-family: "rpicon";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.rpicon-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.rpicon-2x { font-size: 2em; }
+.rpicon-3x { font-size: 3em; }
+.rpicon-4x { font-size: 4em; }
+.rpicon-5x { font-size: 5em; }
+.rpicon-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+.rpicon-search:before { content: "\EA01" }
+.rpicon-table:before { content: "\EA02" }
+.rpicon-user:before { content: "\EA03" }
+.rpicon-users:before { content: "\EA04" }
