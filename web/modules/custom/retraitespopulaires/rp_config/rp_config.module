@@ -1,9 +1,0 @@
-<?php
-
-/**
-* Toolbar hook
-* Attache the custom icons
-*/
-function rp_config_toolbar_alter(&$items){
-    $items['administration']['#attached']['library'][]  = 'rp_config/icons';
-}

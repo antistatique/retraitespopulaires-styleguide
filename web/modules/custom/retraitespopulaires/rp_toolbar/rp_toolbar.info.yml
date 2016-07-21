@@ -1,5 +1,5 @@
-name: RP Config.
-description: 'Base Admin module'
+name: RP Toolbar
+description: 'Toolbar Admin module'
 package: Retraites Populaires
 type: module
 core: 8.x

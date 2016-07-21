@@ -1,4 +1,4 @@
-rp_config.admin:
+rp_toolbar.admin:
     path: '/admin/rp'
     defaults:
         # System Controller that list all links under this parent
