@@ -28,7 +28,7 @@
         "drupal/search_api": "^8",
         "drupal/search_api_attachments": "^8",
         "drupal/search_api_solr": "^8",
-        "drupal/devel": "^8.0"
+        "drupal/devel": "^8"
     },
     "require-dev": {
        "behat/mink": "~1.7",
