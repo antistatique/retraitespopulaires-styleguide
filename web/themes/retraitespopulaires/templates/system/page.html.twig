@@ -61,34 +61,38 @@
 {# Navbar #}
 
 
-{% block navbar %}
-    {%
-    set navbar_classes = [
-    'navbar',
-    'navbar-default',
-    'navbar-fixed',
-    ]
-    %}
-    <header{{ attributes.addClass(navbar_classes) }} id="navbar" role="banner">
-        <div class="navbar-header">
-            {{ page.navigation }}
-            {# .btn-navbar is used as the toggle for collapsed navbar content #}
-            {% if page.navigation_collapsible %}
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            {% endif %}
-        </div>
 
-        {# Navigation (collapsible) #}
-            <div class="navbar-collapse collapse">
-                {{ page.navigation_collapsible }}
+
+{% if page.navigation or page.navigation_collapsible %}
+    {% block navbar %}
+        {%
+        set navbar_classes = [
+        'navbar',
+        'navbar-default',
+        ]
+        %}
+        <header{{ attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+            <div class="navbar-header">
+                {{ page.navigation }}
+                {# .btn-navbar is used as the toggle for collapsed navbar content #}
+                {% if page.navigation_collapsible %}
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                {% endif %}
             </div>
-    </header>
-{% endblock %}
+
+            {# Navigation (collapsible) #}
+                <div class="navbar-collapse collapse">
+                    {{ page.navigation_collapsible }}
+                </div>
+        </header>
+    {% endblock %}
+{% endif %}
+
 
 {# Main #}
 {% block main %}
