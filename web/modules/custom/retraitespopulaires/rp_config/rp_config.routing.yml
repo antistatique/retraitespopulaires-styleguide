@@ -1,0 +1,8 @@
+rp_config.admin:
+    path: '/admin/rp'
+    defaults:
+        # System Controller that list all links under this parent
+        _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+        _title: 'Tools - PR'
+    requirements:
+        _permission: 'access administration pages'

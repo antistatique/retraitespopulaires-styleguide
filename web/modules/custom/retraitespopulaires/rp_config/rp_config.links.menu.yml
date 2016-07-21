@@ -1,0 +1,5 @@
+rp_config.admin:
+    title: Tools - RP
+    parent: system.admin
+    route_name: rp_config.admin
+    weight: 100
