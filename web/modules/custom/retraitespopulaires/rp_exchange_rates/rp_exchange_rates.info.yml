@@ -1,0 +1,6 @@
+name: RP Exchanges rates
+description: 'Importe and expose up-to-date rates'
+package: Retraites Populaires
+type: module
+version: 1.0
+core: 8.x

@@ -1,0 +1,5 @@
+rp_toolbar.admin:
+    title: Tools - RP
+    parent: system.admin
+    route_name: rp_toolbar.admin
+    weight: 100

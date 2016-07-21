@@ -1,0 +1,6 @@
+name: RP Simulators
+description: 'Provide simulators such "Prêts" & "Libre Passage"'
+package: Retraites Populaires
+type: module
+version: 1.0
+core: 8.x
