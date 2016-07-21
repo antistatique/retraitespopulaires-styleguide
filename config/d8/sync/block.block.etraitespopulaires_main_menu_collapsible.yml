@@ -1,4 +1,4 @@
-uuid: 5df88282-8533-4857-b0dc-d3422bf53b52
+uuid: f4c39e33-f423-481d-87b5-71418f2b0851
 langcode: en
 status: true
 dependencies:
@@ -8,19 +8,17 @@ dependencies:
     - system
   theme:
     - retraitespopulaires
-_core:
-  default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
-id: retraitespopulaires_main_menu
+id: etraitespopulaires_main_menu_collapsible
 theme: retraitespopulaires
-region: navigation
-weight: -6
+region: navigation_collapsible
+weight: null
 provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
-  label: 'Main navigation'
+  label: 'Main navigation collapsible'
   provider: system
-  label_display: '0'
+  label_display: visible
   level: 1
   depth: 0
 visibility: {  }
