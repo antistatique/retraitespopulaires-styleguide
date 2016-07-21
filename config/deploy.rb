@@ -64,6 +64,7 @@ namespace :deploy do
   after :updated, "styleguide:deploy_build"
 
   after :updated, "drupal:config:import"
+  after :updated, "drupal:module:disable"
   after :updated, "drupal:updatedb"
   after :updated, "drupal:cache:clear"
 

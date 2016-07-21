@@ -9,6 +9,9 @@ set :branch, 'master'
 
 set :slack_run, -> { true }
 
+# Module that will be disabled by drush
+set :disable_modules, ['devel']
+
 # Map composer and drush commands
 # NOTE: If stage have different deploy_to
 # you have to copy those line for each <stage_name>.rb

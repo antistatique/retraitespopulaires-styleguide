@@ -12,6 +12,9 @@ set :http_auth_users, [
    [ "rp", "$apr1$vHMguZuD$ZD0IeqhM0Ioypda9rIdf./" ]
 ]
 
+# Module that will be disabled by drush
+set :disable_modules, ['devel']
+
 after "deploy:finished", "httpauth:protect"
 
 # Map composer and drush commands

@@ -52,11 +52,24 @@ namespace :drupal do
     end
   end
 
+  namespace :module do
+    desc 'Disable module'
+    task :disable do
+      on roles(:app) do
+        within release_path.join(fetch(:app_path)) do
+          for mod in fetch(:disable_modules)
+            execute :drush, "pmu '#{mod}' -y"
+          end
+        end
+      end
+    end
+  end
+
   desc 'Update database with migrations scripts'
   task :updatedb do
     on roles(:app) do
       within release_path.join(fetch(:app_path)) do
-        execute :drush, 'updatedb'
+        execute :drush, 'updatedb -y'
       end
     end
   end
