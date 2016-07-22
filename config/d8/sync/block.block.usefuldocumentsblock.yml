@@ -1,0 +1,20 @@
+uuid: 53d6ebf8-867b-4b0d-8e51-96dd0b7f761c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - rp_site
+  theme:
+    - retraitespopulaires
+id: usefuldocumentsblock
+theme: retraitespopulaires
+region: content_bottom
+weight: -7
+provider: null
+plugin: rp_site_documentsk
+settings:
+  id: rp_site_documentsk
+  label: 'Useful Documents block'
+  provider: rp_site
+  label_display: '0'
+visibility: {  }
