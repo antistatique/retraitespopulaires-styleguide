@@ -41,10 +41,8 @@
  *
  * Regions:
  * - page.header: Items for the header region.
- * - page.navigation: Items for the navigation region.
- * - page.navigation_collapsible: Items for the navigation (collapsible) region.
- * - page.highlighted: Items for the highlighted content region.
- * - page.help: Dynamic help text, mostly for admin pages.
+ * - page.primary_menu: Items for the navigation (collapsible) region.
+ * - page.secondary_menu: Items for the secondary navigation region.
  * - page.content: The main content of the current page.
  * - page.sidebar_first: Items for the first sidebar.
  * - page.sidebar_second: Items for the second sidebar.
@@ -58,24 +56,36 @@
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 
-{# Navbar #}
+{{ page.header }}
 
-
-
-
-{% if page.navigation or page.navigation_collapsible %}
-    {% block navbar %}
+{# Secondary Navbar #}
+{% if page.secondary_menu %}
+    {% block secondary_menu %}
         {%
-        set navbar_classes = [
-        'navbar',
-        'navbar-default',
+        set secondary_menu_classes = [
+          'navbar',
+          'navbar-default',
         ]
         %}
-        <header{{ attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+        <header{{ attributes.addClass(secondary_menu_classes) }} id="navbar" role="banner">
+          {{ page.secondary_menu }}
+        </header>
+    {% endblock %}
+{% endif %}
+
+{# Navbar #}
+{% if page.primary_menu %}
+    {% block primary_menu %}
+        {%
+        set main_menu_classes = [
+          'navbar',
+          'navbar-default',
+        ]
+        %}
+        <header{{ attributes.addClass(main_menu_classes) }} id="navbar" role="banner">
             <div class="navbar-header">
-                {{ page.navigation }}
                 {# .btn-navbar is used as the toggle for collapsed navbar content #}
-                {% if page.navigation_collapsible %}
+                {% if page.primary_menu %}
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
                         <span class="icon-bar"></span>
@@ -86,27 +96,20 @@
             </div>
 
             {# Navigation (collapsible) #}
-                <div class="navbar-collapse collapse">
-                    {{ page.navigation_collapsible }}
-                </div>
+            <div class="navbar-collapse collapse">
+                {{ page.primary_menu }}
+            </div>
         </header>
     {% endblock %}
 {% endif %}
 
+{{ title }}
+{{ page.breadcrumb }}
 
 {# Main #}
 {% block main %}
   <div role="main" class="main-container {{ container }} js-quickedit-main-content">
     <div class="row">
-
-      {# Header #}
-      {% if page.header %}
-        {% block header %}
-          <div class="col-sm-12" role="heading">
-            {{ page.header }}
-          </div>
-        {% endblock %}
-      {% endif %}
 
       {# Sidebar First #}
       {% if page.sidebar_first %}
@@ -128,31 +131,10 @@
       %}
       <section{{ content_attributes.addClass(content_classes) }}>
 
-        {# Highlighted #}
-        {% if page.highlighted %}
-          {% block highlighted %}
-            <div class="highlighted">{{ page.highlighted }}</div>
-          {% endblock %}
-        {% endif %}
-
-        {# Breadcrumbs #}
-        {% if breadcrumb %}
-          {% block breadcrumb %}
-            {{ breadcrumb }}
-          {% endblock %}
-        {% endif %}
-
         {# Action Links #}
         {% if action_links %}
           {% block action_links %}
             <ul class="action-links">{{ action_links }}</ul>
-          {% endblock %}
-        {% endif %}
-
-        {# Help #}
-        {% if page.help %}
-          {% block help %}
-            {{ page.help }}
           {% endblock %}
         {% endif %}
 
@@ -171,9 +153,13 @@
           </aside>
         {% endblock %}
       {% endif %}
+
+      {{ page.content_bottom }}
     </div>
   </div>
 {% endblock %}
+
+{{ page.content_footer }}
 
 {% if page.footer %}
   {% block footer %}

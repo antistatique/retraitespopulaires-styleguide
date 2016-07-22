@@ -21,6 +21,27 @@ dependencies:
     - image
     - path
     - text
+third_party_settings:
+  field_group:
+    group_attachments:
+      children:
+        - field_profession
+        - field_file_page
+        - field_contact
+        - field_advisor
+        - field_faq
+        - field_products
+        - field_management_contracts
+        - field_document
+      parent_name: ''
+      weight: 5
+      label: 'Linked Contents'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
 _core:
   default_config_hash: KSvzyFhdLuxniTsunUnUfpfMmod2l57GibtVjL8ymHM
 id: node.page.default

@@ -15,10 +15,15 @@ stylesheets-remove:
   - core/modules/views/css/views.module.css
 
 regions:
-  navigation: 'Navigation'
-  navigation_collapsible: 'Navigation (Collapsible)'
   header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  breadcrumb: Breadcrumb
   content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  content_bottom: 'Content bottom'
+  content_footer: 'Content Footer'
   footer: Footer
 
 ckeditor_stylesheets:
