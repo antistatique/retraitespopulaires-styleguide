@@ -1,0 +1,15 @@
+# Admin link
+rp_newsletter.admin:
+    path: '/admin/rp/rp_newsletter'
+    defaults:
+        _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+        _title: 'Newsletter - Admin'
+    requirements:
+        _permission: 'access administration pages'
+rp_newsletter.admin.settings:
+    path: '/admin/rp/rp_newsletter/settings'
+    defaults:
+        _controller: '\Drupal\rp_newsletter\Controller\AdminController::settings'
+        _title: 'Newsletter - Admin - Settings'
+    requirements:
+        _permission: 'access administration pages'
