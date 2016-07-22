@@ -39,3 +39,10 @@ web/sites/simpletest
 # Ignore core phpcs.xml and phpunit.xml.
 web/core/phpcs.xml
 web/core/phpunit.xml
+
+
+# Ignore devel config
+# Because skype-config has a bug https://github.com/drush-ops/drush/issues/1820
+
+config/d8/sync/devel.settings.yml
+config/d8/sync/system.menu.devel.yml
