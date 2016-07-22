@@ -94,7 +94,13 @@
 {% endif %}
 
 {{ title }}
-{{ page.breadcrumb }}
+
+{# Breadcrumbs #}
+{% if page.breadcrumb %}
+  {% block breadcrumb %}
+      {{ page.breadcrumb }}
+  {% endblock %}
+{% endif %}
 
 {# Main #}
 {% block main %}
@@ -144,13 +150,31 @@
         {% endblock %}
       {% endif %}
 
-      {{ page.content_bottom }}
     </div>
+
+      {# Content Bottom #}
+     {% if page.content_bottom %}
+     <div class="col-sm-12">
+       <div class="row">
+           {% block content_bottom %}
+               {{ page.content_bottom }}
+           {% endblock %}
+       </div
+     </div>
+     {% endif %}
+
+
   </div>
 {% endblock %}
 
-{{ page.content_footer }}
+{# Content footer #}
+{% if page.content_footer %}
+  {% block content_footer %}
+    {{ page.content_footer }}
+  {% endblock %}
+{% endif %}
 
+{# Page footer #}
 {% if page.footer %}
   {% block footer %}
     <footer class="footer {{ container }}" role="contentinfo">
