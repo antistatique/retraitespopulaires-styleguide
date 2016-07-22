@@ -45,30 +45,30 @@ class Contact {
     * Twitter url
     * @var String
     */
-    public $twitter = '+41 21 348 21 11';
+    public $twitter = 'https://twitter.com/RetraitesPop';
 
     /**
     * Facebook url
     * @var String
     */
-    public $facebook = '+41 21 348 21 11';
+    public $facebook = 'https://www.facebook.com/retraitespopulaires';
 
     /**
     * Linkedin url
     * @var String
     */
-    public $linkedin = '+41 21 348 21 11';
+    public $linkedin = 'https://www.linkedin.com/company/retraites-populaires';
 
     /**
     * Youtube url
     * @var String
     */
-    public $youtube = '+41 21 348 21 11';
+    public $youtube = 'https://www.youtube.com/user/RetraitesPopulaires';
 
     /**
     * Instagram url
     * @var String
     */
-    public $instagram = '+41 21 348 21 11';
+    public $instagram = 'https://www.instagram.com/retraitespopulaires';
 
 }
