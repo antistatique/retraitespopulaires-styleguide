@@ -1,0 +1,56 @@
+<div class="{{ theme_hook_original }}">
+
+  <div class="row">
+    <div class="col-md-3">
+      <h2>{% trans %}Contactez-nous{% endtrans %}</h2>
+      <h3><a href="tel:{{ variables.contact.phone }}">{{ variables.contact.phone }}</a></h3>
+      <h3><a href="mailto:{{ variables.contact.email }}">{{ variables.contact.email }}</a></h3>
+
+      <h2>{% trans %}Agences{% endtrans %}</h2>
+      <ul class="list-no-style list-no-padding">
+        <li>
+          Lausanne <a class="pull-right" href="tel:{{ variables.contact.phone_lausanne }}">{{ variables.contact.phone_lausanne }}</a>
+        </li>
+        <li>
+          Yverdon-les-bains <a class="pull-right" href="tel:{{ variables.contact.phone_yverdon }}">{{ variables.contact.phone_yverdon }}</a>
+        </li>
+        <li>
+          Nyon <a class="pull-right" href="tel:{{ variables.contact.phone_nyon }}">{{ variables.contact.phone_nyon }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-offset-3 col-md-6">
+      <h2>{% trans %}Retrouvez-nous sur les réseaux sociaux{% endtrans %}</h2>
+      <ul class="list-no-style list-no-padding list-inline">
+        <li>
+          <a href="{{ variables.contact.twitter }}" target="_blank">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="{{ variables.contact.facebook }}" target="_blank">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="{{ variables.contact.linkedin }}" target="_blank">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="{{ variables.contact.youtube }}" target="_blank">
+            <i class="fa fa-youtube" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="{{ variables.contact.instagram }}" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>

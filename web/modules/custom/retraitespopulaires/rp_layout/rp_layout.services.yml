@@ -1,0 +1,3 @@
+services:
+  rp_layout.contact:
+    class: Drupal\rp_layout\Service\Contact
