@@ -140,6 +140,12 @@ We use Capistrano to deploy:
 
     $ bundle exec cap -T
     $ bundle exec cap staging deploy
+    
+    
+## Solr
+We are using solr for search index.
+
+Solr need to be configured for drupal. Follow the INSTALL.txt found in the search_api_solr module.
 
 ## Troubleshootings
 

@@ -1,12 +1,12 @@
-extraction_method: ''
+extraction_method: solr_extractor
 preserve_cache: true
 solr_extractor_configuration:
-  solr_server: ''
+  solr_server: solr
   solr_tika_path: update/extract
 pdftotext_extractor_configuration: {  }
 tika_extractor_configuration:
   java_path: java
-  tika_path: ''
+  tika_path: /var/apache-tika/tika-app-1.13.jar
 python_pdf2txt_extractor_configuration:
   python_path: python
   python_pdf2txt_script: /usr/bin/pdf2txt
