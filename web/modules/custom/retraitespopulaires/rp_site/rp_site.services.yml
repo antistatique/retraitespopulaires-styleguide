@@ -1,0 +1,3 @@
+services:
+  rp_site.profession:
+    class: Drupal\rp_site\Service\Profession
