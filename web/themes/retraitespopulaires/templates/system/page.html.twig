@@ -60,17 +60,7 @@
 
 {# Secondary Navbar #}
 {% if page.secondary_menu %}
-    {% block secondary_menu %}
-        {%
-        set secondary_menu_classes = [
-          'navbar',
-          'navbar-default',
-        ]
-        %}
-        <header{{ attributes.addClass(secondary_menu_classes) }} id="navbar" role="banner">
-          {{ page.secondary_menu }}
-        </header>
-    {% endblock %}
+    {{ page.secondary_menu }}
 {% endif %}
 
 {# Navbar #}
