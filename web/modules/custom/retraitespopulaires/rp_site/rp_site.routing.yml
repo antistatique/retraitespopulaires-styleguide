@@ -1,0 +1,7 @@
+rp_site.documents.download:
+    path: '/download/{node}'
+    defaults:
+        _controller: '\Drupal\rp_site\Controller\DocumentsController::download'
+        _title: 'Download'
+    requirements:
+        _permission: 'access content'
