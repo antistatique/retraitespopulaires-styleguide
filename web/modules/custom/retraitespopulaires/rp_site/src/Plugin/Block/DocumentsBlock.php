@@ -71,6 +71,7 @@ class DocumentsBlock extends BlockBase implements ContainerFactoryPluginInterfac
     public function build($params = array()) {
         $variables = array('documents' => array());
 
+        //Load the current node's field_document
         $documents_nids = array();
         if ($node = $this->route->getParameter('node')) {
             if( isset($node->field_document) && !empty($node->field_document) ){

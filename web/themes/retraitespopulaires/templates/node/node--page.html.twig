@@ -73,8 +73,13 @@
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
-
   {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
 
   <div{{ content_attributes.addClass('content') }}>
 
@@ -85,6 +90,8 @@
     {% if node.body.value %}
       <p>{{ node.body.value|raw }}</p>
     {% endif %}
-  </div>
 
+    {{ content|without('body', 'field_document')  }}
+
+  </div>
 </article>
