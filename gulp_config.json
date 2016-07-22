@@ -6,7 +6,7 @@
   },
   "vendors": {
     "css": [
-      ""
+      "node_modules/font-awesome/css/font-awesome.min.css"
     ],
     "js": [
       "node_modules/bootstrap-sass/assets/javascripts/bootstrap/affix.js",
@@ -27,6 +27,7 @@
     ],
     "fonts": [
       "node_modules/bootstrap-sass/assets/fonts/bootstrap/*",
+      "node_modules/font-awesome/fonts/*",
       "assets/fonts/*"
     ],
     "polyfills": [

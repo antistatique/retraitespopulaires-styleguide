@@ -18,7 +18,33 @@
     svg {
       position: absolute;
       bottom: 0;
-      left: 0;
+      width: 100%;
+
+      &.wave-1 {
+        left: 0;
+      }
+
+      &.wave-2 {
+        left: 0;
+        animation: wave-left 50s infinite linear;
+      }
+
+      &.wave-3 {
+        right: 0;
+        animation: wave-right 30s infinite linear;
+      }
     }
+  }
+}
+
+@keyframes wave-right {
+  100% {
+    transform: translate(50%, 0);
+  }
+}
+
+@keyframes wave-left {
+  100% {
+    transform: translate(-50%, 0);
   }
 }
