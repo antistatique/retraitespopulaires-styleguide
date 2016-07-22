@@ -1,5 +1,5 @@
-uuid: 5df88282-8533-4857-b0dc-d3422bf53b52
-langcode: en
+uuid: 7be4971c-44d5-461e-ae5e-b693eb2a2886
+langcode: fr
 status: true
 dependencies:
   config:
@@ -8,19 +8,17 @@ dependencies:
     - system
   theme:
     - retraitespopulaires
-_core:
-  default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
-id: retraitespopulaires_main_menu
+id: navigationprincipale_2
 theme: retraitespopulaires
-region: primary_menu
-weight: -7
+region: sidebar_first
+weight: -8
 provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
-  label: 'Main navigation'
+  label: 'Navigation principale'
   provider: system
   label_display: '0'
-  level: 1
+  level: 2
   depth: 0
 visibility: {  }

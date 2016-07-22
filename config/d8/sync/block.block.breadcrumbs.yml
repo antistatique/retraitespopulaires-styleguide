@@ -1,17 +1,15 @@
-uuid: a2f15578-9fb7-4f86-9527-177b2d1cc380
-langcode: en
-status: false
+uuid: 867a4e32-8146-4406-89c1-970e4bebfb90
+langcode: fr
+status: true
 dependencies:
   module:
     - system
   theme:
     - retraitespopulaires
-_core:
-  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
-id: retraitespopulaires_breadcrumbs
+id: breadcrumbs
 theme: retraitespopulaires
-region: '-1'
-weight: -6
+region: breadcrumb
+weight: -8
 provider: null
 plugin: system_breadcrumb_block
 settings:
