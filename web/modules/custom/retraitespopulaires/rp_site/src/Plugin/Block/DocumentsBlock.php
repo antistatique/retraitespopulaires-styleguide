@@ -9,9 +9,12 @@ namespace Drupal\rp_site\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Url;
 
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Routing\CurrentRouteMatch;
+use Drupal\Core\Path\AliasManager;
+use Drupal\rp_site\Service\Profession;
 
 /**
 * Provides a 'Useful Documents' Block
@@ -32,7 +35,7 @@ class DocumentsBlock extends BlockBase implements ContainerFactoryPluginInterfac
     * EntityTypeManager to load Nodes
     * @var EntityTypeManager
     */
-    private $entityNode;
+    private $entity_node;
 
     /**
     * Current Route
@@ -41,12 +44,26 @@ class DocumentsBlock extends BlockBase implements ContainerFactoryPluginInterfac
     private $route;
 
     /**
+     * AliasManager Service
+     * @var AliasManager
+     */
+    private $alias_manager;
+
+    /**
+     * Profession Service
+     * @var Profession
+     */
+    private $profession;
+
+    /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity, CurrentRouteMatch $route) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity, CurrentRouteMatch $route, AliasManager $alias_manager, Profession $profession) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
-        $this->entityNode = $entity->getStorage('node');
-        $this->route      = $route;
+        $this->entity_node   = $entity->getStorage('node');
+        $this->route         = $route;
+        $this->alias_manager = $alias_manager;
+        $this->profession    = $profession;
     }
 
     /**
@@ -61,7 +78,9 @@ class DocumentsBlock extends BlockBase implements ContainerFactoryPluginInterfac
             $plugin_definition,
             // Load customs services used in this class.
             $container->get('entity_type.manager'),
-            $container->get('current_route_match')
+            $container->get('current_route_match'),
+            $container->get('path.alias_manager'),
+            $container->get('rp_site.profession')
         );
     }
 
@@ -78,7 +97,16 @@ class DocumentsBlock extends BlockBase implements ContainerFactoryPluginInterfac
                 foreach ($node->field_document as $key => $doc) {
                     $documents_nids[] = $doc->target_id;
                 }
-                $variables['documents'] = $this->entityNode->loadMultiple($documents_nids);
+                $variables['documents'] = $this->entity_node->loadMultiple($documents_nids);
+
+                $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
+                if( !empty($alias) ){
+                    $alias = str_replace('/', '', $alias);
+                }
+                $variables['collection'] = array(
+                    'name' => $this->profession->name($node->field_profession->target_id),
+                    'link' => Url::fromRoute('rp_site.documents.collection', array('taxonomy_term_alias' => $alias))
+                );
             }
         }
 
