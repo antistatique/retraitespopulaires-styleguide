@@ -8,7 +8,7 @@ dependencies:
     - retraitespopulaires
 id: usefuldocumentsblock
 theme: retraitespopulaires
-region: content
+region: content_bottom
 weight: -7
 provider: null
 plugin: rp_site_documentsk

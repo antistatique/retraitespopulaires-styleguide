@@ -9,7 +9,7 @@ _core:
 id: retraitespopulaires_page_title
 theme: retraitespopulaires
 region: content
-weight: -7
+weight: -8
 provider: null
 plugin: page_title_block
 settings:
