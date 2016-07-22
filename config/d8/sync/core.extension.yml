@@ -33,6 +33,7 @@ module:
   path: 0
   rdf: 0
   rp_exchange_rates: 0
+  rp_layout: 0
   rp_newsletter: 0
   rp_simulators: 0
   rp_site: 0
