@@ -1,0 +1,10 @@
+<div class="{{ theme_hook_original }}">
+  <h2>{% trans %}L'actualité de Retraites Populaires{% endtrans %}</h2>
+  <ul>
+   {% for category in variables.categories %}
+    <li>
+      <a href="{{ path('rp_site.news.collection', {'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
+    </li>
+   {% endfor %}
+  </ul>
+</div>
