@@ -1,0 +1,20 @@
+uuid: 93393d95-0285-42a9-9dd5-943975c9cdda
+langcode: fr
+status: true
+dependencies:
+  module:
+    - rp_layout
+  theme:
+    - retraitespopulaires_admin
+id: retraitespopulaires_admin_layoutfooterblock
+theme: retraitespopulaires_admin
+region: footer
+weight: -7
+provider: null
+plugin: rp_layout_footer_block
+settings:
+  id: rp_layout_footer_block
+  label: 'Layout Footer block'
+  provider: rp_layout
+  label_display: '0'
+visibility: {  }

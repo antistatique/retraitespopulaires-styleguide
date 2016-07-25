@@ -1,0 +1,20 @@
+uuid: 9529faea-6f85-4745-9783-4f051bd8d0fc
+langcode: en
+status: false
+dependencies:
+  theme:
+    - retraitespopulaires_admin
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: retraitespopulaires_admin_local_actions
+theme: retraitespopulaires_admin
+region: '-1'
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

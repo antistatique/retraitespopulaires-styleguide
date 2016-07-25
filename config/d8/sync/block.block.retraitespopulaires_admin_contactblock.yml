@@ -1,0 +1,28 @@
+uuid: c11cf614-1387-4566-a11e-2c46cc2a64e5
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - rp_site
+  theme:
+    - retraitespopulaires_admin
+id: retraitespopulaires_admin_contactblock
+theme: retraitespopulaires_admin
+region: sidebar_second
+weight: -10
+provider: null
+plugin: rp_site_contact
+settings:
+  id: rp_site_contact
+  label: 'Contact block'
+  provider: rp_site
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

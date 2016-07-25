@@ -1,0 +1,24 @@
+uuid: 42220936-a9b3-4097-9726-aa3f0b016fdf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.secondary
+  module:
+    - system
+  theme:
+    - retraitespopulaires_admin
+id: retraitespopulaires_admin_secondarynavigation
+theme: retraitespopulaires_admin
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'system_menu_block:secondary'
+settings:
+  id: 'system_menu_block:secondary'
+  label: 'Secondary navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }
