@@ -19,6 +19,6 @@ settings:
   label: 'Navigation principale'
   provider: system
   label_display: '0'
-  level: 2
+  level: 3
   depth: 0
 visibility: {  }
