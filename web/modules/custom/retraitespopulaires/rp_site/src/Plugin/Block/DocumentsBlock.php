@@ -89,7 +89,6 @@ class DocumentsBlock extends BlockBase implements ContainerFactoryPluginInterfac
     */
     public function build($params = array()) {
         $variables = array('documents' => array());
-
         //Load the current node's field_document
         $documents_nids = array();
         if ($node = $this->route->getParameter('node')) {
@@ -113,6 +112,11 @@ class DocumentsBlock extends BlockBase implements ContainerFactoryPluginInterfac
         return [
             '#theme'     => 'rp_site_documents_block',
             '#variables' => $variables,
+            '#cache' => [
+                'contexts' => [
+                    'url.path'
+                ],
+            ]
         ];
     }
 }
