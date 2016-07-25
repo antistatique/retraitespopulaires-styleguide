@@ -8,6 +8,8 @@ third_party_settings:
   menu_ui:
     available_menus:
       - main
+      - profil
+      - secondary
     parent: 'main:'
 _core:
   default_config_hash: zhtPXoRcC6REiepM0k16zw__FDW5YOXDR6U2WlldTrs
