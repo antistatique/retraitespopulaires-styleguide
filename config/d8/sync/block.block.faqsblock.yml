@@ -1,4 +1,4 @@
-uuid: 53d6ebf8-867b-4b0d-8e51-96dd0b7f761c
+uuid: e178ef64-9c61-4878-b5ba-b1db0ac0836e
 langcode: fr
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - rp_site
   theme:
     - retraitespopulaires
-id: usefuldocumentsblock
+id: faqsblock
 theme: retraitespopulaires
 region: content_bottom
-weight: -7
+weight: -8
 provider: null
-plugin: rp_site_documentsk
+plugin: rp_site_faqsk
 settings:
-  id: rp_site_documentsk
-  label: 'Useful Documents block'
+  id: rp_site_faqsk
+  label: 'FAQs block'
   provider: rp_site
   label_display: '0'
 visibility:
