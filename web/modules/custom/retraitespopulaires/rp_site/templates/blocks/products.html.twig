@@ -1,0 +1,9 @@
+<div class="{{ theme_hook_original }}">
+  <ul>
+   {% for product in variables.products %}
+    <li>
+      <a href="{{ path('entity.node.canonical', {'node': product.nid.value}) }}">{{ product.title.value }}</a>
+    </li>
+   {% endfor %}
+  </ul>
+</div>

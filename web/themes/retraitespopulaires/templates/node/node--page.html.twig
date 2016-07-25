@@ -91,7 +91,7 @@
       <p>{{ node.body.value|raw }}</p>
     {% endif %}
 
-    {{ content|without('body', 'field_document')  }}
+    {{ content|without('body', 'field_document', 'field_products', 'field_profession', 'field_profil', 'field_faq', 'field_contact') }}
 
   </div>
 </article>
