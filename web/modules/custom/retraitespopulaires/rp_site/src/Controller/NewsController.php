@@ -78,10 +78,13 @@ class NewsController extends ControllerBase{
      * @return BinaryFileResponse [file stream]
      */
     public function collection($taxonomy_term_alias) {
+        $now = date('Y-m-d h:i:s');
+
         $query = $this->entity_query->get('node')
             ->condition('type', 'news')
             ->condition('status', 1)
-            ->sort('title', 'DESC');
+            ->condition('field_date', $now, '<=')
+            ->sort('field_date', 'DESC');
 
         // Retreive filter from slug alias
         $taxonomy_term_tid = null;
@@ -92,7 +95,7 @@ class NewsController extends ControllerBase{
             if ($term->vid->target_id == 'profession') {
                 $query->condition('field_profession', $taxonomy_term_tid);
             } elseif ($term->vid->target_id == 'category_news') {
-                $query->condition('field_news_taxo', $taxonomy_term_tid);
+                $query->condition('field_news_type', $taxonomy_term_tid);
             }
         }
 

@@ -103,11 +103,13 @@ class NewsBlock extends BlockBase implements ContainerFactoryPluginInterface {
                 $alias = str_replace('/', '', $alias);
             }
 
+            $now = date('Y-m-d h:i:s');
             $query = $this->entity_query->get('node')
                 ->condition('type', 'news')
                 ->condition('status', 1)
                 ->condition('field_profession', $node->field_profession->target_id)
-                ->sort('created', 'DESC')
+                ->condition('field_date', $now, '<=')
+                ->sort('field_date', 'DESC')
                 ->range(0, 3);
 
             $nids = $query->execute();

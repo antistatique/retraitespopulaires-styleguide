@@ -15,7 +15,7 @@ rp_site.faqs.collection:
         _permission: 'access content'
 
 rp_site.news.collection:
-    path: '/news/{taxonomy_term_alias}'
+    path: '/actualites/{taxonomy_term_alias}'
     defaults:
         _controller: '\Drupal\rp_site\Controller\NewsController::collection'
         _title: 'Actualités'
