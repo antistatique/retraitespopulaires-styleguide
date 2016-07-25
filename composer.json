@@ -29,7 +29,8 @@
         "drupal/search_api_attachments": "^8",
         "drupal/search_api_solr": "^8",
         "drupal/devel": "^8",
-        "drewm/mailchimp-api": "^2.2"
+        "drewm/mailchimp-api": "^2.2",
+        "drupal/metatag": "~8.1.0-beta9"
     },
     "require-dev": {
        "behat/mink": "~1.7",
