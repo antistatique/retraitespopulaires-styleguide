@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.building.body
+    - field.field.node.building.field_building_type
     - field.field.node.building.field_city
     - field.field.node.building.field_contact
     - field.field.node.building.field_cover
@@ -32,6 +33,13 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_building_type:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_city:
     weight: 105
     label: above

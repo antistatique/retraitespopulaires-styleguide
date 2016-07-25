@@ -1,0 +1,22 @@
+uuid: d9369297-8795-4904-8be6-4f959cb34ca6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: building
+label: Building
+type: 'canonical_entities:node'
+pattern: 'parc-immobilier/[node:field_building_type]/[node:title]'
+selection_criteria:
+  a1986952-65be-4593-8ef0-c105b45412cd:
+    id: node_type
+    bundles:
+      building: building
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a1986952-65be-4593-8ef0-c105b45412cd
+selection_logic: and
+weight: -5
+relationships: {  }

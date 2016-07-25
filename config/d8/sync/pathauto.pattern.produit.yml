@@ -1,0 +1,22 @@
+uuid: 4c775f84-b8c8-4cdf-b7ca-90a9917a48f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: produit
+label: Produit
+type: 'canonical_entities:node'
+pattern: 'produit/[node:title]'
+selection_criteria:
+  eed71277-7d95-4ff5-9569-1cfcb48052a2:
+    id: node_type
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: node
+    uuid: eed71277-7d95-4ff5-9569-1cfcb48052a2
+selection_logic: and
+weight: -3
+relationships: {  }

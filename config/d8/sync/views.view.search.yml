@@ -398,7 +398,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: search
+      path: recherche
       menu:
         type: none
         title: Search
