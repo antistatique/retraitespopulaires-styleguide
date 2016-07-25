@@ -1,0 +1,16 @@
+/* ---------- Color Module Styles ----------- */
+
+a,
+.link {
+  color: #009966;
+}
+a:hover,
+a:focus,
+.link:hover,
+.link:focus {
+  color: #008e4f;
+}
+a:active,
+.link:active {
+  color: #00a261;
+}

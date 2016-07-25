@@ -1,0 +1,9 @@
+name: Retraites Populaires - Admin
+type: theme
+description: The Official Theme for Retraites Populaires Admin
+core: 8.x
+# Defines the base theme
+base theme: seven
+screenshot: screenshot.png
+libraries:
+  - retraitespopulaires_admin/global-styling

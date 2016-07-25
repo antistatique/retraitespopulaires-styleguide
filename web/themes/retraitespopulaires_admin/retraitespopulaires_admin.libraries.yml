@@ -1,0 +1,7 @@
+global-styling:
+  css:
+    component:
+      css/components/buttons.css: {}
+    theme:
+      css/colors.css: {}
+      css/colors.css: {}

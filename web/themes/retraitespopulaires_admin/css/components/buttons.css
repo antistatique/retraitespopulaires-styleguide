@@ -1,0 +1,19 @@
+.button--primary {
+  background-color: #009966;
+  background-image: -webkit-linear-gradient(top, #00a261, #008e4f);
+  background-image:   linear-gradient(to bottom, #00a261, #008e4f);
+  border-color: #008e4f;
+}
+.button--primary:hover,
+.button--primary:focus,
+.button--primary:active   {
+  background-color: #009966;
+  background-image: -webkit-linear-gradient(top, #008e4f, #00a261);
+  background-image:   linear-gradient(to bottom, #008e4f, #00a261);
+  border-color: #008e4f;
+}
+.button:focus {
+  z-index: 10;
+  border: 1px solid #008e4f;
+  box-shadow: 0 0 0.5em 0.1em hsla(153, 100%, 28%, 0.7);
+}
