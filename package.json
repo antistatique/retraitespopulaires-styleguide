@@ -61,7 +61,7 @@
     "gulp-sass": "^2.0.0",
     "gulp-size": "^2.0.0",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-stylelint": "^2.0.2",
+    "gulp-stylelint": "^3.0.0",
     "gulp-uglify": "~1.5.1",
     "gulp-util": "^3.0.4",
     "imagemin-pngquant": "^5.0.0",
