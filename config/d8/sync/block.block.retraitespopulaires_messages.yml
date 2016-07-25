@@ -11,7 +11,7 @@ _core:
 id: retraitespopulaires_messages
 theme: retraitespopulaires
 region: header
-weight: -8
+weight: -9
 provider: null
 plugin: system_messages_block
 settings:

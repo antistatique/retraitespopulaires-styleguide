@@ -16,8 +16,7 @@ stylesheets-remove:
 
 regions:
   header: Header
-  primary_menu: 'Primary menu'
-  secondary_menu: 'Secondary menu'
+  navigation: 'Navigation'
   breadcrumb: Breadcrumb
   content: Content
   sidebar_first: 'Sidebar first'

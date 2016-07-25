@@ -10,7 +10,7 @@ dependencies:
     - retraitespopulaires
 id: secondarynavigation
 theme: retraitespopulaires
-region: secondary_menu
+region: navigation
 weight: -8
 provider: null
 plugin: 'system_menu_block:secondary'
