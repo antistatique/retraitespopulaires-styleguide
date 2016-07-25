@@ -1,0 +1,10 @@
+<div class="{{ theme_hook_original }}">
+  FAQs
+  <ul>
+   {% for faq in variables.faqs %}
+    <li>
+      <a href="">{{ faq.title.value }}</a>
+    </li>
+   {% endfor %}
+  </ul>
+</div>
