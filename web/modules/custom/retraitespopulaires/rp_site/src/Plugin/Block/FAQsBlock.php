@@ -20,7 +20,7 @@ use Drupal\rp_site\Service\Profession;
 * Provides a 'FAQs' Block
 *
 * @Block(
-*   id = "rp_site_faqsk",
+*   id = "rp_site_faqs",
 *   admin_label = @Translation("FAQs block"),
 * )
 *
@@ -112,6 +112,8 @@ class FAQsBlock extends BlockBase implements ContainerFactoryPluginInterface {
                 );
             }
         }
+
+        if (empty($variables['faqs'])) { return; }
 
         return [
             '#theme'     => 'rp_site_faqs_block',

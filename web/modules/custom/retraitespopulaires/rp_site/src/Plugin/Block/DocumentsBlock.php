@@ -20,7 +20,7 @@ use Drupal\rp_site\Service\Profession;
 * Provides a 'Useful Documents' Block
 *
 * @Block(
-*   id = "rp_site_documentsk",
+*   id = "rp_site_documents",
 *   admin_label = @Translation("Useful Documents block"),
 * )
 *
@@ -110,6 +110,8 @@ class DocumentsBlock extends BlockBase implements ContainerFactoryPluginInterfac
                 );
             }
         }
+
+        if (empty($variables['documents'])) { return; }
 
         return [
             '#theme'     => 'rp_site_documents_block',

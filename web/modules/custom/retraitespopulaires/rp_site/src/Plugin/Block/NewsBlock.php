@@ -21,7 +21,7 @@ use Drupal\Core\Entity\Query\QueryFactory;
 * Provides a 'News' Block
 *
 * @Block(
-*   id = "rp_site_newsk",
+*   id = "rp_site_news",
 *   admin_label = @Translation("News block"),
 * )
 *
@@ -107,7 +107,8 @@ class NewsBlock extends BlockBase implements ContainerFactoryPluginInterface {
                 ->condition('type', 'news')
                 ->condition('status', 1)
                 ->condition('field_profession', $node->field_profession->target_id)
-                ->sort('title', 'DESC');
+                ->sort('created', 'DESC')
+                ->range(0, 3);
 
             $nids = $query->execute();
             $variables['news'] = $this->entity_node->loadMultiple($nids);
@@ -117,6 +118,8 @@ class NewsBlock extends BlockBase implements ContainerFactoryPluginInterface {
                 'link' => Url::fromRoute('rp_site.news.collection', array('taxonomy_term_alias' => $alias))
             );
         }
+
+        if (empty($variables['news'])) { return; }
 
         return [
             '#theme'     => 'rp_site_news_block',

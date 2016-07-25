@@ -18,7 +18,7 @@ use Drupal\Core\Path\AliasManager;
 * Provides a 'NewsFilter' Block
 *
 * @Block(
-*   id = "rp_site_documentsk",
+*   id = "rp_site_news_filter",
 *   admin_label = @Translation("News Filter block"),
 * )
 *

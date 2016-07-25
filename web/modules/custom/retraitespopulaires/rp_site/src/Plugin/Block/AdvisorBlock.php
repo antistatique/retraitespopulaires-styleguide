@@ -78,6 +78,8 @@ class AdvisorBlock extends BlockBase implements ContainerFactoryPluginInterface 
             }
         }
 
+        if (empty($variables['advisor'])) { return; }
+
         return [
             '#theme'     => 'rp_site_advisor_block',
             '#variables' => $variables,
