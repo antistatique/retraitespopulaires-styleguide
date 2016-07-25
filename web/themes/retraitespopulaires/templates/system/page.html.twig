@@ -58,14 +58,10 @@
 
 {{ page.header }}
 
-{# Secondary Navbar #}
-{% if page.secondary_menu %}
-    {{ page.secondary_menu }}
-{% endif %}
 
-{# Navbar #}
-{% if page.primary_menu %}
-    {% block primary_menu %}
+{# Navigation (Main navigation, Secondary navigation, Profil navigation #}
+{% if page.navigation %}
+    {% block navigation %}
         {%
         set main_menu_classes = [
           'navbar',
@@ -75,7 +71,7 @@
         <header{{ attributes.addClass(main_menu_classes) }} id="navbar" role="banner">
             <div class="navbar-header">
                 {# .btn-navbar is used as the toggle for collapsed navbar content #}
-                {% if page.primary_menu %}
+                {% if page.navigation %}
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
                         <span class="icon-bar"></span>
@@ -87,7 +83,7 @@
 
             {# Navigation (collapsible) #}
             <div class="navbar-collapse collapse">
-                {{ page.primary_menu }}
+                {{ page.navigation }}
             </div>
         </header>
     {% endblock %}
