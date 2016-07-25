@@ -10,7 +10,9 @@ dependencies:
     - field.field.node.news.field_firstname
     - field.field.node.news.field_function
     - field.field.node.news.field_lastname
+    - field.field.node.news.field_news_type
     - field.field.node.news.field_present_end_date
+    - field.field.node.news.field_profession
     - field.field.node.news.field_profil
     - field.field.node.news.field_reference
     - field.field.node.news.field_video
@@ -22,31 +24,17 @@ dependencies:
     - file
     - image
     - link
+    - path
     - text
 third_party_settings:
   field_group:
-    group_attachments:
-      children:
-        - field_video
-        - field_reference
-        - field_file_news
-      parent_name: ''
-      weight: 113
-      label: 'Linked Contents'
-      format_type: details
-      format_settings:
-        label: 'Linked Contents'
-        required_fields: true
-        id: ''
-        classes: ''
-        open: false
     group_author:
       children:
         - field_firstname
         - field_lastname
         - field_function
       parent_name: ''
-      weight: 114
+      weight: 11
       label: Author
       format_type: details
       format_settings:
@@ -62,26 +50,31 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: -3
+    weight: 3
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
   field_cover:
-    weight: -4
+    weight: 4
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
   field_date:
-    weight: 3
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
   field_file_news:
-    weight: 6
+    weight: 10
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -107,44 +100,61 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_news_type:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
   field_present_end_date:
-    weight: 4
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
-  field_profil:
-    weight: -2
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+  field_profession:
+    weight: 7
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-  field_reference:
+    type: options_buttons
+  field_profil:
     weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_reference:
+    weight: 9
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
   field_video:
-    weight: 4
+    weight: 8
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+  path:
+    type: path
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
-  created: true
   langcode: true
-  path: true
   promote: true
   sticky: true
-  uid: true

@@ -1,0 +1,28 @@
+uuid: 9a6a3476-9f69-4a34-a289-a23c8312ef4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profession
+    - node.type.news
+    - taxonomy.vocabulary.profession
+id: node.news.field_profession
+field_name: field_profession
+entity_type: node
+bundle: news
+label: Profession
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      profession: profession
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
