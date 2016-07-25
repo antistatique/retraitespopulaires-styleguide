@@ -88,7 +88,7 @@ class DocumentsController extends ControllerBase{
         $variables['documents'] = $this->entity_node->loadMultiple($nids);
 
         return [
-            '#theme'     => 'rp_site_collection_page',
+            '#theme'     => 'rp_site_documents_page',
             '#variables' => $variables,
         ];
     }

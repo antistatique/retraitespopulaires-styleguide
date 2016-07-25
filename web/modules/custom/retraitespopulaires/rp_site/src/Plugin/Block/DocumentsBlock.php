@@ -98,6 +98,8 @@ class DocumentsBlock extends BlockBase implements ContainerFactoryPluginInterfac
                 }
                 $variables['documents'] = $this->entity_node->loadMultiple($documents_nids);
 
+                if (empty($node->field_profession)) { return; }
+
                 $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
                 if( !empty($alias) ){
                     $alias = str_replace('/', '', $alias);
