@@ -1,0 +1,28 @@
+uuid: 9f7d0422-171c-421a-9abb-38e9a38c97da
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - rp_site
+  theme:
+    - retraitespopulaires
+id: newsblock
+theme: retraitespopulaires
+region: content_footer
+weight: -12
+provider: null
+plugin: rp_site_newsk
+settings:
+  id: rp_site_newsk
+  label: 'News block'
+  provider: rp_site
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

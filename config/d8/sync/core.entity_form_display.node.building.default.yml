@@ -23,6 +23,24 @@ dependencies:
     - link
     - path
     - text
+third_party_settings:
+  field_group:
+    group_attachments:
+      children:
+        - field_virtual_visit
+        - field_city
+        - field_file_plan
+        - field_file_building
+        - field_contact
+      parent_name: ''
+      weight: 9
+      label: Attachments
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
 id: node.building.default
 targetEntityType: node
 bundle: building
