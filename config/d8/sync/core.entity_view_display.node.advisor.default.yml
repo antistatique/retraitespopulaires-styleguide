@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.advisor.field_cover
+    - field.field.node.advisor.field_email
     - field.field.node.advisor.field_firstname
     - field.field.node.advisor.field_function
     - field.field.node.advisor.field_lastname
+    - field.field.node.advisor.field_phone
     - field.field.node.advisor.field_region
     - field.field.node.advisor.field_specialty
     - node.type.advisor
@@ -26,6 +28,12 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+  field_email:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
   field_firstname:
     weight: 103
     label: above
@@ -47,6 +55,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_phone:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
   field_region:
     weight: 102
     label: above

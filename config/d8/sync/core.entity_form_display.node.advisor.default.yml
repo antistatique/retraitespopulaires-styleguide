@@ -4,15 +4,18 @@ status: true
 dependencies:
   config:
     - field.field.node.advisor.field_cover
+    - field.field.node.advisor.field_email
     - field.field.node.advisor.field_firstname
     - field.field.node.advisor.field_function
     - field.field.node.advisor.field_lastname
+    - field.field.node.advisor.field_phone
     - field.field.node.advisor.field_region
     - field.field.node.advisor.field_specialty
     - image.style.thumbnail
     - node.type.advisor
   module:
     - image
+    - telephone
 id: node.advisor.default
 targetEntityType: node
 bundle: advisor
@@ -25,6 +28,13 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+  field_email:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
   field_firstname:
     weight: 2
     settings:
@@ -33,7 +43,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_function:
-    weight: 5
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -46,13 +56,19 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_phone:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
   field_region:
-    weight: 6
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_specialty:
-    weight: 4
+    weight: 6
     settings:
       size: 60
       placeholder: ''

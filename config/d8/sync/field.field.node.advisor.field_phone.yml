@@ -1,0 +1,21 @@
+uuid: 7fb2762b-df9e-4f71-abcb-221a4ba17e2f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.advisor
+  module:
+    - telephone
+id: node.advisor.field_phone
+field_name: field_phone
+entity_type: node
+bundle: advisor
+label: 'Téléphone number'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone
