@@ -1,23 +1,23 @@
-uuid: 9459712d-5bf0-4458-afa3-ccfd022dd3c8
-langcode: en
+uuid: aafcd500-9334-47c8-9338-f96d84639cc8
+langcode: fr
 status: true
 dependencies:
   module:
     - ctools
     - taxonomy
-id: news_taxo
-label: 'News taxo'
+id: profession_taxo
+label: 'Profession taxo'
 type: 'canonical_entities:taxonomy_term'
 pattern: '[term:name]'
 selection_criteria:
-  1922f170-28d4-444a-a2fc-a0ae163e53a8:
+  0dba34bc-04a9-4c9f-887a-5beacf4161b2:
     id: 'entity_bundle:taxonomy_term'
     bundles:
-      category_news: category_news
+      profession: profession
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 1922f170-28d4-444a-a2fc-a0ae163e53a8
+    uuid: 0dba34bc-04a9-4c9f-887a-5beacf4161b2
 selection_logic: and
 weight: -5
 relationships: {  }

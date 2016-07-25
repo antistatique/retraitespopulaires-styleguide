@@ -1,23 +1,23 @@
-uuid: 9459712d-5bf0-4458-afa3-ccfd022dd3c8
-langcode: en
+uuid: 575c1765-f41c-40aa-a375-7b433b6962e8
+langcode: fr
 status: true
 dependencies:
   module:
     - ctools
     - taxonomy
-id: news_taxo
-label: 'News taxo'
+id: profil_taxo
+label: 'Profil taxo'
 type: 'canonical_entities:taxonomy_term'
 pattern: '[term:name]'
 selection_criteria:
-  1922f170-28d4-444a-a2fc-a0ae163e53a8:
+  bd85624b-ff2f-4e2d-80a4-a288c4868938:
     id: 'entity_bundle:taxonomy_term'
     bundles:
-      category_news: category_news
+      profil: profil
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 1922f170-28d4-444a-a2fc-a0ae163e53a8
+    uuid: bd85624b-ff2f-4e2d-80a4-a288c4868938
 selection_logic: and
 weight: -5
 relationships: {  }
