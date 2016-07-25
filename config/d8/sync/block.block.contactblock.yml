@@ -1,0 +1,28 @@
+uuid: db301cae-cabe-4adf-a7dd-b2280f4e377b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - rp_site
+  theme:
+    - retraitespopulaires
+id: contactblock
+theme: retraitespopulaires
+region: sidebar_second
+weight: -10
+provider: null
+plugin: rp_site_contact
+settings:
+  id: rp_site_contact
+  label: 'Contact block'
+  provider: rp_site
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
