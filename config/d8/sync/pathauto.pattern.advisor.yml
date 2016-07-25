@@ -1,0 +1,22 @@
+uuid: e4799f38-8680-4134-a24a-ba9054f0dde8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: advisor
+label: Advisor
+type: 'canonical_entities:node'
+pattern: 'conseiller/[node:title]'
+selection_criteria:
+  57b3488e-4632-4596-bbe1-5e9de9784c55:
+    id: node_type
+    bundles:
+      advisor: advisor
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 57b3488e-4632-4596-bbe1-5e9de9784c55
+selection_logic: and
+weight: -8
+relationships: {  }

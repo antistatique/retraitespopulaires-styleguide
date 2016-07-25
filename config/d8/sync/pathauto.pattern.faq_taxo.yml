@@ -1,0 +1,23 @@
+uuid: d396d9be-c9c5-465e-8b28-f38ef1886da3
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: faq_taxo
+label: 'FAQ taxo'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'faq/[term:name]'
+selection_criteria:
+  89ea2df4-8a9b-4382-817b-01d378983ad3:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      profession: profession
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 89ea2df4-8a9b-4382-817b-01d378983ad3
+selection_logic: and
+weight: -5
+relationships: {  }
