@@ -10,6 +10,7 @@ class Loader extends \Twig_Extension {
         return [
             new \Twig_SimpleFunction('load_node', array($this, 'loadNode'), array('is_safe' => array('html'))),
             new \Twig_SimpleFunction('load_block', array($this, 'loadBlock'), array('is_safe' => array('html'))),
+            new \Twig_SimpleFunction('load_form', array($this, 'loadForm'), array('is_safe' => array('html'))),
         ];
     }
 
@@ -37,6 +38,14 @@ class Loader extends \Twig_Extension {
      public static function loadNode($node_id, $params) {
          $node =  Node::load($node_id);
          return $node;
+     }
+
+     /**
+     * Load a given block
+     * with or whitout parameters
+     */
+     public static function loadForm($module, $form, $params = array()) {
+         return \Drupal::formBuilder()->getForm('Drupal\\'.$module.'\Form\\'.$form);
      }
 
 }

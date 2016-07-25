@@ -179,6 +179,7 @@
   {% block footer %}
     <footer class="footer {{ container }}" role="contentinfo">
       {{ page.footer }}
+      {{ load_form('rp_newsletter', 'SubscribeForm') }}
     </footer>
   {% endblock %}
 {% endif %}

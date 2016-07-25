@@ -11,7 +11,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\State\State;
-use Drupal\Core\Config\ConfigFactoryInterface;
 
 use DrewM\MailChimp\MailChimp;
 
