@@ -13,3 +13,10 @@ rp_newsletter.admin.settings:
         _title: 'Newsletter - Admin - Settings'
     requirements:
         _permission: 'access administration pages'
+rp_newsletter.admin.campaigns:
+    path: '/admin/rp/rp_newsletter/campaigns'
+    defaults:
+        _controller: '\Drupal\rp_newsletter\Controller\AdminController::campaigns'
+        _title: 'Newsletter - Admin - Campaigns'
+    requirements:
+        _permission: 'access administration pages'

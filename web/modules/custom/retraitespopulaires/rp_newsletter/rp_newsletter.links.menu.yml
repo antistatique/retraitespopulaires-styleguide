@@ -6,3 +6,7 @@ rp_newsletter.admin.settings:
     title: Settings
     parent: rp_newsletter.admin
     route_name: rp_newsletter.admin.settings
+rp_newsletter.admin.campaigns:
+    title: Campaigns
+    parent: rp_newsletter.admin
+    route_name: rp_newsletter.admin.campaigns
