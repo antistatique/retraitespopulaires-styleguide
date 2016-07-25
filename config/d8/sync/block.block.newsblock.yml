@@ -1,4 +1,4 @@
-uuid: 9f7d0422-171c-421a-9abb-38e9a38c97da
+uuid: 04a8c3cc-5b29-4a10-8e8e-e844e17a5d4a
 langcode: fr
 status: true
 dependencies:
@@ -9,12 +9,12 @@ dependencies:
     - retraitespopulaires
 id: newsblock
 theme: retraitespopulaires
-region: content_footer
+region: content_bottom
 weight: -12
 provider: null
-plugin: rp_site_newsk
+plugin: rp_site_news
 settings:
-  id: rp_site_newsk
+  id: rp_site_news
   label: 'News block'
   provider: rp_site
   label_display: '0'

@@ -1,4 +1,4 @@
-uuid: e178ef64-9c61-4878-b5ba-b1db0ac0836e
+uuid: f553daf4-7f03-46f1-b24d-cacbeb0e8de0
 langcode: fr
 status: true
 dependencies:
@@ -9,12 +9,12 @@ dependencies:
     - retraitespopulaires
 id: faqsblock
 theme: retraitespopulaires
-region: content_bottom
-weight: -8
+region: content_footer
+weight: -12
 provider: null
-plugin: rp_site_faqsk
+plugin: rp_site_faqs
 settings:
-  id: rp_site_faqsk
+  id: rp_site_faqs
   label: 'FAQs block'
   provider: rp_site
   label_display: '0'

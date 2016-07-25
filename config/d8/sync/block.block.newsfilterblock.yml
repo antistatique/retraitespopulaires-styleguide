@@ -1,4 +1,4 @@
-uuid: e33de57d-0b8a-44ec-a744-0f610d711a27
+uuid: 6246bf6f-f6a6-4e7a-9e1d-b99deb7e4fec
 langcode: fr
 status: true
 dependencies:
@@ -12,9 +12,9 @@ theme: retraitespopulaires
 region: sidebar_first
 weight: -11
 provider: null
-plugin: rp_site_documentsk
+plugin: rp_site_news_filter
 settings:
-  id: rp_site_documentsk
+  id: rp_site_news_filter
   label: 'News Filter block'
   provider: rp_site
   label_display: '0'
