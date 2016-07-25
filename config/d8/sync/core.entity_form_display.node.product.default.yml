@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.product.field_document
     - field.field.node.product.field_faq
     - field.field.node.product.field_file_product
+    - field.field.node.product.field_product_plan
     - field.field.node.product.field_profil
     - image.style.thumbnail
     - node.type.product
@@ -28,7 +29,7 @@ third_party_settings:
         - field_faq
         - field_document
       parent_name: ''
-      weight: 6
+      weight: 7
       label: 'Linked Contents'
       format_type: details
       format_settings:
@@ -51,12 +52,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_advisor:
-    weight: 37
+    weight: 42
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_contact:
-    weight: 38
+    weight: 43
     settings:
       match_operator: CONTAINS
       size: 60
@@ -71,7 +72,7 @@ content:
     third_party_settings: {  }
     type: image_image
   field_document:
-    weight: 40
+    weight: 45
     settings:
       match_operator: CONTAINS
       size: 60
@@ -79,7 +80,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_faq:
-    weight: 39
+    weight: 44
     settings:
       match_operator: CONTAINS
       size: 60
@@ -87,19 +88,21 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_file_product:
-    weight: 5
+    weight: 6
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+  field_product_plan:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
   field_profil:
     weight: 4
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   path:
     type: path
     weight: 3

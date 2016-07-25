@@ -83,14 +83,9 @@ processor_settings:
   add_url:
     plugin_id: add_url
     settings: {  }
-  aggregated_field:
-    plugin_id: aggregated_field
+  node_status:
+    plugin_id: node_status
     settings: {  }
-  content_access:
-    plugin_id: content_access
-    settings:
-      weights:
-        preprocess_query: -10
   highlight:
     plugin_id: highlight
     settings:
@@ -102,34 +97,6 @@ processor_settings:
       suffix: '</strong>'
       weights:
         postprocess_query: 0
-  html_filter:
-    plugin_id: html_filter
-    settings:
-      fields: {  }
-      title: true
-      alt: true
-      tags:
-        h1: 5
-        h2: 3
-        h3: 2
-        strong: 2
-        b: 2
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
-  ignorecase:
-    plugin_id: ignorecase
-    settings:
-      fields: {  }
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
-  node_status:
-    plugin_id: node_status
-    settings: {  }
-  rendered_item:
-    plugin_id: rendered_item
-    settings: {  }
   stopwords:
     plugin_id: stopwords
     settings:
@@ -300,6 +267,39 @@ processor_settings:
       weights:
         preprocess_index: -5
         preprocess_query: -2
+  html_filter:
+    plugin_id: html_filter
+    settings:
+      fields: {  }
+      title: true
+      alt: true
+      tags:
+        h1: 5
+        h2: 3
+        h3: 2
+        strong: 2
+        b: 2
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
+  ignorecase:
+    plugin_id: ignorecase
+    settings:
+      fields: {  }
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
+  content_access:
+    plugin_id: content_access
+    settings:
+      weights:
+        preprocess_query: -10
+  aggregated_field:
+    plugin_id: aggregated_field
+    settings: {  }
+  rendered_item:
+    plugin_id: rendered_item
+    settings: {  }
   transliteration:
     plugin_id: transliteration
     settings:

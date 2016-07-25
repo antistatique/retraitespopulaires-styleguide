@@ -1,0 +1,28 @@
+uuid: d5e7e613-2a09-463c-af2e-b0ebedaff536
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_plan
+    - node.type.product
+    - taxonomy.vocabulary.products_plan
+id: node.product.field_product_plan
+field_name: field_product_plan
+entity_type: node
+bundle: product
+label: 'Product Plan'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      products_plan: products_plan
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
