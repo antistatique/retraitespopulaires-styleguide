@@ -10,7 +10,7 @@ dependencies:
 id: newsfilterblock
 theme: retraitespopulaires
 region: sidebar_first
-weight: -11
+weight: -12
 provider: null
 plugin: rp_site_news_filter
 settings:
