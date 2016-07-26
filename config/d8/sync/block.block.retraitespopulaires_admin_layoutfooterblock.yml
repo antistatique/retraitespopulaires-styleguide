@@ -1,6 +1,6 @@
 uuid: 93393d95-0285-42a9-9dd5-943975c9cdda
 langcode: fr
-status: true
+status: false
 dependencies:
   module:
     - rp_layout
@@ -8,8 +8,8 @@ dependencies:
     - retraitespopulaires_admin
 id: retraitespopulaires_admin_layoutfooterblock
 theme: retraitespopulaires_admin
-region: footer
-weight: -7
+region: '-1'
+weight: -3
 provider: null
 plugin: rp_layout_footer_block
 settings:

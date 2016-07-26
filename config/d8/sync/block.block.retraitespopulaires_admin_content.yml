@@ -11,7 +11,7 @@ _core:
 id: retraitespopulaires_admin_content
 theme: retraitespopulaires_admin
 region: content
-weight: -11
+weight: -12
 provider: null
 plugin: system_main_block
 settings:

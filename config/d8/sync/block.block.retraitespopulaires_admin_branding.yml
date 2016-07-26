@@ -11,7 +11,7 @@ _core:
 id: retraitespopulaires_admin_branding
 theme: retraitespopulaires_admin
 region: '-1'
-weight: -4
+weight: -1
 provider: null
 plugin: system_branding_block
 settings:
