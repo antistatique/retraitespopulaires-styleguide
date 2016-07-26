@@ -94,26 +94,28 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
         if ($node = $this->route->getParameter('node')) {
 
             if( isset($node->field_products) && !empty($node->field_products) ){
-                foreach ($node->field_products as $key => $doc) {
-                    $products_nids[] = $doc->target_id;
+                foreach ($node->field_products as $key => $rpoduct) {
+                    $products_nids[] = $rpoduct->target_id;
                 }
 
-                $query = $this->entity_query->get('node')
-                    ->condition('type', 'product')
-                    ->condition('status', 1)
-                    ->condition('nid', $products_nids, 'IN')
-                    ->sort('title', 'DESC');
+                if( !empty($products_nids) ) {
+                    $query = $this->entity_query->get('node')
+                        ->condition('type', 'product')
+                        ->condition('status', 1)
+                        ->condition('nid', $products_nids, 'IN')
+                        ->sort('title', 'DESC');
 
-                if ($filter = \Drupal::request()->query->get('filtre')) {
-                    $taxonomy_term_url = $this->alias_manager->getPathByAlias('/plans/'.$filter);
-                    if( !empty($taxonomy_term_url) ){
-                        $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
-                        $query->condition('field_product_plan', $taxonomy_term_tid);
+                    if ($filter = \Drupal::request()->query->get('filtre')) {
+                        $taxonomy_term_url = $this->alias_manager->getPathByAlias('/plans/'.$filter);
+                        if( !empty($taxonomy_term_url) ){
+                            $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
+                            $query->condition('field_product_plan', $taxonomy_term_tid);
+                        }
                     }
-                }
 
-                $nids = $query->execute();
-                $variables['products'] = $this->entity_node->loadMultiple($nids);
+                    $nids = $query->execute();
+                    $variables['products'] = $this->entity_node->loadMultiple($nids);
+                }
             }
 
         }
