@@ -1,0 +1,16 @@
+<div class="{{ theme_hook_original }}">
+  <ul>
+    {% for category in variables.categories %}
+    <li>
+      <h3>{{ category.term.name }}</h3>
+        <ul>
+        {% for child in category.children %}
+          <li>
+            <a href="{{ path('<current>', {'filtre': child.alias }) }}">{{ child.term.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

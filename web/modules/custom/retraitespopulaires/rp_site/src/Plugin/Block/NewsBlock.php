@@ -57,6 +57,12 @@ class NewsBlock extends BlockBase implements ContainerFactoryPluginInterface {
     private $profession;
 
     /**
+    * QueryFactory to execute query
+    * @var QueryFactory
+    */
+    private $entity_query;
+
+    /**
     * Class constructor.
     */
     public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity, CurrentRouteMatch $route, AliasManager $alias_manager, Profession $profession, QueryFactory $query) {
