@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Seven styles for Tables.
+ */
+
+
+th.is-active > a {
+  color: #008e4f;
+}
+th.is-active > a:after {
+  border-bottom-color: #008e4f;
+}
+th > a:hover,
+th > a:focus,
+th.is-active > a:hover,
+th.is-active > a:focus {
+  color: #00a261;
+}
+th > a:hover:after,
+th > a:focus:after,
+th.is-active > a:hover:after,
+th.is-active > a:focus:after {
+  border-bottom-color: #00a261;
+}

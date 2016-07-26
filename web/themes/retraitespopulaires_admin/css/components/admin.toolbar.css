@@ -1,0 +1,6 @@
+.toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded {
+    background-image: url('../../misc/icons/008e4f/chevron-right.svg');
+}
+[dir="rtl"] .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded {
+    background-image: url('../../misc/icons/008e4f/chevron-left.svg');
+}
