@@ -125,6 +125,7 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
             '#variables' => $variables,
             '#cache' => [
                 'contexts' => [
+                    'url.path',
                     'url.query_args'
                 ],
             ]

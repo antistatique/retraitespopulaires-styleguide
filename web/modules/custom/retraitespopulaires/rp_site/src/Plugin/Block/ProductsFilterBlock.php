@@ -12,7 +12,9 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
 
 use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\Core\Path\AliasManager;
+use Drupal\Core\Database\Connection;
 
 /**
 * Provides a 'ProductsFilter' Block
@@ -36,18 +38,32 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
     private $entity_taxonomy;
 
     /**
+    * Current Route
+    * @var CurrentRouteMatch
+    */
+    private $route;
+
+    /**
      * AliasManager Service
      * @var AliasManager
      */
     private $alias_manager;
 
     /**
+    * Connection to DB
+    * @var Connection
+    */
+    private $database;
+
+    /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity,  AliasManager $alias_manager) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity, CurrentRouteMatch $route, AliasManager $alias_manager, Connection $database) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_taxonomy = $entity->getStorage('taxonomy_term');
+        $this->route           = $route;
         $this->alias_manager   = $alias_manager;
+        $this->database        = $database;
     }
 
     /**
@@ -62,7 +78,9 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
             $plugin_definition,
             // Load customs services used in this class.
             $container->get('entity_type.manager'),
-            $container->get('path.alias_manager')
+            $container->get('current_route_match'),
+            $container->get('path.alias_manager'),
+            $container->get('database')
         );
     }
 
@@ -71,22 +89,56 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
     */
     public function build($params = array()) {
         $variables = array('categories' => array());
+        $variables['current_alias'] = \Drupal::request()->query->get('filtre');
 
-        // Products Plans
-        $categories = $this->entity_taxonomy->loadTree('products_plan');
-        foreach ($categories as $category) {
-            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$category->tid);
-            if( !empty($alias) ){
-                $term = array(
-                    'term' => $category,
-                    'alias' => str_replace('/plans/', '', $alias),
-                );
-                if ($category->parents[0] == '0') {
-                    $term['children'] = array();
-                    $variables['categories'][$category->tid] = $term;
-                } elseif (isset($variables['categories'][$category->parents[0]]['children'])) {
-                    $variables['categories'][$category->parents[0]]['children'][] = $term;
+        if ($node = $this->route->getParameter('node')) {
+
+            if( isset($node->field_products) && !empty($node->field_products) ){
+
+                // Get products linked
+                $products_nids = array();
+                foreach ($node->field_products as $key => $rpoduct) {
+                    $products_nids[] = $rpoduct->target_id;
                 }
+
+                if( !empty($products_nids) ) {
+
+                    // Get valide filters for this product linked
+                    $query = $this->database->select('taxonomy_term_field_data', 't');
+                    $query->join('taxonomy_term_hierarchy', 'h', 'h.tid = t.tid');
+                    $query->join('node__field_product_plan', 'plans', 'plans.field_product_plan_target_id = t.tid');
+                    $results = $query
+                        ->fields('t')
+                        ->fields('h', array('parent'))
+                        ->condition('t.vid', 'products_plan')
+                        ->condition('plans.entity_id', $products_nids, 'IN')
+                        ->orderBy('t.tid', 'DESC')
+                        ->execute();
+
+                    $categories = array();
+                    foreach ($results as $result) {
+                        $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$result->tid);
+                        $term = array(
+                            'term' => $this->entity_taxonomy->load($result->tid),
+                            'alias' => str_replace('/plans/', '', $alias),
+                        );
+
+                        // Check the parent exist otherwise, create it
+                        if (!isset($categories[$result->parent]['children'])) {
+                            $categories[$result->parent] = array(
+                                'term' => $this->entity_taxonomy->load($result->parent),
+                                'children' => array(),
+                            );
+                        }
+
+                        // Add children to parent
+                        if ($result->parent != '0' && isset($categories[$result->parent]['children'])) {
+                            $categories[$result->parent]['children'][] = $term;
+                        }
+                    }
+                }
+
+                $variables['categories'] = $categories;
             }
         }
 
@@ -95,83 +147,10 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
             '#variables' => $variables,
             '#cache' => [
                 'contexts' => [
-                    'url.path'
+                    'url.path',
+                    'url.query_args'
                 ],
             ]
         ];
     }
 }
-
-
-    function var_debug($variable,$strlen=100,$width=25,$depth=10,$i=0,&$objects = array())
-    {
-      $search = array("\0", "\a", "\b", "\f", "\n", "\r", "\t", "\v");
-      $replace = array('\0', '\a', '\b', '\f', '\n', '\r', '\t', '\v');
-
-      $string = '';
-
-      switch(gettype($variable)) {
-        case 'boolean':      $string.= $variable?'true':'false'; break;
-        case 'integer':      $string.= $variable;                break;
-        case 'double':       $string.= $variable;                break;
-        case 'resource':     $string.= '[resource]';             break;
-        case 'NULL':         $string.= "null";                   break;
-        case 'unknown type': $string.= '???';                    break;
-        case 'string':
-          $len = strlen($variable);
-          $variable = str_replace($search,$replace,substr($variable,0,$strlen),$count);
-          $variable = substr($variable,0,$strlen);
-          if ($len<$strlen) $string.= '"'.$variable.'"';
-          else $string.= 'string('.$len.'): "'.$variable.'"...';
-          break;
-        case 'array':
-          $len = count($variable);
-          if ($i==$depth) $string.= 'array('.$len.') {...}';
-          elseif(!$len) $string.= 'array(0) {}';
-          else {
-            $keys = array_keys($variable);
-            $spaces = str_repeat(' ',$i*2);
-            $string.= "array($len)\n".$spaces.'{';
-            $count=0;
-            foreach($keys as $key) {
-              if ($count==$width) {
-                $string.= "\n".$spaces."  ...";
-                break;
-              }
-              $string.= "\n".$spaces."  [$key] => ";
-              $string.= var_debug($variable[$key],$strlen,$width,$depth,$i+1,$objects);
-              $count++;
-            }
-            $string.="\n".$spaces.'}';
-          }
-          break;
-        case 'object':
-          $id = array_search($variable,$objects,true);
-          if ($id!==false)
-            $string.=get_class($variable).'#'.($id+1).' {...}';
-          else if($i==$depth)
-            $string.=get_class($variable).' {...}';
-          else {
-            $id = array_push($objects,$variable);
-            $array = (array)$variable;
-            $spaces = str_repeat(' ',$i*2);
-            $string.= get_class($variable)."#$id\n".$spaces.'{';
-            $properties = array_keys($array);
-            foreach($properties as $property) {
-              $name = str_replace("\0",':',trim($property));
-              $string.= "\n".$spaces."  [$name] => ";
-              $string.= var_debug($array[$property],$strlen,$width,$depth,$i+1,$objects);
-            }
-            $string.= "\n".$spaces.'}';
-          }
-          break;
-      }
-
-      if ($i>0) return $string;
-
-      $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
-      do $caller = array_shift($backtrace); while ($caller && !isset($caller['file']));
-      if ($caller) $string = $caller['file'].':'.$caller['line']."\n".$string;
-
-      echo $string;
-    }

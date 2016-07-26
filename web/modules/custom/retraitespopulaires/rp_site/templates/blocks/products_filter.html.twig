@@ -1,12 +1,15 @@
 <div class="{{ theme_hook_original }}">
+  {% if variables.current_alias %}
+    <a href="{{ path('<current>') }}" class="btn btn-primary">{% trans %}Tous les produits{% endtrans %}</a>
+  {% endif %}
   <ul>
     {% for category in variables.categories %}
     <li>
-      <h3>{{ category.term.name }}</h3>
+      <h3>{{ category.term.name.value }}</h3>
         <ul>
         {% for child in category.children %}
           <li>
-            <a href="{{ path('<current>', {'filtre': child.alias }) }}">{{ child.term.name }}</a>
+            <a class="{{ child.alias == variables.current_alias ? 'active' }}" href="{{ path('<current>', {'filtre': child.alias }) }}">{{ child.term.name.value }}</a>
           </li>
         {% endfor %}
       </ul>
