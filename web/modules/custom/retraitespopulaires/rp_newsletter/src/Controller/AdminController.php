@@ -13,6 +13,7 @@ use Drupal\Core\State\State;
 
 use DrewM\MailChimp\MailChimp;
 use Drupal\Core\Url;
+use Drupal\Core\Link;
 
 /**
 * AdminController.
@@ -54,6 +55,11 @@ class AdminController extends ControllerBase {
     */
     public function campaigns() {
         $client_id = $this->state->get('rp_newsletter.settings.mailchimp.client_id');
+
+        if (empty($client_id)) {
+            return $this->_campaigns_helper();
+        }
+
         $mailChimp = new MailChimp($client_id);
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             $mailChimp->verify_ssl = false;
@@ -89,6 +95,31 @@ class AdminController extends ControllerBase {
         }
 
         return $table;
+    }
+
+    private function _campaigns_helper(){
+        $mailchimp = Url::fromUri('http://mailchimp.com', ['absolute' => TRUE, 'attributes' => ['target' => '_blank']]);
+        $mailchimp_api = Url::fromUri('http://developer.mailchimp.com', ['absolute' => TRUE, 'attributes' => ['target' => '_blank']]);
+
+        $desc = t('Suivez ces étapes pour paramétrer et commencer à utiliser votre compte Mailchimp:') .'<br/>';
+        $desc .= '<ol>';
+        $desc .= '<li>'.t('Une fois connecté, visitez la @page, sur laquelle vous pourrez personnaliser et configurer tous les composants Mailchimp', ['@page' => Link::createFromRoute('page d\'administration', 'rp_newsletter.admin.settings')->toString()]).'</li>';
+        $desc .= '<li>'.t('Enfin, vous pouvez voir @page sur votre site', ['@page' => Link::createFromRoute('vos campagnes Mailchimp', 'rp_newsletter.admin.campaigns')->toString()]).'</li>';
+        $desc .= '</ol>';
+
+        $desc .= '<h2>Liens utiles</h2>';
+
+        return [
+            '#theme'       => 'help_section',
+            '#title'       => t('Bien débuter'),
+            '#description' => $desc,
+            '#links'       => [
+                'mailchimp'     => Link::fromTextAndUrl('Mailchimp', $mailchimp),
+                'mailchimp_api' => Link::fromTextAndUrl('Mailchimp API', $mailchimp_api),
+                'admin'         => Link::createFromRoute('Page d\'administration', 'rp_newsletter.admin.settings'),
+                'campaignes'    => Link::createFromRoute('Listing des campagnes', 'rp_newsletter.admin.campaigns'),
+            ],
+        ];
     }
 
 }

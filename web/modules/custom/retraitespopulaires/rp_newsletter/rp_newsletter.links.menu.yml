@@ -7,6 +7,6 @@ rp_newsletter.admin.settings:
     parent: rp_newsletter.admin
     route_name: rp_newsletter.admin.settings
 rp_newsletter.admin.campaigns:
-    title: Campaigns
+    title: Campagnes
     parent: rp_newsletter.admin
     route_name: rp_newsletter.admin.campaigns
