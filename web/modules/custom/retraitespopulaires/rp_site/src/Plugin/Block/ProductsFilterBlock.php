@@ -11,9 +11,9 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
 
-use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
-use Drupal\Core\Path\AliasManager;
+use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Database\Connection;
 
 /**
@@ -32,8 +32,8 @@ use Drupal\Core\Database\Connection;
 class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     /**
-    * EntityTypeManager to load Taxonomy
-    * @var EntityTypeManager
+    * EntityTypeManagerInterface to load Taxonomy
+    * @var EntityTypeManagerInterface
     */
     private $entity_taxonomy;
 
@@ -44,8 +44,8 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
     private $route;
 
     /**
-     * AliasManager Service
-     * @var AliasManager
+     * AliasManagerInterface Service
+     * @var AliasManagerInterface
      */
     private $alias_manager;
 
@@ -58,7 +58,7 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
     /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity, CurrentRouteMatch $route, AliasManager $alias_manager, Connection $database) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Connection $database) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_taxonomy = $entity->getStorage('taxonomy_term');
         $this->route           = $route;

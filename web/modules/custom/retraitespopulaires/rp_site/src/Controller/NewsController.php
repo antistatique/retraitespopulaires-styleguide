@@ -13,8 +13,8 @@ use Drupal\node\Entity\Node;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Drupal\Core\Entity\EntityTypeManager;
-use Drupal\Core\Path\AliasManager;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -26,20 +26,20 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 class NewsController extends ControllerBase{
 
     /**
-     * AliasManager Service
-     * @var AliasManager
+     * AliasManagerInterface Service
+     * @var AliasManagerInterface
      */
     private $alias_manager;
 
     /**
-    * EntityTypeManager to load Nodes
-    * @var EntityTypeManager
+    * EntityTypeManagerInterface to load Nodes
+    * @var EntityTypeManagerInterface
     */
     private $entity_node;
 
     /**
-    * EntityTypeManager to load Taxonomy
-    * @var EntityTypeManager
+    * EntityTypeManagerInterface to load Taxonomy
+    * @var EntityTypeManagerInterface
     */
     private $entity_taxonomy;
 
@@ -52,7 +52,7 @@ class NewsController extends ControllerBase{
     /**
      * Class constructor.
      */
-     public function __construct(AliasManager $alias_manager, EntityTypeManager $entity, QueryFactory $query) {
+     public function __construct(AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity, QueryFactory $query) {
          $this->alias_manager   = $alias_manager;
          $this->entity_node     = $entity->getStorage('node');
          $this->entity_taxonomy = $entity->getStorage('taxonomy_term');

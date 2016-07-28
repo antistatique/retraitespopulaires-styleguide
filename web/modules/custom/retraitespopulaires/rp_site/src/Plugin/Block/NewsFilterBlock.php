@@ -11,8 +11,8 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
 
-use Drupal\Core\Entity\EntityTypeManager;
-use Drupal\Core\Path\AliasManager;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Path\AliasManagerInterface;
 
 /**
 * Provides a 'NewsFilter' Block
@@ -30,21 +30,21 @@ use Drupal\Core\Path\AliasManager;
 class NewsFilterBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     /**
-    * EntityTypeManager to load Taxonomy
-    * @var EntityTypeManager
+    * EntityTypeManagerInterface to load Taxonomy
+    * @var EntityTypeManagerInterface
     */
     private $entity_taxonomy;
 
     /**
-     * AliasManager Service
-     * @var AliasManager
+     * AliasManagerInterface Service
+     * @var AliasManagerInterface
      */
     private $alias_manager;
 
     /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity,  AliasManager $alias_manager) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity,  AliasManagerInterface $alias_manager) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_taxonomy = $entity->getStorage('taxonomy_term');
         $this->alias_manager   = $alias_manager;

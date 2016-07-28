@@ -10,7 +10,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 
 /**
@@ -29,8 +29,8 @@ use Drupal\Core\Routing\CurrentRouteMatch;
 class AdvisorBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     /**
-    * EntityTypeManager to load Nodes
-    * @var EntityTypeManager
+    * EntityTypeManagerInterface to load Nodes
+    * @var EntityTypeManagerInterface
     */
     private $entity_node;
 
@@ -43,7 +43,7 @@ class AdvisorBlock extends BlockBase implements ContainerFactoryPluginInterface 
     /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity, CurrentRouteMatch $route) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_node   = $entity->getStorage('node');
         $this->route         = $route;

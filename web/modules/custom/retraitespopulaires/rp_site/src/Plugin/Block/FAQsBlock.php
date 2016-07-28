@@ -11,9 +11,9 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
 
-use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
-use Drupal\Core\Path\AliasManager;
+use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\rp_site\Service\Profession;
 
 /**
@@ -32,8 +32,8 @@ use Drupal\rp_site\Service\Profession;
 class FAQsBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     /**
-    * EntityTypeManager to load Nodes
-    * @var EntityTypeManager
+    * EntityTypeManagerInterface to load Nodes
+    * @var EntityTypeManagerInterface
     */
     private $entity_node;
 
@@ -44,8 +44,8 @@ class FAQsBlock extends BlockBase implements ContainerFactoryPluginInterface {
     private $route;
 
     /**
-     * AliasManager Service
-     * @var AliasManager
+     * AliasManagerInterface Service
+     * @var AliasManagerInterface
      */
     private $alias_manager;
 
@@ -58,7 +58,7 @@ class FAQsBlock extends BlockBase implements ContainerFactoryPluginInterface {
     /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity, CurrentRouteMatch $route, AliasManager $alias_manager, Profession $profession) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_node   = $entity->getStorage('node');
         $this->route         = $route;
