@@ -9,7 +9,7 @@ namespace Drupal\rp_newsletter\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Drupal\Core\State\State;
+use Drupal\Core\State\StateInterface;
 
 use DrewM\MailChimp\MailChimp;
 use Drupal\Core\Url;
@@ -21,14 +21,14 @@ use Drupal\Core\Link;
 class AdminController extends ControllerBase {
     /**
     * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-    * @var State
+    * @var StateInterface
     */
     private $state;
 
     /**
      * Class constructor.
      */
-    public function __construct(State $state) {
+    public function __construct(StateInterface $state) {
         $this->state = $state;
     }
 

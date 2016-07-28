@@ -10,7 +10,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Drupal\Core\State\State;
+use Drupal\Core\State\StateInterface;
 
 use DrewM\MailChimp\MailChimp;
 
@@ -18,14 +18,14 @@ class SubscribeForm extends FormBase {
 
     /**
     * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-    * @var State
+    * @var StateInterface
     */
     private $state;
 
     /**
      * Class constructor.
      */
-    public function __construct(State $state) {
+    public function __construct(StateInterface $state) {
         $this->state = $state;
     }
 
