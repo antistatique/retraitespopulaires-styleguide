@@ -9,7 +9,7 @@ set :branch, 'dev'
 
 # Protect the staging with a password
 set :http_auth_users, [
-   [ "rp", "$apr1$vHMguZuD$ZD0IeqhM0Ioypda9rIdf./" ]
+   [ "retraitespopulaires", "$apr1$vHMguZuD$ZD0IeqhM0Ioypda9rIdf./" ]
 ]
 
 # Module that will be disabled by drush
