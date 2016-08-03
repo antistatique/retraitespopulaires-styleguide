@@ -102,8 +102,6 @@ class NewsBlock extends BlockBase implements ContainerFactoryPluginInterface {
         $news_nids = array();
         if ($node = $this->route->getParameter('node')) {
 
-            if (empty($node->field_profession)) { return; }
-
             $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
             if( !empty($alias) ){
                 $alias = str_replace('/', '', $alias);
@@ -126,8 +124,6 @@ class NewsBlock extends BlockBase implements ContainerFactoryPluginInterface {
                 'link' => Url::fromRoute('rp_site.news.collection', array('taxonomy_term_alias' => $alias))
             );
         }
-
-        if (empty($variables['news'])) { return; }
 
         return [
             '#theme'     => 'rp_site_news_block',

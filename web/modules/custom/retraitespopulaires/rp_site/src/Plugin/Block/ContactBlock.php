@@ -78,8 +78,6 @@ class ContactBlock extends BlockBase implements ContainerFactoryPluginInterface 
             }
         }
 
-        if (empty($variables['contact'])) { return; }
-
         return [
             '#theme'     => 'rp_site_contact_block',
             '#variables' => $variables,
