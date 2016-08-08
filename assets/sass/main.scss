@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-@import 'typography';
 @import 'helper';
 
 // init:
+@import 'fonts';
 @import 'main-variables';
 @import 'bootstrap';
 @import 'layout';
-
+@import 'typography';
 
 // atoms:
 @import 'atoms/alert';
