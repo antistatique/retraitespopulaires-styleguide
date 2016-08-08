@@ -226,6 +226,14 @@ table {
 }
 
 /**
+* Highlight
+*/
+
+mark {
+  background-color: lighten($link-color, 25%);
+}
+
+/**
 * Responsive Typography
 */
 
