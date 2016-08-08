@@ -202,10 +202,10 @@ permalink: false
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
         <div class="col-md-10">
-          <ul>
+          <ul class="unordered-list">
             <li>Maintien de votre 2e pilier</li>
             <li>Possibilité de financer une couverture décès et invalidité</li>
-            <ul>
+            <ul class="unordered-list">
               <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
             </ul>
             <li>Flexibilité du produit: prestations et financement en fonction de votre situation</li>
@@ -221,10 +221,10 @@ permalink: false
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
         <div class="col-md-10">
-          <ol>
+          <ol class="ordered-list">
             <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
             <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
-            <ol>
+            <ol class="ordered-list">
               <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
             </ol>
             <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>

@@ -67,49 +67,54 @@ ol {
 * Links
 */
 
-a {
-  text-decoration: none;
-  // Underline via gradient background
-  background-image: linear-gradient(rgba($link-color, 0.25) 0%, $link-color 100%);
-  background-repeat: repeat-x;
-  background-size: 1px 1px;
-  background-position: 0 95%;
-  color: $link-color;
-  // Clear descendors from underline
-  text-shadow:
-    3px 0 $white,
-    2px 0 $white,
-    1px 0 $white,
-    -1px 0 $white,
-    -2px 0 $white,
-    -3px 0 $white;
-
-  // Tweak position + thickness for high res (1.75x and up) displays
-
-  @media (min-resolution: 168dpi) {
-    background-image: linear-gradient(rgba($link-color, 0.25) 0%, $link-color 100%);
-    background-position: 0 93%;
-  }
-
-  &:hover {
+p {
+  a {
     text-decoration: none;
-    background-image: linear-gradient(to bottom, darken($link-color, 6%) 0%, darken($link-color, 6%) 100%);
-    color: darken($link-color, 11%);
-  }
+    // Underline via gradient background
+    background-image: linear-gradient(rgba($link-color, 0.25) 0%, $link-color 100%);
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    background-position: 0 95%;
+    color: $link-color;
+    // Clear descendors from underline
+    text-shadow:
+      3px 0 $white,
+      2px 0 $white,
+      1px 0 $white,
+      -1px 0 $white,
+      -2px 0 $white,
+      -3px 0 $white;
 
-  // Style selected links (or else text-shadow makes it look crazy ugly)
-  // Pseudo selectors must go separately, or they break each other
+    // Tweak position + thickness for high res (1.75x and up) displays
 
-  &::selection {
-    background-color: lighten($link-color, 25%);
-    color: $text-color;
-    text-shadow: none;
+    @media (min-resolution: 168dpi) {
+      background-image: linear-gradient(rgba($link-color, 0.25) 0%, $link-color 100%);
+      background-position: 0 93%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+      background-image: linear-gradient(to bottom, darken($link-color, 6%) 0%, darken($link-color, 6%) 100%);
+      color: darken($link-color, 11%);
+    }
+
+    // Style selected links (or else text-shadow makes it look crazy ugly)
+    // Pseudo selectors must go separately, or they break each other
+
+    &::selection {
+      background-color: lighten($link-color, 15%);
+      color: $text-color;
+      text-shadow: none;
+    }
   }
 }
-
 /**
 * Unordered List & Ordered List
 */
+
+/* stylelint-disable no-duplicate-selectors */
+/* Make the code unreadable otherwise */
 
 ul,
 ol {
@@ -117,7 +122,7 @@ ol {
   padding: 0;
 }
 
-ul {
+ul.unordered-list {
   list-style: none;
   margin-left: $grid-gutter-width / 2;
 
@@ -140,7 +145,7 @@ ul {
   }
 }
 
-ol {
+ol.ordered-list {
   list-style: none;
   counter-reset: item;
 
