@@ -183,6 +183,27 @@ blockquote {
 }
 
 /**
+* Table
+*/
+
+table {
+  border-collapse: collapse;
+  border: 1px solid $deep-yellow;
+
+  thead {
+    background: $deep-yellow;
+    color: $white;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: $grid-gutter-width / 2;
+    border: 1px solid $deep-yellow;
+  }
+}
+
+/**
 * Responsive Typography
 */
 
