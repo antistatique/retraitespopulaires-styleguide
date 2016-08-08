@@ -47,13 +47,12 @@ h6,
   letter-spacing: 0.04em;
 }
 
-p {
-  font-family: Frutiger Neue;
-}
-
-ul,
+p,
+abbr,
+cite,
+li,
 ol {
-  margin-bottom: 0;
+  font-family: $font-frutiger;
 }
 
 .text-bold {
