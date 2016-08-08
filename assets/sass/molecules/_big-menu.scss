@@ -1,0 +1,22 @@
+@charset 'UTF-8';
+
+.big-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  background: $black;
+  z-index: $zindex-navbar-fixed;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition:
+    transform 0.5s,
+    opacity 0.5s;
+
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

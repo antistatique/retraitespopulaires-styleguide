@@ -2,3 +2,7 @@ body {
   text-rendering: optimizelegibilit;
   -webkit-font-smoothing: antialiased;
 }
+
+body.no-scroll {
+  overflow: hidden;
+}
