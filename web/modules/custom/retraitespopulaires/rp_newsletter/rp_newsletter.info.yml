@@ -1,4 +1,4 @@
-name: RP Newsletter
+name: Newsletter
 description: 'Newsletter throught Mailchimp API'
 package: Retraites Populaires
 type: module

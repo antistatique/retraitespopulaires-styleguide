@@ -1,4 +1,4 @@
-name: RP Exchanges rates
+name: Exchanges rates
 description: 'Importe and expose up-to-date rates'
 package: Retraites Populaires
 type: module
