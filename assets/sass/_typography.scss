@@ -210,6 +210,11 @@ table {
   thead {
     background: $deep-yellow;
     color: $white;
+
+    th {
+      padding: $grid-gutter-width / 4 $grid-gutter-width / 2;
+      font-weight: 400;
+    }
   }
 
   th,
