@@ -165,8 +165,8 @@ permalink: false
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
         <div class="col-md-10">
-          <p>Fondée il y a plus de <b>100 ans</b>, <a href="http://retraites-populaires.ch">Retraites Populaires</a> cultive des valeurs humaines fortes et un esprit de mutualité. <br/> Notre mission: être <u>le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle</u>. Notre détermination: demeurer toujours ce partenaire proche sur lequel vous pouvez compter. Active également dans l’immobilier, l'hypothèque et crédit et la gestion d'institutions de prévoyance, Retraites Populaires met au service des personnes, des entreprises et des institutions une plateforme de compétences et tout son savoir-faire.</p>
-          <a href="http://retraites-populaires.ch">Retraites Populaires</a> est proche de ses clients. Avec son siège de <i>Lausanne</i> et ses deux agences à <i>Yverdon-les-Bains</i> et <i>Nyon</i>, elle offre des <b>prestations simples</b> et <b>de qualité</b> pour chacune des étapes de la vie.</p>
+          <p>Fondée il y a plus de <b>100 ans</b>, <a href="http://retraites-populaires.ch">Retraites Populaires</a> cultive des valeurs humaines fortes et un esprit de mutualité. <br/> Notre mission: être le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle. Notre détermination: demeurer toujours ce partenaire proche sur lequel vous pouvez compter. Active également dans l’immobilier, l'hypothèque et crédit et la gestion d'institutions de prévoyance, Retraites Populaires met au service des personnes, des entreprises et des institutions une plateforme de compétences et tout son savoir-faire.</p>
+          <p><a href="http://retraites-populaires.ch">Retraites Populaires</a> est proche de ses clients. Avec son siège de <i>Lausanne</i> et ses deux agences à <i>Yverdon-les-Bains</i> et <i>Nyon</i>, elle offre des <b>prestations simples</b> et <b>de qualité</b> pour chacune des étapes de la vie.</p>
           <div class="spacer spacer-md"></div>
         </div>
       </div>
@@ -178,7 +178,7 @@ permalink: false
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
         <div class="col-md-10">
-          <quote>Retraites Populaires est fiable. Fondée il y a plus de 100 ans, elle est une partenaire de confiance sur laquelle la population et les entreprises peuvent compter en toute sécurité, en tant qu’institution de droit public avec des prestations garanties.</quote>
+          <blockquote>Retraites Populaires est fiable. Fondée il y a plus de 100 ans, elle est une partenaire de confiance sur laquelle la population et les entreprises peuvent compter en toute sécurité, en tant qu’institution de droit public avec des prestations garanties.</blockquote>
           <div class="spacer spacer-md"></div>
         </div>
       </div>
@@ -194,10 +194,10 @@ permalink: false
           <div class="spacer spacer-md"></div>
         </div>
       </div>
-      <!-- Bulleted List  -->
+      <!-- Unordered List  -->
       <div class="row">
         <div class="col-md-2">
-          <b>Bulleted List</b>
+          <b>Unordered List</b>
           <div class="text-muted">Frutiger Neue Regular</div>
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
@@ -205,16 +205,18 @@ permalink: false
           <ul>
             <li>Maintien de votre 2e pilier</li>
             <li>Possibilité de financer une couverture décès et invalidité</li>
-            <li>Résiliation de la police sans délai</li>
+            <ul>
+              <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ul>
             <li>Flexibilité du produit: prestations et financement en fonction de votre situation</li>
           </ul>
           <div class="spacer"></div>
         </div>
       </div>
-      <!-- Numbered List  -->
+      <!-- Ordered List  -->
       <div class="row">
         <div class="col-md-2">
-          <b>Numbered List</b>
+          <b>Ordered List</b>
           <div class="text-muted">Frutiger Neue Regular</div>
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
@@ -222,7 +224,9 @@ permalink: false
           <ol>
             <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
             <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
-            <li>Taux d’intérêt unique sur l’ensemble du prêt</li>
+            <ol>
+              <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ol>
             <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
           </ol>
           <div class="spacer"></div>
