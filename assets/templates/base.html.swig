@@ -13,14 +13,14 @@
     <meta name="viewport" content="width=device-width">
 
     {% if styleguide %}
-      <link rel="stylesheet" href="/build/css/styleguide.css">
+      <link rel="stylesheet" href="/retraitespopulaires-styleguide/build/css/styleguide.css">
     {% endif %}
 
-    <link rel="stylesheet" href="/build/css/vendors.min.css">
-    <link rel="stylesheet" href="/build/css/main.css">
+    <link rel="stylesheet" href="/retraitespopulaires-styleguide/build/css/vendors.min.css">
+    <link rel="stylesheet" href="/retraitespopulaires-styleguide/build/css/main.css">
 
     <!--[if lt IE 9]>
-      <script src="/build/js/polyfills.min.js"></script>
+      <script src="/retraitespopulaires-styleguide/build/js/polyfills.min.js"></script>
     <![endif]-->
   </head>
   <body>
@@ -40,9 +40,9 @@
       </div>
     {% endif %}
 
-    <script src="/build/js/jquery.js"></script>
-    <script src="/build/js/vendors.min.js"></script>
-    <script src="/build/js/main.js"></script>
+    <script src="/retraitespopulaires-styleguide/build/js/jquery.js"></script>
+    <script src="/retraitespopulaires-styleguide/build/js/vendors.min.js"></script>
+    <script src="/retraitespopulaires-styleguide/build/js/main.js"></script>
 
     {% if styleguide %}
       <script>
@@ -60,7 +60,7 @@
           });
         }(jQuery));
       </script>
-      <script src="/build/js/styleguide.min.js"></script>
+      <script src="/retraitespopulaires-styleguide/build/js/styleguide.min.js"></script>
     {% endif %}
 
     {% block javascripts %}{% endblock %}

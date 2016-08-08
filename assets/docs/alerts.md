@@ -1,5 +1,5 @@
 ---
-title: Alerts
+title: alerts
 collection: docs
 styleguide: true
 ---
