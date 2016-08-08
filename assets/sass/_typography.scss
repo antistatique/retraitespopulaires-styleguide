@@ -111,11 +111,60 @@ a {
 * Unordered List & Ordered List
 */
 
-// p,
-// abbr,
-// cite,
-// li,
-// ol, { font-size: $font-size-base; }
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin-left: $grid-gutter-width / 2;
+
+  > ul {
+    padding-left: 1.3em;
+  }
+
+  > li {
+    padding-left: 0.5em;
+    text-indent: -0.5em;
+
+    &:before {
+      content: '\0025A0';
+      position: relative;
+      top: -0.2em;
+      left: -1em;
+      font-size: 0.8em;
+      color: $grey;
+    }
+  }
+}
+
+ol {
+  list-style: none;
+  counter-reset: item;
+
+  > ol {
+    padding-left: 1em;
+  }
+
+  > li {
+    padding-left: 0.5em;
+    text-indent: -0.5em;
+
+    &:before {
+      content: counter(item) '. ';
+      counter-increment: item;
+      color: $grey;
+    }
+  }
+}
+
+
+
+/**
+* Responsive Typography
+*/
 
 /* @TODO: Need review for Phablet
 Extra Small Devices, Phones */
