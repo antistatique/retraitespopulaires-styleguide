@@ -164,25 +164,37 @@ ol.ordered-list {
     }
   }
 }
+/* stylelint-enable */
 
 /**
 * Quote
 */
 
 blockquote {
-  border-left: 10px solid $grey;
-  quotes: '\201C\201D\2018\2019';
+  margin: 0;
+  padding: 0;
+  padding-left: 0.55em;
+  border-left: 0;
+  font-family: $font-frutiger;
+  font-size: 1.75em;
+  font-weight: 300;
 
   p {
     display: inline;
   }
 
   &:before {
-    content: open-quote;
-    margin-right: 0.25em;
-    font-size: 4em;
+    content: '«';
+    position: absolute;
+    top: 0.6em;
+    left: 0.4em;
     line-height: 0.1em;
-    vertical-align: -0.4em;
+    color: $grey;
+  }
+
+  &:after {
+    content: '»';
+    margin-left: 0.2em;
     color: $grey;
   }
 }
