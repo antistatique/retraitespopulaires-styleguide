@@ -254,6 +254,32 @@ permalink: false
             </tr>
            </tbody>
           </table>
+          <div class="spacer spacer-md"></div>
+        </div>
+      </div>
+      <!-- Number  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Number</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <div class="">1'000.10</div>
+          <div class="spacer spacer-md"></div>
+        </div>
+      </div>
+      <!-- SuperScript & SubScript  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>SuperScript & SubScript</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <div class="">D'une surface de 150m<sup>3</sup>.</div>
+          <div class="">Nouvelle mollecule découverte: Hlop<sub>22</sub>, révolution scientifique en vue.</div>
+          <div class="spacer spacer-md"></div>
         </div>
       </div>
     </div>
