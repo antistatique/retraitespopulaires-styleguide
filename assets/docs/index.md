@@ -210,7 +210,7 @@ permalink: false
             </ul>
             <li>Flexibilité du produit: prestations et financement en fonction de votre situation</li>
           </ul>
-          <div class="spacer"></div>
+          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Ordered List  -->
@@ -229,7 +229,31 @@ permalink: false
             </ol>
             <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
           </ol>
-          <div class="spacer"></div>
+          <div class="spacer spacer-md"></div>
+        </div>
+      </div>
+      <!-- Table  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Table</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <table>
+           <thead>
+            <tr>
+               <th>Option 1</th>
+               <th>Option 2</th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+               <td>Toucher pendant 7 ans une rente mensuelle de CHF 300</td>
+               <td>Toucher un capital de CHF 24/480</td>
+            </tr>
+           </tbody>
+          </table>
         </div>
       </div>
     </div>
