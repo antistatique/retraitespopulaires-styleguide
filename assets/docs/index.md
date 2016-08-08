@@ -132,26 +132,26 @@ permalink: false
       <div class="icons">
         <div class="square">
           <div class="thebox">
-            <i class="rpicon rpicon-2x rpicon-search"></i>
-            <div class="text-muted">.rpicon-search</div>
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-search"></i>
+            <div class="text-muted">.retraitespopulaires-icon-search</div>
           </div>  
         </div>
         <div class="square">
           <div class="thebox">
-            <i class="rpicon rpicon-2x rpicon-table"></i>
-            <div class="text-muted">.rpicon-table</div>
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-table"></i>
+            <div class="text-muted">.retraitespopulaires-icon-table</div>
           </div>  
         </div>
         <div class="square">
           <div class="thebox">
-            <i class="rpicon rpicon-2x rpicon-user"></i>
-            <div class="text-muted">.rpicon-user</div>
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-user"></i>
+            <div class="text-muted">.retraitespopulaires-icon-user</div>
           </div>  
         </div>
         <div class="square">
           <div class="thebox">
-            <i class="rpicon rpicon-2x rpicon-users"></i>
-            <div class="text-muted">.rpicon-users</div>
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-users"></i>
+            <div class="text-muted">.retraitespopulaires-icon-users</div>
           </div>  
         </div>
       </div>
