@@ -1,22 +1,59 @@
 @charset 'UTF-8';
 
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
 h1,
 .h1,
 h2,
 .h2,
 h3,
-.h3
+.h3,
 h4,
 .h4,
 h5,
 .h5,
 h6,
 .h6 {
+  margin: 0;
+  padding: 0;
   word-wrap: break-word;
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  font-family: $font-cocon;
+  font-weight: 300;
+}
+
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  font-family: $font-frutiger;
+  font-weight: 700;
+}
+
+h6,
+.h6 {
+  font-family: $font-frutiger;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 p {
   font-family: Frutiger Neue;
+}
+
+ul,
+ol {
+  margin-bottom: 0;
 }
 
 .text-bold {
@@ -28,43 +65,109 @@ p {
 }
 
 /**
-* Fonts
+* Responsive Typography
 */
 
-$font-frutiger: 'Frutiger Neue', helvetica, arial, sans-serif;
+// p,
+// abbr,
+// cite,
+// li,
+// ol, { font-size: $font-size-base; }
 
-@font-face {
-  font-family: Frutiger Neue;
-  src: url('../fonts/FrutigerNeueLTW1G-Bold.eot');
-  src:
-    url('../fonts/FrutigerNeueLTW1G-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/FrutigerNeueLTW1G-Bold.woff') format('woff'),
-    url('../fonts/FrutigerNeueLTW1G-Bold.ttf') format('truetype'),
-    url('../fonts/FrutigerNeueLTW1G-Bold.svg#frutigernewbold') format('svg');
-  font-weight: 600;
-  font-style: normal;
+/* @TODO: Need review for Phablet
+Extra Small Devices, Phones */
+// @media only screen and (min-width: 480px) {
+//
+// }
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  p { font-size: floor(($font-size-base * 1.1)); }
+
+  h1,
+  .h1 { font-size: floor(($font-size-h1 * 1.1)); }
+
+  h2,
+  .h2 { font-size: floor(($font-size-h2 * 1.1)); }
+
+  h3,
+  .h3 { font-size: floor(($font-size-h3 * 1.1)); }
+
+  h4,
+  .h4 { font-size: floor(($font-size-h4 * 1.1)); }
+
+  h5,
+  .h5 { font-size: floor(($font-size-h5 * 1.1)); }
+
+  h6,
+  .h6 { font-size: floor(($font-size-h6 * 1.1)); }
 }
 
-@font-face {
-  font-family: Frutiger Neue;
-  src: url('../fonts/FrutigerNeueLTW1G-regular.eot');
-  src:
-    url('../fonts/FrutigerNeueLTW1G-regular.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/FrutigerNeueLTW1G-regular.woff') format('woff'),
-    url('../fonts/FrutigerNeueLTW1G-regular.ttf') format('truetype'),
-    url('../fonts/FrutigerNeueLTW1G-regular.svg#frutigernewregular') format('svg');
-  font-weight: 400;
-  font-style: normal;
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  p { font-size: floor(($font-size-base * 1.12)); }
+
+  h1,
+  .h1 { font-size: floor(($font-size-h1 * 1.12)); }
+
+  h2,
+  .h2 { font-size: floor(($font-size-h2 * 1.12)); }
+
+  h3,
+  .h3 { font-size: floor(($font-size-h3 * 1.12)); }
+
+  h4,
+  .h4 { font-size: floor(($font-size-h4 * 1.12)); }
+
+  h5,
+  .h5 { font-size: floor(($font-size-h5 * 1.12)); }
+
+  h6,
+  .h6 { font-size: floor(($font-size-h6 * 1.12)); }
 }
 
-@font-face {
-  font-family: Frutiger Neue;
-  src: url('../fonts/FrutigerNeueLTW1G-Light.eot');
-  src:
-    url('../fonts/FrutigerNeueLTW1G-Light.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/FrutigerNeueLTW1G-Light.woff') format('woff'),
-    url('../fonts/FrutigerNeueLTW1G-Light.ttf') format('truetype'),
-    url('../fonts/FrutigerNeueLTW1G-Light.svg#frutigernewlight') format('svg');
-  font-weight: 200;
-  font-style: normal;
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  p { font-size: floor(($font-size-base * 1.18)); }
+
+  h1,
+  .h1 { font-size: floor(($font-size-h1 * 1.15)); }
+
+  h2,
+  .h2 { font-size: floor(($font-size-h2 * 1.15)); }
+
+  h3,
+  .h3 { font-size: floor(($font-size-h3 * 1.15)); }
+
+  h4,
+  .h4 { font-size: floor(($font-size-h4 * 1.15)); }
+
+  h5,
+  .h5 { font-size: floor(($font-size-h5 * 1.15)); }
+
+  h6,
+  .h6 { font-size: floor(($font-size-h6 * 1.18)); }
+}
+
+/* Very Large Devices, Wide/TV Screens */
+@media only screen and (min-width: 1900px) {
+  p { font-size: floor(($font-size-base * 1.28)); }
+
+  h1,
+  .h1 { font-size: floor(($font-size-h1 * 1.22)); }
+
+  h2,
+  .h2 { font-size: floor(($font-size-h2 * 1.22)); }
+
+  h3,
+  .h3 { font-size: floor(($font-size-h3 * 1.22)); }
+
+  h4,
+  .h4 { font-size: floor(($font-size-h4 * 1.22)); }
+
+  h5,
+  .h5 { font-size: floor(($font-size-h5 * 1.22)); }
+
+  h6,
+  .h6 { font-size: floor(($font-size-h6 * 1.28)); }
 }
