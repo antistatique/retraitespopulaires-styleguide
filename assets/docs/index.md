@@ -7,9 +7,9 @@ permalink: false
 
 <div class="moodboard">
   <div class="row">
-    <h2>Brands Colors</h2>
-    <div class="spacer spacer-xs"></div>
     <div class="col-xs-12">
+      <h2>Brands Colors</h2>
+      <div class="spacer spacer-xs"></div>
       <div class="f-color-chips">
         <div class="f-color-chip" style="border-top-color: #008e4f; border-bottom-color: #008e4f;">
           <h5 class="">$green</h5>
@@ -28,9 +28,9 @@ permalink: false
   </div>
 
   <div class="row">
-    <h2>Professions Colors</h2>
-    <div class="spacer spacer-xs"></div>
     <div class="col-xs-12">
+      <h2>Professions Colors</h2>
+      <div class="spacer spacer-xs"></div>
       <div class="f-color-chips">
         <div class="f-color-chip" style="border-top-color: #cbb900; border-bottom-color: #cbb900;">
           <h5 class="">$deep-yellow</h5>
@@ -57,9 +57,9 @@ permalink: false
   </div>
 
   <div class="row">
-    <h2>Institutions & Annexes Colors</h2>
-    <div class="spacer spacer-xs"></div>
     <div class="col-xs-12">
+      <h2>Institutions & Annexes Colors</h2>
+      <div class="spacer spacer-xs"></div>
       <div class="f-color-chips">
         <div class="f-color-chip" style="border-top-color: #663d07; border-bottom-color: #663d07;">
           <h5 class="">$deep-brown</h5>
@@ -82,43 +82,150 @@ permalink: false
   </div>
 
   <div class="row">
-    <h2>Typography</h2>
-    <div class="spacer spacer-xs"></div>
     <div class="col-xs-12">
+      <h2>Typography</h2>
+      <div class="spacer spacer-xs"></div>
+      <!-- Heading 1  -->
       <div class="row">
-        <div class="col-xs-3">Coco Light</div>
-        <div class="col-xs-9">
-          <div>ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
-          <div>abcdefghijklmnopqrstuvwxyz</div>
-          <div>0123456789&@ </div>
-          <div class="spacer spacer-xs"></div>
+        <div class="col-md-2">
+          <b>H1</b>
+          <div class="text-muted">Cocon Pro Light</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <h1>Le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle</h1>
+          <div class="spacer"></div>
         </div>
       </div>
-      <div class="row text-bold">
-        <div class="col-xs-3">Frutiger Neue Bold</div>
-        <div class="col-xs-9">
-          <div>ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
-          <div>abcdefghijklmnopqrstuvwxyz</div>
-          <div>0123456789&@ </div>
-          <div class="spacer spacer-xs"></div>
-        </div>
-      </div>
+      <!-- Heading 2  -->
       <div class="row">
-        <div class="col-xs-3">Frutiger Neue Regular</div>
-        <div class="col-xs-9">
-          <div>ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
-          <div>abcdefghijklmnopqrstuvwxyz</div>
-          <div>0123456789&@ </div>
-          <div class="spacer spacer-xs"></div>
+        <div class="col-md-2">
+          <b>H2</b>
+          <div class="text-muted">Cocon Pro Light</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <h2>Notre raison sociale, notre identité</h2>
+          <div class="spacer"></div>
         </div>
       </div>
-      <div class="row text-light">
-        <div class="col-xs-3">Frutiger Neue Light</div>
-        <div class="col-xs-9">
-          <div>ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
-          <div>abcdefghijklmnopqrstuvwxyz</div>
-          <div>0123456789&@ </div>
-          <div class="spacer spacer-xs"></div>
+      <!-- Heading 3  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>H3</b>
+          <div class="text-muted">Frutiger Neue Bold</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <h3>Plus de cent ans au service des Vaudoises et des Vaudois</h3>
+          <div class="spacer"></div>
+        </div>
+      </div>
+      <!-- Heading 4  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>H4</b>
+          <div class="text-muted">Frutiger Neue Bold</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <h4>Partenaire de vos projets</h4>
+          <div class="spacer"></div>
+        </div>
+      </div>
+      <!-- Heading 5  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>H5</b>
+          <div class="text-muted">Frutiger Neue Bold</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <h5>Les mêmes conditions pour tous les clients</h5>
+          <div class="spacer"></div>
+        </div>
+      </div>
+      <!-- Heading 6  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>H6</b>
+          <div class="text-muted">Frutiger Neue Bold</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <h6>Labels obtenus par Retraites Populaires</h6>
+          <div class="spacer"></div>
+        </div>
+      </div>
+      <!-- Paragraphe  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Paragraphe</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <p>Fondée il y a plus de <b>100 ans</b>, <a href="http://retraites-populaires.ch">Retraites Populaires</a> cultive des valeurs humaines fortes et un esprit de mutualité. <br/> Notre mission: être <u>le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle</u>. Notre détermination: demeurer toujours ce partenaire proche sur lequel vous pouvez compter. Active également dans l’immobilier, l'hypothèque et crédit et la gestion d'institutions de prévoyance, Retraites Populaires met au service des personnes, des entreprises et des institutions une plateforme de compétences et tout son savoir-faire.</p>
+          <a href="http://retraites-populaires.ch">Retraites Populaires</a> est proche de ses clients. Avec son siège de <i>Lausanne</i> et ses deux agences à <i>Yverdon-les-Bains</i> et <i>Nyon</i>, elle offre des <b>prestations simples</b> et <b>de qualité</b> pour chacune des étapes de la vie.</p>
+          <div class="spacer spacer-md"></div>
+        </div>
+      </div>
+      <!-- Quote  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Quote</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <quote>Retraites Populaires est fiable. Fondée il y a plus de 100 ans, elle est une partenaire de confiance sur laquelle la population et les entreprises peuvent compter en toute sécurité, en tant qu’institution de droit public avec des prestations garanties.</quote>
+          <div class="spacer spacer-md"></div>
+        </div>
+      </div>
+      <!-- Highlight  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Highlight</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <p>Retraites Populaires est <mark>responsable</mark>. Au coeur de sa raison d’être se trouve le <mark>respect des engagements</mark>.</p>
+          <div class="spacer spacer-md"></div>
+        </div>
+      </div>
+      <!-- Bulleted List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Bulleted List</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ul>
+            <li>Maintien de votre 2e pilier</li>
+            <li>Possibilité de financer une couverture décès et invalidité</li>
+            <li>Résiliation de la police sans délai</li>
+            <li>Flexibilité du produit: prestations et financement en fonction de votre situation</li>
+          </ul>
+          <div class="spacer"></div>
+        </div>
+      </div>
+      <!-- Numbered List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Numbered List</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ol>
+            <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
+            <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
+            <li>Taux d’intérêt unique sur l’ensemble du prêt</li>
+            <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
+          </ol>
+          <div class="spacer"></div>
         </div>
       </div>
     </div>
@@ -126,9 +233,9 @@ permalink: false
 
 
   <div class="row">
-    <h2>Iconography</h2>
-    <div class="spacer spacer-xs"></div>
     <div class="col-sm-12">
+      <h2>Iconography</h2>
+      <div class="spacer spacer-xs"></div>
       <div class="icons">
         <div class="square">
           <div class="thebox">
