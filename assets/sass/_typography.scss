@@ -116,8 +116,8 @@ p {
 /* stylelint-disable no-duplicate-selectors */
 /* Make the code unreadable otherwise */
 
-ul,
-ol {
+ul.unordered-list,
+ol.ordered-list {
   margin: 0;
   padding: 0;
 }
