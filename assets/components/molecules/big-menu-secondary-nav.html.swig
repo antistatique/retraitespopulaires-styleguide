@@ -10,22 +10,29 @@ notes: |
   <div class="row">
     <div class="col-xs-6">
       <ul class="unstyled-list text-right">
-        <li><a href="#">À propos</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Actualités</a></li>
+        <li><a class="pretty-link-white" href="#">À propos</a></li>
+        <li><a class="pretty-link-white" href="#">Contact</a></li>
+        <li><a class="pretty-link-white" href="#">Actualités</a></li>
       </ul>
     </div>
     <div class="col-xs-6">
       <ul class="unstyled-list">
-      <li><a href="#">Press</a></li>
-      <li><a href="#">Emplois</a></li>
-      <li><a href="#">FAQ</a></li>
+      <li><a class="pretty-link-white" href="#">Press</a></li>
+      <li><a class="pretty-link-white" href="#">Emplois</a></li>
+      <li><a class="pretty-link-white" href="#">FAQ</a></li>
       </ul>
     </div>
   </div>
   <div class="spacer"></div>
   <div class="text-center">
-    <a href="#" class="btn btn-default btn-outline-secondary btn-white">Connexion</a>
+    <div class="button-bubble button-bubble-white">
+      <div class="bubble-icon">
+        <a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-lock"></i></a>
+      </div>
+      <div class="bubble-link">
+        <a href="#" class="pretty-link-white">Connexion</a>
+      </div>
+    </div>
   </div>
   <div class="spacer"></div>
 </div>

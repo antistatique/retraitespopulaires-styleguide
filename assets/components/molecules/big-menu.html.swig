@@ -49,22 +49,22 @@ notes: |
                 </div>
                 <div id="assurance-vie" class="collapse-body collapse in">
                   <ul class="unordered-list treeview-list">
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a>
                       <ul class="unordered-list treeview-list">
-                        <li><a href="#">Lien</a></li>
-                        <li><a href="#">Lien</a></li>
-                        <li><a href="#">Lien</a></li>
-                        <li><a href="#">Lien</a></li>
+                        <li><a class="pretty-link" href="#">Lien</a></li>
+                        <li><a class="pretty-link" href="#">Lien</a></li>
+                        <li><a class="pretty-link" href="#">Lien</a></li>
+                        <li><a class="pretty-link" href="#">Lien</a></li>
                       </ul>
                     </li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
                   </ul>
                 </div>
               </div>
@@ -82,15 +82,15 @@ notes: |
                 </div>
                 <div id="prevoyance-professionnelle" class="collapse-body collapse">
                   <ul class="unordered-list treeview-list">
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
                   </ul>
                 </div>
               </div>
@@ -108,10 +108,10 @@ notes: |
                 </div>
                 <div id="immobilier" class="collapse-body collapse">
                   <ul class="unordered-list treeview-list">
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
                   </ul>
                 </div>
               </div>
@@ -129,10 +129,10 @@ notes: |
                 </div>
                 <div id="financement" class="collapse-body collapse">
                   <ul class="unordered-list treeview-list">
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
-                    <li><a href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
+                    <li><a class="pretty-link" href="#">Lien</a></li>
                   </ul>
                 </div>
               </div>

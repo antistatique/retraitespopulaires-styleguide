@@ -19,12 +19,6 @@
     transform: translateY(0);
     opacity: 1;
   }
-
-  ul {
-    a {
-      @include pretty-link($green);
-    }
-  }
 }
 
 .container-big-menu {

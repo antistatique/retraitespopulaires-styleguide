@@ -374,6 +374,12 @@ permalink: false
             <div class="text-muted">.retraitespopulaires-icon-arrow-oblique</div>
           </div>  
         </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i>
+            <div class="text-muted">.retraitespopulaires-icon-lock</div>
+          </div>  
+        </div>
       </div>
     </div>
   </div>

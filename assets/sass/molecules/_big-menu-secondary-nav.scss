@@ -5,7 +5,7 @@
 
   ul li {
     a {
-      @include pretty-link($white, $green);
+      line-height: 2em;
     }
   }
 }

@@ -74,6 +74,10 @@ a.pretty-link {
   @include pretty-link($link-color);
 }
 
+a.pretty-link-white {
+  @include pretty-link($white, $green);
+}
+
 *.inline-block {
   display: inline-block;
 }
@@ -237,6 +241,7 @@ mark {
 
 i.retraitespopulaires-icon {
   display: inline-block;
+  line-height: 0;
 }
 
 /**
