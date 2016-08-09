@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+
+.big-menu-secondary-nav {
+  background: $green;
+
+  ul li {
+    a {
+      @include pretty-link($white, $green);
+    }
+  }
+}

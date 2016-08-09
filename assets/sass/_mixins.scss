@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-@mixin pretty-link($color: $link-color) {
+@mixin pretty-link($color: $link-color, $bg: $white) {
   text-decoration: none;
   // Underline via gradient background
   background-image: linear-gradient(rgba($color, 0.25) 0%, $color 100%);
@@ -10,12 +10,12 @@
   color: $color;
   // Clear descendors from underline
   text-shadow:
-    3px 0 $white,
-    2px 0 $white,
-    1px 0 $white,
-    -1px 0 $white,
-    -2px 0 $white,
-    -3px 0 $white;
+    3px 0 $bg,
+    2px 0 $bg,
+    1px 0 $bg,
+    -1px 0 $bg,
+    -2px 0 $bg,
+    -3px 0 $bg;
 
   // Tweak position + thickness for high res (1.75x and up) displays
 

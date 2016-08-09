@@ -56,3 +56,7 @@
 .btn-outline {
   @include button-variant($deep-yellow, $transparent, $deep-yellow);
 }
+
+.btn-outline-secondary {
+  @include button-variant($white, $transparent, $white);
+}

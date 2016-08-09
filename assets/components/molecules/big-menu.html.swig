@@ -138,20 +138,8 @@ notes: |
               </div>
             </div>
           </div>
-          <div class="row big-menu-wrapper-shortcuts">
-            <div class="col-xs-12">
-              <div class="shortcuts-wrapper">
-                <ul class="unordered-list">
-                  <li><a href="#">À propos</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">Actualités</a></li>
-                  <li><a href="#">Press</a></li>
-                  <li><a href="#">Emplois</a></li>
-                  <li><a href="#">FAQ</a></li>
-                </ul>
-                <a href="#" class="btn btn-default">Connexion</a>
-              </div>
-            </div>
+          <div class="row">
+          {% include '../molecules/big-menu-secondary-nav.html.swig' %}
           </div>
           <div class="big-menu-wrapper-contact">
             <div class="row big-menu-wrapper-contact-info">
