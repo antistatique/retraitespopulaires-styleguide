@@ -98,6 +98,11 @@
 
   .form-control {
     float: none;
+
+    &:first-child {
+      border-bottom-right-radius: $input-border-radius;
+      border-top-right-radius: $input-border-radius;
+    }
   }
 
   .form-control:first-child {
