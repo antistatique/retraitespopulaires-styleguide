@@ -5,9 +5,17 @@
 }
 
 .collapse-title {
-  padding: 1em 1em 0.8em;
+  padding: 1em 1em 0.6em;
   transition: background 0.25s ease;
   cursor: pointer;
+
+  i {
+    padding: 5px;
+    background-color: $input-bg-disabled;
+    border-radius: $border-radius-base;
+    line-height: 0;
+    transition: background 0.5s ease;
+  }
 
   i:before {
     transform: rotate(180deg);
@@ -22,13 +30,17 @@
 
   &:hover {
     background: lighten($grey, 50%);
+
+    i {
+      background-color: $white;
+    }
   }
 }
 
 .collapse-body {
   margin: 0;
 
-  ul {
-    padding: 1em;
+  > ul {
+    padding: 0 1em 1em;
   }
 }

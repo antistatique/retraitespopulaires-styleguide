@@ -36,6 +36,16 @@ ul.unordered-list {
   }
 }
 
+ul.treeview-list {
+  > li {
+    &:before {
+      content: '\231E';
+      left: -0.5em;
+      font-size: 1.2em;
+    }
+  }
+}
+
 ol.ordered-list {
   list-style: none;
   counter-reset: item;
