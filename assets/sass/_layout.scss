@@ -6,3 +6,8 @@ body {
 body.no-scroll {
   overflow: hidden;
 }
+
+.svg-responsive {
+  max-width: 100%;
+  max-height: 100%;
+}

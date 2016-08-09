@@ -1,13 +1,35 @@
 @charset 'UTF-8';
 
-.hamburger-button {
+.hamburger-wrapper {
   position: absolute;
-  z-index: 2001;
-  top: 0;
-  right: 2em;
-  width: 64px;
+  top: 1rem;
+  right: -3rem;
+  width: 144px;
   height: 64px;
   cursor: pointer;
+  z-index: 2001;
+
+  .hamburger-button {
+    position: absolute;
+    right: 2em;
+  }
+
+  .hamburger-helper {
+    position: absolute;
+    top: 21px;
+    left: 0;
+  }
+}
+
+.hamburger-helper {
+  .helper-when-open {
+    display: none;
+  }
+}
+
+.hamburger-button {
+  width: 64px;
+  height: 64px;
   box-sizing: border-box;
 
   .hamburger,
@@ -92,7 +114,7 @@
   }
 }
 
-.hamburger-button.active {
+.hamburger-wrapper.active {
   .hamburger {
     span {
       width: 0%;
@@ -125,5 +147,13 @@
         transition-delay: 0.375s;
       }
     }
+  }
+
+  .helper-when-open {
+    display: block;
+  }
+
+  .helper-when-close {
+    display: none;
   }
 }

@@ -5,9 +5,7 @@ collection: pages
 styleguide: false
 layout: page.html.swig
 ---
-
 {% include '../organisms/header.html.swig' %}
-{% include '../molecules/big-menu.html.swig' %}
 
 <div>
 Duis facilisis purus ac elit tincidunt, ac efficitur quam ultricies. Donec mauris libero, pellentesque et sollicitudin id, volutpat vel nibh. Sed vel sem rutrum, venenatis nibh sed, gravida sapien. Nam vestibulum volutpat ex id porta. Ut pharetra cursus leo eget placerat. Proin at est nunc. Nam libero lorem, lacinia eget fermentum ac, consequat ut eros. Praesent sem risus, blandit varius tincidunt ut, dictum vitae risus. Maecenas ornare, est at dictum varius, sapien libero pulvinar ante, sed ornare ante metus et lorem. In nibh est, viverra vel varius vel, rutrum sit amet augue. Duis ultricies magna non pretium feugiat. Maecenas at nulla sagittis, tristique odio sit amet, tincidunt risus. Praesent convallis lorem lorem, a sodales arcu scelerisque mattis.

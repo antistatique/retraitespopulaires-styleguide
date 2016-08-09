@@ -9,6 +9,7 @@ notes: |
 ---
 {% include '../molecules/big-menu.html.swig' %}
 <header class="header">
+  {% include '../atoms/logo-retraitespopulaires.html.swig' %}
   <div class="header-nav">
     {% include '../atoms/hamburger.html.swig' %}
   </div>

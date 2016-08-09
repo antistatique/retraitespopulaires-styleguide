@@ -2,20 +2,21 @@
 
 (function($){
   $(document).ready(function() {
-    const $body = $('body'),
-          $button = $('.hamburger-button'),
-          $navbar = $('.big-menu'),
+    const $body      = $('body'),
+          $wrapper   = $('.hamburger-wrapper'),
+          $button    = $('.hamburger-button'),
+          $navbar    = $('.big-menu'),
           $container = $('.big-menu-container');
 
-    $button.on('click', function() {
-      if ($button.hasClass('active')) {
+    $wrapper.on('click', function() {
+      if ($wrapper.hasClass('active')) {
         $body.toggleClass('no-scroll');
-        $button.toggleClass('active');
+        $wrapper.toggleClass('active');
         $navbar.toggleClass('active');
       }else{
         $body.toggleClass('no-scroll');
         $navbar.css({'display': 'block'});
-        $button.toggleClass('active');
+        $wrapper.toggleClass('active');
         $navbar.toggleClass('active');
       }
     });

@@ -1,10 +1,12 @@
 @charset 'UTF-8';
 
 .btn {
+  display: inline-block;
   padding: 11px 0.6em 7px;
   border: 2px solid $transparent;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-family: Cocon Pro;
+  font-weight: 300;
+  text-transform: capitalize;
   transition:
     background 0.25s ease,
     color 0.25s ease,
@@ -39,6 +41,16 @@
   i {
     font-size: 1.2em;
   }
+}
+
+.btn-group {
+  .btn {
+    border: 1px solid $white;
+  }
+}
+
+.btn-invisible {
+  background: $transparent;
 }
 
 .btn-outline {
