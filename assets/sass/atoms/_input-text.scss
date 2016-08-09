@@ -33,6 +33,12 @@
     font-weight: 200;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    transition: opacity 0.25s ease-in-out;
+
+    &.label-hidden {
+      opacity: 0;
+    }
+
   }
 
   legend {
@@ -98,6 +104,10 @@
       border-radius: $btn-border-radius-base - $input-border-size;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+
+      &.btn-icon {
+        padding-bottom: 1px;
+      }
     }
   }
 }

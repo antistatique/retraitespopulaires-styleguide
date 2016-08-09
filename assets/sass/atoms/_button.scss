@@ -35,6 +35,12 @@
   }
 }
 
+.btn-icon {
+  i {
+    font-size: 1.2em;
+  }
+}
+
 .btn-outline {
   @include button-variant($deep-yellow, $transparent, $deep-yellow);
 }
