@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 72 72" enable-background="new 0 0 72 72" xml:space="preserve">
-<g>
-	<path fill="#008F4F" d="M32,4c15.4393,0,28,12.5607,28,28S47.4393,60,32,60S4,47.4393,4,32S16.5607,4,32,4 M32,0
-		C14.3269,0,0,14.3269,0,32s14.3269,32,32,32s32-14.3269,32-32S49.6731,0,32,0L32,0z"/>
-</g>
-<g>
-	<path fill="#008F4F" d="M53.27,51.3163l-2.8262,2.8264l17.1685,17.1687c0.9165,0.9207,2.2056,0.9167,3.1265-0.0039L72,70.0423
-		L53.27,51.3163z"/>
+<!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="XMLID_2_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 700 700" enable-background="new 0 0 700 700" xml:space="preserve">
+<g id="search">
+	<path id="recherche" d="M526.7864,509.1445c47.1826-51.4183,75.9915-119.9692,75.9915-195.2556
+		C602.7778,154.3401,473.4377,25,313.8889,25S25,154.3401,25,313.8889s129.3401,288.8889,288.8889,288.8889
+		c71.2736,0,136.5056-25.826,186.8851-68.6106l134.6149,134.6167c8.2739,8.3115,19.9114,8.2762,28.225-0.0352L675,657.3262
+		L526.7864,509.1445z M61.1111,313.8889c0-139.3823,113.3961-252.7778,252.7778-252.7778s252.7778,113.3955,252.7778,252.7778
+		S453.2706,566.6666,313.8889,566.6666S61.1111,453.2712,61.1111,313.8889z"/>
+	<rect fill="none" width="700" height="700"/>
 </g>
 </svg>

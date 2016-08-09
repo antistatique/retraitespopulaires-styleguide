@@ -4,11 +4,19 @@
   .square {
     position: relative;
     float: left;
-    width: 20%;
+    width: 50%;
     height: 170px;
     background-color: $white;
     border: 1px solid $light-grey;
     text-align: center;
+
+    @media screen and (min-width: 768px) {
+      width: 33%;
+    }
+
+    @media screen and (min-width: 992px) {
+      width: 25%;
+    }
   }
 
   .thebox {
