@@ -363,11 +363,17 @@ body {
 .moodboard .square {
   position: relative;
   float: left;
-  width: 20%;
+  width: 50%;
   height: 170px;
   background-color: #fff;
   border: 1px solid #eee;
   text-align: center; }
+  @media screen and (min-width: 768px) {
+    .moodboard .square {
+      width: 33%; } }
+  @media screen and (min-width: 992px) {
+    .moodboard .square {
+      width: 25%; } }
 
 .moodboard .thebox {
   position: relative;

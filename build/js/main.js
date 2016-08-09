@@ -1,6 +1,45 @@
 'use strict';
 
+(function ($) {
+  $(document).ready(function () {
+    var $body = $('body'),
+        $wrapper = $('.hamburger-wrapper'),
+        $button = $('.hamburger-button'),
+        $navbar = $('.big-menu'),
+        $container = $('.big-menu-container');
+
+    $wrapper.on('click', function () {
+      if ($wrapper.hasClass('active')) {
+        $body.toggleClass('no-scroll');
+        $wrapper.toggleClass('active');
+        $navbar.toggleClass('active');
+      } else {
+        $body.toggleClass('no-scroll');
+        $navbar.css({ 'display': 'block' });
+        $wrapper.toggleClass('active');
+        $navbar.toggleClass('active');
+      }
+    });
+  });
+})(jQuery);
+'use strict';
+
 (function () {})();
+'use strict';
+
+(function ($) {
+  $(document).on('keypress', '.form-group input', function () {
+    var $this = $(this),
+        $group = $this.parents('.form-group'),
+        $label = $group.find('label');
+
+    // Check the label is empty and value isn't
+    if ($this.val().length == 0 && $label.html().length == 0) {
+      $label.toggleClass('label-hidden');
+      $label.html($this.attr('data-title'));
+    }
+  });
+})(jQuery);
 'use strict';
 
 (function ($) {
