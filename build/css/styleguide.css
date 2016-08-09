@@ -4,6 +4,21 @@
 /**
 * Colors Profession
 */
+.color-assurance-vie {
+  color: #cbb900; }
+
+.color-prevoyance-profesionnelle {
+  color: #b35e0a; }
+
+.color-immobilier {
+  color: #b21f16; }
+
+.color-financement {
+  color: #005782; }
+
+.color-gestion {
+  color: #663d07; }
+
 code,
 code[class*='language-'],
 pre[class*='language-'] {
