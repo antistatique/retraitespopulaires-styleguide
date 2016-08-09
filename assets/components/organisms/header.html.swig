@@ -13,4 +13,4 @@ notes: |
   <div class="header-nav">
     {% include '../atoms/hamburger.html.swig' %}
   </div>
-</div>
+</header>

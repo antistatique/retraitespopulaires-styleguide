@@ -3,8 +3,6 @@ title: Overview
 styleguide: true
 permalink: false
 ---
-
-
 <div class="moodboard">
   <div class="row">
     <div class="col-xs-12">

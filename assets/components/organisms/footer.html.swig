@@ -1,0 +1,64 @@
+---
+title: footer
+name: footer
+collection: organisms
+notes: |
+  ##### Usage : `footer`
+---
+<div class="footer">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="spacer"></div>
+      <h2>Contactez-nous</h2>
+      <div class="spacer spacer-sm"></div>
+      <div class="text-large text-cocon text-bold"><a href="tel:+41213482111">021 348 21 11</a></div>
+      <div class="text-large text-cocon text-bold"><a href="mailto:info@retraitespopulaires.ch">info@retraitespopulaires.ch</a></div>
+      <div class="spacer"></div>
+
+      <h4>Agences</h4>
+      <ul class="unstyled-list">
+        <li>
+          Lausanne <a class="pull-right" href="tel:+41213482111">021 348 <strong>21 11</strong></a>
+        </li>
+        <li>
+          Yverdon-les-bains <a class="pull-right" href="tel:+41213482821">021 348 <strong>28 21</strong></a>
+        </li>
+        <li>
+          Nyon <a class="pull-right" href="tel:+41213482020">021 348 <strong>20 20</strong></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-xs-12">
+      <div class="spacer"></div>
+      <h3>Retrouvez-nous sur les réseaux sociaux</h3>
+      <div class="spacer spacer-sm"></div>
+      <ul class="social-list unstyled-list inline-list">
+        <li>
+          <a href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter retraitespopulaires-icon-colored" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/retraitespopulaires" target="_blank">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-facebook retraitespopulaires-icon-colored" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/retraites-populaires" target="_blank">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-linkedin retraitespopulaires-icon-colored" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-youtube retraitespopulaires-icon-colored" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/retraitespopulaires" target="_blank">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram retraitespopulaires-icon-colored" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+      <div class="spacer"></div>
+    </div>
+  </div>
+</div>

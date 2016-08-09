@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-@import 'helper';
 @import 'mixins';
 
 // init:
@@ -35,6 +34,7 @@
 @import 'molecules/big-menu';
 
 // organisms:
+@import 'organisms/footer';
 @import 'organisms/header';
 
 // pages:

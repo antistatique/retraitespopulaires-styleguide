@@ -138,86 +138,10 @@ notes: |
               </div>
             </div>
           </div>
-          <div class="row">
           {% include '../molecules/big-menu-secondary-nav.html.swig' %}
-          </div>
           <div class="big-menu-wrapper-contact">
-            <div class="row big-menu-wrapper-contact-info">
-              <div class="col-md-4">
-                <div class="media">
-                  <a class="media-left" href="tel:+41213482111">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-phone"></i>
-                  </a>
-                  <div class="media-body">
-                    <a href="tel:+41213482111">021 348 21 11</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="media">
-                  <a class="media-left" href="mailto:info@retraitespopulaires.ch">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-mail"></i>
-                  </a>
-                  <div class="media-body">
-                    <a href="mailto:info@retraitespopulaires.ch">info@retraitespopulaires.ch</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 visible-md visible-lg">
-                <ul class="inline-list">
-                  <li><a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-facebook"></i></a></li>
-                  <li><a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter"></i></a></li>
-                  <li><a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram"></i></a></li>
-                  <li><a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-linkedin"></i></a></li>
-                  <li><a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-youtube"></i></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="row big-menu-wrapper-contact-places">
-              <div class="col-md-4">
-                <div class="media">
-                  <a class="media-left" href="#">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-location-pin"></i>
-                  </a>
-                  <div class="media-body">
-                    <h4 class="media-heading">Agence de Lausanne et Siège</h4>
-                    <a href="tel#">021 348 21 11</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="media">
-                  <a class="media-left" href="#">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-location-pin"></i>
-                  </a>
-                  <div class="media-body">
-                    <h4 class="media-heading">Agence d'Yverdon-les-Bains</h4>
-                    <a href="tel#">021 348 28 21</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="media">
-                  <a class="media-left" href="#">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-location-pin"></i>
-                  </a>
-                  <div class="media-body">
-                    <h4 class="media-heading">Agence de Nyon</h4>
-                    <a href="tel#">021 348 20 20</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row big-menu-wrapper-socials visible-xs visible-sm">
-              <div class="col-xs-12">
-                <ul class="inline-list text-center">
-                  <li><a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-facebook"></i></a></li>
-                  <li><a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter"></i></a></li>
-                  <li><a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram"></i></a></li>
-                  <li><a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-linkedin"></i></a></li>
-                  <li><a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-youtube"></i></a></li>
-                </ul>
-              </div>
+            <div class="big-menu-wrapper-footer">
+              {% include '../organisms/footer.html.swig' %}
             </div>
           </div>
         </div>

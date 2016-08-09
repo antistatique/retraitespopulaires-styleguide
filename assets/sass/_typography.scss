@@ -55,6 +55,14 @@ ol {
   font-family: $font-frutiger;
 }
 
+.text-small {
+  font-size: $font-size-small;
+}
+
+.text-large {
+  font-size: $font-size-large;
+}
+
 .text-bold {
   font-weight: 600;
 }
@@ -133,6 +141,12 @@ ul.unordered-list {
       font-size: 0.8em;
       color: $grey;
     }
+  }
+}
+
+ul.social-list {
+  li {
+    padding: 0 1em;
   }
 }
 
@@ -242,6 +256,50 @@ mark {
 i.retraitespopulaires-icon {
   display: inline-block;
   line-height: 0;
+}
+
+i.retraitespopulaires-icon-colored {
+  transition: color 0.25s ease;
+}
+
+.retraitespopulaires-icon-twitter.retraitespopulaires-icon-colored {
+  color: $color-twitter;
+
+  &:hover {
+    color: lighten($color-twitter, 20%);
+  }
+}
+
+.retraitespopulaires-icon-facebook.retraitespopulaires-icon-colored {
+  color: $color-facebook;
+
+  &:hover {
+    color: lighten($color-facebook, 20%);
+  }
+}
+
+.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-colored {
+  color: $color-linkedin;
+
+  &:hover {
+    color: lighten($color-linkedin, 20%);
+  }
+}
+
+.retraitespopulaires-icon-youtube.retraitespopulaires-icon-colored {
+  color: $color-youtube;
+
+  &:hover {
+    color: lighten($color-youtube, 20%);
+  }
+}
+
+.retraitespopulaires-icon-instagram.retraitespopulaires-icon-colored {
+  color: $color-instagram;
+
+  &:hover {
+    color: lighten($color-instagram, 20%);
+  }
 }
 
 /**
