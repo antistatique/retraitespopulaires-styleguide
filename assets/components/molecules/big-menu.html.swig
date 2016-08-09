@@ -4,6 +4,7 @@ name: big-menu
 collection: molecules
 notes: |
   ##### Usage : `big-menu`
+  Ce composant est visible dans le template "<a href="/retraitespopulaires-styleguide/big-menu">Big-Menu</a>"
 ---
 <div class="big-menu active">
   <div class="container-big-menu">
@@ -36,18 +37,18 @@ notes: |
         <div class="col-md-8 big-menu-wrapper-nav">
           <div class="row big-menu-wrapper-professions">
             <div class="col-md-3">
-              <div class="profession-wrapper">
-                <div class="profession-title">
-                  <h3 class="inline-block">
+              <div class="collapse-wrapper">
+                <div class="collapse-title">
+                  <h5 class="inline-block">
                     <a href="#">Assurance vie</a>
-                  </h3>
+                  </h5>
                   <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#assurance-vie" aria-expanded="true" aria-controls="assurance-vie">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-angle"></i>
+                    <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
                   </a>
                   <div class="clearfix"></div>
                 </div>
-                <div id="assurance-vie" class="collapse in">
-                  <ul>
+                <div id="assurance-vie" class="collapse-body collapse in">
+                  <ul class="unordered-list">
                     <li>RP</li>
                     <li>RP</li>
                     <li>RP</li>
@@ -62,18 +63,18 @@ notes: |
               </div>
             </div>
             <div class="col-md-3">
-              <div class="profession-wrapper">
-                <div class="profession-title">
-                  <h3 class="inline-block">
+              <div class="collapse-wrapper">
+                <div class="collapse-title">
+                  <h5 class="inline-block">
                     <a href="#">Prévoyance professionnelle</a>
-                  </h3>
+                  </h5>
                   <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#prevoyance-professionnelle" aria-expanded="false" aria-controls="prevoyance-professionnelle">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-angle"></i>
+                    <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
                   </a>
                   <div class="clearfix"></div>
                 </div>
-                <div id="prevoyance-professionnelle" class="collapse">
-                  <ul>
+                <div id="prevoyance-professionnelle" class="collapse-body collapse">
+                  <ul class="unordered-list">
                     <li>RP</li>
                     <li>RP</li>
                     <li>RP</li>
@@ -88,18 +89,18 @@ notes: |
               </div>
             </div>
             <div class="col-md-3">
-              <div class="profession-wrapper">
-                <div class="profession-title">
-                  <h3 class="inline-block">
+              <div class="collapse-wrapper">
+                <div class="collapse-title">
+                  <h5 class="inline-block">
                     <a href="#">Immobilier</a>
-                  </h3>
+                  </h5>
                   <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#immobilier" aria-expanded="false" aria-controls="immobilier">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-angle"></i>
+                    <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
                   </a>
                   <div class="clearfix"></div>
                 </div>
-                <div id="immobilier" class="collapse">
-                  <ul>
+                <div id="immobilier" class="collapse-body collapse">
+                  <ul class="unordered-list">
                     <li>RP</li>
                     <li>RP</li>
                     <li>RP</li>
@@ -109,18 +110,18 @@ notes: |
               </div>
             </div>
             <div class="col-md-3">
-              <div class="profession-wrapper">
-                <div class="profession-title">
-                  <h3 class="inline-block">
+              <div class="collapse-wrapper">
+                <div class="collapse-title">
+                  <h5 class="inline-block">
                     <a href="#">Financement</a>
-                  </h3>
+                  </h5>
                   <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#financement" aria-expanded="false" aria-controls="financement">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-angle"></i>
+                    <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
                   </a>
                   <div class="clearfix"></div>
                 </div>
-                <div id="financement" class="collapse">
-                  <ul>
+                <div id="financement" class="collapse-body collapse">
+                  <ul class="unordered-list">
                     <li>RP</li>
                     <li>RP</li>
                     <li>RP</li>

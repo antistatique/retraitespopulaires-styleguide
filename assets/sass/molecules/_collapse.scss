@@ -1,0 +1,34 @@
+@charset 'UTF-8';
+
+.collapse-wrapper {
+  border-bottom: 1px solid $input-border;
+}
+
+.collapse-title {
+  padding: 1em 1em 0.8em;
+  transition: background 0.25s ease;
+  cursor: pointer;
+
+  i:before {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+  }
+
+  .collapsed {
+    i:before {
+      transform: rotate(0);
+    }
+  }
+
+  &:hover {
+    background: lighten($grey, 50%);
+  }
+}
+
+.collapse-body {
+  margin: 0;
+
+  ul {
+    padding: 1em;
+  }
+}
