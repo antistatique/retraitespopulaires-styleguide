@@ -9,6 +9,26 @@
   transition: background 0.25s ease;
   cursor: pointer;
 
+  h5 > a {
+    @include pretty-link($link-color);
+
+    &.color-assurance-vie {
+      @include pretty-link($color-assurance-vie);
+    }
+
+    &.color-prevoyance-profesionnelle {
+      @include pretty-link($color-prevoyance-profesionnelle);
+    }
+
+    &.color-financement {
+      @include pretty-link($color-financement);
+    }
+
+    &.color-gestion {
+      @include pretty-link($color-gestion);
+    }
+  }
+
   i {
     padding: 5px;
     background-color: $input-bg-disabled;

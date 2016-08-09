@@ -40,7 +40,7 @@ notes: |
               <div class="collapse-wrapper">
                 <div class="collapse-title">
                   <h5 class="inline-block">
-                    <a href="#">Assurance vie</a>
+                    <a class="color-assurance-vie" href="#">Assurance vie</a>
                   </h5>
                   <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#assurance-vie" aria-expanded="true" aria-controls="assurance-vie">
                     <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
@@ -73,9 +73,9 @@ notes: |
               <div class="collapse-wrapper">
                 <div class="collapse-title">
                   <h5 class="inline-block">
-                    <a href="#">Prévoyance professionnelle</a>
+                    <a class="color-prevoyance-profesionnelle" href="#">Prévoyance professionnelle</a>
                   </h5>
-                  <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#prevoyance-professionnelle" aria-expanded="false" aria-controls="prevoyance-professionnelle">
+                  <a class="inline-block pull-right collapsed" role="button" data-toggle="collapse" href="#prevoyance-professionnelle" aria-expanded="false" aria-controls="prevoyance-professionnelle">
                     <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
                   </a>
                   <div class="clearfix"></div>
@@ -99,9 +99,9 @@ notes: |
               <div class="collapse-wrapper">
                 <div class="collapse-title">
                   <h5 class="inline-block">
-                    <a href="#">Immobilier</a>
+                    <a class="color-immobilier" href="#">Immobilier</a>
                   </h5>
-                  <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#immobilier" aria-expanded="false" aria-controls="immobilier">
+                  <a class="inline-block pull-right collapsed" role="button" data-toggle="collapse" href="#immobilier" aria-expanded="false" aria-controls="immobilier">
                     <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
                   </a>
                   <div class="clearfix"></div>
@@ -120,9 +120,9 @@ notes: |
               <div class="collapse-wrapper">
                 <div class="collapse-title">
                   <h5 class="inline-block">
-                    <a href="#">Financement</a>
+                    <a class="color-financement" href="#">Financement</a>
                   </h5>
-                  <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#financement" aria-expanded="false" aria-controls="financement">
+                  <a class="inline-block pull-right collapsed" role="button" data-toggle="collapse" href="#financement" aria-expanded="false" aria-controls="financement">
                     <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
                   </a>
                   <div class="clearfix"></div>
@@ -141,15 +141,15 @@ notes: |
           <div class="row big-menu-wrapper-shortcuts">
             <div class="col-xs-12">
               <div class="shortcuts-wrapper">
-                <ul class="unstyled-list">
+                <ul class="unordered-list">
                   <li><a href="#">À propos</a></li>
                   <li><a href="#">Contact</a></li>
                   <li><a href="#">Actualités</a></li>
                   <li><a href="#">Press</a></li>
                   <li><a href="#">Emplois</a></li>
                   <li><a href="#">FAQ</a></li>
-                  <li><a href="#" class="btn btn-default">Connexion</a></li>
                 </ul>
+                <a href="#" class="btn btn-default">Connexion</a>
               </div>
             </div>
           </div>
