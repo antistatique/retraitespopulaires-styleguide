@@ -6,30 +6,28 @@ notes: |
   ##### Usage : `secondary-nav`
 ---
 <div class="secondary-nav">
-  <div class="secondary-nav-back">
-    <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-left"></span>
+  <div class="back">
+    <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow"></span>
   </div>
   <div class="secondary-nav-content">
-    <div class="title h2">Assurance Vie</div>
-    <div class="links">
-      <ul class="list-no-style">
-        <li><a href="#">Aliquam placerat</a></li>
-        <li><a href="#">Aliquam placerat</a></li>
-        <li><a href="#">Aliquam placerat</a></li>
-        <li><a href="#">Aliquam placerat</a></li>
-        <li><a href="#">Aliquam placerat</a></li>
-        <li><a href="#">Gestion de mandats</a>
-          <ul class="list-no-style">
-            <li><a href="#">Aliquam placerat</a></li>
-            <li><a href="#">Aliquam placerat</a></li>
-            <li><a href="#">Aliquam placerat</a></li>
-            <li><a href="#">Aliquam placerat</a></li>
-            <li><a href="#">Aliquam placerat</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Aliquam placerat</a></li>
-        <li><a href="#">Aliquam placerat</a></li>
-      </ul>
-    </div>
+    <div class="title h5 text-cocon">Assurance Vie</div>
+    <ul class="links list-no-style list-no-padding">
+      <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
+      <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
+      <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
+      <li class="active"><a class="pretty-link" href="#">Aliquam placerat</a></li>
+      <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
+      <li><a class="pretty-link text-bold" href="#">Gestion de mandats</a>
+        <ul class="list-no-style list-no-padding">
+          <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
+          <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
+          <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
+          <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
+          <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
+        </ul>
+      </li>
+      <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
+      <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
+    </ul>
   </div>
 </div>
