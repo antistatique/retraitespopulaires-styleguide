@@ -9,8 +9,8 @@ id: node.advisor.field_function
 field_name: field_function
 entity_type: node
 bundle: advisor
-label: Function
-description: ''
+label: Titre
+description: 'Par exemple : sous-directrice, directrice'
 required: false
 translatable: false
 default_value: {  }

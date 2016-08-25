@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: News
 type: news
-description: ''
+description: 'Les actualités, bons cadeaux, etc.'
 help: ''
 new_revision: false
 preview_mode: 0

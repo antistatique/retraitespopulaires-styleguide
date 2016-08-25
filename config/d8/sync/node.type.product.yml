@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Product
 type: product
-description: ''
+description: 'Les produits (ex : RP Jeune)'
 help: ''
 new_revision: false
 preview_mode: 0

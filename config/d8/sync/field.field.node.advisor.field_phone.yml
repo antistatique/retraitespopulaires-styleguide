@@ -1,5 +1,5 @@
-uuid: 7fb2762b-df9e-4f71-abcb-221a4ba17e2f
-langcode: fr
+uuid: 1e7ca00b-cf18-4942-b7c1-c4641b953a95
+langcode: en
 status: true
 dependencies:
   config:
@@ -11,7 +11,7 @@ id: node.advisor.field_phone
 field_name: field_phone
 entity_type: node
 bundle: advisor
-label: 'Téléphone number'
+label: 'Numéro de téléphone'
 description: ''
 required: false
 translatable: true

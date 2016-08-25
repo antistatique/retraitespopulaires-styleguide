@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Contact
 type: contact
-description: ''
+description: 'Point de contact (version moins détaillé que l''advisor, ex : adresse de la CPEV)'
 help: ''
 new_revision: false
 preview_mode: 0

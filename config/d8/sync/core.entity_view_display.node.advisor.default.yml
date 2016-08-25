@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.node.advisor.field_cover
     - field.field.node.advisor.field_email
+    - field.field.node.advisor.field_email_form
+    - field.field.node.advisor.field_entity
     - field.field.node.advisor.field_firstname
     - field.field.node.advisor.field_function
     - field.field.node.advisor.field_lastname
@@ -34,6 +36,19 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+  field_email_form:
+    weight: 110
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_entity:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_firstname:
     weight: 103
     label: above

@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.page.field_document
     - field.field.node.page.field_faq
     - field.field.node.page.field_file_page
-    - field.field.node.page.field_management_contracts
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_profil
@@ -68,6 +67,5 @@ hidden:
   field_document: true
   field_faq: true
   field_file_page: true
-  field_management_contracts: true
   field_profil: true
   langcode: true

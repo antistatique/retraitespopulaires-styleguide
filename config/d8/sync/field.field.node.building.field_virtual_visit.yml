@@ -11,7 +11,7 @@ id: node.building.field_virtual_visit
 field_name: field_virtual_visit
 entity_type: node
 bundle: building
-label: 'Virtual visit'
+label: 'Visite(s) virtuelle(s)'
 description: ''
 required: false
 translatable: false

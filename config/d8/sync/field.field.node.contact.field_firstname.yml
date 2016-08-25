@@ -1,0 +1,19 @@
+uuid: 6ef1a6cb-9532-40a8-8c97-71e7f23a849c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_firstname
+    - node.type.contact
+id: node.contact.field_firstname
+field_name: field_firstname
+entity_type: node
+bundle: contact
+label: Prénom
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

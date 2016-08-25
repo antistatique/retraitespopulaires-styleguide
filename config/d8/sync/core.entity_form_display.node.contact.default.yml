@@ -3,35 +3,69 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.contact.field_cover
     - field.field.node.contact.field_email
+    - field.field.node.contact.field_email_form
+    - field.field.node.contact.field_firstname
+    - field.field.node.contact.field_lastname
     - field.field.node.contact.field_phone
-    - field.field.node.contact.field_profil
+    - image.style.thumbnail
     - node.type.contact
   module:
+    - image
+    - path
     - telephone
 id: node.contact.default
 targetEntityType: node
 bundle: contact
 mode: default
 content:
-  field_email:
+  field_cover:
     weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_email:
+    weight: 4
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: email_default
-  field_phone:
+  field_email_form:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+  field_firstname:
     weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_lastname:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_phone:
+    weight: 6
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
-  field_profil:
-    weight: 3
+  path:
+    type: path
+    weight: 7
     settings: {  }
     third_party_settings: {  }
-    type: options_select
   title:
     type: string_textfield
     weight: 0
@@ -42,7 +76,6 @@ content:
 hidden:
   created: true
   langcode: true
-  path: true
   promote: true
   sticky: true
   uid: true

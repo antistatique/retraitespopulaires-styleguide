@@ -10,7 +10,7 @@ field_name: field_email
 entity_type: node
 bundle: advisor
 label: Email
-description: ''
+description: 'E-mail affiché sur l''encart de contact'
 required: false
 translatable: true
 default_value: {  }

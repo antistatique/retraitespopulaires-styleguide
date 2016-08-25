@@ -1,0 +1,19 @@
+uuid: 912bd2ff-32ca-457f-8bd3-b348a15d6d77
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_form
+    - node.type.advisor
+id: node.advisor.field_email_form
+field_name: field_email_form
+entity_type: node
+bundle: advisor
+label: 'Email de contact'
+description: 'Lorsque ce champ est rempli, il permet l''affichage d''un formulaire de contact utilisant cette valeur comme e-mail de contact.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

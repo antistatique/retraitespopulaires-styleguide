@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Partnership
 type: partnership
-description: ''
+description: 'Les partenaires (ex : festival)'
 help: ''
 new_revision: false
 preview_mode: 0

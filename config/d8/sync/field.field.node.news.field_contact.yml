@@ -1,26 +1,26 @@
-uuid: c80f973b-aa96-4243-a6db-60cf420fe9b5
+uuid: b5a4ca09-5b76-4bf0-b09e-e3cf2187a8e4
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_profil
+    - field.storage.node.field_contact
     - node.type.contact
-    - taxonomy.vocabulary.profil
-id: node.contact.field_profil
-field_name: field_profil
+    - node.type.news
+id: node.news.field_contact
+field_name: field_contact
 entity_type: node
-bundle: contact
-label: Profil
+bundle: news
+label: Contact
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      profil: profil
+      contact: contact
     sort:
       field: _none
     auto_create: false

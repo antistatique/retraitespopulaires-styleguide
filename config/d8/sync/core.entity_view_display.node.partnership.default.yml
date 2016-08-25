@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.partnership.body
     - field.field.node.partnership.field_contact
     - field.field.node.partnership.field_cover
-    - field.field.node.partnership.field_date
+    - field.field.node.partnership.field_date_end
+    - field.field.node.partnership.field_date_start
     - field.field.node.partnership.field_latitude
     - field.field.node.partnership.field_longitude
     - field.field.node.partnership.field_partnership
+    - field.field.node.partnership.field_situation
     - field.field.node.partnership.field_web_site
     - node.type.partnership
   module:
@@ -44,8 +46,16 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
-  field_date:
-    weight: 103
+  field_date_end:
+    weight: 110
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+  field_date_start:
+    weight: 109
     label: above
     settings:
       format_type: medium
@@ -79,6 +89,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_situation:
+    weight: 111
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_web_site:
     weight: 105
     label: above

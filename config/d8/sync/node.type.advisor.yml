@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Advisor
+name: Conseiller
 type: advisor
-description: ''
+description: 'Les conseillers (ex : sur page produit et contact)'
 help: ''
 new_revision: false
 preview_mode: 0

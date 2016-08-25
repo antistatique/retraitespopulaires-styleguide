@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.field_advisor
+    - field.field.node.news.field_contact
     - field.field.node.news.field_cover
     - field.field.node.news.field_date
     - field.field.node.news.field_file_news
@@ -14,7 +16,6 @@ dependencies:
     - field.field.node.news.field_present_end_date
     - field.field.node.news.field_profession
     - field.field.node.news.field_profil
-    - field.field.node.news.field_reference
     - field.field.node.news.field_video
     - node.type.news
   module:
@@ -35,6 +36,20 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_advisor:
+    weight: 115
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_contact:
+    weight: 114
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_cover:
     weight: 103
     label: above
@@ -107,17 +122,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_reference:
-    weight: 105
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
   field_video:
     weight: 107
     label: above

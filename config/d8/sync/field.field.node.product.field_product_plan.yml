@@ -10,8 +10,8 @@ id: node.product.field_product_plan
 field_name: field_product_plan
 entity_type: node
 bundle: product
-label: 'Product Plan'
-description: ''
+label: 'Plan du produit'
+description: 'Il suffit de sélectionner le second niveau, l''élément héritera alors de ses parents automatiquement.'
 required: false
 translatable: false
 default_value: {  }

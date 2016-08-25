@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: FAQ
 type: faq
-description: ''
+description: 'Foire aux questions (un type de contenu = question)'
 help: ''
 new_revision: false
 preview_mode: 0

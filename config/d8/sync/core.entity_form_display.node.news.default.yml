@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.field_advisor
+    - field.field.node.news.field_contact
     - field.field.node.news.field_cover
     - field.field.node.news.field_date
     - field.field.node.news.field_file_news
@@ -14,7 +16,6 @@ dependencies:
     - field.field.node.news.field_present_end_date
     - field.field.node.news.field_profession
     - field.field.node.news.field_profil
-    - field.field.node.news.field_reference
     - field.field.node.news.field_video
     - image.style.thumbnail
     - node.type.news
@@ -34,7 +35,7 @@ third_party_settings:
         - field_lastname
         - field_function
       parent_name: ''
-      weight: 11
+      weight: 10
       label: Author
       format_type: details
       format_settings:
@@ -43,6 +44,19 @@ third_party_settings:
         id: ''
         classes: ''
         open: null
+    group_details:
+      children:
+        - field_contact
+        - field_advisor
+      parent_name: ''
+      weight: 11
+      label: 'Linked Contents'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
 id: node.news.default
 targetEntityType: node
 bundle: news
@@ -56,11 +70,16 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
-  created:
-    type: datetime_timestamp
+  field_advisor:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_contact:
     weight: 13
     settings: {  }
     third_party_settings: {  }
+    type: options_select
   field_cover:
     weight: 4
     settings:
@@ -74,7 +93,7 @@ content:
     third_party_settings: {  }
     type: datetime_default
   field_file_news:
-    weight: 10
+    weight: 9
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -120,13 +139,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
-  field_reference:
-    weight: 9
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
   field_video:
     weight: 8
     settings:
@@ -136,7 +148,7 @@ content:
     type: link_default
   path:
     type: path
-    weight: 14
+    weight: 12
     settings: {  }
     third_party_settings: {  }
   title:
@@ -146,15 +158,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 12
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
 hidden:
+  created: true
   langcode: true
   promote: true
   sticky: true
+  uid: true

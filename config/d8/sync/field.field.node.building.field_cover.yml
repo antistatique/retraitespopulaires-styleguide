@@ -18,7 +18,7 @@ id: node.building.field_cover
 field_name: field_cover
 entity_type: node
 bundle: building
-label: 'Cover Image'
+label: 'Image de couverture'
 description: ''
 required: false
 translatable: true

@@ -4,14 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.product.body
-    - field.field.node.product.field_advisor
     - field.field.node.product.field_contact
     - field.field.node.product.field_cover
     - field.field.node.product.field_document
     - field.field.node.product.field_faq
     - field.field.node.product.field_file_product
     - field.field.node.product.field_product_plan
-    - field.field.node.product.field_profil
+    - field.field.node.product.field_profession
     - image.style.thumbnail
     - node.type.product
   module:
@@ -24,7 +23,6 @@ third_party_settings:
   field_group:
     group_attachments:
       children:
-        - field_advisor
         - field_contact
         - field_faq
         - field_document
@@ -51,19 +49,11 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
-  field_advisor:
-    weight: 42
+  field_contact:
+    weight: 43
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_contact:
-    weight: 43
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
   field_cover:
     weight: 1
     settings:
@@ -78,7 +68,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_reference_autocomplete_tags
   field_faq:
     weight: 44
     settings:
@@ -86,26 +76,26 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_reference_autocomplete_tags
   field_file_product:
-    weight: 6
+    weight: 3
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
   field_product_plan:
-    weight: 5
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
-  field_profil:
-    weight: 4
+  field_profession:
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
   path:
     type: path
-    weight: 3
+    weight: 6
     settings: {  }
     third_party_settings: {  }
   title:

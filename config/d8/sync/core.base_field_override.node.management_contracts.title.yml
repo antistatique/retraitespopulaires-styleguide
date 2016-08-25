@@ -1,0 +1,18 @@
+uuid: 836ef951-4079-4766-99c6-946ac06fbea8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.management_contracts
+id: node.management_contracts.title
+field_name: title
+entity_type: node
+bundle: management_contracts
+label: 'Nom de l''entité'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

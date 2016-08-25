@@ -9,9 +9,9 @@ id: node.advisor.field_lastname
 field_name: field_lastname
 entity_type: node
 bundle: advisor
-label: Lastname
+label: 'Nom de famille'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

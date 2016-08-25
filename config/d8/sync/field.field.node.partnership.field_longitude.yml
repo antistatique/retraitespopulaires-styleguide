@@ -10,7 +10,7 @@ field_name: field_longitude
 entity_type: node
 bundle: partnership
 label: Longitude
-description: ''
+description: 'À remplir, avec son tenant <b>Latitude</b>, afin de placer un marqueur sur la Google map.'
 required: false
 translatable: false
 default_value: {  }

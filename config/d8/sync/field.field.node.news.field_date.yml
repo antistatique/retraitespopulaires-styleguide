@@ -11,9 +11,9 @@ id: node.news.field_date
 field_name: field_date
 entity_type: node
 bundle: news
-label: Date
+label: 'Date de publication'
 description: ''
-required: false
+required: true
 translatable: false
 default_value:
   -

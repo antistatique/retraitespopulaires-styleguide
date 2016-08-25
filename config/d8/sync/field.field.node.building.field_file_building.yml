@@ -11,7 +11,7 @@ id: node.building.field_file_building
 field_name: field_file_building
 entity_type: node
 bundle: building
-label: 'File Building'
+label: 'Fichier(s) attaché(s)'
 description: ''
 required: false
 translatable: false

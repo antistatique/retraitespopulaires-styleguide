@@ -1,16 +1,16 @@
-uuid: 1b9cd056-7dac-4e85-8e57-c0f9011acfbb
+uuid: 043a0dc7-274f-4210-965a-46190c409846
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_profil
-    - node.type.building
-    - taxonomy.vocabulary.profil
-id: node.building.field_profil
-field_name: field_profil
+    - field.storage.node.field_profession
+    - node.type.product
+    - taxonomy.vocabulary.profession
+id: node.product.field_profession
+field_name: field_profession
 entity_type: node
-bundle: building
-label: Profil
+bundle: product
+label: Métier
 description: ''
 required: false
 translatable: true
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      profil: profil
+      profession: profession
     sort:
       field: _none
     auto_create: false

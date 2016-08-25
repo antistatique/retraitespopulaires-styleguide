@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.page.field_document
     - field.field.node.page.field_faq
     - field.field.node.page.field_file_page
-    - field.field.node.page.field_management_contracts
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_profil
@@ -76,13 +75,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: file_default
-  field_management_contracts:
-    weight: 9
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_products:
     weight: 8
     label: above

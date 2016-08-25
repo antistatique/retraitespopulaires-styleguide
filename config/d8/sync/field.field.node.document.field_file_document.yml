@@ -11,7 +11,7 @@ id: node.document.field_file_document
 field_name: field_file_document
 entity_type: node
 bundle: document
-label: file_document
+label: 'Fichier attaché'
 description: ''
 required: true
 translatable: false

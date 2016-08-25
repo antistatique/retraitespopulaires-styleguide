@@ -15,7 +15,7 @@ _core:
   default_config_hash: zhtPXoRcC6REiepM0k16zw__FDW5YOXDR6U2WlldTrs
 name: 'Basic page'
 type: page
-description: 'Use <em>basic pages</em> for your static content, such as an ''About us'' page.'
+description: "Base pour la construction de la majorité des pages du futur site. \r\n\r\nOn y intègre un titre, un texte et ensuite nous pouvons construire la page avec d'autres contenus. On peut y ajouter des autres contenus (ex : advisors, products, etc.)"
 help: ''
 new_revision: false
 preview_mode: 0

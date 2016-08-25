@@ -9,7 +9,7 @@ id: node.advisor.field_specialty
 field_name: field_specialty
 entity_type: node
 bundle: advisor
-label: Specialty
+label: Spécialité
 description: ''
 required: false
 translatable: false

@@ -11,7 +11,7 @@ id: node.management_contracts.body
 field_name: body
 entity_type: node
 bundle: management_contracts
-label: Body
+label: Corps
 description: ''
 required: false
 translatable: true

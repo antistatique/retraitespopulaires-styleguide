@@ -11,7 +11,7 @@ id: node.page.field_file_page
 field_name: field_file_page
 entity_type: node
 bundle: page
-label: File
+label: 'Fichier(s) attaché(s)'
 description: ''
 required: false
 translatable: false

@@ -3,36 +3,61 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.contact.field_cover
     - field.field.node.contact.field_email
+    - field.field.node.contact.field_email_form
+    - field.field.node.contact.field_firstname
+    - field.field.node.contact.field_lastname
     - field.field.node.contact.field_phone
-    - field.field.node.contact.field_profil
     - node.type.contact
   module:
+    - image
     - user
 id: node.contact.default
 targetEntityType: node
 bundle: contact
 mode: default
 content:
+  field_cover:
+    weight: 104
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_email:
     weight: 102
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+  field_email_form:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_firstname:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_lastname:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_phone:
     weight: 101
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-  field_profil:
-    weight: 103
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   links:
     weight: 100
 hidden:

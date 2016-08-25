@@ -1,0 +1,18 @@
+uuid: 78ba2199-cd8c-42e6-bce3-1a5d0dc785ec
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.contact
+id: node.contact.title
+field_name: title
+entity_type: node
+bundle: contact
+label: 'Titre d''identification du contact'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

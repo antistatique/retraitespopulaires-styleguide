@@ -11,7 +11,7 @@ id: node.advisor.field_cover
 field_name: field_cover
 entity_type: node
 bundle: advisor
-label: 'Cover Image'
+label: 'Image de couverture'
 description: ''
 required: false
 translatable: false

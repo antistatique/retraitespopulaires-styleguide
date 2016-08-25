@@ -10,7 +10,7 @@ id: node.building.field_city
 field_name: field_city
 entity_type: node
 bundle: building
-label: City
+label: Ville
 description: ''
 required: false
 translatable: false

@@ -10,7 +10,7 @@ id: node.page.field_profession
 field_name: field_profession
 entity_type: node
 bundle: page
-label: Profession
+label: Métier
 description: ''
 required: false
 translatable: true

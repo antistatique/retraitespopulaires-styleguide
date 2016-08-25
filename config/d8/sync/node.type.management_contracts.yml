@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: 'Management contracts'
+name: 'Mandats de gestion'
 type: management_contracts
-description: ''
+description: 'Mandats de gestion tels que CPEV, CIP, ...'
 help: ''
 new_revision: false
 preview_mode: 0

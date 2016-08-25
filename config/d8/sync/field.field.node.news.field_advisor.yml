@@ -1,26 +1,26 @@
-uuid: 9a7836fb-1164-498b-8363-c562ada6e6bf
+uuid: 95346844-e705-4b33-94d4-7d9bd6aac248
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_contact
-    - node.type.contact
-    - node.type.faq
-id: node.faq.field_contact
-field_name: field_contact
+    - field.storage.node.field_advisor
+    - node.type.advisor
+    - node.type.news
+id: node.news.field_advisor
+field_name: field_advisor
 entity_type: node
-bundle: faq
-label: Contact
+bundle: news
+label: Conseiller
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      contact: contact
+      advisor: advisor
     sort:
       field: _none
     auto_create: false

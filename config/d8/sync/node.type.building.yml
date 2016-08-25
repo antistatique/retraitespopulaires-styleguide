@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Building
+name: Construction
 type: building
-description: ''
+description: 'Les constructions que gère Retraites Populaires'
 help: ''
 new_revision: false
 preview_mode: 0

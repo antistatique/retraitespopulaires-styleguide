@@ -11,7 +11,7 @@ id: node.news.body
 field_name: body
 entity_type: node
 bundle: news
-label: Body
+label: Corps
 description: ''
 required: false
 translatable: true

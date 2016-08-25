@@ -1,26 +1,26 @@
-uuid: 5db31453-40d7-46e2-8a86-0238eaf66ac4
+uuid: 12ee01f7-949a-41bf-86ea-10f7ba7eef61
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_profil
-    - node.type.product
-    - taxonomy.vocabulary.profil
-id: node.product.field_profil
-field_name: field_profil
+    - field.storage.node.field_faq_type
+    - node.type.faq
+    - taxonomy.vocabulary.category_faq
+id: node.faq.field_faq_type
+field_name: field_faq_type
 entity_type: node
-bundle: product
-label: Profil
+bundle: faq
+label: 'Catégorie de FAQ'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      profil: profil
+      category_faq: category_faq
     sort:
       field: _none
     auto_create: false

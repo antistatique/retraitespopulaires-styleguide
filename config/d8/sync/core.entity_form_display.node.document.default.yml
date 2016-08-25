@@ -9,6 +9,7 @@ dependencies:
   module:
     - field_group
     - file
+    - path
 third_party_settings:
   field_group:
     group_attachments:
@@ -36,12 +37,14 @@ content:
     type: file_generic
   field_profession:
     weight: 1
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
+  path:
+    type: path
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -52,7 +55,6 @@ content:
 hidden:
   created: true
   langcode: true
-  path: true
   promote: true
   sticky: true
   uid: true

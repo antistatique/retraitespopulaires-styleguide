@@ -4,21 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.node.faq.body
-    - field.field.node.faq.field_contact
+    - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
     - field.field.node.faq.field_profession
-    - field.field.node.faq.field_profil
     - node.type.faq
   module:
     - field_group
     - file
+    - path
     - text
 third_party_settings:
   field_group:
     group_attachments:
       children:
-        - field_contact
-        - field_profil
         - field_profession
         - field_file_faq
       parent_name: ''
@@ -44,27 +42,27 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
-  field_contact:
-    weight: 7
+  field_faq_type:
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_file_faq:
-    weight: 10
+    weight: 29
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
   field_profession:
-    weight: 9
+    weight: 27
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_profil:
-    weight: 8
+  path:
+    type: path
+    weight: 4
     settings: {  }
     third_party_settings: {  }
-    type: options_select
   title:
     type: string_textfield
     weight: 0
@@ -75,7 +73,6 @@ content:
 hidden:
   created: true
   langcode: true
-  path: true
   promote: true
   sticky: true
   translation: true

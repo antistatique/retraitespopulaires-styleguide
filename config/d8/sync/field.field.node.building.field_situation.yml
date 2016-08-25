@@ -11,8 +11,8 @@ id: node.building.field_situation
 field_name: field_situation
 entity_type: node
 bundle: building
-label: Situation
-description: ''
+label: 'Compléments d''information'
+description: 'Utilisé pour indiquer l''adresse complète ou toutes autres informations relatives au lieu.'
 required: false
 translatable: false
 default_value: {  }

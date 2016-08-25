@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.advisor
+  module:
+    - content_translation
 third_party_settings:
   content_translation:
     enabled: false

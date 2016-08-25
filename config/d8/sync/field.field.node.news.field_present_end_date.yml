@@ -11,8 +11,8 @@ id: node.news.field_present_end_date
 field_name: field_present_end_date
 entity_type: node
 bundle: news
-label: 'Present - End Date'
-description: ''
+label: 'Date de fin de promotion'
+description: 'Cette date n''est utilisé que pour les news de type <b>Promo</b> afin de désactiver la promotion en temps voulu.'
 required: false
 translatable: false
 default_value:

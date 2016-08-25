@@ -11,7 +11,7 @@ id: node.news.field_file_news
 field_name: field_file_news
 entity_type: node
 bundle: news
-label: 'File News'
+label: 'Fichier(s) attaché(s)'
 description: ''
 required: false
 translatable: false

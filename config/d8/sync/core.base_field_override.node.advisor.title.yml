@@ -1,0 +1,18 @@
+uuid: fa8be359-53de-4a23-b832-5b7a00a1724b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.advisor
+id: node.advisor.title
+field_name: title
+entity_type: node
+bundle: advisor
+label: 'Titre d''identification du conseiller'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

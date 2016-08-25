@@ -1,18 +1,19 @@
-uuid: 20da0b1b-b348-4eb4-a1e6-39c200c6238d
+uuid: a32e4df1-ead8-4df7-bb87-c33a90cc3cb8
 langcode: fr
 status: true
 dependencies:
   module:
     - node
-id: node.field_management_contracts
-field_name: field_management_contracts
+    - taxonomy
+id: node.field_faq_type
+field_name: field_faq_type
 entity_type: node
 type: entity_reference
 settings:
-  target_type: node
+  target_type: taxonomy_term
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

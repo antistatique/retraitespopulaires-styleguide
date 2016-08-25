@@ -11,7 +11,7 @@ id: node.product.field_file_product
 field_name: field_file_product
 entity_type: node
 bundle: product
-label: 'File Product'
+label: 'Fichier(s) attaché(s)'
 description: ''
 required: false
 translatable: false

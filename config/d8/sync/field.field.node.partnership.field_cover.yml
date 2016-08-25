@@ -18,7 +18,7 @@ id: node.partnership.field_cover
 field_name: field_cover
 entity_type: node
 bundle: partnership
-label: 'Cover Image'
+label: 'Image de couverture'
 description: ''
 required: false
 translatable: true

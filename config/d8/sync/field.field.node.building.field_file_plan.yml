@@ -11,7 +11,7 @@ id: node.building.field_file_plan
 field_name: field_file_plan
 entity_type: node
 bundle: building
-label: 'File Plan'
+label: 'Fichier(s) de plan(s)'
 description: ''
 required: false
 translatable: false

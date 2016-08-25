@@ -11,7 +11,7 @@ id: node.building.body
 field_name: body
 entity_type: node
 bundle: building
-label: Body
+label: Corps
 description: ''
 required: false
 translatable: true
