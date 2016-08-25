@@ -14,7 +14,7 @@
       <ul>
         {% for doc in collections.docs %}
           <li>
-            <a href="/retraitespopulaires-styleguide/{{doc.title}}">{{doc.title}}</a>
+            <a href="/retraitespopulaires-styleguide/{{doc.title|lower}}">{{doc.title}}</a>
           </li>
         {% endfor %}
       </ul>

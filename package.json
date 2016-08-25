@@ -2,6 +2,9 @@
   "name": "@antistatique/retraitespopulaires-styleguide",
   "version": "0.0.31",
   "main": "index.html",
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  },
   "author": {
     "name": "Antistatique",
     "email": "dev@antistatique.net",
