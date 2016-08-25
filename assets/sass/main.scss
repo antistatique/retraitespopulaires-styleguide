@@ -9,6 +9,7 @@
 @import 'bootstrap';
 @import 'layout';
 @import 'typography';
+@import 'themes';
 
 // atoms:
 @import 'atoms/input-text';
@@ -17,6 +18,9 @@
 @import 'atoms/spacer';
 @import 'atoms/funky-waves';
 @import 'atoms/organic-lines';
+@import 'atoms/list';
+@import 'atoms/blockquote';
+@import 'atoms/highlight';
 
 // molecules:
 @import 'molecules/secondary-nav';

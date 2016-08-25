@@ -1,0 +1,55 @@
+@charset 'UTF-8';
+
+/**
+* Colors Profession
+*/
+
+$themes: (
+  assurance: $deep-yellow,
+  prevoyance: $deep-orange,
+  immobilier: $deep-red,
+  hypotheque: $deep-blue,
+  institution: $deep-purle,
+  institutionnel: $deep-brown,
+  profelia: $deep-green,
+  cpev: $light-green,
+  cip: $light-blue,
+);
+
+/**
+* Text colors
+*/
+
+@each $label, $color in $themes {
+  .text-#{$label} {
+    color: $color;
+  }
+}
+
+/**
+* Links
+*/
+
+/* stylelint-disable no-duplicate-selectors */
+/* Make the code unreadable otherwise */
+
+p a,
+a.pretty-link {
+  @include pretty-link($link-color);
+}
+
+a.pretty-link-white {
+  @include pretty-link($white, $green);
+}
+
+@each $label, $color in $themes {
+  .text-#{$label},
+  a.text-#{$label} {
+    &.pretty-link,
+    a.pretty-link {
+      @include pretty-link($color, $white, $color);
+    }
+  }
+}
+
+/* stylelint-enable */
