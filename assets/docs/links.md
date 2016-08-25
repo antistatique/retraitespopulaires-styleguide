@@ -6,6 +6,8 @@ styleguide: true
 
 <h1>Themed links</h1>
 
+<p>The styleguide provides an fancy way to create perfect themed links:</p>
+
 <div><a href="#" class="pretty-link">Normal</a></div>
 
 <div><a href="#" class="pretty-link text-assurance">Assurance</a></div>
