@@ -200,32 +200,6 @@ blockquote {
 }
 
 /**
-* Table
-*/
-
-table {
-  border-collapse: collapse;
-  border: 1px solid $deep-yellow;
-
-  thead {
-    background: $deep-yellow;
-    color: $white;
-
-    th {
-      padding: $grid-gutter-width / 4 $grid-gutter-width / 2;
-      font-weight: 400;
-    }
-  }
-
-  th,
-  td {
-    text-align: left;
-    padding: $grid-gutter-width / 2;
-    border: 1px solid $deep-yellow;
-  }
-}
-
-/**
 * Highlight
 */
 

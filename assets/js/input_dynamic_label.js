@@ -1,6 +1,7 @@
-'use strict';
+import $ from 'jquery';
 
-(function($){
+export function input_dynamic_label () {
+
   $(document).on('keypress', '.form-group input', function() {
     let $this = $(this),
         $group = $this.parents('.form-group'),
@@ -12,4 +13,5 @@
       $label.html($this.attr('data-title'));
     }
   });
-})(jQuery);
+
+}

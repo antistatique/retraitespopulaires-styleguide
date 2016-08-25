@@ -21,7 +21,8 @@
     "bootstrap-sass": "~3.3.5",
     "font-awesome": "^4.6.3",
     "html5shiv": "^3.7.3",
-    "respond.js": "^1.4.2"
+    "respond.js": "^1.4.2",
+    "tablesaw": "2.0.1"
   },
   "devDependencies": {
     "async": "^2.0.0-rc.2",

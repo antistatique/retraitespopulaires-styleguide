@@ -1,11 +1,10 @@
-'use strict';
+import $ from 'jquery';
+
+export function organic_lines () {
+  $('.organic-lines').organicJS();
+}
 
 (function($){
-
-  // Init
-  $(function() {
-    $('.organic-lines').organicJS();
-  });
 
   // jQuery Object
   $.OrganicJS = function(el, options){

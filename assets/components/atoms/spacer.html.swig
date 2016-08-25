@@ -4,6 +4,5 @@ name: spacer
 collection: atoms
 notes: |
   ##### Usage : `spacer`
-  ##### Options :
-  - **option** - Type
 ---
+<div class="spacer"></div>

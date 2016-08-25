@@ -8,3 +8,23 @@
 }
 
 .list-inline li { display: inline-block; }
+
+/**
+* Angles
+*/
+
+.angle {
+  display: inline-block;
+
+  &.angle-down {
+    transform: rotate(45deg);
+  }
+
+  &.angle-up {
+    transform: rotate(-45deg);
+  }
+
+  &.angle-force-top {
+    transform: rotate(-90deg);
+  }
+}
