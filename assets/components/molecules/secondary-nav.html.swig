@@ -7,7 +7,7 @@ notes: |
 ---
 <div class="secondary-nav">
   <div class="back">
-    <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow"></span>
+    <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-arrow"></a>
   </div>
   <div class="secondary-nav-content">
     <div class="title h5 text-cocon">Assurance Vie</div>
