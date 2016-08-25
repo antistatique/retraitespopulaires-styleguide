@@ -2,7 +2,7 @@
 
 .form-control {
   height: auto;
-  padding: 12px;
+  padding: 0.7em;
   border-width: $input-border-size;
   font-family: $font-cocon;
   box-shadow: none;
@@ -26,8 +26,8 @@
   margin-top: 20px;
 
   label {
-    margin-left: 10px;
-    margin-bottom: 4px;
+    margin-left: 0.8em;
+    margin-bottom: 0.3em;
     font-family: $font-frutiger;
     font-size: ceil($font-size-h6 * 0.8);
     font-weight: 200;
@@ -44,7 +44,7 @@
   legend {
     display: inline-block;
     max-width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 0.5em;
     border: 0;
     font-size: $font-size-base;
     font-weight: 800;
@@ -52,8 +52,8 @@
   }
 
   .input-error-desc {
-    padding-top: 8px;
-    padding-left: 10px;
+    padding-top: 0.5em;
+    padding-left: 0.8em;
     font-family: $font-frutiger;
     font-size: ceil($font-size-h6 * 0.8);
     font-weight: 700;
@@ -113,13 +113,13 @@
     z-index: 10;
 
     > .btn {
-      padding-bottom: 10px;
+      padding-bottom: 0.5em;
       border-radius: $btn-border-radius-base - $input-border-size;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
 
       &.btn-icon {
-        padding-bottom: 5px;
+        padding-bottom: 0.2em;
       }
     }
   }
