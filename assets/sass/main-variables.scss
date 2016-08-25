@@ -26,4 +26,5 @@ $light-blue: #00a3e3;
 
 // forms
 $input-bg-focus: $white;
-$input-border-size: 2px;
+$input-border-disabled: lighten($grey, 50%);
+$input-border-size: 1px;

@@ -6,6 +6,7 @@
   border-width: $input-border-size;
   font-family: $font-cocon;
   line-height: 0.8em;
+  box-shadow: none;
 
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
@@ -70,7 +71,9 @@
 
   &.readonly {
     .form-control {
+      color: $input-color-placeholder;
       background: $input-bg-disabled;
+      border-color: $input-border-disabled;
     }
   }
 }

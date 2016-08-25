@@ -4,10 +4,8 @@ name: table
 collection: molecules
 notes: |
   ##### Usage : `table`
-  ##### Options :
-  - **size** - String
 ---
-<table class="{{size}}">
+<table class="table-wide tablesaw tablesaw-stack" data-tablesaw-mode="stack">
  <thead>
   <tr>
      <th>Option 1</th>
