@@ -18,7 +18,7 @@ ul.unordered-list {
   margin-left: $grid-gutter-width / 2;
 
   > ul {
-    padding-left: 1.3em;
+    padding-left: 0.4em;
   }
 
   > li {
@@ -41,7 +41,7 @@ ol.ordered-list {
   counter-reset: item;
 
   > ol {
-    padding-left: 1em;
+    padding-left: 1.5em;
   }
 
   > li {
@@ -50,6 +50,7 @@ ol.ordered-list {
 
     &:before {
       content: counter(item) '. ';
+      margin-right: 0.5em;
       counter-increment: item;
       color: $grey;
     }
