@@ -71,9 +71,9 @@
 
   &.readonly {
     .form-control {
-      color: $input-color-placeholder;
       background: $input-bg-disabled;
       border-color: $input-border-disabled;
+      color: $input-color-placeholder;
     }
   }
 }
