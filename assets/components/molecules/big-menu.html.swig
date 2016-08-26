@@ -42,12 +42,12 @@ notes: |
                   <h5 class="inline-block">
                     <a class="color-assurance-vie" href="#">Assurance vie</a>
                   </h5>
-                  <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#assurance-vie" aria-expanded="true" aria-controls="assurance-vie">
+                  <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#collapse-assurance-vie" aria-expanded="true" aria-controls="collapse-assurance-vie">
                     <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
                   </a>
                   <div class="clearfix"></div>
                 </div>
-                <div id="assurance-vie" class="collapse-body collapse in">
+                <div id="collapse-assurance-vie" class="collapse-body collapse in">
                   <ul class="unordered-list treeview-list">
                     <li><a class="pretty-link" href="#">Lien</a></li>
                     <li><a class="pretty-link" href="#">Lien</a></li>

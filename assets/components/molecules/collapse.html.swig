@@ -17,15 +17,15 @@ notes: |
   </div>
   <div id="assurance-vie" class="collapse-body collapse in">
     <ul class="unordered-list">
-      <li>RP</li>
-      <li>RP</li>
-      <li>RP</li>
-      <li>RP</li>
-      <li>RP</li>
-      <li>RP</li>
-      <li>RP</li>
-      <li>RP</li>
-      <li>RP</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
     </ul>
   </div>
 </div>
