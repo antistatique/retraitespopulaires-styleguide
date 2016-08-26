@@ -4,8 +4,10 @@ name: card-attachement
 collection: molecules
 notes: |
   ##### Usage : `card-attachement`
+  ##### Options :
+  - **theme** - String
 ---
-<div class="card-attachement shadow shadow-down">
+<div class="card-attachement card-attachement-{{theme}} shadow shadow-down">
   <div class="card-title h2">Questions fréquentes</div>
   <ul class="card-content list-unstyled">
     <li><a class="text-bold pretty-link" href="#">Interdum et.</a></li>
