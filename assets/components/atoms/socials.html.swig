@@ -5,7 +5,7 @@ collection: atoms
 notes: |
   ##### Usage : `socials`
 ---
-<ul class="social-list unstyled-list inline-list">
+<ul class="social-list list-no-style list-inline">
   <li>
     <a href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter retraitespopulaires-icon-colored" aria-hidden="true"></i></a>
   </li>

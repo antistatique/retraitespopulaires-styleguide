@@ -16,7 +16,7 @@ notes: |
       <div class="spacer"></div>
 
       <h4>Agences</h4>
-      <ul class="unstyled-list">
+      <ul class="list-no-style">
         <li>
           Lausanne <a class="pull-right" href="tel:+41213482111">021 348 <strong>21 11</strong></a>
         </li>
