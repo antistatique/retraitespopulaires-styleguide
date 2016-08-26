@@ -1,7 +1,14 @@
 import $ from 'jquery';
 
-export function organic_lines () {
+export function organic_generate () {
   $('.organic-lines').organicJS();
+}
+
+export function organic_attachements () {
+  const $attachments = $('.attachements-wrapper'),
+        $organic = $('.attachements-wrapper .organic-lines');
+
+  // $('.organic-lines').css({ 'margin-top': '-' + $attachments.height / 2});
 }
 
 (function($){

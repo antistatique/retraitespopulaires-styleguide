@@ -1,6 +1,8 @@
 @charset 'UTF-8';
 
 .organic-lines {
+  width: 100%;
+
   .organicjs-container {
     position: relative;
     width: 100%;
@@ -11,6 +13,10 @@
       position: absolute;
       top: 0;
       left: 0;
+
+      path {
+        stroke: $brand-primary;
+      }
     }
 
     .path-small,
@@ -20,6 +26,14 @@
 
     .path-small {
       top: 20px;
+    }
+  }
+
+  @each $label, $color in $themes {
+    .lines-#{$label} {
+      path {
+        stroke: $color;
+      }
     }
   }
 }

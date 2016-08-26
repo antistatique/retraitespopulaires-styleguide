@@ -30,3 +30,24 @@
     transform: rotate(-90deg);
   }
 }
+
+/**
+* Alignments of blocks
+*/
+
+.align-h {
+  margin: 0 auto;
+}
+
+.align-v {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.align-vh {
+  position: relative;
+  top: 50%;
+  margin: 0 auto;
+  transform: translateY(-50%);
+}

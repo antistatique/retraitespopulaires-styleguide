@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+.attachements-wrapper {
+  position: relative;
+}
+
+.attachements-wrapper > .container {
+  z-index: 10;
+}
+
+.attachements-wrapper > .organic-lines {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
