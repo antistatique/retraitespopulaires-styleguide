@@ -106,7 +106,7 @@ notes: |
           <li><a href="#" class="pretty-link">Impressum</a></li>
           <li><a href="#" class="pretty-link">Mentions juridiques</a></li>
           <li><a href="#" class="pretty-link">Glossaire</a></li>
-          <li>Résalisation:<a class="signature" href="#" class="pretty-link"> Antistatique</a></li>
+          <li>Résalisation: <a class="signature pretty-link" href="#">Antistatique</a></li>
         </ul>
       </div>
     </div>
