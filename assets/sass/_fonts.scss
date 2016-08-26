@@ -7,11 +7,17 @@ $font-frutiger: 'Frutiger Neue', helvetica, arial, sans-serif;
 $font-cocon: 'Cocon Pro', helvetica, arial, sans-serif;
 
 .text-frutiger {
-  font-family: $font-frutiger;
+  /* stylelint-disable declaration-no-important */
+  /* Need it to override */
+  font-family: $font-frutiger !important;
+  /* stylelint-enable declaration-no-important */
 }
 
 .text-cocon {
-  font-family: $font-cocon;
+  /* stylelint-disable declaration-no-important */
+  /* Need it to override */
+  font-family: $font-cocon !important;
+  /* stylelint-enable declaration-no-important */
 }
 
 @font-face {

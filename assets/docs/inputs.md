@@ -40,6 +40,16 @@ styleguide: true
   </div>
 </div>
 
+<div class="form-group readonly">
+  <label>Groupe - Icône - Read-only</label>
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Chercher un produit, un document, un contact, ..." readonly>
+    <span class="input-group-btn">
+      <button class="btn btn-default btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
+    </span>
+  </div>
+</div>
+
 <div class="form-group">
   <label>Groupe - Icône</label>
   <div class="input-group">

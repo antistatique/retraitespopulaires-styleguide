@@ -14,10 +14,12 @@ permalink: false
         <div class="f-color-chip" style="border-top-color: #008e4f; border-bottom-color: #008e4f;">
           <h5 class="">$green</h5>
           <h5 class="">#008e4f</h5>
+          <code>.brand-primary</code>
         </div>
         <div class="f-color-chip" style="border-top-color: #747476; border-bottom-color: #747476;">
           <h5 class="">$grey</h5>
           <h5 class="">#747476</h5>
+          <code>.text-muted</code>
         </div>
         <div class="f-color-chip" style="border-top-color: #eee; border-bottom-color: #eee;">
           <h5 class="">$light-grey</h5>
@@ -35,22 +37,27 @@ permalink: false
         <div class="f-color-chip" style="border-top-color: #cbb900; border-bottom-color: #cbb900;">
           <h5 class="">$deep-yellow</h5>
           <h5 class="">#cbb900</h5>
+          <code>.x-assurance</code>
         </div>
         <div class="f-color-chip" style="border-top-color: #b35e0a; border-bottom-color: #b35e0a;">
           <h5 class="">$deep-orange</h5>
           <h5 class="">#b35e0a</h5>
+          <code>.x-prevoyance</code>
         </div>
         <div class="f-color-chip" style="border-top-color: #b21f16; border-bottom-color: #b21f16;">
           <h5 class="">$deep-red</h5>
           <h5 class="">#b21f16</h5>
+          <code>.x-immobilier</code>
         </div>
         <div class="f-color-chip" style="border-top-color: #005782; border-bottom-color: #005782;">
           <h5 class="">$deep-blue</h5>
           <h5 class="">#005782</h5>
+          <code>.x-hypotheque</code>
         </div>
         <div class="f-color-chip" style="border-top-color: #5d004a; border-bottom-color: #5d004a;">
           <h5 class="">$deep-purle</h5>
           <h5 class="">#5d004a</h5>
+          <code>.x-institution</code>
         </div>
       </div>
     </div>
@@ -64,18 +71,22 @@ permalink: false
         <div class="f-color-chip" style="border-top-color: #663d07; border-bottom-color: #663d07;">
           <h5 class="">$deep-brown</h5>
           <h5 class="">#663d07</h5>
+          <code>.x-institutionnel</code>
         </div>
         <div class="f-color-chip" style="border-top-color: #009966; border-bottom-color: #009966;">
           <h5 class="">$deep-green</h5>
           <h5 class="">#009966</h5>
+          <code>.x-profelia</code>
         </div>
         <div class="f-color-chip" style="border-top-color: #00a261; border-bottom-color: #00a261;">
           <h5 class="">$light-green</h5>
           <h5 class="">#00a261</h5>
+          <code>.x-cpev</code>
         </div>
         <div class="f-color-chip" style="border-top-color: #00a3e3; border-bottom-color: #00a3e3;">
           <h5 class="">$light-blue</h5>
           <h5 class="">#00a3e3</h5>
+          <code>.x-cip</code>
         </div>
       </div>
     </div>

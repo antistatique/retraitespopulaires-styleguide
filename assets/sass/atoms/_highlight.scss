@@ -1,0 +1,9 @@
+@charset 'UTF-8';
+
+/**
+* Highlight
+*/
+
+mark {
+  background-color: lighten($link-color, 25%);
+}

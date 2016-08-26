@@ -1,0 +1,82 @@
+@charset 'UTF-8';
+
+.secondary-nav {
+  position: relative;
+
+  .back {
+    position: absolute;
+    top: 0;
+    width: $grid-gutter-width * 1.5;
+    min-height: $grid-gutter-width * 4;
+    padding-top: $grid-gutter-width / 2;
+    background: $brand-primary;
+    text-align: center;
+
+    .retraitespopulaires-icon {
+      display: block;
+      color: $white;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.secondary-nav-content {
+  display: block;
+  margin-left: $grid-gutter-width * 1.5;
+  border: 1px solid $ligthen-grey;
+
+  /* Small Devices, Tablets */
+  @media only screen and (min-width: 768px) {
+    display: inline-block;
+  }
+
+  .title {
+    padding: $grid-gutter-width / 1.5;
+    border-bottom: 1px solid $ligthen-grey;
+    color: $brand-primary;
+  }
+
+  .links li {
+    padding: 8px $grid-gutter-width / 1.5;
+
+    a.pretty-link {
+      @include pretty-link($text-color, $white, $link-color);
+    }
+
+    &.active {
+      background-color: $brand-primary;
+
+      a.pretty-link {
+        @include pretty-link($white, $brand-primary, $white);
+      }
+    }
+  }
+}
+
+/**
+* Themes
+*/
+
+@each $label, $color in $themes {
+  .secondary-nav-#{$label} {
+    .back {
+      background: $color;
+    }
+
+    .secondary-nav-content .title {
+      color: $color;
+    }
+
+    .secondary-nav-content li a.pretty-link {
+      @include pretty-link($text-color, $white, $color);
+    }
+
+    .secondary-nav-content li.active {
+      background-color: $color;
+
+      a.pretty-link {
+        @include pretty-link($white, $color, $white);
+      }
+    }
+  }
+}
