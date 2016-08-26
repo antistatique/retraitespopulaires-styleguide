@@ -36,10 +36,10 @@ $themes: (
 p a,
 a.pretty-link {
   @include pretty-link($link-color);
-}
 
-a.pretty-link-white {
-  @include pretty-link($white, $green);
+  &.pretty-link-white {
+    @include pretty-link($white, $green);
+  }
 }
 
 @each $label, $color in $themes {

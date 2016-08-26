@@ -3,8 +3,6 @@ title: Overview
 styleguide: true
 permalink: false
 ---
-
-
 <div class="moodboard">
   <div class="row">
     <div class="col-xs-12">
@@ -372,6 +370,12 @@ permalink: false
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-oblique"></i>
             <div class="text-muted">.retraitespopulaires-icon-arrow-oblique</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i>
+            <div class="text-muted">.retraitespopulaires-icon-lock</div>
           </div>  
         </div>
       </div>

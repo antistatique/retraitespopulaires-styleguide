@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+
+.button-bubble {
+  .bubble-icon {
+    display: inline-block;
+    padding: 1.5em 1.6em;
+    background: $green;
+    border: 1px solid $green;
+    border-radius: 4em;
+    line-height: 0;
+    cursor: pointer;
+
+    i {
+      color: $white;
+    }
+  }
+
+  .bubble-link {
+    margin-top: 10px;
+  }
+
+}
+
+.button-bubble-white {
+  .bubble-icon {
+    background: $white;
+    border: 1px solid $white;
+
+    i {
+      color: $green;
+    }
+  }
+}
