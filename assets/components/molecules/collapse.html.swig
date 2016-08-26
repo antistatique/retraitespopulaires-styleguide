@@ -10,7 +10,7 @@ notes: |
     <h5 class="inline-block">
       <a href="#">Assurance vie</a>
     </h5>
-    <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#assurance-vie" aria-expanded="true" aria-controls="assurance-vie">
+    <a class="inline-block pull-right collapse-button" role="button" data-toggle="collapse" href="#assurance-vie" aria-expanded="true" aria-controls="assurance-vie">
       <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
     </a>
     <div class="clearfix"></div>

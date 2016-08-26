@@ -12,29 +12,23 @@
   h5 > a {
     @include pretty-link($link-color);
 
-    &.color-assurance-vie {
-      @include pretty-link($color-assurance-vie);
-    }
-
-    &.color-prevoyance-profesionnelle {
-      @include pretty-link($color-prevoyance-profesionnelle);
-    }
-
-    &.color-financement {
-      @include pretty-link($color-financement);
-    }
-
-    &.color-gestion {
-      @include pretty-link($color-gestion);
+    @each $label, $color in $themes {
+      .text-#{$label} {
+        @include pretty-link($color);
+      }
     }
   }
 
-  i {
+  .collapse-button {
     padding: 5px;
     background-color: $input-bg-disabled;
     border-radius: $border-radius-base;
     line-height: 0;
     transition: background 0.5s ease;
+
+    &:hover {
+      background: $white;
+    }
   }
 
   i:before {
@@ -50,10 +44,6 @@
 
   &:hover {
     background: lighten($grey, 50%);
-
-    i {
-      background-color: $white;
-    }
   }
 }
 
