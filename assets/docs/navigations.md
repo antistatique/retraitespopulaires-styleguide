@@ -5,7 +5,7 @@ styleguide: true
 ---
 <h1>Secondary Navigations</h1>
 <div class="row">
-  <div class="col-xs-6">
+  <div class="col-sm-6">
     <h2>Primary</h2>
     <div class="secondary-nav secondary-nav">
       <div class="back">
@@ -34,7 +34,7 @@ styleguide: true
       </div>
     </div>
   </div>
-  <div class="col-xs-6">
+  <div class="col-sm-6">
     <h2>Themed</h2>
     <div class="secondary-nav secondary-nav-assurance">
       <div class="back">
