@@ -13,8 +13,8 @@
     @include pretty-link($link-color);
 
     @each $label, $color in $themes {
-      .text-#{$label} {
-        @include pretty-link($color);
+      &.text-#{$label} {
+        @include pretty-link($color, $white, $color);
       }
     }
   }
