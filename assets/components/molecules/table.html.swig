@@ -6,8 +6,9 @@ notes: |
   ##### Usage : `table`
   ##### Options :
   - **size** - String
+  - **theme** - String
 ---
-<table class="table-{{size}} tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+<table class="table-{{size}} table-{{theme}} tablesaw tablesaw-stack" data-tablesaw-mode="stack">
  <thead>
   <tr>
      <th><strong>Entête importante</strong></th>
