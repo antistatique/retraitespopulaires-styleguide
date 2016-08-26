@@ -6,7 +6,7 @@ notes: |
   ##### Usage : `big-menu`
   Ce composant est visible dans le template "<a href="/retraitespopulaires-styleguide/big-menu">Big-Menu</a>"
 ---
-<div class="big-menu active">
+<div class="big-menu">
   <div class="container-big-menu">
     <div class="container">
       <div class="row">
