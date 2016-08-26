@@ -72,23 +72,11 @@ notes: |
           </div>
         </form>
       </div>
-      <div class="col-xs-12 col-md-5 col-md-offset-1">
-      <div class="text-large text-cocon text-bold"><a href="tel:+41213482111">021 348 21 11</a></div>
-      <div class="text-large text-cocon text-bold"><a href="mailto:info@retraitespopulaires.ch">info@retraitespopulaires.ch</a></div>
-      <div class="spacer"></div>
 
-      <h4>Agences</h4>
-      <ul class="list-no-style">
-        <li>
-          Lausanne <a class="pull-right" href="tel:+41213482111">021 348 <strong>21 11</strong></a>
-        </li>
-        <li>
-          Yverdon-les-bains <a class="pull-right" href="tel:+41213482821">021 348 <strong>28 21</strong></a>
-        </li>
-        <li>
-          Nyon <a class="pull-right" href="tel:+41213482020">021 348 <strong>20 20</strong></a>
-        </li>
-      </ul>
+      <div class="col-xs-12 col-md-5 col-md-offset-1">
+        <p>Contactez-nous</p>
+        {% include '../molecules/tabs.html.swig' %}
+        <a href="mailto:info@retraitespopulaires.ch" class="text-large">info@retraitespopulaires.ch</a>
       </div>
     </div>
   </div>

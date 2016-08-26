@@ -1,0 +1,117 @@
+@charset 'UTF-8';
+
+.nav-tabs {
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid $ligthen-grey;
+  text-align: center;
+  font-size: 0;
+  font-weight: 500;
+
+  li {
+    display: inline-block;
+    margin: 0 5px -2px;
+    font-size: $font-size-base;
+    cursor: pointer;
+    transition:
+      color 0.25s,
+      border 0.25s;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:lst-child {
+      margin-right: 0;
+    }
+
+    > a {
+      margin: 0;
+      padding: $grid-gutter-width / 8 0;
+      border: 0;
+      color: $black;
+      font-weight: 700;
+
+      &:hover {
+        background: none;
+      }
+    }
+
+    &:hover {
+      border-bottom: 3px solid $black;
+    }
+
+    &.active {
+      border-bottom: 3px solid $black;
+
+      &:hover {
+        border: 0;
+        border-bottom: 3px solid $black;
+      }
+
+      > a:focus,
+      &:hover > a,
+      > a {
+        border: 0;
+        color: $black;
+      }
+    }
+  }
+/*
+  li {
+    display: inline-block;
+    margin-bottom: -2px;
+    padding: 0;
+    border: 0;
+    font-size: $font-size-base;
+    cursor: pointer;
+
+    &:first-child() {
+      > a { padding-left: 0; }
+    }
+
+    > a {
+      display: block;
+      padding: ($grid-gutter-width / 2);
+      border: 0;
+      border-bottom: 2px solid transparent;
+      transition:
+        color 0.3s,
+        border 0.3s;
+
+      &:hover,
+      &:focus {
+        background: none;
+        border: 0;
+        text-decoration: none;
+      }
+    }
+
+    &.active {
+      cursor: pointer;
+
+      > a {
+        border: 0;
+        border-bottom: 1px solid $link-hover-color;
+        color: $link-hover-color;
+      }
+
+      > a:hover,
+      > a:focus {
+        background: none;
+        border: 0;
+        text-decoration: none;
+        border-bottom-color: $link-hover-color;
+      }
+    }
+  }
+  */
+}
+
+.tab-pane {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
