@@ -40,4 +40,16 @@
       color: $black;
     }
   }
+
+  @each $label, $color in $themes {
+    &.card-attachement-#{$label} {
+      a.pretty-link {
+        @include pretty-link($black, $white, $color);
+      }
+
+      .media-left a {
+        color: $color;
+      }
+    }
+  }
 }
