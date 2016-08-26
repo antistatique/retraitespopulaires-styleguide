@@ -1,0 +1,43 @@
+@charset 'UTF-8';
+
+.card-attachement {
+  width: 100%;
+  background: $white;
+  border: 1px solid $ligthen-grey;
+  border-radius: $border-radius-large;
+
+  .card-title {
+    padding: $grid-gutter-width;
+    color: $grey;
+  }
+
+  .card-content {
+    margin-bottom: $grid-gutter-width;
+    padding: 0 $grid-gutter-width;
+
+    li {
+      margin: $grid-gutter-width / 1.5 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a.pretty-link {
+      color: $black;
+    }
+  }
+
+  .card-footer {
+    padding: $grid-gutter-width;
+    background: $ligthen-grey;
+
+    a.pretty-link {
+      color: $black;
+    }
+  }
+}
