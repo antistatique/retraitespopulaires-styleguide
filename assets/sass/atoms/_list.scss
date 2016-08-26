@@ -36,6 +36,10 @@ ul.unordered-list {
       color: $grey;
     }
   }
+
+  &.list-inline li {
+    margin-right: $grid-gutter-width / 2;
+  }
 }
 
 ul.treeview-list {

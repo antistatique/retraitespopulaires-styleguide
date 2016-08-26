@@ -1,6 +1,8 @@
 @charset 'UTF-8';
 
 .button-bubble {
+  margin: 0 $grid-gutter-width / 2;
+
   .bubble-icon {
     display: inline-block;
     padding: 1.5em 1.6em;
@@ -21,13 +23,17 @@
 
 }
 
-.button-bubble-white {
+.button-bubble-social {
+  .bubble-icon {
+    i {
+      color: inherit;
+    }
+  }
+}
+
+.button-bubble-outline {
   .bubble-icon {
     background: $white;
-    border: 1px solid $white;
-
-    i {
-      color: $green;
-    }
+    border: 1px solid $green;
   }
 }
