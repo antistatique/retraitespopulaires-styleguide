@@ -5,7 +5,7 @@
 <!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
-    <meta charset="utstyleguide-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title></title>
     <meta name="description" content="">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/retraitespopulaires-styleguide/build/css/main.css">
 
     <!--[if lt IE 9]>
-      <script src="/retraitespopulaires-styleguide/build/js/polyfills.min.js"></script>
+      <script src="/build/js/polyfills.min.js"></script>
     <![endif]-->
   </head>
   <body>
@@ -93,6 +93,29 @@
     </li>
 
     <li>
+      <span class="styleguide-menu-heading">Examples</span>
+      <ul>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/cards">cards</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/links">links</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/navigations">navigations</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/tables">tables</a>
+          </li>
+        
+      </ul>
+    </li>
+
+    <li>
       <a href="/retraitespopulaires-styleguide/atoms/" class="styleguide-menu-heading">Atoms</a>
       <ul>
         
@@ -101,31 +124,59 @@
           </li>
         
           <li>
-            <a href="/retraitespopulaires-styleguide/atoms/#atom2">button</a>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom2">blockquote</a>
           </li>
         
           <li>
-            <a href="/retraitespopulaires-styleguide/atoms/#atom3">funky-waves</a>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom3">button</a>
           </li>
         
           <li>
-            <a href="/retraitespopulaires-styleguide/atoms/#atom4">hamburger</a>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom4">button-bubble</a>
           </li>
         
           <li>
-            <a href="/retraitespopulaires-styleguide/atoms/#atom5">input-text</a>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom5">funky-waves</a>
           </li>
         
           <li>
-            <a href="/retraitespopulaires-styleguide/atoms/#atom6">logo-retraitespopulaires</a>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom6">hamburger</a>
           </li>
         
           <li>
-            <a href="/retraitespopulaires-styleguide/atoms/#atom7">organic-lines</a>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom7">highlight</a>
           </li>
         
           <li>
-            <a href="/retraitespopulaires-styleguide/atoms/#atom8">spacer</a>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom8">input-text</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom9">logo-retraitespopulaires</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom10">ordered-list</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom11">organic-lines</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom12">socials</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom13">spacer</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom14">treeview-list</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/atoms/#atom15">unordered-list</a>
           </li>
         
       </ul>
@@ -144,11 +195,19 @@
           </li>
         
           <li>
-            <a href="/retraitespopulaires-styleguide/molecules/#molecule3">button-bubble</a>
+            <a href="/retraitespopulaires-styleguide/molecules/#molecule3">card-attachement</a>
           </li>
         
           <li>
             <a href="/retraitespopulaires-styleguide/molecules/#molecule4">collapse</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/molecules/#molecule5">secondary-nav</a>
+          </li>
+        
+          <li>
+            <a href="/retraitespopulaires-styleguide/molecules/#molecule6">table</a>
           </li>
         
       </ul>
@@ -240,6 +299,16 @@
   </div>
 </div>
 
+<div class="form-group readonly">
+  <label>Groupe - Icône - Read-only</label>
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Chercher un produit, un document, un contact, ..." readonly>
+    <span class="input-group-btn">
+      <button class="btn btn-default btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
+    </span>
+  </div>
+</div>
+
 <div class="form-group">
   <label>Groupe - Icône</label>
   <div class="input-group">
@@ -269,22 +338,16 @@
       </div>
     
 
-    <script src="/retraitespopulaires-styleguide/build/js/jquery.js"></script>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
     <script src="/retraitespopulaires-styleguide/build/js/vendors.min.js"></script>
-    <script src="/retraitespopulaires-styleguide/build/js/main.js"></script>
+    <script src="/retraitespopulaires-styleguide/build/js/bundle.js"></script>
 
     
       <script>
         (function($){
           $(document).ready(function(){
-            $('.styleguide-item-preview').each(function(){
-              var formatted = $(this).html().replace(//g, '');
-              $(this).html(formatted);
-            });
-
             $('.styleguide-item-code code').each(function(){
-              var formatted = $(this).html().replace(//g, '');
-              $(this).html(formatted.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'));
+              $(this).html($(this).html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'));
             });
           });
         }(jQuery));

@@ -4,21 +4,6 @@
 /**
 * Colors Profession
 */
-.color-assurance-vie {
-  color: #cbb900; }
-
-.color-prevoyance-profesionnelle {
-  color: #b35e0a; }
-
-.color-immobilier {
-  color: #b21f16; }
-
-.color-financement {
-  color: #005782; }
-
-.color-gestion {
-  color: #663d07; }
-
 code,
 code[class*='language-'],
 pre[class*='language-'] {
@@ -422,3 +407,12 @@ body {
 
 .styleguide-container {
   padding: 0 15px; }
+
+#atoms .styleguide-item-preview .hamburger-wrapper,
+#atoms .styleguide-item-preview .logo-retraitespopulaires {
+  position: relative;
+  top: 0;
+  left: 0; }
+
+#organisms .styleguide-item-preview .header {
+  position: relative; }
