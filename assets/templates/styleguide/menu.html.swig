@@ -21,6 +21,17 @@
     </li>
 
     <li>
+      <span class="styleguide-menu-heading">Examples</span>
+      <ul>
+        {% for example in collections.examples %}
+          <li>
+            <a href="/retraitespopulaires-styleguide/{{example.title|lower}}">{{example.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
       <a href="/retraitespopulaires-styleguide/atoms/" class="styleguide-menu-heading">Atoms</a>
       <ul>
         {% for atom in collections.atoms %}
