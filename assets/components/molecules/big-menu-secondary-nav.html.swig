@@ -5,7 +5,7 @@ collection: molecules
 notes: |
   ##### Usage : `big-menu-secondary-nav`
 ---
-<div class="big-menu-secondary-nav-wrapper">
+<div class="big-menu-secondary-nav-wrapper visible-xs visible-sm">
   <div class="big-menu-secondary-nav">
     <div class="row">
       <div class="spacer"></div>
