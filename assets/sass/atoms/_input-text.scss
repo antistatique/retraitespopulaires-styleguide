@@ -5,7 +5,6 @@
   padding: 0.7em;
   border-width: $input-border-size;
   font-family: $font-cocon;
-  line-height: 0.8em;
   box-shadow: none;
 
   &:-webkit-autofill,
@@ -16,7 +15,7 @@
   }
 
   &:focus {
-    box-shadow: 0 0 3px 0 $input-border-focus;
+    box-shadow: none;
     outline: none;
     background: $input-bg-focus;
     border-color: $input-border-focus;
@@ -66,10 +65,6 @@
   &.error {
     .form-control {
       border-color: $brand-danger;
-
-      &:focus {
-        box-shadow: 0 0 3px 0 $brand-danger;
-      }
     }
   }
 
@@ -83,11 +78,6 @@
     .input-group-btn .btn {
       background-color: darken($input-border-disabled, 15%);
       color: $input-color-placeholder;
-
-      &:focus {
-        box-shadow: none;
-        border-color: $input-border;
-      }
     }
   }
 }
@@ -108,11 +98,6 @@
 
   .form-control {
     float: none;
-
-    &:first-child {
-      border-bottom-right-radius: $input-border-radius;
-      border-top-right-radius: $input-border-radius;
-    }
   }
 
   .form-control:first-child {
@@ -134,7 +119,7 @@
       border-bottom-left-radius: 0;
 
       &.btn-icon {
-        padding-bottom: 0.2em;
+        padding-bottom: 0.4em;
       }
     }
   }
