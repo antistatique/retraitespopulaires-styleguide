@@ -1,5 +1,6 @@
 ---
 title: hamburger
+name: hamburger
 collection: atoms
 notes: |
   ##### Usage : `hamburger`
