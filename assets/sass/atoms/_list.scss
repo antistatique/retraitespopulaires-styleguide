@@ -8,11 +8,13 @@
 /* Make the code unreadable otherwise */
 
 ul.unordered-list,
-ol.ordered-list {
+ol.ordered-list,
+ul.treeview-list {
   margin: 0;
   padding: 0;
 }
 
+ul.treeview-list,
 ul.unordered-list {
   list-style: none;
   margin-left: $grid-gutter-width / 2;
