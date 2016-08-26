@@ -4,8 +4,10 @@ name: secondary-nav
 collection: molecules
 notes: |
   ##### Usage : `secondary-nav`
+  ##### Options :
+  - **theme** - String
 ---
-<div class="secondary-nav">
+<div class="secondary-nav secondary-nav-{{ theme }}">
   <div class="back">
     <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-arrow"></a>
   </div>

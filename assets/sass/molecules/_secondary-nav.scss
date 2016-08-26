@@ -52,3 +52,31 @@
     }
   }
 }
+
+/**
+* Themes
+*/
+
+@each $label, $color in $themes {
+  .secondary-nav-#{$label} {
+    .back {
+      background: $color;
+    }
+
+    .secondary-nav-content .title {
+      color: $color;
+    }
+
+    .secondary-nav-content li a.pretty-link {
+      @include pretty-link($text-color, $white, $color);
+    }
+
+    .secondary-nav-content li.active {
+      background-color: $color;
+
+      a.pretty-link {
+        @include pretty-link($white, $color, $white);
+      }
+    }
+  }
+}
