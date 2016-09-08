@@ -8,7 +8,7 @@
   position: relative;
 
   .swiper-list {
-    margin-right: -1px;
+    // margin-right: -1px;
     background: $white;
 
     > li {
@@ -22,6 +22,7 @@
         top: 50%;
         right: $grid-gutter-width;
         padding: 15px;
+        line-height: 0;
         transform: translateY(-50%);
       }
 
@@ -40,21 +41,9 @@
         transform: translateY(-50%) rotate(180deg);
       }
 
-      @media only screen and (min-width: $screen-md) {
-        border-right: 1px solid $input-border;
-      }
-
       &.active {
-        border-color: $input-border;
-        border-right-color: $white;
-      }
-    }
-
-    &.swiper-list-alternative > li {
-      border-left-color: $transparent;
-
-      &.active {
-        border-left-color: $white;
+        border-top-color: $input-border;
+        border-bottom-color: $input-border;
       }
     }
   }
@@ -86,7 +75,14 @@
 
     @media only screen and (min-width: $screen-md) {
       min-height: calc(100vh - 80px - #{$grid-gutter-width*2});
-      border-right: 1px solid $input-border;
+
+      &.swiper-column-1 {
+        border-right: 1px solid $input-border;
+      }
+
+      &.swiper-column-3 {
+        border-left: 1px solid $input-border;
+      }
     }
   }
 
@@ -121,5 +117,39 @@
 
   .swiper-back {
     background: $gray-lighter;
+  }
+
+  .swiper-list-first > li {
+    &.active {
+      border-left-color: $input-border;
+
+      &:after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        right: -2px;
+        bottom: 0;
+        width: 1px;
+        background: $white;
+      }
+    }
+  }
+
+  .swiper-list-middle > li { margin: 0 $grid-gutter-width/2; }
+
+  .swiper-list-last > li {
+    &.active {
+      border-right: 2px solid $input-border;
+
+      &:after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -2px;
+        width: 1px;
+        background: $white;
+      }
+    }
   }
 }

@@ -9,12 +9,18 @@ notes: |
 <div class="big-menu">
   <div class="container-big-menu container-fuild">
     <div class="row">
+      <div class="col-xs-12 visible-xs">
+      {% include '../molecules/search-form.html.swig' %}
+      <div class="spacer"></div>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-md-9">
         <div class="row">
           <div class="swiper-menu">
             <div class="swiper-column-wrapper col-xs-12 col-md-4">
               <div class="swiper-column swiper-column-1">
-                <ul data-list="swiper-main" class="swiper-list list-no-padding swiper-list-primary list-no-style" role="navigation">
+                <ul data-list="swiper-main" class="swiper-list swiper-list-first list-no-padding swiper-list-primary list-no-style" role="navigation">
                   <li>
                     <a href="#" class="pretty-link text-black-assurance">Assurance vie</a>
                     <a href="swiper-assurance-vie" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-assurance"></a>
@@ -142,16 +148,8 @@ notes: |
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <ul class="list-spaced list-no-style list-no-padding" role="navigation">
-          <li><a href="#">A propos</a></li>
-          <li><a href="#">A propos</a></li>
-          <li><a href="#">A propos</a></li>
-          <li><a href="#">A propos</a></li>
-          <li><a href="#">Emplois</a></li>
-          <li><a href="#">Connexion <i class="text-primary fa fa-lock"></i></a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
+      <div class="col-xs-12 col-md-2 col-md-offset-1">
+        {% include '../molecules/big-menu-secondary-nav.html.swig' %}
       </div>
     </div>
   </div>

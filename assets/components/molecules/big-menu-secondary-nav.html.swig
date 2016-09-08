@@ -5,10 +5,10 @@ collection: molecules
 notes: |
   ##### Usage : `big-menu-secondary-nav`
 ---
-<div class="big-menu-secondary-nav-wrapper visible-xs visible-sm">
-  <div class="big-menu-secondary-nav">
+<div class="big-menu-secondary-nav-wrapper">
+  <div class="big-menu-secondary-nav visible-xs visible-sm">
     <div class="row">
-      <div class="spacer"></div>
+      <div class="spacer spacer-sm"></div>
       <div class="col-xs-6">
         <ul class="list-no-style text-right">
           <li><a class="pretty-link pretty-link-white" href="#">À propos</a></li>
@@ -17,26 +17,22 @@ notes: |
         </ul>
       </div>
       <div class="col-xs-6">
-        <ul class="list-no-style">
+        <ul class="list-no-style list-no-padding">
         <li><a class="pretty-link pretty-link-white" href="#">Press</a></li>
         <li><a class="pretty-link pretty-link-white" href="#">Emplois</a></li>
-        <li><a class="pretty-link pretty-link-white" href="#">FAQ</a></li>
+        <li><a class="pretty-link pretty-link-white" href="#">Connexion <i class="fa fa-lock"></i></a></li>
         </ul>
       </div>
-      <div class="col-xs-12">
-        <div class="spacer"></div>
-        <div class="text-center">
-          <div class="button-bubble button-bubble-white">
-            <div class="bubble-icon">
-              <a href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-lock"></i></a>
-            </div>
-            <div class="bubble-link">
-              <a href="#" class="pretty-link pretty-link-white">Connexion</a>
-            </div>
-          </div>
-        </div>
-        <div class="spacer"></div>
-      </div>
+      <div class="spacer"></div>
     </div>
   </div>
+  <ul class="list-spaced list-no-style list-no-padding hidden-xs hidden-sm" role="navigation">
+    <li><a href="#">A propos</a></li>
+    <li><a href="#">A propos</a></li>
+    <li><a href="#">A propos</a></li>
+    <li><a href="#">A propos</a></li>
+    <li><a href="#">Emplois</a></li>
+    <li><a href="#">Connexion <i class="text-primary fa fa-lock"></i></a></li>
+    <li><a href="#">FAQ</a></li>
+  </ul>
 </div>
