@@ -34,6 +34,7 @@
   color: $black;
   transition:
     border 0.25s ease-in-out,
+    color 0.25s ease-in-out,
     color 0.25s ease-in-out;
 
   &:before {
@@ -54,7 +55,8 @@
 
     &:hover {
       &.arrow-#{$label} {
-        border-color: darken($color, 20%);
+        background-color: $color;
+        color: $white;
       }
     }
   }
