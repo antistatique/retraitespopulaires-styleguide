@@ -40,6 +40,10 @@ a.pretty-link {
   &.pretty-link-white {
     @include pretty-link($white, $green);
   }
+
+  &.pretty-link-light-grey{
+    @include pretty-link($green, $light-grey);
+  }
 }
 
 a.pretty-link-hover {

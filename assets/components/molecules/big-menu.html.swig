@@ -41,10 +41,11 @@ notes: |
                 <div class="spacer"></div>
                 <h5 class="text-small swiper-padding">Vous êtes</h5>
                 <ul class="swiper-list swiper-list-secondary list-no-style list-no-padding" role="navigation">
-                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <span class="icon-text-txt text-cocon text-large">Un particulier</span></li>
-                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <span class="icon-text-txt text-cocon text-large">Un professionnel</span></li>
-                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <span class="icon-text-txt text-cocon text-large">Une collectivé</span></li>
+                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Un particulier</a></li>
+                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Un professionnel</a></li>
+                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Une collectivé</a></li>
                 </ul>
+                <div class="spacer"></div>
               </div>
             </div>
             <div class="swiper-column-wrapper swiper-column-wrapper-2 col-xs-12 col-md-4">
