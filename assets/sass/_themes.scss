@@ -41,7 +41,7 @@ a.pretty-link {
     @include pretty-link($white, $green);
   }
 
-  &.pretty-link-light-grey{
+  &.pretty-link-light-grey {
     @include pretty-link($green, $light-grey);
   }
 }

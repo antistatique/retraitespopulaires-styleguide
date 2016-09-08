@@ -8,7 +8,6 @@
   position: relative;
 
   .swiper-list {
-    // margin-right: -1px;
     background: $white;
 
     > li {
@@ -139,7 +138,9 @@
     }
   }
 
-  .swiper-list-middle > li { margin: 0 $grid-gutter-width/2; }
+  @media only screen and (min-width: $screen-md) {
+    .swiper-list-middle > li { margin: 0 $grid-gutter-width/2; }
+  }
 
   .swiper-list-last > li {
     &.active {
