@@ -1,0 +1,34 @@
+@charset 'UTF-8';
+
+.arrow-rounded {
+  position: relative;
+  padding: 10px 19px;
+  border: 1px solid $black;
+  border-radius: 50%;
+  color: $black;
+  cursor: pointer;
+  transition:
+    border 0.25s ease-in-out,
+    color 0.25s ease-in-out;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @each $label, $color in $themes {
+    &.arrow-#{$label} {
+      border-color: $color;
+      color: $color;
+    }
+
+    &:hover {
+      &.arrow-#{$label} {
+        border-color: darken($color, 20%);
+        color: darken($color, 20%);
+      }
+    }
+  }
+}
