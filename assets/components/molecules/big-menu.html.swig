@@ -7,144 +7,151 @@ notes: |
   Ce composant est visible dans le template "<a href="/retraitespopulaires-styleguide/big-menu">Big-Menu</a>"
 ---
 <div class="big-menu">
-  <div class="container-big-menu">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <form class="">
-            <div class="form-group">
-              <label class="label-hidden"></label>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Chercher un produit, un document, un contact, ..." data-title="Rechercher">
-                <span class="input-group-btn">
-                  <button class="btn btn-default btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
-                </span>
+  <div class="container-big-menu container-fuild">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="swiper-menu">
+            <div class="swiper-column-wrapper col-xs-12 col-md-4">
+              <div class="swiper-column swiper-column-1">
+                <ul data-list="swiper-main" class="swiper-list list-no-padding swiper-list-primary list-no-style" role="navigation">
+                  <li>
+                    <a href="#" class="pretty-link text-black-assurance">Assurance vie</a>
+                    <a href="swiper-assurance-vie" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-assurance"></a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link text-black-prevoyance">Prévoyance professionnelle</a>
+                    <a href="swiper-prevoyance" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-prevoyance"></a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link text-black-immobilier">Immobilier</a>
+                    <a href="swiper-immobilier" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-immobilier"></a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link text-black-hypotheque">Financement</a>
+                    <a href="swiper-hypotheque" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-hypotheque"></a>
+                  </li>
+                </ul>
+                <div class="spacer"></div>
+                <h5 class="text-small swiper-padding">Vous êtes</h5>
+                <ul class="swiper-list swiper-list-secondary list-no-style list-no-padding" role="navigation">
+                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <span class="icon-text-txt text-cocon text-large">Un particulier</span></li>
+                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <span class="icon-text-txt text-cocon text-large">Un professionnel</span></li>
+                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <span class="icon-text-txt text-cocon text-large">Une collectivé</span></li>
+                </ul>
               </div>
             </div>
-          </form>
+            <div class="swiper-column-wrapper swiper-column-wrapper-2 col-xs-12 col-md-4">
+              <div class="swiper-column swiper-column-2">
+                <ul data-list="swiper-assurance-vie" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
+                  <li class="swiper-back visible-xs visible-sm">
+                    <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-assurance"></a>
+                    <a href="#" class="text-muted pretty-link-hover-assurance">Assurance vie</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-assurance">Assurer les employés</a>
+                    <a href="swiper-assurer-les-employes" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-assurance"></a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-assurance">Indépendants</a>
+                    <a href="swiper-independants" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-assurance"></a>
+                  </li>
+                </ul>
+
+                <ul data-list="swiper-prevoyance" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
+                  <li class="swiper-back visible-xs visible-sm">
+                    <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-prevoyance"></a>
+                    <a href="#" class="text-muted pretty-link-hover-prevoyance">Prévoyance professionnel</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-prevoyance">Plan complémentaires</a>
+                    <a href="swiper-complementaires" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-prevoyance"></a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-prevoyance">Gestion de mandats</a>
+                    <a href="swiper-gestion-de-mandats" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-prevoyance"></a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+            <div class="swiper-column-wrapper swiper-column-wrapper-3 col-xs-12 col-md-4">
+              <div class="swiper-column swiper-column-3 swiper-column-waiting">
+                <ul data-list="swiper-complementaires" class="swiper-list swiper-list-alternative swiper-list-last list-no-padding list-spaced list-no-style" role="navigation">
+                  <li class="swiper-back visible-xs visible-sm">
+                    <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-prevoyance"></a>
+                    <a href="#" class="text-muted pretty-link-hover-prevoyance">Plan complémentaires</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-prevoyance">Plan complémentaires</a>
+                  </li>
+                </ul>
+
+                <ul data-list="swiper-gestion-de-mandats" class="swiper-list swiper-list-alternative swiper-list-last list-no-padding list-spaced list-no-style" role="navigation">
+                  <li class="swiper-back visible-xs visible-sm">
+                    <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-prevoyance"></a>
+                    <a href="#" class="text-muted pretty-link-hover-prevoyance">Gestion de mandats</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-prevoyance">Phasellus non nunc</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-prevoyance">Phasellus non nunc</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-prevoyance">Phasellus non nunc</a>
+                  </li>
+                </ul>
+
+                <ul data-list="swiper-assurer-les-employes" class="swiper-list swiper-list-alternative swiper-list-last list-no-padding list-spaced list-no-style" role="navigation">
+                  <li class="swiper-back visible-xs visible-sm">
+                    <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-assurance"></a>
+                    <a href="#" class="text-muted pretty-link-hover-assurance">Assurer les employés</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-assurance">Mauris suscipit</a>
+                  </li>
+                </ul>
+
+                <ul data-list="swiper-independants" class="swiper-list swiper-list-alternative swiper-list-last list-no-padding list-spaced list-no-style" role="navigation">
+                  <li class="swiper-back visible-xs visible-sm">
+                    <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-assurance"></a>
+                    <a href="#" class="text-muted pretty-link-hover-prevoyance">Indépendant</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-assurance">Donec aliquet</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-assurance">Donec aliquet</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-assurance">Donec aliquet</a>
+                  </li>
+                  <li class="active">
+                    <a href="#" class="pretty-link-hover-assurance">Donec aliquet</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-assurance">Donec aliquet</a>
+                  </li>
+                  <li>
+                    <a href="#" class="pretty-link-hover-assurance">Donec aliquet</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12 big-menu-wrapper-profils text-center visible-xs visible-sm">
-            <div class="spacer spacer-md"></div>
-            <div class="btn-group" role="group">
-              <a href="#" type="button" class="btn btn-default">Particulier</a>
-              <a href="#" type="button" class="btn btn-default">Entreprise</a>
-              <a href="#" type="button" class="btn btn-default">Collectivité</a>
-            </div>
-            <div class="spacer spacer-md"></div>
-        </div>
-        <div class="col-md-8 big-menu-wrapper-nav">
-          <div class="row big-menu-wrapper-professions">
-            <div class="col-md-3">
-              <div class="collapse-wrapper">
-                <div class="collapse-title">
-                  <h5 class="inline-block">
-                    <a class="color-assurance-vie" href="#">Assurance vie</a>
-                  </h5>
-                  <a class="inline-block pull-right" role="button" data-toggle="collapse" href="#collapse-assurance-vie" aria-expanded="true" aria-controls="collapse-assurance-vie">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
-                  </a>
-                  <div class="clearfix"></div>
-                </div>
-                <div id="collapse-assurance-vie" class="collapse-body collapse in">
-                  <ul class="unordered-list treeview-list">
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a>
-                      <ul class="unordered-list treeview-list">
-                        <li><a class="pretty-link" href="#">Lien</a></li>
-                        <li><a class="pretty-link" href="#">Lien</a></li>
-                        <li><a class="pretty-link" href="#">Lien</a></li>
-                        <li><a class="pretty-link" href="#">Lien</a></li>
-                      </ul>
-                    </li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="collapse-wrapper">
-                <div class="collapse-title">
-                  <h5 class="inline-block">
-                    <a class="color-prevoyance-profesionnelle" href="#">Prévoyance professionnelle</a>
-                  </h5>
-                  <a class="inline-block pull-right collapsed" role="button" data-toggle="collapse" href="#prevoyance-professionnelle" aria-expanded="false" aria-controls="prevoyance-professionnelle">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
-                  </a>
-                  <div class="clearfix"></div>
-                </div>
-                <div id="prevoyance-professionnelle" class="collapse-body collapse">
-                  <ul class="unordered-list treeview-list">
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="collapse-wrapper">
-                <div class="collapse-title">
-                  <h5 class="inline-block">
-                    <a class="color-immobilier" href="#">Immobilier</a>
-                  </h5>
-                  <a class="inline-block pull-right collapsed" role="button" data-toggle="collapse" href="#immobilier" aria-expanded="false" aria-controls="immobilier">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
-                  </a>
-                  <div class="clearfix"></div>
-                </div>
-                <div id="immobilier" class="collapse-body collapse">
-                  <ul class="unordered-list treeview-list">
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="collapse-wrapper">
-                <div class="collapse-title">
-                  <h5 class="inline-block">
-                    <a class="color-financement" href="#">Financement</a>
-                  </h5>
-                  <a class="inline-block pull-right collapsed" role="button" data-toggle="collapse" href="#financement" aria-expanded="false" aria-controls="financement">
-                    <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
-                  </a>
-                  <div class="clearfix"></div>
-                </div>
-                <div id="financement" class="collapse-body collapse">
-                  <ul class="unordered-list treeview-list">
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                    <li><a class="pretty-link" href="#">Lien</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% include '../molecules/big-menu-secondary-nav.html.swig' %}
-          <div class="big-menu-wrapper-contact">
-            <div class="big-menu-wrapper-footer">
-              {% include '../organisms/footer.html.swig' %}
-            </div>
-          </div>
-        </div>
+      <div class="col-md-3">
+        <ul class="list-spaced list-no-style list-no-padding" role="navigation">
+          <li><a href="#">A propos</a></li>
+          <li><a href="#">A propos</a></li>
+          <li><a href="#">A propos</a></li>
+          <li><a href="#">A propos</a></li>
+          <li><a href="#">Emplois</a></li>
+          <li><a href="#">Connexion <i class="text-primary fa fa-lock"></i></a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
       </div>
     </div>
   </div>

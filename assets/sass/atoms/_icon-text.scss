@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+
+.icon-text {
+  &.icon-text-center {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+  }
+
+  .icon-text-txt {
+    margin-left: 10px;
+  }
+}

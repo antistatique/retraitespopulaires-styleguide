@@ -8,4 +8,14 @@ header {
   background: $white;
   z-index: 2002;
   border-bottom: 1px solid $input-border;
+
+  .global-search {
+    margin-top: -10px;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+
+    &.active {
+      opacity: 1;
+    }
+  }
 }

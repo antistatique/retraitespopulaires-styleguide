@@ -15,6 +15,8 @@
   }
 }
 
+.list-spaced li { padding: $grid-gutter-width / 3 0; }
+
 .list-inline li { display: inline-block; }
 
 .inline-block { display: inline-block; }

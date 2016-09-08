@@ -42,12 +42,39 @@ a.pretty-link {
   }
 }
 
+a.pretty-link-hover {
+  color: $black;
+
+  &:hover {
+    @include pretty-link($link-color);
+  }
+}
+
 @each $label, $color in $themes {
   .text-#{$label},
   a.text-#{$label} {
     &.pretty-link,
     a.pretty-link {
       @include pretty-link($color, $white, $color);
+    }
+  }
+
+  .pretty-link-hover-#{$label},
+  a.pretty-link-hover-#{$label} {
+    color: $black;
+
+    &.text-muted {
+      color: $gray-light;
+    }
+
+    &:hover {
+      @include pretty-link($color, $white, $color);
+    }
+  }
+
+  a.text-black-#{$label} {
+    &.pretty-link {
+      @include pretty-link($black, $white, $color);
     }
   }
 }
