@@ -90,11 +90,10 @@ notes: |
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
-        <ul class="unordered-list list-inline">
+        <ul class="unordered-list list-inline list-unstyle-first">
           <li><a href="#" class="pretty-link">Impressum</a></li>
           <li><a href="#" class="pretty-link">Mentions juridiques</a></li>
           <li><a href="#" class="pretty-link">Glossaire</a></li>
-          <li>Résalisation: <a class="signature pretty-link" href="#">Antistatique</a></li>
         </ul>
       </div>
     </div>
