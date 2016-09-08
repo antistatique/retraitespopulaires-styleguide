@@ -17,7 +17,7 @@ notes: |
       <span></span>
     </div>
   </div>
-  <div class="hamburger-helper">
+  <div class="hamburger-helper text-cocon">
     <div class="helper-when-close">Menu</div>
     <div class="helper-when-open">Fermer</div>
   </div>

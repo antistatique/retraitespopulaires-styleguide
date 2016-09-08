@@ -40,6 +40,11 @@ export function big_menu () {
   $swiper.find('.swiper-list .arrow-next').on('click', function(event){
     event.preventDefault();
 
+    // Remove the empty-state
+    $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive').on( 'webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+      $(this).remove();
+    });
+
     // Unactive all other siblings li
     $(this).parents('ul').find('li.active').toggleClass('active');
     // Active the clicked one

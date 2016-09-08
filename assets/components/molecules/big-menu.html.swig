@@ -14,10 +14,14 @@ notes: |
       <div class="spacer"></div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-md-9">
         <div class="row">
           <div class="swiper-menu">
+            <div class="hidden-xs hidden-sm">
+              {% include '../molecules/big-menu-empty.html.swig' %}
+            </div>
             <div class="swiper-column-wrapper col-xs-12 col-md-4">
               <div class="swiper-column swiper-column-1">
                 <ul data-list="swiper-main" class="swiper-list swiper-list-first list-no-padding swiper-list-primary list-no-style" role="navigation">
@@ -39,7 +43,7 @@ notes: |
                   </li>
                 </ul>
                 <div class="spacer"></div>
-                <h5 class="text-small swiper-padding">Vous êtes</h5>
+                <p class="media-heading text-small swiper-padding text-muted">Vous êtes</p>
                 <ul class="swiper-list swiper-list-secondary list-no-style list-no-padding" role="navigation">
                   <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Particuliers</a></li>
                   <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Professionnels</a></li>

@@ -37,6 +37,10 @@ p a,
 a.pretty-link {
   @include pretty-link($link-color);
 
+  &.pretty-link-black {
+    @include pretty-link($black, $white);
+  }
+
   &.pretty-link-white {
     @include pretty-link($white, $green);
   }

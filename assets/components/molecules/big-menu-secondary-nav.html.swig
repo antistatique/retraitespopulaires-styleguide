@@ -27,12 +27,12 @@ notes: |
     </div>
   </div>
   <ul class="list-spaced list-no-style list-no-padding hidden-xs hidden-sm" role="navigation">
-    <li><a href="#">À propos</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Actualités</a></li>
-    <li><a href="#">Press</a></li>
-    <li><a href="#">Emplois</a></li>
-    <li><a href="#">Connexion <i class="text-primary fa fa-lock"></i></a></li>
-    <li><a href="#">FAQ</a></li>
+    <li><a class="pretty-link pretty-link-black" href="#">À propos</a></li>
+    <li><a class="pretty-link pretty-link-black" href="#">Contact</a></li>
+    <li><a class="pretty-link pretty-link-black" href="#">Actualités</a></li>
+    <li><a class="pretty-link pretty-link-black" href="#">Press</a></li>
+    <li><a class="pretty-link pretty-link-black" href="#">Emplois</a></li>
+    <li><a class="pretty-link pretty-link-black" href="#">Connexion <i class="text-primary fa fa-lock"></i></a></li>
+    <li><a class="pretty-link pretty-link-black" href="#">FAQ</a></li>
   </ul>
 </div>
