@@ -17,19 +17,81 @@ function big_menu() {
 
   var $body = (0, _jquery2.default)('body'),
       $wrapper = (0, _jquery2.default)('.hamburger-wrapper'),
-      $navbar = (0, _jquery2.default)('.big-menu');
+      $navbar = (0, _jquery2.default)('.big-menu'),
+      $search = (0, _jquery2.default)('.global-search');
 
   $wrapper.on('click', function () {
     if ($wrapper.hasClass('active')) {
       $body.toggleClass('no-scroll');
       $wrapper.toggleClass('active');
       $navbar.toggleClass('active');
+      $search.toggleClass('active');
     } else {
       $body.toggleClass('no-scroll');
       $navbar.css({ 'display': 'block' });
       $wrapper.toggleClass('active');
       $navbar.toggleClass('active');
+      $search.toggleClass('active');
     }
+  });
+
+  /** SWIPER **/
+
+  var $swiper = (0, _jquery2.default)('.swiper-menu');
+
+  // This is under 992px
+  if (!window.matchMedia('(min-width: 992px)').matches) {
+    console.log('fixheight');
+    var height = $swiper.find('.swiper-column-1').height();
+    $swiper.find('.swiper-column-2, .swiper-column-3').css({ 'height': height });
+  }
+
+  /**
+   * Open the correct pan and close the old one
+   * @type {[type]}
+   */
+  $swiper.find('.swiper-list .arrow-next').on('click', function (event) {
+    event.preventDefault();
+
+    // Unactive all other siblings li
+    (0, _jquery2.default)(this).parents('ul').find('li.active').toggleClass('active');
+    // Active the clicked one
+    (0, _jquery2.default)(this).parents('li').toggleClass('active');
+
+    var $next_pane = $swiper.find('[data-list="' + (0, _jquery2.default)(this).attr('href') + '"]');
+    var $next_pane_parent = $next_pane.parents('.swiper-column');
+    var $next_wrapper = $next_pane_parent.parents('.swiper-column-wrapper');
+    var $current_pane = (0, _jquery2.default)(this).parents('.swiper-list');
+
+    if ($next_pane_parent.hasClass('swiper-column-3') && $next_pane_parent.hasClass('swiper-column-waiting')) {
+      $next_pane_parent.removeClass('swiper-column-waiting');
+    }
+
+    // Unactive current opened pan
+    $swiper.find('.swiper-list-alternative.active').not($current_pane).each(function (index, elem) {
+      (0, _jquery2.default)(elem).removeClass('active');
+
+      var $wrapper = (0, _jquery2.default)(elem).parents('.swiper-column-wrapper');
+      $wrapper.removeClass('active');
+    });
+    // Open desired pan
+    $next_wrapper.addClass('active');
+    $next_pane.toggleClass('active');
+  });
+
+  /**
+   * Open the correct pan and close the old one
+   * @type {[type]}
+   */
+  $swiper.find('.swiper-list .arrow-back').on('click', function (event) {
+    event.preventDefault();
+
+    var $current_pane = (0, _jquery2.default)(this).parents('.swiper-list');
+    var $current_wrapper = (0, _jquery2.default)(this).parents('.swiper-column-wrapper');
+
+    // Close current pane
+    $current_pane.removeClass('active');
+    $current_wrapper.removeClass('active');
   });
 }
 
@@ -45,7 +107,8 @@ var _organicJS = require('./organicJS.js');
 
 (function () {
   (0, _big_menu.big_menu)();
-  (0, _organicJS.organic_lines)();
+  (0, _organicJS.organic_generate)();
+  (0, _organicJS.organic_attachements)();
   (0, _input_dynamic_label.input_dynamic_label)();
 })();
 
@@ -87,7 +150,8 @@ function input_dynamic_label() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.organic_lines = organic_lines;
+exports.organic_generate = organic_generate;
+exports.organic_attachements = organic_attachements;
 
 var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
 
@@ -95,8 +159,15 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function organic_lines() {
+function organic_generate() {
   (0, _jquery2.default)('.organic-lines').organicJS();
+}
+
+function organic_attachements() {
+  var $attachments = (0, _jquery2.default)('.attachements-wrapper'),
+      $organic = (0, _jquery2.default)('.attachements-wrapper .organic-lines');
+
+  // $('.organic-lines').css({ 'margin-top': '-' + $attachments.height / 2});
 }
 
 (function ($) {
