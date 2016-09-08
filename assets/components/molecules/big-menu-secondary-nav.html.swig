@@ -27,10 +27,10 @@ notes: |
     </div>
   </div>
   <ul class="list-spaced list-no-style list-no-padding hidden-xs hidden-sm" role="navigation">
-    <li><a href="#">A propos</a></li>
-    <li><a href="#">A propos</a></li>
-    <li><a href="#">A propos</a></li>
-    <li><a href="#">A propos</a></li>
+    <li><a href="#">À propos</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Actualités</a></li>
+    <li><a href="#">Press</a></li>
     <li><a href="#">Emplois</a></li>
     <li><a href="#">Connexion <i class="text-primary fa fa-lock"></i></a></li>
     <li><a href="#">FAQ</a></li>
