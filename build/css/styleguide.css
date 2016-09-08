@@ -414,5 +414,8 @@ body {
   top: 0;
   left: 0; }
 
+#molecules .styleguide-item-preview .swiper-empty-state {
+  position: relative; }
+
 #organisms .styleguide-item-preview .header {
   position: relative; }

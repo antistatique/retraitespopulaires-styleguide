@@ -53,6 +53,11 @@ function big_menu() {
   $swiper.find('.swiper-list .arrow-next').on('click', function (event) {
     event.preventDefault();
 
+    // Remove the empty-state
+    $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive').on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function () {
+      (0, _jquery2.default)(this).remove();
+    });
+
     // Unactive all other siblings li
     (0, _jquery2.default)(this).parents('ul').find('li.active').toggleClass('active');
     // Active the clicked one
