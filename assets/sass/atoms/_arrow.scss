@@ -31,7 +31,8 @@
   padding: 10px 19px;
   border: 1px solid $black;
   border-radius: 50%;
-  color: $black;
+  border-color: $brand-primary;
+  color: $brand-primary;
   transition:
     border 0.25s ease-in-out,
     color 0.25s ease-in-out,
@@ -42,6 +43,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    background-color: $brand-primary;
+    color: $white;
   }
 
   &.arrow-small {

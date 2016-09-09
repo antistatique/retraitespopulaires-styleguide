@@ -44,10 +44,19 @@ notes: |
                 </ul>
                 <div class="spacer"></div>
                 <p class="media-heading text-small swiper-padding text-muted">Vous êtes</p>
-                <ul class="swiper-list swiper-list-secondary list-no-style list-no-padding" role="navigation">
-                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Particuliers</a></li>
-                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Professionnels</a></li>
-                  <li class="text-primary icon-text icon-text-center"><span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Collectivés</a></li>
+                <ul class="swiper-list swiper-list-first swiper-list-secondary list-no-style list-no-padding" role="navigation">
+                  <li class="text-primary icon-text icon-text-center">
+                    <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Particuliers</a>
+                    <a href="swiper-assurance-vie" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
+                  </li>
+                  <li class="text-primary icon-text icon-text-center">
+                    <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Professionnels</a>
+                    <a href="swiper-assurance-vie" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
+                  </li>
+                  <li class="text-primary icon-text icon-text-center">
+                    <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Collectivés</a>
+                    <a href="swiper-assurance-vie" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
+                  </li>
                 </ul>
                 <div class="spacer"></div>
               </div>

@@ -45,8 +45,8 @@ export function big_menu () {
       $(this).remove();
     });
 
-    // Unactive all other siblings li
-    $(this).parents('ul').find('li.active').toggleClass('active');
+    // Unactive all other siblings li in the column
+    $(this).parents('.swiper-column').find('li.active').toggleClass('active');
     // Active the clicked one
     $(this).parents('li').toggleClass('active');
 
