@@ -9,13 +9,15 @@
 
 ul.unordered-list,
 ol.ordered-list,
-ul.treeview-list {
+ul.treeview-list,
+ul.facets-list {
   margin: 0;
   padding: 0;
 }
 
 ul.treeview-list,
-ul.unordered-list {
+ul.unordered-list,
+ul.facets-list {
   list-style: none;
   margin-left: $grid-gutter-width / 2;
 
@@ -48,6 +50,18 @@ ul.treeview-list {
       content: '\231E';
       left: -0.5em;
       font-size: 1.2em;
+    }
+  }
+}
+
+ul.facets-list {
+  > li {
+    &:before {
+      content: '→';
+      top: 0;
+      left: -0.5em;
+      font-size: 1.2em;
+      color: $black;
     }
   }
 }

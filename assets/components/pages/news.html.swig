@@ -20,16 +20,13 @@ layout: page.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-3">
-      <h3>L'actualité de Retraites Populaires</h3>
-      <ul class="unordered-list">
-        <li><a href="#" class="pretty-link">Assurance vie</a></li>
-        <li><a href="#" class="pretty-link">Financement</a></li>
-        <li><a href="#" class="pretty-link">Immobilier</a></li>
-        <li><a href="#" class="pretty-link">Prévoyance professionnelle</a></li>
-        <li><a href="#" class="pretty-link">Catégorie 1</a></li>
-        <li><a href="#" class="pretty-link">Catégorie 2</a></li>
-        <li><a href="#" class="pretty-link">Catégorie 3</a></li>
-        <li><a href="#" class="pretty-link">Catégorie 4</a></li>
+      <p class="media-heading text-muted">L'actualité de Retraites Populaires</p>
+      <ul class="facets-list">
+        <li><a href="#" class="pretty-link text-black-assurance">Assurance vie</a></li>
+        <li><a href="#" class="pretty-link text-black-assurance">Financement</a></li>
+        <li><a href="#" class="pretty-link text-black-assurance">Immobilier</a></li>
+        <li><a href="#" class="pretty-link text-black-assurance">Prévoyance professionnelle</a></li>
+        <li><a href="#" class="pretty-link text-black-assurance">Catégorie 1</a></li>
       </ul>
     </div>
     <div class="col-xs-12 col-md-9">

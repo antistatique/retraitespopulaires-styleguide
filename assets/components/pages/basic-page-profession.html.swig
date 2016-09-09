@@ -57,21 +57,32 @@ layout: page.html.swig
     </div>
     <div class="col-xs-12 col-md-3 col-md-pull-9">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      <h3>Votre versement</h3>
-      <ul class="unordered-list">
-        <li><a href="#" class="pretty-link">Une seule prime</a></li>
+
+      <p class="media-heading text-muted">Votre versement</p>
+      <ul class="facets-list">
+        <li><a href="#" class="pretty-link text-black">Une seule prime</a></li>
+        <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
       </ul>
-      <h3>Fiscalité</h3>
-      <ul class="unordered-list">
-        <li><a href="#" class="pretty-link">3e pillier B</a></li>
+
+      <div class="spacer spacer-sm"></div>
+      <p class="media-heading text-muted">Fiscalité</p>
+      <ul class="facets-list">
+        <li><a href="#" class="pretty-link text-black">3e pillier B</a></li>
+        <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
       </ul>
-      <h3>Forme de prestation</h3>
-      <ul class="unordered-list">
-        <li><a href="#" class="pretty-link">Capital</a></li>
+
+      <div class="spacer spacer-sm"></div>
+      <p class="media-heading text-muted">Forme de prestation</p>
+      <ul class="facets-list">
+        <li><a href="#" class="pretty-link text-black">Capital</a></li>
+        <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
       </ul>
-      <h3>Couverture</h3>
-      <ul class="unordered-list">
-        <li><a href="#" class="pretty-link">Prestation en cas de vie</a></li>
+
+      <div class="spacer spacer-sm"></div>
+      <p class="media-heading text-muted">Couverture</p>
+      <ul class="facets-list">
+        <li><a href="#" class="pretty-link text-black">Prestation en cas de vie</a></li>
+        <li><a href="#" class="pretty-link text-black">Prestation en cas de décès</a></li>
       </ul>
       <div class="spacer"></div>
       {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance'} %}

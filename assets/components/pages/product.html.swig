@@ -74,11 +74,19 @@ layout: page.html.swig
     </div>
     <div class="col-xs-12 col-md-3 col-md-pull-9">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      <h3>Le produits de Retraites Populaires</h3>
-      <ul class="unordered-list">
-        <li><a href="#" class="pretty-link">RP Rente Immédiate</a></li>
-        <li><a href="#" class="pretty-link">RP Rente Immédiate</a></li>
+
+      <p class="media-heading text-muted">Les produits de Retraites Populaires</p>
+      <ul class="facets-list">
+        <li><a href="#" class="pretty-link text-black-assurance">RP Rente Immédiate</a></li>
+        <li><a href="#" class="pretty-link text-black-assurance">RP Rente Immédiate certain</a></li>
+        <li><a href="#" class="pretty-link text-black-assurance">RP Rente différéee</a></li>
+        <li><a href="#" class="pretty-link text-black-assurance">RP Jeune</a></li>
+        <li><a href="#" class="pretty-link text-black-assurance">RP Duo primes périodiques</a></li>
+        <li><a href="#" class="pretty-link text-black-assurance">RP Prime unique</a></li>
+        <li><a href="#" class="pretty-link text-black-assurance">RP Épargne</a></li>
+        <li><a href="#" class="pretty-link text-black-assurance">RP Refuge</a></li>
       </ul>
+
       <div class="spacer spacer-sm"></div>
       {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance'} %}
     </div>
