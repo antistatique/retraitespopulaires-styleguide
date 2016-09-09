@@ -11,6 +11,6 @@ notes: |
     <li class="text-muted">›</li>
     <li class="text-assurance">Assurance vie</li>
     <li class="text-muted">›</li>
-    <li class="text-muted">RP Jeune</li>
+    <li class="text-muted">Quel est votre projet ?</li>
   </ul>
 </div>

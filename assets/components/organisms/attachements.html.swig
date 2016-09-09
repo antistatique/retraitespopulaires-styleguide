@@ -62,4 +62,3 @@ notes: |
   </div>
   {% include '../atoms/organic-lines.html.swig' %}
 </div>
-<div class="clearfix"></div>
