@@ -38,7 +38,7 @@ export function big_menu () {
    * @type {[type]}
    */
   $swiper.find('.swiper-list .arrow-next').on('click', function(event){
-    event.preventDefault();
+    event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 
     // Remove the empty-state
     $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive').on( 'webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
@@ -76,7 +76,7 @@ export function big_menu () {
    * @type {[type]}
    */
   $swiper.find('.swiper-list .arrow-back').on('click', function(event){
-    event.preventDefault();
+    event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 
     const $current_pane = $(this).parents('.swiper-list');
     const $current_wrapper = $(this).parents('.swiper-column-wrapper');
