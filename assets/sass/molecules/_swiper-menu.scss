@@ -111,6 +111,10 @@
       opacity: 1;
       transform: translateX(0);
     }
+
+    > li .arrow-next {
+      right: 0;
+    }
   }
 
   .swiper-column-waiting {
