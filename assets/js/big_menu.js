@@ -41,9 +41,10 @@ export function big_menu () {
     event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 
     // Remove the empty-state
-    $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive').on( 'webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
-      $(this).remove();
-    });
+    $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive')
+    setTimeout(() => {
+      $swiper.find('.swiper-empty-state').remove();
+    }, 250);
 
     // Unactive all other siblings li in the column
     $(this).parents('.swiper-column').find('li.active').toggleClass('active');
@@ -83,6 +84,9 @@ export function big_menu () {
 
     // Close current pane
     $current_pane.removeClass('active');
-    $current_wrapper.removeClass('active');
+    setTimeout(() => {
+      $current_wrapper.removeClass('active');
+    }, 250);
+
   });
 }
