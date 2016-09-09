@@ -1,0 +1,100 @@
+@charset 'UTF-8';
+
+.loader {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+
+  @each $label, $color in $themes {
+    .loader-#{$label} {
+      background: $color;
+    }
+  }
+}
+
+.loader-snake {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: $brand-primary;
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+
+  /* stylelint-disable no-indistinguishable-colors */
+  /* Need HSLA for my loader so stfu */
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background:
+      linear-gradient(0deg, hsla(0, 0%, 100%, 1) 50%, hsla(0, 0%, 100%, 0.9) 100%) 0% 0%,
+      linear-gradient(90deg, hsla(0, 0%, 100%, 0.9) 0%, hsla(0, 0%, 100%, 0.6) 100%) 100% 0%,
+      linear-gradient(180deg, hsla(0, 0%, 100%, 0.6) 0%, hsla(0, 0%, 100%, 0.3) 100%) 100% 100%,
+      linear-gradient(360deg, hsla(0, 0%, 100%, 0.3) 0%, hsla(0, 0%, 100%, 0) 100%) 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    border-radius: 50%;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    bottom: 3%;
+    left: 3%;
+    background: $white;
+    border-radius: 50%;
+  }
+  /* stylelint-enable no-indistinguishable-colors */
+}
+
+.loader-yingyang {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: $brand-primary;
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+
+  /* stylelint-disable no-indistinguishable-colors */
+  /* Need HSLA for my loader so stfu */
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background:
+      linear-gradient(0deg, hsla(0, 0%, 100%, 1) 50%, hsla(0, 0%, 100%, 0.9) 100%) 0% 0%,
+      linear-gradient(90deg, hsla(0, 0%, 100%, 0.9) 0%, hsla(0, 0%, 100%, 0) 100%) 100% 0%,
+      linear-gradient(180deg, hsla(0, 0%, 100%, 1) 50%, hsla(0, 0%, 100%, 0.9) 100%) 100% 100%,
+      linear-gradient(360deg, hsla(0, 0%, 100%, 0.9) 0%, hsla(0, 0%, 100%, 0) 100%) 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    border-radius: 50%;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    bottom: 3%;
+    left: 3%;
+    background: $white;
+    border-radius: 50%;
+  }
+  /* stylelint-enable no-indistinguishable-colors */
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
