@@ -13,10 +13,13 @@
 
   .card-content {
     margin-bottom: $grid-gutter-width;
-    padding: 0 $grid-gutter-width;
+    padding: 0 $grid-gutter-width/2;
 
     li {
       margin: $grid-gutter-width / 1.5 0;
+      padding-left: $grid-gutter-width/2;
+      padding-right: $grid-gutter-width/2;
+      border: 1px solid $transparent;
 
       &:first-child {
         margin-top: 0;
@@ -25,10 +28,24 @@
       &:last-child {
         margin-bottom: 0;
       }
+
+      &:hover {
+        cursor: pointer;
+        border: 1px solid $ligthen-grey;
+        border-radius: $border-radius-base;
+      }
     }
 
     a.pretty-link {
-      color: $black;
+      @include pretty-link($black);
+
+      &:hover {
+        @include pretty-link($brand-primary, $white, $transparent);
+      }
+    }
+
+    .media-left {
+      line-height: 0;
     }
   }
 
@@ -37,18 +54,42 @@
     background: $ligthen-grey;
 
     a.pretty-link {
-      color: $black;
+      @include pretty-link($black, $ligthen-grey);
+
+      &:hover {
+        @include pretty-link($brand-primary, $ligthen-grey, $black);
+      }
     }
   }
 
   @each $label, $color in $themes {
     &.card-attachement-#{$label} {
-      a.pretty-link {
-        @include pretty-link($black, $white, $color);
-      }
-
       .media-left a {
         color: $color;
+      }
+
+      .retraitespopulaires-icon {
+        color: $color;
+      }
+    }
+
+    &.card-attachement-#{$label} .card-content {
+      a.pretty-link {
+        @include pretty-link($black, $white, $color);
+
+        &:hover {
+          @include pretty-link($color, $white, $transparent);
+        }
+      }
+    }
+
+    &.card-attachement-#{$label} .card-footer {
+      a.pretty-link {
+        @include pretty-link($black, $ligthen-grey, $color);
+
+        &:hover {
+          @include pretty-link($color, $ligthen-grey, $black);
+        }
       }
     }
   }
