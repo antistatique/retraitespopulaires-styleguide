@@ -11,7 +11,7 @@ notes: |
       <div class="col-xs-12 text-center">
         <div class="spacer"></div>
         <h2>Retrouvez-nous sur les réseaux sociaux</h2>
-        <p>Suivez-nous en temps réel sur Twitter. FAcebook et vos plateformes préférées!</p>
+        <p>Suivez-nous en temps réel sur Twitter. Facebook et vos plateformes préférées!</p>
         <div class="spacer spacer-xs"></div>
       </div>
     </div>
