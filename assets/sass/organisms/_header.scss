@@ -10,7 +10,7 @@ header {
   border-bottom: 1px solid $input-border;
 
   .global-search {
-    margin-top: -10px;
+    margin-top: $grid-gutter-width / 2;
     opacity: 0;
     transition: opacity 0.25s ease-in-out;
 

@@ -6,7 +6,6 @@ notes: |
   ##### Usage : `search-form`
 ---
 <form class="global-search">
-    <label class="label-hidden"></label>
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Chercher un produit, un document, un contact, ...">
       <span class="input-group-btn">

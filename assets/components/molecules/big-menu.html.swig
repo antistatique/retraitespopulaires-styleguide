@@ -9,7 +9,7 @@ notes: |
 <div class="big-menu">
   <div class="container-big-menu container-fuild">
     <div class="row">
-      <div class="col-xs-12 visible-xs">
+      <div class="col-no-padding col-xs-12 visible-xs">
       {% include '../molecules/search-form.html.swig' %}
       <div class="spacer"></div>
       </div>
