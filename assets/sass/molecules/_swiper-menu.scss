@@ -41,8 +41,8 @@
       }
 
       &.active {
-        border-top-color: $input-border;
-        border-bottom-color: $input-border;
+        border-top-color: $light-grey;
+        border-bottom-color: $light-grey;
       }
     }
   }
@@ -76,11 +76,11 @@
       min-height: calc(100vh - 80px - #{$grid-gutter-width*2});
 
       &.swiper-column-1 {
-        border-right: 1px solid $input-border;
+        border-right: 1px solid $light-grey;
       }
 
       &.swiper-column-3 {
-        border-left: 1px solid $input-border;
+        border-left: 1px solid $light-grey;
       }
     }
   }
@@ -118,7 +118,7 @@
   }
 
   .swiper-column-waiting {
-    border: 1px dashed $input-border;
+    border: 1px dashed $light-grey;
     border-left: 0;
   }
 
@@ -128,7 +128,7 @@
 
   .swiper-list-first > li {
     &.active {
-      border-left-color: $input-border;
+      border-left-color: $light-grey;
 
       &:after {
         content: ' ';
@@ -148,7 +148,7 @@
 
   .swiper-list-last > li {
     &.active {
-      border-right: 2px solid $input-border;
+      border-right: 2px solid $light-grey;
 
       &:after {
         content: ' ';
