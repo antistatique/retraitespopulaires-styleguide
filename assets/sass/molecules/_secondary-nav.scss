@@ -27,7 +27,7 @@
 .secondary-nav-content {
   display: block;
   margin-left: $grid-gutter-width * 1.5;
-  border: 1px solid $ligthen-grey;
+  border: 1px solid $ligthen-gray;
 
   @media only screen and (min-width: $screen-mlg-min) {
     display: inline-block;
@@ -35,7 +35,7 @@
 
   .title {
     padding: $grid-gutter-width / 1.5;
-    border-bottom: 1px solid $ligthen-grey;
+    border-bottom: 1px solid $ligthen-gray;
     color: $brand-primary;
   }
 

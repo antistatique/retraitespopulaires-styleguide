@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 .collapse-wrapper {
-  border-bottom: 1px solid $light-grey;
+  border-bottom: 1px solid $light-gray;
 }
 
 .collapse-title {
@@ -43,7 +43,7 @@
   }
 
   &:hover {
-    background: lighten($grey, 50%);
+    background: lighten($gray, 50%);
   }
 }
 

@@ -2,15 +2,15 @@
 
 .pagination {
   li > a {
-    padding: 0;
     margin: 0 $grid-gutter-width/4;
+    padding: 0;
     border: 0;
     font-family: Cocon Pro;
   }
 
   .active.number > a {
-    background-color: $ligthen-grey;
-    border: 1px solid $ligthen-grey;
+    background-color: $ligthen-gray;
+    border: 1px solid $ligthen-gray;
     color: $black;
   }
 
@@ -18,8 +18,8 @@
   > li > a:focus,
   > li > span:hover,
   > li > span:focus {
-    background-color: $ligthen-grey;
-    border: 1px solid $ligthen-grey;
+    background-color: $ligthen-gray;
+    border: 1px solid $ligthen-gray;
     color: $black;
   }
 

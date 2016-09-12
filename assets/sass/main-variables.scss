@@ -7,10 +7,10 @@ $black: #000;
 $transparent: rgba(255, 255, 255, 0);
 
 $green: #008e4f;
-$grey: #747476;
-$light-grey: #ccc;
-$ligthen-grey: #e8e8e8;
-$shadow-grey: rgba(132, 132, 132, 0.5);
+$gray: #747476;
+$light-gray: #ccc;
+$ligthen-gray: #e8e8e8;
+$shadow-gray: rgba(132, 132, 132, 0.5);
 
 /**
 * Colors Profession
@@ -35,7 +35,7 @@ $color-instagram: #000;
 
 // forms
 $input-bg-focus: $white;
-$input-border-disabled: lighten($grey, 50%);
+$input-border-disabled: lighten($gray, 50%);
 $input-border-size: 1px;
 
 /**

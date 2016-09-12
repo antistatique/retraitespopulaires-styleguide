@@ -3,12 +3,12 @@
 .card-attachement {
   width: 100%;
   background: $white;
-  border: 1px solid $ligthen-grey;
+  border: 1px solid $ligthen-gray;
   border-radius: $border-radius-large;
 
   .card-title {
     padding: $grid-gutter-width;
-    color: $grey;
+    color: $gray;
   }
 
   .card-content {
@@ -31,7 +31,7 @@
 
       &:hover {
         cursor: pointer;
-        border: 1px solid $ligthen-grey;
+        border: 1px solid $ligthen-gray;
         border-radius: $border-radius-base;
       }
     }
@@ -51,13 +51,13 @@
 
   .card-footer {
     padding: $grid-gutter-width;
-    background: $ligthen-grey;
+    background: $ligthen-gray;
 
     a.pretty-link {
-      @include pretty-link($black, $ligthen-grey);
+      @include pretty-link($black, $ligthen-gray);
 
       &:hover {
-        @include pretty-link($brand-primary, $ligthen-grey, $black);
+        @include pretty-link($brand-primary, $ligthen-gray, $black);
       }
     }
   }
@@ -88,10 +88,10 @@
 
     &.card-attachement-#{$label} .card-footer {
       a.pretty-link {
-        @include pretty-link($black, $ligthen-grey, $color);
+        @include pretty-link($black, $ligthen-gray, $color);
 
         &:hover {
-          @include pretty-link($color, $ligthen-grey, $black);
+          @include pretty-link($color, $ligthen-gray, $black);
         }
       }
     }

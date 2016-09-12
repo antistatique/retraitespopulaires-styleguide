@@ -35,7 +35,7 @@ ul.facets-list {
       top: -0.2em;
       left: -1em;
       font-size: 0.8em;
-      color: $grey;
+      color: $gray;
     }
   }
 
@@ -82,7 +82,7 @@ ol.ordered-list {
       content: counter(item) '. ';  // 1.
       margin-right: 0.5em;
       counter-increment: item;
-      color: $grey;
+      color: $gray;
     }
   }
 }

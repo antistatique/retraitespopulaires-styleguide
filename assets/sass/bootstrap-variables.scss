@@ -188,12 +188,12 @@ $btn-border-radius-small:        $btn-border-radius-base !default;
 //** `<input>` background color
 $input-bg:                       $white !default;
 //** `<input disabled>` background color
-$input-bg-disabled:              lighten($grey, 50%) !default;
+$input-bg-disabled:              lighten($gray, 50%) !default;
 
 //** Text color for `<input>`s
 $input-color:                    $black !default;
 //** `<input>` border color
-$input-border:                   $light-grey !default;
+$input-border:                   $light-gray !default;
 
 // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius
