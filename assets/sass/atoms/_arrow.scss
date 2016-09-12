@@ -1,0 +1,69 @@
+@charset 'UTF-8';
+
+.arrow {
+  cursor: pointer;
+
+  @each $label, $color in $themes {
+    &.arrow-#{$label} {
+      color: $color;
+    }
+
+    &:hover {
+      &.arrow-#{$label} {
+        color: darken($color, 20%);
+      }
+    }
+  }
+}
+
+.arrow-small {
+  padding: 10px;
+  font-size: $font-size-base * 0.7;
+}
+
+.arrow-flip {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.arrow-rounded {
+  position: relative;
+  padding: 10px 19px;
+  border: 1px solid $black;
+  border-radius: 50%;
+  border-color: $brand-primary;
+  color: $brand-primary;
+  transition:
+    border 0.25s ease-in-out,
+    color 0.25s ease-in-out,
+    color 0.25s ease-in-out;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    background-color: $brand-primary;
+    color: $white;
+  }
+
+  &.arrow-small {
+    padding: 10px 15px;
+  }
+
+  @each $label, $color in $themes {
+    &.arrow-#{$label} {
+      border-color: $color;
+    }
+
+    &:hover {
+      &.arrow-#{$label} {
+        background-color: $color;
+        color: $white;
+      }
+    }
+  }
+}

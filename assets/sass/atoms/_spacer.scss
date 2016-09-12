@@ -10,6 +10,7 @@ $spacer-height: 60px;
   &.spacer-md { height: $spacer-height / 1.55; }
   &.spacer-sm { height: $spacer-height / 3; }
   &.spacer-xs { height: $spacer-height / 5; }
+  &.spacer-xxs { height: $spacer-height / 7; }
 
   @media only screen and (max-width: $screen-sm-max) {
     height: $spacer-height / 2;
@@ -19,5 +20,6 @@ $spacer-height: 60px;
     &.spacer-md { height: $spacer-height / 2; }
     &.spacer-sm { height: $spacer-height / 5; }
     &.spacer-xs { height: $spacer-height / 10; }
+    &.spacer-xxs { height: $spacer-height / 15; }
   }
 }

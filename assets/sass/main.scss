@@ -13,6 +13,8 @@
 // atoms:
 @import 'atoms/favicon';
 @import 'atoms/loader';
+@import 'atoms/icon-text';
+@import 'atoms/arrow';
 @import 'atoms/input-text';
 @import 'atoms/logo-retraitespopulaires';
 @import 'atoms/hamburger';
@@ -30,6 +32,9 @@
 
 // molecules:
 @import 'molecules/breadcrumb';
+@import 'molecules/big-menu-empty';
+@import 'molecules/search-form';
+@import 'molecules/swiper-menu';
 @import 'molecules/tabs';
 @import 'molecules/secondary-nav';
 @import 'molecules/table';
