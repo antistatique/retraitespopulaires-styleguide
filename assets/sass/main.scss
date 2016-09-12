@@ -11,7 +11,6 @@
 @import 'themes';
 
 // atoms:
-@import 'atoms/teaser-product';
 @import 'atoms/section-bloc';
 @import 'atoms/favicon';
 @import 'atoms/loader';
@@ -35,6 +34,7 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/teaser-product';
 @import 'molecules/teaser-news';
 @import 'molecules/teaser-rental';
 @import 'molecules/teaser-contact';
@@ -51,6 +51,7 @@
 @import 'molecules/card-attachement';
 
 // organisms:
+@import 'organisms/attachments-job';
 @import 'organisms/container-sidebars';
 @import 'organisms/footer';
 @import 'organisms/header';

@@ -73,6 +73,9 @@
       }
     }
 
+    /* stylelint-disable max-nesting-depth */
+    /* More readable with 4 levels sorry */
+
     &.card-attachement-#{$label} .card-content {
       a.pretty-link {
         @include pretty-link($black, $white, $color);
@@ -92,5 +95,6 @@
         }
       }
     }
+    /* stylelint-enable max-nesting-depth */
   }
 }

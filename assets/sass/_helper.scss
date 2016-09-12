@@ -67,9 +67,12 @@
 /**
 * Alignments of blocks
 */
+/* stylelint-disable declaration-no-important */
+/* Override as Bootstrap do */
 @media only screen and (min-width: $screen-mlg-min) {
   .hidden-mlg { display: block !important; }
 }
 @media only screen and (min-width: $screen-xlg-min) {
   .hidden-xlg { display: block !important; }
 }
+/* stylelint-enable declaration-no-important */

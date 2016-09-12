@@ -1,7 +1,7 @@
 ---
 title: teaser-product
 name: teaser-product
-collection: atoms
+collection: molecules
 notes: |
   ##### Usage : `teaser-product`
 ---
