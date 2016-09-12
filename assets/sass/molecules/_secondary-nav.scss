@@ -18,6 +18,10 @@
       transform: rotate(180deg);
     }
   }
+
+  @media only screen and (min-width: $screen-mlg-min) {
+    margin-left: -16px;
+  }
 }
 
 .secondary-nav-content {
@@ -25,7 +29,7 @@
   margin-left: $grid-gutter-width * 1.5;
   border: 1px solid $ligthen-grey;
 
-  @media only screen and (min-width: $screen-md) {
+  @media only screen and (min-width: $screen-mlg-min) {
     display: inline-block;
   }
 

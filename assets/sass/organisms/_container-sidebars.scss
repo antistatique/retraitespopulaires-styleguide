@@ -7,6 +7,7 @@
 
   .container-sidebars-left {
     order: 1;
+    width: 100%;
   }
 
   .container-sidebars-center {
@@ -16,22 +17,42 @@
 
   .container-sidebars-right {
     order: 2;
+    width: 100%;
   }
 
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: $screen-mlg-min) {
     flex-direction: row;
+    flex-wrap: wrap;
 
     .container-sidebars-left {
       order: 0;
+      max-width: 270px;
     }
 
     .container-sidebars-center {
-      margin: 0 $grid-gutter-width;
       order: 1;
+      max-width: 1000px;
+      margin: 0 $grid-gutter-width;
     }
 
     .container-sidebars-right {
-      order: 2;
+      // flex-grow: 3;
+    }
+  }
+
+  @media only screen and (min-width: $screen-xlg-min) {
+    flex-wrap: nowrap;
+
+    .container-sidebars-center {
+      max-width: 1170px;
+    }
+
+    .container-sidebars-left {
+      max-width: 350px;
+    }
+
+    .container-sidebars-right {
+      max-width: 350px;
     }
   }
 }

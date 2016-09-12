@@ -11,7 +11,9 @@ layout: page.html.swig
 <div class="container-fluid">
   <div class="container-sidebars">
     <div class="container-sidebars-center">
-      {% include '../molecules/breadcrumb.html.swig' %}
+      <div class="text-center">
+        {% include '../molecules/breadcrumb.html.swig' %}
+      </div>
       <div class="spacer"></div>
 
       <h1 class="page-title text-center">Quel est votre projet ?</h1>
@@ -50,12 +52,12 @@ layout: page.html.swig
       </div>
     </div>
     <div class="container-sidebars-left">
-      <div class="spacer spacer-xl visible-xs visible-sm"></div>
+      <div class="spacer spacer-xl hidden-mlg"></div>
       {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance'} %}
     </div>
     <div class="container-sidebars-right">
-      <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance'} %}
+      <div class="spacer spacer-xl hidden-xlg"></div>
+      {% include '../molecules/teaser-contact.html.swig' %}
     </div>
   </div>
 </div>

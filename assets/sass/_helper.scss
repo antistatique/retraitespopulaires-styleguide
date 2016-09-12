@@ -63,3 +63,13 @@
   margin: 0 auto;
   transform: translateY(-50%);
 }
+
+/**
+* Alignments of blocks
+*/
+@media only screen and (min-width: $screen-mlg-min) {
+  .hidden-mlg { display: block !important; }
+}
+@media only screen and (min-width: $screen-xlg-min) {
+  .hidden-xlg { display: block !important; }
+}
