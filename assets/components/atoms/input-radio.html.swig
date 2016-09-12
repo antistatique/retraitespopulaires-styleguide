@@ -7,7 +7,7 @@ notes: |
 ---
 <div class="form-group">
   <div class="input-radio">
-    <input type="radio" name="taste" value="en" checked="pistache">
+    <input type="radio" name="taste" value="pistache">
     <label class="option">Pistache</label>
   </div>
   <div class="input-radio">
@@ -15,7 +15,7 @@ notes: |
     <label class="option">Menthe fraîche</label>
   </div>
   <div class="input-radio">
-    <input type="radio" name="taste" value="chocolat">
+    <input type="radio" name="taste" value="chocolat" checked="checked" />
     <label class="option">Chocolat</label>
   </div>
 </div>
