@@ -1,0 +1,44 @@
+@charset 'UTF-8';
+
+.pagination {
+  li > a {
+    padding: 0;
+    margin: 0 $grid-gutter-width/4;
+    border: 0;
+    font-family: Cocon Pro;
+  }
+
+  .active.number > a {
+    background-color: $ligthen-grey;
+    border: 1px solid $ligthen-grey;
+    color: $black;
+  }
+
+  > li > a:hover,
+  > li > a:focus,
+  > li > span:hover,
+  > li > span:focus {
+    background-color: $ligthen-grey;
+    border: 1px solid $ligthen-grey;
+    color: $black;
+  }
+
+  > li.arrow > a:hover,
+  > li.arrow > a:focus,
+  > li.arrow > span:hover,
+  > li.arrow > span:focus {
+    background-color: $transparent;
+    border: 0;
+  }
+
+  .number > a {
+    padding: 19px 15px;
+    border: 1px solid $black;
+    border-radius: 50%;
+    border-color: $transparent;
+    font-size: $font-size-h3;
+    line-height: 0;
+    color: $brand-primary;
+    transition: all 0.25s ease;
+  }
+}
