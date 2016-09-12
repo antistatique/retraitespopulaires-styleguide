@@ -1,0 +1,17 @@
+@charset 'UTF-8';
+
+select.form-control {
+  cursor: pointer;
+  padding: 10px 68px 10px 10px;
+  background: $input-bg url('../svg/arrow-select.svg') 98% center no-repeat;
+  background-size: 23px 11px;
+  border: 1px solid $input-border;
+  font-size: $font-size-large;
+  color: $input-color;
+  appearance: none;
+
+  &:focus {
+    background: $input-bg url('../svg/arrow-select.svg') 98% center no-repeat;
+    background-size: 23px 11px;
+  }
+}
