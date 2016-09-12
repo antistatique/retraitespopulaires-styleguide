@@ -12,7 +12,7 @@
 
   .container-sidebars-center {
     order: 0;
-    max-width: 1170px;
+    max-width: 100%;
   }
 
   .container-sidebars-right {
@@ -44,7 +44,7 @@
     flex-wrap: nowrap;
 
     .container-sidebars-center {
-      max-width: 1170px;
+      max-width: 40%;
     }
 
     .container-sidebars-left {
