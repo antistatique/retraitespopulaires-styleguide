@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
-.checkbox {
+.input-checkbox {
+  position: relative;
   margin-left: $grid-gutter-width/4;
 
   label {
@@ -17,7 +18,7 @@
       width: 17px;
       height: 17px;
       margin-left: -$grid-gutter-width/2;
-      background-color: $light-grey;
+      background-color: $white;
       border: 1px solid $brand-primary;
       border-radius: 3px;
       transition:
@@ -41,6 +42,7 @@
   }
 
   input[type='checkbox'] {
+    position: absolute;
     top: 0;
     left: -$grid-gutter-width/4;
     width: 100%;

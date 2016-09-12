@@ -1,16 +1,16 @@
 ---
-title: checkbox
-name: checkbox
+title: input-checkbox
+name: input-checkbox
 collection: atoms
 notes: |
-  ##### Usage : `checkbox`
+  ##### Usage : `input-checkbox`
 ---
 <div class="form-group">
-  <div class="checkbox">
+  <div class="input-checkbox">
     <input type="checkbox" value="pistache">
     <label>Pistache</label>
   </div>
-  <div class="checkbox">
+  <div class="input-checkbox">
     <input type="checkbox" value="menthe-fraiche" checked>
     <label>Menthe fraîche</label>
   </div>
