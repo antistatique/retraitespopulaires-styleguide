@@ -1,0 +1,37 @@
+@charset 'UTF-8';
+
+.container-sidebars {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .container-sidebars-left {
+    order: 1;
+  }
+
+  .container-sidebars-center {
+    order: 0;
+    max-width: 1170px;
+  }
+
+  .container-sidebars-right {
+    order: 2;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    flex-direction: row;
+
+    .container-sidebars-left {
+      order: 0;
+    }
+
+    .container-sidebars-center {
+      margin: 0 $grid-gutter-width;
+      order: 1;
+    }
+
+    .container-sidebars-right {
+      order: 2;
+    }
+  }
+}

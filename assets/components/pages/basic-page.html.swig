@@ -8,18 +8,12 @@ layout: page.html.swig
 {% include '../organisms/header.html.swig' %}
 {% include '../atoms/funky-waves.html.swig' %}
 
-<div class="container">
-  <div class="row"></div>
-    <div class="col-xs-9 col-xs-offset-3 text-center">
+<div class="container-fluid">
+  <div class="container-sidebars">
+    <div class="container-sidebars-center">
       {% include '../molecules/breadcrumb.html.swig' %}
       <div class="spacer"></div>
-    </div>
-  </div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-9 col-md-push-3">
       <h1 class="page-title text-center">Quel est votre projet ?</h1>
       <div class="spacer"></div>
       <div class="entity-content">
@@ -55,7 +49,11 @@ layout: page.html.swig
         </table>
       </div>
     </div>
-    <div class="col-xs-12 col-md-3 col-md-pull-9">
+    <div class="container-sidebars-left">
+      <div class="spacer spacer-xl visible-xs visible-sm"></div>
+      {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance'} %}
+    </div>
+    <div class="container-sidebars-right">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
       {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance'} %}
     </div>
