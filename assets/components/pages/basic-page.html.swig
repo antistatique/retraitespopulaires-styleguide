@@ -52,16 +52,15 @@ layout: page.html.swig
       </div>
     </div>
     <div class="container-sidebars-left">
-      <div class="spacer spacer-xl hidden-mlg"></div>
+      <div class="spacer spacer-lg hidden-mlg"></div>
       {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance'} %}
     </div>
     <div class="container-sidebars-right">
-      <div class="spacer spacer-xl hidden-xlg"></div>
+      <div class="spacer spacer-lg hidden-xlg"></div>
       {% include '../molecules/teaser-contact.html.swig' %}
     </div>
   </div>
 </div>
-<div class="spacer spacer-xl"></div>
 
 <div class="attachements-wrapper">
   <div class="container">
