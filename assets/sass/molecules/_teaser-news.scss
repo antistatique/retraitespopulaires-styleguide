@@ -1,0 +1,25 @@
+@charset 'UTF-8';
+
+.teaser-news {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 900px;
+  border: 1px solid $brand-primary;
+  border-radius: $border-radius-base;
+
+  .news-heading {
+    width: 100%;
+    height: 196px;
+  }
+
+  .news-body {
+    margin: 0;
+    padding: $grid-gutter-width/2;
+    color: $text-color;
+  }
+
+  .news-date {
+    margin-right: $grid-gutter-width/2;
+  }
+}

@@ -21,12 +21,6 @@
     div { display: inline-block; }
   }
 
-  @media only screen and (min-width: $screen-md-min) {
-    .info-rent {
-      div { display: block; }
-    }
-  }
-
   @media only screen and (min-width: $screen-xlg-min) {
     display: flex;
     flex-direction: column;
