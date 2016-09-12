@@ -3,11 +3,12 @@
 .container-sidebars {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
 
   .container-sidebars-left {
-    order: 1;
+    order: 2;
     width: 100%;
+    margin-right: auto;
   }
 
   .container-sidebars-center {
@@ -16,8 +17,9 @@
   }
 
   .container-sidebars-right {
-    order: 2;
+    order: 1;
     width: 100%;
+    margin-left: auto;
   }
 
   @media only screen and (min-width: $screen-mlg-min) {
@@ -44,7 +46,7 @@
     flex-wrap: nowrap;
 
     .container-sidebars-center {
-      max-width: 40%;
+      max-width: 1170px;
     }
 
     .container-sidebars-left {

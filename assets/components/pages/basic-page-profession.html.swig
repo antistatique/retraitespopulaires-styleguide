@@ -54,37 +54,54 @@ layout: page.html.swig
           </tbody>
         </table>
       </div>
+
+      <div class="spacer"></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="h1 text-center">Retraites Populaires peut vous aider ! Voici la gamme complète des produits 3e pilier A et B.</div>
+          <div class="spacer spacer-md"></div>
+        </div>
+
+        <div class="col-md-4">
+          <p class="media-heading text-muted">Votre versement</p>
+          <ul class="facets-list">
+            <li><a href="#" class="pretty-link text-black">Une seule prime</a></li>
+            <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
+          </ul>
+
+          <div class="spacer spacer-sm"></div>
+          <p class="media-heading text-muted">Fiscalité</p>
+          <ul class="facets-list">
+            <li><a href="#" class="pretty-link text-black">3e pillier B</a></li>
+            <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
+          </ul>
+
+          <div class="spacer spacer-sm"></div>
+          <p class="media-heading text-muted">Forme de prestation</p>
+          <ul class="facets-list">
+            <li><a href="#" class="pretty-link text-black">Capital</a></li>
+            <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
+          </ul>
+
+          <div class="spacer spacer-sm"></div>
+          <p class="media-heading text-muted">Couverture</p>
+          <ul class="facets-list">
+            <li><a href="#" class="pretty-link text-black">Prestation en cas de vie</a></li>
+            <li><a href="#" class="pretty-link text-black">Prestation en cas de décès</a></li>
+          </ul>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-sm-6">{% include '../molecules/teaser-product.html.swig' %}</div>
+            <div class="col-sm-6">{% include '../molecules/teaser-product.html.swig' %}</div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="col-xs-12 col-md-3 col-md-pull-9">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-
-      <p class="media-heading text-muted">Votre versement</p>
-      <ul class="facets-list">
-        <li><a href="#" class="pretty-link text-black">Une seule prime</a></li>
-        <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
-      </ul>
-
-      <div class="spacer spacer-sm"></div>
-      <p class="media-heading text-muted">Fiscalité</p>
-      <ul class="facets-list">
-        <li><a href="#" class="pretty-link text-black">3e pillier B</a></li>
-        <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
-      </ul>
-
-      <div class="spacer spacer-sm"></div>
-      <p class="media-heading text-muted">Forme de prestation</p>
-      <ul class="facets-list">
-        <li><a href="#" class="pretty-link text-black">Capital</a></li>
-        <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
-      </ul>
-
-      <div class="spacer spacer-sm"></div>
-      <p class="media-heading text-muted">Couverture</p>
-      <ul class="facets-list">
-        <li><a href="#" class="pretty-link text-black">Prestation en cas de vie</a></li>
-        <li><a href="#" class="pretty-link text-black">Prestation en cas de décès</a></li>
-      </ul>
-      <div class="spacer"></div>
       {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance'} %}
     </div>
   </div>

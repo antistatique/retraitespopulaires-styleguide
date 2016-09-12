@@ -71,23 +71,36 @@ layout: page.html.swig
           <li><strong>Option 2:</strong> toucher un capital de CHF 20'000</li>
         </ul>
       </div>
+      <div class="spacer"></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="h1 text-center">Retraites Populaires peut vous aider ! Voici la gamme complète des produits 3e pilier A et B.</div>
+          <div class="spacer spacer-md"></div>
+        </div>
+
+        <div class="col-md-4">
+          <ul class="facets-list">
+            <li><a href="#" class="pretty-link text-black-assurance">RP Rente Immédiate</a></li>
+            <li><a href="#" class="pretty-link text-black-assurance">RP Rente Immédiate certain</a></li>
+            <li><a href="#" class="pretty-link text-black-assurance">RP Rente différéee</a></li>
+            <li><a href="#" class="pretty-link text-black-assurance">RP Jeune</a></li>
+            <li><a href="#" class="pretty-link text-black-assurance">RP Duo primes périodiques</a></li>
+            <li><a href="#" class="pretty-link text-black-assurance">RP Prime unique</a></li>
+            <li><a href="#" class="pretty-link text-black-assurance">RP Épargne</a></li>
+            <li><a href="#" class="pretty-link text-black-assurance">RP Refuge</a></li>
+          </ul>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-sm-6">{% include '../molecules/teaser-product.html.swig' %}</div>
+            <div class="col-sm-6">{% include '../molecules/teaser-product.html.swig' %}</div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-xs-12 col-md-3 col-md-pull-9">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-
-      <p class="media-heading text-muted">Les produits de Retraites Populaires</p>
-      <ul class="facets-list">
-        <li><a href="#" class="pretty-link text-black-assurance">RP Rente Immédiate</a></li>
-        <li><a href="#" class="pretty-link text-black-assurance">RP Rente Immédiate certain</a></li>
-        <li><a href="#" class="pretty-link text-black-assurance">RP Rente différéee</a></li>
-        <li><a href="#" class="pretty-link text-black-assurance">RP Jeune</a></li>
-        <li><a href="#" class="pretty-link text-black-assurance">RP Duo primes périodiques</a></li>
-        <li><a href="#" class="pretty-link text-black-assurance">RP Prime unique</a></li>
-        <li><a href="#" class="pretty-link text-black-assurance">RP Épargne</a></li>
-        <li><a href="#" class="pretty-link text-black-assurance">RP Refuge</a></li>
-      </ul>
-
-      <div class="spacer spacer-sm"></div>
       {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance'} %}
     </div>
   </div>
