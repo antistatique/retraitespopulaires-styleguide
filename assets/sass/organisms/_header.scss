@@ -8,6 +8,11 @@ header {
   background: $white;
   z-index: 2002;
   border-bottom: 1px solid $light-grey;
+  transition: border 0.25s ease-in-out;
+
+  &.active {
+    border-bottom-color: transparent;
+  }
 
   .global-search {
     margin-top: $grid-gutter-width / 2;

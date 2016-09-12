@@ -15,6 +15,9 @@
       padding: $grid-gutter-width/2 $grid-gutter-width*2.333333333 $grid-gutter-width/2 $grid-gutter-width/2;
       border: 1px solid $transparent;
       line-height: 1em;
+      word-break: break-all;
+      word-break: break-word; // Non standard for webkit
+      hyphens: auto;
 
       .arrow-next {
         position: absolute;
@@ -90,7 +93,7 @@
       padding: $grid-gutter-width/3;
 
       @media only screen and (min-width: $screen-md) {
-        padding: $grid-gutter-width/1.5 $grid-gutter-width/2;
+        padding: $grid-gutter-width/1.5 $grid-gutter-width*2.333333333 $grid-gutter-width/1.5 $grid-gutter-width/2;
       }
     }
   }
