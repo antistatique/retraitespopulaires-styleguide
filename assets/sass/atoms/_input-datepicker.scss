@@ -1,0 +1,31 @@
+@charset 'UTF-8';
+
+.datepicker-dropdown {
+  padding: 16px;
+}
+
+.datepicker th.dow {
+  font-weight: 600;
+  color: $light-grey;
+}
+
+.datepicker table tr td.active.active {
+  background: $brand-primary;
+}
+
+.table-condensed > tbody > tr > td.day {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.datepicker table tr td.active:hover.active {
+  background: $brand-primary;
+}
+
+.table-condensed > thead > tr > th.prev,
+.table-condensed > thead > tr > th.next {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}

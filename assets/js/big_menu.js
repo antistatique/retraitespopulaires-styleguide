@@ -44,7 +44,7 @@ export function big_menu () {
     event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 
     // Remove the empty-state
-    $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive')
+    $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive');
     setTimeout(() => {
       $swiper.find('.swiper-empty-state').remove();
     }, 250);
