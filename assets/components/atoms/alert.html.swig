@@ -13,5 +13,5 @@ notes: |
 
 <div class="alert alert-{{type}}">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  This is a bag message.
+  <strong>Info!</strong> Indique un changement ou une action d'information neutre.
 </div>
