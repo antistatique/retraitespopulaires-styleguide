@@ -8,10 +8,7 @@ layout: examples.html.swig
 <div class="row">
   <div class="col-xs-12 col-sm-6">
     {% include '../atoms/button.html.swig' %}
-
-    <div class="btn btn-lg btn-secondary">Secondary</div>
-
-    <div class="btn btn-lg btn-outline">outline</div>
-
+    <div class="btn btn-lg btn-secondary">Secondaire</div>
+    <div class="btn btn-lg btn-outline">Contour</div>
   </div>
 </div>

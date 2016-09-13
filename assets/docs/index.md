@@ -1,12 +1,12 @@
 ---
-title: Overview
+title: Moodboard
 styleguide: true
 permalink: false
 ---
 <div class="moodboard">
   <div class="row">
     <div class="col-xs-12">
-      <h2>Brands Colors</h2>
+      <h2>Couleurs principales</h2>
       <div class="spacer spacer-xs"></div>
       <div class="f-color-chips">
         <div class="f-color-chip" style="border-top-color: #008e4f; border-bottom-color: #008e4f;">
@@ -29,7 +29,7 @@ permalink: false
 
   <div class="row">
     <div class="col-xs-12">
-      <h2>Professions Colors</h2>
+      <h2>Couleurs par métier</h2>
       <div class="spacer spacer-xs"></div>
       <div class="f-color-chips">
         <div class="f-color-chip" style="border-top-color: #cbb900; border-bottom-color: #cbb900;">
@@ -63,7 +63,7 @@ permalink: false
 
   <div class="row">
     <div class="col-xs-12">
-      <h2>Institutions & Annexes Colors</h2>
+      <h2>Couleurs des instituions et annexes</h2>
       <div class="spacer spacer-xs"></div>
       <div class="f-color-chips">
         <div class="f-color-chip" style="border-top-color: #663d07; border-bottom-color: #663d07;">
@@ -92,7 +92,7 @@ permalink: false
 
   <div class="row">
     <div class="col-xs-12">
-      <h2>Typography</h2>
+      <h2>Typographie</h2>
       <div class="spacer spacer-xs"></div>
       <!-- Heading 1  -->
       <div class="row">
@@ -182,7 +182,7 @@ permalink: false
       <!-- Quote  -->
       <div class="row">
         <div class="col-md-2">
-          <b>Quote</b>
+          <b>Citation</b>
           <div class="text-muted">Frutiger Neue Regular</div>
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
@@ -194,7 +194,7 @@ permalink: false
       <!-- Highlight  -->
       <div class="row">
         <div class="col-md-2">
-          <b>Highlight</b>
+          <b>Surligner</b>
           <div class="text-muted">Frutiger Neue Regular</div>
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
@@ -206,7 +206,7 @@ permalink: false
       <!-- Unordered List  -->
       <div class="row">
         <div class="col-md-2">
-          <b>Unordered List</b>
+          <b>Liste non ordonnée</b>
           <div class="text-muted">Frutiger Neue Regular</div>
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
@@ -225,7 +225,7 @@ permalink: false
       <!-- Ordered List  -->
       <div class="row">
         <div class="col-md-2">
-          <b>Ordered List</b>
+          <b>Liste ordonnée</b>
           <div class="text-muted">Frutiger Neue Regular</div>
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
@@ -244,7 +244,7 @@ permalink: false
       <!-- Table  -->
       <div class="row">
         <div class="col-md-2">
-          <b>Table</b>
+          <b>Tableau</b>
           <div class="text-muted">Frutiger Neue Regular</div>
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
@@ -269,7 +269,7 @@ permalink: false
       <!-- Number  -->
       <div class="row">
         <div class="col-md-2">
-          <b>Number</b>
+          <b>Nombres</b>
           <div class="text-muted">Frutiger Neue Regular</div>
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
@@ -281,7 +281,7 @@ permalink: false
       <!-- SuperScript & SubScript  -->
       <div class="row">
         <div class="col-md-2">
-          <b>SuperScript & SubScript</b>
+          <b>Exposant et Indice</b>
           <div class="text-muted">Frutiger Neue Regular</div>
           <div class="spacer spacer-sm visible-xs visible-sm"></div>
         </div>
@@ -297,7 +297,7 @@ permalink: false
 
   <div class="row">
     <div class="col-sm-12">
-      <h2>Iconography</h2>
+      <h2>Iconographie</h2>
       <div class="spacer spacer-xs"></div>
       <div class="icons">
         <div class="square">

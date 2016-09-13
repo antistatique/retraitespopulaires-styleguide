@@ -8,7 +8,7 @@ layout: examples.html.swig
 <div class="row">
   <div class="col-xs-12">
     <div class="form-group readonly">
-      <label>Champ Read-only</label>
+      <label>Champ lecture seule</label>
       <input type="text" class="form-control" value="Tu peux me lire mais tu ne peux pas m'éditer !" readonly></input>
     </div>
 
@@ -26,7 +26,7 @@ layout: examples.html.swig
     <div class="form-group">
       <label>Groupe</label>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for...">
+        <input type="text" class="form-control" placeholder="Rechercher des documents, articles, ...">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button">Rechercher</button>
         </span>
@@ -34,7 +34,7 @@ layout: examples.html.swig
     </div>
 
     <div class="form-group readonly">
-      <label>Groupe - Read-only</label>
+      <label>Groupe - lecture seule</label>
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Tu peux me lire mais tu ne peux pas m'éditer !" readonly>
         <span class="input-group-btn">
