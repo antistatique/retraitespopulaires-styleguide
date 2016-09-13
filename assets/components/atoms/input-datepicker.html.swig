@@ -6,7 +6,7 @@ notes: |
   ##### Usage : `input-datepicker`
 ---
 <div class="form-group">
-  <label class="label-hidden"></label>
+  <label>label</label>
   <div class="input-group">
     <input type="text" class="form-control datepicker" value="02/12/2016">
     <span class="input-group-btn">
