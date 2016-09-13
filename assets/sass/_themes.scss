@@ -49,6 +49,10 @@ a.pretty-link {
   &.pretty-link-light-gray {
     @include pretty-link($green, $light-gray);
   }
+
+  &.pretty-link-berrylight-gray {
+    @include pretty-link($green, $berrylight-gray);
+  }
 }
 
 a.pretty-link-hover {
