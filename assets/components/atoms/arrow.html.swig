@@ -5,4 +5,4 @@ collection: atoms
 notes: |
   ##### Usage : `arrow`
 ---
-<a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded arrow-assurance"></a>
+<a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded"></a>

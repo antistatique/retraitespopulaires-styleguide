@@ -1,7 +1,12 @@
 @charset 'UTF-8';
 
 .datepicker-dropdown {
-  padding: 16px;
+  padding: 0 10px;
+}
+
+.datepicker table {
+  border-collapse: separate;
+  border-spacing: 5px;
 }
 
 .datepicker th.dow {
@@ -14,8 +19,7 @@
 }
 
 .table-condensed > tbody > tr > td.day {
-  width: 32px;
-  height: 32px;
+  padding: 6px 7px 3px;
   border-radius: 50%;
 }
 
