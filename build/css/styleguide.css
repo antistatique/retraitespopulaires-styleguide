@@ -366,7 +366,7 @@ body {
   width: 50%;
   height: 170px;
   background-color: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #ccc;
   text-align: center; }
   @media screen and (min-width: 768px) {
     .moodboard .square {
@@ -399,7 +399,7 @@ body {
   margin-right: 10px;
   padding: 1em;
   background: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #ccc;
   border-top-width: 8em;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;

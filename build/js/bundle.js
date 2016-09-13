@@ -17,17 +17,20 @@ function big_menu() {
 
   var $body = (0, _jquery2.default)('body'),
       $wrapper = (0, _jquery2.default)('.hamburger-wrapper'),
+      $header = (0, _jquery2.default)('header'),
       $navbar = (0, _jquery2.default)('.big-menu'),
       $search = (0, _jquery2.default)('.global-search');
 
   $wrapper.on('click', function () {
     if ($wrapper.hasClass('active')) {
       $body.toggleClass('no-scroll');
+      $header.toggleClass('active');
       $wrapper.toggleClass('active');
       $navbar.toggleClass('active');
       $search.toggleClass('active');
     } else {
       $body.toggleClass('no-scroll');
+      $header.toggleClass('active');
       $navbar.css({ 'display': 'block' });
       $wrapper.toggleClass('active');
       $navbar.toggleClass('active');
@@ -51,15 +54,16 @@ function big_menu() {
    * @type {[type]}
    */
   $swiper.find('.swiper-list .arrow-next').on('click', function (event) {
-    event.preventDefault();
+    event.preventDefault ? event.preventDefault() : event.returnValue = false;
 
     // Remove the empty-state
-    $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive').on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function () {
-      (0, _jquery2.default)(this).remove();
-    });
+    $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive');
+    setTimeout(function () {
+      $swiper.find('.swiper-empty-state').remove();
+    }, 250);
 
-    // Unactive all other siblings li
-    (0, _jquery2.default)(this).parents('ul').find('li.active').toggleClass('active');
+    // Unactive all other siblings li in the column
+    (0, _jquery2.default)(this).parents('.swiper-column').find('li.active').toggleClass('active');
     // Active the clicked one
     (0, _jquery2.default)(this).parents('li').toggleClass('active');
 
@@ -89,19 +93,44 @@ function big_menu() {
    * @type {[type]}
    */
   $swiper.find('.swiper-list .arrow-back').on('click', function (event) {
-    event.preventDefault();
+    event.preventDefault ? event.preventDefault() : event.returnValue = false;
 
     var $current_pane = (0, _jquery2.default)(this).parents('.swiper-list');
     var $current_wrapper = (0, _jquery2.default)(this).parents('.swiper-column-wrapper');
 
     // Close current pane
     $current_pane.removeClass('active');
-    $current_wrapper.removeClass('active');
+    setTimeout(function () {
+      $current_wrapper.removeClass('active');
+    }, 250);
   });
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],2:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.datepicker = datepicker;
+
+var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function datepicker() {
+  (0, _jquery2.default)('.datepicker').datepicker({
+    language: 'fr',
+    format: 'dd/mm/yyyy'
+  });
+}
+
+}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],3:[function(require,module,exports){
 'use strict';
 
 var _big_menu = require('./big_menu.js');
@@ -110,14 +139,16 @@ var _input_dynamic_label = require('./input_dynamic_label.js');
 
 var _organicJS = require('./organicJS.js');
 
+var _datepicker = require('./datepicker.js');
+
 (function () {
   (0, _big_menu.big_menu)();
   (0, _organicJS.organic_generate)();
-  (0, _organicJS.organic_attachements)();
   (0, _input_dynamic_label.input_dynamic_label)();
+  (0, _datepicker.datepicker)();
 })();
 
-},{"./big_menu.js":1,"./input_dynamic_label.js":3,"./organicJS.js":4}],3:[function(require,module,exports){
+},{"./big_menu.js":1,"./datepicker.js":2,"./input_dynamic_label.js":4,"./organicJS.js":5}],4:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -148,7 +179,7 @@ function input_dynamic_label() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -156,7 +187,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.organic_generate = organic_generate;
-exports.organic_attachements = organic_attachements;
 
 var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
 
@@ -166,13 +196,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function organic_generate() {
   (0, _jquery2.default)('.organic-lines').organicJS();
-}
-
-function organic_attachements() {
-  var $attachments = (0, _jquery2.default)('.attachements-wrapper'),
-      $organic = (0, _jquery2.default)('.attachements-wrapper .organic-lines');
-
-  // $('.organic-lines').css({ 'margin-top': '-' + $attachments.height / 2});
 }
 
 (function ($) {
@@ -279,5 +302,5 @@ function organic_attachements() {
 })(jQuery);
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}]},{},[2])
+},{}]},{},[3])
 //# sourceMappingURL=bundle.js.map
