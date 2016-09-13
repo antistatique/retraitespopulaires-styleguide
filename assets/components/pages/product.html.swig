@@ -80,14 +80,14 @@ layout: page.html.swig
 
         <div class="col-md-4">
           <ul class="facets-list">
-            <li><a href="#" class="pretty-link text-black-assurance">RP Rente Immédiate</a></li>
-            <li><a href="#" class="pretty-link text-black-assurance">RP Rente Immédiate certain</a></li>
-            <li><a href="#" class="pretty-link text-black-assurance">RP Rente différéee</a></li>
-            <li><a href="#" class="pretty-link text-black-assurance">RP Jeune</a></li>
-            <li><a href="#" class="pretty-link text-black-assurance">RP Duo primes périodiques</a></li>
-            <li><a href="#" class="pretty-link text-black-assurance">RP Prime unique</a></li>
-            <li><a href="#" class="pretty-link text-black-assurance">RP Épargne</a></li>
-            <li><a href="#" class="pretty-link text-black-assurance">RP Refuge</a></li>
+            <li><a href="#" class="pretty-link">RP Rente Immédiate</a></li>
+            <li><a href="#" class="pretty-link">RP Rente Immédiate certain</a></li>
+            <li><a href="#" class="pretty-link">RP Rente différéee</a></li>
+            <li><a href="#" class="pretty-link">RP Jeune</a></li>
+            <li><a href="#" class="pretty-link">RP Duo primes périodiques</a></li>
+            <li><a href="#" class="pretty-link">RP Prime unique</a></li>
+            <li><a href="#" class="pretty-link">RP Épargne</a></li>
+            <li><a href="#" class="pretty-link">RP Refuge</a></li>
           </ul>
           <div class="spacer spacer-sm"></div>
         </div>

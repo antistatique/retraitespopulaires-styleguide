@@ -8,9 +8,9 @@ notes: |
 <div class="teaser-rental shadow shadow-down">
   <div class="rental-heading" style="background-image: url(https://unsplash.it/1400/780)"></div>
   <div class="rental-body">
-    <a href="#" class="rental-type h1 pretty-link text-black-immobilier">Appartement</a>
+    <a href="#" class="rental-type h1 pretty-link">Appartement</a>
     <div class="spacer spacer-xs"></div>
-    <a href="#" class="rental-title h1 pretty-link text-black-immobilier">Av. Collonges 12, 1004 Lausanne</a>
+    <a href="#" class="rental-title h1 pretty-link">Av. Collonges 12, 1004 Lausanne</a>
     <div class="spacer spacer-sm"></div>
     <div class="row info">
       <div class="col-sm-6 info-property">

@@ -17,7 +17,7 @@ notes: |
       <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
       <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
       <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
-      <li class="active"><a class="pretty-link" href="#">Aliquam placerat</a></li>
+      <li class="active">Aliquam placerat</li>
       <li><a class="pretty-link" href="#">Aliquam placerat</a></li>
       <li><a class="pretty-link text-bold" href="#">Gestion de mandats</a>
         <ul class="list-no-style list-no-padding">

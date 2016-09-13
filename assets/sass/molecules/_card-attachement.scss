@@ -36,14 +36,6 @@
       }
     }
 
-    a.pretty-link {
-      @include pretty-link($black);
-
-      &:hover {
-        @include pretty-link($brand-primary, $white, $transparent);
-      }
-    }
-
     .media-left {
       line-height: 0;
     }
@@ -52,14 +44,6 @@
   .card-footer {
     padding: $grid-gutter-width;
     background: $ligthen-gray;
-
-    a.pretty-link {
-      @include pretty-link($black, $ligthen-gray);
-
-      &:hover {
-        @include pretty-link($brand-primary, $ligthen-gray, $black);
-      }
-    }
   }
 
   @each $label, $color in $themes {
@@ -79,20 +63,12 @@
     &.card-attachement-#{$label} .card-content {
       a.pretty-link {
         @include pretty-link($black, $white, $color);
-
-        &:hover {
-          @include pretty-link($color, $white, $transparent);
-        }
       }
     }
 
     &.card-attachement-#{$label} .card-footer {
       a.pretty-link {
         @include pretty-link($black, $ligthen-gray, $color);
-
-        &:hover {
-          @include pretty-link($color, $ligthen-gray, $black);
-        }
       }
     }
     /* stylelint-enable max-nesting-depth */

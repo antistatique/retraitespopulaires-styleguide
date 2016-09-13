@@ -65,29 +65,29 @@ layout: page.html.swig
         <div class="col-md-4">
           <p class="media-heading text-muted">Votre versement</p>
           <ul class="facets-list">
-            <li><a href="#" class="pretty-link text-black">Une seule prime</a></li>
-            <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
+            <li><a href="#" class="pretty-link">Une seule prime</a></li>
+            <li><a href="#" class="pretty-link">Plusieurs prime</a></li>
           </ul>
 
           <div class="spacer spacer-sm"></div>
           <p class="media-heading text-muted">Fiscalité</p>
           <ul class="facets-list">
-            <li><a href="#" class="pretty-link text-black">3e pillier B</a></li>
-            <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
+            <li><a href="#" class="pretty-link">3e pillier B</a></li>
+            <li><a href="#" class="pretty-link">Plusieurs prime</a></li>
           </ul>
 
           <div class="spacer spacer-sm"></div>
           <p class="media-heading text-muted">Forme de prestation</p>
           <ul class="facets-list">
-            <li><a href="#" class="pretty-link text-black">Capital</a></li>
-            <li><a href="#" class="pretty-link text-black">Plusieurs prime</a></li>
+            <li><a href="#" class="pretty-link">Capital</a></li>
+            <li><a href="#" class="pretty-link">Plusieurs prime</a></li>
           </ul>
 
           <div class="spacer spacer-sm"></div>
           <p class="media-heading text-muted">Couverture</p>
           <ul class="facets-list">
-            <li><a href="#" class="pretty-link text-black">Prestation en cas de vie</a></li>
-            <li><a href="#" class="pretty-link text-black">Prestation en cas de décès</a></li>
+            <li><a href="#" class="pretty-link">Prestation en cas de vie</a></li>
+            <li><a href="#" class="pretty-link">Prestation en cas de décès</a></li>
           </ul>
           <div class="spacer spacer-sm"></div>
         </div>

@@ -16,7 +16,6 @@
 
   .section-title {
     display: inline-block;
-    @include pretty-link($black, $white, $link-color);
     margin-bottom: $grid-gutter-width/2;
   }
 

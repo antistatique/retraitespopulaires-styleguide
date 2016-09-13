@@ -58,11 +58,11 @@ layout: page.html.swig
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
       <p class="media-heading text-muted">L'actualité de Retraites Populaires</p>
       <ul class="facets-list">
-        <li><a href="#" class="pretty-link text-black-assurance">Assurance vie</a></li>
-        <li><a href="#" class="pretty-link text-black-assurance">Financement</a></li>
-        <li><a href="#" class="pretty-link text-black-assurance">Immobilier</a></li>
-        <li><a href="#" class="pretty-link text-black-assurance">Prévoyance professionnelle</a></li>
-        <li><a href="#" class="pretty-link text-black-assurance">Catégorie 1</a></li>
+        <li><a href="#" class="pretty-link">Assurance vie</a></li>
+        <li><a href="#" class="pretty-link">Financement</a></li>
+        <li><a href="#" class="pretty-link">Immobilier</a></li>
+        <li><a href="#" class="pretty-link">Prévoyance professionnelle</a></li>
+        <li><a href="#" class="pretty-link">Catégorie 1</a></li>
       </ul>
     </div>
   </div>

@@ -8,7 +8,7 @@ notes: |
 <div class="teaser-news shadow shadow-down">
   <div class="news-heading" style="background-image: url(https://unsplash.it/1400/780)"></div>
   <div class="news-body">
-    <a href="#" class="news-title h1 pretty-link text-black-primary">Bella vita numéro 46</a>
+    <a href="#" class="news-title h1 pretty-link">Bella vita numéro 46</a>
     <div class="spacer spacer-xs"></div>
     <p>Le magazine clientèle de Retraites Populaires<p>
     <div class="spacer spacer-sm"></div>
