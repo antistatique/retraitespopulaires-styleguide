@@ -38,13 +38,3 @@ $color-instagram: #000;
 $input-bg-focus: $white;
 $input-border-disabled: lighten($gray, 50%);
 $input-border-size: 1px;
-
-/**
-* Grid system
-*/
-
-// Medium large screen / medium wide desktop
-$screen-mlg-min: 1380px;
-
-// Very large screen / very wide desktop
-$screen-xlg-min: 1600px;
