@@ -23,7 +23,7 @@ notes: |
         <a href="tel:+41213482821" class="text-large">021 348 <strong>28 21</strong></a>
       </div>
       <div role="tabpanel" class="tab-pane" id="nyon">
-        <a href="tel:+41213482020" class="text-large">021 348 <strong>20 20</</strong></a>
+        <a href="tel:+41213482020" class="text-large">021 348 <strong>20 20</strong></a>
       </div>
     </div>
   </div>

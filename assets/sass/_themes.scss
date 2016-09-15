@@ -5,6 +5,7 @@
 */
 
 $themes: (
+  primary: $brand-primary,
   assurance: $deep-yellow,
   prevoyance: $deep-orange,
   immobilier: $deep-red,
@@ -35,26 +36,14 @@ $themes: (
 
 p a,
 a.pretty-link {
-  @include pretty-link($link-color);
+  @include pretty-link($black, $white, $brand-primary);
 
-  &.pretty-link-black {
-    @include pretty-link($black, $white);
+  &.pretty-link-light-gray {
+    @include pretty-link($black, $light-gray, $brand-primary);
   }
 
-  &.pretty-link-white {
-    @include pretty-link($white, $green);
-  }
-
-  &.pretty-link-light-grey {
-    @include pretty-link($green, $light-grey);
-  }
-}
-
-a.pretty-link-hover {
-  color: $black;
-
-  &:hover {
-    @include pretty-link($link-color);
+  &.pretty-link-berrylight-gray {
+    @include pretty-link($black, $berrylight-gray, $brand-primary);
   }
 }
 
@@ -63,28 +52,8 @@ a.pretty-link-hover {
   a.text-#{$label} {
     &.pretty-link,
     a.pretty-link {
-      @include pretty-link($color, $white, $color);
-    }
-  }
-
-  .pretty-link-hover-#{$label},
-  a.pretty-link-hover-#{$label} {
-    color: $black;
-
-    &.text-muted {
-      color: $gray-light;
-    }
-
-    &:hover {
-      @include pretty-link($color, $white, $color);
-    }
-  }
-
-  a.text-black-#{$label} {
-    &.pretty-link {
       @include pretty-link($black, $white, $color);
     }
   }
 }
-
 /* stylelint-enable */

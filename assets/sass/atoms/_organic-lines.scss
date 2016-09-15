@@ -30,8 +30,8 @@
   }
 
   @each $label, $color in $themes {
-    .lines-#{$label} {
-      path {
+    &.lines-#{$label} {
+      .organicjs-container svg path {
         stroke: $color;
       }
     }

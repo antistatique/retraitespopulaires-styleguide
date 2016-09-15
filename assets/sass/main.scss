@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 // init:
 @import 'fonts';
@@ -11,11 +11,17 @@
 @import 'themes';
 
 // atoms:
+@import 'atoms/input-datepicker';
+@import 'atoms/input-select';
+@import 'atoms/pagination';
+@import 'atoms/section-bloc';
 @import 'atoms/favicon';
 @import 'atoms/loader';
 @import 'atoms/icon-text';
 @import 'atoms/arrow';
 @import 'atoms/input-text';
+@import 'atoms/input-radio';
+@import 'atoms/input-checkbox';
 @import 'atoms/logo-retraitespopulaires';
 @import 'atoms/hamburger';
 @import 'atoms/shadow';
@@ -31,6 +37,11 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/teaser-basicpage';
+@import 'molecules/teaser-product';
+@import 'molecules/teaser-news';
+@import 'molecules/teaser-rental';
+@import 'molecules/teaser-contact';
 @import 'molecules/breadcrumb';
 @import 'molecules/big-menu-empty';
 @import 'molecules/search-form';
@@ -44,9 +55,18 @@
 @import 'molecules/card-attachement';
 
 // organisms:
+@import 'organisms/last-news';
+@import 'organisms/attachments-job';
 @import 'organisms/footer';
 @import 'organisms/header';
 @import 'organisms/attachments';
 
 // pages:
+@import 'pages/management_contracts';
+@import 'pages/product';
+@import 'pages/partnership';
+@import 'pages/news';
+@import 'pages/contact';
+@import 'pages/advisor';
+@import 'pages/basic-page';
 @import 'pages/big-menu';

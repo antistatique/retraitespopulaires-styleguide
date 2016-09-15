@@ -33,6 +33,10 @@ table.tablesaw {
     border: 1px solid $brand-primary;
   }
 
+  .text-icon {
+    line-height: 0;
+  }
+
   &.table-wide {
     width: 100%;
   }

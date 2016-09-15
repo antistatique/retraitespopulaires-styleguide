@@ -1,0 +1,80 @@
+@charset 'UTF-8';
+
+.pagination {
+  li {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+  }
+
+  .arrow {
+    position: relative;
+
+    > a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      line-height: 0;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .number {
+    cursor: pointer;
+    position: relative;
+
+    > a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0;
+      padding: 0;
+      background: none;
+      border: 0;
+      font-family: Cocon Pro;
+      line-height: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      border: 1px solid $black;
+      border-radius: 50%;
+      border-color: $transparent;
+      transform: translate(-50%, -50%);
+    }
+
+    &.active:before {
+      background-color: $brand-primary;
+    }
+
+    &:hover:before {
+      background-color: $berrylight-gray;
+    }
+
+    &:active:before {
+      background-color: darken($berrylight-gray, 10%);
+    }
+
+    &.active:hover:before {
+      background-color: $brand-primary;
+    }
+  }
+
+  > li > a:hover,
+  > li > a:focus,
+  > li > span:hover,
+  > li > span:focus {
+    background: none;
+    border: 0;
+    color: $black;
+  }
+}

@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+
+.last-news-wrapper {
+  position: relative;
+  padding-top: $grid-gutter-width*2;
+  background: $berrylight-gray;
+
+  .last-news-heading {
+    margin-bottom: $grid-gutter-width;
+  }
+}

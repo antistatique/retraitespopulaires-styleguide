@@ -11,7 +11,7 @@ notes: |
       <div class="col-xs-12 text-center">
         <div class="spacer"></div>
         <h2>Retrouvez-nous sur les réseaux sociaux</h2>
-        <p>Suivez-nous en temps réel sur Twitter. FAcebook et vos plateformes préférées!</p>
+        <p>Suivez-nous en temps réel sur Twitter. Facebook et vos plateformes préférées!</p>
         <div class="spacer spacer-xs"></div>
       </div>
     </div>
@@ -60,6 +60,7 @@ notes: |
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-5 col-md-offset-1">
+        <div class="spacer spacer-md visible-xs visible-sm"></div>
         <p>Le Bulletin des spécialistes de Retraites Populaires, directement par email:</p>
         <form>
           <div class="form-group">
@@ -74,6 +75,7 @@ notes: |
       </div>
 
       <div class="col-xs-12 col-md-5 col-md-offset-1">
+        <div class="spacer spacer-md visible-xs visible-sm"></div>
         <p>Contactez-nous</p>
         {% include '../molecules/tabs.html.swig' %}
         <a href="mailto:info@retraitespopulaires.ch" class="text-large">info@retraitespopulaires.ch</a>

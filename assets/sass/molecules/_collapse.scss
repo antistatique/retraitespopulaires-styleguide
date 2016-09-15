@@ -1,23 +1,13 @@
 @charset 'UTF-8';
 
 .collapse-wrapper {
-  border-bottom: 1px solid $light-grey;
+  border-bottom: 1px solid $light-gray;
 }
 
 .collapse-title {
   padding: 1em 1em 0.6em;
   transition: background 0.25s ease;
   cursor: pointer;
-
-  h5 > a {
-    @include pretty-link($link-color);
-
-    @each $label, $color in $themes {
-      &.text-#{$label} {
-        @include pretty-link($color, $white, $color);
-      }
-    }
-  }
 
   .collapse-button {
     padding: 5px;
@@ -43,7 +33,7 @@
   }
 
   &:hover {
-    background: lighten($grey, 50%);
+    background: lighten($gray, 50%);
   }
 }
 

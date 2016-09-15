@@ -4,7 +4,7 @@ name: organic-lines
 collection: atoms
 notes: |
   ##### Usage : `organic-lines`
+  ##### Options :
+  - **theme** - String
 ---
-
-<div class="organic-lines"></div>
-<div class="clearfix"></div>
+<div class="organic-lines lines-{{theme}}"></div>

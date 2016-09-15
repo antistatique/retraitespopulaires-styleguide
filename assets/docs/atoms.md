@@ -4,4 +4,4 @@ order: 1
 layout: atoms.html.swig
 styleguide: true
 ---
-Atoms are tiny components
+Les Atoms sont des composants minuscules

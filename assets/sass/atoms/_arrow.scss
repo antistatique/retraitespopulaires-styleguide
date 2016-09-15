@@ -2,6 +2,7 @@
 
 .arrow {
   cursor: pointer;
+  display: inline-block;
 
   @each $label, $color in $themes {
     &.arrow-#{$label} {
@@ -27,8 +28,9 @@
 }
 
 .arrow-rounded {
+  display: inline-block;
   position: relative;
-  padding: 10px 19px;
+  padding: 19px;
   border: 1px solid $black;
   border-radius: 50%;
   border-color: $brand-primary;
