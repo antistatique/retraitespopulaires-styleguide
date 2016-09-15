@@ -5,7 +5,7 @@ collection: pages
 styleguide: false
 layout: page.html.swig
 ---
-{% include '../organisms/header.html.swig' %}
+{% include '../organisms/header-complet.html.swig' %}
 <div class="wrapper-funky-waves">
 
   <img src="https://www.retraitespopulaires.ch/upload/docs/image/jpeg/2016-07/banner-pilier3a.jpg" />
