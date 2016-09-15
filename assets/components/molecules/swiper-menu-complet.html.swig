@@ -59,7 +59,7 @@ notes: |
           <a href="#" class="text-muted pretty-link text-cocon">Particuliers</a>
         </li>
         <li>
-          <p class="media-heading text-small swiper-padding text-muted">Nouveau projet</p>
+          <p class="media-heading text-small text-muted">Nouveau projet</p>
         </li>
         <li>
           <a href="#" class="pretty-link text-cocon">Fortune</a>
@@ -82,7 +82,7 @@ notes: |
           <a href="swiper-particulier-logement" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-particuliers"></a>
         </li>
         <li>
-          <p class="media-heading text-small swiper-padding text-muted">Déjà client</p>
+          <p class="media-heading text-small text-muted">Déjà client</p>
         </li>
          <li>
           <a href="#" class="pretty-link text-cocon">Assuré 2e pilier</a>

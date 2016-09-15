@@ -37,6 +37,8 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/menu-complet';
+@import 'molecules/swiper-menu-complet';
 @import 'molecules/teaser-basicpage';
 @import 'molecules/teaser-product';
 @import 'molecules/teaser-news';
@@ -55,6 +57,7 @@
 @import 'molecules/card-attachement';
 
 // organisms:
+@import 'organisms/header-complet';
 @import 'organisms/last-news';
 @import 'organisms/attachments-job';
 @import 'organisms/footer';
@@ -62,6 +65,7 @@
 @import 'organisms/attachments';
 
 // pages:
+@import 'pages/menu-complet';
 @import 'pages/management_contracts';
 @import 'pages/product';
 @import 'pages/partnership';
