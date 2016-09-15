@@ -157,3 +157,13 @@ layout: page.html.swig
                 <a class="text-bold pretty-link h5" href="#">Accéder à tous les formulaires relatifs à l'assurance vie</a>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include '../atoms/organic-lines.html.swig' with {'theme': 'assurance'} %}
+</div>
+
+<div class="spacer"></div>
+{% include '../organisms/footer.html.swig' %}
