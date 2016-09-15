@@ -15,13 +15,13 @@ notes: |
     </div>
 
     <div class="row">
-      <div class="col-xs-12 col-md-6 col-md-4">
+      <div class="col-xs-12 col-md-4">
         {% include '../molecules/teaser-news.html.swig' %}
       </div>
-      <div class="col-xs-12 col-md-6 col-md-4">
+      <div class="col-xs-12 col-md-4">
         {% include '../molecules/teaser-news.html.swig' %}
       </div>
-      <div class="col-xs-12 col-md-6 col-md-4">
+      <div class="col-xs-12 col-md-4">
         {% include '../molecules/teaser-news.html.swig' %}
       </div>
     </div>

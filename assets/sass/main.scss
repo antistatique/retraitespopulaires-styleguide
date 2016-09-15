@@ -37,6 +37,12 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/teaser-collectivites';
+@import 'molecules/teaser-entreprise';
+@import 'molecules/teaser-particulier';
+@import 'molecules/secondary-nav-rpjeune';
+@import 'molecules/breadcrumb-rpjeune';
+@import 'molecules/card-attachement-rp-jeune';
 @import 'molecules/menu-complet';
 @import 'molecules/swiper-menu-complet';
 @import 'molecules/teaser-basicpage';
@@ -57,6 +63,7 @@
 @import 'molecules/card-attachement';
 
 // organisms:
+@import 'organisms/rentals';
 @import 'organisms/header-complet';
 @import 'organisms/last-news';
 @import 'organisms/attachments-job';
@@ -65,6 +72,8 @@
 @import 'organisms/attachments';
 
 // pages:
+@import 'pages/homepage-test';
+@import 'pages/rp-jeune';
 @import 'pages/menu-complet';
 @import 'pages/management_contracts';
 @import 'pages/product';
