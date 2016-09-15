@@ -37,6 +37,7 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/secondary-nav-particuliers';
 @import 'molecules/teaser-collectivites';
 @import 'molecules/teaser-entreprise';
 @import 'molecules/teaser-particulier';
@@ -72,6 +73,7 @@
 @import 'organisms/attachments';
 
 // pages:
+@import 'pages/particuliers';
 @import 'pages/homepage-test';
 @import 'pages/rp-jeune';
 @import 'pages/menu-complet';
