@@ -10,7 +10,7 @@ notes: |
 <div class="teaser-basicpage shadow shadow-down">
   <div class="basicpage-heading">
     <div class="text-primary icon-text icon-text-center">
-      <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h4">Particuliers</a>
+      <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="../particuliers" class="icon-text-txt text-cocon h4">Particuliers</a>
     </div>
   </div>
   <div class="basicpage-body">

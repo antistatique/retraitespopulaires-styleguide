@@ -15,7 +15,7 @@ notes: |
     <div class="swiper-column swiper-column-1">
       <ul data-list="swiper-main" class="swiper-list swiper-list-first list-no-padding swiper-list-primary list-no-style" role="navigation">
         <li>
-          <a href="#" class="pretty-link text-assurance">Assurance vie</a>
+          <a href="/retraitespopulaires-styleguide/assurance-vie" class="pretty-link text-assurance">Assurance vie</a>
           <a href="swiper-assurance-vie" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-assurance"></a>
         </li>
         <li>
@@ -35,7 +35,7 @@ notes: |
       <p class="media-heading text-small swiper-padding text-muted">Vous êtes</p>
       <ul class="swiper-list swiper-list-first swiper-list-secondary list-no-style list-no-padding" role="navigation">
         <li class="text-primary icon-text icon-text-center">
-          <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Particuliers</a>
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="/retraitespopulaires-styleguide/particuliers" class="icon-text-txt text-cocon h5">Particuliers</a>
           <a href="swiper-particuliers" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
         </li>
         <li class="text-primary icon-text icon-text-center">
@@ -56,7 +56,7 @@ notes: |
       <ul data-list="swiper-particuliers" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="#" class="text-muted pretty-link text-cocon">Particuliers</a>
+          <a href="/retraitespopulaires-styleguide/particuliers" class="text-muted pretty-link text-cocon">Particuliers</a>
         </li>
         <li>
           <p class="media-heading text-small text-muted">Nouveau projet</p>
@@ -66,7 +66,7 @@ notes: |
           <a href="swiper-particulier-fortune" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-particuliers"></a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-cocon">Famille</a>
+          <a href="/retraitespopulaires-styleguide/famille" class="pretty-link text-cocon">Famille</a>
           <a href="swiper-particulier-famille" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-particuliers"></a>
         </li>
         <li>
@@ -128,34 +128,34 @@ notes: |
       <ul data-list="swiper-assurance-vie" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-assurance"></a>
-          <a href="#" class="text-muted pretty-link text-assurance">Assurance vie</a>
+          <a href="/retraitespopulaires-styleguide/assurance-vie" class="text-muted pretty-link text-assurance">Assurance vie</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-assurance">RP Rente immédiate</a>
+          <a href="/retraitespopulaires-styleguide/rp-jeune" class="pretty-link text-assurance">RP Rente immédiate</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-assurance">RP Rente immédiate certaine</a>
+          <a href="/retraitespopulaires-styleguide/rp-jeune" class="pretty-link text-assurance">RP Rente immédiate certaine</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-assurance">RP Rente différée</a>
+          <a href="/retraitespopulaires-styleguide/rp-jeune" class="pretty-link text-assurance">RP Rente différée</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-assurance">RP Jeune</a>
+          <a href="/retraitespopulaires-styleguide/rp-jeune" class="pretty-link text-assurance">RP Jeune</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-assurance">RP Duo primes périodiques</a>
+          <a href="/retraitespopulaires-styleguide/rp-jeune" class="pretty-link text-assurance">RP Duo primes périodiques</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-assurance">RP RDuo prime unique</a>
+          <a href="/retraitespopulaires-styleguide/rp-jeune" class="pretty-link text-assurance">RP RDuo prime unique</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-assurance">RP Épargne</a>
+          <a href="/retraitespopulaires-styleguide/rp-jeune" class="pretty-link text-assurance">RP Épargne</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-assurance">RP Refuge</a>
+          <a href="/retraitespopulaires-styleguide/rp-jeune" class="pretty-link text-assurance">RP Refuge</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-assurance">RP Sécurifonds</a>
+          <a href="/retraitespopulaires-styleguide/rp-jeune" class="pretty-link text-assurance">RP Sécurifonds</a>
         </li>
       </ul>
 
@@ -228,7 +228,7 @@ notes: |
       <ul data-list="swiper-particulier-fortune" class="swiper-list swiper-list-alternative swiper-list-last list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="#" class="text-muted pretty-link text-particuliers">Famille</a>
+          <a href="#" class="text-muted pretty-link text-particuliers">Fortune</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-particuliers">Épargner</a>
@@ -285,10 +285,10 @@ notes: |
       <ul data-list="swiper-particulier-famille" class="swiper-list swiper-list-alternative swiper-list-last list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="#" class="text-muted pretty-link text-particuliers">Fortune</a>
+          <a href="/retraitespopulaires-styleguide/famille" class="text-muted pretty-link text-particuliers">Famille</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-particuliers">Avenir des enfants</a>
+          <a href="/retraitespopulaires-styleguide/rp-jeune" class="pretty-link text-particuliers">Avenir des enfants</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-particuliers">Protéger les proches</a>

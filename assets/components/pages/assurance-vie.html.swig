@@ -119,7 +119,7 @@ layout: page.html.swig
             <div class="col-sm-6">
               <div class="teaser-product shadow shadow-down">
                 <div class="product-heading">
-                  <div class="product-title h1"><div class="product-prefix">RP</div> Jeune</div>
+                  <div class="product-title h1"><a href="../rp-jeune"><div class="product-prefix">RP</div> Jeune</div></a>
                 </div>
                 <p class="product-body">Réalisez vos projets! Transformez votre capital en revenu supplémentaire garanti.</p>
               </div>

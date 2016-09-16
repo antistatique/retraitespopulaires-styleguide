@@ -37,7 +37,7 @@ layout: page.html.swig
         <ul class="list-inline list-no-style list-no-padding">
           <li class="text-primary"> <a href="/retraitespopulaires-styleguide/homepage-test">Accueil</a></li>
           <li class="text-muted">›</li>
-          <li class="text-primary">Particuliers</li>
+          <li class="text-primary"><a href="/retraitespopulaires-styleguide/particuliers">Particuliers</a></li>
           <li class="text-muted">›</li>
           <li class="text-muted">Famille</li>
         </ul>
@@ -63,7 +63,7 @@ layout: page.html.swig
             <div class="teaser-basicpage shadow shadow-down">
               <div class="basicpage-heading">
                 <div class="text-primary icon-text icon-text-center">
-                  <a href="#" class="icon-text-txt text-cocon h4">Préparer l'avenir de ses enfants</a>
+                  <a href="../rp-jeune" class="icon-text-txt text-cocon h4">Préparer l'avenir de ses enfants</a>
                 </div>
               </div>
               <div class="basicpage-body">
@@ -75,7 +75,7 @@ layout: page.html.swig
             <div class="teaser-basicpage shadow shadow-down">
               <div class="basicpage-heading">
                 <div class="text-primary icon-text icon-text-center">
-                  <a href="#" class="icon-text-txt text-cocon h4">Protéger les proches</a>
+                  <a href="../rp-jeune" class="icon-text-txt text-cocon h4">Protéger les proches</a>
                 </div>
               </div>
               <div class="basicpage-body">

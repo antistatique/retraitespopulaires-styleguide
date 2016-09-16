@@ -36,7 +36,7 @@ layout: page.html.swig
     <div class="col-xs-12 text-center">
       <div class="breadcrumb">
         <ul class="list-inline list-no-style list-no-padding">
-          <li class="text-primary">Accueil</li>
+          <li class="text-primary"><a href="retraitespopulaires-styleguide/homepage-test">Accueil</a></li>
           <li class="text-muted">›</li>
           <li class="text-muted">Particuliers</li>
         </ul>
@@ -90,13 +90,13 @@ layout: page.html.swig
               <div class="teaser-basicpage shadow shadow-down">
                 <div class="basicpage-heading">
                   <div class="text-primary icon-text icon-text-center">
-                    <a href="#" class="icon-text-txt text-cocon h4">Famille</a>
+                    <a href="../famille" class="icon-text-txt text-cocon h4">Famille</a>
                   </div>
                 </div>
                 <div class="basicpage-body">
                   <ul class="facets-list">
-                    <li><a href="#" class="pretty-link">Préparer l'avenir des enfants</a></li>
-                    <li><a href="#" class="pretty-link">Protéger les proches</a></li>
+                    <li><a href="../rp-jeune" class="pretty-link">Préparer l'avenir des enfants</a></li>
+                    <li><a href="../rp-jeune#" class="pretty-link">Protéger les proches</a></li>
                     <li><a href="#" class="pretty-link">Succession</a></li>
                   </ul>
                 </div>
