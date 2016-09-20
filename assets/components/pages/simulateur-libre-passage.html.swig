@@ -43,7 +43,7 @@ layout: page.html.swig
     </div>
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      {% include '../molecules/secondary-nav-plp.html.swig' with {'theme': 'prevoyance'} %}
+      {% include '../molecules/secondary-nav.html.swig' with {'theme': 'prevoyance'} %}
     </div>
   </div>
 </div>
