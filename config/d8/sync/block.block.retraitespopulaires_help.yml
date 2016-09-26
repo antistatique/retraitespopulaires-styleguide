@@ -11,7 +11,7 @@ _core:
 id: retraitespopulaires_help
 theme: retraitespopulaires
 region: '-1'
-weight: -7
+weight: -12
 provider: null
 plugin: help_block
 settings:

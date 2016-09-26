@@ -1,6 +1,6 @@
 uuid: c4ad7104-554a-4e6d-907d-2db7cbcf3ea2
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.profil
@@ -10,8 +10,8 @@ dependencies:
     - retraitespopulaires
 id: profilnavigation
 theme: retraitespopulaires
-region: sidebar_first
-weight: -10
+region: '-1'
+weight: -7
 provider: null
 plugin: 'system_menu_block:profil'
 settings:
