@@ -1,0 +1,134 @@
+{
+  "lorem": {
+    "title": "Lorem Ipsum",
+    "links": [{
+      "url": "#",
+      "label": "In eleifend",
+      "active": false
+    }, {
+      "url": "#",
+      "label": "Purus ut nulla",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Aliquam lobortis",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Nam tristique",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Fringilla",
+      "active": false,
+      "children": []
+    }]
+  },
+  "assurancevie": {
+    "title": "Assurance vie",
+    "links": [{
+      "url": "#",
+      "label": "RP Rente immédiate",
+      "active": false
+    }, {
+      "url": "#",
+      "label": "RP Rente immédiate certaine",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "RP Rente différée",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "RP Jeune",
+      "active": true,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "RP Duo primes périodiques",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "RP Duo primes uniques",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "RP Épargne",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "RP Refuge",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "RP Securifonds",
+      "active": false,
+      "children": []
+    }]
+  },
+  "particuliers": {
+    "title": "Particuliers",
+    "links": [{
+      "url": "#",
+      "label": "Fortune",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Famille",
+      "active": true,
+      "children": [{
+        "url": "retraitespopulaires-styleguide/rp-jeune",
+        "label": "Préparer l'avenir de ses enfants",
+        "active": false
+      }, {
+        "url": "#",
+        "label": "Protéger ses proches",
+        "active": false
+      }, {
+        "url": "#",
+        "label": "Succession",
+        "active": false
+      }]
+    }, {
+      "url": "#",
+      "label": "Travail",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Retraite",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Logement",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Assuré 2e pilier",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Assuré 3e pilier",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Locataire en place",
+      "active": false,
+      "children": []
+    }]
+  }
+}

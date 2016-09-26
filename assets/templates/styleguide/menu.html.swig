@@ -75,6 +75,17 @@
       </ul>
     </li>
 
+    <li>
+      <span class="styleguide-menu-heading">RetraitesPopulaires.ch</span>
+      <ul>
+        {% for page in collections.website %}
+          <li>
+            <a href="/retraitespopulaires-styleguide/{{page.title|lower}}">{{page.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+
   </ul>
 
 

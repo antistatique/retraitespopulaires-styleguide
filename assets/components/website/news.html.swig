@@ -1,9 +1,9 @@
 ---
 title: news
 name: news
-collection: pages
+collection: website
 styleguide: false
-layout: page.html.swig
+layout: website.html.swig
 ---
 {% include '../organisms/header.html.swig' %}
 {% include '../atoms/funky-waves.html.swig' %}
@@ -11,7 +11,7 @@ layout: page.html.swig
 <div class="container">
   <div class="row"></div>
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
-      {% include '../molecules/breadcrumb.html.swig' %}
+      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'Actualités']} %}
       <div class="spacer"></div>
     </div>
   </div>
@@ -56,14 +56,7 @@ layout: page.html.swig
       </div>
     </div>
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
-      <p class="media-heading text-muted">L'actualité de Retraites Populaires</p>
-      <ul class="facets-list">
-        <li><a href="#" class="pretty-link">Assurance vie</a></li>
-        <li><a href="#" class="pretty-link">Financement</a></li>
-        <li><a href="#" class="pretty-link">Immobilier</a></li>
-        <li><a href="#" class="pretty-link">Prévoyance professionnelle</a></li>
-        <li><a href="#" class="pretty-link">Catégorie 1</a></li>
-      </ul>
+      {% include '../atoms/facets-list.html.swig' with {'title': 'L’actualité de Retraites Populaires', 'links': ['Assurance vie', 'Financement', 'Immobilier', 'Prévoyance professionnelle', 'Catégorie Y']} %}
     </div>
   </div>
 </div>

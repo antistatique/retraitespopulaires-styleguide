@@ -37,17 +37,9 @@
 @import 'atoms/socials';
 
 // molecules:
-@import 'molecules/secondary-nav-assurance';
-@import 'molecules/secondary-nav-famille';
-@import 'molecules/secondary-nav-particuliers';
 @import 'molecules/teaser-collectivites';
 @import 'molecules/teaser-entreprise';
 @import 'molecules/teaser-particulier';
-@import 'molecules/secondary-nav-rpjeune';
-@import 'molecules/breadcrumb-rpjeune';
-@import 'molecules/card-attachement-rp-jeune';
-@import 'molecules/menu-complet';
-@import 'molecules/swiper-menu-complet';
 @import 'molecules/teaser-basicpage';
 @import 'molecules/teaser-product';
 @import 'molecules/teaser-news';
@@ -67,7 +59,6 @@
 
 // organisms:
 @import 'organisms/rentals';
-@import 'organisms/header-complet';
 @import 'organisms/last-news';
 @import 'organisms/attachments-job';
 @import 'organisms/footer';
@@ -75,17 +66,3 @@
 @import 'organisms/attachments';
 
 // pages:
-@import 'pages/assurance-vie';
-@import 'pages/famille';
-@import 'pages/particuliers';
-@import 'pages/homepage-test';
-@import 'pages/rp-jeune';
-@import 'pages/menu-complet';
-@import 'pages/management_contracts';
-@import 'pages/product';
-@import 'pages/partnership';
-@import 'pages/news';
-@import 'pages/contact';
-@import 'pages/advisor';
-@import 'pages/basic-page';
-@import 'pages/big-menu';
