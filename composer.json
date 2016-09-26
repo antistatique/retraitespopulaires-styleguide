@@ -73,6 +73,11 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/metatag": {
+                "Deactivate console service": "https://www.drupal.org/files/issues/metatag-deactivate_drupalconsole_services_0.patch"
+            }
         }
     }
 }
