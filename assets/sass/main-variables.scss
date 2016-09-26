@@ -7,8 +7,11 @@ $black: #000;
 $transparent: rgba(255, 255, 255, 0);
 
 $green: #008e4f;
-$grey: #747476;
-$light-grey: #eee;
+$gray: #747476;
+$light-gray: #ccc;
+$ligthen-gray: #e8e8e8;
+$berrylight-gray: #eee;
+$shadow-gray: rgba(132, 132, 132, 0.5);
 
 /**
 * Colors Profession
@@ -23,3 +26,15 @@ $deep-brown: #663d07;
 $deep-green: #009966;
 $light-green: #00a261;
 $light-blue: #00a3e3;
+
+// Socials
+$color-twitter: #55acee;
+$color-facebook: #3b5998;
+$color-linkedin: #0077b5;
+$color-youtube: #cd201f;
+$color-instagram: #000;
+
+// forms
+$input-bg-focus: $white;
+$input-border-disabled: lighten($gray, 50%);
+$input-border-size: 1px;

@@ -1,7 +1,10 @@
 {
   "name": "@antistatique/retraitespopulaires-styleguide",
-  "version": "0.0.31",
+  "version": "0.0.4",
   "main": "index.html",
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  },
   "author": {
     "name": "Antistatique",
     "email": "dev@antistatique.net",
@@ -15,10 +18,12 @@
     "build": "npm install && gulp --production"
   },
   "dependencies": {
+    "bootstrap-datepicker": "^1.6.4",
     "bootstrap-sass": "~3.3.5",
     "font-awesome": "^4.6.3",
     "html5shiv": "^3.7.3",
-    "respond.js": "^1.4.2"
+    "respond.js": "^1.4.2",
+    "tablesaw": "2.0.1"
   },
   "devDependencies": {
     "async": "^2.0.0-rc.2",
@@ -61,7 +66,7 @@
     "gulp-sass": "^2.0.0",
     "gulp-size": "^2.0.0",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-stylelint": "^2.0.2",
+    "gulp-stylelint": "^3.0.0",
     "gulp-uglify": "~1.5.1",
     "gulp-util": "^3.0.4",
     "imagemin-pngquant": "^5.0.0",

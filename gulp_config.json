@@ -2,11 +2,13 @@
   "app": {
     "env": "dev",
     "basedir": "styleguide",
-    "ghpages": "styleguide"
+    "ghpages": "styleguide/retraitespopulaires-styleguide"
   },
   "vendors": {
     "css": [
-      "node_modules/font-awesome/css/font-awesome.min.css"
+      "node_modules/font-awesome/css/font-awesome.min.css",
+      "node_modules/tablesaw/dist/tablesaw.css",
+      "node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css"
     ],
     "js": [
       "node_modules/bootstrap-sass/assets/javascripts/bootstrap/affix.js",
@@ -20,7 +22,11 @@
       "node_modules/bootstrap-sass/assets/javascripts/bootstrap/popover.js",
       "node_modules/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js",
       "node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js",
-      "node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js"
+      "node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js",
+      "node_modules/tablesaw/dist/tablesaw.js",
+      "node_modules/tablesaw/dist/tablesaw-init.js",
+      "node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
+      "node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.fr-CH.min.js"
     ],
     "singlejs": [
       "node_modules/jquery/dist/jquery.js"
@@ -43,12 +49,12 @@
   ],
   "tasks":  "./tasks/",
   "assets": "assets/",
-  "iconsFontName": "rpicon",
+  "iconsFontName": "retraitespopulaires-icon",
   "build": "build/",
   "browsers": ["last 2 versions", "safari 5", "ie 8", "ie 9", "ff 27", "opera 12.1"],
   "metalsmith": {
     "assets": "node_modules/toolbox-utils/styleguide/",
-    "dist": "styleguide/",
+    "dist": "styleguide/retraitespopulaires-styleguide",
     "plugins": {
       "permalinks": {
         "pattern": ":title",
@@ -71,6 +77,14 @@
           "reverse": false
         },
         "pages": {
+          "sortBy": "title",
+          "reverse": false
+        },
+        "website": {
+          "sortBy": "title",
+          "reverse": false
+        },
+        "examples": {
           "sortBy": "title",
           "reverse": false
         },

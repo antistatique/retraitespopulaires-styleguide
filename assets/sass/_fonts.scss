@@ -1,0 +1,68 @@
+
+/**
+* Fonts
+*/
+
+$font-frutiger: 'Frutiger Neue', arial, sans-serif;
+$font-cocon: 'Cocon Pro', arial, sans-serif;
+
+.text-frutiger {
+  /* stylelint-disable declaration-no-important */
+  /* Need it to override */
+  font-family: $font-frutiger !important;
+  /* stylelint-enable declaration-no-important */
+}
+
+.text-cocon {
+  /* stylelint-disable declaration-no-important */
+  /* Need it to override */
+  font-family: $font-cocon !important;
+  /* stylelint-enable declaration-no-important */
+}
+
+@font-face {
+  font-family: Cocon Pro;
+  src: url('../fonts/CoconLight.eot');
+  src:
+    url('../fonts/CoconLight.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CoconLight.woff') format('woff'),
+    url('../fonts/CoconLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Frutiger Neue;
+  src: url('../fonts/FrutigerNeueLTW1G-Light.eot');
+  src:
+    url('../fonts/FrutigerNeueLTW1G-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/FrutigerNeueLTW1G-Light.woff') format('woff'),
+    url('../fonts/FrutigerNeueLTW1G-Light.ttf') format('truetype'),
+    url('../fonts/FrutigerNeueLTW1G-Light.svg#frutigernewregular') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Frutiger Neue;
+  src: url('../fonts/FrutigerNeueLTW1G-regular.eot');
+  src:
+    url('../fonts/FrutigerNeueLTW1G-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/FrutigerNeueLTW1G-regular.woff') format('woff'),
+    url('../fonts/FrutigerNeueLTW1G-regular.ttf') format('truetype'),
+    url('../fonts/FrutigerNeueLTW1G-regular.svg#frutigernewregular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Frutiger Neue;
+  src: url('../fonts/FrutigerNeueLTW1G-Bold.eot');
+  src:
+    url('../fonts/FrutigerNeueLTW1G-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/FrutigerNeueLTW1G-Bold.woff') format('woff'),
+    url('../fonts/FrutigerNeueLTW1G-Bold.ttf') format('truetype'),
+    url('../fonts/FrutigerNeueLTW1G-Bold.svg#frutigernewlight') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}

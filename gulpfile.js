@@ -41,5 +41,5 @@ gulp.task('build',['clean'], function() {
  * Default task
  */
 gulp.task('default', ['clean'], function(done){
-  runSequence(['css-vendors', 'js-vendors', 'js-vendors-single', 'fonts-vendors', 'polyfills-vendors', 'img', 'icons', 'styles', 'scripts', 'metalsmith-styles', 'metalsmith-scripts'], 'favicons', 'metalsmith',  done);
+  runSequence(['css-vendors', 'js-vendors', 'fonts-vendors', 'polyfills-vendors', 'img', 'icons', 'styles', 'scripts', 'metalsmith-styles', 'metalsmith-scripts'], 'favicons', 'metalsmith',  done);
 });

@@ -1,0 +1,126 @@
+@charset 'UTF-8';
+
+.form-control {
+  height: auto;
+  padding: 0.7em;
+  border-width: $input-border-size;
+  font-family: $font-cocon;
+  box-shadow: none;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    box-shadow: 0 0 0 1000px $input-bg inset;
+  }
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+    background: $input-bg-focus;
+    border-color: $input-border-focus;
+  }
+}
+
+.form-group {
+  margin-top: 20px;
+
+  label {
+    margin-left: 0.8em;
+    margin-bottom: 0.3em;
+    font-family: $font-frutiger;
+    font-size: ceil($font-size-h6 * 0.8);
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: opacity 0.25s ease-in-out;
+
+    &.label-hidden {
+      opacity: 0;
+    }
+
+  }
+
+  legend {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 0.5em;
+    border: 0;
+    font-size: $font-size-base;
+    font-weight: 800;
+    color: $label-color;
+  }
+
+  .input-error-desc {
+    padding-top: 0.5em;
+    padding-left: 0.8em;
+    font-family: $font-frutiger;
+    font-size: ceil($font-size-h6 * 0.8);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $brand-danger;
+    letter-spacing: 0.04em;
+  }
+
+  &.error {
+    .form-control {
+      border-color: $brand-danger;
+    }
+  }
+
+  &.readonly {
+    .form-control {
+      background: $input-bg-disabled;
+      border-color: $input-border-disabled;
+      color: $input-color-placeholder;
+    }
+
+    .input-group-btn .btn {
+      background-color: darken($input-border-disabled, 15%);
+      color: $input-color-placeholder;
+    }
+  }
+}
+
+.form-inline {
+  .form-group {
+    margin: 10px 5px;
+
+    @media screen and (min-width: $screen-md-min) {
+      margin: 20px 0 15px;
+    }
+  }
+}
+
+.input-group {
+  display: block;
+  position: relative;
+
+  .form-control {
+    float: none;
+  }
+
+  .form-control:first-child {
+    border-bottom-right-radius: $btn-border-radius-base;
+    border-top-right-radius: $btn-border-radius-base;
+  }
+
+  .input-group-btn {
+    position: absolute;
+    top: $input-border-size;
+    right: $input-border-size;
+    width: auto;
+    z-index: 10;
+
+    > .btn {
+      padding-bottom: 0.6em;
+      border-radius: $btn-border-radius-base - $input-border-size;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+
+      &.btn-icon {
+        padding-bottom: 0.4em;
+      }
+    }
+  }
+}

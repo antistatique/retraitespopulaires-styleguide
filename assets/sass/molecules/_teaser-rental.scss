@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+
+.teaser-rental {
+  display: flex;
+  margin: 0 auto;
+  max-width: 900px;
+  border: 1px solid $light-gray;
+  border-radius: $border-radius-base;
+
+  .rental-heading {
+    width: 100%;
+  }
+
+  .rental-body {
+    width: 100%;
+    margin: 0;
+    padding: $grid-gutter-width/2;
+    color: $text-color;
+  }
+
+  .info-rent {
+    div { display: inline-block; }
+  }
+
+  @media only screen and (min-width: $screen-md-min) {
+    .info-rent {
+      div { display: block; }
+    }
+  }
+
+  @media only screen and (min-width: $screen-lg-min) {
+    display: flex;
+    flex-direction: column;
+
+    .rental-heading {
+      height: 196px;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@charset 'UTF-8';
+
+.shadow {
+  &.shadow-down {
+    box-shadow: 0 50px 75px -45px $shadow-gray;
+    margin-bottom: 50px;
+  }
+}

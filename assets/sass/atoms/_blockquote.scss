@@ -1,0 +1,35 @@
+@charset 'UTF-8';
+
+/**
+* Quote
+*/
+
+blockquote {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.55em;
+  border-left: 0;
+  font-family: $font-frutiger;
+  font-size: 1.75em;
+  font-weight: 300;
+
+  p {
+    display: inline;
+  }
+
+  &:before {
+    content: '«';
+    position: absolute;
+    top: 0.6em;
+    left: -0.2em;
+    line-height: 0.1em;
+    color: $gray;
+  }
+
+  &:after {
+    content: '»';
+    margin-left: 0.2em;
+    color: $gray;
+  }
+}

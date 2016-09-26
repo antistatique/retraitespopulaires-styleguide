@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+
+.teaser-product {
+  border: 1px solid $brand-primary;
+  border-radius: $border-radius-base;
+
+  .product-heading {
+    padding: $grid-gutter-width/2;
+    font-family: Cocon Pro;
+    font-size: 32px;
+    color: $brand-primary;
+  }
+
+  .product-prefix {
+    display: inline-block;
+    margin-top: 0.25em;
+    padding: 0.25em;
+    border: 1px solid $brand-primary;
+    border-radius: $border-radius-base;
+    font-size: $font-size-small;
+    line-height: 1em;
+    font-weight: 700;
+    vertical-align: top;
+  }
+
+  .product-title {
+    display: inline-block;
+  }
+
+  .product-body {
+    margin: 0;
+    padding: $grid-gutter-width/2;
+    background-color: $berrylight-gray;
+    color: $text-color;
+  }
+}

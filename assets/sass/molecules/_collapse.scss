@@ -1,0 +1,46 @@
+@charset 'UTF-8';
+
+.collapse-wrapper {
+  border-bottom: 1px solid $light-gray;
+}
+
+.collapse-title {
+  padding: 1em 1em 0.6em;
+  transition: background 0.25s ease;
+  cursor: pointer;
+
+  .collapse-button {
+    padding: 5px;
+    background-color: $white;
+    border-radius: $border-radius-base;
+    line-height: 0;
+    transition: background 0.5s ease;
+
+    &:hover {
+      background: $white;
+    }
+  }
+
+  i:before {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+  }
+
+  .collapsed {
+    i:before {
+      transform: rotate(0);
+    }
+  }
+
+  &:hover {
+    background: lighten($gray, 50%);
+  }
+}
+
+.collapse-body {
+  margin: 0;
+
+  > ul {
+    padding: 0 1em 1em;
+  }
+}

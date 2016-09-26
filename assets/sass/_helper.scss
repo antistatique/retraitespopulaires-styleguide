@@ -7,4 +7,59 @@
   padding: 0;
 }
 
+.list-unstyle-first > li:first-child {
+  list-style-type: none;
+
+  &:before {
+    display: none;
+  }
+}
+
+.list-spaced li { padding: $grid-gutter-width / 3 0; }
+
 .list-inline li { display: inline-block; }
+
+.inline-block { display: inline-block; }
+
+.col-no-padding { padding: 0; }
+
+/**
+* Angles
+*/
+
+.angle {
+  display: inline-block;
+
+  &.angle-down {
+    transform: rotate(45deg);
+  }
+
+  &.angle-up {
+    transform: rotate(-45deg);
+  }
+
+  &.angle-force-top {
+    transform: rotate(-90deg);
+  }
+}
+
+/**
+* Alignments of blocks
+*/
+
+.align-h {
+  margin: 0 auto;
+}
+
+.align-v {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.align-vh {
+  position: relative;
+  top: 50%;
+  margin: 0 auto;
+  transform: translateY(-50%);
+}

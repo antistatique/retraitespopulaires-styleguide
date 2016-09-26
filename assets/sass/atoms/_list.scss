@@ -1,0 +1,89 @@
+@charset 'UTF-8';
+
+/**
+* Unordered List & Ordered List
+*/
+
+/* stylelint-disable no-duplicate-selectors */
+/* Make the code unreadable otherwise */
+
+ul.unordered-list,
+ol.ordered-list,
+ul.treeview-list,
+ul.facets-list {
+  margin: 0;
+  padding: 0;
+}
+
+ul.treeview-list,
+ul.unordered-list,
+ul.facets-list {
+  list-style: none;
+  margin-left: $grid-gutter-width / 2;
+
+  > ul {
+    padding-left: 0.4em;
+  }
+
+  > li {
+    padding-left: 0.5em;
+    text-indent: -0.5em;
+
+    &:before {
+      content: '\0025A0'; // ■
+      position: relative;
+      top: -0.2em;
+      left: -1em;
+      font-size: 0.8em;
+      color: $gray;
+    }
+  }
+
+  &.list-inline li {
+    margin-right: $grid-gutter-width / 2;
+  }
+}
+
+ul.treeview-list {
+  > li {
+    &:before {
+      content: '\231E';
+      left: -0.5em;
+      font-size: 1.2em;
+    }
+  }
+}
+
+ul.facets-list {
+  > li {
+    &:before {
+      content: '→';
+      top: 0;
+      left: -0.5em;
+      font-size: 1.2em;
+      color: $black;
+    }
+  }
+}
+
+ol.ordered-list {
+  list-style: none;
+  counter-reset: item;
+
+  > ol {
+    padding-left: 1.5em;
+  }
+
+  > li {
+    padding-left: 0.5em;
+    text-indent: -0.5em;
+
+    &:before {
+      content: counter(item) '. ';  // 1.
+      margin-right: 0.5em;
+      counter-increment: item;
+      color: $gray;
+    }
+  }
+}
+/* stylelint-enable */

@@ -1,0 +1,17 @@
+@charset 'UTF-8';
+
+.teaser-basicpage {
+  margin: 0 auto;
+  max-width: 900px;
+  border: 1px solid $brand-primary;
+  border-radius: $border-radius-base;
+
+  .basicpage-heading {
+    padding: $grid-gutter-width/2;
+  }
+
+  .basicpage-body {
+    padding: $grid-gutter-width/2;
+    color: $text-color;
+  }
+}

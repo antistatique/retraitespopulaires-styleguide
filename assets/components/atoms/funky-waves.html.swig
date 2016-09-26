@@ -4,11 +4,16 @@ name: funky-waves
 collection: atoms
 notes: |
   ##### Usage : `funky-waves`
+  ##### Options :
+  - **img** - String
 ---
 
 <div class="wrapper-funky-waves">
-
-  <img src="https://www.retraitespopulaires.ch/upload/docs/image/jpeg/2014-05/banner-pub2014-astronaute.jpg" />
+  {% if img  %}
+    <img src="{{ img }}" />
+  {% else  %}
+    <img src="https://www.retraitespopulaires.ch/upload/docs/image/jpeg/2014-05/banner-pub2014-astronaute.jpg" />
+  {% endif %}
 
   <div class="funky-waves-container">
 

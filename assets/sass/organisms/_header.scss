@@ -1,0 +1,26 @@
+@charset 'UTF-8';
+
+header {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 84px;
+  background: $white;
+  z-index: 2002;
+  border-bottom: 1px solid $light-gray;
+  transition: border 0.25s ease-in-out;
+
+  &.active {
+    border-bottom-color: transparent;
+  }
+
+  .global-search {
+    margin-top: $grid-gutter-width / 2;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

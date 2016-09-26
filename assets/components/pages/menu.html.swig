@@ -1,0 +1,12 @@
+---
+title: menu
+name: menu
+collection: pages
+styleguide: false
+layout: page.html.swig
+---
+{% include '../organisms/header.html.swig' %}
+<div class="container">
+  <div style="height:150vh"></div>
+</div>
+{% include '../organisms/footer.html.swig' %}
