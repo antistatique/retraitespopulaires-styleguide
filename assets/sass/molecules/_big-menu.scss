@@ -26,3 +26,11 @@
   margin-top: 80px;
   padding: $grid-gutter-width;
 }
+
+// When Drupal admin bar is display horizontal - add bigger margin
+
+body.toolbar-tray-open.toolbar-fixed.toolbar-horizontal {
+  .container-big-menu {
+    margin-top: 160px;
+  }
+}
