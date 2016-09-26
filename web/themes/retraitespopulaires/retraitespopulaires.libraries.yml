@@ -5,7 +5,7 @@ global-styling:
       build/css/main.css: {}
   js:
     build/js/vendors.min.js: {}
-    build/js/main.js: {}
+    build/js/bundle.js: {}
   dependencies:
     - core/jquery
     - core/drupal

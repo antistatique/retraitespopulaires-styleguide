@@ -63,9 +63,10 @@
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
   <body{{ attributes.addClass(body_classes) }}>
-    <a href="#main-content" class="visually-hidden focusable skip-link">
-      {{ 'Skip to main content'|t }}
-    </a>
+
+    {{ load_block('rp_layout_bigmenu_block') }}
+    {{ load_block('rp_layout_header_block') }}
+
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
