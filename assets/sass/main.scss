@@ -37,8 +37,9 @@
 @import 'atoms/socials';
 
 // molecules:
-@import 'molecules/menu-complet';
-@import 'molecules/swiper-menu-complet';
+@import 'molecules/teaser-collectivites';
+@import 'molecules/teaser-entreprise';
+@import 'molecules/teaser-particulier';
 @import 'molecules/teaser-basicpage';
 @import 'molecules/teaser-product';
 @import 'molecules/teaser-news';
@@ -57,7 +58,7 @@
 @import 'molecules/card-attachement';
 
 // organisms:
-@import 'organisms/header-complet';
+@import 'organisms/rentals';
 @import 'organisms/last-news';
 @import 'organisms/attachments-job';
 @import 'organisms/footer';
@@ -65,12 +66,3 @@
 @import 'organisms/attachments';
 
 // pages:
-@import 'pages/menu-complet';
-@import 'pages/management_contracts';
-@import 'pages/product';
-@import 'pages/partnership';
-@import 'pages/news';
-@import 'pages/contact';
-@import 'pages/advisor';
-@import 'pages/basic-page';
-@import 'pages/big-menu';

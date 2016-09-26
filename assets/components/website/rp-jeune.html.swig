@@ -1,9 +1,9 @@
 ---
-title: product
-name: product
-collection: pages
+title: rp-jeune
+name: rp-jeune
+collection: website
 styleguide: false
-layout: page.html.swig
+layout: website.html.swig
 ---
 {% include '../organisms/header.html.swig' %}
 {% include '../atoms/funky-waves.html.swig' %}
@@ -11,7 +11,7 @@ layout: page.html.swig
 <div class="container">
   <div class="row"></div>
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
-      {% include '../molecules/breadcrumb.html.swig' %}
+      {% include '../molecules/breadcrumb.html.swig' with {theme: 'assurance-vie', links: ['Accueil', 'Assurance vie', 'RP Jeune']} %}
       <div class="spacer"></div>
     </div>
   </div>
@@ -79,29 +79,24 @@ layout: page.html.swig
         </div>
 
         <div class="col-md-4">
-          <ul class="facets-list">
-            <li><a href="#" class="pretty-link">RP Rente Immédiate</a></li>
-            <li><a href="#" class="pretty-link">RP Rente Immédiate certain</a></li>
-            <li><a href="#" class="pretty-link">RP Rente différéee</a></li>
-            <li><a href="#" class="pretty-link">RP Jeune</a></li>
-            <li><a href="#" class="pretty-link">RP Duo primes périodiques</a></li>
-            <li><a href="#" class="pretty-link">RP Prime unique</a></li>
-            <li><a href="#" class="pretty-link">RP Épargne</a></li>
-            <li><a href="#" class="pretty-link">RP Refuge</a></li>
-          </ul>
+          {% include '../atoms/facets-list.html.swig' with {'title': '', 'links': ['RP Rente Immédiate', 'RP Rente Immédiate certain', 'RP Rente différéee', 'RP Jeune', 'RP Duo primes périodiques', 'RP Prime unique', 'RP Épargne', 'RP Refuge']} %}
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-8">
           <div class="row">
-            <div class="col-sm-6">{% include '../molecules/teaser-product.html.swig' %}</div>
-            <div class="col-sm-6">{% include '../molecules/teaser-product.html.swig' %}</div>
+            <div class="col-sm-6">
+              {% include '../molecules/teaser-product.html.swig' with {'title': 'Rente Immédiate', 'body': 'Profitez de votre retraite! Placez un capital de manière sûre et bénéficiez tout de suite de rentes à vie.'} %}
+            </div>
+            <div class="col-sm-6">
+              {% include '../molecules/teaser-product.html.swig' with {'title': 'Rente Immédiate certain', 'body': 'Réalisez vos projets! Transformez votre capital en revenu supplémentaire garanti.'} %}
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance'} %}
+      {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance', 'json': 'assurance-vie'} %}
     </div>
   </div>
 </div>
@@ -111,54 +106,14 @@ layout: page.html.swig
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        {% include '../molecules/card-attachement.html.swig' with {'theme': 'assurance'} %}
+        {% include '../molecules/card-attachement.html.swig' with {'theme': 'assurance', 'type': 'faq', 'title':'Questions fréquentes', 'links': ['Qu’est-ce qu’un 3e pilier A ou prévoyance liée?', 'Comment maintenir son niveau de vie à la retraite?', 'Qu’en est-il du 3e pilier en cas de divorce?'], 'more': 'Accéder à toutes les questions sur l’assurance vie'} %}
       </div>
       <div class="col-xs-12 col-md-6">
-        <div class="card-attachement card-attachement-assurance shadow shadow-down">
-          <div class="card-title h2">Documents utiles</div>
-          <ul class="card-content list-spaced list-unstyled">
-            <li class="">
-              <div class="media">
-                <div class="media-left">
-                  <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
-                </div>
-                <div class="media-body">
-                  <a href="#" class="pretty-link h5">Brochure Conseil global <span class="text-muted text-small">- PDF</span></a>
-                </div>
-              </div>
-            </li>
-            <li class="">
-              <div class="media">
-                <div class="media-left">
-                  <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
-                </div>
-                <div class="media-body">
-                  <a href="#" class="pretty-link h5">Procuration <span class="text-muted text-small">- PDF</span></a>
-                </div>
-              </div>
-            </li>
-            <li class="">
-              <div class="media">
-                <div class="media-left">
-                  <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
-                </div>
-                <div class="media-body">
-                  <a href="#" class="pretty-link h5">Modification des primes et prestations <span class="text-muted text-small">- PDF</span></a>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <div class="card-footer">
-            <div class="media">
-              <div class="media-left">
-                  <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></a>
-              </div>
-              <div class="media-body">
-                <a class="text-bold pretty-link h5" href="#">Accéder à tous les formulaires relatifs à l'assurance vie</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        {% include '../molecules/card-attachement.html.swig' with {'theme': 'assurance', 'type': 'document', 'title':'Documents utiles', 'links': [
+        'Brochure Conseil global',
+        'Procuration',
+        'Modification des primes et prestations'],
+        'more': 'Accéder à tous les formulaires relatifs à l’assurance vie'} %}
       </div>
     </div>
   </div>

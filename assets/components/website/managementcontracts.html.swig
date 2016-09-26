@@ -1,9 +1,9 @@
 ---
 title: managementcontracts
 name: managementcontracts
-collection: pages
+collection: website
 styleguide: false
-layout: page.html.swig
+layout: website.html.swig
 ---
 {% include '../organisms/header.html.swig' %}
 {% include '../atoms/funky-waves.html.swig' %}

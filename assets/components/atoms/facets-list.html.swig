@@ -4,9 +4,13 @@ name: facets-list
 collection: atoms
 notes: |
   ##### Usage : `facets-list`
+  ##### Options :
+  - **title** - String
+  - **links** - Array
 ---
-<p class="media-heading text-muted">Vous êtes</p>
+<p class="media-heading text-muted">{{ title }}</p>
 <ul class="facets-list">
-  <li><a href="#" class="pretty-link">Une seule prime</a></li>
-  <li><a href="#" class="pretty-link">Plusieurs prime</a></li>
+  {% for link in links %}
+    <li><a href="#" class="pretty-link">{{ link }}</a></li>
+  {% endfor %}
 </ul>
