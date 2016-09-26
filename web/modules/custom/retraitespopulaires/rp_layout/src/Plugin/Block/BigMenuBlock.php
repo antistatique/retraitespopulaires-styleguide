@@ -11,7 +11,6 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use \Drupal\Core\Menu\MenuLinkTreeInterface;
-use \Drupal\Core\Menu\MenuTreeParameters;
 
 /**
 * Provides a 'Layout' BigMenu Block
@@ -35,7 +34,6 @@ class BigMenuBlock extends BlockBase implements ContainerFactoryPluginInterface 
      public function __construct(array $configuration, $plugin_id, $plugin_definition, MenuLinkTreeInterface $menu_tree) {
          parent::__construct($configuration, $plugin_id, $plugin_definition);
          $this->menu_tree         = $menu_tree;
-
      }
 
     /**

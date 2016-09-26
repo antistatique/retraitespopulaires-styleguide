@@ -51,19 +51,35 @@ class SubscribeForm extends FormBase {
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $extra = NULL) {
+
+        $form['form-wrapper_start'] = array(
+            '#markup' => '<div class="form-group">',
+        );
+
+        $form['input-group_start'] = array(
+            '#markup' => '<div class="input-group">',
+        );
+
         $form['email'] = array(
             '#type'   => 'textfield',
-            '#title'  => t('Adresse e-mail'),
-            '#prefix' => '<div class="form-group">',
-            '#suffix' => '</div>',
+            '#placeholder' => $this->t('Ex: jane.doe@bluewin.ch'),
+            '#required'    => true,
         );
 
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
-            '#value'       => t('S\'inscrire'),
-            '#button_type' => 'primary',
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
+            '#value'       => $this->t('Je m\'inscris'),
+            '#attributes'  => ['class' => array('btn-default')],
+            '#prefix'      => '<span class="input-group-btn">',
+            '#suffix'      => '</span>',
+        );
+
+        $form['input-group_end'] = array(
+            '#markup' => '</div>',
+        );
+
+        $form['form-wrapper_end'] = array(
+            '#markup' => '</div>',
         );
         return $form;
     }

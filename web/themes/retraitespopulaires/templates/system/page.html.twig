@@ -58,37 +58,6 @@
 
 {{ page.header }}
 
-
-{# Navigation (Main navigation, Secondary navigation, Profil navigation #}
-{% if page.navigation %}
-    {% block navigation %}
-        {%
-        set main_menu_classes = [
-          'navbar',
-          'navbar-default',
-        ]
-        %}
-        <header{{ attributes.addClass(main_menu_classes) }} id="navbar" role="banner">
-            <div class="navbar-header">
-                {# .btn-navbar is used as the toggle for collapsed navbar content #}
-                {% if page.navigation %}
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                {% endif %}
-            </div>
-
-            {# Navigation (collapsible) #}
-            <div class="navbar-collapse collapse">
-                {{ page.navigation }}
-            </div>
-        </header>
-    {% endblock %}
-{% endif %}
-
 {{ title }}
 
 {# Breadcrumbs #}
@@ -167,15 +136,5 @@
 {% if page.content_footer %}
   {% block content_footer %}
     {{ page.content_footer }}
-  {% endblock %}
-{% endif %}
-
-{# Page footer #}
-{% if page.footer %}
-  {% block footer %}
-    <footer class="footer {{ container }}" role="contentinfo">
-      {{ page.footer }}
-      {{ load_form('rp_newsletter', 'SubscribeForm') }}
-    </footer>
   {% endblock %}
 {% endif %}

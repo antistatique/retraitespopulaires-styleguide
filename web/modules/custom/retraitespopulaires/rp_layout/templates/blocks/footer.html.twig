@@ -1,56 +1,116 @@
-<div class="{{ theme_hook_original }}">
-
-  <div class="row">
-    <div class="col-md-3">
-      <h2>{% trans %}Contactez-nous{% endtrans %}</h2>
-      <h3><a href="tel:{{ variables.contact.phone }}">{{ variables.contact.phone }}</a></h3>
-      <h3><a href="mailto:{{ variables.contact.email }}">{{ variables.contact.email }}</a></h3>
-
-      <h2>{% trans %}Agences{% endtrans %}</h2>
-      <ul class="list-no-style list-no-padding">
-        <li>
-          Lausanne <a class="pull-right" href="tel:{{ variables.contact.phone_lausanne }}">{{ variables.contact.phone_lausanne }}</a>
-        </li>
-        <li>
-          Yverdon-les-bains <a class="pull-right" href="tel:{{ variables.contact.phone_yverdon }}">{{ variables.contact.phone_yverdon }}</a>
-        </li>
-        <li>
-          Nyon <a class="pull-right" href="tel:{{ variables.contact.phone_nyon }}">{{ variables.contact.phone_nyon }}</a>
-        </li>
-      </ul>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="spacer"></div>
+        <h2>{% trans %}Retrouvez-nous sur les réseaux sociaux{% endtrans %}</h2>
+        <p>{% trans %}Suivez-nous en temps réel sur Twitter. Facebook et vos plateformes préférées!{% endtrans %}</p>
+        <div class="spacer spacer-xs"></div>
+      </div>
     </div>
 
-    <div class="col-md-offset-3 col-md-6">
-      <h2>{% trans %}Retrouvez-nous sur les réseaux sociaux{% endtrans %}</h2>
-      <ul class="list-no-style list-no-padding list-inline">
-        <li>
-          <a href="{{ variables.contact.twitter }}" target="_blank">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </a>
-        </li>
-        <li>
-          <a href="{{ variables.contact.facebook }}" target="_blank">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-          </a>
-        </li>
-        <li>
-          <a href="{{ variables.contact.linkedin }}" target="_blank">
-            <i class="fa fa-linkedin" aria-hidden="true"></i>
-          </a>
-        </li>
-        <li>
-          <a href="{{ variables.contact.youtube }}" target="_blank">
-            <i class="fa fa-youtube" aria-hidden="true"></i>
-          </a>
-        </li>
-        <li>
-          <a href="{{ variables.contact.instagram }}" target="_blank">
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+          <div class="spacer spacer-xs"></div>
+          <div class="bubble-icon">
+            <a href="{{ variables.contact.twitter }}" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-colored" aria-hidden="true"></i></a>
+          </div>
+        </div>
 
+        <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+          <div class="spacer spacer-xs"></div>
+          <div class="bubble-icon">
+            <a href="{{ variables.contact.facebook }}" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-colored" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+          <div class="spacer spacer-xs"></div>
+          <div class="bubble-icon">
+            <a href="{{ variables.contact.youtube }}" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-colored" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+          <div class="spacer spacer-xs"></div>
+          <div class="bubble-icon">
+            <a href="{{ variables.contact.instagram }}" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-colored" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+          <div class="spacer spacer-xs"></div>
+          <div class="bubble-icon">
+            <a href="{{ variables.contact.linkedin }}" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-colored" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-5 col-md-offset-1">
+        <div class="spacer spacer-md visible-xs visible-sm"></div>
+        <p>{% trans %}Le Bulletin des spécialistes de Retraites Populaires, directement par email:{% endtrans %}</p>
+        {{ load_form('rp_newsletter', 'SubscribeForm') }}
+      </div>
+
+      <div class="col-xs-12 col-md-5 col-md-offset-1">
+        <div class="spacer spacer-md visible-xs visible-sm"></div>
+        <p>{% trans %}Contactez-nous{% endtrans %}</p>
+
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#lausanne" aria-controls="lausanne" role="tab" data-toggle="tab">{% trans %}Lausanne (siège){% endtrans %}</a></li>
+          <li role="presentation"><a href="#yverdon" aria-controls="yverdon" role="tab" data-toggle="tab">{% trans %}Yverdon-les-Bains{% endtrans %}</a></li>
+          <li role="presentation"><a href="#nyon" aria-controls="nyon" role="tab" data-toggle="tab">{% trans %}Nyon{% endtrans %}</a></li>
+        </ul>
+
+        <div class="spacer spacer-sm"></div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="lausanne">
+                <a href="tel:{{ variables.contact.phone_lausanne }}" class="text-large">{{ variables.contact.phone_lausanne }}</a>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="yverdon">
+                <a href="tel:{{ variables.contact.phone_yverdon }}" class="text-large">{{ variables.contact.phone_yverdon }}</a>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="nyon">
+                <a href="tel:{{ variables.contact.phone_nyon }}" class="text-large">{{ variables.contact.phone_nyon }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="mailto:{{ variables.contact.email }}" class="text-large">{{ variables.contact.email }}</a>
+      </div>
+    </div>
   </div>
 
+  <div class="spacer spacer-xs"></div>
+
+  <div class="organic-lines lines"></div>
+
+  <div class="spacer"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <ul class="unordered-list list-inline list-unstyle-first">
+          {% for item in variables.footer_menu %}
+          <li>
+            <a class="pretty-link" href="{{ item.link.urlObject }}">
+              {{ item.link.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
 </div>
