@@ -105,6 +105,11 @@
     border-top-right-radius: $btn-border-radius-base;
   }
 
+  .form-control:last-child {
+    border-bottom-left-radius: $btn-border-radius-base;
+    border-top-left-radius: $btn-border-radius-base;
+  }
+
   .input-group-btn {
     position: absolute;
     top: $input-border-size;
