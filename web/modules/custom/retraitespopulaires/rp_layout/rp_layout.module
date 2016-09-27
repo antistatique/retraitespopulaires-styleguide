@@ -28,5 +28,12 @@ function rp_layout_theme($existing, $type, $theme, $path) {
             // using [template].html.twig
             'template'  => 'blocks/bigmenu'
         ),
+        'rp_layout_secondarynav_block' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'template'  => 'blocks/secondarynav'
+        ),
     );
 }
