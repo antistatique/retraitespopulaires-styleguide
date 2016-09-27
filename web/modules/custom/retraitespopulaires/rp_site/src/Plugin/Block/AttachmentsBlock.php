@@ -1,7 +1,7 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_site\Plugin\Block\FAQsBlock.
+* Contains \Drupal\rp_site\Plugin\Block\AttachmentsBlock.
 */
 
 namespace Drupal\rp_site\Plugin\Block;
@@ -18,19 +18,19 @@ use Drupal\rp_site\Service\Profession;
 use Drupal\Core\Entity\Query\QueryFactory;
 
 /**
-* Provides a 'FAQs' Block
+* Provides a 'Attachments' Block
 *
 * @Block(
-*   id = "rp_site_faqs",
-*   admin_label = @Translation("FAQs block"),
+*   id = "rp_site_attachments_block",
+*   admin_label = @Translation("Attachments block"),
 * )
 *
 * Inline example:
 * <code>
-* load_block('rp_site_faqs_block')
+* load_block('rp_site_attachments_block')
 * </code>
 */
-class FAQsBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     /**
     * EntityTypeManagerInterface to load Nodes
@@ -91,18 +91,43 @@ class FAQsBlock extends BlockBase implements ContainerFactoryPluginInterface {
     * {@inheritdoc}
     */
     public function build($params = array()) {
-        $variables = array('faqs' => array());
+        $variables = array('attachments' => array());
+
+        if ($node = $this->route->getParameter('node')) {
+            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+        }
+
+        $variables['attachments'][] = $this->faqs();
+        $variables['attachments'][] = $this->documents();
+
+        return [
+            '#theme'     => 'rp_site_attachments_block',
+            '#variables' => $variables,
+            '#cache' => [
+                'contexts' => [
+                    'url.path'
+                ],
+            ]
+        ];
+    }
+
+    private function faqs() {
+        $variables = array();
         //Load the current node's field_faq
         $faqs_nids = array();
         if ($node = $this->route->getParameter('node')) {
+            $variables['title'] = t('');
+            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+            $variables['type'] = 'faqs';
+            $variables['links'] = array();
 
             if( isset($node->field_faq) && !$node->field_faq->isEmpty() ){
-                // Retrieve specified documents
+                // Retrieve specified faqs
                 foreach ($node->field_faq as $key => $doc) {
                     $faqs_nids[] = $doc->target_id;
                 }
 
-                $variables['faqs'] = $this->entity_node->loadMultiple($faqs_nids);
+                $variables['links'] = $this->entity_node->loadMultiple($faqs_nids);
             } else {
                 // Retrieve random documents
                 $query = $this->entity_query->get('node')
@@ -113,7 +138,7 @@ class FAQsBlock extends BlockBase implements ContainerFactoryPluginInterface {
                     ->range(0, 3);
 
                 $nids = $query->execute();
-                $variables['faqs'] = $this->entity_node->loadMultiple($nids);
+                $variables['links'] = $this->entity_node->loadMultiple($nids);
             }
 
             // Generate the collection link
@@ -127,14 +152,50 @@ class FAQsBlock extends BlockBase implements ContainerFactoryPluginInterface {
             );
         }
 
-        return [
-            '#theme'     => 'rp_site_faqs_block',
-            '#variables' => $variables,
-            '#cache' => [
-                'contexts' => [
-                    'url.path'
-                ],
-            ]
-        ];
+        return $variables;
+    }
+
+    private function documents() {
+        $variables = array();
+        //Load the current node's field_document
+        $documents_nids = array();
+        if ($node = $this->route->getParameter('node')) {
+            $variables['title'] = t('');
+            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+            $variables['type'] = 'documents';
+            $variables['links'] = array();
+
+            if( isset($node->field_document) && !$node->field_document->isEmpty() ){
+                // Retrieve specified documents
+                foreach ($node->field_document as $key => $doc) {
+                    $documents_nids[] = $doc->target_id;
+                }
+                $variables['links'] = $this->entity_node->loadMultiple($documents_nids);
+            } else {
+                // Retrieve random documents
+                $query = $this->entity_query->get('node')
+                    ->condition('type', 'document')
+                    ->condition('status', 1)
+                    ->condition('field_profession', $node->field_profession->target_id)
+                    ->addTag('random')
+                    ->range(0, 3);
+
+                $nids = $query->execute();
+                $variables['links'] = $this->entity_node->loadMultiple($nids);
+            }
+
+            // Generate the collection link
+            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
+            if( !empty($alias) ){
+                $alias = str_replace('/', '', $alias);
+            }
+
+            $variables['collection'] = array(
+                'name' => $this->profession->name($node->field_profession->target_id),
+                'link' => Url::fromRoute('rp_site.documents.collection', array('taxonomy_term_alias' => $alias))
+            );
+        }
+
+        return $variables;
     }
 }

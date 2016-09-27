@@ -1,0 +1,27 @@
+<div class="card-attachement card-attachement-{{ variables.theme }} shadow shadow-down">
+  <div class="card-title h2">{% trans %}Documents utiles{% endtrans %}</div>
+  <ul class="card-content list-spaced list-unstyled">
+    {% for doc in variables.links %}
+    <li>
+      <div class="media">
+        <div class="media-left">
+          <a href="{{ path('rp_site.documents.download', {'node': doc.nid.value}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
+        </div>
+        <div class="media-body">
+          <a href="{{ path('rp_site.documents.download', {'node': doc.nid.value}) }}" class="pretty-link h5">{{ doc.title.value }} <span class="text-muted text-small">- {{ doc.field_file_document.entity.mimeType|extension_guesser|upper }}</span></a>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  <div class="card-footer">
+    <div class="media">
+      <div class="media-left">
+        <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></a>
+      </div>
+      <div class="media-body">
+        <a class="text-bold pretty-link h5" href="{{ variables.collection.link }}">{% trans %}Accéder à tous les formulaires relatifs à {{ variables.collection.name }}{% endtrans %}</a>
+      </div>
+    </div>
+  </div>
+</div>

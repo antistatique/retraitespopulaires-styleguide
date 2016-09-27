@@ -15,19 +15,26 @@ function rp_site_theme($existing, $type, $theme, $path) {
     return array(
         // Blocks themes
         // ---------------------------------------------------------------------
-        'rp_site_documents_block' => array(
+        'rp_site_attachments_block' => array(
             // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
-            'template'  => 'blocks/documents'
+            'template'  => 'blocks/attachments'
         ),
-        'rp_site_faqs_block' => array(
+        'rp_site_attachment-faqs_block' => array(
             // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
-            'template'  => 'blocks/faqs'
+            'template'  => 'blocks/attachment-faqs'
+        ),
+        'rp_site_attachment-documents_block' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'template'  => 'blocks/attachment-documents'
         ),
         'rp_site_contact_block' => array(
             // Use the following syntax to retrieve all variables in the "variables" container
