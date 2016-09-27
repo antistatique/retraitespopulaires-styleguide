@@ -63,7 +63,7 @@ class SecondaryNavBlock extends BlockBase implements ContainerFactoryPluginInter
             $variables['secondary_nav'] = $this->getTopParentActiveTrail('profil');
         }
 
-        if (!isset($variables['secondary_nav']->link) && !empty($variables['secondary_nav']->link)) {
+        if (isset($variables['secondary_nav']->link) && !empty($variables['secondary_nav']->link)) {
             $variables['index'] = $variables['secondary_nav']->link->getPluginId();
         }
         return [

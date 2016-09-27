@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e02aa5477f0da874368edc5b6e9e9960",
-    "content-hash": "e19768d52559e9945082534fb17b6acc",
+    "hash": "00cf9f31c59b8371cb2dbc5b60e68624",
+    "content-hash": "2bc71d9bcbf13814f7de0fdad3c8bb42",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -959,7 +959,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.17.zip",
-                "reference": null,
+                "reference": "195f503ee4350c8be74b9515c21e264384a2fcaf",
                 "shasum": null
             },
             "require": {
@@ -1262,7 +1262,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/ctools-8.x-3.0-alpha27.zip",
-                "reference": null,
+                "reference": "231e2649678d58901368a9e5681f36865ce84e73",
                 "shasum": null
             },
             "require": {
@@ -1379,6 +1379,37 @@
             "time": "2015-12-10 12:36:16"
         },
         {
+            "name": "drupal/menu_breadcrumb",
+            "version": "8.1.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/menu_breadcrumb",
+                "reference": "0052d4f87a2b746bc5f7316e16916f5c77ee3fd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/menu_breadcrumb-8.x-1.0-alpha1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Allows you to use the menu the current page belongs to for the breadcrumb.",
+            "homepage": "https://www.drupal.org/project/menu_breadcrumb",
+            "time": "2016-06-10 06:41:32"
+        },
+        {
             "name": "drupal/metatag",
             "version": "8.1.0-beta10",
             "source": {
@@ -1389,7 +1420,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.0-beta10.zip",
-                "reference": null,
+                "reference": "c0610ad2ad9318298823c24db66b8769095910a3",
                 "shasum": null
             },
             "require": {
@@ -1410,6 +1441,9 @@
             "extra": {
                 "branch-alias": {
                     "dev-8.x-1.x": "8.1.x-dev"
+                },
+                "patches_applied": {
+                    "Deactivate console service": "https://www.drupal.org/files/issues/metatag-deactivate_drupalconsole_services_0.patch"
                 }
             },
             "notification-url": "https://packagist.drupal-composer.org/downloads/",
@@ -1442,7 +1476,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.0-beta1.zip",
-                "reference": null,
+                "reference": "05a0bc51694b70efb697b3c8b175f2884bff7b34",
                 "shasum": null
             },
             "require": {
@@ -1475,7 +1509,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.0-beta1.zip",
-                "reference": null,
+                "reference": "1fcc7e9c46cae1a95fa90033f01bac95be6eee9b",
                 "shasum": null
             },
             "require": {
@@ -1561,7 +1595,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/search_api_solr-8.x-1.0-alpha6.zip",
-                "reference": null,
+                "reference": "1b949c59477031ce5880c13537eb73a5f3cb4096",
                 "shasum": null
             },
             "require": {
@@ -1600,7 +1634,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/token-8.x-1.0-beta2.zip",
-                "reference": null,
+                "reference": "724ccaa7a60f1aa7e8883e82de737115b0f73a3f",
                 "shasum": null
             },
             "require": {

@@ -1,6 +1,6 @@
 uuid: fdd8127a-fbde-4fc2-bbd7-24aa2164ec0e
 langcode: fr
-status: true
+status: false
 dependencies:
   module:
     - ctools
@@ -9,8 +9,8 @@ dependencies:
     - retraitespopulaires
 id: advisorblock
 theme: retraitespopulaires
-region: sidebar_second
-weight: -9
+region: '-1'
+weight: 2
 provider: null
 plugin: rp_site_advisor
 settings:

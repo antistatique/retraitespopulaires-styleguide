@@ -9,7 +9,7 @@ dependencies:
 id: breadcrumbs
 theme: retraitespopulaires
 region: breadcrumb
-weight: -8
+weight: -12
 provider: null
 plugin: system_breadcrumb_block
 settings:

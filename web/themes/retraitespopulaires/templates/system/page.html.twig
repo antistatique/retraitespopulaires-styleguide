@@ -56,16 +56,18 @@
 #}
 {# page.header #}
 
+{{ load_block('rp_layout_cover_block') }}
 
 {# Breadcrumbs #}
 {% if page.breadcrumb %}
 <div class="container">
-  <div class="row"></div>
-  <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
-    {% block breadcrumb %}
-        {{ page.breadcrumb }}
-    {% endblock %}
-    <div class="spacer"></div>
+  <div class="row">
+    <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
+      {% block breadcrumb %}
+          {{ page.breadcrumb }}
+      {% endblock %}
+      <div class="spacer"></div>
+    </div>
   </div>
 </div>
 {% endif %}

@@ -10,15 +10,31 @@
  */
 #}
 {% if breadcrumb %}
-  <ol class="breadcrumb">
+<div class="breadcrumb">
+  <ul class="list-inline list-no-style list-no-padding">
     {% for item in breadcrumb %}
-      <li {{ item.attributes }}>
+      {% set classes = ['text-primary'] %}
+      {% set classes = [
+        item.url == '/node/45' ? 'text-assurance',
+        item.url == '/node/46' ? 'text-prevoyance',
+        item.url == '/node/47' ? 'text-immobilier',
+        item.url == '/node/48' ? 'text-hypotheque',
+        loop.last ? 'text-muted',
+      ] %}
+
+      <li class="{{ classes|join(' ') }}" {{ item.attributes }}>
         {% if item.url %}
-          <a href="{{ item.url }}">{{ item.text }}</a>
+          <a class="{{ classes|join(' ') }}" href="{{ item.url }}">{{ item.text }}</a>
         {% else %}
           {{ item.text }}
         {% endif %}
       </li>
+
+      {% if not loop.last %}
+        <li class="text-muted">›</li>
+      {% endif %}
+
     {% endfor %}
-  </ol>
+  </ul>
+</div>
 {% endif %}

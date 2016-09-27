@@ -9,7 +9,7 @@ _core:
 id: retraitespopulaires_local_actions
 theme: retraitespopulaires
 region: '-1'
-weight: -9
+weight: -7
 provider: null
 plugin: local_actions_block
 settings:
