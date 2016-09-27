@@ -19,7 +19,11 @@
     color: $text-color;
   }
 
-  .news-date {
-    margin-right: $grid-gutter-width/2;
+  .news-extra {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1em;
+
+    .news-type { text-align: right; }
   }
 }

@@ -1,0 +1,34 @@
+@charset 'UTF-8';
+
+// Specific for drupal CKEditor
+
+.entity-body {
+  ul {
+    @extend .unordered-list;
+  }
+
+  ol {
+    @extend .ordered-list;
+  }
+
+  @each $label, $color in $themes {
+    &.body-#{$label} {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      strong {
+        @extend .text-#{$label};
+      }
+
+      table.tablesaw {
+        @extend .table-#{$label};
+      }
+
+      a {
+        @extend .text-#{$label}.pretty-link;
+      }
+    }
+  }
+}
