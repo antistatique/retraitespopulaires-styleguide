@@ -1,5 +1,8 @@
 @charset 'UTF-8';
 
+/* stylelint-disable declaration-no-important */
+/* Purpose of helpers */
+
 .list-no-style { list-style-type: none; }
 
 .list-no-padding {
@@ -63,3 +66,19 @@
   margin: 0 auto;
   transform: translateY(-50%);
 }
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-x-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.no-v-padding {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* stylelint-enable declaration-no-important */
