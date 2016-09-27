@@ -1,16 +1,15 @@
 uuid: f553daf4-7f03-46f1-b24d-cacbeb0e8de0
 langcode: fr
-status: true
+status: false
 dependencies:
   module:
     - ctools
-    - rp_site
   theme:
     - retraitespopulaires
 id: faqsblock
 theme: retraitespopulaires
-region: content_footer
-weight: -12
+region: '-1'
+weight: 3
 provider: null
 plugin: rp_site_faqs
 settings:

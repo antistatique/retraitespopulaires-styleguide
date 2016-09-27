@@ -10,7 +10,7 @@ dependencies:
 id: advisorblock
 theme: retraitespopulaires
 region: '-1'
-weight: 2
+weight: -12
 provider: null
 plugin: rp_site_advisor
 settings:

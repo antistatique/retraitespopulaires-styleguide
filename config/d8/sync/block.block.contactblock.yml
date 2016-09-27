@@ -10,7 +10,7 @@ dependencies:
 id: contactblock
 theme: retraitespopulaires
 region: '-1'
-weight: 1
+weight: -11
 provider: null
 plugin: rp_site_contact
 settings:
