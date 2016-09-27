@@ -1,19 +1,9 @@
-<div class="{{ theme_hook_original }}">
-  {% if variables.current_alias %}
-    <a href="{{ path('<current>') }}" class="btn btn-primary">{% trans %}Tous les produits{% endtrans %}</a>
-  {% endif %}
-  <ul>
-    {% for category in variables.categories %}
-    <li>
-      <h3>{{ category.term.name.value }}</h3>
-        <ul>
-        {% for child in category.children %}
-          <li>
-            <a class="{{ child.alias == variables.current_alias ? 'active' }}" href="{{ path('<current>', {'filtre': child.alias }) }}">{{ child.term.name.value }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
+{% for category in variables.categories %}
+<p class="media-heading text-muted">{{ category.term.name.value }}</p>
+<ul class="facets-list">
+  {% for child in category.children %}
+    <li><a href="{{ path('<current>', {'filtre': child.alias }) }}" class="{{ child.alias == variables.current_alias ? 'active' }} pretty-link">{{ child.term.name.value }}</a></li>
+  {% endfor %}
+</ul>
+<div class="spacer spacer-sm"></div>
+{% endfor %}

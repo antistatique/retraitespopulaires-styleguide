@@ -20,7 +20,7 @@ use Drupal\Core\Entity\Query\QueryFactory;
 * Provides a 'Products' Block
 *
 * @Block(
-*   id = "rp_site_products",
+*   id = "rp_site_products_block",
 *   admin_label = @Translation("Products block"),
 * )
 *

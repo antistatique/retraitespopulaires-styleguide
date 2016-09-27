@@ -20,7 +20,7 @@ use Drupal\Core\Database\Connection;
 * Provides a 'ProductsFilter' Block
 *
 * @Block(
-*   id = "rp_site_products_filter",
+*   id = "rp_site_products_filter_block",
 *   admin_label = @Translation("Products Filter block"),
 * )
 *
