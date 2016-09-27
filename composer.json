@@ -31,7 +31,8 @@
         "drupal/devel": "^8",
         "drewm/mailchimp-api": "^2.2",
         "drupal/metatag": "~8.1.0-beta9",
-        "drupal/menu_breadcrumb": "^8"
+        "drupal/menu_breadcrumb": "^8",
+        "drupal/editor_advanced_link": "^8"
     },
     "require-dev": {
        "behat/mink": "~1.7",
