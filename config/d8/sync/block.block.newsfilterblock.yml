@@ -1,6 +1,6 @@
 uuid: 6246bf6f-f6a6-4e7a-9e1d-b99deb7e4fec
 langcode: fr
-status: true
+status: false
 dependencies:
   module:
     - rp_site
@@ -9,8 +9,8 @@ dependencies:
     - retraitespopulaires
 id: newsfilterblock
 theme: retraitespopulaires
-region: sidebar_first
-weight: -12
+region: '-1'
+weight: -4
 provider: null
 plugin: rp_site_news_filter
 settings:

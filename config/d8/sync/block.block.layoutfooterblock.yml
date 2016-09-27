@@ -9,7 +9,7 @@ dependencies:
 id: layoutfooterblock
 theme: retraitespopulaires
 region: '-1'
-weight: -8
+weight: -7
 provider: null
 plugin: rp_layout_footer_block
 settings:

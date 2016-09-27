@@ -1,3 +1,4 @@
+{% if news.nid.value %}
 <div class="{{ theme_hook_original }}">
   <ul>
    {% for news in variables.news %}
@@ -7,3 +8,4 @@
    {% endfor %}
   </ul>
 </div>
+{% if news.nid.value %}

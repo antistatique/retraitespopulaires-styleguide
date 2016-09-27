@@ -1,0 +1,15 @@
+uuid: 1c6f0d84-75a2-4804-a789-515bb15265b5
+langcode: fr
+status: true
+dependencies: {  }
+name: rp_full_screen_md
+label: 'Retraites Populaires - Full Screen MD'
+effects:
+  7dfe1508-46b6-44c8-8998-ccaa35e935b0:
+    uuid: 7dfe1508-46b6-44c8-8998-ccaa35e935b0
+    id: image_scale
+    weight: 1
+    data:
+      width: 1024
+      height: null
+      upscale: false

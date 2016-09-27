@@ -1,16 +1,15 @@
 uuid: f7eea4ae-264c-427b-9061-7fae13be4044
 langcode: fr
-status: true
+status: false
 dependencies:
   module:
     - ctools
-    - rp_site
   theme:
     - retraitespopulaires
 id: productsblock
 theme: retraitespopulaires
-region: content
-weight: -10
+region: '-1'
+weight: 8
 provider: null
 plugin: rp_site_products
 settings:

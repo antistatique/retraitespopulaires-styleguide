@@ -11,7 +11,7 @@ dependencies:
 id: profilnavigation
 theme: retraitespopulaires
 region: '-1'
-weight: -3
+weight: 0
 provider: null
 plugin: 'system_menu_block:profil'
 settings:

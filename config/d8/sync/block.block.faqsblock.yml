@@ -9,7 +9,7 @@ dependencies:
 id: faqsblock
 theme: retraitespopulaires
 region: '-1'
-weight: 3
+weight: -10
 provider: null
 plugin: rp_site_faqs
 settings:

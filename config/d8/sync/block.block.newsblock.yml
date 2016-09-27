@@ -1,6 +1,6 @@
 uuid: 04a8c3cc-5b29-4a10-8e8e-e844e17a5d4a
 langcode: fr
-status: true
+status: false
 dependencies:
   module:
     - ctools
@@ -9,8 +9,8 @@ dependencies:
     - retraitespopulaires
 id: newsblock
 theme: retraitespopulaires
-region: content_bottom
-weight: -12
+region: '-1'
+weight: 7
 provider: null
 plugin: rp_site_news
 settings:

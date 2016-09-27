@@ -1,3 +1,4 @@
+{% if variables.product.nid.value %}
 <a href="{{ path('entity.node.canonical', {'node': variables.product.nid.value}) }}" class="teaser-product shadow shadow-down">
   <div class="product-heading">
     <div class="product-title h1">
@@ -7,3 +8,4 @@
   </div>
   <p class="product-body">{{ variables.product.body.summary }}</p>
 </a>
+{% endif %}

@@ -4,13 +4,12 @@ status: false
 dependencies:
   module:
     - ctools
-    - rp_site
   theme:
     - retraitespopulaires
 id: usefuldocumentsblock
 theme: retraitespopulaires
 region: '-1'
-weight: 4
+weight: 5
 provider: null
 plugin: rp_site_documents
 settings:

@@ -1,0 +1,15 @@
+uuid: 2a25ab68-f8df-4c05-bc31-e51bbc31514f
+langcode: fr
+status: true
+dependencies: {  }
+name: rp_full_screen_lg
+label: 'Retraites Populaires - Full Screen LG'
+effects:
+  ec9c0ebd-2188-499b-aa37-4e57c4c36099:
+    uuid: ec9c0ebd-2188-499b-aa37-4e57c4c36099
+    id: image_scale
+    weight: 1
+    data:
+      width: 1600
+      height: null
+      upscale: false

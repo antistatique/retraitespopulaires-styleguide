@@ -1,0 +1,15 @@
+uuid: ce7b1546-9510-4276-8c44-be994e0af1e3
+langcode: fr
+status: true
+dependencies: {  }
+name: rp_full_screen_xs
+label: 'Retraites Populaires - Full Screen XS'
+effects:
+  743e23e4-a05a-4ac4-89fd-3c08ea283881:
+    uuid: 743e23e4-a05a-4ac4-89fd-3c08ea283881
+    id: image_scale
+    weight: 1
+    data:
+      width: 640
+      height: null
+      upscale: false

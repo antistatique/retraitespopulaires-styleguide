@@ -1,12 +1,1 @@
-<div class="{{ theme_hook_original }}">
-  <h2>{% trans %}Actualités concernant {{ variables.collection.name }}{% endtrans %}</h2>
-  <ul>
-   {% for news in variables.news %}
-    <li>
-      <a href="{{ path('entity.node.canonical', {'node': news.nid.value}) }}">{{ news.title.value }}</a>
-    </li>
-   {% endfor %}
-  </ul>
-
-  <a href="{{ variables.collection.link }}">{% trans %}Voir toutes les actualités concernants {{ variables.collection.name }}{% endtrans %}</a>
-</div>
+List of all news with paginations

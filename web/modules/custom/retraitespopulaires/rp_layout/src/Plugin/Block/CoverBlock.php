@@ -12,6 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
 * Provides a 'Layout' Cover Block
@@ -30,11 +31,18 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
     private $route;
 
     /**
+    * EntityTypeManagerInterface to load Files
+    * @var EntityTypeManagerInterface
+    */
+    private $entity_file;
+
+    /**
      * Class constructor.
      */
-     public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route) {
+     public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route, EntityTypeManagerInterface $entity) {
          parent::__construct($configuration, $plugin_id, $plugin_definition);
-         $this->route = $route;
+         $this->route       = $route;
+         $this->entity_file = $entity->getStorage('file');
      }
 
     /**
@@ -48,7 +56,8 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
              $plugin_id,
              $plugin_definition,
              // Load customs services used in this class.
-             $container->get('current_route_match')
+             $container->get('current_route_match'),
+             $container->get('entity_type.manager')
          );
      }
 
@@ -88,7 +97,7 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
         }
 
         if ($cover_fid) {
-            $cover = File::load($cover_fid);
+            $cover = $this->entity_file->load($cover_fid);
             $build = array(
                 'xs'  => ImageStyle::load('rp_full_screen_xs')->buildUrl($cover->uri->value),
                 'md'  => ImageStyle::load('rp_full_screen_md')->buildUrl($cover->uri->value),
