@@ -37,6 +37,7 @@ module:
   page_cache: 0
   path: 0
   rdf: 0
+  rp_ckeditor: 0
   rp_exchange_rates: 0
   rp_layout: 0
   rp_newsletter: 0

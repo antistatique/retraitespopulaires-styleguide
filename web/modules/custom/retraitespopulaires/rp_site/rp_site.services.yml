@@ -1,3 +1,8 @@
 services:
   rp_site.profession:
     class: Drupal\rp_site\Service\Profession
+  # Custom Twig extensions
+  rp_site.twig.themes:
+      class: Drupal\rp_site\TwigExtension\Themes
+      tags:
+          - { name: twig.extension }

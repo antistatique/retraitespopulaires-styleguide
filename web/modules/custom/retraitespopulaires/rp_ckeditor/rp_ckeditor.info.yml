@@ -1,0 +1,10 @@
+name: 'Advanced CKeditor'
+description: 'Add attributes to Text Editor''s tabe dialog.'
+type: module
+dependencies:
+  - editor
+
+package: Retraites Populaires
+type: module
+version: 1.0
+core: 8.x

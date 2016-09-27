@@ -44,6 +44,7 @@ settings:
         -
           name: 'Block Formatting'
           items:
+            - Styles
             - Format
         -
           name: Tools
@@ -54,7 +55,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: ''
+      styles: "table.table-wide|Tableau - Long\r\ntable.table-condensed|Tableau - Condenser"
 image_upload:
   status: true
   scheme: public

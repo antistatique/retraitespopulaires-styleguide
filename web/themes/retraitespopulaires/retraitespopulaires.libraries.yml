@@ -3,6 +3,7 @@ global-styling:
     theme:
       build/css/vendors.min.css: {}
       build/css/main.css: {}
+      build/css/ckeditor.css: {}
   js:
     build/js/vendors.min.js: {}
     build/js/bundle.js: {}
