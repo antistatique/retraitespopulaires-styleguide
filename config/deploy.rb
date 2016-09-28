@@ -7,7 +7,8 @@ set :repo_url, 'git@github.com:antistatique/retraitespopulaires.git'
 # Used only if styleguide is external of the repository
 # set :styleguide_repo, 'git@github.com:antistatique/retraitespopulaires-styleguide.git'
 
-server 'antistatique.alwaysdata.net', user: 'retraites-populaires', roles: %w{app db web}
+#server 'antistatique.alwaysdata.net', user: 'retraites-populaires', roles: %w{app db web}
+server '192.168.188.51', user: 'dplmgr', roles: %w{app db web}
 
 set :app_path, "web"
 set :styleguide_path, "node_modules/@antistatique/retraitespopulaires-styleguide"
