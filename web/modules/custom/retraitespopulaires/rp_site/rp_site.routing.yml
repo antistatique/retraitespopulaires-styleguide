@@ -22,15 +22,6 @@ rp_site.faqs.collection:
         _title: 'Questions-réponses'
     requirements:
         _permission: 'access content'
-
-rp_site.news.collection:
-    path: '/actualites/{taxonomy_term_alias}'
-    defaults:
-        _controller: '\Drupal\rp_site\Controller\NewsController::collection'
-        _title: 'Actualités'
-    requirements:
-        _permission: 'access content'
-
 rp_site.documents.download:
     path: '/download/{node}'
     defaults:
@@ -38,3 +29,19 @@ rp_site.documents.download:
         _title: 'Téléchargement'
     requirements:
         _permission: 'access content'
+
+# Admin link
+rp_site.admin:
+    path: '/admin/retraites-populaires/site'
+    defaults:
+        _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+        _title: 'Site - Admin'
+    requirements:
+        _permission: 'access administration pages'
+rp_site.admin.settings:
+    path: '/admin/retraites-populaires/site/settings'
+    defaults:
+        _controller: '\Drupal\rp_site\Controller\AdminController::settings'
+        _title: 'Site - Admin - Settings'
+    requirements:
+        _permission: 'access administration pages'

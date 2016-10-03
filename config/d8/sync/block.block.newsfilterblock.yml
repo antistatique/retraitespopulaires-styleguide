@@ -3,7 +3,6 @@ langcode: fr
 status: false
 dependencies:
   module:
-    - rp_site
     - system
   theme:
     - retraitespopulaires

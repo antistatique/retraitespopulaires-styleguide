@@ -16,6 +16,7 @@ use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\rp_site\Service\Profession;
 use Drupal\Core\Entity\Query\QueryFactory;
+use Drupal\Core\State\StateInterface;
 
 /**
 * Provides a 'News Latest' Block
@@ -63,15 +64,22 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
     private $entity_query;
 
     /**
+    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
+    * @var StateInterface
+    */
+    private $state;
+
+    /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession, QueryFactory $query) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession, QueryFactory $query, StateInterface $state) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_node   = $entity->getStorage('node');
         $this->route         = $route;
         $this->alias_manager = $alias_manager;
         $this->profession    = $profession;
         $this->entity_query  = $query;
+        $this->state         = $state;
     }
 
     /**
@@ -89,7 +97,8 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
             $container->get('current_route_match'),
             $container->get('path.alias_manager'),
             $container->get('rp_site.profession'),
-            $container->get('entity.query')
+            $container->get('entity.query'),
+            $container->get('state')
         );
     }
 
@@ -121,7 +130,7 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
 
             $variables['collection'] = array(
                 'name' => $this->profession->name($node->field_profession->target_id),
-                'link' => Url::fromRoute('rp_site.news.collection', array('taxonomy_term_alias' => $alias))
+                'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid'], 'taxonomy_term_alias' => $alias])
             );
         }
 

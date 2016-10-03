@@ -1,0 +1,10 @@
+<?php
+
+function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $state = \Drupal::state();
+
+  if (isset($variables['elements']['#node']->nid->value) &&
+      $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.collection.news')['nid']) {
+      $suggestions[] = 'node' . '__' . $state->get('rp_site.settings.collection.news')['theme'];
+  }
+}

@@ -6,3 +6,8 @@ services:
       class: Drupal\rp_site\TwigExtension\Themes
       tags:
           - { name: twig.extension }
+  # Custom breadcrumb applies
+  rp_site.breadcrumb:
+    class: Drupal\rp_site\Breadcrumb\EntityBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 100 }

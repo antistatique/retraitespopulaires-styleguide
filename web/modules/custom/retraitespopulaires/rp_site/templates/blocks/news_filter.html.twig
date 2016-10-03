@@ -1,10 +1,14 @@
 <div class="{{ theme_hook_original }}">
-  <h2>{% trans %}L'actualité de Retraites Populaires{% endtrans %}</h2>
-  <ul>
-   {% for category in variables.categories %}
+  <p class="media-heading text-muted">{% trans %}L'actualité de Retraites Populaires{% endtrans %}</p>
+  <ul class="facets-list">
     <li>
-      <a href="{{ path('rp_site.news.collection', {'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
+      <a class="pretty-link"  href="{{ path('entity.node.canonical', {'node': variables.collection}) }}">{% trans %}Toutes{% endtrans %}</a>
     </li>
-   {% endfor %}
+    {% for category in variables.categories %}
+     <li>
+       <a class="pretty-link"  href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
+     </li>
+    {% endfor %}
+  </ul>
   </ul>
 </div>

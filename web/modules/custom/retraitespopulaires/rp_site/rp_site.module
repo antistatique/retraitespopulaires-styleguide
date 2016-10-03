@@ -50,13 +50,6 @@ function rp_site_theme($existing, $type, $theme, $path) {
             // using [template].html.twig
             'template'  => 'blocks/advisor'
         ),
-        'rp_site_news_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'template'  => 'blocks/news'
-        ),
         'rp_site_news_filter_block' => array(
             // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
@@ -77,6 +70,13 @@ function rp_site_theme($existing, $type, $theme, $path) {
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
             'template'  => 'blocks/news_teaser'
+        ),
+        'rp_site_news_collection_block' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'template'  => 'blocks/news_collection'
         ),
         'rp_site_products_block' => array(
             // Use the following syntax to retrieve all variables in the "variables" container
@@ -129,13 +129,6 @@ function rp_site_theme($existing, $type, $theme, $path) {
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
             'template'  => 'pages/faqs'
-        ),
-        'rp_site_news_page' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'template'  => 'pages/news'
         ),
     );
 }
