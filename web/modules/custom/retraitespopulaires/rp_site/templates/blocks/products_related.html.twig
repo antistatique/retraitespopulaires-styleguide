@@ -1,1 +1,34 @@
-RELATED PRODUCTS - AUTO - PRODUCT PAGE ONLY
+{% if variables.products %}
+<div class="spacer"></div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="h1 text-center">
+    {% trans %}Retraites Populaires peut vous aider ! Voici la gamme complète des produits{% endtrans %}
+    {% for category in variables.categories %}
+        {{ category.name.value|lower }}{{ not loop.last ? ', ' }}
+    {% endfor %} !
+    </div>
+    <div class="spacer spacer-md"></div>
+  </div>
+  <div class="col-xs-12">
+    {% for product in variables.products %}
+      {% if loop.first %}
+         <div class="row"> {# open row #}
+      {% endif %}
+
+      <div class="col-sm-4">
+        {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
+      </div>
+
+      {% if loop.index % 3 == 0 %}
+          </div><div class="row"> {# after 3 iterates close row and open new #}
+      {% endif %}
+      {% if loop.last %}
+          </div> {# close last row #}
+      {% endif %}
+
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
