@@ -12,23 +12,13 @@
     <div class="spacer spacer-md"></div>
   </div>
   <div class="col-xs-12">
+    <div class="row flex-row">
     {% for product in variables.products %}
-      {% if loop.first %}
-         <div class="row"> {# open row #}
-      {% endif %}
-
-      <div class="col-sm-4">
+      <div class="col-xs-12 col-sm-6 col-lg-6 col-xl-4">
         {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
       </div>
-
-      {% if loop.index % 3 == 0 %}
-          </div><div class="row"> {# after 3 iterates close row and open new #}
-      {% endif %}
-      {% if loop.last %}
-          </div> {# close last row #}
-      {% endif %}
-
     {% endfor %}
+    </div>
   </div>
 </div>
 {% endif %}
