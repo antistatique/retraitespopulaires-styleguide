@@ -1,0 +1,7 @@
+rp_homepage:
+    path: '/homepage'
+    defaults:
+        _controller: '\Drupal\rp_homepage\Controller\HomepageController::homepage'
+        _title: 'Le spécialiste vaudois de l''assurance vie et de la prévoyance professionnelle'
+    requirements:
+        _permission: 'access content'

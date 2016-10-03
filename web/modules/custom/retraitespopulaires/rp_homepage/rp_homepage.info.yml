@@ -1,0 +1,6 @@
+name: Homepage
+description: 'Homepage of Retraites Populaires'
+package: Retraites Populaires
+type: module
+version: 1.0
+core: 8.x
