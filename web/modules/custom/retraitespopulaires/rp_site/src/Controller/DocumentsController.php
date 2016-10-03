@@ -71,6 +71,8 @@ class DocumentsController extends ControllerBase{
      * @return BinaryFileResponse [file stream]
      */
     public function collection($taxonomy_term_alias) {
+        $variables = array();
+
         $query = $this->entity_query->get('node')
             ->condition('type', 'document')
             ->condition('status', 1)

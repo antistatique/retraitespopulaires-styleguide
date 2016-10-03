@@ -58,6 +58,7 @@ class ResponsiveTablesFilter extends FilterBase {
       }
 
       $tables = $dom->getElementsByTagName('table');
+
       // Find all tables in text.
       if ($tables->length !== 0) {
         foreach ($tables as $table) {

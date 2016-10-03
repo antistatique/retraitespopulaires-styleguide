@@ -78,6 +78,8 @@ class NewsController extends ControllerBase{
      * @return BinaryFileResponse [file stream]
      */
     public function collection($taxonomy_term_alias) {
+        $variables = array();
+
         $now = date('Y-m-d h:i:s');
 
         $query = $this->entity_query->get('node')

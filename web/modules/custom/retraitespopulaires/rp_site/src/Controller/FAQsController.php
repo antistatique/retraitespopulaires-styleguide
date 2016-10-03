@@ -72,6 +72,8 @@ class FAQsController extends ControllerBase{
      * @return BinaryFileResponse [file stream]
      */
     public function collection($taxonomy_term_alias) {
+        $variables = array();
+
         $query = $this->entity_query->get('node')
             ->condition('type', 'faq')
             ->condition('status', 1)

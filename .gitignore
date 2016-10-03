@@ -4,6 +4,7 @@ node_modules
 .publish
 .bundle
 .env
+npm-debug.log
 
 /dist
 /build

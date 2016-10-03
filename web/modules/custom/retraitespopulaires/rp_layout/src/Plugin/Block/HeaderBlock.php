@@ -23,6 +23,8 @@ class HeaderBlock extends BlockBase {
     */
     public function build($params = array()) {
         $variables = array();
+        $variables['menu_as_page'] = isset($params['menu-as-page']) ? $params['menu-as-page'] : false;
+
         return [
             '#theme'     => 'rp_layout_header_block',
             '#variables' => $variables,

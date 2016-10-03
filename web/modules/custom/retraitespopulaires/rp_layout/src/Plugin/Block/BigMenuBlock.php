@@ -33,7 +33,7 @@ class BigMenuBlock extends BlockBase implements ContainerFactoryPluginInterface 
      */
      public function __construct(array $configuration, $plugin_id, $plugin_definition, MenuLinkTreeInterface $menu_tree) {
          parent::__construct($configuration, $plugin_id, $plugin_definition);
-         $this->menu_tree         = $menu_tree;
+         $this->menu_tree = $menu_tree;
      }
 
     /**
@@ -57,6 +57,7 @@ class BigMenuBlock extends BlockBase implements ContainerFactoryPluginInterface 
     public function build($params = array()) {
         $variables = array();
         $variables['empty_state'] = true;
+        $variables['menu_as_page'] = isset($params['menu-as-page']) ? $params['menu-as-page'] : false;
 
         $parameters = $this->menu_tree->getCurrentRouteMenuTreeParameters('main');
         $parameters->onlyEnabledLinks();

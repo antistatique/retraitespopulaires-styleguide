@@ -46,17 +46,10 @@ class MenuTransformers {
      * Get the top parent of the current active menu link, or return himself if the
      * current active menu link is a top-level link.
      *
-     * @param \Drupal\Core\Menu\MenuLinkTreeElement[] $tree
-     *   The tree to pull the parent link out of.
-     * @param \Drupal\Core\Menu\MenuLinkTreeElement|null $prev_parent
-     *   The previous parent's parent, or NULL if no previous parent exists.
-     * @param \Drupal\Core\Menu\MenuLinkTreeElement|null $parent
-     *   The parent of the current active link, or NULL if not parent exists.
-     *
      * @return \Drupal\Core\Menu\MenuLinkTreeElement|null
      *   The parent of the current active menu link, or NULL if no parent exists.
      */
-    private function getTopParent($tree, $prev_parent = NULL, $parent = NULL) {
+    private function getTopParent($tree) {
       // Get active item
       foreach ($tree as $leaf) {
         if ($leaf->inActiveTrail) {
@@ -64,6 +57,7 @@ class MenuTransformers {
           break;
         }
       }
-    }
 
+      return null;
+    }
 }
