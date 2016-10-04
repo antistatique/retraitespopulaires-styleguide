@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+
+.teaser-institution {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 900px;
+  border: 1px solid $light-gray;
+  border-radius: $border-radius-base;
+
+  .institution-heading {
+    display: block;
+    width: 100%;
+    height: 196px;
+    background-color: $berrylight-gray;
+
+    img {
+      max-height: 196px;
+      margin: 0 auto;
+    }
+  }
+
+  .institution-body {
+    margin: 0;
+    padding: $grid-gutter-width/2;
+    color: $text-color;
+  }
+
+  .institution-extra {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1em;
+
+    .institution-type { text-align: right; }
+  }
+}
