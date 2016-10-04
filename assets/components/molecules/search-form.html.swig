@@ -6,8 +6,8 @@ notes: |
   ##### Usage : `search-form`
 ---
 <form class="global-search">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Chercher un produit, un document, un contact, ...">
+    <div class="input-group full-width">
+      <input type="text" class="form-control full-width" placeholder="Chercher un produit, un document, un contact, ...">
       <span class="input-group-btn">
         <button class="btn btn-default btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
       </span>
