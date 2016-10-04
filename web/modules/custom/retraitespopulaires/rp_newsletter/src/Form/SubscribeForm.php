@@ -69,7 +69,7 @@ class SubscribeForm extends FormBase {
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => $this->t('Je m\'inscris'),
-            '#attributes'  => ['class' => array('btn-default')],
+            '#attributes'  => ['class' => array('btn btn-default')],
             '#prefix'      => '<span class="input-group-btn">',
             '#suffix'      => '</span>',
         );
