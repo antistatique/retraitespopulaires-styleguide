@@ -21,7 +21,11 @@
     white-space: nowrap;
   }
 
-  &.btn-lg { font-size: 1em; }
+  &.btn-lg {
+    padding-right: $grid-gutter-width*2;
+    padding-left: $grid-gutter-width*2;
+    font-size: 1em;
+  }
 
   &:focus,
   &.focus,
@@ -44,12 +48,20 @@
       @include button-variant($white, $color, $btn-default-border);
     }
   }
-
 }
 
 .btn-icon {
   i {
     font-size: 1.2em;
+  }
+}
+
+.btn-default-invert {
+  background-color: $white;
+  color: $brand-primary;
+
+  &:hover {
+    color: darken($brand-primary, 5%);
   }
 }
 

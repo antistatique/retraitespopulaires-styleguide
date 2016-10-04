@@ -1,11 +1,16 @@
 @charset 'UTF-8';
 
 .form-control {
+  width: auto;
   height: auto;
   padding: 0.7em;
   border-width: $input-border-size;
   font-family: $font-cocon;
   box-shadow: none;
+
+  &.full-width {
+    width: 100%;
+  }
 
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
@@ -34,14 +39,15 @@
   margin-top: 20px;
 
   label {
-    margin-left: 0.8em;
+    margin-left: 0;
     margin-bottom: 0.3em;
     font-family: $font-frutiger;
-    font-size: ceil($font-size-h6 * 0.8);
-    font-weight: 200;
-    text-transform: uppercase;
+    font-size: ceil($font-size-h6);
+    font-weight: 700;
     letter-spacing: 0.04em;
     transition: opacity 0.25s ease-in-out;
+
+    &:first-letter { text-transform: capitalize; }
 
     &.label-hidden {
       opacity: 0;
@@ -61,9 +67,8 @@
 
   .input-error-desc {
     padding-top: 0.5em;
-    padding-left: 0.8em;
     font-family: $font-frutiger;
-    font-size: ceil($font-size-h6 * 0.8);
+    font-size: ceil($font-size-h6);
     font-weight: 700;
     text-transform: uppercase;
     color: $brand-danger;
@@ -101,11 +106,15 @@
 }
 
 .input-group {
-  display: block;
   position: relative;
+
+  &.full-width { width: 100%; }
 
   .form-control {
     float: none;
+    width: auto;
+
+    &.full-width { width: 100%; }
   }
 
   .form-control:first-child {
