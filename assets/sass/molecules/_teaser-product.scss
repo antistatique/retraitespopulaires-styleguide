@@ -26,4 +26,12 @@
     background-color: $berrylight-gray;
     color: $text-color;
   }
+
+  @each $label, $color in $themes {
+    &.teaser-product-#{$label} {
+      border-color: $color;
+
+      .product-heading { color: $color; }
+    }
+  }
 }

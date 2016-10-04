@@ -7,8 +7,9 @@ notes: |
   ##### Options :
   - **title** - String
   - **body** - String
+  - **theme** - String
 ---
-<div class="teaser-product shadow shadow-down">
+<div class="teaser-product teaser-product-{{ theme }} shadow shadow-down">
   <div class="product-heading">
     <div class="product-title h1">
       <div class="product-prefix">RP</div>
