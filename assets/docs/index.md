@@ -52,11 +52,6 @@ permalink: false
           <h5 class="">#005782</h5>
           <code>.x-hypotheque</code>
         </div>
-        <div class="f-color-chip" style="border-top-color: #5d004a; border-bottom-color: #5d004a;">
-          <h5 class="">$deep-purle</h5>
-          <h5 class="">#5d004a</h5>
-          <code>.x-institution</code>
-        </div>
       </div>
     </div>
   </div>
