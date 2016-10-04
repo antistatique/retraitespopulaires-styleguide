@@ -1,8 +1,8 @@
 {% if variables.product.nid.value %}
-<a href="{{ path('entity.node.canonical', {'node': variables.product.nid.value}) }}" class="teaser-product shadow shadow-down">
+{% set theme = variables.product.field_profession.target_id|theme_profession %}
+<a href="{{ path('entity.node.canonical', {'node': variables.product.nid.value}) }}" class="teaser-product teaser-product-{{ theme }} shadow shadow-down">
   <div class="product-heading">
     <div class="product-title h1">
-      <div class="product-prefix">RP</div>
       {{ variables.product.title.value }}
     </div>
   </div>
