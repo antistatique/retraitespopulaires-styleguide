@@ -35,6 +35,13 @@
   &.btn-secondary {
     @include button-variant($btn-default-color, $deep-yellow, $btn-default-border);
   }
+
+  @each $label, $color in $themes {
+    &.btn-#{$label} {
+      @include button-variant($white, $color, $btn-default-border);
+    }
+  }
+
 }
 
 .btn-icon {

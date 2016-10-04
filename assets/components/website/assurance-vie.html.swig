@@ -100,7 +100,7 @@ layout: website.html.swig
     <div class="row">
       <div class="col-xs-12">
         <div class="row">
-          {% include '../molecules/teaser-contact.html.swig' %}
+          {% include '../molecules/teaser-contact.html.swig' with {'theme': 'assurance'} %}
         </div>
       </div>
     </div>

@@ -20,6 +20,14 @@
     background: $input-bg-focus;
     border-color: $input-border-focus;
   }
+
+  @each $label, $color in $themes {
+    &.form-control-#{$label} {
+      &:focus {
+        border-color: $color;
+      }
+    }
+  }
 }
 
 .form-group {
