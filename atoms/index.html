@@ -626,18 +626,22 @@
 
   <div class="styleguide-item-notes" data-styleguide-toggle="notes">
     <h5 id="usage-button-">Usage : <code>button</code></h5>
+<h5 id="options-">Options :</h5>
+<ul>
+<li><strong>theme</strong> - String</li>
+</ul>
 
   </div>
   <div class="styleguide-item-preview">
     
-<button class="btn btn-lg btn-primary">
+<button class="btn btn-lg btn-">
   Mon bouton
 </button>
 
   </div>
   <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
     <pre><code class="language-markup">
-<button class="btn btn-lg btn-primary">
+<button class="btn btn-lg btn-">
   Mon bouton
 </button>
 </code></pre>
@@ -856,9 +860,14 @@
   <div class="styleguide-item-preview">
     
 
-<div class="wrapper-funky-waves">
+<div class="wrapper-funky-waves has-header">
   
-    <img src="https://www.retraitespopulaires.ch/upload/docs/image/jpeg/2014-05/banner-pub2014-astronaute.jpg" />
+    <picture>
+      <source srcset="https://unsplash.it/544/250?image=1057" media="(max-width: 544px)">
+      <source srcset="https://unsplash.it/992/350?image=1057" media="(max-width: 992px)">
+      <source srcset="https://unsplash.it/1600/436?image=1057" media="(max-width: 1600px)">
+      <img class="img-responsive center-block" src="https://unsplash.it/2200/600?image=1057" alt="Image de couverture">
+    </picture>
   
 
   <div class="funky-waves-container">
@@ -885,9 +894,14 @@
   <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
     <pre><code class="language-markup">
 
-<div class="wrapper-funky-waves">
+<div class="wrapper-funky-waves has-header">
   
-    <img src="https://www.retraitespopulaires.ch/upload/docs/image/jpeg/2014-05/banner-pub2014-astronaute.jpg" />
+    <picture>
+      <source srcset="https://unsplash.it/544/250?image=1057" media="(max-width: 544px)">
+      <source srcset="https://unsplash.it/992/350?image=1057" media="(max-width: 992px)">
+      <source srcset="https://unsplash.it/1600/436?image=1057" media="(max-width: 1600px)">
+      <img class="img-responsive center-block" src="https://unsplash.it/2200/600?image=1057" alt="Image de couverture">
+    </picture>
   
 
   <div class="funky-waves-container">
@@ -1317,13 +1331,17 @@
 
   <div class="styleguide-item-notes" data-styleguide-toggle="notes">
     <h5 id="usage-input-text-">Usage : <code>input-text</code></h5>
+<h5 id="options-">Options :</h5>
+<ul>
+<li><strong>theme</strong> - String</li>
+</ul>
 
   </div>
   <div class="styleguide-item-preview">
     
 <div class="form-group">
   <label for="inputID">Label</label>
-  <input class="form-control" id="inputID" type="text" placeholder="Placeholder"></input>
+  <input class="form-control form-control-" id="inputID" type="text" placeholder="Placeholder"></input>
 </div>
 
   </div>
@@ -1331,7 +1349,7 @@
     <pre><code class="language-markup">
 <div class="form-group">
   <label for="inputID">Label</label>
-  <input class="form-control" id="inputID" type="text" placeholder="Placeholder"></input>
+  <input class="form-control form-control-" id="inputID" type="text" placeholder="Placeholder"></input>
 </div>
 </code></pre>
   </div>
