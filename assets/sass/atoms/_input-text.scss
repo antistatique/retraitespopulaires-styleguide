@@ -125,7 +125,8 @@
     width: auto;
     z-index: 10;
 
-    > .btn {
+    .btn {
+      margin-left: 0;
       padding-bottom: 0.6em;
       border-radius: $btn-border-radius-base - $input-border-size;
       border-top-left-radius: 0;
