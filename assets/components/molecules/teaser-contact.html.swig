@@ -8,7 +8,7 @@ notes: |
   - **theme** - String
 ---
 <div class="teaser-contact teaser-contact-{{ theme }} shadow shadow-down">
-  <div class="contact-heading" style="background-image: url(https://unsplash.it/1400/780)"></div>
+  <a href="#" class="contact-heading" style="background-image: url(https://unsplash.it/1400/780)"></a>
   <div class="contact-body">
     <p>N'hésitez pas à nous contacter au <a class="pretty-link text-bold text-{{ theme }}" href="tel:0213482626">021 348 26 26</a>.</p>
     <hr />
