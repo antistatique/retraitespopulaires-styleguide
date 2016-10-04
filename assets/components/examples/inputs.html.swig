@@ -49,6 +49,7 @@ layout: examples.html.swig
     {% include '../atoms/input-select.html.swig' %}
     {% include '../atoms/input-datepicker.html.swig' %}
     {% include '../atoms/input-radio-btn.html.swig' %}
+    {% include '../atoms/input-textarea.html.swig' %}
 
 </div>
 </div>
