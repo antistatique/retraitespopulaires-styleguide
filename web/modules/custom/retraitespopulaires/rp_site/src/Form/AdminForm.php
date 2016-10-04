@@ -68,6 +68,45 @@ class AdminForm extends FormBase {
             '#default_value' => $this->state->get('rp_site.settings.collection.news')['theme'] ? $this->state->get('rp_site.settings.collection.news')['theme'] : 'actualites',
         );
 
+        $form['collection']['profil_individual_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Profil Particulier - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.profil_individual')['nid'],
+        );
+
+        $form['collection']['profil_individual_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Profil Particulier - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.profil_individual')['theme'] ? $this->state->get('rp_site.settings.collection.profil_individual')['theme'] : 'profil_individual',
+        );
+
+        $form['collection']['profil_company_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Profil Entreprise - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.profil_company')['nid'],
+        );
+
+        $form['collection']['profil_company_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Profil Entreprise - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.profil_company')['theme'] ? $this->state->get('rp_site.settings.collection.profil_company')['theme'] : 'profil_company',
+        );
+
+        $form['collection']['profil_public_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Profil Collectivités publiques - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.profil_public')['nid'],
+        );
+
+        $form['collection']['profil_public_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Profil Collectivités publiques - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.profil_public')['theme'] ? $this->state->get('rp_site.settings.collection.profil_public')['theme'] : 'profil_public',
+        );
+
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => $this->t('Save'),
@@ -88,5 +127,21 @@ class AdminForm extends FormBase {
             'nid' => trim($form_state->getValue('news_nid')),
             'theme' => trim($form_state->getValue('news_theme')),
         ));
+
+        $this->state->set('rp_site.settings.collection.profil_individual', array(
+            'nid' => trim($form_state->getValue('profil_individual_nid')),
+            'theme' => trim($form_state->getValue('profil_individual_theme')),
+        ));
+
+        $this->state->set('rp_site.settings.collection.profil_company', array(
+            'nid' => trim($form_state->getValue('profil_company_nid')),
+            'theme' => trim($form_state->getValue('profil_company_theme')),
+        ));
+
+        $this->state->set('rp_site.settings.collection.profil_public', array(
+            'nid' => trim($form_state->getValue('profil_public_nid')),
+            'theme' => trim($form_state->getValue('profil_public_theme')),
+        ));
+
     }
 }
