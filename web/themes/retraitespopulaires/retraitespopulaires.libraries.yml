@@ -6,6 +6,7 @@ global-styling:
       build/css/ckeditor.css: {}
   js:
     build/js/vendors.min.js: {}
+    build/js/MorphSVGPlugin.min.js: {}
     build/js/bundle.js: {}
   dependencies:
     - core/jquery
