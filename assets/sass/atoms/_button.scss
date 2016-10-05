@@ -6,7 +6,6 @@
   border: 1px solid $transparent;
   font-family: Cocon Pro;
   font-weight: 300;
-  text-transform: capitalize;
   transition:
     background 0.25s ease,
     color 0.25s ease,
@@ -14,11 +13,31 @@
     opacity 0.5s ease;
   white-space: normal;
 
+  &:first-letter {
+    text-transform: uppercase;
+  }
+
   @media screen and (min-width: $screen-sm-min) {
     white-space: nowrap;
   }
 
-  &.btn-lg { font-size: 1em; }
+  &.btn-sm {
+    padding-right: $grid-gutter-width/3;
+    padding-left: $grid-gutter-width/3;
+    font-size: 1em;
+  }
+
+  &.btn-md {
+    padding-right: $grid-gutter-width;
+    padding-left: $grid-gutter-width;
+    font-size: 1em;
+  }
+
+  &.btn-lg {
+    padding-right: $grid-gutter-width*2;
+    padding-left: $grid-gutter-width*2;
+    font-size: 1em;
+  }
 
   &:focus,
   &.focus,
@@ -35,11 +54,26 @@
   &.btn-secondary {
     @include button-variant($btn-default-color, $deep-yellow, $btn-default-border);
   }
+
+  @each $label, $color in $themes {
+    &.btn-#{$label} {
+      @include button-variant($white, $color, $btn-default-border);
+    }
+  }
 }
 
 .btn-icon {
   i {
     font-size: 1.2em;
+  }
+}
+
+.btn-default-invert {
+  background-color: $white;
+  color: $brand-primary;
+
+  &:hover {
+    color: darken($brand-primary, 5%);
   }
 }
 

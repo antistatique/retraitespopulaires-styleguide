@@ -2,14 +2,15 @@
 
 .input-radio {
   position: relative;
-  margin-left: $grid-gutter-width/4;
+  margin-left: $grid-gutter-width/2;
 
   label {
     display: inline-block;
     position: relative;
     padding-left: 5px;
-    text-transform: capitalize;
-    font-weight: 600;
+    font-weight: 400;
+
+    &:first-letter { text-transform: capitalize; }
 
     &:before {
       content: '';
@@ -76,4 +77,21 @@
   input[type='radio']:checked + label:before {
     background-color: $white;
   }
+}
+
+.form-group-inline {
+  .input-radio.radio-inline:first-child {
+    margin-left: 0;
+  }
+
+  label {
+    &:before {
+      top: 3px;
+    }
+
+    &:after {
+      top: 0;
+    }
+  }
+
 }

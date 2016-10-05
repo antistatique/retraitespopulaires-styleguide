@@ -2,6 +2,13 @@
 
 /* stylelint-disable selector-no-id */
 /* Drupal specific */
-#toolbar-administration { z-index: 3000; }
+
+#toolbar-administration {
+  z-index: 3000;
+
+  li {
+    font-size: 13px;
+  }
+}
 
 /* stylelint-enable selector-no-id */

@@ -7,11 +7,11 @@ notes: |
 ---
 <div class="form-group">
   <div class="input-checkbox">
-    <input type="checkbox" value="pistache">
-    <label>Pistache</label>
+    <input type="checkbox" value="meringue-crème-double">
+    <label>Meringue crème double</label>
   </div>
   <div class="input-checkbox">
-    <input type="checkbox" value="menthe-fraiche" checked>
-    <label>Menthe fraîche</label>
+    <input type="checkbox" value="miel" checked>
+    <label>Miel</label>
   </div>
 </div>

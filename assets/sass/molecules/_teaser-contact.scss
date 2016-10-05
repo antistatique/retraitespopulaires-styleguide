@@ -28,6 +28,12 @@
     flex-direction: column;
   }
 
+  @each $label, $color in $themes {
+    &.teaser-contact-#{$label} {
+      border-color: $color;
+    }
+  }
+
   @media only screen and (min-width: $screen-sm-min) {
     .form-inline {
       flex-direction: row;

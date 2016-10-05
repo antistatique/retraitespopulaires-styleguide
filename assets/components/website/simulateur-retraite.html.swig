@@ -23,14 +23,20 @@ layout: website.html.swig
       <h1 class="page-title text-center">Simulateur de retraite CP ECA-RP</h1>
       <div class="spacer"></div>
       <div class="entity-content">
-        <p>Planifier votre retraite en fonction d'une date ou d'une rente souhaitée</p>
-        <p>Documents nécessaires pour utiliser ce simulateur:</p>
-        <ul>
-          <li>votre dernière situation de prévoyance personnelle</li>
-          <li>sa fiche explicative</li>
-        </ul>
-        <div class="spacer"></div>
-        {% include '../organisms/form-simulateur-retraite.html.swig' with {'theme': 'prevoyance'} %}
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="well well-lg">
+              <p>Planifier votre retraite en fonction d'une date ou d'une rente souhaitée</p>
+              <p>Documents nécessaires pour utiliser ce simulateur:</p>
+              <ul class="unordered-list">
+                <li>votre dernière situation de prévoyance personnelle</li>
+                <li>sa fiche explicative</li>
+              </ul>
+            </div>
+            <div class="spacer"></div>
+            {% include '../organisms/form-simulateur-retraite.html.swig' with {'theme': 'prevoyance'} %}
+          </div>
+        </div>
       </div>
       <div class="spacer spacer-lg"></div>
       {% include '../molecules/teaser-contact.html.swig' %}

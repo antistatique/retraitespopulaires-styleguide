@@ -26,10 +26,11 @@
       "node_modules/tablesaw/dist/tablesaw.js",
       "node_modules/tablesaw/dist/tablesaw-init.js",
       "node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
-      "node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.fr-CH.min.js"
+      "node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.fr-CH.min.js",
+      "node_modules/gsap/src/minified/TweenMax.min.js"
     ],
     "singlejs": [
-      "node_modules/jquery/dist/jquery.js"
+      "assets/vendors/MorphSVGPlugin.min.js"
     ],
     "fonts": [
       "node_modules/bootstrap-sass/assets/fonts/bootstrap/*",

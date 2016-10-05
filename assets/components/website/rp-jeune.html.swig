@@ -85,10 +85,10 @@ layout: website.html.swig
         <div class="col-md-8">
           <div class="row">
             <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'title': 'Rente Immédiate', 'body': 'Profitez de votre retraite! Placez un capital de manière sûre et bénéficiez tout de suite de rentes à vie.'} %}
+              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Rente Immédiate', 'body': 'Profitez de votre retraite! Placez un capital de manière sûre et bénéficiez tout de suite de rentes à vie.'} %}
             </div>
             <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'title': 'Rente Immédiate certain', 'body': 'Réalisez vos projets! Transformez votre capital en revenu supplémentaire garanti.'} %}
+              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Rente Immédiate certain', 'body': 'Réalisez vos projets! Transformez votre capital en revenu supplémentaire garanti.'} %}
             </div>
           </div>
         </div>

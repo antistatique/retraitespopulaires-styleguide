@@ -1,0 +1,27 @@
+@charset 'UTF-8';
+
+.input-radio-btn {
+  .btn-group {
+    .btn {
+      border-color: $input-border;
+      border-width: $input-border-size;
+
+      &.active {
+        background-color: $brand-primary;
+        border-color: $brand-primary;
+        color: $white;
+      }
+
+      &:hover {
+        background-color: lighten($brand-primary, 05%);
+        border-color: lighten($brand-primary, 05%);
+        color: $white;
+      }
+    }
+  }
+
+  .input-radio-btn-unit {
+    display: inline-block;
+    margin-left: 5px;
+  }
+}

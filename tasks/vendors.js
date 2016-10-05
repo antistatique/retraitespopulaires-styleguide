@@ -28,6 +28,14 @@ module.exports = function() {
       .pipe(gulp.dest(config.build + 'js'));
   });
 
+  /*
+   * JS Vendors
+  */
+  gulp.task('js-vendors-single', function() {
+    return gulp.src(config.vendors.singlejs)
+     .pipe(gulp.dest(config.build + 'js'));
+  });
+
  /*
   * Fonts Sources
   */
@@ -52,7 +60,6 @@ module.exports = function() {
   * Build vendors dependencies
   */
   gulp.task('vendors', function() {
-    return gulp.start('css-vendors', 'js-vendors', 'fonts-vendors', 'polyfills-vendors');
+    return gulp.start('css-vendors', 'js-vendors', 'js-vendors-single', 'fonts-vendors', 'polyfills-vendors');
   });
-
 };

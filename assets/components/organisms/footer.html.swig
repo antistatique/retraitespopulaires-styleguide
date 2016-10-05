@@ -64,8 +64,8 @@ notes: |
         <p>Le Bulletin des spécialistes de Retraites Populaires, directement par email:</p>
         <form>
           <div class="form-group">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Ex: jane.doe@bluewin.ch">
+            <div class="input-group full-width">
+              <input type="text" class="form-control full-width" placeholder="Ex: jane.doe@bluewin.ch">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button">Je m'inscris</button>
               </span>

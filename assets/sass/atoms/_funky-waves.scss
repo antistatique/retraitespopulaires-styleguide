@@ -4,6 +4,9 @@
   position: relative;
   overflow: hidden;
 
+  // Add padding of the header size
+  &.has-header { padding-top: 84px; }
+
   img {
     width: 100%;
     height: auto;

@@ -22,11 +22,17 @@ layout: website.html.swig
     <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-6 col-xl-push-3">
       <h1 class="page-title text-center">Simulateur pour une police de libre passage RP Arc-en-ciel</h1>
       <div class="spacer"></div>
+
       <div class="entity-content">
-        <p>Produit de libre passage permettant de conserver une prévoyance en béton entre deux emplois. Que vous soyez temporairement sans travail ou que vous vous consacriez entièrement à votre activité de jeune parent, il est possible de maintenir votre 2e pilier durant cette période.</p>
-        <div class="spacer"></div>
-        <h3>Vos données personnelles</h3>
-        {% include '../organisms/form-simulateur-libre-passage.html.swig' with {'theme': 'prevoyance'} %}
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="well well-lg">
+              <p>Produit de libre passage permettant de conserver une prévoyance en béton entre deux emplois. Que vous soyez temporairement sans travail ou que vous vous consacriez entièrement à votre activité de jeune parent, il est possible de maintenir votre 2e pilier durant cette période.</p>
+            </div>
+            <div class="spacer"></div>
+            {% include '../organisms/form-simulateur-libre-passage.html.swig' with {'theme': 'prevoyance'} %}
+          </div>
+        </div>
       </div>
       <div class="spacer spacer-lg"></div>
       {% include '../molecules/teaser-contact.html.swig' %}

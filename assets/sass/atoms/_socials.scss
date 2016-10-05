@@ -17,40 +17,45 @@ i.retraitespopulaires-icon-colored {
   &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-colored {
     color: $color-twitter;
 
-    &:hover {
-      color: lighten($color-twitter, 20%);
+    &:hover,
+    .hover {
+      color: $white;
     }
   }
 
   &.retraitespopulaires-icon-facebook.retraitespopulaires-icon-colored {
     color: $color-facebook;
 
-    &:hover {
-      color: lighten($color-facebook, 20%);
+    &:hover,
+    .hover {
+      color: $white;
     }
   }
 
   &.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-colored {
     color: $color-linkedin;
 
-    &:hover {
-      color: lighten($color-linkedin, 20%);
+    &:hover,
+    .hover {
+      color: $white;
     }
   }
 
   &.retraitespopulaires-icon-youtube.retraitespopulaires-icon-colored {
     color: $color-youtube;
 
-    &:hover {
-      color: lighten($color-youtube, 20%);
+    &:hover,
+    .hover {
+      color: $white;
     }
   }
 
   &.retraitespopulaires-icon-instagram.retraitespopulaires-icon-colored {
     color: $color-instagram;
 
-    &:hover {
-      color: lighten($color-instagram, 20%);
+    &:hover,
+    .hover {
+      color: $white;
     }
   }
 }

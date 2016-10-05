@@ -83,7 +83,11 @@ Extra Small Devices, Phones */
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
-  p { font-size: floor(($font-size-base * 1.1)); }
+  p,
+  abbr,
+  cite,
+  li,
+  ol { font-size: floor(($font-size-base * 1.1)); }
 
   h1,
   .h1 { font-size: floor(($font-size-h1 * 1.1)); }
@@ -106,7 +110,11 @@ Extra Small Devices, Phones */
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-  p { font-size: floor(($font-size-base * 1.12)); }
+  p,
+  abbr,
+  cite,
+  li,
+  ol { font-size: floor(($font-size-base * 1.12)); }
 
   h1,
   .h1 { font-size: floor(($font-size-h1 * 1.12)); }
@@ -129,7 +137,11 @@ Extra Small Devices, Phones */
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
-  p { font-size: floor(($font-size-base * 1.18)); }
+  p,
+  abbr,
+  cite,
+  li,
+  ol { font-size: floor(($font-size-base * 1.18)); }
 
   h1,
   .h1 { font-size: floor(($font-size-h1 * 1.15)); }
@@ -152,7 +164,11 @@ Extra Small Devices, Phones */
 
 /* Very Large Devices, Wide/TV Screens */
 @media only screen and (min-width: 1900px) {
-  p { font-size: floor(($font-size-base * 1.28)); }
+  p,
+  abbr,
+  cite,
+  li,
+  ol { font-size: floor(($font-size-base * 1.28)); }
 
   h1,
   .h1 { font-size: floor(($font-size-h1 * 1.22)); }

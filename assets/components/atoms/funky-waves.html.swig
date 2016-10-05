@@ -8,11 +8,16 @@ notes: |
   - **img** - String
 ---
 
-<div class="wrapper-funky-waves">
+<div class="wrapper-funky-waves has-header">
   {% if img  %}
     <img src="{{ img }}" />
   {% else  %}
-    <img src="https://www.retraitespopulaires.ch/upload/docs/image/jpeg/2014-05/banner-pub2014-astronaute.jpg" />
+    <picture>
+      <source srcset="https://unsplash.it/544/250?image=1057" media="(max-width: 544px)">
+      <source srcset="https://unsplash.it/992/350?image=1057" media="(max-width: 992px)">
+      <source srcset="https://unsplash.it/1600/436?image=1057" media="(max-width: 1600px)">
+      <img class="img-responsive center-block" src="https://unsplash.it/2200/600?image=1057" alt="Image de couverture">
+    </picture>
   {% endif %}
 
   <div class="funky-waves-container">
