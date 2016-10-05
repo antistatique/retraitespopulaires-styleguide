@@ -126,7 +126,7 @@ module.exports = function() {
    * Lint JS
    */
   gulp.task('scripts-lint', function() {
-    return gulp.src(config.assets + '**/*.{js,jsx}')
+    return gulp.src(config.assets + 'js/*.{js,jsx}')
       .pipe($.plumber({errorHandler: errorAlert}))
       .pipe($.eslint())
       .pipe($.eslint.format());

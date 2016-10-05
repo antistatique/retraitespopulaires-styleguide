@@ -14,8 +14,8 @@ export function organic_generate () {
     let $container = null;
 
     const styles = {
-      'big'  : {size: 4, duration: 50},
-      'small': {size: 1, duration: 30}
+      'big'  : {size: 4, duration: 25},
+      'small': {size: 1, duration: 15}
     };
 
     const patterns = [
@@ -62,12 +62,17 @@ export function organic_generate () {
     base.generate = function(size, start, end){
       const $svg = _svg('svg', {viewBox: '0 0 1920 220', class:'path-'+size});
 
-      const $path = _svg('path', {fill: 'none', stroke: base.options.color, 'stroke-width':styles[size].size, 'vector-effect':'non-scaling-stroke', 'd': start});
+      var id = _rand_id();
 
-      const $animate = _svg('animate', {id: 'a1', 'attributeName': 'd', values:start+';'+end+';'+start, begin:'0s', dur:styles[size].duration, repeatCount:'indefinite'});
+      const $path = _svg('path', {id: id, fill: 'none', stroke: base.options.color, 'stroke-width':styles[size].size, 'vector-effect':'non-scaling-stroke', 'd': start});
 
-      $path.append($animate);
       $svg.append($path);
+
+      $(document).ready(function () {
+        var tl = new TimelineLite();
+        var path = document.getElementById(id);
+        tl.to($path, styles[size].duration, {morphSVG: end, repeat: -1, yoyo: true, ease: Sine.easeInOut});
+      });
 
       return $svg;
     };
@@ -95,6 +100,7 @@ export function organic_generate () {
       return pattern;
     }
 
+    function _rand_id() { return Math.random().toString(36).substr(2, 10); }
 
     // Run initializer
     base.init();
