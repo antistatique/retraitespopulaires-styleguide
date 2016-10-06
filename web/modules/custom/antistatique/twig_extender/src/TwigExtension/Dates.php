@@ -13,6 +13,15 @@ class Dates extends \Twig_Extension {
     }
 
     /**
+    * List of all Twig functions
+    */
+     public function getFunctions(){
+         return array(
+             new \Twig_SimpleFunction('date_diff', array($this, 'dateDiff'), array('is_safe' => array('html'))),
+         );
+     }
+
+    /**
     * Unique identifier for this Twig extension
     */
     public function getName() {
@@ -34,4 +43,27 @@ class Dates extends \Twig_Extension {
         return format_date($timestmap, "custom", $format);
     }
 
+    /*
+    Render the number of days between two dates
+    */
+    public static function dateDiff($start, $end) {
+        if ($date_format = \DateTime::createFromFormat('Y-m-d', $start)) {
+            $timestmap_start = strtotime($start);
+        }elseif (is_a($start, 'Drupal\Core\Datetime\DrupalDateTime') || is_a($start, 'DateTime')){
+            $timestmap_start = $start->getTimestamp();
+        }else{
+            $timestmap_start = $start;
+        }
+
+        if ($date_format = \DateTime::createFromFormat('Y-m-d', $end)) {
+            $timestmap_end = strtotime($end);
+        }elseif (is_a($end, 'Drupal\Core\Datetime\DrupalDateTime') || is_a($end, 'DateTime')){
+            $timestmap_end = $end->getTimestamp();
+        }else{
+            $timestmap_end = $end;
+        }
+
+
+        return ceil(abs($timestmap_end - $timestmap_start) / 86400);
+    }
 }

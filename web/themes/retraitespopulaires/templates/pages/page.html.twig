@@ -56,6 +56,13 @@
 #}
 {# page.header #}
 
+{# Page Header #}
+{% if page.header %}
+  {% block header %}
+      {{ page.header }}
+  {% endblock %}
+{% endif %}
+
 {{ load_block('rp_layout_cover_block') }}
 
 {# Breadcrumbs #}
@@ -108,7 +115,6 @@
 
   {{ load_block('rp_site_attachments_block') }}
   {{ load_block('rp_site_news_latest_block') }}
-  {{ load_block('rp_offers_linked_block') }}
 
    {# Content Bottom #}
    {% if page.content_bottom %}
