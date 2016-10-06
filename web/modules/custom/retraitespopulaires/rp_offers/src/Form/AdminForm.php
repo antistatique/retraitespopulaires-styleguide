@@ -67,7 +67,7 @@ class AdminForm extends FormBase {
         $link = '<a href="'.$this->url->generateFromRoute('system.site_information_settings').'">'. t('Configuration') .' > '. t('System') .' > '. t('Basic site settings') . '</a>';
         $form['offers']['no_reply'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'No-reply address',
+            '#title'         => 'Adresse No-reply',
             '#disabled'      => true,
             '#default_value' => \Drupal::config('system.site')->get('mail'),
             '#description'  => t('Changer votre configuration ici: ') . $link
@@ -75,14 +75,14 @@ class AdminForm extends FormBase {
 
         $form['offers']['receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Email(s) notified on request',
+            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_offers.settings.receivers'),
-            '#description'   => t('Allow multiple adresses separated by semicolon (;).'),
+            '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
         );
 
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
-            '#value'       => $this->t('Save'),
+            '#value'       => t('Sauvegarder'),
             '#button_type' => 'primary',
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
@@ -99,7 +99,7 @@ class AdminForm extends FormBase {
         $mails = array_map('trim', $mails);
         foreach($mails as $mail) {
             if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-                $form_state->setErrorByName('receivers', t('@email isn\'t a valide address', array('@email' => $mail)));
+                $form_state->setErrorByName('receivers', t('@email n\'est pas une adresse valide.', array('@email' => $mail)));
             }
         }
     }

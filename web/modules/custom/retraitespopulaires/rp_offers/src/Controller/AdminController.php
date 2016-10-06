@@ -104,8 +104,6 @@ class AdminController extends ControllerBase {
         $ids = $query->execute();
         $requests = $this->entity_offers_request->loadMultiple($ids);
 
-
-
         foreach ($requests as $i => $request) {
             $node = $this->entity_node->load($request->offer_target_id->entity->nid->value);
 

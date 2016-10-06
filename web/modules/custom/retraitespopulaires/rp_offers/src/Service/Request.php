@@ -75,8 +75,6 @@ class Request {
             );
             $request = $this->entity_offers_request->create($data);
             $request->save();
-            // $token = EntityRequest::create($data);
-            // $token->save();
         }
     }
 
@@ -88,13 +86,11 @@ class Request {
     public function adminEmail($fields){
         $to = preg_replace('/\s+/', ' ', $this->state->get('authentication.settings.receivers'));
         $to = str_replace(';', ',', $to);
-
         // $params = array(
         //     'email' => $account->getEmail(),
         //     'url'   => $url
         // );
-
-        // \Drupal::service('plugin.manager.mail')->mail('rp_offers', 'creation', $to, 'en', $params, 'no-reply@bat-davidoff.net');
+        // \Drupal::service('plugin.manager.mail')->mail('rp_offers', 'admin', $to, 'fr', $params);
     }
 
     /**
@@ -103,21 +99,10 @@ class Request {
      * @return [type]            [description]
      */
     public function confirmationEmail($fields){
-        // $timestamp = time();
-        //
-        // /* @var \Drupal\user\UserInterface $user */
-        // $user = \Drupal::entityTypeManager()->getStorage('user')->load($account->id());
-        //
-        // $email = $user->getEmail();
-        //
-        // // Get hash url
-        // $hash = $this->getHash($user, $timestamp);
-        // $url = Url::fromRoute('authentication.confirmation', ['uid' => $user->id(), 'timestamp' => $timestamp, 'hash' => $hash], ['absolute' => true]);
-        //
         // $params = array(
         //     'account' => $account,
         //     'url'     => $url
         // );
-        // \Drupal::service('plugin.manager.mail')->mail('rp_offers', 'confirmation', $email, $user->getPreferredLangcode(), $params, 'no-reply@bat-davidoff.net');
+        // \Drupal::service('plugin.manager.mail')->mail('rp_offers', 'admin', $to, 'fr', $params);
     }
 }
