@@ -9,7 +9,7 @@ dependencies:
 id: usefuldocumentsblock
 theme: retraitespopulaires
 region: '-1'
-weight: 5
+weight: 7
 provider: null
 plugin: rp_site_documents
 settings:

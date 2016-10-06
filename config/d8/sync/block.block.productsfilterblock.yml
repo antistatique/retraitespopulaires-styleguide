@@ -9,7 +9,7 @@ dependencies:
 id: productsfilterblock
 theme: retraitespopulaires
 region: '-1'
-weight: -2
+weight: -1
 provider: null
 plugin: rp_site_products_filter
 settings:

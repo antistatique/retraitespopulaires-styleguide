@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.offer.field_cover
     - field.field.node.offer.field_date_end
     - field.field.node.offer.field_profession
-    - field.field.node.offer.field_remaining_offers
     - field.field.node.offer.field_web_site
     - node.type.offer
   module:
@@ -59,14 +58,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_remaining_offers:
-    weight: 106
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
   field_web_site:
     weight: 102
     label: above

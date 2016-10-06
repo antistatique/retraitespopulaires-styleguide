@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.offer.field_cover
     - field.field.node.offer.field_date_end
     - field.field.node.offer.field_profession
-    - field.field.node.offer.field_remaining_offers
     - field.field.node.offer.field_web_site
     - image.style.thumbnail
     - node.type.offer
@@ -69,12 +68,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_remaining_offers:
-    weight: 7
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
   field_web_site:
     weight: 8
     settings:

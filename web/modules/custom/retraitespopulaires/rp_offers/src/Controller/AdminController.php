@@ -12,6 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Render\MetadataBubblingUrlGenerator;
+use \Symfony\Component\HttpFoundation\RequestStack;
 
 /**
 * AdminController.
@@ -49,13 +50,20 @@ class AdminController extends ControllerBase {
     private $url;
 
     /**
+    * Request stack that controls the lifecycle of requests
+    * @var RequestStack
+    */
+    private $request;
+
+    /**
     * Class constructor.
     */
-    public function __construct(EntityTypeManagerInterface $entity, QueryFactory $query, MetadataBubblingUrlGenerator $url) {
+    public function __construct(EntityTypeManagerInterface $entity, QueryFactory $query, MetadataBubblingUrlGenerator $url, RequestStack $request) {
         $this->entity_offers_request = $entity->getStorage('rp_offers_request');
         $this->entity_node           = $entity->getStorage('node');
         $this->entity_query          = $query;
         $this->url                   = $url;
+        $this->request               = $request->getMasterRequest();
     }
 
     /**
@@ -67,7 +75,8 @@ class AdminController extends ControllerBase {
         // Load the service required to construct this class.
         $container->get('entity_type.manager'),
         $container->get('entity.query'),
-        $container->get('url_generator')
+        $container->get('url_generator'),
+        $container->get('request_stack')
       );
     }
 
@@ -83,12 +92,21 @@ class AdminController extends ControllerBase {
     */
     public function requests() {
         $output = array();
+
+        $output['filter'] = \Drupal::formBuilder()->getForm('Drupal\rp_offers\Form\\AdminFilterRequestsForm');
+
         $output['table'] = array(
             '#type'    => 'table',
             '#header'  => array(t('Demande du'), t('Informations'), t('Coupon')),
         );
 
         $query = $this->entity_query->get('rp_offers_request');
+
+        // Add Filter conditions
+        $filter = $this->request->get('filter');
+        if (!empty($filter)) {
+            $query->condition('offer_target_id', $filter);
+        }
 
         // Pager
         $ids = $query->execute();
