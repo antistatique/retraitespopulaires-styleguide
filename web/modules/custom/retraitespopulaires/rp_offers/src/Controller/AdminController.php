@@ -85,7 +85,7 @@ class AdminController extends ControllerBase {
         $output = array();
         $output['table'] = array(
             '#type'    => 'table',
-            '#header'  => array(t('Date (d/m/Y)'), t('Contact informations'), t('Coupon')),
+            '#header'  => array(t('Demande du'), t('Informations'), t('Coupon')),
         );
 
         $query = $this->entity_query->get('rp_offers_request');
