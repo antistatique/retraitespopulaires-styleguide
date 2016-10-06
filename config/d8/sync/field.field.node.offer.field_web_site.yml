@@ -1,0 +1,23 @@
+uuid: 1e291df8-092d-44e0-af66-69ca877986ef
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_web_site
+    - node.type.offer
+  module:
+    - link
+id: node.offer.field_web_site
+field_name: field_web_site
+entity_type: node
+bundle: offer
+label: 'Web site'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

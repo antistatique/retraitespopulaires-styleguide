@@ -1,26 +1,26 @@
-uuid: 9a6a3476-9f69-4a34-a289-a23c8312ef4c
-langcode: en
+uuid: 40a9f96d-d42a-45cf-8872-fd7d04d44d96
+langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_profession
+    - field.storage.node.field_offer
     - node.type.news
-    - taxonomy.vocabulary.profession
-id: node.news.field_profession
-field_name: field_profession
+    - node.type.offer
+id: node.news.field_offer
+field_name: field_offer
 entity_type: node
 bundle: news
-label: Métier
-description: ''
+label: 'Coupons Bella Vita'
+description: 'Liaison de coupons Bella Vita'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      profession: profession
+      offer: offer
     sort:
       field: _none
     auto_create: false

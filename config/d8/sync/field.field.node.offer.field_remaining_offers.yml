@@ -1,0 +1,25 @@
+uuid: a1276a5c-8757-45da-8fc5-122a6732fdc9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_remaining_offers
+    - node.type.offer
+id: node.offer.field_remaining_offers
+field_name: field_remaining_offers
+entity_type: node
+bundle: offer
+label: 'Nombre de coupons restant'
+description: 'Ce champ se met à jours automatiquement en fonctionne des participations.<br/>Cependant, il doit être rempli manuellement et à l''<b>identique du champ Nombre de coupons</b> à la création du coupon.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
