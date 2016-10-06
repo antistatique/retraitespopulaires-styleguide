@@ -1,0 +1,6 @@
+name: Offers
+description: 'Provide Offers linked to News & Request''s offers'
+package: Retraites Populaires
+type: module
+version: 1.0
+core: 8.x
