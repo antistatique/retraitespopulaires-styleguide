@@ -12,7 +12,7 @@ function rp_offers_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
-            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
+            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'blocks/offers_linked'
         ),
         'rp_offers_offer_teaser_block' => array(
@@ -20,7 +20,7 @@ function rp_offers_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
-            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
+            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'blocks/offer_teaser'
         ),
     );
