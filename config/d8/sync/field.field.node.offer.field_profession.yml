@@ -1,18 +1,18 @@
-uuid: 9a6a3476-9f69-4a34-a289-a23c8312ef4c
-langcode: en
+uuid: ea066169-fe3d-433d-a0e8-d493415224a2
+langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.node.field_profession
-    - node.type.news
+    - node.type.offer
     - taxonomy.vocabulary.profession
-id: node.news.field_profession
+id: node.offer.field_profession
 field_name: field_profession
 entity_type: node
-bundle: news
+bundle: offer
 label: Métier
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.news.field_function
     - field.field.node.news.field_lastname
     - field.field.node.news.field_news_type
+    - field.field.node.news.field_offer
     - field.field.node.news.field_present_end_date
     - field.field.node.news.field_profession
     - field.field.node.news.field_profil
@@ -48,6 +49,7 @@ third_party_settings:
       children:
         - field_contact
         - field_advisor
+        - field_offer
       parent_name: ''
       weight: 11
       label: 'Linked Contents'
@@ -124,6 +126,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+  field_offer:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_present_end_date:
     weight: 2
     settings: {  }

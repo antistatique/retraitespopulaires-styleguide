@@ -1,0 +1,18 @@
+uuid: 25cc4126-f1b0-428f-87db-12d18a3f0574
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.offer
+id: node.offer.title
+field_name: title
+entity_type: node
+bundle: offer
+label: Titre
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

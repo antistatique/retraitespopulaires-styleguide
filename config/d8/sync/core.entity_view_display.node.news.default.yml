@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.news.field_function
     - field.field.node.news.field_lastname
     - field.field.node.news.field_news_type
+    - field.field.node.news.field_offer
     - field.field.node.news.field_present_end_date
     - field.field.node.news.field_profession
     - field.field.node.news.field_profil
@@ -95,6 +96,13 @@ content:
     type: string
   field_news_type:
     weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_offer:
+    weight: 116
     label: above
     settings:
       link: true

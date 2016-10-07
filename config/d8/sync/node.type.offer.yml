@@ -1,0 +1,17 @@
+uuid: 6aa1d60c-7b2a-4e80-8207-de287f6929de
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Coupons Bella Vita'
+type: offer
+description: 'Offre Bella Vita attaché aux actualités'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

@@ -45,7 +45,7 @@ class Loader extends \Twig_Extension {
      * with or whitout parameters
      */
      public static function loadForm($module, $form, $params = array()) {
-         return \Drupal::formBuilder()->getForm('Drupal\\'.$module.'\Form\\'.$form);
+         return \Drupal::formBuilder()->getForm('Drupal\\'.$module.'\Form\\'.$form, $params);
      }
 
 }

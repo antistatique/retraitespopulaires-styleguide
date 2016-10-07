@@ -1,0 +1,19 @@
+uuid: 254aae02-a4f3-4855-b76d-b047e0e08bc1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_offer
+field_name: field_offer
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

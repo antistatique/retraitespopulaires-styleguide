@@ -1,0 +1,25 @@
+uuid: 361e6888-b66f-4262-a6e3-29a94048d68b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_available_offers
+    - node.type.offer
+id: node.offer.field_available_offers
+field_name: field_available_offers
+entity_type: node
+bundle: offer
+label: 'Nombre de coupons'
+description: 'Nombre de coupons total à offrir.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -15,6 +15,14 @@ function retraitespopulaires_theme_suggestions_page_alter(array &$suggestions, a
     ) {
         $suggestions[] = 'page__node__profils';
     }
+
+    if (isset($node->nid->value) && $node->getType() == 'news') {
+        $suggestions[] = 'page__node__news';
+    }
+
+    if (isset($node->nid->value) && $node->getType() == 'offer') {
+        $suggestions[] = 'page__node__offer';
+    }
 }
 
 function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, array $variables) {

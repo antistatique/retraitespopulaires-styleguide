@@ -9,7 +9,7 @@ dependencies:
 id: newsblock
 theme: retraitespopulaires
 region: '-1'
-weight: 7
+weight: -3
 provider: null
 plugin: rp_site_news
 settings:

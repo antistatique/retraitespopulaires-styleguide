@@ -56,6 +56,13 @@
 #}
 {# page.header #}
 
+{# Page Header #}
+{% if page.header %}
+  {% block header %}
+      {{ page.header }}
+  {% endblock %}
+{% endif %}
+
 {{ load_block('rp_layout_cover_block') }}
 
 {# Breadcrumbs #}
