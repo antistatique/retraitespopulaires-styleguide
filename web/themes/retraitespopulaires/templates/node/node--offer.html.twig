@@ -97,13 +97,17 @@
     {{ content|without('body', 'field_profession', 'field_date_end') }}
 
     {% set days_left = date_diff('now'|date('Y-m-d'), node.field_date_end.value) %}
-    {% if days_left > 0 %}
+    {% if days_left >= 0 %}
 
-      {% trans %}
-        Il vous reste {{ days_left }} jour pour participé.
-      {% plural days_left %}
-        Il vous reste {{ days_left }} jours pour participé.
-      {% endtrans %}
+      {% if days_left > 0 %}
+        {% trans %}
+          Il vous reste {{ days_left }} jour pour participé.
+        {% plural days_left %}
+          Il vous reste {{ days_left }} jours pour participé.
+        {% endtrans %}
+      {% else %}
+        {% trans %}C'est le dernier jour pour participer dépêcher vous.{% endtrans %}
+      {% endif %}
 
       <div class="spacer"></div>
       <div class="row">
