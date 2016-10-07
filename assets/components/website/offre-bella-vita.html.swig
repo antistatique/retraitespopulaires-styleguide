@@ -45,7 +45,7 @@ layout: website.html.swig
   <div class="col-xs-12">
   <div class="row">
     <div class="spacer spacer-lg"></div>
-    {% include '../organisms/last-news.html.swig' %}
+    {% include '../organisms/attachments-last-news.html.swig' %}
     </div>
   </div>
 </div>

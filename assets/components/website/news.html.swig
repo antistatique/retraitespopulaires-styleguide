@@ -10,8 +10,8 @@ layout: website.html.swig
 
 <div class="container">
   <div class="row"></div>
-    <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'Actualités']} %}
+    <div class="col-xs-12 text-center">
+      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'Actualités', 'Avec la Nuit des images, samedi 25 juin 2016']} %}
       <div class="spacer"></div>
     </div>
   </div>
@@ -19,48 +19,39 @@ layout: website.html.swig
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-6 col-xl-push-3">
-      <h1 class="page-title text-center">Quel est votre projet ?</h1>
+    <div class="col-xs-12 col-md-10 col-md-push-1 col-xl-6 col-xl-push-3">
+      <h1 class="page-title text-center">Avec la Nuit des images, samedi 25 juin 2016'</h1>
       <div class="spacer"></div>
+      <h2 class="h4 text-secondary">Retraites Populaires soutient l'événement au Musée de l'Elysée.</h2>
+      <div class="spacer spacer-sm"></div>
       <div class="entity-content">
         <p>
-          Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.
+          La Nuit des images 2016 se tient samedi 25 juin au Musée de l'Elysée. Rendez-vous culturel gratuit désormais incontournable de l'été lausannois, il invite le public à apprécier l'image sous diverses formes.
+          <br/><br/>
+          Retraites Populaires reconduit son soutien à la manifestation, plus particulièrement à la Nuit des enfants, activité pour les familles où petits et grands sont invités à mettre la main à la pâte. Il s'agira de créer une œuvre collective avec Martin Becka en composant une fresque de photogrammes et de produire une camera obscura portative pour résoudre une énigme à travers les jardins de l'Elysée. L'occasion aussi pour les enfants de se plonger dans des livres de photographie et de se laisser entraîner dans le conte d'Amadou l'audacieux.
         </p><br/>
-        <img class="img-responsive" title="Assurance vie" src="https://www.retraitespopulaires.ch/upload/docs/image/png/2014-09/banner-avp.png" alt="Assurance vie">
-        <br/>
-        <p>Découvrez les produits en cliquant sur les cases du tableau:</p>
-        <table class="table-wide table-assurance tablesaw tablesaw-stack" data-tablesaw-mode="stack">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Je suis en <strong>formation</strong></th>
-              <th>J'ai un <strong>emploi</strong></th>
-              <th>Je suis à la <strong>retraite</strong></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Epargner en toute sécurité</td>
-              <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-              <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-              <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-            </tr>
-            <tr>
-              <td>Epargner en toute sécurité</td>
-              <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-              <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-              <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-            </tr>
-          </tbody>
-        </table>
       </div>
-    </div>
-    <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
-      {% include '../atoms/facets-list.html.swig' with {'title': 'L’actualité de Retraites Populaires', 'links': ['Assurance vie', 'Financement', 'Immobilier', 'Prévoyance professionnelle', 'Catégorie Y']} %}
     </div>
   </div>
 </div>
-<div class="spacer spacer-xl"></div>
+
+<div class="row">
+  <div class="col-xs-12">
+  <div class="row">
+    <div class="spacer spacer-lg"></div>
+    {% include '../organisms/attachments-last-news.html.swig' %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+  <div class="row">
+    <div class="spacer spacer-lg"></div>
+    {% include '../organisms/attachments-offers.html.swig' %}
+    </div>
+  </div>
+</div>
 
 <div class="spacer"></div>
 {% include '../organisms/footer.html.swig' %}

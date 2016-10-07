@@ -7,47 +7,28 @@ notes: |
   ##### Options :
   - **theme** - string
 ---
-<div class="attachements-wrapper attachements-wrapper-job">
+<div class="attachements-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1">
-        <div class="card-attachement card-attachement shadow shadow-down">
-          <div class="card-title h2">Coupons Bella Vita</div>
-          <div class="row">
-            <div class="card-content">
-              <div class="col-xs-12">
-                <ul class="list-spaced list-unstyled">
-
-                  <li class="">
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x text-{{ theme }}"></a>
-                      </div>
-                      <div class="media-body">
-                        <a href="#" class="pretty-link text-{{ theme }} h5">Festial Lavaux Classic</a>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="">
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x text-{{ theme }}"></a>
-                      </div>
-                      <div class="media-body">
-                        <a href="#" class="pretty-link text-{{ theme }} h5">Exposition "Le monde d'Hergé"</a>
-                      </div>
-                    </div>
-                  </li>
-
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-xs-12 last-news-heading">
+        <div class="h2 pull-left">Coupons Bella Vita</div>
+      </div>
+    </div>
+	<div class="spacer spacer-sm"></div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        {% include '../molecules/teaser-offer.html.swig' %}
+      </div>
+      <div class="col-xs-12 col-md-6">
+        {% include '../molecules/teaser-offer.html.swig' %}
+      </div>
+      <div class="col-xs-12 col-md-6">
+        {% include '../molecules/teaser-offer.html.swig' %}
+      </div>
+      <div class="col-xs-12 col-md-6">
+        {% include '../molecules/teaser-offer.html.swig' %}
       </div>
     </div>
   </div>
-
-  <div class="organic-lines lines-{{ theme }}"></div>
+  {% include '../atoms/organic-lines.html.swig' %}
 </div>

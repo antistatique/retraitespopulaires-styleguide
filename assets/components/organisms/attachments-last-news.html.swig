@@ -1,9 +1,9 @@
 ---
-title: last-news
-name: last-news
+title: attachments-last-news
+name: attachments-last-news
 collection: organisms
 notes: |
-  ##### Usage : `last-news`
+  ##### Usage : `attachments-last-news`
 ---
 <div class="last-news-wrapper">
   <div class="container">
