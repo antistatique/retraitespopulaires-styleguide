@@ -4,8 +4,6 @@ name: form-simulateur-libre-passage
 collection: organisms
 notes: |
   ##### Usage : `form-simulateur-libre-passage`
-  ##### Options :
-  - **theme** - String
 ---
 <form class="form-simulateur-libre-passage">
   <h3>Vos données personnelles</h3>
