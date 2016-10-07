@@ -6,13 +6,12 @@
 
 namespace Drupal\rp_offers\Service;
 
-use Drupal\Core\Session\AccountProxy;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\user\PrivateTempStoreFactory;
-
 use Drupal\rp_offers\Entity\Request as EntityRequest;
-
+use Drupal\Core\State\StateInterface;
+use Drupal\Core\Mail\MailManagerInterface;
 /**
 * Request.
 */
@@ -37,12 +36,26 @@ class Request {
     private $entity_query;
 
     /**
+    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
+    * @var StateInterface
+    */
+    protected $state;
+
+    /**
+    * Composes and optionally sends an email message.
+    * @var MailManagerInterface
+    */
+    protected $mail;
+
+    /**
     * Class constructor.
     */
-    public function __construct(EntityTypeManagerInterface $entity, QueryFactory $query) {
+    public function __construct(EntityTypeManagerInterface $entity, QueryFactory $query, StateInterface $state, MailManagerInterface $mail) {
         $this->entity_offers_request = $entity->getStorage('rp_offers_request');
         $this->entity_node           = $entity->getStorage('node');
         $this->entity_query          = $query;
+        $this->state                 = $state;
+        $this->mail                  = $mail;
     }
 
     /**
@@ -100,8 +113,10 @@ class Request {
                 'offer_target_id' => $fields['node'],
             );
             $request = $this->entity_offers_request->create($data);
-            $request->save();
+            // $request->save();
+            return $request;
         }
+        return null;
     }
 
     /**
@@ -109,14 +124,11 @@ class Request {
      * @method adminEmail
      * @return [type]     [description]
      */
-    public function adminEmail($fields){
-        $to = preg_replace('/\s+/', ' ', $this->state->get('authentication.settings.receivers'));
+    public function adminEmail(EntityRequest $request){
+        $to = preg_replace('/\s+/', ' ', $this->state->get('rp_offers.settings.receivers'));
         $to = str_replace(';', ',', $to);
-        // $params = array(
-        //     'email' => $account->getEmail(),
-        //     'url'   => $url
-        // );
-        // \Drupal::service('plugin.manager.mail')->mail('rp_offers', 'admin', $to, 'fr', $params);
+        $params = array('request' => $request);
+        $this->mail->mail('rp_offers', 'admin', $to, 'fr', $params);
     }
 
     /**
@@ -129,6 +141,6 @@ class Request {
         //     'account' => $account,
         //     'url'     => $url
         // );
-        // \Drupal::service('plugin.manager.mail')->mail('rp_offers', 'admin', $to, 'fr', $params);
+        // \Drupal::service('plugin.manager.mail')->mail('rp_offers', 'confirmation', $to, 'fr', $params);
     }
 }

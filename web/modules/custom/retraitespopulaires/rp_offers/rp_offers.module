@@ -25,3 +25,5 @@ function rp_offers_theme($existing, $type, $theme, $path) {
         ),
     );
 }
+
+require_once('src/Mail/mails.php');

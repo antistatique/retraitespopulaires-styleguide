@@ -5,3 +5,5 @@ services:
     arguments:
       - @entity_type.manager
       - @entity.query
+      - @state
+      - @plugin.manager.mail

@@ -116,7 +116,7 @@
 
                       <!-- First item is a back link to previous links  -->
                      <li class="swiper-back visible-xs visible-sm">
-                       <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-{{ theme }}"></a>
+                       <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-{{ theme|join }}"></a>
                        <a href="{{ item.link.urlObject }}" class="text-muted pretty-link text-cocon">{{ item.link.title }}</a>
                      </li>
 
@@ -254,21 +254,7 @@
               </div>
             </div>
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <!-- End of Swiper Menu -->
 
         </div>
       </div>

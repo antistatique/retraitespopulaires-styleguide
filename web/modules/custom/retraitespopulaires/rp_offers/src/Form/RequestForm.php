@@ -219,7 +219,9 @@ class RequestForm extends FormBase {
                 'city'      => $form_state->getValue('city'),
                 'node'      => $form_state->getValue('node'),
             );
-            $this->request->consume($data);
+            $request = $this->request->consume($data);
+
+            $this->request->adminEmail($request);
 
             drupal_set_message(t('Merci de votre participation.'));
 
