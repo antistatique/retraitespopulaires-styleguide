@@ -9,6 +9,8 @@ namespace Drupal\rp_offers\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+use Symfony\Component\HttpFoundation\StreamedResponse;
+
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Render\MetadataBubblingUrlGenerator;
@@ -93,6 +95,10 @@ class AdminController extends ControllerBase {
     public function requests() {
         $output = array();
 
+        $output['download'] = array(
+            '#markup' => '<a class="button button-action button--primary button--small" href="'.$this->url->generateFromRoute('rp_offers.admin.requests.csv').'" target="_blank">'.t('Download').'</a>',
+        );
+
         $output['filter'] = \Drupal::formBuilder()->getForm('Drupal\rp_offers\Form\\AdminFilterRequestsForm');
 
         $output['table'] = array(
@@ -143,6 +149,61 @@ class AdminController extends ControllerBase {
         }
 
         return $output;
+    }
+
+    /**
+    * Admin requests csv.
+    */
+    public function requestsCsv() {
+        $filename = 'Offres Bella Vita - Results.csv';
+
+        $response = new StreamedResponse();
+        $response->setCallback(function() {
+            $handle = fopen('php://output', 'w+');
+
+            // Add the header of the CSV file
+            fputcsv($handle, array('Demande du', 'Prénom', 'Nom de famille', 'Adresse', 'Npa', 'Ville', 'Coupon'),';');
+            // Query data from database
+            $query = $this->entity_query->get('rp_offers_request');
+            // Add Filter conditions
+            $filter = $this->request->get('filter');
+            if (!empty($filter)) {
+                $query->condition('offer_target_id', $filter);
+            }
+
+            $ids = $query->execute();
+            $requests = $this->entity_offers_request->loadMultiple($ids);
+            // Add the data queried from database
+            foreach ($requests as $key => $request) {
+                $dt = new \DateTime();
+                $dt->setTimestamp($request->created->value);
+
+                $node = $this->entity_node->load($request->offer_target_id->entity->nid->value);
+
+                fputcsv(
+                    $handle,
+                    // The fields
+                    array(
+                        $dt->format('d/m/Y'),
+                        $request->firstname->value,
+                        $request->lastname->value,
+                        $request->address->value,
+                        $request->zip->value,
+                        $request->city->value,
+                        $node->title->value,
+                    ),
+                    ';'
+                );
+            }
+
+            fclose($handle);
+        });
+
+        $response->setStatusCode(200);
+        $response->headers->set('Content-Type', 'text/csv; charset=utf-8');
+        $response->headers->set('Content-Disposition', 'attachment; filename="'.$filename.'"');
+
+        return $response;
     }
 
 }

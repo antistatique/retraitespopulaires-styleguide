@@ -80,7 +80,6 @@ class AdminFilterRequestsForm extends FormBase {
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Filtrer'),
-            '#button_type' => 'primary',
             '#prefix'      => '<div class="form-actions">',
             '#suffix'      => '</div>'
         );

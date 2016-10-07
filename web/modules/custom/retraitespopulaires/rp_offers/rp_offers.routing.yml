@@ -20,3 +20,10 @@ rp_offers.admin.requests:
         _title: 'Offre Bella Vita - Admin - Requests'
     requirements:
         _permission: 'access administration pages'
+rp_offers.admin.requests.csv:
+    path: '/admin/retraites-populaires/offers/requests/csv'
+    defaults:
+        _controller: '\Drupal\rp_offers\Controller\AdminController::requestsCsv'
+        _title: 'Offre Bella Vita - Admin - Requests CSV'
+    requirements:
+        _permission: 'access administration pages'
