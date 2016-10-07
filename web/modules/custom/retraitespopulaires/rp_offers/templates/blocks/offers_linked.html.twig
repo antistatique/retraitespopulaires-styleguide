@@ -1,35 +1,20 @@
 {% if variables.offers %}
-<div class="attachements-wrapper attachements-wrapper-job">
+<div class="attachements-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1">
-        <div class="card-attachement card-attachement shadow shadow-down">
-          <div class="card-title h2">{% trans %}Coupons Bella Vita{% endtrans %}</div>
-          <div class="row">
-            <div class="card-content">
-              <div class="col-xs-12">
-                <ul class="list-spaced list-unstyled">
-                  {% for offer in variables.offers %}
-                    <li class="">
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="{{ path('entity.node.canonical', {'node': offer.nid.value}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x text-{{ variables.theme }}"></a>
-                        </div>
-                        <div class="media-body">
-                          <a href="{{ path('entity.node.canonical', {'node': offer.nid.value}) }}" class="pretty-link text-{{ variables.theme }} h5">{{ offer.title.value }}</a>
-                        </div>
-                      </div>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-xs-12 last-news-heading">
+        <div class="h2 pull-left">{% trans %}Coupons Bella Vita{% endtrans %}</div>
       </div>
     </div>
+	<div class="spacer spacer-sm"></div>
+    <div class="row">
+      {% for offer in variables.offers %}
+        <div class="col-xs-12 col-md-6">
+          {{ load_block('rp_offers_offer_teaser_block', {'offer': offer}) }}
+        </div>
+      {% endfor %}
+    </div>
   </div>
-
   <div class="organic-lines lines-{{ variables.theme }}"></div>
 </div>
 {% endif %}

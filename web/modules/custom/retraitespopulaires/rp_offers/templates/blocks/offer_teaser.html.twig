@@ -1,0 +1,41 @@
+{% if variables.offer.nid.value %}
+<div class="teaser-offer shadow shadow-down">
+  <a href="{{ path('entity.node.canonical', {'node': variables.offer.nid.value}) }}" class="offer-heading" style="background-image: url({{ file_url(variables.offer.field_cover.entity.uri.value) }})"></a>
+  <div class="offer-body">
+    <a href="{{ path('entity.node.canonical', {'node': variables.offer.nid.value}) }}" class="offer-title h1 pretty-link">{{ variables.offer.title.value }}</a>
+    <div class="spacer spacer-sm"></div>
+
+    <div class="offer-extra">
+      <div class="pull-left offer-date">
+        <div>{{ variables.offer.created.value|date_format('F Y')|capitalize }}</div>
+      </div>
+      <div class="pull-right offer-infos">
+
+        {% if variables.offer.field_available_offers.value %}
+          <div>
+            {% trans %}
+              {{ variables.offer.field_available_offers.value }} ticket
+            {% plural variables.offer.field_available_offers.value %}
+              {{ variables.offer.field_available_offers.value }} tickets
+            {% endtrans %}
+          </div>
+        {% endif %}
+
+        <div>
+          {% set days_left = date_diff('now'|date('Y-m-d'), variables.offer.field_date_end.value) %}
+          {% if days_left > 0 %}
+            {% trans %}
+              Se termine dans {{ days_left }} jour
+            {% plural days_left %}
+              Se termine dans {{ days_left }} jours
+            {% endtrans %}
+          {% else %}
+            {% trans %}Cette offre est terminée.{% endtrans %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endif %}
