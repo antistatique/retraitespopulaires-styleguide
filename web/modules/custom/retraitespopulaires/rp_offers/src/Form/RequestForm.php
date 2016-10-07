@@ -183,8 +183,14 @@ class RequestForm extends FormBase {
             $errors['email'] = t('Cette adresse e-mail semble invalide.');
         }
 
+        // Assert this email don't already request that node
         if (!$this->request->isAvailable($form_state->getValue('email'), $form_state->getValue('node'))) {
             $errors['email'] = t('Il me semble que vous avez déjà participer.');
+        }
+
+        // Assert the node is both active & currently running
+        if (!$this->request->isEnable($form_state->getValue('node'))) {
+            $errors['email'] = t('Navré mais il n\'est plus possible de participer à cette offre.');
         }
 
         // Save errors in sessions to use it on the form builder

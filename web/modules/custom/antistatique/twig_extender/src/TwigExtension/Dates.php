@@ -63,7 +63,6 @@ class Dates extends \Twig_Extension {
             $timestmap_end = $end;
         }
 
-
-        return ceil(abs($timestmap_end - $timestmap_start) / 86400);
+        return ceil(($timestmap_end - $timestmap_start) / 86400);
     }
 }

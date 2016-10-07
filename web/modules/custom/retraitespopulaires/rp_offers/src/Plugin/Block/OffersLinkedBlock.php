@@ -93,20 +93,34 @@ class OffersLinkedBlock extends BlockBase implements ContainerFactoryPluginInter
         if (!empty($node) && $node->getType() == 'news') {
             $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
 
-            $query = $this->entity_query->get('node')
-                ->condition('type', 'offer')
-                ->condition('status', 1)
-            ;
+            $offers = array();
+            foreach ($node->field_offer as $offer) {
+                $offers[] = $offer->target_id;
+            }
 
-            $query->sort('field_date_end', 'DESC');
+            if (!empty($offers)) {
 
-            $nids = $query->execute();
-            $variables['offers'] = $this->entity_offer->loadMultiple($nids);
+                $query = $this->entity_query->get('node')
+                    ->condition('type', 'offer')
+                    ->condition('status', 1)
+                    ->condition('nid', $offers, 'IN')
+                    ->sort('field_date_end', 'DESC')
+                ;
+
+                $nids = $query->execute();
+                $variables['offers'] = $this->entity_offer->loadMultiple($nids);
+            }
         }
 
         return [
             '#theme'     => 'rp_offers_linked_block',
             '#variables' => $variables,
+            '#cache' => [
+                'contexts' => [
+                    'url.path',
+                    'url.query_args'
+                ],
+            ]
         ];
 
     }

@@ -25,6 +25,12 @@ class Request {
     private $entity_offers_request;
 
     /**
+    * EntityTypeManagerInterface to load Nodes
+    * @var EntityTypeManagerInterface
+    */
+    private $entity_node;
+
+    /**
     * entity_query to query Node's Request
     * @var QueryFactory
     */
@@ -35,6 +41,7 @@ class Request {
     */
     public function __construct(EntityTypeManagerInterface $entity, QueryFactory $query) {
         $this->entity_offers_request = $entity->getStorage('rp_offers_request');
+        $this->entity_node           = $entity->getStorage('node');
         $this->entity_query          = $query;
     }
 
@@ -54,6 +61,25 @@ class Request {
         ;
 
         return $query->execute() == 0;
+    }
+
+    /**
+    * Check the given offer is active and running
+    * @method isAvailable
+    * @param  Integer     $node_nid [description]
+    * @return boolean               [description]
+    */
+    public function isEnable($node_nid) {
+        $is_enable = false;
+
+        $now = new \DateTime();
+        $node = $this->entity_node->load($node_nid);
+
+        if ($node->status->value && $now->getTimestamp() <= $node->field_date_end->date->getTimestamp()) {
+            $is_enable = true;
+        }
+
+        return $is_enable;
     }
 
     /**

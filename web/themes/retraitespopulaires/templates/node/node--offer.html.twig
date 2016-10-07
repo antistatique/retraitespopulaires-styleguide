@@ -100,9 +100,9 @@
     {% if days_left > 0 %}
 
       {% trans %}
-        Il te reste {{ days_left }} jour pour participé.
+        Il vous reste {{ days_left }} jour pour participé.
       {% plural days_left %}
-        Il te reste {{ days_left }} jours pour participé.
+        Il vous reste {{ days_left }} jours pour participé.
       {% endtrans %}
 
       <div class="spacer"></div>
@@ -111,6 +111,12 @@
           {{ load_form('rp_offers', 'RequestForm', {'node': node}) }}
         </div>
       </div>
+    {% else %}
+      {% trans %}
+        Cette offre à expirée depuis {{ days_left }} jour.
+      {% plural days_left %}
+        Cette offre à expirée depuis {{ days_left }} jours.
+      {% endtrans %}
     {% endif %}
 
   </div>
