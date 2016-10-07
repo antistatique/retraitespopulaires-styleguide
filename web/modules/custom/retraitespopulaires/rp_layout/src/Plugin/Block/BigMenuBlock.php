@@ -59,22 +59,31 @@ class BigMenuBlock extends BlockBase implements ContainerFactoryPluginInterface 
         $variables['empty_state'] = true;
         $variables['menu_as_page'] = isset($params['menu-as-page']) ? $params['menu-as-page'] : false;
 
+        // Transform the tree using the manipulators you want.
+        $manipulators = array(
+          // Use the default sorting of menu links.
+          array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+        );
+
         $parameters = $this->menu_tree->getCurrentRouteMenuTreeParameters('main');
         $parameters->onlyEnabledLinks();
         $parameters->expandedParents = array();
-        $variables['main_menu'] = $this->menu_tree->load('main',$parameters);
+        $tree = $this->menu_tree->load('main',$parameters);
+        $variables['main_menu'] = $this->menu_tree->transform($tree, $manipulators);
         $variables['empty_state'] = count($parameters->activeTrail) > 1 ? false : $variables['empty_state'];
 
         $parameters = $this->menu_tree->getCurrentRouteMenuTreeParameters('profil');
         $parameters->onlyEnabledLinks();
         $parameters->expandedParents = array();
-        $variables['profil_menu'] = $this->menu_tree->load('profil', $parameters);
+        $tree = $this->menu_tree->load('profil',$parameters);
+        $variables['profil_menu'] = $this->menu_tree->transform($tree, $manipulators);
         $variables['empty_state'] = count($parameters->activeTrail) > 1 ? false : $variables['empty_state'];
 
         $parameters = $this->menu_tree->getCurrentRouteMenuTreeParameters('profil');
         $parameters->onlyEnabledLinks();
         $parameters->expandedParents = array();
-        $variables['secondary_menu'] = $this->menu_tree->load('secondary', $parameters);
+        $tree = $this->menu_tree->load('secondary',$parameters);
+        $variables['secondary_menu'] = $this->menu_tree->transform($tree, $manipulators);
 
         return [
             '#theme'     => 'rp_layout_bigmenu_block',
