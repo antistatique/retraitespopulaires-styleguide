@@ -20,6 +20,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/attachments'
         ),
         'rp_site_attachment-faqs_block' => array(
@@ -27,6 +28,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/attachment-faqs'
         ),
         'rp_site_attachment-documents_block' => array(
@@ -34,6 +36,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/attachment-documents'
         ),
         'rp_site_contact_block' => array(
@@ -41,6 +44,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/contact'
         ),
         'rp_site_advisor_block' => array(
@@ -48,6 +52,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/advisor'
         ),
         'rp_site_news_filter_block' => array(
@@ -55,6 +60,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/news_filter'
         ),
         'rp_site_news_latest_block' => array(
@@ -62,6 +68,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/news_latest'
         ),
         'rp_site_news_teaser_block' => array(
@@ -69,6 +76,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/news_teaser'
         ),
         'rp_site_news_collection_block' => array(
@@ -76,6 +84,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/news_collection'
         ),
         'rp_site_products_block' => array(
@@ -83,6 +92,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/products'
         ),
         'rp_site_products_filter_block' => array(
@@ -90,6 +100,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/products_filter'
         ),
         'rp_site_products_related_block' => array(
@@ -97,6 +108,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/products_related'
         ),
         'rp_site_product_teaser_block' => array(
@@ -104,6 +116,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/product_teaser'
         ),
 
@@ -114,6 +127,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'pages/launcher'
         ),
         'rp_site_documents_page' => array(
@@ -121,6 +135,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'pages/documents'
         ),
         'rp_site_faqs_page' => array(
@@ -128,6 +143,7 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'pages/faqs'
         ),
     );

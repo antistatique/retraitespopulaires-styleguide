@@ -12,6 +12,7 @@ function rp_homepage_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'pages/homepage'
         ),
     );

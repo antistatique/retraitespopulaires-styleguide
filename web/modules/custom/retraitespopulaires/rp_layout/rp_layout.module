@@ -12,6 +12,7 @@ function rp_layout_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/header'
         ),
         'rp_layout_footer_block' => array(
@@ -19,6 +20,7 @@ function rp_layout_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/footer'
         ),
         'rp_layout_bigmenu_block' => array(
@@ -26,6 +28,7 @@ function rp_layout_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/bigmenu'
         ),
         'rp_layout_secondarynav_block' => array(
@@ -33,6 +36,7 @@ function rp_layout_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/secondarynav'
         ),
         'rp_layout_cover_block' => array(
@@ -40,6 +44,7 @@ function rp_layout_theme($existing, $type, $theme, $path) {
             'variables' => ['variables' => []],
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
+            'path' => \Drupal::theme()->getActiveTheme()->getPath() . '/templates/' . $theme,
             'template'  => 'blocks/cover'
         ),
     );
