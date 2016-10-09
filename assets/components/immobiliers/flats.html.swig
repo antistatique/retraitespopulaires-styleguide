@@ -26,6 +26,12 @@ layout: immobiliers.html.swig
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      {% include '../molecules/teaser-rental.html.swig' %}
+    </div>
+
+  </div>
 </div>
 
 <div class="spacer"></div>
