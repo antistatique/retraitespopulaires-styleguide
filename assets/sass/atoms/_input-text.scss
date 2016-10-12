@@ -87,11 +87,6 @@
       border-color: $input-border-disabled;
       color: $input-color-placeholder;
     }
-
-    .input-group-btn .btn {
-      background-color: darken($input-border-disabled, 15%);
-      color: $input-color-placeholder;
-    }
   }
 }
 
@@ -101,52 +96,6 @@
 
     @media screen and (min-width: $screen-md-min) {
       margin: 20px 0 15px;
-    }
-  }
-}
-
-.input-group {
-  position: relative;
-
-  &.full-width { width: 100%; }
-
-  .form-control {
-    float: none;
-    width: auto;
-    max-width: 100%;
-
-    &.full-width { width: 100%; }
-  }
-
-  .form-control:first-child {
-    border-bottom-right-radius: $btn-border-radius-base;
-    border-top-right-radius: $btn-border-radius-base;
-  }
-
-  .form-control:last-child {
-    border-bottom-left-radius: $btn-border-radius-base;
-    border-top-left-radius: $btn-border-radius-base;
-  }
-
-  .input-group-btn {
-    position: absolute;
-    top: $input-border-size;
-    right: $input-border-size;
-    width: auto;
-    max-width: 100%;
-
-    z-index: 10;
-
-    .btn {
-      margin-left: 0;
-      padding-bottom: 0.6em;
-      border-radius: $btn-border-radius-base - $input-border-size;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-
-      &.btn-icon {
-        padding-bottom: 0.4em;
-      }
     }
   }
 }
