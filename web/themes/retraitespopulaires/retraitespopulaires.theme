@@ -20,6 +20,10 @@ function retraitespopulaires_theme_suggestions_page_alter(array &$suggestions, a
         $suggestions[] = 'page__node__news';
     }
 
+    if (isset($node->nid->value) && $node->nid->value == $state->get('rp_site.settings.collection.news')['nid']) {
+        $suggestions[] = 'page__node__'.$state->get('rp_site.settings.collection.news')['theme'];
+    }
+
     if (isset($node->nid->value) && $node->getType() == 'offer') {
         $suggestions[] = 'page__node__offer';
     }

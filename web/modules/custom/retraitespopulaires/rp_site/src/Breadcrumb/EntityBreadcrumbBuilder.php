@@ -8,20 +8,15 @@ namespace Drupal\rp_site\Breadcrumb;
 
 use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\Routing\LinkGeneratorTrait;
-use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
 
 /**
- * Create breadcrumb for entity page (detail story, detail headlines, detail event)
+ * Create breadcrumb for entity page (detail news)
  * that include the correct views as parent.
  */
 class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
-    // use StringTranslationTrait;
-    // use LinkGeneratorTrait;
-
     /**
      * @inheritdoc
      */
@@ -47,7 +42,7 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
         $links = [ Link::createFromRoute(t('Home'), '<front>') ];
         if ('news' == $type) {
             $links[] = Link::createFromRoute(
-                t('Actualites'),
+                t('Actualités'),
                 'entity.node.canonical',
                 ['node' => $state->get('rp_site.settings.collection.news')['nid']]
             );
