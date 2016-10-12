@@ -8,6 +8,23 @@ First of all, you need to have the following tools installed globally on your en
 
   * composer
   * drush
+  * npm
+
+The git repository of Retraites Populaires is:
+
+```
+ $ git add dplmgr@192.168.188.51:/data/git/retraitespopulaires.git
+```
+
+Got an error ? Like:
+```
+ssh: connect to host 192.168.188.51 port 22: Operation timed out
+fatal: Could not read from remote repository.
+```
+
+It's because you need to connect to the VPN. Open Firefox (and not Safari or Chrome, Java Applets Yeeahh!) and go to http://vpn.retraitespopulaires.ch/ and login.
+
+
 
 ### Tips
 
@@ -94,7 +111,7 @@ To build the theme from vendor, `npm`, you should publish it. You then need to s
 **Development workflow:**
 
 The second solution is to retrieve *styleguide from `git` repo*.
-To build the theme from the repository whitout publishing on `npm`, you then need to clone the `retraitespopulaires-styleguide` repo and put it as a sibling of this repo in your local directory.
+To build the theme from the repository whitout publishing on `npm`, you then need to clone the [`retraitespopulaires-styleguide`](https://github.com/antistatique/retraitespopulaires-styleguide) repo and put it as a sibling of this repo in your local directory.
 
 ### For windows
 
@@ -126,20 +143,20 @@ To build the theme from the repository whitout publishing on `npm`, you then nee
     $ ./bin/styleguide-dev.sh
 
 ## Deploy
-The deployment of branch `dev` and `master` is automatically managed by Codeship!
-
 
 ### First time
 
     # You need to have ruby & bundler installed
     $ bundle install
+    $ npm login
+    # enter your npm credentials, ask Antistatique if you don't have one.
     $ npm install -g gulp
 
 ### Each times
 We use Capistrano to deploy:
 
     $ bundle exec cap -T
-    $ bundle exec cap staging deploy
+    $ bundle exec cap rpeti deploy
     
     
 ## Solr
