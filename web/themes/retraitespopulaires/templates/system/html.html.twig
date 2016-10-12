@@ -57,6 +57,10 @@
 <!DOCTYPE html>
 <html {{ html_attributes }}>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Favicons -->
     <link rel="shortcut icon" href="/{{ directory }}/build/favicons/favicon.ico?v=2" />
     <link rel="apple-touch-icon" sizes="57x57" href="/{{ directory }}/build/favicons/apple-icon-57x57.png?v=2">
@@ -82,6 +86,15 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
+
+    <!-- https://blogs.msdn.microsoft.com/ieinternals/2011/05/14/stylesheet-limits-in-internet-explorer -->
+    <!-- Bypass Limitation of IE 9 -->
+    <!--[if IE 9]>
+    <link rel="stylesheet" href="/{{ directory }}/build/css/vendors.min.css">
+    <link rel="stylesheet" href="/{{ directory }}/build/css/main.css">
+    <link rel="stylesheet" href="/{{ directory }}/build/css/ckeditor.css">
+    <![endif]-->
+
   </head>
   <body{{ attributes.addClass(body_classes) }}>
 
