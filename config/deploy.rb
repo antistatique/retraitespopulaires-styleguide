@@ -8,6 +8,8 @@ set :repo_url, 'git@github.com:antistatique/retraitespopulaires.git'
 # set :styleguide_repo, 'git@github.com:antistatique/retraitespopulaires-styleguide.git'
 
 #server 'antistatique.alwaysdata.net', user: 'retraites-populaires', roles: %w{app db web}
+
+# wwweti2.retraitespopulaires.ch
 server '192.168.188.51', user: 'dplweb', roles: %w{app db web}
 
 set :app_path, "web"
