@@ -3,7 +3,7 @@ set :deploy_to, '/data/sites/wwweti2.retraitespopulaires.ch/'
 set :repo_url, 'dplmgr@192.168.188.51:/data/git/retraitespopulaires.git'
 
 # wwweti2.retraitespopulaires.ch
-server '192.168.188.51', user: 'dplmgr', roles: %w{app db web}
+server '192.168.188.51', user: 'dplweb', roles: %w{app db web}
 
 # set a branch for this release
 set :branch, 'dev'
