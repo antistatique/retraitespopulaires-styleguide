@@ -113,7 +113,7 @@ class Request {
                 'offer_target_id' => $fields['node'],
             );
             $request = $this->entity_offers_request->create($data);
-            // $request->save();
+            $request->save();
             return $request;
         }
         return null;
