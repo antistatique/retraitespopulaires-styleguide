@@ -1,13 +1,13 @@
 ---
-title: rentals
-name: rentals
+title: attachments-rentals
+name: attachments-rentals
 collection: organisms
 notes: |
-  ##### Usage : `rentals`
+  ##### Usage : `attachments-rentals`
   ##### Options :
   - **option** - Type
 ---
-<div>
+<div class="attachements-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 last-news-heading">

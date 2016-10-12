@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+
+.teaser-offer {
+  display: flex;
+  margin: 0 auto;
+  max-width: 900px;
+  border: 1px solid $light-gray;
+  border-radius: $border-radius-base;
+
+  .offer-heading {
+    width: 100%;
+  }
+
+  .offer-body {
+    width: 100%;
+    margin: 0;
+    padding: $grid-gutter-width/2;
+    background: $white;
+    color: $text-color;
+  }
+
+  @media only screen and (min-width: $screen-lg-min) {
+    display: flex;
+    flex-direction: column;
+
+    .offer-heading {
+      height: 196px;
+    }
+  }
+
+  .offer-extra {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1em;
+
+    .offer-date { align-self: flex-end; }
+    .offer-infos { text-align: right; }
+  }
+}

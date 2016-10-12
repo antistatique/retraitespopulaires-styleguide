@@ -13,4 +13,8 @@ fieldset {
     &:first-child { margin-top: 0; }
     &:last-child { margin-bottom: 0; }
   }
+
+  &.fieldset-no-legend {
+    legend { display: none; }
+  }
 }

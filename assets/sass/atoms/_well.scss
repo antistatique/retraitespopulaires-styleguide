@@ -1,1 +1,8 @@
 @charset 'UTF-8';
+
+.well {
+  &.well-danger {
+    background-color: lighten($brand-danger, 45%);
+    color: $brand-danger;
+  }
+}
