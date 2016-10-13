@@ -1,5 +1,5 @@
 ---
-title: emplois
+title: liste-emplois
 name: jobs
 collection: emplois
 styleguide: false

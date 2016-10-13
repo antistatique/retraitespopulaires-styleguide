@@ -1,14 +1,14 @@
 ---
-title: form-immobilier-search
-name: form-immobilier-search
+title: form-immo-search
+name: form-immo-search
 collection: organisms
 notes: |
-  ##### Usage : `form-immobilier-search`
+  ##### Usage : `form-immo-search`
   ##### Options :
   - **theme** - String
 ---
 
-<form class="form-immobilier-search">
+<form class="form-immo-search">
 
   <fieldset class="fieldset-bordered">
     <div class="row">

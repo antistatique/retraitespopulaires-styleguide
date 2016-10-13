@@ -1,5 +1,5 @@
 ---
-title: commerces
+title: liste-commerces
 name: flats
 collection: immobiliers
 styleguide: false

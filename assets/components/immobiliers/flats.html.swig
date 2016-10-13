@@ -1,5 +1,5 @@
 ---
-title: appartements
+title: liste-appartements
 name: flats
 collection: immobiliers
 styleguide: false
@@ -22,7 +22,7 @@ layout: immobiliers.html.swig
       <h1 class="page-title text-center">Appartements à louer</h1>
       <div class="spacer"></div>
       <div class="entity-content">
-        {% include '../organisms/form-immobilier-search.html.swig' %}
+        {% include '../organisms/form-immo-search.html.swig' %}
       </div>
     </div>
   </div>
