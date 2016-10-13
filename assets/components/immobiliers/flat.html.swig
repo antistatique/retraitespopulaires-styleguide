@@ -26,7 +26,8 @@ layout: immobiliers.html.swig
       <div class="row">
         <div class="col-xs-12">
           <div class="spacer spacer-sm"></div>
-          {% include '../molecules/immo-heading.html.swig' with {theme: 'immobilier', immo_heading: 'https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_8212.jpg'} %}
+          {% include '../molecules/immo-heading.html.swig' with {theme: 'immobilier', immo_heading: '
+          '} %}
           <img class="img-responsive img-fullwidth" src="/retraitespopulaires-styleguide/build/img/immo-staticmap-detail.png" alt ="" title ="map"/>
           <div class="spacer spacer-sm"></div>
           <table class="table-wide table-immobilier tablesaw tablesaw-stack" data-tablesaw-mode="stack">
