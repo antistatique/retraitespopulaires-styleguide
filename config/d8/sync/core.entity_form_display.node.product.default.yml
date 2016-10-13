@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.product.field_file_product
     - field.field.node.product.field_product_plan
     - field.field.node.product.field_profession
+    - field.field.node.product.field_weight
     - image.style.thumbnail
     - node.type.product
   module:
@@ -27,7 +28,7 @@ third_party_settings:
         - field_faq
         - field_document
       parent_name: ''
-      weight: 7
+      weight: 8
       label: 'Linked Contents'
       format_type: details
       format_settings:
@@ -93,9 +94,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_weight:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   path:
     type: path
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
   title:

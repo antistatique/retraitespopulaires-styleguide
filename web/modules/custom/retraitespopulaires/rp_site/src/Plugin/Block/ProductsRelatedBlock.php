@@ -123,7 +123,7 @@ class ProductsRelatedBlock extends BlockBase implements ContainerFactoryPluginIn
                         ->condition('type', 'product')
                         ->condition('status', 1)
                         ->condition('nid', $node->nid->value, '!=')
-                        ->sort('title', 'ASC');
+                        ->sort('field_weight', 'ASC');
 
                     $group = $query->orConditionGroup();
                     foreach ($plans_tid as $plan) {

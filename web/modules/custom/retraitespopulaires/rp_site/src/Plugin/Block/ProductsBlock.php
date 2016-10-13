@@ -103,7 +103,7 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
                         ->condition('type', 'product')
                         ->condition('status', 1)
                         ->condition('nid', $products_nids, 'IN')
-                        ->sort('title', 'DESC');
+                        ->sort('field_weight', 'ASC');
 
                     if ($filter = \Drupal::request()->query->get('filtre')) {
                         $taxonomy_term_url = $this->alias_manager->getPathByAlias('/plans/'.$filter);
