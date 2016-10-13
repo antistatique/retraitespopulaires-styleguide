@@ -8,8 +8,9 @@
     display: inline-block;
     position: relative;
     padding-left: 5px;
-    text-transform: capitalize;
     font-weight: 600;
+
+    &:first-letter { text-transform: capitalize; }
 
     &:before {
       content: '';
