@@ -30,27 +30,28 @@ layout: immobiliers.html.swig
   </div>
 
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
       <img class="img-responsive img-fullwidth" border="0" src="/retraitespopulaires-styleguide/build/img/immo-staticmap.png" alt="">
       <div class="spacer"></div>
       {% include '../molecules/immo-results.html.swig' %}
       <div class="spacer"></div>
-    </div>
-  </div>
-  <div class="row">
-    {% for flat in data.flats %}
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        {% include '../molecules/teaser-rental.html.swig' with {
-          "rental_heading": flat.rental_heading,
-          "rental_type": flat.rental_type,
-          "rental_title":  flat.rental_title,
-          "rental_address":  flat.rental_address,
-          "rental_rooms": flat.rental_rooms,
-          "rental_surface": flat.rental_surface,
-          "rental_rent": flat.rental_rent,
-        } %}
+
+      <div class="row">
+        {% for flat in data.flats %}
+          <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6 col-xl-4">
+            {% include '../molecules/teaser-rental.html.swig' with {
+              "rental_heading": flat.rental_heading,
+              "rental_type": flat.rental_type,
+              "rental_title":  flat.rental_title,
+              "rental_address":  flat.rental_address,
+              "rental_rooms": flat.rental_rooms,
+              "rental_surface": flat.rental_surface,
+              "rental_rent": flat.rental_rent,
+            } %}
+          </div>
+        {% endfor %}
       </div>
-    {% endfor %}
+    </div>
   </div>
   <div class="spacer"></div>
 
