@@ -5,18 +5,18 @@ dependencies:
   module:
     - node
 id: faq
-label: faq
+label: Questions-réponses
 type: 'canonical_entities:node'
-pattern: 'faq/[node:field_profession]/[node:title]'
+pattern: 'questions-reponses/[node:field_profession]/[node:title]'
 selection_criteria:
-  42e708a2-4fcf-4c0a-8cfe-df9a9ce48c7d:
+  3227fd71-d9d1-486c-97e7-e53ee4dfae4c:
     id: node_type
     bundles:
       faq: faq
     negate: false
     context_mapping:
       node: node
-    uuid: 42e708a2-4fcf-4c0a-8cfe-df9a9ce48c7d
+    uuid: 3227fd71-d9d1-486c-97e7-e53ee4dfae4c
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -8,16 +8,16 @@ dependencies:
 id: faq_taxo
 label: 'FAQ taxo'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'faq/[term:name]'
+pattern: 'questions-reponses/[term:name]'
 selection_criteria:
-  89ea2df4-8a9b-4382-817b-01d378983ad3:
+  93afbab4-df04-42a9-ac64-e1570c0f3178:
     id: 'entity_bundle:taxonomy_term'
     bundles:
       profession: profession
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 89ea2df4-8a9b-4382-817b-01d378983ad3
+    uuid: 93afbab4-df04-42a9-ac64-e1570c0f3178
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -8,7 +8,7 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: FAQ
+name: Questions-réponses
 type: faq
 description: 'Foire aux questions (un type de contenu = question)'
 help: ''
