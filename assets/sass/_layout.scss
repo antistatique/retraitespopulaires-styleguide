@@ -12,6 +12,12 @@ body.no-scroll {
   max-height: 100%;
 }
 
+.container-wrapper-gray {
+  position: relative;
+  padding-top: $grid-gutter-width*2;
+  background: $berrylight-gray;
+}
+
 /**
  * Extend the background to the left or right
  */

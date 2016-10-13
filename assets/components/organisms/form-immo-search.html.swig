@@ -71,11 +71,16 @@ notes: |
     <div class="form-group">
       <label class="d-block">Loyer maximum</label>
       <div class="input-text">
-        <input type="text" name="max_rent" class="form-control" value="">
+        <input type="text" name="max_rent" class="form-control text-right" placeholder="CHF" value="">
       </div>
     </div>
 
-
+    <div class="form-group">
+      <label class="d-block">Surface min.</label>
+      <div class="input-text">
+        <input type="text" name="max_rent" class="form-control text-right" placeholder="m2" value="">
+      </div>
+    </div>
 
     <div class="form-group">
       <label class="d-block">Disponible dès</label>

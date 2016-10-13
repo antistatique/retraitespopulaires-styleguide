@@ -9,7 +9,7 @@ fieldset {
     border-left: 1px solid $input-border;
   }
 
-  .form-group {
+  > .form-group {
     &:first-child { margin-top: 0; }
     &:last-child { margin-bottom: 0; }
   }

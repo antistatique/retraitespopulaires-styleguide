@@ -15,11 +15,11 @@ notes: |
   - **theme** - String
 ---
 <div class="teaser-rental teaser-rental-{{ theme }} shadow shadow-down">
-  <div class="rental-heading" style="background-image: url({% if rental_heading  %} {{ rental_address }} {% else  %} https://unsplash.it/1400/780 {% endif %})"></div>
+  <div class="rental-heading" style="background-image: url({% if rental_heading  %} {{ rental_heading }} {% else  %} https://unsplash.it/1400/780 {% endif %})"></div>
   <div class="rental-body">
-    <a href="#" class="rental-type h1 pretty-link">
-      {% if rental_title  %}
-        {{ rental_title }}
+    <a href="#" class="rental-type h2 pretty-link">
+      {% if rental_type  %}
+        {{ rental_type }}
       {% else  %}
         Appartement
       {% endif %}
