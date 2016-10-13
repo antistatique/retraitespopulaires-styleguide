@@ -27,11 +27,27 @@ layout: emplois.html.swig
           <table class="table-wide table-primary tablesaw tablesaw-stack" data-tablesaw-mode="stack">
            <thead>
             <tr>
-               <th><strong>Poste </strong><a class="text-assurance" href="#"><span class="text-small">▲</span></a> <a class="text-assurance" href="#"><span class="text-small">▼</span></a></th>
-               <th><strong>Métier</strong><a class="text-assurance" href="#"><span class="text-small">▲</span></a> <a class="text-assurance" href="#"><span class="text-small">▼</span></a></th>
-               <th><strong>Type de contrat</strong><a class="text-assurance" href="#"><span class="text-small">▲</span></a> <a class="text-assurance" href="#"><span class="text-small">▼</span></a></th>
-               <th><strong>Lieu de travail</strong><a class="text-assurance" href="#"><span class="text-small">▲</span></a> <a class="text-assurance" href="#"><span class="text-small">▼</span></a></th>
-               <th></th>
+              <th>
+                <strong>Poste </strong>
+                <a class="text-invert no-underline" href="#"><span class="text-small">▲</span></a>
+                <a class="text-invert no-underline" href="#"><span class="text-small">▼</span></a>
+              </th>
+              <th>
+                <strong>Métier</strong>
+                <a class="text-invert no-underline" href="#"><span class="text-small">▲</span></a>
+                <a class="text-invert no-underline" href="#"><span class="text-small">▼</span></a>
+              </th>
+              <th>
+                <strong>Contrat</strong>
+                <a class="text-invert no-underline" href="#"><span class="text-small">▲</span></a>
+                <a class="text-invert no-underline" href="#"><span class="text-small">▼</span></a>
+              </th>
+              <th>
+                <strong>Lieu</strong>
+                <a class="text-invert no-underline" href="#"><span class="text-small">▲</span></a>
+                <a class="text-invert no-underline" href="#"><span class="text-small">▼</span></a>
+              </th>
+              <th></th>
             </tr>
            </thead>
            <tbody>
