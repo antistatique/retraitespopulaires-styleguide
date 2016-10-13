@@ -11,19 +11,19 @@ notes: |
     <div class="form-group">
       <label class="">Votre nom</label>
       <div class="input-text">
-        <input type="text" name="lastname" class="form-control" placeholder="John" value="">
+        <input type="text" size="40" name="lastname" class="form-control" placeholder="John" value="">
       </div>
     </div>
     <div class="form-group">
       <label class="">Votre prénom</label>
       <div class="input-text">
-        <input type="text" name="firstname" class="form-control" placeholder="Doe" value="">
+        <input type="text" size="40" name="firstname" class="form-control" placeholder="Doe" value="">
       </div>
     </div>
     <div class="form-group">
-      <label class="">Votre date de naissance</label>
+      <label class="">Votre date de naissance <span class="text-small text-muted">(jj/mm/aaaa)</span></label>
       <div class="input-text">
-        <input type="text" name="birthdate" class="form-control" placeholder="24/12/2016" value="">
+        <input type="text" size="10" name="birthdate" class="form-control" placeholder="24/12/2016" value="">
       </div>
     </div>
   </fieldset>
@@ -33,19 +33,19 @@ notes: |
     <div class="form-group">
       <label class="">Votre addresse e-mail</label>
       <div class="input-text">
-        <input type="text" name="mail" class="form-control" placeholder="john.doe@retraites-populaires.ch" value="">
+        <input type="text" size="50" name="mail" class="form-control" placeholder="john.doe@retraites-populaires.ch" value="">
       </div>
     </div>
     <div class="form-group">
-      <label class="">Votre Mot de passe</label>
+      <label class="">Votre mot de passe</label>
       <div class="input-text">
-        <input type="password" name="password" class="form-control" value="">
+        <input type="password" size="30" name="password" class="form-control" value="">
       </div>
     </div>
     <div class="form-group">
       <label class="">Confirmer votre mot de passe</label>
       <div class="input-text">
-        <input type="password" name="password_confirmation" class="form-control" value="">
+        <input type="password" size="30" name="password_confirmation" class="form-control" value="">
       </div>
     </div>
   </fieldset>
