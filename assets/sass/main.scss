@@ -44,6 +44,7 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/immo-results';
 @import 'molecules/teaser-offer';
 @import 'molecules/fieldset';
 @import 'molecules/teaser-institution';
@@ -75,3 +76,10 @@
 @import 'organisms/attachments-offers';
 @import 'organisms/attachments-rentals';
 @import 'organisms/attachments-last-news';
+@import 'organisms/attachments-offers';
+@import 'organisms/attachments-job';
+@import 'organisms/footer';
+@import 'organisms/header';
+@import 'organisms/attachments';
+
+// pages:
