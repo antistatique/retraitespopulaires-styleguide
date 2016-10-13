@@ -74,6 +74,8 @@
     letter-spacing: 0.04em;
   }
 
+  .help-block { font-size: ceil($font-size-h6); }
+
   &.error {
     .form-control {
       border-color: $brand-danger;

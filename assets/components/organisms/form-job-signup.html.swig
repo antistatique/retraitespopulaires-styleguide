@@ -41,6 +41,7 @@ notes: |
       <label class="">Votre mot de passe</label>
       <div class="input-text">
         <input type="password" size="30" name="password" class="form-control" value="">
+        <p class="help-block">Le mot de passe doit compter au moins 8 caractères et être différent de l'e-mail.</p>
       </div>
     </div>
     <div class="form-group">
