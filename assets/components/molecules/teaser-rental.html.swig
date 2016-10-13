@@ -5,6 +5,7 @@ collection: molecules
 notes: |
   ##### Usage : `teaser-rental`
   ##### Options :
+  - **rental_orientation** - String
   - **rental_type** - String
   - **rental_heading** - String
   - **rental_title** - String
@@ -14,7 +15,7 @@ notes: |
   - **rental_rent** - String
   - **theme** - String
 ---
-<div class="teaser-rental teaser-rental-{{ theme }} shadow shadow-down">
+<div class="teaser-rental teaser-rental-{{ theme }} teaser-rental-orientation-{{ rental_orientation }} shadow shadow-down">
   <div class="rental-heading" style="background-image: url({% if rental_heading  %} {{ rental_heading }} {% else  %} https://unsplash.it/1400/780 {% endif %})"></div>
   <div class="rental-body">
     <a href="#" class="rental-type h2 pretty-link">

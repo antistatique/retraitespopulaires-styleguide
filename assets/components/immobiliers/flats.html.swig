@@ -31,15 +31,16 @@ layout: immobiliers.html.swig
 
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <img class="img-responsive img-fullwidth" border="0" src="/retraitespopulaires-styleguide/build/img/immo-staticmap.png" alt="">
+      {% include '../atoms/map-card.html.swig' %}
       <div class="spacer"></div>
       {% include '../molecules/immo-results.html.swig' %}
       <div class="spacer"></div>
 
       <div class="row">
         {% for flat in data.flats %}
-          <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6 col-xl-4">
+          <div class="col-xs-12 col-lg-6 col-xl-4">
             {% include '../molecules/teaser-rental.html.swig' with {
+              "rental_orientation": 'auto',
               "rental_heading": flat.rental_heading,
               "rental_type": flat.rental_type,
               "rental_title":  flat.rental_title,

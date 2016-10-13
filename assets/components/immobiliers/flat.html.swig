@@ -22,7 +22,7 @@ layout: immobiliers.html.swig
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <h1 class="page-title text-center">Ch. de Pierrefleur 54, 1004 Lausanne</h1>
-      <div class="spacer spacer-ml"></div>
+      <div class="spacer spacer-md"></div>
       <div class="row">
         <div class="col-xs-12" align="center">
           <ul class="d-inline-block list-no-style list-no-padding list-inline">
@@ -32,13 +32,13 @@ layout: immobiliers.html.swig
           </ul>
         </div>
       </div>
-      <div class="spacer spacer-ml"></div>
+      <div class="spacer spacer-md"></div>
       <div class="row">
         <div class="col-xs-12">
-          {% include '../molecules/immo-heading.html.swig' with {theme: 'immobilier', immo_heading: '
-          '} %}
-          <img class="img-responsive img-fullwidth" src="/retraitespopulaires-styleguide/build/img/immo-staticmap-detail.png" alt ="" title ="map"/>
-          <div class="spacer spacer-ml"></div>
+          {% include '../molecules/immo-heading.html.swig' with {theme: 'immobilier', immo_heading: ''} %}
+          <div class="spacer spacer-xs"></div>
+          {% include '../atoms/map-card.html.swig' %}
+          <div class="spacer spacer-xs"></div>
           <table class="table-wide table-immobilier tablesaw tablesaw-stack" data-tablesaw-mode="stack">
              <thead>
               <tr>
@@ -73,7 +73,7 @@ layout: immobiliers.html.swig
               </tr>
             </tbody>
           </table>
-          <div class="spacer spacer-ml"></div>
+          <div class="spacer spacer-md"></div>
           <div class="entity-content">
             <h4>Descriptif de l'immeuble</h4>
             <br>

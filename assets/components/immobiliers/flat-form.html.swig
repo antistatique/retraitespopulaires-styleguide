@@ -22,11 +22,19 @@ layout: immobiliers.html.swig
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <h1 class="page-title text-center">Demande de renseignements</h1>
       <div class="spacer"></div>
+      {% include '../molecules/teaser-rental.html.swig' with {
+        "rental_heading": data.flats.universite.rental_heading,
+        "rental_type": data.flats.universite.rental_type,
+        "rental_title":  data.flats.universite.rental_title,
+        "rental_address":  data.flats.universite.rental_address,
+        "rental_rooms": data.flats.universite.rental_rooms,
+        "rental_surface": data.flats.universite.rental_surface,
+        "rental_rent": data.flats.universite.rental_rent,
+      } %}
+      <div class="spacer spacer-sm"></div>
       <div class="row">
-        <div class="col-xs-12">
-          <div class="spacer spacer-sm"></div>
-            {% include '../organisms/form-immo-contact.html.swig' with {'light': true} %}
-          <div class="spacer spacer-sm"></div>
+        <div class="col-xs-8 col-xs-offset-2">
+        {% include '../organisms/form-immo-contact.html.swig' with {'light': true} %}
         </div>
       </div>
     </div>
