@@ -22,37 +22,58 @@ layout: immobiliers.html.swig
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <h1 class="page-title text-center">Ch. de Pierrefleur 54, 1004 Lausanne</h1>
-      <div class="spacer"></div>
+      <div class="spacer spacer-ml"></div>
+      <div class="row">
+        <div class="col-xs-12" align="center">
+          <ul class="d-inline-block list-no-style list-no-padding list-inline">
+            <li> <a class="pretty-link" href="#"><span class="text-small">◀</span> Objet précédent</a></li>
+            <li> <a class="pretty-link" href="#">Revenir à la recherche</a></li>
+            <li> <a class="pretty-link" href="#">Objet suivant <span class="text-small">►</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="spacer spacer-ml"></div>
       <div class="row">
         <div class="col-xs-12">
-          <div class="spacer spacer-sm"></div>
           {% include '../molecules/immo-heading.html.swig' with {theme: 'immobilier', immo_heading: '
           '} %}
           <img class="img-responsive img-fullwidth" src="/retraitespopulaires-styleguide/build/img/immo-staticmap-detail.png" alt ="" title ="map"/>
-          <div class="spacer spacer-sm"></div>
+          <div class="spacer spacer-ml"></div>
           <table class="table-wide table-immobilier tablesaw tablesaw-stack" data-tablesaw-mode="stack">
-            <tbody>
+             <thead>
+              <tr>
+                 <th><strong>Données complémentaires</strong></th>
+                 <th></th>
+              </tr>
+             </thead>
+             <tbody>
               <tr>
                  <td><strong>Loyer total</strong></td>
                  <td>1'120</td>
+              </tr>
+              <tr>
                  <td><strong>Étage</strong></td>
                  <td>1er étage</td>
               </tr>
               <tr>
                  <td><strong>Disponibilité</strong></td>
                  <td> de suite ou à convenir</td>
+              </tr>
+              <tr>
                  <td><strong>Type</strong></td>
                  <td>Appartement</td>
               </tr>
               <tr>
                  <td><strong>Orientation</strong></td>
                  <td>Sud</td>
+              </tr>
+              <tr>
                  <td><strong>Année de construction</strong></td>
                  <td>1890</td>
               </tr>
             </tbody>
           </table>
-          <div class="spacer spacer-sm"></div>
+          <div class="spacer spacer-ml"></div>
           <div class="entity-content">
             <h4>Descriptif de l'immeuble</h4>
             <br>

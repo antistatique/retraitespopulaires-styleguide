@@ -19,37 +19,37 @@ notes: |
     <div class="spacer spacer-xs"></div>
     <p>
       {% if immo_ref  %}
-        Référence: {{ immo_ref }}
+        <span class="text-bold">Référence :</span> {{ immo_ref }}
       {% else  %}
-        Référence : 12356789
+        <span class="text-bold">Référence :</span> 12356789
       {% endif %}
     </p>
     <p>
       {% if immo_loyer  %}
-        Loyer mensuel : {{ immo_loyer }}
+        <span class="text-bold">Loyer mensuel :</span> {{ immo_loyer }}
       {% else  %}
-        Loyer mensuel 1'440.-
+        <span class="text-bold">Loyer mensuel :</span> 1'440.-
       {% endif %}
     </p>
     <p>
       {% if immo_pieces  %}
-        Pièces : {{ immo_pieces }}
+        <span class="text-bold">Pièces :</span> {{ immo_pieces }}
       {% else  %}
-        Pièces : 2.5
+        <span class="text-bold">Pièces :</span> 2.5
       {% endif %}
     </p>
     <p>
       {% if immo_charges  %}
-        Pièces : {{ immo_charges }}
+        <span class="text-bold">Charges :</span> {{ immo_charges }}
       {% else  %}
-        Charges : 60.-
+        <span class="text-bold">Charges :</span> 60.-
       {% endif %}
     </p>
     <p>
       {% if immo_surface  %}
-        Surface : {{ immo_surface }}
+        <span class="text-bold">Surface :</span> {{ immo_surface }}
       {% else  %}
-        Surface ~38 m2
+        <span class="text-bold">Surface :</span> ~38 m2
       {% endif %}
     </p>
   </div>
