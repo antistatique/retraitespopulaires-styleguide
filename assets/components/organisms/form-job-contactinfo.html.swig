@@ -5,7 +5,7 @@ collection: organisms
 notes: |
   ##### Usage : `form-job-contactinfo`
 ---
-<form class="form-job-signup">
+<form class="form-job-contactinfo">
   <h3>Informations personnelles</h3>
   <fieldset class="fieldset-bordered">
     <div class="form-group">

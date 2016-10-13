@@ -5,7 +5,7 @@ collection: organisms
 notes: |
   ##### Usage : `form-job-skill`
 ---
-<form class="form-job-signup">
+<form class="form-job-skill">
   <h3>Domaines d'expertise</h3>
   <fieldset class="fieldset-bordered">
     <div class="form-group">
