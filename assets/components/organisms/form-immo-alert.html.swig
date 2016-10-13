@@ -7,7 +7,7 @@ notes: |
 ---
 <div class="form-immo-alert">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-5 col-md-offset-1">
       <h2>Créer une alerte e-mail</h2>
       <div class="spacer spacer-sm"></div>
       <p>Pendant la durée de votre choix, vous recevrez les nouveaux objets correspondant à vos critères de recherche.</p>
