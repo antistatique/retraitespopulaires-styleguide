@@ -6,8 +6,86 @@ styleguide: false
 layout: immobiliers.html.swig
 ---
 {% include '../organisms/header.html.swig' with {'light': true} %}
+<div class="spacer spacer-xl"></div>
 
-<div class="container" style="height: 250px"></div>
+<div class="container">
+  <div class="row"></div>
+    <div class="col-xs-12 text-center">
+      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-immobilier', links: ['Accueil', 'Immobilier',  'Appartements à louer', 'Ch. de Pierrefleur 54, 1004 Lausanne
+']} %}
+      <div class="spacer"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <h1 class="page-title text-center">Ch. de Pierrefleur 54, 1004 Lausanne</h1>
+      <div class="spacer"></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="spacer spacer-sm"></div>
+          {% include '../molecules/immo-heading.html.swig' with {theme: 'immobilier', immo_heading: 'https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_8212.jpg'} %}
+          <img class="img-responsive img-fullwidth" src="/retraitespopulaires-styleguide/build/img/immo-staticmap-detail.png" alt ="" title ="map"/>
+          <div class="spacer spacer-sm"></div>
+          <table class="table-wide table-immobilier tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+            <tbody>
+              <tr>
+                 <td><strong>Loyer total</strong></td>
+                 <td>1'120</td>
+                 <td><strong>Étage</strong></td>
+                 <td>1er étage</td>
+              </tr>
+              <tr>
+                 <td><strong>Disponibilité</strong></td>
+                 <td> de suite ou à convenir</td>
+                 <td><strong>Type</strong></td>
+                 <td>Appartement</td>
+              </tr>
+              <tr>
+                 <td><strong>Orientation</strong></td>
+                 <td>Sud</td>
+                 <td><strong>Année de construction</strong></td>
+                 <td>1890</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="spacer spacer-sm"></div>
+          <div class="entity-content">
+            <h4>Descriptif de l'immeuble</h4>
+            <br>
+            <p>Bel immeuble situé proche du centre-ville, au coeur du quartier de la Cité et à proximité de toutes les commodités.</p>
+            <br>
+            <h4>Descriptif</h4>
+            <br>
+            <ul>
+              <li><strong>Cuisine :</strong> laboratoire</li>
+              <li><strong>Agencement :</strong> cuisinière électrique, frigo</li>
+              <li><strong>Caractéristiques :</strong> hall</li>
+            </ul>
+            <br>
+            <h4>Contact</h4>
+            <br>
+            <p><strong>Bernard Nicod SA</strong>
+            <br>Agence Immobilière, Case postale 1112, 1001 Lausanne, Tél. 021 311 11 11</p>
+            <br>
+            <h4>Pour visiter</h4>
+            <br>
+            <p><strong>Bernard Nicod SA</strong>
+            <br>Agence Immobilière, Case postale 1112, 1001 Lausanne, Tél. 021 311 11 11</p>
+          </div>
+          <div class="spacer spacer-sm"></div>
+          <div class="row">
+            <div class="col-sm-12">
+              {% include '../atoms/button.html.swig' with {theme: 'immobilier', btn_label: 'Demande de renseignement'} %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="spacer"></div>
 {% include '../organisms/footer.html.swig' with {'light': true} %}
