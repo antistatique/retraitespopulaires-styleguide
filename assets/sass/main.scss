@@ -13,6 +13,8 @@
 @import 'ckeditor';
 
 // atoms:
+@import 'atoms/map-card';
+@import 'atoms/input-group';
 @import 'atoms/input-textarea';
 @import 'atoms/well';
 @import 'atoms/hr';
@@ -43,6 +45,9 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/immo-heading';
+@import 'molecules/immo-results';
+@import 'molecules/teaser-offer';
 @import 'molecules/fieldset';
 @import 'molecules/teaser-institution';
 @import 'molecules/teaser-collectivites';
@@ -66,13 +71,14 @@
 @import 'molecules/card-attachement';
 
 // organisms:
-@import 'organisms/form-immobilier';
+@import 'organisms/footer';
+@import 'organisms/header';
+@import 'organisms/attachments';
+@import 'organisms/attachments-job';
 @import 'organisms/attachments-offers';
-@import 'organisms/form-hypotheque';
-@import 'organisms/form-simulateur-retraite';
-@import 'organisms/form-simulateur-libre-passage';
-@import 'organisms/rentals';
-@import 'organisms/last-news';
+@import 'organisms/attachments-rentals';
+@import 'organisms/attachments-last-news';
+@import 'organisms/attachments-offers';
 @import 'organisms/attachments-job';
 @import 'organisms/footer';
 @import 'organisms/header';

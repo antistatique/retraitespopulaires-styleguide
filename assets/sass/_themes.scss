@@ -46,6 +46,11 @@ a.pretty-link {
   }
 }
 
+.text-invert,
+a.text-invert { color: $white; }
+
+a.no-underline:hover { text-decoration: none; }
+
 @each $label, $color in $themes {
   .text-#{$label},
   a.text-#{$label} {

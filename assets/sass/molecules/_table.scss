@@ -23,7 +23,10 @@ table.tablesaw {
 
   tbody {
     font-size: $font-size-base;
-    font-weight: 700;
+
+    td {
+      line-height: 1.2em;
+    }
   }
 
   th,

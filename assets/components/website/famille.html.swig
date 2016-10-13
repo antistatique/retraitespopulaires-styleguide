@@ -52,7 +52,7 @@ layout: website.html.swig
         {% include '../molecules/teaser-contact.html.swig' %}
         {% include '../organisms/attachments-job.html.swig' %}
         <div class="spacer spacer-md"></div>
-        {% include '../organisms/last-news.html.swig' %}
+        {% include '../organisms/attachments-last-news.html.swig' %}
         </div>
       </div>
     </div>

@@ -64,6 +64,7 @@
 
 .btn-icon {
   i {
+    vertical-align: middle;
     font-size: 1.2em;
   }
 }
@@ -88,7 +89,7 @@
 }
 
 .btn-outline {
-  @include button-variant($deep-yellow, $transparent, $deep-yellow);
+  @include button-variant($brand-primary, $transparent, $brand-primary);
 }
 
 .btn-outline-secondary {

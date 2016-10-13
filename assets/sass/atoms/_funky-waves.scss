@@ -28,14 +28,16 @@
         left: 0;
       }
 
-      &.wave-2 {
+      &.wave-2 { /* Set width to 200% for animated waves */
         left: 0;
-        animation: wave-left 50s infinite linear;
+        width: 200%;
+        animation: wave-left 5s infinite linear;
       }
 
-      &.wave-3 {
+      &.wave-3 { /* Set width to 200% for animated waves */
         right: 0;
-        animation: wave-right 30s infinite linear;
+        width: 200%;
+        animation: wave-right 5s infinite linear;
       }
     }
   }

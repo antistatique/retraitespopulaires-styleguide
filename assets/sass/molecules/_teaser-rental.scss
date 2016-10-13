@@ -9,6 +9,8 @@
 
   .rental-heading {
     width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .rental-body {
@@ -28,12 +30,14 @@
     }
   }
 
-  @media only screen and (min-width: $screen-lg-min) {
-    display: flex;
-    flex-direction: column;
+  &.teaser-rental-orientation-auto {
+    @media only screen and (min-width: $screen-lg-min) {
+      display: flex;
+      flex-direction: column;
 
-    .rental-heading {
-      height: 196px;
+      .rental-heading {
+        height: 196px;
+      }
     }
   }
 }

@@ -86,6 +86,28 @@
       </ul>
     </li>
 
+    <li>
+      <span class="styleguide-menu-heading">Immobiliers</span>
+      <ul>
+        {% for page in collections.immobiliers %}
+          <li>
+            <a href="/retraitespopulaires-styleguide/{{page.title|lower}}">{{page.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <span class="styleguide-menu-heading">Emplois</span>
+      <ul>
+        {% for page in collections.emplois %}
+          <li>
+            <a href="/retraitespopulaires-styleguide/{{page.title|lower}}">{{page.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+
   </ul>
 
 

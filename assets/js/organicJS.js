@@ -1,5 +1,7 @@
 import $ from 'jquery';
 
+/* global TimelineLite, Sine */
+
 export function organic_generate () {
   $('.organic-lines').organicJS();
 }
@@ -61,16 +63,15 @@ export function organic_generate () {
     */
     base.generate = function(size, start, end){
       const $svg = _svg('svg', {viewBox: '0 0 1920 220', class:'path-'+size});
-
-      var id = _rand_id();
+      const id = _rand_id();
 
       const $path = _svg('path', {id: id, fill: 'none', stroke: base.options.color, 'stroke-width':styles[size].size, 'vector-effect':'non-scaling-stroke', 'd': start});
 
       $svg.append($path);
 
       $(document).ready(function () {
-        var tl = new TimelineLite();
-        var path = document.getElementById(id);
+        let tl = new TimelineLite();
+        // let path = document.getElementById(id);
         tl.to($path, styles[size].duration, {morphSVG: end, repeat: -1, yoyo: true, ease: Sine.easeInOut});
       });
 

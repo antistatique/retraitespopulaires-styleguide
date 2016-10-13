@@ -22,9 +22,9 @@ layout: website.html.swig
         </div>
       </div>
       <div class="spacer spacer-lg"></div>
-      {% include '../organisms/last-news.html.swig' %}
+      {% include '../organisms/attachments-last-news.html.swig' %}
       <div class="spacer spacer-lg"></div>
-      {% include '../organisms/rentals.html.swig' %}
+      {% include '../organisms/attachments-rentals.html.swig' %}
     </div>
   </div>
 </div>

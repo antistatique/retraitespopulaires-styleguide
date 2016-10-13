@@ -1,0 +1,34 @@
+{
+  "Av. de Morges 26, 1004 Lausanne": {
+    "rental_image": "https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_3860.jpg",
+    "rental_type": "Commerce",
+    "rental_title": "Av. de Morges 26, 1004 Lausanne",
+    "rental_address": "Av. de Morges 26, 1004 Lausanne",
+    "rental_surface": "70m2",
+    "rental_rent": "1'400.-"
+    }, 
+  "Place de Tunnel 17, 1005 Lausanne": {
+    "rental_image": "https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_8821.jpg",
+    "rental_type": "Commerce",
+    "rental_title": "Place de Tunnel 17, 1005 Lausanne",
+    "rental_address": "Place de Tunnel 17, 1005 Lausanne",
+    "rental_surface": "44m2",
+    "rental_rent": "300.-"
+    },
+  "Av. de Lavaux 54, 1009 Pully": {
+    "rental_image": "https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_6630.jpg",
+    "rental_type": "Commerce",
+    "rental_title": "Av. de Lavaux 54, 1009 Pully",
+    "rental_address": "Av. de Lavaux 54, 1009 Pully",
+    "rental_surface": "16m2",
+    "rental_rent": "250.-"
+    }, 
+  "Ch. de Champ-soleil 22, 1012 Lausanne": {
+    "rental_image": "https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_6210.jpg",
+    "rental_type": "Commerce",
+    "rental_title": "Ch. de Champ-soleil 22, 1012 Lausanne",
+    "rental_address": "Ch. de Champ-soleil 22, 1012 Lausanne",
+    "rental_surface": "385m2",
+    "rental_rent": "2'200.-"
+    }
+}
