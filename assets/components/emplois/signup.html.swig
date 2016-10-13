@@ -6,9 +6,8 @@ styleguide: false
 layout: emplois.html.swig
 ---
 {% include '../organisms/header.html.swig' with {'light': true} %}
-
-{% include '../organisms/header.html.swig' with {'light': true} %}
 <div class="spacer spacer-xl"></div>
+<div class="spacer spacer-xl hidden-md hidden-lg"></div>
 
 <div class="container">
   <div class="row"></div>
