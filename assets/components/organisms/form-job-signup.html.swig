@@ -30,10 +30,11 @@ notes: |
 
   <h3>Informations de connexion</h3>
   <fieldset class="fieldset-bordered">
-    <div class="form-group">
+    <div class="form-group error">
       <label class="">Votre addresse e-mail</label>
       <div class="input-text">
         <input type="text" size="50" name="mail" class="form-control" placeholder="john.doe@retraites-populaires.ch" value="">
+        <div class="input-error-desc">Votre addresse e-mail semble invalide.</div>
       </div>
     </div>
     <div class="form-group">
