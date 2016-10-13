@@ -1,0 +1,23 @@
+uuid: 5fafdd6c-9b43-42a8-ace1-aa44872bb5bd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_zip
+    - node.type.contact
+id: node.contact.field_zip
+field_name: field_zip
+entity_type: node
+bundle: contact
+label: NPA
+description: 'Numéro postal d''acheminement'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
