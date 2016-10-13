@@ -23,7 +23,7 @@ notes: |
   </fieldset>
 
   <hr />
+  <a href="#" class="btn btn-outline pull-left">Mot de passe oublié ?</a>
   <button type="submit" class="btn btn-primary btn-lg pull-right">Se connecter</button>
-  <a href="#" class="btn pretty-link pull-right">Mot de passe oublié ?</a>
   <div class="clearfix"></div>
 </form>
