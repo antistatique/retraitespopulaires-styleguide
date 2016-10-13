@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.building.field_latitude
     - field.field.node.building.field_longitude
     - field.field.node.building.field_situation
+    - field.field.node.building.field_virtual_image
     - field.field.node.building.field_virtual_visit
     - node.type.building
   module:
@@ -99,6 +100,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_virtual_image:
+    weight: 113
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_virtual_visit:
     weight: 110
     label: above

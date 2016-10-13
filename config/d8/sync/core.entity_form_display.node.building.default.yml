@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.building.field_latitude
     - field.field.node.building.field_longitude
     - field.field.node.building.field_situation
+    - field.field.node.building.field_virtual_image
     - field.field.node.building.field_virtual_visit
     - image.style.thumbnail
     - node.type.building
@@ -31,6 +32,7 @@ third_party_settings:
         - field_city
         - field_file_plan
         - field_file_building
+        - field_virtual_image
         - field_contact
       parent_name: ''
       weight: 7
@@ -65,7 +67,7 @@ content:
     third_party_settings: {  }
     type: options_select
   field_contact:
-    weight: 12
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -77,13 +79,13 @@ content:
     third_party_settings: {  }
     type: image_image
   field_file_building:
-    weight: 9
+    weight: 7
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
   field_file_plan:
-    weight: 7
+    weight: 6
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -107,6 +109,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_virtual_image:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
   field_virtual_visit:
     weight: 4
     settings:
