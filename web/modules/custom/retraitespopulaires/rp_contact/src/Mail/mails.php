@@ -24,18 +24,13 @@ function rp_contact_mail($key, &$message, $params) {
     switch($key) {
 
         // Sended to admin new main contact
-        case 'admin':
-
-        break;
-
-        // Sended to advisor new contact
-        case 'advisor':
-
+        case 'main_contact':
+            $message['subject'] = t('Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
         break;
 
         // Sended to contact new contact
         case 'contact':
-
+            $message['subject'] = t('Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
         break;
 
     }
