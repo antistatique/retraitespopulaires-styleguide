@@ -82,3 +82,19 @@
     border-color: $brand-primary;
   }
 }
+
+.form-group-inline {
+  .input-checkbox.checkbox-inline:first-child {
+    margin-left: 0;
+  }
+
+  label {
+    &:before {
+      top: 3px;
+    }
+
+    &:after {
+      top: 0;
+    }
+  }
+}

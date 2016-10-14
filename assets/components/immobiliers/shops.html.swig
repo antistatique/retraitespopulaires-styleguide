@@ -1,6 +1,6 @@
 ---
 title: liste-commerces
-name: flats
+name: shops
 collection: immobiliers
 styleguide: false
 layout: immobiliers.html.swig
@@ -12,7 +12,7 @@ layout: immobiliers.html.swig
 <div class="container">
   <div class="row"></div>
     <div class="col-xs-12 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'x-immobilier', links: ['Accueil', 'Immobilier', 'Appartements à louer']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {theme: 'x-immobilier', links: ['Accueil', 'Immobilier', 'Commerces à louer']} %}
       <div class="spacer"></div>
     </div>
   </div>
@@ -21,10 +21,10 @@ layout: immobiliers.html.swig
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <h1 class="page-title text-center">Appartements à louer</h1>
+      <h1 class="page-title text-center">Commerces à louer</h1>
       <div class="spacer"></div>
       <div class="entity-content">
-        {% include '../organisms/form-immobilier-search.html.swig' %}
+        {% include '../organisms/form-immo-search.html.swig' %}
       </div>
     </div>
   </div>
