@@ -97,14 +97,8 @@ layout: website.html.swig
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
       {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance', 'json': 'assurance-vie'} %}
     </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="row">
-          {% include '../molecules/teaser-contact.html.swig' with {'theme': 'assurance'} %}
-        </div>
-      </div>
-    </div>
   </div>
+  {% include '../organisms/attachments-contact.html.swig' with {'attachments_contact_theme': 'assurance'} %}
 </div>
 <div class="attachements-wrapper">
   <div class="container">
