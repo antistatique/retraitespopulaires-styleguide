@@ -1,0 +1,22 @@
+uuid: 6ad6c81f-ca71-46e2-9e72-784dca0abf01
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.product
+id: node.product.status
+field_name: status
+entity_type: node
+bundle: product
+label: 'Statut de publication'
+description: 'Un booléen indiquant si le nœud est publié ou non.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

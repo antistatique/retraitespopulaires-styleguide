@@ -1,0 +1,22 @@
+uuid: d6c9d045-05c5-462d-b67a-4e2794ec05cc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.management_contracts
+id: node.management_contracts.status
+field_name: status
+entity_type: node
+bundle: management_contracts
+label: 'Statut de publication'
+description: 'Un booléen indiquant si le nœud est publié ou non.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

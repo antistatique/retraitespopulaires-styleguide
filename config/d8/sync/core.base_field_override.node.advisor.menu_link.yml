@@ -1,0 +1,20 @@
+uuid: 8f72d275-93ff-440e-a510-741f701ea97c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.advisor
+id: node.advisor.menu_link
+field_name: menu_link
+entity_type: node
+bundle: advisor
+label: 'Lien du menu'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

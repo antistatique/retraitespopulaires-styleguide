@@ -1,0 +1,20 @@
+uuid: 4124e6f4-5f18-4afb-9583-4ce0e7a2111c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.faq
+id: node.faq.uid
+field_name: uid
+entity_type: node
+bundle: faq
+label: 'Écrit par'
+description: 'Le nom d''utilisateur de l''auteur du contenu.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

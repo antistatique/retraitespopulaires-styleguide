@@ -1,0 +1,20 @@
+uuid: fdfe8c30-8d95-44fb-b309-8d8310e05b51
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.product
+  module:
+    - path
+id: node.product.path
+field_name: path
+entity_type: node
+bundle: product
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

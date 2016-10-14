@@ -42,7 +42,7 @@ display:
           items_per_page: 50
           tags:
             previous: '‹ Previous'
-            next: 'Next ›'
+            next: 'Suivant ›'
             first: '« First'
             last: 'Last »'
       style:
@@ -373,7 +373,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: true
           expose:

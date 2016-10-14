@@ -12,7 +12,7 @@ bundle: advisor
 label: 'Email de contact'
 description: 'Lorsque ce champ est rempli, il permet l''affichage d''un formulaire de contact utilisant cette valeur comme e-mail de contact.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

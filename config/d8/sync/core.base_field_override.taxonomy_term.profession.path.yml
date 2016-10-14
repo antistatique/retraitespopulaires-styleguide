@@ -1,0 +1,20 @@
+uuid: 4d6e2d76-2ff6-4298-8585-6bc14867439e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.profession
+  module:
+    - path
+id: taxonomy_term.profession.path
+field_name: path
+entity_type: taxonomy_term
+bundle: profession
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

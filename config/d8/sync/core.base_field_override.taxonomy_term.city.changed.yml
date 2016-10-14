@@ -1,0 +1,18 @@
+uuid: d3c5debf-e64c-48d3-b6c9-4789df13e6fd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.city
+id: taxonomy_term.city.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: city
+label: Modifié
+description: 'L''heure à laquelle le terme a été édité pour la dernière fois.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

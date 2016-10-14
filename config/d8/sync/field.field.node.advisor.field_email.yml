@@ -12,7 +12,7 @@ bundle: advisor
 label: Email
 description: 'E-mail affiché sur l''encart de contact'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

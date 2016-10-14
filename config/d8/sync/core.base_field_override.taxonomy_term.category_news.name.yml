@@ -1,0 +1,18 @@
+uuid: 882303e0-fcc1-4f87-a4b7-ad71699614db
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_news
+id: taxonomy_term.category_news.name
+field_name: name
+entity_type: taxonomy_term
+bundle: category_news
+label: Name
+description: 'Nom du terme.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

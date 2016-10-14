@@ -22,8 +22,10 @@ settings:
             - Strike
             - Superscript
             - Subscript
+            - SpecialChar
             - '-'
             - RemoveFormat
+            - DrupalNbsp
         -
           name: Linking
           items:

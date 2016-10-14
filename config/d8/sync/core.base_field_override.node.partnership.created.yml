@@ -1,0 +1,18 @@
+uuid: af086e0a-6da5-4019-996a-e3c2ddd62a9c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.partnership
+id: node.partnership.created
+field_name: created
+entity_type: node
+bundle: partnership
+label: 'Écrit le'
+description: 'L''heure à laquelle le nœud a été créé.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

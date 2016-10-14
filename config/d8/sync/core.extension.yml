@@ -39,6 +39,7 @@ module:
   path: 0
   rdf: 0
   rp_ckeditor: 0
+  rp_contact: 0
   rp_exchange_rates: 0
   rp_homepage: 0
   rp_layout: 0

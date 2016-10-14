@@ -1,0 +1,18 @@
+uuid: 9c2ba258-0181-4ac4-9fcf-9d4ae437c0cc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_building
+id: taxonomy_term.category_building.name
+field_name: name
+entity_type: taxonomy_term
+bundle: category_building
+label: Name
+description: 'Nom du terme.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -12,7 +12,7 @@ bundle: building
 label: Longitude
 description: 'À remplir, avec son tenant <b>Latitude</b>, afin de placer un marqueur sur la Google map.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

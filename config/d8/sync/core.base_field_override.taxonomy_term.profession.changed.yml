@@ -1,0 +1,18 @@
+uuid: e4370e2a-2374-49d6-8c2b-3fe5333a5d3e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.profession
+id: taxonomy_term.profession.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: profession
+label: Modifié
+description: 'L''heure à laquelle le terme a été édité pour la dernière fois.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

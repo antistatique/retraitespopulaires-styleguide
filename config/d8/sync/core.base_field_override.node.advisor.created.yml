@@ -1,0 +1,18 @@
+uuid: cb4eaeb6-d1e8-4e26-b5a0-6364658b68ad
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.advisor
+id: node.advisor.created
+field_name: created
+entity_type: node
+bundle: advisor
+label: 'Écrit le'
+description: 'L''heure à laquelle le nœud a été créé.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

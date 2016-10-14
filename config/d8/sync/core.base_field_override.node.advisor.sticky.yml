@@ -1,0 +1,22 @@
+uuid: 718e5004-df2f-4df3-ab1e-eeb9dc379f59
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.advisor
+id: node.advisor.sticky
+field_name: sticky
+entity_type: node
+bundle: advisor
+label: 'Epinglé en haut des listes'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

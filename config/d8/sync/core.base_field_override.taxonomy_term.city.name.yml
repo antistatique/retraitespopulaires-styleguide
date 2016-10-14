@@ -1,0 +1,18 @@
+uuid: 48663979-94ef-4853-8728-6ff11109ac2b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.city
+id: taxonomy_term.city.name
+field_name: name
+entity_type: taxonomy_term
+bundle: city
+label: Name
+description: 'Nom du terme.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

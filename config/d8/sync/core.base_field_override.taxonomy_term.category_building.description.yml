@@ -1,0 +1,20 @@
+uuid: 90e8fa98-7207-4e34-85d0-3bc3a9a39d29
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_building
+  module:
+    - text
+id: taxonomy_term.category_building.description
+field_name: description
+entity_type: taxonomy_term
+bundle: category_building
+label: Description
+description: 'Description du terme.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

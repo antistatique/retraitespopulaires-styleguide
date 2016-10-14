@@ -1,0 +1,18 @@
+uuid: ba2ec0f1-d350-453e-8736-524a9e1fd2da
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_building
+id: taxonomy_term.category_building.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: category_building
+label: Modifié
+description: 'L''heure à laquelle le terme a été édité pour la dernière fois.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
