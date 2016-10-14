@@ -13,6 +13,7 @@
 @import 'ckeditor';
 
 // atoms:
+@import 'atoms/map-card';
 @import 'atoms/input-group';
 @import 'atoms/input-textarea';
 @import 'atoms/well';
@@ -44,12 +45,12 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/immo-heading';
+@import 'molecules/immo-results';
 @import 'molecules/teaser-offer';
 @import 'molecules/fieldset';
 @import 'molecules/teaser-institution';
-@import 'molecules/teaser-collectivites';
-@import 'molecules/teaser-entreprise';
-@import 'molecules/teaser-particulier';
+@import 'molecules/teaser-profil';
 @import 'molecules/teaser-basicpage';
 @import 'molecules/teaser-product';
 @import 'molecules/teaser-news';
@@ -75,3 +76,28 @@
 @import 'organisms/attachments-offers';
 @import 'organisms/attachments-rentals';
 @import 'organisms/attachments-last-news';
+@import 'organisms/attachments-offers';
+@import 'organisms/attachments-job';
+@import 'organisms/footer';
+@import 'organisms/header';
+@import 'organisms/attachments';
+
+// pages:
+@import 'pages/immobilier';
+// @import 'pages/simulateur-retraite';
+// @import 'pages/simulateur-libre-passage';
+// @import 'pages/calculateur-hypotheque';
+// @import 'pages/assurance-vie';
+// @import 'pages/famille';
+// @import 'pages/particuliers';
+// @import 'pages/homepage-test';
+// @import 'pages/rp-jeune';
+// @import 'pages/menu-complet';
+// @import 'pages/management_contracts';
+// @import 'pages/product';
+// @import 'pages/partnership';
+// @import 'pages/news';
+// @import 'pages/contact';
+// @import 'pages/advisor';
+// @import 'pages/basic-page';
+// @import 'pages/big-menu';

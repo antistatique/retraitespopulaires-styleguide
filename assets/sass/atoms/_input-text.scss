@@ -53,7 +53,6 @@
     &.label-hidden {
       opacity: 0;
     }
-
   }
 
   legend {
@@ -74,6 +73,8 @@
     color: $brand-danger;
     letter-spacing: 0.04em;
   }
+
+  .help-block { font-size: ceil($font-size-h6); }
 
   &.error {
     .form-control {

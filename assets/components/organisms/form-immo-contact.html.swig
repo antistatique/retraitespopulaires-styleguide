@@ -1,13 +1,11 @@
 ---
-title: form-offer-bella-vita
-name: form-offer-bella-vita
+title: form-immo-contact
+name: form-immo-contact
 collection: organisms
 notes: |
-  ##### Usage : `form-offer-bella-vita`
+  ##### Usage : `form-immo-contact`
 ---
 <form class="form-offer-bella-vita">
-  <h3>Participer aux tirage au sort</h3>
-
   <fieldset class="fieldset-bordered">
     <div class="form-group">
       <label>Votre prénom</label>
@@ -26,7 +24,7 @@ notes: |
     <div class="form-group">
       <label>Votre E-mail</label>
       <div class="input-group">
-        <input type="email" id="email" name="email" value="" size="60" maxlength="254" placeholder="john.doe@retraitespopulaires.ch" class="form-email required form-control" required="required" aria-required="true">
+        <input type="email" id="email" name="email" value="" size="50" maxlength="254" placeholder="john.doe@retraitespopulaires.ch" class="form-email required form-control" required="required" aria-required="true">
       </div>
     </div>
 
@@ -51,10 +49,17 @@ notes: |
       </div>
     </div>
 
+    <div class="form-group">
+      <label class="">Votre message</label>
+      <div class="input-text">
+        <textarea class="form-control full-width" name="message" rows="2" cols="30"></textarea>
+      </div>
+    </div>
+
   </fieldset>
 
   <hr />
 
-  <button type="submit" class="btn btn-primary btn-lg pull-right">Je participe</button>
+  <button type="submit" class="btn btn-primary btn-lg pull-right">Envoyer</button>
   <div class="clearfix"></div>
 </form>

@@ -33,7 +33,7 @@ notes: |
     </tr>
    </tbody>
   </table>
-  <div class="spacer spacer-ml"></div>
+  <div class="spacer spacer-md"></div>
   <table class="table-{{size}} table-hypotheque tablesaw tablesaw-stack" data-tablesaw-mode="stack">
    <thead>
     <tr>
@@ -56,7 +56,7 @@ notes: |
     </tr>
    </tbody>
   </table>
-  <div class="spacer spacer-ml"></div>
+  <div class="spacer spacer-md"></div>
   <table class="table-{{size}} table-hypotheque tablesaw tablesaw-stack" data-tablesaw-mode="stack">
    <thead>
     <tr>
@@ -79,7 +79,7 @@ notes: |
     </tr>
    </tbody>
   </table>
-  <div class="spacer spacer-ml"></div>
+  <div class="spacer spacer-md"></div>
   <table class="table-{{size}} table-hypotheque tablesaw tablesaw-stack" data-tablesaw-mode="stack">
    <thead>
     <tr>
@@ -121,7 +121,7 @@ notes: |
     </tr>
    </tbody>
   </table>
-  <div class="spacer spacer-ml"></div>
+  <div class="spacer spacer-md"></div>
   <button type="submit" class="btn btn-default">Calculer</button>
   <div class="form-group readonly">
     <input type="text" class="form-control" value="Les taux utilisés sont ceux de septembre 2016" readonly></input>

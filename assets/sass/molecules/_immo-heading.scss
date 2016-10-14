@@ -1,0 +1,23 @@
+@charset 'UTF-8';
+
+.immo-heading {
+  display: flex;
+  margin: 0 auto;
+  max-width: 900px;
+  min-height: 250px;
+  border: 1px solid $light-gray;
+  border-radius: $border-radius-base;
+
+  .immo-heading-heading {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .immo-heading-body {
+    width: 100%;
+    margin: 0;
+    padding: $grid-gutter-width/2;
+    color: $text-color;
+  }
+}
