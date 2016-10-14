@@ -1,0 +1,6 @@
+name: Contact
+description: 'Provide contextual blocks for contacting Retraites Populaires'
+package: Retraites Populaires
+type: module
+version: 1.0
+core: 8.x

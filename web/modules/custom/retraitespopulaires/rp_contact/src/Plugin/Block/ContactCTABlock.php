@@ -1,10 +1,10 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_site\Plugin\Block\ContactCTABlock.
+* Contains \Drupal\rp_contact\Plugin\Block\ContactCTABlock.
 */
 
-namespace Drupal\rp_site\Plugin\Block;
+namespace Drupal\rp_contact\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -18,13 +18,13 @@ use Drupal\rp_site\Service\Profession;
 * Provides a 'Contact CTA' Block
 *
 * @Block(
-*   id = "rp_site_contact_cta_block",
+*   id = "rp_contact_contact_cta_block",
 *   admin_label = @Translation("Contact CTA block"),
 * )
 *
 * Inline example:
 * <code>
-* load_block('rp_site_contact_cta_block')
+* load_block('rp_contact_contact_cta_block')
 * </code>
 */
 class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterface {
@@ -92,7 +92,7 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
         }
 
         return [
-            '#theme'     => 'rp_site_contact_cta_block',
+            '#theme'     => 'rp_contact_contact_cta_block',
             '#variables' => $variables,
             '#cache' => [
                 'contexts' => [

@@ -1,10 +1,10 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_site\Plugin\Block\ContactAttachmentBlock.
+* Contains \Drupal\rp_contact\Plugin\Block\ContactAttachmentBlock.
 */
 
-namespace Drupal\rp_site\Plugin\Block;
+namespace Drupal\rp_contact\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -18,13 +18,13 @@ use Drupal\rp_site\Service\Profession;
 * Provides a 'Contact Attachment' Block
 *
 * @Block(
-*   id = "rp_site_contact_attachment_block",
+*   id = "rp_contact_contact_attachment_block",
 *   admin_label = @Translation("Contact Attachment block"),
 * )
 *
 * Inline example:
 * <code>
-* load_block('rp_site_contact_attachment_block')
+* load_block('rp_contact_contact_attachment_block')
 * </code>
 */
 class ContactAttachmentBlock extends BlockBase implements ContainerFactoryPluginInterface {
@@ -92,7 +92,7 @@ class ContactAttachmentBlock extends BlockBase implements ContainerFactoryPlugin
         }
 
         return [
-            '#theme'     => 'rp_site_contact_attachment_block',
+            '#theme'     => 'rp_contact_contact_attachment_block',
             '#variables' => $variables,
             '#cache' => [
                 'contexts' => [
