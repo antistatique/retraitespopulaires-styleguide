@@ -1,7 +1,7 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_site\Plugin\Block\ContactTeaser.
+* Contains \Drupal\rp_site\Plugin\Block\ContactTeaserBlock.
 */
 
 namespace Drupal\rp_site\Plugin\Block;
@@ -23,7 +23,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 * load_block('rp_site_contact_teaser_block')
 * </code>
 */
-class ContactTeaser extends BlockBase {
+class ContactTeaserBlock extends BlockBase {
     /**
     * {@inheritdoc}
     */

@@ -1,9 +1,0 @@
-<div class="{{ theme_hook_original }}">
-  {% set transform = image_style(variables.advisor.field_cover.entity.fid.value, ['thumbnail']) %}
-  <picture>
-    <img class="img-responsive center-block" src="{{ transform.thumbnail }}" alt="{{ variables.advisor.field_firstname.value }} {{ variables.advisor.field_lastname.value }}">
-  </picture>
-
-  <div>{% trans %}N'hésitez pas à <a href="mailto:{{ variables.advisor.field_email.value }}">contacter</a> {{ variables.advisor.field_firstname.value }} {{ variables.advisor.field_lastname.value }}!{% endtrans %}</div>
-  <div><a href="tel:{{ variables.advisor.field_phone.value }}">{{ variables.advisor.field_phone.value }}</a></div>
-</div>

@@ -1,7 +1,7 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_site\Plugin\Block\ContactPlaceholderTeaser.
+* Contains \Drupal\rp_site\Plugin\Block\ContactPlaceholderTeaserBlock.
 */
 
 namespace Drupal\rp_site\Plugin\Block;
@@ -23,7 +23,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 * load_block('rp_site_contact_placeholder_teaser_block')
 * </code>
 */
-class ContactPlaceholderTeaser extends BlockBase {
+class ContactPlaceholderTeaserBlock extends BlockBase {
     /**
     * {@inheritdoc}
     */
