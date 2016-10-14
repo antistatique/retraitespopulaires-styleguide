@@ -83,14 +83,17 @@ layout: website.html.swig
           </div>
         </div>
       </div>
-      <div class="spacer spacer-lg"></div>
-      {% include '../molecules/teaser-contact.html.swig' %}
-      {% include '../organisms/attachments-job.html.swig' %}
-      <div class="spacer spacer-md"></div>
-      {% include '../organisms/attachments-last-news.html.swig' %}
-      </div>
     </div>
   </div>
+
+  <div class="spacer spacer-lg"></div>
+  {% include '../organisms/attachments-contact.html.swig' %}
+  <div class="spacer spacer-lg"></div>
+  {% include '../organisms/attachments-job.html.swig' %}
+  <div class="spacer spacer-md"></div>
+  {% include '../organisms/attachments-last-news.html.swig' %}
+  </div>
+
 </div>
 <div class="spacer"></div>
 {% include '../organisms/footer.html.swig' %}

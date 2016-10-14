@@ -4,14 +4,27 @@
   display: flex;
   margin: 0 auto;
   max-width: 900px;
+  background: $white;
   border: 1px solid $brand-primary;
   border-radius: $border-radius-base;
 
-  .contact-heading {
+  .teaser-contact-heading {
+    position: relative;
     width: 100%;
+
+    .heading-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 2;
+    }
   }
 
-  .contact-body {
+  .teaser-contact-body {
+    width: 100%;
     margin: 0;
     padding: $grid-gutter-width/2;
     color: $text-color;
@@ -23,31 +36,9 @@
     border-top-color: $light-gray;
   }
 
-  .form-inline {
-    display: flex;
-    flex-direction: column;
-  }
-
   @each $label, $color in $themes {
     &.teaser-contact-#{$label} {
       border-color: $color;
-    }
-  }
-
-  @media only screen and (min-width: $screen-sm-min) {
-    .form-inline {
-      flex-direction: row;
-
-      .form-group { margin-right: $grid-gutter-width/2; }
-    }
-  }
-
-  @media only screen and (min-width: $screen-lg-min) {
-    display: flex;
-    flex-direction: column;
-
-    .contact-heading {
-      height: 196px;
     }
   }
 }

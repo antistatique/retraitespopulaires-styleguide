@@ -8,8 +8,9 @@
     display: inline-block;
     position: relative;
     padding-left: 5px;
-    text-transform: capitalize;
     font-weight: 600;
+
+    &:first-letter { text-transform: capitalize; }
 
     &:before {
       content: '';
@@ -79,5 +80,21 @@
   input[type='checkbox']:checked + label:before {
     background-color: $white;
     border-color: $brand-primary;
+  }
+}
+
+.form-group-inline {
+  .input-checkbox.checkbox-inline:first-child {
+    margin-left: 0;
+  }
+
+  label {
+    &:before {
+      top: 3px;
+    }
+
+    &:after {
+      top: 0;
+    }
   }
 }

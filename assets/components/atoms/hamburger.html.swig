@@ -4,8 +4,14 @@ name: hamburger
 collection: atoms
 notes: |
   ##### Usage : `hamburger`
+  ##### Options :
+  - **link** - Boolean
 ---
-<div class="hamburger-wrapper">
+{% if link %}
+  <a href="/retraitespopulaires-styleguide" class="hamburger-wrapper">
+{% else %}
+  <div class="hamburger-wrapper">
+{% endif %}
   <div class="hamburger-button">
     <div class="hamburger">
       <span></span>
@@ -20,4 +26,8 @@ notes: |
     <div class="helper-when-close">Menu</div>
     <div class="helper-when-open">Fermer</div>
   </div>
-</div>
+{% if link %}
+  </a>
+{% else %}
+  </div>
+{% endif %}

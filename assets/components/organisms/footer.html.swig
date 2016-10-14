@@ -4,8 +4,11 @@ name: footer
 collection: organisms
 notes: |
   ##### Usage : `footer`
+  ##### Options :
+  - **light** - Boolean
 ---
 <div class="footer">
+  {% if not light %}
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
@@ -84,6 +87,8 @@ notes: |
   </div>
 
   <div class="spacer spacer-xs"></div>
+  {% endif %}
+
 
   {% include '../atoms/organic-lines.html.swig' %}
 

@@ -18,10 +18,10 @@ notes: |
 	<div class="spacer spacer-sm"></div>
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        {% include '../molecules/teaser-rental.html.swig' %}
+        {% include '../molecules/teaser-rental.html.swig' with {"rental_orientation": 'auto'} %}
       </div>
       <div class="col-xs-12 col-md-6">
-        {% include '../molecules/teaser-rental.html.swig' %}
+        {% include '../molecules/teaser-rental.html.swig' with {"rental_orientation": 'auto'} %}
       </div>
     </div>
   </div>

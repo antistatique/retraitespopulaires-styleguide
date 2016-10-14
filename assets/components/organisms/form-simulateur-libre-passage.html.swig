@@ -14,7 +14,7 @@ notes: |
       <div class="input-group">
         <input type="text" class="form-control datepicker" value="02/12/2016">
         <span class="input-group-btn no-events">
-          <button class="btn btn-default-invert btn-icon btn-" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></i></button>
+          <button class="btn btn-default-invert btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></i></button>
         </span>
       </div>
     </div>
@@ -80,14 +80,14 @@ notes: |
   <fieldset class="fieldset-bordered">
     <div class="form-group">
       <label for="montant">Montant</label>
-      <input class="form-control" id="inputID" type="text" placeholder="CHF"></input>
+      <input class="form-control text-right" id="inputID" type="text" placeholder="CHF"></input>
     </div>
     <div class="form-group">
       <label>Date du versement</label>
       <div class="input-group">
         <input type="text" class="form-control datepicker" value="02/12/2016">
-        <span class="input-group-btn">
-          <button class="btn btn-default btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></i></button>
+        <span class="input-group-btn no-events">
+          <button class="btn btn-default-invert btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></i></button>
         </span>
       </div>
     </div>

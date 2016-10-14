@@ -38,8 +38,6 @@ layout: website.html.swig
           </div>
         </div>
       </div>
-      <div class="spacer spacer-lg"></div>
-      {% include '../molecules/teaser-contact.html.swig' %}
     </div>
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
@@ -47,6 +45,10 @@ layout: website.html.swig
     </div>
   </div>
 </div>
+
+<div class="spacer spacer-lg"></div>
+{% include '../organisms/attachments-contact.html.swig' %}
+
 <div class="attachements-wrapper">
   <div class="container">
     <div class="row">

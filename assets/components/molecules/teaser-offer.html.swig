@@ -8,7 +8,10 @@ notes: |
   - **theme** - String
 ---
 <div class="teaser-offer shadow shadow-down">
-  <div class="offer-heading" style="background-image: url(https://unsplash.it/1400/780)"></div>
+  <a href="#" class="offer-heading">
+    <div class="heading-image" style="background-image: url(https://unsplash.it/780/780?image=1005)"></div>
+    <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>
+  </a>
   <div class="offer-body">
     <a href="#" class="offer-title h1 pretty-link">Festival Lavaux Classic</a>
     <div class="spacer spacer-sm"></div>

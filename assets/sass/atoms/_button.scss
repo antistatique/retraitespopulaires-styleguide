@@ -12,6 +12,7 @@
     border-color 0.25s ease,
     opacity 0.5s ease;
   white-space: normal;
+  @include button-variant($white, $brand-primary, $brand-primary);
 
   &:first-letter {
     text-transform: uppercase;
@@ -64,12 +65,14 @@
 
 .btn-icon {
   i {
+    vertical-align: middle;
     font-size: 1.2em;
   }
 }
 
 .btn-default-invert {
   background-color: $white;
+  border: none;
   color: $brand-primary;
 
   &:hover {
@@ -88,7 +91,7 @@
 }
 
 .btn-outline {
-  @include button-variant($deep-yellow, $transparent, $deep-yellow);
+  @include button-variant($brand-primary, $transparent, $brand-primary);
 }
 
 .btn-outline-secondary {
