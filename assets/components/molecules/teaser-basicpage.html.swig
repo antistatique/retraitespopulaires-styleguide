@@ -12,7 +12,7 @@ notes: |
 ---
 <div class="teaser-basicpage shadow shadow-down">
   <div class="basicpage-heading">
-    <div class="text-primary icon-text icon-text-center">
+    <div class="text-primary {% if icon %} icon-text icon-text-center {% endif %}">
     {% if icon %}
       <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span>
       <a href="#" class="icon-text-txt text-cocon h4">{{ title }}</a>
