@@ -7,7 +7,7 @@ layout: examples.html.swig
 ---
 <div class="row">
   <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-3">
-    {% include '../atoms/loader.html.swig' with  %}
+    {% include '../atoms/loader.html.swig' %}
     <div class="spacer"></div>
     {% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang'} %}
   </div>
