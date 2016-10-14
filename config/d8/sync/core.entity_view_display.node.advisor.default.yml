@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.advisor.field_phone
     - field.field.node.advisor.field_region
     - field.field.node.advisor.field_specialty
+    - field.field.node.advisor.field_zip_codes
     - node.type.advisor
   module:
     - image
@@ -90,6 +91,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_zip_codes:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   links:
     weight: 100
 hidden:

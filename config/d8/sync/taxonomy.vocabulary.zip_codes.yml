@@ -1,0 +1,9 @@
+uuid: 87b6ae0c-9007-45a9-ad2e-0935c4de7ab9
+langcode: und
+status: true
+dependencies: {  }
+name: 'Numéros postales d''acheminement'
+vid: zip_codes
+description: 'NPA liées aux conseillers'
+hierarchy: 0
+weight: 0

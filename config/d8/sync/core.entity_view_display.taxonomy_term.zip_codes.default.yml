@@ -1,0 +1,29 @@
+uuid: 6942c4f8-b097-493f-9b98-437442f5418c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.zip_codes.field_district
+    - taxonomy.vocabulary.zip_codes
+  module:
+    - text
+id: taxonomy_term.zip_codes.default
+targetEntityType: taxonomy_term
+bundle: zip_codes
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_district:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  langcode: true

@@ -1,0 +1,30 @@
+uuid: cd7077e7-d3f2-4b35-9d1b-e7a5a4a552ff
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.zip_codes.field_district
+    - taxonomy.vocabulary.zip_codes
+id: taxonomy_term.zip_codes.default
+targetEntityType: taxonomy_term
+bundle: zip_codes
+mode: default
+content:
+  field_district:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  name:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true
