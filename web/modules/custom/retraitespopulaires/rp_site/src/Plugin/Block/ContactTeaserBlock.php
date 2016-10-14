@@ -11,11 +11,11 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
-* Provides a 'Contact  Teaser' Block
+* Provides a 'Contact Teaser' Block
 *
 * @Block(
 *   id = "rp_site_contact_teaser_block",
-*   admin_label = @Translation("Contact  Teaser block"),
+*   admin_label = @Translation("Contact Teaser block"),
 * )
 *
 * Inline example:

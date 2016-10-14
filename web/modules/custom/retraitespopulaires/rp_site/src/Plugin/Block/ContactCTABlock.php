@@ -1,7 +1,7 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_site\Plugin\Block\ContactAttachmentBlock.
+* Contains \Drupal\rp_site\Plugin\Block\ContactCTABlock.
 */
 
 namespace Drupal\rp_site\Plugin\Block;
@@ -15,19 +15,19 @@ use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\rp_site\Service\Profession;
 
 /**
-* Provides a 'Contact Attachment' Block
+* Provides a 'Contact CTA' Block
 *
 * @Block(
-*   id = "rp_site_contact_attachment_block",
-*   admin_label = @Translation("Contact Attachment block"),
+*   id = "rp_site_contact_cta_block",
+*   admin_label = @Translation("Contact CTA block"),
 * )
 *
 * Inline example:
 * <code>
-* load_block('rp_site_contact_attachment_block')
+* load_block('rp_site_contact_cta_block')
 * </code>
 */
-class ContactAttachmentBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     /**
     * EntityTypeManagerInterface to load Nodes
@@ -92,7 +92,7 @@ class ContactAttachmentBlock extends BlockBase implements ContainerFactoryPlugin
         }
 
         return [
-            '#theme'     => 'rp_site_contact_attachment_block',
+            '#theme'     => 'rp_site_contact_cta_block',
             '#variables' => $variables,
             '#cache' => [
                 'contexts' => [

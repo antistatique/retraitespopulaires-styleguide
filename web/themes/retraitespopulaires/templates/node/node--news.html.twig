@@ -82,6 +82,7 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('content') }}>
+    {{ load_block('rp_site_contact_cta_block') }}
 
     {% if node.body.summary %}
       <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
