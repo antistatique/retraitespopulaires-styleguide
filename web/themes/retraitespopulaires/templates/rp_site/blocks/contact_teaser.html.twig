@@ -1,0 +1,18 @@
+<div class="teaser-contact teaser-contact-{{ variables.node.field_profession.entity.tid.value|theme_profession }} shadow shadow-down">
+  <a href="{{ path('entity.node.canonical', {'node': variables.contact.nid.value}) }}" class="teaser-contact-heading">
+    <div class="heading-image" style="background-image: url({{ variables.contact.field_cover.entity.uri.value }})"></div>
+    <div class="loader-image">
+      <div class="loader">
+        <div class="loader-yingyang loader-{{ variables.node.field_profession.entity.tid.value|theme_profession }}"></div>
+      </div>
+    </div>
+  </a>
+  <div class="teaser-contact-body">
+    <a href="#" class="h3 pretty-link text-{{ variables.node.field_profession.entity.tid.value|theme_profession }}">{{ variables.contact.field_firstname.value ~ ' ' ~ variables.contact.field_lastname.value }}</a>
+    <div class="spacer spacer-sm"></div>
+    <p>
+    {% trans %}N'hésitez pas à contacter {{ variables.contact.field_firstname.value ~ ' ' ~ variables.contact.field_lastname.value }} au <a class="pretty-link text-bold text-{{ variables.node.field_profession.entity.tid.value|theme_profession }}" href="tel:{{ variables.contact.field_phone.value }}">{{ variables.contact.field_phone.value }}</a>.{% endtrans %}
+    </p>
+    <a href="{{ path('entity.node.canonical', {'node': variables.contact.nid.value}) }}" class="btn btn-{{ variables.node.field_profession.entity.tid.value|theme_profession }}">Contacter {{ variables.contact.field_firstname.value ~ ' ' ~ variables.contact.field_lastname.value }}</a>
+  </div>
+</div>
