@@ -1,13 +1,13 @@
 @charset 'UTF-8';
 
-.teaser-contact {
+.teaser-contact-placeholder {
   display: flex;
   margin: 0 auto;
   max-width: 900px;
   border: 1px solid $brand-primary;
   border-radius: $border-radius-base;
 
-  .teaser-contact-heading {
+  .teaser-contact-placeholder-heading {
     position: relative;
     width: 100%;
 
@@ -22,7 +22,7 @@
     }
   }
 
-  .teaser-contact-body {
+  .teaser-contact-placeholder-body {
     width: 100%;
     margin: 0;
     padding: $grid-gutter-width/2;
@@ -39,7 +39,7 @@
   }
 
   @each $label, $color in $themes {
-    &.teaser-contact-#{$label} {
+    &.teaser-contact-placeholder-#{$label} {
       border-color: $color;
     }
   }

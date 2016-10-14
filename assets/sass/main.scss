@@ -56,6 +56,7 @@
 @import 'molecules/teaser-news';
 @import 'molecules/teaser-rental';
 @import 'molecules/teaser-contact';
+@import 'molecules/teaser-contact-placeholder';
 @import 'molecules/breadcrumb';
 @import 'molecules/big-menu-empty';
 @import 'molecules/search-form';
@@ -76,28 +77,4 @@
 @import 'organisms/attachments-offers';
 @import 'organisms/attachments-rentals';
 @import 'organisms/attachments-last-news';
-@import 'organisms/attachments-offers';
-@import 'organisms/attachments-job';
-@import 'organisms/footer';
-@import 'organisms/header';
-@import 'organisms/attachments';
-
-// pages:
-@import 'pages/immobilier';
-// @import 'pages/simulateur-retraite';
-// @import 'pages/simulateur-libre-passage';
-// @import 'pages/calculateur-hypotheque';
-// @import 'pages/assurance-vie';
-// @import 'pages/famille';
-// @import 'pages/particuliers';
-// @import 'pages/homepage-test';
-// @import 'pages/rp-jeune';
-// @import 'pages/menu-complet';
-// @import 'pages/management_contracts';
-// @import 'pages/product';
-// @import 'pages/partnership';
-// @import 'pages/news';
-// @import 'pages/contact';
-// @import 'pages/advisor';
-// @import 'pages/basic-page';
-// @import 'pages/big-menu';
+@import 'organisms/attachments-contact';

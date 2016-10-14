@@ -12,6 +12,7 @@
     border-color 0.25s ease,
     opacity 0.5s ease;
   white-space: normal;
+  @include button-variant($white, $brand-primary, $brand-primary);
 
   &:first-letter {
     text-transform: uppercase;

@@ -16,7 +16,10 @@ notes: |
   - **theme** - String
 ---
 <div class="teaser-rental teaser-rental-{{ theme }} teaser-rental-orientation-{{ rental_orientation }} shadow shadow-down">
-  <div class="rental-heading" style="background-image: url({% if rental_heading  %} {{ rental_heading }} {% else  %} https://unsplash.it/1400/780 {% endif %})"></div>
+  <a href="#" class="rental-heading">
+    <div class="heading-image" style="background-image: url({% if rental_heading  %} {{ rental_heading }} {% else  %} https://unsplash.it/780/780?image=1005 {% endif %})"></div>
+    <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>
+  </a>
   <div class="rental-body">
     <a href="#" class="rental-type h2 pretty-link">
       {% if rental_type  %}
