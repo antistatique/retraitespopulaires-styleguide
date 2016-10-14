@@ -49,6 +49,7 @@
     
 
 
+
   
 <div class="big-menu">
   <div class="container-big-menu container-fuild">
@@ -766,7 +767,7 @@
 
 <div class="container">
   <div class="row"></div>
-    <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
+    <div class="col-xs-12 text-center">
       
 
 <div class="breadcrumb">
@@ -783,21 +784,14 @@
       
         
       
-      <li class="text-prevoyance">Prévoyance professionnelle</li>
+      <li class="x-immobilier">Immobilier</li>
        <li class="text-muted">›</li> 
     
       
       
         
       
-      <li class="text-prevoyance">Transiter entre deux emplois</li>
-       <li class="text-muted">›</li> 
-    
-      
-      
-        
-      
-      <li class="text-muted">Simulateur pour une police de libre passage RP Arc-en-ciel</li>
+      <li class="text-muted">Appartements à louer</li>
       
     
   </ul>
@@ -810,148 +804,104 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-6 col-xl-push-3">
-      <h1 class="page-title text-center">Simulateur pour une police de libre passage RP Arc-en-ciel</h1>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <h1 class="page-title text-center">Appartements à louer</h1>
       <div class="spacer"></div>
-
       <div class="entity-content">
-        <div class="row">
-          <div class="col-xs-8 col-xs-offset-2">
-            <div class="well well-lg">
-              <p>Produit de libre passage permettant de conserver une prévoyance en béton entre deux emplois. Que vous soyez temporairement sans travail ou que vous vous consacriez entièrement à votre activité de jeune parent, il est possible de maintenir votre 2e pilier durant cette période.</p>
-            </div>
-            <div class="spacer"></div>
-            
-<form class="form-simulateur-libre-passage">
-  <h3>Vos données personnelles</h3>
+        
+
+<form class="form-immobilier">
 
   <fieldset class="fieldset-bordered">
-    <div class="form-group">
-      <label>Date de la situation de prévoyance</label>
-      <div class="input-group">
-        <input type="text" class="form-control datepicker" value="02/12/2016">
-        <span class="input-group-btn no-events">
-          <button class="btn btn-default-invert btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></i></button>
-        </span>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label>Canton</label>
+          <select class="form-control full-width">
+            <option value="vd">Vaud</option>
+            <option value="fr">Fribourg</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label>District</label>
+          <select class="form-control full-width">
+            <option value="all">Indiférent</option>
+            <option value="fr">...</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label>Commune</label>
+          <select class="form-control full-width">
+            <option value="all">Indiférent</option>
+            <option value="fr">...</option>
+          </select>
+        </div>
       </div>
     </div>
+    <div class="spacer spacer-xs">
 
+    </div>
     <div class="form-group">
-      <label class="d-block">Sexe</label>
+      <label class="d-block">Nombre de pièces</label>
       <div class="form-group-inline">
-        <div class="input-radio radio-inline">
-          <input type="radio" name="taste" value="f">
-          <label class="option">Femme</label>
+        <div class="input-checkbox checkbox-inline">
+          <input type="checkbox" name="nbpieces" value="1">
+          <label class="option">1</label>
         </div>
-        <div class="input-radio radio-inline">
-          <input type="radio" name="taste" value="h">
-          <label class="option">Homme</label>
+        <div class="input-checkbox checkbox-inline">
+          <input type="checkbox" name="nbpieces" value="2">
+          <label class="option">2</label>
         </div>
-        <div class="input-radio radio-inline">
-          <input type="radio" name="taste" value="other">
-          <label class="option">Ne souhaite pas répondre</label>
+        <div class="input-checkbox checkbox-inline">
+          <input type="checkbox" name="nbpieces" value="3">
+          <label class="option">3</label>
         </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="d-block">Marié(e) ou lié(e) par un partenariat enregistré</label>
-      <div class="form-group-inline">
-        <div class="input-radio radio-inline">
-          <input type="radio" name="etat-civil" value="no">
-          <label class="option">Non</label>
+        <div class="input-checkbox checkbox-inline">
+          <input type="checkbox" name="nbpieces" value="4">
+          <label class="option">4</label>
         </div>
-        <div class="input-radio radio-inline">
-          <input type="radio" name="etat-civil" value="yess">
-          <label class="option">Oui</label>
+        <div class="input-checkbox checkbox-inline">
+          <input type="checkbox" name="nbpieces" value="5">
+          <label class="option">5</label>
         </div>
       </div>
     </div>
-
     <div class="form-group">
-      <label for="pourcentage-rente">Pourcentage souhaité de la rente de vieillesse versée au conjoint (ou partenaire enregistré) survivant</label>
-
-      <div class="input-radio-btn">
-        <div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-md">
-            <input type="radio" name="percents" autocomplete="off"> 0
-          </label>
-          <label class="btn btn-md">
-            <input type="radio" name="percents" autocomplete="off"> 60
-          </label>
-          <label class="btn btn-md">
-            <input type="radio" name="percents" autocomplete="off"> 80
-          </label>
-          <label class="btn btn-md">
-            <input type="radio" name="percents" autocomplete="off"> 100
-          </label>
-        </div>
-        <div class="input-radio-btn-unit">%</div>
-      </div>
-    </div>
-  </fieldset>
-
-  <div class="spacer spacer-sm"></div>
-  <h3>Votre apport de libre passage</h3>
-
-  <fieldset class="fieldset-bordered">
-    <div class="form-group">
-      <label for="montant">Montant</label>
-      <input class="form-control text-right" id="inputID" type="text" placeholder="CHF"></input>
-    </div>
-    <div class="form-group">
-      <label>Date du versement</label>
-      <div class="input-group">
-        <input type="text" class="form-control datepicker" value="02/12/2016">
-        <span class="input-group-btn no-events">
-          <button class="btn btn-default-invert btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></i></button>
-        </span>
+      <label class="d-block">Loyer maximum</label>
+      <div class="input-text">
+        <input type="text" name="max_rent" class="form-control" value="">
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="pourcentage-rente">Âge terme pour le versement des prestations</label>
 
-      <div class="input-radio-btn">
-        <div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 59
-          </label>
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 60
-          </label>
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 61
-          </label>
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 62
-          </label>
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 62
-          </label>
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 63
-          </label>
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 64
-          </label>
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 65
-          </label>
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 66
-          </label>
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 67
-          </label>
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 68
-          </label>
-          <label class="btn btn-sm">
-            <input type="radio" name="percents" autocomplete="off"> 69
-          </label>
+
+    <div class="form-group">
+      <label class="d-block">Disponible dès</label>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label>Mois</label>
+            <select class="form-control full-width">
+              <option value="01">Janvier</option>
+              <option value="02">Février</option>
+              <option value="02">...</option>
+            </select>
+          </div>
         </div>
-        <div class="input-radio-btn-unit">ans</div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label>Année</label>
+            <select class="form-control full-width">
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -959,267 +909,59 @@
 
   <hr />
 
-  <button type="submit" class="btn btn-primary btn-lg pull-right">Calculer</button>
+  <button type="submit" class="btn btn-primary btn-lg pull-right">Rechercher</button>
   <div class="clearfix"></div>
 </form>
 
-          </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      
+<div class="teaser-rental teaser-rental- teaser-rental-orientation- shadow shadow-down">
+  <div class="rental-heading" style="background-image: url( https://unsplash.it/1400/780 )"></div>
+  <div class="rental-body">
+    <a href="#" class="rental-type h2 pretty-link">
+      
+        Appartement
+      
+    </a>
+    <div class="spacer spacer-xs"></div>
+    <a href="#" class="rental-title h1 pretty-link">
+      
+        Av. Collonges 12, 1004 Lausanne
+      
+    </a>
+    <div class="spacer spacer-sm"></div>
+    <div class="row info">
+      <div class="col-sm-6 info-property">
+        <div>
+          
+            3.5 pièces(s)
+          
+        </div>
+        <div>
+          
+            ±64m<sup>2</sup>
+          
+        </div>
+      </div>
+      <div class="col-sm-6 info-rent">
+        <div>Loyer total</div>
+        <div>
+        
+          1'710.-
+        
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
-      <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      
-<div class="secondary-nav secondary-nav-prevoyance">
-  <div class="back">
-    <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-arrow"></a>
-  </div>
-  <div class="secondary-nav-content">
-
-    
-    
-      
-    
-
-    <div class="title h5 text-cocon">Lorem Ipsum</div>
-    <ul class="links list-no-style list-no-padding">
-      
-
-        
-        
-
-        <li class="">
-          
-            <a class="pretty-link" href="#">In eleifend</a>
-          
-        </li>
-
-        
-      
-
-        
-        
-
-        <li class="">
-          
-            <a class="pretty-link" href="#">Purus ut nulla</a>
-          
-        </li>
-
-        
-          <li class="">
-            <ul class="list-no-style list-no-padding">
-              
-            </ul>
-          </li>
-        
-      
-
-        
-        
-
-        <li class="">
-          
-            <a class="pretty-link" href="#">Aliquam lobortis</a>
-          
-        </li>
-
-        
-          <li class="">
-            <ul class="list-no-style list-no-padding">
-              
-            </ul>
-          </li>
-        
-      
-
-        
-        
-
-        <li class="">
-          
-            <a class="pretty-link" href="#">Nam tristique</a>
-          
-        </li>
-
-        
-          <li class="">
-            <ul class="list-no-style list-no-padding">
-              
-            </ul>
-          </li>
-        
-      
-
-        
-        
-
-        <li class="">
-          
-            <a class="pretty-link" href="#">Fringilla</a>
-          
-        </li>
-
-        
-          <li class="">
-            <ul class="list-no-style list-no-padding">
-              
-            </ul>
-          </li>
-        
-      
-    </ul>
   </div>
 </div>
 
     </div>
+
   </div>
-</div>
-
-<div class="spacer spacer-lg"></div>
-
-<div class="attachments-contact">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 last-news-heading">
-        <div class="h2 pull-left">Nous sommes disponible pour vous</div>
-        <a class="pretty-link pretty-link-berrylight-gray pull-right text-prevoyance">Contacter Retraites Populaires</a>
-      </div>
-    </div>
-
-    <div class="spacer"></div>
-    <div class="row">
-      <div class="col-xs-6 col-xs-offset-3">
-        
-<div class="teaser-contact teaser-contact-prevoyance shadow shadow-down">
-  <div class="teaser-contact-heading">
-    <div class="heading-image" style="background-image: url(https://unsplash.it/780/780?image=1005)"></div>
-    <div class="loader-image">
-
-<div class="loader">
-  <div class="loader-yingyang loader-prevoyance"></div>
-</div>
-</div>
-  </div>
-  <div class="teaser-contact-body">
-    <a href="#" class="h3 pretty-link text-prevoyance">Dominique Schmid</a>
-    <div class="spacer spacer-sm"></div>
-    <p>N'hésitez pas à contacter Dominique Schmid au <a class="pretty-link text-bold text-prevoyance" href="tel:0213482626">021 348 26 26</a>.</p>
-    <a href="#" class="btn btn-prevoyance">Contacter Dominique Schmid</a>
-  </div>
-</div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="attachements-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        
-<div class="card-attachement card-attachement-prevoyance shadow shadow-down">
-  <div class="card-title h2">Questions fréquentes</div>
-  <ul class="card-content list-spaced list-unstyled">
-    
-      <li>
-        
-          <a class="text-bold pretty-link h5" href="#">Qu’est-ce qu’un 3e pilier A ou prévoyance liée?</a>
-        
-      </li>
-    
-      <li>
-        
-          <a class="text-bold pretty-link h5" href="#">Comment maintenir son niveau de vie à la retraite?</a>
-        
-      </li>
-    
-      <li>
-        
-          <a class="text-bold pretty-link h5" href="#">Qu’en est-il du 3e pilier en cas de divorce?</a>
-        
-      </li>
-    
-  </ul>
-  <div class="card-footer">
-    <div class="media">
-    <div class="media-left">
-        <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></a>
-    </div>
-    <div class="media-body">
-      <a class="text-bold pretty-link h5" href="#">Accéder à toutes les questions sur le financement</a>
-    </div>
-    </div>
-  </div>
-</div>
-
-      </div>
-      <div class="col-xs-12 col-md-6">
-        
-<div class="card-attachement card-attachement-prevoyance shadow shadow-down">
-  <div class="card-title h2">Documents utiles</div>
-  <ul class="card-content list-spaced list-unstyled">
-    
-      <li>
-        
-          <div class="media">
-            <div class="media-left">
-              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="pretty-link h5">D’un emploi à l’autre, placer son 2e pilier (24 heures) <span class="text-muted text-small">- PDF</span></a>
-            </div>
-          </div>
-        
-      </li>
-    
-      <li>
-        
-          <div class="media">
-            <div class="media-left">
-              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="pretty-link h5">Conditions RP Arc-en-ciel <span class="text-muted text-small">- PDF</span></a>
-            </div>
-          </div>
-        
-      </li>
-    
-      <li>
-        
-          <div class="media">
-            <div class="media-left">
-              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="pretty-link h5">Brochure RP Arc-en-ciel <span class="text-muted text-small">- PDF</span></a>
-            </div>
-          </div>
-        
-      </li>
-    
-  </ul>
-  <div class="card-footer">
-    <div class="media">
-    <div class="media-left">
-        <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></a>
-    </div>
-    <div class="media-body">
-      <a class="text-bold pretty-link h5" href="#">Accéder à tous les formulaires relatifs à la prévoyance professionnelle</a>
-    </div>
-    </div>
-  </div>
-</div>
-
-      </div>
-    </div>
-  </div>
-  
-<div class="organic-lines lines-prevoyance"></div>
-
 </div>
 
 <div class="spacer"></div>
