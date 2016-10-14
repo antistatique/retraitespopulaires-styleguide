@@ -9,8 +9,19 @@
   border-radius: $border-radius-base;
 
   .news-heading {
+    position: relative;
     width: 100%;
     height: 196px;
+
+    .heading-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 2;
+    }
   }
 
   .news-body {

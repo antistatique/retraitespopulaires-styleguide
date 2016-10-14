@@ -45,18 +45,16 @@ layout: website.html.swig
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
       {% include '../molecules/secondary-nav.html.swig' with {'theme': 'primary', 'json': 'particuliers'} %}
     </div>
-    <div class="row">
-      <div class="col-xs-12">
-      <div class="row">
-        <div class="spacer spacer-lg"></div>
-        {% include '../molecules/teaser-contact.html.swig' %}
-        {% include '../organisms/attachments-job.html.swig' %}
-        <div class="spacer spacer-md"></div>
-        {% include '../organisms/attachments-last-news.html.swig' %}
-        </div>
-      </div>
-    </div>
   </div>
 </div>
+
+<div class="spacer spacer-lg"></div>
+{% include '../organisms/attachments-contact.html.swig' %}
+<div class="spacer spacer-lg"></div>
+{% include '../organisms/attachments-job.html.swig' %}
+<div class="spacer spacer-md"></div>
+{% include '../organisms/attachments-last-news.html.swig' %}
+</div>
+
 <div class="spacer"></div>
 {% include '../organisms/footer.html.swig' %}
