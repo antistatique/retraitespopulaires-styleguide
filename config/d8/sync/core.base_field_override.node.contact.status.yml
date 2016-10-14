@@ -1,0 +1,22 @@
+uuid: 0d4b844f-c509-4012-bacd-82a23435ae65
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.contact
+id: node.contact.status
+field_name: status
+entity_type: node
+bundle: contact
+label: 'Statut de publication'
+description: 'Un booléen indiquant si le nœud est publié ou non.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

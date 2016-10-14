@@ -1,0 +1,20 @@
+uuid: 6e417d64-22bb-48ea-9283-291a1c9434a2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.partnership
+  module:
+    - path
+id: node.partnership.path
+field_name: path
+entity_type: node
+bundle: partnership
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,18 @@
+uuid: 468a64df-6bba-47fd-8632-9529c9be4fdb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.management_contracts
+id: node.management_contracts.changed
+field_name: changed
+entity_type: node
+bundle: management_contracts
+label: Modifié
+description: 'Le moment auquel le nœud a été modifié pour la dernière fois.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

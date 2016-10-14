@@ -1,0 +1,18 @@
+uuid: 0b8ab8f1-ad8a-47a9-9fe6-3969b8a975bd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.profession
+id: taxonomy_term.profession.name
+field_name: name
+entity_type: taxonomy_term
+bundle: profession
+label: Name
+description: 'Nom du terme.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

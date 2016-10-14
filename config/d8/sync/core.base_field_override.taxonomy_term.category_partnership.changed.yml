@@ -1,0 +1,18 @@
+uuid: ed4ab6cf-1475-476d-8132-5656489a2d31
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_partnership
+id: taxonomy_term.category_partnership.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: category_partnership
+label: Modifié
+description: 'L''heure à laquelle le terme a été édité pour la dernière fois.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

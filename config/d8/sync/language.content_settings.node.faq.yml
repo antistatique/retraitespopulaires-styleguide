@@ -8,7 +8,7 @@ dependencies:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: true
+    enabled: false
 id: node.faq
 target_entity_type_id: node
 target_bundle: faq

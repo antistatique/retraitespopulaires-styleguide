@@ -1,0 +1,20 @@
+uuid: ccd60869-be06-4bf8-ab71-e57e308b176a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.products_plan
+  module:
+    - text
+id: taxonomy_term.products_plan.description
+field_name: description
+entity_type: taxonomy_term
+bundle: products_plan
+label: Description
+description: 'Description du terme.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

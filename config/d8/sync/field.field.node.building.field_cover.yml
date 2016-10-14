@@ -6,14 +6,7 @@ dependencies:
     - field.storage.node.field_cover
     - node.type.building
   module:
-    - content_translation
     - image
-third_party_settings:
-  content_translation:
-    translation_sync:
-      file: '0'
-      alt: '0'
-      title: '0'
 id: node.building.field_cover
 field_name: field_cover
 entity_type: node
@@ -21,7 +14,7 @@ bundle: building
 label: 'Image de couverture'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

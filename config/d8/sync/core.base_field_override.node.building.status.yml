@@ -1,0 +1,22 @@
+uuid: ff98c0a0-a184-4f1b-9ebf-b593e6d28faf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.building
+id: node.building.status
+field_name: status
+entity_type: node
+bundle: building
+label: 'Statut de publication'
+description: 'Un booléen indiquant si le nœud est publié ou non.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

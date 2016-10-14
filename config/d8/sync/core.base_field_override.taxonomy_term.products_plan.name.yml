@@ -1,0 +1,18 @@
+uuid: a402b317-93c4-4b4a-a180-8b3312974d9c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.products_plan
+id: taxonomy_term.products_plan.name
+field_name: name
+entity_type: taxonomy_term
+bundle: products_plan
+label: Name
+description: 'Nom du terme.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

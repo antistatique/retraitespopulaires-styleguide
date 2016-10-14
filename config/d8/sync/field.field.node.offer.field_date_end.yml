@@ -14,7 +14,7 @@ bundle: offer
 label: 'Date de fin'
 description: 'Affichage du formulaire jusqu''à la date butoir.'
 required: true
-translatable: true
+translatable: false
 default_value:
   -
     default_date_type: relative

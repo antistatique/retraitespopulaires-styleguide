@@ -1,0 +1,20 @@
+uuid: c46161b0-ec49-4b70-9950-782eb010ae2b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.advisor
+  module:
+    - path
+id: node.advisor.path
+field_name: path
+entity_type: node
+bundle: advisor
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

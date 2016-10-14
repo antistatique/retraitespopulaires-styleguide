@@ -1,0 +1,20 @@
+uuid: 522af2cf-b7fb-4109-a7d0-ab1b6ae28022
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.management_contracts
+id: node.management_contracts.uid
+field_name: uid
+entity_type: node
+bundle: management_contracts
+label: 'Écrit par'
+description: 'Le nom d''utilisateur de l''auteur du contenu.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: 618145ea-853e-49b8-ae06-667794fae948
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_partnership
+  module:
+    - path
+id: taxonomy_term.category_partnership.path
+field_name: path
+entity_type: taxonomy_term
+bundle: category_partnership
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

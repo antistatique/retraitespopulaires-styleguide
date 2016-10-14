@@ -1,0 +1,20 @@
+uuid: 04aa28c2-fec8-4a64-b9db-60331f00f327
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.profession
+  module:
+    - text
+id: taxonomy_term.profession.description
+field_name: description
+entity_type: taxonomy_term
+bundle: profession
+label: Description
+description: 'Description du terme.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

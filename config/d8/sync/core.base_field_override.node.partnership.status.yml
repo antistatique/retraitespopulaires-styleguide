@@ -1,0 +1,22 @@
+uuid: 3b8d8b7c-3bb3-45b0-b041-7e39be80f7af
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.partnership
+id: node.partnership.status
+field_name: status
+entity_type: node
+bundle: partnership
+label: 'Statut de publication'
+description: 'Un booléen indiquant si le nœud est publié ou non.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

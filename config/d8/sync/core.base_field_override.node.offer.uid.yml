@@ -1,0 +1,20 @@
+uuid: 437f8d5f-a02d-4017-80b8-793b2e517b0f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.offer
+id: node.offer.uid
+field_name: uid
+entity_type: node
+bundle: offer
+label: 'Écrit par'
+description: 'Le nom d''utilisateur de l''auteur du contenu.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

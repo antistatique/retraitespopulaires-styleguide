@@ -1,0 +1,22 @@
+uuid: cac8443e-b16c-45ca-a80f-ea25667d8f90
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.offer
+id: node.offer.sticky
+field_name: sticky
+entity_type: node
+bundle: offer
+label: 'Epinglé en haut des listes'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

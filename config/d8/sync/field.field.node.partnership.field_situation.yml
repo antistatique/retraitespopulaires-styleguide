@@ -14,7 +14,7 @@ bundle: partnership
 label: 'Compléments d''information'
 description: 'Utilisé pour indiquer l''adresse complète ou toutes autres informations relatives au lieu.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
