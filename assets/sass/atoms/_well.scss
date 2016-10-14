@@ -5,4 +5,9 @@
     background-color: lighten($brand-danger, 45%);
     color: $brand-danger;
   }
+
+  &.well-success {
+    background-color: lighten($brand-success, 45%);
+    color: $brand-success;
+  }
 }
