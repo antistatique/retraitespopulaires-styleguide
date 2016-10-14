@@ -12,7 +12,7 @@ notes: |
     <div class="row">
       <div class="col-xs-12 last-news-heading">
         <div class="h2 pull-left">Nous sommes disponible pour vous</div>
-        <a class="pretty-link pretty-link-berrylight-gray pull-right text-{{ attachments_contact_theme }}">Notre formulaire de contact</a>
+        <a class="pretty-link pretty-link-berrylight-gray pull-right text-{{ attachments_contact_theme }}">Contacter Retraites Populaires</a>
       </div>
     </div>
 

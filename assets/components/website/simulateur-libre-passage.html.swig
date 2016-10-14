@@ -43,7 +43,7 @@ layout: website.html.swig
 </div>
 
 <div class="spacer spacer-lg"></div>
-{% include '../organisms/attachments-contact.html.swig' %}
+{% include '../organisms/attachments-contact.html.swig' {'attachments_contact_theme': 'prevoyance'} %}
 
 <div class="attachements-wrapper">
   <div class="container">
