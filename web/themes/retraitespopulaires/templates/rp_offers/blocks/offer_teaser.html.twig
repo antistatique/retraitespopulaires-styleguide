@@ -1,7 +1,7 @@
 {% if variables.offer.nid.value %}
 <div class="teaser-offer shadow shadow-down">
   <a href="{{ path('entity.node.canonical', {'node': variables.offer.nid.value}) }}" class="offer-heading">
-    <div class="heading-image" style="background-image: url({{ variables.offer.field_cover.entity.uri.value }})"></div>
+    <div class="heading-image" style="background-image: url({{ file_url(variables.offer.field_cover.entity.uri.value) }})"></div>
     <div class="loader-image">
       <div class="loader">
         <div class="loader-yingyang loader-{{ theme }}"></div>

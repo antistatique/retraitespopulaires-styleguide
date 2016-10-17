@@ -130,7 +130,7 @@ class RequestForm extends FormBase {
         );
 
         $form['personnal']['address'] = array(
-            '#title'       => t('Votre addresse'),
+            '#title'       => t('Votre adresse'),
             '#placeholder' => t('Ch. des pinçons 12'),
             '#type'        => 'textfield',
             '#required'    => true,

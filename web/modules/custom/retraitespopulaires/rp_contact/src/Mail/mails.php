@@ -46,7 +46,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('Npa: '). $params['zip'] . '<br />');
             $message['body'][] = Markup::create( t('Ville: '). $params['city'] . '<br />');
             $message['body'][] = Markup::create( t('E-mail: '). $params['email'] . '<br />');
-            $message['body'][] = Markup::create( t('N° de téléphone: '). $params['phone'] . '<br />');
+            $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
         break;
 
     }

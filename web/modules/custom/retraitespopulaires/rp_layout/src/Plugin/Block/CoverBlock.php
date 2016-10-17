@@ -13,6 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\rp_site\Service\Profession;
 
 /**
 * Provides a 'Layout' Cover Block
@@ -37,12 +38,19 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
     private $entity_file;
 
     /**
+     * Profession Service
+     * @var Profession
+     */
+    private $profession;
+
+    /**
      * Class constructor.
      */
-     public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route, EntityTypeManagerInterface $entity) {
+     public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route, EntityTypeManagerInterface $entity, Profession $profession) {
          parent::__construct($configuration, $plugin_id, $plugin_definition);
          $this->route       = $route;
          $this->entity_file = $entity->getStorage('file');
+         $this->profession  = $profession;
      }
 
     /**
@@ -57,7 +65,8 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
              $plugin_definition,
              // Load customs services used in this class.
              $container->get('current_route_match'),
-             $container->get('entity_type.manager')
+             $container->get('entity_type.manager'),
+             $container->get('rp_site.profession')
          );
      }
 
@@ -68,6 +77,9 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
         $variables = array();
 
         $variables['cover'] = $this->_covers();
+        if (isset($node->field_profession->target_id)) {
+            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+        }
 
         return [
             '#theme'     => 'rp_layout_cover_block',
@@ -103,11 +115,6 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
                 'md'  => ImageStyle::load('rp_full_screen_md')->buildUrl($cover->uri->value),
                 'lg'  => ImageStyle::load('rp_full_screen_lg')->buildUrl($cover->uri->value),
                 'xlg' => $cover->url(),
-            );
-        } else {
-            // $cover = file_create_url(drupal_get_path('theme', 'retraitespopulaires').'/build/img/cover_default.jpg');
-            $build = array(
-                'xlg' => 'http://www.famillesausommet.com/images/famille_accueil.jpg',
             );
         }
         return $build;

@@ -183,7 +183,7 @@ class ContactForm extends FormBase {
         );
 
         $form['personnal']['address'] = array(
-            '#title'       => t('Votre addresse'),
+            '#title'       => t('Votre adresse'),
             '#placeholder' => t('Ch. des pinçons 12'),
             '#type'        => 'textfield',
             '#required'    => true,
@@ -224,7 +224,7 @@ class ContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['phone'] = array(
-            '#title'       => t('Votre N° de téléphone'),
+            '#title'       => t('Votre numéro de téléphone'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 20],
@@ -334,13 +334,13 @@ class ContactForm extends FormBase {
 
         // Assert the phone is valid
         if (!$form_state->getValue('phone') || empty($form_state->getValue('phone'))) {
-            $errors['phone'] = t('Le N° de téléphone est obligatoire.');
+            $errors['phone'] = t('Le numéro de téléphone est obligatoire.');
         }else {
             try {
                 $phoneUtil = PhoneNumberUtil::getInstance();
                 $phoneUtil->parse($form_state->getValue('phone'), 'CH');
             } catch (\Exception $e) {
-                $errors['phone'] = t('Votre N° de téléphone est invalide.');
+                $errors['phone'] = t('Votre numéro de téléphone est invalide.');
             }
         }
 
