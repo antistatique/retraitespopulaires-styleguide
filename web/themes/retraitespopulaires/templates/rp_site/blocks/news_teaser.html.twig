@@ -1,6 +1,13 @@
 {% if variables.news.nid.value %}
 <div class="teaser-news shadow shadow-down">
-  <a href="{{ path('entity.node.canonical', {'node': variables.news.nid.value}) }}" class="news-heading" style="background-image: url({{ file_url(variables.news.field_cover.entity.uri.value) }})"></a>
+  <a href="{{ path('entity.node.canonical', {'node': variables.news.nid.value}) }}" class="news-heading">
+    <div class="heading-image" style="background-image: url({{ variables.news.field_cover.entity.uri.value }})"></div>
+    <div class="loader-image">
+      <div class="loader">
+        <div class="loader-yingyang loader-{{ theme }}"></div>
+      </div>
+    </div>
+  </a>
   <div class="news-body">
     <a href="{{ path('entity.node.canonical', {'node': variables.news.nid.value}) }}" class="news-title h1 pretty-link">{{ variables.news.title.value }}</a>
     <div class="spacer spacer-xs"></div>
