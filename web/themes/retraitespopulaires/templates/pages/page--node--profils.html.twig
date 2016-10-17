@@ -90,8 +90,8 @@
     </div>
   </div>
 
-  {{ load_block('rp_site_attachments_block') }}
-  {{ load_block('rp_site_news_latest_block') }}
+  <div class="spacer spacer-xl"></div>
+  {{ load_block('rp_site_pages_collection_block', {'node': node}) }}
 
    {# Content Bottom #}
    {% if page.content_bottom %}
