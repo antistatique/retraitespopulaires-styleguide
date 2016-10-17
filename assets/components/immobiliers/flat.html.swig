@@ -82,7 +82,7 @@ layout: immobiliers.html.swig
             <br>
             <h4>Descriptif</h4>
             <br>
-            <ul>
+            <ul class="unordered-list">
               <li><strong>Cuisine :</strong> laboratoire</li>
               <li><strong>Agencement :</strong> cuisinière électrique, frigo</li>
               <li><strong>Caractéristiques :</strong> hall</li>
