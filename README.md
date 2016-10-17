@@ -164,6 +164,10 @@ We are using solr for search index.
 
 Solr need to be configured for drupal. Follow the INSTALL.txt found in the search_api_solr module.
 
+## Tests
+
+    $ phpunit
+
 ## Troubleshootings
 
 ### Error while importing config ?
