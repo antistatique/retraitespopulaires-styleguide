@@ -8,7 +8,7 @@
   <div class="col-md-8">
     <div class="row flex-row">
       {% for news in variables.news %}
-      <div class="col-xs-12 col-lg-6">
+      <div class="col-xs-12">
         {{ load_block('rp_site_news_teaser_block', {'news': news}) }}
       </div>
       {% endfor %}
