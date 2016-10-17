@@ -47,22 +47,26 @@ class ImportZipCommand {
         $callback = function($chunk, &$handle, $line){
             // Read the line as CSV to retrieve all details
             $values = str_getcsv($chunk);
-            if (!$this->isZipExist($values[0])) {
-                $data = array(
-                    'vid'            => 'zip_codes',
-                    'name'           => $values[0],
-                    'field_district' => $values[1],
-                );
+            if (isset($values[0]) && !empty($values[0]) && isset($values[1]) && !empty($values[1])) {
+                if (!$zip = $this->isZipExist($values[0], $values[1])) {
+                    $data = array(
+                        'vid'            => 'zip_codes',
+                        'name'           => $values[0] . ' '. $values[1],
+                        'field_zip_code' => $values[0],
+                        'field_district' => $values[1],
+                    );
 
-                $zip = $this->entity_taxonomy->create($data);
-                $zip->save();
+                    $zip = $this->entity_taxonomy->create($data);
+                    $zip->save();
+                }
 
                 $advisor = $this->entity_node->load($this->mapAdvisors($values[2]));
-
-                $advisor->field_zip_codes[] = $zip->tid->value;
-                $advisor->field_region = $this->mapRegions($values[3]);
-                // $advisor->save();
-                drush_print('Added ' . $values[0]);
+                $advisor->field_zip_codes->appendItem($zip->tid->value);
+                $advisor->field_region->setValue([
+                    'target_id' => $this->mapRegions($values[3])
+                ]);
+                $advisor->save();
+                drush_print('Added ' . $values[0] .' '. $values[1].' to ' . $advisor->field_firstname->value);
             }
         };
 
@@ -76,37 +80,45 @@ class ImportZipCommand {
      * @param  string      $code [description]
      * @return boolean           [description]
      */
-    protected function isZipExist($zip) {
+    protected function isZipExist($zip, $district) {
+        $term = null;
         $query = $this->entity_query->get('taxonomy_term')
             ->condition('name', $zip)
+            ->condition('field_district', $district)
             ->condition('vid', 'zip_codes')
-            ->count();
         ;
-        return $query->execute() > 0;
+        $tids = $query->execute();
+
+        if (count($tids) > 0) {
+            $tid = reset($tids);
+            $term = $this->entity_taxonomy->load($tid);
+        }
+
+        return $term;
     }
 
     protected function mapAdvisors($advisor) {
         switch ($advisor) {
             case 'Xavier GRANDJEAN':
-                return null;
+                return 158;
                 break;
             case 'Marc WERTH':
-                return null;
+                return 159;
                 break;
             case 'Antonio DA FONTE':
-                return null;
+                return 160;
                 break;
             case 'Pierre-Alain PELLEGRI':
-                return null;
+                return 161;
                 break;
             case 'Emilia OLIVEIRA':
-                return null;
+                return 162;
                 break;
             case 'Michel PASCHE':
                 return 157;
                 break;
             case 'Milko MANTERO':
-                return null;
+                return 163;
                 break;
             case 'Marie-France BARBAY':
                 return 91;
