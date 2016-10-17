@@ -1,9 +1,9 @@
 <div class="wrapper-funky-waves wrapper-funky-waves-{{ variables.theme }}  has-header">
   {% if variables.cover %}
     <picture>
-      <source srcset="{{ variables.cover.xs }}" media="(max-width: 544px)">
-      <source srcset="{{ variables.cover.md }}" media="(max-width: 992px)">
-      <source srcset="{{ variables.cover.lg }}" media="(max-width: 1600px)">
+      <source srcset="{{ file_url(variables.cover.xs) }}" media="(max-width: 544px)">
+      <source srcset="{{ file_url(variables.cover.md) }}" media="(max-width: 992px)">
+      <source srcset="{{ file_url(variables.cover.lg) }}" media="(max-width: 1600px)">
       <img class="img-responsive center-block" src="{{ file_url(variables.cover.xlg) }}" alt="{{ variables.title }}">
     </picture>
   {% endif %}
