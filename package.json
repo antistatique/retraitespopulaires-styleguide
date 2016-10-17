@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "async": "^2.0.0-rc.2",
+    "autonumeric": "^1.9.46",
     "autoprefixer": "^6.2.3",
     "babel-core": "6.8.0",
     "babel-loader": "6.2.4",

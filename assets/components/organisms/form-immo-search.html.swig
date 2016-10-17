@@ -72,7 +72,7 @@ notes: |
         <div class="form-group">
           <label class="d-block">Loyer maximum</label>
           <div class="input-text">
-            <input type="text" name="max_rent" class="form-control form-control-immobilier text-right full-width" placeholder="CHF" value="">
+            <input type="text" name="max_rent" class="form-control form-control-immobilier form-chf-numeric text-right full-width" placeholder="CHF" value="">
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@ notes: |
         <div class="form-group">
           <label class="d-block">Surface min.</label>
           <div class="input-text">
-            <input type="text" name="max_rent" class="form-control form-control-immobilier text-right full-width" placeholder="m2" value="">
+            <input type="text" name="max_rent" class="form-control form-control-immobilier text-right full-width form-surface-numeric" placeholder="m2" value="">
           </div>
         </div>
       </div>
