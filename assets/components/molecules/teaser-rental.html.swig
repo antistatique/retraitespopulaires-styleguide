@@ -21,7 +21,7 @@ notes: |
     <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>
   </a>
   <div class="rental-body">
-    <a href="#" class="rental-type h2 pretty-link">
+    <a href="#" class="rental-type h5 text-muted">
       {% if rental_type  %}
         {{ rental_type }}
       {% else  %}
