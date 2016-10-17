@@ -4,12 +4,16 @@
          xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
          backupGlobals="false"
          colors="true"
-         bootstrap="vendor/autoload.php"
+         bootstrap="tests/bootstrap.php"
          verbose="true"
         >
     <testsuites>
         <testsuite name="drupal-composer-project tests">
             <directory>./test/</directory>
+        </testsuite>
+
+        <testsuite name="custom retraitespopulaires modules tests">
+            <directory>./web/modules/custom/retraitespopulaires/*/tests/</directory>
         </testsuite>
     </testsuites>
 </phpunit>
