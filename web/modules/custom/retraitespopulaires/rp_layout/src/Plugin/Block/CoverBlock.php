@@ -117,7 +117,7 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
                 'xs'  => ImageStyle::load('rp_full_screen_xs')->buildUrl($cover->uri->value),
                 'md'  => ImageStyle::load('rp_full_screen_md')->buildUrl($cover->uri->value),
                 'lg'  => ImageStyle::load('rp_full_screen_lg')->buildUrl($cover->uri->value),
-                'xlg' => $cover->url(),
+                'xlg' => ImageStyle::load('rp_full_screen_xl')->buildUrl($cover->uri->value),
             );
         }
         return $build;
