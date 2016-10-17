@@ -1,0 +1,17 @@
+<div class="teaser-basicpage shadow shadow-down">
+  <div class="basicpage-heading">
+    <div class="text-primary ">
+      <a href="{{ variables.url }}" class="text-cocon h4">{{ variables.title }}</a>
+    </div>
+  </div>
+  <div class="basicpage-body">
+      {% if variables.body %} <p>{{ variables.body }}</p> {% endif %}
+      {% if variables.links %}
+      <ul class="facets-list">
+        {% for subitem in variables.links %}
+          <li><a href="{{ subitem.link.urlObject }}" class="pretty-link">{{ subitem.link.title }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+  </div>
+</div>
