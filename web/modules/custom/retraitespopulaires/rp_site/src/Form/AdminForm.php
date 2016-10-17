@@ -6,6 +6,7 @@
 
 namespace Drupal\rp_site\Form;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -29,11 +30,17 @@ class AdminForm extends FormBase {
     protected $file_usage;
 
     /**
+     * @var EntityTypeManagerInterface
+     */
+    private $entity;
+
+    /**
      * Class constructor.
      */
-    public function __construct(StateInterface $state, FileUsageInterface $file_usage) {
+    public function __construct(StateInterface $state, FileUsageInterface $file_usage, EntityTypeManagerInterface $entity) {
         $this->state      = $state;
         $this->file_usage = $file_usage;
+        $this->entity = $entity;
     }
 
     /**
@@ -44,7 +51,8 @@ class AdminForm extends FormBase {
       return new static(
         // Load the service required to construct this class.
         $container->get('state'),
-        $container->get('file.usage')
+        $container->get('file.usage'),
+        $container->get('entity_type.manager')
       );
     }
 
@@ -71,6 +79,8 @@ class AdminForm extends FormBase {
             '#upload_location' => 'public://rp_site/homepage',
             '#description'     => t('Merci de déposer une image Retina de min. 2200x600 pixels'),
         );
+
+        $nodeEntity = $this->entity->getStorage('node');
 
         // Collection pages settings
         $form['collection'] = array(
@@ -271,6 +281,44 @@ class AdminForm extends FormBase {
             '#default_value' => $this->state->get('rp_site.settings.profils.public')['menu'] ? $this->state->get('rp_site.settings.profils.public')['menu'] : 'menu_link_content:a7007bf2-c605-4284-8a24-5c4ee23717b7',
         );
 
+        $form['collection']['contacts_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Contacts - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.contacts')['nid'],
+        );
+        $form['collection']['contacts_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Contacts - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.contacts')['theme'] ? $this->state->get('rp_site.settings.collection.contacts')['theme'] : 'contacts',
+        );
+
+        $form['collection']['advisors_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Conseillers - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.advisors')['nid'],
+        );
+        $form['collection']['advisors_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Conseillers - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.advisors')['theme'] ? $this->state->get('rp_site.settings.collection.advisors')['theme'] : 'advisors',
+        );
+
+        $form['collection']['mortgage_calculator_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'  => 'node',
+            '#title'         => 'Calculateur d\'hypothèque - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.mortgage_calculator')['nid'] ? $nodeEntity->load($this->state->get('rp_site.settings.collection.mortgage_calculator')['nid']) : NULL,
+        );
+
+        $form['collection']['mortgage_calculator_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Calculateur d\'hypothèque - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.mortgage_calculator')['theme'] ? $this->state->get('rp_site.settings.collection.mortgage_calculator')['theme'] : 'mortgage_calculator',
+        );
+
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => $this->t('Save'),
@@ -361,6 +409,11 @@ class AdminForm extends FormBase {
         $this->state->set('rp_site.settings.collection.advisors', array(
             'nid' => trim($form_state->getValue('advisors_nid')),
             'theme' => trim($form_state->getValue('advisors_theme')),
+        ));
+
+        $this->state->set('rp_site.settings.collection.mortgage_calculator', array(
+            'nid' => trim($form_state->getValue('mortgage_calculator_nid')),
+            'theme' => trim($form_state->getValue('mortgage_calculator_theme')),
         ));
     }
 
