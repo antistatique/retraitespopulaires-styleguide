@@ -77,8 +77,11 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
         $variables = array();
 
         $variables['cover'] = $this->_covers();
-        if (isset($node->field_profession->target_id)) {
-            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+
+        if ($node = $this->route->getParameter('node')) {
+            if (isset($node->field_profession->target_id)) {
+                $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+            }
         }
 
         return [
