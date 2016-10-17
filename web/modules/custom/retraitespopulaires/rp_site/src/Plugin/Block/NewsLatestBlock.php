@@ -132,6 +132,22 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
                 'name' => $this->profession->name($node->field_profession->target_id),
                 'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid'], 'taxonomy_term_alias' => $alias])
             );
+        }else {
+            $now = date('Y-m-d h:i:s');
+            $query = $this->entity_query->get('node')
+                ->condition('type', 'news')
+                ->condition('status', 1)
+                ->condition('field_date', $now, '<=')
+                ->sort('field_date', 'DESC')
+                ->range(0, 3);
+
+            $nids = $query->execute();
+            $variables['news'] = $this->entity_node->loadMultiple($nids);
+
+            $variables['collection'] = array(
+                'name' => null,
+                'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid']])
+            );
         }
 
         return [

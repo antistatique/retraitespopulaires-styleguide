@@ -1,0 +1,16 @@
+{% if variables.profils %}
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <h1 class="page-title text-center">{% trans %}Le spécialiste vaudois de l'assurance vie et de la prévoyance professionnelle{% endtrans %}</h1>
+    <div class="spacer"></div>
+  </div>
+</div>
+
+<div class="row">
+  {% for profil in variables.profils %}
+  <div class="col-xs-12 col-sm-4">
+    {{ load_block('rp_homepage_profil_teaser_block', {'profil': profil}) }}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
