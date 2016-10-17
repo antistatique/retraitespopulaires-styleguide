@@ -17,7 +17,7 @@ notes: |
         <div class="form-group">
           <div class="input-group full-width">
             <label for="interval">Durée</label>
-            <select class="form-control" name="interval">
+            <select class="form-control select-immo" name="interval">
               <option value="1">1 mois</option>
               <option value="2">2 mois</option>
               <option value="3" selected>3 mois</option>
@@ -29,7 +29,7 @@ notes: |
           <div class="input-group full-width">
             <input type="text" class="form-control full-width" placeholder="Ex: jane.doe@bluewin.ch">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Inscription</button>
+              <button class="btn btn-immobilier" type="button">Inscription</button>
             </span>
           </div>
         </div>

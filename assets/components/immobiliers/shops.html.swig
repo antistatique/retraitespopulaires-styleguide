@@ -12,7 +12,7 @@ layout: immobiliers.html.swig
 <div class="container">
   <div class="row"></div>
     <div class="col-xs-12 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'x-immobilier', links: ['Accueil', 'Immobilier', 'Commerces à louer']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-immobilier', links: ['Accueil', 'Immobilier', 'Commerces à louer']} %}
       <div class="spacer"></div>
     </div>
   </div>

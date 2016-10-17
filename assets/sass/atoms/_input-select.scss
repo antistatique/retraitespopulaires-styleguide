@@ -4,18 +4,10 @@ select.form-control {
   cursor: pointer;
   height: 50.78px;
   padding: 0.7em 40px 0.7em 0.7em;
-  background: $input-bg url('../svg/arrow-select.svg') 98% center no-repeat;
-  background-size: 23px 11px;
   border: 1px solid $input-border;
   color: $input-color;
-  appearance: none;
 
   &.full-width {
     width: 100%;
-  }
-
-  &:focus {
-    background: $input-bg url('../svg/arrow-select.svg') 98% center no-repeat;
-    background-size: 23px 11px;
   }
 }

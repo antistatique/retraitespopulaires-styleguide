@@ -15,7 +15,7 @@ notes: |
       <div class="col-sm-4">
         <div class="form-group">
           <label>Canton</label>
-          <select class="form-control full-width">
+          <select class="form-control form-control-immobilier full-width">
             <option value="vd">Vaud</option>
             <option value="fr">Fribourg</option>
           </select>
@@ -24,7 +24,7 @@ notes: |
       <div class="col-sm-4">
         <div class="form-group">
           <label>District</label>
-          <select class="form-control full-width">
+          <select class="form-control form-control-immobilier full-width">
             <option value="all">Indifférent</option>
             <option value="fr">...</option>
           </select>
@@ -33,7 +33,7 @@ notes: |
       <div class="col-sm-4">
         <div class="form-group">
           <label>Commune</label>
-          <select class="form-control full-width">
+          <select class="form-control form-control-immobilier full-width">
             <option value="all">Indifférente</option>
             <option value="fr">...</option>
           </select>
@@ -71,14 +71,14 @@ notes: |
     <div class="form-group">
       <label class="d-block">Loyer maximum</label>
       <div class="input-text">
-        <input type="text" name="max_rent" class="form-control text-right" placeholder="CHF" value="">
+        <input type="text" name="max_rent" class="form-control form-control-immobilier text-right" placeholder="CHF" value="">
       </div>
     </div>
 
     <div class="form-group">
       <label class="d-block">Surface min.</label>
       <div class="input-text">
-        <input type="text" name="max_rent" class="form-control text-right" placeholder="m2" value="">
+        <input type="text" name="max_rent" class="form-control form-control-immobilier text-right" placeholder="m2" value="">
       </div>
     </div>
     <div class="form-group">
@@ -87,7 +87,7 @@ notes: |
         <div class="col-sm-3">
           <div class="form-group">
             <label>Mois</label>
-            <select class="form-control full-width">
+            <select class="form-control form-control-immobilier full-width">
               <option value="01">Janvier</option>
               <option value="02">Février</option>
               <option value="02">...</option>
@@ -97,7 +97,7 @@ notes: |
         <div class="col-sm-3">
           <div class="form-group">
             <label>Année</label>
-            <select class="form-control full-width">
+            <select class="form-control form-control-immobilier full-width">
               <option value="2016">2016</option>
               <option value="2017">2017</option>
             </select>
@@ -110,6 +110,6 @@ notes: |
 
   <hr />
 
-  <button type="submit" class="btn btn-primary btn-lg pull-right">Rechercher</button>
+  <button type="submit" class="btn btn-immobilier btn-lg pull-right">Rechercher</button>
   <div class="clearfix"></div>
 </form>

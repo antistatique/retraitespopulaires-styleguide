@@ -49,6 +49,7 @@ layout: immobiliers.html.swig
               "rental_rooms": flat.rental_rooms,
               "rental_surface": flat.rental_surface,
               "rental_rent": flat.rental_rent,
+              "theme": "immobilier",
             } %}
           </div>
         {% endfor %}
