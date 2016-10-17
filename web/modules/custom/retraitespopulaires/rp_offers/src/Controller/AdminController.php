@@ -155,7 +155,7 @@ class AdminController extends ControllerBase {
     * Admin requests csv.
     */
     public function requestsCsv() {
-        $filename = 'Offres Bella Vita - Results.csv';
+        $filename = 'Offres Bella vita - Results.csv';
 
         $response = new StreamedResponse();
         $response->setCallback(function() {

@@ -1,5 +1,5 @@
 rp_offers.admin:
-    title: Offres Bella Vita
+    title: Offres Bella vita
     parent: rp_toolbar.admin
     route_name: rp_offers.admin
 rp_offers.admin.settings:

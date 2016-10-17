@@ -41,7 +41,7 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
         $links = [ Link::createFromRoute(t('Home'), '<front>') ];
         if ('offer' == $type) {
             $links[] = Link::createFromRoute(
-                t('Offre Bella Vita'),
+                t('Offre Bella vita'),
                 'entity.node.canonical',
                 ['node' => $state->get('rp_site.settings.collection.news')['nid']]
             );
