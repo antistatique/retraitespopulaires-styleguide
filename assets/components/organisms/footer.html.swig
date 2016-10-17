@@ -64,7 +64,7 @@ notes: |
     <div class="row">
       <div class="col-xs-12 col-md-5 col-md-offset-1">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
-        <p>Le Bulletin des spécialistes de Retraites Populaires, directement par email:</p>
+        <p>Recevez <a href="/savoir-faire" class="pretty-link text-italic"><i>Savoir-faire</i></a>, le bulletin des spécialistes de Retraites&nbsp;Populaires, trois fois par année via e-mail:</p>
         <form>
           <div class="form-group">
             <div class="input-group full-width">
@@ -81,7 +81,6 @@ notes: |
         <div class="spacer spacer-md visible-xs visible-sm"></div>
         <p>Contactez-nous</p>
         {% include '../molecules/tabs.html.swig' %}
-        <a href="mailto:info@retraitespopulaires.ch" class="text-large">info@retraitespopulaires.ch</a>
       </div>
     </div>
   </div>
