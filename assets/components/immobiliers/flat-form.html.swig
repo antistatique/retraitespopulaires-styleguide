@@ -5,7 +5,7 @@ collection: immobiliers
 styleguide: false
 layout: immobiliers.html.swig
 ---
-{% include '../organisms/header.html.swig' with {'light': true} %}
+{% include '../organisms/header.html.swig' with {'light': true, 'theme': 'immobilier'} %}
 <div class="spacer spacer-xl"></div>
 <div class="spacer spacer-xl hidden-md hidden-lg"></div>
 
@@ -44,4 +44,4 @@ layout: immobiliers.html.swig
 </div>
 
 <div class="spacer"></div>
-{% include '../organisms/footer.html.swig' with {'light': true} %}
+{% include '../organisms/footer.html.swig' with {'light': true, 'theme': 'immobilier'} %}

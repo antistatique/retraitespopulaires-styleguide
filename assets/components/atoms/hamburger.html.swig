@@ -6,11 +6,12 @@ notes: |
   ##### Usage : `hamburger`
   ##### Options :
   - **link** - Boolean
+  - **theme** - Theme
 ---
 {% if link %}
-  <a href="/retraitespopulaires-styleguide" class="hamburger-wrapper">
+  <a href="#" class="hamburger-wrapper hamburger-{{theme}}">
 {% else %}
-  <div class="hamburger-wrapper">
+  <div class="hamburger-wrapper hamburger-{{theme}}">
 {% endif %}
   <div class="hamburger-button">
     <div class="hamburger">
