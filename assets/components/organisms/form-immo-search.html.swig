@@ -40,76 +40,79 @@ notes: |
         </div>
       </div>
     </div>
-    <div class="spacer spacer-xs">
-
-    </div>
-    <div class="form-group">
-      <label class="d-block">Nombre de pièces</label>
-      <div class="form-group-inline">
-        <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="1">
-          <label class="option">1</label>
-        </div>
-        <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="2">
-          <label class="option">2</label>
-        </div>
-        <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="3">
-          <label class="option">3</label>
-        </div>
-        <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="4">
-          <label class="option">4</label>
-        </div>
-        <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="5">
-          <label class="option">5</label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="d-block">Loyer maximum</label>
-      <div class="input-text">
-        <input type="text" name="max_rent" class="form-control form-control-immobilier text-right" placeholder="CHF" value="">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="d-block">Surface min.</label>
-      <div class="input-text">
-        <input type="text" name="max_rent" class="form-control form-control-immobilier text-right" placeholder="m2" value="">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="d-block">Disponible dès</label>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="form-group">
-            <label>Mois</label>
-            <select class="form-control form-control-immobilier full-width">
-              <option value="01">Janvier</option>
-              <option value="02">Février</option>
-              <option value="02">...</option>
-            </select>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="d-block">Nombre de pièces</label>
+          <div class="form-group-inline">
+            <div class="input-checkbox checkbox-inline">
+              <input type="checkbox" name="nbpieces" value="1">
+              <label class="option">1</label>
+            </div>
+            <div class="input-checkbox checkbox-inline">
+              <input type="checkbox" name="nbpieces" value="2">
+              <label class="option">2</label>
+            </div>
+            <div class="input-checkbox checkbox-inline">
+              <input type="checkbox" name="nbpieces" value="3">
+              <label class="option">3</label>
+            </div>
+            <div class="input-checkbox checkbox-inline">
+              <input type="checkbox" name="nbpieces" value="4">
+              <label class="option">4</label>
+            </div>
+            <div class="input-checkbox checkbox-inline">
+              <input type="checkbox" name="nbpieces" value="5">
+              <label class="option">5</label>
+            </div>
           </div>
         </div>
-        <div class="col-sm-3">
-          <div class="form-group">
-            <label>Année</label>
-            <select class="form-control form-control-immobilier full-width">
-              <option value="2016">2016</option>
-              <option value="2017">2017</option>
-            </select>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="d-block">Loyer maximum</label>
+          <div class="input-text">
+            <input type="text" name="max_rent" class="form-control form-control-immobilier text-right full-width" placeholder="CHF" value="">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="d-block">Surface min.</label>
+          <div class="input-text">
+            <input type="text" name="max_rent" class="form-control form-control-immobilier text-right full-width" placeholder="m2" value="">
           </div>
         </div>
       </div>
     </div>
-
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="spacer spacer-xs"></div>
+        <div class="spacer spacer-sm"></div>
+        <label class="d-block">Disponible dès</label>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <select class="form-control form-control-immobilier full-width">
+            <option value="01">Janvier</option>
+            <option value="02">Février</option>
+            <option value="02">...</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <select class="form-control form-control-immobilier full-width">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-4">
+      <div class="spacer spacer-sm"></div>
+        <button type="submit" class="btn btn-immobilier pull-right">Rechercher</button>
+      </div>
+    </div>
   </fieldset>
-
-  <hr />
-
-  <button type="submit" class="btn btn-immobilier btn-lg pull-right">Rechercher</button>
   <div class="clearfix"></div>
 </form>
