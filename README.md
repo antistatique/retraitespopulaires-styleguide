@@ -188,7 +188,7 @@ A better way is to use the `example.settings.local.php` that do more for your de
  1. Copy the example local file:
 
   ```bash
-  $ cp sites/example.settings.local.xml sites/default/settings.local.php
+  $ cp sites/example.settings.local.php sites/default/settings.local.php
   ```
 
  2. Uncomment the following line in your `settings.php`
