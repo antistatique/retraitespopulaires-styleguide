@@ -378,10 +378,12 @@ class ContactForm extends FormBase {
 
             // Send to admin
             $to = $advisor->field_email_form->value;
-            $this->mail->mail('rp_contact', 'contact', $to, 'fr', $data);
+            $reply = $form_state->getValue('email');
+            $this->mail->mail('rp_contact', 'contact', $to, 'fr', $data, $reply);
 
-            drupal_set_message(t('Merci @firstname pour votre demande. Nous allons rapidement traitez votre demander et vous recontactez à l\'adresse @email ou par téléphone au @phone.', [
+            drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traitez votre demander et vous recontactez à l\'adresse @email ou par téléphone au @phone.', [
                 '@firstname' => $form_state->getValue('firstname'),
+                '@lastname'  => $form_state->getValue('lastname'),
                 '@email'     => $form_state->getValue('email'),
                 '@phone'     => $form_state->getValue('phone'),
             ]));
