@@ -6,8 +6,8 @@
   min-height: 25vh;
   background: $brand-primary;
 
-  @media (min-width: $screen-xl-min) {
-    min-height: 350px;
+  @media (min-width: $screen-md-min) {
+    min-height: 300px;
   }
 
   // Add padding of the header size
