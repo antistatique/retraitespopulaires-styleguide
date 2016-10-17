@@ -54,7 +54,9 @@
     <div class="row">
       <div class="col-xs-12 col-md-5 col-md-offset-1">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
-        <p>{% trans %}Recevez <a href="/savoir-faire" class="pretty-link text-italic"><i>Savoir-faire</i></a>, le bulletin des spécialistes de Retraites&nbsp;Populaires, trois fois par année via e-mail:{% endtrans %}</p>
+        <p>
+          {% set link = path('entity.node.canonical', {'node': 179}) %}
+          {% trans %}Recevez <a href="{{ link }}" class="pretty-link text-italic"><i>Savoir-faire</i></a>, le bulletin des spécialistes de Retraites&nbsp;Populaires, trois fois par année via e-mail:{% endtrans %}</p>
         {{ load_form('rp_newsletter', 'SubscribeForm') }}
       </div>
 
