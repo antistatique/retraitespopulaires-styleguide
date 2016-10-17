@@ -91,6 +91,16 @@ class AdminForm extends FormBase {
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_site.settings.profils.individual')['menu'] ? $this->state->get('rp_site.settings.profils.individual')['menu'] : 'menu_link_content:5b39083f-b9e1-4b3c-9146-c6c674cf844f',
         );
+        $form['profils']['profil_individual_menu_project'] = array(
+            '#type'          => 'textarea',
+            '#title'         => 'Profil Particulier, Nouveau projet - menu IDs',
+            '#default_value' => $this->state->get('rp_site.settings.profils.individual')['menu_project'] ? join(';', $this->state->get('rp_site.settings.profils.individual')['menu_project']) : '',
+        );
+        $form['profils']['profil_individual_menu_client'] = array(
+            '#type'          => 'textarea',
+            '#title'         => 'Profil Particulier, Déjà client - menu IDs',
+            '#default_value' => $this->state->get('rp_site.settings.profils.individual')['menu_client'] ? join(';', $this->state->get('rp_site.settings.profils.individual')['menu_client']) : '',
+        );
 
         $form['profils']['profil_company_nid'] = array(
             '#type'          => 'textfield',
@@ -177,6 +187,8 @@ class AdminForm extends FormBase {
             'nid' => trim($form_state->getValue('profil_individual_nid')),
             'theme' => trim($form_state->getValue('profil_individual_theme')),
             'menu' => trim($form_state->getValue('profil_individual_menu')),
+            'menu_project' => explode(';', $form_state->getValue('profil_individual_menu_project')),
+            'menu_client' => explode(';', $form_state->getValue('profil_individual_menu_client')),
         ));
 
         $this->state->set('rp_site.settings.profils.company', array(

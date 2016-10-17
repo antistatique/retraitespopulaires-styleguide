@@ -80,7 +80,6 @@ class PagesCollectionBlock extends BlockBase implements ContainerFactoryPluginIn
         $parameters = $this->menu_tree->getCurrentRouteMenuTreeParameters('profil');
         $parameters->onlyEnabledLinks();
         $parameters->expandedParents = array();
-        $parameters->setTopLevelOnly();
 
         // Transform the tree using the manipulators you want.
         $manipulators = array(
@@ -91,14 +90,20 @@ class PagesCollectionBlock extends BlockBase implements ContainerFactoryPluginIn
         if ($params['node']->nid->value == $this->state->get('rp_site.settings.profils.individual')['nid']) {
             $parameters->setRoot($this->state->get('rp_site.settings.profils.individual')['menu']);
             $tree = $this->menu_tree->load('profil', $parameters);
+
+            $manipulators_project = $manipulators;
+            $manipulators_project['project'] = array('callable' => 'rp_site.menu_transformers:getIndividualProjectOnly');
             $variables['profil'][] = array(
                 'title' => t('Vous avez un nouveau projet ?'),
-                'menu'  => $this->menu_tree->transform($tree, $manipulators),
+                'menu'  => $this->menu_tree->transform($tree, $manipulators_project),
             );
 
+            $tree = $this->menu_tree->load('profil', $parameters);
+            $manipulators_client = $manipulators;
+            $manipulators_client['client'] = array('callable' => 'rp_site.menu_transformers:getIndividualClientOnly');
             $variables['profil'][] = array(
                 'title' => t('Déja assuré ?'),
-                'menu'  => $this->menu_tree->transform($tree, $manipulators),
+                'menu'  => $this->menu_tree->transform($tree, $manipulators_client),
             );
         }
 
