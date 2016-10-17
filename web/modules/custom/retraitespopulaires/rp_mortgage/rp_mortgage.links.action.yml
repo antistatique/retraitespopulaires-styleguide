@@ -1,0 +1,5 @@
+entity.rp_mortgage_rate.add_form:
+  route_name: entity.rp_mortgage_rate.add_form
+  title: 'Add Rate'
+  appears_on:
+    - entity.rp_mortgage_rate.collection
