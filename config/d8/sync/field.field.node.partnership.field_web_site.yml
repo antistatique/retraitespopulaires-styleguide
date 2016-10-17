@@ -11,7 +11,7 @@ id: node.partnership.field_web_site
 field_name: field_web_site
 entity_type: node
 bundle: partnership
-label: 'Web site'
+label: 'Site internet'
 description: ''
 required: false
 translatable: false

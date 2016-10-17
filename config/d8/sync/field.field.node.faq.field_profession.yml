@@ -10,7 +10,7 @@ id: node.faq.field_profession
 field_name: field_profession
 entity_type: node
 bundle: faq
-label: Profession
+label: Métier
 description: ''
 required: false
 translatable: false

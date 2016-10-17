@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Document
 type: document
-description: 'Useful document'
+description: 'Document ou formulaire à télécharger, qui peut être lié à un contenu'
 help: ''
 new_revision: false
 preview_mode: 0

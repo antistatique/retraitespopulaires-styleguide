@@ -11,7 +11,7 @@ id: node.partnership.body
 field_name: body
 entity_type: node
 bundle: partnership
-label: Body
+label: Description
 description: ''
 required: false
 translatable: false

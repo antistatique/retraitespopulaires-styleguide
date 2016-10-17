@@ -11,7 +11,7 @@ id: node.management_contracts.field_web_site
 field_name: field_web_site
 entity_type: node
 bundle: management_contracts
-label: 'Web site'
+label: 'Site internet'
 description: ''
 required: false
 translatable: false

@@ -12,18 +12,32 @@ dependencies:
     - path
 third_party_settings:
   field_group:
-    group_attachments:
+    group_tabs:
       children:
-        - field_profession
+        - group_info
       parent_name: ''
-      weight: 2
-      label: 'Linked Contents'
-      format_type: details
+      weight: 0
+      label: Tabs
+      format_type: tabs
       format_settings:
-        open: false
-        required_fields: true
+        direction: vertical
         classes: ''
         id: ''
+    group_info:
+      children:
+        - title
+        - field_file_document
+        - field_profession
+      parent_name: group_tabs
+      weight: 5
+      label: 'Données principales'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
 id: node.document.default
 targetEntityType: node
 bundle: document
@@ -36,13 +50,13 @@ content:
     third_party_settings: {  }
     type: file_generic
   field_profession:
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
   path:
     type: path
-    weight: 3
+    weight: 1
     settings: {  }
     third_party_settings: {  }
   title:

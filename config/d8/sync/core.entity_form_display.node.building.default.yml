@@ -29,20 +29,79 @@ third_party_settings:
     group_attachments:
       children:
         - field_virtual_visit
-        - field_city
         - field_file_plan
         - field_file_building
         - field_virtual_image
-        - field_contact
-      parent_name: ''
-      weight: 7
-      label: Attachments
-      format_type: details
+      parent_name: group_tabs
+      weight: 3
+      label: 'Elements attachés'
+      format_type: tab
       format_settings:
-        open: false
+        label: 'Elements attachés'
+        formatter: closed
+        description: ''
         required_fields: true
+        id: ''
+        classes: ''
+    group_info:
+      children:
+        - title
+        - field_cover
+        - body
+        - field_building_type
+      parent_name: group_tabs
+      weight: 1
+      label: 'Données principales'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
         classes: ''
         id: ''
+        required_fields: true
+    group_tabs:
+      children:
+        - group_info
+        - group_geo
+        - group_attachments
+        - group_contacts
+      parent_name: ''
+      weight: 0
+      label: Tabs
+      format_type: tabs
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
+    group_geo:
+      children:
+        - field_city
+        - field_latitude
+        - field_longitude
+        - field_situation
+      parent_name: group_tabs
+      weight: 2
+      label: 'Position géographique'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_contacts:
+      children:
+        - field_contact
+      parent_name: group_tabs
+      weight: 4
+      label: 'Elements de contact'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
 id: node.building.default
 targetEntityType: node
 bundle: building
@@ -50,7 +109,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 1
+    weight: 2
     settings:
       rows: 9
       summary_rows: 3
@@ -72,7 +131,7 @@ content:
     third_party_settings: {  }
     type: options_select
   field_cover:
-    weight: 2
+    weight: 1
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -91,19 +150,19 @@ content:
     third_party_settings: {  }
     type: file_generic
   field_latitude:
-    weight: 4
+    weight: 6
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
   field_longitude:
-    weight: 5
+    weight: 7
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
   field_situation:
-    weight: 6
+    weight: 8
     settings:
       rows: 5
       placeholder: ''
@@ -125,7 +184,7 @@ content:
     type: link_default
   path:
     type: path
-    weight: 8
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   title:

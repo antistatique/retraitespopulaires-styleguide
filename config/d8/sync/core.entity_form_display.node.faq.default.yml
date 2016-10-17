@@ -15,20 +15,34 @@ dependencies:
     - text
 third_party_settings:
   field_group:
-    group_attachments:
+    group_tabs:
       children:
-        - field_profession
-        - field_file_faq
+        - group_info
       parent_name: ''
       weight: 3
-      label: 'Linked Contents'
-      format_type: details
+      label: Tabs
+      format_type: tabs
       format_settings:
-        label: 'Linked Contents'
-        required_fields: true
-        id: ''
+        direction: vertical
         classes: ''
-        open: false
+        id: ''
+    group_info:
+      children:
+        - title
+        - body
+        - field_faq_type
+        - field_profession
+        - field_file_faq
+      parent_name: group_tabs
+      weight: 7
+      label: 'Données principales'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
 id: node.faq.default
 targetEntityType: node
 bundle: faq
@@ -48,13 +62,13 @@ content:
     third_party_settings: {  }
     type: options_select
   field_file_faq:
-    weight: 29
+    weight: 4
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
   field_profession:
-    weight: 27
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select

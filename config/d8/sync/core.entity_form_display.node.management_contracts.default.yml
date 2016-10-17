@@ -19,17 +19,45 @@ third_party_settings:
   field_group:
     group_attachments:
       children:
+        - title
+        - field_logo
+        - body
+        - field_web_site
+      parent_name: group_tabs
+      weight: 5
+      label: 'Données principales'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_contacts:
+      children:
         - field_contact
+      parent_name: group_tabs
+      weight: 6
+      label: 'Elements de contact'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_tabs:
+      children:
+        - group_attachments
+        - group_contacts
       parent_name: ''
       weight: 4
-      label: 'Linked Contents'
-      format_type: details
+      label: Tabs
+      format_type: tabs
       format_settings:
-        label: 'Linked Contents'
-        required_fields: true
-        id: ''
+        direction: vertical
         classes: ''
-        open: false
+        id: ''
 id: node.management_contracts.default
 targetEntityType: node
 bundle: management_contracts
@@ -64,7 +92,7 @@ content:
     type: link_default
   path:
     type: path
-    weight: 5
+    weight: 7
     settings: {  }
     third_party_settings: {  }
   title:

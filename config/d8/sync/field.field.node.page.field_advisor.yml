@@ -10,7 +10,7 @@ id: node.page.field_advisor
 field_name: field_advisor
 entity_type: node
 bundle: page
-label: Advisor
+label: Conseiller(s)
 description: ''
 required: false
 translatable: false

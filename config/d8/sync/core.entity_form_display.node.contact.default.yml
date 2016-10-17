@@ -14,16 +14,51 @@ dependencies:
     - image.style.thumbnail
     - node.type.contact
   module:
+    - field_group
     - image
     - path
     - telephone
+third_party_settings:
+  field_group:
+    group_info:
+      children:
+        - title
+        - field_lastname
+        - field_firstname
+        - field_cover
+        - field_email
+        - field_email_form
+        - field_phone
+        - field_fax
+        - field_zip
+      parent_name: group_tabs
+      weight: 111
+      label: 'Données principales'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_tabs:
+      children:
+        - group_info
+      parent_name: ''
+      weight: 111
+      label: Tabs
+      format_type: tabs
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
 id: node.contact.default
 targetEntityType: node
 bundle: contact
 mode: default
 content:
   field_cover:
-    weight: 1
+    weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -57,7 +92,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_lastname:
-    weight: 3
+    weight: 1
     settings:
       size: 60
       placeholder: ''

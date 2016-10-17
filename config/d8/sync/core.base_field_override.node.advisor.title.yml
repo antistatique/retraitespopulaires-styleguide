@@ -8,7 +8,7 @@ id: node.advisor.title
 field_name: title
 entity_type: node
 bundle: advisor
-label: 'Titre d''identification du conseiller'
+label: 'Nom et prénom du conseiller'
 description: ''
 required: true
 translatable: false

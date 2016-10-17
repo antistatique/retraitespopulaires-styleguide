@@ -10,7 +10,7 @@ id: node.product.field_faq
 field_name: field_faq
 entity_type: node
 bundle: product
-label: FAQ
+label: 'Questions-réponses attaché(s)'
 description: ''
 required: false
 translatable: false

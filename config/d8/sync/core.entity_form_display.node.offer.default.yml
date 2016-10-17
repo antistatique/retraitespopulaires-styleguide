@@ -22,14 +22,32 @@ third_party_settings:
   field_group:
     group_attachments:
       children:
+        - title
+        - field_cover
+        - body
+        - field_date_end
+        - field_available_offers
         - field_profession
-      parent_name: ''
-      weight: 9
-      label: 'Linked Contents'
+        - field_web_site
+      parent_name: group_tabs
+      weight: 2
+      label: 'Données principales'
       format_type: details
       format_settings:
-        open: false
+        label: 'Données principales'
         required_fields: true
+        id: ''
+        classes: ''
+        open: false
+    group_tabs:
+      children:
+        - group_attachments
+      parent_name: ''
+      weight: 1
+      label: Tabs
+      format_type: tabs
+      format_settings:
+        direction: vertical
         classes: ''
         id: ''
 id: node.offer.default
@@ -46,7 +64,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_available_offers:
-    weight: 6
+    weight: 5
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -64,12 +82,12 @@ content:
     third_party_settings: {  }
     type: datetime_default
   field_profession:
-    weight: 13
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_web_site:
-    weight: 8
+    weight: 7
     settings:
       placeholder_url: ''
       placeholder_title: ''

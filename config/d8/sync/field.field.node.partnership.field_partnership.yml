@@ -10,7 +10,7 @@ id: node.partnership.field_partnership
 field_name: field_partnership
 entity_type: node
 bundle: partnership
-label: Partnership
+label: 'Type de partenaire'
 description: ''
 required: true
 translatable: false

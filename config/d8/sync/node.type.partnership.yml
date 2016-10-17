@@ -8,7 +8,7 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Partnership
+name: Partenaire
 type: partnership
 description: 'Les partenaires (ex : festival)'
 help: ''

@@ -10,7 +10,7 @@ field_name: field_specialty
 entity_type: node
 bundle: advisor
 label: Spécialité
-description: ''
+description: 'Par exemple : Spécialiste Service conseil en prévoyance professionnelle'
 required: false
 translatable: false
 default_value: {  }

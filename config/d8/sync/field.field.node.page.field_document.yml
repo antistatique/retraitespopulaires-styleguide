@@ -10,7 +10,7 @@ id: node.page.field_document
 field_name: field_document
 entity_type: node
 bundle: page
-label: Document
+label: Document(s)
 description: ''
 required: false
 translatable: false

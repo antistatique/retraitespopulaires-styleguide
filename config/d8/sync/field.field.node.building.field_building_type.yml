@@ -10,7 +10,7 @@ id: node.building.field_building_type
 field_name: field_building_type
 entity_type: node
 bundle: building
-label: 'Building type'
+label: 'Type de construction'
 description: ''
 required: true
 translatable: false

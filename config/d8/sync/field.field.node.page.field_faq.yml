@@ -10,7 +10,7 @@ id: node.page.field_faq
 field_name: field_faq
 entity_type: node
 bundle: page
-label: FAQ
+label: Questions-réponses
 description: ''
 required: false
 translatable: false

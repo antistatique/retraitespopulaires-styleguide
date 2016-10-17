@@ -9,7 +9,7 @@ id: node.news.field_firstname
 field_name: field_firstname
 entity_type: node
 bundle: news
-label: Firstname
+label: Prénom
 description: ''
 required: false
 translatable: false
