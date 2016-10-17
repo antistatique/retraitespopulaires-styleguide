@@ -47,6 +47,7 @@ module:
   rp_exchange_rates: 0
   rp_homepage: 0
   rp_layout: 0
+  rp_mortgage: 0
   rp_newsletter: 0
   rp_offers: 0
   rp_simulators: 0
