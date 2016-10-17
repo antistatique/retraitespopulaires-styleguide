@@ -42,6 +42,18 @@ class Contact {
     public $phone_nyon = '+41 21 348 20 20';
 
     /**
+    * Yverdon mail contact
+    * @var String
+    */
+    public $email_yverdon = 'nyon@retraitespopulaires.ch';
+
+    /**
+    * Nyon mail contact
+    * @var String
+    */
+    public $email_nyon = 'yverdon@retraitespopulaires.ch';
+
+    /**
     * Twitter url
     * @var String
     */
