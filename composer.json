@@ -36,7 +36,8 @@
         "drupal/mailsystem": "^8",
         "drupal/swiftmailer": "^8",
         "swiftmailer/swiftmailer": "5.2.*@stable",
-        "giggsey/libphonenumber-for-php": "^7.3"
+        "giggsey/libphonenumber-for-php": "^7.3",
+        "drupal/focal_point": "^8"
     },
     "require-dev": {
        "behat/mink": "~1.7",

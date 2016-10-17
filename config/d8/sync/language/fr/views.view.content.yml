@@ -48,9 +48,6 @@ display:
         title:
           expose:
             label: Titre
-        langcode:
-          expose:
-            label: Langue
       title: Contenu
       empty:
         area_text_custom:

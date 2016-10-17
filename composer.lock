@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9e91c528e20960cbf43e238943ceee98",
-    "content-hash": "8822e14f4b6d84b101207fe6a8acba3d",
+    "hash": "833dde487d3d718c7f309d1a04c33431",
+    "content-hash": "24e06746603083d101241f6bcb6f5672",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1539,6 +1539,46 @@
             "time": "2016-10-11 10:18:49"
         },
         {
+            "name": "drupal/crop",
+            "version": "8.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/crop.git",
+                "reference": "8506e099c9f7cd889db4e982890011df2b956bca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/crop-8.x-1.0-rc1.zip",
+                "reference": "8506e099c9f7cd889db4e982890011df2b956bca",
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*",
+                "drupal/image": "8.*",
+                "drupal/user": "8.*"
+            },
+            "replace": {
+                "drupal/crop_media_entity": "self.version"
+            },
+            "suggest": {
+                "drupal/core": "Required by drupal/crop_media_entity",
+                "drupal/media_entity": "Required by drupal/crop_media_entity"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Provides storage and API for image crops.",
+            "homepage": "https://www.drupal.org/project/crop",
+            "time": "2016-05-18 15:47:02"
+        },
+        {
             "name": "drupal/ctools",
             "version": "8.3.0-alpha27",
             "source": {
@@ -1638,7 +1678,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/editor_advanced_link-8.x-1.3.zip",
-                "reference": null,
+                "reference": "fef08c8dd4b9ebff80d075da9c3222c118272165",
                 "shasum": null
             },
             "require": {
@@ -1698,6 +1738,39 @@
             "time": "2015-12-10 12:36:16"
         },
         {
+            "name": "drupal/focal_point",
+            "version": "8.1.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/focal_point",
+                "reference": "5f122a98c854c6f70f2683a3f5583a769dcde85a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/focal_point-8.x-1.0-beta3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*",
+                "drupal/crop": ">=8.1.0-alpha2",
+                "drupal/image": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Allows users to specify the focal point of an image for use during cropping.",
+            "homepage": "https://www.drupal.org/project/focal_point",
+            "time": "2016-09-01 01:51:27"
+        },
+        {
             "name": "drupal/mailsystem",
             "version": "8.4.1",
             "source": {
@@ -1708,7 +1781,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/mailsystem-8.x-4.1.zip",
-                "reference": null,
+                "reference": "6bd5e36ceb89b24e2195600e36a9f49e732e911d",
                 "shasum": null
             },
             "require": {
@@ -1741,7 +1814,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/menu_breadcrumb-8.x-1.0-beta1.zip",
-                "reference": null,
+                "reference": "4b7503fa5115585a5157ef9849042d1db33bd058",
                 "shasum": null
             },
             "require": {
@@ -1861,7 +1934,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.0-beta2.zip",
-                "reference": null,
+                "reference": "bb7f8865c1d7cc1d768648696d2f5ef27c2a7eae",
                 "shasum": null
             },
             "require": {
@@ -1986,7 +2059,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/swiftmailer-8.x-1.0-alpha1.zip",
-                "reference": null,
+                "reference": "73f6c9c53fd898707abd4e4707539fc68e6a1e1a",
                 "shasum": null
             },
             "require": {

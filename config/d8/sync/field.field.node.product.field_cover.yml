@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_cover
     - node.type.product
   module:
+    - content_translation
     - image
 third_party_settings:
   content_translation:
@@ -18,7 +19,7 @@ field_name: field_cover
 entity_type: node
 bundle: product
 label: 'Image de couverture'
-description: ''
+description: "L'image doit faire au idéalement 2200x600 pixels - au minimum. Elle sera ensuite redimensionnée pour les différents formats du site.\r\nUtiliser le curseur \"Focal Point\" pour définir le point de focus de votre image. Par exemple la tête de la personne."
 required: false
 translatable: false
 default_value: {  }
@@ -28,7 +29,7 @@ settings:
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
   max_resolution: ''
-  min_resolution: ''
+  min_resolution: 2200x600
   alt_field: false
   alt_field_required: true
   title_field: false
