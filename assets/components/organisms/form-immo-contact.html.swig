@@ -22,14 +22,14 @@ notes: |
     </div>
 
     <div class="form-group">
-      <label>Votre E-mail</label>
+      <label>Votre adresse e-mail</label>
       <div class="input-group">
         <input type="email" id="email" name="email" value="" size="50" maxlength="254" placeholder="john.doe@retraitespopulaires.ch" class="form-email required form-control" required="required" aria-required="true">
       </div>
     </div>
 
     <div class="form-group">
-      <label>Votre addresse</label>
+      <label>Votre adresse</label>
       <div class="input-group">
         <input type="text" id="address" name="address" value="" size="60" maxlength="128" placeholder="Ch. des pinçons 12" class="form-text required form-control" required="required" aria-required="true">
       </div>

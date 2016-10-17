@@ -1,14 +1,14 @@
 ---
-title: form-immo-search
-name: form-immo-search
+title: form-immobilier
+name: form-immobilier
 collection: organisms
 notes: |
-  ##### Usage : `form-immo-search`
+  ##### Usage : `form-immobilier`
   ##### Options :
   - **theme** - String
 ---
 
-<form class="form-immo-search">
+<form class="form-immobilier">
 
   <fieldset class="fieldset-bordered">
     <div class="row">
@@ -71,18 +71,15 @@ notes: |
     <div class="form-group">
       <label class="d-block">Loyer maximum</label>
       <div class="input-text">
-        <input type="text" name="max_rent" class="form-control text-right" placeholder="CHF" value="">
+        <input type="text" name="max_rent" class="form-control" value="">
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="d-block">Surface min.</label>
-      <div class="input-text">
-        <input type="text" name="max_rent" class="form-control text-right" placeholder="m2" value="">
-      </div>
-    </div>
+
+
     <div class="form-group">
       <label class="d-block">Disponible dès</label>
+
       <div class="row">
         <div class="col-sm-3">
           <div class="form-group">
@@ -110,6 +107,6 @@ notes: |
 
   <hr />
 
-  <button type="submit" class="btn btn-primary btn-lg pull-right">Rechercher</button>
+  <button type="submit" class="btn btn-primary btn-immobilier btn-lg pull-right">Rechercher</button>
   <div class="clearfix"></div>
 </form>
