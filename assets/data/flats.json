@@ -6,7 +6,7 @@
     "rental_address": "Ch. de Pierrefleur 54, 1004 Lausanne",
     "rental_rooms": "2.5",
     "rental_surface": "73m2",
-    "rental_rent": "1'440.-"
+    "rental_rent": "CHF 1'440"
     },
   "universite": {
     "rental_heading": "https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_8212.jpg",
@@ -15,7 +15,7 @@
     "rental_address": "Av. de l'Université 24, 1005 Lausanne",
     "rental_rooms": "1.5",
     "rental_surface": "38m2",
-    "rental_rent": "1'060.-"
+    "rental_rent": "CHF 1'060"
     },
   "rumine": {
     "rental_heading": "https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_3540.jpg",
@@ -24,7 +24,7 @@
     "rental_address": "Av. de Rumine 38, 1005 Lausanne",
     "rental_rooms": "5.5",
     "rental_surface": "135m2",
-    "rental_rent": "3'750.-"
+    "rental_rent": "CHF 3'750"
     },
   "rumine2": {
     "rental_heading": "https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_7290.jpg",
@@ -33,6 +33,6 @@
     "rental_address": "Av. de Rumine 38, 1005 Lausanne",
     "rental_rooms": "5.5",
     "rental_surface": "129m2",
-    "rental_rent": "2'750.-"
+    "rental_rent": "CHF 2'750"
     }
 }

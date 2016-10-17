@@ -50,7 +50,7 @@ layout: immobiliers.html.swig
              <tbody>
               <tr>
                  <td><strong>Loyer total</strong></td>
-                 <td>1'120</td>
+                 <td>CHF 1'120.-</td>
               </tr>
               <tr>
                  <td><strong>Étage</strong></td>
