@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.zip_codes.field_district
+    - field.field.taxonomy_term.zip_codes.field_zip_code
     - taxonomy.vocabulary.zip_codes
   module:
     - text
@@ -25,5 +26,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_zip_code:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
 hidden:
   langcode: true

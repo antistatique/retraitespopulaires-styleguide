@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.zip_codes.field_district
+    - field.field.taxonomy_term.zip_codes.field_zip_code
     - taxonomy.vocabulary.zip_codes
 id: taxonomy_term.zip_codes.default
 targetEntityType: taxonomy_term
@@ -11,12 +12,18 @@ bundle: zip_codes
 mode: default
 content:
   field_district:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_zip_code:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   name:
     type: string_textfield
     weight: 0

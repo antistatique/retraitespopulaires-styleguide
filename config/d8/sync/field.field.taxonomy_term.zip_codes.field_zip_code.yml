@@ -1,0 +1,23 @@
+uuid: 30a99125-f5cc-4285-b38f-16af7f41eb17
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_zip_code
+    - taxonomy.vocabulary.zip_codes
+id: taxonomy_term.zip_codes.field_zip_code
+field_name: field_zip_code
+entity_type: taxonomy_term
+bundle: zip_codes
+label: 'NPA / NIP'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
