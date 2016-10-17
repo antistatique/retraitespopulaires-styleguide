@@ -4,7 +4,6 @@ status: false
 dependencies:
   module:
     - ctools
-    - rp_site
   theme:
     - retraitespopulaires_admin
 id: retraitespopulaires_admin_advisorblock

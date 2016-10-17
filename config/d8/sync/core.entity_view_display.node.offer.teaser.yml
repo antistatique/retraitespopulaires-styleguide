@@ -24,4 +24,9 @@ content:
   links:
     weight: 100
 hidden:
+  field_available_offers: true
+  field_cover: true
+  field_date_end: true
+  field_profession: true
+  field_web_site: true
   langcode: true

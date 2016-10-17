@@ -1,0 +1,19 @@
+uuid: 3b0206f5-f8f8-4632-a84d-776f3a86b929
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_district
+    - taxonomy.vocabulary.zip_codes
+id: taxonomy_term.zip_codes.field_district
+field_name: field_district
+entity_type: taxonomy_term
+bundle: zip_codes
+label: Commune
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

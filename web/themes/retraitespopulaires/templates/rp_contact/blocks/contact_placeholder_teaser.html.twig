@@ -1,0 +1,23 @@
+<div class="teaser-contact-placeholder teaser-contact-placeholder-{{ variables.node.field_profession.entity.tid.value|theme_profession }} shadow shadow-down">
+  <div class="teaser-contact-placeholder-heading">
+    <div class="heading-image" style="background-image: url({{ documents }})"></div>
+    <div class="loader-image">
+      <div class="loader">
+        <div class="loader-yingyang loader-{{ variables.node.field_profession.entity.tid.value|theme_profession }}"></div>
+      </div>
+    </div>
+  </div>
+  <div class="teaser-contact-placeholder-body">
+    <p>{% trans %}N'hésitez pas à nous contacter au{% endtrans %} <a class="pretty-link text-bold text-{{ variables.node.field_profession.entity.tid.value|theme_profession }}" href="tel:+41 21 348 21 11">+41 21 348 21 11</a>.</p>
+    <hr />
+    <p>Ou retrouvez votre contact régional en entrant votre code postal<p>
+    <form class="form-inline">
+      <div class="form-group">
+        <input class="form-control form-control-{{ variables.node.field_profession.entity.tid.value|theme_profession }}" id="zip" type="text" placeholder="Votre NPA"></input>
+      </div>
+      <div class="form-group">
+        <input class="btn btn-{{ variables.node.field_profession.entity.tid.value|theme_profession }}" type="submit" value="Trouver"></input>
+      </div>
+    </form>
+  </div>
+</div>

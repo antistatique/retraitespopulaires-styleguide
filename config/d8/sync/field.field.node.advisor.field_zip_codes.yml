@@ -1,0 +1,28 @@
+uuid: 7abac71f-3b03-458f-a22a-2729f195423d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_zip_codes
+    - node.type.advisor
+    - taxonomy.vocabulary.zip_codes
+id: node.advisor.field_zip_codes
+field_name: field_zip_codes
+entity_type: node
+bundle: advisor
+label: 'Numéros postales d''acheminement'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      zip_codes: zip_codes
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

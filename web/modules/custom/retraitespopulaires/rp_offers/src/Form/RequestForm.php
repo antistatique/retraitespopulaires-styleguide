@@ -63,6 +63,12 @@ class RequestForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-offers-form';
 
+        $status = drupal_get_messages('status');
+        if (!empty($status['status'])) {
+            $form['status'] = array(
+                '#markup' => '<div class="well well-success well-lg"><p>'.$status['status'][0].'</p></div>',
+            );
+        }
         if (!empty($this->session->get('errors'))) {
             $form['errors'] = array(
                 '#markup' => '<div class="well well-danger well-lg"><p>'.t('Attention, des erreurs sont subvenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',

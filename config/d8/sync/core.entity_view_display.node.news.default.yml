@@ -14,7 +14,6 @@ dependencies:
     - field.field.node.news.field_lastname
     - field.field.node.news.field_news_type
     - field.field.node.news.field_offer
-    - field.field.node.news.field_present_end_date
     - field.field.node.news.field_profession
     - field.field.node.news.field_profil
     - field.field.node.news.field_video
@@ -108,14 +107,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_present_end_date:
-    weight: 108
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
   field_profession:
     weight: 113
     label: above

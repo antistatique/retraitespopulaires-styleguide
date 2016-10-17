@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.advisor.field_phone
     - field.field.node.advisor.field_region
     - field.field.node.advisor.field_specialty
+    - field.field.node.advisor.field_zip_codes
     - image.style.thumbnail
     - node.type.advisor
   module:
@@ -91,9 +92,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_zip_codes:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
   path:
     type: path
-    weight: 11
+    weight: 12
     settings: {  }
     third_party_settings: {  }
   title:

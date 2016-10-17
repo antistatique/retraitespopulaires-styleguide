@@ -1,0 +1,35 @@
+{% set theme = variables.node.field_profession.entity.tid.value|theme_profession %}
+
+</a>
+<a href="#contacter-nous" class="pull-right teaser-contact-cta teaser-contact-cta-{{ theme }} shadow shadow-down">
+  <div class="teaser-contact-cta-heading">
+    <div class="heading-image" style="background-image: url({{ variables.contact.field_cover.entity.uri.value }})"></div>
+    <div class="loader-image">
+      <div class="loader">
+        <div class="loader-yingyang loader-{{ theme }}"></div>
+      </div>
+    </div>
+  </div>
+  <div class="teaser-contact-cta-body text-center">
+    <div class="spacer spacer-xs"></div>
+    <p class="text-small">
+      {% if variables.contact.type.target_id == 'advisor' %}
+        {% trans %}Contactez votre conseiller {{ variables.contact.field_firstname.value }} {{ variables.contact.field_lastname.value }}.{% endtrans %}
+      {% else %}
+        {% set display = [] %}
+        {% if variables.contact.field_firstname.value %}
+          {% set display = display|merge([variables.contact.field_firstname.value])  %}
+        {% endif %}
+        {% if variables.contact.field_lastname.value %}
+          {% set display = display|merge([variables.contact.field_lastname.value])  %}
+        {% endif %}
+        {% if not display %}
+          {% trans %}Contactez-nous.{% endtrans %}
+        {% else %}
+          {% trans %}Contacter {{ display|join(' ') }}.{% endtrans %}
+        {% endif %}
+
+      {% endif %}
+    </p>
+  </div>
+</a>
