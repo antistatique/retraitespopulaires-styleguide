@@ -24,7 +24,7 @@ layout: emplois.html.swig
       <h1 class="page-title text-center">Mon compte</h1>
       <div class="spacer"></div>
 
-      <ul class="nav nav-tabs" role="tablist">
+      <ul class="nav nav-tabs nav-tabs-expanded" role="tablist">
         <li role="presentation" class="active"><a href="#contactinfo" aria-controls="lausanne" role="tab" data-toggle="tab">Coordonnées</a></li>
         <li role="presentation"><a href="#resume" aria-controls="resume" role="tab" data-toggle="tab">CV</a></li>
         <li role="presentation"><a href="#skills" aria-controls="skills" role="tab" data-toggle="tab">Compétences</a></li>
