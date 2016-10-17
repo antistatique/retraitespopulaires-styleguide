@@ -27,9 +27,9 @@ layout: immobiliers.html.swig
       <div class="row">
         <div class="col-xs-12" align="center">
           <ul class="d-inline-block list-no-style list-no-padding list-inline">
-            <li> <a class="pretty-link" href="#"><span class="text-small">◀</span> Objet précédent</a></li>
-            <li> <a class="pretty-link" href="#">Revenir à la recherche</a></li>
-            <li> <a class="pretty-link" href="#">Objet suivant <span class="text-small">►</span></a></li>
+            <li> <a class="pretty-link text-immobilier" href="#"><span class="text-small">◀</span> Objet précédent</a></li>
+            <li> <a class="pretty-link text-immobilier" href="#">Revenir à la recherche</a></li>
+            <li> <a class="pretty-link text-immobilier" href="#">Objet suivant <span class="text-small">►</span></a></li>
           </ul>
         </div>
       </div>
