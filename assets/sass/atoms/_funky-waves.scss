@@ -3,6 +3,12 @@
 .wrapper-funky-waves {
   position: relative;
   overflow: hidden;
+  min-height: 25vh;
+  background: $brand-primary;
+
+  @media (min-width: $screen-xl-min) {
+    min-height: 30vh;
+  }
 
   // Add padding of the header size
   &.has-header { padding-top: 84px; }
@@ -10,6 +16,12 @@
   img {
     width: 100%;
     height: auto;
+  }
+
+  @each $label, $color in $themes {
+    &.wrapper-funky-waves-#{$label} {
+      background: $color;
+    }
   }
 
   .funky-waves-container {
