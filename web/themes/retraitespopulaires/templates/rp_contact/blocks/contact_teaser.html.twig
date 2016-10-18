@@ -1,18 +1,19 @@
 {% set theme = variables.node.field_profession.entity.tid.value|theme_profession %}
-
-
+{% set link = path('entity.node.canonical', {'node': variables.contact.nid.value}) %}
 <div class="teaser-contact teaser-contact-{{ theme }} shadow shadow-down">
-  <a href="{{ path('entity.node.canonical', {'node': variables.contact.nid.value}) }}" class="teaser-contact-heading">
-    <div class="heading-image" style="background-image: url({{ file_url(variables.contact.field_cover.entity.uri.value) }})"></div>
-    <div class="loader-image">
-      <div class="loader">
-        <div class="loader-yingyang loader-{{ theme }}"></div>
+  {% if not variables.contact.field_cover.entity.uri.value is empty %}
+    <a href="{{ link }}" class="teaser-contact-heading">
+      <div class="heading-image" style="background-image: url({{ file_url(variables.contact.field_cover.entity.uri.value) }})"></div>
+      <div class="loader-image">
+        <div class="loader">
+          <div class="loader-yingyang loader-{{ theme }}"></div>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
+  {% endif %}
 
   <div class="teaser-contact-body">
-    <a href="#" class="h3 pretty-link text-{{ theme }}">
+    <a href="{{ link }}" class="h3 pretty-link text-{{ theme }}">
       {% set display = [] %}
       {% if variables.contact.field_firstname.value %}
         {% set display = display|merge([variables.contact.field_firstname.value])  %}
@@ -39,8 +40,6 @@
 
       {%- if variables.contact.field_email.value -%}
         {% trans %}, par e-mail via <a class="pretty-link text-bold text-{{ theme }}" href="mailto:{{ variables.contact.field_email.value }}">{{ variables.contact.field_email.value }}</a>{% endtrans %}
-      {%- else -%}
-        .
       {%- endif -%}
 
       {%- if variables.contact.field_fax.value -%}
@@ -49,6 +48,6 @@
         .
       {%- endif -%}
     </p>
-    <a href="{{ path('entity.node.canonical', {'node': variables.contact.nid.value}) }}" class="btn btn-{{ theme }}">Contacter</a>
+    <a href="{{ link }}" class="btn btn-{{ theme }}">Contacter</a>
   </div>
 </div>

@@ -2,6 +2,7 @@
 
 </a>
 <a href="#contacter-nous" class="pull-right teaser-contact-cta teaser-contact-cta-{{ theme }} shadow shadow-down">
+  {% if not variables.contact.field_cover.entity.uri.value is empty %}
   <div class="teaser-contact-cta-heading">
     <div class="heading-image" style="background-image: url({{ file_url(variables.contact.field_cover.entity.uri.value) }})"></div>
     <div class="loader-image">
@@ -10,25 +11,22 @@
       </div>
     </div>
   </div>
+  <div class="spacer spacer-xs"></div>
+  {% endif %}
   <div class="teaser-contact-cta-body text-center">
-    <div class="spacer spacer-xs"></div>
-    <p class="text-small">
-      {% if variables.contact.type.target_id == 'advisor' %}
-        {% trans %}Contactez votre conseiller {{ variables.contact.field_firstname.value }} {{ variables.contact.field_lastname.value }}.{% endtrans %}
+    <p class="text-small m-0">
+      {% set display = [] %}
+      {% if variables.contact.field_firstname.value %}
+        {% set display = display|merge([variables.contact.field_firstname.value]) %}
+      {% endif %}
+      {% if variables.contact.field_lastname.value %}
+        {% set display = display|merge([variables.contact.field_lastname.value]) %}
+      {% endif %}
+      {% if display is empty %}
+        {% trans %}Contactez-nous.{% endtrans %}
       {% else %}
-        {% set display = [] %}
-        {% if variables.contact.field_firstname.value %}
-          {% set display = display|merge([variables.contact.field_firstname.value])  %}
-        {% endif %}
-        {% if variables.contact.field_lastname.value %}
-          {% set display = display|merge([variables.contact.field_lastname.value])  %}
-        {% endif %}
-        {% if not display %}
-          {% trans %}Contactez-nous.{% endtrans %}
-        {% else %}
-          {% trans %}Contacter {{ display|join(' ') }}.{% endtrans %}
-        {% endif %}
-
+        {% set display = display|join(' ') %}
+        {% trans %}Contacter {{ display }}.{% endtrans %}
       {% endif %}
     </p>
   </div>
