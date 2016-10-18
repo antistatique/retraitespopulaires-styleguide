@@ -8,8 +8,6 @@ use Drupal\KernelTests\Core\Entity\EntityQueryTest;
 
 class ImportRateCommand
 {
-
-
     /**
      * EntityStorageInterface to load Nodes
      * @var EntityTypeManagerInterface
@@ -34,6 +32,14 @@ class ImportRateCommand
         $this->entity_query = $entityQuery;
     }
 
+    /**
+     * Import CSV rates file
+     *
+     * @param string $file          CSV file
+     * @param string $institution   Institution name to filter
+     *
+     * @throws \Exception
+     */
     public function import($file, $institution) {
         drush_print('Start Importing from: ' . $file);
 
@@ -57,8 +63,10 @@ class ImportRateCommand
 
             $rate = $this->entity_rate->create($data);
             $rate->save();
-            drush_print('Added ' . $values[0]);
+            drush_print('Added ' . $values[3]);
         };
+
+        $this->deleteAll();
 
         $success = $this->_readFileLinebyLine($file, $callback);
 
@@ -68,18 +76,16 @@ class ImportRateCommand
     }
 
     /**
-     * Check the given zip exist
-     * @method isZipExist
-     * @param  string      $code [description]
-     * @return boolean           [description]
+     * Delete all existing rates
+     *
      */
-    protected function isZipExist($zip) {
-        $query = $this->entity_query->get('taxonomy_term')
-            ->condition('name', $zip)
-            ->condition('vid', 'zip_codes')
-            ->count();
-        ;
-        return $query->execute() > 0;
+    protected function deleteAll()
+    {
+        $ids = $this->entity_query->get('rp_mortgage_rate')->execute();
+        $ratesToDelete = $this->entity_rate->loadMultiple($ids);
+        foreach ($ratesToDelete as $rate) {
+            $rate->delete();
+        }
     }
 
     /**
