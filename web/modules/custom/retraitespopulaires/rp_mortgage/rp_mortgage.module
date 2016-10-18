@@ -8,17 +8,20 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
- * Implements hook_help().
+ * Implements hook_theme().
  */
-function rp_mortgage_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the rp_mortgage module.
-    case 'help.page.rp_mortgage':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Provide Mortgage (Hypothèque) calculator and Rates import') . '</p>';
-      return $output;
-
-    default:
-  }
+function rp_mortgage_theme($existing, $type, $theme, $path)
+{
+  return [
+    // Blocks themes
+    // ---------------------------------------------------------------------
+    'rp_mortgage_table_rate_block' => array(
+      // Use the following syntax to retrieve all variables in the "variables" container
+        'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions into a sub folder
+      // using [template].html.twig
+        'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+        'template'  => 'blocks/table_rate'
+    ),
+  ];
 }
