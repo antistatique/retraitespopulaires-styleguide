@@ -1,0 +1,61 @@
+ENTREPRISE,GENRE,DATE,TYPE,PREMIER_RANG,DEUXIEME_RANG,ANNEE
+RP,Prêts hypothécaires standard,Octobre 2016,Taux d'intérêt variable,1.75,1.75,0
+RP,Prêts hypothécaires standard,Octobre 2016,Taux d'intérêt fixe,0.00,0.00,0
+RP,Prêts hypothécaires standard,Octobre 2016,1 an,1.00,0.00,1
+RP,Prêts hypothécaires standard,Octobre 2016,2 ans,1.00,0.00,2
+RP,Prêts hypothécaires standard,Octobre 2016,3 ans,1.05,0.00,3
+RP,Prêts hypothécaires standard,Octobre 2016,4 ans,1.05,0.00,4
+RP,Prêts hypothécaires standard,Octobre 2016,5 ans,1.10,0.00,5
+RP,Prêts hypothécaires standard,Octobre 2016,6 ans,1.10,0.00,6
+RP,Prêts hypothécaires standard,Octobre 2016,7 ans,1.15,0.00,7
+RP,Prêts hypothécaires standard,Octobre 2016,8 ans,1.20,0.00,8
+RP,Prêts hypothécaires standard,Octobre 2016,9 ans,1.30,0.00,9
+RP,Prêts hypothécaires standard,Octobre 2016,10 ans,1.35,0.00,10
+RP,Prêts hypothécaires standard,Octobre 2016,11 ans,1.75,0.00,11
+RP,Prêts hypothécaires standard,Octobre 2016,12 ans,1.80,0.00,12
+RP,Prêts hypothécaires standard,Octobre 2016,13 ans,1.85,0.00,13
+RP,Prêts hypothécaires standard,Octobre 2016,14 ans,1.90,0.00,14
+RP,Prêts hypothécaires standard,Octobre 2016,15 ans,1.95,0.00,15
+RP,Prêts hypothécaires standard,Octobre 2016,16 ans,2.40,0.00,16
+RP,Prêts hypothécaires standard,Octobre 2016,17 ans,2.45,0.00,17
+RP,Prêts hypothécaires standard,Octobre 2016,18 ans,2.55,0.00,18
+RP,Prêts hypothécaires standard,Octobre 2016,19 ans,2.60,0.00,19
+RP,Prêts hypothécaires standard,Octobre 2016,20 ans,2.60,0.00,20
+RP,Prêts hypothécaires formulaire,Octobre 2016,Variable,1.75,1.75,0
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe,0.00,0.00,0
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 1 an,1.00,0.00,1
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 2 ans,1.00,0.00,2
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 3 ans,1.05,0.00,3
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 4 ans,1.05,0.00,4
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 5 ans,1.10,0.00,5
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 6 ans,1.10,0.00,6
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 7 ans,1.15,0.00,7
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 8 ans,1.20,0.00,8
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 9 ans,1.30,0.00,9
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 10 ans,1.35,0.00,10
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 11 ans,1.75,0.00,11
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 12 ans,1.80,0.00,12
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 13 ans,1.85,0.00,13
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 14 ans,1.90,0.00,14
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 15 ans,1.95,0.00,15
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 16 ans,2.40,0.00,16
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 17 ans,2.45,0.00,17
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 18 ans,2.55,0.00,18
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 19 ans,2.60,0.00,19
+RP,Prêts hypothécaires formulaire,Octobre 2016,Fixe à 20 ans,2.60,0.00,20
+RP,Prêts corporations,Octobre 2016,Taux d'intérêt variable,1.75,0.00,0
+RP,Prêts corporations,Octobre 2016,Taux d'intérêt fixe,0.00,0.00,0
+RP,Prêts corporations,Octobre 2016,6 mois,0.35,0.00,0
+RP,Prêts corporations,Octobre 2016,3 mois,0.25,0.00,0
+RP,Prêts corporations,Octobre 2016,1 an,0.35,0.00,1
+RP,Prêts corporations,Octobre 2016,2 ans,0.35,0.00,2
+RP,Prêts corporations,Octobre 2016,3 ans,0.35,0.00,3
+RP,Prêts corporations,Octobre 2016,4 ans,0.35,0.00,4
+RP,Prêts corporations,Octobre 2016,5 ans,0.40,0.00,5
+RP,Prêts corporations,Octobre 2016,6 ans,0.50,0.00,6
+RP,Prêts corporations,Octobre 2016,7 ans,0.55,0.00,7
+RP,Prêts corporations,Octobre 2016,8 ans,0.65,0.00,8
+RP,Prêts corporations,Octobre 2016,9 ans,0.70,0.00,9
+RP,Prêts corporations,Octobre 2016,10 ans,0.70,0.00,10
+RP,Taux credit de construction,Octobre 2016,Variable avec promesse de consolidation,1.75,0.00,0
+RP,Taux credit de construction,Octobre 2016,Variable sans promesse de consolidation,2.75,0.00,0
