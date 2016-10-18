@@ -58,9 +58,11 @@ class SecondaryNavBlock extends BlockBase implements ContainerFactoryPluginInter
         $variables = array();
         $variables['index'] = null;
         $variables['secondary_nav'] = $this->getTopParentActiveTrail('main');
+        $variables['active_trail'] = $this->getFullActiveTrail('main');
 
         if (!isset($variables['secondary_nav']->link) || empty($variables['secondary_nav']->link)) {
             $variables['secondary_nav'] = $this->getTopParentActiveTrail('profil');
+            $variables['active_trail'] = $this->getFullActiveTrail('main');
         }
 
         if (isset($variables['secondary_nav']->link) && !empty($variables['secondary_nav']->link)) {
@@ -93,5 +95,11 @@ class SecondaryNavBlock extends BlockBase implements ContainerFactoryPluginInter
         );
         return $this->menu_tree->transform($tree, $manipulators);
     }
+
+    public function getFullActiveTrail($menu_name) {
+        $parameters = $this->menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+        return $parameters->activeTrail;
+    }
+
 
 }

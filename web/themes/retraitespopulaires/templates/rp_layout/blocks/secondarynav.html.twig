@@ -18,11 +18,12 @@
   <div class="secondary-nav-content">
     <div class="title h5 text-cocon">{{ variables.secondary_nav.link.title }}</div>
     <ul class="links list-no-style list-no-padding">
-      {% for item in variables.secondary_nav.subtree %}
+      {% set trail_depth = variables.active_trail|length -1 %}
 
+      {% for item in variables.secondary_nav.subtree %}
       {% set classes = [
-        item.inActiveTrail ? 'active',
-        item.inActiveTrail ? 'text-bold',
+        item.inActiveTrail and item.depth == trail_depth  ? 'active',
+        item.inActiveTrail and item.depth == trail_depth  ? 'text-bold',
       ] %}
       <li class="{{ classes|join(' ') }}">
         <a class="pretty-link" href="{{ item.link.urlObject }}">
@@ -34,11 +35,10 @@
       <li class="no-padding">
         <ul class="links-children list-no-style list-no-padding">
           {% for subitem in item.subtree %}
-
-          {% set classes = [
+            {% set classes = [
             'list-twice-padding-left',
-            subitem.inActiveTrail ? 'active',
-            subitem.inActiveTrail ? 'text-bold',
+            subitem.inActiveTrail and subitem.depth == trail_depth  ? 'active',
+            subitem.inActiveTrail and subitem.depth == trail_depth  ? 'text-bold',
           ] %}
 
           <li class="{{ classes|join(' ') }}">
