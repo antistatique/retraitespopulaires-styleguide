@@ -319,6 +319,49 @@ class AdminForm extends FormBase {
             '#default_value' => $this->state->get('rp_site.settings.collection.mortgage_calculator')['theme'] ? $this->state->get('rp_site.settings.collection.mortgage_calculator')['theme'] : 'mortgage_calculator',
         );
 
+        $form['collection']['mortgage_rates_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'  => 'node',
+            '#title'         => 'Tableau de taux hypothéquaires - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.mortgage_tablerates')['nid'] ? $nodeEntity->load($this->state->get('rp_site.settings.collection.mortgage_tablerates')['nid']) : NULL,
+        );
+
+        $form['collection']['mortgage_rates_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Tableau de taux hypothéquaires - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.mortgage_tablerates')['theme'] ? $this->state->get('rp_site.settings.collection.mortgage_tablerates')['theme'] : 'mortgage_tablerates',
+        );
+
+        $form['collection']['constructionloan_tablerates_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'  => 'node',
+            '#title'         => 'Tableau de taux pour les crédits de construction - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.constructionloan_tablerates')['nid'] ? $nodeEntity->load($this->state->get('rp_site.settings.collection.constructionloan_tablerates')['nid']) : NULL,
+        );
+
+        $form['collection']['constructionloan_tablerates_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Tableau de taux pour les crédits de construction - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.constructionloan_tablerates')['theme'] ? $this->state->get('rp_site.settings.collection.constructionloan_tablerates')['theme'] : 'constructionloan_tablerates',
+        );
+
+
+        $form['collection']['localauthoritiesloan_tablerates_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'  => 'node',
+            '#title'         => 'Tableau de taux pour prêt aux collectivités - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['nid'] ? $nodeEntity->load($this->state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['nid']) : NULL,
+        );
+
+        $form['collection']['localauthoritiesloan_tablerates_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Tableau de taux pour prêt aux collectivités - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['theme'] ? $this->state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['theme'] : 'localauthoritiesloan_tablerates',
+        );
+
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => $this->t('Save'),
@@ -414,6 +457,21 @@ class AdminForm extends FormBase {
         $this->state->set('rp_site.settings.collection.mortgage_calculator', array(
             'nid' => trim($form_state->getValue('mortgage_calculator_nid')),
             'theme' => trim($form_state->getValue('mortgage_calculator_theme')),
+        ));
+
+        $this->state->set('rp_site.settings.collection.mortgage_tablerates', array(
+            'nid' => trim($form_state->getValue('mortgage_rates_nid')),
+            'theme' => trim($form_state->getValue('mortgage_rates_theme')),
+        ));
+
+        $this->state->set('rp_site.settings.collection.constructionloan_tablerates', array(
+            'nid' => trim($form_state->getValue('constructionloan_tablerates_nid')),
+            'theme' => trim($form_state->getValue('constructionloan_tablerates_theme')),
+        ));
+
+        $this->state->set('rp_site.settings.collection.localauthoritiesloan_tablerates', array(
+            'nid' => trim($form_state->getValue('localauthoritiesloan_tablerates_nid')),
+            'theme' => trim($form_state->getValue('localauthoritiesloan_tablerates_theme')),
         ));
     }
 
