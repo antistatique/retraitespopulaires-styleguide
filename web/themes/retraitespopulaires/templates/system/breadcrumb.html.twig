@@ -12,26 +12,22 @@
 {% if breadcrumb %}
 <div class="breadcrumb">
   <ul class="list-inline list-no-style list-no-padding">
-    {% set theme = [
-      breadcrumb[1].url == '/node/45' ? 'text-assurance',
-      breadcrumb[1].url == '/node/46' ? 'text-prevoyance',
-      breadcrumb[1].url == '/node/47' ? 'text-immobilier',
-      breadcrumb[1].url == '/node/48' ? 'text-hypotheque',
-    ] %}
+    {% set theme = theme_guesser() %}
 
     {% for item in breadcrumb %}
       {% set classes = [
+        'pretty-link',
         loop.first ? 'text-primary',
         loop.last ? 'text-muted',
-        (not loop.first and not loop.last) ? theme|join(' '),
+        (not loop.first and not loop.last) ? 'text-' ~ theme,
       ] %}
 
       {# Breadcrumb link #}
-      <li class="{{ classes|join(' ') }}" {{ item.attributes }}>
+      <li class="" {{ item.attributes }}>
         {% if item.url %}
           <a class="{{ classes|join(' ') }}" href="{{ item.url }}">{{ item.text }}</a>
         {% else %}
-          {{ item.text }}
+          <span class="{{ classes|join(' ') }}">{{ item.text }}</span>
         {% endif %}
       </li>
 
