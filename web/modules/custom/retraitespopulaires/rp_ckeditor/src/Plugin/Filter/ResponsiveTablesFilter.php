@@ -12,7 +12,7 @@ use Drupal\filter\Plugin\FilterBase;
  *   id = "responsive_tables_filter",
  *   title = @Translation("Responsive Tables Filter"),
  *   description = @Translation("Make tables in WYSIWYG responsive."),
- *   type = Drupal\filter\Plugin\FilterInterface::TYPE_MARKUP_LANGUAGE,
+ *   type = Drupal\filter\Plugin\FilterInterface::TYPE_TRANSFORM_IRREVERSIBLE,
  * )
  */
 class ResponsiveTablesFilter extends FilterBase {

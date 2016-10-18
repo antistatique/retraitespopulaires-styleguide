@@ -89,9 +89,9 @@
       <div class="spacer spacer-sm"></div>
     {% endif %}
 
-    {% if node.body.value %}
+    {% if content.body %}
       <div class="entity-body body-{{ node.field_profession.entity.tid.value|theme_profession }}">
-        {{ node.body.value|raw }}
+        {{ content.body }}
       </div>
     {% endif %}
 
