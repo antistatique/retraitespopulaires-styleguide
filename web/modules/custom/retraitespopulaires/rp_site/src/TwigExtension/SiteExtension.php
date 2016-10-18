@@ -4,7 +4,7 @@ namespace Drupal\rp_site\TwigExtension;
 use Drupal\rp_site\Service\Profession;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class Themes extends \Twig_Extension {
+class SiteExtension extends \Twig_Extension {
 
     protected $container;
 
@@ -18,6 +18,8 @@ class Themes extends \Twig_Extension {
     public function getFilters() {
         return [
             new \Twig_SimpleFilter('theme_profession', array($this, 'themeProfession')),
+            new \Twig_SimpleFilter('format_pourcent', array($this, 'formatPourcent')),
+
         ];
     }
 
@@ -34,7 +36,7 @@ class Themes extends \Twig_Extension {
     * Unique identifier for this Twig extension
     */
     public function getName() {
-        return 'rp_site.twig.themes';
+        return 'rp_site.twig.extension';
     }
 
     /*
@@ -55,9 +57,21 @@ class Themes extends \Twig_Extension {
         $node = $route->getParameter('node');
         if (isset($node) && !empty($node->field_profession->entity->tid->value)) {
             $profession = $this->container->get('rp_site.profession');
+
             return $profession->theme($node->field_profession->entity->tid->value);
         }
+
         return '';
     }
 
+    /**
+     * @param $float
+     *
+     * @return string formatted number like "1.25%"
+     */
+    public function formatPourcent($value) {
+        $number = number_format((float)$value, 2, '.', "'");
+
+        return sprintf('%s%%', $number);
+    }
 }

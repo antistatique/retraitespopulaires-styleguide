@@ -7,7 +7,7 @@ services:
       - @entity.manager
   # Custom Twig extensions
   rp_site.twig.themes:
-    class: Drupal\rp_site\TwigExtension\Themes
+    class: Drupal\rp_site\TwigExtension\SiteExtension
     tags:
         - { name: twig.extension }
     arguments:
