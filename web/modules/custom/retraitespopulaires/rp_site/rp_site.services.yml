@@ -16,3 +16,8 @@ services:
     class: Drupal\rp_site\Service\MenuTransformers
     arguments:
       - @state
+  # Custom Event Subscrbiber
+  rp_site.entity_access:
+    class: Drupal\rp_site\EventSubscriber\EntityAccess
+    tags: 
+      - {name: event_subscriber}

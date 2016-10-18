@@ -89,7 +89,9 @@
 {% block main %}
   <div role="main" class="main-container container-fluid js-quickedit-main-content">
     <div class="row">
+
       <div class="col-xs-12 col-md-10 col-md-push-1 col-xl-6 col-xl-push-3">
+
         <div class="entity-content">
           <section{{ content_attributes.addClass(content_classes) }}>
             {# Content #}
@@ -100,11 +102,13 @@
           </section>
         </div>
         <div class="spacer"></div>
+
       </div>
     </div>
   </div>
 
-  {{ load_block('rp_site_news_latest_block') }}
+  {{ load_block('rp_contact_contact_attachment_block') }}
+  {{ load_block('rp_site_attachments_block') }}
 
    {# Content Bottom #}
    {% if page.content_bottom %}

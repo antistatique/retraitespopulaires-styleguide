@@ -57,17 +57,95 @@ class AdminForm extends FormBase {
 
         $form['collection']['news_nid'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Actualites - node ID',
+            '#title'         => 'Listing Actualites - node ID',
             '#default_value' => $this->state->get('rp_site.settings.collection.news')['nid'],
         );
         $form['collection']['news_theme'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Actualites - theme hook',
+            '#title'         => 'Listing Actualites - theme hook',
             '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.collection.news')['theme'] ? $this->state->get('rp_site.settings.collection.news')['theme'] : 'actualites',
+            '#default_value' => $this->state->get('rp_site.settings.collection.news')['theme'] ? $this->state->get('rp_site.settings.collection.news')['theme'] : 'collection-actualites',
+            '#suffix'        => '<br/>'
         );
 
-        // Collection pages settings
+        $form['collection']['contacts_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Contacts - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.contacts')['nid'],
+        );
+        $form['collection']['contacts_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Contacts - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.contacts')['theme'] ? $this->state->get('rp_site.settings.collection.contacts')['theme'] : 'contacts',
+            '#suffix'        => '<br/>'
+        );
+
+        $form['collection']['advisors_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Conseillers - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.advisors')['nid'],
+        );
+        $form['collection']['advisors_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Conseillers - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.advisors')['theme'] ? $this->state->get('rp_site.settings.collection.advisors')['theme'] : 'advisors',
+            '#suffix'        => '<br/>'
+        );
+
+        $form['collection']['faqs_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Questions-réponses - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.faqs')['nid'],
+        );
+        $form['collection']['faqs_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Questions-réponses - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.faqs')['theme'] ? $this->state->get('rp_site.settings.collection.faqs')['theme'] : 'collection-faqs',
+            '#suffix'        => '<br/>'
+        );
+
+        $form['collection']['buildings_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Constructions - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.buildings')['nid'],
+        );
+        $form['collection']['buildings_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Constructions - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.buildings')['theme'] ? $this->state->get('rp_site.settings.collection.buildings')['theme'] : 'collection-buildings',
+            '#suffix'        => '<br/>'
+        );
+
+        $form['collection']['management_contracts_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Mandats de gestion - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.management_contracts')['nid'],
+        );
+        $form['collection']['management_contracts_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Mandats de gestion - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.management_contracts')['theme'] ? $this->state->get('rp_site.settings.collection.management_contracts')['theme'] : 'collection-management-contracts',
+            '#suffix'        => '<br/>'
+        );
+
+        $form['collection']['partnerships_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Partenaires - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.collection.partnerships')['nid'],
+        );
+        $form['collection']['partnerships_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing Partenaires - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.collection.partnerships')['theme'] ? $this->state->get('rp_site.settings.collection.partnerships')['theme'] : 'collection-partnerships',
+        );
+
+        // Profils pages settings
         $form['profils'] = array(
             '#type'          => 'fieldset',
             '#title'         => 'Profils pages',
@@ -100,6 +178,7 @@ class AdminForm extends FormBase {
             '#type'          => 'textarea',
             '#title'         => 'Profil Particulier, Déjà client - menu IDs',
             '#default_value' => $this->state->get('rp_site.settings.profils.individual')['menu_client'] ? join(';', $this->state->get('rp_site.settings.profils.individual')['menu_client']) : '',
+            '#suffix'        => '<br/>'
         );
 
         $form['profils']['profil_company_nid'] = array(
@@ -118,6 +197,7 @@ class AdminForm extends FormBase {
             '#title'         => 'Profil Entreprise - menu ID',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_site.settings.profils.company')['menu'] ? $this->state->get('rp_site.settings.profils.company')['menu'] : 'menu_link_content:9d1dafdc-251b-4456-a993-cfef04d66530',
+            '#suffix'        => '<br/>'
         );
 
         $form['profils']['profil_public_nid'] = array(
@@ -136,30 +216,6 @@ class AdminForm extends FormBase {
             '#title'         => 'Profil Collectivités publiques - menu ID',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_site.settings.profils.public')['menu'] ? $this->state->get('rp_site.settings.profils.public')['menu'] : 'menu_link_content:a7007bf2-c605-4284-8a24-5c4ee23717b7',
-        );
-
-        $form['collection']['contacts_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Contacts - node ID',
-            '#default_value' => $this->state->get('rp_site.settings.collection.contacts')['nid'],
-        );
-        $form['collection']['contacts_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Contacts - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.collection.contacts')['theme'] ? $this->state->get('rp_site.settings.collection.contacts')['theme'] : 'contacts',
-        );
-
-        $form['collection']['advisors_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Conseillers - node ID',
-            '#default_value' => $this->state->get('rp_site.settings.collection.advisors')['nid'],
-        );
-        $form['collection']['advisors_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Conseillers - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.collection.advisors')['theme'] ? $this->state->get('rp_site.settings.collection.advisors')['theme'] : 'advisors',
         );
 
         $form['actions']['submit'] = array(
@@ -181,6 +237,26 @@ class AdminForm extends FormBase {
         $this->state->set('rp_site.settings.collection.news', array(
             'nid' => trim($form_state->getValue('news_nid')),
             'theme' => trim($form_state->getValue('news_theme')),
+        ));
+
+        $this->state->set('rp_site.settings.collection.faqs', array(
+            'nid' => trim($form_state->getValue('faqs_nid')),
+            'theme' => trim($form_state->getValue('faqs_theme')),
+        ));
+
+        $this->state->set('rp_site.settings.collection.buildings', array(
+            'nid' => trim($form_state->getValue('buildings_nid')),
+            'theme' => trim($form_state->getValue('buildings_theme')),
+        ));
+
+        $this->state->set('rp_site.settings.collection.management_contracts', array(
+            'nid' => trim($form_state->getValue('management_contracts_nid')),
+            'theme' => trim($form_state->getValue('management_contracts_theme')),
+        ));
+
+        $this->state->set('rp_site.settings.collection.partnerships', array(
+            'nid' => trim($form_state->getValue('partnerships_nid')),
+            'theme' => trim($form_state->getValue('partnerships_theme')),
         ));
 
         $this->state->set('rp_site.settings.profils.individual', array(
