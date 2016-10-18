@@ -72,7 +72,15 @@ class Rate extends ContentEntityBase implements RateInterface {
    * {@inheritdoc}
    */
   public function getDate() {
-    return $this->get('date')->value;
+    $timestamp = $this->get('date')->value;
+
+    if (!$timestamp) {
+      return null;
+    }
+
+    $datetime = \DateTime::createFromFormat('U', $timestamp);
+
+    return $datetime;
   }
 
   /**
@@ -93,7 +101,7 @@ class Rate extends ContentEntityBase implements RateInterface {
   }
 
   public function getFirstRate() {
-    return $this->get('first_rate')->value;
+    return (float) $this->get('first_rate')->value;
   }
 
   public function setFirstRate($rate) {
@@ -102,7 +110,7 @@ class Rate extends ContentEntityBase implements RateInterface {
   }
 
   public function getSecondRate() {
-    return $this->get('second_rate')->value;
+    return (float) $this->get('second_rate')->value;
   }
 
   public function setSecondRate($rate) {
@@ -110,11 +118,12 @@ class Rate extends ContentEntityBase implements RateInterface {
     return $this;
   }
 
+
   /**
    * @return integer
    */
   public function getYear() {
-    return $this->get('year')->value;
+    return (int) $this->get('year')->value;
   }
 
   /**
