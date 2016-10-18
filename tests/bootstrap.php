@@ -120,7 +120,7 @@ function drupal_phpunit_populate_class_loader() {
 
     if (!isset($GLOBALS['namespaces'])) {
         // Scan for arbitrary extension namespaces from core and contrib.
-        $extension_roots = drupal_phpunit_contrib_extension_directory_roots('web');
+        $extension_roots = drupal_phpunit_contrib_extension_directory_roots(__DIR__.'/../web');
 
         $dirs = array_map('drupal_phpunit_find_extension_directories', $extension_roots);
         $dirs = array_reduce($dirs, 'array_merge', array());
