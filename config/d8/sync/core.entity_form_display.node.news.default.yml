@@ -16,7 +16,6 @@ dependencies:
     - field.field.node.news.field_offer
     - field.field.node.news.field_profession
     - field.field.node.news.field_profil
-    - field.field.node.news.field_video
     - image.style.thumbnail
     - node.type.news
   module:
@@ -24,7 +23,6 @@ dependencies:
     - field_group
     - file
     - image
-    - link
     - path
     - text
 third_party_settings:
@@ -37,13 +35,15 @@ third_party_settings:
       parent_name: group_tabs
       weight: 16
       label: Auteur
-      format_type: details
+      format_type: tab
       format_settings:
         label: Auteur
         required_fields: true
         id: ''
         classes: ''
         open: false
+        formatter: closed
+        description: ''
     group_details:
       children:
         - field_file_news
@@ -51,13 +51,13 @@ third_party_settings:
       parent_name: group_tabs
       weight: 17
       label: 'Elements attachés'
-      format_type: details
+      format_type: tab
       format_settings:
-        label: 'Elements attachés'
-        required_fields: true
-        id: ''
+        formatter: closed
+        description: ''
         classes: ''
-        open: false
+        id: ''
+        required_fields: true
     group_contacts:
       children:
         - field_advisor
@@ -188,13 +188,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
-  field_video:
-    weight: 12
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
   path:
     type: path
     weight: 12

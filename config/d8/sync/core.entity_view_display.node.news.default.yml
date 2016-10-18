@@ -16,13 +16,11 @@ dependencies:
     - field.field.node.news.field_offer
     - field.field.node.news.field_profession
     - field.field.node.news.field_profil
-    - field.field.node.news.field_video
     - node.type.news
   module:
     - datetime
     - file
     - image
-    - link
     - text
     - user
 id: node.news.default
@@ -121,17 +119,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_video:
-    weight: 107
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
   links:
     weight: 100
 hidden:

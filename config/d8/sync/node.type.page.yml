@@ -13,7 +13,7 @@ third_party_settings:
     parent: 'main:'
 _core:
   default_config_hash: zhtPXoRcC6REiepM0k16zw__FDW5YOXDR6U2WlldTrs
-name: 'Basic page'
+name: 'Page de base'
 type: page
 description: "Base pour la construction de la majorité des pages du futur site. \r\n\r\nOn y intègre un titre, un texte et ensuite nous pouvons construire la page avec d'autres contenus. On peut y ajouter des autres contenus (ex : advisors, products, etc.)"
 help: ''

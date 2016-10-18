@@ -11,7 +11,7 @@ field_name: field_document
 entity_type: node
 bundle: page
 label: Document(s)
-description: ''
+description: 'Nous conseillons de ne pas lier plus de 3 documents pour une navigation optimale.'
 required: false
 translatable: false
 default_value: {  }

@@ -82,11 +82,11 @@ class NewsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
         $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.news')['nid']);
 
         // Professions
-        $professions = $this->entity_taxonomy->loadTree('profession');
+        // $professions = $this->entity_taxonomy->loadTree('profession');
         // categories
         $types  = $this->entity_taxonomy->loadTree('category_news');
 
-        $categories = array_merge($professions, $types);
+        $categories = $types;
         foreach ($categories as $profession) {
             $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$profession->tid);
             if( !empty($alias) ){

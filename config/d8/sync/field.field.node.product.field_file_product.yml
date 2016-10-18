@@ -21,7 +21,7 @@ settings:
   file_directory: 'file-products/[date:custom:Y]-[date:custom:m]'
   file_extensions: 'txt pdf doc docx xls xlsx'
   max_filesize: ''
-  description_field: false
+  description_field: true
   handler: 'default:file'
   handler_settings: {  }
 field_type: file

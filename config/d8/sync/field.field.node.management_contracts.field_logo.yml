@@ -12,7 +12,7 @@ field_name: field_logo
 entity_type: node
 bundle: management_contracts
 label: Logo
-description: ''
+description: "L'image doit faire idéalement 512x512 pixels - au minimum. Elle sera ensuite redimensionnée pour les différents formats du site.\r\nUn fond transparent ou blanc est préférable."
 required: false
 translatable: false
 default_value: {  }
@@ -22,7 +22,7 @@ settings:
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
   max_resolution: ''
-  min_resolution: ''
+  min_resolution: 512x512
   alt_field: false
   alt_field_required: true
   title_field: false

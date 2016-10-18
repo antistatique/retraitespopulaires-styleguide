@@ -11,7 +11,7 @@ id: node.offer.field_web_site
 field_name: field_web_site
 entity_type: node
 bundle: offer
-label: 'Web site'
+label: 'Lien vers le magazine'
 description: ''
 required: false
 translatable: false

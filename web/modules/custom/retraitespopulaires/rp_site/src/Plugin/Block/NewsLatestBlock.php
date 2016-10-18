@@ -109,8 +109,8 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
         $variables = array('news' => array());
         //Load the current node's related news
         $news_nids = array();
-        if ($node = $this->route->getParameter('node')) {
-
+        $node = $this->route->getParameter('node');
+        if (isset($node->field_profession->target_id)) {
             $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
             if( !empty($alias) ){
                 $alias = str_replace('/', '', $alias);
@@ -129,10 +129,33 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
             $variables['news'] = $this->entity_node->loadMultiple($nids);
 
             $variables['collection'] = array(
-                'name' => $this->profession->name($node->field_profession->target_id),
-                'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid'], 'taxonomy_term_alias' => $alias])
+                'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid']])
             );
-        }else {
+        } else if (isset($node->field_profil->target_id)) {
+            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profil->target_id);
+            if( !empty($alias) ){
+                $alias = str_replace('/', '', $alias);
+            }
+
+            $now = date('Y-m-d h:i:s');
+            $query = $this->entity_query->get('node')
+                ->condition('type', 'news')
+                ->condition('status', 1)
+                ->condition('field_profil', $node->field_profil->target_id)
+                ->condition('field_date', $now, '<=')
+                ->sort('field_date', 'DESC')
+                ->range(0, 3);
+
+            $nids = $query->execute();
+            $variables['news'] = $this->entity_node->loadMultiple($nids);
+
+            $variables['collection'] = array(
+                'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid']])
+            );
+        }
+
+        // Fallback to retrieve news
+        if (empty($node) || empty($variables['news'])) {
             $now = date('Y-m-d h:i:s');
             $query = $this->entity_query->get('node')
                 ->condition('type', 'news')

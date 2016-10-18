@@ -12,7 +12,7 @@ field_name: field_file_building
 entity_type: node
 bundle: building
 label: 'Fichier(s) attaché(s)'
-description: ''
+description: 'Tout autre type de fichier que l''on souhaite attacher à la construction.'
 required: false
 translatable: false
 default_value: {  }
@@ -21,7 +21,7 @@ settings:
   file_directory: 'file-buildings/[date:custom:Y]-[date:custom:m]'
   file_extensions: 'txt pdf doc docx xls xlsx'
   max_filesize: ''
-  description_field: false
+  description_field: true
   handler: 'default:file'
   handler_settings: {  }
 field_type: file

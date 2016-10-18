@@ -30,13 +30,13 @@ third_party_settings:
       parent_name: group_tabs
       weight: 116
       label: 'Elements attachés'
-      format_type: details
+      format_type: tab
       format_settings:
-        label: 'Elements attachés'
-        required_fields: true
-        id: ''
+        formatter: closed
+        description: ''
         classes: ''
-        open: false
+        id: ''
+        required_fields: true
     group_contacts:
       children:
         - field_contact
@@ -113,7 +113,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete_tags
+    type: entity_reference_autocomplete
   field_faq:
     weight: 49
     settings:
@@ -121,7 +121,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete_tags
+    type: entity_reference_autocomplete
   field_file_product:
     weight: 48
     settings:

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.building.body
+    - field.field.node.building.field_building_status
     - field.field.node.building.field_building_type
     - field.field.node.building.field_city
     - field.field.node.building.field_contact
@@ -28,10 +29,10 @@ third_party_settings:
   field_group:
     group_attachments:
       children:
-        - field_virtual_visit
         - field_file_plan
-        - field_file_building
         - field_virtual_image
+        - field_virtual_visit
+        - field_file_building
       parent_name: group_tabs
       weight: 3
       label: 'Elements attachés'
@@ -48,6 +49,7 @@ third_party_settings:
         - title
         - field_cover
         - body
+        - field_building_status
         - field_building_type
       parent_name: group_tabs
       weight: 1
@@ -115,8 +117,13 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
-  field_building_type:
+  field_building_status:
     weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_building_type:
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -138,7 +145,7 @@ content:
     third_party_settings: {  }
     type: image_image
   field_file_building:
-    weight: 7
+    weight: 9
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -169,14 +176,14 @@ content:
     third_party_settings: {  }
     type: text_textarea
   field_virtual_image:
-    weight: 8
+    weight: 7
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
   field_virtual_visit:
-    weight: 4
+    weight: 8
     settings:
       placeholder_url: ''
       placeholder_title: ''

@@ -30,13 +30,13 @@ third_party_settings:
       parent_name: group_tabs
       weight: 117
       label: 'Elements de contact'
-      format_type: details
+      format_type: tab
       format_settings:
-        label: 'Elements de contact'
-        required_fields: true
-        id: ''
+        formatter: closed
+        description: ''
         classes: ''
-        open: false
+        id: ''
+        required_fields: true
     group_info:
       children:
         - title

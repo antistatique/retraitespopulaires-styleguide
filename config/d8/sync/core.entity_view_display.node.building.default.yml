@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.building.body
+    - field.field.node.building.field_building_status
     - field.field.node.building.field_building_type
     - field.field.node.building.field_city
     - field.field.node.building.field_contact
@@ -20,6 +21,7 @@ dependencies:
     - file
     - image
     - link
+    - options
     - text
     - user
 id: node.building.default
@@ -33,6 +35,12 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_building_status:
+    weight: 114
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   field_building_type:
     weight: 112
     label: above

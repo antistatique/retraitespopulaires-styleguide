@@ -1,0 +1,21 @@
+uuid: b4a726ea-f828-4175-855a-a177e33cca53
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_building_status
+    - node.type.building
+  module:
+    - options
+id: node.building.field_building_status
+field_name: field_building_status
+entity_type: node
+bundle: building
+label: 'Statut de la construction'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

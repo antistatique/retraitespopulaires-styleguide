@@ -14,7 +14,7 @@ field_name: body
 entity_type: node
 bundle: page
 label: Corps
-description: ''
+description: "Les couleurs des titres et des liens s'accordent automatiquement selon le métier sélectionné (Assurance vie, ...).\r\nPour la création d'un tableau, utiliser le bouton <b>tableau</b> - définir les propriétés du tableau <b>largeur toujours vide</b> - puis sélectionner un style de tableau <b>long ou condensé</b>."
 required: false
 translatable: false
 default_value: {  }

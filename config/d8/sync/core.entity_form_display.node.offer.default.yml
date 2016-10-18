@@ -32,13 +32,13 @@ third_party_settings:
       parent_name: group_tabs
       weight: 2
       label: 'Données principales'
-      format_type: details
+      format_type: tab
       format_settings:
-        label: 'Données principales'
-        required_fields: true
-        id: ''
+        formatter: closed
+        description: ''
         classes: ''
-        open: false
+        id: ''
+        required_fields: true
     group_tabs:
       children:
         - group_attachments

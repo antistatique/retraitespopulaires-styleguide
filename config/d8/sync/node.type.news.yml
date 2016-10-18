@@ -8,10 +8,10 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: News
+name: Actualité
 type: news
 description: 'Les actualités, bons cadeaux, etc.'
-help: ''
+help: 'Nous conseillons un titre de 50 caractères environ, pour une lecture optimale.'
 new_revision: false
 preview_mode: 0
 display_submitted: false
