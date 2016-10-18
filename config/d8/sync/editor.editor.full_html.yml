@@ -43,6 +43,7 @@ settings:
             - DrupalImage
             - Table
             - HorizontalRule
+            - EmbedSemantic
         -
           name: 'Block Formatting'
           items:
@@ -58,6 +59,8 @@ settings:
       language_list: un
     stylescombo:
       styles: "table.table-wide|Tableau - Long\r\ntable.table-condensed|Tableau - Condenser"
+    autoembed:
+      status: embedsemantic
 image_upload:
   status: true
   scheme: public

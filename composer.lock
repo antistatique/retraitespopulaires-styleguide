@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "833dde487d3d718c7f309d1a04c33431",
-    "content-hash": "24e06746603083d101241f6bcb6f5672",
+    "hash": "a0a37058235f82ded26471a0a2d742c6",
+    "content-hash": "6eb949d1310117505202fecdf72d9e22",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1150,6 +1150,38 @@
             "time": "2016-08-19 14:05:31"
         },
         {
+            "name": "drupal/ckeditor_media_embed",
+            "version": "8.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/ckeditor_media_embed.git",
+                "reference": "4762ba8a871a591cf3112d57bf8bd9cd58654263"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_media_embed-8.x-1.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ckeditor": "8.*",
+                "drupal/core": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Adds the Media Embed CKEditor plugins to Drupal.",
+            "homepage": "https://www.drupal.org/project/embed",
+            "time": "2016-06-16 21:31:16"
+        },
+        {
             "name": "drupal/console",
             "version": "1.0.0-rc5",
             "source": {
@@ -1515,6 +1547,11 @@
                 "symfony/css-selector": "~2.8"
             },
             "type": "drupal-core",
+            "extra": {
+                "patches_applied": {
+                    "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Drupal\\Core\\": "lib/Drupal/Core",
@@ -1748,7 +1785,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/focal_point-8.x-1.0-beta3.zip",
-                "reference": null,
+                "reference": "5f122a98c854c6f70f2683a3f5583a769dcde85a",
                 "shasum": null
             },
             "require": {

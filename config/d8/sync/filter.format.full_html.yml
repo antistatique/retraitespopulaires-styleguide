@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   module:
+    - ckeditor_media_embed
     - editor
     - rp_ckeditor
 _core:
@@ -50,18 +51,6 @@ filters:
     status: true
     weight: -50
     settings: {  }
-  filter_autop:
-    id: filter_autop
-    provider: filter
-    status: false
-    weight: -43
-    settings: {  }
-  filter_html_escape:
-    id: filter_html_escape
-    provider: filter
-    status: false
-    weight: -44
-    settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
@@ -75,3 +64,21 @@ filters:
     weight: -42
     settings:
       filter_url_length: 72
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -44
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -43
+    settings: {  }
+  filter_ckeditor_media_embed:
+    id: filter_ckeditor_media_embed
+    provider: ckeditor_media_embed
+    status: true
+    weight: 0
+    settings: {  }

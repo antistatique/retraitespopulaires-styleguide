@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.management_contracts.body
     - field.field.node.management_contracts.field_contact
     - field.field.node.management_contracts.field_logo
+    - field.field.node.management_contracts.field_profession
     - field.field.node.management_contracts.field_web_site
     - image.style.thumbnail
     - node.type.management_contracts
@@ -23,6 +24,7 @@ third_party_settings:
         - field_logo
         - body
         - field_web_site
+        - field_profession
       parent_name: group_tabs
       weight: 5
       label: 'Données principales'
@@ -83,6 +85,11 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+  field_profession:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_web_site:
     weight: 3
     settings:
