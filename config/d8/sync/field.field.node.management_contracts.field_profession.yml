@@ -1,0 +1,28 @@
+uuid: c8914ecc-eb29-4ab3-83b1-cfadd8e47b94
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profession
+    - node.type.management_contracts
+    - taxonomy.vocabulary.profession
+id: node.management_contracts.field_profession
+field_name: field_profession
+entity_type: node
+bundle: management_contracts
+label: Métier
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      profession: profession
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
