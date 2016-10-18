@@ -95,7 +95,31 @@
       </div>
     {% endif %}
 
-    {{ content|without('body', 'field_document', 'field_products', 'field_profession', 'field_profil', 'field_faq', 'field_contact', 'field_advisor') }}
+    <!-- Linked Files -->
+    {% if not node.field_file_page is empty %}
+      <div class="spacer spacer-sm"></div>
+      <p class="media-heading text-muted">
+        {% trans %}
+          Fichier attaché
+        {% plural node.field_file_page|length %}
+          Fichiers attachés
+        {% endtrans %}
+      </p>
+      <ul class="unordered-list">
+      {% for file in node.field_file_page %}
+          <li>
+            {% set file_title = file.description ? file.description : file.entity.filename.value %}
+            {% set file_type = file.entity.mimeType ? file.entity.mimeType %}
+            <a href="{{ file_url(file.entity.uri.value) }}" class="pretty-link text-{{ node.field_profession.entity.tid.value|theme_profession }}">
+              {{ file_title }}
+              <span class="text-muted text-small">- {{ file_type|extension_guesser|upper }}</span>
+            </a>
+          </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+    {{ content|without('body', 'field_document', 'field_products', 'field_profession', 'field_profil', 'field_faq', 'field_contact', 'field_advisor', 'field_file_page') }}
   </div>
 </article>
 

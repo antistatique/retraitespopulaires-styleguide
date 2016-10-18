@@ -82,6 +82,8 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('content') }}>
+    {{ load_block('rp_contact_contact_cta_block') }}
+
     {% if node.body.summary %}
       <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
       <div class="spacer spacer-sm"></div>
@@ -92,5 +94,30 @@
         {{ content.body }}
       </div>
     {% endif %}
+
+    <!-- Linked Files -->
+    {% if not node.field_file_faq is empty %}
+      <div class="spacer spacer-sm"></div>
+      <p class="media-heading text-muted">
+        {% trans %}
+          Fichier attaché
+        {% plural node.field_file_faq|length %}
+          Fichiers attachés
+        {% endtrans %}
+      </p>
+      <ul class="unordered-list">
+      {% for file in node.field_file_faq %}
+          <li>
+            {% set file_title = file.description ? file.description : file.entity.filename.value %}
+            {% set file_type = file.entity.mimeType ? file.entity.mimeType %}
+            <a href="{{ file_url(file.entity.uri.value) }}" class="pretty-link text-{{ node.field_profession.entity.tid.value|theme_profession }}">
+              {{ file_title }}
+              <span class="text-muted text-small">- {{ file_type|extension_guesser|upper }}</span>
+            </a>
+          </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+
   </div>
 </article>
