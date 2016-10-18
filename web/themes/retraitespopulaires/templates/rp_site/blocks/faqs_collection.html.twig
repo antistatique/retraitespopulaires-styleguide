@@ -1,0 +1,32 @@
+{% if variables.faqs %}
+<div class="spacer"></div>
+
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="h1 text-center">
+    {% trans %}Retraites Populaires peut vous aider ! Voici la liste des questions-réponses.{% endtrans %}
+    </div>
+    <div class="spacer spacer-md"></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3 col-lg-2 col-md-offset-1 col-lg-offset-2">
+    {{ load_block('rp_site_faqs_filter_block') }}
+  </div>
+  <div class="col-md-8 col-lg-6">
+    {% for faq in variables.faqs %}
+      {{ load_block('rp_site_faq_teaser_block', {'faq': faq}) }}
+    {% endfor %}
+  </div>
+</div>
+
+{% if variables.pager %}
+<div class="row">
+  <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
+    {{ variables.pager }}
+  </div>
+</div>
+{% endif %}
+
+{% endif %}

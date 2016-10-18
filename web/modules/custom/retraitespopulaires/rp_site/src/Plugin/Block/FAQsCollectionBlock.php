@@ -1,7 +1,7 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_site\Plugin\Block\NewsCollectionBlock.
+* Contains \Drupal\rp_site\Plugin\Block\FAQsCollectionBlock.
 */
 
 namespace Drupal\rp_site\Plugin\Block;
@@ -16,22 +16,22 @@ use Drupal\Core\Entity\Query\QueryFactory;
 use \Symfony\Component\HttpFoundation\RequestStack;
 
 /**
-* Provides a 'News Collection' Block
+* Provides a 'FAQs Collection' Block
 *
 * @Block(
-*   id = "rp_site_news_collection_block",
-*   admin_label = @Translation("News Collection block"),
+*   id = "rp_site_faqs_collection_block",
+*   admin_label = @Translation("FAQs Collection block"),
 * )
 *
 * Inline example:
 * <code>
-* load_block('rp_site_news_collection_block')
+* load_block('rp_site_faqs_collection_block')
 * </code>
 */
-class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class FAQsCollectionBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     /**
-     * Number of news per page
+     * Number of faqs per page
      * @var integer
      */
     private $limit = 20;
@@ -106,9 +106,8 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
         $now = date('Y-m-d h:i:s');
 
         $query = $this->entity_query->get('node')
-            ->condition('type', 'news')
+            ->condition('type', 'faq')
             ->condition('status', 1)
-            ->condition('field_date', $now, '<=')
         ;
 
         $taxonomy_term_alias = $this->request->query->get('taxonomy_term_alias');
@@ -122,8 +121,8 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
                 $term = $this->entity_taxonomy->load($taxonomy_term_tid);
                 if ($term->vid->target_id == 'profession') {
                     $query->condition('field_profession', $taxonomy_term_tid);
-                } elseif ($term->vid->target_id == 'category_news') {
-                    $query->condition('field_news_type', $taxonomy_term_tid);
+                } elseif ($term->vid->target_id == 'category_faqs') {
+                    $query->condition('field_faqs_type', $taxonomy_term_tid);
                 }
             }
         }
@@ -141,14 +140,14 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
         if (!is_null($this->request->get('page'))) {
             $page = (int)$this->request->get('page');
         }
-        $query->sort('field_date', 'DESC');
+        $query->sort('title', 'ASC');
         $query->range($page*$this->limit, $this->limit);
 
         $nids = $query->execute();
-        $variables['news'] = $this->entity_node->loadMultiple($nids);
+        $variables['faqs'] = $this->entity_node->loadMultiple($nids);
 
         return [
-            '#theme'     => 'rp_site_news_collection_block',
+            '#theme'     => 'rp_site_faqs_collection_block',
             '#variables' => $variables,
             '#cache' => [
                 'contexts' => [

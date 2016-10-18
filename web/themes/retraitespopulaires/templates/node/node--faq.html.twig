@@ -82,8 +82,6 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('content') }}>
-    {{ load_block('rp_contact_contact_cta_block') }}
-
     {% if node.body.summary %}
       <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
       <div class="spacer spacer-sm"></div>
@@ -94,6 +92,5 @@
         {{ content.body }}
       </div>
     {% endif %}
-
   </div>
 </article>

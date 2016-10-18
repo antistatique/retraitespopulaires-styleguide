@@ -15,13 +15,6 @@ rp_site.documents.collection:
     requirements:
         _permission: 'access content'
 
-rp_site.faqs.collection:
-    path: '/faqs/{taxonomy_term_alias}'
-    defaults:
-        _controller: '\Drupal\rp_site\Controller\FAQsController::collection'
-        _title: 'Questions-réponses'
-    requirements:
-        _permission: 'access content'
 rp_site.documents.download:
     path: '/download/{node}'
     defaults:
