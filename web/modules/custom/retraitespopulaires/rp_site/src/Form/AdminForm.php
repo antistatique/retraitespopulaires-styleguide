@@ -257,6 +257,11 @@ class AdminForm extends FormBase {
             'theme' => trim($form_state->getValue('faqs_theme')),
         ));
 
+        $this->state->set('rp_site.settings.collection.documents', array(
+            'nid' => trim($form_state->getValue('documents_nid')),
+            'theme' => trim($form_state->getValue('documents_theme')),
+        ));
+
         $this->state->set('rp_site.settings.collection.buildings', array(
             'nid' => trim($form_state->getValue('buildings_nid')),
             'theme' => trim($form_state->getValue('buildings_theme')),
