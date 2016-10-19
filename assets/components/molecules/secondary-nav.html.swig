@@ -10,7 +10,7 @@ notes: |
 ---
 <div class="secondary-nav secondary-nav-{{ theme }}">
   <div class="back">
-    <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-arrow"></a>
+    <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></a>
   </div>
   <div class="secondary-nav-content">
 
