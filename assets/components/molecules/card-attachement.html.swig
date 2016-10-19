@@ -19,7 +19,7 @@ notes: |
         {% if type == 'document' %}
           <div class="media">
             <div class="media-left">
-              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
+              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
             </div>
             <div class="media-body">
               <a href="#" class="pretty-link h5">{{ link }} <span class="text-muted text-small">- PDF</span></a>

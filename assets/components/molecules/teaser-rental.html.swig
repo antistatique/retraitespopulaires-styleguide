@@ -15,27 +15,35 @@ notes: |
   - **rental_rent** - String
   - **theme** - String
 ---
-<div class="teaser-rental teaser-rental-{{ theme }} teaser-rental-orientation-{{ rental_orientation }} shadow shadow-down">
-  <a href="#" class="rental-heading">
+<a href="#" class="teaser teaser-fullclick teaser-rental teaser-rental-{{ theme }} teaser-rental-orientation-{{ rental_orientation }} shadow shadow-down">
+  <div class="rental-heading">
     <div class="heading-image" style="background-image: url({% if rental_heading  %} {{ rental_heading }} {% else  %} https://unsplash.it/780/780?image=1005 {% endif %})"></div>
     <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>
-  </a>
+  </div>
   <div class="rental-body">
-    <a href="#" class="rental-type h2 pretty-link">
-      {% if rental_type  %}
-        {{ rental_type }}
-      {% else  %}
-        Appartement
-      {% endif %}
-    </a>
+    <div class="row">
+       <div class="col-sm-12">
+        <h5 class="rental-type h5 text-muted">
+          {% if rental_type  %}
+            {{ rental_type }}
+          {% else  %}
+            Appartement
+          {% endif %}
+        </h5>
+      </div>
+    </div>
     <div class="spacer spacer-xs"></div>
-    <a href="#" class="rental-title h1 pretty-link">
-      {% if rental_address  %}
-        {{ rental_address }}
-      {% else  %}
-        Av. Collonges 12, 1004 Lausanne
-      {% endif %}
-    </a>
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="rental-title h1 link-immobilier">
+          {% if rental_address  %}
+            {{ rental_address }}
+          {% else  %}
+            Av. Collonges 12, 1004 Lausanne
+          {% endif %}
+        </h1>
+      </div>
+    </div>
     <div class="spacer spacer-sm"></div>
     <div class="row info">
       <div class="col-sm-6 info-property">
@@ -66,4 +74,4 @@ notes: |
       </div>
     </div>
   </div>
-</div>
+</a>

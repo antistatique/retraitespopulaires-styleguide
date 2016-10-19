@@ -33,6 +33,7 @@
 @import 'atoms/logo-retraitespopulaires';
 @import 'atoms/hamburger';
 @import 'atoms/shadow';
+@import 'atoms/teaser';
 @import 'atoms/alert';
 @import 'atoms/button';
 @import 'atoms/spacer';
@@ -45,6 +46,7 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/teaser-contact-cta';
 @import 'molecules/immo-heading';
 @import 'molecules/immo-results';
 @import 'molecules/teaser-offer';

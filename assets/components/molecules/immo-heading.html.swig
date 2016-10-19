@@ -28,7 +28,7 @@ notes: |
       {% if immo_loyer  %}
         <span class="text-bold">Loyer mensuel :</span> {{ immo_loyer }}
       {% else  %}
-        <span class="text-bold">Loyer mensuel :</span> 1'440.-
+        <span class="text-bold">Loyer mensuel :</span> CHF 1'440.-
       {% endif %}
     </p>
     <p>
@@ -42,7 +42,7 @@ notes: |
       {% if immo_charges  %}
         <span class="text-bold">Charges :</span> {{ immo_charges }}
       {% else  %}
-        <span class="text-bold">Charges :</span> 60.-
+        <span class="text-bold">Charges :</span> CHF 60.-
       {% endif %}
     </p>
     <p>

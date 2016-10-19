@@ -1,0 +1,38 @@
+@charset 'UTF-8';
+
+.teaser-contact-cta {
+  display: block;
+  max-width: 150px;
+  margin: 0 0 $grid-gutter-width $grid-gutter-width;
+  background: $white;
+  border: 1px solid $brand-primary;
+  border-radius: $border-radius-base;
+
+  .teaser-contact-cta-heading {
+    position: relative;
+    width: 100%;
+    min-height: 150px;
+
+    .heading-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 2;
+    }
+  }
+
+  .teaser-contact-cta-body {
+    margin: 0;
+    padding: $grid-gutter-width/2;
+    color: $text-color;
+  }
+
+  @each $label, $color in $themes {
+    &.teaser-contact-cta-#{$label} {
+      border-color: $color;
+    }
+  }
+}

@@ -4,6 +4,13 @@ table.tablesaw {
   border-collapse: collapse;
   border: 1px solid $brand-primary;
 
+  caption {
+    margin-top: $grid-gutter-width / 2;
+    margin-bottom: 0;
+    color: $text-color;
+    opacity: 1;
+  }
+
   thead {
     background: $brand-primary;
     color: $white;
@@ -104,6 +111,12 @@ table.tablesaw.table-condensed {
       }
     }
 
+    tbody th {
+      padding: $grid-gutter-width / 4 $grid-gutter-width / 2;
+      background: $brand-primary;
+      font-weight: 400;
+      color: $white;
+    }
   }
 
   table.tablesaw.table-wide {
@@ -131,6 +144,10 @@ table.tablesaw.table-condensed {
       &:after {
         display: none;
       }
+    }
+
+    tbody th .tablesaw-cell-label {
+      color: $white;
     }
   }
 
@@ -167,10 +184,14 @@ table.tablesaw {
       }
 
       @media (max-width: 39.9375em) {
+        tbody th {
+          background: $color;
+        }
+
         &.table-wide {
           border-bottom-color: $color;
 
-          &:after { background-color: $color; }
+          tbody > tr td:after { background-color: $color; }
 
           tbody > tr td:first-child { border-top-color: $color; }
         }

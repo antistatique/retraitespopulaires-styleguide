@@ -8,22 +8,14 @@ notes: |
   - **teaser_profil_title** - String
   - **teaser_profil_body** - String
 ---
-<div class="teaser-profil shadow shadow-down">
+<a href="#" class="teaser teaser-fullclick teaser-profil shadow shadow-down">
   <div class="profil-heading">
     <div class="text-primary {% if teaser_profil_icon %} icon-text icon-text-center {% endif %}">
     {% if teaser_profil_icon %}
       <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span>
-      {% if teaser_profil_title %}
-        <a href="#" class="icon-text-txt text-cocon h4">{{ teaser_profil_title }}</a>
-      {% else %}
-        <a href="#" class="icon-text-txt text-cocon h4">Profil</a>
-      {% endif %}
+      <div class="icon-text-txt text-cocon h4">{{ teaser_profil_title|default('Profil') }}</div>
     {% else %}
-      {% if teaser_profil_title %}
-        <a href="#" class="text-cocon h4">{{ teaser_profil_title }}</a>
-      {% else %}
-        <a href="#" class="text-cocon h4">Profil</a>
-      {% endif %}
+      <div class="text-cocon h4">{{ teaser_profil_title|default('Profil') }}</div>
     {% endif %}
     </div>
   </div>
@@ -34,4 +26,4 @@ notes: |
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
     {% endif %}
   </div>
-</div>
+</a>

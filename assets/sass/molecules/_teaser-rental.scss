@@ -7,6 +7,14 @@
   border: 1px solid $light-gray;
   border-radius: $border-radius-base;
 
+  @each $label, $color in $themes {
+    &.teaser-rental-#{$label} {
+      .rental-body h1 {
+        border-color: $color;
+      }
+    }
+  }
+
   .rental-heading {
     position: relative;
     width: 100%;
@@ -27,6 +35,11 @@
     margin: 0;
     padding: $grid-gutter-width/2;
     color: $text-color;
+
+    h1 {
+      display: inline;
+      border-color: $brand-primary;
+    }
   }
 
   .info-rent {

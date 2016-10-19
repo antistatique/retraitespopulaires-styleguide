@@ -7,13 +7,13 @@ notes: |
   ##### Options :
   - **theme** - String
 ---
-<div class="teaser-offer shadow shadow-down">
-  <a href="#" class="offer-heading">
+<a href="#" class="teaser teaser-fullclick teaser-offer shadow shadow-down">
+  <div class="offer-heading">
     <div class="heading-image" style="background-image: url(https://unsplash.it/780/780?image=1005)"></div>
     <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>
-  </a>
+  </div>
   <div class="offer-body">
-    <a href="#" class="offer-title h1 pretty-link">Festival Lavaux Classic</a>
+    <div class="offer-title h1 pretty-link">Festival Lavaux Classic</div>
     <div class="spacer spacer-sm"></div>
 
     <div class="offer-extra">
@@ -26,4 +26,4 @@ notes: |
       </div>
     </div>
   </div>
-</div>
+</a>

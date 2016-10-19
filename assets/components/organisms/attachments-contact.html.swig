@@ -11,8 +11,8 @@ notes: |
   <div class="container">
     <div class="row">
       <div class="col-xs-12 last-news-heading">
-        <div class="h2 pull-left">Nous sommes disponible pour vous</div>
-        <a class="pretty-link pretty-link-berrylight-gray pull-right text-{{ attachments_contact_theme }}">Contacter Retraites Populaires</a>
+        <div class="h2 pull-left">Retraites&nbsp;Populaires est à votre disposition</div>
+        <a class="pretty-link pretty-link-berrylight-gray pull-right text-{{ attachments_contact_theme }}">Contacter Retraites&nbsp;Populaires</a>
       </div>
     </div>
 

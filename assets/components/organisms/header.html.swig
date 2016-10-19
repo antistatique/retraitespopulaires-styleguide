@@ -6,6 +6,7 @@ notes: |
   ##### Usage : `header`
   ##### Options :
   - **light** - Boolean
+  - **theme** - Theme
 ---
 {% if not light %}
   {% include '../molecules/big-menu.html.swig' %}
@@ -20,8 +21,7 @@ notes: |
     </div>
   </div>
   {% endif %}
-
   <div class="header-nav">
-    {% include '../atoms/hamburger.html.swig' with {'link': light} %}
+    {% include '../atoms/hamburger.html.swig' with {'link': light, 'theme': theme} %}
   </div>
 </header>

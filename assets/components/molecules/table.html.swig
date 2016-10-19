@@ -22,14 +22,14 @@ notes: |
   <tr>
      <td>Première ligne</td>
      <td>Carmin</td>
-     <td><div class="text-center text-icon"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-arrow-oblique"></span></div></td>
+     <td><div class="text-center text-icon"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-arrow-down-right"></span></div></td>
      <td><div class="text-right">-2,2%</div></td>
      <td><div class="text-right">12'0400.-</div></td>
   </tr>
   <tr>
      <td>Une sconde information</td>
      <td>Ocre</td>
-     <td><div class="text-center text-icon"><span class="text-success angle angle-force-top retraitespopulaires-icon retraitespopulaires-icon-arrow-oblique"></span></div></td>
+     <td><div class="text-center text-icon"><span class="text-success angle angle-force-top retraitespopulaires-icon retraitespopulaires-icon-arrow-up-right"></span></div></td>
      <td><div class="text-right">+0,2%</div></td>
      <td><div class="text-right">1'1050.-</div></td>
   </tr>

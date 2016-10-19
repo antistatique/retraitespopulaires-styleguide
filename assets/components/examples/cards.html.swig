@@ -16,7 +16,7 @@ layout: examples.html.swig
         <li class="">
           <div class="media">
             <div class="media-left">
-              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
+              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
             </div>
             <div class="media-body">
               <a href="#" class="pretty-link h5">Brochure Conseil global <span class="text-muted text-small">- PDF</span></a>
@@ -26,7 +26,7 @@ layout: examples.html.swig
         <li class="">
           <div class="media">
             <div class="media-left">
-              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
+              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
             </div>
             <div class="media-body">
               <a href="#" class="pretty-link h5">Procuration <span class="text-muted text-small">- PDF</span></a>
@@ -36,7 +36,7 @@ layout: examples.html.swig
         <li class="">
           <div class="media">
             <div class="media-left">
-              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
+              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
             </div>
             <div class="media-body">
               <a href="#" class="pretty-link h5">Modification des primes et prestations <span class="text-muted text-small">- PDF</span></a>
@@ -47,7 +47,7 @@ layout: examples.html.swig
       <div class="card-footer">
         <div class="media">
           <div class="media-left">
-              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></a>
+              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file"></a>
           </div>
           <div class="media-body">
             <a class="text-bold pretty-link h5" href="#">Accéder à tous les formulaires relatifs à l'assurance vie</a>

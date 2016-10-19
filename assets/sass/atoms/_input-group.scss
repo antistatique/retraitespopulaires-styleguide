@@ -38,7 +38,8 @@
       border-bottom-left-radius: 0;
 
       &.btn-icon {
-        padding-bottom: 0.4em;
+        max-height: 48px;
+        padding-bottom: 0.6em;
       }
     }
   }
@@ -46,5 +47,7 @@
 
 .readonly .input-group-btn .btn {
   background-color: darken($input-border-disabled, 15%);
+  border-color: darken($input-border-disabled, 15%);
   color: $input-color-placeholder;
+  cursor: not-allowed;
 }

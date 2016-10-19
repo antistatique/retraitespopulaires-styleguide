@@ -23,7 +23,7 @@ notes: |
                 <li class="">
                   <div class="media">
                     <div class="media-left">
-                      <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
+                      <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-3x"></a>
                     </div>
                     <div class="media-body">
                       <a href="#" class="pretty-link h5">Stagiaire MPC post-CFC à Lausanne</a>
@@ -33,7 +33,7 @@ notes: |
                 <li class="">
                   <div class="media">
                     <div class="media-left">
-                      <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
+                      <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-3x"></a>
                     </div>
                     <div class="media-body">
                       <a href="#" class="pretty-link h5">Stagiaire MPC post-CFC à Lausanne</a>
@@ -43,7 +43,7 @@ notes: |
                 <li class="">
                   <div class="media">
                     <div class="media-left">
-                      <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></a>
+                      <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-3x"></a>
                     </div>
                     <div class="media-body">
                       <a href="#" class="pretty-link h5">Stagiaire MPC post-CFC à Lausanne</a>
@@ -58,10 +58,10 @@ notes: |
           <div class="card-footer">
             <div class="media">
               <div class="media-left">
-                  <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></a>
+                  <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-right"></a>
               </div>
               <div class="media-body">
-                <a class="text-bold pretty-link h5" href="#">Voir tous les emplois</a>
+                <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="#">Voir tous les emplois</a>
               </div>
             </div>
           </div>

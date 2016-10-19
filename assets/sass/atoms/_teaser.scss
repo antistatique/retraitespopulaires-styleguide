@@ -1,0 +1,14 @@
+@charset 'UTF-8';
+
+.teaser {
+  &.teaser-fullclick {
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out;
+
+    &:hover {
+      background: darken($white, 10%);
+      text-decoration: none;
+    }
+  }
+}

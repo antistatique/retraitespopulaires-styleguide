@@ -9,7 +9,7 @@ notes: |
   <h3>Informations personnelles</h3>
   <fieldset class="fieldset-bordered">
     <div class="form-group">
-      <label>Votre Titre</label>
+      <label>Votre titre</label>
       <select name="title" class="form-control">
         <option value="h">Monsieur</option>
         <option value="f">Madame</option>
@@ -49,7 +49,7 @@ notes: |
       </select>
     </div>
     <div class="form-group">
-      <label>Votre état civile</label>
+      <label>Votre état civil</label>
       <select name="civility" class="form-control">
         <option value="single">Célibataire</option>
         <option value="married">Marié</option>

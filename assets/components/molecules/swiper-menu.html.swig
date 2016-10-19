@@ -33,15 +33,15 @@ notes: |
       <p class="media-heading text-small swiper-padding text-muted">Vous êtes</p>
       <ul class="swiper-list swiper-list-first swiper-list-secondary list-no-style list-no-padding" role="navigation">
         <li class="text-primary icon-text icon-text-center">
-          <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="/retraitespopulaires-styleguide/particuliers" class="icon-text-txt text-cocon h5">Particuliers</a>
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-particuliers retraitespopulaires-icon-2x"></span> <a href="/retraitespopulaires-styleguide/particuliers" class="icon-text-txt text-cocon h5">Particuliers</a>
           <a href="swiper-particuliers" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
         </li>
         <li class="text-primary icon-text icon-text-center">
-          <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Professionnels</a>
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-entreprises retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Professionnels</a>
           <a href="swiper-professionnels" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
         </li>
         <li class="text-primary icon-text icon-text-center">
-          <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Collectivés</a>
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-collectivites retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Collectivés</a>
           <a href="swiper-collectivites" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
         </li>
       </ul>
