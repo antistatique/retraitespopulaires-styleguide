@@ -1,0 +1,16 @@
+uuid: 74e711fa-e336-491d-b776-2fb72e5842f9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: rp_teaser_contact_xl
+label: 'Retraites Populaires - Teaser Contact XL'
+effects:
+  f06c6c8b-1e40-4e45-b4ff-6b6b7355e05e:
+    uuid: f06c6c8b-1e40-4e45-b4ff-6b6b7355e05e
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: '300'
+      height: '250'
