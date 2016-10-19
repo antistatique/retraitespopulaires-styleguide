@@ -112,13 +112,24 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
         }
 
         if ($cover_fid) {
+
             $cover = $this->entity_file->load($cover_fid);
-            $build = array(
-                'xs'  => ImageStyle::load('rp_full_screen_xs')->buildUrl($cover->uri->value),
-                'md'  => ImageStyle::load('rp_full_screen_md')->buildUrl($cover->uri->value),
-                'lg'  => ImageStyle::load('rp_full_screen_lg')->buildUrl($cover->uri->value),
-                'xlg' => ImageStyle::load('rp_full_screen_xl')->buildUrl($cover->uri->value),
+            $styles = array(
+                'xs' => 'rp_full_screen_xs',
+                'md' => 'rp_full_screen_md',
+                'lg' => 'rp_full_screen_lg',
+                'xl' => 'rp_full_screen_xl',
             );
+
+            foreach ($styles as $media => $style) {
+                $img_style = ImageStyle::load($style);
+                $destination_uri = $img_style->buildUri($cover->getFileUri());
+                $destination_url = $img_style->buildUrl($cover->getFileUri());
+
+                // create the new image derivative
+                $derivative = $img_style->createDerivative($cover->getFileUri(), $destination_uri);
+                $build[$media] = $destination_url;
+            }
         }
         return $build;
     }

@@ -4,7 +4,8 @@
       <source srcset="{{ file_url(variables.cover.xs) }}" media="(max-width: 544px)">
       <source srcset="{{ file_url(variables.cover.md) }}" media="(max-width: 992px)">
       <source srcset="{{ file_url(variables.cover.lg) }}" media="(max-width: 1600px)">
-      <img class="img-responsive center-block" src="{{ file_url(variables.cover.xlg) }}" alt="{{ variables.title }}">
+      <source srcset="{{ file_url(variables.cover.xl) }}">
+      <img class="img-responsive center-block" src="{{ file_url(variables.cover.xl) }}" alt="{{ variables.title }}">
     </picture>
   {% endif %}
   <div class="funky-waves-container">
