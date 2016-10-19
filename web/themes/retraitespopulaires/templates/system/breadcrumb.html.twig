@@ -16,7 +16,7 @@
 
     {% for item in breadcrumb %}
       {% set classes = [
-        'pretty-link',
+        (not loop.first and not loop.last) ? 'pretty-link',
         loop.first ? 'text-primary',
         loop.last ? 'text-muted',
         (not loop.first and not loop.last) ? 'text-' ~ theme,
