@@ -20,6 +20,10 @@ class MortgageCalculatorTest extends PHPUnit_Framework_TestCase
 
     public function testCalculate()
     {
+        $this->markTestIncomplete(
+          'Missing informations about Loan second rang'
+        );
+
         $expectedResult = new MortgageResult();
         $expectedResult->setFirstRate(1.35);
         $expectedResult->setSecondRate(1.75);
