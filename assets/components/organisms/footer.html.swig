@@ -6,6 +6,7 @@ notes: |
   ##### Usage : `footer`
   ##### Options :
   - **light** - Boolean
+  - **theme** - String
 ---
 <div class="footer">
   {% if not light %}
@@ -89,7 +90,7 @@ notes: |
   {% endif %}
 
 
-  {% include '../atoms/organic-lines.html.swig' %}
+  {% include '../atoms/organic-lines.html.swig' with {'theme': theme} %}
 
   <div class="spacer"></div>
 
@@ -97,9 +98,9 @@ notes: |
     <div class="row">
       <div class="col-xs-12 text-center">
         <ul class="unordered-list list-inline list-unstyle-first">
-          <li><a href="#" class="pretty-link">Impressum</a></li>
-          <li><a href="#" class="pretty-link">Mentions juridiques</a></li>
-          <li><a href="#" class="pretty-link">Glossaire</a></li>
+          <li><a href="#" class="pretty-link text-{{theme}}">Impressum</a></li>
+          <li><a href="#" class="pretty-link text-{{theme}}">Mentions juridiques</a></li>
+          <li><a href="#" class="pretty-link text-{{theme}}">Glossaire</a></li>
         </ul>
       </div>
     </div>

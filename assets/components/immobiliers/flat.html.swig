@@ -5,7 +5,7 @@ collection: immobiliers
 styleguide: false
 layout: immobiliers.html.swig
 ---
-{% include '../organisms/header.html.swig' with {'light': true} %}
+{% include '../organisms/header.html.swig' with {'light': true, 'theme': 'immobilier'} %}
 <div class="spacer spacer-xl"></div>
 <div class="spacer spacer-xl hidden-md hidden-lg"></div>
 
@@ -27,9 +27,9 @@ layout: immobiliers.html.swig
       <div class="row">
         <div class="col-xs-12" align="center">
           <ul class="d-inline-block list-no-style list-no-padding list-inline">
-            <li> <a class="pretty-link" href="#"><span class="text-small">◀</span> Objet précédent</a></li>
-            <li> <a class="pretty-link" href="#">Revenir à la recherche</a></li>
-            <li> <a class="pretty-link" href="#">Objet suivant <span class="text-small">►</span></a></li>
+            <li> <a class="pretty-link text-immobilier" href="#"><span class="text-small">◀</span> Objet précédent</a></li>
+            <li> <a class="pretty-link text-immobilier" href="#">Revenir à la recherche</a></li>
+            <li> <a class="pretty-link text-immobilier" href="#">Objet suivant <span class="text-small">►</span></a></li>
           </ul>
         </div>
       </div>
@@ -50,7 +50,7 @@ layout: immobiliers.html.swig
              <tbody>
               <tr>
                  <td><strong>Loyer total</strong></td>
-                 <td>1'120</td>
+                 <td>CHF 1'120.-</td>
               </tr>
               <tr>
                  <td><strong>Étage</strong></td>
@@ -82,7 +82,7 @@ layout: immobiliers.html.swig
             <br>
             <h4>Descriptif</h4>
             <br>
-            <ul>
+            <ul class="unordered-list">
               <li><strong>Cuisine :</strong> laboratoire</li>
               <li><strong>Agencement :</strong> cuisinière électrique, frigo</li>
               <li><strong>Caractéristiques :</strong> hall</li>
@@ -111,4 +111,4 @@ layout: immobiliers.html.swig
 </div>
 
 <div class="spacer"></div>
-{% include '../organisms/footer.html.swig' with {'light': true} %}
+{% include '../organisms/footer.html.swig' with {'light': true, 'theme': 'immobilier'} %}
