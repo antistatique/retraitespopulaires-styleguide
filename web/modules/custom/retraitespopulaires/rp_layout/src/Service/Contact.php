@@ -45,13 +45,13 @@ class Contact {
     * Yverdon mail contact
     * @var String
     */
-    public $email_yverdon = 'nyon@retraitespopulaires.ch';
+    public $email_yverdon = 'yverdon@retraitespopulaires.ch';
 
     /**
     * Nyon mail contact
     * @var String
     */
-    public $email_nyon = 'yverdon@retraitespopulaires.ch';
+    public $email_nyon = 'nyon@retraitespopulaires.ch';
 
     /**
     * Twitter url
