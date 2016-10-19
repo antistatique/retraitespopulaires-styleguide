@@ -34,8 +34,8 @@
 .button-bubble-outline {
   .bubble-icon {
     position: relative;
-    background: lighten($green, 5%);
-    border: 1px solid $green;
+    background: $ligthen-gray;
+    border: 1px solid $ligthen-gray;
     overflow: hidden;
 
     &:after {
@@ -64,7 +64,7 @@
     }
 
     i.retraitespopulaires-icon {
-      color: $white;
+      color: $brand-primary;
       transition-delay: 0.15s;
     }
   }

@@ -25,7 +25,7 @@ layout: website.html.swig
         <h2>Comment ça marche ?</h2>
         <div class="spacer spacer-xs"></div>
         <p>D'abord, remplissez les champs:</p>
-          <ul>
+          <ul class="unordered-list">
             <li><strong>Prix d'achat</strong> (1)</li>
             <li><strong>Fonds propres</strong> (2)</li>
             <li><strong>Revenu annuel net</strong> (3) </li>

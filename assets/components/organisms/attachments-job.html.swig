@@ -56,13 +56,9 @@ notes: |
           </div>
 
           <div class="card-footer">
-            <div class="media">
-              <div class="media-left">
-                  <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-right"></a>
-              </div>
-              <div class="media-body">
-                <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="#">Voir tous les emplois</a>
-              </div>
+            <div class="icon-text icon-text-center">
+              <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin retraitespopulaires-icon-2x text-primary"></span>
+              <a class="icon-text-txt text-bold pretty-link pretty-link-berrylight-gray h5" href="#">Voir tous les emplois</a>
             </div>
           </div>
         </div>

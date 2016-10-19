@@ -45,9 +45,46 @@ layout: examples.html.swig
     </div>
 
     {% include '../atoms/input-radio.html.swig' %}
+    <div class="form-group">
+      <div class="form-group-inline">
+        <div class="input-checkbox checkbox-inline">
+          <input type="checkbox" name="choice" value="pistache">
+          <label class="option">Pistache</label>
+        </div>
+        <div class="input-checkbox checkbox-inline">
+          <input type="checkbox" name="choice" value="menthe-fraiche">
+          <label class="option">Menthe fraîche</label>
+        </div>
+        <div class="input-checkbox checkbox-inline">
+          <input type="checkbox" name="choice" value="chocolat">
+          <label class="option">chocolat</label>
+        </div>
+      </div>
+    </div>
+
     {% include '../atoms/input-checkbox.html.swig' %}
+    <div class="form-group">
+      <div class="form-group-inline">
+        <div class="input-radio radio-inline">
+          <input type="radio" name="choice" value="meringue-creme-double">
+          <label class="option">Meringue crème double</label>
+        </div>
+        <div class="input-radio radio-inline">
+          <input type="radio" name="choice" value="miel">
+          <label class="option">Miel</label>
+        </div>
+      </div>
+    </div>
+
     {% include '../atoms/input-select.html.swig' %}
     {% include '../atoms/input-datepicker.html.swig' %}
+    <div class="input-group">
+      <input type="text" class="form-control datepicker" value="02/12/2016">
+      <span class="input-group-btn no-events">
+        <button class="btn btn-default-invert btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
+      </span>
+    </div>
+
     {% include '../atoms/input-radio-btn.html.swig' %}
     {% include '../atoms/input-textarea.html.swig' %}
 

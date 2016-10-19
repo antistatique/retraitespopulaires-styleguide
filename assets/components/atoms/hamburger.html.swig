@@ -8,7 +8,7 @@ notes: |
   - **link** - Boolean
 ---
 {% if link %}
-  <a href="/retraitespopulaires-styleguide" class="hamburger-wrapper">
+  <a href="#" class="hamburger-wrapper">
 {% else %}
   <div class="hamburger-wrapper">
 {% endif %}
