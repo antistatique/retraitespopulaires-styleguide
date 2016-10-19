@@ -6,11 +6,13 @@ notes: |
   ##### Usage : `form-immo-search`
   ##### Options :
   - **theme** - String
+  - **type_immo_search** - String [flats|shops]
 ---
 
 <form class="form-immo-search">
 
-  <fieldset class="fieldset-bordered">
+  <fieldset class="fieldset-no-legend">
+    <legend>Recherche d'appartements</legend>
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
@@ -42,6 +44,7 @@ notes: |
     </div>
     <div class="row">
       <div class="col-sm-4">
+        {% if type_immo_search == 'flats' %}
         <div class="form-group">
           <label class="d-block">Nombre de pièces</label>
           <div class="form-group-inline">
@@ -67,8 +70,9 @@ notes: |
             </div>
           </div>
         </div>
+        {% endif %}
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-2">
         <div class="form-group">
           <label class="d-block">Loyer maximum</label>
           <div class="input-text">
@@ -76,7 +80,7 @@ notes: |
           </div>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-2">
         <div class="form-group">
           <label class="d-block">Surface min.</label>
           <div class="input-text">
@@ -84,35 +88,27 @@ notes: |
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
       <div class="col-sm-4">
-        <div class="spacer spacer-xs"></div>
-        <div class="spacer spacer-sm"></div>
-        <label class="d-block">Disponible dès</label>
-      </div>
-      <div class="col-sm-2">
-        <div class="form-group">
+        <div class="form-group d-inline-block">
+          <label class="d-block">Disponible dès.</label>
           <select class="form-control form-control-immobilier full-width">
             <option value="01">Janvier</option>
             <option value="02">Février</option>
             <option value="02">...</option>
           </select>
         </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="form-group">
+        <div class="form-group d-inline-block">
           <select class="form-control form-control-immobilier full-width">
             <option value="2016">2016</option>
             <option value="2017">2017</option>
           </select>
         </div>
       </div>
-      <div class="col-sm-4">
-      <div class="spacer spacer-sm"></div>
-        <button type="submit" class="btn btn-immobilier pull-right">Rechercher</button>
-      </div>
     </div>
+
+    <div class="spacer spacer-sm"></div>
+    <button type="submit" class="btn btn-lg btn-immobilier pull-right">Rechercher</button>
+    <div>
   </fieldset>
   <div class="clearfix"></div>
 </form>

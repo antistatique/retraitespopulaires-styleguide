@@ -24,7 +24,7 @@ layout: immobiliers.html.swig
       <h1 class="page-title text-center">Appartements à louer</h1>
       <div class="spacer"></div>
       <div class="entity-content">
-        {% include '../organisms/form-immo-search.html.swig' %}
+        {% include '../organisms/form-immo-search.html.swig' with {'theme': 'immobilier', 'type_immo_search': 'flats'} %}
         <div class="spacer"></div>
       </div>
     </div>
