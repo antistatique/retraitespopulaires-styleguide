@@ -49,6 +49,8 @@
         bottom: 0;
         left: 0;
 
+        /* stylelint-disable max-nesting-depth */
+        /* Need this depth for reading code */
         @media (min-width: $screen-sm-min) {
           bottom: -25px;
         }
@@ -56,6 +58,7 @@
         @media (min-width: $screen-xl-min) {
           bottom: -55px;
         }
+        /* stylelint-enable max-nesting-depth */
       }
 
       &.wave-2 { /* Set width to 200% for animated waves */
