@@ -141,14 +141,17 @@ var _organicJS = require('./organicJS.js');
 
 var _datepicker = require('./datepicker.js');
 
+var _smoothscroll = require('./smoothscroll.js');
+
 (function () {
   (0, _big_menu.big_menu)();
+  (0, _smoothscroll.smoothscroll_load)();
   (0, _organicJS.organic_generate)();
   (0, _input_dynamic_label.input_dynamic_label)();
   (0, _datepicker.datepicker)();
 })();
 
-},{"./big_menu.js":1,"./datepicker.js":2,"./input_dynamic_label.js":4,"./organicJS.js":5}],4:[function(require,module,exports){
+},{"./big_menu.js":1,"./datepicker.js":2,"./input_dynamic_label.js":4,"./organicJS.js":5,"./smoothscroll.js":6}],4:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -310,6 +313,55 @@ function organic_generate() {
     });
   };
 })(jQuery);
+
+}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],6:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.smoothscroll_load = smoothscroll_load;
+exports.smoothscroll_click = smoothscroll_click;
+
+var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function smoothscroll_load() {
+  console.log('load');
+  setTimeout(function () {
+    if (location.hash) {
+      /* we need to scroll to the top of the window first, because the browser will always jump to the anchor first before JavaScript is ready, thanks Stack Overflow: http://stackoverflow.com/a/3659116 */
+      window.scrollTo(0, 0);
+      var hash = location.hash.split('#');
+      smoothScrollTo((0, _jquery2.default)('#' + hash[1]));
+    }
+  }, 1);
+}
+
+function smoothscroll_click() {
+  (0, _jquery2.default)('a[href*=#]:not([href=#])').click(function () {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      smoothScrollTo((0, _jquery2.default)(this.hash));
+      return false;
+    }
+  });
+}
+
+var smoothScrollTo = function smoothScrollTo(dest) {
+  var offset = arguments.length <= 1 || arguments[1] === undefined ? 100 : arguments[1];
+
+  var target = dest.length ? dest : (0, _jquery2.default)('[name=' + this.hash.slice(1) + ']');
+  if (target.length) {
+    (0, _jquery2.default)('html,body').animate({
+      scrollTop: target.offset().top - offset
+    }, 1000);
+  }
+};
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}]},{},[3])
