@@ -10,6 +10,14 @@
     min-height: 300px;
   }
 
+  @media (min-width: $screen-lg-min) {
+    min-height: 350px;
+  }
+
+  @media (min-width: $screen-xl-min) {
+    min-height: 400px;
+  }
+
   // Add padding of the header size
   &.has-header { padding-top: 84px; }
 
