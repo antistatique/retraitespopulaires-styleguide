@@ -12,13 +12,15 @@ layout: website.html.swig
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="page-title text-center">Le spécialiste vaudois de l'assurance vie et de la prévoyance professionnelle</h1>
-      <div class="spacer"></div>
       <div class="entity-content">
-        <div class="row">
-          <div class="col-xs-12 col-sm-4">{% include '../molecules/teaser-profil.html.swig' with {'teaser_profil_icon': true, 'teaser_profil_title': "Particuliers", 'teaser_profil_body': "Retraites Populaires peut vous aider. Que ce soit pour votre épargne, votre famille, votre avenir professionnel, votre retraite ou même votre logement, nous avons des solutions."} %}</div>
-          <div class="col-xs-12 col-sm-4">{% include '../molecules/teaser-profil.html.swig' with {'teaser_profil_icon': true, 'teaser_profil_title': "Entreprises", 'teaser_profil_body': "Vous trouverez chez nous de précieux renseignements sur la prévoyance professionnelle et l’assurance vie. Nous avons également des locaux commerciaux à louer."} %}</div>
-          <div class="col-xs-12 col-sm-4">{% include '../molecules/teaser-profil.html.swig' with {'teaser_profil_icon': true, 'teaser_profil_title': "Collectivités", 'teaser_profil_body': "Notre gestion d'institutions de prévoyance vous intéressera sûrement ! Nous finançons également la construction de nouvelles infrastructures et de logements."} %}</div>
+        <div class="container">
+          <h1 class="page-title text-center">Le spécialiste vaudois de l'assurance vie et de la prévoyance professionnelle</h1>
+          <div class="spacer"></div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">{% include '../molecules/teaser-profil.html.swig' with {'teaser_profil_icon': true, 'teaser_profil_title': "Particuliers", 'teaser_profil_body': "Retraites Populaires peut vous aider. Que ce soit pour votre épargne, votre famille, votre avenir professionnel, votre retraite ou même votre logement, nous avons des solutions."} %}</div>
+            <div class="col-xs-12 col-sm-4">{% include '../molecules/teaser-profil.html.swig' with {'teaser_profil_icon': true, 'teaser_profil_title': "Entreprises", 'teaser_profil_body': "Vous trouverez chez nous de précieux renseignements sur la prévoyance professionnelle et l’assurance vie. Nous avons également des locaux commerciaux à louer."} %}</div>
+            <div class="col-xs-12 col-sm-4">{% include '../molecules/teaser-profil.html.swig' with {'teaser_profil_icon': true, 'teaser_profil_title': "Collectivités", 'teaser_profil_body': "Notre gestion d'institutions de prévoyance vous intéressera sûrement ! Nous finançons également la construction de nouvelles infrastructures et de logements."} %}</div>
+          </div>
         </div>
       </div>
       <div class="spacer spacer-lg"></div>

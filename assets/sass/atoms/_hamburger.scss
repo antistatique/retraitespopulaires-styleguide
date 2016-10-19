@@ -3,7 +3,7 @@
 .hamburger-wrapper {
   position: absolute;
   top: 1rem;
-  right: -2rem;
+  right: 0rem;
   width: 160px;
   height: 80px;
   cursor: pointer;
@@ -16,8 +16,8 @@
 
   .hamburger-helper {
     position: absolute;
-    top: 26px;
-    left: 0;
+    top: 30px;
+    right: 100px;
   }
 }
 

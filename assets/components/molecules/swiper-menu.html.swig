@@ -54,7 +54,7 @@ notes: |
       <ul data-list="swiper-particuliers" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="/retraitespopulaires-styleguide/particuliers" class="text-muted pretty-link text-cocon">Particuliers</a>
+          <a href="/retraitespopulaires-styleguide/particuliers" class="text-muted pretty-link pretty-link-berrylight-gray text-cocon">Particuliers</a>
         </li>
         <li>
           <p class="media-heading text-small text-muted">Nouveau projet</p>
@@ -97,7 +97,7 @@ notes: |
       <ul data-list="swiper-professionnels" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="#" class="text-muted pretty-link text-cocon">Professionnels</a>
+          <a href="#" class="text-muted pretty-link pretty-link-berrylight-gray text-cocon">Professionnels</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-cocon">Prévoyance professionnelle</a>
@@ -110,7 +110,7 @@ notes: |
        <ul data-list="swiper-collectivites" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="#" class="text-muted pretty-link text-cocon">Collectivités</a>
+          <a href="#" class="text-muted pretty-link pretty-link-berrylight-gray text-cocon">Collectivités</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-cocon">Gestion d'institutions de prévoyance</a>

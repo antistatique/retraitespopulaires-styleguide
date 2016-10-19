@@ -23,8 +23,12 @@
 }
 
 .container-big-menu {
-  margin-top: 80px;
+  margin-top: 122px;
   padding: $grid-gutter-width;
+  @media (min-width: $screen-sm-min) {
+      padding-left: 0;
+      margin-left: 6.56rem; // to align logo
+  }
 }
 
 // When Drupal admin bar is display horizontal - add bigger margin
