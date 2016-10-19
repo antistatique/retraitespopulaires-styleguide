@@ -6,12 +6,11 @@ notes: |
   ##### Usage : `hamburger`
   ##### Options :
   - **link** - Boolean
-  - **theme** - Theme
 ---
 {% if link %}
-  <a href="#" class="hamburger-wrapper hamburger-{{theme}}">
+  <a href="#" class="hamburger-wrapper">
 {% else %}
-  <div class="hamburger-wrapper hamburger-{{theme}}">
+  <div class="hamburger-wrapper">
 {% endif %}
   <div class="hamburger-button">
     <div class="hamburger">
