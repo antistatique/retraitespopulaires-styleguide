@@ -8,7 +8,7 @@ notes: |
   - **teaser_profil_title** - String
   - **teaser_profil_body** - String
 ---
-<a href="#" class="teaser-profil shadow shadow-down">
+<a href="#" class="teaser teaser-fullclick teaser-profil shadow shadow-down">
   <div class="profil-heading">
     <div class="text-primary {% if teaser_profil_icon %} icon-text icon-text-center {% endif %}">
     {% if teaser_profil_icon %}

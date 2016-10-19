@@ -5,13 +5,13 @@ collection: molecules
 notes: |
   ##### Usage : `teaser-news`
 ---
-<div class="teaser-news shadow shadow-down">
-  <a href="#" class="news-heading">
+<a href="#" class="teaser teaser-fullclick teaser-news shadow shadow-down">
+  <div class="news-heading">
     <div class="heading-image" style="background-image: url(https://unsplash.it/1400/780)"></div>
     <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>
-  </a>
+  </div>
   <div class="news-body">
-    <a href="#" class="news-title h1 pretty-link">Bella vita numéro 46</a>
+    <div class="news-title h1 pretty-link">Bella vita numéro 46</div>
     <div class="spacer spacer-xs"></div>
     <p>Le magazine clientèle de Retraites Populaires<p>
     <div class="spacer spacer-sm"></div>
@@ -19,4 +19,4 @@ notes: |
       <span class="news-date">Décembre 2015</span> <span class="news-type">Bella Vita</span>
     </div>
   </div>
-</div>
+</a>

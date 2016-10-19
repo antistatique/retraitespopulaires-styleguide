@@ -7,7 +7,7 @@ notes: |
   ##### Options :
   - **theme** - String
 ---
-<a href="#" class="teaser-contact-cta teaser-contact-cta-{{ theme }} shadow shadow-down">
+<a href="#" class="teaser teaser-fullclick teaser-contact-cta teaser-contact-cta-{{ theme }} shadow shadow-down">
   <div class="teaser-contact-cta-heading">
     <div class="heading-image" style="background-image: url(https://unsplash.it/780/780?image=1005)"></div>
     <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>

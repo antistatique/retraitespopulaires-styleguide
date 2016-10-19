@@ -8,10 +8,10 @@ notes: |
   - **theme** - String
 ---
 <div class="teaser-contact teaser-contact-{{ theme }} shadow shadow-down">
-  <div class="teaser-contact-heading">
+  <a href="#" class="teaser-contact-heading">
     <div class="heading-image" style="background-image: url(https://unsplash.it/780/780?image=1005)"></div>
     <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>
-  </div>
+  </a>
   <div class="teaser-contact-body">
     <a href="#" class="h3 pretty-link text-{{ theme }}">Dominique Schmid</a>
     <div class="spacer spacer-sm"></div>

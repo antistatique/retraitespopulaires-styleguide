@@ -11,6 +11,7 @@
   .offer-heading {
     position: relative;
     width: 100%;
+    height: 196px;
 
     .heading-image {
       position: absolute;
@@ -27,7 +28,6 @@
     width: 100%;
     margin: 0;
     padding: $grid-gutter-width/2;
-    background: $white;
     color: $text-color;
   }
 
