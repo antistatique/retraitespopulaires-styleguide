@@ -1,7 +1,6 @@
 {% set theme = variables.node.field_profession.entity.tid.value|theme_profession %}
 
-</a>
-<a href="#contacter-nous" class="pull-right teaser-contact-cta teaser-contact-cta-{{ theme }} shadow shadow-down">
+<a href="#contacter-nous" class="pull-right teaser teaser-fullclick teaser-contact-cta teaser-contact-cta-{{ theme }} shadow shadow-down">
   {% if not variables.contact.field_cover.entity.uri.value is empty %}
   <div class="teaser-contact-cta-heading">
     <div class="heading-image" style="background-image: url({{ file_url(variables.contact.field_cover.entity.uri.value) }})"></div>
