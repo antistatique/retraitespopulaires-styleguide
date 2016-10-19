@@ -114,10 +114,10 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
         if ($cover_fid) {
             $cover = $this->entity_file->load($cover_fid);
             $build = array(
-                'xs'  => ImageStyle::load('rp_full_screen_xs')->buildUri($cover->uri->value),
-                'md'  => ImageStyle::load('rp_full_screen_md')->buildUri($cover->uri->value),
-                'lg'  => ImageStyle::load('rp_full_screen_lg')->buildUri($cover->uri->value),
-                'xlg' => ImageStyle::load('rp_full_screen_xl')->buildUri($cover->uri->value),
+                'xs'  => ImageStyle::load('rp_full_screen_xs')->buildUrl($cover->uri->value),
+                'md'  => ImageStyle::load('rp_full_screen_md')->buildUrl($cover->uri->value),
+                'lg'  => ImageStyle::load('rp_full_screen_lg')->buildUrl($cover->uri->value),
+                'xlg' => ImageStyle::load('rp_full_screen_xl')->buildUrl($cover->uri->value),
             );
         }
         return $build;
