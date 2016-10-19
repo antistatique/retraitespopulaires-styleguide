@@ -79,7 +79,15 @@
                     ] %}
 
                     <li class="{{ classes|join(' ') }}">
-                      <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span>
+                      {% set profil_icon = 'placeholder' %}
+                      {% if loop.index0 == 0 %}
+                        {% set profil_icon = 'particuliers' %}
+                      {% elseif loop.index0 == 1 %}
+                        {% set profil_icon = 'entreprises' %}
+                      {% elseif loop.index0 == 2 %}
+                        {% set profil_icon = 'collectivites' %}
+                      {% endif %}
+                      <span class="retraitespopulaires-icon retraitespopulaires-icon-{{ profil_icon }} retraitespopulaires-icon-3x"></span>
                       <a href="{{ item.link.urlObject }}" class="icon-text-txt text-cocon h5">{{ item.link.title }}</a>
                       {% if item.hasChildren %}
                         <a href="swiper-{{ item.link.pluginId }}"  class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
