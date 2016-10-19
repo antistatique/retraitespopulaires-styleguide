@@ -297,6 +297,30 @@ permalink: false
       <div class="icons">
         <div class="square">
           <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-collectivites"></i>
+            <div class="text-muted">.retraitespopulaires-icon-collectivites</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-entreprises"></i>
+            <div class="text-muted">.retraitespopulaires-icon-entreprises</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-particuliers"></i>
+            <div class="text-muted">.retraitespopulaires-icon-particuliers</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-document-file"></i>
+            <div class="text-muted">.retraitespopulaires-icon-document-file</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram"></i>
             <div class="text-muted">.retraitespopulaires-icon-instagram</div>
           </div>  
@@ -357,14 +381,56 @@ permalink: false
         </div>
         <div class="square">
           <div class="thebox">
-            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow"></i>
-            <div class="text-muted">.retraitespopulaires-icon-arrow</div>
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-up"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-up</div>
           </div>  
         </div>
         <div class="square">
           <div class="thebox">
-            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-oblique"></i>
-            <div class="text-muted">.retraitespopulaires-icon-arrow-oblique</div>
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-up-right"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-up-right</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-right"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-right</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-down-right"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-down-right</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-down"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-down</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-down-left"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-down-left</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-left</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-up-left"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-up-left</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-thin"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-thin</div>
           </div>  
         </div>
         <div class="square">

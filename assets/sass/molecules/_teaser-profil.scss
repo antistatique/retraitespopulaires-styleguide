@@ -2,10 +2,17 @@
 @charset 'UTF-8';
 
 .teaser-profil {
+  display: block;
   margin: 0 auto;
   max-width: 900px;
   border: 1px solid $brand-primary;
   border-radius: $border-radius-base;
+  transition: background-color 0.25s ease-in-out;
+
+  &:hover {
+    background: darken($white, 10%);
+    text-decoration: none;
+  }
 
   .profil-heading {
     padding: $grid-gutter-width/2;
