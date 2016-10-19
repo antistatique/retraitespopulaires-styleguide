@@ -3,19 +3,22 @@
 .wrapper-funky-waves {
   position: relative;
   overflow: hidden;
-  min-height: 25vh;
   background: $brand-primary;
 
-  @media (min-width: $screen-md-min) {
-    min-height: 300px;
-  }
+  &:not(.wrapper-funky-waves-with-cover) {
+    min-height: 25vh;
 
-  @media (min-width: $screen-lg-min) {
-    min-height: 350px;
-  }
+    @media (min-width: $screen-md-min) {
+      min-height: 300px;
+    }
 
-  @media (min-width: $screen-xl-min) {
-    min-height: 400px;
+    @media (min-width: $screen-lg-min) {
+      min-height: 350px;
+    }
+
+    @media (min-width: $screen-xl-min) {
+      min-height: 400px;
+    }
   }
 
   // Add padding of the header size
