@@ -20,12 +20,44 @@ function retraitespopulaires_theme_suggestions_page_alter(array &$suggestions, a
         $suggestions[] = 'page__node__news';
     }
 
+    if (isset($node->nid->value) && $node->getType() == 'building') {
+        $suggestions[] = 'page__node__building';
+    }
+
+    if (isset($node->nid->value) && $node->getType() == 'partnership') {
+        $suggestions[] = 'page__node__partnership';
+    }
+
+    if (isset($node->nid->value) && $node->getType() == 'faq') {
+        $suggestions[] = 'page__node__faq';
+    }
+
+    if (isset($node->nid->value) && $node->getType() == 'management_contracts') {
+        $suggestions[] = 'page__node__management_contracts';
+    }
+
     if (isset($node->nid->value) && ($node->getType() == 'advisor' || $node->getType() == 'contact')) {
         $suggestions[] = 'page__node__contact';
     }
 
     if (isset($node->nid->value) && $node->nid->value == $state->get('rp_site.settings.collection.news')['nid']) {
         $suggestions[] = 'page__node__'.$state->get('rp_site.settings.collection.news')['theme'];
+    }
+
+    if (isset($node->nid->value) && $node->nid->value == $state->get('rp_site.settings.collection.faqs')['nid']) {
+        $suggestions[] = 'page__node__'.$state->get('rp_site.settings.collection.faqs')['theme'];
+    }
+
+    if (isset($node->nid->value) && $node->nid->value == $state->get('rp_site.settings.collection.buildings')['nid']) {
+        $suggestions[] = 'page__node__'.$state->get('rp_site.settings.collection.buildings')['theme'];
+    }
+
+    if (isset($node->nid->value) && $node->nid->value == $state->get('rp_site.settings.collection.management_contracts')['nid']) {
+        $suggestions[] = 'page__node__'.$state->get('rp_site.settings.collection.management_contracts')['theme'];
+    }
+
+    if (isset($node->nid->value) && $node->nid->value == $state->get('rp_site.settings.collection.partnerships')['nid']) {
+        $suggestions[] = 'page__node__'.$state->get('rp_site.settings.collection.partnerships')['theme'];
     }
 
     if (isset($node->nid->value) && $node->getType() == 'offer') {
@@ -49,5 +81,10 @@ function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, a
         )
     ) {
         $suggestions[] = 'node__profil';
+    }
+
+    if (isset($variables['elements']['#node']->nid->value) &&
+        $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.collection.faqs')['nid']) {
+        $suggestions[] = 'node__' . $state->get('rp_site.settings.collection.faqs')['theme'];
     }
 }

@@ -16,6 +16,7 @@ use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\rp_site\Service\Profession;
 use Drupal\Core\Entity\Query\QueryFactory;
+use Drupal\Core\State\StateInterface;
 
 /**
 * Provides a 'Attachments' Block
@@ -57,15 +58,22 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
     private $profession;
 
     /**
+    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
+    * @var StateInterface
+    */
+    private $state;
+
+    /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession, QueryFactory $query) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession, QueryFactory $query, StateInterface $state) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_node   = $entity->getStorage('node');
         $this->route         = $route;
         $this->alias_manager = $alias_manager;
         $this->profession    = $profession;
         $this->entity_query  = $query;
+        $this->state         = $state;
     }
 
     /**
@@ -83,7 +91,8 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
             $container->get('current_route_match'),
             $container->get('path.alias_manager'),
             $container->get('rp_site.profession'),
-            $container->get('entity.query')
+            $container->get('entity.query'),
+            $container->get('state')
         );
     }
 
@@ -148,7 +157,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
             }
             $variables['collection'] = array(
                 'name' => $this->profession->name($node->field_profession->target_id),
-                'link' => Url::fromRoute('rp_site.faqs.collection', array('taxonomy_term_alias' => $alias))
+                'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.faqs')['nid'], 'taxonomy_term_alias' => $alias))
             );
         }
 
@@ -192,7 +201,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
 
             $variables['collection'] = array(
                 'name' => $this->profession->name($node->field_profession->target_id),
-                'link' => Url::fromRoute('rp_site.documents.collection', array('taxonomy_term_alias' => $alias))
+                'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.documents')['nid'], 'taxonomy_term_alias' => $alias))
             );
         }
 

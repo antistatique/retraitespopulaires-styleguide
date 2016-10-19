@@ -90,23 +90,23 @@
     {% endif %}
 
     {% if content.body %}
-      <div class="entity-body body-{{ node.field_profession.entity.tid.value|theme_profession }}">
+      <div class="entity-body">
         {{ content.body }}
       </div>
     {% endif %}
 
     <!-- Linked Files -->
-    {% if not node.field_file_page is empty %}
+    {% if not node.field_file_faq is empty %}
       <div class="spacer spacer-sm"></div>
       <p class="media-heading text-muted">
         {% trans %}
           Fichier attaché
-        {% plural node.field_file_page|length %}
+        {% plural node.field_file_faq|length %}
           Fichiers attachés
         {% endtrans %}
       </p>
       <ul class="unordered-list">
-      {% for file in node.field_file_page %}
+      {% for file in node.field_file_faq %}
           <li>
             {% set file_title = file.description ? file.description : file.entity.filename.value %}
             {% set file_type = file.entity.mimeType ? file.entity.mimeType %}
@@ -119,8 +119,5 @@
       </ul>
     {% endif %}
 
-    {{ content|without('body', 'field_document', 'field_products', 'field_profession', 'field_profil', 'field_faq', 'field_contact', 'field_advisor', 'field_file_page') }}
   </div>
 </article>
-
-{{ load_block('rp_site_products_block') }}
