@@ -4,8 +4,8 @@
   position: absolute;
   top: 1rem;
   right: -2rem;
-  width: 144px;
-  height: 64px;
+  width: 160px;
+  height: 80px;
   cursor: pointer;
   z-index: 2001;
 
@@ -16,7 +16,7 @@
 
   .hamburger-helper {
     position: absolute;
-    top: 21px;
+    top: 26px;
     left: 0;
   }
 }
@@ -32,16 +32,16 @@
 }
 
 .hamburger-button {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   box-sizing: border-box;
 
   .hamburger {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     margin-top: -15px;
     margin-left: -12px;
 
@@ -60,8 +60,8 @@
 
   .hamburger-circle {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 13px;
+    left: 16px;
 
     circle {
       stroke: $brand-primary;
