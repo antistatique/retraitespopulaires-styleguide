@@ -69,7 +69,7 @@ class Rate extends ContentEntityBase implements RateInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * @return \DateTime|null
    */
   public function getDate() {
     $timestamp = $this->get('date')->value;
