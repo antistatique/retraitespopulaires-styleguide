@@ -80,7 +80,7 @@ notes: |
         <div class="form-group">
           <label class="d-block">Surface min.</label>
           <div class="input-text">
-            <input type="text" name="max_rent" class="form-control form-control-immobilier text-right full-width form-surface-numeric" placeholder="m2" value="">
+            <input type="text" name="max_rent" class="form-control form-control-immobilier text-right full-width form-surface-numeric" placeholder="m²" value="">
           </div>
         </div>
       </div>
