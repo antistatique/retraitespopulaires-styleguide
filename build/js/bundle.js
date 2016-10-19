@@ -141,6 +141,8 @@ var _organicJS = require('./organicJS.js');
 
 var _datepicker = require('./datepicker.js');
 
+var _number_format = require('./number_format.js');
+
 var _smoothscroll = require('./smoothscroll.js');
 
 (function () {
@@ -149,9 +151,10 @@ var _smoothscroll = require('./smoothscroll.js');
   (0, _organicJS.organic_generate)();
   (0, _input_dynamic_label.input_dynamic_label)();
   (0, _datepicker.datepicker)();
+  (0, _number_format.number_format)();
 })();
 
-},{"./big_menu.js":1,"./datepicker.js":2,"./input_dynamic_label.js":4,"./organicJS.js":5,"./smoothscroll.js":6}],4:[function(require,module,exports){
+},{"./big_menu.js":1,"./datepicker.js":2,"./input_dynamic_label.js":4,"./number_format.js":5,"./organicJS.js":6,"./smoothscroll.js":7}],4:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -183,6 +186,37 @@ function input_dynamic_label() {
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],5:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.number_format = number_format;
+
+var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function number_format() {
+  (0, _jquery2.default)('.form-chf-numeric').autoNumeric('init', {
+    aSep: '\'',
+    pSign: 's',
+    aSign: ' CHF'
+  });
+
+  (0, _jquery2.default)('.form-surface-numeric').autoNumeric('init', {
+    aSep: '\'',
+    mDec: '0',
+    pSign: 's',
+    aSign: ' m2'
+  });
+}
+
+}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],6:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -315,7 +349,7 @@ function organic_generate() {
 })(jQuery);
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 (function (global){
 'use strict';
 

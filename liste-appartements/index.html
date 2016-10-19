@@ -158,11 +158,10 @@
 
 
   
-
   <div class="header-nav">
     
 
-  <a href="/retraitespopulaires-styleguide" class="hamburger-wrapper">
+  <a href="#" class="hamburger-wrapper">
 
   <div class="hamburger-button">
     <div class="hamburger">
@@ -235,12 +234,13 @@
 
 <form class="form-immo-search">
 
-  <fieldset class="fieldset-bordered">
+  <fieldset class="fieldset-no-legend">
+    <legend>Recherche d'appartements</legend>
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
           <label>Canton</label>
-          <select class="form-control full-width">
+          <select class="form-control form-control-immobilier full-width">
             <option value="vd">Vaud</option>
             <option value="fr">Fribourg</option>
           </select>
@@ -249,8 +249,8 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label>District</label>
-          <select class="form-control full-width">
-            <option value="all">Indiférent</option>
+          <select class="form-control form-control-immobilier full-width">
+            <option value="all">Indifférent</option>
             <option value="fr">...</option>
           </select>
         </div>
@@ -258,84 +258,81 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label>Commune</label>
-          <select class="form-control full-width">
-            <option value="all">Indiférent</option>
+          <select class="form-control form-control-immobilier full-width">
+            <option value="all">Indifférente</option>
             <option value="fr">...</option>
           </select>
         </div>
       </div>
     </div>
-    <div class="spacer spacer-xs">
-
-    </div>
-    <div class="form-group">
-      <label class="d-block">Nombre de pièces</label>
-      <div class="form-group-inline">
-        <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="1">
-          <label class="option">1</label>
-        </div>
-        <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="2">
-          <label class="option">2</label>
-        </div>
-        <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="3">
-          <label class="option">3</label>
-        </div>
-        <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="4">
-          <label class="option">4</label>
-        </div>
-        <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="5">
-          <label class="option">5</label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="d-block">Loyer maximum</label>
-      <div class="input-text">
-        <input type="text" name="max_rent" class="form-control text-right" placeholder="CHF" value="">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="d-block">Surface min.</label>
-      <div class="input-text">
-        <input type="text" name="max_rent" class="form-control text-right" placeholder="m2" value="">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="d-block">Disponible dès</label>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="form-group">
-            <label>Mois</label>
-            <select class="form-control full-width">
-              <option value="01">Janvier</option>
-              <option value="02">Février</option>
-              <option value="02">...</option>
-            </select>
+    <div class="row">
+      <div class="col-sm-4">
+        
+        <div class="form-group">
+          <label class="d-block">Nombre de pièces</label>
+          <div class="form-group-inline">
+            <div class="input-checkbox checkbox-inline">
+              <input type="checkbox" name="nbpieces" value="1">
+              <label class="option">1</label>
+            </div>
+            <div class="input-checkbox checkbox-inline">
+              <input type="checkbox" name="nbpieces" value="2">
+              <label class="option">2</label>
+            </div>
+            <div class="input-checkbox checkbox-inline">
+              <input type="checkbox" name="nbpieces" value="3">
+              <label class="option">3</label>
+            </div>
+            <div class="input-checkbox checkbox-inline">
+              <input type="checkbox" name="nbpieces" value="4">
+              <label class="option">4</label>
+            </div>
+            <div class="input-checkbox checkbox-inline">
+              <input type="checkbox" name="nbpieces" value="5">
+              <label class="option">5</label>
+            </div>
           </div>
         </div>
-        <div class="col-sm-3">
-          <div class="form-group">
-            <label>Année</label>
-            <select class="form-control full-width">
-              <option value="2016">2016</option>
-              <option value="2017">2017</option>
-            </select>
+        
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label class="d-block">Loyer maximum</label>
+          <div class="input-text">
+            <input type="text" name="max_rent" class="form-control form-control-immobilier form-chf-numeric text-right full-width" placeholder="CHF" value="">
           </div>
         </div>
       </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label class="d-block">Surface min.</label>
+          <div class="input-text">
+            <input type="text" name="max_rent" class="form-control form-control-immobilier text-right full-width form-surface-numeric" placeholder="m²" value="">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group d-inline-block">
+          <label class="d-block">Disponible dès.</label>
+          <select class="form-control form-control-immobilier full-width">
+            <option value="01">Janvier</option>
+            <option value="02">Février</option>
+            <option value="02">...</option>
+          </select>
+        </div>
+        <div class="form-group d-inline-block">
+          <select class="form-control form-control-immobilier full-width">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+          </select>
+        </div>
+      </div>
     </div>
 
+    <div class="spacer spacer-sm"></div>
+    <button type="submit" class="btn btn-lg btn-immobilier pull-right">Rechercher</button>
+    <div>
   </fieldset>
-
-  <hr />
-
-  <button type="submit" class="btn btn-primary btn-lg pull-right">Rechercher</button>
   <div class="clearfix"></div>
 </form>
 
@@ -358,9 +355,9 @@
   <div class="immo-results-sorts pull-right">
     <div class="d-inline-block">Tri:</div>
     <ul class="d-inline-block list-no-style list-no-padding list-inline">
-      <li> <a class="pretty-link" href="#"><span class="text-small">►</span> Loyer</a> </li>
-      <li> <a class="pretty-link" href="#"><span class="text-small">▼</span> Pièces</a> </li>
-      <li> <a class="pretty-link" href="#"><span class="text-small">▲</span> Surface</a> </li>
+      <li> <a class="pretty-link text-immobilier" href="#"><span class="text-small">►</span> Loyer</a> </li>
+      <li> <a class="pretty-link text-immobilier" href="#"><span class="text-small">▼</span> Pièces</a> </li>
+      <li> <a class="pretty-link text-immobilier" href="#"><span class="text-small">▲</span> Surface</a> </li>
     </ul>
   </div>
 </div>
@@ -371,28 +368,36 @@
         
           <div class="col-xs-12 col-lg-6 col-xl-4">
             
-<div class="teaser-rental teaser-rental- teaser-rental-orientation-auto shadow shadow-down">
-  <a href="#" class="rental-heading">
+<a href="#" class="teaser teaser-fullclick teaser-rental teaser-rental-immobilier teaser-rental-orientation-auto shadow shadow-down">
+  <div class="rental-heading">
     <div class="heading-image" style="background-image: url( https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_6870.jpg )"></div>
     <div class="loader-image">
 
 <div class="loader">
-  <div class="loader-yingyang loader-"></div>
+  <div class="loader-yingyang loader-immobilier"></div>
 </div>
 </div>
-  </a>
+  </div>
   <div class="rental-body">
-    <a href="#" class="rental-type h2 pretty-link">
-      
-        Appartement
-      
-    </a>
+    <div class="row">
+       <div class="col-sm-12">
+        <h5 class="rental-type h5 text-muted">
+          
+            Appartement
+          
+        </h5>
+      </div>
+    </div>
     <div class="spacer spacer-xs"></div>
-    <a href="#" class="rental-title h1 pretty-link">
-      
-        Ch. de Pierrefleur 54, 1004 Lausanne
-      
-    </a>
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="rental-title h1 link-immobilier">
+          
+            Ch. de Pierrefleur 54, 1004 Lausanne
+          
+        </h1>
+      </div>
+    </div>
     <div class="spacer spacer-sm"></div>
     <div class="row info">
       <div class="col-sm-6 info-property">
@@ -411,40 +416,48 @@
         <div>Loyer total</div>
         <div>
         
-          1&#39;440.-.-
+          CHF 1&#39;440.-
         
         </div>
       </div>
     </div>
   </div>
-</div>
+</a>
 
           </div>
         
           <div class="col-xs-12 col-lg-6 col-xl-4">
             
-<div class="teaser-rental teaser-rental- teaser-rental-orientation-auto shadow shadow-down">
-  <a href="#" class="rental-heading">
+<a href="#" class="teaser teaser-fullclick teaser-rental teaser-rental-immobilier teaser-rental-orientation-auto shadow shadow-down">
+  <div class="rental-heading">
     <div class="heading-image" style="background-image: url( https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_8212.jpg )"></div>
     <div class="loader-image">
 
 <div class="loader">
-  <div class="loader-yingyang loader-"></div>
+  <div class="loader-yingyang loader-immobilier"></div>
 </div>
 </div>
-  </a>
+  </div>
   <div class="rental-body">
-    <a href="#" class="rental-type h2 pretty-link">
-      
-        Appartement
-      
-    </a>
+    <div class="row">
+       <div class="col-sm-12">
+        <h5 class="rental-type h5 text-muted">
+          
+            Appartement
+          
+        </h5>
+      </div>
+    </div>
     <div class="spacer spacer-xs"></div>
-    <a href="#" class="rental-title h1 pretty-link">
-      
-        Av. de l&#39;Université 24, 1005 Lausanne
-      
-    </a>
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="rental-title h1 link-immobilier">
+          
+            Av. de l&#39;Université 24, 1005 Lausanne
+          
+        </h1>
+      </div>
+    </div>
     <div class="spacer spacer-sm"></div>
     <div class="row info">
       <div class="col-sm-6 info-property">
@@ -463,40 +476,48 @@
         <div>Loyer total</div>
         <div>
         
-          1&#39;060.-.-
+          CHF 1&#39;060.-
         
         </div>
       </div>
     </div>
   </div>
-</div>
+</a>
 
           </div>
         
           <div class="col-xs-12 col-lg-6 col-xl-4">
             
-<div class="teaser-rental teaser-rental- teaser-rental-orientation-auto shadow shadow-down">
-  <a href="#" class="rental-heading">
+<a href="#" class="teaser teaser-fullclick teaser-rental teaser-rental-immobilier teaser-rental-orientation-auto shadow shadow-down">
+  <div class="rental-heading">
     <div class="heading-image" style="background-image: url( https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_3540.jpg )"></div>
     <div class="loader-image">
 
 <div class="loader">
-  <div class="loader-yingyang loader-"></div>
+  <div class="loader-yingyang loader-immobilier"></div>
 </div>
 </div>
-  </a>
+  </div>
   <div class="rental-body">
-    <a href="#" class="rental-type h2 pretty-link">
-      
-        Appartement
-      
-    </a>
+    <div class="row">
+       <div class="col-sm-12">
+        <h5 class="rental-type h5 text-muted">
+          
+            Appartement
+          
+        </h5>
+      </div>
+    </div>
     <div class="spacer spacer-xs"></div>
-    <a href="#" class="rental-title h1 pretty-link">
-      
-        Av. de Rumine 38, 1005 Lausanne
-      
-    </a>
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="rental-title h1 link-immobilier">
+          
+            Av. de Rumine 38, 1005 Lausanne
+          
+        </h1>
+      </div>
+    </div>
     <div class="spacer spacer-sm"></div>
     <div class="row info">
       <div class="col-sm-6 info-property">
@@ -515,40 +536,48 @@
         <div>Loyer total</div>
         <div>
         
-          3&#39;750.-.-
+          CHF 3&#39;750.-
         
         </div>
       </div>
     </div>
   </div>
-</div>
+</a>
 
           </div>
         
           <div class="col-xs-12 col-lg-6 col-xl-4">
             
-<div class="teaser-rental teaser-rental- teaser-rental-orientation-auto shadow shadow-down">
-  <a href="#" class="rental-heading">
+<a href="#" class="teaser teaser-fullclick teaser-rental teaser-rental-immobilier teaser-rental-orientation-auto shadow shadow-down">
+  <div class="rental-heading">
     <div class="heading-image" style="background-image: url( https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_7290.jpg )"></div>
     <div class="loader-image">
 
 <div class="loader">
-  <div class="loader-yingyang loader-"></div>
+  <div class="loader-yingyang loader-immobilier"></div>
 </div>
 </div>
-  </a>
+  </div>
   <div class="rental-body">
-    <a href="#" class="rental-type h2 pretty-link">
-      
-        Appartement
-      
-    </a>
+    <div class="row">
+       <div class="col-sm-12">
+        <h5 class="rental-type h5 text-muted">
+          
+            Appartement
+          
+        </h5>
+      </div>
+    </div>
     <div class="spacer spacer-xs"></div>
-    <a href="#" class="rental-title h1 pretty-link">
-      
-        Av. de Rumine 38, 1005 Lausanne
-      
-    </a>
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="rental-title h1 link-immobilier">
+          
+            Av. de Rumine 38, 1005 Lausanne
+          
+        </h1>
+      </div>
+    </div>
     <div class="spacer spacer-sm"></div>
     <div class="row info">
       <div class="col-sm-6 info-property">
@@ -567,13 +596,13 @@
         <div>Loyer total</div>
         <div>
         
-          2&#39;750.-.-
+          CHF 2&#39;750.-
         
         </div>
       </div>
     </div>
   </div>
-</div>
+</a>
 
           </div>
         
@@ -597,7 +626,7 @@
         <div class="form-group">
           <div class="input-group full-width">
             <label for="interval">Durée</label>
-            <select class="form-control" name="interval">
+            <select class="form-control form-control-immobilier" name="interval">
               <option value="1">1 mois</option>
               <option value="2">2 mois</option>
               <option value="3" selected>3 mois</option>
@@ -607,9 +636,9 @@
         <div class="form-group">
           <label for="interval">Votre e-mail</label>
           <div class="input-group full-width">
-            <input type="text" class="form-control full-width" placeholder="Ex: jane.doe@bluewin.ch">
+            <input type="text" class="form-control form-control-immobilier full-width" placeholder="Ex: jane.doe@bluewin.ch">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Inscription</button>
+              <button class="btn btn-immobilier" type="button">Inscription</button>
             </span>
           </div>
         </div>
@@ -630,7 +659,7 @@
 
 
   
-<div class="organic-lines lines-"></div>
+<div class="organic-lines lines-immobilier"></div>
 
 
   <div class="spacer"></div>
@@ -639,9 +668,9 @@
     <div class="row">
       <div class="col-xs-12 text-center">
         <ul class="unordered-list list-inline list-unstyle-first">
-          <li><a href="#" class="pretty-link">Impressum</a></li>
-          <li><a href="#" class="pretty-link">Mentions juridiques</a></li>
-          <li><a href="#" class="pretty-link">Glossaire</a></li>
+          <li><a href="#" class="pretty-link text-immobilier">Impressum</a></li>
+          <li><a href="#" class="pretty-link text-immobilier">Mentions juridiques</a></li>
+          <li><a href="#" class="pretty-link text-immobilier">Glossaire</a></li>
         </ul>
       </div>
     </div>
