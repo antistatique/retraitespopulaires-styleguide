@@ -13,6 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\rp_site\Service\Profession;
+use Drupal\rp_site\Service\Cover;
 
 /**
 * Provides a 'Contact CTA' Block
@@ -48,13 +49,20 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
     private $profession;
 
     /**
+     * Cover Service
+     * @var Cover
+     */
+    private $cover;
+
+    /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, Profession $profession) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, Profession $profession, Cover $cover) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_node = $entity->getStorage('node');
         $this->route       = $route;
         $this->profession  = $profession;
+        $this->cover       = $cover;
     }
 
     /**
@@ -70,7 +78,8 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
             // Load customs services used in this class.
             $container->get('entity_type.manager'),
             $container->get('current_route_match'),
-            $container->get('rp_site.profession')
+            $container->get('rp_site.profession'),
+            $container->get('rp_site.cover')
         );
     }
 
@@ -89,6 +98,10 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
             } else if ( isset($node->field_contact) && !empty($node->field_contact) ){
                 $variables['contact'] = $this->entity_node->load($node->field_contact->target_id);
             }
+        }
+
+        if ($variables['contact']) {
+            $variables['cover'] = $this->cover->generate($variables['contact'], array('xl' => 'rp_teaser_contact_portrait_xl'));
         }
 
         return [

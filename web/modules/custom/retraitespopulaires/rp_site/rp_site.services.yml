@@ -1,6 +1,10 @@
 services:
   rp_site.profession:
     class: Drupal\rp_site\Service\Profession
+  rp_site.cover:
+    class: Drupal\rp_site\Service\Cover
+    arguments:
+      - @entity.manager
   # Custom Twig extensions
   rp_site.twig.themes:
     class: Drupal\rp_site\TwigExtension\Themes

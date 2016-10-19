@@ -11,9 +11,9 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Routing\CurrentRouteMatch;
-use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\rp_site\Service\Profession;
+use Drupal\rp_site\Service\Cover;
 
 /**
 * Provides a 'Layout' Cover Block
@@ -44,13 +44,20 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
     private $profession;
 
     /**
+     * Cover Service
+     * @var Cover
+     */
+    private $cover;
+
+    /**
      * Class constructor.
      */
-     public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route, EntityTypeManagerInterface $entity, Profession $profession) {
+     public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route, EntityTypeManagerInterface $entity, Profession $profession, Cover $cover) {
          parent::__construct($configuration, $plugin_id, $plugin_definition);
          $this->route       = $route;
          $this->entity_file = $entity->getStorage('file');
          $this->profession  = $profession;
+         $this->cover       = $cover;
      }
 
     /**
@@ -66,7 +73,8 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
              // Load customs services used in this class.
              $container->get('current_route_match'),
              $container->get('entity_type.manager'),
-             $container->get('rp_site.profession')
+             $container->get('rp_site.profession'),
+             $container->get('rp_site.cover')
          );
      }
 
@@ -76,12 +84,17 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
     public function build($params = array()) {
         $variables = array();
 
-        $variables['cover'] = $this->_covers();
-
         if ($node = $this->route->getParameter('node')) {
             if (isset($node->field_profession->target_id)) {
                 $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
             }
+
+            $variables['cover'] = $this->cover->generate($node, array(
+                'xs' => 'rp_full_screen_xs',
+                'md' => 'rp_full_screen_md',
+                'lg' => 'rp_full_screen_lg',
+                'xl' => 'rp_full_screen_xl',
+            ));
         }
 
         return [
@@ -94,44 +107,4 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
             ]
         ];
     }
-
-    /**
-     * Generate Image Style, with responsive format
-     * @method _covers
-     * @return array [Image for each responsive layout]
-     */
-    private function _covers(){
-        $build = array();
-
-        // Retreive node
-        $node = $this->route->getParameter('node');
-        $cover_fid = '';
-
-        if (isset($node) && $node->field_cover->entity) {
-            $cover_fid = $node->field_cover->entity->id();
-        }
-
-        if ($cover_fid) {
-
-            $cover = $this->entity_file->load($cover_fid);
-            $styles = array(
-                'xs' => 'rp_full_screen_xs',
-                'md' => 'rp_full_screen_md',
-                'lg' => 'rp_full_screen_lg',
-                'xl' => 'rp_full_screen_xl',
-            );
-
-            foreach ($styles as $media => $style) {
-                $img_style = ImageStyle::load($style);
-                $destination_uri = $img_style->buildUri($cover->getFileUri());
-                $destination_url = $img_style->buildUrl($cover->getFileUri());
-
-                // create the new image derivative
-                $derivative = $img_style->createDerivative($cover->getFileUri(), $destination_uri);
-                $build[$media] = $destination_url;
-            }
-        }
-        return $build;
-    }
-
 }
