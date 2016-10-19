@@ -6,21 +6,12 @@
   max-width: 900px;
   border: 1px solid $light-gray;
   border-radius: $border-radius-base;
-  transition: background 0.2s;
 
   @each $label, $color in $themes {
     &.teaser-rental-#{$label} {
       .rental-body h1 {
         border-color: $color;
       }
-    }
-  }
-
-  &:hover {
-    background: darken($white, 10%);
-
-    h1 {
-      border-bottom: 1px solid;
     }
   }
 
