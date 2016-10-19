@@ -2,12 +2,31 @@
 
 .input-checkbox {
   position: relative;
-  margin-left: $grid-gutter-width/2;
 
   label {
     display: inline-block;
     position: relative;
-    font-weight: 600;
+    top: 0.15em;
+    margin: 0;
+    font-weight: 400;
+
+    &:first-letter { text-transform: capitalize; }
+  }
+
+  input[type='checkbox'] {
+    margin: 0;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  input[type='checkbox']:focus + label:before {
+    outline: 0;
+    outline-style: none;
+    outline-width: 0;
+  }
+
+  input[type='checkbox']:disabled + label:before {
+    cursor: not-allowed;
   }
 
 }
