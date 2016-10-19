@@ -32,8 +32,11 @@
 }
 
 .form-group-inline {
-  .input-checkbox.checkbox-inline:first-child {
-    margin-left: 0;
+  .input-checkbox.checkbox-inline {
+    padding: 0;
+
+    input[type='checkbox'] { position: relative; }
+    &:first-child { margin-left: 0; }
   }
 
   label {
