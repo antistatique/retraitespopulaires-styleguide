@@ -101,7 +101,7 @@ class ContactForm extends FormBase {
 
         $form['personnal'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-bordered fieldset-no-legend')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos informations'),
           '#prefix'     => '<h3>'.t('Vos informations').'</h3>',
         );
@@ -235,7 +235,7 @@ class ContactForm extends FormBase {
 
         $form['message'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-bordered fieldset-no-legend')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Votre demande'),
           '#prefix'     => '<h3>'.t('Votre demande').'</h3>',
         );
