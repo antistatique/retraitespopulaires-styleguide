@@ -56,14 +56,20 @@
 #}
 {# page.header #}
 
+{{ load_block('rp_layout_cover_block') }}
+
 {# Page Header #}
 {% if page.header %}
-  {% block header %}
-      {{ page.header }}
-  {% endblock %}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-push-1 col-xl-6 col-xl-push-3">
+    {% block header %}
+        {{ page.header }}
+    {% endblock %}
+    </div>
+  </div>
+</div>
 {% endif %}
-
-{{ load_block('rp_layout_cover_block') }}
 
 {# Breadcrumbs #}
 {% if page.breadcrumb %}

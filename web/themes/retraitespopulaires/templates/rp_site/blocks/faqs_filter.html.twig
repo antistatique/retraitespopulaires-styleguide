@@ -1,0 +1,14 @@
+<div class="{{ theme_hook_original }}">
+  <p class="media-heading text-muted">{% trans %}Questions-réponses{% endtrans %}</p>
+  <ul class="facets-list">
+    <li>
+      <a class="pretty-link"  href="{{ path('entity.node.canonical', {'node': variables.collection}) }}">{% trans %}Toutes{% endtrans %}</a>
+    </li>
+    {% for category in variables.categories %}
+     <li>
+       <a class="pretty-link"  href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
+     </li>
+    {% endfor %}
+  </ul>
+  </ul>
+</div>

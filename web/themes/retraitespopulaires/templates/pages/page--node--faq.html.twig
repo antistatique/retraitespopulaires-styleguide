@@ -56,14 +56,20 @@
 #}
 {# page.header #}
 
+{{ load_block('rp_layout_cover_block') }}
+
 {# Page Header #}
 {% if page.header %}
-  {% block header %}
-      {{ page.header }}
-  {% endblock %}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-push-1 col-xl-6 col-xl-push-3">
+    {% block header %}
+        {{ page.header }}
+    {% endblock %}
+    </div>
+  </div>
+</div>
 {% endif %}
-
-{{ load_block('rp_layout_cover_block') }}
 
 {# Breadcrumbs #}
 {% if page.breadcrumb %}
@@ -83,9 +89,7 @@
 {% block main %}
   <div role="main" class="main-container container-fluid js-quickedit-main-content">
     <div class="row">
-
       <div class="col-xs-12 col-md-10 col-md-push-1 col-xl-6 col-xl-push-3">
-
         <div class="entity-content">
           <section{{ content_attributes.addClass(content_classes) }}>
             {# Content #}
@@ -96,13 +100,11 @@
           </section>
         </div>
         <div class="spacer"></div>
-
       </div>
     </div>
   </div>
 
   {{ load_block('rp_contact_contact_attachment_block') }}
-  {{ load_block('rp_site_attachments_block') }}
 
    {# Content Bottom #}
    {% if page.content_bottom %}

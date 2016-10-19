@@ -1,0 +1,7 @@
+{% if variables.faq.nid.value %}
+<div class="teaser-faq shadow shadow-down">
+  <a href="{{ path('entity.node.canonical', {'node': variables.faq.nid.value}) }}" class="faq-body">
+    <div class="faq-title h4">{{ variables.faq.title.value }}</div>
+  </a>
+</div>
+{% endif %}

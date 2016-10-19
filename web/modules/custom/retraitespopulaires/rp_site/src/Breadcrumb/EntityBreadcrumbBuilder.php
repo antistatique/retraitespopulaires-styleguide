@@ -48,6 +48,30 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
             );
         }
 
+        if ('faq' == $type) {
+            $links[] = Link::createFromRoute(
+                t('Questions-réponses'),
+                'entity.node.canonical',
+                ['node' => $state->get('rp_site.settings.collection.faqs')['nid']]
+            );
+        }
+
+        if ('building' == $type) {
+            $links[] = Link::createFromRoute(
+                t('Constructions'),
+                'entity.node.canonical',
+                ['node' => $state->get('rp_site.settings.collection.buildings')['nid']]
+            );
+        }
+
+        if ('partnership' == $type) {
+            $links[] = Link::createFromRoute(
+                t('Partenaires'),
+                'entity.node.canonical',
+                ['node' => $state->get('rp_site.settings.collection.partnerships')['nid']]
+            );
+        }
+
         // We add a text node (without link) with the element title
         $links[] = Link::createFromRoute(
             $node->getTitle(),
@@ -66,6 +90,6 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
      */
     private function checkNodeType($node) {
         $type = $node->getType();
-        return in_array($type, ['news']);
+        return in_array($type, ['news', 'faq', 'building', 'partnership']);
     }
 }
