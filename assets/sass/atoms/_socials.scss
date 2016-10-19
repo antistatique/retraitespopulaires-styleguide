@@ -14,8 +14,12 @@ i.retraitespopulaires-icon-colored {
 }
 
 .retraitespopulaires-icon {
-  &.retraitespopulaires-icon-blacked {
-    color: $black;
+  &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-blacked,
+  &.retraitespopulaires-icon-facebook.retraitespopulaires-icon-blacked,
+  &.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-blacked,
+  &.retraitespopulaires-icon-youtube.retraitespopulaires-icon-blacked,
+  &.retraitespopulaires-icon-instagram.retraitespopulaires-icon-blacked {
+    color: $mine-shaft;
   }
 
   &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-colored {
