@@ -1,0 +1,14 @@
+<div class="{{ theme_hook_original }}">
+  <p class="media-heading text-muted">{% trans %}Nos constructions{% endtrans %}</p>
+  <ul class="facets-list">
+    <li>
+      <a class="pretty-link text-immobilier"  href="{{ path('entity.node.canonical', {'node': variables.collection}) }}">{% trans %}Toutes{% endtrans %}</a>
+    </li>
+    {% for category in variables.categories %}
+     <li>
+       <a class="pretty-link text-immobilier"  href="{{ path('entity.node.canonical', {'node': variables.collection, 'building_status_alias': category.alias}) }}">{{ category.term }}</a>
+     </li>
+    {% endfor %}
+  </ul>
+  </ul>
+</div>

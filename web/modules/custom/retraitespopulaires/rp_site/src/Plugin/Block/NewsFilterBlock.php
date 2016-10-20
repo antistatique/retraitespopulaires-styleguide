@@ -16,7 +16,7 @@ use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\State\StateInterface;
 
 /**
-* Provides a 'NewsFilter' Block
+* Provides a 'News Filter' Block
 *
 * @Block(
 *   id = "rp_site_news_filter_block",

@@ -89,6 +89,10 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
     public function build($params = array()) {
         $variables = array();
 
+        if (isset($params['theme'])) {
+            $variables['theme'] = $params['theme'];
+        }
+
         if ($node = $this->route->getParameter('node')) {
             $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
 

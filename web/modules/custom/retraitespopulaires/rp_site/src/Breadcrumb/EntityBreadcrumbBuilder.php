@@ -58,7 +58,12 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
         if ('building' == $type) {
             $links[] = Link::createFromRoute(
-                t('Constructions'),
+                t('Immobilier'),
+                'entity.node.canonical',
+                ['node' => 47]
+            );
+            $links[] = Link::createFromRoute(
+                t('Parc immobilier'),
                 'entity.node.canonical',
                 ['node' => $state->get('rp_site.settings.collection.buildings')['nid']]
             );

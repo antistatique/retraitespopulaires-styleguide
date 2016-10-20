@@ -82,7 +82,7 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('content') }}>
-    {{ load_block('rp_contact_contact_cta_block') }}
+    {{ load_block('rp_contact_contact_cta_block', {'theme': 'immobilier'}) }}
 
     {% if node.body.summary %}
       <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
@@ -90,7 +90,7 @@
     {% endif %}
 
     {% if content.body %}
-      <div class="entity-body body-{{ node.field_profession.entity.tid.value|theme_profession }}">
+      <div class="entity-body body-immobilier">
         {{ content.body }}
       </div>
     {% endif %}
@@ -110,7 +110,7 @@
           <li>
             {% set file_title = file.description ? file.description : file.entity.filename.value %}
             {% set file_type = file.entity.mimeType ? file.entity.mimeType %}
-            <a href="{{ file_url(file.entity.uri.value) }}" class="pretty-link text-{{ node.field_profession.entity.tid.value|theme_profession }}">
+            <a href="{{ file_url(file.entity.uri.value) }}" class="pretty-link text-immobilier">
               {{ file_title }}
               <span class="text-muted text-small">- {{ file_type|extension_guesser|upper }}</span>
             </a>
@@ -134,7 +134,7 @@
           <li>
             {% set file_title = file.description ? file.description : file.entity.filename.value %}
             {% set file_type = file.entity.mimeType ? file.entity.mimeType %}
-            <a href="{{ file_url(file.entity.uri.value) }}" class="pretty-link">
+            <a href="{{ file_url(file.entity.uri.value) }}" class="pretty-link text-immobilier">
               {{ file_title }}
               <span class="text-muted text-small">- {{ file_type|extension_guesser|upper }}</span>
             </a>
@@ -143,8 +143,8 @@
       </ul>
     {% endif %}
 
-    ICI Image(s) virtuelle(s)
-    ICI Visite(s) virtuelle(s)
+    <!-- TODO ICI Image(s) virtuelle(s) -->
+    <!-- TODO ICI Visite(s) virtuelle(s) -->
 
   </div>
 </article>

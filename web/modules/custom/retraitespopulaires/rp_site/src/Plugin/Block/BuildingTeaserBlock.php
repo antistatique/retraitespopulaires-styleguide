@@ -1,10 +1,10 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_contact\Plugin\Block\ContactTeaserBlock.
+* Contains \Drupal\rp_site\Plugin\Block\BuildingTeaserBlock.
 */
 
-namespace Drupal\rp_contact\Plugin\Block;
+namespace Drupal\rp_site\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -13,20 +13,19 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\rp_site\Service\Cover;
 
 /**
-* Provides a 'Contact Teaser' Block
+* Provides a 'Building Teaser' Block
 *
 * @Block(
-*   id = "rp_contact_contact_teaser_block",
-*   admin_label = @Translation("Contact Teaser block"),
+*   id = "rp_site_building_teaser_block",
+*   admin_label = @Translation("Building Teaser block"),
 * )
 *
 * Inline example:
 * <code>
-* load_block('rp_contact_contact_teaser_block')
+* load_block('rp_site_building_teaser_block')
 * </code>
 */
-class ContactTeaserBlock extends BlockBase implements ContainerFactoryPluginInterface {
-
+class BuildingTeaserBlock extends BlockBase implements ContainerFactoryPluginInterface {
     /**
      * Cover Service
      * @var Cover
@@ -38,7 +37,7 @@ class ContactTeaserBlock extends BlockBase implements ContainerFactoryPluginInte
      */
      public function __construct(array $configuration, $plugin_id, $plugin_definition, Cover $cover) {
          parent::__construct($configuration, $plugin_id, $plugin_definition);
-         $this->cover  = $cover;
+         $this->cover = $cover;
      }
 
      /**
@@ -62,15 +61,10 @@ class ContactTeaserBlock extends BlockBase implements ContainerFactoryPluginInte
     public function build($params = array()) {
         $variables = array();
         $variables = $params;
-
-        if (isset($params['theme'])) {
-            $variables['theme'] = $params['theme'];
-        }
-
-        $variables['cover'] = $this->cover->fromNode($params['contact'], array('xl' => 'rp_teaser_contact_xl'));
+        $variables['cover'] = $this->cover->fromNode($params['building'], array('xl' => 'rp_teaser_xl'));
 
         return [
-            '#theme'     => 'rp_contact_contact_teaser_block',
+            '#theme'     => 'rp_site_building_teaser_block',
             '#variables' => $variables,
         ];
     }
