@@ -28,10 +28,12 @@ class Cover {
 
     /**
      * Generate Image Style, with responsive format
-     * @method generate
-     * @return array [Image for each responsive layout]
+     * @method fromNode
+     * @param Node $node Node to retreive cover and derivate it
+     * @param array $styles styles to be derivated
+     * @return array derivated link of styles
      */
-    public function generate($node, $styles){
+    public function fromNode($node, $styles){
         $build = array();
 
         // Retreive node
@@ -42,20 +44,55 @@ class Cover {
         }
 
         if ($cover_fid) {
-            $cover = $this->entity_file->load($cover_fid);
-
-            foreach ($styles as $media => $style) {
-                $img_style = ImageStyle::load($style);
-                $destination_uri = $img_style->buildUri($cover->getFileUri());
-                $destination_url = $img_style->buildUrl($cover->getFileUri());
-
-                // create the new image derivative
-                $derivative = $img_style->createDerivative($cover->getFileUri(), $destination_uri);
-                $build[$media] = $destination_url;
-            }
+            $build = $this->_derivate($cover_fid, $styles);
         }
 
         return $build;
     }
+
+    /**
+    * Generate Image Style, with responsive format
+     * @method fromFile
+     * @param integer $fid File id to derivate
+     * @param array $styles styles to be derivated
+     * @return array derivated link of styles
+     */
+    public function fromFile($fid, $styles){
+        $build = array();
+
+        $image = $this->entity_file->load($fid);
+
+        if ($image) {
+            $build = $this->_derivate($fid, $styles);
+        }
+
+        return $build;
+    }
+
+    /**
+    * Generate Image Style, with responsive format
+     * @method fromFile
+     * @param integer $fid File id to derivate
+     * @param array $styles styles to be derivated
+     * @return array derivated link of styles
+     */
+    private function _derivate($fid, $styles) {
+        $build = array();
+
+        $image = $this->entity_file->load($fid);
+
+        foreach ($styles as $media => $style) {
+            $img_style = ImageStyle::load($style);
+            $destination_uri = $img_style->buildUri($image->getFileUri());
+            $destination_url = $img_style->buildUrl($image->getFileUri());
+
+            // create the new image derivative
+            $derivative = $img_style->createDerivative($image->getFileUri(), $destination_uri);
+            $build[$media] = $destination_url;
+        }
+
+        return $build;
+    }
+
 
 }

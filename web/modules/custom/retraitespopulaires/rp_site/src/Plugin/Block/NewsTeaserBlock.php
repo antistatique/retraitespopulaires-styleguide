@@ -61,7 +61,7 @@ class NewsTeaserBlock extends BlockBase implements ContainerFactoryPluginInterfa
     public function build($params = array()) {
         $variables = array();
         $variables = $params;
-        $variables['cover'] = $this->cover->generate($params['news'], array('xl' => 'rp_teaser_xl'));
+        $variables['cover'] = $this->cover->fromNode($params['news'], array('xl' => 'rp_teaser_xl'));
 
         return [
             '#theme'     => 'rp_site_news_teaser_block',

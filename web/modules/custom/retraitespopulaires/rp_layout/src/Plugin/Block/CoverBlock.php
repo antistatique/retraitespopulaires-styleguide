@@ -11,9 +11,9 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Routing\CurrentRouteMatch;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\rp_site\Service\Profession;
 use Drupal\rp_site\Service\Cover;
+use Drupal\Core\State\StateInterface;
 
 /**
 * Provides a 'Layout' Cover Block
@@ -32,12 +32,6 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
     private $route;
 
     /**
-    * EntityTypeManagerInterface to load Files
-    * @var EntityTypeManagerInterface
-    */
-    private $entity_file;
-
-    /**
      * Profession Service
      * @var Profession
      */
@@ -50,14 +44,20 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
     private $cover;
 
     /**
+    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
+    * @var StateInterface
+    */
+    protected $state;
+
+    /**
      * Class constructor.
      */
-     public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route, EntityTypeManagerInterface $entity, Profession $profession, Cover $cover) {
+     public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route, Profession $profession, Cover $cover, StateInterface $state) {
          parent::__construct($configuration, $plugin_id, $plugin_definition);
          $this->route       = $route;
-         $this->entity_file = $entity->getStorage('file');
          $this->profession  = $profession;
          $this->cover       = $cover;
+         $this->state       = $state;
      }
 
     /**
@@ -72,9 +72,9 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
              $plugin_definition,
              // Load customs services used in this class.
              $container->get('current_route_match'),
-             $container->get('entity_type.manager'),
              $container->get('rp_site.profession'),
-             $container->get('rp_site.cover')
+             $container->get('rp_site.cover'),
+             $container->get('state')
          );
      }
 
@@ -89,7 +89,14 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
                 $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
             }
 
-            $variables['cover'] = $this->cover->generate($node, array(
+            $variables['cover'] = $this->cover->fromNode($node, array(
+                'xs' => 'rp_full_screen_xs',
+                'md' => 'rp_full_screen_md',
+                'lg' => 'rp_full_screen_lg',
+                'xl' => 'rp_full_screen_xl',
+            ));
+        } elseif ($this->route->getRouteName() == 'rp_homepage') {
+            $variables['cover'] = $this->cover->fromFile($this->state->get('rp_site.settings.homepage'), array(
                 'xs' => 'rp_full_screen_xs',
                 'md' => 'rp_full_screen_md',
                 'lg' => 'rp_full_screen_lg',
