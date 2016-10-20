@@ -6,7 +6,7 @@
     <div class="h1 text-center">
       {% trans %}
           Produit recommandé dans cette situation
-      {% plural variables.products %}
+      {% plural variables.products|length %}
           Produits recommandés dans cette situation
       {% endtrans %}
     </div>
