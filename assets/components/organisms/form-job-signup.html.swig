@@ -7,7 +7,8 @@ notes: |
 ---
 <form class="form-job-signup">
   <h3>Informations personnelles</h3>
-  <fieldset class="fieldset-bordered">
+  <fieldset class="fieldset-no-legend">
+    <legend>Informations personnelles</legend>
     <div class="form-group">
       <label class="">Votre nom</label>
       <div class="input-text">
@@ -29,7 +30,8 @@ notes: |
   </fieldset>
 
   <h3>Informations de connexion</h3>
-  <fieldset class="fieldset-bordered">
+  <fieldset class="fieldset-no-legend">
+    <legend>Informations de connexion</legend>
     <div class="form-group error">
       <label class="">Votre adresse e-mail</label>
       <div class="input-text">

@@ -7,7 +7,8 @@ notes: |
 ---
 <form class="form-job-signin">
   <h3>Informations de connexion</h3>
-  <fieldset class="fieldset-bordered">
+  <fieldset class="fieldset-no-legend">
+    <legend>Connexion</legend>
     <div class="form-group">
       <label class="">Votre adresse e-mail</label>
       <div class="input-text">
