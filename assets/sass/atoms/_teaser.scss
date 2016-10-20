@@ -1,14 +1,49 @@
 @charset 'UTF-8';
 
 .teaser {
+  box-sizing: content-box;
+
   &.teaser-fullclick {
     display: block;
     cursor: pointer;
-    transition: background-color 0.25s ease-in-out;
 
     &:hover {
-      background: darken($white, 10%);
       text-decoration: none;
+      border-color: darken($brand-primary, 0.3);
+    }
+  }
+}
+
+.teaser.shadow.teaser-fullclick {
+  opacity: 0.9;
+  transition:
+    opacity 0.25s ease-in-out
+    box-shadow 0.25s ease-in-out;
+
+  .heading-image:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 4;
+    width: 100%;
+    background-color: $black;
+    opacity: 0;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    .heading-image {
+      position: relative;
+    }
+
+    .heading-image:before {
+      opacity: 0.1;
+    }
+
+    &.shadow-down {
+      box-shadow: 0 35px 60px -45px darken($shadow-gray, 0.3);
     }
   }
 }
