@@ -9,9 +9,11 @@ namespace Drupal\rp_contact\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\file\Entity\File;
 
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\Render\MetadataBubblingUrlGenerator;
+use Drupal\file\FileUsage\FileUsageInterface;
 
 class AdminForm extends FormBase {
 
@@ -19,20 +21,27 @@ class AdminForm extends FormBase {
     * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
     * @var StateInterface
     */
-    private $state;
+    protected $state;
 
     /**
     * Decorator for the URL generator, which bubbles bubbleable URL metadata
     * @var MetadataBubblingUrlGenerator
     */
-    private $url;
+    protected $url;
+
+    /**
+    * Defines the database file usage backend. This is the default Drupal backend.
+    * @var FileUsageInterface
+    */
+    protected $file_usage;
 
     /**
      * Class constructor.
      */
-    public function __construct(StateInterface $state, MetadataBubblingUrlGenerator $url) {
-        $this->state = $state;
-        $this->url = $url;
+    public function __construct(StateInterface $state, MetadataBubblingUrlGenerator $url, FileUsageInterface $file_usage) {
+        $this->state      = $state;
+        $this->url        = $url;
+        $this->file_usage = $file_usage;
     }
 
     /**
@@ -43,7 +52,8 @@ class AdminForm extends FormBase {
       return new static(
         // Load the service required to construct this class.
         $container->get('state'),
-        $container->get('url_generator')
+        $container->get('url_generator'),
+        $container->get('file.usage')
       );
     }
 
@@ -80,6 +90,19 @@ class AdminForm extends FormBase {
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
         );
 
+        // Layout settings
+        $form['layout'] = array(
+            '#type'  => 'fieldset',
+            '#title' => t('Images'),
+        );
+        $form['layout']['placeholder'] = array(
+            '#type'            => 'managed_file',
+            '#title'           => t('Image de placeholder'),
+            '#default_value'   => !empty($this->state->get('rp_contact.settings.placeholder')) ? array($this->state->get('rp_contact.settings.placeholder')) : null,
+            '#upload_location' => 'public://rp_contact/placeholder',
+            '#description'     => t('Merci de déposer une image Retina de min. 600×500 pixels'),
+        );
+
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Sauvegarder'),
@@ -110,5 +133,31 @@ class AdminForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // General settings
         $this->state->set('rp_contact.settings.receivers', trim($form_state->getValue('receivers')));
+
+        // Save placeholder
+        $this->state->set('rp_contact.settings.placeholder', '');
+        $placeholder = $form_state->getValue('placeholder');
+        if( !empty($placeholder)  ){
+            $placeholder = reset($placeholder);
+            $this->state->set('rp_contact.settings.placeholder', $placeholder);
+            $file = File::load($placeholder);
+            $this->saveFileAsPermanent($file);
+        }
+    }
+
+    /**
+     * New files are uploaded with a status of 0 and are treated as temporary files which are removed after 6 hours
+     * We are responsible for changing the $file objects status to FILE_STATUS_PERMANENT
+     * @method saveFile
+     * @param  File     $file [description]
+     * @return [type]         [description]
+     */
+    protected function saveFileAsPermanent(File $file) {
+        if( !$file->isPermanent() ){
+            $file->setPermanent();
+            $file->save();
+            // Add entry to file_usage
+            $this->file_usage->add($file, 'rp_contact', 'module', 1);
+        }
     }
 }
