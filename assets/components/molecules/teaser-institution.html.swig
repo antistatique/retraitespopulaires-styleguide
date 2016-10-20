@@ -13,7 +13,7 @@ notes: |
   </div>
   <div class="institution-body">
     <div class="institution-title h1 pretty-link">Caisse de pensions de l'Etat de Vaud (CPEV)</div>
-    <div class="spacer spacer-xs"></div>
-    <p>Gérée par Retraites Populaires<p>
+    <div class="spacer spacer-sm"></div>
+    <p class="m-b--">Gérée par Retraites Populaires</p>
   </div>
 </a>
