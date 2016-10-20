@@ -54,7 +54,7 @@ notes: |
       <ul data-list="swiper-particuliers" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="/retraitespopulaires-styleguide/particuliers" class="text-muted pretty-link pretty-link-berrylight-gray text-cocon">Particuliers</a>
+          <a href="/retraitespopulaires-styleguide/particuliers" class="text-muted pretty-link pretty-link-light-gray text-primary text-cocon">Particuliers</a>
         </li>
         <li>
           <p class="media-heading text-small text-muted">Nouveau projet</p>
@@ -97,7 +97,7 @@ notes: |
       <ul data-list="swiper-professionnels" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="#" class="text-muted pretty-link pretty-link-berrylight-gray text-cocon">Professionnels</a>
+          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-primary text-cocon">Professionnels</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-cocon">Prévoyance professionnelle</a>
@@ -110,7 +110,7 @@ notes: |
        <ul data-list="swiper-collectivites" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="#" class="text-muted pretty-link pretty-link-berrylight-gray text-cocon">Collectivités</a>
+          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-primary text-cocon">Collectivités</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-cocon">Gestion d'institutions de prévoyance</a>
@@ -126,7 +126,7 @@ notes: |
       <ul data-list="swiper-assurance-vie" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-assurance"></a>
-          <a href="/retraitespopulaires-styleguide/assurance-vie" class="text-muted pretty-link text-assurance">Assurance vie</a>
+          <a href="/retraitespopulaires-styleguide/assurance-vie" class="text-muted pretty-link pretty-link-light-gray text-assurance">Assurance vie</a>
         </li>
         <li>
           <a href="/retraitespopulaires-styleguide/rp-jeune" class="pretty-link text-assurance">RP Rente immédiate</a>
@@ -160,7 +160,7 @@ notes: |
       <ul data-list="swiper-prevoyance" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-prevoyance"></a>
-          <a href="#" class="text-muted pretty-link text-prevoyance">Prévoyance professionnel</a>
+          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-prevoyance">Prévoyance professionnel</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-prevoyance">Pour les entreprises</a>
@@ -179,7 +179,7 @@ notes: |
       <ul data-list="swiper-immobilier" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-immobilier"></a>
-          <a href="#" class="text-muted pretty-link text-immobilier">Immobilier</a>
+          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-immobilier">Immobilier</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-immobilier">Louer</a>
@@ -201,7 +201,7 @@ notes: |
       <ul data-list="swiper-hypotheque" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-hypotheque"></a>
-          <a href="#" class="text-muted pretty-link text-hypotheque">Financement</a>
+          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-hypotheque">Financement</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-hypotheque">Prêt hypothécaire</a>
@@ -226,7 +226,7 @@ notes: |
       <ul data-list="swiper-particulier-fortune" class="swiper-list swiper-list-alternative swiper-list-last list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="#" class="text-muted pretty-link text-particuliers">Fortune</a>
+          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-particuliers">Fortune</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-particuliers">Épargner</a>
@@ -417,7 +417,7 @@ notes: |
       <ul data-list="swiper-immobilier-parc" class="swiper-list swiper-list-alternative swiper-list-last list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-immobilier"></a>
-          <a href="#" class="text-muted pretty-link text-immobilier">Parc immobilier</a>
+          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-immobilier">Parc immobilier</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-immobilier">Constructions en cours</a>
@@ -430,7 +430,7 @@ notes: |
       <ul data-list="swiper-hypotheque-pret" class="swiper-list swiper-list-alternative swiper-list-last list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-hypotheque"></a>
-          <a href="#" class="text-muted pretty-link text-hypotheque">Prêt hypothécaire</a>
+          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-hypotheque">Prêt hypothécaire</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-hypotheque">Calculateur d'hypothèque</a>
@@ -443,7 +443,7 @@ notes: |
       <ul data-list="swiper-hypotheque-credit" class="swiper-list swiper-list-alternative swiper-list-last list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-hypotheque"></a>
-          <a href="#" class="text-muted pretty-link text-hypotheque">Crédit de construction</a>
+          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-hypotheque">Crédit de construction</a>
         </li>
         <li>
           <a href="#" class="pretty-link text-hypotheque">Taux</a>
