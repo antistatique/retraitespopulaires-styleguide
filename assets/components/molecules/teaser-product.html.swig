@@ -9,7 +9,7 @@ notes: |
   - **body** - String
   - **theme** - String
 ---
-<a href="#" class="teaser teaser-fullclick teaser-product teaser-product-{{ theme }} shadow shadow-down">
+<a href="#" class="teaser teaser-{{ theme }} teaser-fullclick teaser-product teaser-product-{{ theme }} shadow shadow-down">
   <div class="product-heading">
     <div class="product-title h1">
       <div class="product-prefix">RP</div>

@@ -7,18 +7,18 @@
     display: block;
     cursor: pointer;
 
+    &:focus,
+    &:active,
     &:hover {
       text-decoration: none;
-      border-color: darken($brand-primary, 0.3);
     }
   }
 }
 
 .teaser.shadow.teaser-fullclick {
-  opacity: 0.9;
   transition:
-    opacity 0.25s ease-in-out
-    box-shadow 0.25s ease-in-out;
+    border 0.25s ease-in-out,
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   .heading-image:before {
     content: ' ';
@@ -27,23 +27,36 @@
     bottom: 0;
     z-index: 4;
     width: 100%;
-    background-color: $black;
+    background: linear-gradient(to bottom, $brand-primary 0%, $transparent 100%);
     opacity: 0;
+    transition: all 0.5s ease-in-out;
   }
 
   &:hover {
-    opacity: 1;
-
-    .heading-image {
-      position: relative;
-    }
+    border-color: darken($brand-primary, 10);
+    box-shadow: 0 65px 75px -45px darken($shadow-gray, 0.3);
 
     .heading-image:before {
       opacity: 0.1;
     }
+  }
 
-    &.shadow-down {
-      box-shadow: 0 35px 60px -45px darken($shadow-gray, 0.3);
+  &:active.shadow-down,
+  &:focus.shadow-down {
+    border-color: $mine-shaft;
+    box-shadow: 0 45px 75px -45px $shadow-gray;
+  }
+
+  @each $label, $color in $themes {
+    &.teaser-#{$label} {
+      .heading-image:before {
+        background: linear-gradient(to bottom, $color 0%, $transparent 100%);
+      }
+
+      &:hover {
+        border-color: darken($color, 10);
+      }
+      border-color: $color;
     }
   }
 }
