@@ -2,7 +2,7 @@
 <a href="{{ path('entity.node.canonical', {'node': variables.news.nid.value}) }}" class="teaser teaser-fullclick teaser-news shadow shadow-down">
   {% if not variables.news.field_cover.entity.uri.value is empty %}
   <div class="news-heading">
-    <div class="heading-image" style="background-image: url({{ file_url(variables.news.field_cover.entity.uri.value) }})"></div>
+    <div class="heading-image" style="background-image: url({{ file_url(variables.cover.xl) }})"></div>
     <div class="loader-image">
       <div class="loader">
         <div class="loader-yingyang loader-{{ theme }}"></div>
