@@ -13,7 +13,7 @@
   <div class="rental-body">
     <div class="row">
        <div class="col-sm-12">
-        <h5 class="rental-type h5 text-muted">{{ variables.building.field_building_type.value }}</h5>
+        <h5 class="rental-type h5 text-muted">{{ variables.building.field_building_type.entity.name.value }}</h5>
       </div>
     </div>
     <div class="spacer spacer-xs"></div>
@@ -22,6 +22,14 @@
         <h1 class="rental-title h1 link-immobilier">{{ variables.building.title.value }}</h1>
       </div>
     </div>
+
+    <div class="spacer spacer-sm"></div>
+    <div class="row info">
+      <div class="col-xs-12 text-right">
+        {{ variables.building.field_building_status.settings.allowed_values[variables.building.field_building_status.value] }}
+      </div>
+    </div>
+
   </div>
 </a>
 
