@@ -88,22 +88,24 @@ class PagesCollectionBlock extends BlockBase implements ContainerFactoryPluginIn
         );
 
         if ($params['node']->nid->value == $this->state->get('rp_site.settings.profils.individual')['nid']) {
-            $parameters->setRoot($this->state->get('rp_site.settings.profils.individual')['menu']);
-            $tree = $this->menu_tree->load('profil', $parameters);
+            $parameters_profil = clone $parameters;
+            $parameters_profil->setRoot($this->state->get('rp_site.settings.profils.individual')['menu']);
+            $tree_profil = $this->menu_tree->load('profil', $parameters_profil);
 
             $manipulators_project = $manipulators;
             $manipulators_project['project'] = array('callable' => 'rp_site.menu_transformers:getIndividualProjectOnly');
             $variables['profil'][] = array(
                 'title' => t('Vous avez un nouveau projet ?'),
-                'menu'  => $this->menu_tree->transform($tree, $manipulators_project),
+                'menu'  => $this->menu_tree->transform($tree_profil, $manipulators_project),
             );
 
-            $tree = $this->menu_tree->load('profil', $parameters);
+            $parameters_client = clone $parameters;
+            $tree_client = $this->menu_tree->load('profil', $parameters_client);
             $manipulators_client = $manipulators;
             $manipulators_client['client'] = array('callable' => 'rp_site.menu_transformers:getIndividualClientOnly');
             $variables['profil'][] = array(
-                'title' => t('Déja client ?'),
-                'menu'  => $this->menu_tree->transform($tree, $manipulators_client),
+                'title' => t('Déjà client ?'),
+                'menu'  => $this->menu_tree->transform($tree_client, $manipulators_client),
             );
         }
 
