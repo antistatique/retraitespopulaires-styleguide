@@ -4,9 +4,11 @@
     <img class="img-responsive" src="{{ file_url(variables.management_contract.field_logo.entity.uri.value) }}" alt="{% trans %}Logo - {{ variables.management_contract.title.value }}{% endtrans %}">
   </div>
   <div class="institution-body">
-    <div class="institution-title h1 pretty-link">{{ variables.management_contract.title.value }}</div>
-    <div class="spacer spacer-sm"></div>
-    <p class="m-b-0">{{ variables.management_contract.field_administrator.value }}</p>
+    <div class="institution-title h3 pretty-link">{{ variables.management_contract.title.value }}</div>
+    {% if variables.management_contract.field_administrator.value %}
+      <div class="spacer spacer-sm"></div>
+      <p class="m-b-0">{{ variables.management_contract.field_administrator.value }}</p>
+    {% endif %}
   </div>
 </a>
 {% endif %}
