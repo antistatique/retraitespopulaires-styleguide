@@ -148,12 +148,12 @@
 
                 <!-- Profil menu  -->
                 {% for item in variables.profil_menu %}
+                  {% set has_separator = item.link.pluginId == variables.profils_individual_menu %}
                   {% if item.hasChildren %}
                     {% set classes = [
                       item.inActiveTrail ? 'active',
                       item.link.pluginId,
                     ] %}
-
                     <ul data-list="swiper-{{ item.link.pluginId }}" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style {{ classes|join(' ') }}" role="navigation">
 
                       <!-- First item is a back link to previous links  -->
@@ -167,7 +167,12 @@
                          subitem.inActiveTrail ? 'active',
                          subitem.link.pluginId,
                        ] %}
-
+                        {% if has_separator and subitem.link.pluginId == variables.profils_individual_project %}
+                          <li class="p-t-0 p-b-0"><p class="m-0 text-small text-muted">{% trans %}Nouveau projet{% endtrans %}</li></p>
+                        {% elseif has_separator and subitem.link.pluginId == variables.profils_individual_client %}
+                          <div class="spacer spacer-sm"></div>
+                          <li class="p-t-0 p-b-0"><p class="m-0 text-small text-muted">{% trans %}Déjà client{% endtrans %}</li></p>
+                        {% endif %}
                        <li class="{{ classes|join(' ') }}">
                          <a href="{{ subitem.link.urlObject }}" class="pretty-link text-primary">{{ subitem.link.title }}</a>
                          {% if subitem.hasChildren %}

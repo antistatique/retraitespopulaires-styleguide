@@ -10,7 +10,8 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use \Drupal\Core\Menu\MenuLinkTreeInterface;
+use Drupal\Core\Menu\MenuLinkTreeInterface;
+use Drupal\Core\State\StateInterface;
 
 /**
 * Provides a 'Layout' BigMenu Block
@@ -29,11 +30,18 @@ class BigMenuBlock extends BlockBase implements ContainerFactoryPluginInterface 
     private $menu_tree;
 
     /**
+    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
+    * @var StateInterface
+    */
+    private $state;
+
+    /**
      * Class constructor.
      */
-     public function __construct(array $configuration, $plugin_id, $plugin_definition, MenuLinkTreeInterface $menu_tree) {
+     public function __construct(array $configuration, $plugin_id, $plugin_definition, MenuLinkTreeInterface $menu_tree, StateInterface $state) {
          parent::__construct($configuration, $plugin_id, $plugin_definition);
          $this->menu_tree = $menu_tree;
+         $this->state     = $state;
      }
 
     /**
@@ -47,7 +55,8 @@ class BigMenuBlock extends BlockBase implements ContainerFactoryPluginInterface 
              $plugin_id,
              $plugin_definition,
              // Load customs services used in this class.
-             $container->get('menu.link_tree')
+             $container->get('menu.link_tree'),
+             $container->get('state')
          );
      }
 
@@ -84,6 +93,11 @@ class BigMenuBlock extends BlockBase implements ContainerFactoryPluginInterface 
         $parameters->expandedParents = array();
         $tree = $this->menu_tree->load('secondary',$parameters);
         $variables['secondary_menu'] = $this->menu_tree->transform($tree, $manipulators);
+
+        // Virtual separator of links for Profil > Particuliers
+        $variables['profils_individual_menu'] = $this->state->get('rp_site.settings.profils.individual')['menu'];
+        $variables['profils_individual_project'] = $this->state->get('rp_site.settings.profils.individual')['menu_project'][0];
+        $variables['profils_individual_client'] =  $this->state->get('rp_site.settings.profils.individual')['menu_client'][0];
 
         return [
             '#theme'     => 'rp_layout_bigmenu_block',
