@@ -23,14 +23,18 @@
 }
 
 .container-big-menu {
-  margin-top: 80px;
+  margin-top: 122px;
   padding: $grid-gutter-width;
+  @media (min-width: $screen-sm-min) {
+    margin-left: 6.56rem;
+    padding: 0 $grid-gutter-width 0 0;
+  }
 }
 
 // When Drupal admin bar is display horizontal - add bigger margin
 
 body.toolbar-tray-open.toolbar-fixed.toolbar-horizontal {
   .container-big-menu {
-    margin-top: 160px;
+    margin-top: 140px;
   }
 }

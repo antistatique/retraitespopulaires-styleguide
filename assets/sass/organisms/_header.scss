@@ -4,7 +4,7 @@ header {
   position: absolute;
   overflow: hidden;
   width: 100%;
-  height: 84px;
+  height: 104px;
   background: $white;
   z-index: 2002;
   border-bottom: 1px solid $light-gray;
@@ -15,9 +15,12 @@ header {
   }
 
   .global-search {
-    margin-top: $grid-gutter-width / 2;
+    margin-top: 25px;
     opacity: 0;
     transition: opacity 0.25s ease-in-out;
+    @media (min-width: $screen-sm-min) {
+      margin-left: 3.56rem; // to align logo
+    }
 
     &.active {
       opacity: 1;
