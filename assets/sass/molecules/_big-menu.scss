@@ -27,7 +27,7 @@
   padding: $grid-gutter-width;
   @media (min-width: $screen-sm-min) {
     margin-left: 6.56rem;
-    padding-left: 0;
+    padding: 0 $grid-gutter-width 0 0;
   }
 }
 
