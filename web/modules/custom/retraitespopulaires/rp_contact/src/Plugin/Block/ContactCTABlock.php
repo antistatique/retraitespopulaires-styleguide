@@ -100,6 +100,11 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
             }
         }
 
+        // If the contact is disabled don't show it
+        if (isset($variables['contact']) && !$variables['contact']->status->value) {
+            unset($variables['contact']);
+        }
+
         if ($variables['contact']) {
             $variables['cover'] = $this->cover->generate($variables['contact'], array('xl' => 'rp_teaser_contact_portrait_xl'));
         }

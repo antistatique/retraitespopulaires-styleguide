@@ -91,6 +91,11 @@ class ContactAttachmentBlock extends BlockBase implements ContainerFactoryPlugin
             }
         }
 
+        // If the contact is disabled don't show it
+        if (isset($variables['contact']) && !$variables['contact']->status->value) {
+            unset($variables['contact']);
+        }
+
         return [
             '#theme'     => 'rp_contact_contact_attachment_block',
             '#variables' => $variables,
