@@ -1,5 +1,5 @@
 {% if variables.management_contract.nid.value %}
-<a href="{{ path('entity.node.canonical', {'node': variables.management_contract.nid.value}) }}" class="teaser teaser-fullclick teaser-institution teaser-institution shadow shadow-down">
+<a href="{{ path('entity.node.canonical', {'node': variables.management_contract.nid.value}) }}" class="teaser teaser-fullclick teaser-institution shadow shadow-down">
   <div class="institution-heading">
     <img class="img-responsive" src="{{ file_url(variables.management_contract.field_logo.entity.uri.value) }}" alt="{% trans %}Logo - {{ variables.management_contract.title.value }}{% endtrans %}">
   </div>

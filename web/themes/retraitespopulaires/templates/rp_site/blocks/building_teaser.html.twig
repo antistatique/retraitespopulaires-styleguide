@@ -1,5 +1,5 @@
 {% if variables.building.nid.value %}
-<a href="{{ path('entity.node.canonical', {'node': variables.building.nid.value}) }}" class="teaser teaser-fullclick teaser-rental teaser-rental-immobilier teaser-rental-orientation- shadow shadow-down">
+<a href="{{ path('entity.node.canonical', {'node': variables.building.nid.value}) }}" class="teaser teaser-immobilier teaser-fullclick teaser-rental teaser-rental-immobilier teaser-rental-orientation- shadow shadow-down">
   {% if not variables.building.field_cover.entity.uri.value is empty %}
   <div class="rental-heading">
     <div class="heading-image" style="background-image: url({{ file_url(variables.cover.xl) }})"></div>
