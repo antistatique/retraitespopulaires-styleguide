@@ -126,7 +126,7 @@
                       <!-- First item is a back link to previous links  -->
                      <li class="swiper-back visible-xs visible-sm">
                        <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-{{ theme|join }}"></a>
-                       <a href="{{ item.link.urlObject }}" class="text-muted pretty-link text-cocon">{{ item.link.title }}</a>
+                       <a href="{{ item.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-{{ theme|join }} text-cocon">{{ item.link.title }}</a>
                      </li>
 
                      {% for subitem in item.subtree %}
@@ -159,7 +159,7 @@
                       <!-- First item is a back link to previous links  -->
                      <li class="swiper-back visible-xs visible-sm">
                        <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-primary"></a>
-                       <a href="{{ item.link.urlObject }}" class="text-muted pretty-link text-cocon">{{ item.link.title }}</a>
+                       <a href="{{ item.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-primary text-cocon">{{ item.link.title }}</a>
                      </li>
 
                      {% for subitem in item.subtree %}
@@ -209,7 +209,7 @@
                        <!-- First subitem is a back link to previous links  -->
                       <li class="swiper-back visible-xs visible-sm">
                         <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-{{ theme|join }}"></a>
-                        <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link text-cocon">{{ subitem.link.title }}</a>
+                        <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-{{ theme|join }} text-cocon">{{ subitem.link.title }}</a>
                       </li>
 
                        {% for lastitem in subitem.subtree %}
@@ -242,7 +242,7 @@
                        <!-- First subitem is a back link to previous links  -->
                       <li class="swiper-back visible-xs visible-sm">
                         <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-primary"></a>
-                        <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link text-cocon">{{ subitem.link.title }}</a>
+                        <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-primary text-cocon">{{ subitem.link.title }}</a>
                       </li>
 
                        {% for lastitem in subitem.subtree %}
@@ -276,7 +276,7 @@
               {% for item in variables.secondary_menu %}
                 {% if linksPerColumn == 1 or loop.index % linksPerColumn == 1 %}
                   <div class="col-xs-6">
-                    <ul class="list-no-style {{ loop.first ? 'text-right'}}">
+                    <ul class="list-no-style list-no-padding {{ loop.first ? 'text-right'}}">
                 {% endif %}
                 <li>
                   <a class="pretty-link pretty-link-berrylight-gray" href="{{ item.link.urlObject }}">
