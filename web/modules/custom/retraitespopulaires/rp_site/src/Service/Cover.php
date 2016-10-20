@@ -83,12 +83,14 @@ class Cover {
 
         foreach ($styles as $media => $style) {
             $img_style = ImageStyle::load($style);
-            $destination_uri = $img_style->buildUri($image->getFileUri());
-            $destination_url = $img_style->buildUrl($image->getFileUri());
+            if ($img_style) {
+                $destination_uri = $img_style->buildUri($image->getFileUri());
+                $destination_url = $img_style->buildUrl($image->getFileUri());
 
-            // create the new image derivative
-            $derivative = $img_style->createDerivative($image->getFileUri(), $destination_uri);
-            $build[$media] = $destination_url;
+                // create the new image derivative
+                $derivative = $img_style->createDerivative($image->getFileUri(), $destination_uri);
+                $build[$media] = $destination_url;
+            }
         }
 
         return $build;
