@@ -2,10 +2,15 @@
 
 .logo-retraitespopulaires {
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   left: 2rem;
   width: 16rem;
   height: 8rem;
   z-index: 2001;
   cursor: pointer;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }

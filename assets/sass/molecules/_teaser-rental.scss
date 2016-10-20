@@ -4,7 +4,7 @@
   display: flex;
   margin: 0 auto;
   max-width: 900px;
-  border: 1px solid $light-gray;
+  border: 1px solid $brand-primary;
   border-radius: $border-radius-base;
 
   @each $label, $color in $themes {
