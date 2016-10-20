@@ -102,7 +102,7 @@ class PagesCollectionBlock extends BlockBase implements ContainerFactoryPluginIn
             $manipulators_client = $manipulators;
             $manipulators_client['client'] = array('callable' => 'rp_site.menu_transformers:getIndividualClientOnly');
             $variables['profil'][] = array(
-                'title' => t('Déja assuré ?'),
+                'title' => t('Déja client ?'),
                 'menu'  => $this->menu_tree->transform($tree, $manipulators_client),
             );
         }

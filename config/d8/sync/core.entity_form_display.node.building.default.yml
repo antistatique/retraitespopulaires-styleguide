@@ -113,7 +113,7 @@ content:
     type: text_textarea_with_summary
     weight: 2
     settings:
-      rows: 9
+      rows: 18
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
