@@ -164,8 +164,8 @@ class AdminForm extends FormBase {
         $form['collection']['management_contracts_theme'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Listing Mandats de gestion - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.collection.management_contracts')['theme'] ? $this->state->get('rp_site.settings.collection.management_contracts')['theme'] : 'collection-management_contracts',
+            '#disabled'      => false,
+            '#default_value' => $this->state->get('rp_site.settings.collection.management_contracts')['theme'] ? $this->state->get('rp_site.settings.collection.management_contracts')['theme'] : 'collection_management_contracts',
             '#suffix'        => '<br/>'
         );
 
@@ -177,8 +177,8 @@ class AdminForm extends FormBase {
         $form['collection']['partnerships_theme'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Listing Partenaires - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.collection.partnerships')['theme'] ? $this->state->get('rp_site.settings.collection.partnerships')['theme'] : 'collection-partnerships',
+            '#disabled'      => false,
+            '#default_value' => $this->state->get('rp_site.settings.collection.partnerships')['theme'] ? $this->state->get('rp_site.settings.collection.partnerships')['theme'] : 'collection_partnerships',
         );
 
         // Profils pages settings

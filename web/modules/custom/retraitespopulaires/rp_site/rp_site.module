@@ -159,6 +159,22 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'blocks/faqs_collection'
         ),
+        'rp_site_management_contracts_collection_block' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'template'  => 'blocks/management_contracts_collection'
+        ),
+        'rp_site_management_contract_teaser_block' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'template'  => 'blocks/management_contract_teaser'
+        ),
 
         // Pages themes
         // ---------------------------------------------------------------------
@@ -178,13 +194,6 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'pages/documents'
         ),
-        'rp_site_faqs_page' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'pages/faqs'
-        ),
+
     );
 }
