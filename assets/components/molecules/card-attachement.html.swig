@@ -7,12 +7,12 @@ notes: |
   ##### Options :
   - **theme** - String
   - **title** - String
-  - **type** - String
+  - **type** - String ['faq'|'document']
   - **links** - Array
   - **more** - String
 ---
 <div class="card-attachement card-attachement-{{theme}} shadow shadow-down">
-  <div class="card-title h2">{{ title }}</div>
+  <div class="card-title h2">{{ title|default('Lorem') }}</div>
   <ul class="card-content list-spaced list-unstyled">
     {% for link in links %}
       <li>
@@ -32,13 +32,14 @@ notes: |
     {% endfor %}
   </ul>
   <div class="card-footer">
-    <div class="media">
-    <div class="media-left">
-        <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-placeholder"></a>
-    </div>
-    <div class="media-body">
-      <a class="text-bold pretty-link h5" href="#">{{ more }}</a>
-    </div>
+    <div class="icon-text icon-text-center">
+      {% if type == 'document' %}
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-documents-thick"></span>
+      {% else %}
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-faq-thick"></span>
+      {% endif %}
+
+      <a class="icon-text-txt text-bold pretty-link pretty-link-berrylight-gray h5" href="#">{{ more|default('En apprendre plus') }}</a>
     </div>
   </div>
 </div>

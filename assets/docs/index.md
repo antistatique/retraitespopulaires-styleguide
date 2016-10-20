@@ -441,6 +441,24 @@ permalink: false
         </div>
         <div class="square">
           <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-calendar"></i>
+            <div class="text-muted">.retraitespopulaires-icon-calendar</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-faq-thick"></i>
+            <div class="text-muted">.retraitespopulaires-icon-faq-thick</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-documents-thick"></i>
+            <div class="text-muted">.retraitespopulaires-icon-documents-thick</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-placeholder"></i>
             <div class="text-muted">.retraitespopulaires-icon-placeholder</div>
           </div>  

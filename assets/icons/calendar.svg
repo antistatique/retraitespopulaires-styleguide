@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="XMLID_2_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 700 700" enable-background="new 0 0 700 700" xml:space="preserve">
+<g id="calendar">
+	<path d="M576,150h-76v-50H400v50H300v-50H200v50h-76c-13.2,0-24,10.7998-24,24v402c0,13.2002,10.8,24,24,24h452
+		c13.2,0,24-10.7998,24-24V174C600,160.7998,589.2,150,576,150z M212.5,550H150v-66.6699h62.5V550z M212.5,441.3301H150v-66.6699
+		h62.5V441.3301z M212.5,341.6602H150v-66.6699h62.5V341.6602z M225,125h50v50h-50V125z M325,550h-62.5v-66.6699H325V550z
+		 M325,441.3301h-62.5v-66.6699H325V441.3301z M325,341.6602h-62.5v-66.6699H325V341.6602z M437.5,550H375v-66.6699h62.5V550z
+		 M437.5,441.3301H375v-66.6699h62.5V441.3301z M437.5,341.6602H375v-66.6699h62.5V341.6602z M475,175h-50v-50h50V175z M550,550
+		h-62.5v-66.6699H550V550z M550,441.3301h-62.5v-66.6699H550V441.3301z M550,341.6602h-62.5v-66.6699H550V341.6602z"/>
+	<rect x="0" y="0" transform="matrix(-1 -4.488244e-11 4.488244e-11 -1 700 700)" fill="none" width="700" height="700"/>
+</g>
+</svg>
