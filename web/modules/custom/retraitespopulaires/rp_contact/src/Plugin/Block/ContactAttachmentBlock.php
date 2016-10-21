@@ -90,9 +90,9 @@ class ContactAttachmentBlock extends BlockBase implements ContainerFactoryPlugin
             }
 
             $variables['node'] = $node;
-            if (isset($node->field_advisor) && !empty($node->field_advisor) ){
+            if (isset($node->field_advisor->target_id) && !empty($node->field_advisor->target_id) ){
                 $variables['contact'] = $this->entity_node->load($node->field_advisor->target_id);
-            } else if ( isset($node->field_contact) && !empty($node->field_contact) ){
+            } else if ( isset($node->field_contact->target_id) && !empty($node->field_contact->target_id) ){
                 $variables['contact'] = $this->entity_node->load($node->field_contact->target_id);
             }
         }
