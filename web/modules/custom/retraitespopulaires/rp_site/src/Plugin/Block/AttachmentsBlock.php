@@ -150,15 +150,17 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                 $variables['links'] = $this->entity_node->loadMultiple($nids);
             }
 
-            // Generate the collection link
-            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
-            if( !empty($alias) ){
-                $alias = str_replace('/', '', $alias);
+            if (isset($node->field_profession->target_id)) {
+                // Generate the collection link
+                $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
+                if( !empty($alias) ){
+                    $alias = str_replace('/', '', $alias);
+                }
+                $variables['collection'] = array(
+                    'name' => $this->profession->name($node->field_profession->target_id),
+                    'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.faqs')['nid'], 'taxonomy_term_alias' => $alias))
+                );
             }
-            $variables['collection'] = array(
-                'name' => $this->profession->name($node->field_profession->target_id),
-                'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.faqs')['nid'], 'taxonomy_term_alias' => $alias))
-            );
         }
 
         return $variables;
@@ -193,16 +195,18 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                 $variables['links'] = $this->entity_node->loadMultiple($nids);
             }
 
-            // Generate the collection link
-            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
-            if( !empty($alias) ){
-                $alias = str_replace('/', '', $alias);
-            }
+            if (isset($node->field_profession->target_id)) {
+                // Generate the collection link
+                $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
+                if( !empty($alias) ){
+                    $alias = str_replace('/', '', $alias);
+                }
 
-            $variables['collection'] = array(
-                'name' => $this->profession->name($node->field_profession->target_id),
-                'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.documents')['nid'], 'taxonomy_term_alias' => $alias))
-            );
+                $variables['collection'] = array(
+                    'name' => $this->profession->name($node->field_profession->target_id),
+                    'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.documents')['nid'], 'taxonomy_term_alias' => $alias))
+                );
+            }
         }
 
         return $variables;

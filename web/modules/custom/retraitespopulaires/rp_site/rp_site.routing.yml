@@ -7,22 +7,6 @@ rp_site.launcher:
     requirements:
         _permission: 'access content'
 
-rp_site.documents.collection:
-    path: '/documents/{taxonomy_term_alias}'
-    defaults:
-        _controller: '\Drupal\rp_site\Controller\DocumentsController::collection'
-        _title: 'Documents utiles'
-    requirements:
-        _permission: 'access content'
-
-rp_site.documents.download:
-    path: '/download/{node}'
-    defaults:
-        _controller: '\Drupal\rp_site\Controller\DocumentsController::download'
-        _title: 'Téléchargement'
-    requirements:
-        _permission: 'access content'
-
 # Admin link
 rp_site.admin:
     path: '/admin/retraites-populaires/site'

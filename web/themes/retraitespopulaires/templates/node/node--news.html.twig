@@ -110,7 +110,7 @@
           <li>
             {% set file_title = file.description ? file.description : file.entity.filename.value %}
             {% set file_type = file.entity.mimeType ? file.entity.mimeType %}
-            <a href="{{ file_url(file.entity.uri.value) }}" class="pretty-link text-{{ node.field_profession.entity.tid.value|theme_profession }}">
+            <a href="{{ file_url(file.entity.uri.value) }}" target="_blank" class="pretty-link text-{{ node.field_profession.entity.tid.value|theme_profession }}">
               {{ file_title }}
               <span class="text-muted text-small">- {{ file_type|extension_guesser|upper }}</span>
             </a>
