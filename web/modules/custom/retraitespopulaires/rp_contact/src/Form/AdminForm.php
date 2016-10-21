@@ -84,10 +84,10 @@ class AdminForm extends FormBase {
         );
 
         $form['contact']['receivers'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
+            '#type'          => 'textarea',
+            '#title'         => 'Secteurs et e-mail notifié lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.receivers'),
-            '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
+            '#description'   => t('Séparer l\'e-mail et le secteur par un pipe (|).') .'<br />'. t('Séparer les différentes secteurs par un saut de ligne.'),
         );
 
         // Layout settings
@@ -118,11 +118,12 @@ class AdminForm extends FormBase {
     * {@inheritdoc}
     */
     public function validateForm(array &$form, FormStateInterface $form_state) {
-        $mails = explode(';', $form_state->getValue('receivers'));
+        $mails = explode(PHP_EOL, $form_state->getValue('receivers'));
         $mails = array_map('trim', $mails);
         foreach($mails as $mail) {
-            if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-                $form_state->setErrorByName('receivers', t('@email n\'est pas une adresse valide.', array('@email' => $mail)));
+            $part = explode('|', $mail);
+            if (!filter_var($part[0], FILTER_VALIDATE_EMAIL)) {
+                $form_state->setErrorByName('receivers', t('@email n\'est pas une adresse valide.', array('@email' => $part[0])));
             }
         }
     }
