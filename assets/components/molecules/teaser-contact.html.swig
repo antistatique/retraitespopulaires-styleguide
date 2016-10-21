@@ -15,7 +15,7 @@ notes: |
   <div class="teaser-contact-body">
     <a href="#" class="h3 pretty-link text-{{ theme }}">Dominique Schmid</a>
     <div class="spacer spacer-sm"></div>
-    <p>N'hésitez pas à contacter Dominique Schmid au <a class="pretty-link text-bold text-{{ theme }}" href="tel:0213482626">021 348 26 26</a>.</p>
+    <p>N'hésitez pas à contacter Dominique Schmid au <a class="pretty-link text-no-wrap text-bold text-{{ theme }}" href="tel:0213482626">021 348 26 26</a>.</p>
     <a href="#" class="btn btn-{{ theme }}">Contacter</a>
   </div>
 </div>
