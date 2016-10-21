@@ -5,15 +5,10 @@ collection: atoms
 notes: |
   ##### Usage : `button`
   ##### Options :
-  - **theme** - String
-  - **btn_label** - String
+  - **btn_label** - <i>String</i>
+  - **btn_size** - <i>String</i> - <b>btn-['lg']</b>
+  - **theme** - <i>String</i> - <b>btn-['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<button class="btn btn-lg btn-{{ theme }}">
-  {% spaceless %}
-    {% if btn_label %}
-      {{ btn_label }}
-    {% else %}
-      Mon bouton
-    {% endif %}
-  {% endspaceless %}
+<button class="btn btn-{{ btn-size }} btn-{{ theme }}">
+  {{ btn_label|default('Mon bouton') }}
 </button>

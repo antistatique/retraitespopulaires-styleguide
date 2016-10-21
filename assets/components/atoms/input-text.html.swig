@@ -5,7 +5,7 @@ collection: atoms
 notes: |
   ##### Usage : `input-text`
   ##### Options :
-  - **theme** - String
+  - **theme** - <i>String</i> - <b>form-control-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="form-group">
   <label for="inputID">Label</label>

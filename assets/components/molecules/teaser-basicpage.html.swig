@@ -5,10 +5,10 @@ collection: molecules
 notes: |
   ##### Usage : `teaser-basicpage`
   ##### Options :
-  - **icon** - Boolean
-  - **title_basicpage** - String
-  - **links_basicpage** - Array
-  - **body_basicpage** - String
+  - **icon** - <i>Boolean</i>
+  - **title_basicpage** - <i>String</i>
+  - **links_basicpage** - <i>Array</i>
+  - **body_basicpage** - <i>String</i>
 ---
 <div class="teaser-basicpage shadow shadow-down">
   <div class="basicpage-heading">

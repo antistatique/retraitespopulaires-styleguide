@@ -5,7 +5,7 @@ collection: atoms
 notes: |
   ##### Usage : `funky-waves`
   ##### Options :
-  - **img** - String
+  - **img** - <i>String</i>
 ---
 
 <div class="wrapper-funky-waves has-header">

@@ -4,10 +4,7 @@ name: form-immobilier
 collection: organisms
 notes: |
   ##### Usage : `form-immobilier`
-  ##### Options :
-  - **theme** - String
 ---
-
 <form class="form-immobilier">
 
   <fieldset class="fieldset-bordered">

@@ -80,7 +80,7 @@ notes: |
   <fieldset class="fieldset-bordered">
     <div class="form-group">
       <label for="montant">Montant</label>
-      <input class="form-control text-right" id="inputID" type="text" placeholder="CHF"></input>
+      <input class="form-control form-chf-numeric text-right" id="inputID" type="text" placeholder="CHF"></input>
     </div>
     <div class="form-group">
       <label>Date du versement</label>

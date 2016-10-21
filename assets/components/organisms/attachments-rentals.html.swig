@@ -4,8 +4,6 @@ name: attachments-rentals
 collection: organisms
 notes: |
   ##### Usage : `attachments-rentals`
-  ##### Options :
-  - **option** - Type
 ---
 <div class="attachements-wrapper">
   <div class="container">

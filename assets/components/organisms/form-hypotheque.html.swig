@@ -4,8 +4,6 @@ name: form-hypotheque
 collection: organisms
 notes: |
   ##### Usage : `form-hypotheque`
-  ##### Options :
-  - **theme** - string
 ---
 <table class="table-{{size}} table-hypotheque tablesaw tablesaw-stack" data-tablesaw-mode="stack">
    <thead>
@@ -17,7 +15,7 @@ notes: |
    <tbody>
     <tr>
        <td>Introduisez ici le montant d'achat du bien immobilier</td>
-       <td><input type="email" class="form-control" id="exampleInputEmail1" placeholder="Le montant en CHF"></td>
+       <td><input type="email" class="form-control form-control-hypotheque" id="exampleInputEmail1" placeholder="Le montant en CHF"></td>
     </tr>
     <tr>
        <td>Prix d'achat y compris droits de mutations et frais de notaire (+5%)</td>
@@ -44,7 +42,7 @@ notes: |
    <tbody>
     <tr>
        <td>Les fonds propres doivent au moins représenter 20% du prix d'achat</td>
-       <td><input type="email" class="form-control" id="exampleInputEmail1" placeholder="Le montant en CHF"></td>
+       <td><input type="email" class="form-control form-control-hypotheque" id="exampleInputEmail1" placeholder="Le montant en CHF"></td>
     </tr>
     <tr>
        <td>Prix d'achat (max.) sans droits de mutations et frais de notaire</td>
@@ -67,7 +65,7 @@ notes: |
    <tbody>
     <tr>
        <td>Revenu anuel net du ménage</td>
-       <td><input type="email" class="form-control" id="exampleInputEmail1" placeholder="Le montant en CHF"></td>
+       <td><input type="email" class="form-control form-control-hypotheque" id="exampleInputEmail1" placeholder="Le montant en CHF"></td>
     </tr>
     <tr>
        <td>Prix d'achat (max.) sans droits de mutations et frais de notaire</td>
@@ -91,7 +89,7 @@ notes: |
     <tr>
        <td>Sélectionnez le taux qui vous intéresse en premier rang</td>
        <td>
-        <select class="form-control">
+        <select class="form-control form-control-hypotheque">
           <option>Fixe à 1 an</option>
           <option>Fixe à 2 ans</option>
           <option>Fixe à 3 ans</option>
@@ -121,8 +119,8 @@ notes: |
     </tr>
    </tbody>
   </table>
-  <div class="spacer spacer-md"></div>
-  <button type="submit" class="btn btn-default">Calculer</button>
   <div class="form-group readonly">
-    <input type="text" class="form-control" value="Les taux utilisés sont ceux de septembre 2016" readonly></input>
+    <input type="text" class="form-control form-control-hypotheque full-width" value="Les taux utilisés sont ceux de septembre 2016" readonly></input>
   </div>
+  <div class="spacer spacer-md"></div>
+  <button type="submit" class="btn btn-default btn-hypotheque pull-right">Calculer</button>

@@ -5,8 +5,8 @@ collection: atoms
 notes: |
   ##### Usage : `loader`
   ##### Options :
-  - **loader_type** - String
-  - **loader_theme** - String
+  - **loader_type** - <i>String</i> - <b>loader-['snake'|'yinyang']</b>
+  - **loader_theme** - <i>String</i> - <b>loader-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 {% if not loader_type %} {% set loader_type = 'snake' %} {% endif %}
 <div class="loader">

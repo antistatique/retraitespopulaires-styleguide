@@ -4,9 +4,9 @@ name: teaser-profil
 collection: molecules
 notes: |
   ##### Usage : `teaser-profil`
-  - **teaser_profil_icon** - Boolean
-  - **teaser_profil_title** - String
-  - **teaser_profil_body** - String
+  - **teaser_profil_icon** - <i>Boolean</i>
+  - **teaser_profil_title** - <i>String</i>
+  - **teaser_profil_body** - <i>String</i>
 ---
 <a href="#" class="teaser teaser-fullclick teaser-profil shadow shadow-down">
   <div class="profil-heading">

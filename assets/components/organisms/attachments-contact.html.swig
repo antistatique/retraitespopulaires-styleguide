@@ -5,7 +5,7 @@ collection: organisms
 notes: |
   ##### Usage : `attachments-contact`
   ##### Options :
-  - **attachments_contact_theme** - String
+  - **attachments_contact_theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="attachments-contact">
   <div class="container">
@@ -18,7 +18,7 @@ notes: |
 
     <div class="spacer"></div>
     <div class="row">
-      <div class="col-xs-6 col-xs-offset-3">
+      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
         {% include '../molecules/teaser-contact.html.swig' with {theme: attachments_contact_theme} %}
       </div>
     </div>

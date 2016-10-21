@@ -13,4 +13,11 @@ export function number_format () {
     pSign: 's',
     aSign: ' m2'
   });
+
+  $('.form-percent-numeric').autoNumeric('init',{
+    aSep: '\'',
+    mDec: '0',
+    pSign: 's',
+    aSign: ' %'
+  });
 }

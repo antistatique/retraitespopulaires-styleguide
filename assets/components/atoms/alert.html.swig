@@ -5,7 +5,7 @@ collection: atoms
 notes: |
   ##### Usage : `alert`
   ##### Options :
-  - **type** - String
+  - **type** - <i>String</i> - <b>alert-['success'|'danger'|'info'|'warning']</b>
 ---
 {% if not type %}
   {% set type = 'info' %}

@@ -50,6 +50,10 @@
   pointer-events: none;
 }
 
+.text-no-wrap {
+  white-space: nowrap;
+}
+
 /**
 * Alignments of blocks
 */
@@ -152,6 +156,46 @@
 
 .m-l-1 {
   margin-left: $grid-gutter-width / 2 !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.p-t-0 {
+  padding-top: 0 !important;
+}
+
+.p-r-0 {
+  padding-right: 0 !important;
+}
+
+.p-b-0 {
+  padding-bottom: 0 !important;
+}
+
+.p-l-0 {
+  padding-left: 0 !important;
+}
+
+.p-1 {
+  padding: $grid-gutter-width / 2 !important;
+}
+
+.p-t-1 {
+  padding-top: $grid-gutter-width / 2 !important;
+}
+
+.p-r-1 {
+  padding-right: $grid-gutter-width / 2 !important;
+}
+
+.p-b-1 {
+  padding-bottom: $grid-gutter-width / 2 !important;
+}
+
+.p-l-1 {
+  padding-left: $grid-gutter-width / 2 !important;
 }
 
 /* stylelint-enable declaration-no-important */

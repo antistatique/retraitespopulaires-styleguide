@@ -4,8 +4,6 @@ name: attachments-offers
 collection: organisms
 notes: |
   ##### Usage : `attachments-offers`
-  ##### Options :
-  - **theme** - string
 ---
 <div class="attachements-wrapper">
   <div class="container">

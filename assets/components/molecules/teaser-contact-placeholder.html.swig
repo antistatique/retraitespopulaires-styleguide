@@ -5,7 +5,7 @@ collection: molecules
 notes: |
   ##### Usage : `teaser-contact-placeholder`
   ##### Options :
-  - **theme** - String
+  - **theme** - <i>String</i> - <b>teaser-contact-placeholder-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="teaser-contact-placeholder teaser-contact-placeholder-{{ theme }} shadow shadow-down">
   <a href="#" class="teaser-contact-placeholder-heading">
@@ -14,7 +14,7 @@ notes: |
   </a>
   <div class="teaser-contact-placeholder-body">
 
-    <p>N'hésitez pas à nous contacter au <a class="pretty-link text-bold text-{{ theme }}" href="tel:0213482626">021 348 26 26</a>.</p>
+    <p>N'hésitez pas à nous contacter au <a class="pretty-link text-no-wrap text-bold text-{{ theme }}" href="tel:0213482626">021 348 26 26</a>.</p>
     <hr />
     <p>Ou retrouvez votre contact régional en entrant votre code postal<p>
     <form class="form-inline">

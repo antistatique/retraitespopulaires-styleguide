@@ -4,7 +4,7 @@ name: big-menu
 collection: molecules
 notes: |
   ##### Usage : `big-menu`
-  Ce composant est visible dans le template "<a href="/retraitespopulaires-styleguide/big-menu">Big-Menu</a>"
+  Ce composant est visible dans le template "<a href="/retraitespopulaires-styleguide/basic-page">Page de base</a>".
 ---
 <div class="big-menu">
   <div class="container-big-menu container-fuild">
