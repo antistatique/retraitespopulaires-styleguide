@@ -44,6 +44,20 @@ layout: examples.html.swig
       </div>
     </div>
 
+    <div class="form-group">
+      <label class="d-block">Formattage de monnaie</label>
+      <div class="input-text">
+        <input type="text" name="max_rent" class="form-control form-chf-numeric text-right" placeholder="CHF" value="">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="d-block">Formattage numérique</label>
+      <div class="input-text">
+        <input type="text" name="max_rent" class="form-control text-right form-surface-numeric" placeholder="m²" value="">
+      </div>
+    </div>
+
     {% include '../atoms/input-radio.html.swig' %}
     <div class="form-group">
       <div class="form-group-inline">
