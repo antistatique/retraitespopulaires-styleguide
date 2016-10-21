@@ -5,6 +5,18 @@ collection: examples
 styleguide: true
 layout: examples.html.swig
 ---
+
+<div class="row">
+  <div class="col-xs-6 col-xs-offet-3">
+    <label>Confirmation de réussit d'un formulaire</label>
+    {% include '../atoms/well.html.swig' with {'well_status': 'success'} %}
+    <div class="spacer spacer-sm"></div>
+
+    <label>Affichage des erreurs d'un formulaire</label>
+    {% include '../atoms/well.html.swig' with {'well_status': 'danger'} %}
+  </div>
+</div>
+
 <div class="row">
   <div class="col-xs-12">
     <div class="form-group readonly">
@@ -45,17 +57,22 @@ layout: examples.html.swig
     </div>
 
     <div class="form-group">
-      <label class="d-block">Formattage de monnaie</label>
+      <label class="d-block">Formatage de monnaie CHF</label>
       <div class="input-text">
         <input type="text" name="max_rent" class="form-control form-chf-numeric text-right" placeholder="CHF" value="">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="d-block">Formattage numérique</label>
+      <label class="d-block">Formatage numérique</label>
       <div class="input-text">
         <input type="text" name="max_rent" class="form-control text-right form-surface-numeric" placeholder="m²" value="">
       </div>
+    </div>
+
+    <div class="form-group">
+      <label for="montant">Formatage de pourcentage</label>
+      <input class="form-control form-percent-numeric text-right" id="inputID" type="text" placeholder="%"></input>
     </div>
 
     {% include '../atoms/input-radio.html.swig' %}
