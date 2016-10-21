@@ -132,7 +132,7 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
 
                         // Add children to parent
                         if ($result->parent != '0' && isset($categories[$result->parent]['children'])) {
-                            $categories[$result->parent]['children'][] = $term;
+                            $categories[$result->parent]['children'][$result->tid] = $term;
                         }
                     }
                 }
