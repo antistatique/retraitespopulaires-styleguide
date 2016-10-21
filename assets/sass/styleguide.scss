@@ -11,10 +11,6 @@
 
 @import 'doc/moodboard';
 
-.styleguide-container {
-  padding: 0 15px;
-}
-
 #atoms {
   .styleguide-item-preview .hamburger-wrapper,
   .styleguide-item-preview .logo-retraitespopulaires {
@@ -36,6 +32,10 @@
   }
 }
 
+.styleguide-header-container {
+  background-color: $menu-bg;
+}
+
 .styleguide-menu-active .styleguide-container {
   transform: translate(300px, 0);
 
@@ -50,10 +50,12 @@
 
   a {
     padding: 0 1em;
+    transition: all 0.25s ease-in-out;
 
     &.styleguide-menu-heading:hover,
     &:hover {
-      background: lighten($menu-bg, 5%);
+      cursor: pointer;
+      background: darken($menu-bg, 25%);
       color: $white;
     }
   }
@@ -65,7 +67,7 @@
   .styleguide-menu-heading {
     margin-bottom: 0.5em;
     padding-left: 1rem;
-    border-bottom: 1px solid lighten($menu-bg, 5%);
+    border-bottom: 1px solid darken($menu-bg, 25%);
   }
 
   a.styleguide-menu-heading {
