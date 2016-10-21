@@ -50,6 +50,13 @@ settings:
             - Styles
             - Format
         -
+          name: 'Copier et Coller'
+          items:
+            - Copy
+            - Cut
+            - Paste
+            - PasteFromWord
+        -
           name: Tools
           items:
             - Maximize
