@@ -18,7 +18,7 @@ notes: |
 
     <div class="spacer"></div>
     <div class="row">
-      <div class="col-xs-6 col-xs-offset-3">
+      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
         {% include '../molecules/teaser-contact.html.swig' with {theme: attachments_contact_theme} %}
       </div>
     </div>
