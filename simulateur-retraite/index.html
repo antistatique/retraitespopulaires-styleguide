@@ -875,22 +875,22 @@
   <fieldset class="fieldset-bordered">
     <div class="form-group">
       <label for="montant">Dernier degré d'assurance</label>
-      <input class="form-control text-right" id="inputID" type="number" placeholder="%"></input>
+      <input class="form-control form-percent-numeric text-right" id="inputID" type="text" placeholder="%"></input>
       <p class="help-block">Equivaut au <strong>pourcentage d'activité</strong> actuel ou au pourcentage d'activité antiérieur maintenu par des cotisations complémentaires.</p>
     </div>
      <div class="form-group">
       <label for="montant">Dernier salaire cotisant</label>
-      <input class="form-control" id="inputID" type="number" placeholder="CHF"></input>
+      <input class="form-control text-right form-chf-numeric" id="inputID" type="text" placeholder="CHF"></input>
       <p class="help-block">Salaire sur lequel seront prélevées les cotisations et qui correspond au <strong>salaire annuel</strong> brut diminué d'une déudction de coordination.</p>
     </div>
     <div class="form-group">
       <label for="montant">Salaire assuré en cas de sortie et avant la retraite</label>
-      <input class="form-control" id="inputID" type="number" placeholder="CHF"></input>
+      <input class="form-control text-right form-chf-numeric" id="inputID" type="text" placeholder="CHF"></input>
       <p class="help-block">Avant 57 ans, il est égal au <strong>dernier salaire cotisant</strong>. À partir de 57 ans, il correspond à la <strong>moyenne des salires cotisants</strong> mais au plus sur uen durée de 5ans.</p>
     </div>
     <div class="form-group">
       <label for="montant">Degré moyen d'assurance</label>
-      <input class="form-control text-right" id="inputID" type="number" placeholder="%"></input>
+      <input class="form-control form-percent-numeric text-right" id="inputID" type="text" placeholder="%"></input>
       <p class="help-block">Moyenne des degrés d'assurance sur la période décrite pour le salaire assurle en cas de sortie et avant la retraite (ci-dessus).</p>
     </div>
   </fieldset>
@@ -898,12 +898,12 @@
   <fieldset class="fieldset-bordered">
     <div class="form-group">
       <label for="montant">Compte individuel de préfinancement</label>
-      <input class="form-control" id="inputID" type="text" placeholder="CHF"></input>
+      <input class="form-control text-right form-chf-numeric" id="inputID" type="text" placeholder="CHF"></input>
       <p class="help-block">Montant disponible pour financer tout ou partie de la réduction de la rente en cas de retraite anticipée (soit avant l'âge pivot de 62 ans).</p>
     </div>
     <div class="form-group">
       <label for="montant">Droits transitoires financés par l'employeur </label>
-      <input class="form-control" id="inputID" type="text" placeholder="CHF"></input>
+      <input class="form-control text-right form-chf-numeric" id="inputID" type="text" placeholder="CHF"></input>
       <p class="help-block">Montant versé par l'employeur permettant de compenser les effets du nouveau plan. Il sera définitiveement acquis et converti en rente viagère au moment de la retraite.</p>
     </div>
   </fieldset>
@@ -941,7 +941,7 @@
     </div>
     <div class="form-group">
       <label for="montant">Je souhaite une rente mensuelle d'un montant de</label>
-      <input class="form-control" id="inputID" type="text" placeholder="CHF"></input>
+      <input class="form-control  text-right form-chf-numeric" id="inputID" type="text" placeholder="CHF"></input>
       <p class="help-block">Rente de retraite mensuelle souhaitée sans le supplément temporaire.</p>
     </div>
   </fieldset>
@@ -956,18 +956,26 @@
   	    <input type="radio" name="capital" value="oui">
   	    <label class="option">Pas de capital</label>
   	  </div>
+    </div>
+    <div class="form-group">
   	  <div class="input-radio">
   	    <input type="radio" name="capital" value="non">
   	    <label class="option">Pourcentage de rente pris en capital</label>
-  	    <input class="form-control text-right" id="inputID" type="number" placeholder="%"></input>
-  	    <p class="help-block">Indiquer le pourcentage de la rente que vous désirez toucher sous forme de capital (maximum 25 %).</p>
-  	  </div>
+      </div>
+    </div>
+    <div class="form-group">
+	    <input class="form-control form-percent-numeric text-right" id="inputID" type="text" placeholder="%"></input>
+	    <p class="help-block">Indiquer le pourcentage de la rente que vous désirez toucher sous forme de capital (maximum 25 %).</p>
+    </div>
+    <div class="form-group">
   	  <div class="input-radio">
   	    <input type="radio" name="capital" value="non">
   	    <label class="option">Montant pris en capital</label>
-  	    <input class="form-control" id="inputID" type="number" placeholder="CHF"></input>
-  	    <p class="help-block">Indiquer le montant que vous désirez toucher sous forme de capital.<br> <strong>NB : si vous désirez connaître le montant maximum possible, veuillez indiquer 25 % dans la rubrique précédente "Pourcentage de rente pris en capital".</strong></p>
-  	  </div>
+      </div>
+    </div>
+    <div class="form-group">
+	    <input class="form-control text-right form-chf-numeric" id="inputID" type="text" placeholder="CHF"></input>
+	    <p class="help-block">Indiquer le montant que vous désirez toucher sous forme de capital.<br> <strong>NB : si vous désirez connaître le montant maximum possible, veuillez indiquer 25 % dans la rubrique précédente "Pourcentage de rente pris en capital".</strong></p>
     </div>
   </fieldset>
 
@@ -1103,7 +1111,7 @@
 
     <div class="spacer"></div>
     <div class="row">
-      <div class="col-xs-6 col-xs-offset-3">
+      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
         
 <div class="teaser-contact teaser-contact- shadow shadow-down">
   <a href="#" class="teaser-contact-heading">

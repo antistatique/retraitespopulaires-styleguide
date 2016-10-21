@@ -213,6 +213,13 @@ function number_format() {
     pSign: 's',
     aSign: ' m2'
   });
+
+  (0, _jquery2.default)('.form-percent-numeric').autoNumeric('init', {
+    aSep: '\'',
+    mDec: '0',
+    pSign: 's',
+    aSign: ' %'
+  });
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
