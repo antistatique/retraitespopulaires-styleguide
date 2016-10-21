@@ -140,18 +140,26 @@ notes: |
   	    <input type="radio" name="capital" value="oui">
   	    <label class="option">Pas de capital</label>
   	  </div>
+    </div>
+    <div class="form-group">
   	  <div class="input-radio">
   	    <input type="radio" name="capital" value="non">
   	    <label class="option">Pourcentage de rente pris en capital</label>
-  	    <input class="form-control text-right" id="inputID" type="number" placeholder="%"></input>
-  	    <p class="help-block">Indiquer le pourcentage de la rente que vous désirez toucher sous forme de capital (maximum 25 %).</p>
-  	  </div>
+      </div>
+    </div>
+    <div class="form-group">
+	    <input class="form-control text-right" id="inputID" type="number" placeholder="%"></input>
+	    <p class="help-block">Indiquer le pourcentage de la rente que vous désirez toucher sous forme de capital (maximum 25 %).</p>
+    </div>
+    <div class="form-group">
   	  <div class="input-radio">
   	    <input type="radio" name="capital" value="non">
   	    <label class="option">Montant pris en capital</label>
-  	    <input class="form-control" id="inputID" type="number" placeholder="CHF"></input>
-  	    <p class="help-block">Indiquer le montant que vous désirez toucher sous forme de capital.<br> <strong>NB : si vous désirez connaître le montant maximum possible, veuillez indiquer 25 % dans la rubrique précédente "Pourcentage de rente pris en capital".</strong></p>
-  	  </div>
+      </div>
+    </div>
+    <div class="form-group">
+	    <input class="form-control" id="inputID" type="number" placeholder="CHF"></input>
+	    <p class="help-block">Indiquer le montant que vous désirez toucher sous forme de capital.<br> <strong>NB : si vous désirez connaître le montant maximum possible, veuillez indiquer 25 % dans la rubrique précédente "Pourcentage de rente pris en capital".</strong></p>
     </div>
   </fieldset>
 
