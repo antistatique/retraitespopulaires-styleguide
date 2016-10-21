@@ -5,8 +5,8 @@ collection: molecules
 notes: |
   ##### Usage : `table`
   ##### Options :
-  - **size** - String
-  - **theme** - String
+  - **size** - <i>String</i> - <b>table-['wide'|'condensed']</b>
+  - **theme** - <i>String</i> - <b>table-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <table class="table-{{size}} table-{{theme}} tablesaw tablesaw-stack" data-tablesaw-mode="stack">
  <thead>

@@ -5,8 +5,8 @@ collection: molecules
 notes: |
   ##### Usage : `secondary-nav`
   ##### Options :
-  - **theme** - String
-  - **json** - String
+  - **json** - <i>String</i>
+  - **theme** - <i>String</i> - <b>secondary-nav-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="secondary-nav secondary-nav-{{ theme }}">
   <div class="back">

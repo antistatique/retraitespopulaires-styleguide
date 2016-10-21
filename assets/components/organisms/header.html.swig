@@ -5,8 +5,8 @@ collection: organisms
 notes: |
   ##### Usage : `header`
   ##### Options :
-  - **light** - Boolean
-  - **theme** - Theme
+  - **light** - <i>Boolean</i>
+  - **theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 {% if not light %}
   {% include '../molecules/big-menu.html.swig' %}

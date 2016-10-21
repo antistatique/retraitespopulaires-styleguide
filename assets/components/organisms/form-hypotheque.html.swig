@@ -4,8 +4,6 @@ name: form-hypotheque
 collection: organisms
 notes: |
   ##### Usage : `form-hypotheque`
-  ##### Options :
-  - **theme** - string
 ---
 <table class="table-{{size}} table-hypotheque tablesaw tablesaw-stack" data-tablesaw-mode="stack">
    <thead>

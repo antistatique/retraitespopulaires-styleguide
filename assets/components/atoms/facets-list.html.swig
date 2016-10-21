@@ -5,8 +5,8 @@ collection: atoms
 notes: |
   ##### Usage : `facets-list`
   ##### Options :
-  - **title** - String
-  - **links** - Array
+  - **title** - <i>String</i>
+  - **links** - <i>Array</i>
 ---
 <p class="media-heading text-muted">{{ title }}</p>
 <ul class="facets-list">

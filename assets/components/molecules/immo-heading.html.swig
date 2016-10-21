@@ -5,13 +5,13 @@ collection: molecules
 notes: |
   ##### Usage : `immo-heading`
   ##### Options :
-  - **immo_ref** - String
-  - **immo_loyer** - String
-  - **immo_pieces** - String
-  - **immo_charges** - String
-  - **immo_surface** - String
-  - **immo_heading** - String
-  - **theme** - String
+  - **immo_ref** - <i>String</i>
+  - **immo_loyer** - <i>String</i>
+  - **immo_pieces** - <i>String</i>
+  - **immo_charges** - <i>String</i>
+  - **immo_surface** - <i>String</i>
+  - **immo_heading** - <i>String</i>
+  - **theme** - <i>String</i> - <b>immo-heading-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="immo-heading immo-heading-{{ theme }} shadow shadow-down">
   <div class="immo-heading-heading" style="background-image: url({% if immo-heading_heading  %} {{ immo-heading_heading }} {% else  %} https://immobilier.retraitespopulaires.ch/data/images/thumbs/detail/10138_8212.jpg {% endif %})"></div>

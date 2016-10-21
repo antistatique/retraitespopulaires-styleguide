@@ -4,13 +4,11 @@ name: teaser-offer
 collection: molecules
 notes: |
   ##### Usage : `teaser-offer`
-  ##### Options :
-  - **theme** - String
 ---
 <a href="#" class="teaser teaser-fullclick teaser-offer shadow shadow-down">
   <div class="offer-heading">
     <div class="heading-image" style="background-image: url(https://unsplash.it/780/780?image=1005)"></div>
-    <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>
+    <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang'} %}</div>
   </div>
   <div class="offer-body">
     <div class="offer-title h1 pretty-link">Festival Lavaux Classic</div>

@@ -5,11 +5,11 @@ collection: molecules
 notes: |
   ##### Usage : `card-attachement`
   ##### Options :
-  - **theme** - String
-  - **title** - String
-  - **type** - String ['faq'|'document']
-  - **links** - Array
-  - **more** - String
+  - **title** - <i>String</i>
+  - **type** - <i>String</i> ['faq'|'document']
+  - **links** - <i>Array</i>
+  - **more** - <i>String</i>
+  - **theme** - <i>String</i> - <b>card-attachement-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="card-attachement card-attachement-{{theme}} shadow shadow-down">
   <div class="card-title h2">{{ title|default('Lorem') }}</div>

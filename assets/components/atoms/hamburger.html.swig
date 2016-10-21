@@ -5,7 +5,7 @@ collection: atoms
 notes: |
   ##### Usage : `hamburger`
   ##### Options :
-  - **link** - Boolean
+  - **link** - <i>Boolean</i>
 ---
 {% if link %}
   <a href="#" class="hamburger-wrapper">

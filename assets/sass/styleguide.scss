@@ -30,9 +30,79 @@
   }
 }
 
-
 #organisms {
   .styleguide-item-preview .header {
     position: relative;
+  }
+}
+
+.styleguide-menu-active .styleguide-container {
+  transform: translate(300px, 0);
+
+  @media (min-width: 60em) {
+    margin-left: 300px;
+    transform: translate(0, 0);
+  }
+}
+
+.styleguide-menu {
+  width: 300px;
+
+  a {
+    padding: 0 1em;
+
+    &.styleguide-menu-heading:hover,
+    &:hover {
+      background: lighten($menu-bg, 5%);
+      color: $white;
+    }
+  }
+
+  span.styleguide-menu-heading {
+    padding-left: 1rem;
+  }
+
+  .styleguide-menu-heading {
+    margin-bottom: 0.5em;
+    padding-left: 1rem;
+    border-bottom: 1px solid lighten($menu-bg, 5%);
+  }
+
+  a.styleguide-menu-heading {
+    &:hover {
+      background: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.styleguide-item-group > .styleguide-item-group {
+  padding-bottom: 0;
+  border: 1px solid;
+
+  .styleguide-item-heading-group {
+    margin: 0;
+    padding: 20px;
+    background: #eee;
+  }
+
+  .styleguide-item-notes {
+    max-width: 100%;
+    padding: 20px;
+    background: #eee;
+  }
+
+  .styleguide-item-preview {
+    border: 0;
+
+    .container {
+      max-width: 100%;
+    }
+  }
+
+  .styleguide-item-code {
+    .language-markup {
+      margin: 0;
+    }
   }
 }

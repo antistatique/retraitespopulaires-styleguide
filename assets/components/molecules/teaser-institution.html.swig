@@ -5,7 +5,7 @@ collection: molecules
 notes: |
   ##### Usage : `teaser-institution`
   ##### Options :
-  - **logo** - String
+  - **logo** - <i>String</i>
 ---
 <a href="#" class="teaser teaser-fullclick teaser-institution teaser-institution shadow shadow-down">
   <div class="institution-heading">

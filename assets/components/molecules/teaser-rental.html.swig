@@ -5,15 +5,15 @@ collection: molecules
 notes: |
   ##### Usage : `teaser-rental`
   ##### Options :
-  - **rental_orientation** - String
-  - **rental_type** - String
-  - **rental_heading** - String
-  - **rental_title** - String
-  - **rental_address** - String
-  - **rental_rooms** - String
-  - **rental_surface** - String
-  - **rental_rent** - String
-  - **theme** - String
+  - **rental_type** - <i>String</i>
+  - **rental_heading** - <i>String</i>
+  - **rental_title** - <i>String</i>
+  - **rental_address** - <i>String</i>
+  - **rental_rooms** - <i>String</i>
+  - **rental_surface** - <i>String</i>
+  - **rental_rent** - <i>String</i>
+  - **rental_orientation** - <i>String</i> - <b>teaser-rental-orientation-['portrait'|'landscape']</b>
+  - **theme** - <i>String</i> - <b>teaser-rental-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <a href="#" class="teaser teaser-{{ theme }} teaser-fullclick teaser-rental teaser-rental-{{ theme }} teaser-rental-orientation-{{ rental_orientation }} shadow shadow-down">
   <div class="rental-heading">

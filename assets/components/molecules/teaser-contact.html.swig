@@ -5,7 +5,7 @@ collection: molecules
 notes: |
   ##### Usage : `teaser-contact`
   ##### Options :
-  - **theme** - String
+  - **theme** - <i>String</i> - <b>teaser-contact-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="teaser-contact teaser-contact-{{ theme }} shadow shadow-down">
   <a href="#" class="teaser-contact-heading">

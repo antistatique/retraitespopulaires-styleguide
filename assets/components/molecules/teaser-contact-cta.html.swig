@@ -5,7 +5,7 @@ collection: molecules
 notes: |
   ##### Usage : `teaser-contact-cta`
   ##### Options :
-  - **theme** - String
+  - **theme** - <i>String</i> - <b>teaser-contact-cta-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <a href="#" class="teaser teaser-{{ theme }} teaser-fullclick teaser-contact-cta teaser-contact-cta-{{ theme }} shadow shadow-down">
   <div class="teaser-contact-cta-heading">

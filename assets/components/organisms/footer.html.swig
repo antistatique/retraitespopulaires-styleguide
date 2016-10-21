@@ -5,8 +5,8 @@ collection: organisms
 notes: |
   ##### Usage : `footer`
   ##### Options :
-  - **light** - Boolean
-  - **theme** - String
+  - **light** - <i>Boolean</i>
+  - **theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="footer">
   {% if not light %}

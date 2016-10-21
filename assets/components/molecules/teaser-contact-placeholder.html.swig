@@ -5,7 +5,7 @@ collection: molecules
 notes: |
   ##### Usage : `teaser-contact-placeholder`
   ##### Options :
-  - **theme** - String
+  - **theme** - <i>String</i> - <b>teaser-contact-placeholder-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="teaser-contact-placeholder teaser-contact-placeholder-{{ theme }} shadow shadow-down">
   <a href="#" class="teaser-contact-placeholder-heading">

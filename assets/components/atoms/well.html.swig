@@ -5,7 +5,7 @@ collection: atoms
 notes: |
   ##### Usage : `well`
   ##### Options :
-  - **well_status** - String [success|danger]
+  - **well_status** - <i>String</i> <b>[success|danger]</b>
 ---
 <div class="well well-{{ well_status }}">
   <p>

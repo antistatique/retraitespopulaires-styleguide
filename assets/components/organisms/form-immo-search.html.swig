@@ -5,8 +5,7 @@ collection: organisms
 notes: |
   ##### Usage : `form-immo-search`
   ##### Options :
-  - **theme** - String
-  - **type_immo_search** - String [flats|shops]
+  - **type_immo_search** - <i>String</i> [flats|shops]
 ---
 
 <form class="form-immo-search">

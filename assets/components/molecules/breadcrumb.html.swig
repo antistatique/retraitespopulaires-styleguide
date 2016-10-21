@@ -5,8 +5,8 @@ collection: molecules
 notes: |
   ##### Usage : `breadcrumb`
   ##### Options :
-  - **theme** - String
-  - **links** - Array
+  - **theme** - <i>String</i> - <b>lines-['text-assurance'|'text-prevoyance'|'text-immobilier'|'text-hypotheque'|'text-institutionnel'|'text-profelia'|'text-cpev'|'text-cip']</b>
+  - **links** - <i>Array</i>
 ---
 
 <div class="breadcrumb">

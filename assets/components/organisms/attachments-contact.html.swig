@@ -5,7 +5,7 @@ collection: organisms
 notes: |
   ##### Usage : `attachments-contact`
   ##### Options :
-  - **attachments_contact_theme** - String
+  - **attachments_contact_theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="attachments-contact">
   <div class="container">
