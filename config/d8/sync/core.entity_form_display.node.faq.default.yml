@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.faq.body
+    - field.field.node.faq.field_advisor
+    - field.field.node.faq.field_contact
     - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
     - field.field.node.faq.field_profession
@@ -18,6 +20,7 @@ third_party_settings:
     group_tabs:
       children:
         - group_info
+        - group_contacts
       parent_name: ''
       weight: 3
       label: Tabs
@@ -43,6 +46,20 @@ third_party_settings:
         classes: ''
         id: ''
         required_fields: true
+    group_contacts:
+      children:
+        - field_advisor
+        - field_contact
+      parent_name: group_tabs
+      weight: 8
+      label: 'Elements de contact'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
 id: node.faq.default
 targetEntityType: node
 bundle: faq
@@ -56,6 +73,22 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+  field_advisor:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_contact:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_faq_type:
     weight: 2
     settings: {  }

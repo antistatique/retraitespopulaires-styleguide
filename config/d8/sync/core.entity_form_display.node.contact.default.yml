@@ -6,10 +6,13 @@ dependencies:
     - field.field.node.contact.field_cover
     - field.field.node.contact.field_email
     - field.field.node.contact.field_email_form
+    - field.field.node.contact.field_entity
     - field.field.node.contact.field_fax
     - field.field.node.contact.field_firstname
+    - field.field.node.contact.field_function
     - field.field.node.contact.field_lastname
     - field.field.node.contact.field_phone
+    - field.field.node.contact.field_specialty
     - field.field.node.contact.field_zip
     - image.style.thumbnail
     - node.type.contact
@@ -30,6 +33,9 @@ third_party_settings:
         - field_email_form
         - field_phone
         - field_fax
+        - field_function
+        - field_specialty
+        - field_entity
         - field_zip
       parent_name: group_tabs
       weight: 111
@@ -78,6 +84,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: email_default
+  field_entity:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_fax:
     weight: 7
     settings:
@@ -86,6 +99,13 @@ content:
     type: telephone_default
   field_firstname:
     weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_function:
+    weight: 8
     settings:
       size: 60
       placeholder: ''
@@ -104,8 +124,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
+  field_specialty:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_zip:
-    weight: 8
+    weight: 11
     settings:
       placeholder: ''
     third_party_settings: {  }
