@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.contact.field_function
     - field.field.node.contact.field_lastname
     - field.field.node.contact.field_phone
+    - field.field.node.contact.field_profession
     - field.field.node.contact.field_specialty
     - field.field.node.contact.field_zip
     - image.style.thumbnail
@@ -37,6 +38,7 @@ third_party_settings:
         - field_specialty
         - field_entity
         - field_zip
+        - field_profession
       parent_name: group_tabs
       weight: 111
       label: 'Données principales'
@@ -124,6 +126,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
+  field_profession:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_specialty:
     weight: 9
     settings:

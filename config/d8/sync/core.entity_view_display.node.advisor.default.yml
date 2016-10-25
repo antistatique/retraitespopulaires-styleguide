@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.advisor.field_function
     - field.field.node.advisor.field_lastname
     - field.field.node.advisor.field_phone
+    - field.field.node.advisor.field_profession
     - field.field.node.advisor.field_region
     - field.field.node.advisor.field_specialty
     - field.field.node.advisor.field_zip_codes
@@ -77,6 +78,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+  field_profession:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_region:
     weight: 102
     label: above

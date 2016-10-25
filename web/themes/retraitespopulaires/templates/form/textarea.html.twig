@@ -13,6 +13,12 @@
  * @see template_preprocess_textarea()
  */
 #}
+{%
+  set classes = [
+    'form-control',
+    attributes.theme.__toString == empty ? '' : 'form-control-'~attributes.theme.__toString,
+  ]
+%}
 <div{{ wrapper_attributes }}>
-  <textarea{{ attributes.addClass('form-control') }}>{{ value }}</textarea>
+  <textarea{{ attributes.addClass(classes) }}>{{ value }}</textarea>
 </div>

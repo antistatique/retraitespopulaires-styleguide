@@ -1,4 +1,9 @@
-{% set theme = variables.node.field_profession.entity.tid.value|theme_profession %}
+{% if not variables.theme %}
+  {% set theme = variables.node.field_profession.entity.tid.value|theme_profession %}
+{% else %}
+  {% set theme = variables.theme %}
+{% endif %}
+
 {% set link = path('entity.node.canonical', {'node': variables.contact.nid.value}) %}
 <div class="teaser-contact teaser-contact-{{ theme }} shadow shadow-down">
   {% if not variables.contact.field_cover.entity.uri.value is empty %}

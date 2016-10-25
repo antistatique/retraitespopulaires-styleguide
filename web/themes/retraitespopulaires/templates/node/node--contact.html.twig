@@ -83,13 +83,13 @@
 
   <div{{ content_attributes.addClass('content') }}>
 
-    {{ load_block('rp_contact_contact_teaser_block', {'node': null, 'contact': node}) }}
+    {{ load_block('rp_contact_contact_teaser_block', {'node': null, 'contact': node, 'theme': node.field_profession.entity.tid.value|theme_profession}) }}
 
     {% if node.field_email_form.value %}
       <div class="spacer"></div>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-          {{ load_form('rp_contact', 'ContactForm', {'node': node}) }}
+          {{ load_form('rp_contact', 'ContactForm', {'node': node, 'theme': node.field_profession.entity.tid.value|theme_profession}) }}
         </div>
       </div>
     {% endif %}

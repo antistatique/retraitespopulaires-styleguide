@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.contact.field_function
     - field.field.node.contact.field_lastname
     - field.field.node.contact.field_phone
+    - field.field.node.contact.field_profession
     - field.field.node.contact.field_specialty
     - field.field.node.contact.field_zip
     - node.type.contact
@@ -83,6 +84,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+  field_profession:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_specialty:
     weight: 111
     label: above

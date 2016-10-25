@@ -15,6 +15,7 @@
     'btn',
     attributes.button_primary.__toString == empty ? '' : 'btn-primary',
     attributes.button_block.__toString == empty ? '' : 'btn-block',
+    attributes.theme.__toString == empty ? '' : 'btn-'~attributes.theme.__toString,
   ]
 %}
 <input{{ attributes.addClass(classes) }} />{{ children }}

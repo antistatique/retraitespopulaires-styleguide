@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.advisor.field_function
     - field.field.node.advisor.field_lastname
     - field.field.node.advisor.field_phone
+    - field.field.node.advisor.field_profession
     - field.field.node.advisor.field_region
     - field.field.node.advisor.field_specialty
     - field.field.node.advisor.field_zip_codes
@@ -47,6 +48,7 @@ third_party_settings:
         - field_function
         - field_specialty
         - field_entity
+        - field_profession
       parent_name: group_tabs
       weight: 12
       label: 'Données principales'
@@ -131,6 +133,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
+  field_profession:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_region:
     weight: 10
     settings: {  }

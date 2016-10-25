@@ -1,0 +1,28 @@
+uuid: bfbd1099-77a2-4748-a632-75ba82ce640f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profession
+    - node.type.contact
+    - taxonomy.vocabulary.profession
+id: node.contact.field_profession
+field_name: field_profession
+entity_type: node
+bundle: contact
+label: Métier
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      profession: profession
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

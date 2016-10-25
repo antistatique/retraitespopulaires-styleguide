@@ -10,4 +10,10 @@
  * @see template_preprocess_input()
  */
 #}
-<input{{ attributes.addClass('form-control') }} />{{ children }}
+{%
+  set classes = [
+    'form-control',
+    attributes.theme.__toString == empty ? '' : 'form-control-'~attributes.theme.__toString,
+  ]
+%}
+<input{{ attributes.addClass(classes) }} />{{ children }}

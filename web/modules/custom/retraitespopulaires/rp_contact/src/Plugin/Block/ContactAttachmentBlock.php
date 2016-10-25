@@ -98,7 +98,7 @@ class ContactAttachmentBlock extends BlockBase implements ContainerFactoryPlugin
         }
 
         // If the contact is disabled don't show it
-        if (isset($variables['contact']) && !$variables['contact']->status->value) {
+        if (isset($variables['contact']) && !$variables['contact']->isPublished()) {
             unset($variables['contact']);
         }
 
