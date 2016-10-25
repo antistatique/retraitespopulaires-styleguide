@@ -76,7 +76,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: "table.table-wide|Tableau - Long\r\ntable.table-condensed|Tableau - Condenser"
+      styles: "table.table-wide|Tableau - Long\r\ntable.table-condensed|Tableau - Condenser\r\na.no-style|Lien d'image"
     autoembed:
       status: embedsemantic
 image_upload:
