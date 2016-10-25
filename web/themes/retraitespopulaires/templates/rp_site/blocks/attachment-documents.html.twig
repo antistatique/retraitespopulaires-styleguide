@@ -19,7 +19,9 @@
   <div class="card-footer">
     <div class="icon-text icon-text-center">
         <span class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-documents-thick"></span>
-        <a class="icon-text-txt text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ variables.collection.link }}">{% trans %}Tous les documents {{ variables.collection.name }}{% endtrans %}</a>
+        <div class="icon-text-txt">
+          <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ variables.collection.link }}">{% trans %}Tous les documents {{ variables.collection.name }}{% endtrans %}</a>
+        </div>
     </div>
   </div>
   {% endif %}
