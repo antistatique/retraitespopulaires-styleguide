@@ -25,5 +25,5 @@ regions:
   content_footer: 'Content Footer'
   footer: Footer
 
-ckeditor_stylesheets:
-  - build/css/ckeditor.css
+# ckeditor_stylesheets:
+#   - build/css/ckeditor.css

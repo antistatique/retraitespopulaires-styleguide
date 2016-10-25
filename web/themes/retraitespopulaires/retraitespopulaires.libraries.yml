@@ -3,7 +3,7 @@ global-styling:
     theme:
       build/css/vendors.min.css: {}
       build/css/main.css: {}
-      build/css/ckeditor.css: {}
+      # build/css/ckeditor.css: {}
   js:
     build/js/vendors.min.js: {}
     build/js/MorphSVGPlugin.min.js: {}
