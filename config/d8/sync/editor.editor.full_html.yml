@@ -27,6 +27,13 @@ settings:
             - RemoveFormat
             - DrupalNbsp
         -
+          name: Alignements
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+        -
           name: Linking
           items:
             - DrupalLink
@@ -36,6 +43,8 @@ settings:
           items:
             - BulletedList
             - NumberedList
+            - Indent
+            - Outdent
         -
           name: Media
           items:
@@ -55,6 +64,7 @@ settings:
             - Copy
             - Cut
             - Paste
+            - PasteText
             - PasteFromWord
         -
           name: Tools
