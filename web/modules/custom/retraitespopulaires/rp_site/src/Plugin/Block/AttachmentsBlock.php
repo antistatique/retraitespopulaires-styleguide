@@ -157,7 +157,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                     $alias = str_replace('/', '', $alias);
                 }
                 $variables['collection'] = array(
-                    'name' => $this->profession->name($node->field_profession->target_id),
+                    'name' => $this->profession->name($node->field_profession->target_id, 'faq'),
                     'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.faqs')['nid'], 'taxonomy_term_alias' => $alias))
                 );
             }
@@ -203,7 +203,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                 }
 
                 $variables['collection'] = array(
-                    'name' => $this->profession->name($node->field_profession->target_id),
+                    'name' => $this->profession->name($node->field_profession->target_id, 'document'),
                     'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.documents')['nid'], 'taxonomy_term_alias' => $alias))
                 );
             }

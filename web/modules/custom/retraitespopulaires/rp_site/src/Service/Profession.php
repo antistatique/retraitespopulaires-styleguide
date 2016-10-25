@@ -11,24 +11,46 @@ namespace Drupal\rp_site\Service;
 */
 class Profession {
 
-    public function name($tid) {
-        switch ($tid) {
-            case 1:
-                return t('la prévoyance professionnelle');
-            break;
+    public function name($tid, $type) {
+        if ($type == 'faq') {
+            switch ($tid) {
+                case 1:
+                    return t('la prévoyance professionnelle');
+                break;
 
-            case 2:
-                return t('l\'immobilier');
-            break;
+                case 2:
+                    return t('l\'immobilier');
+                break;
 
-            case 6:
-                return t('la finance');
-            break;
+                case 6:
+                    return t('la finance');
+                break;
 
-            case 7:
-                return t('l\'assurance vie');
-            break;
+                case 7:
+                    return t('l\'assurance vie');
+                break;
+            }
+        } elseif ($type == 'document') {
+            switch ($tid) {
+                case 1:
+                    return t('de prévoyance professionnelle');
+                break;
+
+                case 2:
+                    return t('d\'immobilier');
+                break;
+
+                case 6:
+                    return t('de financement');
+                break;
+
+                case 7:
+                    return t('d\'assurance vie');
+                break;
+            }
         }
+
+        return '';
     }
 
     public function theme($tid) {
