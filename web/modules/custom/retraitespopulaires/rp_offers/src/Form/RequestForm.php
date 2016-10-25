@@ -131,7 +131,7 @@ class RequestForm extends FormBase {
 
         $form['personnal']['address'] = array(
             '#title'       => t('Votre adresse'),
-            '#placeholder' => t('Ch. des pinçons 12'),
+            '#placeholder' => t('Chemin de l'Avenir 1'),
             '#type'        => 'textfield',
             '#required'    => true,
             '#prefix'      => '<div class="form-group">',
