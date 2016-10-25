@@ -1,7 +1,7 @@
 {% set theme = variables.node.field_profession.entity.tid.value|theme_profession %}
 
 <a href="#contacter-nous" class="pull-right teaser teaser-{{ theme }} teaser-fullclick teaser-contact-cta teaser-contact-cta-{{ theme }} shadow shadow-down">
-  {% if not variables.contact.field_cover.entity.uri.value is empty %}
+  {% if not variables.cover is empty %}
   <div class="teaser-contact-cta-heading">
     <div class="heading-image" style="background-image: url({{ file_url(variables.cover.xl) }})"></div>
     <div class="loader-image">
@@ -15,12 +15,15 @@
   <div class="teaser-contact-cta-body text-center">
     <p class="text-small m-0">
       {% set display = [] %}
-      {% if variables.contact.field_firstname.value %}
-        {% set display = display|merge([variables.contact.field_firstname.value]) %}
+      {% if variables.contact|length == 1 %}
+        {% if variables.contact.field_firstname.value %}
+          {% set display = display|merge([variables.contact.field_firstname.value]) %}
+        {% endif %}
+        {% if variables.contact.field_lastname.value %}
+          {% set display = display|merge([variables.contact.field_lastname.value]) %}
+        {% endif %}
       {% endif %}
-      {% if variables.contact.field_lastname.value %}
-        {% set display = display|merge([variables.contact.field_lastname.value]) %}
-      {% endif %}
+
       {% if display is empty %}
         {% trans %}Contactez-nous.{% endtrans %}
       {% else %}

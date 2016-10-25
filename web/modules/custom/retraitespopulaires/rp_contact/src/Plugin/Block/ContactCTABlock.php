@@ -87,7 +87,7 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
     * {@inheritdoc}
     */
     public function build($params = array()) {
-        $variables = array();
+        $variables = array('contacts' => array());
 
         if (isset($params['theme'])) {
             $variables['theme'] = $params['theme'];
@@ -97,19 +97,31 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
             $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
 
             $variables['node'] = $node;
+
+            // List all advisor(s)
             if (isset($node->field_advisor) && !empty($node->field_advisor) ){
-                $variables['contact'] = $this->entity_node->load($node->field_advisor->target_id);
-            } else if ( isset($node->field_contact) && !empty($node->field_contact) ){
-                $variables['contact'] = $this->entity_node->load($node->field_contact->target_id);
+                foreach ($node->field_advisor as $key => $advisor) {
+                    $advisor = $this->entity_node->load($advisor->target_id);
+                    // If the advisor is publish only
+                    if ($advisor->isPublished()){
+                        $variables['contacts'][] = $advisor;
+                    }
+                }
+            }
+
+            // List all contact(s)
+            if ( isset($node->field_contact) && !empty($node->field_contact) ){
+                foreach ($node->field_contact as $key => $contact) {
+                    $contact = $this->entity_node->load($contact->target_id);
+                    // If the contact is publish only
+                    if ($contact->isPublished()){
+                        $variables['contacts'][] = $contact;
+                    }
+                }
             }
         }
 
-        // If the contact is disabled don't show it
-        if (isset($variables['contact']) && !$variables['contact']->status->value) {
-            unset($variables['contact']);
-        }
-
-        if ($variables['contact']) {
+        if (count($variables['contacts']) == 1) {
             $variables['cover'] = $this->cover->fromNode($variables['contact'], array('xl' => 'rp_teaser_contact_portrait_xl'));
         }
 

@@ -78,7 +78,7 @@ class ContactAttachmentBlock extends BlockBase implements ContainerFactoryPlugin
     * {@inheritdoc}
     */
     public function build($params = array()) {
-        $variables = array();
+        $variables = array('contacts' => array());
 
         if (isset($params['theme'])) {
             $variables['theme'] = $params['theme'];
@@ -90,16 +90,28 @@ class ContactAttachmentBlock extends BlockBase implements ContainerFactoryPlugin
             }
 
             $variables['node'] = $node;
-            if (isset($node->field_advisor->target_id) && !empty($node->field_advisor->target_id) ){
-                $variables['contact'] = $this->entity_node->load($node->field_advisor->target_id);
-            } else if ( isset($node->field_contact->target_id) && !empty($node->field_contact->target_id) ){
-                $variables['contact'] = $this->entity_node->load($node->field_contact->target_id);
-            }
-        }
 
-        // If the contact is disabled don't show it
-        if (isset($variables['contact']) && !$variables['contact']->isPublished()) {
-            unset($variables['contact']);
+            // List all advisor(s)
+            if (isset($node->field_advisor) && !empty($node->field_advisor) ){
+                foreach ($node->field_advisor as $key => $advisor) {
+                    $advisor = $this->entity_node->load($advisor->target_id);
+                    // If the advisor is publish only
+                    if ($advisor->isPublished()){
+                        $variables['contacts'][] = $advisor;
+                    }
+                }
+            }
+
+            // List all contact(s)
+            if ( isset($node->field_contact) && !empty($node->field_contact) ){
+                foreach ($node->field_contact as $key => $contact) {
+                    $contact = $this->entity_node->load($contact->target_id);
+                    // If the contact is publish only
+                    if ($contact->isPublished()){
+                        $variables['contacts'][] = $contact;
+                    }
+                }
+            }
         }
 
         return [
