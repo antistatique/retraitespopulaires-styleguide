@@ -97,7 +97,7 @@ notes: |
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
-        <ul class="unordered-list list-inline list-unstyle-first">
+        <ul class="menu-footer unordered-list list-inline list-unstyle-first">
           <li><a href="#" class="pretty-link text-{{theme}}">Impressum</a></li>
           <li><a href="#" class="pretty-link text-{{theme}}">Mentions juridiques</a></li>
           <li><a href="#" class="pretty-link text-{{theme}}">Glossaire</a></li>
