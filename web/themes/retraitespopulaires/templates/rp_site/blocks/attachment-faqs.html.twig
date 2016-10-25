@@ -3,14 +3,14 @@
   <ul class="card-content list-spaced list-unstyled">
     {% for faq in variables.links %}
     <li>
-      <a class="text-bold pretty-link h5" href="#">{{ faq.title.value }}</a>
+      <a class="text-bold pretty-link h5" href="{{ path('entity.node.canonical', {'node':faq.nid.value}) }}">{{ faq.title.value }}</a>
     </li>
     {% endfor %}
   </ul>
   <div class="card-footer">
     <div class="icon-text icon-text-center">
         <span class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-faq-thick"></span>
-        <a class="icon-text-txt text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ variables.collection.link }}">{% trans %}Accéder à toutes les questions relatives à {{ variables.collection.name }}{% endtrans %}</a>
+        <a class="icon-text-txt text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ variables.collection.link }}">{% trans %}Accéder à toutes les questions-réponses relatives à {{ variables.collection.name }}{% endtrans %}</a>
     </div>
   </div>
 </div>
