@@ -184,7 +184,7 @@ class ContactForm extends FormBase {
 
         $form['personnal']['address'] = array(
             '#title'       => t('Votre adresse'),
-            '#placeholder' => t('Chemin de l'Avenir 1'),
+            '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#required'    => true,
             '#prefix'      => '<div class="form-group">',
