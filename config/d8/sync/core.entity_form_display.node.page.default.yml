@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_contact
     - field.field.node.page.field_cover
     - field.field.node.page.field_document
+    - field.field.node.page.field_document_page
     - field.field.node.page.field_faq
     - field.field.node.page.field_file_page
     - field.field.node.page.field_products
@@ -38,12 +39,10 @@ third_party_settings:
         id: ''
     group_attachment:
       children:
-        - field_file_page
-        - field_faq
-        - field_products
-        - field_document
+        - group_attachments_content
+        - group_attachments_footer
       parent_name: group_attachments
-      weight: 17
+      weight: 15
       label: 'Elements attachés'
       format_type: tab
       format_settings:
@@ -83,6 +82,34 @@ third_party_settings:
         classes: ''
         id: ''
         required_fields: true
+    group_attachments_content:
+      children:
+        - field_file_page
+        - field_document_page
+      parent_name: group_attachment
+      weight: 13
+      label: 'Positionner dans le contenu'
+      format_type: details
+      format_settings:
+        label: 'Positionner dans le contenu'
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+    group_attachments_footer:
+      children:
+        - field_products
+        - field_faq
+        - field_document
+      parent_name: group_attachment
+      weight: 14
+      label: 'Positionner au pied du contenu'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
 _core:
   default_config_hash: KSvzyFhdLuxniTsunUnUfpfMmod2l57GibtVjL8ymHM
 id: node.page.default
@@ -116,7 +143,15 @@ content:
     third_party_settings: {  }
     type: image_image
   field_document:
-    weight: 8
+    weight: 19
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_document_page:
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -124,7 +159,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_faq:
-    weight: 6
+    weight: 18
     settings:
       match_operator: CONTAINS
       size: 60
@@ -132,13 +167,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_file_page:
-    weight: 5
+    weight: 14
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
   field_products:
-    weight: 7
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: 60
