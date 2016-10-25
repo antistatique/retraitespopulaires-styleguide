@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * Implementation of hook_query_TAG_alter
+ */
+function rp_offers_query_random_alter($query) {
+  $query->orderRandom();
+}
+
+/**
 * Theme hook
 */
 function rp_offers_theme($existing, $type, $theme, $path) {
@@ -23,6 +30,16 @@ function rp_offers_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'blocks/offer_teaser'
         ),
+        // Pages admin
+        // ---------------------------------------------------------------------
+        'rp_offers_admin_request_page' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'template'  => 'admin/request'
+        ),
+
     );
 }
 
