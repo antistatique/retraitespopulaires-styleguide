@@ -10,7 +10,7 @@ id: node.news.field_contact
 field_name: field_contact
 entity_type: node
 bundle: news
-label: Contact
+label: Contact(s)
 description: ''
 required: false
 translatable: false

@@ -10,7 +10,7 @@ id: node.news.field_advisor
 field_name: field_advisor
 entity_type: node
 bundle: news
-label: Conseiller
+label: Conseiller(s)
 description: ''
 required: false
 translatable: false
