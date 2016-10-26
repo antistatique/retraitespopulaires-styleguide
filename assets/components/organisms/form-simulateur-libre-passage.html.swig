@@ -12,9 +12,9 @@ notes: |
     <div class="form-group">
       <label>Date de la situation de prévoyance</label>
       <div class="input-group">
-        <input type="text" class="form-control datepicker" value="02/12/2016">
+        <input type="text" class="form-control datepicker" value="02/12/2016" aria-label="Saisissez la date au format (JJ/MM/AAAA)">
         <span class="input-group-btn no-events">
-          <button class="btn btn-default-invert btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
+          <button class="btn btn-default-invert btn-icon" type="button" aria-label="Choisir la date"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
         </span>
       </div>
     </div>

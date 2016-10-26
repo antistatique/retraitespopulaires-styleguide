@@ -7,9 +7,10 @@ notes: |
 ---
 <form class="global-search">
     <div class="input-group full-width">
-      <input type="text" class="form-control full-width" placeholder="Chercher un produit, un document, un contact, ...">
+      <h2>Rechercher</h2>
+      <input type="text" class="form-control full-width" aria-label="Champ de recherche" placeholder="Chercher un produit, un document, un contact, ...">
       <span class="input-group-btn">
-        <button class="btn btn-default btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
+        <button class="btn btn-default btn-icon" type="button" aria-label="Rechercher sur le site"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
       </span>
     </div>
 </form>
