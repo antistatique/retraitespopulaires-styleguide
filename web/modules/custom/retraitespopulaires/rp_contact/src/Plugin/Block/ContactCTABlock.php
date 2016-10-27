@@ -122,7 +122,7 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
         }
 
         if (count($variables['contacts']) == 1) {
-            $variables['cover'] = $this->cover->fromNode($variables['contact'], array('xl' => 'rp_teaser_contact_portrait_xl'));
+          $variables['cover'] = $this->cover->fromNode($variables['contacts'][0], array('xl' => 'rp_teaser_contact_portrait_xl'));
         }
 
         return [
