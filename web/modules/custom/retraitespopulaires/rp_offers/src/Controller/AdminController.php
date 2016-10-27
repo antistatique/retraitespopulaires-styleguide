@@ -180,7 +180,7 @@ class AdminController extends ControllerBase {
             $handle = fopen('php://output', 'w+');
 
             // Add the header of the CSV file
-            fputcsv($handle, array('Demande du', 'Prénom', 'Nom de famille', 'Adresse', 'Npa', 'Ville', 'Coupon', 'Gagnant'),';');
+            fputcsv($handle, array('Demande du', 'Prénom', 'Nom de famille', 'Adresse', 'Npa', 'Ville', 'Coupon', 'Gagnant'), ';');
             // Query data from database
             $query = $this->entity_query->get('rp_offers_request');
             // Add Filter conditions
