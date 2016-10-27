@@ -1,0 +1,28 @@
+uuid: ef643592-5118-4ce3-a6e3-94aeebf81577
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_page
+    - node.type.document
+    - node.type.page
+id: node.page.field_document_page
+field_name: field_document_page
+entity_type: node
+bundle: page
+label: 'Document(s) utile(s) attaché(s)'
+description: 'Permets à des documents utiles d''être attachés directement au contenu - donc au même endroit que le(s) fichier(s) attaché(s).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
