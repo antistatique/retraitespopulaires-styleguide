@@ -94,7 +94,7 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
             if( !empty($alias) ){
                 $variables['categories'][] = array(
                     'term'  => $profession,
-                    'alias' => str_replace('/', '', $alias),
+                    'alias' => ltrim($alias, '/'),
                 );
             }
         }
