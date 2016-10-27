@@ -92,7 +92,6 @@ third_party_settings:
         - field_date
         - field_cover
         - body
-        - field_video
         - field_news_type
         - field_profession
         - field_profil
@@ -121,14 +120,20 @@ content:
     third_party_settings: {  }
   field_advisor:
     weight: 14
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
   field_contact:
     weight: 15
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
   field_cover:
     weight: 10
     settings:
