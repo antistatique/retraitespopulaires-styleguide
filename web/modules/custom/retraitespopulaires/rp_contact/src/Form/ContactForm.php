@@ -378,7 +378,7 @@ class ContactForm extends FormBase {
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_contact', 'contact', $to, 'fr', $data, $reply);
 
-            drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traitez votre demander et vous recontactez à l\'adresse @email ou par téléphone au @phone.', [
+            drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traitez votre demande et vous recontactez à l\'adresse @email ou par téléphone au @phone.', [
                 '@firstname' => $form_state->getValue('firstname'),
                 '@lastname'  => $form_state->getValue('lastname'),
                 '@email'     => $form_state->getValue('email'),
