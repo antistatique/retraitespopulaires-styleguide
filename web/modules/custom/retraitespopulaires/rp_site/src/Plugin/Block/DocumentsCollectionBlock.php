@@ -133,6 +133,7 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
 
         $taxonomy_term_alias = $this->request->query->get('taxonomy_term_alias');
 
+        // Only interested by alias of Profession taxonomy
         if (!empty($taxonomy_term_alias)) {
             // Retreive filter from slug alias
             $taxonomy_term_tid = null;
