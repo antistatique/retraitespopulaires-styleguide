@@ -1,0 +1,6 @@
+name: Libre passage (PLP) - RP Arc-en-ciel
+description: 'Simulateur et contact pour une police de libre passage (PLP) RP Arc-en-ciel'
+package: Retraites Populaires
+type: module
+version: 1.0
+core: 8.x

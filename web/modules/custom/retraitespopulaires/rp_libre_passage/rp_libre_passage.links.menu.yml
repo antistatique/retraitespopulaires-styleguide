@@ -1,0 +1,8 @@
+rp_libre_passage.admin:
+    title: Libre Passage
+    parent: rp_toolbar.admin
+    route_name: rp_libre_passage.admin
+rp_libre_passage.admin.settings:
+    title: Settings
+    parent: rp_libre_passage.admin
+    route_name: rp_libre_passage.admin.settings

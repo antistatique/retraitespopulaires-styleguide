@@ -77,6 +77,15 @@ function retraitespopulaires_theme_suggestions_page_alter(array &$suggestions, a
 
     // Suggestions theme of rp_contact module
     rp_contact_suggestions_pages($suggestions);
+
+    // Libre passage
+    if (isset($node->nid->value) && $node->nid->value == $state->get('rp_libre_passage.settings.page.simulator')['nid']) {
+        $suggestions[] = 'page__node__'.$state->get('rp_libre_passage.settings.page.simulator')['theme'];
+    }
+
+    if (isset($node->nid->value) && $node->nid->value == $state->get('rp_libre_passage.settings.page.contact')['nid']) {
+        $suggestions[] = 'page__node__'.$state->get('rp_libre_passage.settings.page.contact')['theme'];
+    }
 }
 
 function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, array $variables) {
