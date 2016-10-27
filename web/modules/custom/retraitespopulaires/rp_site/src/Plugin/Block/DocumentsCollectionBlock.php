@@ -147,8 +147,9 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
         }
 
         // Pager
-        $nids = $query->execute();
-        pager_default_initialize(count($nids), $this->limit);
+        $count_query = clone $query;
+        $count = $count_query->count()->execute();
+        pager_default_initialize($count, $this->limit);
         $variables['pager'] = array(
             '#type' => 'pager',
             '#quantity' => '3',
