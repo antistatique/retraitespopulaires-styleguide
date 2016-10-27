@@ -1,1 +1,19 @@
 @charset 'UTF-8';
+
+.menu-footer {
+  li {
+    display: block;
+
+    &:before {
+      display: none;
+    }
+
+    @media only screen and (min-width: $screen-sm-min) {
+      display: inline-block;
+
+      &:before {
+        display: inline;
+      }
+    }
+  }
+}

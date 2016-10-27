@@ -16,7 +16,7 @@ notes: |
         'Brochure Conseil global',
         'Procuration',
         'Modification des primes et prestations'],
-        'more': 'Accéder à tous les formulaires'} %}
+        'more': 'Tous les documents'} %}
       </div>
     </div>
   </div>

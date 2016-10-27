@@ -27,6 +27,19 @@
       "children": []
     }]
   },
+  "emploi": {
+    "title": "Emploi",
+    "links": [{
+      "url": "#",
+      "label": "Mon compte",
+      "active": false
+    }, {
+      "url": "#",
+      "label": "Les offres",
+      "active": false,
+      "children": []
+    }]
+  },
   "assurancevie": {
     "title": "Assurance vie",
     "links": [{

@@ -45,7 +45,7 @@ notes: |
     <div class="form-group">
       <label>Votre addresse</label>
       <div class="input-group">
-        <input type="text" id="address" name="address" value="" size="60" maxlength="128" placeholder="Ch. des pinçons 12" class="form-text form-control">
+        <input type="text" id="address" name="address" value="" size="60" maxlength="128" placeholder="Chemin de l'Avenir 1" class="form-text form-control">
       </div>
     </div>
 

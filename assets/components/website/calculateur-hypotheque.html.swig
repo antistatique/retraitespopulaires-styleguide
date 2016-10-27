@@ -60,7 +60,7 @@ layout: website.html.swig
         'Brochure Conseil global',
         'Procuration',
         'Modification des primes et prestations'],
-        'more': 'Accéder à tous les formulaires relatifs au financement'} %}
+        'more': 'Tous les documents de financement'} %}
       </div>
     </div>
   </div>

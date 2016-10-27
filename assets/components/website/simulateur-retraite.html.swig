@@ -60,7 +60,7 @@ layout: website.html.swig
         'D’un emploi à l’autre, placer son 2e pilier (24 heures)',
         'Conditions RP Arc-en-ciel',
         'Brochure RP Arc-en-ciel'],
-        'more': 'Accéder à tous les formulaires relatifs à la prévoyance professionnelle'} %}
+        'more': 'Tous les documents de prévoyance professionnelle'} %}
       </div>
     </div>
   </div>

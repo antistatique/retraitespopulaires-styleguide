@@ -38,8 +38,7 @@ notes: |
       {% else %}
         <span class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-faq-thick"></span>
       {% endif %}
-
-      <a class="icon-text-txt text-bold pretty-link pretty-link-berrylight-gray h5" href="#">{{ more|default('En apprendre plus') }}</a>
+      <div class="icon-text-txt"><a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="#">{{ more|default('En apprendre plus') }}</a></div>
     </div>
   </div>
 </div>

@@ -50,7 +50,7 @@ layout: examples.html.swig
               <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file"></a>
           </div>
           <div class="media-body">
-            <a class="text-bold pretty-link h5" href="#">Accéder à tous les formulaires relatifs à l'assurance vie</a>
+            <a class="text-bold pretty-link h5" href="#">Tous les documents d'assurance vie</a>
           </div>
         </div>
       </div>

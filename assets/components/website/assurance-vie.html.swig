@@ -111,7 +111,7 @@ layout: website.html.swig
         'Brochure Conseil global',
         'Procuration',
         'Modification des primes et prestations'],
-        'more': 'Accéder à tous les formulaires relatifs à l’assurance vie'} %}
+        'more': "Tous les documents d'assurance vie"} %}
       </div>
     </div>
   </div>

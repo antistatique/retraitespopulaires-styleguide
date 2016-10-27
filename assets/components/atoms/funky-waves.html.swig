@@ -10,7 +10,7 @@ notes: |
 
 <div class="wrapper-funky-waves has-header">
   {% if img  %}
-    <img src="{{ img }}" />
+    <img class="img-responsive center-block" src="{{ img }}" />
   {% else  %}
     <picture>
       <source srcset="https://unsplash.it/544/250?image=1057" media="(max-width: 544px)">
