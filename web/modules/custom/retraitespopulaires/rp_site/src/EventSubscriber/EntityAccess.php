@@ -44,7 +44,7 @@ class EntityAccess implements EventSubscriberInterface {
         $node = $route_match->getParameter('node');
         $route_name = $route_match->getRouteName();
         if ($route_name == 'entity.node.canonical' && $node && $node->getType() == 'document') {
-            $dest = Url::fromRoute('<front>')->toString();
+            $dest = file_create_url($node->field_file_document->entity->uri->value);
             $event->setResponse(RedirectResponse::create($dest));
         }
     }
