@@ -10,9 +10,6 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use \libphonenumber\PhoneNumberUtil;
-use \libphonenumber\PhoneNumberFormat;
-
 use Drupal\user\PrivateTempStoreFactory;
 use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -342,13 +339,6 @@ class ContactForm extends FormBase {
         // Assert the phone is valid
         if (!$form_state->getValue('phone') || empty($form_state->getValue('phone'))) {
             $errors['phone'] = t('Le numéro de téléphone est obligatoire.');
-        }else {
-            try {
-                $phoneUtil = PhoneNumberUtil::getInstance();
-                $phoneUtil->parse($form_state->getValue('phone'), 'CH');
-            } catch (\Exception $e) {
-                $errors['phone'] = t('Votre numéro de téléphone est invalide.');
-            }
         }
 
         // Save errors in sessions to use it on the form builder

@@ -10,9 +10,6 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use \libphonenumber\PhoneNumberUtil;
-use \libphonenumber\PhoneNumberFormat;
-
 use Drupal\user\PrivateTempStoreFactory;
 use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -193,7 +190,7 @@ class GlobalContactForm extends FormBase {
 
         $form['personnal']['address'] = array(
             '#title'       => t('Votre adresse'),
-            '#placeholder' => t('Ch. des pinçons 12'),
+            '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#required'    => true,
             '#prefix'      => '<div class="form-group">',
@@ -351,13 +348,6 @@ class GlobalContactForm extends FormBase {
         // Assert the phone is valid
         if (!$form_state->getValue('phone') || empty($form_state->getValue('phone'))) {
             $errors['phone'] = t('Le numéro de téléphone est obligatoire.');
-        }else {
-            try {
-                $phoneUtil = PhoneNumberUtil::getInstance();
-                $phoneUtil->parse($form_state->getValue('phone'), 'CH');
-            } catch (\Exception $e) {
-                $errors['phone'] = t('Votre numéro de téléphone est invalide.');
-            }
         }
 
         // Save errors in sessions to use it on the form builder
@@ -376,31 +366,33 @@ class GlobalContactForm extends FormBase {
     */
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // TODO Found better solution to inline errors than hack session to
-        if (empty($this->session->get('errors'))) {
-            $data = array(
-                'firstname' => $form_state->getValue('firstname'),
-                'lastname'  => $form_state->getValue('lastname'),
-                'email'     => $form_state->getValue('email'),
-                'birthdate' => $form_state->getValue('birthdate'),
-                'address'   => $form_state->getValue('address'),
-                'zip'       => $form_state->getValue('zip'),
-                'city'      => $form_state->getValue('city'),
-                'phone'     => $form_state->getValue('phone'),
-                'subject'   => t('Nouvelle demande de contact'),
-                'message'   => $form_state->getValue('message'),
-            );
-
-            // Send to admin
-            $to = $form_state->getValue('subject');
-            $reply = $form_state->getValue('email');
-            $this->mail->mail('rp_contact', 'contact', $to, 'fr', $data, $reply);
-
-            drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traitez votre demander et vous recontactez à l\'adresse @email ou par téléphone au @phone.', [
-                '@firstname' => $form_state->getValue('firstname'),
-                '@lastname'  => $form_state->getValue('lastname'),
-                '@email'     => $form_state->getValue('email'),
-                '@phone'     => $form_state->getValue('phone'),
-            ]));
+        if (!empty($this->session->get('errors'))) {
+           return;
         }
+
+        $data = array(
+            'firstname' => $form_state->getValue('firstname'),
+            'lastname'  => $form_state->getValue('lastname'),
+            'email'     => $form_state->getValue('email'),
+            'birthdate' => $form_state->getValue('birthdate'),
+            'address'   => $form_state->getValue('address'),
+            'zip'       => $form_state->getValue('zip'),
+            'city'      => $form_state->getValue('city'),
+            'phone'     => $form_state->getValue('phone'),
+            'subject'   => t('Nouvelle demande de contact'),
+            'message'   => $form_state->getValue('message'),
+        );
+
+        // Send to admin
+        $to = $form_state->getValue('subject');
+        $reply = $form_state->getValue('email');
+        $this->mail->mail('rp_contact', 'contact', $to, 'fr', $data, $reply);
+
+        drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traitez votre demander et vous recontactez à l\'adresse @email ou par téléphone au @phone.', [
+            '@firstname' => $form_state->getValue('firstname'),
+            '@lastname'  => $form_state->getValue('lastname'),
+            '@email'     => $form_state->getValue('email'),
+            '@phone'     => $form_state->getValue('phone'),
+        ]));
     }
 }
