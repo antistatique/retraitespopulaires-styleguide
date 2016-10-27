@@ -8,13 +8,16 @@ namespace Drupal\rp_offers\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Render\MetadataBubblingUrlGenerator;
-use \Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
 * AdminController.
@@ -103,7 +106,7 @@ class AdminController extends ControllerBase {
 
         $output['table'] = array(
             '#type'    => 'table',
-            '#header'  => array(t('Demande du'), t('Informations'), t('Coupon')),
+            '#header'  => array(t('Date de participations'), t('Informations'), t('Coupon'), t('Operations')),
         );
 
         $query = $this->entity_query->get('rp_offers_request');
@@ -139,12 +142,27 @@ class AdminController extends ControllerBase {
 
             $output['table'][$i]['info'] = array(
               '#markup' => ucfirst($request->firstname->value) .' · <strong>'. $request->lastname->value . '</strong>'
+              . '<br/><a href="mailto:'.$request->email->value.'">' . strtolower($request->email->value) .'</a>'
               . '<br/>' . ucfirst($request->address->value)
               . '<br/>' . $request->zip->value . ' ' . $request->city->value,
             );
 
             $output['table'][$i]['offer'] = array(
               '#markup' => '<a href="'.$this->url->generateFromRoute('entity.node.canonical', ['node' => $node->nid->value]).'" target="_blank">'.$node->title->value.'</a>',
+            );
+
+            // Operations
+            $output['table'][$i]['operations'] = array(
+              '#type' => 'dropbutton',
+              '#links' => array(),
+            );
+            $output['table'][$i]['operations']['#links']['detail'] = array(
+              'title' => t('Détail'),
+              'url' => Url::fromRoute('rp_offers.admin.request', ['node' => $node->nid->value]),
+            );
+            $output['table'][$i]['operations']['#links']['edit'] = array(
+              'title' => t('Edit'),
+              'url' => Url::fromRoute('entity.node.edit_form', ['node' => $node->nid->value]),
             );
         }
 
@@ -154,7 +172,7 @@ class AdminController extends ControllerBase {
     /**
     * Admin requests csv.
     */
-    public function requestsCsv() {
+    public function requestsCsv(Node $node = null) {
         $filename = 'Offres Bella vita - Results.csv';
 
         $response = new StreamedResponse();
@@ -162,14 +180,18 @@ class AdminController extends ControllerBase {
             $handle = fopen('php://output', 'w+');
 
             // Add the header of the CSV file
-            fputcsv($handle, array('Demande du', 'Prénom', 'Nom de famille', 'Adresse', 'Npa', 'Ville', 'Coupon'),';');
+            fputcsv($handle, array('Demande du', 'Prénom', 'Nom de famille', 'Adresse', 'Npa', 'Ville', 'Coupon', 'Gagnant'), ';');
             // Query data from database
             $query = $this->entity_query->get('rp_offers_request');
             // Add Filter conditions
             $filter = $this->request->get('filter');
-            if (!empty($filter)) {
+            if (!empty($node)) {
+                $query->condition('offer_target_id', $node->nid->value);
+            }else if (!empty($filter)) {
                 $query->condition('offer_target_id', $filter);
             }
+
+            $query->sort('winner', 'DESC');
 
             $ids = $query->execute();
             $requests = $this->entity_offers_request->loadMultiple($ids);
@@ -191,6 +213,7 @@ class AdminController extends ControllerBase {
                         $request->zip->value,
                         $request->city->value,
                         $node->title->value,
+                        $request->winner->value ? 'X' : '',
                     ),
                     ';'
                 );
@@ -206,4 +229,74 @@ class AdminController extends ControllerBase {
         return $response;
     }
 
+    /**
+    * Admin request detail.
+    */
+    public function request(Node $node) {
+        $variables = array('node' => $node);
+
+        $query = $this->entity_query->get('rp_offers_request');
+        $query->condition('offer_target_id', $node->nid->value);
+
+        // Pager
+        $ids = $query->execute();
+        pager_default_initialize(count($ids), $this->limit);
+        $variables['pager'] = array(
+            '#type' => 'pager',
+            '#quantity' => '3',
+        );
+
+        $query->sort('winner', 'DESC');
+
+        // Paged query
+        $page = pager_find_page();
+        $query->range($page*$this->limit, $this->limit);
+        $ids = $query->execute();
+        $variables['requests'] = $this->entity_offers_request->loadMultiple($ids);
+
+        return [
+            '#theme'     => 'rp_offers_admin_request_page',
+            '#variables' => $variables,
+            '#cache' => [
+                'max-age' => 0,
+            ]
+        ];
+    }
+
+    /**
+    * Admin request draw.
+    */
+    public function requestsDraw(Node $node) {
+        $tickets = $node->field_available_offers->value;
+
+        // Check if we run draw or not depending number of tickets & already winned tickets
+        $winners = $this->entity_query->get('rp_offers_request')
+            ->condition('offer_target_id', $node->nid->value)
+            ->condition('winner', 1)
+            ->count()
+            ->execute()
+        ;
+
+        if ($winners < $tickets) {
+            $tickets = $tickets - $winners;
+            $ids = $this->entity_query->get('rp_offers_request')
+                ->condition('offer_target_id', $node->nid->value)
+                ->addTag('random')
+                ->range(0, $tickets)
+                ->execute();
+            ;
+
+            $requests = $this->entity_offers_request->loadMultiple($ids);
+
+            foreach ($requests as $request) {
+                $request->winner->value = 1;
+                $request->save();
+            }
+        }
+
+        drupal_set_message(t('Tirage au sort terminée, @winners gagnants sélectionnés.', ['@winners' => $tickets]));
+
+        $response = new RedirectResponse(\Drupal::url('rp_offers.admin.request', ['node' => $node->nid->value]));
+        return $response;
+    }
 }

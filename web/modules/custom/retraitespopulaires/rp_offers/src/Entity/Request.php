@@ -152,9 +152,13 @@ class Request extends ContentEntityBase implements RequestInterface {
         ->setDescription(t('The client city'));
 
     $fields['email'] = BaseFieldDefinition::create('string')
-        ->setLabel(t('District'))
+        ->setLabel(t('Email'))
         ->setDescription(t('The client email'))
         ->setRequired(TRUE);
+
+    $fields['winner'] = BaseFieldDefinition::create('boolean')
+        ->setLabel(t('Winner'))
+        ->setDescription(t('The client has won'));
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
