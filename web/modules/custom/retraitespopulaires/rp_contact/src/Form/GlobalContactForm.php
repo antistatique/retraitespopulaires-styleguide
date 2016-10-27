@@ -1,7 +1,7 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_contact\Form\ContactForm.
+* Contains \Drupal\rp_contact\Form\GlobalContactForm.
 */
 
 namespace Drupal\rp_contact\Form;
@@ -13,8 +13,9 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\user\PrivateTempStoreFactory;
 use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\State\StateInterface;
 
-class ContactForm extends FormBase {
+class GlobalContactForm extends FormBase {
 
     /**
      * Stores and retrieves temporary data for a given owner
@@ -35,11 +36,18 @@ class ContactForm extends FormBase {
     protected $entity_node;
 
     /**
+    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
+    * @var StateInterface
+    */
+    protected $state;
+
+    /**
      * Class constructor.
      */
-    public function __construct(PrivateTempStoreFactory $private_tempstore, MailManagerInterface $mail, EntityTypeManagerInterface $entity) {
+    public function __construct(PrivateTempStoreFactory $private_tempstore, MailManagerInterface $mail, EntityTypeManagerInterface $entity, StateInterface $state) {
         $this->entity_node = $entity->getStorage('node');
         $this->mail        = $mail;
+        $this->state       = $state;
 
         // Init session
         // TODO Found better solution to inline errors than hack session to
@@ -55,7 +63,8 @@ class ContactForm extends FormBase {
         // Load the service required to construct this class.
         $container->get('user.private_tempstore'),
         $container->get('plugin.manager.mail'),
-        $container->get('entity_type.manager')
+        $container->get('entity_type.manager'),
+        $container->get('state')
       );
     }
 
@@ -63,18 +72,14 @@ class ContactForm extends FormBase {
     * {@inheritdoc}.
     */
     public function getFormId() {
-        return 'rp_contact_form';
+        return 'rp_contact_main_form';
     }
 
     /**
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
-        $form['#action'] = '#rp-contact-form';
-
-        if (isset($params['theme'])) {
-            $theme = $params['theme'];
-        }
+        $form['#action'] = '#rp-contact-main-form';
 
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
@@ -124,7 +129,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre prénom'),
             '#placeholder' => t('John'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 25, 'theme' => $theme],
+            '#attributes'  => ['size' => 25],
             '#required'    => true,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div></div>',
@@ -142,7 +147,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre nom de famille'),
             '#placeholder' => t('Doe'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#required'    => true,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div></div>',
@@ -160,7 +165,6 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre e-mail'),
             '#placeholder' => t('john.doe@retraitespopulaires.ch'),
             '#type'        => 'email',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => true,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -178,7 +182,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span>'),
             '#placeholder' => t('24/12/2016'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => array('size' => 10),
             '#required'    => true,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -188,7 +192,6 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre adresse'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => true,
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
@@ -203,7 +206,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre code postal / NIP'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group">',
             '#suffix'      => '</div></div>',
         );
@@ -212,7 +215,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre ville'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group">',
             '#suffix'      => '</div></div>',
         );
@@ -230,7 +233,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre numéro de téléphone'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#attributes'  => ['size' => 20],
             '#required'    => true,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -251,13 +254,19 @@ class ContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
+        $options = array();
+        $services = explode(PHP_EOL, $this->state->get('rp_contact.settings.receivers'));
+        foreach ($services as $value) {
+            $part = explode('|', $value);
+            $options[$part[0]] = $part[1];
+        }
         $form['message']['subject'] = array(
-            '#title'       => t('Sujet de votre demande'),
-            '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
-            '#prefix'      => '<div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div>',
+            '#title'    => t('Sujet de votre demande'),
+            '#type'     => 'select',
+            '#required' => true,
+            '#prefix'   => '<div class="form-group '.$error_class.'">',
+            '#suffix'   => $error. '</div>',
+            '#options'  => $options,
         );
 
         // Get error to inline it as suffix
@@ -272,7 +281,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre message'),
             '#type'        => 'textarea',
             '#required'    => true,
-            '#attributes'  => ['cols' => 59, 'theme' => $theme],
+            '#attributes'  => ['cols' => 59],
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -282,7 +291,7 @@ class ContactForm extends FormBase {
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Envoyer'),
-            '#attributes'  => ['class' => array('btn-primary pull-right'), 'theme' => $theme],
+            '#attributes'  => ['class' => array('btn-primary pull-right')],
             '#button_type' => 'primary',
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
@@ -357,33 +366,33 @@ class ContactForm extends FormBase {
     */
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // TODO Found better solution to inline errors than hack session to
-        if (empty($this->session->get('errors'))) {
-            $data = array(
-                'firstname' => $form_state->getValue('firstname'),
-                'lastname'  => $form_state->getValue('lastname'),
-                'email'     => $form_state->getValue('email'),
-                'birthdate' => $form_state->getValue('birthdate'),
-                'address'   => $form_state->getValue('address'),
-                'zip'       => $form_state->getValue('zip'),
-                'city'      => $form_state->getValue('city'),
-                'phone'     => $form_state->getValue('phone'),
-                'subject'   => $form_state->getValue('subject'),
-                'message'   => $form_state->getValue('message'),
-            );
-
-            $advisor = $this->entity_node->load($form_state->getValue('node'));
-
-            // Send to admin
-            $to = $advisor->field_email_form->value;
-            $reply = $form_state->getValue('email');
-            $this->mail->mail('rp_contact', 'contact', $to, 'fr', $data, $reply);
-
-            drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traitez votre demande et vous recontactez à l\'adresse @email ou par téléphone au @phone.', [
-                '@firstname' => $form_state->getValue('firstname'),
-                '@lastname'  => $form_state->getValue('lastname'),
-                '@email'     => $form_state->getValue('email'),
-                '@phone'     => $form_state->getValue('phone'),
-            ]));
+        if (!empty($this->session->get('errors'))) {
+           return;
         }
+
+        $data = array(
+            'firstname' => $form_state->getValue('firstname'),
+            'lastname'  => $form_state->getValue('lastname'),
+            'email'     => $form_state->getValue('email'),
+            'birthdate' => $form_state->getValue('birthdate'),
+            'address'   => $form_state->getValue('address'),
+            'zip'       => $form_state->getValue('zip'),
+            'city'      => $form_state->getValue('city'),
+            'phone'     => $form_state->getValue('phone'),
+            'subject'   => t('Nouvelle demande de contact'),
+            'message'   => $form_state->getValue('message'),
+        );
+
+        // Send to admin
+        $to = $form_state->getValue('subject');
+        $reply = $form_state->getValue('email');
+        $this->mail->mail('rp_contact', 'contact', $to, 'fr', $data, $reply);
+
+        drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traitez votre demande et vous recontactez à l\'adresse @email ou par téléphone au @phone.', [
+            '@firstname' => $form_state->getValue('firstname'),
+            '@lastname'  => $form_state->getValue('lastname'),
+            '@email'     => $form_state->getValue('email'),
+            '@phone'     => $form_state->getValue('phone'),
+        ]));
     }
 }

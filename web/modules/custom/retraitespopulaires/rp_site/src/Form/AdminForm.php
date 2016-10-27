@@ -182,6 +182,24 @@ class AdminForm extends FormBase {
         );
 
         // Profils pages settings
+        $form['single'] = array(
+            '#type'          => 'fieldset',
+            '#title'         => 'Pages spéciales',
+        );
+
+        $form['single']['contact_nid'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Contact Global - node ID',
+            '#default_value' => $this->state->get('rp_site.settings.single.contact')['nid'],
+        );
+        $form['single']['contact_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Contact Global - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_site.settings.contact')['theme'] ? $this->state->get('rp_site.settings.single.contact')['theme'] : 'global_contact',
+        );
+
+        // Profils pages settings
         $form['profils'] = array(
             '#type'          => 'fieldset',
             '#title'         => 'Profils pages',
@@ -192,7 +210,6 @@ class AdminForm extends FormBase {
             '#title'         => 'Profil Particulier - node ID',
             '#default_value' => $this->state->get('rp_site.settings.profils.individual')['nid'],
         );
-
         $form['profils']['profil_individual_theme'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Profil Particulier - theme hook',
@@ -308,6 +325,12 @@ class AdminForm extends FormBase {
         $this->state->set('rp_site.settings.collection.partnerships', array(
             'nid' => trim($form_state->getValue('partnerships_nid')),
             'theme' => trim($form_state->getValue('partnerships_theme')),
+        ));
+
+        // General settings
+        $this->state->set('rp_site.settings.single.contact', array(
+            'nid' => trim($form_state->getValue('contact_nid')),
+            'theme' => trim($form_state->getValue('contact_theme')),
         ));
 
         $this->state->set('rp_site.settings.profils.individual', array(
