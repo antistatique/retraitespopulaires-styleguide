@@ -72,6 +72,7 @@ class ContactForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-contact-form';
 
+        $theme = '';
         if (isset($params['theme'])) {
             $theme = $params['theme'];
         }
