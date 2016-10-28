@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+
+.teaser-contact-detail {
+  padding: $grid-gutter-width;
+  background-color: $berrylight-gray;
+  border-radius: $border-radius-base;
+
+  .teaser-contact-detail-infos {
+    margin-top: $grid-gutter-width / 2;
+
+    a {
+      display: block;
+      margin-bottom: $grid-gutter-width / 4;
+      padding: $grid-gutter-width / 4;
+      background-color: $white;
+      color: $brand-primary;
+      transition: all 0.25s ease-in-out;
+
+      .label {
+        color: $black;
+        transition: all 0.25s ease-in-out;
+      }
+    }
+
+    a:hover {
+      background-color: $brand-primary;
+      color: $white;
+      text-decoration: none;
+
+      .label { color: $white; }
+    }
+  }
+}
