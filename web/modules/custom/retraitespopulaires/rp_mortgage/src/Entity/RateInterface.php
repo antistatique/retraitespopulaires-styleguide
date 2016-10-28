@@ -11,7 +11,7 @@ use Drupal\user\EntityOwnerInterface;
  *
  * @ingroup rp_mortgage
  */
-interface RateInterface extends ContentEntityInterface, EntityChangedInterface {
+interface RateInterface extends ContentEntityInterface, EntityChangedInterface, \JsonSerializable {
 
   // Add get/set methods for your configuration properties here.
 

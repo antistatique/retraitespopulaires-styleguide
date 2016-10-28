@@ -154,6 +154,19 @@ class Rate extends ContentEntityBase implements RateInterface {
   /**
    * {@inheritdoc}
    */
+  public function jsonSerialize() {
+    return [
+      'id' => $this->id(),
+      'name' => $this->getName(),
+      'first_rate' => $this->getFirstRate(),
+      'second_rate' => $this->getSecondRate(),
+      'year' => $this->getYear(),
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 

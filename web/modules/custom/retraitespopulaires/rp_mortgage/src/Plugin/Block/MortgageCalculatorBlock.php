@@ -61,12 +61,73 @@ class MortgageCalculatorBlock extends BlockBase implements ContainerFactoryPlugi
      */
     public function build($params = array()) {
         $variables = [];
-        $rateType = 'Prêts hypothécaires formulaire'; // 'Prêts hypothécaires standard' ?
-        $variables['rates'] = $this->rateService->getRates($rateType);
+
+        $variables['rates'] = $this->getCalculatorRates();
+        $variables['rate_date'] = $this->getDateBasedOnRate($variables['rates']);
+
+        // @TODO: Move this into a Drupal Admin settings
+        $variables['settings'] = [
+            'notaryRateFee' => 0.05,
+            'firstRateMax' => 0.70,
+            'theoricalCostFirstRate' => 0.05,
+            'secondRateMax' => 0.10,
+            'theoricalCostSecondRate' => 0.07,
+            'ratioCostIncomeMax' => 0.30, //0.33,
+            'maintenanceFees' => 4800.0, //6000,
+            'equityCapitalMinRate' => 0.25,
+            'avgRate' => 0.0525,
+            'advanceRateMax' => 0.80,
+            'amortisationFirstRate' => 0.01,
+            'amortistationSecondRate' => 0.02,
+        ];
 
         return [
             '#theme'     => 'rp_mortgage_calculator_block',
             '#variables' => $variables,
         ];
+    }
+
+    /**
+     * @param array $rates
+     *
+     * @return \DateTime|null
+     */
+    public function getDateBasedOnRate(array $rates) {
+        $firstRate = current($rates);
+
+        return $firstRate ? $firstRate->getDate() : null;
+    }
+
+    private function getCalculatorRates()
+    {
+        $rateType = 'Prêts hypothécaires formulaire'; // 'Prêts hypothécaires standard' ?
+
+        /** @var \Drupal\rp_mortgage\Entity\Rate[] $rates */
+        $rates = $this->rateService->getRates($rateType);
+
+        // remove empty lines (= first rate not defined)
+        $rates = array_filter($rates, function ($rate) {
+            return ($rate->getFirstRate() && $rate->getFirstRate() != 0.0);
+        });
+
+        // get default the variable rate
+        $defaultSecondRate = null;
+        foreach ($rates as $rate) {
+            if ($rate->getYear() == 0 && $rate->getSecondRate() && $rate->getSecondRate() != 0.0) {
+                $defaultSecondRate = $rate->getSecondRate();
+                break;
+            }
+        }
+
+        // fill empty second rate by the default values
+        $rates = array_map(function ($rate) use ($defaultSecondRate) {
+            if (!$rate->getSecondRate()) {
+                $rate->setSecondRate($defaultSecondRate);
+            }
+
+            return $rate;
+        }, $rates);
+
+        return array_values($rates);
     }
 }

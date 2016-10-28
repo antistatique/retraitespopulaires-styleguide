@@ -1,1 +1,147 @@
-<h1>Hello, I'm a calculator</h1>
+
+{% set settings = variables.settings %}
+
+<form id="mortgage-calculator" class="js-mortgage-calculator" action="#">
+  <table class="table-wide table-hypotheque tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+    <thead>
+    <tr>
+      <th colspan="2"><strong>{% trans %}1. Prix d'achat{% endtrans %}</strong></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{% trans %}Introduisez ici le montant d'achat du bien immobilier{% endtrans %}</td>
+      <td>
+        <div class="input-group">
+          <input type="text" class="form-control form-control-hypotheque form-chf-numeric js-amount-input" id="amount" placeholder="Le montant en CHF">
+          <span class="input-group-addon">CHF</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans %}Prix d'achat y compris droits de mutations et frais de notaire (+{{ settings.notaryRateFee|format_pourcent }}){% endtrans %}</td>
+      <td>
+        <input type="text" readonly name="amountWithFee" class="form-control form-chf-numeric js-amount-with-fee-input" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans %}Revenu annuel net (min.){% endtrans %}</td>
+      <td>
+        <input type="text" readonly name="minimalIncomeForAmount" class="form-control form-chf-numeric js-minimal-income-for-amount" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans %}Fonds propres (min.){% endtrans %}</td>
+      <td>
+        <input type="text" readonly name="minimalEquityCapitalForAmount" class="form-control form-chf-numeric js-minimal-equity-capital-for-amount" value="" />
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="spacer spacer-md"></div>
+  <table class="table-wide table-hypotheque tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+    <thead>
+    <tr>
+      <th colspan="2"><strong>{% trans %}2. Fonds propres{% endtrans %}</strong></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{% trans %}Les fonds propres doivent au moins représenter 20% du prix d'achat{% endtrans %}</td>
+      <td><input type="text" class="form-control form-control-hypotheque js-equity-capital-input" name="equityCapital" placeholder="Le montant en CHF"></td>
+    </tr>
+    <tr>
+      <td>{% trans %}Prix d'achat (max.) sans droits de mutations et frais de notaire{% endtrans %}</td>
+      <td>
+        <input type="text" readonly name="maxAmountForEquityCapital" class="form-control form-chf-numeric js-max-amount-for-equity-capital" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans %}Revenu annuel net (min.){% endtrans %}</td>
+      <td>
+        <input type="text" readonly name="minimalIncomeForEquityCapital" class="form-control form-chf-numeric js-minimal-income-for-equity-capital" value="" />
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="spacer spacer-md"></div>
+  <table class="table-{{size}} table-hypotheque tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+    <thead>
+    <tr>
+      <th colspan="2"><strong>{% trans %}3. Revenu annuel net{% endtrans %}</strong></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{% trans %}Revenu anuel net du ménage{% endtrans %}</td>
+      <td><input type="text" class="form-control form-control-hypotheque js-income-input" name="income" placeholder="Le montant en CHF"></td>
+    </tr>
+    <tr>
+      <td>Prix d'achat (max.) sans droits de mutations et frais de notaire</td>
+      <td>
+        <input type="text" readonly name="maxAmountForIncome" class="form-control form-chf-numeric js-max-amount-for-income" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans %}Fonds propres (min.){% endtrans %}</td>
+      <td>
+        <input type="text" readonly name="minEquityCapitalForIncome" class="form-control form-chf-numeric js-min-equity-capital-for-income" value="" />
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="spacer spacer-md"></div>
+  <table class="table-large table-hypotheque tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+    <thead>
+    <tr>
+      <th colspan="2"><strong>{% trans %}4. Taux souhaité en 1er rang{% endtrans %}</strong></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{% trans %}Sélectionnez le taux qui vous intéresse en premier rang{% endtrans %}</td>
+      <td>
+        <select name="rate" class="form-control form-control-hypotheque js-rate-name">
+          {% for rate in variables.rates %}
+            <option value="{{ rate.firstRate }}" data-first-rate="{{ rate.firstRate }}" data-second-rate="{{ rate.secondRate }}">{{ rate.getName() }}</option>
+          {% endfor %}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>{% trans %}Taux en pourcent{% endtrans %}</td>
+      <td>
+        <div class="input-group readonly">
+          <input type="text" class="form-control form-control-hypotheque js-rate" readonly value="" aria-label="Taux en pourcent">
+          <span class="input-group-addon">%</span>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="spacer spacer-md"></div>
+  <div>
+  {% if variables.rate_date %}
+    <div class="alert alert-info">
+      {% set formatted_date = variables.rate_date|date_format('F Y') %}
+      {% trans %}Les taux utilisés sont ceux de {{ formatted_date }}{% endtrans %}
+    </div>
+    {% else %}
+    <div class="alert alert-warning">
+      {% trans %}La date des taux n'est pas connue, contactez Retraites Populaires pour en savoir plus.{% endtrans %}
+    </div>
+  {% endif %}
+  </div>
+
+  <button type="submit" class="btn btn-default btn-hypotheque pull-right">Calculer</button>
+</form>
+
+
+
+{# @TODO: Expose this with the Drupal Javascript API... #}
+<script>
+  window.MORTGAGE_RATES = {{ variables.rates|json_encode|raw }};
+  window.MORTGAGE_SETTINGS = {{ variables.settings|json_encode|raw }};
+</script>
