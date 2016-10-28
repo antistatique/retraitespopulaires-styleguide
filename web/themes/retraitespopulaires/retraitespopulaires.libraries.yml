@@ -8,6 +8,9 @@ global-styling:
     build/js/vendors.min.js: {}
     build/js/MorphSVGPlugin.min.js: {}
     build/js/bundle.js: {}
+    # @TODO: only include this one the page that need it
+    js/mortgage_lib.js: {}
+    js/mortgage_calculator.js: {}
   dependencies:
     - core/jquery
     - core/drupal
