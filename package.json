@@ -15,7 +15,8 @@
     "url": "https://github.com/antistatique/retraitespopulaires-styleguide.git"
   },
   "scripts": {
-    "build": "npm install && gulp --production"
+    "build": "npm install && gulp --production",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "bootstrap-datepicker": "^1.6.4",
