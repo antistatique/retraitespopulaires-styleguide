@@ -72,7 +72,11 @@ class ContactPlaceholderTeaserBlock extends BlockBase implements ContainerFactor
         $variables = array();
         $variables = $params;
 
-        $variables['cover'] = $this->cover->fromFile($this->state->get('rp_contact.settings.placeholder'), array('xl' => 'rp_teaser_contact_xl'));
+        if ($placeholder = $this->state->get('rp_contact.settings.placeholder')) {
+            $variables['cover'] = $this->cover->fromFile($placeholder, array('xl' => 'rp_teaser_contact_xl'));
+        } else {
+            $variables['cover'] = NULL;
+        }
 
         return [
             '#theme'     => 'rp_contact_contact_placeholder_teaser_block',
