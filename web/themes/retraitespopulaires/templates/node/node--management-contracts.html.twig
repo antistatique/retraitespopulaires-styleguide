@@ -85,6 +85,8 @@
   {% endif %}
   {{ title_suffix }}
 
+  <img class="logo-management-contract img-responsive" src="{{ file_url(node.field_logo.entity.uri.value) }}" alt="Logo - {{ node.title.value }}">
+
   <div{{ content_attributes.addClass('content') }}>
     {{ load_block('rp_contact_contact_cta_block') }}
 
@@ -97,6 +99,7 @@
       <div class="entity-body body-{{ node.field_profession.entity.tid.value|theme_profession }}">
         {{ content.body }}
       </div>
+      <a class="btn btn-lg btn-{{ node.field_profession.entity.tid.value|theme_profession }}" href="{{ node.field_website.value }}" target="_blank">{% trans %}Site internet{% endtrans %}</a>
     {% endif %}
 
   </div>
