@@ -103,7 +103,7 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
                 foreach ($node->field_advisor as $key => $advisor) {
                     $advisor = $this->entity_node->load($advisor->target_id);
                     // If the advisor is publish only
-                    if ($advisor->isPublished()){
+                    if ($advisor && $advisor->isPublished()){
                         $variables['contacts'][] = $advisor;
                     }
                 }
@@ -114,7 +114,7 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
                 foreach ($node->field_contact as $key => $contact) {
                     $contact = $this->entity_node->load($contact->target_id);
                     // If the contact is publish only
-                    if ($contact->isPublished()){
+                    if ($contact && $contact->isPublished()){
                         $variables['contacts'][] = $contact;
                     }
                 }
