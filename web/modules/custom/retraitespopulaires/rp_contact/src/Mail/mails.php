@@ -28,7 +28,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['subject'] = t('Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
         break;
 
-        // Sended to contact new contact
+        // Sended when contacring contact/advisor
         case 'contact':
             $message['subject'] = t('Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
 
@@ -47,6 +47,11 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('Ville: '). $params['city'] . '<br />');
             $message['body'][] = Markup::create( t('E-mail: '). $params['email'] . '<br />');
             $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
+        break;
+
+        // Sended when contacting of Demande de documents
+        case 'contact_documents':
+            $message['subject'] = t('Nouvelle demande de documents @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
         break;
 
     }

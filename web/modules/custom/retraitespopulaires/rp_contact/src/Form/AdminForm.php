@@ -116,13 +116,13 @@ class AdminForm extends FormBase {
             '#title'         => 'Commande de documents - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_contact.settings.page.documents')['theme'] ? $this->state->get('rp_contact.settings.page.documents')['theme'] : 'contact_documents',
-            '#suffix'        => '<br/>'
         );
         $form['page']['documents_receivers'] = array(
             '#type'          => 'textfield',
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.documents')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
+            '#suffix'        => '<br/>'
         );
 
         // Changement d'adresses Form
@@ -137,13 +137,13 @@ class AdminForm extends FormBase {
             '#title'         => 'Changement d\'adresses - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_contact.settings.page.address')['theme'] ? $this->state->get('rp_contact.settings.page.address')['theme'] : 'contact_address',
-            '#suffix'        => '<br/>'
         );
         $form['page']['address_receivers'] = array(
             '#type'          => 'textfield',
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.address')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
+            '#suffix'        => '<br/>'
         );
 
         // Layout settings
@@ -194,11 +194,13 @@ class AdminForm extends FormBase {
         $this->state->set('rp_contact.settings.page.documents', array(
             'nid'   => $form_state->getValue('documents_nid'),
             'theme' => trim($form_state->getValue('documents_theme')),
+            'receivers' => trim($form_state->getValue('documents_receivers')),
         ));
 
         $this->state->set('rp_contact.settings.page.address', array(
             'nid'   => $form_state->getValue('address_nid'),
             'theme' => trim($form_state->getValue('address_theme')),
+            'receivers' => trim($form_state->getValue('address_receivers')),
         ));
 
         // Save placeholder

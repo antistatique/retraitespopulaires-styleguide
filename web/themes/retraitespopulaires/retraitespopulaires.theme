@@ -71,6 +71,7 @@ function retraitespopulaires_theme_suggestions_page_alter(array &$suggestions, a
     if (isset($node->nid->value) && $node->getType() == 'offer') {
         $suggestions[] = 'page__node__offer';
     }
+
 }
 
 function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, array $variables) {
@@ -115,4 +116,7 @@ function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, a
         $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['nid']) {
         $suggestions[] = 'node__' . $state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['theme'];
     }
+
+    // Suggestions theme of rp_contact module
+    rp_contact_suggestions_nodes($suggestions);
 }
