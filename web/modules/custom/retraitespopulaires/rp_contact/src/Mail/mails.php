@@ -54,6 +54,12 @@ function rp_contact_mail($key, &$message, $params) {
             $message['subject'] = t('Nouvelle demande de documents @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
         break;
 
+        // Sended when contacting of Changement d'adresses
+        case 'contact_address':
+            $message['subject'] = t('Nouvelle demande de changement d\'adresses par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
+        break;
+
+
     }
 
     $message['body'][] = Markup::create( '<br /><br />'.t('Retraites Populaires') );
