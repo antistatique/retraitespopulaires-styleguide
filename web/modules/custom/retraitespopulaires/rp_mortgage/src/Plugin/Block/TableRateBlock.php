@@ -29,9 +29,10 @@ class TableRateBlock extends BlockBase implements ContainerFactoryPluginInterfac
     /**
      * TableRateBlock constructor.
      *
-     * @param array  $configuration
-     * @param string $plugin_id
-     * @param mixed  $plugin_definition
+     * @param array                            $configuration
+     * @param string                           $plugin_id
+     * @param mixed                            $plugin_definition
+     * @param \Drupal\rp_mortgage\Service\Rate $rateService
      */
     public function __construct(array $configuration, $plugin_id, $plugin_definition, Rate $rateService) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
