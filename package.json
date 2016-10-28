@@ -1,6 +1,6 @@
 {
   "name": "@antistatique/retraitespopulaires-styleguide",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "main": "index.html",
   "browserify-shim": {
     "jquery": "global:jQuery"
@@ -15,7 +15,7 @@
     "url": "https://github.com/antistatique/retraitespopulaires-styleguide.git"
   },
   "scripts": {
-    "build": "npm install && gulp --production",
+    "build": "npm install && gulp --production"
   },
   "dependencies": {
     "bootstrap-datepicker": "^1.6.4",
