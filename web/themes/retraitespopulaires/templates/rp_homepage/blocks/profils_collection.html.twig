@@ -1,13 +1,6 @@
 {% if variables.profils %}
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <h1 class="page-title text-center">{% trans %}Votre avenir, notre mission{% endtrans %}</h1>
-      <div class="spacer"></div>
-    </div>
-  </div>
-
-  <div class="row">
     {% for profil in variables.profils %}
     <div class="col-xs-12 col-sm-4">
       {{ load_block('rp_homepage_profil_teaser_block', {'profil': profil}) }}

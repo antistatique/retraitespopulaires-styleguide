@@ -82,11 +82,29 @@
             {# Content #}
             {% block content %}
               <a id="main-content"></a>
-              {{ page.content }}
             {% endblock %}
+
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12">
+                  {% if node.body.summary %}
+                    <h1 class="page-title text-center">{{ node.body.summary|nl2br }}</h1>
+                    <div class="spacer spacer-sm"></div>
+                  {% endif %}
+
+                  {% if node.body.value %}
+                    <div class="entity-body text-center">
+                      {{ node.body.value|raw }}
+                    </div>
+                    <div class="spacer spacer-sm"></div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+            {{ load_block('rp_homepage_profils_collection_block') }}
           </section>
         </div>
-        <div class="spacer"></div>
       </div>
     </div>
   </div>

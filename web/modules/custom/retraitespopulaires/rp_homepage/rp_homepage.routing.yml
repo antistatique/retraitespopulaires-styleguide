@@ -1,7 +1,0 @@
-rp_homepage:
-    path: '/homepage'
-    defaults:
-        _controller: '\Drupal\rp_homepage\Controller\HomepageController::homepage'
-        _title: 'Accueil'
-    requirements:
-        _permission: 'access content'
