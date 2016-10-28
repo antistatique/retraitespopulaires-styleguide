@@ -34,13 +34,14 @@ layout: website.html.swig
   <div class="spacer spacer-xl"></div>
   <div class="row">
     <div class="col-xs-12">
-      <div class="last-news-wrapper">
+      <div class="attachements-wrapper">
         <div class="container">
           <div class="row">
-            <div class="col-xs-12 last-news-heading">
+            <div class="col-xs-12">
               <div class="h2 pull-left">Vous avez un nouveau projet ?</div>
             </div>
           </div>
+          <div class="spacer"></div>
           <div class="row">
             <div class="col-xs-12 col-md-4">
               {% include '../molecules/teaser-basicpage.html.swig' with {'title': 'Fortune', 'links': ['Épargner', 'Payer moins d’impôts', 'Faire fructifier mon patrimoine', 'Vendre un bien immobilier' ]} %}
@@ -63,13 +64,14 @@ layout: website.html.swig
         </div>
       </div>
       <div class="spacer spacer-md"></div>
-      <div class="last-news-wrapper">
+      <div class="attachements-wrapper">
         <div class="container">
           <div class="row">
-            <div class="col-xs-12 last-news-heading">
+            <div class="col-xs-12">
               <div class="h2 pull-left">Déja assuré</div>
             </div>
           </div>
+          <div class="spacer"></div>
           <div class="row">
             <div class="col-xs-12 col-md-4">
               {% include '../molecules/teaser-basicpage.html.swig' with {'title': 'Assuré 2e pilier'} %}
