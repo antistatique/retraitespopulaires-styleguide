@@ -39,7 +39,7 @@ class Cover {
         // Retreive node
         $cover_fid = '';
 
-        if (isset($node) && $node->field_cover->entity) {
+        if (isset($node->field_cover) && $node->field_cover->entity) {
             $cover_fid = $node->field_cover->entity->id();
         }
 
