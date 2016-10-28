@@ -14,6 +14,7 @@ use Drupal\file\Entity\File;
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\Render\MetadataBubblingUrlGenerator;
 use Drupal\file\FileUsage\FileUsageInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 class AdminForm extends FormBase {
 
@@ -36,12 +37,18 @@ class AdminForm extends FormBase {
     protected $file_usage;
 
     /**
+     * @var EntityTypeManagerInterface
+     */
+    private $entity;
+
+    /**
      * Class constructor.
      */
-    public function __construct(StateInterface $state, MetadataBubblingUrlGenerator $url, FileUsageInterface $file_usage) {
+    public function __construct(StateInterface $state, MetadataBubblingUrlGenerator $url, FileUsageInterface $file_usage, EntityTypeManagerInterface $entity) {
         $this->state      = $state;
         $this->url        = $url;
         $this->file_usage = $file_usage;
+        $this->entity_node = $entity->getStorage('node');
     }
 
     /**
@@ -53,7 +60,8 @@ class AdminForm extends FormBase {
         // Load the service required to construct this class.
         $container->get('state'),
         $container->get('url_generator'),
-        $container->get('file.usage')
+        $container->get('file.usage'),
+        $container->get('entity_type.manager')
       );
     }
 
@@ -88,6 +96,54 @@ class AdminForm extends FormBase {
             '#title'         => 'Secteurs et e-mail notifié lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.receivers'),
             '#description'   => t('Séparer l\'e-mail et le secteur par un pipe (|).') .'<br />'. t('Séparer les différentes secteurs par un saut de ligne.'),
+        );
+
+        // Page settings
+        $form['page'] = array(
+            '#type'          => 'fieldset',
+            '#title'         => 'Page d\'attaches des formulaires',
+        );
+
+        // Commande de documents Form
+        $form['page']['documents_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'   => 'node',
+            '#title'         => 'Commande de documents - node ID',
+            '#default_value' => $this->state->get('rp_contact.settings.page.documents')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.documents')['nid']) : NULL,
+        );
+        $form['page']['documents_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Commande de documents - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_contact.settings.page.documents')['theme'] ? $this->state->get('rp_contact.settings.page.documents')['theme'] : 'contact_documents',
+            '#suffix'        => '<br/>'
+        );
+        $form['page']['documents_receivers'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
+            '#default_value' => $this->state->get('rp_contact.settings.page.documents')['receivers'],
+            '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
+        );
+
+        // Changement d'adresses Form
+        $form['page']['address_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'   => 'node',
+            '#title'         => 'Changement d\'adresses - node ID',
+            '#default_value' => $this->state->get('rp_contact.settings.page.address')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.address')['nid']) : NULL,
+        );
+        $form['page']['address_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Changement d\'adresses - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_contact.settings.page.address')['theme'] ? $this->state->get('rp_contact.settings.page.address')['theme'] : 'contact_address',
+            '#suffix'        => '<br/>'
+        );
+        $form['page']['address_receivers'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
+            '#default_value' => $this->state->get('rp_contact.settings.page.address')['receivers'],
+            '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
         );
 
         // Layout settings
@@ -134,6 +190,16 @@ class AdminForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // General settings
         $this->state->set('rp_contact.settings.receivers', trim($form_state->getValue('receivers')));
+
+        $this->state->set('rp_contact.settings.page.documents', array(
+            'nid'   => $form_state->getValue('documents_nid'),
+            'theme' => trim($form_state->getValue('documents_theme')),
+        ));
+
+        $this->state->set('rp_contact.settings.page.address', array(
+            'nid'   => $form_state->getValue('address_nid'),
+            'theme' => trim($form_state->getValue('address_theme')),
+        ));
 
         // Save placeholder
         $this->state->set('rp_contact.settings.placeholder', '');
