@@ -36,7 +36,17 @@ layout: website.html.swig
           <address>
             <strong>Retraites Populaires</strong>, Service des prêts, Caroline 9, 1001 Lausanne - <a class="text-no-wrap" href="tel:0213482626">021 348 26 26</a> - <a href="mailto:prets@retraitespopulaires.ch">prets@retraitespopulaires.ch</a>.
           </address>
-          {% include '../organisms/form-hypotheque.html.swig' %}
+          <div class="row">
+            <div class="col-xs-12">
+              {% include '../organisms/form-hypotheque.html.swig' %}
+            </div>
+          </div>
+          <div class="spacer"></div>
+          <div class="row">
+            <div class="col-xs-12">
+              {% include '../molecules/progresschart.html.swig' %}
+            </div>
+          </div>
         </div>
     </div>
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
