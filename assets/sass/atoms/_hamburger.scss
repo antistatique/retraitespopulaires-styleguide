@@ -56,7 +56,7 @@
       position: relative;
       width: 100%;
       height: 3px;
-      margin: 6px 0;
+      margin: 5px 0;
       background-color: $text-color;
       transition:
         0.25s ease-in-out,
@@ -83,7 +83,7 @@
 
       &:nth-child(1) {
         background: $brand-primary;
-        transform: rotateZ(45deg) scaleX(1) translate(5.5px, 5.5px);
+        transform: rotateZ(45deg) scaleX(1) translate(6.5px, 6.5px);
       }
 
       &:nth-child(2) {
@@ -92,7 +92,7 @@
 
       &:nth-child(3) {
         background: $brand-primary;
-        transform: rotateZ(-45deg) scaleX(1) translate(6px, -6px);
+        transform: rotateZ(-45deg) scaleX(1) translate(5px, -5px);
       }
     }
   }
