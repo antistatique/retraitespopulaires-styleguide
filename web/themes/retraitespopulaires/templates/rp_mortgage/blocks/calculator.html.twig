@@ -13,7 +13,7 @@
       <td>{% trans %}Introduisez ici le montant d'achat du bien immobilier{% endtrans %}</td>
       <td>
         <div class="input-group">
-          <input type="text" value="250000" class="form-control form-control-hypotheque form-chf-numeric js-amount-input" id="amount" placeholder="Le montant en CHF">
+          <input type="text" value="" class="form-control form-control-hypotheque js-amount-input" id="amount" placeholder="Le montant en CHF">
           <span class="input-group-addon">CHF</span>
         </div>
       </td>
@@ -22,19 +22,19 @@
       {% set notaryRateFormatted = (settings.notaryRateFee*100)|format_pourcent %}
       <td>{% trans %}Prix d'achat y compris droits de mutations et frais de notaire (+{{ notaryRateFormatted }}){% endtrans %}</td>
       <td>
-        <input type="text" readonly name="amountWithFee" class="form-control form-chf-numeric js-amount-with-fee-input" value="" />
+        <input type="text" readonly name="amountWithFee" class="form-control js-amount-with-fee-input" value="" />
       </td>
     </tr>
     <tr>
       <td>{% trans %}Revenu annuel net (min.){% endtrans %}</td>
       <td>
-        <input type="text" readonly name="minimalIncomeForAmount" class="form-control form-chf-numeric js-minimal-income-for-amount" value="" />
+        <input type="text" readonly name="minimalIncomeForAmount" class="form-control js-minimal-income-for-amount" value="" />
       </td>
     </tr>
     <tr>
       <td>{% trans %}Fonds propres (min.){% endtrans %}</td>
       <td>
-        <input type="text" readonly name="minimalEquityCapitalForAmount" class="form-control form-chf-numeric js-minimal-equity-capital-for-amount" value="" />
+        <input type="text" readonly name="minimalEquityCapitalForAmount" class="form-control js-minimal-equity-capital-for-amount" value="" />
       </td>
     </tr>
     </tbody>
@@ -50,18 +50,18 @@
     <tbody>
     <tr>
       <td>{% trans %}Les fonds propres doivent au moins représenter 20% du prix d'achat{% endtrans %}</td>
-      <td><input type="text" value="50000" class="form-control form-control-hypotheque js-equity-capital-input" name="equityCapital" value="" placeholder="Le montant en CHF"></td>
+      <td><input type="text" value="" class="form-control form-control-hypotheque js-equity-capital-input" name="equityCapital" value="" placeholder="Le montant en CHF"></td>
     </tr>
     <tr>
       <td>{% trans %}Prix d'achat (max.) sans droits de mutations et frais de notaire{% endtrans %}</td>
       <td>
-        <input type="text" readonly name="maxAmountForEquityCapital" class="form-control form-chf-numeric js-max-amount-for-equity-capital" value="" />
+        <input type="text" readonly name="maxAmountForEquityCapital" class="form-control js-max-amount-for-equity-capital" value="" />
       </td>
     </tr>
     <tr>
       <td>{% trans %}Revenu annuel net (min.){% endtrans %}</td>
       <td>
-        <input type="text" readonly name="minimalIncomeForEquityCapital" class="form-control form-chf-numeric js-minimal-income-for-equity-capital" value="" />
+        <input type="text" readonly name="minimalIncomeForEquityCapital" class="form-control js-minimal-income-for-equity-capital" value="" />
       </td>
     </tr>
     </tbody>
@@ -76,18 +76,18 @@
     <tbody>
     <tr>
       <td>{% trans %}Revenu anuel net du ménage{% endtrans %}</td>
-      <td><input type="text" value="40000" class="form-control form-control-hypotheque js-income-input" name="income" placeholder="Le montant en CHF"></td>
+      <td><input type="text" value="" class="form-control form-control-hypotheque js-income-input" name="income" placeholder="Le montant en CHF"></td>
     </tr>
     <tr>
       <td>Prix d'achat (max.) sans droits de mutations et frais de notaire</td>
       <td>
-        <input type="text" readonly name="maxAmountForIncome" class="form-control form-chf-numeric js-max-amount-for-income" value="" />
+        <input type="text" readonly name="maxAmountForIncome" class="form-control js-max-amount-for-income" value="" />
       </td>
     </tr>
     <tr>
       <td>{% trans %}Fonds propres (min.){% endtrans %}</td>
       <td>
-        <input type="text" readonly name="minEquityCapitalForIncome" class="form-control form-chf-numeric js-min-equity-capital-for-income" value="" />
+        <input type="text" readonly name="minEquityCapitalForIncome" class="form-control js-min-equity-capital-for-income" value="" />
       </td>
     </tr>
     </tbody>

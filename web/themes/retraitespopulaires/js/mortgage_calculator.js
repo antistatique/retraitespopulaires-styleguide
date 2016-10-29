@@ -1,5 +1,5 @@
 ;(function($, MORTGAGE_RATES, MORTGAGE_SETTINGS) {
-  
+
   // on domReady
   $(function() {
     var $mortgageForm = $('.js-mortgage-calculator');
