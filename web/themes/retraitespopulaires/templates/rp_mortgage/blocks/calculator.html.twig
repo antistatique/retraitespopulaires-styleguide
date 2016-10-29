@@ -162,19 +162,19 @@
     <tr>
       <td>{% trans %}Montant du prêt en 1<sup>er</sup> rang{% endtrans %}</td>
       <td>
-        <span class="js-loan-first"> - </span>
+        <span class="js-first-loan"> - </span>
       </td>
     </tr>
     <tr>
       <td>{% trans %}Montant du prêt en 2<sup>ème</sup> rang{% endtrans %}</td>
       <td>
-        <span class="js-loan-second"> - </span>
+        <span class="js-second-loan"> - </span>
       </td>
     </tr>
-    <tr class="table-success">
+    <tr class="success">
       <td>{% trans %}Montant total du prêt hypothécaire{% endtrans %}</td>
       <td>
-        <span class="js-loan-second"> - </span>
+        <span class="js-total-loan"> - </span>
       </td>
     </tr>
     </tbody>
@@ -199,13 +199,13 @@
       </thead>
       <tbody>
       <tr>
-        <td>{% trans %}Intérêts en 1er rang{% endtrans %} <span class="js-first-rate"></span></td>
+        <td>{% trans %}Intérêts en 1er rang{% endtrans %} <small class="js-first-rate pull-right"></small></td>
         <td>
           <span class="js-interest-first-loan"></span>
         </td>
       </tr>
       <tr>
-        <td>{% trans %}Intérêts en 2ème rang{% endtrans %} <span class="js-second-rate"></span></td>
+        <td>{% trans %}Intérêts en 2ème rang{% endtrans %} <small class="js-second-rate pull-right"></small></td>
         <td>
           <span class="js-interest-second-loan"></span>
         </td>
@@ -228,13 +228,13 @@
           <span class="js-maintenance-fee"></span>
         </td>
       </tr>
-      <tr class="table-success">
+      <tr class="success">
         <td>{% trans %}Charge mensuelle réelle{% endtrans %}</td>
         <td>
           <span class="js-monthly-living-cost"></span>
         </td>
       </tr>
-      <tr class="table-success">
+      <tr class="success">
         <td>{% trans %}Charge annuelle réelle{% endtrans %}</td>
         <td>
           <span class="js-yearly-living-cost"></span>
