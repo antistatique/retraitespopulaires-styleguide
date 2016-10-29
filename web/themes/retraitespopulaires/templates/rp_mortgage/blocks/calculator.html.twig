@@ -12,10 +12,7 @@
     <tr>
       <td>{% trans %}Introduisez ici le montant d'achat du bien immobilier{% endtrans %}</td>
       <td>
-        <div class="input-group">
-          <input type="text" value="" class="form-control form-control-hypotheque js-amount-input" id="amount" placeholder="Le montant en CHF">
-          <span class="input-group-addon">CHF</span>
-        </div>
+        <input type="text" value="" required class="form-control form-control-hypotheque js-amount-input" id="amount" placeholder="Le montant en CHF">
       </td>
     </tr>
     <tr>
@@ -50,7 +47,7 @@
     <tbody>
     <tr>
       <td>{% trans %}Les fonds propres doivent au moins représenter 20% du prix d'achat{% endtrans %}</td>
-      <td><input type="text" value="" class="form-control form-control-hypotheque js-equity-capital-input" name="equityCapital" value="" placeholder="Le montant en CHF"></td>
+      <td><input type="text" value="" required class="form-control form-control-hypotheque js-equity-capital-input" name="equityCapital" value="" placeholder="Le montant en CHF"></td>
     </tr>
     <tr>
       <td>{% trans %}Prix d'achat (max.) sans droits de mutations et frais de notaire{% endtrans %}</td>
@@ -76,7 +73,7 @@
     <tbody>
     <tr>
       <td>{% trans %}Revenu anuel net du ménage{% endtrans %}</td>
-      <td><input type="text" value="" class="form-control form-control-hypotheque js-income-input" name="income" placeholder="Le montant en CHF"></td>
+      <td><input type="text" value="" required class="form-control form-control-hypotheque js-income-input" name="income" placeholder="Le montant en CHF"></td>
     </tr>
     <tr>
       <td>Prix d'achat (max.) sans droits de mutations et frais de notaire</td>
