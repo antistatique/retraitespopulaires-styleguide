@@ -79,6 +79,7 @@ class MortgageCalculatorBlock extends BlockBase implements ContainerFactoryPlugi
             'advanceRateMax' => 0.80,
             'amortisationFirstRate' => 0.01,
             'amortistationSecondRate' => 0.02,
+            'maxCost' => 0.33,
         ];
 
         return [

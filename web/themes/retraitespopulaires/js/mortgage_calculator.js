@@ -152,6 +152,35 @@
       var monthlyLivingCost = getChargeMensuelle(firstInterestLoan, secondInterestLoan, firstAmortisation, secondAmortisation, maintenanceFee);
       var yearlyLivingCost = getChargeAnnuelle(firstInterestLoan, secondInterestLoan, firstAmortisation, secondAmortisation, maintenanceFee);
 
+      var deptRate = getTauxEndettement(totalLoan, amount, 100);
+      if (deptRate > 100) {
+        deptRate = 100;
+      }
+      if (deptRate < 0) {
+        deptRate = 0;
+      }
+
+      var deptRateOK = deptRate <= MORTGAGE_SETTINGS.advanceRateMax*100;
+
+      var costRatio = getRapportChargesRevenus(
+        firstLoan,
+        MORTGAGE_SETTINGS.theoricalCostFirstRate,
+        secondLoan,
+        MORTGAGE_SETTINGS.theoricalCostSecondRate,
+        maintenanceFee,
+        income,
+        100
+      );
+
+      if (costRatio > 100) {
+        costRatio = 100;
+      }
+      if (costRatio < 0) {
+        costRatio = 0;
+      }
+
+      var costRatioOK = costRatio <= MORTGAGE_SETTINGS.maxCost*100;
+
       $firstLoan = $('.js-first-loan');
       $secondLoan = $('.js-second-loan');
       $totalLoan = $('.js-total-loan');
@@ -164,7 +193,8 @@
       $maintenanceFee = $('.js-maintenance-fee');
       $monthlyLivingCost = $('.js-monthly-living-cost');
       $yearlyLivingCost = $('.js-yearly-living-cost');
-
+      $loanVisualisation = $('.js-visualisation-loan');
+      $costVisualisation = $('.js-visualisation-cost');
 
       $firstLoan.text(formatPrice(firstLoan));
       $secondLoan.text(formatPrice(secondLoan));
@@ -178,6 +208,32 @@
       $maintenanceFee.text(formatPrice(maintenanceFee));
       $monthlyLivingCost.text(monthlyLivingCost);
       $yearlyLivingCost.text(yearlyLivingCost);
+
+      $loanVisualisation
+        .find('.progress-bar')
+        .removeClass('progress-bar-warning progress-bar-success')
+        .addClass(deptRateOK ? 'progress-bar-success' : 'progress-bar-warning')
+        .attr('aria-valuenow', deptRate)
+        .css('width', deptRate + '%')
+        .text(deptRate + '%')
+        .end()
+        .find('.js-text-success, .js-text-warning')
+        .addClass('hidden')
+        .filter(deptRateOK ? '.js-text-success' : '.js-text-warning').removeClass('hidden')
+      ;
+
+      $costVisualisation
+        .find('.progress-bar')
+        .removeClass('progress-bar-warning progress-bar-success')
+        .addClass(costRatioOK ? 'progress-bar-success' : 'progress-bar-warning')
+        .attr('aria-valuenow', costRatio)
+        .css('width', costRatio + '%')
+        .text(costRatio + '%')
+        .end()
+        .find('.js-text-success, .js-text-warning')
+        .addClass('hidden')
+        .filter(costRatioOK ? '.js-text-success' : '.js-text-warning').removeClass('hidden')
+      ;
     }
 
     function resetResult() {
