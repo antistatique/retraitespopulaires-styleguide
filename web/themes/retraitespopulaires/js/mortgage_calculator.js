@@ -139,6 +139,9 @@
         return;
       }
 
+      // display the results
+      $('.js-mortgage-results').removeClass('hidden');
+
       var amountWithFee = getPrixAchatAvecFraisNotaire(amount, MORTGAGE_SETTINGS.notaryRateFee);
 
       var firstLoan = getPretEnPremierRang(amount, amountWithFee, equityCapital, MORTGAGE_SETTINGS.firstRateMax);
