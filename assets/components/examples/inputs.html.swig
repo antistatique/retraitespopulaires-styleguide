@@ -110,7 +110,7 @@ layout: examples.html.swig
     {% include '../atoms/input-select.html.swig' %}
     {% include '../atoms/input-datepicker.html.swig' %}
     <div class="input-group">
-      <input type="text" class="form-control datepicker" value="02/12/2016">
+      <input aria-label="Saisissez la date au format (JJ/MM/AAAA)" type="text" class="form-control datepicker" value="02/12/2016">
       <span class="input-group-btn no-events">
         <button class="btn btn-default-invert btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
       </span>

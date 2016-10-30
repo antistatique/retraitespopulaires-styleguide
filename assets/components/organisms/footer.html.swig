@@ -69,7 +69,7 @@ notes: |
         <form>
           <div class="form-group">
             <div class="input-group full-width">
-              <input type="text" class="form-control full-width" placeholder="Ex: jane.doe@bluewin.ch">
+            <input type="text" class="form-control full-width" placeholder="Ex: jane.doe@bluewin.ch" aria-label="Saisissez votre adresse e-mail.">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button">Je m'inscris</button>
               </span>

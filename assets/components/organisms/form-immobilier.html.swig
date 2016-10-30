@@ -44,31 +44,31 @@ notes: |
       <label class="d-block">Nombre de pièces</label>
       <div class="form-group-inline">
         <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="1">
+          <input aria-label="1 pièce" type="checkbox" name="nbpieces" value="1">
           <label class="option">1</label>
         </div>
         <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="2">
+          <input aria-label="2 pièces" type="checkbox" name="nbpieces" value="2">
           <label class="option">2</label>
         </div>
         <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="3">
+          <input aria-label="3 pièces" type="checkbox" name="nbpieces" value="3">
           <label class="option">3</label>
         </div>
         <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="4">
+          <input aria-label="4 pièces" type="checkbox" name="nbpieces" value="4">
           <label class="option">4</label>
         </div>
         <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="nbpieces" value="5">
+          <input aria-label="5 pièces" type="checkbox" name="nbpieces" value="5">
           <label class="option">5</label>
         </div>
       </div>
     </div>
     <div class="form-group">
-      <label class="d-block">Loyer maximum</label>
+      <label for="max_rent" class="d-block">Loyer maximum</label>
       <div class="input-text">
-        <input type="text" name="max_rent" class="form-control" value="">
+        <input type="text" id="max_rent" name="max_rent" class="form-control" value="">
       </div>
     </div>
 
@@ -80,8 +80,8 @@ notes: |
       <div class="row">
         <div class="col-sm-3">
           <div class="form-group">
-            <label>Mois</label>
-            <select class="form-control full-width">
+            <label for="available_month">Mois</label>
+            <select id="available_month" name="available_month" class="form-control full-width">
               <option value="01">Janvier</option>
               <option value="02">Février</option>
               <option value="02">...</option>
@@ -90,8 +90,8 @@ notes: |
         </div>
         <div class="col-sm-3">
           <div class="form-group">
-            <label>Année</label>
-            <select class="form-control full-width">
+            <label for="available_year">Année</label>
+            <select id="available_year" name="available_year" class="form-control full-width">
               <option value="2016">2016</option>
               <option value="2017">2017</option>
             </select>
