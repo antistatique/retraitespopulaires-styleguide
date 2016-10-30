@@ -66,6 +66,21 @@ class MortgageCalculatorBlock extends BlockBase implements ContainerFactoryPlugi
         $variables['rate_date'] = $this->getDateBasedOnRate($variables['rates']);
 
         // @TODO: Move this into a Drupal Admin settings
+        /*
+         * @param float $notaryRateFee           Droit de mutation et frais de notaire (en %)
+         * @param float $firstRateMax            Prêt max. en 1er rang par rapport au prix d'achat (en %)
+         * @param float $theoricalCostFirstRate  Charges théoriques du prêt en 1er rang (en %)
+         * @param float $secondRateMax           Prêt max. en 2ème rang par rapport au prix d'achat (en %)
+         * @param float $theoricalCostSecondRate Charges théoriques du prêt en 2ème rang (en %)
+         * @param float $ratioCostIncomeMax      Rapport charges-revenus max. (en %)
+         * @param int   $maintenanceFees         Frais d'entretien
+         * @param float $equityCapitalMinRate    Pourcentage min. des fonds propres
+         * @param float $avgRate                 Taux moyen (1er + 2ème rang) de charges du prêt total (en %)
+         * @param float $advanceRateMax          Taux d'avance max. (en %)
+         * @param float $amortisationFirstRate   Amortissement du prêt en 1er rang (en %)
+         * @param float $amortistationSecondRate Amortissement du prêt en 2ème rang (en %)
+         * @param float $maxCost
+         */
         $variables['settings'] = [
             'notaryRateFee' => 0.05,
             'firstRateMax' => 0.70,
