@@ -6,6 +6,14 @@ notes: |
   ##### Usage : `big-menu`
   Ce composant est visible dans le template "<a href="/retraitespopulaires-styleguide/basic-page">Page de base</a>".
 ---
+<nav class="sr-only access-navigation">
+  <ul>
+    <li><a href="#" accesskey="1">Page d'accueil du site Retraites Populaires</a></li>
+    <li><a href="#startcontent" accesskey="2" >Passer la navigation</a></li>
+    <li><a href="#global-search" accesskey="4" >Accéder au champ de recherche</a></li>
+    <li><a href="mailto:info@retraitespopulaires.ch" accesskey="9">Contacter un conseiller</a></li>
+  </ul>
+</nav>
 <nav class="sr-only" role="navigation">
   <ul>
     <li>
