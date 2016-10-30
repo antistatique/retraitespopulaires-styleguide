@@ -6,6 +6,7 @@ notes: |
   ##### Usage : `swiper-menu`
 ---
 <div class="swiper-menu">
+  <h2 class="sr-only">Navigation principale</h2>
   <div class="hidden-xs hidden-sm">
     {% include '../molecules/big-menu-empty.html.swig' %}
   </div>

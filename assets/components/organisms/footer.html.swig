@@ -9,6 +9,7 @@ notes: |
   - **theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="footer">
+  <h2 class="sr-only">Footer</h2>
   {% if not light %}
   <div class="container">
     <div class="row">

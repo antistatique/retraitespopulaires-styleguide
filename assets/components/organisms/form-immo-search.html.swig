@@ -9,7 +9,7 @@ notes: |
 ---
 
 <form class="form-immo-search">
-
+  <h2 class="sr-only">Recherche d'appartements</h2>
   <fieldset class="fieldset-no-legend">
     <legend>Recherche d'appartements</legend>
     <div class="row">
