@@ -1,0 +1,6 @@
+calculator:
+  js:
+    js/mortgage_lib.js: {}
+    js/mortgage_calculator.js: {}
+  dependencies:
+    - 'global-styling'

@@ -85,6 +85,9 @@ class MortgageCalculatorBlock extends BlockBase implements ContainerFactoryPlugi
         return [
             '#theme'     => 'rp_mortgage_calculator_block',
             '#variables' => $variables,
+            '#attached' => array(
+               'library' =>  array('rp_mortgage/calculator'),
+            )
         ];
     }
 
