@@ -112,7 +112,7 @@ layout: examples.html.swig
     <div class="input-group">
       <input aria-label="Saisissez la date au format (JJ/MM/AAAA)" type="text" class="form-control datepicker" value="02/12/2016">
       <span class="input-group-btn no-events">
-        <button class="btn btn-default-invert btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
+        <button class="btn btn-default-invert btn-icon" type="button" aria-label="Choisir la date"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
       </span>
     </div>
 
