@@ -20,6 +20,7 @@ layout: page.html.swig
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-6 col-xl-push-3">
+      <a name="startcontent"></a>
       <h1 class="page-title text-center">Quel est votre projet ?</h1>
       <div class="spacer"></div>
       <div class="entity-content">
