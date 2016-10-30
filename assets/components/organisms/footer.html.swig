@@ -25,35 +25,35 @@ notes: |
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Twitter des Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="https://www.facebook.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Facebook des Retraites Populaires" href="https://www.facebook.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Youtube des Retraites Populaires" href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="https://www.instagram.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Instagram des Retraites Populaires" href="https://www.instagram.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="https://www.linkedin.com/company/retraites-populaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte LinkedIn des Retraites Populaires" href="https://www.linkedin.com/company/retraites-populaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
