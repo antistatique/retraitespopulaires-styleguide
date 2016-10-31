@@ -236,6 +236,44 @@ permalink: false
           <div class="spacer spacer-md"></div>
         </div>
       </div>
+      <!-- Treeview List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste en arbre</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ul class="treeview-list">
+            <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
+            <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
+            <ul class="treeview-list">
+              <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ul>
+            <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
+          </ul>
+          <div class="spacer spacer-md"></div>
+        </div>
+      </div>
+      <!-- Facets List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste en facettes</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ul class="facets-list">
+            <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
+            <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
+            <ul class="facets-list">
+              <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ul>
+            <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
+          </ul>
+          <div class="spacer spacer-md"></div>
+        </div>
+      </div>
       <!-- Table  -->
       <div class="row">
         <div class="col-md-2">
