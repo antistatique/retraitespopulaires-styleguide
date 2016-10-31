@@ -10,7 +10,7 @@ layout: emplois.html.swig
 <div class="spacer spacer-xl hidden-md hidden-lg"></div>
 
 <div class="container">
-  <div class="row"></div>
+  <div class="row">
     <div class="col-xs-12 text-center">
       {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'Emploi', 'Crée un compte']} %}
       <div class="spacer"></div>
