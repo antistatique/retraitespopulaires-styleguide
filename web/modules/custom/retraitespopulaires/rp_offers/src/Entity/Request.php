@@ -171,5 +171,3 @@ class Request extends ContentEntityBase implements RequestInterface {
     return $fields;
   }
 }
-
-?>

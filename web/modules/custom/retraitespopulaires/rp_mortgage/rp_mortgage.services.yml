@@ -1,0 +1,6 @@
+services:
+  rp_mortgage.rate:
+    class: Drupal\rp_mortgage\Service\Rate
+    arguments:
+      - '@entity_type.manager'
+      - '@entity.query'

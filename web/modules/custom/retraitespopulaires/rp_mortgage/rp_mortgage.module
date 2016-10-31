@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains rp_mortgage.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function rp_mortgage_theme($existing, $type, $theme, $path)
+{
+  return [
+    // Blocks themes
+    // ---------------------------------------------------------------------
+    'rp_mortgage_table_rate_block' => array(
+      // Use the following syntax to retrieve all variables in the "variables" container
+        'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions into a sub folder
+      // using [template].html.twig
+        'path' => 'themes/retraitespopulaires/templates/' . $theme,
+        'template'  => 'blocks/table_rate'
+    ),
+    // ---------------------------------------------------------------------
+      'rp_mortgage_calculator_block' => array(
+        // Use the following syntax to retrieve all variables in the "variables" container
+          'variables' => ['variables' => []],
+        // Set the template attribute to force the theme suggestions into a sub folder
+        // using [template].html.twig
+          'path' => 'themes/retraitespopulaires/templates/' . $theme,
+          'template'  => 'blocks/calculator'
+      ),
+  ];
+}

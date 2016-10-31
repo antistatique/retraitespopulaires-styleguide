@@ -1,0 +1,4 @@
+administer rate entities:
+  title: 'Administer Rate entities'
+  description: 'Allow to access the administration form to configure Rate entities.'
+  restrict access: true

@@ -1,0 +1,9 @@
+# Rate menu items definition
+entity.rp_mortgage_rate.collection:
+  title: 'Rates'
+  route_name: entity.rp_mortgage_rate.collection
+  parent: rp_toolbar.admin
+  description: 'List Rate entities'
+  parent: system.admin_structure
+  weight: 100
+

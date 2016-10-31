@@ -164,6 +164,10 @@ We are using solr for search index.
 
 Solr need to be configured for drupal. Follow the INSTALL.txt found in the search_api_solr module.
 
+## Tests
+
+    $ phpunit
+
 ## Troubleshootings
 
 ### Error while importing config ?
@@ -188,7 +192,7 @@ A better way is to use the `example.settings.local.php` that do more for your de
  1. Copy the example local file:
 
   ```bash
-  $ cp sites/example.settings.local.xml sites/default/settings.local.php
+  $ cp sites/example.settings.local.php sites/default/settings.local.php
   ```
 
  2. Uncomment the following line in your `settings.php`

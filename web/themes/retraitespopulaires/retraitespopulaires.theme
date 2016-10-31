@@ -95,4 +95,24 @@ function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, a
         $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.collection.faqs')['nid']) {
         $suggestions[] = 'node__' . $state->get('rp_site.settings.collection.faqs')['theme'];
     }
+
+    if (isset($variables['elements']['#node']->nid->value) &&
+        $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.collection.mortgage_calculator')['nid']) {
+        $suggestions[] = 'node__' . $state->get('rp_site.settings.collection.mortgage_calculator')['theme'];
+    }
+
+    if (isset($variables['elements']['#node']->nid->value) &&
+        $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.collection.mortgage_tablerates')['nid']) {
+        $suggestions[] = 'node__' . $state->get('rp_site.settings.collection.mortgage_tablerates')['theme'];
+    }
+
+    if (isset($variables['elements']['#node']->nid->value) &&
+        $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.collection.constructionloan_tablerates')['nid']) {
+        $suggestions[] = 'node__' . $state->get('rp_site.settings.collection.constructionloan_tablerates')['theme'];
+    }
+
+    if (isset($variables['elements']['#node']->nid->value) &&
+        $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['nid']) {
+        $suggestions[] = 'node__' . $state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['theme'];
+    }
 }

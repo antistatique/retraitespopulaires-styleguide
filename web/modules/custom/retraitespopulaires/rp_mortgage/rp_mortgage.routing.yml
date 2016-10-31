@@ -1,0 +1,47 @@
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.rp_mortgage_rate.canonical:
+  path: '/admin/retraites-populaires/rates/{rp_mortgage_rate}'
+  defaults:
+    # Calls the view controller, defined in the annotation of the contact entity
+    _entity_view: 'rp_mortgage_rate'
+    _title: 'Rate Content'
+  requirements:
+    # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'rp_mortgage_rate.view'
+
+entity.rp_mortgage_rate.collection:
+  path: '/admin/retraites-populaires/rates'
+  defaults:
+  # Calls the list controller, defined in the annotation of the contact entity.
+    _entity_list: 'rp_mortgage_rate'
+    _title: 'Rates List'
+  requirements:
+    _permission: 'administer rate entities'
+
+entity.rp_mortgage_rate.add_form:
+  path: '/admin/retraites-populaires/rates/add'
+  defaults:
+  # Calls the form.add controller, defined in the contact entity.
+    _entity_form: rp_mortgage_rate.add
+    _title: 'Add Rate'
+  requirements:
+    _entity_create_access: 'rp_mortgage_rate'
+
+entity.rp_mortgage_rate.edit_form:
+  path: '/admin/retraites-populaires/rates/{rp_mortgage_rate}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the contact entity.
+    _entity_form: rp_mortgage_rate.edit
+    _title: 'Edit Rate'
+  requirements:
+    _entity_access: 'rp_mortgage_rate.edit'
+
+entity.rp_mortgage_rate.delete_form:
+  path: '/admin/retraites-populaires/rates/{rp_mortgage_rate}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the contact entity.
+    _entity_form: rp_mortgage_rate.delete
+    _title: 'Delete Rate'
+  requirements:
+    _entity_access: 'rp_mortgage_rate.delete'

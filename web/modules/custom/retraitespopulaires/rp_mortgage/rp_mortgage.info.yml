@@ -1,0 +1,7 @@
+name: Mortgage Calculator and Rates
+type: module
+description: Provide Mortgage (Hypothèques) calculator and Rates import
+core: 8.x
+package: Retraites Populaires
+dependencies:
+  - rp_site

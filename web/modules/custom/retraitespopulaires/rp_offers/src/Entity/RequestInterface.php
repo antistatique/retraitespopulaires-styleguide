@@ -15,4 +15,3 @@ use Drupal\Core\Entity\EntityChangedInterface;
  * @ingroup commands
  */
 interface RequestInterface extends ContentEntityInterface, EntityOwnerInterface, EntityChangedInterface { }
-?>
