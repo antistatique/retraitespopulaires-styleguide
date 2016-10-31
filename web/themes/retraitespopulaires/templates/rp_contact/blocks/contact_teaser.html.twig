@@ -53,6 +53,8 @@
         .
       {%- endif -%}
     </p>
-    <a href="{{ link }}" class="btn btn-{{ theme }}">Contacter</a>
+    {% if variables.btn %}
+      <a href="{{ link }}" class="btn btn-{{ theme }}">Contacter</a>
+    {% endif %}
   </div>
 </div>

@@ -1,7 +1,7 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_contact\Plugin\Block\ContactTeaserBlock.
+* Contains \Drupal\rp_contact\Plugin\Block\ContactTeaserDetailBlock.
 */
 
 namespace Drupal\rp_contact\Plugin\Block;
@@ -13,19 +13,19 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\rp_site\Service\Cover;
 
 /**
-* Provides a 'Contact Teaser' Block
+* Provides a 'Contact Teaser Detail' Block
 *
 * @Block(
-*   id = "rp_contact_contact_teaser_block",
-*   admin_label = @Translation("Contact Teaser block"),
+*   id = "rp_contact_contact_teaser_detail_block",
+*   admin_label = @Translation("Contact Teaser Detail block"),
 * )
 *
 * Inline example:
 * <code>
-* load_block('rp_contact_contact_teaser_block')
+* load_block('rp_contact_contact_teaser_detail_block')
 * </code>
 */
-class ContactTeaserBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class ContactTeaserDetailBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     /**
      * Cover Service
@@ -67,15 +67,10 @@ class ContactTeaserBlock extends BlockBase implements ContainerFactoryPluginInte
             $variables['theme'] = $params['theme'];
         }
 
-        $variables['btn'] = true;
-        if (isset($params['btn'])) {
-            $variables['btn'] = $params['btn'];
-        }
-
         $variables['cover'] = $this->cover->fromNode($params['contact'], array('xl' => 'rp_teaser_contact_xl'));
 
         return [
-            '#theme'     => 'rp_contact_contact_teaser_block',
+            '#theme'     => 'rp_contact_contact_teaser_detail_block',
             '#variables' => $variables,
         ];
     }

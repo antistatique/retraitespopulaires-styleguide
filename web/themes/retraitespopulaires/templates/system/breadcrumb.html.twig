@@ -24,10 +24,10 @@
 
       {# Breadcrumb link #}
       <li class="" {{ item.attributes }}>
-        {% if item.url %}
+        {% if item.url and not loop.last %}
           <a class="{{ classes|join(' ') }}" href="{{ item.url }}">{{ item.text }}</a>
         {% else %}
-          <span class="{{ classes|join(' ') }}">{{ item.text }}</span>
+          <span class="{{ classes|join(' ') }}">{{ item.text|slice(0, 42) }}{% if item.text|length > 42 %}...{% endif %}</span>
         {% endif %}
       </li>
 

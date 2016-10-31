@@ -38,6 +38,14 @@ function rp_contact_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'blocks/contact_teaser'
         ),
+        'rp_contact_contact_teaser_detail_block' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'template'  => 'blocks/contact_teaser_detail'
+        ),
 
         // Pages themes
         // ---------------------------------------------------------------------

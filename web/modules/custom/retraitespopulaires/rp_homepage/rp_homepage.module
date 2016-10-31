@@ -23,16 +23,5 @@ function rp_homepage_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'blocks/profil_teaser'
         ),
-
-        // Pages themes
-        // ---------------------------------------------------------------------
-        'rp_homepage_page' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'pages/homepage'
-        ),
     );
 }

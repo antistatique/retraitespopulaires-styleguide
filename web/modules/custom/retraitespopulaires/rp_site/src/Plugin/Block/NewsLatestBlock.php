@@ -123,7 +123,7 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
                 ->condition('field_profession', $node->field_profession->target_id)
                 ->condition('field_date', $now, '<=')
                 ->sort('field_date', 'DESC')
-                ->range(0, 3);
+                ->range(0, 2);
 
             $nids = $query->execute();
             $variables['news'] = $this->entity_node->loadMultiple($nids);
@@ -144,7 +144,7 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
                 ->condition('field_profil', $node->field_profil->target_id)
                 ->condition('field_date', $now, '<=')
                 ->sort('field_date', 'DESC')
-                ->range(0, 3);
+                ->range(0, 2);
 
             $nids = $query->execute();
             $variables['news'] = $this->entity_node->loadMultiple($nids);
@@ -162,7 +162,7 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
                 ->condition('status', 1)
                 ->condition('field_date', $now, '<=')
                 ->sort('field_date', 'DESC')
-                ->range(0, 3);
+                ->range(0, 2);
 
             $nids = $query->execute();
             $variables['news'] = $this->entity_node->loadMultiple($nids);
