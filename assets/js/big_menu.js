@@ -81,6 +81,9 @@ export function big_menu () {
     // Open desired pan
     $next_wrapper.addClass('active');
     $next_pane.toggleClass('active');
+    $next_wrapper.animate({
+      scrollTop: 0
+    }, 500);
   });
 
   /**
