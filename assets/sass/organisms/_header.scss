@@ -7,7 +7,6 @@ header {
   height: 104px;
   background: $white;
   z-index: 2002;
-  border-bottom: 1px solid $light-gray;
   transition: border 0.25s ease-in-out;
 
   &.active {

@@ -83,7 +83,7 @@ The deployment of branch `dev` and `master` is managed yourself and publish on N
 ````shell
 # You need to create a new realease using git flow
 $ git flow release start 0.0.1
-# Make some last minutes changes and prepare your realease
+# Make some last minutes changes and prepare your realease and edit CHANGELOG.md file!
 $ git flow release finish -p 0.0.1
 # Publish on NPM your last release
 $ npm publish

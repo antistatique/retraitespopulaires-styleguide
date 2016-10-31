@@ -13,6 +13,7 @@
 @import 'ckeditor';
 
 // atoms:
+@import 'atoms/logo-management-contract';
 @import 'atoms/map-card';
 @import 'atoms/input-group';
 @import 'atoms/input-textarea';
@@ -46,6 +47,8 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/progresschart';
+@import 'molecules/teaser-contact-detail';
 @import 'molecules/teaser-contact-cta';
 @import 'molecules/immo-heading';
 @import 'molecules/immo-results';
