@@ -120,7 +120,7 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
                         ->condition('n.nid', $products_nids, 'IN')
                     ;
 
-                    if ($filters = \Drupal::request()->query->get('filtres')) {
+                    if ($filters = \Drupal::request()->query->get('filtres') && !empty($filters)) {
                         foreach ($filters as $key => $filter) {
                             $taxonomy_term_url = $this->alias_manager->getPathByAlias('/plans/'.$filter);
                             if( !empty($taxonomy_term_url) ){
