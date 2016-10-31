@@ -167,19 +167,6 @@ class AdminForm extends FormBase {
             '#suffix'        => '<br/>'
         );
 
-        // Layout settings
-        $form['layout'] = array(
-            '#type'  => 'fieldset',
-            '#title' => t('Images'),
-        );
-        $form['layout']['placeholder'] = array(
-            '#type'            => 'managed_file',
-            '#title'           => t('Image de placeholder'),
-            '#default_value'   => !empty($this->state->get('rp_contact.settings.placeholder')) ? array($this->state->get('rp_contact.settings.placeholder')) : null,
-            '#upload_location' => 'public://rp_contact/placeholder',
-            '#description'     => t('Merci de déposer une image Retina de min. 600×500 pixels'),
-        );
-
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Sauvegarder'),
@@ -229,31 +216,5 @@ class AdminForm extends FormBase {
             'theme' => trim($form_state->getValue('building_theme')),
             'receivers' => trim($form_state->getValue('building_receivers')),
         ));
-
-        // Save placeholder
-        $this->state->set('rp_contact.settings.placeholder', '');
-        $placeholder = $form_state->getValue('placeholder');
-        if( !empty($placeholder)  ){
-            $placeholder = reset($placeholder);
-            $this->state->set('rp_contact.settings.placeholder', $placeholder);
-            $file = File::load($placeholder);
-            $this->saveFileAsPermanent($file);
-        }
-    }
-
-    /**
-     * New files are uploaded with a status of 0 and are treated as temporary files which are removed after 6 hours
-     * We are responsible for changing the $file objects status to FILE_STATUS_PERMANENT
-     * @method saveFile
-     * @param  File     $file [description]
-     * @return [type]         [description]
-     */
-    protected function saveFileAsPermanent(File $file) {
-        if( !$file->isPermanent() ){
-            $file->setPermanent();
-            $file->save();
-            // Add entry to file_usage
-            $this->file_usage->add($file, 'rp_contact', 'module', 1);
-        }
     }
 }

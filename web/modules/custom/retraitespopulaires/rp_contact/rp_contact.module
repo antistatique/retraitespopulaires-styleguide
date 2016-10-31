@@ -22,14 +22,6 @@ function rp_contact_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'blocks/contact_cta'
         ),
-        'rp_contact_contact_placeholder_teaser_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/contact_placeholder_teaser'
-        ),
         'rp_contact_contact_teaser_block' => array(
             // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
