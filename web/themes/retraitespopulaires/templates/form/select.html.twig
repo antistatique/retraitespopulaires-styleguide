@@ -11,7 +11,13 @@
  */
 #}
 {% spaceless %}
-  <select{{ attributes.addClass('form-control') }}>
+  {%
+    set classes = [
+      'form-control',
+      attributes.theme.__toString == empty ? '' : 'form-control-'~attributes.theme.__toString,
+    ]
+  %}
+  <select{{ attributes.addClass(classes) }}>
     {% for option in options %}
       {% if option.type == 'optgroup' %}
         <optgroup label="{{ option.label }}">

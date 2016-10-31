@@ -12,7 +12,7 @@
 #}
 {%
   set classes = [
-    'form-control',
+    attributes.type != 'checkbox' and attributes.type != 'radio' ? 'form-control',
     attributes.theme.__toString == empty ? '' : 'form-control-'~attributes.theme.__toString,
   ]
 %}
