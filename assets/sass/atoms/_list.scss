@@ -116,8 +116,24 @@ ol.filters-list {
       top: 0.6em;
       left: -0.5em;
       font-size: 0.6em;
+      color: $black;
+
+      &:hover { color: $brand-primary; }
+    }
+
+    &.active {
+      .retraitespopulaires-icon { color: $brand-primary; }
     }
   }
 }
 
+@each $label, $color in $themes {
+  ul.filters-list > li.active {
+    .retraitespopulaires-icon.text-#{$label} {
+      color: $color;
+
+      &:hover { color: $black; }
+    }
+  }
+}
 /* stylelint-enable */
