@@ -88,7 +88,7 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
     */
     public function build($params = array()) {
         $variables = array('categories' => array());
-        $variables['current_alias'] = \Drupal::request()->query->get('filtre');
+        $variables['current_aliases'] = \Drupal::request()->query->get('filtres');
 
         if (isset($params['theme'])) {
             $variables['theme'] = $params['theme'];
@@ -100,8 +100,8 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
 
                 // Get products linked
                 $products_nids = array();
-                foreach ($node->field_products as $key => $rpoduct) {
-                    $products_nids[] = $rpoduct->target_id;
+                foreach ($node->field_products as $key => $product) {
+                    $products_nids[] = $product->target_id;
                 }
 
                 if( !empty($products_nids) ) {

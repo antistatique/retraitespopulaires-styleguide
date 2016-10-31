@@ -1,4 +1,3 @@
-{% if variables.products %}
 <div class="spacer"></div>
 
 <div class="row">
@@ -17,12 +16,13 @@
   </div>
   <div class="col-md-8">
     <div class="row row-flex">
-      {% for product in variables.products %}
-        <div class="col-sm-6">
-          {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
-        </div>
-      {% endfor %}
+      {% if variables.products %}
+        {% for product in variables.products %}
+          <div class="col-sm-6">
+            {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
+          </div>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </div>
-{% endif %}
