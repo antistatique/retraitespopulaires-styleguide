@@ -4,7 +4,7 @@
       {% trans %}Questions et réponses{% endtrans %}
     </p>
     <ul class="filters-list">
-      <li>
+      <li class="{{ variables.current_aliases is empty ? 'active' }}">
         {% if variables.current_aliases is empty %}
           <a href="{{ path('entity.node.canonical', {'node': variables.collection}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ variables.theme }}"></a>
         {% else %}
@@ -14,11 +14,11 @@
         <a class="pretty-link text-{{ variables.theme }}" href="{{ path('entity.node.canonical', {'node': variables.collection}) }}">{% trans %}Toutes{% endtrans %}</a>
       </li>
       {% for category in variables.categories %}
-       <li>
+        <li class="{{ category.alias in variables.current_aliases ? 'active' }}">
          {% if category.alias in variables.current_aliases %}
            <a href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ variables.theme }}"></a>
          {% else %}
-           <a href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked"></a>
+           <a href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked text-{{ variables.theme }}"></a>
          {% endif %}
 
          <a class="pretty-link text-{{ variables.theme }}" href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>

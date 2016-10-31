@@ -5,7 +5,7 @@
   <p class="media-heading text-muted">{{ category.term.name.value }}</p>
   <ul class="filters-list">
     {% for child in category.children %}
-      <li>
+      <li class="{{ child.alias in variables.current_aliases ? 'active' }}">
         {% set link = child.alias %}
 
         {% if variables.current_aliases[0] is defined %}
