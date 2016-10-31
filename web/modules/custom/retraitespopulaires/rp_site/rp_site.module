@@ -241,14 +241,6 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'pages/launcher'
         ),
-        'rp_site_documents_page' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'pages/documents'
-        ),
 
     );
 }

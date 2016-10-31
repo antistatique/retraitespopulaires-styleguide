@@ -1,0 +1,9 @@
+<ul>
+    {% for advisor in variables.advisors %}
+    <li>
+        <a data-id="{{ advisor.nid.value }}" data-value="{{ advisor.title.value }}" href="">
+          {{ advisor.title.value }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
