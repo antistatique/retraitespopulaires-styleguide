@@ -79,19 +79,32 @@ class NewsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
     * {@inheritdoc}
     */
     public function build($params = array()) {
-        $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.news')['nid']);
+        $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.news')['nid'], 'selected' => []);
 
-        // Professions
-        // $professions = $this->entity_taxonomy->loadTree('profession');
-        // categories
-        $types  = $this->entity_taxonomy->loadTree('category_news');
+        $taxonomy_term_alias = \Drupal::request()->query->get('taxonomy_term_alias');
+        $variables['current_aliases'] = $taxonomy_term_alias;
 
-        $categories = $types;
-        foreach ($categories as $profession) {
-            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$profession->tid);
+        // Only interested by alias of Category News taxonomy
+        if (!empty($taxonomy_term_alias)) {
+            // Retreive filter from slug alias
+            $taxonomy_term_tid = null;
+            $taxonomy_term_url = $this->alias_manager->getPathByAlias('/'.$taxonomy_term_alias);
+            if( !empty($taxonomy_term_url) ){
+                $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
+                $term = $this->entity_taxonomy->load($taxonomy_term_tid);
+                if ($term->vid->target_id == 'category_news') {
+                    $variables['selected'] = $term;
+                }
+            }
+        }
+
+        // Listing of Categories
+        $categories = $this->entity_taxonomy->loadTree('category_news');
+        foreach ($categories as $category) {
+            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$category->tid);
             if( !empty($alias) ){
                 $variables['categories'][] = array(
-                    'term'  => $profession,
+                    'term'  => $category,
                     'alias' => str_replace('/', '', $alias),
                 );
             }
