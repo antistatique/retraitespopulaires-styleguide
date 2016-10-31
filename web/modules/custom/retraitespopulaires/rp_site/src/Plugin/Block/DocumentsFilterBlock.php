@@ -81,6 +81,8 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
     public function build($params = array()) {
         $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.documents')['nid']);
 
+        $variables['taxonomy_term_alias'] = \Drupal::request()->query->get('taxonomy_term_alias');
+
         if (isset($params['theme'])) {
             $variables['theme'] = $params['theme'];
         }
