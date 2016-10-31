@@ -38,21 +38,20 @@ layout: website.html.swig
         </div>
 
         <div class="col-md-4">
-          {% include '../atoms/facets-list.html.swig' with {'title': 'Votre versement', 'links': ['Une seule prime', 'Plusieurs prime']} %}
+          {% include '../atoms/filters-list.html.swig' with {'title_filters_list': 'Votre versement', 'links_filters_list': ['Une seule prime', 'Plusieurs prime'], 'theme_filters_list': 'assurance'} %}
 
           <div class="spacer spacer-sm"></div>
-          {% include '../atoms/facets-list.html.swig' with {'title': 'Fiscalité', 'links': ['3e pillier B', 'Plusieurs prime']} %}
+          {% include '../atoms/filters-list.html.swig' with {'title_filters_list': 'Fiscalité', 'links_filters_list': ['3e pillier B', 'Plusieurs prime'], 'theme_filters_list': 'assurance'} %}
 
           <div class="spacer spacer-sm"></div>
-          {% include '../atoms/facets-list.html.swig' with {'title': 'Forme de prestation', 'links': ['Capital', 'Plusieurs prime']} %}
+          {% include '../atoms/filters-list.html.swig' with {'title_filters_list': 'Forme de prestation', 'links_filters_list': ['Capital', 'Plusieurs prime'], 'theme_filters_list': 'assurance'} %}
 
           <div class="spacer spacer-sm"></div>
-          {% include '../atoms/facets-list.html.swig' with {'title': 'Couverture', 'links': ['Prestation en cas de vie', 'Prestation en cas de décès']} %}
+          {% include '../atoms/filters-list.html.swig' with {'title_filters_list': 'Couverture', 'links_filters_list': ['Prestation en cas de vie', 'Prestation en cas de décès'], 'theme_filters_list': 'assurance'} %}
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-8">
-          <div class="row">
-
+          <div class="row row-flex">
             <div class="col-sm-6">
               {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Rente Immédiate', 'body': 'Profitez de votre retraite! Placez un capital de manière sûre et bénéficiez tout de suite de rentes à vie..'} %}
             </div>

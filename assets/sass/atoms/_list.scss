@@ -71,7 +71,7 @@ ul.facets-list {
       content: '→'; // →
       top: 0;
       left: -0.5em;
-      font-size: 1.2em;
+      font-size: 0.9em;
       color: $black;
     }
   }
@@ -94,12 +94,29 @@ ol.ordered-list {
     &:before {
       content: counter(item) '. ';  // 1.
       position: absolute;
-      // top: -0.2em;
       left: -0.5em;
-      margin-right: 0.5em;
       counter-increment: item;
       color: $gray;
     }
   }
 }
+
+ul.filters-list,
+ol.filters-list {
+  list-style: none;
+  padding-left: 0.5em;
+
+  > li {
+    position: relative;
+    margin-bottom: 0.3em;
+    padding-left: 0.5em;
+
+    .retraitespopulaires-icon {
+      position: absolute;
+      left: -0.5em;
+      font-size: 1em;
+    }
+  }
+}
+
 /* stylelint-enable */
