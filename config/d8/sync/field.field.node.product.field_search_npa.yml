@@ -1,0 +1,23 @@
+uuid: 23878e35-334f-4a07-9cf1-542c916cc3ba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_search_npa
+    - node.type.product
+id: node.product.field_search_npa
+field_name: field_search_npa
+entity_type: node
+bundle: product
+label: 'Activer la recherche par NPA'
+description: 'En activant la recherche par NPA, vous permettez à l’utilisateur de trouver le conseiller de sa région. Chaque conseiller se voit attribuer des communes bien précises. Dès lors, le bloc contact dans une page se verra attribuer cette nouvelle possibilité de recherche.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

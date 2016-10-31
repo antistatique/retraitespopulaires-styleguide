@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.product.field_file_product
     - field.field.node.product.field_product_plan
     - field.field.node.product.field_profession
+    - field.field.node.product.field_search_npa
     - field.field.node.product.field_weight
     - image.style.thumbnail
     - node.type.product
@@ -39,6 +40,7 @@ third_party_settings:
         required_fields: true
     group_contacts:
       children:
+        - field_search_npa
         - field_contact
       parent_name: group_tabs
       weight: 115
@@ -122,7 +124,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_contact:
-    weight: 9
+    weight: 118
     settings:
       match_operator: CONTAINS
       size: 60
@@ -176,6 +178,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_search_npa:
+    weight: 117
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_weight:
     weight: 7
     settings:

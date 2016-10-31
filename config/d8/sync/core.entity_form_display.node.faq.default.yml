@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
     - field.field.node.faq.field_profession
+    - field.field.node.faq.field_search_npa
     - node.type.faq
   module:
     - field_group
@@ -48,6 +49,7 @@ third_party_settings:
         required_fields: true
     group_contacts:
       children:
+        - field_search_npa
         - field_advisor
         - field_contact
       parent_name: group_tabs
@@ -74,7 +76,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_advisor:
-    weight: 27
+    weight: 30
     settings:
       match_operator: CONTAINS
       size: 60
@@ -82,7 +84,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_contact:
-    weight: 28
+    weight: 31
     settings:
       match_operator: CONTAINS
       size: 60
@@ -105,6 +107,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_search_npa:
+    weight: 29
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   path:
     type: path
     weight: 4

@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.news.field_offer
     - field.field.node.news.field_profession
     - field.field.node.news.field_profil
+    - field.field.node.news.field_search_npa
     - node.type.news
   module:
     - datetime
@@ -119,6 +120,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_search_npa:
+    weight: 117
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   links:
     weight: 100
 hidden:

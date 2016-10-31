@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
     - field.field.node.faq.field_profession
+    - field.field.node.faq.field_search_npa
     - node.type.faq
   module:
     - file
@@ -59,6 +60,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_search_npa:
+    weight: 111
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   links:
     weight: 100
 hidden:

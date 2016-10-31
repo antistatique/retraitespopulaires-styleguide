@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.partnership.field_latitude
     - field.field.node.partnership.field_longitude
     - field.field.node.partnership.field_partnership
+    - field.field.node.partnership.field_search_npa
     - field.field.node.partnership.field_situation
     - field.field.node.partnership.field_web_site
     - node.type.partnership
@@ -89,6 +90,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_search_npa:
+    weight: 112
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_situation:
     weight: 111
     label: above
