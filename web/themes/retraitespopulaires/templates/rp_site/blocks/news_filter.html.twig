@@ -5,7 +5,6 @@
       <p>{{ variables.selected.description.value|raw }}</p>
     {% else %}
       {% trans %}L'actualité de Retraites Populaires{% endtrans %}
-      {% trans %}L'actualité de Retraites Populaires{% endtrans %}
     {% endif %}
   </p>
   <ul class="filters-list">
@@ -16,7 +15,7 @@
         <a href="{{ path('entity.node.canonical', {'node': variables.collection}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked text-{{ variables.theme }}"></a>
       {% endif %}
 
-      <a class="pretty-link"  href="{{ path('entity.node.canonical', {'node': variables.collection}) }}">{% trans %}Toutes{% endtrans %}</a>
+      <a class="pretty-link text-{{ variables.theme }}" href="{{ path('entity.node.canonical', {'node': variables.collection}) }}">{% trans %}Toutes{% endtrans %}</a>
     </li>
     {% for category in variables.categories %}
      <li>
@@ -29,6 +28,5 @@
        <a class="pretty-link text-{{ variables.theme }}" href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
      </li>
     {% endfor %}
-  </ul>
   </ul>
 </div>

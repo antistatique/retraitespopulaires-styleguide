@@ -1,14 +1,32 @@
 <div class="{{ theme_hook_original }}">
-  <p class="media-heading text-muted">{% trans %}Questions-réponses{% endtrans %}</p>
-  <ul class="facets-list">
+  <p class="media-heading text-muted">
+    {% if variables.selected %}
+      <h2>{{ variables.selected.name.value }}</h2>
+      <p>{{ variables.selected.description.value|raw }}</p>
+    {% else %}
+      {% trans %}Questions et réponses{% endtrans %}
+    {% endif %}
+  </p>
+  <ul class="filters-list">
     <li>
-      <a class="pretty-link"  href="{{ path('entity.node.canonical', {'node': variables.collection}) }}">{% trans %}Toutes{% endtrans %}</a>
+      {% if variables.current_aliases is empty %}
+        <a href="{{ path('entity.node.canonical', {'node': variables.collection}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ variables.theme }}"></a>
+      {% else %}
+        <a href="{{ path('entity.node.canonical', {'node': variables.collection}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked text-{{ variables.theme }}"></a>
+      {% endif %}
+
+      <a class="pretty-link text-{{ variables.theme }}" href="{{ path('entity.node.canonical', {'node': variables.collection}) }}">{% trans %}Toutes{% endtrans %}</a>
     </li>
     {% for category in variables.categories %}
      <li>
-       <a class="pretty-link"  href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
+       {% if category.alias in variables.current_aliases %}
+         <a href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ variables.theme }}"></a>
+       {% else %}
+         <a href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked"></a>
+       {% endif %}
+
+       <a class="pretty-link text-{{ variables.theme }}" href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
      </li>
     {% endfor %}
-  </ul>
   </ul>
 </div>
