@@ -520,6 +520,18 @@ permalink: false
             <div class="text-muted">.retraitespopulaires-icon-placeholder</div>
           </div>  
         </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></i>
+            <div class="text-muted">.retraitespopulaires-icon-checked</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked"></i>
+            <div class="text-muted">.retraitespopulaires-icon-unchecked</div>
+          </div>  
+        </div>
       </div>
     </div>
   </div>
