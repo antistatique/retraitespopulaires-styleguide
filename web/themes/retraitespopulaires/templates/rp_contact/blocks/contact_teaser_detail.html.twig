@@ -36,7 +36,7 @@
     {%- endif -%}
 
     {%- if variables.contact.field_email.value -%}
-      <a class="text-{{ theme }} text-bold" href="mailto:{{ variables.contact.field_email.value }}">{% trans %}Par e-mail{% endtrans %}</a>
+      <a class="text-{{ theme }} text-bold text-break-all" href="mailto:{{ variables.contact.field_email.value }}">{% trans %}Par e-mail{% endtrans %}</a>
     {%- endif -%}
 
     {%- if variables.contact.field_fax.value -%}
