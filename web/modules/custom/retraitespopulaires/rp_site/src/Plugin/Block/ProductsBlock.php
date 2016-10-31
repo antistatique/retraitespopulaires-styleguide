@@ -15,6 +15,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
+use Drupal\rp_site\Service\Profession;
 
 /**
 * Provides a 'Products' Block
@@ -56,14 +57,21 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
     private $entity_query;
 
     /**
+     * Profession Service
+     * @var Profession
+     */
+    private $profession;
+
+    /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, QueryFactory $query) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, QueryFactory $query, Profession $profession) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_node   = $entity->getStorage('node');
         $this->route         = $route;
         $this->alias_manager = $alias_manager;
         $this->entity_query  = $query;
+        $this->profession    = $profession;
     }
 
     /**
@@ -80,7 +88,8 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
             $container->get('entity_type.manager'),
             $container->get('current_route_match'),
             $container->get('path.alias_manager'),
-            $container->get('entity.query')
+            $container->get('entity.query'),
+            $container->get('rp_site.profession')
         );
     }
 
@@ -92,6 +101,9 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
         //Load the current node's field_products
         $products_nids = array();
         if ($node = $this->route->getParameter('node')) {
+
+            // Set the theme using the current node profession
+            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
 
             if( isset($node->field_products) && !empty($node->field_products) ){
                 foreach ($node->field_products as $key => $rpoduct) {

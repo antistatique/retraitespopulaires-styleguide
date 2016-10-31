@@ -13,10 +13,10 @@
     <div class="spacer spacer-md"></div>
   </div>
   <div class="col-md-4">
-    {{ load_block('rp_site_products_filter_block') }}
+    {{ load_block('rp_site_products_filter_block', {'theme': variables.theme}) }}
   </div>
   <div class="col-md-8">
-    <div class="row">
+    <div class="row row-flex">
       {% for product in variables.products %}
         <div class="col-sm-6">
           {{ load_block('rp_site_product_teaser_block', {'product': product}) }}

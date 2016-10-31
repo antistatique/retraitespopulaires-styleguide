@@ -90,6 +90,10 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
         $variables = array('categories' => array());
         $variables['current_alias'] = \Drupal::request()->query->get('filtre');
 
+        if (isset($params['theme'])) {
+            $variables['theme'] = $params['theme'];
+        }
+
         if ($node = $this->route->getParameter('node')) {
 
             if( isset($node->field_products) && !empty($node->field_products) ){
