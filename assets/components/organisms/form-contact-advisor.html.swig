@@ -52,7 +52,7 @@ notes: |
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <div class="form-group">
-          <label>Votre Code postal / NIP</label>
+          <label>Votre code postal (NPA)</label>
           <div class="input-group">
             <input size="10" type="text" id="zip" name="zip" value="" maxlength="128" placeholder="1000" class="form-text form-control">
           </div>
