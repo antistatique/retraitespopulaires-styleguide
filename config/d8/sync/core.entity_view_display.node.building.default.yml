@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.building.field_city
     - field.field.node.building.field_contact
     - field.field.node.building.field_cover
+    - field.field.node.building.field_date
     - field.field.node.building.field_file_building
     - field.field.node.building.field_file_plan
     - field.field.node.building.field_latitude
@@ -18,6 +19,7 @@ dependencies:
     - field.field.node.building.field_virtual_visit
     - node.type.building
   module:
+    - datetime
     - file
     - image
     - link
@@ -70,6 +72,14 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+  field_date:
+    weight: 115
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
   field_file_building:
     weight: 103
     label: above
