@@ -92,6 +92,22 @@ class SearchZipController extends ControllerBase {
             $nids[$node->nid] = $node->nid;
         }
 
+        if (empty($nids)) {
+            $query = $this->database->select('node_field_data', 'n');
+            $query->fields('n')
+                ->condition('n.status', 1)
+                ->condition('n.type', 'advisor')
+                ->addTag('random')
+                ->range(0, 2)
+            ;
+            $result = $query->execute();
+            // List of nodes
+            $nids = array();
+            foreach ($result as $node) {
+                $nids[$node->nid] = $node->nid;
+            }
+        }
+
         $variables['advisors'] = $this->entity_node->loadMultiple($nids);
 
         // Ajax - renderrender the view whitout all the template
