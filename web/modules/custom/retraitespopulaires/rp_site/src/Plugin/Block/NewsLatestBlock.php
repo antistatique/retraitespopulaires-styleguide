@@ -106,7 +106,8 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
     * {@inheritdoc}
     */
     public function build($params = array()) {
-        $variables = array('news' => array());
+        $variables = array('news' => array(), 'title' => t('Actualités'));
+
         //Load the current node's related news
         $news_nids = array();
         $node = $this->route->getParameter('node');
@@ -128,6 +129,7 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
             $nids = $query->execute();
             $variables['news'] = $this->entity_node->loadMultiple($nids);
 
+            $variables['title'] = t('Actualités du métier');
             $variables['collection'] = array(
                 'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid']])
             );
