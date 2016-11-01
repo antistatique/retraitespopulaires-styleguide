@@ -98,13 +98,6 @@ class GlobalContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
 
-        // A hidden field can't be altered, Drupal assert it
-        $form['node'] = array(
-            '#type'     => 'hidden',
-            '#value'    => $params['node']->nid->value,
-            '#required' => true
-        );
-
         $form['personnal'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
