@@ -14,6 +14,7 @@ use Drupal\user\PrivateTempStoreFactory;
 use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\rp_mortgage\Service\Rate;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 class BuildingForm extends FormBase {
 
@@ -42,12 +43,19 @@ class BuildingForm extends FormBase {
     protected $rate;
 
     /**
+    * EntityTypeManagerInterface to load Rate
+    * @var EntityTypeManagerInterface
+    */
+    private $entity_rate;
+
+    /**
      * Class constructor.
      */
-    public function __construct(PrivateTempStoreFactory $private_tempstore, MailManagerInterface $mail, StateInterface $state, Rate $rate) {
-        $this->mail  = $mail;
-        $this->state = $state;
-        $this->rate  = $rate;
+    public function __construct(PrivateTempStoreFactory $private_tempstore, MailManagerInterface $mail, StateInterface $state, Rate $rate, EntityTypeManagerInterface $entity) {
+        $this->mail        = $mail;
+        $this->state       = $state;
+        $this->rate        = $rate;
+        $this->entity_rate = $entity->getStorage('rp_mortgage_rate');
 
         // Init session
         // TODO Found better solution to inline errors than hack session to
@@ -64,7 +72,8 @@ class BuildingForm extends FormBase {
         $container->get('user.private_tempstore'),
         $container->get('plugin.manager.mail'),
         $container->get('state'),
-        $container->get('rp_mortgage.rate')
+        $container->get('rp_mortgage.rate'),
+        $container->get('entity_type.manager')
       );
     }
 
@@ -475,6 +484,8 @@ class BuildingForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // TODO Found better solution to inline errors than hack session to
         if (empty($this->session->get('errors'))) {
+
+            $rate = $this->entity_rate->load($form_state->getValue('rate'));
             $data = array(
                 'title'     => $form_state->getValue('title'),
                 'policy'    => $form_state->getValue('policy'),
@@ -486,7 +497,7 @@ class BuildingForm extends FormBase {
                 'address'   => $form_state->getValue('address'),
                 'zip'       => $form_state->getValue('zip'),
                 'city'      => $form_state->getValue('city'),
-                'rate'      => $form_state->getValue('rate'),
+                'rate'      => $rate,
                 'amount'    => $form_state->getValue('amount'),
                 'remarque'  => $form_state->getValue('remarque'),
             );
