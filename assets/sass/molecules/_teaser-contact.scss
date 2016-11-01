@@ -73,14 +73,14 @@
   @each $label, $color in $themes {
     &.teaser-contact-#{$label} {
       border-color: $color;
-    }
 
-    .teaser-contact-heading .heading-image:before {
-      background: linear-gradient(to bottom, $color 0%, $transparent 100%);
-    }
+      .teaser-contact-heading .heading-image:before {
+        background: linear-gradient(to bottom, $color 0%, $transparent 100%);
+      }
 
-    .teaser-contact-heading :hover {
-      border-color: darken($color, 10);
+      .teaser-contact-heading :hover {
+        border-color: darken($color, 10);
+      }
     }
   }
 
