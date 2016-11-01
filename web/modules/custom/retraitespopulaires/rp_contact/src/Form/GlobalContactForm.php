@@ -258,7 +258,7 @@ class GlobalContactForm extends FormBase {
         $services = explode(PHP_EOL, $this->state->get('rp_contact.settings.receivers'));
         foreach ($services as $value) {
             $part = explode('|', $value);
-            $options[$part[0]] = $part[1];
+            $options[] = $part[1];
         }
         $form['message']['subject'] = array(
             '#title'    => t('Sujet de votre demande'),
@@ -384,7 +384,12 @@ class GlobalContactForm extends FormBase {
         );
 
         // Send to admin
-        $to = $form_state->getValue('subject');
+        $services = explode(PHP_EOL, $this->state->get('rp_contact.settings.receivers'));
+        $to = '';
+        if (isset($services[$form_state->getValue('subject')])) {
+            $parts = $services[$form_state->getValue('subject')];
+            $to = explode('|', $parts)[0];
+        }
         $reply = $form_state->getValue('email');
         $this->mail->mail('rp_contact', 'contact', $to, 'fr', $data, $reply);
 
