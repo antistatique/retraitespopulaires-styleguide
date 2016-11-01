@@ -119,6 +119,24 @@ class DocumentsForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['civil_state']) && $error_msg = $this->session->get('errors')['civil_state'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['personnal']['civil_state'] = array(
+            '#title'       => t('Votre état civil'),
+            '#type'        => 'select',
+            '#attributes'  => ['theme' => $theme],
+            '#options'     => array('Madame' => t('Madame'), 'Monsieur' => t('Monsieur')),
+            '#required'    => true,
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
+        );
+
         $form['personnal']['row_1'] = array(
             '#prefix'      => '<div class="row">',
             '#suffix'      => '</div>',
@@ -354,6 +372,10 @@ class DocumentsForm extends FormBase {
         $form_state->setRebuild();
         $errors = array();
 
+        // Assert the civil_state is valid
+        if (!$form_state->getValue('civil_state') || empty($form_state->getValue('civil_state'))) {
+            $errors['civil_state'] = t('Votre état civile est obligatoire.');
+        }
 
         // Assert the firstname is valid
         if (!$form_state->getValue('firstname') || empty($form_state->getValue('firstname'))) {
@@ -411,6 +433,7 @@ class DocumentsForm extends FormBase {
         if (empty($this->session->get('errors'))) {
             $data = array(
                 'policy'       => $form_state->getValue('policy'),
+                'civil_state'  => $form_state->getValue('civil_state'),
                 'firstname'    => $form_state->getValue('firstname'),
                 'lastname'     => $form_state->getValue('lastname'),
                 'email'        => $form_state->getValue('email'),

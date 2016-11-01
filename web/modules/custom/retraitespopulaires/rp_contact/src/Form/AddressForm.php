@@ -458,7 +458,6 @@ class AddressForm extends FormBase {
         $form_state->setRebuild();
         $errors = array();
 
-
         // Assert the civil_state is valid
         if (!$form_state->getValue('civil_state') || empty($form_state->getValue('civil_state'))) {
             $errors['civil_state'] = t('Votre état civile est obligatoire.');
