@@ -19,13 +19,13 @@ notes: |
     <div class="form-group">
       <label class="">Votre nom</label>
       <div class="input-text">
-        <input type="text" size="40" name="lastname" class="form-control" placeholder="John" value="">
+        <input type="text" size="40" name="lastname" class="form-control" placeholder="Alain" value="">
       </div>
     </div>
     <div class="form-group">
       <label class="">Votre prénom</label>
       <div class="input-text">
-        <input type="text" size="40" name="firstname" class="form-control" placeholder="Doe" value="">
+        <input type="text" size="40" name="firstname" class="form-control" placeholder="Rochat" value="">
       </div>
     </div>
     <div class="form-group">
@@ -59,7 +59,7 @@ notes: |
     <div class="form-group disabled">
       <label class="">Votre adresse e-mail</label>
       <div class="input-text">
-        <input type="text" size="50" name="mail" class="form-control" value="john.doe@retraitespopulaires.ch" disabled>
+        <input type="text" size="50" name="mail" class="form-control" value="alain.rochat@retraitespopulaires.ch" disabled>
       </div>
     </div>
   </fieldset>
