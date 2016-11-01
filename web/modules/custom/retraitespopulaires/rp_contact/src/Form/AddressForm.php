@@ -199,11 +199,10 @@ class AddressForm extends FormBase {
         );
 
         $form['address']['client_of'] = array(
-            '#type'        => 'radios',
+            '#type'        => 'checkboxes',
             '#attributes'  => ['theme' => $theme, 'title' => t('Dans quel domaine êtes-vous client ?')],
             '#required'    => true,
             '#options'     => array(
-                'Aucun'                => t('Aucun'),
                 '2ème ou 3ème pillier' => t('2<sup>e</sup> ou 3<sup>e</sup> pilier'),
                 'Immobilier'           => t('Immobilier'),
                 'Prêts'                => t('Prêts'),
