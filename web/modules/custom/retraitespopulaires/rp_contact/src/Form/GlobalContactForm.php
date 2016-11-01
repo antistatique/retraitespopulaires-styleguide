@@ -203,7 +203,7 @@ class GlobalContactForm extends FormBase {
         );
 
         $form['personnal']['row_2']['zip'] = array(
-            '#title'       => t('Votre code postal / NIP'),
+            '#title'       => t('Votre code postal (NPA)'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10],
