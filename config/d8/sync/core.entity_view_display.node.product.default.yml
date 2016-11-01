@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.product.field_contact
     - field.field.node.product.field_cover
     - field.field.node.product.field_document
+    - field.field.node.product.field_document_page
     - field.field.node.product.field_faq
     - field.field.node.product.field_file_product
     - field.field.node.product.field_product_plan
@@ -46,6 +47,13 @@ content:
     type: image
   field_document:
     weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_document_page:
+    weight: 112
     label: above
     settings:
       link: true

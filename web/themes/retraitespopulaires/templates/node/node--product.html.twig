@@ -99,6 +99,30 @@
       </div>
     {% endif %}
 
+    <!-- Linked Useful Documents -->
+    {% if not node.field_document_page is empty %}
+      <div class="spacer spacer-sm"></div>
+      <p class="media-heading text-muted">
+        {% trans %}
+          Document utile attaché
+        {% plural node.field_document_page|length %}
+          Documents utiles attachés
+        {% endtrans %}
+      </p>
+      <ul class="unordered-list">
+      {% for document in node.field_document_page %}
+          <li>
+            {% set document_title = document.entity.title.value %}
+            {% set document_type = document.entity.field_file_document.entity.mimeType %}
+            <a href="{{ file_url(document.entity.field_file_document.entity.uri.value) }}" target="_blank" class="pretty-link text-{{ node.field_profession.entity.tid.value|theme_profession }}">
+              {{ document_title }}
+              <span class="text-muted text-small">- {{ document_type|extension_guesser|upper }}</span>
+            </a>
+          </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+
     <!-- Linked Files -->
     {% if not node.field_file_product is empty %}
       <div class="spacer spacer-sm"></div>
@@ -123,9 +147,7 @@
       </ul>
     {% endif %}
 
-    {{ content|without('body', 'field_cover', 'field_document', 'field_product_plan', 'field_profession', 'field_profil', 'field_faq', 'field_contact', 'field_advisor', 'field_file_product') }}
+    {{ content|without('body', 'field_cover', 'field_document', 'field_document_page', 'field_product_plan', 'field_profession', 'field_profil', 'field_faq', 'field_contact', 'field_advisor', 'field_file_product') }}
 
   </div>
 </article>
-
-{{ load_block('rp_site_products_related_block') }}
