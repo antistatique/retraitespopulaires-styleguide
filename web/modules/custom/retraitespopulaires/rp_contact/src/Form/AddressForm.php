@@ -72,6 +72,7 @@ class AddressForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-contact-address-form';
 
+        $theme = '';
         if (isset($params['theme'])) {
             $theme = $params['theme'];
         }
@@ -199,13 +200,13 @@ class AddressForm extends FormBase {
 
         $form['address']['client_of'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Quel sont vos contrats client ?')],
+            '#attributes'  => ['theme' => $theme, 'title' => t('Dans quel domaine êtes-vous client ?')],
             '#required'    => true,
             '#options'     => array(
-                'Aucun' => t('Aucun'),
-                '2ème ou 3ème pillier' => t('2<sup>ème</sup> ou 3<sup>ème</sup> pilier'),
-                'Immobilier' => t('Immobilier'),
-                'Prêts' => t('Prêts'),
+                'Aucun'                => t('Aucun'),
+                '2ème ou 3ème pillier' => t('2<sup>e</sup> ou 3<sup>e</sup> pilier'),
+                'Immobilier'           => t('Immobilier'),
+                'Prêts'                => t('Prêts'),
             ),
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -220,7 +221,7 @@ class AddressForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['address']['client_number'] = array(
-            '#title'       => t('Votre numéro client'),
+            '#title'       => t('Votre référence ou numéro de client'),
             '#placeholder' => t('123456789'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
