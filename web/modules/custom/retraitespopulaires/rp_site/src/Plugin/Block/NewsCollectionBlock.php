@@ -120,9 +120,7 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
             if( !empty($taxonomy_term_url) ){
                 $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
                 $term = $this->entity_taxonomy->load($taxonomy_term_tid);
-                if ($term->vid->target_id == 'profession') {
-                    $query->condition('field_profession', $taxonomy_term_tid);
-                } elseif ($term->vid->target_id == 'category_news') {
+                if ($term->vid->target_id == 'category_news') {
                     $query->condition('field_news_type', $taxonomy_term_tid);
                 }
             }

@@ -154,7 +154,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                 // Generate the collection link
                 $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
                 if( !empty($alias) ){
-                    $alias = str_replace('/', '', $alias);
+                    $alias = str_replace('/metier/', '', $alias);
                 }
                 $variables['collection'] = array(
                     'name' => $this->profession->name($node->field_profession->target_id, 'faq'),
@@ -199,7 +199,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                 // Generate the collection link
                 $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
                 if( !empty($alias) ){
-                    $alias = str_replace('/', '', $alias);
+                    $alias = str_replace('/metier/', '', $alias);
                 }
 
                 $variables['collection'] = array(

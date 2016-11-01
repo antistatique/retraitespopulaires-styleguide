@@ -137,7 +137,7 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
         if (!empty($taxonomy_term_alias)) {
             // Retreive filter from slug alias
             $taxonomy_term_tid = null;
-            $taxonomy_term_url = $this->alias_manager->getPathByAlias('/'.$taxonomy_term_alias);
+            $taxonomy_term_url = $this->alias_manager->getPathByAlias('/metier/'.$taxonomy_term_alias);
             if( !empty($taxonomy_term_url) ){
                 $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
                 $term = $this->entity_taxonomy->load($taxonomy_term_tid);

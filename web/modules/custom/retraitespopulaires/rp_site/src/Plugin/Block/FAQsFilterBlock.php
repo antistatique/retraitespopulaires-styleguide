@@ -91,7 +91,7 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
         foreach ($professions as $profession) {
             $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$profession->tid);
             if( !empty($alias) ){
-                $alias = str_replace('/', '', $alias);
+                $alias = str_replace('/metier/', '', $alias);
                 $variables['categories'][] = array(
                     'term'  => $profession,
                     'alias' => $alias,

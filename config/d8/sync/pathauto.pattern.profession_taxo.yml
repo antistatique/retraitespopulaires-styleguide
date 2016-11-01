@@ -8,16 +8,16 @@ dependencies:
 id: profession_taxo
 label: 'Profession taxo'
 type: 'canonical_entities:taxonomy_term'
-pattern: '[term:name]'
+pattern: '/metier/[term:name]'
 selection_criteria:
-  0dba34bc-04a9-4c9f-887a-5beacf4161b2:
+  442b1c67-ff57-469a-b30d-9868dd72fc47:
     id: 'entity_bundle:taxonomy_term'
     bundles:
       profession: profession
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 0dba34bc-04a9-4c9f-887a-5beacf4161b2
+    uuid: 442b1c67-ff57-469a-b30d-9868dd72fc47
 selection_logic: and
 weight: -5
 relationships: {  }

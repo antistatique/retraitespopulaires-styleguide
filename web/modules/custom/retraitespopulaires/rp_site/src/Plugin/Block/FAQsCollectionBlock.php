@@ -115,14 +115,12 @@ class FAQsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
         if (!empty($taxonomy_term_alias)) {
             // Retreive filter from slug alias
             $taxonomy_term_tid = null;
-            $taxonomy_term_url = $this->alias_manager->getPathByAlias('/'.$taxonomy_term_alias);
+            $taxonomy_term_url = $this->alias_manager->getPathByAlias('/metier/'.$taxonomy_term_alias);
             if( !empty($taxonomy_term_url) ){
                 $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
                 $term = $this->entity_taxonomy->load($taxonomy_term_tid);
                 if ($term->vid->target_id == 'profession') {
                     $query->condition('field_profession', $taxonomy_term_tid);
-                } elseif ($term->vid->target_id == 'category_faqs') {
-                    $query->condition('field_faqs_type', $taxonomy_term_tid);
                 }
             }
         }
