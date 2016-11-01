@@ -122,7 +122,7 @@ class PagesCollectionBlock extends BlockBase implements ContainerFactoryPluginIn
             $parameters->setRoot($this->state->get('rp_site.settings.profils.public')['menu']);
             $tree = $this->menu_tree->load('profil', $parameters);
             $variables['profil'][] = array(
-                'title' => t('Vous êtes une collectivités publiques ?'),
+                'title' => t('Vous êtes une collectivité publique ?'),
                 'menu'  => $this->menu_tree->transform($tree, $manipulators),
             );
         }
