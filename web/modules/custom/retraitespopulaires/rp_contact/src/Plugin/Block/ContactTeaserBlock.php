@@ -82,6 +82,9 @@ class ContactTeaserBlock extends BlockBase implements ContainerFactoryPluginInte
         return [
             '#theme'     => 'rp_contact_contact_teaser_block',
             '#variables' => $variables,
+            '#attached' => array(
+               'library' =>  array('rp_contact/search_zip'),
+            )
         ];
     }
 }

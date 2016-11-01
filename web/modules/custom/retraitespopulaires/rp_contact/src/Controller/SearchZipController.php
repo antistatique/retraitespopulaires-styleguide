@@ -12,6 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Render\Renderer;
 use Drupal\Core\Database\Connection;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
 * SearchZipController.
@@ -37,12 +38,19 @@ class SearchZipController extends ControllerBase {
     private $database;
 
     /**
+    * Request stack that controls the lifecycle of requests
+    * @var RequestStack
+    */
+    private $request;
+
+    /**
     * Class constructor.
     */
-    public function __construct(EntityTypeManagerInterface $entity, Renderer $renderer, Connection $database) {
+    public function __construct(EntityTypeManagerInterface $entity, Renderer $renderer, Connection $database, RequestStack $request) {
         $this->entity_node = $entity->getStorage('node');
         $this->renderer    = $renderer;
         $this->database    = $database;
+        $this->request     = $request->getMasterRequest();
     }
 
     /**
@@ -54,15 +62,17 @@ class SearchZipController extends ControllerBase {
             // Load customs services used in this class.
             $container->get('entity_type.manager'),
             $container->get('renderer'),
-            $container->get('database')
+            $container->get('database'),
+            $container->get('request_stack')
         );
     }
 
     /**
     * Ajax Advisors (Conseillers) search by NPA.
     */
-    public function advisors($zip) {
+    public function advisors($zip = null) {
         $variables = array();
+        $variables['theme'] = $this->request->query->get('theme');
 
         // Retrieve all matched terms with the searched link
         $query = $this->database->select('node_field_data', 'n');
