@@ -172,7 +172,7 @@ class BuildingForm extends FormBase {
         }
         $form['building']['row_1']['firstname'] = array(
             '#title'       => t('Votre prénom'),
-            '#placeholder' => t('John'),
+            '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.' '.$readonly.'">',
@@ -197,7 +197,7 @@ class BuildingForm extends FormBase {
         }
         $form['building']['row_1']['lastname'] = array(
             '#title'       => t('Votre nom de famille'),
-            '#placeholder' => t('Doe'),
+            '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.' '.$readonly.'">',
@@ -242,7 +242,7 @@ class BuildingForm extends FormBase {
         }
         $form['building']['email'] = array(
             '#title'       => t('Votre e-mail'),
-            '#placeholder' => t('john.doe@retraitespopulaires.ch'),
+            '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'email',
             '#attributes'  => ['theme' => $theme],
             '#required'    => true,
@@ -350,7 +350,10 @@ class BuildingForm extends FormBase {
         $rates = $this->rate->getRates('Prêts hypothécaires formulaire');
         $options = array();
         foreach ($rates as $rate) {
-            $options[$rate->id->value] = $rate->getName() . ' ('.$rate->getFirstRate().')';
+            // remove empty lines (= first rate not defined)
+            if ($rate->getFirstRate() && $rate->getFirstRate() != 0.0) {
+                $options[$rate->id->value] = $rate->getName() . ' ('.number_format($rate->getFirstRate(), 2).')';
+            }
         }
         $form['more']['row_1']['rate'] = array(
             '#title'       => t('Réserver le taux'),

@@ -67,7 +67,7 @@ function rp_contact_mail($key, &$message, $params) {
 
             $message['body'][] = Markup::create( '<b>'. t('Demande: '). '</b><br />');
             if (!empty($params['rate'])) {
-                $message['body'][] = Markup::create( t('Taux: '). $params['rate']->name->value .' ('.$params['rate']->first_rate->value.')' . '<br />');
+                $message['body'][] = Markup::create( t('Taux: '). $params['rate']->name->value .' ('.number_format($params['rate']->getFirstRate(), 2).')' . '<br />');
             }
             $message['body'][] = Markup::create( t('Montant: '). $params['amount'] . '<br />');
             $message['body'][] = Markup::create( t('Remarque: '). '<br />'. nl2br($params['remarque']) . '<br />');
