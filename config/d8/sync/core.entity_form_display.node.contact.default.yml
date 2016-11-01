@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.contact.body
     - field.field.node.contact.field_cover
     - field.field.node.contact.field_email
     - field.field.node.contact.field_email_form
@@ -22,6 +23,7 @@ dependencies:
     - image
     - path
     - telephone
+    - text
 third_party_settings:
   field_group:
     group_info:
@@ -37,6 +39,7 @@ third_party_settings:
         - field_function
         - field_specialty
         - field_entity
+        - body
         - field_zip
         - field_profession
       parent_name: group_tabs
@@ -65,6 +68,14 @@ targetEntityType: node
 bundle: contact
 mode: default
 content:
+  body:
+    weight: 11
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
   field_cover:
     weight: 3
     settings:
@@ -127,7 +138,7 @@ content:
     third_party_settings: {  }
     type: telephone_default
   field_profession:
-    weight: 12
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -139,7 +150,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_zip:
-    weight: 11
+    weight: 12
     settings:
       placeholder: ''
     third_party_settings: {  }
