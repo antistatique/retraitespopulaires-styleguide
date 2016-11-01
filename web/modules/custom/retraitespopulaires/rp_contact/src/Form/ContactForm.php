@@ -123,7 +123,7 @@ class ContactForm extends FormBase {
         }
         $form['personnal']['row_1']['firstname'] = array(
             '#title'       => t('Votre prénom'),
-            '#placeholder' => t('John'),
+            '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
             '#required'    => true,
@@ -141,7 +141,7 @@ class ContactForm extends FormBase {
         }
         $form['personnal']['row_1']['lastname'] = array(
             '#title'       => t('Votre nom de famille'),
-            '#placeholder' => t('Doe'),
+            '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#required'    => true,
@@ -159,7 +159,7 @@ class ContactForm extends FormBase {
         }
         $form['personnal']['email'] = array(
             '#title'       => t('Votre e-mail'),
-            '#placeholder' => t('john.doe@retraitespopulaires.ch'),
+            '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'email',
             '#attributes'  => ['theme' => $theme],
             '#required'    => true,

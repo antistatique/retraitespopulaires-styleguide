@@ -62,7 +62,7 @@ class SubscribeForm extends FormBase {
 
         $form['email'] = array(
             '#type'   => 'textfield',
-            '#placeholder' => $this->t('Ex: jane.doe@bluewin.ch'),
+            '#placeholder' => $this->t('Ex: alain.rochat@retraitespopulaires.ch'),
             '#attributes'  => ['class' => array('full-width')],
             '#required'    => true,
         );
