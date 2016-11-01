@@ -13,10 +13,10 @@ settings:
   allowed_values:
     -
       value: in_progress
-      label: 'Construction en cours'
+      label: 'Constructions en cours'
     -
       value: done
-      label: 'Construction terminées'
+      label: 'Constructions terminées'
   allowed_values_function: ''
 module: options
 locked: false
