@@ -205,7 +205,7 @@ class GlobalContactForm extends FormBase {
         );
 
         $form['personnal']['row_2']['city'] = array(
-            '#title'       => t('Votre ville'),
+            '#title'       => t('Votre localité'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24],

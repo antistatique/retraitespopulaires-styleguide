@@ -149,7 +149,7 @@ class RequestForm extends FormBase {
         );
 
         $form['personnal']['city'] = array(
-            '#title'       => t('Votre ville'),
+            '#title'       => t('Votre localité'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 30],
