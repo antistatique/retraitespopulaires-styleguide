@@ -72,6 +72,7 @@ class DocumentsForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-contact-documents-form';
 
+        $theme = '';
         if (isset($params['theme'])) {
             $theme = $params['theme'];
         }
@@ -93,11 +94,11 @@ class DocumentsForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
 
-        $form['documents'] = array(
+        $form['personnal'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend')],
-          '#title'      => t('Commande de documents'),
-          '#prefix'     => '<h3>'.t('Commande de documents').'</h3>',
+          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#title'      => t('Vos informations'),
+          '#prefix'     => '<h3>'.t('Vos informations').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -108,8 +109,8 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['documents']['policy'] = array(
-            '#title'       => t('Votre numéro(s) de police(s)'),
+        $form['personnal']['policy'] = array(
+            '#title'       => t('Numéro(s) de police(s)'),
             '#placeholder' => t('123456789'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
@@ -118,7 +119,7 @@ class DocumentsForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['documents']['row_1'] = array(
+        $form['personnal']['row_1'] = array(
             '#prefix'      => '<div class="row">',
             '#suffix'      => '</div>',
         );
@@ -131,7 +132,7 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['documents']['row_1']['firstname'] = array(
+        $form['personnal']['row_1']['firstname'] = array(
             '#title'       => t('Votre prénom'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
@@ -149,7 +150,7 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['documents']['row_1']['lastname'] = array(
+        $form['personnal']['row_1']['lastname'] = array(
             '#title'       => t('Votre nom de famille'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
@@ -167,7 +168,7 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['documents']['email'] = array(
+        $form['personnal']['email'] = array(
             '#title'       => t('Votre e-mail'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'email',
@@ -185,7 +186,7 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['documents']['birthdate'] = array(
+        $form['personnal']['birthdate'] = array(
             '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span>'),
             '#placeholder' => t('24/12/2016'),
             '#type'        => 'textfield',
@@ -203,7 +204,7 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['documents']['address'] = array(
+        $form['personnal']['address'] = array(
             '#title'       => t('Votre adresse'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
@@ -213,7 +214,7 @@ class DocumentsForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['documents']['row_2'] = array(
+        $form['personnal']['row_2'] = array(
             '#prefix'      => '<div class="row">',
             '#suffix'      => '</div>',
         );
@@ -226,7 +227,7 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['documents']['row_2']['zip'] = array(
+        $form['personnal']['row_2']['zip'] = array(
             '#title'       => t('Votre code postal (NPA)'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
@@ -244,8 +245,8 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['documents']['row_2']['city'] = array(
-            '#title'       => t('Votre ville'),
+        $form['personnal']['row_2']['city'] = array(
+            '#title'       => t('Votre localité'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
@@ -262,7 +263,7 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['documents']['birthdate'] = array(
+        $form['personnal']['birthdate'] = array(
             '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span>'),
             '#placeholder' => t('24/12/2016'),
             '#type'        => 'textfield',
@@ -270,6 +271,13 @@ class DocumentsForm extends FormBase {
             '#required'    => true,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
+        );
+
+        $form['documents'] = array(
+          '#type'       => 'fieldset',
+          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#title'      => t('Votre demande'),
+          '#prefix'     => '<h3>'.t('Votre demande').'</h3>',
         );
 
         $form['documents']['policies'] = array(
@@ -381,7 +389,7 @@ class DocumentsForm extends FormBase {
 
         // Assert the city is valid
         if (!$form_state->getValue('city') || empty($form_state->getValue('city'))) {
-            $errors['city'] = t('Votre ville est obligatoire.');
+            $errors['city'] = t('Votre localité est obligatoire.');
         }
 
         // Save errors in sessions to use it on the form builder
