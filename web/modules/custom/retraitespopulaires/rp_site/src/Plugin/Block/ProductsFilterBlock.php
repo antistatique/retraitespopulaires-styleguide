@@ -104,6 +104,7 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
                     $products_nids[] = $product->target_id;
                 }
 
+                $categories = array();
                 if( !empty($products_nids) ) {
 
                     // Get valide filters for this product linked
@@ -118,7 +119,6 @@ class ProductsFilterBlock extends BlockBase implements ContainerFactoryPluginInt
                         ->orderBy('t.tid', 'DESC')
                         ->execute();
 
-                    $categories = array();
                     foreach ($results as $result) {
                         $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$result->tid);
                         $term = array(

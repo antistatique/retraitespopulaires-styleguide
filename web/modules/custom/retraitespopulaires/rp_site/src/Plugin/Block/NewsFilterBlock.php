@@ -79,21 +79,25 @@ class NewsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
     * {@inheritdoc}
     */
     public function build($params = array()) {
-        $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.news')['nid']);
+        $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.news')['nid'], 'selected' => []);
 
-        // Professions
-        // $professions = $this->entity_taxonomy->loadTree('profession');
-        // categories
-        $types  = $this->entity_taxonomy->loadTree('category_news');
+        $taxonomy_term_alias = \Drupal::request()->query->get('taxonomy_term_alias');
+        $variables['current_aliases'] = $taxonomy_term_alias;
 
-        $categories = $types;
-        foreach ($categories as $profession) {
-            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$profession->tid);
+        // Listing of Categories
+        $categories = $this->entity_taxonomy->loadTree('category_news');
+        foreach ($categories as $category) {
+            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$category->tid);
             if( !empty($alias) ){
+                $alias = str_replace('/', '', $alias);
                 $variables['categories'][] = array(
-                    'term'  => $profession,
-                    'alias' => str_replace('/', '', $alias),
+                    'term'  => $category,
+                    'alias' => $alias,
                 );
+
+                if($alias == $taxonomy_term_alias) {
+                    $variables['selected'] = $this->entity_taxonomy->load($category->tid);
+                }
             }
         }
 

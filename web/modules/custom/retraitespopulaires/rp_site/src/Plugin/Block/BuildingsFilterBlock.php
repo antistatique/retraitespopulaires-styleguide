@@ -72,14 +72,16 @@ class BuildingsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
     public function build($params = array()) {
         $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.buildings')['nid']);
 
+        $variables['building_status_alias'] = \Drupal::request()->query->get('building_status_alias');
+
         // categories
         $fields = $this->entity_field->getFieldDefinitions('node', 'building');
         $categories = $fields['field_building_status']->getSetting('allowed_values');
 
-        foreach ($categories as $key => $value) {
+        foreach ($categories as $alias => $value) {
             $variables['categories'][] = array(
                 'term'  => $value,
-                'alias' => $key,
+                'alias' => $alias,
             );
         }
 
