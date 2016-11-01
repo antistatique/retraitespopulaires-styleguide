@@ -60,7 +60,7 @@ notes: |
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="form-group">
-          <label>Votre ville</label>
+          <label>Votre localité</label>
           <div class="input-group">
             <input size="30" type="text" id="city" name="city" value="" maxlength="128" placeholder="Lausanne" class="form-text form-control">
           </div>

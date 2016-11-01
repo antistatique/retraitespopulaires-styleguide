@@ -45,7 +45,7 @@ notes: |
     </div>
 
     <div class="form-group">
-      <label>Votre ville</label>
+      <label>Votre localité</label>
       <div class="input-group">
         <input size="30" type="text" id="city" name="city" value="" maxlength="128" placeholder="Lausanne" class="form-text required form-control" required="required" aria-required="true">
       </div>

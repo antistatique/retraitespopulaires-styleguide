@@ -85,7 +85,7 @@ notes: |
       </div>
     </div>
     <div class="form-group">
-      <label class="">Votre ville</label>
+      <label class="">Votre localité</label>
       <div class="input-text">
         <input type="text" size="30" name="city" placeholder="Lausanne" class="form-control" value="">
       </div>
