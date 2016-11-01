@@ -83,4 +83,31 @@
       border-color: darken($color, 10);
     }
   }
+
+  .js-zip-results {
+    li {
+      margin: $grid-gutter-width / 1.5 0;
+      padding-left: $grid-gutter-width/2;
+      padding-right: $grid-gutter-width/2;
+      border: 1px solid $transparent;
+
+      .media-left {
+        line-height: 0;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        border: 1px solid $ligthen-gray;
+        border-radius: $border-radius-base;
+      }
+    }
+  }
 }
