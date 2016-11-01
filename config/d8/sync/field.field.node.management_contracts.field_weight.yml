@@ -1,0 +1,25 @@
+uuid: 9fbe5993-45ea-47e7-b114-c04a9fdd3499
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.management_contracts
+id: node.management_contracts.field_weight
+field_name: field_weight
+entity_type: node
+bundle: management_contracts
+label: Position
+description: 'Position du mandat de gestion dans la page de listing.'
+required: true
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -100,7 +100,7 @@ class ManagementContractsCollectionBlock extends BlockBase implements ContainerF
         $query = $this->entity_query->get('node')
             ->condition('type', 'management_contracts')
             ->condition('status', 1)
-            ->sort('title', 'ASC')
+            ->sort('field_weight', 'ASC')
         ;
 
         $nids = $query->execute();

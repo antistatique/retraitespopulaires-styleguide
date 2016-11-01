@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.management_contracts.field_logo
     - field.field.node.management_contracts.field_profession
     - field.field.node.management_contracts.field_web_site
+    - field.field.node.management_contracts.field_weight
     - image.style.thumbnail
     - node.type.management_contracts
   module:
@@ -26,6 +27,7 @@ third_party_settings:
         - body
         - field_administrator
         - field_web_site
+        - field_weight
         - field_profession
       parent_name: group_tabs
       weight: 5
@@ -98,7 +100,7 @@ content:
     third_party_settings: {  }
     type: image_image
   field_profession:
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -109,6 +111,12 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+  field_weight:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   path:
     type: path
     weight: 7

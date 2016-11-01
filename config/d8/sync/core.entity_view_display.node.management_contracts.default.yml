@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.management_contracts.field_logo
     - field.field.node.management_contracts.field_profession
     - field.field.node.management_contracts.field_web_site
+    - field.field.node.management_contracts.field_weight
     - node.type.management_contracts
   module:
     - image
@@ -66,6 +67,14 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+  field_weight:
+    weight: 107
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   links:
     weight: 100
 hidden:
