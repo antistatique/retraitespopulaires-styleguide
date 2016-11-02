@@ -5,6 +5,7 @@ services:
     class: Drupal\rp_site\Service\Cover
     arguments:
       - @entity.manager
+      - @file_system
   # Custom Twig extensions
   rp_site.twig.themes:
     class: Drupal\rp_site\TwigExtension\SiteExtension
