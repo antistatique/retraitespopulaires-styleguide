@@ -146,6 +146,27 @@ class AdminForm extends FormBase {
             '#suffix'        => '<br/>'
         );
 
+        // Demande de réservation d\'un taux Form
+        $form['page']['building_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'   => 'node',
+            '#title'         => 'Demande de réservation d\'un taux - node ID',
+            '#default_value' => $this->state->get('rp_contact.settings.page.building')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.building')['nid']) : NULL,
+        );
+        $form['page']['building_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Demande de réservation d\'un taux - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_contact.settings.page.building')['theme'] ? $this->state->get('rp_contact.settings.page.building')['theme'] : 'contact_building',
+        );
+        $form['page']['building_receivers'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
+            '#default_value' => $this->state->get('rp_contact.settings.page.building')['receivers'],
+            '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
+            '#suffix'        => '<br/>'
+        );
+
         // Layout settings
         $form['layout'] = array(
             '#type'  => 'fieldset',
@@ -201,6 +222,12 @@ class AdminForm extends FormBase {
             'nid'   => $form_state->getValue('address_nid'),
             'theme' => trim($form_state->getValue('address_theme')),
             'receivers' => trim($form_state->getValue('address_receivers')),
+        ));
+
+        $this->state->set('rp_contact.settings.page.building', array(
+            'nid'   => $form_state->getValue('building_nid'),
+            'theme' => trim($form_state->getValue('building_theme')),
+            'receivers' => trim($form_state->getValue('building_receivers')),
         ));
 
         // Save placeholder
