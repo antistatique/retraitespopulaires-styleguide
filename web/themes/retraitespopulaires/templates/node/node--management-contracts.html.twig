@@ -100,9 +100,9 @@
         {{ content.body }}
       </div>
 
-      {% if node.field_website.value %}
+      {% if node.field_web_site.uri %}
         <div class="spacer"></div>
-        <a class="btn btn-lg btn-{{ node.field_profession.entity.tid.value|theme_profession }}" href="{{ node.field_website.value }}" target="_blank">{% trans %}Site internet{% endtrans %}</a>
+        <a class="btn btn-lg btn-{{ node.field_profession.entity.tid.value|theme_profession }}" href="{{ node.field_web_site.uri }}" target="_blank">{% trans %}Site internet{% endtrans %}</a>
       {% endif %}
     {% endif %}
 
