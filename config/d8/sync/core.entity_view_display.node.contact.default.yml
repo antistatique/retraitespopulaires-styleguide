@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.contact.body
     - field.field.node.contact.field_cover
     - field.field.node.contact.field_email
     - field.field.node.contact.field_email_form
@@ -18,12 +19,19 @@ dependencies:
     - node.type.contact
   module:
     - image
+    - text
     - user
 id: node.contact.default
 targetEntityType: node
 bundle: contact
 mode: default
 content:
+  body:
+    weight: 113
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_cover:
     weight: 104
     label: above

@@ -72,11 +72,19 @@ class ContactTeaserBlock extends BlockBase implements ContainerFactoryPluginInte
             $variables['btn'] = $params['btn'];
         }
 
+        $variables['search_npa'] = true;
+        if (isset($params['search_npa'])) {
+            $variables['search_npa'] = $params['search_npa'];
+        }
+
         $variables['cover'] = $this->cover->fromNode($params['contact'], array('xl' => 'rp_teaser_contact_xl'));
 
         return [
             '#theme'     => 'rp_contact_contact_teaser_block',
             '#variables' => $variables,
+            '#attached' => array(
+               'library' =>  array('rp_contact/search_zip'),
+            )
         ];
     }
 }

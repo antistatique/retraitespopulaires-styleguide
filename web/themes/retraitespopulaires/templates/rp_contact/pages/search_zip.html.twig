@@ -1,0 +1,31 @@
+<ul class="list-spaced list-unstyled">
+    {% for advisor in variables.advisors %}
+    <li>
+      <div class="media">
+        <div class="media-left">
+          <a data-id="{{ advisor.nid.value }}" data-value="{{ advisor.title.value }}" href="{{ path('entity.node.canonical', {'node': advisor.nid.value}) }}" class="text-{{ variables.theme }} retraitespopulaires-icon retraitespopulaires-icon-frontdesk retraitespopulaires-icon-2x"></a>
+        </div>
+        <div class="media-body">
+          <a data-id="{{ advisor.nid.value }}" data-value="{{ advisor.title.value }}" href="{{ path('entity.node.canonical', {'node': advisor.nid.value}) }}" class="pretty-link h5 text-{{ variables.theme }}">
+            {% set display = [] %}
+            {% if advisor|length == 1 %}
+              {% if advisor.field_firstname.value %}
+                {% set display = display|merge([advisor.field_firstname.value]) %}
+              {% endif %}
+              {% if advisor.field_lastname.value %}
+                {% set display = display|merge([advisor.field_lastname.value]) %}
+              {% endif %}
+            {% endif %}
+
+            {% if display is empty %}
+              {{ advisor.title.value }}
+            {% else %}
+              {% set display = display|join(' ') %}
+              {{ display }}
+            {% endif %}
+          </a>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+</ul>

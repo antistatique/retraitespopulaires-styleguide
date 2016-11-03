@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.news.field_offer
     - field.field.node.news.field_profession
     - field.field.node.news.field_profil
+    - field.field.node.news.field_search_npa
     - image.style.thumbnail
     - node.type.news
   module:
@@ -60,6 +61,7 @@ third_party_settings:
         required_fields: true
     group_contacts:
       children:
+        - field_search_npa
         - field_advisor
         - field_contact
       parent_name: group_tabs
@@ -119,7 +121,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_advisor:
-    weight: 14
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: 60
@@ -127,7 +129,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_contact:
-    weight: 15
+    weight: 18
     settings:
       match_operator: CONTAINS
       size: 60
@@ -193,6 +195,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+  field_search_npa:
+    weight: 16
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   path:
     type: path
     weight: 12

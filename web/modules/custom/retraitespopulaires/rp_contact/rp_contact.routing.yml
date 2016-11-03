@@ -1,3 +1,11 @@
+rp_contact.search_zip:
+    path: '/recherche-par-npa/conseillers/{zip}'
+    defaults:
+        _controller: '\Drupal\rp_contact\Controller\SearchZipController::advisors'
+        zip: ''
+    requirements:
+        _permission: 'access content'
+
 # Admin link
 rp_contact.admin:
     path: '/admin/retraites-populaires/contact'

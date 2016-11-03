@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.product.field_file_product
     - field.field.node.product.field_product_plan
     - field.field.node.product.field_profession
+    - field.field.node.product.field_search_npa
     - field.field.node.product.field_weight
     - node.type.product
   module:
@@ -86,6 +87,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_search_npa:
+    weight: 112
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_weight:
     weight: 111
     label: above

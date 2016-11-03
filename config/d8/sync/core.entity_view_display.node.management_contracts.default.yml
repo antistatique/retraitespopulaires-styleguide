@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.management_contracts.field_contact
     - field.field.node.management_contracts.field_logo
     - field.field.node.management_contracts.field_profession
+    - field.field.node.management_contracts.field_search_npa
     - field.field.node.management_contracts.field_web_site
     - field.field.node.management_contracts.field_weight
     - node.type.management_contracts
@@ -56,6 +57,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_search_npa:
+    weight: 107
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_web_site:
     weight: 103
     label: above

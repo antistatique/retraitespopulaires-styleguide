@@ -25,6 +25,10 @@
       {% if variables.contact.field_specialty.value %}{{ variables.contact.field_specialty.value }} <br />{% endif %}
       {% if variables.contact.field_entity.value %}{{ variables.contact.field_entity.value }}{% endif %}
     </p>
+
+    {% if variables.contact.body %}
+      <p>{{ variables.contact.body.value|raw }}</p>
+    {% endif %}
   </div>
   <div class="teaser-contact-detail-infos">
 

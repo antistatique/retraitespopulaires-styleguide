@@ -1,0 +1,22 @@
+uuid: 9dfd4de9-4788-4d9a-bf45-77248eb21cd2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.advisor
+  module:
+    - text
+id: node.advisor.body
+field_name: body
+entity_type: node
+bundle: advisor
+label: Biographie
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

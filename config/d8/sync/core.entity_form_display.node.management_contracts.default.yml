@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.management_contracts.field_contact
     - field.field.node.management_contracts.field_logo
     - field.field.node.management_contracts.field_profession
+    - field.field.node.management_contracts.field_search_npa
     - field.field.node.management_contracts.field_web_site
     - field.field.node.management_contracts.field_weight
     - image.style.thumbnail
@@ -41,6 +42,7 @@ third_party_settings:
         required_fields: true
     group_contacts:
       children:
+        - field_search_npa
         - field_contact
       parent_name: group_tabs
       weight: 6
@@ -85,7 +87,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_contact:
-    weight: 34
+    weight: 36
     settings:
       match_operator: CONTAINS
       size: 60
@@ -104,6 +106,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_search_npa:
+    weight: 35
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_web_site:
     weight: 4
     settings:
