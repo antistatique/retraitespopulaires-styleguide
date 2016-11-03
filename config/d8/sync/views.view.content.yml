@@ -13,7 +13,7 @@ _core:
 id: content
 label: Content
 module: node
-description: 'Find and manage content.'
+description: 'Trouver et gérer le contenu.'
 tag: default
 base_table: node_field_data
 base_field: nid
@@ -32,7 +32,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Filtrer
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -44,10 +44,10 @@ display:
         options:
           items_per_page: 50
           tags:
-            previous: '‹ Previous'
+            previous: '‹ Précédent'
             next: 'Suivant ›'
-            first: '« First'
-            last: 'Last »'
+            first: '« Premier'
+            last: 'Dernier »'
       style:
         type: table
         options:
@@ -164,7 +164,7 @@ display:
           id: title
           table: node_field_data
           field: title
-          label: Title
+          label: Titre
           exclude: false
           alter:
             alter_text: false
@@ -187,7 +187,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Content type'
+          label: 'Type de contenu'
           exclude: false
           alter:
             alter_text: false
@@ -250,7 +250,7 @@ display:
           table: users_field_data
           field: name
           relationship: uid
-          label: Author
+          label: Auteur
           exclude: false
           alter:
             alter_text: false
@@ -268,7 +268,7 @@ display:
           id: status
           table: node_field_data
           field: status
-          label: Status
+          label: Statut
           exclude: false
           alter:
             alter_text: false
@@ -290,7 +290,7 @@ display:
           id: changed
           table: node_field_data
           field: changed
-          label: Updated
+          label: 'Mis à jour'
           exclude: false
           alter:
             alter_text: false
@@ -315,7 +315,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Actions
           exclude: false
           alter:
             alter_text: false
@@ -381,7 +381,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: Status
+            label: Statut
             description: ''
             use_operator: false
             operator: status_op
@@ -393,7 +393,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: 'Published status'
+            label: 'Statut de publication'
             description: ''
             identifier: status
             optional: true
@@ -404,11 +404,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Publié
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: 'Non publié'
                 operator: '='
                 value: '0'
           plugin_id: boolean
@@ -427,7 +427,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: 'Content type'
+            label: 'Type de contenu'
             description: ''
             use_operator: false
             operator: type_op
@@ -516,7 +516,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: Title
+            label: Titre
             description: ''
             use_operator: false
             operator: title_op
@@ -551,7 +551,7 @@ display:
           table: views
           field: area_text_custom
           empty: true
-          content: 'No content available.'
+          content: 'Aucun contenu disponible.'
           plugin_id: text_custom
       arguments: {  }
       relationships:
@@ -596,7 +596,7 @@ display:
       tab_options:
         type: normal
         title: Content
-        description: 'Find and manage content'
+        description: 'Trouver et gérer le contenu'
         menu_name: admin
         weight: -10
       display_extenders: {  }

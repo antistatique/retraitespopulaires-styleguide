@@ -42,6 +42,7 @@ module:
   page_cache: 0
   path: 0
   rdf: 0
+  redirect: 0
   rp_ckeditor: 0
   rp_contact: 0
   rp_exchange_rates: 0

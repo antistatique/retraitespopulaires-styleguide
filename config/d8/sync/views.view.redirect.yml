@@ -1,19 +1,20 @@
-uuid: 70b1c7c8-ef9f-4b1f-9abd-a8b9bc5537a1
+uuid: bb4e8a6d-5af8-4f45-8b61-c3cbcf5b0afc
 langcode: fr
 status: true
 dependencies:
   module:
-    - block_content
+    - link
+    - redirect
     - user
 _core:
-  default_config_hash: msYnighLW1IbiBfyQbwbQwb2cU-5LECiFryt60k0Nfk
-id: block_content
-label: 'Custom block library'
+  default_config_hash: CmEaMuCJ98kSh_yrKoFCxG628jM5_QIS9Nmb7cHFBc4
+id: redirect
+label: Redirect
 module: views
-description: 'Find and manage custom blocks.'
-tag: default
-base_table: block_content_field_data
-base_field: id
+description: 'List of redirects'
+tag: ''
+base_table: redirect
+base_field: rid
 core: 8.x
 display:
   default:
@@ -25,7 +26,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'administer blocks'
+          perm: 'administer redirects'
       cache:
         type: tag
         options: {  }
@@ -48,15 +49,17 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: mini
+        type: full
         options:
           items_per_page: 50
           offset: 0
           id: 0
           total_pages: null
           tags:
-            previous: '‹ Précédent'
-            next: 'Suivant ›'
+            previous: '‹ previous'
+            next: 'next ›'
+            first: '« first'
+            last: 'last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -65,6 +68,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 9
       style:
         type: table
         options:
@@ -77,28 +81,44 @@ display:
           summary: ''
           description: ''
           columns:
-            info: info
-            type: type
-            changed: changed
+            redirect_source__path: redirect_source__path
+            redirect_redirect__uri: redirect_redirect__uri
+            status_code: status_code
+            language: language
+            created: created
             operations: operations
           info:
-            info:
+            redirect_source__path:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            type:
+            redirect_redirect__uri:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            changed:
+            status_code:
               sortable: true
-              default_sort_order: desc
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            language:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            created:
+              sortable: true
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
@@ -110,19 +130,19 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-          default: changed
-          empty_table: true
+          default: created
+          empty_table: false
       row:
         type: fields
       fields:
-        info:
-          id: info
-          table: block_content_field_data
-          field: info
+        redirect_source__path:
+          id: redirect_source__path
+          table: redirect
+          field: redirect_source__path
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Block description'
+          label: From
           exclude: false
           alter:
             alter_text: false
@@ -163,11 +183,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: true
-          group_column: value
+          click_sort_column: path
+          type: redirect_source
+          settings: {  }
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -177,17 +196,38 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: null
-          entity_field: info
+          entity_type: redirect
+          entity_field: redirect_source
           plugin_id: field
-        type:
-          id: type
-          table: block_content_field_data
-          field: type
+        redirect_redirect__uri:
+          id: redirect_redirect__uri
+          table: redirect
+          field: redirect_redirect__uri
+          entity_type: redirect
+          entity_field: redirect_redirect
+          plugin_id: field
+        status_code:
+          id: status_code
+          table: redirect
+          field: status_code
+          entity_type: redirect
+          entity_field: status_code
+          plugin_id: field
+        language:
+          id: language
+          table: redirect
+          field: language
+          entity_type: redirect
+          entity_field: language
+          plugin_id: field
+        created:
+          id: created
+          table: redirect
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Block type'
+          label: Created
           exclude: false
           alter:
             alter_text: false
@@ -228,135 +268,23 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: block_content
-          entity_field: type
-          plugin_id: field
-        changed:
-          id: changed
-          table: block_content_field_data
-          field: changed
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Mis à jour'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          entity_type: block_content
-          entity_field: changed
-          type: timestamp
-          settings:
-            date_format: short
-            custom_date_format: ''
-            timezone: ''
-          plugin_id: field
+          date_format: fallback
+          custom_date_format: ''
+          timezone: ''
+          entity_type: redirect
+          entity_field: created
+          plugin_id: date
         operations:
           id: operations
-          table: block_content
+          table: redirect
           field: operations
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Actions
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          destination: true
-          entity_type: block_content
+          entity_type: redirect
           plugin_id: entity_operations
       filters:
-        info:
-          id: info
-          table: block_content_field_data
-          field: info
+        redirect_source__path:
+          id: redirect_source__path
+          table: redirect
+          field: redirect_source__path
           relationship: none
           group_type: group
           admin_label: ''
@@ -365,12 +293,12 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: info_op
-            label: 'Block description'
+            operator_id: redirect_source__path_op
+            label: From
             description: ''
             use_operator: false
-            operator: info_op
-            identifier: info
+            operator: redirect_source__path_op
+            identifier: redirect_source__path
             required: false
             remember: false
             multiple: false
@@ -390,13 +318,145 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: block_content
-          entity_field: info
+          entity_type: redirect
+          entity_field: redirect_source
           plugin_id: string
-        type:
-          id: type
-          table: block_content_field_data
-          field: type
+        redirect_redirect__uri:
+          id: redirect_redirect__uri
+          table: redirect
+          field: redirect_redirect__uri
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: redirect_redirect__uri_op
+            label: To
+            description: ''
+            use_operator: false
+            operator: redirect_redirect__uri_op
+            identifier: redirect_redirect__uri
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: redirect
+          entity_field: redirect_redirect
+          plugin_id: string
+        status_code:
+          id: status_code
+          table: redirect
+          field: status_code
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: status_code_op
+            label: 'Status code'
+            description: ''
+            use_operator: false
+            operator: status_code_op
+            identifier: status_code
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: true
+          group_info:
+            label: 'Status code'
+            description: ''
+            identifier: status_code
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: '300 Multiple Choices'
+                operator: '='
+                value:
+                  value: '300'
+                  min: ''
+                  max: ''
+              2:
+                title: '301 Moved Permanently'
+                operator: '='
+                value:
+                  value: '301'
+                  min: ''
+                  max: ''
+              3:
+                title: '302 Found'
+                operator: '='
+                value:
+                  value: '302'
+                  min: ''
+                  max: ''
+              4:
+                title: '303 See Other'
+                operator: '='
+                value:
+                  value: '303'
+                  min: ''
+                  max: ''
+              5:
+                title: '304 Not Modified'
+                operator: '='
+                value:
+                  value: '304'
+                  min: ''
+                  max: ''
+              6:
+                title: '305 Use Proxy'
+                operator: '='
+                value:
+                  value: '305'
+                  min: ''
+                  max: ''
+              7:
+                title: '307 Temporary Redirect'
+                operator: '='
+                value:
+                  value: '307'
+                  min: ''
+                  max: ''
+          entity_type: redirect
+          entity_field: status_code
+          plugin_id: numeric
+        language:
+          id: language
+          table: redirect
+          field: language
           relationship: none
           group_type: group
           admin_label: ''
@@ -405,12 +465,12 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: type_op
-            label: 'Block type'
+            operator_id: language_op
+            label: 'Original language'
             description: ''
             use_operator: false
-            operator: type_op
-            identifier: type
+            operator: language_op
+            identifier: language
             required: false
             remember: false
             multiple: false
@@ -431,11 +491,11 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: block_content
-          entity_field: type
-          plugin_id: bundle
+          entity_type: redirect
+          entity_field: language
+          plugin_id: language
       sorts: {  }
-      title: 'Custom block library'
+      title: Redirect
       header: {  }
       footer: {  }
       empty:
@@ -448,22 +508,15 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'There are no custom blocks available. '
+          content: 'There is no redirect yet.'
           plugin_id: text_custom
-        block_content_listing_empty:
-          admin_label: ''
-          empty: true
-          field: block_content_listing_empty
-          group_type: group
-          id: block_content_listing_empty
-          label: ''
-          relationship: none
-          table: block_content
-          plugin_id: block_content_listing_empty
-          entity_type: block_content
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       contexts:
         - 'languages:language_content'
@@ -471,6 +524,7 @@ display:
         - url
         - url.query_args
         - user.permissions
+      cacheable: false
       max-age: 0
       tags: {  }
   page_1:
@@ -480,15 +534,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: admin/structure/block/block-content
-      menu:
-        type: tab
-        title: 'Custom block library'
-        description: ''
-        parent: block.admin_display
-        weight: 0
-        context: '0'
-        menu_name: admin
+      path: admin/config/search/redirect
     cache_metadata:
       contexts:
         - 'languages:language_content'
@@ -496,5 +542,6 @@ display:
         - url
         - url.query_args
         - user.permissions
+      cacheable: false
       max-age: 0
       tags: {  }

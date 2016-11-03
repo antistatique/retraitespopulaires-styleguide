@@ -179,10 +179,10 @@ display:
             offset: false
             offset_label: Offset
           tags:
-            previous: '‹ Previous'
+            previous: '‹ Précédent'
             next: 'Suivant ›'
-            first: '« First'
-            last: 'Last »'
+            first: '« Premier'
+            last: 'Dernier »'
           quantity: 9
       query:
         type: views_query

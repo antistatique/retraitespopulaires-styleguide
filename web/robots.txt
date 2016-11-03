@@ -14,9 +14,6 @@
 # http://www.robotstxt.org/robotstxt.html
 
 User-agent: *
-Noindex: /launcher
-
-User-agent: *
 # CSS, JS, Images
 Allow: /core/*.css$
 Allow: /core/*.css?
