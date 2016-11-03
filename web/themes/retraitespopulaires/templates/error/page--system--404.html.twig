@@ -72,20 +72,6 @@
 </div>
 {% endif %}
 
-{# Breadcrumbs #}
-{% if page.breadcrumb %}
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
-      {% block breadcrumb %}
-          {{ page.breadcrumb }}
-      {% endblock %}
-      <div class="spacer"></div>
-    </div>
-  </div>
-</div>
-{% endif %}
-
 {# Main #}
 {% block main %}
   <div role="main" class="main-container container-fluid js-quickedit-main-content">
@@ -95,8 +81,15 @@
           <section{{ content_attributes.addClass(content_classes) }}>
             {# Content #}
             {% block content %}
-              <a id="main-content"></a>
-              {{ page.content }}
+              <h1 class="page-title text-center">{% trans %}Page <span class="text-primary">404</span>{% endtrans %}</h1>
+              <h2 class="page-title text-center">{% trans %}Cette page profite de sa retraite{% endtrans %}</h2>
+              <div class="spacer"></div>
+              <p class="text-center">
+                {% trans %}Peut-être trouverez-vous votre bonheur dans {% endtrans %} <a class="pretty-link text-assurance" href="{{ path('entity.node.canonical', {'node': 54}) }}">{% trans %}nos produits{% endtrans %}</a> {% trans %}ou{% endtrans %} <a class="pretty-link text-immobilier" href="{{ path('entity.node.canonical', {'node': 29}) }}">{% trans %}nos appartements à louer{% endtrans %}</a>.
+              </p>
+              <p class="text-center">
+                {% trans %}Quoi qu'il en soit, n'hésitez pas à {% endtrans %} <a class="pretty-link" href="{{ path('entity.node.canonical', {'node': 50}) }}">{% trans %}nous contacter{% endtrans %}</a> {% trans %}ou à vous promener sur le site de{% endtrans %} <a class="pretty-link " href="{{ path('<front>') }}">Retraites&nbsp;Populaires</a>.
+              </p>
             {% endblock %}
           </section>
         </div>
