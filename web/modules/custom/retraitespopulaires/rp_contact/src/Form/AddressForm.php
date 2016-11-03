@@ -397,9 +397,7 @@ class AddressForm extends FormBase {
 
         $form['more'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
-          '#title'      => t('Enfin'),
-          '#prefix'     => '<h3>'.t('Enfin').'</h3>',
+          '#attributes' => ['class' => array('fieldset-no-legend')],
         );
 
         // Get error to inline it as suffix
