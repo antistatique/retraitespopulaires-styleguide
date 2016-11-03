@@ -1,8 +1,7 @@
 # RP - Retraites Populaires
 Retraites Populaires website. Drupal 8 powered.
 
-
-## Prerequisites
+## 🔧 Prerequisites
 
 First of all, you need to have the following tools installed globally on your environment:
 
@@ -25,7 +24,6 @@ fatal: Could not read from remote repository.
 It's because you need to connect to the VPN. Open Firefox (and not Safari or Chrome, Java Applets Yeeahh!) and go to http://vpn.retraitespopulaires.ch/ and login.
 
 
-
 ### Tips
 
 To run any drush command, you need to be on a hight bootstrapped drupal directory, such `/web`.
@@ -36,7 +34,7 @@ To run any drush command, you need to be on a hight bootstrapped drupal director
 
 On common errors, see the Troubleshootings section.
 
-## Install
+## 🚛 Install
 
 1. Setup your virtualhost (like `http://rp.dev`) to serve `/web`.
 
@@ -101,7 +99,7 @@ On common errors, see the Troubleshootings section.
   $ drush cr
   ```
 
-## Build the theme
+## 🎨 Build the theme
 
 **Production workflow:**
 
@@ -142,7 +140,7 @@ To build the theme from the repository whitout publishing on `npm`, you then nee
     # copy all built files from the repo styleguide
     $ ./bin/styleguide-dev.sh
 
-## Deploy
+## 🚀 Deploy
 
 ### First time
 
@@ -157,18 +155,18 @@ We use Capistrano to deploy:
 
     $ bundle exec cap -T
     $ bundle exec cap rpeti deploy
-    
-    
+
+
 ## Solr
 We are using solr for search index.
 
 Solr need to be configured for drupal. Follow the INSTALL.txt found in the search_api_solr module.
 
-## Tests
+## 🏆 Tests
 
     $ phpunit
 
-## Troubleshootings
+## 🚑 Troubleshootings
 
 ### Error while importing config ?
 
@@ -231,3 +229,21 @@ A better way is to use the `example.settings.local.php` that do more for your de
   ```
 
 [Read More about it](https://www.drupal.org/node/1903374)
+
+## 💻 Drush Commands
+
+### import_zip
+
+To importe all zips and associate it with advisor, use the drush command `rp:contact:import_zip` and the option `file` as full csv file path that contain zips to be imported.
+
+  ```bash
+  $ drush rp:contact:import_zip --file=target
+  ```
+
+### import-rates
+
+To importe all rates, use the drush command `rp:mortgage:import-rates` and the option `file` as full csv file path that contain rates to be imported and the optional option `institution` to only import rates concerning institution name-
+
+  ```bash
+  $ drush rp:mortgage:import-rates --file=target [--institution=institution]
+  ```
