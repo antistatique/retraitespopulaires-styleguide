@@ -49,6 +49,7 @@ a.pretty-link {
 .text-invert,
 a.text-invert { color: $white; }
 
+.no-underline,
 a.no-underline {
   text-decoration: none;
   &:hover { text-decoration: none; }

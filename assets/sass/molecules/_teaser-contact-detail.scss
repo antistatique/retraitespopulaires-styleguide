@@ -16,8 +16,9 @@
       color: $brand-primary;
       transition: all 0.25s ease-in-out;
 
-      .label {
-        color: $black;
+      .label { color: $black; }
+
+      > div {
         transition: all 0.25s ease-in-out;
       }
     }
@@ -28,6 +29,19 @@
       text-decoration: none;
 
       .label { color: $white; }
+    }
+  }
+
+  @each $label, $color in $themes {
+    &.teaser-contact-detail-#{$label} {
+      a { color: $color; }
+
+      a:hover {
+        background-color: $color;
+        color: $white;
+      }
+
+      a:hover > div { color: $white; }
     }
   }
 }
