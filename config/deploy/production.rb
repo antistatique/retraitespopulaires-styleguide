@@ -1,13 +1,14 @@
-# overwrite deploy_to
-set :deploy_to, '/home/rp/www/retraitespopulaires.ch'
+# www2.retraitespopulaires.ch
+server '192.168.188.50', user: 'dplweb', roles: %w{app db web}
+set :deploy_to, '/data/sites/www2.retraitespopulaires.ch/'
 
 # set a branch for this release
 set :branch, 'master'
 
-# Used only if styleguide is external of the repository
-# set :styleguide_branch, 'master'
-
 set :slack_run, -> { true }
+
+# Used only if styleguide is external of the repository
+# set :styleguide_branch, 'dev'
 
 # Module that will be disabled by drush
 set :disable_modules, ['devel']
