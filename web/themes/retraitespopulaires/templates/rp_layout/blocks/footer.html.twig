@@ -14,35 +14,35 @@
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="{{ variables.contact.twitter }}" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a href="{{ variables.contact.twitter }}" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="{{ variables.contact.facebook }}" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a href="{{ variables.contact.facebook }}" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="{{ variables.contact.youtube }}" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a href="{{ variables.contact.youtube }}" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="{{ variables.contact.instagram }}" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a href="{{ variables.contact.instagram }}" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="{{ variables.contact.linkedin }}" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a href="{{ variables.contact.linkedin }}" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -106,7 +106,8 @@
         <ul class="menu-footer unordered-list list-inline list-unstyle-first">
           {% for item in variables.footer_menu %}
           <li>
-            <a class="pretty-link" href="{{ item.link.urlObject }}">
+            {% set target = item.link.options.external ? '_blank' %}
+            <a class="pretty-link" href="{{ item.link.urlObject }}" target="{{ target }}">
               {{ item.link.title }}
             </a>
           </li>

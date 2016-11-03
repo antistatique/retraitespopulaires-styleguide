@@ -57,7 +57,8 @@
                     ] %}
 
                     <li class="{{ classes|join(' ') }}">
-                      <a href="{{ item.link.urlObject }}" class="pretty-link text-{{ theme|join }}">{{ item.link.title }}</a>
+                      {% set target = item.link.options.external ? '_blank' %}
+                      <a href="{{ item.link.urlObject }}" class="pretty-link text-{{ theme|join }}" target="{{ target }}">{{ item.link.title }}</a>
                       {% if item.hasChildren %}
                         <a href="swiper-{{ item.link.pluginId }}" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-{{ theme|join }}"></a>
                       {% endif %}
@@ -88,8 +89,10 @@
                       {% elseif loop.index0 == 2 %}
                         {% set profil_icon = 'collectivites' %}
                       {% endif %}
-                      <span class="retraitespopulaires-icon retraitespopulaires-icon-{{ profil_icon }} retraitespopulaires-icon-3x"></span>
-                      <a href="{{ item.link.urlObject }}" class="icon-text-txt text-cocon h5">{{ item.link.title }}</a>
+
+                      {% set target = item.link.options.external ? '_blank' %}
+                      <a href="{{ item.link.urlObject }}" class="retraitespopulaires-icon retraitespopulaires-icon-{{ profil_icon }} retraitespopulaires-icon-3x" target="{{ target }}"></a>
+                      <a href="{{ item.link.urlObject }}" class="icon-text-txt text-cocon h5" target="{{ target }}">{{ item.link.title }}</a>
                       {% if item.hasChildren %}
                         <a href="swiper-{{ item.link.pluginId }}"  class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
                       {% endif %}
@@ -136,7 +139,8 @@
                        ] %}
 
                        <li class="{{ classes|join(' ') }}">
-                         <a href="{{ subitem.link.urlObject }}" class="pretty-link text-{{ theme|join }}">{{ subitem.link.title }}</a>
+                         {% set target = subitem.link.options.external ? '_blank' %}
+                         <a href="{{ subitem.link.urlObject }}" class="pretty-link text-{{ theme|join }}" target="{{ target }}">{{ subitem.link.title }}</a>
                          {% if subitem.hasChildren %}
                            <a href="swiper-{{ subitem.link.pluginId }}" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-{{ theme|join }}"></a>
                          {% endif %}
@@ -174,7 +178,8 @@
                           <li class="p-t-0 p-b-0"><p class="m-0 text-small text-muted">{% trans %}Déjà client{% endtrans %}</li></p>
                         {% endif %}
                        <li class="{{ classes|join(' ') }}">
-                         <a href="{{ subitem.link.urlObject }}" class="pretty-link text-primary">{{ subitem.link.title }}</a>
+                         {% set target = subitem.link.options.external ? '_blank' %}
+                         <a href="{{ subitem.link.urlObject }}" class="pretty-link text-primary" {{ target|e }}>{{ subitem.link.title }}</a>
                          {% if subitem.hasChildren %}
                            <a href="swiper-{{ subitem.link.pluginId }}" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-primary"></a>
                          {% endif %}
@@ -224,7 +229,8 @@
                          ] %}
 
                          <li class="{{ classes|join(' ') }}">
-                           <a href="{{ lastitem.link.urlObject }}" class="pretty-link text-{{ theme|join }}">{{ lastitem.link.title }}</a>
+                           {% set target = lastitem.link.options.external ? '_blank' %}
+                           <a href="{{ lastitem.link.urlObject }}" class="pretty-link text-{{ theme|join }}" target="{{ target }}">{{ lastitem.link.title }}</a>
                          </li>
                        {% endfor %}
                      </ul>
@@ -257,7 +263,8 @@
                          ] %}
 
                          <li class="{{ classes|join(' ') }}">
-                           <a href="{{ lastitem.link.urlObject }}" class="pretty-link text-primary">{{ lastitem.link.title }}</a>
+                           {% set target = lastitem.link.options.external ? '_blank' %}
+                           <a href="{{ lastitem.link.urlObject }}" class="pretty-link text-primary" target="{{ target }}">{{ lastitem.link.title }}</a>
                          </li>
                        {% endfor %}
                      </ul>
@@ -288,7 +295,8 @@
                     <ul class="list-no-style list-no-padding {{ loop.first ? 'text-right'}}">
                 {% endif %}
                 <li class="{{ classes|join(' ') }}">
-                  <a class="pretty-link pretty-link-berrylight-gray" href="{{ item.link.urlObject }}">
+                  {% set target = item.link.options.external ? '_blank' %}
+                  <a class="pretty-link pretty-link-berrylight-gray" href="{{ item.link.urlObject }}" target="{{ target }}">
                   {{ item.link.title }}
                   {% if item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' %}
                     <i class="text-primary retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i>
@@ -310,8 +318,9 @@
               item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text',
               item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text-locker',
             ] %}
+            {% set target = item.link.options.external ? '_blank' %}
             <li class="{{ classes|join(' ') }}">
-              <a class="pretty-link" href="{{ item.link.urlObject }}">
+              <a class="pretty-link" href="{{ item.link.urlObject }}" target="{{ target }}">
                 {{ item.link.title }}
               </a>
               {% if item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' %}

@@ -83,6 +83,7 @@ class PageTeaserBlock extends BlockBase implements ContainerFactoryPluginInterfa
         if (isset($params['menu'])) {
             $variables['title'] = $params['menu']->link->getTitle();
             $variables['url'] = $params['menu']->link->getUrlObject();
+            $variables['options'] = $params['menu']->link->getOptions();
             $param = $params['menu']->link->getRouteParameters();
 
             if (isset($param['node'])) {

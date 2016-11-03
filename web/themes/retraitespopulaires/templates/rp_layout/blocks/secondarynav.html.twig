@@ -26,7 +26,8 @@
         item.inActiveTrail and item.depth == trail_depth  ? 'text-bold',
       ] %}
       <li class="{{ classes|join(' ') }}">
-        <a class="pretty-link" href="{{ item.link.urlObject }}">
+        {% set target = item.link.options.external ? '_blank' %}
+        <a class="pretty-link" href="{{ item.link.urlObject }}" target="{{ target }}">
           {{ item.link.title }}
         </a>
       </li>
@@ -42,7 +43,8 @@
           ] %}
 
           <li class="{{ classes|join(' ') }}">
-            <a class="pretty-link" href="{{ subitem.link.urlObject }}">
+            {% set target = subitem.link.options.external ? '_blank' %}
+            <a class="pretty-link" href="{{ subitem.link.urlObject }}" target="{{ target }}">
               {{ subitem.link.title }}
             </a>
           </li>
