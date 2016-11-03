@@ -12,6 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\Render\MetadataBubblingUrlGenerator;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 class AdminForm extends FormBase {
 
@@ -28,11 +29,18 @@ class AdminForm extends FormBase {
     private $url;
 
     /**
+    * EntityTypeManagerInterface to load Nodes
+    * @var EntityTypeManagerInterface
+    */
+    private $entity_node;
+
+    /**
      * Class constructor.
      */
-    public function __construct(StateInterface $state, MetadataBubblingUrlGenerator $url) {
-        $this->state = $state;
-        $this->url = $url;
+    public function __construct(StateInterface $state, MetadataBubblingUrlGenerator $url, EntityTypeManagerInterface $entity) {
+        $this->entity_node = $entity->getStorage('node');
+        $this->state       = $state;
+        $this->url         = $url;
     }
 
     /**
@@ -43,7 +51,8 @@ class AdminForm extends FormBase {
       return new static(
         // Load the service required to construct this class.
         $container->get('state'),
-        $container->get('url_generator')
+        $container->get('url_generator'),
+        $container->get('entity_type.manager')
       );
     }
 
@@ -80,6 +89,26 @@ class AdminForm extends FormBase {
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
         );
 
+        // Collection pages settings
+        $form['collection'] = array(
+            '#type'          => 'fieldset',
+            '#title'         => 'Collection pages',
+        );
+
+        $form['collection']['offers_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'  => 'node',
+            '#title'         => 'Listing des offres Bella vita - node ID',
+            '#default_value' => $this->state->get('rp_offers.settings.collection.offers')['nid'] ? $this->entity_node->load($this->state->get('rp_offers.settings.collection.offers')['nid']) : NULL,
+        );
+        $form['collection']['offers_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing des offres Bella vita - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_offers.settings.collection.offers')['theme'] ? $this->state->get('rp_offers.settings.collection.offers')['theme'] : 'collection_offers',
+            '#suffix'        => '<br/>'
+        );
+
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Sauvegarder'),
@@ -110,5 +139,11 @@ class AdminForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // General settings
         $this->state->set('rp_offers.settings.receivers', trim($form_state->getValue('receivers')));
+
+        // Collection pages settings
+        $this->state->set('rp_offers.settings.collection.offers', array(
+            'nid'   => trim($form_state->getValue('offers_nid')),
+            'theme' => trim($form_state->getValue('offers_theme')),
+        ));
     }
 }
