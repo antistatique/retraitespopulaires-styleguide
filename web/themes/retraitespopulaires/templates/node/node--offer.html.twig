@@ -98,7 +98,7 @@
       </div>
     {% endif %}
 
-    {{ content|without('body', 'field_cover', 'field_profession', 'field_date_end') }}
+    {{ content|without('body', 'field_search_npa', 'field_cover', 'field_profession', 'field_date_end') }}
 
     {% set days_left = date_diff('now'|date('Y-m-d'), node.field_date_end.value) %}
     {% if days_left >= 0 %}
