@@ -27,6 +27,7 @@ $destinaton = $query
 if (!empty($destinaton)) {
     $response = new RedirectResponse($destinaton);
 } else {
+    \Drupal::logger('page not found')->warning('@uri', ['@uri' => $request->getRequestUri()]);
     $response = new RedirectResponse('/');
 }
 $response->send();
