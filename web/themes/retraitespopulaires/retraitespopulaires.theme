@@ -72,6 +72,8 @@ function retraitespopulaires_theme_suggestions_page_alter(array &$suggestions, a
         $suggestions[] = 'page__node__offer';
     }
 
+    // Suggestions theme of rp_offers module
+    rp_offers_suggestions_pages($suggestions);
 }
 
 function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, array $variables) {

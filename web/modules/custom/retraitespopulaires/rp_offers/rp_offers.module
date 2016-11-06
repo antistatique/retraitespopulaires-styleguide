@@ -22,6 +22,14 @@ function rp_offers_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'blocks/offers_linked'
         ),
+        'rp_offers_offers_collection_block' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'template'  => 'blocks/offers_collection'
+        ),
         'rp_offers_offer_teaser_block' => array(
             // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
@@ -30,6 +38,7 @@ function rp_offers_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'blocks/offer_teaser'
         ),
+
         // Pages admin
         // ---------------------------------------------------------------------
         'rp_offers_admin_request_page' => array(
@@ -44,3 +53,4 @@ function rp_offers_theme($existing, $type, $theme, $path) {
 }
 
 require_once('src/Mail/mails.php');
+require_once('src/Suggestion/suggestions.php');
