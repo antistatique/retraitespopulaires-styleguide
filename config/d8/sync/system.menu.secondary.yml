@@ -1,0 +1,8 @@
+uuid: 4260fac0-aeca-4abb-b869-ee20d9321621
+langcode: zxx
+status: true
+dependencies: {  }
+id: secondary
+label: 'Secondary navigation'
+description: 'Navigation secondaire présente dans le menu - à droite de la navigation principale'
+locked: false

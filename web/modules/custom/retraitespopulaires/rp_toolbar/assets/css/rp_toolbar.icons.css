@@ -1,0 +1,22 @@
+/**
+ * @file
+ * Styling for Commerce toolbar icons.
+ */
+
+/* Bar formatting, not implemented, but we may want this in the future. */
+.toolbar-bar .toolbar-icon-rp-toolbar-admin:before {
+  background-image: url("../../misc/icons/bebebe/config.svg");
+}
+.toolbar-bar .toolbar-icon-rp-toolbar-admin:active:before,
+.toolbar-bar .toolbar-icon-rp-toolbar-admin.active:before {
+  background-image: url("../../misc/icons/ffffff/config.svg");
+}
+
+/* Tray formatting, shown in screenshots. */
+.toolbar-tray .toolbar-icon-rp-toolbar-admin:before {
+  background-image: url("../../misc/icons/787878/config.svg");
+}
+.toolbar-tray .toolbar-icon-rp-toolbar-admin:active:before,
+.toolbar-tray .toolbar-icon-rp-toolbar-admin.active:before {
+  background-image: url("../../misc/icons/000000/config.svg");
+}

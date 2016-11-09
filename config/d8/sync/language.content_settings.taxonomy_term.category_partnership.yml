@@ -1,0 +1,16 @@
+uuid: bc542048-dba4-495a-901c-dc30554c126a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_partnership
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: taxonomy_term.category_partnership
+target_entity_type_id: taxonomy_term
+target_bundle: category_partnership
+default_langcode: site_default
+language_alterable: false

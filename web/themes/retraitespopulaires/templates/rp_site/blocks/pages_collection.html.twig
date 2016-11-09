@@ -1,0 +1,24 @@
+{% for profil in variables.profil %}
+  {% if loop.index0 > 0 %} <div class="spacer spacer-md"></div> {% endif %}
+  <div class="attachements-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="h2 pull-left">{{ profil.title }}</div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="row">
+          {% for item in profil.menu %}
+            {% if item.hasChildren %}
+               {% for subitem in item.subtree %}
+                 <div class="col-xs-12 col-md-4">
+                   {{ load_block('rp_site_page_teaser_block', {'menu': subitem}) }}
+                 </div>
+               {% endfor %}
+            {% endif %}
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endfor %}

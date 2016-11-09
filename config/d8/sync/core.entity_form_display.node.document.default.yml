@@ -1,0 +1,74 @@
+uuid: f27f1e25-c396-4494-8014-db0bb48c1c75
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.document.field_file_document
+    - field.field.node.document.field_profession
+    - node.type.document
+  module:
+    - field_group
+    - file
+    - path
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_info
+      parent_name: ''
+      weight: 0
+      label: Tabs
+      format_type: tabs
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
+    group_info:
+      children:
+        - title
+        - field_file_document
+        - field_profession
+      parent_name: group_tabs
+      weight: 5
+      label: 'Données principales'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+id: node.document.default
+targetEntityType: node
+bundle: document
+mode: default
+content:
+  field_file_document:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_profession:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  path:
+    type: path
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  promote: true
+  sticky: true
+  uid: true

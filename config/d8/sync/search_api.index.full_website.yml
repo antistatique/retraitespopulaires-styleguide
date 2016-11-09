@@ -1,0 +1,332 @@
+uuid: 584e679a-308a-433b-a2cc-e55b289e7ff8
+langcode: en
+status: false
+dependencies:
+  config:
+    - field.storage.node.body
+    - search_api.server.solr
+  module:
+    - search_api
+    - search_api_attachments
+    - node
+id: full_website
+name: 'Full website'
+description: ''
+read_only: false
+field_settings:
+  status:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  uid:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  url:
+    label: URI
+    property_path: search_api_url
+    type: string
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          advisor: default
+          building: default
+          contact: default
+          document: default
+          faq: default
+          management_contracts: default
+          news: default
+          page: default
+          partnership: default
+          product: default
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+processor_settings:
+  highlight:
+    plugin_id: highlight
+    settings:
+      highlight: always
+      excerpt: true
+      excerpt_length: 256
+      exclude_fields: {  }
+      prefix: '<strong>'
+      suffix: '</strong>'
+      weights:
+        postprocess_query: 0
+  aggregated_field:
+    plugin_id: aggregated_field
+    settings: {  }
+  ignorecase:
+    plugin_id: ignorecase
+    settings:
+      fields: {  }
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
+  rendered_item:
+    plugin_id: rendered_item
+    settings: {  }
+  node_status:
+    plugin_id: node_status
+    settings: {  }
+  stopwords:
+    plugin_id: stopwords
+    settings:
+      fields:
+        - rendered_item
+      stopwords:
+        - alors
+        - au
+        - aucuns
+        - aussi
+        - autre
+        - avant
+        - avec
+        - avoir
+        - bon
+        - car
+        - ce
+        - cela
+        - ces
+        - ceux
+        - chaque
+        - ci
+        - comme
+        - comment
+        - dans
+        - des
+        - du
+        - dedans
+        - dehors
+        - depuis
+        - deux
+        - devrait
+        - doit
+        - donc
+        - dos
+        - droite
+        - début
+        - elle
+        - elles
+        - en
+        - encore
+        - essai
+        - est
+        - et
+        - eu
+        - fait
+        - faites
+        - fois
+        - font
+        - force
+        - haut
+        - hors
+        - ici
+        - il
+        - ils
+        - je
+        - juste
+        - la
+        - le
+        - les
+        - leur
+        - là
+        - ma
+        - maintenant
+        - mais
+        - mes
+        - mine
+        - moins
+        - mon
+        - mot
+        - même
+        - ni
+        - nommés
+        - notre
+        - nous
+        - nouveaux
+        - ou
+        - où
+        - par
+        - parce
+        - parole
+        - pas
+        - personnes
+        - peut
+        - peu
+        - pièce
+        - plupart
+        - pour
+        - pourquoi
+        - quand
+        - que
+        - quel
+        - quelle
+        - quelles
+        - quels
+        - qui
+        - sa
+        - sans
+        - ses
+        - seulement
+        - si
+        - sien
+        - son
+        - sont
+        - sous
+        - soyez
+        - sujet
+        - sur
+        - ta
+        - tandis
+        - tellement
+        - tels
+        - tes
+        - ton
+        - tous
+        - tout
+        - trop
+        - très
+        - tu
+        - valeur
+        - voie
+        - voient
+        - vont
+        - votre
+        - vous
+        - vu
+        - ça
+        - étaient
+        - état
+        - étions
+        - été
+        - être
+        - a
+        - an
+        - and
+        - are
+        - as
+        - at
+        - be
+        - but
+        - by
+        - for
+        - if
+        - in
+        - into
+        - is
+        - it
+        - 'no'
+        - not
+        - of
+        - 'on'
+        - or
+        - s
+        - such
+        - t
+        - that
+        - the
+        - their
+        - then
+        - there
+        - these
+        - they
+        - this
+        - to
+        - was
+        - will
+        - with
+      weights:
+        preprocess_index: -5
+        preprocess_query: -2
+  transliteration:
+    plugin_id: transliteration
+    settings:
+      fields: {  }
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
+  html_filter:
+    plugin_id: html_filter
+    settings:
+      fields: {  }
+      title: true
+      alt: true
+      tags:
+        h1: 5
+        h2: 3
+        h3: 2
+        strong: 2
+        b: 2
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
+  content_access:
+    plugin_id: content_access
+    settings:
+      weights:
+        preprocess_query: -10
+  add_url:
+    plugin_id: add_url
+    settings: {  }
+  file_attachments:
+    plugin_id: file_attachments
+    settings:
+      excluded_extensions: 'aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv'
+      number_indexed: 0
+      max_filesize: 0
+      excluded_private: 1
+      excluded_mimes: 'audio/x-aiff image/x-jg video/x-msvideo image/x-ms-bmp image/gif image/vnd.microsoft.icon video/quicktime audio/ogg video/ogg image/png image/x-photoshop audio/x-realaudio audio/x-pn-realaudio image/x-rgb video/x-flv'
+options:
+  index_directly: true
+  cron_limit: 50
+datasource_settings:
+  'entity:node':
+    plugin_id: 'entity:node'
+    settings:
+      bundles:
+        default: true
+        selected: {  }
+      languages:
+        default: true
+        selected: {  }
+tracker_settings:
+  default:
+    plugin_id: default
+    settings: {  }
+server: solr

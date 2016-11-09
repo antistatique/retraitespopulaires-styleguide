@@ -1,0 +1,10 @@
+global-styling:
+  css:
+    component:
+      css/components/buttons.css: {}
+      css/components/dropbutton.component.css: {}
+      css/components/tables.css: {}
+      css/components/tabs.css: {}
+      css/components/admin.toolbar.css: {}
+    theme:
+      css/colors.css: {}

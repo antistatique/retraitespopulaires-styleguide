@@ -1,0 +1,22 @@
+uuid: a1082d7f-aca4-4b6c-831d-e9ea86c7ad31
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - retraitespopulaires
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: retraitespopulaires_help
+theme: retraitespopulaires
+region: '-1'
+weight: -8
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

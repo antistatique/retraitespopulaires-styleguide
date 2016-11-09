@@ -1,0 +1,22 @@
+uuid: 8a8d966b-44af-474e-bb15-2276136913ba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.management_contracts
+id: node.management_contracts.promote
+field_name: promote
+entity_type: node
+bundle: management_contracts
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,19 @@
+global-styling:
+  css:
+    theme:
+      build/css/vendors.min.css: {}
+      build/css/main.css: {}
+      # build/css/ckeditor.css: {}
+  js:
+    build/js/vendors.min.js: {}
+    build/js/MorphSVGPlugin.min.js: {}
+    build/js/bundle.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+head-styling:
+  header: true
+  js:
+    build/js/polyfills.min.js: { browsers: { IE: 'lte IE 9', '!IE': false } }

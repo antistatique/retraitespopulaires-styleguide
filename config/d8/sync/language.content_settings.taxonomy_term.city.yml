@@ -1,0 +1,16 @@
+uuid: fc82a7fd-b70d-4f8b-8e43-a16e7a6d399a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.city
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: taxonomy_term.city
+target_entity_type_id: taxonomy_term
+target_bundle: city
+default_langcode: site_default
+language_alterable: false

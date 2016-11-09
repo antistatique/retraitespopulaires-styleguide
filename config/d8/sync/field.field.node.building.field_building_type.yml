@@ -1,0 +1,28 @@
+uuid: cb488007-d354-4f70-8231-cabf01bf5ce5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_building_type
+    - node.type.building
+    - taxonomy.vocabulary.category_building
+id: node.building.field_building_type
+field_name: field_building_type
+entity_type: node
+bundle: building
+label: 'Type de construction'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      category_building: category_building
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

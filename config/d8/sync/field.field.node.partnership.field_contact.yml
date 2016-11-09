@@ -1,0 +1,28 @@
+uuid: 6bf2cbfb-15f2-49bc-98bd-5df583e73dc3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact
+    - node.type.contact
+    - node.type.partnership
+id: node.partnership.field_contact
+field_name: field_contact
+entity_type: node
+bundle: partnership
+label: Contact(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      contact: contact
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

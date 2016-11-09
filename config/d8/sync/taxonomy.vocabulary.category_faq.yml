@@ -1,0 +1,9 @@
+uuid: c64c82a3-9811-47dc-b0f9-02163ef7a78d
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Category FAQ'
+vid: category_faq
+description: 'Catégorie de la foire aux questions'
+hierarchy: 0
+weight: 0

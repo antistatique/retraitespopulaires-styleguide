@@ -1,0 +1,9 @@
+uuid: 7bc3bcdb-f663-4fcd-95ac-5542b0375b64
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Category News'
+vid: category_news
+description: ''
+hierarchy: 0
+weight: 0

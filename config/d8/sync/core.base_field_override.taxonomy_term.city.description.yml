@@ -1,0 +1,20 @@
+uuid: 67d38375-1848-4e4a-9e0e-bbdaa11a9fda
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.city
+  module:
+    - text
+id: taxonomy_term.city.description
+field_name: description
+entity_type: taxonomy_term
+bundle: city
+label: Description
+description: 'Description du terme.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

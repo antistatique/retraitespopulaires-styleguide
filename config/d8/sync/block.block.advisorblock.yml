@@ -1,0 +1,27 @@
+uuid: fdd8127a-fbde-4fc2-bbd7-24aa2164ec0e
+langcode: fr
+status: false
+dependencies:
+  module:
+    - ctools
+  theme:
+    - retraitespopulaires
+id: advisorblock
+theme: retraitespopulaires
+region: '-1'
+weight: -12
+provider: null
+plugin: rp_site_advisor
+settings:
+  id: rp_site_advisor
+  label: 'Advisor block'
+  provider: rp_site
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

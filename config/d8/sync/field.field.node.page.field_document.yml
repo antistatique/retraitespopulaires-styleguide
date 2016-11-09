@@ -1,0 +1,29 @@
+uuid: bef5c09c-f524-4a80-8633-be3e01bbe9cf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document
+    - node.type.document
+    - node.type.page
+id: node.page.field_document
+field_name: field_document
+entity_type: node
+bundle: page
+label: Document(s)
+description: 'Nous conseillons de ne pas lier plus de 3 documents pour une navigation optimale.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

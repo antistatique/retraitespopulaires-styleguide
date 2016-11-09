@@ -1,0 +1,23 @@
+uuid: aafcd500-9334-47c8-9338-f96d84639cc8
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: profession_taxo
+label: 'Profession taxo'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/metier/[term:name]'
+selection_criteria:
+  442b1c67-ff57-469a-b30d-9868dd72fc47:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      profession: profession
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 442b1c67-ff57-469a-b30d-9868dd72fc47
+selection_logic: and
+weight: -5
+relationships: {  }

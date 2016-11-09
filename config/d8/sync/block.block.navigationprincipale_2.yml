@@ -1,0 +1,24 @@
+uuid: 7be4971c-44d5-461e-ae5e-b693eb2a2886
+langcode: fr
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - retraitespopulaires
+id: navigationprincipale_2
+theme: retraitespopulaires
+region: '-1'
+weight: -5
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navigation principale'
+  provider: system
+  label_display: '0'
+  level: 3
+  depth: 0
+visibility: {  }

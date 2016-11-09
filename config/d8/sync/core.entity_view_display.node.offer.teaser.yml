@@ -1,0 +1,32 @@
+uuid: ac167979-fae5-42a6-a487-d8dd25b2e599
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.offer.body
+    - node.type.offer
+  module:
+    - text
+    - user
+id: node.offer.teaser
+targetEntityType: node
+bundle: offer
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_available_offers: true
+  field_cover: true
+  field_date_end: true
+  field_profession: true
+  field_web_site: true
+  langcode: true

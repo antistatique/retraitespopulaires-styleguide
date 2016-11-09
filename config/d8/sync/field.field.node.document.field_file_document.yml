@@ -1,0 +1,27 @@
+uuid: 5334d428-227e-4171-b15d-6750dbe1c7f3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_document
+    - node.type.document
+  module:
+    - file
+id: node.document.field_file_document
+field_name: field_file_document
+entity_type: node
+bundle: document
+label: 'Fichier attaché'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'files-document/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx xls xlsx ppt pptx png gif jpg jpeg zip mp4 avi mov'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

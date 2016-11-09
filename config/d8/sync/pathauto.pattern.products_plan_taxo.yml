@@ -1,0 +1,23 @@
+uuid: 970349de-65ce-44b1-a84f-fc86b0043935
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: products_plan_taxo
+label: 'Products Plan Taxo'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/plans/[term:name]'
+selection_criteria:
+  359794d8-33cd-41b3-8d56-aa3baf96e337:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      products_plan: products_plan
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 359794d8-33cd-41b3-8d56-aa3baf96e337
+selection_logic: and
+weight: -5
+relationships: {  }

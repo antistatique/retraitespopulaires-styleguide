@@ -1,0 +1,44 @@
+# Admin link
+rp_offers.admin:
+    path: '/admin/retraites-populaires/offers'
+    defaults:
+        _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+        _title: 'Offre Bella vita - Admin'
+    requirements:
+        _permission: 'access administration pages'
+rp_offers.admin.settings:
+    path: '/admin/retraites-populaires/offers/settings'
+    defaults:
+        _controller: '\Drupal\rp_offers\Controller\AdminController::settings'
+        _title: 'Offre Bella vita - Admin - Settings'
+    requirements:
+        _permission: 'access administration pages'
+rp_offers.admin.requests:
+    path: '/admin/retraites-populaires/offers/requests'
+    defaults:
+        _controller: '\Drupal\rp_offers\Controller\AdminController::requests'
+        _title: 'Offre Bella vita - Admin - Requests'
+    requirements:
+        _permission: 'access administration pages'
+rp_offers.admin.requests.csv:
+    path: '/admin/retraites-populaires/offers/requests/csv/{node}'
+    defaults:
+        _controller: '\Drupal\rp_offers\Controller\AdminController::requestsCsv'
+        _title: 'Offre Bella vita - Admin - Requests CSV'
+        node: null
+    requirements:
+        _permission: 'access administration pages'
+rp_offers.admin.request:
+    path: '/admin/retraites-populaires/offers/requests/{node}'
+    defaults:
+        _controller: '\Drupal\rp_offers\Controller\AdminController::request'
+        _title: 'Offre Bella vita - Admin - Requests Detail'
+    requirements:
+        _permission: 'access administration pages'
+rp_offers.admin.requests.draw:
+    path: '/admin/retraites-populaires/offers/requests/draw/{node}'
+    defaults:
+        _controller: '\Drupal\rp_offers\Controller\AdminController::requestsDraw'
+        _title: 'Offre Bella vita - Admin - Requests Draw'
+    requirements:
+        _permission: 'access administration pages'

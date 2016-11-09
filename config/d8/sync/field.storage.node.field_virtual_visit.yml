@@ -1,0 +1,19 @@
+uuid: c1895854-a14d-4589-b85b-9c4d726bd51f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_virtual_visit
+field_name: field_virtual_visit
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

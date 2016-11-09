@@ -1,0 +1,45 @@
+uuid: f869f288-9ac6-4fee-8d11-1e2c18253f1d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cover
+    - node.type.building
+  module:
+    - content_translation
+    - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: '0'
+      alt: '0'
+      title: '0'
+id: node.building.field_cover
+field_name: field_cover
+entity_type: node
+bundle: building
+label: 'Image de couverture'
+description: "L'image doit faire au idéalement 2200x600 pixels - au minimum. Elle sera ensuite redimensionnée pour les différents formats du site.\r\nUtiliser le curseur \"Focal Point\" pour définir le point de focus de votre image. Par exemple la tête de la personne."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'cover-buildings/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: 2200x600
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

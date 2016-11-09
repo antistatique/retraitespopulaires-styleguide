@@ -1,0 +1,12 @@
+rp_offers.admin:
+    title: Offres Bella vita
+    parent: rp_toolbar.admin
+    route_name: rp_offers.admin
+rp_offers.admin.settings:
+    title: Settings
+    parent: rp_offers.admin
+    route_name: rp_offers.admin.settings
+rp_offers.admin.requests:
+    title: Participations
+    parent: rp_offers.admin
+    route_name: rp_offers.admin.requests

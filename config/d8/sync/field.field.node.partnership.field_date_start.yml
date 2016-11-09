@@ -1,0 +1,21 @@
+uuid: 7648deea-aaf3-473a-a7d5-39a4dc8fd5a5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_start
+    - node.type.partnership
+  module:
+    - datetime
+id: node.partnership.field_date_start
+field_name: field_date_start
+entity_type: node
+bundle: partnership
+label: 'Date de début'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

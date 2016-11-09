@@ -1,0 +1,31 @@
+<div class="spacer"></div>
+
+<div class="row">
+  {% if variables.products %}
+  <div class="col-xs-12">
+    <div class="h1 text-center">
+      {% trans %}
+          Produit recommandé dans cette situation
+      {% plural variables.products|length %}
+          Produits recommandés dans cette situation
+      {% endtrans %}
+    </div>
+    <div class="spacer spacer-md"></div>
+  </div>
+  {% endif %}
+
+  <div class="col-md-4">
+    {{ load_block('rp_site_products_filter_block', {'theme': variables.theme}) }}
+  </div>
+  <div class="col-md-8">
+    <div class="row row-flex">
+      {% if variables.products %}
+        {% for product in variables.products %}
+          <div class="col-sm-6">
+            {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>

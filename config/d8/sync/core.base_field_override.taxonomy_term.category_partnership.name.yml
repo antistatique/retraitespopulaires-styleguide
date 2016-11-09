@@ -1,0 +1,18 @@
+uuid: 68e748fb-20d5-420b-966c-f7f1b33624fd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_partnership
+id: taxonomy_term.category_partnership.name
+field_name: name
+entity_type: taxonomy_term
+bundle: category_partnership
+label: Name
+description: 'Nom du terme.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

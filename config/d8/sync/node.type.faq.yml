@@ -1,0 +1,17 @@
+uuid: b5a26c1d-f8e4-46a1-9f9b-53e441fb7758
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Questions-réponses
+type: faq
+description: 'Foire aux questions (un type de contenu = question)'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

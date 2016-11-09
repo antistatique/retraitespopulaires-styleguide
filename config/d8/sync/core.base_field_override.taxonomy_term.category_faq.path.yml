@@ -1,0 +1,20 @@
+uuid: db37c458-f820-44a9-b44b-f9f81f8818d8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_faq
+  module:
+    - path
+id: taxonomy_term.category_faq.path
+field_name: path
+entity_type: taxonomy_term
+bundle: category_faq
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,34 @@
+{%
+set classes = [
+node.bundle|clean_class,
+view_mode ? view_mode|clean_class,
+'clearfix',
+]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  <div{{ content_attributes.addClass('content') }}>
+
+    {% if node.body.summary %}
+      <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
+      <div class="spacer spacer-sm"></div>
+    {% endif %}
+
+    {% if node.body.value %}
+      <div class="entity-body body-{{ node.field_profession.entity.tid.value|theme_profession }}">
+        {{ node.body.value|raw }}
+      </div>
+    {% endif %}
+
+    {{ content|without('body', 'field_document', 'field_search_npa', 'field_products', 'field_profession', 'field_profil', 'field_faq', 'field_contact') }}
+
+    {{ load_block('rp_mortgage_table_rate_block', { 'type': "Taux credit de construction" }) }}
+  </div>
+</article>

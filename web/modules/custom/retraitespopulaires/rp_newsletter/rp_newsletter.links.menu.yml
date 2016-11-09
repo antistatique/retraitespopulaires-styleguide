@@ -1,0 +1,12 @@
+rp_newsletter.admin:
+    title: Newsletter
+    parent: rp_toolbar.admin
+    route_name: rp_newsletter.admin
+rp_newsletter.admin.settings:
+    title: Settings
+    parent: rp_newsletter.admin
+    route_name: rp_newsletter.admin.settings
+rp_newsletter.admin.campaigns:
+    title: Campagnes
+    parent: rp_newsletter.admin
+    route_name: rp_newsletter.admin.campaigns

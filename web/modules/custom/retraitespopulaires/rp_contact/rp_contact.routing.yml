@@ -1,0 +1,23 @@
+rp_contact.search_zip:
+    path: '/recherche-par-npa/conseillers/{zip}'
+    defaults:
+        _controller: '\Drupal\rp_contact\Controller\SearchZipController::advisors'
+        zip: ''
+    requirements:
+        _permission: 'access content'
+
+# Admin link
+rp_contact.admin:
+    path: '/admin/retraites-populaires/contact'
+    defaults:
+        _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+        _title: 'Contact - Admin'
+    requirements:
+        _permission: 'access administration pages'
+rp_contact.admin.settings:
+    path: '/admin/retraites-populaires/contact/settings'
+    defaults:
+        _controller: '\Drupal\rp_contact\Controller\AdminController::settings'
+        _title: 'Contact - Admin - Settings'
+    requirements:
+        _permission: 'access administration pages'

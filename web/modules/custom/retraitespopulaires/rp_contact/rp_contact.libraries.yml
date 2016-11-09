@@ -1,0 +1,6 @@
+contact_building_form:
+  js:
+    js/contact_building_form.js: {}
+search_zip:
+  js:
+    js/search_zip.js: {}

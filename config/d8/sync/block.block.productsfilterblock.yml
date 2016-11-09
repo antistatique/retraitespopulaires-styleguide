@@ -1,0 +1,27 @@
+uuid: b6cb3c0e-43f4-4daf-8020-75f5728f62e6
+langcode: fr
+status: false
+dependencies:
+  module:
+    - ctools
+  theme:
+    - retraitespopulaires
+id: productsfilterblock
+theme: retraitespopulaires
+region: '-1'
+weight: -1
+provider: null
+plugin: rp_site_products_filter
+settings:
+  id: rp_site_products_filter
+  label: 'Products Filter block'
+  provider: rp_site
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

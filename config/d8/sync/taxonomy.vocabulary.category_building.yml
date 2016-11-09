@@ -1,0 +1,9 @@
+uuid: 45a7fb4e-4b04-4e19-801b-a9383f4da45f
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Category Building'
+vid: category_building
+description: 'Catégorie de constructions (en cours et terminés)'
+hierarchy: 0
+weight: 0

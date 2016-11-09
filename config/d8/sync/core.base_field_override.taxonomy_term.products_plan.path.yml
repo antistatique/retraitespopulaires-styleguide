@@ -1,0 +1,20 @@
+uuid: 0788ba27-608c-4187-bd0e-2ea138153540
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.products_plan
+  module:
+    - path
+id: taxonomy_term.products_plan.path
+field_name: path
+entity_type: taxonomy_term
+bundle: products_plan
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

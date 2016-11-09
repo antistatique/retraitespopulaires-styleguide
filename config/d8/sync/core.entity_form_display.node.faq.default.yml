@@ -1,0 +1,134 @@
+uuid: 0bc33b32-d7eb-4534-81a3-77812bacda67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.faq.body
+    - field.field.node.faq.field_advisor
+    - field.field.node.faq.field_contact
+    - field.field.node.faq.field_faq_type
+    - field.field.node.faq.field_file_faq
+    - field.field.node.faq.field_profession
+    - field.field.node.faq.field_search_npa
+    - node.type.faq
+  module:
+    - field_group
+    - file
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_info
+        - group_contacts
+      parent_name: ''
+      weight: 3
+      label: Tabs
+      format_type: tabs
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
+    group_info:
+      children:
+        - title
+        - body
+        - field_faq_type
+        - field_profession
+        - field_file_faq
+      parent_name: group_tabs
+      weight: 7
+      label: 'Données principales'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_contacts:
+      children:
+        - field_search_npa
+        - field_advisor
+        - field_contact
+      parent_name: group_tabs
+      weight: 8
+      label: 'Elements de contact'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+id: node.faq.default
+targetEntityType: node
+bundle: faq
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    settings:
+      rows: 18
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_advisor:
+    weight: 30
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_contact:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_faq_type:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_file_faq:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_profession:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_search_npa:
+    weight: 29
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  path:
+    type: path
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  promote: true
+  sticky: true
+  translation: true
+  uid: true

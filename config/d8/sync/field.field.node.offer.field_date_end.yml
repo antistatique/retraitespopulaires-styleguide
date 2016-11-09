@@ -1,0 +1,24 @@
+uuid: 81841810-8caa-4594-9da1-7c43a04af1fc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_end
+    - node.type.offer
+  module:
+    - datetime
+id: node.offer.field_date_end
+field_name: field_date_end
+entity_type: node
+bundle: offer
+label: 'Date de fin'
+description: 'Affichage du formulaire jusqu''à la date butoir.'
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+10 days'
+default_value_callback: ''
+settings: {  }
+field_type: datetime

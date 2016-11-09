@@ -1,0 +1,28 @@
+uuid: 964e41c1-d173-4a5f-86ba-d44c98e1b5af
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact
+    - node.type.contact
+    - node.type.management_contracts
+id: node.management_contracts.field_contact
+field_name: field_contact
+entity_type: node
+bundle: management_contracts
+label: Contact(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      contact: contact
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

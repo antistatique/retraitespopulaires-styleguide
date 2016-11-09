@@ -1,0 +1,30 @@
+services:
+  rp_site.profession:
+    class: Drupal\rp_site\Service\Profession
+  rp_site.cover:
+    class: Drupal\rp_site\Service\Cover
+    arguments:
+      - @entity.manager
+      - @file_system
+  # Custom Twig extensions
+  rp_site.twig.themes:
+    class: Drupal\rp_site\TwigExtension\SiteExtension
+    tags:
+        - { name: twig.extension }
+    arguments:
+      - @service_container
+  # Custom breadcrumb applies
+  rp_site.breadcrumb:
+    class: Drupal\rp_site\Breadcrumb\EntityBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 100 }
+  # Custom Menu Manipulators
+  rp_site.menu_transformers:
+    class: Drupal\rp_site\Service\MenuTransformers
+    arguments:
+      - @state
+  # Custom Event Subscrbiber
+  rp_site.entity_access:
+    class: Drupal\rp_site\EventSubscriber\EntityAccess
+    tags: 
+      - {name: event_subscriber}

@@ -1,0 +1,28 @@
+uuid: 77f1022d-99a7-4e6c-8de1-353590ff2a7a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city
+    - node.type.building
+    - taxonomy.vocabulary.city
+id: node.building.field_city
+field_name: field_city
+entity_type: node
+bundle: building
+label: Ville
+description: 'Ville dans laquelle la construction est effectuée.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      city: city
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

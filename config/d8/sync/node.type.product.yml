@@ -1,0 +1,17 @@
+uuid: 534008b3-8115-4cf6-9f0f-6dc1a9465c88
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Produit
+type: product
+description: 'Les produits (ex : RP Jeune)'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

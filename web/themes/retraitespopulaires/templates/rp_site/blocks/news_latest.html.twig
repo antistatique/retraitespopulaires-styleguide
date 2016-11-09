@@ -1,0 +1,23 @@
+{% if variables.news %}
+<div class="spacer"></div>
+<div class="last-news-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 last-news-heading">
+        <div class="h2">{{ variables.title }}</div>
+        <div>
+          <a href="{{ variables.collection.link }}" class="pretty-link pretty-link-berrylight-gray">{% trans %}Voir toutes les actualités{% endtrans %}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row last-news-content">
+      {% for news in variables.news %}
+        <div class="col-xs-12 col-md-6">
+          {{ load_block('rp_site_news_teaser_block', {'news': news}) }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

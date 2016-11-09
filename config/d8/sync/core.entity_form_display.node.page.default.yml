@@ -1,0 +1,224 @@
+uuid: df72b43b-0fbb-4708-804d-d81f8cd3717b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_advisor
+    - field.field.node.page.field_contact
+    - field.field.node.page.field_cover
+    - field.field.node.page.field_document
+    - field.field.node.page.field_document_page
+    - field.field.node.page.field_faq
+    - field.field.node.page.field_file_page
+    - field.field.node.page.field_products
+    - field.field.node.page.field_profession
+    - field.field.node.page.field_profil
+    - field.field.node.page.field_search_npa
+    - image.style.thumbnail
+    - node.type.page
+  module:
+    - field_group
+    - file
+    - image
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_attachments:
+      children:
+        - group_info
+        - group_contacts
+        - group_attachment
+      parent_name: ''
+      weight: 5
+      label: 'Linked Contents'
+      format_type: tabs
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
+    group_attachment:
+      children:
+        - group_attachments_content
+        - group_attachments_footer
+      parent_name: group_attachments
+      weight: 15
+      label: 'Elements attachés'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_info:
+      children:
+        - title
+        - field_cover
+        - body
+        - field_profil
+        - field_profession
+      parent_name: group_attachments
+      weight: 13
+      label: 'Données principales'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_contacts:
+      children:
+        - field_search_npa
+        - field_advisor
+        - field_contact
+      parent_name: group_attachments
+      weight: 14
+      label: 'Elements de contact'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_attachments_content:
+      children:
+        - field_file_page
+        - field_document_page
+      parent_name: group_attachment
+      weight: 13
+      label: 'Positionner dans le contenu'
+      format_type: details
+      format_settings:
+        label: 'Positionner dans le contenu'
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+    group_attachments_footer:
+      children:
+        - field_products
+        - field_faq
+        - field_document
+      parent_name: group_attachment
+      weight: 14
+      label: 'Positionner au pied du contenu'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
+_core:
+  default_config_hash: KSvzyFhdLuxniTsunUnUfpfMmod2l57GibtVjL8ymHM
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 18
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_advisor:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_contact:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_cover:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_document:
+    weight: 19
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_document_page:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_faq:
+    weight: 18
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_file_page:
+    weight: 14
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_products:
+    weight: 17
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_profession:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_profil:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_search_npa:
+    weight: 26
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  path:
+    type: path
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  promote: true
+  sticky: true
+  uid: true

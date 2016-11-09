@@ -1,0 +1,82 @@
+{% if not variables.theme %}
+  {% set theme = variables.node.field_profession.entity.tid.value|theme_profession %}
+{% else %}
+  {% set theme = variables.theme %}
+{% endif %}
+
+{% set link = path('entity.node.canonical', {'node': variables.contact.nid.value}) %}
+<div class="teaser-contact teaser-contact-{{ theme }} shadow shadow-down">
+  {% if not variables.contact.field_cover.entity.uri.value is empty %}
+    <a href="{{ link }}" class="teaser-contact-heading">
+      <div class="heading-image" style="background-image: url({{ file_url(variables.cover.xl) }})"></div>
+      <div class="loader-image">
+        <div class="loader">
+          <div class="loader-yingyang loader-{{ theme }}"></div>
+        </div>
+      </div>
+    </a>
+  {% endif %}
+
+  <div class="teaser-contact-body">
+    <a href="{{ link }}" class="h3 pretty-link text-{{ theme }}">
+      {% set display = [] %}
+      {% if variables.contact.field_firstname.value %}
+        {% set display = display|merge([variables.contact.field_firstname.value])  %}
+      {% endif %}
+      {% if variables.contact.field_lastname.value %}
+        {% set display = display|merge([variables.contact.field_lastname.value])  %}
+      {% endif %}
+      {% if not display %}
+        {% set display = [variables.contact.title.value] %}
+      {% endif %}
+      {{ display|join(' ') }}
+    </a>
+    <div class="spacer spacer-sm"></div>
+    <p>
+      {%- if variables.contact.field_firstname.value or variables.contact.field_lastname.value -%}
+        {% trans %}Joindre directement votre contact{% endtrans %}
+      {%- else -%}
+        {% trans %}N'hésitez pas à nous contacter {% endtrans %}
+      {%- endif -%}
+
+      {% if variables.contact.field_phone.value %}
+        {% trans %} au <a class="pretty-link text-bold text-no-wrap text-{{ theme }}" href="tel:{{ variables.contact.field_phone.value }}">{{ variables.contact.field_phone.value }}</a>{% endtrans %}
+      {%- endif -%}
+
+      {%- if variables.contact.field_email.value -%}
+        {% trans %}, par e-mail via <a class="pretty-link text-bold text-break-all text-{{ theme }}" href="mailto:{{ variables.contact.field_email.value }}">{{ variables.contact.field_email.value }}</a>{% endtrans %}
+      {%- endif -%}
+
+      {%- if variables.contact.field_fax.value -%}
+        {% trans %} ou par fax au <a class="pretty-link text-no-wrap text-bold text-{{ theme }}" href="tel:{{ variables.contact.field_fax.value }}">{{ variables.contact.field_fax.value }}</a>.{% endtrans %}
+      {%- else -%}
+        .
+      {%- endif -%}
+    </p>
+    {% if variables.btn %}
+      <a href="{{ link }}" class="btn btn-{{ theme }}">Contacter</a>
+    {% endif %}
+
+    {% if variables.search_npa %}
+      <div class="teaser-contact-placeholder-body">
+        <hr />
+        <p class="m-0">{% trans %}Ou retrouvez votre contact régional en entrant votre code postal{% endtrans %}</p>
+        <form class="form-inline js-search-zip" method="GET" data-theme="{{ theme }}" data-ajax="{{ path('rp_contact.search_zip') }}">
+          <div class="form-group m-t-0">
+            <input class="form-control form-control-{{ theme }} js-zip-input" name="zip" type="text" placeholder="Votre NPA"></input>
+          </div>
+          <div class="form-group m-t-0">
+            <input class="btn btn-{{ theme }}" type="submit" value="Trouver"></input>
+          </div>
+          <div class="zip-results js-zip-results">
+            <div class="js-zip-loader loader hidden">
+              <div class="loader-snake loader-{{ theme }}"></div>
+            </div>
+            <div class="js-zip-results-list"></div>
+          </div>
+        </form>
+      </div>
+    {% endif %}
+
+  </div>
+</div>

@@ -1,0 +1,18 @@
+uuid: 1dd61ca5-401e-46f2-a4a7-8135af4e535b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_faq
+id: taxonomy_term.category_faq.name
+field_name: name
+entity_type: taxonomy_term
+bundle: category_faq
+label: Name
+description: 'Nom du terme.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

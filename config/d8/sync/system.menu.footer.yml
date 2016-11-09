@@ -1,0 +1,10 @@
+uuid: b0147f83-335d-41ad-a321-4cdb426ebd0f
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7yrlW5z9zdg2eBucB2GPqXKSMQfH9lSRSO4DbWF7AFc
+id: footer
+label: Footer
+description: 'Liens d''informations en dessous du pied de page'
+locked: true

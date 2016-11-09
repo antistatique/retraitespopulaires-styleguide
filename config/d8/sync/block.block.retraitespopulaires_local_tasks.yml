@@ -1,0 +1,22 @@
+uuid: cf7177c7-f11a-409e-ae73-5dd8b8f9d53c
+langcode: en
+status: false
+dependencies:
+  theme:
+    - retraitespopulaires
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: retraitespopulaires_local_tasks
+theme: retraitespopulaires
+region: '-1'
+weight: 5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

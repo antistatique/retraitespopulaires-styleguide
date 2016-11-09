@@ -1,0 +1,19 @@
+uuid: 5db7b679-832d-4473-829b-ec7a1832d8ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.contact
+id: node.contact.field_email
+field_name: field_email
+entity_type: node
+bundle: contact
+label: Email
+description: 'E-mail affiché sur l''encart de contact'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

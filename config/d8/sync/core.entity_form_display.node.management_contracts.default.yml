@@ -1,0 +1,145 @@
+uuid: 3b3a819c-d3e7-4f9c-a986-3190542c46ce
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.management_contracts.body
+    - field.field.node.management_contracts.field_administrator
+    - field.field.node.management_contracts.field_contact
+    - field.field.node.management_contracts.field_logo
+    - field.field.node.management_contracts.field_profession
+    - field.field.node.management_contracts.field_search_npa
+    - field.field.node.management_contracts.field_web_site
+    - field.field.node.management_contracts.field_weight
+    - image.style.thumbnail
+    - node.type.management_contracts
+  module:
+    - field_group
+    - image
+    - link
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_attachments:
+      children:
+        - title
+        - field_logo
+        - body
+        - field_administrator
+        - field_web_site
+        - field_weight
+        - field_profession
+      parent_name: group_tabs
+      weight: 5
+      label: 'Données principales'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_contacts:
+      children:
+        - field_search_npa
+        - field_contact
+      parent_name: group_tabs
+      weight: 6
+      label: 'Elements de contact'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_tabs:
+      children:
+        - group_attachments
+        - group_contacts
+      parent_name: ''
+      weight: 4
+      label: Tabs
+      format_type: tabs
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
+id: node.management_contracts.default
+targetEntityType: node
+bundle: management_contracts
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 18
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_administrator:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_contact:
+    weight: 36
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_logo:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_profession:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_search_npa:
+    weight: 35
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_web_site:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_weight:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  path:
+    type: path
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  promote: true
+  sticky: true
+  uid: true

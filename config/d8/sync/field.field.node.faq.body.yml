@@ -1,0 +1,22 @@
+uuid: f0a41a0a-68cc-44a2-aef1-196562030290
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.faq
+  module:
+    - text
+id: node.faq.body
+field_name: body
+entity_type: node
+bundle: faq
+label: Réponse
+description: "Les couleurs des titres et des liens s'accordent automatiquement selon le métier sélectionné (Assurance vie, ...).\r\nPour la création d'un tableau, utiliser le bouton <b>tableau</b> - définir les propriétés du tableau <b>largeur toujours vide</b> - puis sélectionner un style de tableau <b>long ou condensé</b>."
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

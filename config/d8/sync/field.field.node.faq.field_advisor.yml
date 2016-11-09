@@ -1,0 +1,28 @@
+uuid: 7f48b919-306b-4add-a4a9-52bf97936fa7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_advisor
+    - node.type.advisor
+    - node.type.faq
+id: node.faq.field_advisor
+field_name: field_advisor
+entity_type: node
+bundle: faq
+label: Conseiller(s)
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      advisor: advisor
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

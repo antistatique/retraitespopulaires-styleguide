@@ -1,0 +1,18 @@
+uuid: 72f5fb9e-78d0-40ea-a89b-9d151d189023
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.contact
+id: node.contact.changed
+field_name: changed
+entity_type: node
+bundle: contact
+label: Modifié
+description: 'Le moment auquel le nœud a été modifié pour la dernière fois.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

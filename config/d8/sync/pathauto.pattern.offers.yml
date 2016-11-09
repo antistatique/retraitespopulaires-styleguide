@@ -1,0 +1,22 @@
+uuid: f839b794-8de8-4f4d-bb18-5c95bb5a9152
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: offers
+label: 'Offre Bella Vita'
+type: 'canonical_entities:node'
+pattern: 'offre/[node:title]'
+selection_criteria:
+  aa857e37-fed1-48dd-aedd-c1e4b69994bb:
+    id: node_type
+    bundles:
+      offer: offer
+    negate: false
+    context_mapping:
+      node: node
+    uuid: aa857e37-fed1-48dd-aedd-c1e4b69994bb
+selection_logic: and
+weight: -5
+relationships: {  }

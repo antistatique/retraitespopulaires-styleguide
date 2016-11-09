@@ -1,0 +1,28 @@
+uuid: 40a9f96d-d42a-45cf-8872-fd7d04d44d96
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_offer
+    - node.type.news
+    - node.type.offer
+id: node.news.field_offer
+field_name: field_offer
+entity_type: node
+bundle: news
+label: 'Coupons Bella Vita'
+description: 'Liaison de coupons Bella Vita'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      offer: offer
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

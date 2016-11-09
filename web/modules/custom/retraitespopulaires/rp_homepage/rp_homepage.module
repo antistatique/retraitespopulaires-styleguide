@@ -1,0 +1,27 @@
+<?php
+
+/**
+* Theme hook
+*/
+function rp_homepage_theme($existing, $type, $theme, $path) {
+    return array(
+        // Blocks themes
+        // ---------------------------------------------------------------------
+        'rp_homepage_profils_collection_block' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'template'  => 'blocks/profils_collection'
+        ),
+        'rp_homepage_profil_teaser_block' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'template'  => 'blocks/profil_teaser'
+        ),
+    );
+}

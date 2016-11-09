@@ -1,0 +1,19 @@
+uuid: 70571a98-0ccd-46dc-9d2b-7c233a59bebf
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_advisor
+field_name: field_advisor
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

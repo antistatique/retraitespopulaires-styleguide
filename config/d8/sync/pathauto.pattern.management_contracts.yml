@@ -1,0 +1,22 @@
+uuid: 923b3203-f7cb-409a-a915-1b0ef8eacf81
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: management_contracts
+label: 'Management contracts'
+type: 'canonical_entities:node'
+pattern: 'mandat-de-gestion/[node:title]'
+selection_criteria:
+  ed4cc35f-ca19-42be-b11b-5159b6388e1c:
+    id: node_type
+    bundles:
+      management_contracts: management_contracts
+    negate: false
+    context_mapping:
+      node: node
+    uuid: ed4cc35f-ca19-42be-b11b-5159b6388e1c
+selection_logic: and
+weight: -7
+relationships: {  }

@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ *
+ * @ingroup templates
+ */
+#}
+{% if breadcrumb %}
+<div class="breadcrumb">
+  <ul class="list-inline list-no-style list-no-padding">
+    {% set theme = theme_guesser() %}
+
+    {% for item in breadcrumb %}
+      {% set classes = [
+        (not loop.first and not loop.last) ? 'pretty-link',
+        loop.first ? 'text-primary',
+        loop.last ? 'text-muted',
+        (not loop.first and not loop.last) ? 'text-' ~ theme,
+      ] %}
+
+      {# Breadcrumb link #}
+      <li class="" {{ item.attributes }}>
+        {% if item.url and not loop.last %}
+          <a class="{{ classes|join(' ') }}" href="{{ item.url }}">{{ item.text }}</a>
+        {% else %}
+          <span class="{{ classes|join(' ') }}">{{ item.text|slice(0, 42) }}{% if item.text|length > 42 %}...{% endif %}</span>
+        {% endif %}
+      </li>
+
+      {# Breadcrumb separator #}
+      {% if not loop.last %}
+        <li class="text-muted">›</li>
+      {% endif %}
+
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

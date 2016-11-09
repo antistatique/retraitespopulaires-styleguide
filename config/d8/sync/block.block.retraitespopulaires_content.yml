@@ -1,0 +1,22 @@
+uuid: f3595619-70bb-417c-9213-a217d3318a65
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - retraitespopulaires
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: retraitespopulaires_content
+theme: retraitespopulaires
+region: content
+weight: -11
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

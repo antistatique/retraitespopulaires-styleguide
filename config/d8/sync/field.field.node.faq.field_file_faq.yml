@@ -1,0 +1,27 @@
+uuid: 44d39849-a1c1-454f-8554-b3990f09c0d0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_faq
+    - node.type.faq
+  module:
+    - file
+id: node.faq.field_file_faq
+field_name: field_file_faq
+entity_type: node
+bundle: faq
+label: 'Fichier(s) attaché(s)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'files-faq/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx xls xlsx ppt pptx png gif jpg jpeg zip mp4 avi mov'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

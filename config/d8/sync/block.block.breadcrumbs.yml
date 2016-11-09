@@ -1,0 +1,20 @@
+uuid: 867a4e32-8146-4406-89c1-970e4bebfb90
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - retraitespopulaires
+id: breadcrumbs
+theme: retraitespopulaires
+region: breadcrumb
+weight: -12
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

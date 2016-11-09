@@ -1,0 +1,9 @@
+uuid: e45aba2a-1d28-4a48-bc88-c2f79feca8d8
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Category Partnership'
+vid: category_partnership
+description: ''
+hierarchy: 0
+weight: 0

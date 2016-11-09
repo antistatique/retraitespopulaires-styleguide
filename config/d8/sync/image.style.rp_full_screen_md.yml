@@ -1,0 +1,16 @@
+uuid: 1c6f0d84-75a2-4804-a789-515bb15265b5
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: rp_full_screen_md
+label: 'Retraites Populaires - Full Screen MD'
+effects:
+  9188d74c-2cee-4c07-9501-f19a4c4325bf:
+    uuid: 9188d74c-2cee-4c07-9501-f19a4c4325bf
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: '992'
+      height: '350'

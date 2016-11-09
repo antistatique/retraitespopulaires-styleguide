@@ -1,0 +1,23 @@
+{% if variables.news.nid.value %}
+<a href="{{ path('entity.node.canonical', {'node': variables.news.nid.value}) }}" class="teaser teaser-fullclick teaser-news shadow shadow-down">
+  {% if not variables.news.field_cover.entity.uri.value is empty %}
+  <div class="news-heading">
+    <div class="heading-image" style="background-image: url({{ file_url(variables.cover.xl) }})"></div>
+    <div class="loader-image">
+      <div class="loader">
+        <div class="loader-yingyang loader-{{ theme }}"></div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  <div class="news-body">
+    <div class="news-title h1 pretty-link">{{ variables.news.title.value }}</div>
+    <div class="spacer spacer-xs"></div>
+    <p>{{ variables.news.body.summary }}</p><p>
+    </p><div class="spacer spacer-sm"></div>
+    <div class="news-extra">
+      <span class="news-date">{{ variables.news.field_date.date|date_format('d F Y')|capitalize }}</span> <span class="news-type">{{ variables.news.field_news_type.entity.name.value }}</span>
+    </div>
+  </div>
+</a>
+{% endif %}

@@ -1,0 +1,17 @@
+uuid: 80120eb1-9ab7-4577-b6b1-64eaa3ba664f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Partenaire
+type: partnership
+description: 'Les partenaires (ex : festival)'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

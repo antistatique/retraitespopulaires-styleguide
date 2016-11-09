@@ -1,0 +1,19 @@
+uuid: 924b2bf7-1934-4420-8c0c-423203a38199
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lastname
+    - node.type.contact
+id: node.contact.field_lastname
+field_name: field_lastname
+entity_type: node
+bundle: contact
+label: 'Nom de famille'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

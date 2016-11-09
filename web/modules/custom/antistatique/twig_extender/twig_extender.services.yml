@@ -1,0 +1,14 @@
+services:
+    # Custom Twig extensions
+    twig_extender.twig.loader:
+        class: Drupal\twig_extender\TwigExtension\Loader
+        tags:
+            - { name: twig.extension }
+    twig_extender.twig.files:
+        class: Drupal\twig_extender\TwigExtension\Files
+        tags:
+            - { name: twig.extension }
+    twig_extender.twig.dates:
+        class: Drupal\twig_extender\TwigExtension\Dates
+        tags:
+            - { name: twig.extension }

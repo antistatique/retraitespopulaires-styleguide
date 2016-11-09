@@ -1,0 +1,19 @@
+uuid: f075a78e-29aa-467d-8e69-740e9aed1452
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_function
+    - node.type.advisor
+id: node.advisor.field_function
+field_name: field_function
+entity_type: node
+bundle: advisor
+label: Titre
+description: 'Par exemple : sous-directrice, directrice'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

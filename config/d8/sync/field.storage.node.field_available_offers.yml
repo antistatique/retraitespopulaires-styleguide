@@ -1,0 +1,20 @@
+uuid: c45ed047-3e14-4fb2-bf8a-7f463c0853d7
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_available_offers
+field_name: field_available_offers
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

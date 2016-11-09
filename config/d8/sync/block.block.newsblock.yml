@@ -1,0 +1,27 @@
+uuid: 04a8c3cc-5b29-4a10-8e8e-e844e17a5d4a
+langcode: fr
+status: false
+dependencies:
+  module:
+    - ctools
+  theme:
+    - retraitespopulaires
+id: newsblock
+theme: retraitespopulaires
+region: '-1'
+weight: -3
+provider: null
+plugin: rp_site_news
+settings:
+  id: rp_site_news
+  label: 'News block'
+  provider: rp_site
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

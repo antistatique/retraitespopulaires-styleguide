@@ -1,0 +1,17 @@
+# Rate routing definition
+entity.rp_mortgage_rate.canonical:
+  route_name: entity.rp_mortgage_rate.canonical
+  base_route: entity.rp_mortgage_rate.canonical
+  title: 'View'
+
+entity.rp_mortgage_rate.edit_form:
+  route_name: entity.rp_mortgage_rate.edit_form
+  base_route: entity.rp_mortgage_rate.canonical
+  title: Edit
+
+entity.rp_mortgage_rate.delete_form:
+  route_name:  entity.rp_mortgage_rate.delete_form
+  base_route:  entity.rp_mortgage_rate.canonical
+  title: Delete
+  weight: 10
+

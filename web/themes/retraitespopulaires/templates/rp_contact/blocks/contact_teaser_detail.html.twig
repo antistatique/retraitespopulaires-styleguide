@@ -1,0 +1,53 @@
+{% if not variables.theme %}
+  {% set theme = variables.node.field_profession.entity.tid.value|theme_profession %}
+{% else %}
+  {% set theme = variables.theme %}
+{% endif %}
+
+<div class="teaser-contact-detail teaser-contact-detail-{{ theme }} align-h">
+
+  {% set display = [] %}
+  {% if variables.contact.field_firstname.value %}
+    {% set display = display|merge([variables.contact.field_firstname.value])  %}
+  {% endif %}
+  {% if variables.contact.field_lastname.value %}
+    {% set display = display|merge([variables.contact.field_lastname.value])  %}
+  {% endif %}
+  {% if not display %}
+    {% set display = [variables.contact.title.value] %}
+  {% endif %}
+
+  <h2>{{ display|join(' ') }}</h2>
+  <div class="teaser-contact-detail-body">
+    <div class="spacer spacer-sm"></div>
+    <p>
+      {% if variables.contact.field_function.value %}<strong>{{ variables.contact.field_function.value }}</strong> <br />{% endif %}
+      {% if variables.contact.field_specialty.value %}{{ variables.contact.field_specialty.value }} <br />{% endif %}
+      {% if variables.contact.field_entity.value %}{{ variables.contact.field_entity.value }}{% endif %}
+    </p>
+
+    {% if variables.contact.body %}
+      <p>{{ variables.contact.body.value|raw }}</p>
+    {% endif %}
+  </div>
+  <div class="teaser-contact-detail-infos">
+
+    {% if variables.contact.field_phone.value %}
+      <a href="tel:{{ variables.contact.field_phone.value }}">
+        <div class="text-{{ theme }} text-small label">{% trans %}Par téléphone{% endtrans %}</div>
+        <div class="text-{{ theme }} text-bold text-no-wrap">{{ variables.contact.field_phone.value }}</div>
+      </a>
+    {%- endif -%}
+
+    {%- if variables.contact.field_email.value -%}
+      <a class="text-{{ theme }} text-bold text-break-all" href="mailto:{{ variables.contact.field_email.value }}">{% trans %}Par e-mail{% endtrans %}</a>
+    {%- endif -%}
+
+    {%- if variables.contact.field_fax.value -%}
+      <a href="tel:{{ variables.contact.field_fax.value }}">
+        <div class="text-{{ theme }} text-small label">{% trans %}Par fax{% endtrans %}</div>
+        <div class="text-{{ theme }} text-bold text-no-wrap">{{ variables.contact.field_fax.value }}</div>
+      </a>
+      {%- endif -%}
+  </div>
+</div>

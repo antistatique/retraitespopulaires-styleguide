@@ -1,0 +1,21 @@
+uuid: 03a226f4-9a10-4d4e-9c5a-b13ed9eb9190
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_situation
+    - node.type.building
+  module:
+    - text
+id: node.building.field_situation
+field_name: field_situation
+entity_type: node
+bundle: building
+label: 'Compléments d''information'
+description: 'Utilisé pour indiquer l''adresse complète ou toutes autres informations relatives au lieu.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

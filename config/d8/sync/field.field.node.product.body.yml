@@ -1,0 +1,22 @@
+uuid: 121c3596-2bca-4eed-8783-814ed8cdb833
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.product
+  module:
+    - text
+id: node.product.body
+field_name: body
+entity_type: node
+bundle: product
+label: Description
+description: "Les couleurs des titres et des liens s'accordent automatiquement selon le métier sélectionné (Assurance vie, ...).\r\nPour la création d'un tableau, utiliser le bouton <b>tableau</b> - définir les propriétés du tableau <b>largeur toujours vide</b> - puis sélectionner un style de tableau <b>long ou condensé</b>."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

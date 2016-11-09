@@ -1,0 +1,16 @@
+uuid: f9e6d77b-8cd5-4a48-9a94-8e23d2ca62b2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.management_contracts
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: node.management_contracts
+target_entity_type_id: node
+target_bundle: management_contracts
+default_langcode: site_default
+language_alterable: false

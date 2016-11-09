@@ -1,0 +1,19 @@
+uuid: ae5a3627-0b96-4526-88cc-93fac2678541
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lastname
+    - node.type.advisor
+id: node.advisor.field_lastname
+field_name: field_lastname
+entity_type: node
+bundle: advisor
+label: 'Nom de famille'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

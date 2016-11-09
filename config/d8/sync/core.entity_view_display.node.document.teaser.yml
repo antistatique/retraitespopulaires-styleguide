@@ -1,0 +1,20 @@
+uuid: f55c390c-ab5d-4c08-b16e-9e54bb270870
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.document
+  module:
+    - user
+id: node.document.teaser
+targetEntityType: node
+bundle: document
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_file_document: true
+  field_profession: true
+  langcode: true

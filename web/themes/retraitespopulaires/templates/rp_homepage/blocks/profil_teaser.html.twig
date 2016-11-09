@@ -1,0 +1,11 @@
+<a href="{{ path('entity.node.canonical', {'node': variables.profil.nid.value}) }}" class="teaser teaser-fullclick teaser-profil shadow shadow-down">
+  <div class="profil-heading">
+    <div class="text-primary icon-text icon-text-center">
+      <span class="retraitespopulaires-icon retraitespopulaires-icon-{{ variables.icon }} retraitespopulaires-icon-3x"></span>
+        <div class="icon-text-txt text-cocon h4">{{ variables.profil.title.value }}</div>
+    </div>
+  </div>
+  <div class="profil-body">
+    <p>{{ variables.profil.body.summary }}</p>
+  </div>
+</a>

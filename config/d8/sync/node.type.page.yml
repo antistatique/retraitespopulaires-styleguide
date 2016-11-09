@@ -1,0 +1,22 @@
+uuid: 6735041f-243c-48cf-830f-60c7f3f5d35f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - profil
+      - secondary
+    parent: 'main:'
+_core:
+  default_config_hash: zhtPXoRcC6REiepM0k16zw__FDW5YOXDR6U2WlldTrs
+name: 'Page de base'
+type: page
+description: "Base pour la construction de la majorité des pages du futur site. \r\n\r\nOn y intègre un titre, un texte et ensuite nous pouvons construire la page avec d'autres contenus. On peut y ajouter des autres contenus (ex : advisors, products, etc.)"
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

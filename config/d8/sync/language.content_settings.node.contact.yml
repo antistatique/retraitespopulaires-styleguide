@@ -1,0 +1,16 @@
+uuid: 2373bd56-c7cd-48c8-af53-8b5e34e80beb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: node.contact
+target_entity_type_id: node
+target_bundle: contact
+default_langcode: site_default
+language_alterable: false

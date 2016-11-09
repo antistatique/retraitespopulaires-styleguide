@@ -1,0 +1,22 @@
+uuid: d1ab52d3-7b21-49c9-96bd-0b2ea65b8184
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: partnership
+label: Partnership
+type: 'canonical_entities:node'
+pattern: 'partenariat/[node:field_partnership]/[node:title]'
+selection_criteria:
+  0ff3c9be-d432-4ca3-a318-8c082c69ed6a:
+    id: node_type
+    bundles:
+      partnership: partnership
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 0ff3c9be-d432-4ca3-a318-8c082c69ed6a
+selection_logic: and
+weight: -5
+relationships: {  }

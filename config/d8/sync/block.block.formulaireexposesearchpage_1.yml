@@ -1,0 +1,29 @@
+uuid: 6b4de14b-21f3-4c91-90c5-c36337d3743f
+langcode: fr
+status: false
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - system
+    - views
+  theme:
+    - retraitespopulaires
+id: formulaireexposesearchpage_1
+theme: retraitespopulaires
+region: '-1'
+weight: 9
+provider: null
+plugin: 'views_exposed_filter_block:search-page_1'
+settings:
+  id: 'views_exposed_filter_block:search-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '/admin/*'
+    negate: true
+    context_mapping: {  }

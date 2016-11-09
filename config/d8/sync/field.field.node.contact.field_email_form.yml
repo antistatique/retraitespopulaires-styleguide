@@ -1,0 +1,19 @@
+uuid: 2aac15d3-59fc-41b4-9390-2ae02e8311a1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_form
+    - node.type.contact
+id: node.contact.field_email_form
+field_name: field_email_form
+entity_type: node
+bundle: contact
+label: 'Email de contact'
+description: 'Lorsque ce champ est rempli, il permet l''affichage d''un formulaire de contact utilisant cette valeur comme e-mail de contact.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

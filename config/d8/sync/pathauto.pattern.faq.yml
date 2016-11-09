@@ -1,0 +1,22 @@
+uuid: 2c679338-a9bd-4e5d-a299-74ce5311585b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: faq
+label: Questions-réponses
+type: 'canonical_entities:node'
+pattern: 'questions-reponses/[node:field_profession]/[node:title]'
+selection_criteria:
+  3227fd71-d9d1-486c-97e7-e53ee4dfae4c:
+    id: node_type
+    bundles:
+      faq: faq
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 3227fd71-d9d1-486c-97e7-e53ee4dfae4c
+selection_logic: and
+weight: -5
+relationships: {  }

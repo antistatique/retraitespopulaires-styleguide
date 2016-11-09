@@ -1,0 +1,20 @@
+{% if variables.offers %}
+<div class="attachements-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 last-news-heading">
+        <div class="h2 pull-left">{% trans %}Coupons Bella vita{% endtrans %}</div>
+      </div>
+    </div>
+	<div class="spacer spacer-sm"></div>
+    <div class="row">
+      {% for offer in variables.offers %}
+        <div class="col-xs-12 col-md-6">
+          {{ load_block('rp_offers_offer_teaser_block', {'offer': offer}) }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="organic-lines hidden-print lines-{{ variables.theme }}"></div>
+</div>
+{% endif %}

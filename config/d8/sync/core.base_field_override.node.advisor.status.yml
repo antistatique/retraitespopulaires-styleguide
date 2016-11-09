@@ -1,0 +1,22 @@
+uuid: 7525caad-6be4-4f40-a15c-68364a65fdf9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.advisor
+id: node.advisor.status
+field_name: status
+entity_type: node
+bundle: advisor
+label: 'Statut de publication'
+description: 'Un booléen indiquant si le nœud est publié ou non.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

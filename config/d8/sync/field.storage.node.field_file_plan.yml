@@ -1,0 +1,23 @@
+uuid: 23901721-46c5-44de-bed5-76e8f139a02e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_file_plan
+field_name: field_file_plan
+entity_type: node
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,125 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display the basic html structure of a single
+ * Drupal page.
+ *
+ * Variables:
+ * - $css: An array of CSS files for the current page.
+ * - $language: (object) The language the site is being displayed in.
+ *   $language->language contains its textual representation.
+ *   $language->dir contains the language direction. It will either be 'ltr' or
+ *   'rtl'.
+ * - $rdf_namespaces: All the RDF namespace prefixes used in the HTML document.
+ * - $grddl_profile: A GRDDL profile allowing agents to extract the RDF data.
+ * - $head_title: A modified version of the page title, for use in the TITLE
+ *   tag.
+ * - $head_title_array: (array) An associative array containing the string parts
+ *   that were used to generate the $head_title variable, already prepared to be
+ *   output as TITLE tag. The key/value pairs may contain one or more of the
+ *   following, depending on conditions:
+ *   - title: The title of the current page, if any.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site, if any, and if there is no title.
+ * - $head: Markup for the HEAD section (including meta tags, keyword tags, and
+ *   so on).
+ * - $styles: Style tags necessary to import all CSS files for the page.
+ * - $scripts: Script tags necessary to load the JavaScript files and settings
+ *   for the page.
+ * - $page_top: Initial markup from any modules that have altered the
+ *   page. This variable should always be output first, before all other dynamic
+ *   content.
+ * - $page: The rendered page content.
+ * - $page_bottom: Final closing markup from any modules that have altered the
+ *   page. This variable should always be output last, after all other dynamic
+ *   content.
+ * - $classes String of classes that can be used to style contextually through
+ *   CSS.
+ *
+ * @ingroup templates
+ *
+ * @see bootstrap_preprocess_html()
+ * @see template_preprocess()
+ * @see template_preprocess_html()
+ * @see template_process()
+ */
+#}
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+    theme.settings.navbar_position ? 'navbar-is-' ~ theme.settings.navbar_position,
+    theme.has_glyphicons ? 'has-glyphicons',
+  ]
+%}
+<!DOCTYPE html>
+<html {{ html_attributes }}>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/{{ directory }}/build/favicons/favicon.ico?v=2" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/{{ directory }}/build/favicons/apple-icon-57x57.png?v=2">
+    <link rel="apple-touch-icon" sizes="60x60" href="/{{ directory }}/build/favicons/apple-icon-60x60.png?v=2">
+    <link rel="apple-touch-icon" sizes="72x72" href="/{{ directory }}/build/favicons/apple-icon-72x72.png?v=2">
+    <link rel="apple-touch-icon" sizes="76x76" href="/{{ directory }}/build/favicons/apple-icon-76x76.png?v=2">
+    <link rel="apple-touch-icon" sizes="114x114" href="/{{ directory }}/build/favicons/apple-icon-114x114.png?v=2">
+    <link rel="apple-touch-icon" sizes="120x120" href="/{{ directory }}/build/favicons/apple-icon-120x120.png?v=2">
+    <link rel="apple-touch-icon" sizes="144x144" href="/{{ directory }}/build/favicons/apple-icon-144x144.png?v=2">
+    <link rel="apple-touch-icon" sizes="152x152" href="/{{ directory }}/build/favicons/apple-icon-152x152.png?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="/{{ directory }}/build/favicons/apple-icon-180x180.png?v=2">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/{{ directory }}/build/favicons/android-icon-192x192.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="/{{ directory }}/build/favicons/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="96x96" href="/{{ directory }}/build/favicons/favicon-96x96.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="/{{ directory }}/build/favicons/favicon-16x16.png?v=2">
+    <link rel="manifest" href="/{{ directory }}/build/favicons/manifest.json?v=2">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/{{ directory }}/build/favicons/ms-icon-144x144.png?v=2">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Drupal assets and headers -->
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N44ZW2');</script>
+    <!-- End Google Tag Manager -->
+
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+
+    <!-- https://blogs.msdn.microsoft.com/ieinternals/2011/05/14/stylesheet-limits-in-internet-explorer -->
+    <!-- Bypass Limitation of IE 9 -->
+    <!--[if IE 9]>
+    <link rel="stylesheet" href="/{{ directory }}/build/css/vendors.min.css">
+    <link rel="stylesheet" href="/{{ directory }}/build/css/main.css">
+    <![endif]-->
+
+  </head>
+  <body{{ attributes.addClass(body_classes) }}>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N44ZW2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+    {{ load_block('rp_layout_bigmenu_block') }}
+    {{ load_block('rp_layout_header_block') }}
+
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+
+    <div class="spacer"></div>
+    {{ load_block('rp_layout_footer_block') }}
+
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
+</html>

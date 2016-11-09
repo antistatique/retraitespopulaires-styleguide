@@ -1,0 +1,7 @@
+# French translation of Retraites Populaires
+#
+msgid ""
+msgstr ""
+
+msgid "Non-breaking space"
+msgstr "Espace insécable"

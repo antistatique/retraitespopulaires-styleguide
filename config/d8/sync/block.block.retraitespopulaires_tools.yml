@@ -1,0 +1,26 @@
+uuid: f99777ea-01a8-4f01-b2ac-c789a682ec98
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - retraitespopulaires
+_core:
+  default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
+id: retraitespopulaires_tools
+theme: retraitespopulaires
+region: '-1'
+weight: 6
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

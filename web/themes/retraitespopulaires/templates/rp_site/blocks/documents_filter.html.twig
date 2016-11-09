@@ -1,0 +1,36 @@
+{% set theme = variables.theme %}
+
+{% if variables.categories %}
+<h4>{% trans %}Filtrer par:{% endtrans %}</h4>
+<div class="spacer spacer-sm"></div>
+
+<div class="{{ theme_hook_original }}">
+  <p class="media-heading text-muted">{% trans %}Nos documents utiles{% endtrans %}</p>
+  <ul class="filters-list">
+
+    <li class="{{ variables.taxonomy_term_alias is empty ? 'active' }}">
+      {% if variables.taxonomy_term_alias is empty %}
+        <a href="{{ path('entity.node.canonical', {'node': variables.collection}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ theme }}"></a>
+      {% else %}
+        <a href="{{ path('entity.node.canonical', {'node': variables.collection}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked text-{{ theme }}"></a>
+      {% endif %}
+
+      <a class="pretty-link text-{{ theme }}" href="{{ path('entity.node.canonical', {'node': variables.collection}) }}">{% trans %}Tous{% endtrans %}</a>
+    </li>
+
+    {% for category in variables.categories %}
+      <li class="{{ category.alias == variables.taxonomy_term_alias ? 'active' }}">
+       {% if category.alias == variables.taxonomy_term_alias %}
+         <a href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ theme }}"></a>
+       {% else %}
+         <a href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked text-{{ theme }}"></a>
+       {% endif %}
+
+       <a class="pretty-link text-{{ theme }}" href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
+     </li>
+    {% endfor %}
+
+  </ul>
+  </ul>
+</div>
+{% endif %}

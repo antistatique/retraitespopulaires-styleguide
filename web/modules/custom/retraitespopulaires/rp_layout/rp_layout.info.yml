@@ -1,0 +1,6 @@
+name: Layout
+description: 'Global layout such Header, Menu, Footer'
+package: Retraites Populaires
+type: module
+version: 1.0
+core: 8.x

@@ -1,0 +1,6 @@
+name: Newsletter
+description: 'Newsletter throught Mailchimp API'
+package: Retraites Populaires
+type: module
+version: 1.0
+core: 8.x

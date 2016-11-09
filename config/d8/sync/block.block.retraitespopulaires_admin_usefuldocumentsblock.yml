@@ -1,0 +1,28 @@
+uuid: 901e31ba-d38c-445c-900d-6ea2aa86ff3d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - rp_site
+  theme:
+    - retraitespopulaires_admin
+id: retraitespopulaires_admin_usefuldocumentsblock
+theme: retraitespopulaires_admin
+region: sidebar_first
+weight: -12
+provider: null
+plugin: rp_site_documents
+settings:
+  id: rp_site_documents
+  label: 'Useful Documents block'
+  provider: rp_site
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

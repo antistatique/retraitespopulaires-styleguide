@@ -1,0 +1,28 @@
+uuid: 56c0930d-df5a-464d-a801-1b4951b4040a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profession
+    - node.type.advisor
+    - taxonomy.vocabulary.profession
+id: node.advisor.field_profession
+field_name: field_profession
+entity_type: node
+bundle: advisor
+label: Métier
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      profession: profession
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

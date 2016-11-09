@@ -1,0 +1,4 @@
+embed_provider: 'http://iframe.ly/api/oembed?url={url}&callback={callback}&api_key=576fa7659d38c36f11daaa'
+_core:
+  default_config_hash: wHgddFra_KkG7ATiHI-Wks4-pkdtvei_fEb0UbgdB9Y
+langcode: fr

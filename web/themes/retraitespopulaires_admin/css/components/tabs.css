@@ -1,0 +1,52 @@
+/**
+ * Tab
+ *
+ * 1. Required by some elements such as <button>
+ * 2. Fixed height needed to ensure alignment with absolutely-positioned
+ *    active tab.
+ */
+.tabs__tab {
+  color: #008e4f;
+}
+.tabs__tab:hover,
+.tabs__tab:focus {
+  color: #00a261;
+}
+.tabs.secondary .is-active a {
+  color: #008e4f;
+}
+.tabs.primary a:focus {
+  color: #00a261;
+}
+.tabs.secondary .tabs__tab.is-active {
+  color: #008e4f;
+}
+[dir="rtl"] .tabs.secondary .tabs__tab.is-active {
+  border-right-color: #008e4f;
+}
+
+.tabs.secondary .tabs__tab:hover,
+.tabs.secondary .tabs__tab:focus {
+  color: #00a261;
+}
+[dir="rtl"] .tabs.secondary .tabs__tab:hover,
+[dir="rtl"] .tabs.secondary .tabs__tab:focus {
+  border-right-color: #00a261;
+}
+.is-horizontal .tabs.secondary .tabs__tab.is-active {
+  border-bottom-color: #008e4f;
+}
+.is-horizontal .tabs.secondary .tabs__tab:hover,
+.is-horizontal .tabs.secondary .tabs__tab:focus {
+  border-bottom-color: #00a261;
+}
+
+/* Only add the arrow if there's space */
+@media screen and (min-width:18.75em) { /* 300px */
+  .tabs.primary a {
+    background: url(../../misc/icons/008e4f/chevron-right.svg) 99% center no-repeat;
+  }
+  [dir="rtl"] .tabs.primary a {
+    background: url(../../misc/icons/008e4f/chevron-left.svg) 1% center no-repeat;
+  }
+}

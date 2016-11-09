@@ -1,0 +1,33 @@
+uuid: 430a2ac9-6fbf-43f6-8fe6-88844bdddd5c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.document.field_file_document
+    - field.field.node.document.field_profession
+    - node.type.document
+  module:
+    - file
+    - user
+id: node.document.default
+targetEntityType: node
+bundle: document
+mode: default
+content:
+  field_file_document:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  field_profession:
+    weight: 101
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+hidden:
+  langcode: true

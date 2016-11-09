@@ -1,0 +1,22 @@
+uuid: f770fd79-6267-4ecd-a85a-0e6777dcaa38
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.partnership
+id: node.partnership.sticky
+field_name: sticky
+entity_type: node
+bundle: partnership
+label: 'Epinglé en haut des listes'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

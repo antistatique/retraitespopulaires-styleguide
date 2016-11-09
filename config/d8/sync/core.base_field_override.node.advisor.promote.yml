@@ -1,0 +1,22 @@
+uuid: dd8a4c74-290a-4db8-a44c-3553e1a02ada
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.advisor
+id: node.advisor.promote
+field_name: promote
+entity_type: node
+bundle: advisor
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

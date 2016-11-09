@@ -1,0 +1,34 @@
+<div class="admin--detail-item container-fluid">
+	<div class="block block--secondary">
+		<h2 class="">Participants ({{ variables.requests|length }})</h2>
+    <p>
+      <a class="button button-action button--primary button--small" href="{{ path('rp_offers.admin.requests.csv', {'node' : variables.node.nid.value}) }}" target="_blank">{% trans %}Télécharger la liste{% endtrans %}</a>
+      <a class="button button--secondary button--small" href="{{ path('rp_offers.admin.requests.draw', {'node' : variables.node.nid.value}) }}" target="_blank">{% trans %}Lancer le tirage au sort ({{ variables.node.field_available_offers.value }} coupons){% endtrans %}</a>
+    </p>
+    <table class="responsive-enabled" data-striping="1">
+      <thead>
+        <tr>
+          <th>{% trans %}Date de participations{% endtrans %}</th>
+          <th>{% trans %}Informations{% endtrans %}</th>
+          <th>{% trans %}Gagnants{% endtrans %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for request in variables.requests %}
+        <tr class="odd">
+          <td>{{ request.created_at|date("m/d/Y") }}</td>
+          <td>
+            {{ request.firstname.value|capitalize }} · <strong>{{ request.lastname.value|capitalize }}</strong><br>
+            <a href="mailto:{{ request.email.value|lower }}">{{ request.email.value|lower }}</a><br>
+            {{ request.address.value }}<br>
+            {{ request.zip.value }} {{ request.city.value }}
+          </td>
+          <td>{% if request.winner.value %} <span class="ui-icon ui-icon-check"></span> {% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {{ variables.pager }}
+	</div>
+</div>

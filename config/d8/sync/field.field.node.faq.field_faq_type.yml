@@ -1,0 +1,28 @@
+uuid: 12ee01f7-949a-41bf-86ea-10f7ba7eef61
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq_type
+    - node.type.faq
+    - taxonomy.vocabulary.category_faq
+id: node.faq.field_faq_type
+field_name: field_faq_type
+entity_type: node
+bundle: faq
+label: 'Catégorie de questions-réponses'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      category_faq: category_faq
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

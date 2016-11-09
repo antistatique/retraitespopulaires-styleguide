@@ -1,0 +1,5 @@
+icons:
+    version: 1.0
+    css:
+        theme:
+            assets/css/rp_toolbar.icons.css: {}

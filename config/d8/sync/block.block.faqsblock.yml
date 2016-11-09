@@ -1,0 +1,27 @@
+uuid: f553daf4-7f03-46f1-b24d-cacbeb0e8de0
+langcode: fr
+status: false
+dependencies:
+  module:
+    - ctools
+  theme:
+    - retraitespopulaires
+id: faqsblock
+theme: retraitespopulaires
+region: '-1'
+weight: -10
+provider: null
+plugin: rp_site_faqs
+settings:
+  id: rp_site_faqs
+  label: 'FAQs block'
+  provider: rp_site
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

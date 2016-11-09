@@ -1,0 +1,18 @@
+uuid: e66eef1f-4b9d-44a0-bd43-f13525a01b4e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.management_contracts
+id: node.management_contracts.created
+field_name: created
+entity_type: node
+bundle: management_contracts
+label: 'Écrit le'
+description: 'L''heure à laquelle le nœud a été créé.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

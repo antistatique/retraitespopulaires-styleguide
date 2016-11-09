@@ -1,0 +1,25 @@
+uuid: 6246bf6f-f6a6-4e7a-9e1d-b99deb7e4fec
+langcode: fr
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - retraitespopulaires
+id: newsfilterblock
+theme: retraitespopulaires
+region: '-1'
+weight: -4
+provider: null
+plugin: rp_site_news_filter
+settings:
+  id: rp_site_news_filter
+  label: 'News Filter block'
+  provider: rp_site
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/actualites/*'
+    negate: false
+    context_mapping: {  }

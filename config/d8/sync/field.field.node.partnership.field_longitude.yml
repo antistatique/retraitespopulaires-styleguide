@@ -1,0 +1,23 @@
+uuid: b14ffd0d-878b-466d-a60a-541584e3d924
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_longitude
+    - node.type.partnership
+id: node.partnership.field_longitude
+field_name: field_longitude
+entity_type: node
+bundle: partnership
+label: Longitude
+description: 'À remplir, avec son tenant <b>Latitude</b>, afin de placer un marqueur sur la Google map.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float -180
+  max: !!float 180
+  prefix: ''
+  suffix: ''
+field_type: float

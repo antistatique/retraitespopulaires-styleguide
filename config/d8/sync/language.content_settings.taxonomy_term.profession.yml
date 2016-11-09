@@ -1,0 +1,16 @@
+uuid: 5824cca3-f7af-4ec7-8142-31baeb272039
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.profession
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: taxonomy_term.profession
+target_entity_type_id: taxonomy_term
+target_bundle: profession
+default_langcode: site_default
+language_alterable: false

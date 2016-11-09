@@ -1,0 +1,27 @@
+uuid: 803beecc-a3e6-4298-9da2-5bddfa7795f0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_news
+    - node.type.news
+  module:
+    - file
+id: node.news.field_file_news
+field_name: field_file_news
+entity_type: node
+bundle: news
+label: 'Fichier(s) attaché(s)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'files-news/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx xls xlsx ppt pptx png gif jpg jpeg zip mp4 avi mov'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

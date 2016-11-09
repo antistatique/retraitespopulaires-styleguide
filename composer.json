@@ -21,8 +21,26 @@
         "cweagans/composer-patches": "~1.0",
         "drupal/core": "~8.0",
         "drush/drush": "~8.0",
-        "drupal/console": "~1.0"
-    },
+        "drupal/console": "~1.0",
+        "drupal/admin_toolbar": "^8.0",
+        "drupal/pathauto": "^8.0",
+        "drupal/field_group": "^8",
+        "drupal/search_api": "^8",
+        "drupal/search_api_attachments": "^8",
+        "drupal/search_api_solr": "^8",
+        "drupal/devel": "^8",
+        "drewm/mailchimp-api": "^2.2",
+        "drupal/metatag": "~8.1.0-beta9",
+        "drupal/menu_breadcrumb": "^8",
+        "drupal/editor_advanced_link": "^8",
+        "drupal/mailsystem": "^8",
+        "drupal/swiftmailer": "^8",
+        "swiftmailer/swiftmailer": "5.2.*@stable",
+        "giggsey/libphonenumber-for-php": "^7.3",
+        "drupal/focal_point": "^8",
+        "drupal/ckeditor_media_embed": "^8",
+        "drupal/redirect": "^8"
+      },
     "require-dev": {
        "behat/mink": "~1.7",
         "behat/mink-goutte-driver": "~1.2",
@@ -64,6 +82,14 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/metatag": {
+                "Deactivate console service": "https://www.drupal.org/files/issues/metatag-deactivate_drupalconsole_services_0.patch"
+            },
+            "drupal/core": {
+              "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch"
+            }
         }
     }
 }

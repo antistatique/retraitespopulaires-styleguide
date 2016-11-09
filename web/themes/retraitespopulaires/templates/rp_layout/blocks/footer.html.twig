@@ -1,0 +1,121 @@
+<div class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="spacer"></div>
+        <h2>{% trans %}Retrouvez-nous sur les réseaux sociaux{% endtrans %}</h2>
+        <p>{% trans %}Suivez-nous en temps réel sur Twitter. Facebook et vos plateformes préférées!{% endtrans %}</p>
+        <div class="spacer spacer-xs"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+          <div class="spacer spacer-xs"></div>
+          <div class="bubble-icon">
+            <a href="{{ variables.contact.twitter }}" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+          <div class="spacer spacer-xs"></div>
+          <div class="bubble-icon">
+            <a href="{{ variables.contact.facebook }}" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+          <div class="spacer spacer-xs"></div>
+          <div class="bubble-icon">
+            <a href="{{ variables.contact.youtube }}" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+          <div class="spacer spacer-xs"></div>
+          <div class="bubble-icon">
+            <a href="{{ variables.contact.instagram }}" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+          <div class="spacer spacer-xs"></div>
+          <div class="bubble-icon">
+            <a href="{{ variables.contact.linkedin }}" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-5 col-md-offset-1">
+        <div class="spacer spacer-md visible-xs visible-sm"></div>
+        <p>
+          {% set link = path('entity.node.canonical', {'node': 179}) %}
+          {% trans %}Recevez <a href="{{ link }}" class="pretty-link text-italic"><i>Savoir-faire</i></a>, le bulletin des spécialistes de Retraites&nbsp;Populaires, trois fois par année via e-mail:{% endtrans %}</p>
+        {{ load_form('rp_newsletter', 'SubscribeForm') }}
+      </div>
+
+      <div class="col-xs-12 col-md-5 col-md-offset-1">
+        <div class="spacer spacer-md visible-xs visible-sm"></div>
+        <p>{% trans %}Contactez-nous{% endtrans %}</p>
+
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#lausanne" aria-controls="lausanne" role="tab" data-toggle="tab">{% trans %}Lausanne (siège){% endtrans %}</a></li>
+          <li role="presentation"><a href="#yverdon" aria-controls="yverdon" role="tab" data-toggle="tab">{% trans %}Yverdon-les-Bains{% endtrans %}</a></li>
+          <li role="presentation"><a href="#nyon" aria-controls="nyon" role="tab" data-toggle="tab">{% trans %}Nyon{% endtrans %}</a></li>
+        </ul>
+
+        <div class="spacer spacer-sm"></div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="lausanne">
+                <a href="tel:{{ variables.contact.phone_lausanne }}" class="text-large d-block text-no-wrap">{{ variables.contact.phone_lausanne }}</a>
+                <a href="mailto:{{ variables.contact.email }}" class="text-large d-block">{{ variables.contact.email }}</a>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="yverdon">
+                <a href="tel:{{ variables.contact.phone_yverdon }}" class="text-large d-block text-no-wrap">{{ variables.contact.phone_yverdon }}</a>
+                <a href="mailto:{{ variables.contact.email_yverdon }}" class="text-large d-block">{{ variables.contact.email_yverdon }}</a>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="nyon">
+                <a href="tel:{{ variables.contact.phone_nyon }}" class="text-large d-block text-no-wrap">{{ variables.contact.phone_nyon }}</a>
+                <a href="mailto:{{ variables.contact.email_nyon }}" class="text-large d-block">{{ variables.contact.email_nyon }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer spacer-xs"></div>
+
+  <div class="organic-lines lines"></div>
+
+  <div class="spacer"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <ul class="menu-footer unordered-list list-inline list-unstyle-first">
+          {% for item in variables.footer_menu %}
+          <li>
+            {% set target = item.link.options.external ? '_blank' %}
+            <a class="pretty-link" href="{{ item.link.urlObject }}" target="{{ target }}">
+              {{ item.link.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+</div>

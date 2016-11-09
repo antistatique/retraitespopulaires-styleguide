@@ -1,0 +1,13 @@
+{% if variables.management_contracts %}
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <div class="row flex-row">
+      {% for management_contract in variables.management_contracts %}
+      <div class="col-xs-12 col-md-6">
+        {{ load_block('rp_site_management_contract_teaser_block', {'management_contract': management_contract}) }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

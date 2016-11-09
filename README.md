@@ -1,7 +1,40 @@
 # RP - Retraites Populaires
 Retraites Populaires website. Drupal 8 powered.
 
-## Install
+## 🔧 Prerequisites
+
+First of all, you need to have the following tools installed globally on your environment:
+
+  * composer
+  * drush
+  * npm
+
+The git repository of Retraites Populaires is:
+
+```
+ $ git add dplmgr@192.168.188.51:/data/git/retraitespopulaires.git
+```
+
+Got an error ? Like:
+```
+ssh: connect to host 192.168.188.51 port 22: Operation timed out
+fatal: Could not read from remote repository.
+```
+
+It's because you need to connect to the VPN. Open Firefox (and not Safari or Chrome, Java Applets Yeeahh!) and go to http://vpn.retraitespopulaires.ch/ and login.
+
+
+### Tips
+
+To run any drush command, you need to be on a hight bootstrapped drupal directory, such `/web`.
+
+  ```bash
+  $ cd /web
+  ```
+
+On common errors, see the Troubleshootings section.
+
+## 🚛 Install
 
 1. Setup your virtualhost (like `http://rp.dev`) to serve `/web`.
 
@@ -20,19 +53,28 @@ Retraites Populaires website. Drupal 8 powered.
 
 4. Use the same site UUID than your collegue:
 
-```bash
-$ drush config-set system.site uuid "178593ac-4188-4313-8826-c15c99d64cc4"
-```
+  ```bash
+  $ drush config-set system.site uuid "178593ac-4188-4313-8826-c15c99d64cc4"
+  ```
 
-(This is certainly a bad idea, [follow this drupal issue](https://www.drupal.org/node/1613424)).
+  (This is certainly a bad idea, [follow this drupal issue](https://www.drupal.org/node/1613424)).
 
-5. Update your  `sites/default/settings.php`:
+5. Update your  `web/sites/default/settings.php`:
+
+  ```bash
+  $ vim web/sites/default/settings.php
+  ```
 
   ```php
   $config_directories['sync'] = '../config/d8/sync';
   ```
 
-6. Update your `sites/default/drushrc.php`:
+6. Update your `web/sites/default/drushrc.php`:
+
+  ```bash
+  $ cp web/sites/default/default.drushrc.php web/sites/default/drushrc.php
+  $ vim web/sites/default/drushrc.php
+  ```
 
   ```php
   $options['uri'] = "http://rp.dev";
@@ -51,48 +93,90 @@ $ drush config-set system.site uuid "178593ac-4188-4313-8826-c15c99d64cc4"
   ```
 
 ## After a git pull/merge
-    ```bash
-    $ drush cim
-    $ drush cr
-    ```
 
-## Build the theme
+  ```bash
+  $ drush cim
+  $ drush cr
+  ```
 
-You first need to setup the work environment by running `$ npm install`.
+## 🎨 Build the theme
 
-To build the theme, you then need to clone the `retraitespopulaires-styleguide` repo and put it as a sibling of this repo in your local directory.
+**Production workflow:**
 
-In the styleguide (once it is set up, cf its README file):
+The first solution is to retrieve *styleguide as `npm` dependency* .
+To build the theme from vendor, `npm`, you should publish it. You then need to setup the work environment by running `$ npm install`.
 
-    # build all assets
-    $ gulp build
-    # or build all assets, serve the styleguide and watch changes
-    $ gulp serve
+**Development workflow:**
 
-In the drupal project:
+The second solution is to retrieve *styleguide from `git` repo*.
+To build the theme from the repository whitout publishing on `npm`, you then need to clone the [`retraitespopulaires-styleguide`](https://github.com/antistatique/retraitespopulaires-styleguide) repo and put it as a sibling of this repo in your local directory.
 
-    # copy all built files from the styleguide
-    $ gulp build
-    # or watch changes in styleguide build folder
-    $ gulp watch
+### For windows
 
-## Deploy
-The deployment of branch `dev` and `master` is automatically managed by Codeship!
+**Production workflow:**
 
+    # copy all built files from the vendor styleguide
+    $ ./bin/styleguide.bat
+
+**Development workflow:**
+
+    # copy all built files from the repo styleguide
+    $ ./bin/styleguide-dev.bat
+
+### For Unix
+
+**Production workflow:**
+
+    # copy all built files from the vendor styleguide
+    $ ./bin/styleguide.sh
+
+**Development workflow:**
+
+    # create a symlink
+    $ ln -s /path/to/retraitespopulaires-styleguide/build /web/themes/retraitespopulaires/build
+
+    Or
+
+    # copy all built files from the repo styleguide
+    $ ./bin/styleguide-dev.sh
+
+## 🚀 Deploy
 
 ### First time
 
     # You need to have ruby & bundler installed
     $ bundle install
+    $ npm login
+    # enter your npm credentials, ask Antistatique if you don't have one.
     $ npm install -g gulp
 
 ### Each times
 We use Capistrano to deploy:
 
     $ bundle exec cap -T
-    $ bundle exec cap staging deploy
+    $ bundle exec cap rpeti deploy
 
-## Troubleshootings
+
+## Solr
+We are using solr for search index.
+
+Solr need to be configured for drupal. Follow the INSTALL.txt found in the search_api_solr module.
+
+## 🏆 Tests
+
+    $ phpunit
+
+## 🚑 Troubleshootings
+
+### Error while importing config ?
+
+```
+The import failed due for the following reasons:                                                                                                   [error]
+Entities exist of type <em class="placeholder">Shortcut link</em> and <em class="placeholder"></em> <em class="placeholder">Default</em>. These
+entities need to be deleted before importing.
+```
+
+Solution: Delete all your shortcuts from the Drupal Admin on [admin/config/user-interface/shortcut/manage/default/customize](admin/config/user-interface/shortcut/manage/default/customize).
 
 ### How to disable the Drupal Cache for dev ?
 The tricks is to add this two lines in your `settings.php`:
@@ -106,7 +190,7 @@ A better way is to use the `example.settings.local.php` that do more for your de
  1. Copy the example local file:
 
   ```bash
-  $ cp sites/example.settings.local.xml sites/default/settings.local.php
+  $ cp sites/example.settings.local.php sites/default/settings.local.php
   ```
 
  2. Uncomment the following line in your `settings.php`
@@ -145,3 +229,21 @@ A better way is to use the `example.settings.local.php` that do more for your de
   ```
 
 [Read More about it](https://www.drupal.org/node/1903374)
+
+## 💻 Drush Commands
+
+### import_zip
+
+To importe all zips and associate it with advisor, use the drush command `rp:contact:import_zip` and the option `file` as full csv file path that contain zips to be imported.
+
+  ```bash
+  $ drush rp:contact:import_zip --file=target
+  ```
+
+### import-rates
+
+To importe all rates, use the drush command `rp:mortgage:import-rates` and the option `file` as full csv file path that contain rates to be imported and the optional option `institution` to only import rates concerning institution name-
+
+  ```bash
+  $ drush rp:mortgage:import-rates --file=target [--institution=institution]
+  ```
