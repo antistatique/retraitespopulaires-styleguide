@@ -16,4 +16,10 @@
       flex-direction: row;
     }
   }
+
+  .last-news-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 }

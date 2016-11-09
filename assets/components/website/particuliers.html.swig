@@ -11,7 +11,7 @@ layout: website.html.swig
 
 
 <div class="container">
-  <div class="row"></div>
+  <div class="row">
     <div class="col-xs-12 text-center">
       {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'Particuliers']} %}
       <div class="spacer"></div>

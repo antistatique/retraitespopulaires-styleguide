@@ -13,6 +13,7 @@
 @import 'ckeditor';
 
 // atoms:
+@import 'atoms/logo-management-contract';
 @import 'atoms/map-card';
 @import 'atoms/input-group';
 @import 'atoms/input-textarea';
@@ -47,6 +48,7 @@
 
 // molecules:
 @import 'molecules/progresschart';
+@import 'molecules/teaser-contact-detail';
 @import 'molecules/teaser-contact-cta';
 @import 'molecules/immo-heading';
 @import 'molecules/immo-results';
@@ -59,7 +61,6 @@
 @import 'molecules/teaser-news';
 @import 'molecules/teaser-rental';
 @import 'molecules/teaser-contact';
-@import 'molecules/teaser-contact-placeholder';
 @import 'molecules/breadcrumb';
 @import 'molecules/big-menu-empty';
 @import 'molecules/search-form';
@@ -71,6 +72,7 @@
 @import 'molecules/collapse';
 @import 'molecules/big-menu';
 @import 'molecules/card-attachement';
+@import 'molecules/form';
 
 // organisms:
 @import 'organisms/footer';

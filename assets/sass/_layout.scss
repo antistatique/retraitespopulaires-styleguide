@@ -4,6 +4,8 @@ body {
 }
 
 body.no-scroll {
+  position: fixed;
+  width: 100%;
   overflow: hidden;
 }
 

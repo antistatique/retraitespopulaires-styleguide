@@ -9,7 +9,7 @@ layout: website.html.swig
 {% include '../atoms/funky-waves.html.swig' %}
 
 <div class="container">
-  <div class="row"></div>
+  <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
       {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-hypotheque', links: ['Accueil', 'Financement', 'Prêt hypothécaire', 'Calculateur d’hypothèque']} %}
       <div class="spacer"></div>

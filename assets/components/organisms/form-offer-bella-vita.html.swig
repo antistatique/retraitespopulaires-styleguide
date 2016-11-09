@@ -12,21 +12,21 @@ notes: |
     <div class="form-group">
       <label>Votre prénom</label>
       <div class="input-group">
-        <input type="text" id="firstname" name="firstname" value="" size="40" maxlength="128" placeholder="John" class="form-text required form-control" required="required" aria-required="true">
+        <input type="text" id="firstname" name="firstname" value="" size="40" maxlength="128" placeholder="Alain" class="form-text required form-control" required="required" aria-required="true">
       </div>
     </div>
 
     <div class="form-group">
       <label>Votre nom de famille</label>
       <div class="input-group">
-        <input type="text" id="lastname" name="lastname" value="" size="40" maxlength="128" placeholder="Doe" class="form-text required form-control" required="required" aria-required="true">
+        <input type="text" id="lastname" name="lastname" value="" size="40" maxlength="128" placeholder="Rochat" class="form-text required form-control" required="required" aria-required="true">
       </div>
     </div>
 
     <div class="form-group">
       <label>Votre E-mail</label>
       <div class="input-group">
-        <input type="email" id="email" name="email" value="" size="60" maxlength="254" placeholder="john.doe@retraitespopulaires.ch" class="form-email required form-control" required="required" aria-required="true">
+        <input type="email" id="email" name="email" value="" size="60" maxlength="254" placeholder="alain.rochat@retraitespopulaires.ch" class="form-email required form-control" required="required" aria-required="true">
       </div>
     </div>
 
@@ -45,7 +45,7 @@ notes: |
     </div>
 
     <div class="form-group">
-      <label>Votre ville</label>
+      <label>Votre localité</label>
       <div class="input-group">
         <input size="30" type="text" id="city" name="city" value="" maxlength="128" placeholder="Lausanne" class="form-text required form-control" required="required" aria-required="true">
       </div>
