@@ -5,14 +5,17 @@
 
   &.icon-text-center {
     display: flex;
-    align-items: center;
-    line-height: 0;
+    align-items: flex-start;
   }
 
   .retraitespopulaires-icon-lock {
     position: absolute;
     top: 50%;
     margin-top: -0.6em;
+  }
+
+  .retraitespopulaires-icon {
+    margin-top: 0.2em;
   }
 
   .icon-text-txt {
