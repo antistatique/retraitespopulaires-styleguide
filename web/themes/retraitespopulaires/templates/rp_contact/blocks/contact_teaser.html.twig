@@ -40,7 +40,7 @@
       {%- endif -%}
 
       {% if variables.contact.field_phone.value %}
-        {% trans %} au <a class="pretty-link text-bold text-no-wrap text-{{ theme }}" href="tel:{{ variables.contact.field_phone.value }}">{{ variables.contact.field_phone.value }}</a>{% endtrans %}
+        {% trans %} au <a class="pretty-link text-bold text-no-wrap text-{{ theme }}" href="tel:{{ variables.contact.field_phone.value|replace(' ', '') }}">{{ variables.contact.field_phone.value }}</a>{% endtrans %}
       {%- endif -%}
 
       {%- if variables.contact.field_email.value -%}
@@ -48,7 +48,7 @@
       {%- endif -%}
 
       {%- if variables.contact.field_fax.value -%}
-        {% trans %} ou par fax au <a class="pretty-link text-no-wrap text-bold text-{{ theme }}" href="tel:{{ variables.contact.field_fax.value }}">{{ variables.contact.field_fax.value }}</a>.{% endtrans %}
+        {% trans %} ou par fax au <a class="pretty-link text-no-wrap text-bold text-{{ theme }}" href="tel:{{ variables.contact.field_fax.value|replace(' ', '') }}">{{ variables.contact.field_fax.value }}</a>.{% endtrans %}
       {%- else -%}
         .
       {%- endif -%}
