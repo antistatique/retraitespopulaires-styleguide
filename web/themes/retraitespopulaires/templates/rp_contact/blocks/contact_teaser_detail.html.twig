@@ -33,7 +33,8 @@
   <div class="teaser-contact-detail-infos">
 
     {% if variables.contact.field_phone.value %}
-      <a href="tel:{{ variables.contact.field_phone.value|replace(' ', '') }}">
+      {% set tel = variables.contact.field_phone.value|replace({' ': ''}) %}
+      <a href="tel:{{ tel }}">
         <div class="text-{{ theme }} text-small label">{% trans %}Par téléphone{% endtrans %}</div>
         <div class="text-{{ theme }} text-bold text-no-wrap">{{ variables.contact.field_phone.value }}</div>
       </a>
