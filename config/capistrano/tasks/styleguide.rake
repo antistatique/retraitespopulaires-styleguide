@@ -7,7 +7,7 @@ namespace :styleguide do
   # desc "Build assets locally"
   task :build do
     run_locally do
-      execute 'npm', '--no-spin', '--silent', 'install'
+      execute 'npm', '--no-spin', '--silent', 'update'
     end
   end
 

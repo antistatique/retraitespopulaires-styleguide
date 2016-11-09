@@ -5,7 +5,7 @@ set :deploy_to, '/data/sites/www2.retraitespopulaires.ch/'
 # set a branch for this release
 set :branch, 'master'
 
-set :slack_run, -> { true }
+# set :slack_run, -> { true }
 
 # Used only if styleguide is external of the repository
 # set :styleguide_branch, 'dev'
