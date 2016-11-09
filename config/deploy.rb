@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.4.1'
+lock '3.5.0'
 
 set :application, 'retraites-populaires'
 set :repo_url, 'dplmgr@192.168.188.51:/data/git/retraitespopulaires.git'
