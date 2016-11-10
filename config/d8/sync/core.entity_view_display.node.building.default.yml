@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.building.field_file_plan
     - field.field.node.building.field_latitude
     - field.field.node.building.field_longitude
+    - field.field.node.building.field_metatags
     - field.field.node.building.field_search_npa
     - field.field.node.building.field_situation
     - field.field.node.building.field_virtual_image
@@ -24,6 +25,7 @@ dependencies:
     - file
     - image
     - link
+    - metatag
     - options
     - text
     - user
@@ -113,6 +115,12 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
+  field_metatags:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
   field_search_npa:
     weight: 115
     label: above

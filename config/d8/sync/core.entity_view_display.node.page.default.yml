@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.page.field_faq
     - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_profil
@@ -21,6 +22,7 @@ dependencies:
   module:
     - file
     - image
+    - metatag
     - text
     - user
 _core:
@@ -96,6 +98,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: file_default
+  field_metatags:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
   field_products:
     weight: 7
     label: above

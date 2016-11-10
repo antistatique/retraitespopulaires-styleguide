@@ -8,11 +8,13 @@ dependencies:
     - field.field.node.faq.field_contact
     - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
+    - field.field.node.faq.field_metatags
     - field.field.node.faq.field_profession
     - field.field.node.faq.field_search_npa
     - node.type.faq
   module:
     - file
+    - metatag
     - text
     - user
 id: node.faq.default
@@ -53,6 +55,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: file_default
+  field_metatags:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
   field_profession:
     weight: 104
     label: above
