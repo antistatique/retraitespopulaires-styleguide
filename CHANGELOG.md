@@ -1,6 +1,9 @@
 CHANGELOG
 =========
-  
+
+* 1.0.1 (2016-11-10)
+  - Safari bug fixes
+
 * 1.0.0 (2016-11-09)
   - Fix icon-text component
   - First release for production
