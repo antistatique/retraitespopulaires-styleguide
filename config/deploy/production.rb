@@ -1,6 +1,6 @@
 # www2.retraitespopulaires.ch
 server '192.168.188.50', user: 'dplweb', roles: %w{app db web}
-set :deploy_to, '/data/sites/www2.retraitespopulaires.ch/'
+set :deploy_to, '/data/sites/www.retraitespopulaires.ch/'
 
 # set a branch for this release
 set :branch, 'master'
