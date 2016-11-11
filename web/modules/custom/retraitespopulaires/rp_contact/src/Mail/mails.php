@@ -56,7 +56,7 @@ function rp_contact_mail($key, &$message, $params) {
 
         // Sended when contacting of Changement d'adresses
         case 'contact_address':
-            $message['subject'] = t('Nouvelle demande de changement d\'adresses par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
+            $message['subject'] = t('Nouvelle demande de changement d\'adresse par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
         break;
 
         // Sended when contacting of Demande de réservation d'un taux
