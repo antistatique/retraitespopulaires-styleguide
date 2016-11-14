@@ -11,8 +11,33 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class SearchForm extends FormBase {
+
+    /**
+    * Request stack that controls the lifecycle of requests
+    * @var RequestStack
+    */
+    private $request;
+
+    /**
+    * Class constructor.
+    */
+    public function __construct(RequestStack $request) {
+        $this->request = $request->getMasterRequest();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function create(ContainerInterface $container) {
+      // Instantiates this form class.
+      return new static(
+        // Load the service required to construct this class.
+        $container->get('request_stack')
+      );
+    }
 
     /**
     * {@inheritdoc}.
@@ -27,20 +52,23 @@ class SearchForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = Url::fromRoute('rp_site.search')->toString();
         $form['#method'] = 'GET';
+        $form['#attributes']['class'] = array('global-search');
 
         $form['form-wrapper_start'] = array(
             '#markup' => '<div class="form-group">',
         );
 
         $form['input-group_start'] = array(
-            '#markup' => '<div class="input-group align-h">',
+            '#markup' => '<div class="input-group full-width">',
         );
 
+        $default = $this->request->query->get('q');
         $form['q'] = array(
-            '#type'   => 'textfield',
-            '#placeholder' => $this->t('Chercher un produit, un document, un contact, ...'),
-            '#attributes'  => ['class' => array('full-width')],
-            '#required'    => true,
+            '#type'          => 'textfield',
+            '#placeholder'   => $this->t('Chercher un produit, un document, un contact, ...'),
+            '#attributes'    => ['class' => array('full-width')],
+            '#required'      => true,
+            '#default_value' => $default,
         );
 
         $form['actions']['submit'] = array(
