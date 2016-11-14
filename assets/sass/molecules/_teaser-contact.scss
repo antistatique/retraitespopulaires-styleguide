@@ -47,10 +47,6 @@
     &:hover {
       border-color: darken($brand-primary, 10);
 
-      .heading-image {
-        position: relative;
-      }
-
       .heading-image:before {
         opacity: 0.1;
       }
