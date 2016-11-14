@@ -1,0 +1,7 @@
+{% if variables.result.nid %}
+<a href="{{ path('entity.node.canonical', {'node': variables.result.nid}) }}" class="teaser teaser-fullclick teaser-result shadow shadow-down">
+  <div class="result-body">
+    <div class="result-title h4">{{ variables.result.title }}</div>
+  </div>
+</a>
+{% endif %}
