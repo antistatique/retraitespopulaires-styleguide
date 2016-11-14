@@ -534,7 +534,7 @@ class AddressForm extends FormBase {
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_contact', 'contact_address', $to, 'fr', $data, $reply);
 
-            drupal_set_message(t('Merci @firstname @lastname pour votre demande de changement d\'adresse. Nous allons rapidement traitez votre demande et vous recontactez.', [
+            drupal_set_message(t('Merci @firstname @lastname pour votre demande de changement d\'adresse. Nous allons rapidement traiter votre demande et vous recontacter.', [
                 '@firstname' => $form_state->getValue('firstname'),
                 '@lastname'  => $form_state->getValue('lastname'),
             ]));

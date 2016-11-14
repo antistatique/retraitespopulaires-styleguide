@@ -454,7 +454,7 @@ class DocumentsForm extends FormBase {
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_contact', 'contact_documents', $to, 'fr', $data, $reply);
 
-            drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traitez votre demande et vous recontactez à l\'adresse @email.', [
+            drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l\'adresse @email.', [
                 '@firstname' => $form_state->getValue('firstname'),
                 '@lastname'  => $form_state->getValue('lastname'),
                 '@email'     => $form_state->getValue('email'),
