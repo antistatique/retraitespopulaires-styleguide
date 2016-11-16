@@ -11,9 +11,9 @@ notes: |
     <div class="form-group">
       <label>Date de la situation de prévoyance</label>
       <div class="input-group">
-        <input type="text" class="form-control datepicker" value="02/12/2016">
+        <input type="text" class="form-control datepicker" aria-label="Saisissez la date au format (JJ/MM/AAAA)" value="02/12/2016">
         <span class="input-group-btn no-events">
-          <button class="btn btn-default-invert btn-icon btn-" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
+          <button class="btn btn-default-invert btn-icon btn-" type="button" aria-label="Choisir la date"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
         </span>
       </div>
     </div>
@@ -39,18 +39,18 @@ notes: |
     <div class="form-group">
       <label>Date de naissance</label>
       <div class="input-group">
-        <input type="text" class="form-control datepicker" value="02/12/2016">
+        <input type="text" class="form-control datepicker" aria-label="Saisissez la date au format (JJ/MM/AAAA)" value="02/12/2016">
         <span class="input-group-btn no-events">
-          <button class="btn btn-default-invert btn-icon btn-" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
+          <button class="btn btn-default-invert btn-icon btn-" type="button" aria-label="Choisir la date"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
         </span>
       </div>
     </div>
     <div class="form-group">
       <label>Date d'entrée théorique dans la caisse</label>
       <div class="input-group">
-        <input type="text" class="form-control datepicker" value="02/12/2016">
+        <input type="text" class="form-control datepicker" aria-label="Saisissez la date au format (JJ/MM/AAAA)" value="02/12/2016">
         <span class="input-group-btn no-events">
-          <button class="btn btn-default-invert btn-icon btn-" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
+          <button class="btn btn-default-invert btn-icon btn-" type="button" aria-label="Choisir la date"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
         </span>
       </div>
     </div>
@@ -116,9 +116,9 @@ notes: |
   	<div class="form-group">
       <label>Je souhaite partir à la retraite à la date du</label>
       <div class="input-group">
-        <input type="text" class="form-control datepicker" value="02/12/2016">
+        <input type="text" class="form-control datepicker" aria-label="Saisissez la date au format (JJ/MM/AAAA)" value="02/12/2016">
         <span class="input-group-btn no-events">
-          <button class="btn btn-default-invert btn-icon btn-" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
+          <button class="btn btn-default-invert btn-icon btn-" type="button" aria-label="Choisir la date"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
         </span>
       </div>
       <p class="help-block">Indiquer une date correspondant à un âge se situant entre 58 et 70 ans et mentionner le dernier jour du mois.</p>

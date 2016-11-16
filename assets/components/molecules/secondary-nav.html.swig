@@ -9,8 +9,9 @@ notes: |
   - **theme** - <i>String</i> - <b>secondary-nav-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="secondary-nav secondary-nav-{{ theme }}">
+  <h2 class="sr-only">Navigation secondaire</h2>
   <div class="back">
-    <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></a>
+    <a aria-label="Back" href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></a>
   </div>
   <div class="secondary-nav-content">
 
