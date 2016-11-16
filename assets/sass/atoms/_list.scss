@@ -7,11 +7,21 @@
 /* stylelint-disable no-duplicate-selectors */
 /* Make the code unreadable otherwise */
 
+ul.unstyled-list,
+ol.unstyled-list {
+  list-style: none;
+  padding-left: 0.5em;
+}
+
 ul.unordered-list,
 ol.ordered-list,
 ul.treeview-list,
 ul.facets-list {
   padding: 0;
+
+  > li {
+    line-height: 1.2em;
+  }
 }
 
 ul.treeview-list,
@@ -25,28 +35,30 @@ ul.facets-list {
   }
 
   > li {
+    position: relative;
+    margin-bottom: 0.3em;
     padding-left: 0.5em;
-    text-indent: -0.5em;
 
     &:before {
       content: '\0025A0'; // ■
-      position: relative;
+      position: absolute;
       top: -0.2em;
-      left: -1em;
+      left: -0.5em;
       font-size: 0.8em;
       color: $gray;
     }
   }
 
   &.list-inline li {
-    margin-right: $grid-gutter-width / 2;
+    margin-right: 0.3em;
   }
 }
 
 ul.treeview-list {
   > li {
     &:before {
-      content: '\231E';
+      content: '\231E'; // →
+      top: 0;
       left: -0.5em;
       font-size: 1.2em;
     }
@@ -56,10 +68,10 @@ ul.treeview-list {
 ul.facets-list {
   > li {
     &:before {
-      content: '→';
+      content: '→'; // →
       top: 0;
       left: -0.5em;
-      font-size: 1.2em;
+      font-size: 0.9em;
       color: $black;
     }
   }
@@ -68,20 +80,59 @@ ul.facets-list {
 ol.ordered-list {
   list-style: none;
   counter-reset: item;
+  margin-left: $grid-gutter-width / 2;
 
   > ol {
     padding-left: 1.5em;
   }
 
   > li {
+    position: relative;
+    margin-bottom: 0.3em;
     padding-left: 0.5em;
-    text-indent: -0.5em;
 
     &:before {
       content: counter(item) '. ';  // 1.
-      margin-right: 0.5em;
+      position: absolute;
+      left: -0.5em;
       counter-increment: item;
       color: $gray;
+    }
+  }
+}
+
+ul.filters-list,
+ol.filters-list {
+  list-style: none;
+  padding-left: 0.5em;
+
+  > li {
+    position: relative;
+    margin-bottom: 0.3em;
+    padding-left: 0.5em;
+
+    .retraitespopulaires-icon {
+      position: absolute;
+      top: 0.6em;
+      left: -0.5em;
+      font-size: 0.6em;
+      color: $black;
+
+      &:hover { color: $brand-primary; }
+    }
+
+    &.active {
+      .retraitespopulaires-icon { color: $brand-primary; }
+    }
+  }
+}
+
+@each $label, $color in $themes {
+  ul.filters-list > li.active {
+    .retraitespopulaires-icon.text-#{$label} {
+      color: $color;
+
+      &:hover { color: $black; }
     }
   }
 }

@@ -31,9 +31,8 @@ export function big_menu () {
 
   // This is under 992px
   if (!window.matchMedia('(min-width: 992px)').matches) {
-    console.log('fixheight');
     let height = $swiper.find('.swiper-column-1').height();
-    $swiper.find('.swiper-column-2, .swiper-column-3').css({'height': height});
+    $swiper.find('.swiper-column-wrapper-2, .swiper-column-wrapper-3').css({'height': height});
   }
 
   /**
@@ -42,6 +41,15 @@ export function big_menu () {
    */
   $swiper.find('.swiper-list .arrow-next').on('click', function(event){
     event.preventDefault ? event.preventDefault() : (event.returnValue = false);
+
+    // This is under 992px, we lock body when opening children pan
+    if (!window.matchMedia('(min-width: 992px)').matches) {
+      $navbar.animate({
+        scrollTop: 0
+      }, 500, function(){
+        $navbar.addClass('no-scroll');
+      });
+    }
 
     // Remove the empty-state
     $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive');
@@ -73,6 +81,9 @@ export function big_menu () {
     // Open desired pan
     $next_wrapper.addClass('active');
     $next_pane.toggleClass('active');
+    $next_wrapper.animate({
+      scrollTop: 0
+    }, 500);
   });
 
   /**
@@ -84,6 +95,11 @@ export function big_menu () {
 
     const $current_pane = $(this).parents('.swiper-list');
     const $current_wrapper = $(this).parents('.swiper-column-wrapper');
+
+    // This is under 992px, we lock body when opening children pan
+    if ($current_wrapper.hasClass('swiper-column-wrapper-2') && !window.matchMedia('(min-width: 992px)').matches) {
+      $navbar.removeClass('no-scroll');
+    }
 
     // Close current pane
     $current_pane.removeClass('active');

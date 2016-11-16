@@ -20,6 +20,8 @@ notes: |
       {% set nav = data.nav.particuliers %}
     {% elseif json == 'assurance-vie'  %}
       {% set nav = data.nav.assurancevie %}
+    {% elseif json == 'emploi'  %}
+      {% set nav = data.nav.emploi %}
     {% else  %}
       {% set nav = data.nav.lorem %}
     {% endif %}

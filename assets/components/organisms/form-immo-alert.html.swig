@@ -27,7 +27,7 @@ notes: |
         <div class="form-group">
           <label for="interval">Votre e-mail</label>
           <div class="input-group full-width">
-            <input type="text" class="form-control form-control-immobilier full-width" placeholder="Ex: jane.doe@bluewin.ch">
+            <input type="text" class="form-control form-control-immobilier full-width" placeholder="Ex: aline.rochat@retraitespopulaires.ch">
             <span class="input-group-btn">
               <button class="btn btn-immobilier" type="button">Inscription</button>
             </span>

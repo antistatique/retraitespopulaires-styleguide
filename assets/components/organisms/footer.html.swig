@@ -70,7 +70,7 @@ notes: |
         <form>
           <div class="form-group">
             <div class="input-group full-width">
-            <input type="text" class="form-control full-width" placeholder="Ex: jane.doe@bluewin.ch" aria-label="Saisissez votre adresse e-mail.">
+              <input type="text" class="form-control full-width" placeholder="Ex: aline.rochat@retraitespopulaires.ch" aria-label="Saisissez votre adresse e-mail.">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button">Je m'inscris</button>
               </span>
@@ -98,7 +98,7 @@ notes: |
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
-        <ul class="unordered-list list-inline list-unstyle-first">
+        <ul class="menu-footer unordered-list list-inline list-unstyle-first">
           <li><a href="#" class="pretty-link text-{{theme}}">Impressum</a></li>
           <li><a href="#" class="pretty-link text-{{theme}}">Mentions juridiques</a></li>
           <li><a href="#" class="pretty-link text-{{theme}}">Glossaire</a></li>

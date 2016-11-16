@@ -12,7 +12,7 @@ notes: |
     <div class="form-group">
       <label class="">Votre adresse e-mail</label>
       <div class="input-text">
-        <input type="text" size="50" name="mail" class="form-control" placeholder="john.doe@retraites-populaires.ch" value="">
+        <input type="text" size="50" name="mail" class="form-control" placeholder="alain.rochat@retraitespopulaires.ch" value="">
       </div>
     </div>
     <div class="form-group">

@@ -6,7 +6,11 @@
   background: $brand-primary;
 
   &:not(.wrapper-funky-waves-with-cover) {
-    min-height: 25vh;
+    min-height: 35vh;
+
+    @media (min-width: $screen-sm-min) {
+      min-height: 25vh;
+    }
 
     @media (min-width: $screen-md-min) {
       min-height: 300px;
@@ -47,6 +51,7 @@
       position: absolute;
       bottom: 0;
       width: 100%;
+      height: auto;
 
       &.wave-1 {
         bottom: 0;
@@ -67,12 +72,14 @@
       &.wave-2 { /* Set width to 200% for animated waves */
         left: 0;
         width: 200%;
+        height: auto;
         animation: wave-left 50s infinite linear;
       }
 
       &.wave-3 { /* Set width to 200% for animated waves */
         right: 0;
         width: 200%;
+        height: auto;
         animation: wave-right 80s infinite linear;
       }
     }
