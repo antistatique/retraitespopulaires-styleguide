@@ -137,6 +137,13 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                 }
 
                 $variables['links'] = $this->entity_node->loadMultiple($faqs_nids);
+
+                // Remove linked in admin but unpublished faq
+                foreach ($variables['links'] as $key => $link) {
+                    if (!$link->isPublished()) {
+                        unset($variables['links'][$key]);
+                    }
+                }
             } else {
                 // Retrieve random documents
                 $query = $this->entity_query->get('node')
@@ -182,6 +189,13 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                     $documents_nids[] = $doc->target_id;
                 }
                 $variables['links'] = $this->entity_node->loadMultiple($documents_nids);
+
+                // Remove linked in admin but unpublished faq
+                foreach ($variables['links'] as $key => $link) {
+                    if (!$link->isPublished()) {
+                        unset($variables['links'][$key]);
+                    }
+                }
             } else {
                 // Retrieve random documents
                 $query = $this->entity_query->get('node')
