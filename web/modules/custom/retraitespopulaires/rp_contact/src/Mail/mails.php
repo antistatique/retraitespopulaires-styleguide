@@ -28,7 +28,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['subject'] = t('Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
         break;
 
-        // Sended when contacring contact/advisor
+        // Sended when contacting contact/advisor
         case 'contact':
             $message['subject'] = t('Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
 
@@ -44,14 +44,42 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('Prénom: '). $params['firstname'] . '<br />');
             $message['body'][] = Markup::create( t('Date de naissance (jj/mm/aaaa): '). $params['birthdate'] . '<br />');
             $message['body'][] = Markup::create( t('Npa: '). $params['zip'] . '<br />');
-            $message['body'][] = Markup::create( t('Ville: '). $params['city'] . '<br />');
+            $message['body'][] = Markup::create( t('Localité: '). $params['city'] . '<br />');
             $message['body'][] = Markup::create( t('E-mail: '). $params['email'] . '<br />');
             $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
         break;
 
         // Sended when contacting of Demande de documents
         case 'contact_documents':
-            $message['subject'] = t('Nouvelle demande de documents @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
+            $message['subject'] = t('Nouvelle commande de documents par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
+
+            $message['body'][] = Markup::create( '<b>'. t('Nouvelle commande de documents par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]) . '</b><br /><br />');
+
+            $message['body'][] = Markup::create( '<b>'. t('Demande: '). '</b><br />');
+            if ($params['policies']) {
+                $message['body'][] = Markup::create( t('Police(s) d\'assurance: '). implode(', ', $params['policies']) . '<br />');
+            }
+            if ($params['attestations']) {
+                $message['body'][] = Markup::create( t('Attestations fiscales: '). implode(', ', $params['attestations']) . '<br />');
+            }
+            if (!empty($params['other_year'])) {
+                $message['body'][] = Markup::create( t('Autre(s) année(s): '). $params['other_year'] . '<br />');
+            }
+            if ($params['payments']) {
+                $message['body'][] = Markup::create( t('Moyen(s) de paiement: '). implode(', ', $params['payments']) . '<br />');
+            }
+            $message['body'][] = Markup::create( t('Message: '). '<br />'. nl2br($params['message']) . '<br />');
+
+            $message['body'][] = Markup::create( '<br /><br />');
+            $message['body'][] = Markup::create( '<b>'. t('Informations de contact: '). '</b><br />');
+            $message['body'][] = Markup::create( t('Numéro(s) de police(s): '). $params['policy'] . '<br />');
+            $message['body'][] = Markup::create( t('Etat civil: '). $params['civil_state'] . '<br />');
+            $message['body'][] = Markup::create( t('Nom: '). $params['lastname'] . '<br />');
+            $message['body'][] = Markup::create( t('Prénom: '). $params['firstname'] . '<br />');
+            $message['body'][] = Markup::create( t('Date de naissance (jj/mm/aaaa): '). $params['birthdate'] . '<br />');
+            $message['body'][] = Markup::create( t('Npa: '). $params['zip'] . '<br />');
+            $message['body'][] = Markup::create( t('Localité: '). $params['city'] . '<br />');
+            $message['body'][] = Markup::create( t('E-mail: '). $params['email'] . '<br />');
         break;
 
         // Sended when contacting of Changement d'adresses
@@ -80,7 +108,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('Prénom: '). $params['firstname'] . '<br />');
             $message['body'][] = Markup::create( t('Raison sociale: '). $params['company'] . '<br />');
             $message['body'][] = Markup::create( t('NPA: '). $params['zip'] . '<br />');
-            $message['body'][] = Markup::create( t('Ville: '). $params['city'] . '<br />');
+            $message['body'][] = Markup::create( t('Localité: '). $params['city'] . '<br />');
             $message['body'][] = Markup::create( t('E-mail: '). $params['email'] . '<br />');
             $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
         break;
