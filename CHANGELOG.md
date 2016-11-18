@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+## 1.0.2 (2016-11-18)
+ - Add body to mails `contact_address` and  `contact_documents`
+ - Fix bug list attached FAQs even if unpublished
+
 ## 1.0.1 (2016-11-10)
  - Add link to contact page in contact attachments block
  - Open Google Search in a new windows
