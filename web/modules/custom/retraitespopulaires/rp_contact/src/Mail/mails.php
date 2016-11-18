@@ -82,12 +82,11 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('E-mail: '). $params['email'] . '<br />');
         break;
 
-        // Sended when contacting of Changement d'adresses
+        // Sended when contacting of Changement d'adresse
         case 'contact_address':
+            $message['subject'] = t('Nouvelle demande de changement d\'adresse par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
 
-            $message['subject'] = t('Nouvelle demande de changement d\'adresses par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
-
-            $message['body'][] = Markup::create( '<b>'. t('Nouvelle commande de documents par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]) . '</b><br /><br />');
+            $message['body'][] = Markup::create( '<b>'. t('Nouvelle demande de changement d\'adresse par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]) . '</b><br /><br />');
 
             // Contact informations
             $message['body'][] = Markup::create( '<b>'. t('Informations de contact: '). '</b><br />');
