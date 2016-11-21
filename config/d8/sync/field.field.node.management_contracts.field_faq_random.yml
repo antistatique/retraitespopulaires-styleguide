@@ -1,0 +1,23 @@
+uuid: 4dd8765d-ebc7-4854-9853-9b49541c0e12
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq_random
+    - node.type.management_contracts
+id: node.management_contracts.field_faq_random
+field_name: field_faq_random
+entity_type: node
+bundle: management_contracts
+label: 'Question(s)-Réponse(s) - Désactiver l''affichage aléatoire'
+description: "L'affichage aléatoire est un comportement naturel sur retraitespopulaire.ch. Il intervient lorsque le contenu ne possède pas de question(s)-réponse(s) spécialement liés. <br />\r\nCependant en cochant cette case, vous pouvez désactiver ce comportement. Il n’y aura dès lors plus le bloc sur la page détail du contenu que vous modifiez."
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean
