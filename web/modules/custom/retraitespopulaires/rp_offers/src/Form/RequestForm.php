@@ -87,7 +87,7 @@ class RequestForm extends FormBase {
             '#required' => true
         );
 
-        // Calculate the number of day(s) left to generate dynamique title
+        // Calculate the number of day(s) left to generate dynamic title
         $title = t('Cette offre est terminée, vous ne pouvez plus participer au tirage au sort');
         $now = new \DateTime();
         $date_end = \DateTime::createFromFormat('Y-m-d', $params['node']->field_date_end->value);
