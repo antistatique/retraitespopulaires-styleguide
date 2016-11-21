@@ -106,6 +106,7 @@
     transform: translateX(101%);
     transition: transform 0.25s ease-in-out;
     visibility: hidden;
+    overflow: hidden;
 
     @media only screen and (min-width: $screen-md) {
       height: auto;
@@ -116,6 +117,7 @@
       visibility: visible;
       opacity: 1;
       transform: translateX(0);
+      overflow: auto;
     }
 
     > li .arrow-next {
