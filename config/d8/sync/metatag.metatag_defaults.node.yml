@@ -7,5 +7,13 @@ _core:
 id: node
 label: Content
 tags:
-  title: '[node:title] | [site:name]'
   description: '[node:summary]'
+  image_src: '[node:field_cover]'
+  title: '[node:title] | [site:name]'
+  og_description: '[node:summary]'
+  og_image: '[node:field_cover]'
+  og_site_name: '[site:name]'
+  og_title: '[current-page:title]'
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_image: '[node:field_cover]'
+  twitter_cards_type: summary_large_image
