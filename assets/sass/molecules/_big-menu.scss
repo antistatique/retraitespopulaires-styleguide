@@ -38,6 +38,7 @@
       left: 25px;
       z-index: 3003;
       transform: translateY(-100%);
+      transition: transform 0.2s;
     }
 
     a:focus {
