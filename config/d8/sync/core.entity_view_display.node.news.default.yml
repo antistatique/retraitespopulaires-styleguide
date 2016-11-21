@@ -8,6 +8,8 @@ dependencies:
     - field.field.node.news.field_contact
     - field.field.node.news.field_cover
     - field.field.node.news.field_date
+    - field.field.node.news.field_document_random
+    - field.field.node.news.field_faq_random
     - field.field.node.news.field_file_news
     - field.field.node.news.field_firstname
     - field.field.node.news.field_function
@@ -65,6 +67,24 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+  field_document_random:
+    weight: 118
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_faq_random:
+    weight: 119
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_file_news:
     weight: 104
     label: above
