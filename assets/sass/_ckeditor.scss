@@ -47,6 +47,11 @@
     @include pretty-link($black, $white, $brand-primary);
   }
 
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
   @each $label, $color in $themes {
     &.body-#{$label} {
       h1,
