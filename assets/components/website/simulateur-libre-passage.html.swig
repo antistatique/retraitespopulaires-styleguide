@@ -9,7 +9,7 @@ layout: website.html.swig
 {% include '../atoms/funky-waves.html.swig' %}
 
 <div class="container">
-  <div class="row"></div>
+  <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
       {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-prevoyance', links: ['Accueil', 'Prévoyance professionnelle', 'Transiter entre deux emplois', 'Simulateur pour une police de libre passage RP Arc-en-ciel']} %}
       <div class="spacer"></div>
@@ -56,7 +56,7 @@ layout: website.html.swig
         'D’un emploi à l’autre, placer son 2e pilier (24 heures)',
         'Conditions RP Arc-en-ciel',
         'Brochure RP Arc-en-ciel'],
-        'more': 'Accéder à tous les formulaires relatifs à la prévoyance professionnelle'} %}
+        'more': 'Tous les documents de prévoyance professionnelle'} %}
       </div>
     </div>
   </div>

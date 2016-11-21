@@ -49,9 +49,29 @@ a.pretty-link {
 .text-invert,
 a.text-invert { color: $white; }
 
-a.no-underline:hover { text-decoration: none; }
+.no-underline,
+a.no-underline {
+  text-decoration: none;
+  &:hover { text-decoration: none; }
+}
+
+/* stylelint-disable declaration-no-important */
+/* Helper need important */
+
+a.no-style {
+  background: none !important;
+}
+/* stylelint-enable declaration-no-important */
 
 @each $label, $color in $themes {
+  a.text-#{$label} {
+    color: $color;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
   .text-#{$label},
   a.text-#{$label} {
     &.pretty-link,

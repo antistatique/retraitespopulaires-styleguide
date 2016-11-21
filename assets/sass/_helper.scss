@@ -54,6 +54,10 @@
   white-space: nowrap;
 }
 
+.text-break-all {
+  word-break: break-all;
+}
+
 /**
 * Alignments of blocks
 */
@@ -198,4 +202,12 @@
   padding-left: $grid-gutter-width / 2 !important;
 }
 
+/**
+* Flexible rows
+*/
+
+.row-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
 /* stylelint-enable declaration-no-important */

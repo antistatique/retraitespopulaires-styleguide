@@ -10,7 +10,7 @@ layout: emplois.html.swig
 <div class="spacer spacer-xl hidden-md hidden-lg"></div>
 
 <div class="container">
-  <div class="row"></div>
+  <div class="row">
     <div class="col-xs-12 text-center">
       {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'À propos', 'Emplois']} %}
       <div class="spacer"></div>
@@ -20,7 +20,7 @@ layout: emplois.html.swig
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-6 col-xl-push-3">
       <h1 class="page-title text-center">Postes vacants à Retraites Populaires</h1>
       <div class="spacer"></div>
       <div class="row">
@@ -84,6 +84,10 @@ layout: emplois.html.swig
           </table>
         </div>
       </div>
+    </div>
+    <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
+      <div class="spacer spacer-xl visible-xs visible-sm"></div>
+      {% include '../molecules/secondary-nav.html.swig' with {'theme': '', 'json': 'emploi'} %}
     </div>
   </div>
 </div>

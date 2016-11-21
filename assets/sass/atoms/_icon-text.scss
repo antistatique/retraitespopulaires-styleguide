@@ -1,12 +1,17 @@
 @charset 'UTF-8';
 
 .icon-text {
+  display: flex;
   position: relative;
 
+  .retraitespopulaires-icon {
+    margin-top: 0.2em;
+  }
+
   &.icon-text-center {
-    display: flex;
     align-items: center;
     line-height: 0;
+    .retraitespopulaires-icon { margin-top: 0; }
   }
 
   .retraitespopulaires-icon-lock {
@@ -19,3 +24,5 @@
     margin-left: 10px;
   }
 }
+
+.icon-text-locker { display: initial; }

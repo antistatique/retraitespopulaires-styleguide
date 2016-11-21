@@ -9,12 +9,12 @@ notes: |
   <div class="container">
     <div class="row">
       <div class="col-xs-12 last-news-heading">
-        <div class="h2 pull-left">Actualités</div>
-        <a class="pretty-link pretty-link-berrylight-gray pull-right">Voir toutes les actualités</a>
+        <div class="h2">Actualités</div>
+        <div><a class="pretty-link pretty-link-berrylight-gray">Voir toutes les actualités</a></div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row last-news-content">
       <div class="col-xs-12 col-md-4">
         {% include '../molecules/teaser-news.html.swig' %}
       </div>

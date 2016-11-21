@@ -6,6 +6,7 @@ notes: |
   ##### Usage : `swiper-menu`
 ---
 <div class="swiper-menu">
+  <h2 class="sr-only">Navigation principale</h2>
   <div class="hidden-xs hidden-sm">
     {% include '../molecules/big-menu-empty.html.swig' %}
   </div>
@@ -14,19 +15,19 @@ notes: |
       <ul data-list="swiper-main" class="swiper-list swiper-list-first list-no-padding swiper-list-primary list-no-style" role="navigation">
         <li>
           <a href="/retraitespopulaires-styleguide/assurance-vie" class="pretty-link text-assurance">Assurance vie</a>
-          <a href="swiper-assurance-vie" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-assurance"></a>
+          <a aria-label="Cliquez pour ouvrir le sous-menu Assurance Vie" href="swiper-assurance-vie" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-assurance"></a>
         </li>
         <li>
           <a href="#" class="pretty-link text-prevoyance">Prévoyance professionnelle</a>
-          <a href="swiper-prevoyance" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-prevoyance"></a>
+          <a aria-label="Cliquez pour ouvrir le sous-menu" href="swiper-prevoyance" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-prevoyance"></a>
         </li>
         <li>
           <a href="#" class="pretty-link text-immobilier">Immobilier</a>
-          <a href="swiper-immobilier" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-immobilier"></a>
+          <a aria-label="Cliquez pour ouvrir le sous-menu" href="swiper-immobilier" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-immobilier"></a>
         </li>
         <li>
           <a href="#" class="pretty-link text-hypotheque">Financement</a>
-          <a href="swiper-hypotheque" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-hypotheque"></a>
+          <a aria-label="Cliquez pour ouvrir le sous-menu" href="swiper-hypotheque" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-hypotheque"></a>
         </li>
       </ul>
       <div class="spacer"></div>
@@ -164,7 +165,7 @@ notes: |
         </li>
         <li>
           <a href="#" class="pretty-link text-prevoyance">Pour les entreprises</a>
-          <a href="swiper-prevoyance-entreprises" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-prevoyance"></a>
+          <a aria-label="Cliquez pour ouvrir le sous-menu" href="swiper-prevoyance-entreprises" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-prevoyance"></a>
         </li>
         <li>
           <a href="#" class="pretty-link text-prevoyance">Pour les institutions de prévoyance</a>

@@ -2,15 +2,25 @@
 
 .teaser-contact {
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 900px;
   background: $white;
   border: 1px solid $brand-primary;
   border-radius: $border-radius-base;
 
+  @media only screen and (min-width: $screen-sm-min) {
+    flex-direction: row;
+  }
+
   .teaser-contact-heading {
     position: relative;
     width: 100%;
+    min-height: 196px;
+
+    @media only screen and (min-width: $screen-sm-min) {
+      min-height: auto;
+    }
 
     .heading-image {
       position: absolute;
@@ -37,10 +47,6 @@
     &:hover {
       border-color: darken($brand-primary, 10);
 
-      .heading-image {
-        position: relative;
-      }
-
       .heading-image:before {
         opacity: 0.1;
       }
@@ -63,14 +69,41 @@
   @each $label, $color in $themes {
     &.teaser-contact-#{$label} {
       border-color: $color;
-    }
 
-    .teaser-contact-heading .heading-image:before {
-      background: linear-gradient(to bottom, $color 0%, $transparent 100%);
-    }
+      .teaser-contact-heading .heading-image:before {
+        background: linear-gradient(to bottom, $color 0%, $transparent 100%);
+      }
 
-    .teaser-contact-heading :hover {
-      border-color: darken($color, 10);
+      .teaser-contact-heading :hover {
+        border-color: darken($color, 10);
+      }
+    }
+  }
+
+  .zip-results {
+    li {
+      margin: $grid-gutter-width / 1.5 0;
+      padding-left: $grid-gutter-width/2;
+      padding-right: $grid-gutter-width/2;
+      border: 1px solid $transparent;
+
+      .media-left {
+        line-height: 0;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        border: 1px solid $ligthen-gray;
+        border-radius: $border-radius-base;
+      }
     }
   }
 }

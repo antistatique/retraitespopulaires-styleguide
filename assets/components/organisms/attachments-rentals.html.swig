@@ -5,15 +5,14 @@ collection: organisms
 notes: |
   ##### Usage : `attachments-rentals`
 ---
-<div class="attachements-wrapper">
+<div class="attachments-rentals-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 last-news-heading">
-        <div class="h2 pull-left">Locations</div>
-        <a class="pretty-link pretty-link-berrylight-gray pull-right">Voir tous les biens à louer</a>
+      <div class="col-xs-12 attachments-rentals-heading">
+        <div class="h2">Locations</div>
+        <div><a class="pretty-link pretty-link-berrylight-gray">Voir tous les biens à louer</a></div>
       </div>
     </div>
-	<div class="spacer spacer-sm"></div>
     <div class="row">
       <div class="col-xs-12 col-md-6">
         {% include '../molecules/teaser-rental.html.swig' with {"rental_orientation": 'auto'} %}

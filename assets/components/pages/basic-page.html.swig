@@ -9,7 +9,7 @@ layout: page.html.swig
 {% include '../atoms/funky-waves.html.swig' %}
 
 <div class="container">
-  <div class="row"></div>
+  <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
       {% include '../molecules/breadcrumb.html.swig' %}
       <div class="spacer"></div>
@@ -20,6 +20,7 @@ layout: page.html.swig
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-6 col-xl-push-3">
+      <a name="startcontent"></a>
       <h1 class="page-title text-center">Quel est votre projet ?</h1>
       <div class="spacer"></div>
       <div class="entity-content">
@@ -76,7 +77,7 @@ layout: page.html.swig
         'Brochure Conseil global',
         'Procuration',
         'Modification des primes et prestations'],
-        'more': 'Accéder à tous les formulaires relatifs à l’assurance vie'} %}
+        'more': 'Tous les documents d’assurance vie'} %}
       </div>
     </div>
   </div>

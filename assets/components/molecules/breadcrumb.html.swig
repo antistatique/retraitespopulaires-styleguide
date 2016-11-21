@@ -9,7 +9,8 @@ notes: |
   - **links** - <i>Array</i>
 ---
 
-<div class="breadcrumb">
+<nav class="breadcrumb" role="breadcrumb" aria-label="Vous êtes ici:">
+  <h1 class="hidden" aria-level="3">Vous êtes sur ce chemin.</h1>
   <ul class="list-inline list-no-style list-no-padding">
     {% for link in links %}
       {%
@@ -24,8 +25,8 @@ notes: |
       {% else %}
         {% set classes = [theme] %}
       {% endif %}
-      <li class="{{ classes }}">{{ link }}</li>
-      {% if !loop.last %} <li class="text-muted">›</li> {% endif %}
+      <li class="{{ classes }}" aria-label="{{ link }}">{{ link }}</li>
+    {% if !loop.last %} <li class="text-muted" aria-label=">">›</li> {% endif %}
     {% endfor %}
   </ul>
-</div>
+</nav>

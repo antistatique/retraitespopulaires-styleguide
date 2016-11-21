@@ -43,6 +43,10 @@
     margin-bottom: 10px;
   }
 
+  a:not(.no-style) {
+    @include pretty-link($black, $white, $brand-primary);
+  }
+
   @each $label, $color in $themes {
     &.body-#{$label} {
       h1,
@@ -58,7 +62,7 @@
         @extend .table-#{$label};
       }
 
-      a {
+      a:not(.no-style) {
         @extend .text-#{$label}.pretty-link;
       }
     }
