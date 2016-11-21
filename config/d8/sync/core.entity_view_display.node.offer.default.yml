@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.offer.field_available_offers
     - field.field.node.offer.field_cover
     - field.field.node.offer.field_date_end
-    - field.field.node.offer.field_profession
     - field.field.node.offer.field_web_site
     - node.type.offer
   module:
@@ -51,13 +50,6 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
-  field_profession:
-    weight: 107
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_web_site:
     weight: 102
     label: above

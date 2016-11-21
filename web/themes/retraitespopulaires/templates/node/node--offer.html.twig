@@ -98,21 +98,15 @@
       </div>
     {% endif %}
 
-    {{ content|without('body', 'field_search_npa', 'field_cover', 'field_profession', 'field_date_end') }}
+    {% if node.field_web_site.uri %}
+      <div class="spacer"></div>
+      <a class="btn btn-lg" href="{{ node.field_web_site.uri }}">{% trans %}Lien vers le magazine{% endtrans %}</a>
+    {% endif %}
+
+    {{ content|without('body', 'field_search_npa', 'field_cover', 'field_profession', 'field_date_end', 'field_web_site', 'field_available_offers') }}
 
     {% set days_left = date_diff('now'|date('Y-m-d'), node.field_date_end.value) %}
     {% if days_left >= 0 %}
-
-      {% if days_left > 0 %}
-        {% trans %}
-          Il vous reste {{ days_left }} jour pour participé.
-        {% plural days_left %}
-          Il vous reste {{ days_left }} jours pour participé.
-        {% endtrans %}
-      {% else %}
-        {% trans %}C'est le dernier jour pour participer dépêcher vous.{% endtrans %}
-      {% endif %}
-
       <div class="spacer"></div>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
@@ -120,12 +114,7 @@
         </div>
       </div>
     {% else %}
-      {% trans %}
-        Cette offre à expirée depuis {{ days_left }} jour.
-      {% plural days_left %}
-        Cette offre à expirée depuis {{ days_left }} jours.
-      {% endtrans %}
-    {% endif %}
 
+    {% endif %}
   </div>
 </article>
