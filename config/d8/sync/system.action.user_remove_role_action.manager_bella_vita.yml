@@ -1,0 +1,14 @@
+uuid: 8eca51d7-dce2-40d8-bd9d-3da28db5a4eb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.manager_bella_vita
+  module:
+    - user
+id: user_remove_role_action.manager_bella_vita
+label: 'Retirer le rôle Gestion Bella vita aux utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: manager_bella_vita
