@@ -66,10 +66,10 @@ field_settings:
     indexed_locked: true
     type_locked: true
   title:
-    label: Title
+    label: Titre
     datasource_id: 'entity:node'
     property_path: title
-    type: string
+    type: text
   body:
     label: Body
     datasource_id: 'entity:node'

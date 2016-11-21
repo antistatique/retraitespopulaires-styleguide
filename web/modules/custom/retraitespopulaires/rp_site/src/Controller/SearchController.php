@@ -60,7 +60,8 @@ class SearchController extends ControllerBase {
           'offset' => !is_null($this->request->get('page')) ? $this->request->get('page') * $this->limit : 0,
         ]);
 
-        $query->setFulltextFields(['body'])->keys($search);
+        $query->setFulltextFields(['title', 'body'])->keys($search);
+        $query->sort('search_api_relevance', 'DESC');
         $results = $query->execute();
 
         $variables['search'] = array(
