@@ -125,7 +125,7 @@
 
 
   
-  <div class="header-nav">
+  <div class="header-nav" aria-hidden="true">
     
 
   <a href="#" class="hamburger-wrapper">
@@ -137,7 +137,7 @@
       <span></span>
     </div>
     <svg class="hamburger-circle" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
-      <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+      <circle fill="transparent" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
     </svg>
   </div>
   <div class="hamburger-helper text-cocon">
@@ -155,36 +155,37 @@
 <div class="spacer spacer-xl hidden-md hidden-lg"></div>
 
 <div class="container">
-  <div class="row"></div>
+  <div class="row">
     <div class="col-xs-12 text-center">
       
 
-<div class="breadcrumb">
+<nav class="breadcrumb" role="breadcrumb" aria-label="Vous êtes ici:">
+  <h1 class="hidden" aria-level="3">Vous êtes sur ce chemin.</h1>
   <ul class="list-inline list-no-style list-no-padding">
     
       
       
         
       
-      <li class="text-primary">Accueil</li>
-       <li class="text-muted">›</li> 
+      <li class="text-primary" aria-label="Accueil">Accueil</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-primary">Emploi</li>
-       <li class="text-muted">›</li> 
+      <li class="text-primary" aria-label="Emploi">Emploi</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-muted">Mon compte</li>
-      
+      <li class="text-muted" aria-label="Mon compte">Mon compte</li>
+    
     
   </ul>
-</div>
+</nav>
 
       <div class="spacer"></div>
     </div>
@@ -193,7 +194,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-6 col-xl-push-3">
       <h1 class="page-title text-center">Mon compte</h1>
       <div class="spacer"></div>
 
@@ -229,13 +230,13 @@
     <div class="form-group">
       <label class="">Votre nom</label>
       <div class="input-text">
-        <input type="text" size="40" name="lastname" class="form-control" placeholder="John" value="">
+        <input type="text" size="40" name="lastname" class="form-control" placeholder="Alain" value="">
       </div>
     </div>
     <div class="form-group">
       <label class="">Votre prénom</label>
       <div class="input-text">
-        <input type="text" size="40" name="firstname" class="form-control" placeholder="Doe" value="">
+        <input type="text" size="40" name="firstname" class="form-control" placeholder="Rochat" value="">
       </div>
     </div>
     <div class="form-group">
@@ -269,7 +270,7 @@
     <div class="form-group disabled">
       <label class="">Votre adresse e-mail</label>
       <div class="input-text">
-        <input type="text" size="50" name="mail" class="form-control" value="john.doe@retraitespopulaires.ch" disabled>
+        <input type="text" size="50" name="mail" class="form-control" value="alain.rochat@retraitespopulaires.ch" disabled>
       </div>
     </div>
   </fieldset>
@@ -295,7 +296,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="">Votre ville</label>
+      <label class="">Votre localité</label>
       <div class="input-text">
         <input type="text" size="30" name="city" placeholder="Lausanne" class="form-control" value="">
       </div>
@@ -420,12 +421,66 @@
       </div>
 
     </div>
+    <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
+      <div class="spacer spacer-xl visible-xs visible-sm"></div>
+      
+<div class="secondary-nav secondary-nav-">
+  <h2 class="sr-only">Navigation secondaire</h2>
+  <div class="back">
+    <a aria-label="Back" href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></a>
+  </div>
+  <div class="secondary-nav-content">
+
+    
+    
+      
+    
+
+    <div class="title h5 text-cocon">Emploi</div>
+    <ul class="links list-no-style list-no-padding">
+      
+
+        
+        
+
+        <li class="">
+          
+            <a class="pretty-link" href="#">Mon compte</a>
+          
+        </li>
+
+        
+      
+
+        
+        
+
+        <li class="">
+          
+            <a class="pretty-link" href="#">Les offres</a>
+          
+        </li>
+
+        
+          <li class="">
+            <ul class="list-no-style list-no-padding">
+              
+            </ul>
+          </li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
   </div>
 </div>
 
 <div class="spacer"></div>
 
 <div class="footer">
+  <h2 class="sr-only">Footer</h2>
   
 
 
@@ -438,7 +493,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
-        <ul class="unordered-list list-inline list-unstyle-first">
+        <ul class="menu-footer unordered-list list-inline list-unstyle-first">
           <li><a href="#" class="pretty-link text-">Impressum</a></li>
           <li><a href="#" class="pretty-link text-">Mentions juridiques</a></li>
           <li><a href="#" class="pretty-link text-">Glossaire</a></li>

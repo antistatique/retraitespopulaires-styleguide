@@ -125,7 +125,7 @@
 
 
   
-  <div class="header-nav">
+  <div class="header-nav" aria-hidden="true">
     
 
   <a href="#" class="hamburger-wrapper">
@@ -137,7 +137,7 @@
       <span></span>
     </div>
     <svg class="hamburger-circle" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
-      <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+      <circle fill="transparent" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
     </svg>
   </div>
   <div class="hamburger-helper text-cocon">
@@ -155,50 +155,51 @@
 <div class="spacer spacer-xl hidden-md hidden-lg"></div>
 
 <div class="container">
-  <div class="row"></div>
+  <div class="row">
     <div class="col-xs-12 text-center">
       
 
-<div class="breadcrumb">
+<nav class="breadcrumb" role="breadcrumb" aria-label="Vous êtes ici:">
+  <h1 class="hidden" aria-level="3">Vous êtes sur ce chemin.</h1>
   <ul class="list-inline list-no-style list-no-padding">
     
       
       
         
       
-      <li class="text-primary">Accueil</li>
-       <li class="text-muted">›</li> 
+      <li class="text-primary" aria-label="Accueil">Accueil</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-immobilier">Immobilier</li>
-       <li class="text-muted">›</li> 
+      <li class="text-immobilier" aria-label="Immobilier">Immobilier</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-immobilier">Appartements à louer</li>
-       <li class="text-muted">›</li> 
+      <li class="text-immobilier" aria-label="Appartements à louer">Appartements à louer</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-immobilier">Ch. de Pierrefleur 54, 1004 Lausanne</li>
-       <li class="text-muted">›</li> 
+      <li class="text-immobilier" aria-label="Ch. de Pierrefleur 54, 1004 Lausanne">Ch. de Pierrefleur 54, 1004 Lausanne</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-muted">Demande de renseignements</li>
-      
+      <li class="text-muted" aria-label="Demande de renseignements">Demande de renseignements</li>
+    
     
   </ul>
-</div>
+</nav>
 
       <div class="spacer"></div>
     </div>
@@ -276,28 +277,28 @@
     <div class="form-group">
       <label>Votre prénom</label>
       <div class="input-group">
-        <input type="text" id="firstname" name="firstname" value="" size="40" maxlength="128" placeholder="John" class="form-text required form-control form-control-immobilier" required="required" aria-required="true">
+        <input type="text" id="firstname" name="firstname" value="" size="40" maxlength="128" placeholder="Alain" class="form-text required form-control form-control-immobilier" required="required" aria-required="true">
       </div>
     </div>
 
     <div class="form-group">
       <label>Votre nom de famille</label>
       <div class="input-group">
-        <input type="text" id="lastname" name="lastname" value="" size="40" maxlength="128" placeholder="Doe" class="form-text required form-control form-control-immobilier" required="required" aria-required="true">
+        <input type="text" id="lastname" name="lastname" value="" size="40" maxlength="128" placeholder="Rochat" class="form-text required form-control form-control-immobilier" required="required" aria-required="true">
       </div>
     </div>
 
     <div class="form-group">
       <label>Votre adresse e-mail</label>
       <div class="input-group">
-        <input type="email" id="email" name="email" value="" size="50" maxlength="254" placeholder="john.doe@retraitespopulaires.ch" class="form-email required form-control form-control-immobilier" required="required" aria-required="true">
+        <input type="email" id="email" name="email" value="" size="50" maxlength="254" placeholder="alain.rochat@retraitespopulaires.ch" class="form-email required form-control form-control-immobilier" required="required" aria-required="true">
       </div>
     </div>
 
     <div class="form-group">
       <label>Votre adresse</label>
       <div class="input-group">
-        <input type="text" id="address" name="address" value="" size="60" maxlength="128" placeholder="Ch. des pinçons 12" class="form-text required form-control form-control-immobilier" required="required" aria-required="true">
+        <input type="text" id="address" name="address" value="" size="60" maxlength="128" placeholder="Chemin de l'Avenir 1" class="form-text required form-control form-control-immobilier" required="required" aria-required="true">
       </div>
     </div>
 
@@ -309,7 +310,7 @@
     </div>
 
     <div class="form-group">
-      <label>Votre ville</label>
+      <label>Votre localité</label>
       <div class="input-group">
         <input size="30" type="text" id="city" name="city" value="" maxlength="128" placeholder="Lausanne" class="form-text required form-control form-control-immobilier" required="required" aria-required="true">
       </div>
@@ -339,6 +340,7 @@
 <div class="spacer"></div>
 
 <div class="footer">
+  <h2 class="sr-only">Footer</h2>
   
 
 
@@ -351,7 +353,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
-        <ul class="unordered-list list-inline list-unstyle-first">
+        <ul class="menu-footer unordered-list list-inline list-unstyle-first">
           <li><a href="#" class="pretty-link text-immobilier">Impressum</a></li>
           <li><a href="#" class="pretty-link text-immobilier">Mentions juridiques</a></li>
           <li><a href="#" class="pretty-link text-immobilier">Glossaire</a></li>

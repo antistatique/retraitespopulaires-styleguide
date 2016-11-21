@@ -44,9 +44,8 @@ function big_menu() {
 
   // This is under 992px
   if (!window.matchMedia('(min-width: 992px)').matches) {
-    console.log('fixheight');
     var height = $swiper.find('.swiper-column-1').height();
-    $swiper.find('.swiper-column-2, .swiper-column-3').css({ 'height': height });
+    $swiper.find('.swiper-column-wrapper-2, .swiper-column-wrapper-3').css({ 'height': height });
   }
 
   /**
@@ -55,6 +54,15 @@ function big_menu() {
    */
   $swiper.find('.swiper-list .arrow-next').on('click', function (event) {
     event.preventDefault ? event.preventDefault() : event.returnValue = false;
+
+    // This is under 992px, we lock body when opening children pan
+    if (!window.matchMedia('(min-width: 992px)').matches) {
+      $navbar.animate({
+        scrollTop: 0
+      }, 500, function () {
+        $navbar.addClass('no-scroll');
+      });
+    }
 
     // Remove the empty-state
     $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive');
@@ -86,6 +94,9 @@ function big_menu() {
     // Open desired pan
     $next_wrapper.addClass('active');
     $next_pane.toggleClass('active');
+    $next_wrapper.animate({
+      scrollTop: 0
+    }, 500);
   });
 
   /**
@@ -97,6 +108,11 @@ function big_menu() {
 
     var $current_pane = (0, _jquery2.default)(this).parents('.swiper-list');
     var $current_wrapper = (0, _jquery2.default)(this).parents('.swiper-column-wrapper');
+
+    // This is under 992px, we lock body when opening children pan
+    if ($current_wrapper.hasClass('swiper-column-wrapper-2') && !window.matchMedia('(min-width: 992px)').matches) {
+      $navbar.removeClass('no-scroll');
+    }
 
     // Close current pane
     $current_pane.removeClass('active');
@@ -373,13 +389,12 @@ var _jquery2 = _interopRequireDefault(_jquery);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function smoothscroll_load() {
-  console.log('load');
   setTimeout(function () {
     if (location.hash) {
       /* we need to scroll to the top of the window first, because the browser will always jump to the anchor first before JavaScript is ready, thanks Stack Overflow: http://stackoverflow.com/a/3659116 */
       window.scrollTo(0, 0);
       var hash = location.hash.split('#');
-      smoothScrollTo((0, _jquery2.default)('#' + hash[1]));
+      smoothscroll_to((0, _jquery2.default)('#' + hash[1]));
     }
   }, 1);
 }
@@ -387,13 +402,13 @@ function smoothscroll_load() {
 function smoothscroll_click() {
   (0, _jquery2.default)('a[href*=#]:not([href=#])').click(function () {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      smoothScrollTo((0, _jquery2.default)(this.hash));
+      smoothscroll_to((0, _jquery2.default)(this.hash));
       return false;
     }
   });
 }
 
-var smoothScrollTo = function smoothScrollTo(dest) {
+var smoothscroll_to = function smoothscroll_to(dest) {
   var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
 
   var target = dest.length ? dest : (0, _jquery2.default)('[name=' + this.hash.slice(1) + ']');

@@ -125,7 +125,7 @@
 
 
   
-  <div class="header-nav">
+  <div class="header-nav" aria-hidden="true">
     
 
   <a href="#" class="hamburger-wrapper">
@@ -137,7 +137,7 @@
       <span></span>
     </div>
     <svg class="hamburger-circle" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
-      <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+      <circle fill="transparent" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
     </svg>
   </div>
   <div class="hamburger-helper text-cocon">
@@ -155,36 +155,37 @@
 <div class="spacer spacer-xl hidden-md hidden-lg"></div>
 
 <div class="container">
-  <div class="row"></div>
+  <div class="row">
     <div class="col-xs-12 text-center">
       
 
-<div class="breadcrumb">
+<nav class="breadcrumb" role="breadcrumb" aria-label="Vous êtes ici:">
+  <h1 class="hidden" aria-level="3">Vous êtes sur ce chemin.</h1>
   <ul class="list-inline list-no-style list-no-padding">
     
       
       
         
       
-      <li class="text-primary">Accueil</li>
-       <li class="text-muted">›</li> 
+      <li class="text-primary" aria-label="Accueil">Accueil</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-immobilier">Immobilier</li>
-       <li class="text-muted">›</li> 
+      <li class="text-immobilier" aria-label="Immobilier">Immobilier</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-muted">Appartements à louer</li>
-      
+      <li class="text-muted" aria-label="Appartements à louer">Appartements à louer</li>
+    
     
   </ul>
-</div>
+</nav>
 
       <div class="spacer"></div>
     </div>
@@ -200,7 +201,7 @@
         
 
 <form class="form-immo-search">
-
+  <h2 class="sr-only">Recherche d'appartements</h2>
   <fieldset class="fieldset-no-legend">
     <legend>Recherche d'appartements</legend>
     <div class="row">
@@ -603,7 +604,7 @@
         <div class="form-group">
           <label for="interval">Votre e-mail</label>
           <div class="input-group full-width">
-            <input type="text" class="form-control form-control-immobilier full-width" placeholder="Ex: jane.doe@bluewin.ch">
+            <input type="text" class="form-control form-control-immobilier full-width" placeholder="Ex: aline.rochat@retraitespopulaires.ch">
             <span class="input-group-btn">
               <button class="btn btn-immobilier" type="button">Inscription</button>
             </span>
@@ -622,6 +623,7 @@
 <div class="spacer"></div>
 
 <div class="footer">
+  <h2 class="sr-only">Footer</h2>
   
 
 
@@ -634,7 +636,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
-        <ul class="unordered-list list-inline list-unstyle-first">
+        <ul class="menu-footer unordered-list list-inline list-unstyle-first">
           <li><a href="#" class="pretty-link text-immobilier">Impressum</a></li>
           <li><a href="#" class="pretty-link text-immobilier">Mentions juridiques</a></li>
           <li><a href="#" class="pretty-link text-immobilier">Glossaire</a></li>

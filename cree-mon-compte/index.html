@@ -125,7 +125,7 @@
 
 
   
-  <div class="header-nav">
+  <div class="header-nav" aria-hidden="true">
     
 
   <a href="#" class="hamburger-wrapper">
@@ -137,7 +137,7 @@
       <span></span>
     </div>
     <svg class="hamburger-circle" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
-      <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+      <circle fill="transparent" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
     </svg>
   </div>
   <div class="hamburger-helper text-cocon">
@@ -155,36 +155,37 @@
 <div class="spacer spacer-xl hidden-md hidden-lg"></div>
 
 <div class="container">
-  <div class="row"></div>
+  <div class="row">
     <div class="col-xs-12 text-center">
       
 
-<div class="breadcrumb">
+<nav class="breadcrumb" role="breadcrumb" aria-label="Vous êtes ici:">
+  <h1 class="hidden" aria-level="3">Vous êtes sur ce chemin.</h1>
   <ul class="list-inline list-no-style list-no-padding">
     
       
       
         
       
-      <li class="text-primary">Accueil</li>
-       <li class="text-muted">›</li> 
+      <li class="text-primary" aria-label="Accueil">Accueil</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-primary">Emploi</li>
-       <li class="text-muted">›</li> 
+      <li class="text-primary" aria-label="Emploi">Emploi</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-muted">Crée un compte</li>
-      
+      <li class="text-muted" aria-label="Crée un compte">Crée un compte</li>
+    
     
   </ul>
-</div>
+</nav>
 
       <div class="spacer"></div>
     </div>
@@ -211,13 +212,13 @@
     <div class="form-group">
       <label class="">Votre nom</label>
       <div class="input-text">
-        <input type="text" size="40" name="lastname" class="form-control" placeholder="John" value="">
+        <input type="text" size="40" name="lastname" class="form-control" placeholder="Alain" value="">
       </div>
     </div>
     <div class="form-group">
       <label class="">Votre prénom</label>
       <div class="input-text">
-        <input type="text" size="40" name="firstname" class="form-control" placeholder="Doe" value="">
+        <input type="text" size="40" name="firstname" class="form-control" placeholder="Rochat" value="">
       </div>
     </div>
     <div class="form-group">
@@ -234,7 +235,7 @@
     <div class="form-group error">
       <label class="">Votre adresse e-mail</label>
       <div class="input-text">
-        <input type="text" size="50" name="mail" class="form-control" placeholder="john.doe@retraites-populaires.ch" value="">
+        <input type="text" size="50" name="mail" class="form-control" placeholder="alain.rochat@retraitespopulaires.ch" value="">
         <div class="input-error-desc">Votre adresse e-mail semble invalide.</div>
       </div>
     </div>
@@ -268,6 +269,7 @@
 <div class="spacer"></div>
 
 <div class="footer">
+  <h2 class="sr-only">Footer</h2>
   
 
 
@@ -280,7 +282,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
-        <ul class="unordered-list list-inline list-unstyle-first">
+        <ul class="menu-footer unordered-list list-inline list-unstyle-first">
           <li><a href="#" class="pretty-link text-">Impressum</a></li>
           <li><a href="#" class="pretty-link text-">Mentions juridiques</a></li>
           <li><a href="#" class="pretty-link text-">Glossaire</a></li>

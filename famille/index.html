@@ -50,29 +50,117 @@
 
 
   
-<div class="big-menu">
+<nav class="rp-access-nav">
+  <ul>
+    <li><a class="btn btn-primary" href="/" accesskey="1">Page d'accueil du site Retraites Populaires</a></li>
+    <li><a class="btn btn-primary" href="#main-content" accesskey="2" >Passer la navigation</a></li>
+    <li><a class="btn btn-primary" href="#full-accessible-navigation" accesskey="3" >Accéder à la navigation</a></li>
+    <li><a class="btn btn-primary" href="#global-search" accesskey="4" >Accéder au champ de recherche</a></li>
+    <li><a class="btn btn-primary" href="mailto:info@retraitespopulaires.ch" accesskey="9">Contacter un conseiller</a></li>
+  </ul>
+</nav>
+<nav id="full-accessible-navigation" class="sr-only" role="navigation">
+  <ul>
+    <li>
+      <h2>Navigation principale</h2>
+      <ul>
+        <li>
+          <a href="#">Assurance vie</a>
+          <ul>
+            <li><a href="#">RP Rente immédiate</a></li>
+            <li><a href="#">RP Rente immédiate certaine</a></li>
+            <li><a href="#">RP Jeune</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Prévoyance professionnelle</a>
+          <ul>
+            <li><a href="#">Pour les entreprises</a></li>
+            <li>
+              <a href="#">Pour les institutions de prévoyance</a>
+              <ul>
+                <li><a href="#">Assurer les employés</a></li>
+                <li><a href="#">Plans complémentaires</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h2>Vous êtes</h2>
+      <ul>
+        <li>
+          <a href="#">Particuliers</a>
+          <h3>Nouveau projet</h3>
+          <ul>
+            <li>
+              <a href="#">Fortune</a>
+              <ul>
+                <li><a href="#">Épargner</a></li>
+                <li><a href="#">Payer moins d'impôts</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Famille</a></li>
+          </ul>
+          <h3>Déjà client</h3>
+          <ul>
+            <li><a href="#">Assuré 2e pilier</a></li>
+            <li>
+              <a href="#">Assuré 3e pilier</a>
+              <ul>
+                <li><a href="#">Décès</a></li>
+                <li><a href="#">Invalidité</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Professionnels</a>
+          <ul>
+            <li><a href="#">Prévoyance professionnelle</a></li>
+            <li><a href="#">Location de local commercial</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h2>Navigation secondaire</h2>
+      <ul>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Actualités</a></li>
+        <li><a href="#">Faq</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<div class="big-menu" aria-hidden="true">
   <div class="container-big-menu container-fuild">
     <div class="row">
       <div class="col-no-padding col-xs-12 visible-xs">
-      
+        
 <form class="global-search">
-    <div class="input-group full-width">
-      <input type="text" class="form-control full-width" placeholder="Chercher un produit, un document, un contact, ...">
-      <span class="input-group-btn">
-        <button class="btn btn-default btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
-      </span>
-    </div>
+  <h2 name="global-search" class="sr-only">Formulaire de recherche</h2>
+  <div class="input-group full-width">
+    <h2 class="sr-only">Rechercher</h2>
+    <input type="text" class="form-control full-width" aria-label="Champ de recherche" placeholder="Chercher un produit, un document, un contact, ...">
+    <span class="input-group-btn">
+      <button class="btn btn-default btn-icon" type="button" aria-label="Rechercher sur le site"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
+    </span>
+  </div>
 </form>
 
-      <div class="spacer"></div>
+        <div class="spacer"></div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-9">
         <div class="row">
-        
+          
 <div class="swiper-menu">
+  <h2 class="sr-only">Navigation principale</h2>
   <div class="hidden-xs hidden-sm">
     
 <div class="swiper-empty-state">
@@ -93,19 +181,19 @@
       <ul data-list="swiper-main" class="swiper-list swiper-list-first list-no-padding swiper-list-primary list-no-style" role="navigation">
         <li>
           <a href="/retraitespopulaires-styleguide/assurance-vie" class="pretty-link text-assurance">Assurance vie</a>
-          <a href="swiper-assurance-vie" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-assurance"></a>
+          <a aria-label="Cliquez pour ouvrir le sous-menu Assurance Vie" href="swiper-assurance-vie" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-assurance"></a>
         </li>
         <li>
           <a href="#" class="pretty-link text-prevoyance">Prévoyance professionnelle</a>
-          <a href="swiper-prevoyance" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-prevoyance"></a>
+          <a aria-label="Cliquez pour ouvrir le sous-menu" href="swiper-prevoyance" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-prevoyance"></a>
         </li>
         <li>
           <a href="#" class="pretty-link text-immobilier">Immobilier</a>
-          <a href="swiper-immobilier" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-immobilier"></a>
+          <a aria-label="Cliquez pour ouvrir le sous-menu" href="swiper-immobilier" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-immobilier"></a>
         </li>
         <li>
           <a href="#" class="pretty-link text-hypotheque">Financement</a>
-          <a href="swiper-hypotheque" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-hypotheque"></a>
+          <a aria-label="Cliquez pour ouvrir le sous-menu" href="swiper-hypotheque" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-hypotheque"></a>
         </li>
       </ul>
       <div class="spacer"></div>
@@ -243,7 +331,7 @@
         </li>
         <li>
           <a href="#" class="pretty-link text-prevoyance">Pour les entreprises</a>
-          <a href="swiper-prevoyance-entreprises" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-prevoyance"></a>
+          <a aria-label="Cliquez pour ouvrir le sous-menu" href="swiper-prevoyance-entreprises" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-prevoyance"></a>
         </li>
         <li>
           <a href="#" class="pretty-link text-prevoyance">Pour les institutions de prévoyance</a>
@@ -654,18 +742,20 @@
     <div class="col-xs-6 col-xs-offset-3 hidden-xs">
     
 <form class="global-search">
-    <div class="input-group full-width">
-      <input type="text" class="form-control full-width" placeholder="Chercher un produit, un document, un contact, ...">
-      <span class="input-group-btn">
-        <button class="btn btn-default btn-icon" type="button"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
-      </span>
-    </div>
+  <h2 name="global-search" class="sr-only">Formulaire de recherche</h2>
+  <div class="input-group full-width">
+    <h2 class="sr-only">Rechercher</h2>
+    <input type="text" class="form-control full-width" aria-label="Champ de recherche" placeholder="Chercher un produit, un document, un contact, ...">
+    <span class="input-group-btn">
+      <button class="btn btn-default btn-icon" type="button" aria-label="Rechercher sur le site"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
+    </span>
+  </div>
 </form>
 
     </div>
   </div>
   
-  <div class="header-nav">
+  <div class="header-nav" aria-hidden="true">
     
 
   <div class="hamburger-wrapper">
@@ -677,7 +767,7 @@
       <span></span>
     </div>
     <svg class="hamburger-circle" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
-      <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+      <circle fill="transparent" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
     </svg>
   </div>
   <div class="hamburger-helper text-cocon">
@@ -696,7 +786,7 @@
 
 <div class="wrapper-funky-waves has-header">
   
-    <img src="http://www.famillesausommet.com/images/famille_accueil.jpg" />
+    <img class="img-responsive center-block" src="http://www.famillesausommet.com/images/famille_accueil.jpg" />
   
 
   <div class="funky-waves-container">
@@ -713,7 +803,7 @@
     </svg>
 
     
-    <svg class="wave-3" version="1.1" viewBox="0 0 3840 210" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+    <svg class="wave-3" version="1.1" viewBox="0 0 3840 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
      
       <path opacity="0.33" fill="#FFFFFF" d="M3839.76,105.23c-318.75,96.5-566.89,87.44-884.92,6.43C2598.46,20.88,2223,8.74,1919.76,105c-318.75,96.5-566.89,87.43-884.92,6.43C678.45,20.61,303,8.47-.24,104.69L0,273l1920,.27,1920,.27Z"/>
     </svg>
@@ -723,36 +813,37 @@
 
 
 <div class="container">
-  <div class="row"></div>
+  <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
       
 
-<div class="breadcrumb">
+<nav class="breadcrumb" role="breadcrumb" aria-label="Vous êtes ici:">
+  <h1 class="hidden" aria-level="3">Vous êtes sur ce chemin.</h1>
   <ul class="list-inline list-no-style list-no-padding">
     
       
       
         
       
-      <li class="text-primary">Accueil</li>
-       <li class="text-muted">›</li> 
+      <li class="text-primary" aria-label="Accueil">Accueil</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-primary">Particuliers</li>
-       <li class="text-muted">›</li> 
+      <li class="text-primary" aria-label="Particuliers">Particuliers</li>
+     <li class="text-muted" aria-label=">">›</li> 
     
       
       
         
       
-      <li class="text-muted">Famille</li>
-      
+      <li class="text-muted" aria-label="Famille">Famille</li>
+    
     
   </ul>
-</div>
+</nav>
 
       <div class="spacer"></div>
     </div>
@@ -828,8 +919,9 @@
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
       
 <div class="secondary-nav secondary-nav-primary">
+  <h2 class="sr-only">Navigation secondaire</h2>
   <div class="back">
-    <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></a>
+    <a aria-label="Back" href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></a>
   </div>
   <div class="secondary-nav-content">
 
@@ -1018,13 +1110,11 @@
 <div class="attachments-contact">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 last-news-heading">
-        <div class="h2 pull-left">Retraites&nbsp;Populaires est à votre disposition</div>
-        <a class="pretty-link pretty-link-berrylight-gray pull-right text-">Contacter Retraites&nbsp;Populaires</a>
+      <div class="col-xs-12 attachments-contact-heading">
+        <div class="h2">Retraites&nbsp;Populaires est à votre disposition</div>
+        <div><a class="pretty-link pretty-link-berrylight-gray text-">Contacter Retraites&nbsp;Populaires</a></div>
       </div>
     </div>
-
-    <div class="spacer"></div>
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
         
@@ -1124,12 +1214,12 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 last-news-heading">
-        <div class="h2 pull-left">Actualités</div>
-        <a class="pretty-link pretty-link-berrylight-gray pull-right">Voir toutes les actualités</a>
+        <div class="h2">Actualités</div>
+        <div><a class="pretty-link pretty-link-berrylight-gray">Voir toutes les actualités</a></div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row last-news-content">
       <div class="col-xs-12 col-md-4">
         
 <a href="#" class="teaser teaser-fullclick teaser-news shadow shadow-down">
@@ -1211,6 +1301,7 @@
 <div class="spacer"></div>
 
 <div class="footer">
+  <h2 class="sr-only">Footer</h2>
   
   <div class="container">
     <div class="row">
@@ -1227,35 +1318,35 @@
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Twitter des Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="https://www.facebook.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Facebook des Retraites Populaires" href="https://www.facebook.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Youtube des Retraites Populaires" href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="https://www.instagram.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Instagram des Retraites Populaires" href="https://www.instagram.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a href="https://www.linkedin.com/company/retraites-populaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte LinkedIn des Retraites Populaires" href="https://www.linkedin.com/company/retraites-populaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -1271,7 +1362,7 @@
         <form>
           <div class="form-group">
             <div class="input-group full-width">
-              <input type="text" class="form-control full-width" placeholder="Ex: jane.doe@bluewin.ch">
+              <input type="text" class="form-control full-width" placeholder="Ex: aline.rochat@retraitespopulaires.ch" aria-label="Saisissez votre adresse e-mail.">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button">Je m'inscris</button>
               </span>
@@ -1328,7 +1419,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
-        <ul class="unordered-list list-inline list-unstyle-first">
+        <ul class="menu-footer unordered-list list-inline list-unstyle-first">
           <li><a href="#" class="pretty-link text-">Impressum</a></li>
           <li><a href="#" class="pretty-link text-">Mentions juridiques</a></li>
           <li><a href="#" class="pretty-link text-">Glossaire</a></li>
