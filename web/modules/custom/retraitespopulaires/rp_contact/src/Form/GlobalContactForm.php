@@ -329,7 +329,7 @@ class GlobalContactForm extends FormBase {
         }
 
         // Assert the subject is valid
-        if (!$form_state->getValue('subject') || empty($form_state->getValue('subject'))) {
+        if (is_null($form_state->getValue('subject'))) {
             $errors['subject'] = t('Le sujet de votre demande est important.');
         }
 
@@ -383,6 +383,7 @@ class GlobalContactForm extends FormBase {
             $parts = $services[$form_state->getValue('subject')];
             $to = explode('|', $parts)[0];
         }
+
         $reply = $form_state->getValue('email');
         $this->mail->mail('rp_contact', 'contact', $to, 'fr', $data, $reply);
 
