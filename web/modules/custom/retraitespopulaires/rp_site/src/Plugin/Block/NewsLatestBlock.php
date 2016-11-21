@@ -117,12 +117,12 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
                 $alias = str_replace('/', '', $alias);
             }
 
-            $now = date('Y-m-d h:i:s');
+            $now = new \DateTime();
             $query = $this->entity_query->get('node')
                 ->condition('type', 'news')
                 ->condition('status', 1)
                 ->condition('field_profession', $node->field_profession->target_id)
-                ->condition('field_date', $now, '<=')
+                ->condition('field_date', $now->format('c'), '<=')
                 ->sort('field_date', 'DESC')
                 ->range(0, 2);
 
@@ -139,12 +139,12 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
                 $alias = str_replace('/', '', $alias);
             }
 
-            $now = date('Y-m-d h:i:s');
+            $now = new \DateTime();
             $query = $this->entity_query->get('node')
                 ->condition('type', 'news')
                 ->condition('status', 1)
                 ->condition('field_profil', $node->field_profil->target_id)
-                ->condition('field_date', $now, '<=')
+                ->condition('field_date', $now->format('c'), '<=')
                 ->sort('field_date', 'DESC')
                 ->range(0, 2);
 
@@ -158,11 +158,11 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
 
         // Fallback to retrieve news
         if (empty($node) || empty($variables['news'])) {
-            $now = date('Y-m-d h:i:s');
+            $now = new \DateTime();
             $query = $this->entity_query->get('node')
                 ->condition('type', 'news')
                 ->condition('status', 1)
-                ->condition('field_date', $now, '<=')
+                ->condition('field_date', $now->format('c'), '<=')
                 ->sort('field_date', 'DESC')
                 ->range(0, 2);
 
