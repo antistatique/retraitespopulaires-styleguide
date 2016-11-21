@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+* 1.0.2 (2016-11-21)
+  - Improvment for Bella vita detail page
+  - Fix Big menu responsivness
+
 * 1.0.1 (2016-11-10)
   - Safari bug fixes
 
