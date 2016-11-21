@@ -87,11 +87,26 @@ class RequestForm extends FormBase {
             '#required' => true
         );
 
+        // Calculate the number of day(s) left to generate dynamic title
+        $title = t('Cette offre est terminée, vous ne pouvez plus participer au tirage au sort');
+        $now = new \DateTime();
+        $date_end = \DateTime::createFromFormat('Y-m-d', $params['node']->field_date_end->value);
+        if ($now <= $date_end) {
+            $interval = $now->diff($date_end);
+            $days = $interval->format('%a');
+            if ($days > 1) {
+                $title = t('Il vous reste @days jours pour participer au tirage au sort', ['@days' => $days] );
+            } elseif ($interval->format('%a') == 1) {
+                $title = t('Il vous reste 1 jour pour participer aux tirage au sort');
+            } else {
+                $title = t('C\'est le dernier jour pour participer au tirage au sort dépêcher vous');
+            }
+        }
         $form['personnal'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-bordered fieldset-no-legend')],
-          '#title'      => t('Participer aux tirage au sort'),
-          '#prefix'     => '<h3>'.t('Participer aux tirage au sort').'</h3>',
+          '#title'      => $title,
+          '#prefix'     => '<h3>'.$title.'</h3>',
         );
 
         $form['personnal']['firstname'] = array(
