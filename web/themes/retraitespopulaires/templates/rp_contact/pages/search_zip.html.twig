@@ -1,3 +1,4 @@
+{% if variables.advisors %}
 <ul class="list-spaced list-unstyled">
     {% for advisor in variables.advisors %}
     <li>
@@ -29,3 +30,6 @@
     </li>
     {% endfor %}
 </ul>
+{% else %}
+    {% trans %}Malheureusement ce NPA n'est pas desservi. N'hésitez pas cependant à nous contacter au <a class="pretty-link text-bold text-no-wrap text-{{ variables.theme }}" href="tel:0213482626">021 348 26 26</a>.{% endtrans %}
+{% endif %}

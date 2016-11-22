@@ -73,6 +73,9 @@
   ]
 %}
 
+<p class="h4 page-title">{{ node.field_date.date|date_format('d F Y')|capitalize }}</p>
+<div class="spacer spacer-md"></div>
+
 <!-- Admin Button to edit quickly the node  -->
 {{ load_block('rp_site_node_edit_block') }}
 
