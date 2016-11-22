@@ -9,6 +9,11 @@ First of all, you need to have the following tools installed globally on your en
   * drush
   * npm
 
+don't forget to add bins to your path such:
+
+  * php
+  * mysql
+add m
 The git repository of Retraites Populaires is:
 
 ```
@@ -168,6 +173,15 @@ Solr need to be configured for drupal. Follow the INSTALL.txt found in the searc
 
 ## 🚑 Troubleshootings
 
+### Error while `npm install` ?
+
+```
+ERR! 404 Not Found: @antistatique/retraitespopulaires-stlyeguide
+ERR! 404 '@antistatique/retraitespopulaires-styleguide' is not in the npm regitry.
+```
+
+Solution: Connect yourself to npm using `npm login` with your NPM credentials.
+
 ### Error while importing config ?
 
 ```
@@ -176,7 +190,13 @@ Entities exist of type <em class="placeholder">Shortcut link</em> and <em class=
 entities need to be deleted before importing.
 ```
 
-Solution: Delete all your shortcuts from the Drupal Admin on [admin/config/user-interface/shortcut/manage/default/customize](admin/config/user-interface/shortcut/manage/default/customize).
+Solution 1: Delete all your shortcuts from the Drupal Admin on [admin/config/user-interface/shortcut/manage/default/customize](admin/config/user-interface/shortcut/manage/default/customize).
+
+Solution 2: Delete all your shortcuts with drush
+
+```
+drush ev '\Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();'
+```
 
 ### How to disable the Drupal Cache for dev ?
 The tricks is to add this two lines in your `settings.php`:
