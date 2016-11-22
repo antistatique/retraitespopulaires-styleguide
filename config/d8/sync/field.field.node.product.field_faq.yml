@@ -10,7 +10,7 @@ id: node.product.field_faq
 field_name: field_faq
 entity_type: node
 bundle: product
-label: 'Questions-réponses attaché(s)'
+label: 'Question(s)-Réponse(s) attaché(s)'
 description: 'Nous conseillons de ne pas lier plus de 3 questions-réponses pour une navigation optimale.'
 required: false
 translatable: false

@@ -8,7 +8,9 @@ dependencies:
     - field.field.node.product.field_cover
     - field.field.node.product.field_document
     - field.field.node.product.field_document_page
+    - field.field.node.product.field_document_random
     - field.field.node.product.field_faq
+    - field.field.node.product.field_faq_random
     - field.field.node.product.field_file_product
     - field.field.node.product.field_product_plan
     - field.field.node.product.field_profession
@@ -100,7 +102,9 @@ third_party_settings:
     group_position_bottom_content:
       children:
         - field_faq
+        - field_faq_random
         - field_document
+        - field_document_random
       parent_name: group_attachments
       weight: 116
       label: "Positionner au pied du contenu\t"
@@ -139,7 +143,7 @@ content:
     third_party_settings: {  }
     type: image_image
   field_document:
-    weight: 120
+    weight: 121
     settings:
       match_operator: CONTAINS
       size: 60
@@ -154,6 +158,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_document_random:
+    weight: 122
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_faq:
     weight: 119
     settings:
@@ -162,6 +172,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_faq_random:
+    weight: 120
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_file_product:
     weight: 118
     settings:

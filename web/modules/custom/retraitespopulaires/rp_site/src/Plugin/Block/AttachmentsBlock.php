@@ -130,7 +130,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
             $variables['type'] = 'faqs';
             $variables['links'] = array();
 
-            if( isset($node->field_faq) && !$node->field_faq->isEmpty() ){
+            if (isset($node->field_faq) && !$node->field_faq->isEmpty()) {
                 // Retrieve specified faqs
                 foreach ($node->field_faq as $key => $doc) {
                     $faqs_nids[] = $doc->target_id;
@@ -144,7 +144,9 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                         unset($variables['links'][$key]);
                     }
                 }
-            } else {
+            } elseif ((isset($node->field_faq_random) && !$node->field_faq_random->value) || !isset($node->field_faq_random)) {
+                // Check if we want to disable the FAQ random
+
                 // Retrieve random documents
                 $query = $this->entity_query->get('node')
                     ->condition('type', 'faq')
@@ -160,7 +162,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
             if (isset($node->field_profession->target_id)) {
                 // Generate the collection link
                 $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
-                if( !empty($alias) ){
+                if (!empty($alias) ) {
                     $alias = str_replace('/metier/', '', $alias);
                 }
                 $variables['collection'] = array(
@@ -183,7 +185,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
             $variables['type'] = 'documents';
             $variables['links'] = array();
 
-            if( isset($node->field_document) && !$node->field_document->isEmpty() ){
+            if (isset($node->field_document) && !$node->field_document->isEmpty()) {
                 // Retrieve specified documents
                 foreach ($node->field_document as $key => $doc) {
                     $documents_nids[] = $doc->target_id;
@@ -196,7 +198,9 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                         unset($variables['links'][$key]);
                     }
                 }
-            } else {
+            } elseif ((isset($node->field_document_random) && !$node->field_document_random->value) || !isset($node->field_faq_random)) {
+                // Check if we want to disable the documents random
+
                 // Retrieve random documents
                 $query = $this->entity_query->get('node')
                     ->condition('type', 'document')

@@ -8,6 +8,8 @@ dependencies:
     - field.field.node.news.field_contact
     - field.field.node.news.field_cover
     - field.field.node.news.field_date
+    - field.field.node.news.field_document_random
+    - field.field.node.news.field_faq_random
     - field.field.node.news.field_file_news
     - field.field.node.news.field_firstname
     - field.field.node.news.field_function
@@ -47,8 +49,8 @@ third_party_settings:
         description: ''
     group_details:
       children:
-        - field_file_news
-        - field_offer
+        - group_attachments_content
+        - group_attachments_footer
       parent_name: group_tabs
       weight: 17
       label: 'Elements attachés'
@@ -107,6 +109,32 @@ third_party_settings:
         classes: ''
         id: ''
         required_fields: true
+    group_attachments_footer:
+      children:
+        - field_offer
+        - field_document_random
+        - field_faq_random
+      parent_name: group_details
+      weight: 121
+      label: 'Positionner au pied du contenu'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
+    group_attachments_content:
+      children:
+        - field_file_news
+      parent_name: group_details
+      weight: 120
+      label: 'Positionner dans le contenu'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
 id: node.news.default
 targetEntityType: node
 bundle: news
@@ -148,8 +176,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+  field_document_random:
+    weight: 124
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_faq_random:
+    weight: 125
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_file_news:
-    weight: 8
+    weight: 122
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -181,7 +221,7 @@ content:
     third_party_settings: {  }
     type: options_buttons
   field_offer:
-    weight: 9
+    weight: 123
     settings: {  }
     third_party_settings: {  }
     type: options_select

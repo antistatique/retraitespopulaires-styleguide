@@ -8,7 +8,9 @@ dependencies:
     - field.field.node.product.field_cover
     - field.field.node.product.field_document
     - field.field.node.product.field_document_page
+    - field.field.node.product.field_document_random
     - field.field.node.product.field_faq
+    - field.field.node.product.field_faq_random
     - field.field.node.product.field_file_product
     - field.field.node.product.field_product_plan
     - field.field.node.product.field_profession
@@ -60,6 +62,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_document_random:
+    weight: 113
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_faq:
     weight: 107
     label: above
@@ -67,6 +78,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_faq_random:
+    weight: 114
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_file_product:
     weight: 106
     label: above
