@@ -1,0 +1,4 @@
+'administer rp offers':
+  title: 'Administer Retraites Populaires offers - Bella vita'
+  description: 'Configure Retraites Populaires offers - Bella vita.'
+  restrict access: true

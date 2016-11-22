@@ -5,18 +5,18 @@ rp_newsletter.admin:
         _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
         _title: 'Newsletter - Admin'
     requirements:
-        _permission: 'access administration pages'
+        _permission: 'administer rp newsletter'
 rp_newsletter.admin.settings:
     path: '/admin/retraites-populaires/newsletter/settings'
     defaults:
         _controller: '\Drupal\rp_newsletter\Controller\AdminController::settings'
         _title: 'Newsletter - Admin - Settings'
     requirements:
-        _permission: 'access administration pages'
+        _permission: 'administer rp newsletter'
 rp_newsletter.admin.campaigns:
     path: '/admin/retraites-populaires/newsletter/campaigns'
     defaults:
         _controller: '\Drupal\rp_newsletter\Controller\AdminController::campaigns'
         _title: 'Newsletter - Admin - Campagnes'
     requirements:
-        _permission: 'access administration pages'
+        _permission: 'administer rp newsletter'
