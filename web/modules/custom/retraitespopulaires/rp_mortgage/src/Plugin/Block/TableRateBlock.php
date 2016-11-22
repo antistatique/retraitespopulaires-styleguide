@@ -61,6 +61,7 @@ class TableRateBlock extends BlockBase implements ContainerFactoryPluginInterfac
      */
     public function build($params = array()) {
         $variables = $params;
+        $theme = 'rp_mortgage_table_rate_block';
 
         if ($params['type']) {
             $rates = $this->rateService->getRates($params['type']);
@@ -71,21 +72,21 @@ class TableRateBlock extends BlockBase implements ContainerFactoryPluginInterfac
 
             switch ($params['type']) {
                 case 'Prêts hypothécaires standard':
-                    $variables['headers'] = [
-                        'name' => $this->t("Taux d'avance"),
-                        'first_rate' => $this->t('1er rang (70%)'),
-                        'second_rate' => $this->t('2e rang (10%)'),
-                    ];
+                    $theme = 'rp_mortgage_table_hypothec_rate_block';
                     break;
-                default:
-                    $variables['headers'] = FALSE;
+                case 'Taux credit de construction':
+                    $theme = 'rp_mortgage_table_building_rate_block';
+                    break;
+                case 'Prêts corporations':
+                    $theme = 'rp_mortgage_table_company_rate_block';
+                    break;
             }
 
             $variables['rates'] = $rates;
         }
 
         return [
-            '#theme'     => 'rp_mortgage_table_rate_block',
+            '#theme'     => $theme,
             '#variables' => $variables,
         ];
     }
