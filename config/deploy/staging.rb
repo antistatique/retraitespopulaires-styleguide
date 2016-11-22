@@ -2,9 +2,11 @@
 server '192.168.188.51', user: 'dplweb', roles: %w{app db web}
 set :deploy_to, '/data/sites/wwweti2.retraitespopulaires.ch/'
 set :repo_url, 'dplmgr@192.168.188.51:/data/git/retraitespopulaires.git'
+set :styleguide_path, './styleguide'
 
 # set a branch for this release
 set :branch, 'dev'
+set :styleguide_branch, 'dev'
 
 # Used only if styleguide is external of the repository
 # set :styleguide_branch, 'dev'
