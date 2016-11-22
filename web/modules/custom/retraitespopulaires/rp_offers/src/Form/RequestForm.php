@@ -61,7 +61,8 @@ class RequestForm extends FormBase {
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
-        $form['#action'] = '#rp-offers-form';
+        $form['#action'] = '#bellavita-offers-form';
+        $form['#attributes']['id'] = 'bellavita-offers-form';
 
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
@@ -136,7 +137,7 @@ class RequestForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['email'] = array(
-            '#title'       => t('Votre E-mail'),
+            '#title'       => t('Votre e-mail'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'email',
             '#required'    => true,
@@ -206,7 +207,7 @@ class RequestForm extends FormBase {
 
         // Assert this email don't already request that node
         if (!$this->request->isAvailable($form_state->getValue('email'), $form_state->getValue('node'))) {
-            $errors['email'] = t('Il me semble que vous avez déjà participer.');
+            $errors['email'] = t('Vous avez déjà participé. Merci de tenter votre chance lors d\'un prochain concours.');
         }
 
         // Assert the node is both active & currently running
