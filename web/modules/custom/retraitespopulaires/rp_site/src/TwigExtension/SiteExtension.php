@@ -57,8 +57,9 @@ class SiteExtension extends \Twig_Extension {
         $node = $route->getParameter('node');
         if (isset($node) && !empty($node->field_profession->entity->tid->value)) {
             $profession = $this->container->get('rp_site.profession');
-
             return $profession->theme($node->field_profession->entity->tid->value);
+        }elseif (isset($node) && $node->getType() == 'building') {
+            return 'immobilier';
         }
 
         return '';
