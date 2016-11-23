@@ -15,11 +15,15 @@
     <caption>{% trans %}Taux de {{ formatted_date }}{% endtrans %}</caption>
     <thead>
       <tr>
-        <th>Taux d'avance 80%</th>
+        <th>Type</th>
         <th>Taux</th>
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td>Taux d'avance</td>
+        <td>80%</td>
+      </tr>
       {% for rate in variables_rates %}
       <tr>
         <td>{{ rate.getName() }}</td>
