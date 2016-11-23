@@ -37,9 +37,21 @@
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
 
+      /* IE10+ CSS */
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        max-height: 47px;
+      }
+
       &.btn-icon {
         max-height: 2.9em;
         padding-bottom: 0.6em;
+
+        /* stylelint-disable max-nesting-depth */
+        /* IE10+ CSS */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          max-height: 47px;
+        }
+        /* stylelint-enable max-nesting-depth */
       }
     }
   }
