@@ -6,6 +6,10 @@ dependencies:
     - field.field.node.faq.body
     - field.field.node.faq.field_advisor
     - field.field.node.faq.field_contact
+    - field.field.node.faq.field_document
+    - field.field.node.faq.field_document_random
+    - field.field.node.faq.field_faq
+    - field.field.node.faq.field_faq_random
     - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
     - field.field.node.faq.field_profession
@@ -22,6 +26,7 @@ third_party_settings:
       children:
         - group_info
         - group_contacts
+        - group_attachment
       parent_name: ''
       weight: 3
       label: Tabs
@@ -62,6 +67,34 @@ third_party_settings:
         classes: ''
         id: ''
         required_fields: true
+    group_attachment:
+      children:
+        - group_attachments_footer
+      parent_name: group_tabs
+      weight: 10
+      label: 'Elements attachés'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_attachments_footer:
+      children:
+        - field_document
+        - field_document_random
+        - field_faq
+        - field_faq_random
+      parent_name: group_attachment
+      weight: 9
+      label: 'Positionner au pied du contenu'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
 id: node.faq.default
 targetEntityType: node
 bundle: faq
@@ -91,6 +124,34 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_document:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_document_random:
+    weight: 11
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_faq:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_faq_random:
+    weight: 13
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_faq_type:
     weight: 2
     settings: {  }

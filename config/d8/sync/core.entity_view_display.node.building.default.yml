@@ -10,6 +10,10 @@ dependencies:
     - field.field.node.building.field_contact
     - field.field.node.building.field_cover
     - field.field.node.building.field_date
+    - field.field.node.building.field_document
+    - field.field.node.building.field_document_random
+    - field.field.node.building.field_faq
+    - field.field.node.building.field_faq_random
     - field.field.node.building.field_file_building
     - field.field.node.building.field_file_plan
     - field.field.node.building.field_latitude
@@ -81,6 +85,38 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+  field_document:
+    weight: 116
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_document_random:
+    weight: 117
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_faq:
+    weight: 119
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_faq_random:
+    weight: 118
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_file_building:
     weight: 103
     label: above

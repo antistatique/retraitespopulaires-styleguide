@@ -8,6 +8,10 @@ dependencies:
     - field.field.node.partnership.field_cover
     - field.field.node.partnership.field_date_end
     - field.field.node.partnership.field_date_start
+    - field.field.node.partnership.field_document
+    - field.field.node.partnership.field_document_random
+    - field.field.node.partnership.field_faq
+    - field.field.node.partnership.field_faq_random
     - field.field.node.partnership.field_latitude
     - field.field.node.partnership.field_longitude
     - field.field.node.partnership.field_partnership
@@ -30,7 +34,7 @@ third_party_settings:
         - field_search_npa
         - field_contact
       parent_name: group_tabs
-      weight: 117
+      weight: 116
       label: 'Elements de contact'
       format_type: tab
       format_settings:
@@ -63,6 +67,7 @@ third_party_settings:
         - group_info
         - group_geo
         - group_attachments
+        - group_attachment
       parent_name: ''
       weight: 114
       label: Tabs
@@ -77,7 +82,7 @@ third_party_settings:
         - field_longitude
         - field_situation
       parent_name: group_tabs
-      weight: 116
+      weight: 115
       label: 'Position géographique'
       format_type: tab
       format_settings:
@@ -86,6 +91,34 @@ third_party_settings:
         classes: ''
         id: ''
         required_fields: true
+    group_attachment:
+      children:
+        - group_attachments_footer
+      parent_name: group_tabs
+      weight: 117
+      label: 'Elements attachés'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_attachments_footer:
+      children:
+        - field_document
+        - field_document_random
+        - field_faq
+        - field_faq_random
+      parent_name: group_attachment
+      weight: 117
+      label: 'Positionner au pied du contenu'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
 id: node.partnership.default
 targetEntityType: node
 bundle: partnership
@@ -124,6 +157,34 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+  field_document:
+    weight: 120
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_document_random:
+    weight: 121
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_faq:
+    weight: 122
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_faq_random:
+    weight: 123
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_latitude:
     weight: 9
     settings:
