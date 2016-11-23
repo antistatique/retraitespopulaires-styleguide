@@ -12,26 +12,34 @@
     <tr>
       <td>{% trans %}Introduisez ici le montant d'achat du bien immobilier{% endtrans %}</td>
       <td>
-        <input type="text" value="" required class="form-control form-control-hypotheque js-amount-input" id="amount" placeholder="Le montant en CHF">
+        <div class="form-group">
+          <input type="text" value="" required class="form-control form-control-hypotheque js-amount-input form-chf-numeric " id="amount" placeholder="Le montant en CHF">
+        </div>
       </td>
     </tr>
     <tr>
       {% set notaryRateFormatted = (settings.notaryRateFee*100)|format_pourcent %}
       <td>{% trans %}Prix d'achat y compris droits de mutations et frais de notaire (+{{ notaryRateFormatted }}){% endtrans %}</td>
       <td>
-        <input type="text" readonly name="amountWithFee" class="form-control js-amount-with-fee-input" value="" />
+        <div class="form-group readonly">
+          <input type="text" readonly="" name="amountWithFee" class="form-control js-amount-with-fee-input form-chf-numeric" value="" />
+        </div>
       </td>
     </tr>
     <tr>
       <td>{% trans %}Revenu annuel net (min.){% endtrans %}</td>
       <td>
-        <input type="text" readonly name="minimalIncomeForAmount" class="form-control js-minimal-income-for-amount" value="" />
+        <div class="form-group readonly">
+          <input type="text" readonly="" name="minimalIncomeForAmount" class="form-control js-minimal-income-for-amount form-chf-numeric" value="" />
+        </div>
       </td>
     </tr>
     <tr>
       <td>{% trans %}Fonds propres (min.){% endtrans %}</td>
       <td>
-        <input type="text" readonly name="minimalEquityCapitalForAmount" class="form-control js-minimal-equity-capital-for-amount" value="" />
+        <div class="form-group readonly">
+          <input type="text" readonly="" name="minimalEquityCapitalForAmount" class="form-control js-minimal-equity-capital-for-amount form-chf-numeric" value="" />
+        </div>
       </td>
     </tr>
     </tbody>
@@ -47,18 +55,26 @@
     <tbody>
     <tr>
       <td>{% trans %}Les fonds propres doivent au moins représenter 20% du prix d'achat{% endtrans %}</td>
-      <td><input type="text" value="" required class="form-control form-control-hypotheque js-equity-capital-input" name="equityCapital" value="" placeholder="Le montant en CHF"></td>
+      <td>
+        <div class="form-group">
+          <input type="text" value="" required class="form-control form-control-hypotheque js-equity-capital-input form-chf-numeric" name="equityCapital" value="" placeholder="Le montant en CHF">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>{% trans %}Prix d'achat (max.) sans droits de mutations et frais de notaire{% endtrans %}</td>
       <td>
-        <input type="text" readonly name="maxAmountForEquityCapital" class="form-control js-max-amount-for-equity-capital" value="" />
+        <div class="form-group readonly">
+          <input type="text" readonly name="maxAmountForEquityCapital" class="form-control js-max-amount-for-equity-capital form-chf-numeric" value="" />
+        </div>
       </td>
     </tr>
     <tr>
       <td>{% trans %}Revenu annuel net (min.){% endtrans %}</td>
       <td>
-        <input type="text" readonly name="minimalIncomeForEquityCapital" class="form-control js-minimal-income-for-equity-capital" value="" />
+        <div class="form-group readonly">
+          <input type="text" readonly name="minimalIncomeForEquityCapital" class="form-control js-minimal-income-for-equity-capital form-chf-numeric" value="" />
+        </div>
       </td>
     </tr>
     </tbody>
@@ -73,18 +89,26 @@
     <tbody>
     <tr>
       <td>{% trans %}Revenu annuel net du ménage{% endtrans %}</td>
-      <td><input type="text" value="" required class="form-control form-control-hypotheque js-income-input" name="income" placeholder="Le montant en CHF"></td>
+      <td>
+        <div class="form-group">
+          <input type="text" value="" required class="form-control form-control-hypotheque js-income-input form-chf-numeric" name="income" placeholder="Le montant en CHF">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>Prix d'achat (max.) sans droits de mutations et frais de notaire</td>
       <td>
-        <input type="text" readonly name="maxAmountForIncome" class="form-control js-max-amount-for-income" value="" />
+        <div class="form-group readonly">
+          <input type="text" readonly name="maxAmountForIncome" class="form-control js-max-amount-for-income form-chf-numeric" value="" />
       </td>
+    </div>
     </tr>
     <tr>
       <td>{% trans %}Fonds propres (min.){% endtrans %}</td>
       <td>
-        <input type="text" readonly name="minEquityCapitalForIncome" class="form-control js-min-equity-capital-for-income" value="" />
+        <div class="form-group readonly">
+          <input type="text" readonly name="minEquityCapitalForIncome" class="form-control js-min-equity-capital-for-income form-chf-numeric" value="" />
+        </div>
       </td>
     </tr>
     </tbody>
@@ -100,11 +124,13 @@
     <tr>
       <td>{% trans %}Sélectionnez le taux qui vous intéresse en premier rang{% endtrans %}</td>
       <td>
-        <select name="rate" class="form-control form-control-hypotheque js-rate-name">
-          {% for rate in variables.rates %}
-            <option value="{{ rate.firstRate }}" data-first-rate="{{ rate.firstRate }}" data-second-rate="{{ rate.secondRate }}">{{ rate.getName() }}</option>
-          {% endfor %}
-        </select>
+        <div class="form-group">
+          <select name="rate" class="form-control form-control-hypotheque js-rate-name full-width">
+            {% for rate in variables.rates %}
+              <option value="{{ rate.firstRate }}" data-first-rate="{{ rate.firstRate }}" data-second-rate="{{ rate.secondRate }}">{{ rate.getName() }}</option>
+            {% endfor %}
+          </select>
+        </div>
       </td>
     </tr>
     <tr>
@@ -117,9 +143,8 @@
         {% endspaceless %}
       </td>
       <td>
-        <div class="input-group readonly">
-          <input type="text" class="form-control form-control-hypotheque js-rate" readonly value="" aria-label="Taux en pourcent">
-          <span class="input-group-addon">%</span>
+        <div class="form-group readonly">
+          <input type="text" class="form-control form-control-hypotheque form-percent-numeric js-rate" readonly value="" aria-label="Taux en pourcent">
         </div>
       </td>
     </tr>
@@ -183,7 +208,8 @@
     {% set advanceRateMax = (settings.advanceRateMax*100)|format_pourcent %}
     <div class="js-visualisation-loan">
       <h4>{% trans %}Financement hypothécaire nécessaire (max {{ advanceRateMax }}){% endtrans %}</h4>
-      <div class="progress">
+      <div class="spacer spacer-xs"></div>
+      <div class="progress media-heading">
         <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
 
         </div>
@@ -197,14 +223,15 @@
     <div class="js-visualisation-cost">
       {% set maxCost = (settings.maxCost*100)|format_pourcent %}
       <h4>Charge hypothécaire annuelle (max {{ maxCost }})</h4>
-      <div class="progress">
+      <div class="spacer spacer-xs"></div>
+      <div class="progress media-heading">
         <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
 
         </div>
         <div class="progress-pipe" role="progresspipe" aria-valuenow="{{ (settings.maxCost*100) }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ (settings.maxCost*100) }}%;"></div>
       </div>
 
-      <p class="text-warning js-text-warning hidden">Prix d'achat trop élevé. Si vous arrivez vous situer entre 30 et 35%, contactez-nous.</p>
+      <p class="text-warning js-text-warning hidden">Prix d'achat trop élevé. Si vous vous situez entre 30 et 35%, contactez-nous.</p>
       <p class="text-success js-text-success hidden">
         Les charges hypothécaires sont calculées à raison de 5% sur le 1er rang et 7% sur le 2ème rang. Le calcul tient également compte d'un forfait de frais d'entretien estimé à CHF 4800.- par année.
       </p>
