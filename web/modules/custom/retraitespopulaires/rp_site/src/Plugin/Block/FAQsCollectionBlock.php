@@ -13,7 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
-use \Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\rp_site\Service\Profession;
 
 /**
 * Provides a 'FAQs Collection' Block
@@ -67,15 +68,22 @@ class FAQsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
     private $request;
 
     /**
+     * Profession Service
+     * @var Profession
+     */
+    private $profession;
+
+    /**
      * Class constructor.
      */
-     public function __construct(array $configuration, $plugin_id, $plugin_definition, AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity, QueryFactory $query, RequestStack $request) {
+     public function __construct(array $configuration, $plugin_id, $plugin_definition, AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity, QueryFactory $query, RequestStack $request, Profession $profession) {
          parent::__construct($configuration, $plugin_id, $plugin_definition);
          $this->alias_manager   = $alias_manager;
          $this->entity_node     = $entity->getStorage('node');
          $this->entity_taxonomy = $entity->getStorage('taxonomy_term');
          $this->entity_query    = $query;
          $this->request         = $request->getMasterRequest();
+         $this->profession      = $profession;
      }
 
 
@@ -83,18 +91,19 @@ class FAQsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
      * {@inheritdoc}
      */
      public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-         // Instantiates this form class.
-         return new static(
-             // Load the service required to construct this class.
-             $configuration,
-             $plugin_id,
-             $plugin_definition,
-             // Load customs services used in this class.
-             $container->get('path.alias_manager'),
-             $container->get('entity_type.manager'),
-             $container->get('entity.query'),
-             $container->get('request_stack')
-         );
+        // Instantiates this form class.
+        return new static(
+            // Load the service required to construct this class.
+            $configuration,
+            $plugin_id,
+            $plugin_definition,
+            // Load customs services used in this class.
+            $container->get('path.alias_manager'),
+            $container->get('entity_type.manager'),
+            $container->get('entity.query'),
+            $container->get('request_stack'),
+            $container->get('rp_site.profession')
+        );
      }
 
     /**
@@ -121,6 +130,7 @@ class FAQsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
                 $term = $this->entity_taxonomy->load($taxonomy_term_tid);
                 if ($term->vid->target_id == 'profession') {
                     $query->condition('field_profession', $taxonomy_term_tid);
+                    $variables['theme'] = $this->profession->theme($taxonomy_term_tid);
                 }
             }
         }
