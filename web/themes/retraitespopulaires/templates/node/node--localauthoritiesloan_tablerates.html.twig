@@ -27,7 +27,7 @@ view_mode ? view_mode|clean_class,
       </div>
     {% endif %}
 
-    {{ content|without('body', 'field_document', 'field_search_npa', 'field_products', 'field_profession', 'field_profil', 'field_faq', 'field_contact', 'field_advisor') }}
+    {{ content|without('body', 'field_document', 'field_document_random', 'field_faq_random', 'field_search_npa', 'field_products', 'field_profession', 'field_profil', 'field_faq', 'field_contact', 'field_advisor') }}
 
     {{ load_block('rp_mortgage_table_rate_block', { 'type': "Prêts corporations" }) }}
   </div>
