@@ -42,12 +42,6 @@ function big_menu() {
 
   var $swiper = (0, _jquery2.default)('.swiper-menu');
 
-  // This is under 992px
-  if (!window.matchMedia('(min-width: 992px)').matches) {
-    var height = $swiper.find('.swiper-column-1').height();
-    $swiper.find('.swiper-column-wrapper-2, .swiper-column-wrapper-3').css({ 'height': height });
-  }
-
   /**
    * Open the correct pan and close the old one
    * @type {[type]}
@@ -61,6 +55,10 @@ function big_menu() {
         scrollTop: 0
       }, 500, function () {
         $navbar.addClass('no-scroll');
+
+        // Fix the height for scrolling
+        var height = (0, _jquery2.default)(window).height() - (0, _jquery2.default)('.swiper-column-wrapper.active').offset().top;
+        $swiper.find('.swiper-column-wrapper-2, .swiper-column-wrapper-3').css({ 'height': height });
       });
     }
 
