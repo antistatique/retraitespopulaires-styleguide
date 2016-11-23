@@ -143,6 +143,7 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
                 $term = $this->entity_taxonomy->load($taxonomy_term_tid);
                 if ($term->vid->target_id == 'profession') {
                     $query->condition('field_profession', $taxonomy_term_tid);
+                    $variables['theme'] = $this->profession->theme($taxonomy_term_tid);
                 }
             }
         }
