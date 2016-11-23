@@ -70,9 +70,8 @@ class SiteExtension extends \Twig_Extension {
      *
      * @return string formatted number like "1.25%"
      */
-    public function formatPourcent($value) {
-        $number = number_format((float)$value, 2, '.', "'");
-
+    public function formatPourcent($value, $decimals = 2) {
+        $number = number_format((float)$value, $decimals, '.', "'");
         return sprintf('%s%%', $number);
     }
 }
