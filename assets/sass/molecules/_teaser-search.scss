@@ -1,0 +1,18 @@
+@charset 'UTF-8';
+
+.teaser-search {
+  margin: 0 auto;
+  max-width: 900px;
+  background-color: $white;
+  border: 1px solid $brand-primary;
+  border-radius: $border-radius-base;
+
+  .search-heading {
+    padding: $grid-gutter-width/2 $grid-gutter-width/2 0 $grid-gutter-width/2;
+  }
+
+  .search-body {
+    padding: 0 $grid-gutter-width/2 $grid-gutter-width/2 $grid-gutter-width/2;
+    color: $text-color;
+  }
+}
