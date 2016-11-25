@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+* 1.0.3 (2016-11-25)
+ - Improvments hovers
+ - Improvments on BigMenu 
+ - Fix Inline images on CKEditor
+
 * 1.0.2 (2016-11-21)
   - Improvment for Bella vita detail page
   - Fix Big menu responsivness
