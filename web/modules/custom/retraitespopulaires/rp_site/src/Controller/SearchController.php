@@ -69,10 +69,12 @@ class SearchController extends ControllerBase {
             'count'  => $results->getResultCount(),
         );
 
-        foreach ($results as $result) {
-            $variables['results'][] = array(
+        foreach ($results as $key => $result) {
+            $variables['results'][$key] = array(
                 'nid'   => $result->getField('nid')->getValues()[0],
                 'title' => $result->getField('title')->getValues()[0],
+                'body'  => !empty($result->getField('body')->getValues()) ? $result->getField('body')->getValues()[0] : '',
+                'type'  => $result->getField('type')->getValues()[0],
             );
         }
 
