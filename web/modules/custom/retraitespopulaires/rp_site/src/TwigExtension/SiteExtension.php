@@ -57,8 +57,9 @@ class SiteExtension extends \Twig_Extension {
         $node = $route->getParameter('node');
         if (isset($node) && !empty($node->field_profession->entity->tid->value)) {
             $profession = $this->container->get('rp_site.profession');
-
             return $profession->theme($node->field_profession->entity->tid->value);
+        }elseif (isset($node) && $node->getType() == 'building') {
+            return 'immobilier';
         }
 
         return '';
@@ -69,9 +70,8 @@ class SiteExtension extends \Twig_Extension {
      *
      * @return string formatted number like "1.25%"
      */
-    public function formatPourcent($value) {
-        $number = number_format((float)$value, 2, '.', "'");
-
+    public function formatPourcent($value, $decimals = 2) {
+        $number = number_format((float)$value, $decimals, '.', "'");
         return sprintf('%s%%', $number);
     }
 }

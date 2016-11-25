@@ -5,7 +5,7 @@ set :application, 'retraites-populaires'
 set :repo_url, 'dplmgr@192.168.188.51:/data/git/retraitespopulaires.git'
 
 # Used only if styleguide is external of the repository
-# set :styleguide_repo, 'git@github.com:antistatique/retraitespopulaires-styleguide.git'
+set :styleguide_repo, 'git@github.com:antistatique/retraitespopulaires-styleguide.git'
 
 set :app_path, "web"
 set :styleguide_path, "node_modules/@antistatique/retraitespopulaires-styleguide"
@@ -55,10 +55,11 @@ namespace :deploy do
   # before :starting, "drupal:backup"
 
   # Used only if styleguide is external of the repository
-  # after :updated, "styleguide:update"
+  after :updated, "styleguide:clone"
 
   # Used only if styleguide is internal of the repository
-  after :updated, "styleguide:build"
+  # after :updated, "styleguide:build"
+
   after :updated, "styleguide:deploy_build"
 
   after :updated, "drupal:config:import"

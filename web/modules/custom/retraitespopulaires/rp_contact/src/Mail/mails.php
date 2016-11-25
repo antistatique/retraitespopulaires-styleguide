@@ -84,6 +84,7 @@ function rp_contact_mail($key, &$message, $params) {
 
         // Sended when contacting of Changement d'adresse
         case 'contact_address':
+
             $message['subject'] = t('Nouvelle demande de changement d\'adresse par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
 
             $message['body'][] = Markup::create( '<b>'. t('Nouvelle demande de changement d\'adresse par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]) . '</b><br /><br />');
@@ -127,7 +128,6 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( '<br /><br />');
             $message['body'][] = Markup::create( t('Valable dès (jj/mm/aaaa): '). $params['due_date'] . '<br />');
             $message['body'][] = Markup::create( t('Remarque: '). '<br />'. nl2br($params['remarque']) . '<br />');
-
         break;
 
         // Sended when contacting of Demande de réservation d'un taux

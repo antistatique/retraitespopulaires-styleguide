@@ -2,6 +2,7 @@
 
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Link;
+use Drupal\node\Entity\Node;
 
 /**
 * Mail hook
@@ -45,7 +46,7 @@ function rp_offers_mail($key, &$message, $params) {
 
         // Sended to admin new request of offer
         case 'admin':
-            $message['subject'] = t('Nouvelle demande d\'offre @node', ['node' => $params['node']->title->value]);
+            $message['subject'] = t('Nouvelle demande d\'offre "@node"', ['@node' => $params['request']->offer_target_id->entity->title->value]);
 
             $message['body'][] = Markup::create( '<b>'. t('Une nouvelle demande d\'offre vient d\'être soumise') . '</b><br /><br />');
             $message['body'][] = Markup::create( t('E-mail: '). $params['request']->email->value . '<br />');

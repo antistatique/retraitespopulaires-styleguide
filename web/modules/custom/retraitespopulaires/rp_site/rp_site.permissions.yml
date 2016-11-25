@@ -1,0 +1,4 @@
+'administer rp site':
+  title: 'Administer Retraites Populaires Site'
+  description: 'Configure Retraites Populaires Site.'
+  restrict access: true

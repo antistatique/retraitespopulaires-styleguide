@@ -1,0 +1,54 @@
+{#
+ Variables:
+  - variables.type: (string)
+  - variables.headers: (array of string)
+  - variables.rates: (array of Rate)
+  - variables.date: (DateTime)
+#}
+
+{% if variables.rates %}
+  {% set formatted_date = variables.date|date_format('F Y') %}
+
+  {% set variables_rates = [variables.rates|first] %}
+  <table class="table table-wide tablesaw tablesaw-stack table-hypotheque" data-tablesaw-mode="stack" id="table-{{ variable.type|clean_id }}-variables">
+    <caption>{% trans %}Taux de {{ formatted_date }}{% endtrans %}</caption>
+    <thead>
+      <tr>
+        <th>Taux d'intérêt variable</th>
+        <th>1<sup>er</sup> rang (70%)</th>
+        <th>2<sup>e</sup> rang (10%)</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for rate in variables_rates %}
+      <tr>
+        <td>{{ rate.getName() }}</td>
+        <td>{{ rate.firstRate ? rate.firstRate|format_pourcent : '' }}</td>
+        <td>{{ rate.secondRate ? rate.secondrate|format_pourcent : '' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% set fixes_rates = variables.rates|slice(2) %}
+  <table class="table table-wide tablesaw tablesaw-stack table-hypotheque" data-tablesaw-mode="stack" id="table-{{ variable.type|clean_id }}-fixe">
+    <caption>{% trans %}Taux de {{ formatted_date }}{% endtrans %}</caption>
+    <thead>
+      <tr>
+        <th>Taux d'intérêt fixe</th>
+        <th>1<sup>er</sup> rang (70%)</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for rate in fixes_rates %}
+      <tr>
+        <td>{{ rate.getName() }}</td>
+        <td>{{ rate.firstRate ? rate.firstRate|format_pourcent : '' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endif %}

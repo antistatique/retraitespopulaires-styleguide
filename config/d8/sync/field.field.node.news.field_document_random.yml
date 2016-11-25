@@ -1,0 +1,23 @@
+uuid: bc3568df-3bd7-4f3c-ab36-df4b739140ae
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_random
+    - node.type.news
+id: node.news.field_document_random
+field_name: field_document_random
+entity_type: node
+bundle: news
+label: 'Document(s) - Désactiver l''affichage aléatoire'
+description: "L'affichage aléatoire est un comportement naturel sur retraitespopulaires.ch. Il intervient lorsque le contenu ne possède pas de documents utiles spécialement liés. <br />\r\nCependant en cochant cette case, vous pouvez désactiver ce comportement. Il n’y aura dès lors plus le bloc sur la page détail du contenu que vous modifiez."
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

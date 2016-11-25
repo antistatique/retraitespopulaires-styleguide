@@ -1,0 +1,36 @@
+{#
+ Variables:
+  - variables.type: (string)
+  - variables.headers: (array of string)
+  - variables.rates: (array of Rate)
+  - variables.date: (DateTime)
+#}
+
+{% if variables.rates %}
+  {% set formatted_date = variables.date|date_format('F Y') %}
+
+  {% set variables_rates = variables.rates %}
+  {% if variables_rates %}
+  <table class="table table-wide tablesaw tablesaw-stack table-hypotheque" data-tablesaw-mode="stack" id="table-{{ variable.type|clean_id }}-variables">
+    <caption>{% trans %}Taux de {{ formatted_date }}{% endtrans %}</caption>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Taux</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Taux d'avance</td>
+        <td>80%</td>
+      </tr>
+      {% for rate in variables_rates %}
+      <tr>
+        <td>{{ rate.getName() }}</td>
+        <td>{{ rate.firstRate ? rate.firstRate|format_pourcent : '' }} {% trans %}net de commission{% endtrans %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+{% endif %}

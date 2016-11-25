@@ -1,0 +1,18 @@
+uuid: 30ebb76f-211b-4b5b-98ec-dec7f9c8fd3f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_document_random
+field_name: field_document_random
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -61,7 +61,8 @@ class RequestForm extends FormBase {
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
-        $form['#action'] = '#rp-offers-form';
+        $form['#action'] = '#bellavita-offers-form';
+        $form['#attributes']['id'] = 'bellavita-offers-form';
 
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
@@ -87,11 +88,26 @@ class RequestForm extends FormBase {
             '#required' => true
         );
 
+        // Calculate the number of day(s) left to generate dynamic title
+        $title = t('Cette offre est terminée, vous ne pouvez plus participer au tirage au sort');
+        $now = new \DateTime();
+        $date_end = \DateTime::createFromFormat('Y-m-d', $params['node']->field_date_end->value);
+        if ($now <= $date_end) {
+            $interval = $now->diff($date_end);
+            $days = $interval->format('%a');
+            if ($days > 1) {
+                $title = t('Il vous reste @days jours pour participer au tirage au sort', ['@days' => $days] );
+            } elseif ($interval->format('%a') == 1) {
+                $title = t('Il vous reste 1 jour pour participer aux tirage au sort');
+            } else {
+                $title = t('C\'est le dernier jour pour participer au tirage au sort dépêcher vous');
+            }
+        }
         $form['personnal'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-bordered fieldset-no-legend')],
-          '#title'      => t('Participer aux tirage au sort'),
-          '#prefix'     => '<h3>'.t('Participer aux tirage au sort').'</h3>',
+          '#title'      => $title,
+          '#prefix'     => '<h3>'.$title.'</h3>',
         );
 
         $form['personnal']['firstname'] = array(
@@ -121,7 +137,7 @@ class RequestForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['email'] = array(
-            '#title'       => t('Votre E-mail'),
+            '#title'       => t('Votre e-mail'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'email',
             '#required'    => true,
@@ -191,7 +207,7 @@ class RequestForm extends FormBase {
 
         // Assert this email don't already request that node
         if (!$this->request->isAvailable($form_state->getValue('email'), $form_state->getValue('node'))) {
-            $errors['email'] = t('Il me semble que vous avez déjà participer.');
+            $errors['email'] = t('Vous avez déjà participé. Merci de tenter votre chance lors d\'un prochain concours.');
         }
 
         // Assert the node is both active & currently running

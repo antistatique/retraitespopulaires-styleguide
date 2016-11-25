@@ -329,7 +329,7 @@ class GlobalContactForm extends FormBase {
         }
 
         // Assert the subject is valid
-        if (!$form_state->getValue('subject') || empty($form_state->getValue('subject'))) {
+        if (is_null($form_state->getValue('subject'))) {
             $errors['subject'] = t('Le sujet de votre demande est important.');
         }
 
@@ -383,10 +383,11 @@ class GlobalContactForm extends FormBase {
             $parts = $services[$form_state->getValue('subject')];
             $to = explode('|', $parts)[0];
         }
+
         $reply = $form_state->getValue('email');
         $this->mail->mail('rp_contact', 'contact', $to, 'fr', $data, $reply);
 
-        drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traitez votre demande et vous recontactez à l\'adresse @email ou par téléphone au @phone.', [
+        drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l\'adresse @email ou par téléphone au @phone.', [
             '@firstname' => $form_state->getValue('firstname'),
             '@lastname'  => $form_state->getValue('lastname'),
             '@email'     => $form_state->getValue('email'),

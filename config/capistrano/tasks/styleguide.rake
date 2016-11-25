@@ -4,12 +4,32 @@ namespace :styleguide do
     set :app_path, 'web'
   end
 
-  # desc "Build assets locally"
-  task :build do
+  desc "Clone or update styleguide locally"
+  task :clone do
     run_locally do
-      execute 'npm', '--no-spin', '--silent', 'update'
+      if test("[ -d #{fetch(:styleguide_path)} ]")
+        within fetch(:styleguide_path) do
+          execute "git clean -f"
+          execute "git checkout", fetch(:styleguide_branch)
+          execute "git pull"
+        end
+      else
+        execute :git, 'clone', '-b', fetch(:styleguide_branch), fetch(:styleguide_repo), fetch(:styleguide_path)
+      end
+
+      within fetch(:styleguide_path) do
+        execute 'npm', '--no-spin', '--silent', 'update'
+        execute 'gulp', 'build', '--silent', '--production'
+      end
     end
   end
+
+  # desc "Build assets locally"
+  # task :build do
+  #   run_locally do
+  #     execute 'npm', '--no-spin', '--silent', 'update'
+  #   end
+  # end
 
   desc "Push build to server"
   task :deploy_build do
