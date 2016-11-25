@@ -1,5 +1,18 @@
 CHANGELOG
 ---------
+## 1.1.0 (2016-11-25)
+ - New ACL Bella vita
+ - Query condition using timezone (News)
+ - New Empty State Search by NPA
+ - Solr integration
+ - Attachments for every Content Types & Checkbox for random
+ - Improvment  Mortgage tables
+ - Open Graph 
+ - Fix breadcrumb color on Building
+ - FAQ & Documents collection use color of selected filter profession
+ - Fix filter products
+ - Add Body to every Forms
+ - Improvment Bella vita detail page
 
 ## 1.0.3 (2016-11-18)
  - Fix typo `Changement d'adresses` to `Changement d'adresse`
