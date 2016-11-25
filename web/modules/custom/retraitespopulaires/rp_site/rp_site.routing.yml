@@ -6,6 +6,13 @@ rp_site.launcher:
         menu_id: null
     requirements:
         _permission: 'access content'
+rp_site.search:
+    path: '/recherche'
+    defaults:
+        _controller: '\Drupal\rp_site\Controller\SearchController::search'
+        _title: 'Recherche'
+    requirements:
+        _permission: 'access content'
 
 # Admin link
 rp_site.admin:

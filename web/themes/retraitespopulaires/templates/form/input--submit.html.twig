@@ -18,4 +18,10 @@
     attributes.theme.__toString == empty ? '' : 'btn-'~attributes.theme.__toString,
   ]
 %}
-<input{{ attributes.addClass(classes) }} />{{ children }}
+{% if attributes.icon.__toString == empty %}
+  <input{{ attributes.addClass(classes) }} />{{ children }}
+{% else %}
+  <button {{ attributes.addClass(classes) }} type="submit">
+    <i class="{{ attributes.icon.__toString }}"></i>
+  </button>
+{% endif %}
