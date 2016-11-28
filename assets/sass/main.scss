@@ -48,6 +48,7 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/navbar';
 @import 'molecules/teaser-search';
 @import 'molecules/progresschart';
 @import 'molecules/teaser-contact-detail';
@@ -77,6 +78,7 @@
 @import 'molecules/form';
 
 // organisms:
+@import 'organisms/header-mandats';
 @import 'organisms/footer';
 @import 'organisms/header';
 @import 'organisms/attachments';

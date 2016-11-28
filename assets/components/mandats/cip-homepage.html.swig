@@ -5,9 +5,9 @@ collection: mandats
 styleguide: false
 layout: mandats.html.swig
 ---
-{% include '../organisms/header.html.swig' with {'light': true, 'theme': 'cip'} %}
-
-{% include '../atoms/funky-waves.html.swig' with {img: 'https://www.retraitespopulaires.ch/upload/docs/image/jpeg/2016-07/banner-pilier3a.jpg'} %}
+{% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
+<div class="spacer spacer-xl"></div>
+<div class="spacer spacer-xl hidden-md hidden-lg"></div>
 
 <div class="container-fluid">
   <div class="row">
@@ -45,9 +45,10 @@ layout: mandats.html.swig
         </div>
       </div>
       <div class="spacer spacer-lg"></div>
-      
+
     </div>
   </div>
 </div>
 
+<div class="spacer"></div>
 {% include '../organisms/footer.html.swig' with {'light': true, 'theme': 'cip'} %}
