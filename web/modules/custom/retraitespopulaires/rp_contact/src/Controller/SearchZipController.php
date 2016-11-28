@@ -92,7 +92,7 @@ class SearchZipController extends ControllerBase {
             $nids[$node->nid] = $node->nid;
         }
 
-        if (empty($nids)) {
+        if (!empty($nids)) {
             $variables['advisors'] = $this->entity_node->loadMultiple($nids);
         }
 
