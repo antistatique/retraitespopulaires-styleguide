@@ -1,5 +1,9 @@
 CHANGELOG
 ---------
+
+## 1.1.1 (2016-11-28)
+ - Fix error when searching by NPA
+
 ## 1.1.0 (2016-11-25)
  - New ACL Bella vita
  - Query condition using timezone (News)
