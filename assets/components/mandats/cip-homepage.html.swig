@@ -51,4 +51,4 @@ layout: mandats.html.swig
 </div>
 
 <div class="spacer"></div>
-{% include '../organisms/footer.html.swig' with {'light': true, 'theme': 'cip'} %}
+{% include '../organisms/mandats-footer.html.swig' with {'theme': 'cip'} %}
