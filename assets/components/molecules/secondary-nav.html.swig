@@ -22,6 +22,8 @@ notes: |
       {% set nav = data.nav.assurancevie %}
     {% elseif json == 'emploi'  %}
       {% set nav = data.nav.emploi %}
+    {% elseif json == 'cip'  %}
+      {% set nav = data.nav.cip %}
     {% else  %}
       {% set nav = data.nav.lorem %}
     {% endif %}
