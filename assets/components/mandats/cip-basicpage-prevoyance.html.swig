@@ -6,7 +6,6 @@ styleguide: false
 layout: mandats.html.swig
 ---
 {% include '../organisms/header.html.swig' with {'light': true, 'theme': 'cip'} %}
-
 {% include '../atoms/funky-waves.html.swig' with {'theme': 'cip'} %}
 
 <div class="container">
