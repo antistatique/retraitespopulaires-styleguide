@@ -48,17 +48,22 @@
       "active": false
     }, {
       "url": "#",
+      "label": "Prestations",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
       "label": "Simulateurs",
       "active": false,
       "children": []
     }, {
       "url": "#",
-      "label": "Questions-réponses",
+      "label": "Formulaires",
       "active": false,
       "children": []
     }, {
       "url": "#",
-      "label": "Formulaires",
+      "label": "Questions-réponses",
       "active": false,
       "children": []
     }, {
