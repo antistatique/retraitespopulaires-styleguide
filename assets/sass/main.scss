@@ -49,6 +49,8 @@
 
 // molecules:
 @import 'molecules/navbar';
+@import 'molecules/mandats-secondary-nav';
+@import 'molecules/mandats-teaser-contact';
 @import 'molecules/mandats-contact';
 @import 'molecules/teaser-search';
 @import 'molecules/progresschart';
@@ -80,6 +82,8 @@
 
 // organisms:
 @import 'organisms/header-mandats';
+@import 'organisms/mandats-table';
+@import 'organisms/mandats-attachements-contact';
 @import 'organisms/mandats-footer';
 @import 'organisms/footer';
 @import 'organisms/header';
