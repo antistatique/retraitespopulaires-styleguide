@@ -6,7 +6,7 @@ styleguide: false
 layout: mandats.html.swig
 ---
 {% include '../organisms/header.html.swig' with {'light': true, 'theme': 'cip'} %}
-{% include '../atoms/funky-waves.html.swig' with {'theme': 'cip'} %}
+{% include '../atoms/funky-waves.html.swig' with {'funky_waves_theme': 'cip'} %}
 
 <div class="container">
   <div class="row">
@@ -55,4 +55,4 @@ layout: mandats.html.swig
 <div class="spacer spacer-lg"></div>
 {% include '../organisms/mandats-attachements-contact.html.swig' with {'attachments_contact_theme': 'cip'} %}
 <div class="spacer"></div>
-{% include '../organisms/mandats-footer.html.swig' %}
+{% include '../organisms/mandats-footer.html.swig' with {'theme': 'cip'} %}
