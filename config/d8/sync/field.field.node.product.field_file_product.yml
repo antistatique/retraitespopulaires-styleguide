@@ -19,7 +19,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: 'file-products/[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'txt pdf doc docx xls xlsx ppt pptx png gif jpg jpeg zip mp4 avi mov'
+  file_extensions: 'txt pdf doc docx xls xlsx ppt pptx png gif jpg jpeg zip mp4 avi mov mp3 wma aac wav'
   max_filesize: ''
   description_field: true
   handler: 'default:file'

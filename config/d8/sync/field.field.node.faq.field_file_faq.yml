@@ -12,14 +12,14 @@ field_name: field_file_faq
 entity_type: node
 bundle: faq
 label: 'Fichier(s) attaché(s)'
-description: ''
+description: 'mp3, wma, aac, wav'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: 'files-faq/[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'txt pdf doc docx xls xlsx ppt pptx png gif jpg jpeg zip mp4 avi mov'
+  file_extensions: 'txt pdf doc docx xls xlsx ppt pptx png gif jpg jpeg zip mp4 avi mov mp3 wma aac wav'
   max_filesize: ''
   description_field: true
   handler: 'default:file'
