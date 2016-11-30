@@ -6,9 +6,10 @@ notes: |
   ##### Usage : `funky-waves`
   ##### Options :
   - **img** - <i>String</i>
+  - **funky_waves_theme** - <i>String</i> - <b>wrapper-funky-waves-['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 
-<div class="wrapper-funky-waves has-header">
+<div class="wrapper-funky-waves has-header wrapper-funky-waves-{{ funky_waves_theme }}">
   {% if img  %}
     <img class="img-responsive center-block" src="{{ img }}" />
   {% else  %}
