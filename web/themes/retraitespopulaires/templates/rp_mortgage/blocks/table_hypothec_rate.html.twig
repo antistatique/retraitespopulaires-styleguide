@@ -11,7 +11,9 @@
 
   {% set variables_rates = [variables.rates|first] %}
   <table class="table table-wide tablesaw tablesaw-stack table-hypotheque" data-tablesaw-mode="stack" id="table-{{ variable.type|clean_id }}-variables">
-    <caption>{% trans %}Taux de {{ formatted_date }}{% endtrans %}</caption>
+    {% if formatted_date %}
+      <caption>{% trans %}Taux de {{ formatted_date }}{% endtrans %}</caption>
+    {% endif %}
     <thead>
       <tr>
         <th>Taux d'intérêt variable</th>
