@@ -6,8 +6,9 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\KernelTests\Core\Entity\EntityQueryTest;
 
-class ImportRateCommand
-{
+use Drupal\Core\Cache\CacheTagsInvalidator;
+
+class ImportRateCommand {
     /**
      * EntityStorageInterface to load Nodes
      * @var EntityTypeManagerInterface
@@ -21,15 +22,22 @@ class ImportRateCommand
     private $entity_query;
 
     /**
+     * Helper methods for cache tags invalidator.
+     * @var CacheTagsInvalidator
+     */
+    private $cacheTagsInvalidator;
+
+    /**
      * Class constructor.
      *
      * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
      * @param \Drupal\Core\Entity\Query\QueryFactory         $entityQuery
      */
-    public function __construct(EntityTypeManagerInterface $entityTypeManager, QueryFactory $entityQuery)
+    public function __construct(EntityTypeManagerInterface $entityTypeManager, QueryFactory $entityQuery, CacheTagsInvalidator $cacheTagsInvalidator)
     {
-        $this->entity_rate = $entityTypeManager->getStorage('rp_mortgage_rate');
-        $this->entity_query = $entityQuery;
+        $this->entity_rate            = $entityTypeManager->getStorage('rp_mortgage_rate');
+        $this->entity_query           = $entityQuery;
+        $this->cache_tags_invalidator = $cacheTagsInvalidator;
     }
 
     /**
@@ -73,6 +81,9 @@ class ImportRateCommand
         if (!$success) {
             drush_print('Failed on ' . $file);
         }
+
+        $this->cache_tags_invalidator->invalidateTags(['rp_mortage_rates']);
+        drush_print('Tags cleaned');
     }
 
     /**
@@ -128,7 +139,7 @@ class ImportRateCommand
 
         // set French locale
         $locale = setlocale(LC_ALL, 0);
-        setlocale(LC_ALL, 'fr_FR');
+        setlocale(LC_ALL, 'fr_FR.UTF-8');
 
         $data = strptime($textDate, "%B %Y");
         if ($data) {

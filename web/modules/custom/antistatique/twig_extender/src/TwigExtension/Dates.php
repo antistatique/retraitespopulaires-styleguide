@@ -38,7 +38,13 @@ class Dates extends \Twig_Extension {
         } elseif ($date_format = \DateTime::createFromFormat('Y-m-d', $date)) {
             $timestmap = strtotime($date);
         } else {
-            $timestmap = $date;
+            // Check the $date is a valid timestmap
+            try {
+                $date_format = new \DateTime('@'.$date);
+                $timestmap = $date;
+            } catch (\Exception $e) {
+                return null;
+            }
         }
         return format_date($timestmap, "custom", $format);
     }
