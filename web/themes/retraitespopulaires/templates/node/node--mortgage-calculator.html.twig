@@ -5,6 +5,10 @@ view_mode ? view_mode|clean_class,
 'clearfix',
 ]
 %}
+
+<!-- Admin Button to edit quickly the node  -->
+{{ load_block('rp_site_node_edit_block') }}
+
 <article{{ attributes.addClass(classes) }}>
     {{ title_prefix }}
     {% if not page %}
