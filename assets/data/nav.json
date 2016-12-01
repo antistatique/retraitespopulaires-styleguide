@@ -48,11 +48,6 @@
       "active": false
     }, {
       "url": "#",
-      "label": "Prestations",
-      "active": false,
-      "children": []
-    }, {
-      "url": "#",
       "label": "Simulateurs",
       "active": false,
       "children": []
