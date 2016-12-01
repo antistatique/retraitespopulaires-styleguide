@@ -66,6 +66,7 @@ namespace :deploy do
   after :updated, "drupal:module:disable"
   after :updated, "drupal:updatedb"
   after :updated, "drupal:cache:clear"
+  after :updated, "drupal:set_permissions"
 
   before :cleanup, :fix_permission do
     on roles(:app) do
@@ -74,9 +75,9 @@ namespace :deploy do
         directories = (releases - releases.last(fetch(:keep_releases)))
         if directories.any?
           directories_str = directories.map do |release|
-            releases_path.join(release).join("#{fetch(:app_path)}/sites/default")
+            releases_path.join(release).join("#{fetch(:app_path)}")
           end.join(" ")
-          execute :chmod, 'u+w', directories_str
+          execute :chmod, '-R' ,'u+w', directories_str
         end
       end
     end
