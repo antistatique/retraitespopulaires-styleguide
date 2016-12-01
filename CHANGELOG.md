@@ -1,5 +1,9 @@
 CHANGELOG
 ---------
+## 1.1.5 (2016-12-01)
+ - Solr integration finalized
+ - Metatags integration and configuration
+
 ## 1.1.3 (2016-12-01)
  - Fix rates imports dates
  - Improve cache of rates
