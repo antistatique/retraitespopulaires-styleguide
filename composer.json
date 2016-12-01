@@ -84,9 +84,6 @@
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
         "patches": {
-            "drupal/metatag": {
-                "Deactivate console service": "https://www.drupal.org/files/issues/metatag-deactivate_drupalconsole_services_0.patch"
-            },
             "drupal/core": {
               "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch"
             }
