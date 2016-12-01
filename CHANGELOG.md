@@ -1,5 +1,9 @@
 CHANGELOG
 ---------
+
+## 1.1.6 (2016-12-01)
+ - Remove kint from module dependencies
+
 ## 1.1.5 (2016-12-01)
  - Solr integration finalized
  - Metatags integration and configuration
