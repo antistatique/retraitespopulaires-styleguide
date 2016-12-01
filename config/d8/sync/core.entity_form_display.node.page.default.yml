@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.page.field_faq
     - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_profil
@@ -23,6 +24,7 @@ dependencies:
     - field_group
     - file
     - image
+    - metatag
     - path
     - text
 third_party_settings:
@@ -196,6 +198,11 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+  field_metatags:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
   field_products:
     weight: 17
     settings:

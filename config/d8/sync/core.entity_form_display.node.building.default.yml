@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.building.field_file_plan
     - field.field.node.building.field_latitude
     - field.field.node.building.field_longitude
+    - field.field.node.building.field_metatags
     - field.field.node.building.field_search_npa
     - field.field.node.building.field_situation
     - field.field.node.building.field_virtual_image
@@ -30,6 +31,7 @@ dependencies:
     - file
     - image
     - link
+    - metatag
     - path
     - text
 third_party_settings:
@@ -241,6 +243,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+  field_metatags:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
   field_search_npa:
     weight: 26
     settings:

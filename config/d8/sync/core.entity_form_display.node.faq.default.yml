@@ -12,12 +12,14 @@ dependencies:
     - field.field.node.faq.field_faq_random
     - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
+    - field.field.node.faq.field_metatags
     - field.field.node.faq.field_profession
     - field.field.node.faq.field_search_npa
     - node.type.faq
   module:
     - field_group
     - file
+    - metatag
     - path
     - text
 third_party_settings:
@@ -163,6 +165,11 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+  field_metatags:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
   field_profession:
     weight: 3
     settings: {  }

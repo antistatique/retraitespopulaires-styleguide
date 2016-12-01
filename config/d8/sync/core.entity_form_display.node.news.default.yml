@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.news.field_firstname
     - field.field.node.news.field_function
     - field.field.node.news.field_lastname
+    - field.field.node.news.field_metatags
     - field.field.node.news.field_news_type
     - field.field.node.news.field_offer
     - field.field.node.news.field_profession
@@ -28,6 +29,7 @@ dependencies:
     - field_group
     - file
     - image
+    - metatag
     - path
     - text
 third_party_settings:
@@ -235,6 +237,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_metatags:
+    weight: 117
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
   field_news_type:
     weight: 13
     settings: {  }
