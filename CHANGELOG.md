@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 1.1.7 (2016-12-01)
+ - Metatags og:image resized
+
 ## 1.1.6 (2016-12-01)
  - Remove kint from module dependencies
 
