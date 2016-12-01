@@ -1,6 +1,9 @@
 contact_building_form:
   js:
     js/contact_building_form.js: {}
+contact_tax_attestation_form:
+  js:
+    js/contact_tax_attestation_form.js: {}
 search_zip:
   js:
     js/search_zip.js: {}
