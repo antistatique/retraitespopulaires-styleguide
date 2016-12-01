@@ -35,7 +35,7 @@
         "drupal/editor_advanced_link": "^8",
         "drupal/mailsystem": "^8",
         "drupal/swiftmailer": "^8",
-        "swiftmailer/swiftmailer": "5.2.*@stable",
+        "swiftmailer/swiftmailer": "~5.4.0",
         "giggsey/libphonenumber-for-php": "^7.3",
         "drupal/focal_point": "^8",
         "drupal/ckeditor_media_embed": "^8",
