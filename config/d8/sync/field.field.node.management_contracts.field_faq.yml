@@ -1,0 +1,28 @@
+uuid: 9d371a58-8622-431a-a75b-b98c037b415e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq
+    - node.type.faq
+    - node.type.management_contracts
+id: node.management_contracts.field_faq
+field_name: field_faq
+entity_type: node
+bundle: management_contracts
+label: Question(s)-Réponse(s)
+description: 'Nous conseillons de ne pas lier plus de 3 questions-réponses pour une navigation optimale.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      faq: faq
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

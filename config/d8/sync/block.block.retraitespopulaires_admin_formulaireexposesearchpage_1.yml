@@ -2,10 +2,6 @@ uuid: 72f3b042-668b-4af0-8acb-8d04a80838e9
 langcode: fr
 status: false
 dependencies:
-  config:
-    - views.view.search
-  module:
-    - views
   theme:
     - retraitespopulaires_admin
 id: retraitespopulaires_admin_formulaireexposesearchpage_1

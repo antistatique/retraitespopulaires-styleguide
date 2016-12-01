@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="h1 text-center">
+    {% if variables.results and variables.search.search %}
+      {% trans %}
+        Voici l'unique résultat de votre recherche <span class="text-primary">"{{ variables.search.search }}"</span>.
+      {% plural variables.search.count %}
+        Voici les <span class="text-primary">{{ variables.search.count }}</span> résultats de votre recherche "<span class="text-primary">{{ variables.search.search }}</span>".
+      {% endtrans %}
+    {% elseif not variables.results and variables.search.search %}
+      {% trans %}Aucun résultat pour votre recherche <span class="text-primary">"{{ variables.search.search }}" </span>.{% endtrans %}
+    {% else %}
+      {% trans %}Rechercher un produit, un document, un contact...{% endtrans %}
+    {% endif %}
+    </div>
+    <div class="spacer spacer-md"></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    {{ load_form('rp_site', 'SearchForm') }}
+    <div class="spacer spacer-md"></div>
+  </div>
+  <div class="col-xs-12">
+    {% if variables.results %}
+      {% for result in variables.results %}
+        {{ load_block('rp_site_search_teaser_block', {'result': result}) }}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% if variables.pager %}
+<div class="row">
+  <div class="col-xs-12 text-center">
+    {{ variables.pager }}
+  </div>
+</div>
+{% endif %}

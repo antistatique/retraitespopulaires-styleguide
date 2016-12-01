@@ -73,6 +73,26 @@ class Profession {
         }
     }
 
+    public function theme_by_name($name) {
+        switch ($name) {
+            case 'prevoyance':
+                return 1;
+            break;
+
+            case 'immobilier':
+                return 2;
+            break;
+
+            case 'hypotheque':
+                return 6;
+            break;
+
+            case 'assurance':
+                return 7;
+            break;
+        }
+    }
+
     public function menu($plugin_id) {
         switch ($plugin_id) {
             case 'menu_link_content:a0be6622-b6ba-4cab-aa7a-6b979f7901bf':

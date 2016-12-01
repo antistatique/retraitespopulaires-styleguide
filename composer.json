@@ -28,27 +28,28 @@
         "drupal/search_api": "^8",
         "drupal/search_api_attachments": "^8",
         "drupal/search_api_solr": "^8",
-        "drupal/devel": "^8",
         "drewm/mailchimp-api": "^2.2",
         "drupal/metatag": "~8.1.0-beta9",
         "drupal/menu_breadcrumb": "^8",
         "drupal/editor_advanced_link": "^8",
         "drupal/mailsystem": "^8",
         "drupal/swiftmailer": "^8",
-        "swiftmailer/swiftmailer": "5.2.*@stable",
+        "swiftmailer/swiftmailer": "~5.4.0",
         "giggsey/libphonenumber-for-php": "^7.3",
         "drupal/focal_point": "^8",
         "drupal/ckeditor_media_embed": "^8",
-        "drupal/redirect": "^8"
+        "drupal/redirect": "^8",
+        "drupal/crop": "8.1.0@stable"
       },
     "require-dev": {
-       "behat/mink": "~1.7",
-        "behat/mink-goutte-driver": "~1.2",
-        "jcalderonzumba/gastonjs": "~1.0.2",
-        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
-        "mikey179/vfsStream": "~1.2",
-        "phpunit/phpunit": "~4.8",
-        "symfony/css-selector": "~2.8"
+      "behat/mink": "~1.7",
+      "behat/mink-goutte-driver": "~1.2",
+      "jcalderonzumba/gastonjs": "~1.0.2",
+      "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
+      "mikey179/vfsStream": "~1.2",
+      "phpunit/phpunit": "~4.8",
+      "symfony/css-selector": "~2.8",
+      "drupal/devel": "^8"
     },
     "conflict": {
         "drupal/drupal": "*"

@@ -22,6 +22,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/launcher\r\n/launcher/*\r\n/homepage"
+    pages: "/launcher\r\n/launcher/*\r\n/homepage\r\n/recherche\r\n/recherche/*"
     negate: true
     context_mapping: {  }

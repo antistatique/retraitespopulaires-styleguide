@@ -20,7 +20,13 @@
     <div class="icon-text icon-text-center">
         <span class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-documents-thick"></span>
         <div class="icon-text-txt">
-          <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ variables.collection.link }}">{% trans %}Tous les documents {{ variables.collection.name }}{% endtrans %}</a>
+          <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ variables.collection.link }}">
+            {% if variables.collection.name %}
+              {% trans %}Tous les documents {{ variables.collection.name }}{% endtrans %}
+            {% else %}
+              {% trans %}Tous les documents{% endtrans %}
+            {% endif %}
+          </a>
         </div>
     </div>
   </div>

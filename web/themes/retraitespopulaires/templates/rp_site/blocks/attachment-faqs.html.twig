@@ -11,7 +11,13 @@
     <div class="icon-text icon-text-center">
         <span class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-faq-thick"></span>
         <div class="icon-text-txt">
-          <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ variables.collection.link }}">{% trans %}Accéder à toutes les questions relatives à {{ variables.collection.name }}{% endtrans %}</a>
+          <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ variables.collection.link }}">
+            {% if variables.collection.name %}
+              {% trans %}Accéder à toutes les questions relatives à {{ variables.collection.name }}{% endtrans %}
+            {% else %}
+              {% trans %}Accéder à toutes les questions{% endtrans %}
+            {% endif %}
+          </a>
         </div>
     </div>
   </div>
