@@ -4,6 +4,7 @@ namespace Drupal\rp_mortgage\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\rp_mortgage\Service\Rate;
+
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -55,7 +56,6 @@ class TableRateBlock extends BlockBase implements ContainerFactoryPluginInterfac
         return new self($configuration, $plugin_id, $plugin_definition, $container->get('rp_mortgage.rate'));
     }
 
-
     /**
      * {@inheritdoc}
      */
@@ -88,6 +88,9 @@ class TableRateBlock extends BlockBase implements ContainerFactoryPluginInterfac
         return [
             '#theme'     => $theme,
             '#variables' => $variables,
+            '#cache' => [
+                'tags'=> ['rp_mortage_rates'], // invalidate cache when importing new data.
+            ],
         ];
     }
 }

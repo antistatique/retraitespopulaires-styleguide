@@ -1,5 +1,9 @@
 CHANGELOG
 ---------
+## 1.1.3 (2016-12-01)
+ - Fix rates imports dates
+ - Improve cache of rates
+
 ## 1.1.2 (2016-12-01)
  - Update Drupal to 8.2.3
 
