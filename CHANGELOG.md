@@ -1,5 +1,7 @@
 CHANGELOG
 ---------
+## 1.1.2 (2016-12-01)
+ - Update Drupal to 8.2.3
 
 ## 1.1.1 (2016-11-28)
  - Fix error when searching by NPA
