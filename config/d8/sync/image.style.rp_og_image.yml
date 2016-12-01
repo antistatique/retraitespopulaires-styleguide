@@ -1,0 +1,16 @@
+uuid: 1d91847c-e473-4bb3-961a-cea5d5d3d95d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: rp_og_image
+label: 'Retraites Populaires - Open Graph Image'
+effects:
+  49a17569-047d-4104-87ea-a1e85a56593a:
+    uuid: 49a17569-047d-4104-87ea-a1e85a56593a
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 630

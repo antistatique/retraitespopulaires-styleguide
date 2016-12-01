@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.contact.field_phone
     - field.field.node.contact.field_profession
     - field.field.node.contact.field_specialty
-    - field.field.node.contact.field_zip
     - image.style.thumbnail
     - node.type.contact
   module:
@@ -149,12 +148,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_zip:
-    weight: 12
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
   path:
     type: path
     weight: 9

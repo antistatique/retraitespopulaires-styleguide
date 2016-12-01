@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.contact.field_phone
     - field.field.node.contact.field_profession
     - field.field.node.contact.field_specialty
-    - field.field.node.contact.field_zip
     - node.type.contact
   module:
     - image
@@ -106,14 +105,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_zip:
-    weight: 108
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
   links:
     weight: 100
 hidden:
