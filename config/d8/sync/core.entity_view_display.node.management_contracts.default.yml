@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.management_contracts.body
     - field.field.node.management_contracts.field_administrator
     - field.field.node.management_contracts.field_contact
+    - field.field.node.management_contracts.field_document
     - field.field.node.management_contracts.field_document_random
+    - field.field.node.management_contracts.field_faq
     - field.field.node.management_contracts.field_faq_random
     - field.field.node.management_contracts.field_logo
     - field.field.node.management_contracts.field_profession
@@ -44,6 +46,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_document:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_document_random:
     weight: 108
     label: above
@@ -53,6 +62,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+  field_faq:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_faq_random:
     weight: 109
     label: above

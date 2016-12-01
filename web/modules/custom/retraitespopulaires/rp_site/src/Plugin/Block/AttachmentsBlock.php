@@ -101,13 +101,21 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
     */
     public function build($params = array()) {
         $variables = array('attachments' => array());
+        $theme_tid = null;
 
-        if ($node = $this->route->getParameter('node')) {
-            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+        if (isset($params['theme']) & !empty($params['theme'])) {
+            $variables['theme'] = $params['theme'];
+            $theme_tid = $this->profession->theme_by_name($params['theme']);
         }
 
-        $variables['attachments'][] = $this->faqs();
-        $variables['attachments'][] = $this->documents();
+        $node = $this->route->getParameter('node');
+        if (isset($node->field_profession->target_id)) {
+            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+            $theme_tid = $node->field_profession->target_id;
+        }
+
+        $variables['attachments'][] = $this->faqs($theme_tid);
+        $variables['attachments'][] = $this->documents($theme_tid);
 
         return [
             '#theme'     => 'rp_site_attachments_block',
@@ -120,13 +128,21 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
         ];
     }
 
-    private function faqs() {
+    private function faqs($theme_tid = null) {
         $variables = array();
+
+        if (!empty($theme_tid)) {
+            $variables['theme'] = $this->profession->theme($theme_tid);
+        }
+
         //Load the current node's field_faq
         $faqs_nids = array();
         if ($node = $this->route->getParameter('node')) {
             $variables['title'] = t('');
-            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+            if (isset($node->field_profession->target_id)) {
+                $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+                $theme_tid = $node->field_profession->target_id;
+            }
             $variables['type'] = 'faqs';
             $variables['links'] = array();
 
@@ -144,30 +160,41 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                         unset($variables['links'][$key]);
                     }
                 }
-            } elseif ((isset($node->field_faq_random) && !$node->field_faq_random->value) || !isset($node->field_faq_random)) {
+            } elseif (
+                (isset($node->field_faq_random) && !$node->field_faq_random->value)
+                || !isset($node->field_faq_random)
+            ) {
                 // Check if we want to disable the FAQ random
 
                 // Retrieve random documents
                 $query = $this->entity_query->get('node')
                     ->condition('type', 'faq')
                     ->condition('status', 1)
-                    ->condition('field_profession', $node->field_profession->target_id)
                     ->addTag('random')
-                    ->range(0, 3);
+                    ->range(0, 3)
+                ;
+
+                if (!empty($theme_tid)) {
+                    $query->condition('field_profession', $theme_tid);
+                }
 
                 $nids = $query->execute();
                 $variables['links'] = $this->entity_node->loadMultiple($nids);
             }
 
-            if (isset($node->field_profession->target_id)) {
+            if (!empty($theme_tid)) {
                 // Generate the collection link
-                $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
+                $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$theme_tid);
                 if (!empty($alias) ) {
                     $alias = str_replace('/metier/', '', $alias);
                 }
                 $variables['collection'] = array(
-                    'name' => $this->profession->name($node->field_profession->target_id, 'faq'),
+                    'name' => $this->profession->name($theme_tid, 'faq'),
                     'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.faqs')['nid'], 'taxonomy_term_alias' => $alias))
+                );
+            } else {
+                $variables['collection'] = array(
+                    'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.faqs')['nid']))
                 );
             }
         }
@@ -175,13 +202,21 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
         return $variables;
     }
 
-    private function documents() {
+    private function documents($theme_tid = null) {
         $variables = array();
+
+        if (!empty($theme_tid)) {
+            $variables['theme'] = $this->profession->theme($theme_tid);
+        }
+
         //Load the current node's field_document
         $documents_nids = array();
         if ($node = $this->route->getParameter('node')) {
             $variables['title'] = t('');
-            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+            if (isset($node->field_profession->target_id)) {
+                $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+                $theme_tid = $node->field_profession->target_id;
+            }
             $variables['type'] = 'documents';
             $variables['links'] = array();
 
@@ -198,31 +233,42 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                         unset($variables['links'][$key]);
                     }
                 }
-            } elseif ((isset($node->field_document_random) && !$node->field_document_random->value) || !isset($node->field_faq_random)) {
+            } elseif (
+                (isset($node->field_document_random) && !$node->field_document_random->value)
+                || !isset($node->field_faq_random)
+            ) {
                 // Check if we want to disable the documents random
 
                 // Retrieve random documents
                 $query = $this->entity_query->get('node')
                     ->condition('type', 'document')
                     ->condition('status', 1)
-                    ->condition('field_profession', $node->field_profession->target_id)
                     ->addTag('random')
-                    ->range(0, 3);
+                    ->range(0, 3)
+                ;
+
+                if (!empty($theme_tid)) {
+                    $query->condition('field_profession', $theme_tid);
+                }
 
                 $nids = $query->execute();
                 $variables['links'] = $this->entity_node->loadMultiple($nids);
             }
 
-            if (isset($node->field_profession->target_id)) {
+            if (!empty($theme_tid)) {
                 // Generate the collection link
-                $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profession->target_id);
+                $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$theme_tid);
                 if( !empty($alias) ){
                     $alias = str_replace('/metier/', '', $alias);
                 }
 
                 $variables['collection'] = array(
-                    'name' => $this->profession->name($node->field_profession->target_id, 'document'),
+                    'name' => $this->profession->name($theme_tid, 'document'),
                     'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.documents')['nid'], 'taxonomy_term_alias' => $alias))
+                );
+            } else {
+                $variables['collection'] = array(
+                    'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.documents')['nid']))
                 );
             }
         }
