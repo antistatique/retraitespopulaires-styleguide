@@ -139,7 +139,7 @@ class ImportRateCommand {
 
         // set French locale
         $locale = setlocale(LC_ALL, 0);
-        setlocale(LC_ALL, 'fr_FR');
+        setlocale(LC_ALL, 'fr_FR.UTF-8');
 
         $data = strptime($textDate, "%B %Y");
         if ($data) {
