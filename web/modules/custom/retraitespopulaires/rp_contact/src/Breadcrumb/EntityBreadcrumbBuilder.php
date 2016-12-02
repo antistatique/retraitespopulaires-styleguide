@@ -43,7 +43,7 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
             $links[] = Link::createFromRoute(
                 t('Conseillers'),
                 'entity.node.canonical',
-                ['node' => $state->get('rp_site.settings.collection.advisors')['nid']]
+                ['node' => $state->get('rp_contact.settings.collection.advisors')['nid']]
             );
         }
 
@@ -51,7 +51,7 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
             $links[] = Link::createFromRoute(
                 t('Contacts'),
                 'entity.node.canonical',
-                ['node' => $state->get('rp_site.settings.collection.contacts')['nid']]
+                ['node' => $state->get('rp_contact.settings.collection.contacts')['nid']]
             );
         }
 
