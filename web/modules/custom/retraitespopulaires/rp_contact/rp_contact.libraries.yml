@@ -10,3 +10,6 @@ contact_conversion_form:
 contact_depreciation_form:
   js:
     js/contact_depreciation_form.js: {}
+contact_loan_increase_form:
+  js:
+    js/contact_loan_increase_form.js: {}

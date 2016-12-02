@@ -28,6 +28,10 @@ function rp_contact_suggestions_nodes(&$suggestions) {
     if (isset($node->nid->value) && $node->nid->value == $state->get('rp_contact.settings.page.depreciation')['nid']) {
         $suggestions[] = 'node__' . $state->get('rp_contact.settings.page.depreciation')['theme'];
     }
+
+    if (isset($node->nid->value) && $node->nid->value == $state->get('rp_contact.settings.page.loan_increase')['nid']) {
+        $suggestions[] = 'node__' . $state->get('rp_contact.settings.page.loan_increase')['theme'];
+    }
 }
 
 
