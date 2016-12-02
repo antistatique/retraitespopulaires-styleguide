@@ -1,0 +1,41 @@
+@charset 'UTF-8';
+
+.form-group.form-file {
+  label {
+    margin: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .btn {
+    margin-bottom: 0.3em;
+  }
+
+  small {
+    display: block;
+    position: relative;
+    margin-top: 5px;
+    margin-left: -3px;
+    padding-left: 20px;
+    text-transform: lowercase;
+    text-align: left;
+    color: $text-color;
+
+    i {
+      position: absolute;
+      top: 2px;
+      left: 0;
+    }
+  }
+
+  input {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+}
