@@ -167,6 +167,26 @@ class AdminForm extends FormBase {
             '#suffix'        => '<br/>'
         );
 
+        // Collection pages settings
+        $form['collection'] = array(
+            '#type'          => 'fieldset',
+            '#title'         => 'Collection pages',
+        );
+
+        // Listing des conseillers
+        $form['collection']['advisors_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'   => 'node',
+            '#title'         => 'Demande de réservation d\'un taux - node ID',
+            '#default_value' => $this->state->get('rp_contact.settings.collection.advisors')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.collection.advisors')['nid']) : NULL,
+        );
+        $form['collection']['advisors_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Demande de réservation d\'un taux - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_contact.settings.collection.advisors')['theme'] ? $this->state->get('rp_contact.settings.collection.advisors')['theme'] : 'collection_advisors',
+        );
+
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Sauvegarder'),
@@ -215,6 +235,12 @@ class AdminForm extends FormBase {
             'nid'   => $form_state->getValue('building_nid'),
             'theme' => trim($form_state->getValue('building_theme')),
             'receivers' => trim($form_state->getValue('building_receivers')),
+        ));
+
+        // Collection pages settings
+        $this->state->set('rp_contact.settings.collection.advisors', array(
+            'nid'   => trim($form_state->getValue('advisors_nid')),
+            'theme' => trim($form_state->getValue('advisors_theme')),
         ));
     }
 }
