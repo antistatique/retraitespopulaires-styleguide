@@ -3,13 +3,10 @@
 .form-group.form-file {
   label {
     margin: 0;
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 
-  .btn {
+  .form-file-handler {
+    position: relative;
     margin-bottom: 0.3em;
   }
 
@@ -32,10 +29,14 @@
 
   input {
     position: absolute;
-    width: 0.1px;
-    height: 0.1px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0;
-    overflow: hidden;
-    z-index: -1;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

@@ -10,8 +10,8 @@ notes: |
 
 <div class="form-group form-file">
   <div class="label">Certificat de salaire</div>
-  <div class="btn btn-lg btn-{{ theme|default('primary') }}">
+  <div class="form-file-handler btn btn-lg btn-{{ theme|default('primary') }}">
     <label for="inputID">Télécharger votre fichier</label>
+    <input class="" id="inputID" type="file"></input>
   </div>
-  <input class="" id="inputID" type="file"></input>
 </div>

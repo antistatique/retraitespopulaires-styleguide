@@ -5,7 +5,7 @@ export function input_files () {
   $('.form-file').each(function() {
     const $label  = $(this).find('label'),
           labelVal = $label.text(),
-          $input = $(this).find('input'),
+          $handler = $(this).find('.form-file-handler'),
           $this = $(this);
 
     $this.on('change', function(e) {
@@ -18,7 +18,7 @@ export function input_files () {
       }
 
       if( fileName ) {
-        $('<small><i class="retraitespopulaires-icon retraitespopulaires-icon-documents-thick" aria-hidden="true"></i> <span>' +fileName +'</span></small>').insertAfter($input);
+        $('<small><i class="retraitespopulaires-icon retraitespopulaires-icon-documents-thick" aria-hidden="true"></i> <span>' +fileName +'</span></small>').insertAfter($handler);
       }
       else {
         $label.text(labelVal);
