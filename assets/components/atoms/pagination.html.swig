@@ -4,6 +4,7 @@ name: pagination
 collection: atoms
 notes: |
   ##### Usage : `pagination`
+    - **theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <nav aria-label="Pagination">
   <ul class="pagination">

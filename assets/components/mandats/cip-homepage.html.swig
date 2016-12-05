@@ -6,10 +6,6 @@ styleguide: false
 layout: mandats.html.swig
 ---
 {% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
-<div class="spacer spacer-xl"></div>
-<div class="spacer spacer-xl hidden-md hidden-lg"></div>
-
-{% include '../atoms/funky-waves.html.swig' with {img: 'https://www.retraitespopulaires.ch/upload/docs/image/jpeg/2016-07/banner-pilier3a.jpg', 'funky_waves_theme': 'cip'} %}
 
 <div class="container-fluid">
   <div class="row">

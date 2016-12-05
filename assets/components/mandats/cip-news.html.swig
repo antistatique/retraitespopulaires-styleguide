@@ -13,9 +13,6 @@ styleguide: false
 layout: mandats.html.swig
 ---
 {% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
-<div class="spacer spacer-xl"></div>
-<div class="spacer spacer-xl hidden-md hidden-lg"></div>
-{% include '../atoms/funky-waves.html.swig' with {'funky_waves_theme': 'cip'} %}
 
 <div class="container">
   <div class="row">
@@ -42,7 +39,7 @@ layout: mandats.html.swig
           <div class="col-xs-10 col-xs-offset-1 col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-1">
             <div class="rp_site_news_filter_block">
               <p class="media-heading text-muted">
-                L'actualité de CIP   
+                L'actualité de CIP
               </p>
               <ul class="filters-list">
                 <li class="active">
@@ -120,7 +117,7 @@ layout: mandats.html.swig
       </div>
     </div>
     <div class="col-xs-10 col-xs-offset-1 text-center">
-      {% include '../atoms/pagination.html.swig' %}
+      {% include '../atoms/pagination.html.swig' with {'theme': 'cip'} %}
     </div>
   </div>
 </div>

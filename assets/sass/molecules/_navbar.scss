@@ -1,1 +1,17 @@
 @charset 'UTF-8';
+
+@each $label, $color in $themes {
+  .navbar-#{$label} .navbar-nav > li.active {
+    & > a {
+      color: $color;
+    }
+  }
+}
+
+.navbar-brand {
+  margin-top: -35px;
+}
+
+.navbar {
+  margin-bottom: 0;
+}

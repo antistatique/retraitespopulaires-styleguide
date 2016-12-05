@@ -6,9 +6,6 @@ styleguide: false
 layout: mandats.html.swig
 ---
 {% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
-<div class="spacer spacer-xl"></div>
-<div class="spacer spacer-xl hidden-md hidden-lg"></div>
-{% include '../atoms/funky-waves.html.swig' with {'funky_waves_theme': 'cip'} %}
 
 <div class="container">
   <div class="row">
