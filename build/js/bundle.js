@@ -151,8 +151,6 @@ var _big_menu = require('./big_menu.js');
 
 var _input_dynamic_label = require('./input_dynamic_label.js');
 
-var _input_files = require('./input_files.js');
-
 var _organicJS = require('./organicJS.js');
 
 var _datepicker = require('./datepicker.js');
@@ -166,12 +164,11 @@ var _smoothscroll = require('./smoothscroll.js');
   (0, _smoothscroll.smoothscroll_load)();
   (0, _organicJS.organic_generate)();
   (0, _input_dynamic_label.input_dynamic_label)();
-  (0, _input_files.input_files)();
   (0, _datepicker.datepicker)();
   (0, _number_format.number_format)();
 })();
 
-},{"./big_menu.js":1,"./datepicker.js":2,"./input_dynamic_label.js":4,"./input_files.js":5,"./number_format.js":6,"./organicJS.js":7,"./smoothscroll.js":8}],4:[function(require,module,exports){
+},{"./big_menu.js":1,"./datepicker.js":2,"./input_dynamic_label.js":4,"./number_format.js":5,"./organicJS.js":6,"./smoothscroll.js":7}],4:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -203,47 +200,6 @@ function input_dynamic_label() {
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],5:[function(require,module,exports){
-(function (global){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.input_files = input_files;
-
-var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function input_files() {
-
-  (0, _jquery2.default)('.form-file').each(function () {
-    var $label = (0, _jquery2.default)(this).find('label'),
-        labelVal = $label.text(),
-        $handler = (0, _jquery2.default)(this).find('.form-file-handler'),
-        $this = (0, _jquery2.default)(this);
-
-    $this.on('change', function (e) {
-      var fileName = '';
-      if (this.files && this.files.length > 1) {
-        fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
-      } else {
-        fileName = e.target.value.split('\\').pop();
-      }
-
-      if (fileName) {
-        (0, _jquery2.default)('<small><i class="retraitespopulaires-icon retraitespopulaires-icon-documents-thick" aria-hidden="true"></i> <span>' + fileName + '</span></small>').insertAfter($handler);
-      } else {
-        $label.text(labelVal);
-      }
-    });
-  });
-}
-
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],6:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -283,7 +239,7 @@ function number_format() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -416,7 +372,7 @@ function organic_generate() {
 })(jQuery);
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -453,7 +409,7 @@ function smoothscroll_click() {
 }
 
 var smoothscroll_to = function smoothscroll_to(dest) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
+  var offset = arguments.length <= 1 || arguments[1] === undefined ? 100 : arguments[1];
 
   var target = dest.length ? dest : (0, _jquery2.default)('[name=' + this.hash.slice(1) + ']');
   if (target.length) {
