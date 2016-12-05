@@ -16,6 +16,7 @@ Use Drupal\Core\Url;
 
 use Drupal\Core\State\StateInterface;
 use Drupal\file\FileUsage\FileUsageInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 class AdminForm extends FormBase {
 
@@ -32,11 +33,18 @@ class AdminForm extends FormBase {
     protected $file_usage;
 
     /**
+    * EntityTypeManagerInterface to load Nodes
+    * @var EntityTypeManagerInterface
+    */
+    private $entity_node;
+
+    /**
      * Class constructor.
      */
-    public function __construct(StateInterface $state, FileUsageInterface $file_usage) {
-        $this->state      = $state;
-        $this->file_usage = $file_usage;
+    public function __construct(StateInterface $state, FileUsageInterface $file_usage, EntityTypeManagerInterface $entity) {
+        $this->state       = $state;
+        $this->file_usage  = $file_usage;
+        $this->entity_node = $entity->getStorage('node');
     }
 
     /**
@@ -47,7 +55,8 @@ class AdminForm extends FormBase {
       return new static(
         // Load the service required to construct this class.
         $container->get('state'),
-        $container->get('file.usage')
+        $container->get('file.usage'),
+        $container->get('entity_type.manager')
       );
     }
 
@@ -70,14 +79,14 @@ class AdminForm extends FormBase {
 
         $form['simulator']['age_man'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Homme - Åge terme pour le versement des prestations',
+            '#title'         => 'Monsieur - Âge souhaité pour le versement des prestations',
             '#default_value' => $this->state->get('rp_libre_passage.settings.age_man'),
             '#description'   => t('Séparer les âges par le caractère point-virgule (;).'),
         );
 
         $form['simulator']['age_woman'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Femme - Åge terme pour le versement des prestations',
+            '#title'         => 'Madame - Âge souhaité pour le versement des prestations',
             '#default_value' => $this->state->get('rp_libre_passage.settings.age_woman'),
             '#description'   => t('Séparer les âges par le caractère point-virgule (;).'),
         );
@@ -90,16 +99,18 @@ class AdminForm extends FormBase {
             '#description'     => t('Merci de déposer une fichier PDF.'),
         );
 
-        $form['simulator']['simulator_nid'] = array(
-            '#type'          => 'textfield',
+        $form['simulator']['calculator_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'  => 'node',
             '#title'         => 'Simulateur - node ID',
-            '#default_value' => $this->state->get('rp_libre_passage.settings.page.simulator')['nid'],
+            '#default_value' => $this->state->get('rp_libre_passage.settings.page.calculator')['nid'] ? $this->entity_node->load($this->state->get('rp_libre_passage.settings.page.calculator')['nid']) : NULL,
         );
-        $form['simulator']['simulator_theme'] = array(
+        $form['simulator']['calculator_theme'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Simulateur - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_libre_passage.settings.page.simulator')['theme'] ? $this->state->get('rp_libre_passage.settings.page.simulator')['theme'] : 'libre_passage_simulator',
+            '#disabled'      => false,
+            '#default_value' => $this->state->get('rp_libre_passage.settings.page.calculator')['theme'] ? $this->state->get('rp_libre_passage.settings.page.calculator')['theme'] : 'libre_passage_calculator',
+            '#suffix'        => '<br/>'
         );
 
         // Contact settings
@@ -119,21 +130,9 @@ class AdminForm extends FormBase {
 
         $form['contact']['receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une demande d\'information',
+            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_libre_passage.settings.receivers'),
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
-        );
-
-        $form['contact']['contact_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Contact - node ID',
-            '#default_value' => $this->state->get('rp_libre_passage.settings.page.contact')['nid'],
-        );
-        $form['contact']['contact_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Contact - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_libre_passage.settings.page.contact')['theme'] ? $this->state->get('rp_libre_passage.settings.page.contact')['theme'] : 'libre_passage_contact',
         );
 
         $form['actions']['submit'] = array(
@@ -170,14 +169,9 @@ class AdminForm extends FormBase {
         $this->state->set('rp_libre_passage.settings.age_man', trim($form_state->getValue('age_man')));
         $this->state->set('rp_libre_passage.settings.age_woman', trim($form_state->getValue('age_woman')));
 
-        $this->state->set('rp_libre_passage.settings.page.simulator', array(
-            'nid' => trim($form_state->getValue('simulator_nid')),
-            'theme' => trim($form_state->getValue('simulator_theme')),
-        ));
-
-        $this->state->set('rp_libre_passage.settings.page.contact', array(
-            'nid' => trim($form_state->getValue('contact_nid')),
-            'theme' => trim($form_state->getValue('contact_theme')),
+        $this->state->set('rp_libre_passage.settings.page.calculator', array(
+            'nid' => trim($form_state->getValue('calculator_nid')),
+            'theme' => trim($form_state->getValue('calculator_theme')),
         ));
 
         // Save file(s)

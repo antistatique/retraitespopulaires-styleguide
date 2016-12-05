@@ -20,6 +20,6 @@
     required ? 'form-required',
   ]
 %}
-{% if title is not empty or required -%} 
-  <label{{ attributes.addClass(classes) }}>{{ title }}</label> {%- if required -%} * {%- endif -%}
+{% if title is not empty or required -%}
+  <label{{ attributes.addClass(classes) }}>{{ title }}{%- if required -%} * {%- endif -%}</label>
 {%- endif %}

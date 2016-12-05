@@ -1,0 +1,3 @@
+plp_calculator:
+  js:
+    js/plp_calculator.js: {}

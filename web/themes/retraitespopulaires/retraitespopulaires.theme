@@ -133,4 +133,7 @@ function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, a
 
     // Suggestions theme of rp_contact module
     rp_contact_suggestions_nodes($suggestions);
+
+    // Suggestions theme of rp_libre_passage module
+    rp_libre_passage_suggestions_nodes($suggestions);
 }

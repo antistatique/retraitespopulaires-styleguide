@@ -1,7 +1,7 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_libre_passage\Form\ContactForm.
+* Contains \Drupal\rp_libre_passage\Form\PLPContactForm.
 */
 
 namespace Drupal\rp_libre_passage\Form;
@@ -16,7 +16,7 @@ use \libphonenumber\PhoneNumberFormat;
 use Drupal\user\PrivateTempStoreFactory;
 use Drupal\Core\Mail\MailManagerInterface;
 
-class ContactForm extends FormBase {
+class PLPContactForm extends FormBase {
 
     /**
      * Stores and retrieves temporary data for a given owner
@@ -57,14 +57,14 @@ class ContactForm extends FormBase {
     * {@inheritdoc}.
     */
     public function getFormId() {
-        return 'rp_libre_passage_contact_form';
+        return 'rp_libre_passage_plp_contact_form';
     }
 
     /**
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
-        $form['#action'] = '#rp-contact-form';
+        $form['#action'] = '#rp-plp-contact-form';
 
         if (isset($params['theme'])) {
             $theme = $params['theme'];

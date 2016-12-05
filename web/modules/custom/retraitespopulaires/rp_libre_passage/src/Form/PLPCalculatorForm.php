@@ -1,7 +1,7 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_libre_passage\Form\SimulatorForm.
+* Contains \Drupal\rp_libre_passage\Form\PLPCalculatorForm.
 */
 
 namespace Drupal\rp_libre_passage\Form;
@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\user\PrivateTempStoreFactory;
 use Drupal\Core\State\StateInterface;
 
-class SimulatorForm extends FormBase {
+class PLPCalculatorForm extends FormBase {
 
     /**
      * Stores and retrieves temporary data for a given owner
@@ -54,14 +54,18 @@ class SimulatorForm extends FormBase {
     * {@inheritdoc}.
     */
     public function getFormId() {
-        return 'rp_libre_passage_simulator_form';
+        return 'rp_libre_passage_plp_calculator_form';
     }
 
     /**
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
-        $form['#action'] = '#rp-simulator-form';
+        $form['#action'] = '#rp-calculator-form';
+
+        $form['#attached'] = array(
+            'library' =>  array('rp_libre_passage/plp_calculator'),
+        );
 
         if (isset($params['theme'])) {
             $theme = $params['theme'];
@@ -117,16 +121,12 @@ class SimulatorForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $options = array(
-            'man'   => t('Homme'),
-            'woman' => t('Femme'),
-        );
-        $form['personnal']['gender'] = array(
-            '#title'       => t('Votre genre'),
+        $form['personnal']['civil_state'] = array(
+            '#title'       => t('Votre état civil'),
             '#type'        => 'select',
             '#attributes'  => ['theme' => $theme],
+            '#options'     => array('Madame' => t('Madame'), 'Monsieur' => t('Monsieur')),
             '#required'    => true,
-            '#options'     => $options,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -139,16 +139,14 @@ class SimulatorForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $options = array(
-            0 => t('Non'),
-            1 => t('Oui'),
-        );
         $form['personnal']['civil_status'] = array(
-            '#title'       => t('Marié(e) ou lié(e) par un partenariat enregistré'),
-            '#type'        => 'select',
-            '#attributes'  => ['theme' => $theme],
+            '#type'        => 'radios',
+            '#attributes'  => ['theme' => $theme, 'title' => t('Marié(e) ou lié(e) par un partenariat enregistré')],
             '#required'    => true,
-            '#options'     => $options,
+            '#options'     => array(
+                'Oui' => t('Oui'),
+                'Non' => t('Non')
+            ),
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -162,17 +160,15 @@ class SimulatorForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $options = array(
-            '_none' => t('Choissisez un pourcentage'),
-            0 => '0%',
-            60 => '60%',
-            80 => '80%',
+            0   => '0%',
+            60  => '60%',
+            80  => '80%',
             100 => '100%',
         );
         $form['personnal']['percent'] = array(
             '#title'       => t('Pourcentage souhaité de la rente de vieillesse versée au conjoint (ou partenaire enregistré) survivant'),
             '#type'        => 'select',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
             '#options'     => $options,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -197,7 +193,7 @@ class SimulatorForm extends FormBase {
             '#title'       => t('Montant'),
             '#type'        => 'textfield',
             '#placeholder' => t('CHF'),
-            '#attributes'  => ['size' => 50, 'theme' => $theme, 'class' => array('format text-right')],
+            '#attributes'  => ['size' => 50, 'theme' => $theme, 'class' => array('form-chf-numeric text-right')],
             '#required'    => true,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -211,14 +207,20 @@ class SimulatorForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['libre_passage']['payment_date'] = array(
-            '#title'       => t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span>'),
+        $form['libre_passage']['group_start'] = array(
+            '#prefix' => '<div class="form-group '.$error_class.'"><div class="label">'. t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span>') . '</div class="label"><div class="input-group">',
+            '#suffix' => '</div>'.$error.'</div>',
+        );
+        $form['libre_passage']['group_start']['payment_date'] = array(
             '#placeholder' => t('24/12/2016'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 15, 'theme' => $theme, 'class' => array('datepicker')],
             '#required'    => true,
-            '#prefix'      => '<div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div>',
+        );
+        $form['libre_passage']['group_start']['picker'] = array(
+            '#prefix' => '<span class="input-group-btn no-events"><div class="btn btn-default-invert btn-icon">',
+            '#markup' => '<i class="retraitespopulaires-icon retraitespopulaires-icon-calendar text-'.$theme.'"></i>',
+            '#suffix' => '</div></span>',
         );
 
         // Get error to inline it as suffix
@@ -229,15 +231,22 @@ class SimulatorForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $options = array('_none' => t('Choissisez un âge'),);
-        foreach ($this->state->get('rp_libre_passage.settings.age_man') as $age) {
-            $options[$age] = $age;
+        $options = array();
+        foreach (explode(';',$this->state->get('rp_libre_passage.settings.age_man')) as $age) {
+            $options[$age] = $age.'%';
+            $form['#attached']['drupalSettings']['age_man'][] = array(
+                'value' => $age,
+            );
         }
-        foreach ($this->state->get('rp_libre_passage.settings.age_woman') as $age) {
-            $options[$age] = $age;
+        foreach (explode(';',$this->state->get('rp_libre_passage.settings.age_woman')) as $age) {
+            $options[$age] = $age.'%';
+            $form['#attached']['drupalSettings']['age_woman'][] = array(
+                'value' => $age,
+            );
         }
+        asort($options);
         $form['libre_passage']['age'] = array(
-            '#title'       => t('Åge terme pour le versement des prestations'),
+            '#title'       => t('Âge souhaité pour le versement des prestations'),
             '#type'        => 'select',
             '#attributes'  => ['theme' => $theme],
             '#required'    => true,
@@ -283,6 +292,40 @@ class SimulatorForm extends FormBase {
             $errors['birthdate'] = t('Votre date de naissance semble invalide.');
         }
 
+        // Assert the civil_state is valid
+        if (!$form_state->getValue('civil_state') || empty($form_state->getValue('civil_state'))) {
+            $errors['civil_state'] = t('Votre état civil est obligatoire.');
+        }
+
+        // Assert the civil_status is valid
+        if (!$form_state->getValue('civil_status') || empty($form_state->getValue('civil_status'))) {
+            $errors['civil_status'] = t('Votre partenariat obligatoire.');
+        }
+
+        // Assert the percent is valid
+        if (!empty($form_state->getValue('civil_status')) && $form_state->getValue('civil_status') == 'Oui') {
+            if (!$form_state->getValue('percent') || empty($form_state->getValue('percent'))) {
+                $errors['percent'] = t('Le pourcentage souhaité est obligatoire.');
+            }
+        }
+
+        // Assert the amount is valid
+        if (!$form_state->getValue('amount') || empty($form_state->getValue('amount'))) {
+            $errors['amount'] = t('Le montant est obligatoire.');
+        }
+
+        // Assert the payment_date is valid
+        if (!$form_state->getValue('payment_date') || empty($form_state->getValue('payment_date'))) {
+            $errors['payment_date'] = t('La date de versement est obligatoire.');
+        } else if (\DateTime::createFromFormat('d/m/Y', $form_state->getValue('payment_date')) === false) {
+            $errors['payment_date'] = t('La date de versement semble invalide.');
+        }
+
+        // Assert the age is valid
+        if (!$form_state->getValue('age') || empty($form_state->getValue('age'))) {
+            $errors['age'] = t('L\'âge souhaité pour le versement est obligatoire.');
+        }
+
         // Save errors in sessions to use it on the form builder
         // TODO Found better solution to inline errors than hack session to
         $this->session->set('errors', $errors);
@@ -300,8 +343,20 @@ class SimulatorForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // TODO Found better solution to inline errors than hack session to
         if (empty($this->session->get('errors'))) {
-            $data = array();
-            // $form_state->setRedirect('xxx', ['node' => $order->nid->value]);
+            $data = array(
+                'birthdate'    => $form_state->getValue('birthdate'),
+                'civil_state'  => $form_state->getValue('civil_state'),
+                'civil_status' => $form_state->getValue('civil_status'),
+                'percent'      => $form_state->getValue('percent'),
+                'amount'       => $form_state->getValue('amount'),
+                'payment_date' => $form_state->getValue('payment_date'),
+                'age'          => $form_state->getValue('age'),
+            );
+            dump($data);
+            die();
+            $this->session->set('data', $data);
+
+            $form_state->setRedirect('rp_libre_passage.plp_results');
         }
     }
 }
