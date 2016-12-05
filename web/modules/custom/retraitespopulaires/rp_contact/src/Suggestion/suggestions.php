@@ -32,4 +32,7 @@ function rp_contact_suggestions_pages(&$suggestions) {
     if (isset($node->nid->value) && $node->nid->value == $state->get('rp_contact.settings.collection.advisors')['nid']) {
         $suggestions[] = 'page__node__' . $state->get('rp_contact.settings.collection.advisors')['theme'];
     }
+    if (isset($node->nid->value) && $node->nid->value == $state->get('rp_contact.settings.collection.contacts')['nid']) {
+        $suggestions[] = 'page__node__' . $state->get('rp_contact.settings.collection.contacts')['theme'];
+    }
 }

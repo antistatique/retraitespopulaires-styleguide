@@ -177,14 +177,28 @@ class AdminForm extends FormBase {
         $form['collection']['advisors_nid'] = array(
             '#type'          => 'entity_autocomplete',
             '#target_type'   => 'node',
-            '#title'         => 'Demande de réservation d\'un taux - node ID',
+            '#title'         => 'Listing des conseillers - node ID',
             '#default_value' => $this->state->get('rp_contact.settings.collection.advisors')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.collection.advisors')['nid']) : NULL,
         );
         $form['collection']['advisors_theme'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Demande de réservation d\'un taux - theme hook',
+            '#title'         => 'Listing des conseillers - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_contact.settings.collection.advisors')['theme'] ? $this->state->get('rp_contact.settings.collection.advisors')['theme'] : 'collection_advisors',
+        );
+
+        // Listing des contacts
+        $form['collection']['contacts_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'   => 'node',
+            '#title'         => 'Listing des contacts - node ID',
+            '#default_value' => $this->state->get('rp_contact.settings.collection.contacts')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.collection.contacts')['nid']) : NULL,
+        );
+        $form['collection']['contacts_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Listing des contacts - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_contact.settings.collection.contacts')['theme'] ? $this->state->get('rp_contact.settings.collection.contacts')['theme'] : 'collection_contacts',
         );
 
         $form['actions']['submit'] = array(
@@ -219,6 +233,7 @@ class AdminForm extends FormBase {
         // General settings
         $this->state->set('rp_contact.settings.receivers', trim($form_state->getValue('receivers')));
 
+        // Page with forms settings
         $this->state->set('rp_contact.settings.page.documents', array(
             'nid'   => $form_state->getValue('documents_nid'),
             'theme' => trim($form_state->getValue('documents_theme')),
@@ -241,6 +256,10 @@ class AdminForm extends FormBase {
         $this->state->set('rp_contact.settings.collection.advisors', array(
             'nid'   => trim($form_state->getValue('advisors_nid')),
             'theme' => trim($form_state->getValue('advisors_theme')),
+        ));
+        $this->state->set('rp_contact.settings.collection.contacts', array(
+            'nid'   => trim($form_state->getValue('contacts_nid')),
+            'theme' => trim($form_state->getValue('contacts_theme')),
         ));
     }
 }
