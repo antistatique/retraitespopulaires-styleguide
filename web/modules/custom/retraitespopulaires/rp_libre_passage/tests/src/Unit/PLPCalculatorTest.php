@@ -14,6 +14,8 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
 
     public function setUp() {
         $PLPRatesRepositoryMock = $this->createMock('Drupal\rp_libre_passage\Service\PLPRatesRepository');
+
+        // Mock getRate
         $PLPRatesRepositoryMock
             ->method('getRate')
             ->will(
@@ -61,6 +63,19 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
                     [2052, 1.5],
                     [2053, 1.5],
                     [2054, 1.5],
+                ])
+            )
+        ;
+
+        // Mock getRate
+        $PLPRatesRepositoryMock
+            ->method('getConversionRate')
+            ->will(
+                $this->returnValueMap([
+                    ['man', 60, 0, 5.958],
+                    ['man', 90, 0, 7.748],
+                    ['woman', 60, 0, 4.944],
+                    ['woman', 90, 0, 5.985],
                 ])
             )
         ;
@@ -177,6 +192,48 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
     * @expectedExceptionMessage paymentAge must be a numbmer and greater than today - birthdate
     */
     // public function testCalcCapitalNegativeAmount() {}
+
+    /**
+     * @dataProvider calcAnnualPensionSimpleProvider
+     */
+    public function testCalcAnnualPensionSimple($capital, $gender, $age, $expected) {
+        $raw = $this->calculator->calcAnnualPensionSimple($capital, $gender, $age);
+        $formatted = $this->calculator->formatCents($raw);
+        $this->assertEquals($expected, $formatted);
+    }
+
+    public function calcAnnualPensionSimpleProvider() {
+        return [
+            [22850.84, 'man', 60, 1361.40],
+            [22851.50, 'man', 90, 1770.60],
+            [22850.84, 'woman', 60, 1129.80],
+            [22851.50, 'woman', 90, 1367.40],
+        ];
+    }
+
+    /**
+    * @expectedException \InvalidArgumentException
+    * @expectedExceptionMessage capital must be numeric
+    */
+    public function testCalcAnnualPensionSimpleNotNumericCapital() {
+        $this->calculator->calcAnnualPensionSimple('abcd', 'man', 90);
+    }
+
+    /**
+    * @expectedException \InvalidArgumentException
+    * @expectedExceptionMessage gender must be string of "man" or "woman"
+    */
+    public function testCalcAnnualPensionSimpleInvalidGender() {
+        $this->calculator->calcAnnualPensionSimple(22851.50, 'G', 90);
+    }
+
+    /**
+    * @expectedException \InvalidArgumentException
+    * @expectedExceptionMessage age must be an integer
+    */
+    public function testCalcAnnualPensionSimpleNotIntAge() {
+        $this->calculator->calcAnnualPensionSimple(22851.50, 'man', '90');
+    }
 
     /**
      * @dataProvider days360Provider

@@ -52,7 +52,9 @@ class PLPCalculator {
     }
 
     /**
-     * [calcCapital description]
+     * Calc of Capital since the payementDate to the deadline
+     * (Capital à l’échéance depuis la date de versement jusqu'à la date d'échéance)
+     *
      * @method calcCapital
      * @param  DateTime    $payementDate  The date of payment (Date de versement), at the beginig of the month
      * @param  DateTime    $deadline      The deadline date, at the end of the month
@@ -63,9 +65,9 @@ class PLPCalculator {
         $today = new DateTime('today');
 
         // Assert $payementDate is positive
-        // if ($payementDate <= $today) {
-        //     throw new \InvalidArgumentException('payementDate must be greater or equal as today');
-        // }
+        if ($payementDate >= $today) {
+            throw new \InvalidArgumentException('payementDate must be greater or equal as today');
+        }
 
         // Assert $deadline is greater than today
         if ($deadline <= $today) {
@@ -133,6 +135,35 @@ class PLPCalculator {
         }
 
         return $total;
+    }
+
+    /**
+     * Calc the Annual Pension (Calcul de la rente annuel simple)
+     * @method calcAnnualPensionSimple
+     * @param  Numeric          $capital   The capital given by the method calcCapital
+     * @param  String           $gender    The gender, man or woman
+     * @param  Integer          $age
+     * @return Float                       The annual pension (Rente annuel simple)
+     */
+    public function calcAnnualPensionSimple($capital, $gender, $age) {
+        if (!is_numeric($capital)) {
+            throw new \InvalidArgumentException('capital must be numeric');
+        }
+
+        if ($gender != 'man' && $gender != 'woman') {
+            throw new \InvalidArgumentException('gender must be string of "man" or "woman"');
+        }
+
+        if (!is_int($age)) {
+            throw new \InvalidArgumentException('age must be an integer');
+        }
+
+        // Rate1Head - According gender (man/woman) and the age
+        // (Taux de rente 1 tête, en fonction du genre (homme/femme) et de l'age)
+        $rate1_head = $this->ratesRepo->getConversionRate($gender, $age, 0);
+
+        $annual_pension_raw = ($capital * $rate1_head / 100 / 12);
+        return $this->formatCents($annual_pension_raw) * 12;
     }
 
     /**
