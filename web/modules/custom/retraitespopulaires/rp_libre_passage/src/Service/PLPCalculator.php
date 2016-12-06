@@ -201,6 +201,26 @@ class PLPCalculator {
     }
 
     /**
+     * Calc the Survivor Pension (Calcul de la rente survivant)
+     * @method calcSurvivorPension
+     * @param  Numeric          $annual_pension_couple   The annual pension couple given by the method calcAnnualPensionCouple
+     * @param  Numeric          $percent   The desired percent
+     * @return Float                       The survivor pension (Rente survivant)
+     */
+    public function calcSurvivorPension($annual_pension_couple, $percent) {
+        if (!is_numeric($annual_pension_couple)) {
+            throw new \InvalidArgumentException('capital must be numeric');
+        }
+
+        if (!is_int($percent)) {
+            throw new \InvalidArgumentException('percent must be numeric');
+        }
+
+        $pension_raw = ($annual_pension_couple * $percent / 100 / 12);
+        return $this->formatCents($pension_raw) * 12;
+    }
+
+    /**
      * Rounding number nearest 0.05
      * @method formatCents
      * @param  float      $number  A float number

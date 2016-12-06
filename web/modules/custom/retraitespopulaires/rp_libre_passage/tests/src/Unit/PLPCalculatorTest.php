@@ -290,6 +290,41 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
+     * @dataProvider calcSurvivorPensionProvider
+     */
+    public function testCalcSurvivorPension($annual_pension_couple, $percent, $expected) {
+        $raw = $this->calculator->calcSurvivorPension($annual_pension_couple, $percent);
+        $formatted = $this->calculator->formatCents($raw);
+        $this->assertEquals($expected, $formatted);
+    }
+
+
+    public function calcSurvivorPensionProvider() {
+        return [
+            [1103.40, 40, 441.60],
+            [1103.40, 60, 661.80],
+            [1103.40, 75, 827.40],
+            [1103.40, 80, 882.60],
+            [1103.40, 100, 1103.40],
+        ];
+    }
+
+    /**
+    * @expectedException \InvalidArgumentException
+    * @expectedExceptionMessage capital must be numeric
+    */
+    public function testCalcSurvivorPensionNotNumericCapital() {
+        $this->calculator->calcSurvivorPension('abcd', 75);
+    }
+    /**
+    * @expectedException \InvalidArgumentException
+    * @expectedExceptionMessage percent must be numeric
+    */
+    public function testCalcSurvivorPensionNotNumericPercent() {
+        $this->calculator->calcSurvivorPension(1103.40, 'abcd');
+    }
+
+    /**
      * @dataProvider days360Provider
      */
     public function testdays360($from, $to, $expected) {
