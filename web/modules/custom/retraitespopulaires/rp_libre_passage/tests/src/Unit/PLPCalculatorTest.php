@@ -76,6 +76,10 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
                     ['man', 90, 0, 7.748],
                     ['woman', 60, 0, 4.944],
                     ['woman', 90, 0, 5.985],
+                    ['man', 60, 75, 4.831],
+                    ['man', 90, 80, 5.874],
+                    ['woman', 60, 75, 4.829],
+                    ['woman', 90, 80, 5.851],
                 ])
             )
         ;
@@ -194,15 +198,15 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
     // public function testCalcCapitalNegativeAmount() {}
 
     /**
-     * @dataProvider calcAnnualPensionSimpleProvider
+     * @dataProvider calcAnnualPensionSingleProvider
      */
-    public function testCalcAnnualPensionSimple($capital, $gender, $age, $expected) {
-        $raw = $this->calculator->calcAnnualPensionSimple($capital, $gender, $age);
+    public function testCalcAnnualPensionSingle($capital, $gender, $age, $expected) {
+        $raw = $this->calculator->calcAnnualPensionSingle($capital, $gender, $age);
         $formatted = $this->calculator->formatCents($raw);
         $this->assertEquals($expected, $formatted);
     }
 
-    public function calcAnnualPensionSimpleProvider() {
+    public function calcAnnualPensionSingleProvider() {
         return [
             [22850.84, 'man', 60, 1361.40],
             [22851.50, 'man', 90, 1770.60],
@@ -215,24 +219,74 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
     * @expectedException \InvalidArgumentException
     * @expectedExceptionMessage capital must be numeric
     */
-    public function testCalcAnnualPensionSimpleNotNumericCapital() {
-        $this->calculator->calcAnnualPensionSimple('abcd', 'man', 90);
+    public function testCalcAnnualPensionSingleNotNumericCapital() {
+        $this->calculator->calcAnnualPensionSingle('abcd', 'man', 90);
     }
 
     /**
     * @expectedException \InvalidArgumentException
     * @expectedExceptionMessage gender must be string of "man" or "woman"
     */
-    public function testCalcAnnualPensionSimpleInvalidGender() {
-        $this->calculator->calcAnnualPensionSimple(22851.50, 'G', 90);
+    public function testCalcAnnualPensionSingleInvalidGender() {
+        $this->calculator->calcAnnualPensionSingle(22851.50, 'G', 90);
     }
 
     /**
     * @expectedException \InvalidArgumentException
     * @expectedExceptionMessage age must be an integer
     */
-    public function testCalcAnnualPensionSimpleNotIntAge() {
-        $this->calculator->calcAnnualPensionSimple(22851.50, 'man', '90');
+    public function testCalcAnnualPensionSingleNotIntAge() {
+        $this->calculator->calcAnnualPensionSingle(22851.50, 'man', '90');
+    }
+
+    /**
+     * @dataProvider calcAnnualPensionCoupleProvider
+     */
+    public function testCalcAnnualPensionCouple($capital, $gender, $age, $percent, $expected) {
+        $raw = $this->calculator->calcAnnualPensionCouple($capital, $gender, $age, $percent);
+        $formatted = $this->calculator->formatCents($raw);
+        $this->assertEquals($expected, $formatted);
+    }
+
+    public function calcAnnualPensionCoupleProvider() {
+        return [
+            [22850.84, 'man', 60, 75, 1104.00],
+            [22850.84, 'man', 90, 80, 1342.20],
+            [22850.84, 'woman', 60, 75, 1103.40],
+            [22850.84, 'woman', 90, 80, 1336.80],
+        ];
+    }
+
+    /**
+    * @expectedException \InvalidArgumentException
+    * @expectedExceptionMessage capital must be numeric
+    */
+    public function testCalcAnnualPensionCoupleNotNumericCapital() {
+        $this->calculator->calcAnnualPensionCouple('abcd', 'man', 90, 75);
+    }
+
+    /**
+    * @expectedException \InvalidArgumentException
+    * @expectedExceptionMessage gender must be string of "man" or "woman"
+    */
+    public function testCalcAnnualPensionCoupleInvalidGender() {
+        $this->calculator->calcAnnualPensionCouple(22851.50, 'G', 90, 75);
+    }
+
+    /**
+    * @expectedException \InvalidArgumentException
+    * @expectedExceptionMessage age must be an integer
+    */
+    public function testCalcAnnualPensionCoupleNotIntAge() {
+        $this->calculator->calcAnnualPensionCouple(22851.50, 'man', '90', 75);
+    }
+
+    /**
+    * @expectedException \InvalidArgumentException
+    * @expectedExceptionMessage percent must be numeric
+    */
+    public function testCalcAnnualPensionCoupleNotNumericPercent() {
+        $this->calculator->calcAnnualPensionCouple(22851.50, 'man', 90, 'abcd');
     }
 
     /**

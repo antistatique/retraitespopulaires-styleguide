@@ -138,14 +138,14 @@ class PLPCalculator {
     }
 
     /**
-     * Calc the Annual Pension (Calcul de la rente annuel simple)
-     * @method calcAnnualPensionSimple
+     * Calc the Annual Pension Single (Calcul de la rente annuel simple)
+     * @method calcAnnualPensionSingle
      * @param  Numeric          $capital   The capital given by the method calcCapital
      * @param  String           $gender    The gender, man or woman
      * @param  Integer          $age
      * @return Float                       The annual pension (Rente annuel simple)
      */
-    public function calcAnnualPensionSimple($capital, $gender, $age) {
+    public function calcAnnualPensionSingle($capital, $gender, $age) {
         if (!is_numeric($capital)) {
             throw new \InvalidArgumentException('capital must be numeric');
         }
@@ -163,6 +163,40 @@ class PLPCalculator {
         $rate1_head = $this->ratesRepo->getConversionRate($gender, $age, 0);
 
         $annual_pension_raw = ($capital * $rate1_head / 100 / 12);
+        return $this->formatCents($annual_pension_raw) * 12;
+    }
+
+    /**
+     * Calc the Annual Pension Couple (Calcul de la rente annuel couple)
+     * @method calcAnnualPensionCouple
+     * @param  Numeric          $capital   The capital given by the method calcCapital
+     * @param  String           $gender    The gender, man or woman
+     * @param  Integer          $age
+     * @param  Numeric          $percent   The desired percent
+     * @return Float                       The annual pension (Rente annuel simple)
+     */
+    public function calcAnnualPensionCouple($capital, $gender, $age, $percent) {
+        if (!is_numeric($capital)) {
+            throw new \InvalidArgumentException('capital must be numeric');
+        }
+
+        if ($gender != 'man' && $gender != 'woman') {
+            throw new \InvalidArgumentException('gender must be string of "man" or "woman"');
+        }
+
+        if (!is_int($age)) {
+            throw new \InvalidArgumentException('age must be an integer');
+        }
+
+        if (!is_int($percent)) {
+            throw new \InvalidArgumentException('percent must be numeric');
+        }
+
+        // Rate1Head - According gender (man/woman) and the age
+        // (Taux de rente 2 tête, en fonction du genre (homme/femme), de l'âge et du pourcentage souhaité de la rente annuelle)
+        $rate2_head = $this->ratesRepo->getConversionRate($gender, $age, $percent);
+
+        $annual_pension_raw = ($capital * $rate2_head / 100 / 12);
         return $this->formatCents($annual_pension_raw) * 12;
     }
 
