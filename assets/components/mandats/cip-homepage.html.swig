@@ -7,11 +7,15 @@ layout: mandats.html.swig
 ---
 {% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
 
+<div class="wrapper-funky-waves">
+  <img class="img-responsive center-block" src="http://www.cipvd.ch/upload/docs/image/png/2016-07/banner_salleconseilcip.png" />
+</div>
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
       <div class="entity-content">
         <div class="container">
+          <div class="spacer"></div>
           <h1 class="page-title text-center">Caisse intercommunale de pensions</h1>
           <div class="spacer"></div>
           <div class="row">
@@ -38,17 +42,13 @@ layout: mandats.html.swig
           </div>
 
           <div class="row last-news-content">
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-6">
               {% include '../molecules/teaser-news.html.swig' with {'title_news': "
         Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme' : 'cip'} %}
             </div>
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-6">
               {% include '../molecules/teaser-news.html.swig' with {'title_news': "
         Le rapport de gestion 2015 est sorti", 'body_news': "En 2015, la CIP réalise une performance de 3,7% dans un contexte économique mondial chahuté. Ce résultat reste toutefois en dessous du besoin en rendement du plan de prévoyance", 'date_news' : 'Juin 2016', 'type_news' : 'Bulletin CIP', 'theme' : 'cip'} %}
-            </div>
-            <div class="col-xs-12 col-md-4">
-              {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Un nouveau quartier convivial prévoit de créer 260 logements et abriter 40 emplois à Crissier", 'body_news': "Les Uttins accueilleront leurs locataires en 2020 dans un cadre architectural de qualité élevée, à 15 minutes de bus de la gare de Renens et à 20 minutes du Flon.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme' : 'cip'} %}
             </div>
           </div>
         </div>

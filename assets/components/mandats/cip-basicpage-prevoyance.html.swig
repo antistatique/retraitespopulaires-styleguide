@@ -6,7 +6,10 @@ styleguide: false
 layout: mandats.html.swig
 ---
 {% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
-
+<div class="wrapper-funky-waves">
+  <img class="img-responsive center-block" src="http://www.cipvd.ch/upload/docs/image/png/2016-06/banner_rente_ou_capital.png" />
+</div>
+<div class="spacer"></div>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">

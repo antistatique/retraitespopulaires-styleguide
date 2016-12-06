@@ -13,7 +13,7 @@ styleguide: false
 layout: mandats.html.swig
 ---
 {% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
-
+<div class="spacer"></div>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">

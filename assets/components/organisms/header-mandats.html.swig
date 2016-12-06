@@ -37,4 +37,3 @@ notes: |
     </div>
   </div>
 </header>
-<div class="spacer"></div>
