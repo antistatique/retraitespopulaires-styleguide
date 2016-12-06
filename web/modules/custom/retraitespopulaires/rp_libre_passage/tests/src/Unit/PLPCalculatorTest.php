@@ -116,7 +116,7 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
 
     /**
     * @expectedException \InvalidArgumentException
-    * @expectedExceptionMessage paymentAge must be a numbmer and greater than today - birthdate
+    * @expectedExceptionMessage paymentAge must be numeric and greater than today - birthdate
     */
     public function testDeadlineNotIntegerAge() {
         $birthdate = DateTime::createFromFormat('d/m/Y h:i:s', '25/03/1994 00:00:00');
@@ -125,7 +125,7 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
 
     /**
     * @expectedException \InvalidArgumentException
-    * @expectedExceptionMessage paymentAge must be a numbmer and greater than today - birthdate
+    * @expectedExceptionMessage paymentAge must be numeric and greater than today - birthdate
     */
     public function testDeadlineNegativeAge() {
         $birthdate = DateTime::createFromFormat('d/m/Y h:i:s', '25/03/1994 00:00:00');
@@ -134,7 +134,7 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
 
     /**
     * @expectedException \InvalidArgumentException
-    * @expectedExceptionMessage paymentAge must be a numbmer and greater than today - birthdate
+    * @expectedExceptionMessage paymentAge must be numeric and greater than today - birthdate
     */
     public function testDeadlineOverlappedAge() {
         $birthdate = DateTime::createFromFormat('d/m/Y h:i:s', '25/03/1994 00:00:00');
@@ -161,41 +161,67 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
         ];
     }
 
-    /**
-    * @expectedException \InvalidArgumentException
-    * @expectedExceptionMessage paymentAge must be a numbmer and greater than today - birthdate
-    */
-    // public function testCalcCapitalNotDateTimePayementDate() {}
+    public function testCalcCapitalNotDateTimePayementDate() {
+        try {
+            $payementDate = '22/11/2012';
+            $deadline = new DateTime();
+            $amount = 12345.12;
+
+            $raw = $this->calculator->calcCapital($payementDate, $deadline, $amount);
+        } catch (\Exception $e) {
+            $this->assertContains('must be an instance of DateTime', $e->getMessage());
+        }
+    }
+
+    public function testCalcCapitalNotDateTimeDeadline() {
+        try {
+            $payementDate = new DateTime();
+            $deadline = '22/11/2012';
+            $amount = 12345.12;
+
+            $raw = $this->calculator->calcCapital($payementDate, $deadline, $amount);
+        } catch (\Exception $e) {
+            $this->assertContains('must be an instance of DateTime', $e->getMessage());
+        }
+    }
 
     /**
     * @expectedException \InvalidArgumentException
-    * @expectedExceptionMessage paymentAge must be a numbmer and greater than today - birthdate
+    * @expectedExceptionMessage deadline must be greater or equal as today
     */
-    // public function testCalcCapitalNotDateTimeDeadline() {}
+    public function testCalcCapitalPastDeadlineDate() {
+        $payementDate = new DateTime();
+        $deadline = new DateTime();
+        $deadline->modify('-1 month');
+        $amount = 12345.12;
+        $raw = $this->calculator->calcCapital($payementDate, $deadline, $amount);
+    }
 
     /**
     * @expectedException \InvalidArgumentException
-    * @expectedExceptionMessage paymentAge must be a numbmer and greater than today - birthdate
+    * @expectedExceptionMessage deadline must be greater than payementDate
     */
-    // public function testCalcCapitalPastPayementDate() {}
+    public function testCalcCapitalOverlappedPaymentDateAndDeadline() {
+        $payementDate = new DateTime();
+        $payementDate->modify('+2 months');
+        $deadline = new DateTime();
+        $deadline->modify('+1 month');
+        $amount = 12345.12;
+        $raw = $this->calculator->calcCapital($payementDate, $deadline, $amount);
+    }
 
     /**
     * @expectedException \InvalidArgumentException
-    * @expectedExceptionMessage paymentAge must be a numbmer and greater than today - birthdate
+    * @expectedExceptionMessage amount must be unsigned
     */
-    // public function testCalcCapitalPastDeadlineDate() {}
-
-    /**
-    * @expectedException \InvalidArgumentException
-    * @expectedExceptionMessage paymentAge must be a numbmer and greater than today - birthdate
-    */
-    // public function testCalcCapitalOverlappedPaymentDateAndDeadline() {}
-
-    /**
-    * @expectedException \InvalidArgumentException
-    * @expectedExceptionMessage paymentAge must be a numbmer and greater than today - birthdate
-    */
-    // public function testCalcCapitalNegativeAmount() {}
+    public function testCalcCapitalNegativeAmount() {
+        $payementDate = new DateTime();
+        $payementDate->modify('+1 months');
+        $deadline = new DateTime();
+        $deadline->modify('+2 month');
+        $amount = -5;
+        $raw = $this->calculator->calcCapital($payementDate, $deadline, $amount);
+    }
 
     /**
      * @dataProvider calcAnnualPensionSingleProvider
@@ -297,7 +323,6 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
         $formatted = $this->calculator->formatCents($raw);
         $this->assertEquals($expected, $formatted);
     }
-
 
     public function calcSurvivorPensionProvider() {
         return [

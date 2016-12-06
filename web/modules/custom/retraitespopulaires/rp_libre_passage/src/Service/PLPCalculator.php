@@ -42,7 +42,7 @@ class PLPCalculator {
 
         // Assert $payementAge is integer and positive
         if (!is_int($payementAge) || $rest <= 0 ) {
-            throw new \InvalidArgumentException('paymentAge must be a numbmer and greater than today - birthdate');
+            throw new \InvalidArgumentException('paymentAge must be numeric and greater than today - birthdate');
         }
 
         $deadline->add(new \DateInterval('P'.$payementAge.'Y'));
@@ -64,11 +64,6 @@ class PLPCalculator {
     public function calcCapital(DateTime $payementDate, DateTime $deadline, $amount) {
         $today = new DateTime('today');
 
-        // Assert $payementDate is positive
-        if ($payementDate >= $today) {
-            throw new \InvalidArgumentException('payementDate must be greater or equal as today');
-        }
-
         // Assert $deadline is greater than today
         if ($deadline <= $today) {
             throw new \InvalidArgumentException('deadline must be greater or equal as today');
@@ -81,7 +76,7 @@ class PLPCalculator {
 
         // Assert $amount is positive
         if ($amount <= 0) {
-            throw new \InvalidArgumentException('amount must be a positive');
+            throw new \InvalidArgumentException('amount must be unsigned');
         }
 
         $curr_date  = clone $payementDate;
