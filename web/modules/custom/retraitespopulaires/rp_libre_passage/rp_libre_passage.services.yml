@@ -1,0 +1,7 @@
+services:
+  rp_libre_passage.plp_calculator:
+    class: Drupal\rp_libre_passage\Service\PLPCalculator
+  rp_libre_passage.plp_rates_repository:
+    class: Drupal\rp_libre_passage\Service\PLPRatesRepository
+    arguments:
+      - '@state'

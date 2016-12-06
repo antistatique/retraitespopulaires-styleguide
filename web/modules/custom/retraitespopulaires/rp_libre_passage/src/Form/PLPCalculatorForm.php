@@ -352,8 +352,6 @@ class PLPCalculatorForm extends FormBase {
                 'payment_date' => $form_state->getValue('payment_date'),
                 'age'          => $form_state->getValue('age'),
             );
-            dump($data);
-            die();
             $this->session->set('data', $data);
 
             $form_state->setRedirect('rp_libre_passage.plp_results');

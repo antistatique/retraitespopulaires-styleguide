@@ -9,8 +9,8 @@ namespace Drupal\rp_libre_passage\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Symfony\Component\HttpFoundation\RequestStack;
-use Drupal\search_api\Entity\Index;
+use Drupal\user\PrivateTempStoreFactory;
+use Drupal\rp_libre_passage\Service\PLPCalculator;
 
 /**
 * PLPResultsController.
@@ -18,16 +18,16 @@ use Drupal\search_api\Entity\Index;
 class PLPResultsController extends ControllerBase {
 
     /**
-    * Request stack that controls the lifecycle of requests
-    * @var RequestStack
-    */
-    private $request;
-
+     * Stores and retrieves temporary data for a given owner
+     * @var PrivateTempStoreFactory
+     */
+    protected $session;
     /**
      * Class constructor.
      */
-     public function __construct(RequestStack $request) {
-         $this->request   = $request->getMasterRequest();
+     public function __construct(PrivateTempStoreFactory $private_tempstore, PLPCalculator $plpCalculator) {
+         $this->session = $private_tempstore->get('rp_libre_passage_plp_calculator_form');
+         $this->plpCalculator = $plpCalculator;
      }
 
      /**
@@ -37,13 +37,21 @@ class PLPResultsController extends ControllerBase {
          // Instantiates this form class.
          return new static(
              // Load customs services used in this class.
-             $container->get('request_stack')
+             $container->get('user.private_tempstore'),
+             $container->get('rp_libre_passage.plp_calculator')
          );
      }
 
     public function results() {
         $variables = array();
+        $data = $this->session->get('data');
 
+        $birthdate = \DateTime::createFromFormat('d/m/Y', $data['birthdate']);
+        dump($data);
+        $deadline = $this->plpCalculator->getDeadline($birthdate, $data['age']);
+        dump($deadline);
+
+        die();
         return [
             '#theme'     => 'rp_libre_passage_plp_results_page',
             '#variables' => $variables,
