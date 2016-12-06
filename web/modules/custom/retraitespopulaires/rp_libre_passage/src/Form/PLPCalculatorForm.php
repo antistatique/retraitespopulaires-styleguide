@@ -232,15 +232,15 @@ class PLPCalculatorForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $options = array();
-        foreach (explode(';',$this->state->get('rp_libre_passage.settings.age_man')) as $age) {
+        foreach (explode(';',$this->state->get('rp_libre_passage.settings.age_men')) as $age) {
             $options[$age] = $age.'%';
-            $form['#attached']['drupalSettings']['age_man'][] = array(
+            $form['#attached']['drupalSettings']['age_men'][] = array(
                 'value' => $age,
             );
         }
-        foreach (explode(';',$this->state->get('rp_libre_passage.settings.age_woman')) as $age) {
+        foreach (explode(';',$this->state->get('rp_libre_passage.settings.age_women')) as $age) {
             $options[$age] = $age.'%';
-            $form['#attached']['drupalSettings']['age_woman'][] = array(
+            $form['#attached']['drupalSettings']['age_women'][] = array(
                 'value' => $age,
             );
         }

@@ -52,14 +52,14 @@
       switch ($this.val()) {
         // Set according avaialble age
         case 'Madame':
-          if (drupalSettings.age_woman.length > 0) {
-            data = drupalSettings.age_woman;
+          if (drupalSettings.age_women.length > 0) {
+            data = drupalSettings.age_women;
           }
           break;
           // Set according avaialble age
         case 'Monsieur':
-          if (drupalSettings.age_man.length > 0) {
-            data = drupalSettings.age_man;
+          if (drupalSettings.age_men.length > 0) {
+            data = drupalSettings.age_men;
           }
           break;
       }

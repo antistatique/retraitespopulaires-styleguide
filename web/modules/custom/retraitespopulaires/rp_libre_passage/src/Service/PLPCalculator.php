@@ -5,6 +5,7 @@ use Drupal\rp_libre_passage\Service\PLPRatesRepository;
 use \DateTime;
 
 class PLPCalculator {
+
     /**
     * @var PLPRatesRepository
     */

@@ -77,17 +77,17 @@ class AdminForm extends FormBase {
             '#title' => t('Simulateur de libre passage Arc-en-ciel'),
         );
 
-        $form['simulator']['age_man'] = array(
+        $form['simulator']['age_men'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Monsieur - Âge souhaité pour le versement des prestations',
-            '#default_value' => $this->state->get('rp_libre_passage.settings.age_man'),
+            '#default_value' => $this->state->get('rp_libre_passage.settings.age_men'),
             '#description'   => t('Séparer les âges par le caractère point-virgule (;).'),
         );
 
-        $form['simulator']['age_woman'] = array(
+        $form['simulator']['age_women'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Madame - Âge souhaité pour le versement des prestations',
-            '#default_value' => $this->state->get('rp_libre_passage.settings.age_woman'),
+            '#default_value' => $this->state->get('rp_libre_passage.settings.age_women'),
             '#description'   => t('Séparer les âges par le caractère point-virgule (;).'),
         );
 
@@ -166,8 +166,8 @@ class AdminForm extends FormBase {
         // Contact settings
         $this->state->set('rp_libre_passage.settings.receivers', trim($form_state->getValue('receivers')));
 
-        $this->state->set('rp_libre_passage.settings.age_man', trim($form_state->getValue('age_man')));
-        $this->state->set('rp_libre_passage.settings.age_woman', trim($form_state->getValue('age_woman')));
+        $this->state->set('rp_libre_passage.settings.age_men', trim($form_state->getValue('age_men')));
+        $this->state->set('rp_libre_passage.settings.age_women', trim($form_state->getValue('age_women')));
 
         $this->state->set('rp_libre_passage.settings.page.calculator', array(
             'nid' => trim($form_state->getValue('calculator_nid')),
