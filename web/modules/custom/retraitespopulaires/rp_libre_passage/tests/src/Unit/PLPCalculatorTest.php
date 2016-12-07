@@ -100,7 +100,11 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
     public function testDeadlineNotDateTimeBirthdate() {
         try {
             $this->calculator->getDeadline(null, 60);
+        } catch (\Throwable $t) {
+            // Executed only in PHP 7, will not match in PHP 5.x
+            $this->assertContains('must be an instance of DateTime', $t->getMessage());
         } catch (\Exception $e) {
+            // Executed only in PHP 5.x, will not be reached in PHP 7
             $this->assertContains('must be an instance of DateTime', $e->getMessage());
         }
     }
@@ -168,7 +172,11 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
             $amount = 12345.12;
 
             $raw = $this->calculator->calcCapital($payementDate, $deadline, $amount);
+        } catch (\Throwable $t) {
+            // Executed only in PHP 7, will not match in PHP 5.x
+            $this->assertContains('must be an instance of DateTime', $t->getMessage());
         } catch (\Exception $e) {
+            // Executed only in PHP 5.x, will not be reached in PHP 7
             $this->assertContains('must be an instance of DateTime', $e->getMessage());
         }
     }
@@ -180,7 +188,11 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
             $amount = 12345.12;
 
             $raw = $this->calculator->calcCapital($payementDate, $deadline, $amount);
+        } catch (\Throwable $t) {
+            // Executed only in PHP 7, will not match in PHP 5.x
+            $this->assertContains('must be an instance of DateTime', $t->getMessage());
         } catch (\Exception $e) {
+            // Executed only in PHP 5.x, will not be reached in PHP 7
             $this->assertContains('must be an instance of DateTime', $e->getMessage());
         }
     }
@@ -391,7 +403,11 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
             $from = '22/11/2012';
             $to = DateTime::createFromFormat('d/m/Y h:i:s', '31/12/2012 00:00:00');
             $this->calculator->days360($from, $to);
+        } catch (\Throwable $t) {
+            // Executed only in PHP 7, will not match in PHP 5.x
+            $this->assertContains('must be an instance of DateTime', $t->getMessage());
         } catch (\Exception $e) {
+            // Executed only in PHP 5.x, will not be reached in PHP 7
             $this->assertContains('must be an instance of DateTime', $e->getMessage());
         }
 
@@ -402,7 +418,11 @@ class PLPCalculatorTest extends PHPUnit_Framework_TestCase {
             $from = DateTime::createFromFormat('d/m/Y h:i:s', '22/11/2012 00:00:00');
             $to = '31/12/2012';
             $this->calculator->days360($from, $to);
+        } catch (\Throwable $t) {
+            // Executed only in PHP 7, will not match in PHP 5.x
+            $this->assertContains('must be an instance of DateTime', $t->getMessage());
         } catch (\Exception $e) {
+            // Executed only in PHP 5.x, will not be reached in PHP 7
             $this->assertContains('must be an instance of DateTime', $e->getMessage());
         }
     }
