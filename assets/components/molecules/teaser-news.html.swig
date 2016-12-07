@@ -8,8 +8,9 @@ notes: |
   - **title_news** - <i>String</i>
   - **date_news** - <i>String</i>
   - **type_news** - <i>String</i>
+  - **theme_news** - <i>String</i> - <b>teaser-news-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<a href="#" class="teaser teaser-fullclick teaser-news shadow shadow-down">
+<a href="#" class="teaser teaser-{{ theme_news }} teaser-fullclick teaser-news teaser-news-{{ theme_news }} shadow shadow-down">
   <div class="news-heading">
     <div class="heading-image" style="background-image: url(https://unsplash.it/1400/780)"></div>
     <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>

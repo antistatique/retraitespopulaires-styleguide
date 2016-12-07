@@ -12,7 +12,7 @@ layout: mandats.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-cip', links: ['Accueil', 'Prévoyance', 'Transiter entre deux emplois', 'Plans de prévoyance']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {'primary_theme': 'text-cip', theme: 'text-cip', links: ['Accueil', 'Prévoyance', 'Transiter entre deux emplois', 'Plans de prévoyance']} %}
       <div class="spacer"></div>
     </div>
   </div>

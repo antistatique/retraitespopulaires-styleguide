@@ -15,4 +15,10 @@
     padding: $grid-gutter-width/2;
     color: $text-color;
   }
+
+  @each $label, $color in $themes {
+    &.teaser-basicpage-#{$label} {
+      border: 1px solid $color;
+    }
+  }
 }
