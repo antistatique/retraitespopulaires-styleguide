@@ -1,9 +1,9 @@
 ---
-title: mandats-footer
-name: mandats-footer
+title: footer-mandats
+name: footer-mandats
 collection: organisms
 notes: |
-  ##### Usage : `mandats-footer`
+  ##### Usage : `footer-mandats`
   ##### Options :
   - **light** - <i>Boolean</i>
   - **theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
@@ -31,11 +31,26 @@ notes: |
       <div class="col-xs-12 col-md-3 ">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
         <p>Contactez-nous</p>
-        {% include '../molecules/mandats-contact.html.swig' %}
+
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#lausanne" aria-controls="lausanne" role="tab" data-toggle="tab">Lausanne (siège)</a></li>
+        </ul>
+        <div class="spacer spacer-sm"></div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="lausanne">
+                <a href="tel:+41213482111" class="text-large text-no-wrap d-block text-cip">021 348 <strong>21 11</strong></a>
+                <a href="mailto:info@cipvd.ch" class="text-large d-block text-cip">info@cipvd.ch</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="col-xs-12 col-md-3">
+      <div class="col-xs-12 col-md-4">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
-        <p>Géré par <a href="#">Retraites Populaires</a></p>
+        <p>Géré par <a href="#">Retraites&nbsp;Populaires</a></p>
       </div>
     </div>
   </div>

@@ -49,9 +49,6 @@
 
 // molecules:
 @import 'molecules/navbar';
-@import 'molecules/mandats-secondary-nav';
-@import 'molecules/mandats-teaser-contact';
-@import 'molecules/mandats-contact';
 @import 'molecules/teaser-search';
 @import 'molecules/progresschart';
 @import 'molecules/teaser-contact-detail';
@@ -81,12 +78,10 @@
 @import 'molecules/form';
 
 // organisms:
-@import 'organisms/header-mandats';
-@import 'organisms/mandats-table';
-@import 'organisms/mandats-attachements-contact';
-@import 'organisms/mandats-footer';
 @import 'organisms/footer';
+@import 'organisms/footer-mandats';
 @import 'organisms/header';
+@import 'organisms/header-mandats';
 @import 'organisms/attachments';
 @import 'organisms/attachments-job';
 @import 'organisms/attachments-offers';

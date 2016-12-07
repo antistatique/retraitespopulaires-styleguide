@@ -6,10 +6,9 @@ styleguide: false
 layout: mandats.html.swig
 ---
 {% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
-<div class="wrapper-funky-waves">
-  <img class="img-responsive center-block" src="http://www.cipvd.ch/upload/docs/image/png/2016-06/banner_rente_ou_capital.png" />
-</div>
-<div class="spacer"></div>
+
+{% include '../atoms/funky-waves.html.swig' with {img: 'http://www.cipvd.ch/upload/docs/image/png/2016-06/banner_rente_ou_capital.png', 'funky_waves_theme': 'cip', 'funky_waves_disable': true, 'funky_waves_no_header': true} %}
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
@@ -41,9 +40,45 @@ layout: mandats.html.swig
         <hr>
         <h3>Cotisations et contributions</h3>
         <p>Les cotisations sont prélevées en pourcent du salaire cotisant:</p>
-        <div class="spacer spacer-ml"></div>
-        {% include '../organisms/mandats-table.html.swig' %}
-        <div class="spacer spacer-ml"></div>
+
+        <table class="table-wide table-cip tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+          <thead>
+            <tr>
+            <th></th>
+            <th><strong>Plan risques</strong></th>
+            <th><strong>Plan ordinaire variante A </strong></th>
+            <th><strong>Plan ordinaire variante B</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cotisation de l'assuré</td>
+              <td>1%</td>
+              <td>8%</td>
+              <td>9%</td>
+            </tr>
+            <tr>
+              <td>Cotisation de l'employeur</td>
+              <td>1%</td>
+              <td>8%</td>
+              <td>9%</td>
+            </tr>
+            <tr>
+              <td>Contribution de l'employeur</td>
+              <td>1%</td>
+              <td>8%</td>
+            <td>6%</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>3%</td>
+              <td>24%</td>
+              <td>24%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="spacer spacer-xs"></div>
         <p>Selon l'employeur, la variante A ou B est appliquée. L'employeur va au-delà du minimum légal fixé dans la LPP, puisqu'il verse un total de 15% ou 16% du salaire cotisant au titre de la prévoyance.</p>
       </div>
     </div>
@@ -55,6 +90,7 @@ layout: mandats.html.swig
 </div>
 
 <div class="spacer spacer-lg"></div>
-{% include '../organisms/mandats-attachements-contact.html.swig' with {'attachments_contact_theme': 'cip'} %}
+{% include '../organisms/attachments-contact.html.swig' with {'attachments_contact_theme': 'cip', 'attachments_contact_title': 'La CIP est à votre disposition', 'attachments_contact_more': 'Contacter la CIP'} %}
 <div class="spacer"></div>
-{% include '../organisms/mandats-footer.html.swig' with {'theme': 'cip'} %}
+
+{% include '../organisms/footer-mandats.html.swig' with {'theme': 'cip'} %}

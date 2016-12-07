@@ -44,9 +44,8 @@ notes: |
             <a class="pretty-link" href="{{ link.url }}">{{ link.label }}</a>
           {% endif %}
         </li>
-
-        {% if link.children  %}
-          <li class="">
+      {% if link.children.length %}
+          <li class="children">
             <ul class="list-no-style list-no-padding">
               {% for child in link.children %}
                 {% set classes = '' %}

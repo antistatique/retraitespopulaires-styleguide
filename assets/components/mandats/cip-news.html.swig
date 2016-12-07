@@ -13,7 +13,9 @@ styleguide: false
 layout: mandats.html.swig
 ---
 {% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
-<div class="spacer"></div>
+
+{% include '../atoms/funky-waves.html.swig' with {img: 'none', 'funky_waves_theme': 'cip', 'funky_waves_disable': true, 'funky_waves_no_header': true} %}
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
@@ -123,6 +125,7 @@ layout: mandats.html.swig
 </div>
 
 <div class="spacer spacer-lg"></div>
-{% include '../organisms/mandats-attachements-contact.html.swig' with {'attachments_contact_theme': 'cip'} %}
+{% include '../organisms/attachments-contact.html.swig' with {'attachments_contact_theme': 'cip', 'attachments_contact_title': 'La CIP est à votre disposition', 'attachments_contact_more': 'Contacter la CIP'} %}
 <div class="spacer"></div>
-{% include '../organisms/mandats-footer.html.swig' with {'theme': 'cip'} %}
+
+{% include '../organisms/footer-mandats.html.swig' with {'theme': 'cip'} %}
