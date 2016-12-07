@@ -40,6 +40,39 @@
       "children": []
     }]
   },
+  "cip": {
+    "title": "Plans de prévoyance",
+    "links": [{
+      "url": "#",
+      "label": "Prestations",
+      "active": false
+    }, {
+      "url": "#",
+      "label": "Simulateurs",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Formulaires",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Questions-réponses",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Lexique",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Les 3 piliers",
+      "active": false,
+      "children": []
+    }]
+  },
   "assurancevie": {
     "title": "Assurance vie",
     "links": [{
