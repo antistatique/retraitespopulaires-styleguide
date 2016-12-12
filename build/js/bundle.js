@@ -453,7 +453,7 @@ function smoothscroll_click() {
 }
 
 var smoothscroll_to = function smoothscroll_to(dest) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
+  var offset = arguments.length <= 1 || arguments[1] === undefined ? 100 : arguments[1];
 
   var target = dest.length ? dest : (0, _jquery2.default)('[name=' + this.hash.slice(1) + ']');
   if (target.length) {
