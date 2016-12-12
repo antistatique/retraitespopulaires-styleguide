@@ -23,7 +23,7 @@ class RateListBuilder extends EntityListBuilder {
     $header['id'] = $this->t('Rate ID');
     $header['type'] = $this->t('Type');
     $header['name'] = $this->t('Name');
-    $header['date'] = $this->t('Date');
+    $header['date'] = $this->   t('Date');
     $header['first_rate'] = $this->t('First Rate');
     $header['second_rate'] = $this->t('Second Rate');
     $header['year'] = $this->t('Year');
@@ -46,7 +46,7 @@ class RateListBuilder extends EntityListBuilder {
       )
     );
     $row['name'] = $entity->getName();
-    $row['date'] = $entity->getDate();
+    $row['date'] = !empty($entity->getDate()) ? $entity->getDate()->format('d-m-Y') : '';
     $row['first_rate'] = $entity->getFirstRate();
     $row['second_rate'] = $entity->getSecondRate();
     $row['year'] = $entity->getYear();
