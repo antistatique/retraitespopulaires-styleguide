@@ -1,0 +1,5 @@
+entity.plp_interest_rate.add_form:
+  route_name: entity.plp_interest_rate.add_form
+  title: 'Add PLP Interesst Rate'
+  appears_on:
+    - entity.plp_interest_rate.collection

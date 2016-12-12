@@ -1,0 +1,4 @@
+administer plp interest rate entities:
+  title: 'Administer PLP Taux d intérêt entities'
+  description: 'Allow to access the administration form to configure PLP Taux d intérêt entities.'
+  restrict access: true

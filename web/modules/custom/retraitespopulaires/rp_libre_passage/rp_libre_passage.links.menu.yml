@@ -6,3 +6,9 @@ rp_libre_passage.admin.settings:
     title: Settings
     parent: rp_libre_passage.admin
     route_name: rp_libre_passage.admin.settings
+
+# PLP Taux d intérêt menu items definition
+entity.plp_interest_rate.collection:
+  title: 'Taux d''intérêt'
+  parent: rp_libre_passage.admin
+  route_name: entity.plp_interest_rate.collection

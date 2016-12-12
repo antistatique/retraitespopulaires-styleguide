@@ -7,6 +7,24 @@ use Drupal\Core\State\StateInterface;
 
 class PLPRatesRepository {
 
+    // TODO: add this on the drupal admin
+    /**
+     * Taux d'intérêt selon les années
+     * @var array
+     */
+    const PLPInterestRates = array(
+        1900 => [
+            'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-1900 00:00:00'),
+            'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-2011 00:00:00'),
+            'rate'  => 2,
+        ],
+        2012 => [
+            'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-2012 00:00:00'),
+            'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-9999 00:00:00'),
+            'rate'  => 1.5,
+        ],
+    );
+
     /**
      * Tableau Homme - des taux de conversion  des PLP à 3% (valable dès le 1.01.2012)
      * @var array
@@ -71,19 +89,7 @@ class PLPRatesRepository {
             throw new \InvalidArgumentException('year must be an integer');
         }
 
-        // TODO: add this on the drupal admin
-        $rates = array(
-            1900 => [
-                'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-1900 00:00:00'),
-                'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-2011 00:00:00'),
-                'rate'  => 2,
-            ],
-            2012 => [
-                'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-2012 00:00:00'),
-                'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-9999 00:00:00'),
-                'rate'  => 1.5,
-            ],
-        );
+        $rates = self:PLPInterestRates;
 
         $according_rate = null;
         foreach ($rates as $rate) {

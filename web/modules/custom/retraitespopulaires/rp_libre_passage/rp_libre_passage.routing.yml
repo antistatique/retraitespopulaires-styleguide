@@ -21,3 +21,50 @@ rp_libre_passage.admin.settings:
         _title: 'Libre Passage - Admin - Settings'
     requirements:
         _permission: 'access administration pages'
+
+# Entity link - PLP Interesst Rate
+entity.plp_interest_rate.canonical:
+  path: '/admin/retraites-populaires/libre_passage/interest-rate/{plp_interest_rate}'
+  defaults:
+    # Calls the view controller, defined in the annotation of the contact entity
+    _entity_view: 'plp_interest_rate'
+    _title: 'Rate Content'
+  requirements:
+    # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'plp_interest_rate.view'
+
+entity.plp_interest_rate.collection:
+  path: '/admin/retraites-populaires/libre_passage/interest-rate'
+  defaults:
+  # Calls the list controller, defined in the annotation of the contact entity.
+    _entity_list: 'plp_interest_rate'
+    _title: 'Rates List'
+  requirements:
+    _permission: 'administer plp interest rate entities'
+
+entity.plp_interest_rate.add_form:
+  path: '/admin/retraites-populaires/libre_passage/interest-rate/add'
+  defaults:
+  # Calls the form.add controller, defined in the contact entity.
+    _entity_form: plp_interest_rate.add
+    _title: 'Add Rate'
+  requirements:
+    _entity_create_access: 'plp_interest_rate'
+
+entity.plp_interest_rate.edit_form:
+  path: '/admin/retraites-populaires/libre_passage/interest-rate/{plp_interest_rate}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the contact entity.
+    _entity_form: plp_interest_rate.edit
+    _title: 'Edit Rate'
+  requirements:
+    _entity_access: 'plp_interest_rate.edit'
+
+entity.plp_interest_rate.delete_form:
+  path: '/admin/retraites-populaires/libre_passage/interest-rate/{plp_interest_rate}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the contact entity.
+    _entity_form: plp_interest_rate.delete
+    _title: 'Delete Rate'
+  requirements:
+    _entity_access: 'plp_interest_rate.delete'
