@@ -19,5 +19,5 @@ settings:
   min: !!float -180
   max: !!float 180
   prefix: ''
-  suffix: ''
+  suffix: °
 field_type: float

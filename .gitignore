@@ -10,6 +10,7 @@ npm-debug.log
 /build
 /styleguide
 /log
+/console
 
 # Drupal 8 & Styleguide
 /web/themes/retraitespopulaires/build
