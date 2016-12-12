@@ -10,7 +10,7 @@ notes: |
   - **links** - <i>Array</i>
 ---
 
-<nav class="breadcrumb" role="breadcrumb" aria-label="Vous êtes ici:">
+<nav class="breadcrumb breadcrumb-ca" role="breadcrumb" aria-label="Vous êtes ici:">
 <h1 class="hidden" aria-level="3">Vous êtes sur ce chemin.</h1>
 <ul class="list-inline list-no-style list-no-padding">
     <li class="text-primary" aria-label=""><a href="#">Accueil</a></li>
