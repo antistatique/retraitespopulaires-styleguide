@@ -35,6 +35,8 @@ layout: extranets.html.swig
           </div>
           <div class="spacer spacer-xs"></div>
         </div>
+        <div class="spacer spacer-xs"></div>
+
         {% include '../molecules/attachments-ca.html.swig' with {
           'title_attachment': 'All inclusive de la séance du 22 avril 2016',
           'version_attachment': 'Version: 20160422 OJ AI - v1'
