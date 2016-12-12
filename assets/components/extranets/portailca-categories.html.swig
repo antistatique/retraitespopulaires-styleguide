@@ -15,7 +15,6 @@ layout: extranets.html.swig
         <div class="spacer spacer-xs"></div>
         <div class="spacer spacer-md"></div>
         <h1>Ordres du jour all inclusives</h1>
-        <div class="spacer spacer-xs"></div>
         <div class="spacer spacer-md"></div>
       </div>
     </div>
@@ -66,4 +65,3 @@ layout: extranets.html.swig
 
   <div class="spacer"></div>
 </div>
-
