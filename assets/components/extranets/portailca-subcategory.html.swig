@@ -33,9 +33,8 @@ layout: extranets.html.swig
               <a href="#" class="btn btn-default btn-xs pull-right">Ajouter un document</a>
             </div>
           </div>
-          <div class="spacer spacer-xs"></div>
         </div>
-        <div class="spacer spacer-xs"></div>
+        <div class="spacer spacer-sm"></div>
 
         {% include '../molecules/attachments-ca.html.swig' with {
           'title_attachment': 'All inclusive de la séance du 22 avril 2016',
