@@ -35,63 +35,21 @@ layout: extranets.html.swig
           </div>
           <div class="spacer spacer-xs"></div>
         </div>
-        <div class="row">
-          <div class="col-md-10">
-            <div class="media">
-            <div class="media-left">
-              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="pretty-link h5">All inclusive de la séance du 22 avril 2016 <span class="text-muted text-small">- PDF</span></a><br>
-              <span class="text-muted"><small>Version: 20160422 OJ AI - v1</small></span>
-              <a href="#" class="pretty-link"><small>Voir l'historique du document</small></a> |
-              <a href="#" class="pretty-link"><small>Mettre à jour le document</small></a>
-            </div>
-          </div>
-          </div>
-          <div class="col-md-2">
-            <a href="#" class="btn btn-outline">Télécharger</a>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-10">
-            <div class="media">
-            <div class="media-left">
-              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="pretty-link h5">All inclusive de la séance du 21 mars 2016 <span class="text-muted text-small">- PDF</span></a><br>
-              <span class="text-muted"><small>Version: 20160321 OJ AI - v1.2</small></span>
-              <a href="#" class="pretty-link"><small>Voir l'historique du document</small></a> |
-              <a href="#" class="pretty-link"><small>Mettre à jour le document</small></a>
-            </div>
-          </div>
-          </div>
-          <div class="col-md-2">
-            <a href="#" class="btn btn-outline">Télécharger</a>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-10">
-            <div class="media">
-            <div class="media-left">
-              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="pretty-link h5">All inclusive de la séance du 15 février 2016 <span class="text-muted text-small">- PDF</span></a><br>
-              <span class="text-muted"><small>Version: 20160215 OJ AI - v2.3</small></span>
-              <a href="#" class="pretty-link"><small>Voir l'historique du document</small></a> |
-              <a href="#" class="pretty-link"><small>Mettre à jour le document</small></a>
-            </div>
-          </div>
-          </div>
-          <div class="col-md-2">
-            <a href="#" class="btn btn-outline">Télécharger</a>
-          </div>
-        </div>
-        <hr>
+        {% include '../molecules/attachments-ca.html.swig' with {
+          'title_attachment': 'All inclusive de la séance du 22 avril 2016',
+          'version_attachment': 'Version: 20160422 OJ AI - v1'
+          }
+        %}
+        {% include '../molecules/attachments-ca.html.swig' with {
+          'title_attachment': 'All inclusive de la séance du 21 mars 2016',
+          'version_attachment': 'Version: 20160321 OJ AI - v1.2'
+          }
+        %}
+        {% include '../molecules/attachments-ca.html.swig' with {
+          'title_attachment': 'All inclusive de la séance du 15 février 2016',
+          'version_attachment': 'Version: 20160215 OJ AI - v2.3'
+          }
+        %}
       </div>
       <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
         <div class="spacer spacer-xl visible-xs visible-sm"></div>
