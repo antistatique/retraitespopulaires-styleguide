@@ -106,7 +106,6 @@ class PLPRatesRepository {
         }
 
         $rate = $this->plp_conversion_rate->getRate($gender, $age, $percent);
-        var_dump($rate);
 
         if (is_null($rate)) {
             throw new \InvalidArgumentException('age is not enought');
