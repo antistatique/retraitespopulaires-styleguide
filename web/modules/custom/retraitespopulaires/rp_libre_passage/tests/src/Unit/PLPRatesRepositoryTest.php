@@ -15,15 +15,6 @@ class PLPRatesRepositoryTest extends PHPUnit_Framework_TestCase {
     public function setUp() {
         $PLPInterestRate = $this->createMock('Drupal\rp_libre_passage\Service\PLPInterestRate');
 
-        // [1900, 2],
-        // [1990, 2],
-        // [2000, 2],
-        // [2011, 2],
-        // [2012, 1.5],
-        // [2013, 1.5],
-        // [2100, 1.5],
-        // [3000, 1.5],
-
         $PLPInterestRate
             ->method('getRate')
             ->will(
@@ -71,7 +62,31 @@ class PLPRatesRepositoryTest extends PHPUnit_Framework_TestCase {
                 ])
             )
         ;
-        $this->ratesRepo = new PLPRatesRepository($PLPInterestRate);
+
+        $PLPConversionRate = $this->createMock('Drupal\rp_libre_passage\Service\PLPConversionRate');
+
+        $PLPConversionRate
+            ->method('getRate')
+            ->will(
+                $this->returnValueMap([
+                    ['man', 60, 0, 5.958],
+                    ['man', 90, 0, 7.748],
+                    ['woman', 60, 0, 4.944],
+                    ['woman', 90, 0, 5.985],
+                    ['man', 60, 75, 4.831],
+                    ['man', 90, 80, 5.874],
+                    ['woman', 60, 75, 4.829],
+                    ['woman', 90, 80, 5.851],
+                    ['man', 60, 60, 5.021],
+                    ['man', 65, 0, 6.721],
+                    ['man', 65, 80, 5.239],
+                    ['woman', 65, 0, 5.456],
+                    ['woman', 65, 80, 5.326],
+                ])
+            )
+        ;
+
+        $this->ratesRepo = new PLPRatesRepository($PLPInterestRate, $PLPConversionRate);
     }
 
     /**
@@ -165,7 +180,6 @@ class PLPRatesRepositoryTest extends PHPUnit_Framework_TestCase {
 
     /**
     * @expectedException \InvalidArgumentException
-    * @expectedExceptionMessage percent is invalid
     */
     public function testGetConversionRateInvalidPercent() {
         $this->ratesRepo->getConversionRate('man', 60, 2000);

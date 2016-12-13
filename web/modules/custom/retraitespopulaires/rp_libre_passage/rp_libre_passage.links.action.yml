@@ -3,3 +3,9 @@ entity.plp_interest_rate.add_form:
   title: 'Add PLP Interesst Rate'
   appears_on:
     - entity.plp_interest_rate.collection
+
+entity.plp_conversion_rate.add_form:
+  route_name: entity.plp_conversion_rate.add_form
+  title: 'Add PLP Conversion Rate'
+  appears_on:
+    - entity.plp_conversion_rate.collection

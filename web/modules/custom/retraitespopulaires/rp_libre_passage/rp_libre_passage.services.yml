@@ -8,9 +8,16 @@ services:
     class: Drupal\rp_libre_passage\Service\PLPRatesRepository
     arguments:
       - '@rp_libre_passage.plp_interest_rate'
+      - '@rp_libre_passage.plp_conversion_rate'
 
   rp_libre_passage.plp_interest_rate:
     class: Drupal\rp_libre_passage\Service\PLPInterestRate
+    arguments:
+      - '@entity_type.manager'
+      - '@entity.query'
+
+  rp_libre_passage.plp_conversion_rate:
+    class: Drupal\rp_libre_passage\Service\PLPConversionRate
     arguments:
       - '@entity_type.manager'
       - '@entity.query'

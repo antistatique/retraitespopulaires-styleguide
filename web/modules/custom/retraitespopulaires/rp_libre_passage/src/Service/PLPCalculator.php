@@ -99,8 +99,6 @@ class PLPCalculator {
             // Numbers of days based on convention “30E/360”
             $days = $this->days360($curr_date, $end);
 
-            // $this->repoRates->getRate($year);
-
             // Special Retraites Populaires, if not the first payment year, add 1 day
             if($curr_date->format('y') > $payementDate->format('y')) {
                 $days++;

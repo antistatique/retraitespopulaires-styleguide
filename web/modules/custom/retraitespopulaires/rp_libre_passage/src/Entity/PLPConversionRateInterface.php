@@ -6,12 +6,11 @@ use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
 
 /**
- * Provides an interface for defining PLP Interest Rate entities.
+ * Provides an interface for defining PLP Conversion Rate entities.
  *
  * @ingroup rp_libre_passage
  */
-interface PLPInterestRateInterface extends ContentEntityInterface, EntityChangedInterface {
-
+interface PLPConversionRateInterface extends  ContentEntityInterface, EntityChangedInterface {
   // Add get/set methods for your configuration properties here.
 
   /**

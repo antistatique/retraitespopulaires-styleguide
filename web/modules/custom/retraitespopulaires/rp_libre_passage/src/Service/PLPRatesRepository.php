@@ -49,12 +49,19 @@ class PLPRatesRepository {
     private $plp_interest_rate;
 
     /**
+     * @var \Drupal\rp_libre_passage\Service\PLPConversionRate
+     */
+    private $plp_conversion_rate;
+
+    /**
      * PLPRatesRepository constructor.
      *
      * @param \Drupal\rp_libre_passage\Service\PLPInterestRate $plp_interest_rate
+     * @param \Drupal\rp_libre_passage\Service\PLPConversionRate $plp_conversion_rate
      */
-    public function __construct(PLPInterestRate $plp_interest_rate) {
+    public function __construct(PLPInterestRate $plp_interest_rate, PLPConversionRate $plp_conversion_rate) {
         $this->plp_interest_rate = $plp_interest_rate;
+        $this->plp_conversion_rate = $plp_conversion_rate;
     }
 
     /**
@@ -98,35 +105,13 @@ class PLPRatesRepository {
             throw new \InvalidArgumentException('percent must be numeric');
         }
 
-        // Select the correspondig conversion rates table
-        switch ($gender) {
-            case 'man':
-                $rates = self::PLPConversionRatesMen;
-                break;
+        $rate = $this->plp_conversion_rate->getRate($gender, $age, $percent);
+        var_dump($rate);
 
-            case 'woman':
-                $rates = self::PLPConversionRatesWomen;
-                break;
-        }
-
-        // Check we have the minimum age
-        reset($rates);
-        $first_age = key($rates);
-
-        if ($age < $first_age) {
+        if (is_null($rate)) {
             throw new \InvalidArgumentException('age is not enought');
-        } else {
-            // Get the corresponding age or the maximum one possible
-            if (!key_exists($age, $rates)) {
-                end($rates);
-                $age = key($rates);
-            }
         }
 
-        if (!key_exists($percent, $rates[$age])) {
-            throw new \InvalidArgumentException('percent is invalid');
-        }
-
-        return $rates[$age][$percent];
+        return $rate;
     }
 }

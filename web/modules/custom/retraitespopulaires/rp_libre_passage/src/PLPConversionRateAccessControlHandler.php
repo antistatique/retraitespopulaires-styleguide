@@ -8,23 +8,23 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
 
 /**
- * Access controller for the PLP Interest Rate entity.
+ * Access controller for the PLP Conversion Rate entity.
  *
- * @see \Drupal\rp_libre_passage\Entity\PLPInterestRate.
+ * @see \Drupal\rp_libre_passage\Entity\PLPConversionRate.
  */
-class PLPInterestRateAccessControlHandler extends EntityAccessControlHandler {
+class PLPConversionRateAccessControlHandler extends EntityAccessControlHandler {
 
   /**
    * {@inheritdoc}
    */
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
-    /** @var \Drupal\rp_libre_passage\Entity\PLPInterestRateInterface $entity */
+    /** @var \Drupal\rp_libre_passage\Entity\PLPConversionRateInterface $entity */
     switch ($operation) {
       case 'view':
       case 'update':
       case 'edit':
       case 'delete':
-        return AccessResult::allowedIfHasPermission($account, 'administer plp interest rate entities');
+        return AccessResult::allowedIfHasPermission($account, 'administer plp conversion rate entities');
     }
 
     // Unknown operation, no opinion.
@@ -35,6 +35,7 @@ class PLPInterestRateAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
-    return AccessResult::allowedIfHasPermission($account, 'administer plp interest rate entities');
+      return AccessResult::allowedIfHasPermission($account, 'administer plp conversion rate entities');
   }
+
 }

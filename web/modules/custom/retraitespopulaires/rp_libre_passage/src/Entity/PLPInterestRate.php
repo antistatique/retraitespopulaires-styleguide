@@ -9,7 +9,7 @@ use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 
 /**
- * Defines the PLP Interesst Rate entity.
+ * Defines the PLP Interest Rate entity.
  *
  * @ingroup rp_libre_passage
  *
@@ -28,16 +28,16 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *     "access" = "Drupal\rp_libre_passage\PLPInterestRateAccessControlHandler",
  *   },
  *   base_table = "rp_libre_passage_interest_rate",
- *   admin_permission = "administer plp taux d intérêt entities",
+ *   admin_permission = "administer plp interest rate entities",
  *   entity_keys = {
  *     "id" = "id",
  *   },
  *   links = {
- *     "canonical" = "/admin/retraites-populaires/libre_passage/plp-interest-rate/plp_interest_rate/{plp_interest_rate}",
- *     "add-form" = "/admin/retraites-populaires/libre_passage/plp-interest-rate/plp_interest_rate/add",
- *     "edit-form" = "/admin/retraites-populaires/libre_passage/plp-interest-rate/plp_interest_rate/{plp_interest_rate}/edit",
- *     "delete-form" = "/admin/retraites-populaires/libre_passage/plp-interest-rate/plp_interest_rate/{plp_interest_rate}/delete",
- *     "collection" = "/admin/retraites-populaires/libre_passage/plp-interest-rate/plp_interest_rate",
+ *     "canonical" = "/admin/retraites-populaires/libre_passage/interest-rate/{plp_interest_rate}",
+ *     "add-form" = "/admin/retraites-populaires/libre_passage/interest-rate/add",
+ *     "edit-form" = "/admin/retraites-populaires/libre_passage/interest-rate/{plp_interest_rate}/edit",
+ *     "delete-form" = "/admin/retraites-populaires/libre_passage/interest-rate/{plp_interest_rate}/delete",
+ *     "collection" = "/admin/retraites-populaires/libre_passage/interest-rate",
  *   }
  * )
  */
