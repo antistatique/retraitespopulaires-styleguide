@@ -96,9 +96,6 @@ class PLPCalculator {
                 $end->modify('last day of december');
             }
 
-            // var_dump($curr_date);
-            // var_dump($end);
-
             // Numbers of days based on convention “30E/360”
             $days = $this->days360($curr_date, $end);
 
@@ -122,7 +119,7 @@ class PLPCalculator {
                 // Remnant sale (Solde de fin) for the current year
                 $total += $interest;
             } catch (\Exception $e) {
-
+                throw new \Exception($e->getMessage());
             }
 
             // Loop to the next year
@@ -236,7 +233,7 @@ class PLPCalculator {
     */
     public function days360(DateTime $from, DateTime $to) {
         // Assert $to is greater than $from
-        if ($to <= $from) {
+        if ($to < $from) {
             throw new \InvalidArgumentException('to must be greater than from');
         }
 

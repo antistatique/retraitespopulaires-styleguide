@@ -3,27 +3,7 @@ namespace Drupal\rp_libre_passage\Service;
 
 use \DateTime;
 
-use Drupal\Core\State\StateInterface;
-
 class PLPRatesRepository {
-
-    // TODO: add this on the drupal admin
-    /**
-     * Taux d'intérêt selon les années
-     * @var array
-     */
-    const PLPInterestRates = array(
-        1900 => [
-            'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-1900 00:00:00'),
-            'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-2011 00:00:00'),
-            'rate'  => 2,
-        ],
-        2012 => [
-            'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-2012 00:00:00'),
-            'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-9999 00:00:00'),
-            'rate'  => 1.5,
-        ],
-    );
 
     /**
      * Tableau Homme - des taux de conversion  des PLP à 3% (valable dès le 1.01.2012)
@@ -63,19 +43,18 @@ class PLPRatesRepository {
         69 => array(0 => 5.985, 40 => 5.917, 60 => 5.884, 75 => 5.859, 80 => 5.851, 100 => 5.818),
     );
 
-    /*
-    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-    * @var StateInterface
-    */
-    protected $state;
+    /**
+     * @var \Drupal\rp_libre_passage\Service\PLPInterestRate
+     */
+    private $plp_interest_rate;
 
     /**
      * PLPRatesRepository constructor.
      *
-     * @param \Drupal\Core\State\StateInterface $state
+     * @param \Drupal\rp_libre_passage\Service\PLPInterestRate $plp_interest_rate
      */
-    public function __construct(StateInterface $state) {
-        $this->state = $state;
+    public function __construct(PLPInterestRate $plp_interest_rate) {
+        $this->plp_interest_rate = $plp_interest_rate;
     }
 
     /**
@@ -89,13 +68,10 @@ class PLPRatesRepository {
             throw new \InvalidArgumentException('year must be an integer');
         }
 
-        $rates = self:PLPInterestRates;
+        $rate = $this->plp_interest_rate->getRate($year);
 
-        $according_rate = null;
-        foreach ($rates as $rate) {
-            if ($year >= $rate['start']->format('Y') && $year <= $rate['end']->format('Y')) {
-                return $rate['rate'];
-            }
+        if (!empty($rate['rate'])) {
+            return $rate['rate'];
         }
 
         throw new \InvalidArgumentException('year isn\'t in the repository');

@@ -1,7 +1,16 @@
 services:
   rp_libre_passage.plp_calculator:
     class: Drupal\rp_libre_passage\Service\PLPCalculator
+    arguments:
+      - '@rp_libre_passage.plp_rates_repository'
+
   rp_libre_passage.plp_rates_repository:
     class: Drupal\rp_libre_passage\Service\PLPRatesRepository
     arguments:
-      - '@state'
+      - '@rp_libre_passage.plp_interest_rate'
+
+  rp_libre_passage.plp_interest_rate:
+    class: Drupal\rp_libre_passage\Service\PLPInterestRate
+    arguments:
+      - '@entity_type.manager'
+      - '@entity.query'

@@ -4,6 +4,7 @@ namespace Drupal\rp_libre_passage\tests\src\Unit;
 
 use Drupal\rp_libre_passage\Service\PLPRatesRepository;
 use PHPUnit_Framework_TestCase;
+use \DateTime;
 
 class PLPRatesRepositoryTest extends PHPUnit_Framework_TestCase {
     /**
@@ -12,11 +13,65 @@ class PLPRatesRepositoryTest extends PHPUnit_Framework_TestCase {
     private $ratesRepo;
 
     public function setUp() {
-        $state = $this->getMockBuilder('\Drupal\Core\State\StateInterface')
-            ->disableOriginalConstructor()
-            ->getMock()
+        $PLPInterestRate = $this->createMock('Drupal\rp_libre_passage\Service\PLPInterestRate');
+
+        // [1900, 2],
+        // [1990, 2],
+        // [2000, 2],
+        // [2011, 2],
+        // [2012, 1.5],
+        // [2013, 1.5],
+        // [2100, 1.5],
+        // [3000, 1.5],
+
+        $PLPInterestRate
+            ->method('getRate')
+            ->will(
+                $this->returnValueMap([
+                    [1900,[
+                        'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-1900 00:00:00'),
+                        'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-2011 00:00:00'),
+                        'rate'  => 2,
+                    ]],
+                    [1990,[
+                        'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-1900 00:00:00'),
+                        'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-2011 00:00:00'),
+                        'rate'  => 2,
+                    ]],
+                    [2000,[
+                        'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-1900 00:00:00'),
+                        'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-2011 00:00:00'),
+                        'rate'  => 2,
+                    ]],
+                    [2011,[
+                        'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-1900 00:00:00'),
+                        'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-2011 00:00:00'),
+                        'rate'  => 2,
+                    ]],
+                    [2012,[
+                        'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-2012 00:00:00'),
+                        'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-9999 00:00:00'),
+                        'rate'  => 1.5,
+                    ]],
+                    [2013,[
+                        'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-2012 00:00:00'),
+                        'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-9999 00:00:00'),
+                        'rate'  => 1.5,
+                    ]],
+                    [2100,[
+                        'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-2012 00:00:00'),
+                        'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-9999 00:00:00'),
+                        'rate'  => 1.5,
+                    ]],
+                    [3000,[
+                        'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-2012 00:00:00'),
+                        'end'   => DateTime::createFromFormat('m-d-Y h:i:s', '12-31-9999 00:00:00'),
+                        'rate'  => 1.5,
+                    ]],
+                ])
+            )
         ;
-        $this->ratesRepo = new PLPRatesRepository($state);
+        $this->ratesRepo = new PLPRatesRepository($PLPInterestRate);
     }
 
     /**
