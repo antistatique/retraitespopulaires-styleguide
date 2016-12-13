@@ -51,13 +51,13 @@
       var data = [];
       switch ($this.val()) {
         // Set according avaialble age
-        case 'Madame':
+        case 'woman':
           if (drupalSettings.age_women.length > 0) {
             data = drupalSettings.age_women;
           }
           break;
           // Set according avaialble age
-        case 'Monsieur':
+        case 'man':
           if (drupalSettings.age_men.length > 0) {
             data = drupalSettings.age_men;
           }
@@ -69,7 +69,7 @@
           var obj = data[key];
            $ageInput.append($('<option></option>')
              .attr('value', obj.value)
-             .text(obj.value + '%')
+             .text(obj.value)
            );
       }
     });

@@ -9,9 +9,11 @@ namespace Drupal\rp_libre_passage\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use \DateTime;
 
 use Drupal\user\PrivateTempStoreFactory;
 use Drupal\Core\State\StateInterface;
+use Drupal\rp_libre_passage\Service\PLPCalculator;
 
 class PLPCalculatorForm extends FormBase {
 
@@ -28,10 +30,17 @@ class PLPCalculatorForm extends FormBase {
     protected $state;
 
     /**
+    * The PLP Calculator (Simulateur de Libre Passage).
+    * @var PLPCalculator
+    */
+    protected $plp_calculator;
+
+    /**
      * Class constructor.
      */
-    public function __construct(PrivateTempStoreFactory $private_tempstore, StateInterface $state) {
+    public function __construct(PrivateTempStoreFactory $private_tempstore, StateInterface $state, PLPCalculator $plp_calculator) {
         $this->state = $state;
+        $this->plp_calculator = $plp_calculator;
 
         // Init session
         // TODO Found better solution to inline errors than hack session to
@@ -46,7 +55,8 @@ class PLPCalculatorForm extends FormBase {
       return new static(
         // Load the service required to construct this class.
         $container->get('user.private_tempstore'),
-        $container->get('state')
+        $container->get('state'),
+        $container->get('rp_libre_passage.plp_calculator')
       );
     }
 
@@ -125,7 +135,7 @@ class PLPCalculatorForm extends FormBase {
             '#title'       => t('Votre état civil'),
             '#type'        => 'select',
             '#attributes'  => ['theme' => $theme],
-            '#options'     => array('Madame' => t('Madame'), 'Monsieur' => t('Monsieur')),
+            '#options'     => array('woman' => t('Madame'), 'man' => t('Monsieur')),
             '#required'    => true,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -233,13 +243,13 @@ class PLPCalculatorForm extends FormBase {
         }
         $options = array();
         foreach (explode(';',$this->state->get('rp_libre_passage.settings.age_men')) as $age) {
-            $options[$age] = $age.'%';
+            $options[$age] = $age;
             $form['#attached']['drupalSettings']['age_men'][] = array(
                 'value' => $age,
             );
         }
         foreach (explode(';',$this->state->get('rp_libre_passage.settings.age_women')) as $age) {
-            $options[$age] = $age.'%';
+            $options[$age] = $age;
             $form['#attached']['drupalSettings']['age_women'][] = array(
                 'value' => $age,
             );
@@ -304,7 +314,7 @@ class PLPCalculatorForm extends FormBase {
 
         // Assert the percent is valid
         if (!empty($form_state->getValue('civil_status')) && $form_state->getValue('civil_status') == 'Oui') {
-            if (!$form_state->getValue('percent') || empty($form_state->getValue('percent'))) {
+            if (!$form_state->getValue('percent')) {
                 $errors['percent'] = t('Le pourcentage souhaité est obligatoire.');
             }
         }
@@ -319,6 +329,27 @@ class PLPCalculatorForm extends FormBase {
             $errors['payment_date'] = t('La date de versement est obligatoire.');
         } else if (\DateTime::createFromFormat('d/m/Y', $form_state->getValue('payment_date')) === false) {
             $errors['payment_date'] = t('La date de versement semble invalide.');
+        }
+
+        // Assert the birthdate and payment_date seems legit
+        if (
+            $payment_date = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('payment_date'))
+            &&
+            $birthdate = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('birthdate'))
+        ) {
+            $today = new DateTime('today');
+
+            if ($birthdate > $today) {
+                $errors['birthdate'] = t('Votre date de naissance semble erronée.');
+            }else {
+                $age   = $birthdate->diff($today)->y;
+                $rest  = $form_state->getValue('age') - $age;
+
+                // Assert the age is not already passed
+                if ($rest <= 0 ) {
+                    $errors['age'] = t('L\'âge souahité pour le versement entre en contradiction avec votre date de naissance.');
+                }
+            }
         }
 
         // Assert the age is valid
@@ -343,18 +374,49 @@ class PLPCalculatorForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // TODO Found better solution to inline errors than hack session to
         if (empty($this->session->get('errors'))) {
+            // Format date for simulator
+            $birthdate = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('birthdate'));
+            $payment_date = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('payment_date'));
+
+            // Retrieve the deadline
+            $deadline = $this->plp_calculator->getDeadline($birthdate, (int)$form_state->getValue('age'));
+
+            // Calculate the Capital
+            $capital_raw = $this->plp_calculator->calcCapital($payment_date, $deadline, (float)$form_state->getValue('amount'));
+            $capital_formatted = $this->plp_calculator->formatCents($capital_raw);
+
+            // Calculate the Annual pension when single
+            $annual_pension_single_raw = $this->plp_calculator->calcAnnualPensionSingle($capital_formatted, $form_state->getValue('civil_state'), (int)$form_state->getValue('age'));
+            $annual_pension_single_formatted = $this->plp_calculator->formatCents($annual_pension_single_raw);
+
+            // Calculate the Annual pension on couple
+            $annual_pension_couple_raw = $this->plp_calculator->calcAnnualPensionCouple($capital_formatted, $form_state->getValue('civil_state'), (int)$form_state->getValue('age'), (int)$form_state->getValue('percent'));
+            $annual_pension_couple_formatted = $this->plp_calculator->formatCents($annual_pension_couple_raw);
+
+            // Calculate the Annual pension of the survivor (on couple)
+            $pension_survivor_raw = $this->plp_calculator->calcSurvivorPension($annual_pension_couple_formatted, (int)$form_state->getValue('percent'));
+            $pension_survivor_formatted = $this->plp_calculator->formatCents($pension_survivor_raw);
+
             $data = array(
-                'birthdate'    => $form_state->getValue('birthdate'),
-                'civil_state'  => $form_state->getValue('civil_state'),
-                'civil_status' => $form_state->getValue('civil_status'),
-                'percent'      => $form_state->getValue('percent'),
-                'amount'       => $form_state->getValue('amount'),
-                'payment_date' => $form_state->getValue('payment_date'),
-                'age'          => $form_state->getValue('age'),
+                'birthdate'             => $form_state->getValue('birthdate'),
+                'civil_state'           => $form_state->getValue('civil_state'),
+                'civil_status'          => $form_state->getValue('civil_status'),
+                'percent'               => $form_state->getValue('percent'),
+                'amount'                => $form_state->getValue('amount'),
+                'payment_date'          => $form_state->getValue('payment_date'),
+                'age'                   => $form_state->getValue('age'),
+                'deadline'              => $deadline,
+                'capital'               => $capital_formatted,
+                'annual_pension_single' => $annual_pension_single_formatted,
+                'annual_pension_couple' => $annual_pension_couple_formatted,
+                'pension_survivor'      => $pension_survivor_formatted,
             );
             $this->session->set('data', $data);
 
-            $form_state->setRedirect('rp_libre_passage.plp_results');
+            dump($data);
+            die();
+
+            // $form_state->setRedirect('rp_libre_passage.plp_results');
         }
     }
 }
