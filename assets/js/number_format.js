@@ -4,22 +4,39 @@ export function number_format () {
   $('.form-chf-numeric').autoNumeric('init',{
     aSep: '\'',
     pSign: 's',
-    aSign: ' CHF',
-    unSetOnSubmit: true
+    aSign: ' CHF'
   });
 
   $('.form-surface-numeric').autoNumeric('init',{
     aSep: '\'',
     mDec: '0',
     pSign: 's',
-    aSign: ' m2',
-    unSetOnSubmit: true
+    aSign: ' m2'
   });
 
   $('.form-percent-numeric').autoNumeric('init',{
     aSep: '\'',
     pSign: 's',
-    aSign: ' %',
-    unSetOnSubmit: true
+    aSign: ' %'
+  });
+
+  // Replace formatted value to raw one when submitting forms
+  $(document).on('submit', 'form', function() {
+    const $this = $(this);
+
+    $this.find('.form-chf-numeric').each(function(i, el){
+      const $el = $(el);
+      $el.val($el.autoNumeric('get'));
+    });
+
+    $this.find('.form-surface-numeric').each(function(i, el){
+      const $el = $(el);
+      $el.val($el.autoNumeric('get'));
+    });
+
+    $this.find('.form-percent-numeric').each(function(i, el){
+      const $el = $(el);
+      $el.val($el.autoNumeric('get'));
+    });
   });
 }
