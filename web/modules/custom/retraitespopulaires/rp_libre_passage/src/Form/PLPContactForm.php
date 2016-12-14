@@ -70,6 +70,14 @@ class PLPContactForm extends FormBase {
             $theme = $params['theme'];
         }
 
+        $params['results']['deadline'] = $params['results']['deadline']->format('d.m.Y');
+        // A hidden field can't be altered, Drupal assert it
+        $form['results'] = array(
+            '#type'     => 'hidden',
+            '#value'    => $params['results'],
+            '#required' => true
+        );
+
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
             $form['status'] = array(
@@ -87,21 +95,14 @@ class PLPContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
 
-        // A hidden field can't be altered, Drupal assert it
-        $form['birthdate'] = array(
-            '#type'     => 'hidden',
-            '#value'    => $params['node']->nid->value,
-            '#required' => true
-        );
-
-        $form = array(
+        $form['personnal'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend')],
-          '#title'      => t('Etes-vous intéressé(e)'),
-          '#prefix'     => '<h3>'.t('Etes-vous intéressé(e)').'</h3>',
+          '#attributes' => ['class' => array('fieldset-no-legend', 'fieldset-bordered')],
+          '#title'      => t('Je suis intressé(e)'),
+          '#prefix'     => '<h3>'.t('Je suis intressé(e)').'</h3>',
         );
 
-        $form['row_1'] = array(
+        $form['personnal']['row_1'] = array(
             '#prefix'      => '<div class="row">',
             '#suffix'      => '</div>',
         );
@@ -114,7 +115,7 @@ class PLPContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['row_1']['firstname'] = array(
+        $form['personnal']['row_1']['firstname'] = array(
             '#title'       => t('Votre prénom'),
             '#placeholder' => t('John'),
             '#type'        => 'textfield',
@@ -132,7 +133,7 @@ class PLPContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['row_1']['lastname'] = array(
+        $form['personnal']['row_1']['lastname'] = array(
             '#title'       => t('Votre nom de famille'),
             '#placeholder' => t('Doe'),
             '#type'        => 'textfield',
@@ -150,7 +151,7 @@ class PLPContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['email'] = array(
+        $form['personnal']['email'] = array(
             '#title'       => t('Votre e-mail'),
             '#placeholder' => t('john.doe@retraitespopulaires.ch'),
             '#type'        => 'email',
@@ -168,7 +169,7 @@ class PLPContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['phone'] = array(
+        $form['personnal']['phone'] = array(
             '#title'       => t('Votre numéro de téléphone'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
@@ -186,7 +187,7 @@ class PLPContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['message'] = array(
+        $form['personnal']['message'] = array(
             '#title'       => t('Votre message'),
             '#type'        => 'textarea',
             '#required'    => true,
@@ -240,13 +241,6 @@ class PLPContactForm extends FormBase {
         // Assert the phone is valid
         if (!$form_state->getValue('phone') || empty($form_state->getValue('phone'))) {
             $errors['phone'] = t('Le numéro de téléphone est obligatoire.');
-        }else {
-            try {
-                $phoneUtil = PhoneNumberUtil::getInstance();
-                $phoneUtil->parse($form_state->getValue('phone'), 'CH');
-            } catch (\Exception $e) {
-                $errors['phone'] = t('Votre numéro de téléphone est invalide.');
-            }
         }
 
         // Assert the message is valid
@@ -271,12 +265,14 @@ class PLPContactForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // TODO Found better solution to inline errors than hack session to
         if (empty($this->session->get('errors'))) {
+
             $data = array(
                 'firstname' => $form_state->getValue('firstname'),
                 'lastname'  => $form_state->getValue('lastname'),
                 'email'     => $form_state->getValue('email'),
                 'phone'     => $form_state->getValue('phone'),
                 'message'   => $form_state->getValue('message'),
+                'results'   => $form_state->getValue('results')
             );
 
             // Send to admin

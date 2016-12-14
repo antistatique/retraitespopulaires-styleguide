@@ -1,11 +1,3 @@
-rp_libre_passage.plp_results:
-    path: '/simulateur-pour-une-police-de-libre-passage/resultat'
-    defaults:
-        _controller: '\Drupal\rp_libre_passage\Controller\PLPResultsController::results'
-        _title: 'Simulateur pour une police de libre passage - Résultat'
-    requirements:
-        _permission: 'access content'
-
 # Admin link
 rp_libre_passage.admin:
     path: '/admin/retraites-populaires/libre_passage'

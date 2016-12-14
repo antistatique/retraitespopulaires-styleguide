@@ -77,6 +77,7 @@ class PLPCalculatorForm extends FormBase {
             'library' =>  array('rp_libre_passage/plp_calculator'),
         );
 
+        $theme = '';
         if (isset($params['theme'])) {
             $theme = $params['theme'];
         }
@@ -374,49 +375,53 @@ class PLPCalculatorForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // TODO Found better solution to inline errors than hack session to
         if (empty($this->session->get('errors'))) {
-            // Format date for simulator
-            $birthdate = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('birthdate'));
-            $payment_date = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('payment_date'));
 
-            // Retrieve the deadline
-            $deadline = $this->plp_calculator->getDeadline($birthdate, (int)$form_state->getValue('age'));
+            try {
+                // Format date for simulator
+                $birthdate = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('birthdate'));
+                $payment_date = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('payment_date'));
 
-            // Calculate the Capital
-            $capital_raw = $this->plp_calculator->calcCapital($payment_date, $deadline, (float)$form_state->getValue('amount'));
-            $capital_formatted = $this->plp_calculator->formatCents($capital_raw);
+                // Retrieve the deadline
+                $deadline = $this->plp_calculator->getDeadline($birthdate, (int)$form_state->getValue('age'));
 
-            // Calculate the Annual pension when single
-            $annual_pension_single_raw = $this->plp_calculator->calcAnnualPensionSingle($capital_formatted, $form_state->getValue('civil_state'), (int)$form_state->getValue('age'));
-            $annual_pension_single_formatted = $this->plp_calculator->formatCents($annual_pension_single_raw);
+                // Calculate the Capital
+                $capital_raw = $this->plp_calculator->calcCapital($payment_date, $deadline, (float)$form_state->getValue('amount'));
+                $capital_formatted = $this->plp_calculator->formatCents($capital_raw);
 
-            // Calculate the Annual pension on couple
-            $annual_pension_couple_raw = $this->plp_calculator->calcAnnualPensionCouple($capital_formatted, $form_state->getValue('civil_state'), (int)$form_state->getValue('age'), (int)$form_state->getValue('percent'));
-            $annual_pension_couple_formatted = $this->plp_calculator->formatCents($annual_pension_couple_raw);
+                // Calculate the Annual pension when single
+                $annual_pension_single_raw = $this->plp_calculator->calcAnnualPensionSingle($capital_formatted, $form_state->getValue('civil_state'), (int)$form_state->getValue('age'));
+                $annual_pension_single_formatted = $this->plp_calculator->formatCents($annual_pension_single_raw);
 
-            // Calculate the Annual pension of the survivor (on couple)
-            $pension_survivor_raw = $this->plp_calculator->calcSurvivorPension($annual_pension_couple_formatted, (int)$form_state->getValue('percent'));
-            $pension_survivor_formatted = $this->plp_calculator->formatCents($pension_survivor_raw);
+                // Calculate the Annual pension on couple
+                $annual_pension_couple_raw = $this->plp_calculator->calcAnnualPensionCouple($capital_formatted, $form_state->getValue('civil_state'), (int)$form_state->getValue('age'), (int)$form_state->getValue('percent'));
+                $annual_pension_couple_formatted = $this->plp_calculator->formatCents($annual_pension_couple_raw);
 
-            $data = array(
-                'birthdate'             => $form_state->getValue('birthdate'),
-                'civil_state'           => $form_state->getValue('civil_state'),
-                'civil_status'          => $form_state->getValue('civil_status'),
-                'percent'               => $form_state->getValue('percent'),
-                'amount'                => $form_state->getValue('amount'),
-                'payment_date'          => $form_state->getValue('payment_date'),
-                'age'                   => $form_state->getValue('age'),
-                'deadline'              => $deadline,
-                'capital'               => $capital_formatted,
-                'annual_pension_single' => $annual_pension_single_formatted,
-                'annual_pension_couple' => $annual_pension_couple_formatted,
-                'pension_survivor'      => $pension_survivor_formatted,
-            );
-            $this->session->set('data', $data);
+                // Calculate the Annual pension of the survivor (on couple)
+                $pension_survivor_raw = $this->plp_calculator->calcSurvivorPension($annual_pension_couple_formatted, (int)$form_state->getValue('percent'));
+                $pension_survivor_formatted = $this->plp_calculator->formatCents($pension_survivor_raw);
 
-            dump($data);
-            die();
+                $data = array(
+                    'birthdate'             => $form_state->getValue('birthdate'),
+                    'civil_state'           => $form_state->getValue('civil_state'),
+                    'civil_status'          => $form_state->getValue('civil_status'),
+                    'percent'               => $form_state->getValue('percent'),
+                    'amount'                => $form_state->getValue('amount'),
+                    'payment_date'          => $form_state->getValue('payment_date'),
+                    'age'                   => $form_state->getValue('age'),
+                    'deadline'              => $deadline,
+                    'capital'               => $capital_formatted,
+                    'annual_pension_single' => $annual_pension_single_formatted,
+                    'annual_pension_couple' => $annual_pension_couple_formatted,
+                    'pension_survivor'      => $pension_survivor_formatted,
+                );
+                $this->session->set('data', $data);
 
-            // $form_state->setRedirect('rp_libre_passage.plp_results');
+                $form_state->setRedirect('entity.node.canonical', [
+                    'node' =>  $this->state->get('rp_libre_passage.settings.page.calculator')['nid']
+                ]);
+            } catch (\Exception $e) {
+                drupal_set_message(t('An error occurred and processing did not complete.'), 'error');
+            }
         }
     }
 }

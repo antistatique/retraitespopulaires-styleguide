@@ -108,7 +108,7 @@ class AdminForm extends FormBase {
         $form['simulator']['calculator_theme'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Simulateur - theme hook',
-            '#disabled'      => false,
+            '#disabled'      => true,
             '#default_value' => $this->state->get('rp_libre_passage.settings.page.calculator')['theme'] ? $this->state->get('rp_libre_passage.settings.page.calculator')['theme'] : 'libre_passage_calculator',
             '#suffix'        => '<br/>'
         );
