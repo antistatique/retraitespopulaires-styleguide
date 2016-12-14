@@ -23,7 +23,9 @@ notes: |
     </div>
   </div>
   <div class="basicpage-body">
-    <p>{{ body_basicpage|default('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.') }}</p>
+    {% if body_basicpage %}
+      <p>{{ body_basicpage }}</p>
+    {% endif %}
     {% if links_basicpage %}
       <ul class="facets-list">
         {% for link in links_basicpage %}

@@ -98,6 +98,17 @@
     </li>
 
     <li>
+      <span class="styleguide-menu-heading">Extranets</span>
+      <ul>
+        {% for page in collections.extranets %}
+          <li>
+            <a href="/retraitespopulaires-styleguide/{{page.title|lower}}">{{page.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
       <span class="styleguide-menu-heading">Immobiliers</span>
       <ul>
         {% for page in collections.immobiliers %}
