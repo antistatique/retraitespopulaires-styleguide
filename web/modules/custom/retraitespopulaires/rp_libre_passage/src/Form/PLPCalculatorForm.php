@@ -203,7 +203,7 @@ class PLPCalculatorForm extends FormBase {
             '#title'       => t('Montant'),
             '#type'        => 'textfield',
             '#placeholder' => t('CHF'),
-            '#attributes'  => ['size' => 50, 'theme' => $theme, 'class' => array('form-chf-numeric text-right')],
+            '#attributes'  => ['size' => 20, 'theme' => $theme, 'class' => array('form-chf-numeric text-right')],
             '#required'    => true,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
