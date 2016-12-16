@@ -1,5 +1,15 @@
 @charset 'UTF-8';
 
+@each $label, $color in $themes {
+  .retraitespopulaires-icon-#{$label} {
+    color: $color;
+
+    &:hover {
+      color: darken($color, 20%);
+    }
+  }
+}
+
 /**
 * FontIcon
 */
