@@ -4,20 +4,35 @@
 
 
 {% block content %}
-  <div class="styleguide-item-group" id="atoms">
 
-  {% if collections.atoms.length > 0 %}
-    <div class="styleguide-item-heading-group">
-      <div class="lead">{{contents|raw}}</div>
-    </div>
-    {% for atom in collections.atoms %}
-      {{item.default('atom' ,atom, loop)}}
-    {% endfor %}
+<div class="styleguide-item-heading-group">
+  <div class="lead">{{contents|raw}}</div>
+</div>
+
+{% if collections.atoms.length > 0 %}
+<div class="styleguide-item-group" id="atoms">
+  <h2>Atoms</h2>
+  {% for atom in collections.atoms %}
+  {{item.default('atom' ,atom, loop)}}
+  {% endfor %}
   {% else %}
-    <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-      <div class="lead">{{contents|raw}}</div>
-    </div>
-  {% endif %}
-
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <div class="lead">{{contents|raw}}</div>
   </div>
+</div>
+{% endif %}
+
+{% if collections.molecules.length > 0 %}
+<div class="styleguide-item-group" id="molecules">
+  <h2>Molecules</h2>
+  {% for molecule in collections.molecules %}
+  {{item.default('molecule', molecule, loop)}}
+  {% endfor %}
+  {% else %}
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <div class="lead">{{contents|raw}}</div>
+  </div>
+</div>
+{% endif %}
+
 {% endblock %}

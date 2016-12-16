@@ -11,4 +11,18 @@
   .dropdown-menu li {
     display: block;
   }
+
+  @each $label, $color in $themes {
+    &.breadcrumb-ca-#{$label} {
+      .dropdown-toggle {
+        border-color: $color;
+        color: $color;
+      }
+
+      .dropdown-toggle:focus {
+        border-color: darken($color, 20%);
+        color: darken($color, 20%);
+      }
+    }
+  }
 }

@@ -4,11 +4,12 @@ name: collapse
 collection: molecules
 notes: |
   ##### Usage : `collapse`
+  - **collapse_theme** - <i>String</i> - <b>['text-assurance'|'text-prevoyance'|'text-immobilier'|'text-hypotheque'|'text-institutionnel'|'text-profelia'|'text-cpev'|'text-cip']</b>
 ---
 <div class="collapse-wrapper">
   <div class="collapse-title">
     <h5 class="inline-block">
-      <a href="#">Assurance vie</a>
+      <a class="text-{{collapse_theme}}" href="#">Assurance vie</a>
     </h5>
     <a class="inline-block pull-right collapse-button" role="button" data-toggle="collapse" href="#assurance-vie" aria-expanded="true" aria-controls="assurance-vie" aria-label="Cliquez pour dérouler le contenu de la section assurance-vie.">
       <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>

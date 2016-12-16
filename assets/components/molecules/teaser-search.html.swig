@@ -10,10 +10,10 @@ notes: |
   - **link_search** - <i>String</i>
   - **body_search** - <i>String</i>
 ---
-<a href="{{ link_search|default('#') }}" class="teaser teaser-fullclick teaser-search shadow shadow-down">
+<a href="{{ link_search|default('#') }}" class="teaser teaser-{{teaser_search_theme}} teaser-fullclick teaser-search shadow shadow-down">
   <div class="search-heading">
     <div class="text-primary">
-      <div class="text-cocon h4">{{ title_search|default('Lorem Ipsum') }}</div>
+      <div class="text-cocon h4 text-{{teaser_search_theme}}">{{ title_search|default('Lorem Ipsum') }}</div>
       <div class="spacer spacer-xs"></div>
       <div class="text-cocon h6 text-muted">{{ type_search|default('Dolore')|upper }}</div>
       <div class="spacer spacer-xs"></div>

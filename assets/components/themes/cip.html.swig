@@ -18,4 +18,14 @@ input_textarea_theme: cip
 loader_theme: cip
 theme_pagination: cip
 section_bloc_theme: cip
+theme_attachment: cip
+big_menu_secondary_nav_theme: cip
+collapse_theme: cip
+immo_result_theme: cip
+theme_basicpage: cip
+theme_news: cip
+teaser_theme: cip
+teaser_offer_theme: cip
+teaser_profil_theme: cip
+teaser_search_theme: cip
 ---

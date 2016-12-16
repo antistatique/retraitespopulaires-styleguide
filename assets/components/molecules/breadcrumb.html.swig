@@ -13,6 +13,7 @@ notes: |
 <nav class="breadcrumb" role="breadcrumb" aria-label="Vous êtes ici:">
   <h1 class="hidden" aria-level="3">Vous êtes sur ce chemin.</h1>
   <ul class="list-inline list-no-style list-no-padding">
+    {% if links %}
     {% for link in links %}
       {%
         set classes = [
@@ -29,5 +30,12 @@ notes: |
       <li class="{{ classes }}" aria-label="{{ link }}">{{ link }}</li>
     {% if !loop.last %} <li class="text-muted" aria-label=">">›</li> {% endif %}
     {% endfor %}
+    {% else %}
+      <li class="text-{{theme}}" aria-label="Accueil">Accueil</li>
+      <li class="text-muted" aria-label=">">›</li>
+      <li class="text-{{theme}}" aria-label="Emploi">Emploi</li>
+      <li class="text-muted" aria-label=">">›</li>
+      <li class="text-muted" aria-label="Connexion">Connexion</li>
+    {% endif %}
   </ul>
 </nav>

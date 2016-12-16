@@ -4,8 +4,9 @@ name: teaser-offer
 collection: molecules
 notes: |
   ##### Usage : `teaser-offer`
+  - **teaser_offer_theme** - <i>String</i> - <b>hamburger-['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<a href="#" class="teaser teaser-fullclick teaser-offer shadow shadow-down">
+<a href="#" class="teaser teaser-{{teaser_offer_theme}} teaser-fullclick teaser-offer shadow shadow-down">
   <div class="offer-heading">
     <div class="heading-image" style="background-image: url(https://unsplash.it/780/780?image=1005)"></div>
     <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang'} %}</div>
