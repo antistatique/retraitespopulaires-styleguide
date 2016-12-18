@@ -50,7 +50,7 @@ notes: |
       </div>
       <div class="col-xs-12 col-md-4">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
-        <p>Géré par <a href="#">Retraites&nbsp;Populaires</a></p>
+        <p>Géré par <a class="pretty-link text-{{theme}}" href="#">Retraites&nbsp;Populaires</a></p>
       </div>
     </div>
   </div>

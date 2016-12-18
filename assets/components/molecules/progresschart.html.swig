@@ -4,6 +4,8 @@ name: progresschart
 collection: molecules
 notes: |
   ##### Usage : `progresschart`
+  - **progresschart_theme** - <i>String</i> - <b>['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+
 ---
 
 <h2>Visualisation</h2>
@@ -11,7 +13,7 @@ notes: |
 
 <h4>Financement hypothécaire nécessaire (max 80%)</h4>
 <div class="progress">
-  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+  <div class="progress-bar progress-bar-{{progresschart_theme|default('warning')}}" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
   95%
   </div>
   <div class="progress-pipe" role="progresspipe" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
@@ -21,7 +23,7 @@ notes: |
 <h4>Charge hypothécaire annuelle (max 33%)</h4>
 
 <div class="progress">
-  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100" style="width: 48%;">
+  <div class="progress-bar progress-bar-{{progresschart_theme|default('warning')}}" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100" style="width: 48%;">
     48%
   </div>
   <div class="progress-pipe" role="progresspipe" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>

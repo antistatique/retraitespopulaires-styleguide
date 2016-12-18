@@ -28,4 +28,13 @@ teaser_theme: cip
 teaser_offer_theme: cip
 teaser_profil_theme: cip
 teaser_search_theme: cip
+input_select_theme: cip
+progresschart_theme: cip
+search_form_theme: cip
+attachments_contact_theme: cip
+attachments_job_theme: cip
+attachements_theme: cip
+attachements_rentals: cip
+attachements_lastnews_theme: cip
+tabs_theme: cip
 ---

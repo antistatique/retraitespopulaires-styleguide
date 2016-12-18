@@ -26,35 +26,35 @@ notes: |
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a aria-label="Accéder au compte Twitter des Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Twitter des Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color retraitespopulaires-icon-hover-{{theme}}" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a aria-label="Accéder au compte Facebook des Retraites Populaires" href="https://www.facebook.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Facebook des Retraites Populaires" href="https://www.facebook.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color retraitespopulaires-icon-hover-{{theme}}" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a aria-label="Accéder au compte Youtube des Retraites Populaires" href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Youtube des Retraites Populaires" href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color retraitespopulaires-icon-hover-{{theme}}" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a aria-label="Accéder au compte Instagram des Retraites Populaires" href="https://www.instagram.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Instagram des Retraites Populaires" href="https://www.instagram.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color retraitespopulaires-icon-hover-{{theme}}" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a aria-label="Accéder au compte LinkedIn des Retraites Populaires" href="https://www.linkedin.com/company/retraites-populaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte LinkedIn des Retraites Populaires" href="https://www.linkedin.com/company/retraites-populaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color retraitespopulaires-icon-hover-{{theme}}" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -66,13 +66,13 @@ notes: |
     <div class="row">
       <div class="col-xs-12 col-md-5 col-md-offset-1">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
-        <p>Recevez <a href="/savoir-faire" class="pretty-link text-italic"><i>Savoir-faire</i></a>, le bulletin des spécialistes de Retraites&nbsp;Populaires, trois fois par année via e-mail:</p>
+        <p>Recevez <a href="/savoir-faire" class="pretty-link text-italic text-{{theme}}"><i>Savoir-faire</i></a>, le bulletin des spécialistes de Retraites&nbsp;Populaires, trois fois par année via e-mail:</p>
         <form>
           <div class="form-group">
             <div class="input-group full-width">
-              <input type="text" class="form-control full-width" placeholder="Ex: aline.rochat@retraitespopulaires.ch" aria-label="Saisissez votre adresse e-mail.">
+              <input type="text" class="form-control full-width form-control-{{theme}}" placeholder="Ex: aline.rochat@retraitespopulaires.ch" aria-label="Saisissez votre adresse e-mail.">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Je m'inscris</button>
+                <button class="btn btn-default btn-{{theme}}" type="button">Je m'inscris</button>
               </span>
             </div>
           </div>
