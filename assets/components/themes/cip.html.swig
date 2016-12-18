@@ -38,3 +38,6 @@ attachements_rentals: cip
 attachements_lastnews_theme: cip
 tabs_theme: cip
 ---
+
+{# This page is an examples page listing all the components (Atoms, Molecules, Organisms) available in the styleguide with a specific coloring theme.
+Because of the complexity of the styleguide & the lack of scoping variables in swig we have no other choice than specifying all the (as much as possible) unique variable used for theming here above #}
