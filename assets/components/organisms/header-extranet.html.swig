@@ -17,7 +17,7 @@ notes: |
     <div class="col-xs-6 col-xs-offset-6 col-sm-3 col-sm-offset-1">
     <!-- Single button -->
     <div class="btn-group pull-right header-vertical-center m-r-1">
-      <button type="button" class="btn btn-xs btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type="button" class="btn btn-xs btn-{{theme|default('primary')}} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <i class="retraitespopulaires-icon retraitespopulaires-icon-lock"></i> Marc Friederich <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
