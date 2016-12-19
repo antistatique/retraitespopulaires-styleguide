@@ -261,3 +261,15 @@ function rp_site_theme($existing, $type, $theme, $path) {
 
     );
 }
+
+function rp_site_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+    Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
+}
+
+function rp_site_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
+    Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
+}
+
+function rp_site_entity_delete(Drupal\Core\Entity\EntityInterface $entity) {
+    Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
+}
