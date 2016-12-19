@@ -167,7 +167,6 @@ class AdminForm extends FormBase {
             '#suffix'        => '<br/>'
         );
 
-<<<<<<< 289b2e6acb96aa8b22166a8d74fa4c35038d2595
         // Demande de conversion d'un taux variable en taux fixe
         $form['page']['conversion_nid'] = array(
             '#type'          => 'entity_autocomplete',
@@ -203,7 +202,7 @@ class AdminForm extends FormBase {
             '#type'          => 'textfield',
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.depreciation')['receivers'],
-=======
+
         // Demande d'augmentation de prêt Form
         $form['page']['loan_increase_nid'] = array(
             '#type'          => 'entity_autocomplete',
@@ -221,7 +220,24 @@ class AdminForm extends FormBase {
             '#type'          => 'textfield',
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.loan_increase')['receivers'],
->>>>>>> Added form Loan Increase
+
+        // Demande d'attestation d'intérêts Form
+        $form['page']['tax_attestation_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'   => 'node',
+            '#title'         => 'Demande d\'attestation d\'intérêts - node ID',
+            '#default_value' => $this->state->get('rp_contact.settings.page.tax_attestation')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.tax_attestation')['nid']) : NULL,
+        );
+        $form['page']['tax_attestation_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Demande d\'attestation d\'intérêts - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_contact.settings.page.tax_attestation')['theme'] ? $this->state->get('rp_contact.settings.page.tax_attestation')['theme'] : 'contact_tax_attestation',
+        );
+        $form['page']['tax_attestation_receivers'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
+            '#default_value' => $this->state->get('rp_contact.settings.page.tax_attestation')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
             '#suffix'        => '<br/>'
         );
@@ -310,7 +326,6 @@ class AdminForm extends FormBase {
             'receivers' => trim($form_state->getValue('building_receivers')),
         ));
 
-<<<<<<< 289b2e6acb96aa8b22166a8d74fa4c35038d2595
         $this->state->set('rp_contact.settings.page.conversion', array(
             'nid'   => $form_state->getValue('conversion_nid'),
             'theme' => trim($form_state->getValue('conversion_theme')),
@@ -323,9 +338,18 @@ class AdminForm extends FormBase {
             'receivers' => trim($form_state->getValue('depreciation_receivers')),
         ));
 
-=======
-<<<<<<< 5e863ace660e74cc5d3109fab6762dbf6510f523
->>>>>>> Added form Loan Increase
+        $this->state->set('rp_contact.settings.page.loan_increase', array(
+            'nid'   => $form_state->getValue('loan_increase_nid'),
+            'theme' => trim($form_state->getValue('loan_increase_theme')),
+            'receivers' => trim($form_state->getValue('loan_increase_receivers')),
+        ));
+
+        $this->state->set('rp_contact.settings.page.tax_attestation', array(
+            'nid'   => $form_state->getValue('tax_attestation_nid'),
+            'theme' => trim($form_state->getValue('tax_attestation_theme')),
+            'receivers' => trim($form_state->getValue('tax_attestation_receivers')),
+        ));
+
         // Collection pages settings
         $this->state->set('rp_contact.settings.collection.advisors', array(
             'nid'   => trim($form_state->getValue('advisors_nid')),
@@ -334,12 +358,6 @@ class AdminForm extends FormBase {
         $this->state->set('rp_contact.settings.collection.contacts', array(
             'nid'   => trim($form_state->getValue('contacts_nid')),
             'theme' => trim($form_state->getValue('contacts_theme')),
-=======
-        $this->state->set('rp_contact.settings.page.loan_increase', array(
-            'nid'   => $form_state->getValue('loan_increase_nid'),
-            'theme' => trim($form_state->getValue('loan_increase_theme')),
-            'receivers' => trim($form_state->getValue('loan_increase_receivers')),
->>>>>>> Added form Loan Increase
         ));
     }
 }
