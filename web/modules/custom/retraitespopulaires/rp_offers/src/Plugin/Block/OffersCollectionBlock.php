@@ -118,6 +118,9 @@ class OffersCollectionBlock extends BlockBase implements ContainerFactoryPluginI
                     'url.path',
                     'url.query_args'
                 ],
+                'tags' => [
+                    'node_list' // invalidated whenever any Node entity is updated, deleted or created
+                ],
             ]
         ];
     }
