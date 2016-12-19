@@ -124,6 +124,10 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                 'contexts' => [
                     'url.path'
                 ],
+                'tags' => [
+                    'node_list:faq', // invalidated whenever any Node entity is updated, deleted or created
+                    'node_list:document', // invalidated whenever any Node entity is updated, deleted or created
+                ],
             ]
         ];
     }

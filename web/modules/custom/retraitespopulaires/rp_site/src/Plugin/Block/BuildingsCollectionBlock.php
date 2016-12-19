@@ -136,6 +136,9 @@ class BuildingsCollectionBlock extends BlockBase implements ContainerFactoryPlug
                     'url.path',
                     'url.query_args'
                 ],
+                'tags' => [
+                    'node_list:building', // invalidated whenever any Node entity is updated, deleted or created
+                ],
             ]
         ];
     }
