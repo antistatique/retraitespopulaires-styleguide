@@ -114,11 +114,6 @@ class ConversionForm extends FormBase {
             );
         }
 
-        if( isset($this->session->get('errors')['email']) && $error_msg = $this->session->get('errors')['email'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
-        }
-
         $form['conversion'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
@@ -247,7 +242,7 @@ class ConversionForm extends FormBase {
         $form['conversion']['email'] = array(
             '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
-            '#type'        => 'email',
+            '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
