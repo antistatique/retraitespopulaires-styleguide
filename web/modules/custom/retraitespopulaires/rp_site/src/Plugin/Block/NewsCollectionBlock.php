@@ -153,7 +153,7 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
                     'url.query_args'
                 ],
                 'tags' => [
-                    'node_list' // invalidated whenever any Node entity is updated, deleted or created
+                    'node_list:news' // invalidated whenever any Node entity is updated, deleted or created
                 ],
             ]
         ];
