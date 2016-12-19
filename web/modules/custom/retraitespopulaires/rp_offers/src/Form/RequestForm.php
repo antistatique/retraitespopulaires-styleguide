@@ -84,7 +84,11 @@ class RequestForm extends FormBase {
         $form['node'] = array(
             '#type'     => 'hidden',
             '#value'    => $params['node']->nid->value,
+<<<<<<< ad7e2b569cad8847fce1f24edefb8c0d3d73a9f5
             '#required' => false
+=======
+            '#required' => false,
+>>>>>>> Improve cache of bella vita request form
         );
 
         // Calculate the number of day(s) left to generate dynamic title
@@ -122,8 +126,13 @@ class RequestForm extends FormBase {
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#required'    => false,
+<<<<<<< ad7e2b569cad8847fce1f24edefb8c0d3d73a9f5
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
+=======
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
+>>>>>>> Improve cache of bella vita request form
         );
 
         // Get error to inline it as suffix
@@ -139,8 +148,13 @@ class RequestForm extends FormBase {
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#required'    => false,
+<<<<<<< ad7e2b569cad8847fce1f24edefb8c0d3d73a9f5
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
+=======
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
+>>>>>>> Improve cache of bella vita request form
         );
 
         // Get error to inline it as suffix
@@ -173,8 +187,13 @@ class RequestForm extends FormBase {
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#required'    => false,
+<<<<<<< ad7e2b569cad8847fce1f24edefb8c0d3d73a9f5
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
+=======
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
+>>>>>>> Improve cache of bella vita request form
         );
 
         // Get error to inline it as suffix
@@ -191,8 +210,13 @@ class RequestForm extends FormBase {
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10],
             '#required'    => false,
+<<<<<<< ad7e2b569cad8847fce1f24edefb8c0d3d73a9f5
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
+=======
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
+>>>>>>> Improve cache of bella vita request form
         );
 
         // Get error to inline it as suffix
@@ -209,8 +233,13 @@ class RequestForm extends FormBase {
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 30],
             '#required'    => false,
+<<<<<<< ad7e2b569cad8847fce1f24edefb8c0d3d73a9f5
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
+=======
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
+>>>>>>> Improve cache of bella vita request form
         );
 
         $form['separator'] = array( '#markup' => '<hr />' );
@@ -311,7 +340,7 @@ class RequestForm extends FormBase {
 
             drupal_set_message(t('Merci de votre participation.'));
 
-            $form_state->setRedirect('entity.node.canonical', ['node' =>$form_state->getValue('node') ]);
+            $form_state->setRedirect('entity.node.canonical', ['node' => $form_state->getValue('node') ]);
         }
     }
 }
