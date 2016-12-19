@@ -64,6 +64,10 @@ class RequestForm extends FormBase {
         $form['#action'] = '#bellavita-offers-form';
         $form['#attributes']['id'] = 'bellavita-offers-form';
 
+        // Disable caching & HTML5 validation
+        $form['#cache']['max-age'] = 0;
+        $form['#attributes']['novalidate'] = 'novalidate';
+
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
             $form['status'] = array(
@@ -76,16 +80,11 @@ class RequestForm extends FormBase {
             );
         }
 
-        if( isset($this->session->get('errors')['email']) && $error_msg = $this->session->get('errors')['email'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
-        }
-
         // A hidden field can't be altered, Drupal assert it
         $form['node'] = array(
             '#type'     => 'hidden',
             '#value'    => $params['node']->nid->value,
-            '#required' => true
+            '#required' => false
         );
 
         // Calculate the number of day(s) left to generate dynamic title
@@ -111,19 +110,19 @@ class RequestForm extends FormBase {
         );
 
         $form['personnal']['firstname'] = array(
-            '#title'       => t('Votre prénom'),
+            '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
 
         $form['personnal']['lastname'] = array(
-            '#title'       => t('Votre nom de famille'),
+            '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -137,39 +136,39 @@ class RequestForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['email'] = array(
-            '#title'       => t('Votre e-mail'),
+            '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
-            '#type'        => 'email',
-            '#required'    => true,
+            '#type'        => 'textfield',
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
 
         $form['personnal']['address'] = array(
-            '#title'       => t('Votre adresse'),
+            '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
 
         $form['personnal']['zip'] = array(
-            '#title'       => t('Votre NPA'),
+            '#title'       => t('Votre NPA *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
 
         $form['personnal']['city'] = array(
-            '#title'       => t('Votre localité'),
+            '#title'       => t('Votre localité *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 30],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
