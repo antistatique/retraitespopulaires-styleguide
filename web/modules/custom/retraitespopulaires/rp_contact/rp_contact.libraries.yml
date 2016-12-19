@@ -7,3 +7,6 @@ search_zip:
 contact_conversion_form:
   js:
     js/contact_conversion_form.js: {}
+contact_depreciation_form:
+  js:
+    js/contact_depreciation_form.js: {}

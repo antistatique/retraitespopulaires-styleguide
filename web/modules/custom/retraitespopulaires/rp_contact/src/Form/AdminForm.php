@@ -184,6 +184,24 @@ class AdminForm extends FormBase {
             '#type'          => 'textfield',
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.conversion')['receivers'],
+
+        // Demande de modification de l'amortissement du 1er rang Form
+        $form['page']['depreciation_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'   => 'node',
+            '#title'         => 'Demande de modification de l\'amortissement du 1er rang - node ID',
+            '#default_value' => $this->state->get('rp_contact.settings.page.depreciation')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.depreciation')['nid']) : NULL,
+        );
+        $form['page']['depreciation_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Demande de modification de l\'amortissement du 1er rang - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_contact.settings.page.depreciation')['theme'] ? $this->state->get('rp_contact.settings.page.depreciation')['theme'] : 'contact_depreciation',
+        );
+        $form['page']['depreciation_receivers'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
+            '#default_value' => $this->state->get('rp_contact.settings.page.depreciation')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
             '#suffix'        => '<br/>'
         );
@@ -272,7 +290,18 @@ class AdminForm extends FormBase {
             'receivers' => trim($form_state->getValue('building_receivers')),
         ));
 
-<<<<<<< 804b29885b5ab46ccc8dbdb1d60da521efe898ee
+        $this->state->set('rp_contact.settings.page.conversion', array(
+            'nid'   => $form_state->getValue('conversion_nid'),
+            'theme' => trim($form_state->getValue('conversion_theme')),
+            'receivers' => trim($form_state->getValue('conversion_receivers')),
+        ));
+
+        $this->state->set('rp_contact.settings.page.depreciation', array(
+            'nid'   => $form_state->getValue('depreciation_nid'),
+            'theme' => trim($form_state->getValue('depreciation_theme')),
+            'receivers' => trim($form_state->getValue('depreciation_receivers')),
+        ));
+
         // Collection pages settings
         $this->state->set('rp_contact.settings.collection.advisors', array(
             'nid'   => trim($form_state->getValue('advisors_nid')),
@@ -281,12 +310,6 @@ class AdminForm extends FormBase {
         $this->state->set('rp_contact.settings.collection.contacts', array(
             'nid'   => trim($form_state->getValue('contacts_nid')),
             'theme' => trim($form_state->getValue('contacts_theme')),
-=======
-        $this->state->set('rp_contact.settings.page.conversion', array(
-            'nid'   => $form_state->getValue('conversion_nid'),
-            'theme' => trim($form_state->getValue('conversion_theme')),
-            'receivers' => trim($form_state->getValue('conversion_receivers')),
->>>>>>> Form 'Demande de conversion d'un taux variable en taux fixe'
         ));
     }
 }
