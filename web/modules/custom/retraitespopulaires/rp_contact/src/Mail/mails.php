@@ -156,6 +156,39 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
         break;
 
+        // Sended when contacting of Nouvelle demande de conversion d'un taux variable en taux fixe
+        case 'contact_conversion':
+            $message['subject'] = t('Nouvelle demande de conversion d\'un taux variable en taux fixe par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
+
+            $message['body'][] = Markup::create( '<b>'. t('Nouvelle demande de conversion d\'un taux variable en taux fixe par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]) . '</b><br /><br />');
+
+            $message['body'][] = Markup::create( '<b>'. t('Demande: '). '</b><br />');
+            if (!empty($params['rate'])) {
+                $message['body'][] = Markup::create( t('Taux: '). $params['rate']->name->value .' ('.number_format($params['rate']->getFirstRate(), 2).')' . '<br />');
+            }
+            $message['body'][] = Markup::create( t('Montant: '). $params['amount'] . '<br />');
+            $message['body'][] = Markup::create( t('Remarque: '). '<br />'. nl2br($params['remarque']) . '<br />');
+
+            $message['body'][] = Markup::create( '<br /><br />');
+            $message['body'][] = Markup::create( '<b>'. t('Bien: '). '</b><br />');
+            $message['body'][] = Markup::create( t('Adresse: '). $params['building_address'] . '<br />');
+            $message['body'][] = Markup::create( t('NPA: '). $params['building_zip'] . '<br />');
+            $message['body'][] = Markup::create( t('Localité: '). $params['building_city'] . '<br />');
+
+            $message['body'][] = Markup::create( '<br /><br />');
+            $message['body'][] = Markup::create( '<b>'. t('Informations de contact: '). '</b><br />');
+            $message['body'][] = Markup::create( t('Numéro crédit de construction: '). $params['policy'] . '<br />');
+            $message['body'][] = Markup::create( t('Titre: '). $params['title'] . '<br />');
+            $message['body'][] = Markup::create( t('Nom: '). $params['lastname'] . '<br />');
+            $message['body'][] = Markup::create( t('Prénom: '). $params['firstname'] . '<br />');
+            $message['body'][] = Markup::create( t('Raison sociale: '). $params['company'] . '<br />');
+            $message['body'][] = Markup::create( t('Adresse: '). $params['address'] . '<br />');
+            $message['body'][] = Markup::create( t('NPA: '). $params['zip'] . '<br />');
+            $message['body'][] = Markup::create( t('Localité: '). $params['city'] . '<br />');
+            $message['body'][] = Markup::create( t('E-mail: '). $params['email'] . '<br />');
+            $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
+        break;
+
     }
 
     $message['body'][] = Markup::create( '<br /><br />'.t('Retraites Populaires') );

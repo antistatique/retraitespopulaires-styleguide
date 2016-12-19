@@ -20,6 +20,10 @@ function rp_contact_suggestions_nodes(&$suggestions) {
     if (isset($node->nid->value) && $node->nid->value == $state->get('rp_contact.settings.page.building')['nid']) {
         $suggestions[] = 'node__' . $state->get('rp_contact.settings.page.building')['theme'];
     }
+
+    if (isset($node->nid->value) && $node->nid->value == $state->get('rp_contact.settings.page.conversion')['nid']) {
+        $suggestions[] = 'node__' . $state->get('rp_contact.settings.page.conversion')['theme'];
+    }
 }
 
 

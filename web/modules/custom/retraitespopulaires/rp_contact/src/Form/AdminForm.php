@@ -167,6 +167,27 @@ class AdminForm extends FormBase {
             '#suffix'        => '<br/>'
         );
 
+        // Demande de conversion d'un taux variable en taux fixe
+        $form['page']['conversion_nid'] = array(
+            '#type'          => 'entity_autocomplete',
+            '#target_type'   => 'node',
+            '#title'         => 'Demande de conversion d\'un taux variable en taux fixe - node ID',
+            '#default_value' => $this->state->get('rp_contact.settings.page.conversion')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.conversion')['nid']) : NULL,
+        );
+        $form['page']['conversion_theme'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'Demande de conversion d\'un taux variable en taux fixe - theme hook',
+            '#disabled'      => true,
+            '#default_value' => $this->state->get('rp_contact.settings.page.conversion')['theme'] ? $this->state->get('rp_contact.settings.page.conversion')['theme'] : 'contact_conversion',
+        );
+        $form['page']['conversion_receivers'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
+            '#default_value' => $this->state->get('rp_contact.settings.page.conversion')['receivers'],
+            '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
+            '#suffix'        => '<br/>'
+        );
+
         // Collection pages settings
         $form['collection'] = array(
             '#type'          => 'fieldset',
@@ -199,7 +220,6 @@ class AdminForm extends FormBase {
             '#title'         => 'Listing des contacts - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_contact.settings.collection.contacts')['theme'] ? $this->state->get('rp_contact.settings.collection.contacts')['theme'] : 'collection_contacts',
-        );
 
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
@@ -252,6 +272,7 @@ class AdminForm extends FormBase {
             'receivers' => trim($form_state->getValue('building_receivers')),
         ));
 
+<<<<<<< 804b29885b5ab46ccc8dbdb1d60da521efe898ee
         // Collection pages settings
         $this->state->set('rp_contact.settings.collection.advisors', array(
             'nid'   => trim($form_state->getValue('advisors_nid')),
@@ -260,6 +281,12 @@ class AdminForm extends FormBase {
         $this->state->set('rp_contact.settings.collection.contacts', array(
             'nid'   => trim($form_state->getValue('contacts_nid')),
             'theme' => trim($form_state->getValue('contacts_theme')),
+=======
+        $this->state->set('rp_contact.settings.page.conversion', array(
+            'nid'   => $form_state->getValue('conversion_nid'),
+            'theme' => trim($form_state->getValue('conversion_theme')),
+            'receivers' => trim($form_state->getValue('conversion_receivers')),
+>>>>>>> Form 'Demande de conversion d'un taux variable en taux fixe'
         ));
     }
 }

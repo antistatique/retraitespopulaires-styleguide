@@ -4,3 +4,6 @@ contact_building_form:
 search_zip:
   js:
     js/search_zip.js: {}
+contact_conversion_form:
+  js:
+    js/contact_conversion_form.js: {}
