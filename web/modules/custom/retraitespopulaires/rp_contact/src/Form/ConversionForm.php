@@ -90,6 +90,10 @@ class ConversionForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-contact-conversion-form';
 
+        // Disable caching & HTML5 validation
+        $form['#cache']['max-age'] = 0;
+        $form['#attributes']['novalidate'] = 'novalidate';
+
         $form['#attached'] = array(
            'library' =>  array('rp_contact/contact_conversion_form'),
        );
@@ -132,8 +136,8 @@ class ConversionForm extends FormBase {
         }
         $form['conversion']['title'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => true],
-            '#required'    => true,
+            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => false],
+            '#required'    => false,
             '#options'     => array(
                 'Madame'   => t('Madame'),
                 'Monsieur' => t('Monsieur'),
@@ -171,7 +175,7 @@ class ConversionForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['conversion']['row_1']['firstname'] = array(
-            '#title'       => t('Votre prénom'),
+            '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
@@ -196,7 +200,7 @@ class ConversionForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['conversion']['row_1']['lastname'] = array(
-            '#title'       => t('Votre nom de famille'),
+            '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
@@ -222,7 +226,7 @@ class ConversionForm extends FormBase {
         }
         $form['conversion']['company'] = array(
             '#title'       => t('Votre raison sociale'),
-            '#placeholder' => t('Schaffter pives'),
+            '#placeholder' => t('Retraites Populaires'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
@@ -241,11 +245,11 @@ class ConversionForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['conversion']['email'] = array(
-            '#title'       => t('Votre e-mail'),
+            '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'email',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -259,11 +263,11 @@ class ConversionForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['conversion']['phone'] = array(
-            '#title'       => t('Votre numéro de téléphone'),
+            '#title'       => t('Votre numéro de téléphone *'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 20, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
         );
@@ -277,11 +281,11 @@ class ConversionForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['conversion']['address'] = array(
-            '#title'       => t('Votre adresse'),
+            '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -300,11 +304,11 @@ class ConversionForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['conversion']['row_2']['zip'] = array(
-            '#title'       => t('Votre code postal (NPA)'),
+            '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -318,11 +322,11 @@ class ConversionForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['conversion']['row_2']['city'] = array(
-            '#title'       => t('Votre ville'),
+            '#title'       => t('Votre ville *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -343,11 +347,11 @@ class ConversionForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['building_address'] = array(
-            '#title'       => t('Adresse de votre bien'),
+            '#title'       => t('Adresse de votre bien *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -366,11 +370,11 @@ class ConversionForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['row_2']['building_zip'] = array(
-            '#title'       => t('Code postal (NPA) de votre bien'),
+            '#title'       => t('Code postal (NPA) de votre bien *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -384,11 +388,11 @@ class ConversionForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['row_2']['building_city'] = array(
-            '#title'       => t('Ville de votre bien'),
+            '#title'       => t('Ville de votre bien *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -407,11 +411,11 @@ class ConversionForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['more']['amount'] = array(
-            '#title'       => t('Le montant'),
+            '#title'       => t('Le montant *'),
             '#placeholder' => t('CHF'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 20, 'theme' => $theme, 'class' => array('form-chf-numeric', 'text-right')],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
         );
@@ -433,10 +437,10 @@ class ConversionForm extends FormBase {
             }
         }
         $form['more']['rate'] = array(
-            '#title'       => t('Le taux'),
+            '#title'       => t('Le taux *'),
             '#type'        => 'select',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#options'     => $options,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
