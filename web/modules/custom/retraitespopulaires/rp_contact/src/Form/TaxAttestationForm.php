@@ -72,6 +72,10 @@ class TaxAttestationForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-contact-tax-attestation-form';
 
+        // Disable caching & HTML5 validation
+        $form['#cache']['max-age'] = 0;
+        $form['#attributes']['novalidate'] = 'novalidate';
+
         $form['#attached'] = array(
            'library' =>  array('rp_contact/contact_tax_attestation_form'),
        );
@@ -114,8 +118,8 @@ class TaxAttestationForm extends FormBase {
         }
         $form['building']['title'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => true],
-            '#required'    => true,
+            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => false],
+            '#required'    => false,
             '#options'     => array(
                 'Madame'   => t('Madame'),
                 'Monsieur' => t('Monsieur'),
@@ -153,10 +157,11 @@ class TaxAttestationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['row_1']['firstname'] = array(
-            '#title'       => t('Votre prénom'),
+            '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.' '.$readonly.'">',
             '#suffix'      => $error. '</div></div>',
         );
@@ -178,10 +183,11 @@ class TaxAttestationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['row_1']['lastname'] = array(
-            '#title'       => t('Votre nom de famille'),
+            '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.' '.$readonly.'">',
             '#suffix'      => $error. '</div></div>',
         );
@@ -204,7 +210,7 @@ class TaxAttestationForm extends FormBase {
         }
         $form['building']['company'] = array(
             '#title'       => t('Votre raison sociale'),
-            '#placeholder' => t('Schaffter pives'),
+            '#placeholder' => t('Retraites Populaires'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
@@ -223,11 +229,11 @@ class TaxAttestationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['email'] = array(
-            '#title'       => t('Votre e-mail'),
+            '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
-            '#type'        => 'email',
+            '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -241,11 +247,11 @@ class TaxAttestationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['phone'] = array(
-            '#title'       => t('Votre numéro de téléphone'),
+            '#title'       => t('Votre numéro de téléphone *'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 20, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
         );
@@ -259,11 +265,11 @@ class TaxAttestationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['address'] = array(
-            '#title'       => t('Votre adresse'),
+            '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -282,11 +288,11 @@ class TaxAttestationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['row_2']['zip'] = array(
-            '#title'       => t('Votre code postal (NPA)'),
+            '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -300,11 +306,11 @@ class TaxAttestationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['row_2']['city'] = array(
-            '#title'       => t('Votre ville'),
+            '#title'       => t('Votre ville *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -326,11 +332,11 @@ class TaxAttestationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['more']['building_address'] = array(
-            '#title'       => t('Adresse de votre bien'),
+            '#title'       => t('Adresse de votre bien *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -349,11 +355,11 @@ class TaxAttestationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['more']['row_2']['building_zip'] = array(
-            '#title'       => t('Code postal (NPA) de votre bien'),
+            '#title'       => t('Code postal (NPA) de votre bien *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -367,11 +373,11 @@ class TaxAttestationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['more']['row_2']['building_city'] = array(
-            '#title'       => t('Ville de votre bien'),
+            '#title'       => t('Ville de votre bien *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -385,11 +391,11 @@ class TaxAttestationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['more']['year'] = array(
-            '#title'       => t('Recevoir le décompte pour l\'année'),
+            '#title'       => t('Recevoir le décompte pour l\'année *'),
             '#placeholder' => t('2000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
