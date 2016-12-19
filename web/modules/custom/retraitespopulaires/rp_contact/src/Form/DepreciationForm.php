@@ -503,7 +503,7 @@ class DepreciationForm extends FormBase {
 
         // Assert the address is valid
         if (!$form_state->getValue('address') || empty($form_state->getValue('address'))) {
-            $errors['address'] = t('Votre addresse est obligatoire.');
+            $errors['address'] = t('Votre adresse est obligatoire.');
         }
 
         // Assert the zip is valid
@@ -518,7 +518,7 @@ class DepreciationForm extends FormBase {
 
         // Assert the address is valid
         if (!$form_state->getValue('building_address') || empty($form_state->getValue('building_address'))) {
-            $errors['building_address'] = t('L\'addresse de votre bien est obligatoire.');
+            $errors['building_address'] = t('L\'adresse de votre bien est obligatoire.');
         }
 
         // Assert the zip is valid

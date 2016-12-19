@@ -446,7 +446,7 @@ class BuildingForm extends FormBase {
 
         // Assert the address is valid
         if (!$form_state->getValue('address') || empty($form_state->getValue('address'))) {
-            $errors['address'] = t('Votre addresse est obligatoire.');
+            $errors['address'] = t('Votre adresse est obligatoire.');
         }
 
         // Assert the zip is valid

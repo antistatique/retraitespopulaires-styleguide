@@ -322,7 +322,7 @@ class TaxAttestationForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         $error = '';
         $error_class = '';
-        if( isset($this->session->get('errors')['address']) && $error_msg = $this->session->get('errors')['address'] ){
+        if( isset($this->session->get('errors')['building_address']) && $error_msg = $this->session->get('errors')['building_address'] ){
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
@@ -345,7 +345,7 @@ class TaxAttestationForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         $error = '';
         $error_class = '';
-        if( isset($this->session->get('errors')['zip']) && $error_msg = $this->session->get('errors')['zip'] ){
+        if( isset($this->session->get('errors')['building_zip']) && $error_msg = $this->session->get('errors')['building_zip'] ){
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
@@ -363,7 +363,7 @@ class TaxAttestationForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         $error = '';
         $error_class = '';
-        if( isset($this->session->get('errors')['city']) && $error_msg = $this->session->get('errors')['city'] ){
+        if( isset($this->session->get('errors')['building_city']) && $error_msg = $this->session->get('errors')['building_city'] ){
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
@@ -461,7 +461,7 @@ class TaxAttestationForm extends FormBase {
 
         // Assert the address is valid
         if (!$form_state->getValue('address') || empty($form_state->getValue('address'))) {
-            $errors['address'] = t('Votre addresse est obligatoire.');
+            $errors['address'] = t('Votre adresse est obligatoire.');
         }
 
         // Assert the zip is valid
@@ -476,7 +476,7 @@ class TaxAttestationForm extends FormBase {
 
         // Assert the address is valid
         if (!$form_state->getValue('building_address') || empty($form_state->getValue('building_address'))) {
-            $errors['building_address'] = t('Votre addresse est obligatoire.');
+            $errors['building_address'] = t('Votre adresse est obligatoire.');
         }
 
         // Assert the zip is valid
