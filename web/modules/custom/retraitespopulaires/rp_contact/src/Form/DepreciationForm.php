@@ -392,7 +392,10 @@ class DepreciationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $options = array(
-            'Je souhaite suspendre mon amortissement' => t('Je souhaite suspendre mon amortissement')
+            'Je souhaite suspendre mon amortissement' => t('Je souhaite suspendre mon amortissement'),
+            'Je souhaite modifier mon amortissement' => t('Je souhaite modifier mon amortissement'),
+            'Je souhaite fixer mon amortissement' => t('Je souhaite fixer mon amortissement'),
+            'Je souhaite introduire un amortissement indirect' => t('Je souhaite introduire un amortissement indirect'),
         );
         $form['more']['depreciation'] = array(
             '#title'    => t('Amortissement'),
@@ -413,7 +416,17 @@ class DepreciationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $options = array(
-            'now' => t('now')
+            '1 an'   => t('1 an'),
+            '2 ans'  => t('2 ans'),
+            '3 ans'  => t('3 ans'),
+            '4 ans'  => t('4 ans'),
+            '5 ans'  => t('5 ans'),
+            '6 ans'  => t('6 ans'),
+            '7 ans'  => t('7 ans'),
+            '8 ans'  => t('8 ans'),
+            '9 ans'  => t('9 ans'),
+            '10 ans' => t('10 ans'),
+            'jusqu\'à l\'échéance du contrat en cours' => t('jusqu\'à l\'échéance du contrat en cours'),
         );
         $form['more']['duration'] = array(
             '#title'    => t('Durée'),
