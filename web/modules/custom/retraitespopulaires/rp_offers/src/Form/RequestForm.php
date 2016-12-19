@@ -109,22 +109,38 @@ class RequestForm extends FormBase {
           '#prefix'     => '<h3>'.$title.'</h3>',
         );
 
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['firstname']) && $error_msg = $this->session->get('errors')['firstname'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
         $form['personnal']['firstname'] = array(
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#required'    => false,
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['lastname']) && $error_msg = $this->session->get('errors')['lastname'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
         $form['personnal']['lastname'] = array(
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#required'    => false,
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         // Get error to inline it as suffix
@@ -144,33 +160,57 @@ class RequestForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['address']) && $error_msg = $this->session->get('errors')['address'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
         $form['personnal']['address'] = array(
             '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#required'    => false,
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['zip']) && $error_msg = $this->session->get('errors')['zip'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
         $form['personnal']['zip'] = array(
-            '#title'       => t('Votre NPA *'),
+            '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10],
             '#required'    => false,
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['city']) && $error_msg = $this->session->get('errors')['city'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
         $form['personnal']['city'] = array(
             '#title'       => t('Votre localité *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 30],
             '#required'    => false,
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         $form['separator'] = array( '#markup' => '<hr />' );
@@ -212,6 +252,31 @@ class RequestForm extends FormBase {
         // Assert the node is both active & currently running
         if (!$this->request->isEnable($form_state->getValue('node'))) {
             $errors['email'] = t('Navré mais il n\'est plus possible de participer à cette offre.');
+        }
+
+        // Assert Votre prénom is valid
+        if (!$form_state->getValue('firstname') || empty($form_state->getValue('firstname'))) {
+            $errors['firstname'] = t('Votre prénom est obligatoire.');
+        }
+
+        // Assert Votre nom de famille is valid
+        if (!$form_state->getValue('lastname') || empty($form_state->getValue('lastname'))) {
+            $errors['lastname'] = t('Votre nom de famille est obligatoire.');
+        }
+
+        // Assert Votre adresse is valid
+        if (!$form_state->getValue('address') || empty($form_state->getValue('address'))) {
+            $errors['address'] = t('Votre adresse est obligatoire.');
+        }
+
+        // Assert Votre NPA is valid
+        if (!$form_state->getValue('zip') || empty($form_state->getValue('zip'))) {
+            $errors['zip'] = t('Votre code postale (NPA) est obligatoire.');
+        }
+
+        // Assert Votre localite is valid
+        if (!$form_state->getValue('city') || empty($form_state->getValue('city'))) {
+            $errors['city'] = t('Votre localité est obligatoire.');
         }
 
         // Save errors in sessions to use it on the form builder

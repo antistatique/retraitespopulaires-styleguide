@@ -203,7 +203,7 @@ class DepreciationForm extends FormBase {
         }
         $form['depreciation']['company'] = array(
             '#title'       => t('Votre raison sociale'),
-            '#placeholder' => t('Schaffter pives'),
+            '#placeholder' => t('Retraites Populaires'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',

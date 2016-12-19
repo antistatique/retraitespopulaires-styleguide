@@ -184,6 +184,7 @@ class AdminForm extends FormBase {
             '#type'          => 'textfield',
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.conversion')['receivers'],
+        );
 
         // Demande de modification de l'amortissement du 1er rang Form
         $form['page']['depreciation_nid'] = array(
@@ -202,6 +203,7 @@ class AdminForm extends FormBase {
             '#type'          => 'textfield',
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.depreciation')['receivers'],
+        );
 
         // Demande d'augmentation de prêt Form
         $form['page']['loan_increase_nid'] = array(
@@ -220,6 +222,7 @@ class AdminForm extends FormBase {
             '#type'          => 'textfield',
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.loan_increase')['receivers'],
+        );
 
         // Demande d'attestation d'intérêts Form
         $form['page']['tax_attestation_nid'] = array(
@@ -274,6 +277,7 @@ class AdminForm extends FormBase {
             '#title'         => 'Listing des contacts - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_contact.settings.collection.contacts')['theme'] ? $this->state->get('rp_contact.settings.collection.contacts')['theme'] : 'collection_contacts',
+        );
 
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
