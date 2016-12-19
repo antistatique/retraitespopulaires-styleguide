@@ -114,11 +114,6 @@ class LoanIncreaseForm extends FormBase {
             );
         }
 
-        if( isset($this->session->get('errors')['email']) && $error_msg = $this->session->get('errors')['email'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
-        }
-
         $form['personnal'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
