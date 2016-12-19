@@ -72,6 +72,10 @@ class DepreciationForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-contact-depreciation-form';
 
+        // Disable caching & HTML5 validation
+        $form['#cache']['max-age'] = 0;
+        $form['#attributes']['novalidate'] = 'novalidate';
+
         $form['#attached'] = array(
            'library' =>  array('rp_contact/contact_depreciation_form'),
        );
@@ -92,11 +96,6 @@ class DepreciationForm extends FormBase {
             );
         }
 
-        if( isset($this->session->get('errors')['email']) && $error_msg = $this->session->get('errors')['email'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
-        }
-
         $form['depreciation'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
@@ -114,8 +113,8 @@ class DepreciationForm extends FormBase {
         }
         $form['depreciation']['title'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => true],
-            '#required'    => true,
+            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => false],
+            '#required'    => false,
             '#options'     => array(
                 'Madame'   => t('Madame'),
                 'Monsieur' => t('Monsieur'),
@@ -153,7 +152,7 @@ class DepreciationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['depreciation']['row_1']['firstname'] = array(
-            '#title'       => t('Votre prénom'),
+            '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
@@ -178,7 +177,7 @@ class DepreciationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['depreciation']['row_1']['lastname'] = array(
-            '#title'       => t('Votre nom de famille'),
+            '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
@@ -223,11 +222,11 @@ class DepreciationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['depreciation']['email'] = array(
-            '#title'       => t('Votre e-mail'),
+            '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
-            '#type'        => 'email',
+            '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -241,11 +240,11 @@ class DepreciationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['depreciation']['phone'] = array(
-            '#title'       => t('Votre numéro de téléphone'),
+            '#title'       => t('Votre numéro de téléphone *'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 20, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
         );
@@ -260,10 +259,10 @@ class DepreciationForm extends FormBase {
         }
         $form['depreciation']['address'] = array(
             '#title'       => t('Votre adresse'),
-            '#placeholder' => t('Chemin de l\'Avenir 1'),
+            '#placeholder' => t('Chemin de l\'Avenir 1 *'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -282,11 +281,11 @@ class DepreciationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['depreciation']['row_2']['zip'] = array(
-            '#title'       => t('Votre code postal (NPA)'),
+            '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -300,11 +299,11 @@ class DepreciationForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['depreciation']['row_2']['city'] = array(
-            '#title'       => t('Votre ville'),
+            '#title'       => t('Votre ville *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -320,16 +319,16 @@ class DepreciationForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         $error = '';
         $error_class = '';
-        if( isset($this->session->get('errors')['address']) && $error_msg = $this->session->get('errors')['address'] ){
+        if( isset($this->session->get('errors')['building_address']) && $error_msg = $this->session->get('errors')['building_address'] ){
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['building_address'] = array(
-            '#title'       => t('Adresse de votre bien'),
+            '#title'       => t('Adresse de votre bien *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -343,16 +342,16 @@ class DepreciationForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         $error = '';
         $error_class = '';
-        if( isset($this->session->get('errors')['zip']) && $error_msg = $this->session->get('errors')['zip'] ){
+        if( isset($this->session->get('errors')['building_zip']) && $error_msg = $this->session->get('errors')['building_zip'] ){
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['row_2']['building_zip'] = array(
-            '#title'       => t('Code postal (NPA) de votre bien'),
+            '#title'       => t('Code postal (NPA) de votre bien *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -361,16 +360,16 @@ class DepreciationForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         $error = '';
         $error_class = '';
-        if( isset($this->session->get('errors')['city']) && $error_msg = $this->session->get('errors')['city'] ){
+        if( isset($this->session->get('errors')['building_city']) && $error_msg = $this->session->get('errors')['building_city'] ){
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['row_2']['building_city'] = array(
-            '#title'       => t('Ville de votre bien'),
+            '#title'       => t('Ville de votre bien *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -398,10 +397,10 @@ class DepreciationForm extends FormBase {
             'Je souhaite introduire un amortissement indirect' => t('Je souhaite introduire un amortissement indirect'),
         );
         $form['more']['depreciation'] = array(
-            '#title'    => t('Amortissement'),
+            '#title'    => t('Amortissement *'),
             '#type'     => 'select',
             '#attributes'  => ['theme' => $theme],
-            '#required' => true,
+            '#required' => false,
             '#prefix'   => '<div class="form-group '.$error_class.'">',
             '#suffix'   => $error. '</div>',
             '#options'  => $options,
@@ -429,10 +428,10 @@ class DepreciationForm extends FormBase {
             'jusqu\'à l\'échéance du contrat en cours' => t('jusqu\'à l\'échéance du contrat en cours'),
         );
         $form['more']['duration'] = array(
-            '#title'    => t('Durée'),
+            '#title'    => t('Durée *'),
             '#type'     => 'select',
             '#attributes'  => ['theme' => $theme],
-            '#required' => true,
+            '#required' => false,
             '#prefix'   => '<div class="form-group '.$error_class.'">',
             '#suffix'   => $error. '</div>',
             '#options'  => $options,
