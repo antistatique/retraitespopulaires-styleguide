@@ -182,6 +182,9 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
                 'contexts' => [
                     'url.path'
                 ],
+                'tags' => [
+                    'node_list' // invalidated whenever any Node entity is updated, deleted or created
+                ],
             ]
         ];
     }
