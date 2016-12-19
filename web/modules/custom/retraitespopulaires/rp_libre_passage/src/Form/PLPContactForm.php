@@ -66,6 +66,10 @@ class PLPContactForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-plp-contact-form';
 
+        // Disable caching & HTML5 validation
+        $form['#cache']['max-age'] = 0;
+        $form['#attributes']['novalidate'] = 'novalidate';
+
         if (isset($params['theme'])) {
             $theme = $params['theme'];
         }
@@ -75,7 +79,7 @@ class PLPContactForm extends FormBase {
         $form['results'] = array(
             '#type'     => 'hidden',
             '#value'    => $params['results'],
-            '#required' => true
+            '#required' => false
         );
 
         $status = drupal_get_messages('status');
@@ -88,11 +92,6 @@ class PLPContactForm extends FormBase {
             $form['errors'] = array(
                 '#markup' => '<div class="well well-danger well-lg"><p>'.t('Attention, des erreurs sont subvenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
             );
-        }
-
-        if( isset($this->session->get('errors')['email']) && $error_msg = $this->session->get('errors')['email'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
 
         $form['personnal'] = array(
@@ -116,11 +115,11 @@ class PLPContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['row_1']['firstname'] = array(
-            '#title'       => t('Votre prénom'),
+            '#title'       => t('Votre prénom *'),
             '#placeholder' => t('John'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div></div>',
         );
@@ -134,11 +133,11 @@ class PLPContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['row_1']['lastname'] = array(
-            '#title'       => t('Votre nom de famille'),
+            '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Doe'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div></div>',
         );
@@ -152,11 +151,11 @@ class PLPContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['email'] = array(
-            '#title'       => t('Votre e-mail'),
+            '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('john.doe@retraitespopulaires.ch'),
-            '#type'        => 'email',
+            '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -170,11 +169,11 @@ class PLPContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['phone'] = array(
-            '#title'       => t('Votre numéro de téléphone'),
+            '#title'       => t('Votre numéro de téléphone *'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 20, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -188,9 +187,9 @@ class PLPContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['message'] = array(
-            '#title'       => t('Votre message'),
+            '#title'       => t('Votre message *'),
             '#type'        => 'textarea',
-            '#required'    => true,
+            '#required'    => false,
             '#attributes'  => ['cols' => 59, 'theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',

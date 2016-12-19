@@ -73,6 +73,10 @@ class PLPCalculatorForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-calculator-form';
 
+        // Disable caching & HTML5 validation
+        $form['#cache']['max-age'] = 0;
+        $form['#attributes']['novalidate'] = 'novalidate';
+
         $form['#attached'] = array(
             'library' =>  array('rp_libre_passage/plp_calculator'),
         );
@@ -94,11 +98,6 @@ class PLPCalculatorForm extends FormBase {
             );
         }
 
-        if( isset($this->session->get('errors')['email']) && $error_msg = $this->session->get('errors')['email'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
-        }
-
         $form['personnal'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend', 'fieldset-bordered')],
@@ -115,11 +114,11 @@ class PLPCalculatorForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['birthdate'] = array(
-            '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span>'),
+            '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
             '#placeholder' => t('24/12/2016'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -133,11 +132,11 @@ class PLPCalculatorForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['civil_state'] = array(
-            '#title'       => t('Votre état civil'),
+            '#title'       => t('Votre état civil *'),
             '#type'        => 'select',
             '#attributes'  => ['theme' => $theme],
             '#options'     => array('woman' => t('Madame'), 'man' => t('Monsieur')),
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -152,8 +151,8 @@ class PLPCalculatorForm extends FormBase {
         }
         $form['personnal']['civil_status'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Marié(e) ou lié(e) par un partenariat enregistré')],
-            '#required'    => true,
+            '#attributes'  => ['theme' => $theme, 'title' => t('Marié(e) ou lié(e) par un partenariat enregistré *')],
+            '#required'    => false,
             '#options'     => array(
                 'Oui' => t('Oui'),
                 'Non' => t('Non')
@@ -201,11 +200,11 @@ class PLPCalculatorForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['libre_passage']['amount'] = array(
-            '#title'       => t('Montant'),
+            '#title'       => t('Montant *'),
             '#type'        => 'textfield',
             '#placeholder' => t('CHF'),
             '#attributes'  => ['size' => 20, 'theme' => $theme, 'class' => array('form-chf-numeric text-right')],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -219,14 +218,14 @@ class PLPCalculatorForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['libre_passage']['group_start'] = array(
-            '#prefix' => '<div class="form-group '.$error_class.'"><div class="label">'. t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span>') . '</div class="label"><div class="input-group">',
+            '#prefix' => '<div class="form-group '.$error_class.'"><div class="label">'. t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</div><div class="input-group">',
             '#suffix' => '</div>'.$error.'</div>',
         );
         $form['libre_passage']['group_start']['payment_date'] = array(
             '#placeholder' => t('24/12/2016'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 15, 'theme' => $theme, 'class' => array('datepicker')],
-            '#required'    => true,
+            '#required'    => false,
         );
         $form['libre_passage']['group_start']['picker'] = array(
             '#prefix' => '<span class="input-group-btn no-events"><div class="btn btn-default-invert btn-icon">',
@@ -257,10 +256,10 @@ class PLPCalculatorForm extends FormBase {
         }
         asort($options);
         $form['libre_passage']['age'] = array(
-            '#title'       => t('Âge souhaité pour le versement des prestations'),
+            '#title'       => t('Âge souhaité pour le versement des prestations *'),
             '#type'        => 'select',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#options'     => $options,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
