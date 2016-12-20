@@ -101,32 +101,6 @@ class AdminForm extends FormBase {
             '#suffix'        => '<br/>'
         );
 
-        $form['collection']['contacts_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Global Contacts - node ID',
-            '#default_value' => $this->state->get('rp_site.settings.collection.contacts')['nid'],
-        );
-        $form['collection']['contacts_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Global Contacts - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.collection.contacts')['theme'] ? $this->state->get('rp_site.settings.collection.contacts')['theme'] : 'contact',
-            '#suffix'        => '<br/>'
-        );
-
-        $form['collection']['advisors_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Conseillers - node ID',
-            '#default_value' => $this->state->get('rp_site.settings.collection.advisors')['nid'],
-        );
-        $form['collection']['advisors_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Conseillers - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.collection.advisors')['theme'] ? $this->state->get('rp_site.settings.collection.advisors')['theme'] : 'advisors',
-            '#suffix'        => '<br/>'
-        );
-
         $form['collection']['documents_nid'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Listing Documents utiles - node ID',
@@ -281,30 +255,6 @@ class AdminForm extends FormBase {
             '#default_value' => $this->state->get('rp_site.settings.profils.public')['menu'] ? $this->state->get('rp_site.settings.profils.public')['menu'] : 'menu_link_content:a7007bf2-c605-4284-8a24-5c4ee23717b7',
         );
 
-        $form['collection']['contacts_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Contacts - node ID',
-            '#default_value' => $this->state->get('rp_site.settings.collection.contacts')['nid'],
-        );
-        $form['collection']['contacts_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Contacts - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.collection.contacts')['theme'] ? $this->state->get('rp_site.settings.collection.contacts')['theme'] : 'contacts',
-        );
-
-        $form['collection']['advisors_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Conseillers - node ID',
-            '#default_value' => $this->state->get('rp_site.settings.collection.advisors')['nid'],
-        );
-        $form['collection']['advisors_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Conseillers - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.collection.advisors')['theme'] ? $this->state->get('rp_site.settings.collection.advisors')['theme'] : 'advisors',
-        );
-
         $form['collection']['mortgage_calculator_nid'] = array(
             '#type'          => 'entity_autocomplete',
             '#target_type'  => 'node',
@@ -442,16 +392,6 @@ class AdminForm extends FormBase {
             'nid' => trim($form_state->getValue('profil_public_nid')),
             'theme' => trim($form_state->getValue('profil_public_theme')),
             'menu' => trim($form_state->getValue('profil_public_menu')),
-        ));
-
-        $this->state->set('rp_site.settings.collection.contacts', array(
-            'nid' => trim($form_state->getValue('contacts_nid')),
-            'theme' => trim($form_state->getValue('contacts_theme')),
-        ));
-
-        $this->state->set('rp_site.settings.collection.advisors', array(
-            'nid' => trim($form_state->getValue('advisors_nid')),
-            'theme' => trim($form_state->getValue('advisors_theme')),
         ));
 
         $this->state->set('rp_site.settings.collection.mortgage_calculator', array(
