@@ -175,6 +175,9 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
                     'url.path',
                     'url.query_args'
                 ],
+                'tags' => [
+                    'node_list:document', // invalidated whenever any Node entity is updated, deleted or created
+                ],
             ]
         ];
     }
