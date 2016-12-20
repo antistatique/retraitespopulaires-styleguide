@@ -4,15 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - field.storage.node.field_file_product
-    - field.storage.node.field_file_news
-    - field.storage.node.field_file_page
-    - field.storage.node.field_file_faq
     - field.storage.node.field_file_document
-    - field.storage.node.field_file_building
-    - field.storage.node.field_file_plan
     - search_api.server.solr
   module:
+    - file
     - search_api
     - search_api_attachments
     - node
@@ -51,6 +46,18 @@ field_settings:
           page: default
           partnership: default
           product: default
+  saa_field_file_document:
+    label: 'Search api attachments: Fichier attaché'
+    property_path: saa_field_file_document
+    type: text
+  saa_field_file_page:
+    label: 'Search api attachments: Fichier(s) attaché(s)'
+    property_path: saa_field_file_page
+    type: string
+  saa_field_file_news:
+    label: 'Search api attachments: Fichier(s) attaché(s)'
+    property_path: saa_field_file_news
+    type: string
   status:
     label: status
     datasource_id: 'entity:node'
@@ -83,67 +90,21 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: type
     type: string
-  field_file_product:
-    label: 'Fichier(s) attaché(s)'
-    datasource_id: 'entity:node'
-    property_path: field_file_product
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_file_product
-  field_file_news:
-    label: 'Fichier(s) attaché(s) - News'
-    datasource_id: 'entity:node'
-    property_path: field_file_news
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_file_news
-  field_file_page:
-    label: 'Fichier(s) attaché(s) - Pages'
-    datasource_id: 'entity:node'
-    property_path: field_file_page
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_file_page
-  field_file_faq:
-    label: 'Fichier(s) attaché(s) - FAQs'
-    datasource_id: 'entity:node'
-    property_path: field_file_faq
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_file_faq
-  field_file_document:
-    label: 'Fichier attaché - Documents utiles'
-    datasource_id: 'entity:node'
-    property_path: field_file_document
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_file_document
-  field_file_building:
-    label: 'Fichier(s) attaché(s) - Constructions'
-    datasource_id: 'entity:node'
-    property_path: field_file_building
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_file_building
-  field_file_plan:
-    label: 'Fichier(s) de plan(s)'
-    datasource_id: 'entity:node'
-    property_path: field_file_plan
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_file_plan
   nid:
     label: 'Identifiant (ID)'
     datasource_id: 'entity:node'
     property_path: nid
     type: integer
+  filename:
+    label: 'Fichier attaché » Fichier » Filename'
+    datasource_id: 'entity:node'
+    property_path: 'field_file_document:entity:filename'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_file_document
+      module:
+        - file
 processor_settings:
   add_url:
     plugin_id: add_url
@@ -368,18 +329,20 @@ processor_settings:
   transliteration:
     plugin_id: transliteration
     settings:
-      fields: {  }
+      fields:
+        - title
+        - body
+        - filename
       weights:
         preprocess_index: -10
         preprocess_query: -10
   file_attachments:
     plugin_id: file_attachments
     settings:
-      excluded_extensions: 'aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv'
+      excluded_extensions: 'aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv jpg mp4 tif'
       number_indexed: 0
       max_filesize: 0
       excluded_private: 1
-      excluded_mimes: 'audio/x-aiff image/x-jg video/x-msvideo image/x-ms-bmp image/gif image/vnd.microsoft.icon video/quicktime audio/ogg video/ogg image/png image/x-photoshop audio/x-realaudio audio/x-pn-realaudio image/x-rgb video/x-flv'
 options:
   index_directly: true
   cron_limit: 50

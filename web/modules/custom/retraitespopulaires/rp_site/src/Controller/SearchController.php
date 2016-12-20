@@ -63,7 +63,7 @@ class SearchController extends ControllerBase {
         // returns an array containing all the words found inside the string
         $words = str_word_count($search, 1);
 
-        $query->setFulltextFields(['title', 'body']);
+        $query->setFulltextFields(['title', 'body', 'filename', 'saa_field_file_document', 'saa_field_file_news', 'saa_field_file_page']);
 
         // Flatten array to multiple arguments to generate an OR query
         call_user_func_array( array($query, 'keys'), $words);
@@ -80,9 +80,44 @@ class SearchController extends ControllerBase {
             $variables['results'][$key] = array(
                 'nid'   => $result->getField('nid')->getValues()[0],
                 'title' => $result->getField('title')->getValues()[0],
-                'body'  => !empty($result->getField('body')->getValues()) ? $result->getField('body')->getValues()[0] : '',
-                'type'  => $result->getField('type')->getValues()[0],
+                'body'  => $result->getExcerpt(),
             );
+
+            if ($result->getField('type')->getValues()[0]) {
+                switch ($result->getField('type')->getValues()[0]) {
+                    case 'news':
+                        $variables['results'][$key]['type'] = t('Actualités');
+                        break;
+
+                    case 'advisor':
+                        $variables['results'][$key]['type'] = t('Conseiller');
+                        break;
+
+                    case 'product':
+                        $variables['results'][$key]['type'] = t('Produit');
+                        break;
+
+                    case 'faq':
+                        $variables['results'][$key]['type'] = t('Questions-réponses');
+                        break;
+
+                    case 'partnership':
+                        $variables['results'][$key]['type'] = t('Partenaire');
+                        break;
+
+                    case 'offer':
+                        $variables['results'][$key]['type'] = t('Coupons Bella Vita');
+                        break;
+
+                    case 'management_contracts':
+                        $variables['results'][$key]['type'] = t('Mandats de gestion');
+                        break;
+
+                    default:
+                        $variables['results'][$key]['type'] = $result->getField('type')->getValues()[0];
+                        break;
+                }
+            }
         }
 
         // Pager
