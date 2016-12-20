@@ -416,7 +416,7 @@ class PLPCalculatorForm extends FormBase {
                 $this->session->set('data', $data);
 
                 $form_state->setRedirect('entity.node.canonical', [
-                    'node' =>  $this->state->get('rp_libre_passage.settings.page.calculator')['nid']
+                    'node' => $this->state->get('rp_libre_passage.settings.page.calculator')['nid']
                 ]);
             } catch (\Exception $e) {
                 drupal_set_message(t('An error occurred and processing did not complete.'), 'error');

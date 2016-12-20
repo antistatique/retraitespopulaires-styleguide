@@ -64,7 +64,7 @@ class PLPContactForm extends FormBase {
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
-        $form['#action'] = '#rp-plp-contact-form';
+        $form['#action'] = '#rp-libre-passage-plp-contact-form';
 
         // Disable caching & HTML5 validation
         $form['#cache']['max-age'] = 0;
