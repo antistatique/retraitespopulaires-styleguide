@@ -87,6 +87,9 @@
         "patches": {
             "drupal/core": {
               "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch"
+            },
+            "drupal/core": {
+              "Fix Ckeditor warning when local file not found": "patches/CKEDITOR_fix_No_such_file_or_directory_in__locale_parse_js_file_warning.patch"
             }
         }
     }
