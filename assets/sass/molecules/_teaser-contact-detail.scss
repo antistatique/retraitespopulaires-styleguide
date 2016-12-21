@@ -33,7 +33,7 @@
   }
 
   @each $label, $color in $themes {
-    &.teaser-contact-detail-#{$label} {
+    &.teaser-contact-detail-#{$label} .teaser-contact-detail-infos {
       a { color: $color; }
 
       a:hover {

@@ -75,3 +75,14 @@
     }
   }
 }
+
+.entity-body-berrylight-gray {
+  @each $label, $color in $themes {
+    &.body-#{$label} {
+      p a,
+      a.pretty-link {
+        @include pretty-link($black, $berrylight-gray, $color);
+      }
+    }
+  }
+}
