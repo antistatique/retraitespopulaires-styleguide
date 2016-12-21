@@ -98,6 +98,23 @@ class PLPConversionRate extends ContentEntityBase implements PLPConversionRateIn
     }
 
     /**
+    * @return integer
+    */
+    public function getStatus() {
+        return $this->get('status')->value;
+    }
+
+    /**
+    * @param integer $status
+    *
+    * @return $this
+    */
+    public function setStatus($status) {
+        $this->set('status', $status);
+        return $this;
+    }
+
+    /**
     * {@inheritdoc}
     */
     public function getCreatedTime() {
@@ -119,7 +136,7 @@ class PLPConversionRate extends ContentEntityBase implements PLPConversionRateIn
         $fields = parent::baseFieldDefinitions($entity_type);
 
         $fields['gender'] = BaseFieldDefinition::create('list_string')
-        ->setLabel(t('Genre'))
+            ->setLabel(t('Genre'))
             ->setSettings(array(
               'allowed_values' => array(
                 'man' => 'Homme',
@@ -268,6 +285,21 @@ class PLPConversionRate extends ContentEntityBase implements PLPConversionRateIn
             ->setDisplayConfigurable('form', TRUE)
             ->setDisplayConfigurable('view', TRUE)
             ->setRequired(true)
+        ;
+
+        $fields['status'] = BaseFieldDefinition::create('boolean')
+          ->setLabel(t('Published'))
+          ->setDefaultValue(1)
+          ->setDescription(t('The status of this entity. 0 - disabled, 1 - enabled.'))
+          ->setDisplayOptions('view', array(
+              'label' => 'above',
+              'weight' => 100,
+          ))
+          ->setDisplayOptions('form', array(
+              'weight' => 100,
+          ))
+          ->setDisplayConfigurable('form', TRUE)
+          ->setDisplayConfigurable('view', TRUE)
         ;
 
         $fields['created'] = BaseFieldDefinition::create('created')

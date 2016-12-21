@@ -96,6 +96,23 @@ class PLPInterestRate extends ContentEntityBase implements PLPInterestRateInterf
   }
 
   /**
+  * @return integer
+  */
+  public function getStatus() {
+      return $this->get('status')->value;
+  }
+
+  /**
+  * @param integer $status
+  *
+  * @return $this
+  */
+  public function setStatus($status) {
+      $this->set('status', $status);
+      return $this;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function getCreatedTime() {
@@ -167,6 +184,21 @@ class PLPInterestRate extends ContentEntityBase implements PLPInterestRateInterf
           ->setDisplayConfigurable('form', TRUE)
           ->setDisplayConfigurable('view', TRUE)
           ->setRequired(true)
+      ;
+
+      $fields['status'] = BaseFieldDefinition::create('boolean')
+        ->setLabel(t('Published'))
+        ->setDefaultValue(1)
+        ->setDescription(t('The status of this entity. 0 - disabled, 1 - enabled.'))
+        ->setDisplayOptions('view', array(
+            'label' => 'above',
+            'weight' => 100,
+        ))
+        ->setDisplayOptions('form', array(
+            'weight' => 100,
+        ))
+        ->setDisplayConfigurable('form', TRUE)
+        ->setDisplayConfigurable('view', TRUE)
       ;
 
       $fields['created'] = BaseFieldDefinition::create('created')
