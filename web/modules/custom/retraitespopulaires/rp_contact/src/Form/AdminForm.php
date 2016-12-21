@@ -184,6 +184,7 @@ class AdminForm extends FormBase {
             '#type'          => 'textfield',
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.conversion')['receivers'],
+            '#suffix'        => '<br/>'
         );
 
         // Demande de modification de l'amortissement du 1er rang Form
@@ -203,6 +204,7 @@ class AdminForm extends FormBase {
             '#type'          => 'textfield',
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.depreciation')['receivers'],
+            '#suffix'        => '<br/>'
         );
 
         // Demande d'augmentation de prêt Form
@@ -222,6 +224,7 @@ class AdminForm extends FormBase {
             '#type'          => 'textfield',
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.loan_increase')['receivers'],
+            '#suffix'        => '<br/>'
         );
 
         // Demande d'attestation d'intérêts Form
@@ -263,6 +266,7 @@ class AdminForm extends FormBase {
             '#title'         => 'Listing des conseillers - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_contact.settings.collection.advisors')['theme'] ? $this->state->get('rp_contact.settings.collection.advisors')['theme'] : 'collection_advisors',
+            '#suffix'        => '<br/>'
         );
 
         // Listing des contacts
