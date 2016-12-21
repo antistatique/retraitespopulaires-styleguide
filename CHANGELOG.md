@@ -1,6 +1,15 @@
 CHANGELOG
 ---------
 
+## 1.1.8 (2016-12-21))
+ - Added ConversionForm (Demande de conversion d'un taux variable en taux fixe)
+ - Added DepreciationForm (Demande de modification de l'amortissement du 1er rang)
+ - Added TaxAttestationForm (Demande d'attestation d'intérêts)
+ - Added LoanIncreaseForm (Demande d'augmentation de prêt)
+ - Added BuildingForm (Demande de réservation d'un taux)
+ - Fix issue on admin hen an Offer is deleted and already has subscribers
+ - Improve cachability of list and purge of them
+
 ## 1.1.7 (2016-12-01)
  - Metatags og:image resized
 
