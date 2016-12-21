@@ -5,7 +5,8 @@ collection: molecules
 notes: |
   ##### Usage : `breadcrumb`
   ##### Options :
-  - **theme** - <i>String</i> - <b>lines-['text-assurance'|'text-prevoyance'|'text-immobilier'|'text-hypotheque'|'text-institutionnel'|'text-profelia'|'text-cpev'|'text-cip']</b>
+  - **primary_theme** - <i>String</i> - <b>['text-primary', 'text-assurance'|'text-prevoyance'|'text-immobilier'|'text-hypotheque'|'text-institutionnel'|'text-profelia'|'text-cpev'|'text-cip']</b>
+  - **theme** - <i>String</i> - <b>['text-assurance'|'text-prevoyance'|'text-immobilier'|'text-hypotheque'|'text-institutionnel'|'text-profelia'|'text-cpev'|'text-cip']</b>
   - **links** - <i>Array</i>
 ---
 
@@ -19,7 +20,7 @@ notes: |
         ]
       %}
       {% if loop.first %}
-        {% set classes = ['text-primary'] %}
+        {% set classes = [primary_theme|default('text-primary')] %}
       {% elseif loop.last %}
         {% set classes = ['text-muted'] %}
       {% else %}

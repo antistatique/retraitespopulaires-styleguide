@@ -22,6 +22,10 @@ notes: |
       {% set nav = data.nav.assurancevie %}
     {% elseif json == 'emploi'  %}
       {% set nav = data.nav.emploi %}
+    {% elseif json == 'cip'  %}
+      {% set nav = data.nav.cip %}
+    {% elseif json == 'portailca'  %}
+      {% set nav = data.nav.portailca %}
     {% else  %}
       {% set nav = data.nav.lorem %}
     {% endif %}
@@ -42,9 +46,8 @@ notes: |
             <a class="pretty-link" href="{{ link.url }}">{{ link.label }}</a>
           {% endif %}
         </li>
-
-        {% if link.children  %}
-          <li class="">
+      {% if link.children.length %}
+          <li class="children">
             <ul class="list-no-style list-no-padding">
               {% for child in link.children %}
                 {% set classes = '' %}

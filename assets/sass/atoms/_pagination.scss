@@ -39,6 +39,8 @@
       transform: translate(-50%, -50%);
     }
 
+    &.active > a { color: $white; }
+
     &:before {
       content: ' ';
       position: absolute;
@@ -66,6 +68,21 @@
 
     &.active:hover:before {
       background-color: $brand-primary;
+    }
+  }
+
+  @each $label, $color in $themes {
+    &.pagination-#{$label} {
+      .number.active:before {
+        background-color: $color;
+      }
+
+      .number.active:hover:before {
+        background-color: $color;
+      }
+
+      .number > a { color: $color; }
+      .number.active > a { color: $white; }
     }
   }
 

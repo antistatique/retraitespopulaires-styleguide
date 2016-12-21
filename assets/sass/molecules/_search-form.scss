@@ -1,1 +1,13 @@
 @charset 'UTF-8';
+
+.global-search.global-search-visible .input-group .form-control {
+  // A bit of extra classes specification. But that was necessary to overcharge the .input-group styling
+  border-color: $gray;
+  border-radius: $border-radius-base;
+}
+
+.global-search {
+  .retraitespopulaires-icon {
+    font-size: 22px;
+  }
+}

@@ -118,6 +118,7 @@ layout: examples.html.swig
 
     {% include '../atoms/input-radio-btn.html.swig' %}
     {% include '../atoms/input-textarea.html.swig' %}
+    {% include '../atoms/input-file.html.swig' %}
 
 </div>
 </div>

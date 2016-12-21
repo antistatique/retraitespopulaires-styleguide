@@ -13,6 +13,7 @@
 @import 'ckeditor';
 
 // atoms:
+@import 'atoms/input-file';
 @import 'atoms/logo-management-contract';
 @import 'atoms/map-card';
 @import 'atoms/input-group';
@@ -47,6 +48,10 @@
 @import 'atoms/socials';
 
 // molecules:
+@import 'molecules/attachments-ca';
+@import 'molecules/breadcrumb-ca';
+@import 'molecules/navbar';
+@import 'molecules/teaser-search';
 @import 'molecules/progresschart';
 @import 'molecules/teaser-contact-detail';
 @import 'molecules/teaser-contact-cta';
@@ -75,8 +80,11 @@
 @import 'molecules/form';
 
 // organisms:
+@import 'organisms/header-extranet';
 @import 'organisms/footer';
+@import 'organisms/footer-mandats';
 @import 'organisms/header';
+@import 'organisms/header-mandats';
 @import 'organisms/attachments';
 @import 'organisms/attachments-job';
 @import 'organisms/attachments-offers';

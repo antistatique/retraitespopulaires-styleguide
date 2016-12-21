@@ -4,12 +4,13 @@ name: pagination
 collection: atoms
 notes: |
   ##### Usage : `pagination`
+    - **theme_pagination** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <nav aria-label="Pagination">
-  <ul class="pagination">
+  <ul class="pagination pagination-{{ theme_pagination }}">
     <li class="arrow">
       <a href="#" aria-label="Previous">
-        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded arrow arrow-flip"></span>
+        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded arrow arrow-flip arrow-{{ theme_pagination }}"></span>
       </a>
     </li>
     <li class="number"><a href="#">1</a></li>
@@ -19,7 +20,7 @@ notes: |
     <li class="number"><a href="#">5</a></li>
     <li class="arrow">
       <a href="#" aria-label="Previous">
-        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded arrow"></span>
+        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded arrow arrow-{{ theme_pagination }}"></span>
       </a>
     </li>
   </ul>

@@ -36,4 +36,10 @@
 
     .news-type { text-align: right; }
   }
+
+  @each $label, $color in $themes {
+    &.teaser-news-#{$label} {
+      border: 1px solid $color;
+    }
+  }
 }

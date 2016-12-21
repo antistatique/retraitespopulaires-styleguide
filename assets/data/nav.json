@@ -40,6 +40,39 @@
       "children": []
     }]
   },
+  "cip": {
+    "title": "Plans de prévoyance",
+    "links": [{
+      "url": "#",
+      "label": "Prestations",
+      "active": false
+    }, {
+      "url": "#",
+      "label": "Simulateurs",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Formulaires",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Questions-réponses",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Lexique",
+      "active": false,
+      "children": []
+    }, {
+      "url": "#",
+      "label": "Les 3 piliers",
+      "active": false,
+      "children": []
+    }]
+  },
   "assurancevie": {
     "title": "Assurance vie",
     "links": [{
@@ -140,6 +173,97 @@
     }, {
       "url": "#",
       "label": "Locataire en place",
+      "active": false,
+      "children": []
+    }]
+  },
+  "portailca": {
+    "title": "Retraites Populaires",
+    "links": [{
+      "url": "#",
+      "label": "Ordres du jour all inclusives",
+      "active": true,
+      "children": [{
+        "url": "#",
+        "label": "2016",
+        "active": false
+      }, {
+        "url": "#",
+        "label": "2015",
+        "active": false
+      }, {
+        "url": "#",
+        "label": "2014",
+        "active": false
+      }]
+    },{
+      "url": "#",
+      "label": "Procès verbaux",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Préavis signés",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Commentaires de marché",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "TBD",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Bureau du Conseil RP",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Documents de référence",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Lois et réglements",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Exclusif Conseil (stratégiques et confidentiels)",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Comité GEP",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Comité d'audit et risque (CAR)",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Veille législative et jurisprudence",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Coordonnées conseil/direction",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Calendrier des séances",
+      "active": false,
+      "children": []
+    },{
+      "url": "#",
+      "label": "Formation",
       "active": false,
       "children": []
     }]

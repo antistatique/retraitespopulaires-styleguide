@@ -48,7 +48,9 @@
   }
 
   img {
+    display: block;
     height: auto;
+    margin: 0 auto 10px;
     max-width: 100%;
   }
 
@@ -69,6 +71,17 @@
 
       a:not(.no-style) {
         @extend .text-#{$label}.pretty-link;
+      }
+    }
+  }
+}
+
+.entity-body-berrylight-gray {
+  @each $label, $color in $themes {
+    &.body-#{$label} {
+      p a,
+      a.pretty-link {
+        @include pretty-link($black, $berrylight-gray, $color);
       }
     }
   }
