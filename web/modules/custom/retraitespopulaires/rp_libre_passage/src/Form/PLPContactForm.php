@@ -152,7 +152,7 @@ class PLPContactForm extends FormBase {
         }
         $form['personnal']['email'] = array(
             '#title'       => t('Votre e-mail *'),
-            '#placeholder' => t('john.doe@retraitespopulaires.ch'),
+            '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
             '#required'    => false,
