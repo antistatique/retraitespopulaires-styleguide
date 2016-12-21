@@ -27,7 +27,7 @@
     </p>
 
     {% if variables.contact.body %}
-      <p>{{ variables.contact.body.value|raw }}</p>
+      <div class="entity-body-berrylight-gray body-{{ theme }}">{{ variables.contact.body.value|raw }}</div>
     {% endif %}
   </div>
   <div class="teaser-contact-detail-infos">

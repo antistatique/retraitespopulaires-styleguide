@@ -132,7 +132,10 @@ class AdminController extends ControllerBase {
         $requests = $this->entity_offers_request->loadMultiple($ids);
 
         foreach ($requests as $i => $request) {
-            $node = $this->entity_node->load($request->offer_target_id->entity->nid->value);
+            $node = null;
+            if ($request->offer_target_id->entity) {
+                $node = $this->entity_node->load($request->offer_target_id->entity->nid->value);
+            }
 
             $dt = new \DateTime();
             $dt->setTimestamp($request->created->value);
@@ -147,23 +150,27 @@ class AdminController extends ControllerBase {
               . '<br/>' . $request->zip->value . ' ' . $request->city->value,
             );
 
-            $output['table'][$i]['offer'] = array(
-              '#markup' => '<a href="'.$this->url->generateFromRoute('entity.node.canonical', ['node' => $node->nid->value]).'" target="_blank">'.$node->title->value.'</a>',
-            );
+            if ($node) {
+                $output['table'][$i]['offer'] = array(
+                  '#markup' => '<a href="'.$this->url->generateFromRoute('entity.node.canonical', ['node' => $node->nid->value]).'" target="_blank">'.$node->title->value.'</a>',
+                );
+            }
 
             // Operations
             $output['table'][$i]['operations'] = array(
               '#type' => 'dropbutton',
               '#links' => array(),
             );
-            $output['table'][$i]['operations']['#links']['detail'] = array(
-              'title' => t('Détail'),
-              'url' => Url::fromRoute('rp_offers.admin.request', ['node' => $node->nid->value]),
-            );
-            $output['table'][$i]['operations']['#links']['edit'] = array(
-              'title' => t('Edit'),
-              'url' => Url::fromRoute('entity.node.edit_form', ['node' => $node->nid->value]),
-            );
+            if ($node) {
+                $output['table'][$i]['operations']['#links']['detail'] = array(
+                  'title' => t('Détail'),
+                  'url' => Url::fromRoute('rp_offers.admin.request', ['node' => $node->nid->value]),
+                );
+                $output['table'][$i]['operations']['#links']['edit'] = array(
+                  'title' => t('Edit'),
+                  'url' => Url::fromRoute('entity.node.edit_form', ['node' => $node->nid->value]),
+                );
+            }
         }
 
         return $output;

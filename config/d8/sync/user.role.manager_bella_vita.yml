@@ -29,3 +29,4 @@ permissions:
   23: 'edit own news content'
   24: 'revert news revisions'
   25: 'view news revisions'
+  26: 'view own unpublished content'

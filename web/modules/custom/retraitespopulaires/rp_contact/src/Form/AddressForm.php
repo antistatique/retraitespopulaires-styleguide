@@ -72,6 +72,10 @@ class AddressForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-contact-address-form';
 
+        // Disable caching & HTML5 validation
+        $form['#cache']['max-age'] = 0;
+        $form['#attributes']['novalidate'] = 'novalidate';
+
         $theme = '';
         if (isset($params['theme'])) {
             $theme = $params['theme'];
@@ -87,11 +91,6 @@ class AddressForm extends FormBase {
             $form['errors'] = array(
                 '#markup' => '<div class="well well-danger well-lg"><p>'.t('Attention, des erreurs sont survenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
             );
-        }
-
-        if( isset($this->session->get('errors')['email']) && $error_msg = $this->session->get('errors')['email'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
 
         $form['address'] = array(
@@ -110,11 +109,11 @@ class AddressForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['address']['civil_state'] = array(
-            '#title'       => t('Votre état civil'),
+            '#title'       => t('Votre état civil *'),
             '#type'        => 'select',
             '#attributes'  => ['theme' => $theme],
             '#options'     => array('Madame' => t('Madame'), 'Monsieur' => t('Monsieur')),
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -133,11 +132,11 @@ class AddressForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['address']['row_1']['firstname'] = array(
-            '#title'       => t('Votre prénom'),
+            '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div></div>',
         );
@@ -151,11 +150,11 @@ class AddressForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['address']['row_1']['lastname'] = array(
-            '#title'       => t('Votre nom de famille'),
+            '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div></div>',
         );
@@ -169,11 +168,11 @@ class AddressForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['address']['birthdate'] = array(
-            '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span>'),
+            '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
             '#placeholder' => t('24/12/2016'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -188,8 +187,8 @@ class AddressForm extends FormBase {
         }
         $form['address']['client'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Êtes-vous déjà client Retraites Populaires ?')],
-            '#required'    => true,
+            '#attributes'  => ['theme' => $theme, 'title' => t('Êtes-vous déjà client Retraites Populaires ? *')],
+            '#required'    => false,
             '#options'     => array(
                 'Oui' => t('Oui'),
                 'Non' => t('Non')
@@ -200,8 +199,8 @@ class AddressForm extends FormBase {
 
         $form['address']['client_of'] = array(
             '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Dans quel domaine êtes-vous client ?')],
-            '#required'    => true,
+            '#attributes'  => ['theme' => $theme, 'title' => t('Dans quel domaine êtes-vous client ? *')],
+            '#required'    => false,
             '#options'     => array(
                 '2ème ou 3ème pillier' => t('2<sup>e</sup> ou 3<sup>e</sup> pilier'),
                 'Immobilier'           => t('Immobilier'),
@@ -220,11 +219,11 @@ class AddressForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['address']['client_number'] = array(
-            '#title'       => t('Votre référence ou numéro de client'),
+            '#title'       => t('Votre référence ou numéro de client *'),
             '#placeholder' => t('123456789'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -247,7 +246,7 @@ class AddressForm extends FormBase {
         $form['old']['old_email'] = array(
             '#title'       => t('Votre ancien e-mail'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
-            '#type'        => 'email',
+            '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -330,7 +329,7 @@ class AddressForm extends FormBase {
         $form['new']['new_email'] = array(
             '#title'       => t('Votre nouvel e-mail'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
-            '#type'        => 'email',
+            '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -409,14 +408,14 @@ class AddressForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['more']['group_start'] = array(
-            '#prefix' => '<div class="form-group '.$error_class.'"><label>'. t('Valable dès <span class ="text-small text-muted">(jj/mm/aaaa)</span>') . '</label><div class="input-group">',
+            '#prefix' => '<div class="form-group '.$error_class.'"><label>'. t('Valable dès <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</label><div class="input-group">',
             '#suffix' => '</div></div>',
         );
         $form['more']['group_start']['due_date'] = array(
             '#placeholder' => t('24/12/2016'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 15, 'theme' => $theme, 'class' => array('datepicker')],
-            '#required'    => true,
+            '#required'    => false,
         );
         $form['more']['group_start']['picker'] = array(
             '#prefix' => '<span class="input-group-btn no-events"><div class="btn btn-default-invert btn-icon">',

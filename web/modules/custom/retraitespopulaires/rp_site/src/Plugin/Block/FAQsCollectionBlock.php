@@ -162,6 +162,9 @@ class FAQsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
                     'url.path',
                     'url.query_args'
                 ],
+                'tags' => [
+                    'node_list:faq', // invalidated whenever any Node entity is updated, deleted or created
+                ],
             ]
         ];
     }

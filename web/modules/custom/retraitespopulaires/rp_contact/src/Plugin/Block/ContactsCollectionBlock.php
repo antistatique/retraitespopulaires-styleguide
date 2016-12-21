@@ -1,10 +1,10 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_offers\Plugin\Block\OffersCollectionBlock.
+* Contains \Drupal\rp_contact\Plugin\Block\ContactsCollectionBlock.
 */
 
-namespace Drupal\rp_offers\Plugin\Block;
+namespace Drupal\rp_contact\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -12,28 +12,24 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
+use Drupal\rp_site\Service\Profession;
+use Drupal\Core\Routing\CurrentRouteMatch;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
-* Provides a 'Offers Collection' Block
+* Provides a 'Contacts Collection' Block
 *
 * @Block(
-*   id = "rp_offers_offers_collection_block",
-*   admin_label = @Translation("Offers Collection block"),
+*   id = "rp_contact_contacts_collection_block",
+*   admin_label = @Translation("Contacts Collection block"),
 * )
 *
 * Inline example:
 * <code>
-* load_block('rp_offers_offers_collection_block')
+* load_block('rp_contact_contacts_collection_block')
 * </code>
 */
-class OffersCollectionBlock extends BlockBase implements ContainerFactoryPluginInterface {
-
-    /**
-     * Number of buildings per page
-     * @var integer
-     */
-    private $limit = 20;
+class ContactsCollectionBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     /**
     * EntityTypeManagerInterface to load Nodes
@@ -48,6 +44,18 @@ class OffersCollectionBlock extends BlockBase implements ContainerFactoryPluginI
     private $entity_query;
 
     /**
+     * Profession Service
+     * @var Profession
+     */
+    private $profession;
+
+    /**
+    * Current Route
+    * @var CurrentRouteMatch
+    */
+    private $route;
+
+    /**
     * Request stack that controls the lifecycle of requests
     * @var RequestStack
     */
@@ -56,11 +64,13 @@ class OffersCollectionBlock extends BlockBase implements ContainerFactoryPluginI
     /**
      * Class constructor.
      */
-     public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, QueryFactory $query, RequestStack $request) {
+     public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, QueryFactory $query, Profession $profession, CurrentRouteMatch $route, RequestStack $request) {
          parent::__construct($configuration, $plugin_id, $plugin_definition);
-         $this->entity_node   = $entity->getStorage('node');
-         $this->entity_query  = $query;
-         $this->request       = $request->getMasterRequest();
+         $this->entity_node  = $entity->getStorage('node');
+         $this->entity_query = $query;
+         $this->profession   = $profession;
+         $this->route        = $route;
+         $this->request      = $request->getMasterRequest();
      }
 
      /**
@@ -76,6 +86,8 @@ class OffersCollectionBlock extends BlockBase implements ContainerFactoryPluginI
              // Load customs services used in this class.
              $container->get('entity_type.manager'),
              $container->get('entity.query'),
+             $container->get('rp_site.profession'),
+             $container->get('current_route_match'),
              $container->get('request_stack')
          );
      }
@@ -86,40 +98,26 @@ class OffersCollectionBlock extends BlockBase implements ContainerFactoryPluginI
     public function build($params = array()) {
         $variables = array();
 
+        // Set the theme using the current node profession
+        if ($node = $this->route->getParameter('node')) {
+            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+        }
+
         $query = $this->entity_query->get('node')
-            ->condition('type', 'offer')
+            ->condition('type', 'contact')
             ->condition('status', 1)
+            ->sort('title', 'ASC')
         ;
 
-        // Pager
         $nids = $query->execute();
-        pager_default_initialize(count($nids), $this->limit);
-        $variables['pager'] = array(
-            '#type' => 'pager',
-            '#quantity' => '3',
-        );
-
-        // Paged query
-        $page = 0;
-        if (!is_null($this->request->get('page'))) {
-            $page = (int)$this->request->get('page');
-        }
-        $query->sort('field_date_end', 'DESC');
-        $query->range($page*$this->limit, $this->limit);
-
-        $nids = $query->execute();
-        $variables['offers'] = $this->entity_node->loadMultiple($nids);
+        $variables['contacts'] = $this->entity_node->loadMultiple($nids);
 
         return [
-            '#theme'     => 'rp_offers_offers_collection_block',
+            '#theme'     => 'rp_contact_contacts_collection_block',
             '#variables' => $variables,
             '#cache' => [
                 'contexts' => [
                     'url.path',
-                    'url.query_args'
-                ],
-                'tags' => [
-                    'node_list:offer' // invalidated whenever any Node entity is updated, deleted or created
                 ],
             ]
         ];

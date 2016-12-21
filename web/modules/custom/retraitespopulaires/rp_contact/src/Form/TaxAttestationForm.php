@@ -1,7 +1,7 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_contact\Form\DocumentsForm.
+* Contains \Drupal\rp_contact\Form\TaxAttestationForm.
 */
 
 namespace Drupal\rp_contact\Form;
@@ -14,7 +14,7 @@ use Drupal\user\PrivateTempStoreFactory;
 use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\State\StateInterface;
 
-class DocumentsForm extends FormBase {
+class TaxAttestationForm extends FormBase {
 
     /**
      * Stores and retrieves temporary data for a given owner
@@ -38,8 +38,8 @@ class DocumentsForm extends FormBase {
      * Class constructor.
      */
     public function __construct(PrivateTempStoreFactory $private_tempstore, MailManagerInterface $mail, StateInterface $state) {
-        $this->mail  = $mail;
-        $this->state = $state;
+        $this->mail        = $mail;
+        $this->state       = $state;
 
         // Init session
         // TODO Found better solution to inline errors than hack session to
@@ -63,20 +63,23 @@ class DocumentsForm extends FormBase {
     * {@inheritdoc}.
     */
     public function getFormId() {
-        return 'rp_contact_documents_form';
+        return 'rp_contact_tax_attestation_form';
     }
 
     /**
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
-        $form['#action'] = '#rp-contact-documents-form';
+        $form['#action'] = '#rp-contact-tax-attestation-form';
 
         // Disable caching & HTML5 validation
         $form['#cache']['max-age'] = 0;
         $form['#attributes']['novalidate'] = 'novalidate';
 
-        $theme = '';
+        $form['#attached'] = array(
+           'library' =>  array('rp_contact/contact_tax_attestation_form'),
+       );
+
         if (isset($params['theme'])) {
             $theme = $params['theme'];
         }
@@ -84,16 +87,16 @@ class DocumentsForm extends FormBase {
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
             $form['status'] = array(
-                '#markup' => '<div class="well well-success well-lg"><p>'.$status['status'][0].'</p></div>',
+                '#markup' => '<div class="well well-success well-lg"><p class="m-b-0">'.$status['status'][0].'</p></div>',
             );
         }
         if (!empty($this->session->get('errors'))) {
             $form['errors'] = array(
-                '#markup' => '<div class="well well-danger well-lg"><p>'.t('Attention, des erreurs sont survenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
+                '#markup' => '<div class="well well-danger well-lg"><p class="m-b-0">'.t('Attention, des erreurs sont survenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
             );
         }
 
-        $form['personnal'] = array(
+        $form['building'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
           '#title'      => t('Vos informations'),
@@ -104,43 +107,42 @@ class DocumentsForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         $error = '';
         $error_class = '';
-        if( isset($this->session->get('errors')['policy']) && $error_msg = $this->session->get('errors')['policy'] ){
+        if( isset($this->session->get('errors')['title']) && $error_msg = $this->session->get('errors')['title'] ){
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['policy'] = array(
-            '#title'       => t('Numéro(s) de police(s) *'),
+        $form['building']['title'] = array(
+            '#type'        => 'radios',
+            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => false],
+            '#required'    => false,
+            '#options'     => array(
+                'Madame'   => t('Madame'),
+                'Monsieur' => t('Monsieur'),
+                'Société'  => t('Société'),
+            ),
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
+        );
+
+        $form['building']['policy'] = array(
+            '#title'       => t('Votre numéro de prêt ou crédit de construction'),
             '#placeholder' => t('123456789'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => false,
-            '#prefix'      => '<div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div>',
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
         );
 
-        // Get error to inline it as suffix
-        // TODO Found better solution to inline errors than hack session to
-        $error = '';
-        $error_class = '';
-        if( isset($this->session->get('errors')['civil_state']) && $error_msg = $this->session->get('errors')['civil_state'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
-        }
-        $form['personnal']['civil_state'] = array(
-            '#title'       => t('Votre état civil *'),
-            '#type'        => 'select',
-            '#attributes'  => ['theme' => $theme],
-            '#options'     => array('Madame' => t('Madame'), 'Monsieur' => t('Monsieur')),
-            '#required'    => false,
-            '#prefix'      => '<div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div>',
-        );
-
-        $form['personnal']['row_1'] = array(
+        $form['building']['row_1'] = array(
             '#prefix'      => '<div class="row">',
             '#suffix'      => '</div>',
         );
 
+        // Get readonly
+        $readonly = '';
+        if (isset($form_state->getUserInput()['title']) && $form_state->getUserInput()['title'] == 'Société') {
+            $readonly = 'readonly';
+        }
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
         $error = '';
@@ -149,16 +151,24 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_1']['firstname'] = array(
+        $form['building']['row_1']['firstname'] = array(
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
+            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.' '.$readonly.'">',
             '#suffix'      => $error. '</div></div>',
         );
+        if (!empty($readonly)) {
+            $form['building']['row_1']['firstname']['#attributes']['readonly'] = $readonly;
+        }
 
+        // Get readonly
+        $readonly = '';
+        if (isset($form_state->getUserInput()['title']) && $form_state->getUserInput()['title'] == 'Société') {
+            $readonly = 'readonly';
+        }
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
         $error = '';
@@ -167,15 +177,43 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_1']['lastname'] = array(
+        $form['building']['row_1']['lastname'] = array(
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
+            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.' '.$readonly.'">',
             '#suffix'      => $error. '</div></div>',
         );
+        if (!empty($readonly)) {
+            $form['building']['row_1']['lastname']['#attributes']['readonly'] = $readonly;
+        }
+
+        // Get readonly
+        $readonly = '';
+        if (isset($form_state->getUserInput()['title']) && $form_state->getUserInput()['title'] != 'Société') {
+            $readonly = 'readonly';
+        }
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['company']) && $error_msg = $this->session->get('errors')['company'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['building']['company'] = array(
+            '#title'       => t('Votre raison sociale'),
+            '#placeholder' => t('Retraites Populaires'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['theme' => $theme],
+            '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
+            '#suffix'      => $error. '</div>',
+        );
+        if (!empty($readonly)) {
+            $form['building']['company']['#attributes']['readonly'] = $readonly;
+        }
 
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
@@ -185,7 +223,7 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['email'] = array(
+        $form['building']['email'] = array(
             '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'textfield',
@@ -199,18 +237,18 @@ class DocumentsForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         $error = '';
         $error_class = '';
-        if( isset($this->session->get('errors')['birthdate']) && $error_msg = $this->session->get('errors')['birthdate'] ){
+        if( isset($this->session->get('errors')['phone']) && $error_msg = $this->session->get('errors')['phone'] ){
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['birthdate'] = array(
-            '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
-            '#placeholder' => t('24/12/2016'),
+        $form['building']['phone'] = array(
+            '#title'       => t('Votre numéro de téléphone *'),
+            '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 20, 'theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div>',
+            '#suffix'      => $error.'</div>',
         );
 
         // Get error to inline it as suffix
@@ -221,7 +259,7 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['address'] = array(
+        $form['building']['address'] = array(
             '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
@@ -231,7 +269,7 @@ class DocumentsForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['personnal']['row_2'] = array(
+        $form['building']['row_2'] = array(
             '#prefix'      => '<div class="row">',
             '#suffix'      => '</div>',
         );
@@ -244,7 +282,7 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_2']['zip'] = array(
+        $form['building']['row_2']['zip'] = array(
             '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
@@ -262,8 +300,75 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_2']['city'] = array(
-            '#title'       => t('Votre localité *'),
+        $form['building']['row_2']['city'] = array(
+            '#title'       => t('Votre ville *'),
+            '#placeholder' => t('Lausanne'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#required'    => false,
+            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div></div>',
+        );
+
+        $form['more'] = array(
+          '#type'       => 'fieldset',
+          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#title'      => t('Votre demande'),
+          '#prefix'     => '<h3>'.t('Votre demande').'</h3>',
+        );
+
+
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['building_address']) && $error_msg = $this->session->get('errors')['building_address'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['more']['building_address'] = array(
+            '#title'       => t('Adresse de votre bien *'),
+            '#placeholder' => t('Chemin de l\'Avenir 1'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['theme' => $theme],
+            '#required'    => false,
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
+        );
+
+        $form['more']['row_2'] = array(
+            '#prefix'      => '<div class="row">',
+            '#suffix'      => '</div>',
+        );
+
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['building_zip']) && $error_msg = $this->session->get('errors')['building_zip'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['more']['row_2']['building_zip'] = array(
+            '#title'       => t('Code postal (NPA) de votre bien *'),
+            '#placeholder' => t('1000'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#required'    => false,
+            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div></div>',
+        );
+
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['building_city']) && $error_msg = $this->session->get('errors')['building_city'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['more']['row_2']['building_city'] = array(
+            '#title'       => t('Ville de votre bien *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
@@ -276,13 +381,13 @@ class DocumentsForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         $error = '';
         $error_class = '';
-        if( isset($this->session->get('errors')['birthdate']) && $error_msg = $this->session->get('errors')['birthdate'] ){
+        if( isset($this->session->get('errors')['address']) && $error_msg = $this->session->get('errors')['address'] ){
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['birthdate'] = array(
-            '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
-            '#placeholder' => t('24/12/2016'),
+        $form['more']['year'] = array(
+            '#title'       => t('Recevoir le décompte pour l\'année *'),
+            '#placeholder' => t('2000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
             '#required'    => false,
@@ -290,57 +395,8 @@ class DocumentsForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['documents'] = array(
-          '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
-          '#title'      => t('Votre demande'),
-          '#prefix'     => '<h3>'.t('Votre demande').'</h3>',
-        );
-
-        $form['documents']['policies'] = array(
-            '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Police d\'assurance')],
-            '#options'     => array(
-                'Copie de police' => t('Copie de police'),
-                'Déclaration de perte de police' => t('Déclaration de perte de police'),
-                'Provision de certificats de vie' => t('Provision de certificats de vie'),
-                'Valeur de rachat actuelle à titre informatif' => t('Valeur de rachat actuelle à titre informatif')
-            ),
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['documents']['attestations'] = array(
-            '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Attestations fiscales')],
-            '#options'     => array(
-                'Dernière année' => t('Dernière année'),
-                'Autre(s) année(s)' => t('Autre(s) année(s)')
-            ),
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['documents']['other_year'] = array(
-            '#title'       => t('Autre(s) année(s)'),
-            '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
-        );
-
-        $form['documents']['payments'] = array(
-            '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Moyen de paiement')],
-            '#options'     => array(
-                'Copie des factures ouvertes' => t('Copie des factures ouvertes'),
-                'Stock de BVR+' => t('Stock de BVR+'),
-                'Relevé des factures et encaissements' => t('Relevé des factures et encaissements')
-            ),
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['documents']['message'] = array(
-            '#title'       => t('Votre message'),
+        $form['more']['remarque'] = array(
+            '#title'       => t('Remarque'),
             '#type'        => 'textarea',
             '#attributes'  => ['cols' => 59, 'theme' => $theme],
         );
@@ -371,19 +427,26 @@ class DocumentsForm extends FormBase {
         $form_state->setRebuild();
         $errors = array();
 
-        // Assert the civil_state is valid
-        if (!$form_state->getValue('civil_state') || empty($form_state->getValue('civil_state'))) {
-            $errors['civil_state'] = t('Votre état civile est obligatoire.');
+        // Assert the Title is valid
+        if (!$form_state->getValue('title') || empty($form_state->getValue('title'))) {
+            $errors['title'] = t('Votre titre est obligatoire.');
         }
 
-        // Assert the firstname is valid
-        if (!$form_state->getValue('firstname') || empty($form_state->getValue('firstname'))) {
-            $errors['firstname'] = t('Le prénom est obligatoire.');
-        }
+        if ($form_state->getValue('title') == 'Monsieur' || $form_state->getValue('title') == 'Madame') {
+            // Assert the firstname is valid
+            if (!$form_state->getValue('firstname') || empty($form_state->getValue('firstname'))) {
+                $errors['firstname'] = t('Le prénom est obligatoire.');
+            }
 
-        // Assert the lastname is valid
-        if (!$form_state->getValue('lastname') || empty($form_state->getValue('lastname'))) {
-            $errors['lastname'] = t('Le nom est obligatoire.');
+            // Assert the lastname is valid
+            if (!$form_state->getValue('lastname') || empty($form_state->getValue('lastname'))) {
+                $errors['lastname'] = t('Le nom est obligatoire.');
+            }
+        } else {
+            // Assert the lastname is valid
+            if (!$form_state->getValue('company') || empty($form_state->getValue('company'))) {
+                $errors['company'] = t('Votre raison sociale est obligatoire.');
+            }
         }
 
         // Assert the email is valid
@@ -392,10 +455,8 @@ class DocumentsForm extends FormBase {
         }
 
         // Assert the birthdate is valid
-        if (!$form_state->getValue('birthdate') || empty($form_state->getValue('birthdate'))) {
-            $errors['birthdate'] = t('Votre date de naissance est obligatoire.');
-        } else if (\DateTime::createFromFormat('d/m/Y', $form_state->getValue('birthdate')) === false) {
-            $errors['birthdate'] = t('Votre date de naissance semble invalide.');
+        if (!$form_state->getValue('phone') || empty($form_state->getValue('phone'))) {
+            $errors['phone'] = t('Votre date de naissance est obligatoire.');
         }
 
         // Assert the address is valid
@@ -410,7 +471,27 @@ class DocumentsForm extends FormBase {
 
         // Assert the city is valid
         if (!$form_state->getValue('city') || empty($form_state->getValue('city'))) {
-            $errors['city'] = t('Votre localité est obligatoire.');
+            $errors['city'] = t('Votre ville est obligatoire.');
+        }
+
+        // Assert the address is valid
+        if (!$form_state->getValue('building_address') || empty($form_state->getValue('building_address'))) {
+            $errors['building_address'] = t('Votre adresse est obligatoire.');
+        }
+
+        // Assert the zip is valid
+        if (!$form_state->getValue('building_zip') || empty($form_state->getValue('building_zip'))) {
+            $errors['building_zip'] = t('Votre code postal est obligatoire.');
+        }
+
+        // Assert the city is valid
+        if (!$form_state->getValue('building_city') || empty($form_state->getValue('building_city'))) {
+            $errors['building_city'] = t('Votre ville est obligatoire.');
+        }
+
+        // Assert the year is valid
+        if (!$form_state->getValue('year') || empty($form_state->getValue('year'))) {
+            $errors['year'] = t('L\'année est obligatoire.');
         }
 
         // Save errors in sessions to use it on the form builder
@@ -430,33 +511,36 @@ class DocumentsForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // TODO Found better solution to inline errors than hack session to
         if (empty($this->session->get('errors'))) {
+
             $data = array(
-                'policy'       => $form_state->getValue('policy'),
-                'civil_state'  => $form_state->getValue('civil_state'),
-                'firstname'    => $form_state->getValue('firstname'),
-                'lastname'     => $form_state->getValue('lastname'),
-                'email'        => $form_state->getValue('email'),
-                'birthdate'    => $form_state->getValue('birthdate'),
-                'address'      => $form_state->getValue('address'),
-                'zip'          => $form_state->getValue('zip'),
-                'city'         => $form_state->getValue('city'),
-                'policies'     => $form_state->getValue('policies'),
-                'attestations' => $form_state->getValue('attestations'),
-                'other_year'   => $form_state->getValue('other_year'),
-                'payments'     => $form_state->getValue('payments'),
-                'message'      => $form_state->getValue('message'),
+                'title'            => $form_state->getValue('title'),
+                'policy'           => $form_state->getValue('policy'),
+                'firstname'        => $form_state->getValue('firstname'),
+                'lastname'         => $form_state->getValue('lastname'),
+                'company'          => $form_state->getValue('company'),
+                'email'            => $form_state->getValue('email'),
+                'phone'            => $form_state->getValue('phone'),
+                'address'          => $form_state->getValue('address'),
+                'zip'              => $form_state->getValue('zip'),
+                'city'             => $form_state->getValue('city'),
+                'building_address' => $form_state->getValue('building_address'),
+                'building_zip'     => $form_state->getValue('building_zip'),
+                'building_city'    => $form_state->getValue('building_city'),
+                'year'             => $form_state->getValue('year'),
+                'remarque'         => $form_state->getValue('remarque'),
             );
 
             // Send to admin
-            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.page.documents')['receivers']);
+            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.page.tax_attestation')['receivers']);
             $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('email');
-            $this->mail->mail('rp_contact', 'contact_documents', $to, 'fr', $data, $reply);
+            $this->mail->mail('rp_contact', 'contact_tax_attestation', $to, 'fr', $data, $reply);
 
-            drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l\'adresse @email.', [
+            drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l\'adresse @email ou par téléphone au @phone.', [
                 '@firstname' => $form_state->getValue('firstname'),
                 '@lastname'  => $form_state->getValue('lastname'),
                 '@email'     => $form_state->getValue('email'),
+                '@phone'     => $form_state->getValue('phone'),
             ]));
         }
     }

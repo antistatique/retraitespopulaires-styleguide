@@ -1,7 +1,7 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_contact\Form\BuildingForm.
+* Contains \Drupal\rp_contact\Form\ConversionForm.
 */
 
 namespace Drupal\rp_contact\Form;
@@ -16,7 +16,7 @@ use Drupal\Core\State\StateInterface;
 use Drupal\rp_mortgage\Service\Rate;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
-class BuildingForm extends FormBase {
+class ConversionForm extends FormBase {
 
     /**
      * Stores and retrieves temporary data for a given owner
@@ -46,7 +46,7 @@ class BuildingForm extends FormBase {
     * EntityTypeManagerInterface to load Rate
     * @var EntityTypeManagerInterface
     */
-    private $entity_rate;
+    protected $entity_rate;
 
     /**
      * Class constructor.
@@ -81,21 +81,21 @@ class BuildingForm extends FormBase {
     * {@inheritdoc}.
     */
     public function getFormId() {
-        return 'rp_contact_building_form';
+        return 'rp_contact_conversion_form';
     }
 
     /**
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
-        $form['#action'] = '#rp-contact-building-form';
+        $form['#action'] = '#rp-contact-conversion-form';
 
         // Disable caching & HTML5 validation
         $form['#cache']['max-age'] = 0;
         $form['#attributes']['novalidate'] = 'novalidate';
 
         $form['#attached'] = array(
-           'library' =>  array('rp_contact/contact_building_form'),
+           'library' =>  array('rp_contact/contact_conversion_form'),
        );
 
         if (isset($params['theme'])) {
@@ -114,7 +114,7 @@ class BuildingForm extends FormBase {
             );
         }
 
-        $form['building'] = array(
+        $form['conversion'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
           '#title'      => t('Vos informations'),
@@ -129,7 +129,7 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['title'] = array(
+        $form['conversion']['title'] = array(
             '#type'        => 'radios',
             '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => false],
             '#required'    => false,
@@ -142,8 +142,8 @@ class BuildingForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['building']['policy'] = array(
-            '#title'       => t('Votre numéro crédit de construction'),
+        $form['conversion']['policy'] = array(
+            '#title'       => t('Votre numéro de prêt'),
             '#placeholder' => t('123456789'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
@@ -151,7 +151,7 @@ class BuildingForm extends FormBase {
             '#suffix'      => '</div>',
         );
 
-        $form['building']['row_1'] = array(
+        $form['conversion']['row_1'] = array(
             '#prefix'      => '<div class="row">',
             '#suffix'      => '</div>',
         );
@@ -169,8 +169,8 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['row_1']['firstname'] = array(
-            '#title'       => t('Votre prénom'),
+        $form['conversion']['row_1']['firstname'] = array(
+            '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
@@ -178,7 +178,7 @@ class BuildingForm extends FormBase {
             '#suffix'      => $error. '</div></div>',
         );
         if (!empty($readonly)) {
-            $form['building']['row_1']['firstname']['#attributes']['readonly'] = $readonly;
+            $form['conversion']['row_1']['firstname']['#attributes']['readonly'] = $readonly;
         }
 
         // Get readonly
@@ -194,8 +194,8 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['row_1']['lastname'] = array(
-            '#title'       => t('Votre nom de famille'),
+        $form['conversion']['row_1']['lastname'] = array(
+            '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
@@ -203,7 +203,7 @@ class BuildingForm extends FormBase {
             '#suffix'      => $error. '</div></div>',
         );
         if (!empty($readonly)) {
-            $form['building']['row_1']['lastname']['#attributes']['readonly'] = $readonly;
+            $form['conversion']['row_1']['lastname']['#attributes']['readonly'] = $readonly;
         }
 
         // Get readonly
@@ -219,7 +219,7 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['company'] = array(
+        $form['conversion']['company'] = array(
             '#title'       => t('Votre raison sociale'),
             '#placeholder' => t('Retraites Populaires'),
             '#type'        => 'textfield',
@@ -228,7 +228,7 @@ class BuildingForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
         if (!empty($readonly)) {
-            $form['building']['company']['#attributes']['readonly'] = $readonly;
+            $form['conversion']['company']['#attributes']['readonly'] = $readonly;
         }
 
         // Get error to inline it as suffix
@@ -239,7 +239,7 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['email'] = array(
+        $form['conversion']['email'] = array(
             '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'textfield',
@@ -257,9 +257,9 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['phone'] = array(
-            '#title'       => t('Votre numéro de téléphone'),
-            '#placeholder' => t('079 123 45 67 *'),
+        $form['conversion']['phone'] = array(
+            '#title'       => t('Votre numéro de téléphone *'),
+            '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 20, 'theme' => $theme],
             '#required'    => false,
@@ -275,7 +275,7 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['address'] = array(
+        $form['conversion']['address'] = array(
             '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
@@ -285,7 +285,7 @@ class BuildingForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['building']['row_2'] = array(
+        $form['conversion']['row_2'] = array(
             '#prefix'      => '<div class="row">',
             '#suffix'      => '</div>',
         );
@@ -298,7 +298,7 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['row_2']['zip'] = array(
+        $form['conversion']['row_2']['zip'] = array(
             '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
@@ -316,8 +316,74 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['row_2']['city'] = array(
+        $form['conversion']['row_2']['city'] = array(
             '#title'       => t('Votre ville *'),
+            '#placeholder' => t('Lausanne'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#required'    => false,
+            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div></div>',
+        );
+
+        $form['building'] = array(
+          '#type'       => 'fieldset',
+          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#title'      => t('Votre bien'),
+          '#prefix'     => '<h3>'.t('Votre bien').'</h3>',
+        );
+
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['building_address']) && $error_msg = $this->session->get('errors')['building_address'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['building']['building_address'] = array(
+            '#title'       => t('Adresse de votre bien *'),
+            '#placeholder' => t('Chemin de l\'Avenir 1'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['theme' => $theme],
+            '#required'    => false,
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
+        );
+
+        $form['building']['row_2'] = array(
+            '#prefix'      => '<div class="row">',
+            '#suffix'      => '</div>',
+        );
+
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['building_zip']) && $error_msg = $this->session->get('errors')['building_zip'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['building']['row_2']['building_zip'] = array(
+            '#title'       => t('Code postal (NPA) de votre bien *'),
+            '#placeholder' => t('1000'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#required'    => false,
+            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div></div>',
+        );
+
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['building_city']) && $error_msg = $this->session->get('errors')['building_city'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['building']['row_2']['building_city'] = array(
+            '#title'       => t('Ville de votre bien *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
@@ -330,12 +396,23 @@ class BuildingForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
           '#title'      => t('Votre demande'),
-          '#prefix'     => '<h3>'.t('Votre demande').'</h3>',
+          '#prefix'     => '<h3>'.t('Votre demande de conversion').'</h3>',
         );
 
-        $form['more']['row_1'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['amount']) && $error_msg = $this->session->get('errors')['amount'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['more']['amount'] = array(
+            '#title'       => t('Le montant *'),
+            '#placeholder' => t('CHF'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['size' => 20, 'theme' => $theme, 'class' => array('form-chf-numeric', 'text-right')],
+            '#required'    => false,
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         // Get error to inline it as suffix
@@ -354,30 +431,14 @@ class BuildingForm extends FormBase {
                 $options[$rate->id->value] = $rate->getName() . ' ('.number_format($rate->getFirstRate(), 2).')';
             }
         }
-        $form['more']['row_1']['rate'] = array(
-            '#title'       => t('Réserver le taux *'),
+        $form['more']['rate'] = array(
+            '#title'       => t('Le taux *'),
             '#type'        => 'select',
             '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#options'     => $options,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
-        );
-
-        $error = '';
-        $error_class = '';
-        if( isset($this->session->get('errors')['amount']) && $error_msg = $this->session->get('errors')['amount'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
-        }
-        $form['more']['row_1']['amount'] = array(
-            '#title'       => t('Pour un montant *'),
-            '#placeholder' => t('CHF'),
-            '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme, 'class' => array('form-chf-numeric', 'text-right')],
-            '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         $form['more']['remarque'] = array(
@@ -459,6 +520,21 @@ class BuildingForm extends FormBase {
             $errors['city'] = t('Votre ville est obligatoire.');
         }
 
+        // Assert the address is valid
+        if (!$form_state->getValue('building_address') || empty($form_state->getValue('building_address'))) {
+            $errors['building_address'] = t('L\'adresse de votre bien est obligatoire.');
+        }
+
+        // Assert the zip is valid
+        if (!$form_state->getValue('building_zip') || empty($form_state->getValue('building_zip'))) {
+            $errors['building_zip'] = t('Le code postal de votre bien est obligatoire.');
+        }
+
+        // Assert the city is valid
+        if (!$form_state->getValue('building_city') || empty($form_state->getValue('building_city'))) {
+            $errors['building_city'] = t('La ville de votre bien est obligatoire.');
+        }
+
         // Assert the rate is valid
         if (!$form_state->getValue('rate') || empty($form_state->getValue('rate'))) {
             $errors['rate'] = t('Le choix du taux est obligatoire.');
@@ -473,7 +549,7 @@ class BuildingForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         $this->session->set('errors', $errors);
 
-        // If no error, disable rebuilding form
+        // If no error, disable reconversion form
         // TODO Found better solution to inline errors than hack session to
         if (empty($this->session->get('errors'))) {
             $form_state->setRebuild(false);
@@ -486,29 +562,31 @@ class BuildingForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // TODO Found better solution to inline errors than hack session to
         if (empty($this->session->get('errors'))) {
-
             $rate = $this->entity_rate->load($form_state->getValue('rate'));
             $data = array(
-                'title'     => $form_state->getValue('title'),
-                'policy'    => $form_state->getValue('policy'),
-                'firstname' => $form_state->getValue('firstname'),
-                'lastname'  => $form_state->getValue('lastname'),
-                'company'   => $form_state->getValue('company'),
-                'email'     => $form_state->getValue('email'),
-                'phone'     => $form_state->getValue('phone'),
-                'address'   => $form_state->getValue('address'),
-                'zip'       => $form_state->getValue('zip'),
-                'city'      => $form_state->getValue('city'),
-                'rate'      => $rate,
-                'amount'    => $form_state->getValue('amount'),
-                'remarque'  => $form_state->getValue('remarque'),
+                'title'            => $form_state->getValue('title'),
+                'policy'           => $form_state->getValue('policy'),
+                'firstname'        => $form_state->getValue('firstname'),
+                'lastname'         => $form_state->getValue('lastname'),
+                'company'          => $form_state->getValue('company'),
+                'email'            => $form_state->getValue('email'),
+                'phone'            => $form_state->getValue('phone'),
+                'address'          => $form_state->getValue('address'),
+                'zip'              => $form_state->getValue('zip'),
+                'city'             => $form_state->getValue('city'),
+                'building_address' => $form_state->getValue('building_address'),
+                'building_zip'     => $form_state->getValue('building_zip'),
+                'building_city'    => $form_state->getValue('building_city'),
+                'rate'             => $rate,
+                'amount'           => $form_state->getValue('amount'),
+                'remarque'         => $form_state->getValue('remarque'),
             );
 
             // Send to admin
-            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.page.building')['receivers']);
+            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.page.conversion')['receivers']);
             $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('email');
-            $this->mail->mail('rp_contact', 'contact_building', $to, 'fr', $data, $reply);
+            $this->mail->mail('rp_contact', 'contact_conversion', $to, 'fr', $data, $reply);
 
             drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l\'adresse @email ou par téléphone au @phone.', [
                 '@firstname' => $form_state->getValue('firstname'),

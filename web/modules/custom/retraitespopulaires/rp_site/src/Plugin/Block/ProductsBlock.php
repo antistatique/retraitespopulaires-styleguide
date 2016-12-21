@@ -152,6 +152,9 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
                     'url.path',
                     'url.query_args'
                 ],
+                'tags' => [
+                    'node_list:product', // invalidated whenever any Node entity is updated, deleted or created
+                ],
             ]
         ];
     }
