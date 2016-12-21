@@ -46,7 +46,7 @@ class ConversionForm extends FormBase {
     * EntityTypeManagerInterface to load Rate
     * @var EntityTypeManagerInterface
     */
-    private $entity_rate;
+    protected $entity_rate;
 
     /**
      * Class constructor.
@@ -143,7 +143,7 @@ class ConversionForm extends FormBase {
         );
 
         $form['conversion']['policy'] = array(
-            '#title'       => t('Votre de prêt'),
+            '#title'       => t('Votre numéro de prêt'),
             '#placeholder' => t('123456789'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
@@ -562,7 +562,6 @@ class ConversionForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // TODO Found better solution to inline errors than hack session to
         if (empty($this->session->get('errors'))) {
-
             $rate = $this->entity_rate->load($form_state->getValue('rate'));
             $data = array(
                 'title'            => $form_state->getValue('title'),
