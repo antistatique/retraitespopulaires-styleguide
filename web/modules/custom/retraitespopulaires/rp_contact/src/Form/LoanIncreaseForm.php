@@ -81,14 +81,14 @@ class LoanIncreaseForm extends FormBase {
     * {@inheritdoc}.
     */
     public function getFormId() {
-        return 'rp_contact_loan_increase_form';
+        return 'rp-contact-loan-increase-form';
     }
 
     /**
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
-        $form['#action'] = '#rp-contact-loan_increase-form';
+        $form['#action'] = '#rp-contact-loan-increase-form';
 
         // Disable caching & HTML5 validation
         $form['#cache']['max-age'] = 0;
