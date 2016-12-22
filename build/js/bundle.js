@@ -262,23 +262,40 @@ function number_format() {
   (0, _jquery2.default)('.form-chf-numeric').autoNumeric('init', {
     aSep: '\'',
     pSign: 's',
-    aSign: ' CHF',
-    unSetOnSubmit: true
+    aSign: ' CHF'
   });
 
   (0, _jquery2.default)('.form-surface-numeric').autoNumeric('init', {
     aSep: '\'',
     mDec: '0',
     pSign: 's',
-    aSign: ' m2',
-    unSetOnSubmit: true
+    aSign: ' m2'
   });
 
   (0, _jquery2.default)('.form-percent-numeric').autoNumeric('init', {
     aSep: '\'',
     pSign: 's',
-    aSign: ' %',
-    unSetOnSubmit: true
+    aSign: ' %'
+  });
+
+  // Replace formatted value to raw one when submitting forms
+  (0, _jquery2.default)(document).on('submit', 'form', function () {
+    var $this = (0, _jquery2.default)(this);
+
+    $this.find('.form-chf-numeric').each(function (i, el) {
+      var $el = (0, _jquery2.default)(el);
+      $el.val($el.autoNumeric('get'));
+    });
+
+    $this.find('.form-surface-numeric').each(function (i, el) {
+      var $el = (0, _jquery2.default)(el);
+      $el.val($el.autoNumeric('get'));
+    });
+
+    $this.find('.form-percent-numeric').each(function (i, el) {
+      var $el = (0, _jquery2.default)(el);
+      $el.val($el.autoNumeric('get'));
+    });
   });
 }
 
@@ -453,7 +470,7 @@ function smoothscroll_click() {
 }
 
 var smoothscroll_to = function smoothscroll_to(dest) {
-  var offset = arguments.length <= 1 || arguments[1] === undefined ? 100 : arguments[1];
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
 
   var target = dest.length ? dest : (0, _jquery2.default)('[name=' + this.hash.slice(1) + ']');
   if (target.length) {
