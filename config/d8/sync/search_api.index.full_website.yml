@@ -53,11 +53,11 @@ field_settings:
   saa_field_file_page:
     label: 'Search api attachments: Fichier(s) attaché(s)'
     property_path: saa_field_file_page
-    type: string
+    type: text
   saa_field_file_news:
     label: 'Search api attachments: Fichier(s) attaché(s)'
     property_path: saa_field_file_news
-    type: string
+    type: text
   status:
     label: status
     datasource_id: 'entity:node'
