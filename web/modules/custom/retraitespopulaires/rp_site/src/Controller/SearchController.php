@@ -60,13 +60,8 @@ class SearchController extends ControllerBase {
           'offset' => !is_null($this->request->get('page')) ? $this->request->get('page') * $this->limit : 0,
         ]);
 
-        // returns an array containing all the words found inside the string
-        $words = str_word_count($search, 1);
-
         $query->setFulltextFields(['title', 'body', 'filename', 'saa_field_file_document', 'saa_field_file_news', 'saa_field_file_page']);
-
-        // Flatten array to multiple arguments to generate an OR query
-        call_user_func_array( array($query, 'keys'), $words);
+        $query->keys($search);
 
         $query->sort('search_api_relevance', 'DESC');
         $results = $query->execute();
