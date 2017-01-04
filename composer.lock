@@ -4,13 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< c3133ebe6734f33dcc9f96f4de3ca46f877e3530
-    "hash": "c93ef42aef8fb53c8072c3b6215ddf27",
-    "content-hash": "44c3fe0a5b39fdd0d2eadf814f9aef49",
-=======
     "hash": "9479087b743e8f0685db56379a0da356",
     "content-hash": "bdd6b4011586f8cca66957b46b551a69",
->>>>>>> Create patch for Seach API Attachments
     "packages": [
         {
             "name": "alchemy/zippy",
