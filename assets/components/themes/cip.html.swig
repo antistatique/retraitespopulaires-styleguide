@@ -37,6 +37,7 @@ attachements_theme: cip
 attachements_rentals: cip
 attachements_lastnews_theme: cip
 tabs_theme: cip
+attachment_ca_theme: cip
 ---
 
 {# This page is an examples page listing all the components (Atoms, Molecules, Organisms) available in the styleguide with a specific coloring theme.
