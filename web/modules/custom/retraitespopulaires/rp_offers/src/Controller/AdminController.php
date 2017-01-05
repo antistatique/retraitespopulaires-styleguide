@@ -242,11 +242,25 @@ class AdminController extends ControllerBase {
     public function request(Node $node) {
         $variables = array('node' => $node);
 
+        $variables['search'] = \Drupal::formBuilder()->getForm('Drupal\rp_offers\Form\AdminRequestSearchForm');
+
         $query = $this->entity_query->get('rp_offers_request');
         $query->condition('offer_target_id', $node->nid->value);
 
+        // Add Seach conditions from AdminRequestSearchForm
+        $search = $this->request->get('q');
+        if (!empty($search)) {
+            $group = $query->orConditionGroup()
+                ->condition('email', $search, 'CONTAINS')
+                ->condition('firstname', $search, 'CONTAINS')
+                ->condition('lastname', $search, 'CONTAINS')
+            ;
+            $query->condition($group);
+        }
+
         // Pager
         $ids = $query->execute();
+        $total = count($ids);
         pager_default_initialize(count($ids), $this->limit);
         $variables['pager'] = array(
             '#type' => 'pager',
@@ -260,6 +274,7 @@ class AdminController extends ControllerBase {
         $query->range($page*$this->limit, $this->limit);
         $ids = $query->execute();
         $variables['requests'] = $this->entity_offers_request->loadMultiple($ids);
+        $variables['total'] = $total;
 
         return [
             '#theme'     => 'rp_offers_admin_request_page',
