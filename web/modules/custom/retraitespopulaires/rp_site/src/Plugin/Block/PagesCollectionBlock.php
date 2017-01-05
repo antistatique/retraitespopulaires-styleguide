@@ -135,6 +135,9 @@ class PagesCollectionBlock extends BlockBase implements ContainerFactoryPluginIn
                     'url.path',
                     'url.query_args'
                 ],
+                'tags' => [
+                    'node_list:page', // invalidated whenever any Node entity is updated, deleted or created
+                ],
             ]
         ];
     }

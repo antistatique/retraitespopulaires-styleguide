@@ -71,7 +71,7 @@ class SearchZipController extends ControllerBase {
     * Ajax Advisors (Conseillers) search by NPA.
     */
     public function advisors($zip = null) {
-        $variables = array();
+        $variables = array('advisors' => array());
         $variables['theme'] = $this->request->query->get('theme');
 
         // Retrieve all matched terms with the searched link
@@ -92,23 +92,9 @@ class SearchZipController extends ControllerBase {
             $nids[$node->nid] = $node->nid;
         }
 
-        if (empty($nids)) {
-            $query = $this->database->select('node_field_data', 'n');
-            $query->fields('n')
-                ->condition('n.status', 1)
-                ->condition('n.type', 'advisor')
-                ->addTag('random')
-                ->range(0, 2)
-            ;
-            $result = $query->execute();
-            // List of nodes
-            $nids = array();
-            foreach ($result as $node) {
-                $nids[$node->nid] = $node->nid;
-            }
+        if (!empty($nids)) {
+            $variables['advisors'] = $this->entity_node->loadMultiple($nids);
         }
-
-        $variables['advisors'] = $this->entity_node->loadMultiple($nids);
 
         // Ajax - renderrender the view whitout all the template
         $params = [

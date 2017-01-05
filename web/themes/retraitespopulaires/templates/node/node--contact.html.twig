@@ -86,19 +86,22 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('content') }}>
-
     {% if node.field_email_form.value %}
-      <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
+      <div class="col-xs-12 col-md-4">
     {% else %}
-      <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
     {% endif %}
       {{ load_block('rp_contact_contact_teaser_detail_block', {'node': null, 'contact': node, 'theme': node.field_profession.entity.tid.value|theme_profession}) }}
     </div>
 
     {% if node.field_email_form.value %}
-      <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-0">
+      <div class="col-xs-12 col-md-8">
         <div class="spacer visible-xs visible-sm"></div>
-        {{ load_form('rp_contact', 'ContactForm', {'node': node, 'theme': node.field_profession.entity.tid.value|theme_profession}) }}
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2 col-md-12 col-lg-10 col-lg-offset-2">
+            {{ load_form('rp_contact', 'ContactForm', {'node': node, 'theme': node.field_profession.entity.tid.value|theme_profession}) }}
+          </div>
+        </div>
       </div>
     {% endif %}
   </div>

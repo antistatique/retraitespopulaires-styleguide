@@ -5,7 +5,7 @@ set :application, 'retraites-populaires'
 set :repo_url, 'dplmgr@192.168.188.51:/data/git/retraitespopulaires.git'
 
 # Used only if styleguide is external of the repository
-# set :styleguide_repo, 'git@github.com:antistatique/retraitespopulaires-styleguide.git'
+set :styleguide_repo, 'git@github.com:antistatique/retraitespopulaires-styleguide.git'
 
 set :app_path, "web"
 set :styleguide_path, "node_modules/@antistatique/retraitespopulaires-styleguide"
@@ -55,16 +55,18 @@ namespace :deploy do
   # before :starting, "drupal:backup"
 
   # Used only if styleguide is external of the repository
-  # after :updated, "styleguide:update"
+  after :updated, "styleguide:clone"
 
   # Used only if styleguide is internal of the repository
-  after :updated, "styleguide:build"
+  # after :updated, "styleguide:build"
+
   after :updated, "styleguide:deploy_build"
 
   after :updated, "drupal:config:import"
   after :updated, "drupal:module:disable"
   after :updated, "drupal:updatedb"
   after :updated, "drupal:cache:clear"
+  after :updated, "drupal:set_permissions"
 
   before :cleanup, :fix_permission do
     on roles(:app) do
@@ -73,9 +75,9 @@ namespace :deploy do
         directories = (releases - releases.last(fetch(:keep_releases)))
         if directories.any?
           directories_str = directories.map do |release|
-            releases_path.join(release).join("#{fetch(:app_path)}/sites/default")
+            releases_path.join(release).join("#{fetch(:app_path)}")
           end.join(" ")
-          execute :chmod, 'u+w', directories_str
+          execute :chmod, '-R' ,'u+w', directories_str
         end
       end
     end

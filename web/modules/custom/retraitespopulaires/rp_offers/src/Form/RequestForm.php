@@ -61,7 +61,12 @@ class RequestForm extends FormBase {
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
-        $form['#action'] = '#rp-offers-form';
+        $form['#action'] = '#bellavita-offers-form';
+        $form['#attributes']['id'] = 'bellavita-offers-form';
+
+        // Disable caching & HTML5 validation
+        $form['#cache']['max-age'] = 0;
+        $form['#attributes']['novalidate'] = 'novalidate';
 
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
@@ -75,41 +80,67 @@ class RequestForm extends FormBase {
             );
         }
 
-        if( isset($this->session->get('errors')['email']) && $error_msg = $this->session->get('errors')['email'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
-        }
-
         // A hidden field can't be altered, Drupal assert it
         $form['node'] = array(
             '#type'     => 'hidden',
             '#value'    => $params['node']->nid->value,
-            '#required' => true
+            '#required' => false
         );
 
+        // Calculate the number of day(s) left to generate dynamic title
+        $title = t('Cette offre est terminée, vous ne pouvez plus participer au tirage au sort');
+        $now = new \DateTime();
+        $date_end = \DateTime::createFromFormat('Y-m-d', $params['node']->field_date_end->value);
+        if ($now <= $date_end) {
+            $interval = $now->diff($date_end);
+            $days = $interval->format('%a');
+            if ($days > 1) {
+                $title = t('Il vous reste @days jours pour participer au tirage au sort', ['@days' => $days] );
+            } elseif ($interval->format('%a') == 1) {
+                $title = t('Il vous reste 1 jour pour participer aux tirage au sort');
+            } else {
+                $title = t('C\'est le dernier jour pour participer au tirage au sort dépêcher vous');
+            }
+        }
         $form['personnal'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-bordered fieldset-no-legend')],
-          '#title'      => t('Participer aux tirage au sort'),
-          '#prefix'     => '<h3>'.t('Participer aux tirage au sort').'</h3>',
+          '#title'      => $title,
+          '#prefix'     => '<h3>'.$title.'</h3>',
         );
 
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['firstname']) && $error_msg = $this->session->get('errors')['firstname'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
         $form['personnal']['firstname'] = array(
-            '#title'       => t('Votre prénom'),
+            '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
-            '#required'    => true,
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
+            '#required'    => false,
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['lastname']) && $error_msg = $this->session->get('errors')['lastname'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
         $form['personnal']['lastname'] = array(
-            '#title'       => t('Votre nom de famille'),
+            '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
-            '#required'    => true,
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
+            '#required'    => false,
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         // Get error to inline it as suffix
@@ -121,41 +152,65 @@ class RequestForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['email'] = array(
-            '#title'       => t('Votre E-mail'),
+            '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
-            '#type'        => 'email',
-            '#required'    => true,
+            '#type'        => 'textfield',
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
 
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['address']) && $error_msg = $this->session->get('errors')['address'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
         $form['personnal']['address'] = array(
-            '#title'       => t('Votre adresse'),
+            '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
-            '#required'    => true,
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
+            '#required'    => false,
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['zip']) && $error_msg = $this->session->get('errors')['zip'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
         $form['personnal']['zip'] = array(
-            '#title'       => t('Votre NPA'),
+            '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10],
-            '#required'    => true,
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
+            '#required'    => false,
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['city']) && $error_msg = $this->session->get('errors')['city'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
         $form['personnal']['city'] = array(
-            '#title'       => t('Votre localité'),
+            '#title'       => t('Votre localité *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 30],
-            '#required'    => true,
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
+            '#required'    => false,
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         $form['separator'] = array( '#markup' => '<hr />' );
@@ -191,12 +246,37 @@ class RequestForm extends FormBase {
 
         // Assert this email don't already request that node
         if (!$this->request->isAvailable($form_state->getValue('email'), $form_state->getValue('node'))) {
-            $errors['email'] = t('Il me semble que vous avez déjà participer.');
+            $errors['email'] = t('Vous avez déjà participé. Merci de tenter votre chance lors d\'un prochain concours.');
         }
 
         // Assert the node is both active & currently running
         if (!$this->request->isEnable($form_state->getValue('node'))) {
             $errors['email'] = t('Navré mais il n\'est plus possible de participer à cette offre.');
+        }
+
+        // Assert Votre prénom is valid
+        if (!$form_state->getValue('firstname') || empty($form_state->getValue('firstname'))) {
+            $errors['firstname'] = t('Votre prénom est obligatoire.');
+        }
+
+        // Assert Votre nom de famille is valid
+        if (!$form_state->getValue('lastname') || empty($form_state->getValue('lastname'))) {
+            $errors['lastname'] = t('Votre nom de famille est obligatoire.');
+        }
+
+        // Assert Votre adresse is valid
+        if (!$form_state->getValue('address') || empty($form_state->getValue('address'))) {
+            $errors['address'] = t('Votre adresse est obligatoire.');
+        }
+
+        // Assert Votre NPA is valid
+        if (!$form_state->getValue('zip') || empty($form_state->getValue('zip'))) {
+            $errors['zip'] = t('Votre code postale (NPA) est obligatoire.');
+        }
+
+        // Assert Votre localite is valid
+        if (!$form_state->getValue('city') || empty($form_state->getValue('city'))) {
+            $errors['city'] = t('Votre localité est obligatoire.');
         }
 
         // Save errors in sessions to use it on the form builder
@@ -231,7 +311,7 @@ class RequestForm extends FormBase {
 
             drupal_set_message(t('Merci de votre participation.'));
 
-            $form_state->setRedirect('entity.node.canonical', ['node' =>$form_state->getValue('node') ]);
+            $form_state->setRedirect('entity.node.canonical', ['node' => $form_state->getValue('node') ]);
         }
     }
 }

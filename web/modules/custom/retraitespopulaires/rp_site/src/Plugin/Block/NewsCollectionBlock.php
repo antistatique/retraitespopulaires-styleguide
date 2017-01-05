@@ -103,12 +103,11 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
     public function build($params = array()) {
         $variables = array();
 
-        $now = date('Y-m-d h:i:s');
-
+        $now = new \DateTime();
         $query = $this->entity_query->get('node')
             ->condition('type', 'news')
             ->condition('status', 1)
-            ->condition('field_date', $now, '<=')
+            ->condition('field_date', $now->format('c'), '<=')
         ;
 
         $taxonomy_term_alias = $this->request->query->get('taxonomy_term_alias');
@@ -152,6 +151,9 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
                 'contexts' => [
                     'url.path',
                     'url.query_args'
+                ],
+                'tags' => [
+                    'node_list:news' // invalidated whenever any Node entity is updated, deleted or created
                 ],
             ]
         ];

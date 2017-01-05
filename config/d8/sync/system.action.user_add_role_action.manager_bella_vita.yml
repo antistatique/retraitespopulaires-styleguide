@@ -1,0 +1,14 @@
+uuid: f2f1dd62-dc22-4bd2-a4ce-32c5601f2168
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.manager_bella_vita
+  module:
+    - user
+id: user_add_role_action.manager_bella_vita
+label: 'Ajouter le rôle Gestion Bella vita aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: manager_bella_vita

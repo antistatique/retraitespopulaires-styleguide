@@ -23,6 +23,31 @@ function rp_mortgage_theme($existing, $type, $theme, $path)
         'path' => 'themes/retraitespopulaires/templates/' . $theme,
         'template'  => 'blocks/table_rate'
     ),
+    'rp_mortgage_table_hypothec_rate_block' => array(
+      // Use the following syntax to retrieve all variables in the "variables" container
+        'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions into a sub folder
+      // using [template].html.twig
+        'path' => 'themes/retraitespopulaires/templates/' . $theme,
+        'template'  => 'blocks/table_hypothec_rate'
+    ),
+    'rp_mortgage_table_building_rate_block' => array(
+      // Use the following syntax to retrieve all variables in the "variables" container
+        'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions into a sub folder
+      // using [template].html.twig
+        'path' => 'themes/retraitespopulaires/templates/' . $theme,
+        'template'  => 'blocks/table_building_rate'
+    ),
+    'rp_mortgage_table_company_rate_block' => array(
+      // Use the following syntax to retrieve all variables in the "variables" container
+        'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions into a sub folder
+      // using [template].html.twig
+        'path' => 'themes/retraitespopulaires/templates/' . $theme,
+        'template'  => 'blocks/table_company_rate'
+    ),
+
     // ---------------------------------------------------------------------
       'rp_mortgage_calculator_block' => array(
         // Use the following syntax to retrieve all variables in the "variables" container

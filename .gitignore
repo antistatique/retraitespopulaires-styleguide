@@ -9,6 +9,7 @@ npm-debug.log
 /dist
 /build
 /styleguide
+/log
 
 # Drupal 8 & Styleguide
 /web/themes/retraitespopulaires/build
@@ -47,3 +48,5 @@ web/core/phpunit.xml
 
 config/d8/sync/devel.settings.yml
 config/d8/sync/system.menu.devel.yml
+
+/log

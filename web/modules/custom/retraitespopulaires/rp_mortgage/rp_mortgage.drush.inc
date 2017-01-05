@@ -27,7 +27,8 @@ function drush_rp_mortgage_import_rates() {
 
     $cmd = new Drupal\rp_mortgage\Command\ImportRateCommand(
         \Drupal::entityTypeManager(),
-        \Drupal::service('entity.query')
+        \Drupal::service('entity.query'),
+        \Drupal::service('cache_tags.invalidator')
     );
     $cmd->import($file, $institution);
 }

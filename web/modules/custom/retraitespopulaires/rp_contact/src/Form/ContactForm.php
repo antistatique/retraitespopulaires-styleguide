@@ -72,6 +72,10 @@ class ContactForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-contact-form';
 
+        // Disable caching & HTML5 validation
+        $form['#cache']['max-age'] = 0;
+        $form['#attributes']['novalidate'] = 'novalidate';
+
         $theme = '';
         if (isset($params['theme'])) {
             $theme = $params['theme'];
@@ -89,16 +93,11 @@ class ContactForm extends FormBase {
             );
         }
 
-        if( isset($this->session->get('errors')['email']) && $error_msg = $this->session->get('errors')['email'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
-        }
-
         // A hidden field can't be altered, Drupal assert it
         $form['node'] = array(
             '#type'     => 'hidden',
             '#value'    => $params['node']->nid->value,
-            '#required' => true
+            '#required' => false
         );
 
         $form['personnal'] = array(
@@ -122,11 +121,11 @@ class ContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['row_1']['firstname'] = array(
-            '#title'       => t('Votre prénom'),
+            '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div></div>',
         );
@@ -140,11 +139,11 @@ class ContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['row_1']['lastname'] = array(
-            '#title'       => t('Votre nom de famille'),
+            '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div></div>',
         );
@@ -158,11 +157,11 @@ class ContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['email'] = array(
-            '#title'       => t('Votre e-mail'),
+            '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
-            '#type'        => 'email',
+            '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -176,21 +175,21 @@ class ContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['birthdate'] = array(
-            '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span>'),
+            '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
             '#placeholder' => t('24/12/2016'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
 
         $form['personnal']['address'] = array(
-            '#title'       => t('Votre adresse'),
+            '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -228,11 +227,11 @@ class ContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['phone'] = array(
-            '#title'       => t('Votre numéro de téléphone'),
+            '#title'       => t('Votre numéro de téléphone *'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 20, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -253,10 +252,10 @@ class ContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['message']['subject'] = array(
-            '#title'       => t('Sujet de votre demande'),
+            '#title'       => t('Sujet de votre demande *'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -270,9 +269,9 @@ class ContactForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['message']['message'] = array(
-            '#title'       => t('Votre message'),
+            '#title'       => t('Votre message *'),
             '#type'        => 'textarea',
-            '#required'    => true,
+            '#required'    => false,
             '#attributes'  => ['cols' => 59, 'theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',

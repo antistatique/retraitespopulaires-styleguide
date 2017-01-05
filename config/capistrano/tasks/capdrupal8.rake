@@ -95,8 +95,19 @@ namespace :drupal do
       end
     end
   end
-end
 
+  desc 'Set recommended Drupal permissions'
+  task :set_permissions do
+    on roles(:app) do
+      within release_path.join(fetch(:app_path)) do
+        execute :chmod, '-R', '550', '.'
+      end
+      within shared_path do
+        execute :chmod, '-R', '770', 'web/sites/default/files'
+      end
+    end
+  end
+end
 
 namespace :files do
   desc "Download drupal sites files (from remote to local)"

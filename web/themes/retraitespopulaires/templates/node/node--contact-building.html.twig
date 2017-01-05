@@ -82,6 +82,18 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('content') }}>
+    {{ load_block('rp_contact_contact_cta_block') }}
+
+    {% if node.body.summary %}
+      <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
+      <div class="spacer spacer-sm"></div>
+    {% endif %}
+
+    {% if content.body %}
+      <div class="entity-body body-{{ node.field_profession.entity.tid.value|theme_profession }}">
+        {{ content.body }}
+      </div>
+    {% endif %}
 
     <div class="spacer"></div>
     <div class="row">
@@ -89,6 +101,5 @@
         {{ load_form('rp_contact', 'BuildingForm', {'theme': node.field_profession.entity.tid.value|theme_profession}) }}
       </div>
     </div>
-
   </div>
 </article>

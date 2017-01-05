@@ -68,14 +68,13 @@
   {% if label_display in ['before', 'invisible'] %}
     {%
       set label_classes = [
-        type == 'file' ? 'btn',
-        type == 'file' ? 'btn-primary',
-        type == 'file' ? 'btn-lg',
       ]
     %}
+    {% if type != 'file' %}
     <div{{ attributes.addClass(label_classes) }}>
       {{ label }}
     </div>
+    {% endif %}
   {% endif %}
   {% if prefix is not empty %}
     <span class="field-prefix">{{ prefix }}</span>

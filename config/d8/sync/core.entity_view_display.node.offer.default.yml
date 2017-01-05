@@ -7,7 +7,10 @@ dependencies:
     - field.field.node.offer.field_available_offers
     - field.field.node.offer.field_cover
     - field.field.node.offer.field_date_end
-    - field.field.node.offer.field_profession
+    - field.field.node.offer.field_document
+    - field.field.node.offer.field_document_random
+    - field.field.node.offer.field_faq
+    - field.field.node.offer.field_faq_random
     - field.field.node.offer.field_web_site
     - node.type.offer
   module:
@@ -51,13 +54,38 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
-  field_profession:
+  field_document:
     weight: 107
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_document_random:
+    weight: 106
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_faq:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_faq_random:
+    weight: 108
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_web_site:
     weight: 102
     label: above

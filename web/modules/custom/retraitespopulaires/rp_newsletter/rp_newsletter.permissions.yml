@@ -1,0 +1,4 @@
+'administer rp newsletter':
+  title: 'Administer Retraites Populaires Newsletter'
+  description: 'Configure Retraites Populaires Newsletter.'
+  restrict access: true

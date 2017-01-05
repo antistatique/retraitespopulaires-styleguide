@@ -14,6 +14,7 @@ use Drupal\Core\Url;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\State\StateInterface;
+use Drupal\rp_site\Service\Profession;
 
 /**
 * Provides a 'FAQs Filter' Block
@@ -49,13 +50,20 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
     private $state;
 
     /**
+     * Profession Service
+     * @var Profession
+     */
+    private $profession;
+
+    /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity,  AliasManagerInterface $alias_manager, StateInterface $state) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity,  AliasManagerInterface $alias_manager, StateInterface $state, Profession $profession) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_taxonomy = $entity->getStorage('taxonomy_term');
         $this->alias_manager   = $alias_manager;
         $this->state           = $state;
+        $this->profession      = $profession;
     }
 
     /**
@@ -71,7 +79,8 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
             // Load customs services used in this class.
             $container->get('entity_type.manager'),
             $container->get('path.alias_manager'),
-            $container->get('state')
+            $container->get('state'),
+            $container->get('rp_site.profession')
         );
     }
 
@@ -99,6 +108,7 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
 
                 if($alias == $taxonomy_term_alias) {
                     $variables['selected'] = $this->entity_taxonomy->load($profession->tid);
+                    $variables['theme'] = $this->profession->theme($profession->tid);
                 }
             }
         }

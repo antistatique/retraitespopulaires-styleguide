@@ -1,0 +1,32 @@
+uuid: 0d84f7b0-6698-4156-af39-e5246dbd0258
+langcode: fr
+status: true
+dependencies: {  }
+id: manager_bella_vita
+label: 'Gestion Bella vita'
+weight: 3
+is_admin: null
+permissions:
+  0: 'use text format full_html'
+  1: 'access content overview'
+  2: 'create offer content'
+  3: 'delete any offer content'
+  4: 'delete own offer content'
+  5: 'delete offer revisions'
+  6: 'edit any offer content'
+  7: 'edit own offer content'
+  8: 'revert offer revisions'
+  9: 'view offer revisions'
+  11: 'view the administration theme'
+  14: 'change own username'
+  16: 'administer rp offers'
+  17: 'access administration pages'
+  18: 'access toolbar'
+  19: 'create news content'
+  20: 'delete own news content'
+  21: 'delete news revisions'
+  22: 'edit any news content'
+  23: 'edit own news content'
+  24: 'revert news revisions'
+  25: 'view news revisions'
+  26: 'view own unpublished content'

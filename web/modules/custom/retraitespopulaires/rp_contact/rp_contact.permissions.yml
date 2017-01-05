@@ -1,0 +1,4 @@
+'administer rp contact':
+  title: 'Administer Retraites Populaires contact'
+  description: 'Configure Retraites Populaires contact.'
+  restrict access: true

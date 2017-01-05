@@ -10,7 +10,7 @@ field_name: field_entity
 entity_type: node
 bundle: contact
 label: Entité
-description: 'Par exemple : Service client ou CEPV'
+description: 'Par exemple : Service conseil clients'
 required: false
 translatable: true
 default_value: {  }

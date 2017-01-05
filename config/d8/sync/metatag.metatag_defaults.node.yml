@@ -7,5 +7,17 @@ _core:
 id: node
 label: Content
 tags:
-  title: '[node:title] | [site:name]'
   description: '[node:summary]'
+  image_src: '[node:field_cover]'
+  title: '[node:title] | [site:name]'
+  og_description: '[node:summary]'
+  og_image: '[node:field_cover:rp_og_image]'
+  og_image_height: '[node:field_cover:rp_og_image:height]'
+  og_image_width: '[node:field_cover:rp_og_image:width]'
+  og_site_name: '[site:name]'
+  og_title: '[current-page:title]'
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_image: '[node:field_cover:rp_og_image]'
+  twitter_cards_image_height: '[node:field_cover:rp_og_image:height]'
+  twitter_cards_image_width: '[node:field_cover:rp_og_image:width]'
+  twitter_cards_type: summary_large_image

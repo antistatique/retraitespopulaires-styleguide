@@ -1,9 +1,16 @@
 uuid: 584e679a-308a-433b-a2cc-e55b289e7ff8
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.node.body
+    - field.storage.node.field_file_product
+    - field.storage.node.field_file_news
+    - field.storage.node.field_file_page
+    - field.storage.node.field_file_faq
+    - field.storage.node.field_file_document
+    - field.storage.node.field_file_building
+    - field.storage.node.field_file_plan
     - search_api.server.solr
   module:
     - search_api
@@ -14,20 +21,6 @@ name: 'Full website'
 description: ''
 read_only: false
 field_settings:
-  status:
-    label: null
-    datasource_id: 'entity:node'
-    property_path: status
-    type: boolean
-    indexed_locked: true
-    type_locked: true
-  uid:
-    label: null
-    datasource_id: 'entity:node'
-    property_path: uid
-    type: integer
-    indexed_locked: true
-    type_locked: true
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -58,11 +51,25 @@ field_settings:
           page: default
           partnership: default
           product: default
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
   title:
-    label: Title
+    label: Titre
     datasource_id: 'entity:node'
     property_path: title
-    type: string
+    type: text
   body:
     label: Body
     datasource_id: 'entity:node'
@@ -76,7 +83,79 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: type
     type: string
+  field_file_product:
+    label: 'Fichier(s) attaché(s)'
+    datasource_id: 'entity:node'
+    property_path: field_file_product
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_file_product
+  field_file_news:
+    label: 'Fichier(s) attaché(s) - News'
+    datasource_id: 'entity:node'
+    property_path: field_file_news
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_file_news
+  field_file_page:
+    label: 'Fichier(s) attaché(s) - Pages'
+    datasource_id: 'entity:node'
+    property_path: field_file_page
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_file_page
+  field_file_faq:
+    label: 'Fichier(s) attaché(s) - FAQs'
+    datasource_id: 'entity:node'
+    property_path: field_file_faq
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_file_faq
+  field_file_document:
+    label: 'Fichier attaché - Documents utiles'
+    datasource_id: 'entity:node'
+    property_path: field_file_document
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_file_document
+  field_file_building:
+    label: 'Fichier(s) attaché(s) - Constructions'
+    datasource_id: 'entity:node'
+    property_path: field_file_building
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_file_building
+  field_file_plan:
+    label: 'Fichier(s) de plan(s)'
+    datasource_id: 'entity:node'
+    property_path: field_file_plan
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_file_plan
+  nid:
+    label: 'Identifiant (ID)'
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
 processor_settings:
+  add_url:
+    plugin_id: add_url
+    settings: {  }
+  aggregated_field:
+    plugin_id: aggregated_field
+    settings: {  }
+  content_access:
+    plugin_id: content_access
+    settings:
+      weights:
+        preprocess_query: -10
   highlight:
     plugin_id: highlight
     settings:
@@ -88,9 +167,21 @@ processor_settings:
       suffix: '</strong>'
       weights:
         postprocess_query: 0
-  aggregated_field:
-    plugin_id: aggregated_field
-    settings: {  }
+  html_filter:
+    plugin_id: html_filter
+    settings:
+      fields: {  }
+      title: true
+      alt: true
+      tags:
+        h1: 5
+        h2: 3
+        h3: 2
+        strong: 2
+        b: 2
+      weights:
+        preprocess_index: -10
+        preprocess_query: -10
   ignorecase:
     plugin_id: ignorecase
     settings:
@@ -98,11 +189,11 @@ processor_settings:
       weights:
         preprocess_index: -10
         preprocess_query: -10
-  rendered_item:
-    plugin_id: rendered_item
-    settings: {  }
   node_status:
     plugin_id: node_status
+    settings: {  }
+  rendered_item:
+    plugin_id: rendered_item
     settings: {  }
   stopwords:
     plugin_id: stopwords
@@ -281,29 +372,6 @@ processor_settings:
       weights:
         preprocess_index: -10
         preprocess_query: -10
-  html_filter:
-    plugin_id: html_filter
-    settings:
-      fields: {  }
-      title: true
-      alt: true
-      tags:
-        h1: 5
-        h2: 3
-        h3: 2
-        strong: 2
-        b: 2
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
-  content_access:
-    plugin_id: content_access
-    settings:
-      weights:
-        preprocess_query: -10
-  add_url:
-    plugin_id: add_url
-    settings: {  }
   file_attachments:
     plugin_id: file_attachments
     settings:

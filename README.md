@@ -9,6 +9,11 @@ First of all, you need to have the following tools installed globally on your en
   * drush
   * npm
 
+don't forget to add bins to your path such:
+
+  * php
+  * mysql
+add m
 The git repository of Retraites Populaires is:
 
 ```
@@ -157,16 +162,62 @@ We use Capistrano to deploy:
     $ bundle exec cap rpeti deploy
 
 
-## Solr
+## 🔍 Solr (6.1.0+) search Engine & Tika (1.13+) Extractor
 We are using solr for search index.
 
-Solr need to be configured for drupal. Follow the INSTALL.txt found in the search_api_solr module.
+Solr need to be configured for drupal. Follow the INSTALL.txt found in the `search_api_solr` module.
+
+As a pre-requisite for running your own Solr server, you'll need Java 6 or higher.
+
+### Installation
+
+Install all prerequisites and configuration from `web/modules/contrib/search_api_solr/INSTALL.txt` then
+
+### For windows
+
+### For Unix
+
+Start Solr with:
+    $ bin/solr start
+
+Create the new instance retraitespopulaires-website
+    $ bin/solr create -c retraitespopulaires-website
+
+The creation will generate a folder under `$SOLR_PATH/6.1.0/server/solr/retraitespopulaires-website`
+
+Copy all the configs files from `web/modules/contrib/search_api_solr/solr-conf/6.x/*` into `$SOLR_PATH/6.1.0/server/solr/retraitespopulaires-website/conf`
+
+    $ cp web/modules/contrib/search_api_solr/solr-conf/6.x/* $SOLR_PATH/6.1.0/server/solr/retraitespopulaires-website/conf
+
+Restart Solr
+    $ bin/solr restart
+
+Check your Solr status with `solr status` and with `http://localhost:8983/solr/#/`
+
+### Usage
+
+Start Solr with:
+    $ bin/solr start
+
+### Drupal Configuration
+
+Check the Solr configuration on `admin/config/search/search-api/server/solr/edit` and the Tika under `admin/config/search/search_api_attachments`
+
 
 ## 🏆 Tests
 
     $ phpunit
 
 ## 🚑 Troubleshootings
+
+### Error while `npm install` ?
+
+```
+ERR! 404 Not Found: @antistatique/retraitespopulaires-stlyeguide
+ERR! 404 '@antistatique/retraitespopulaires-styleguide' is not in the npm regitry.
+```
+
+Solution: Connect yourself to npm using `npm login` with your NPM credentials.
 
 ### Error while importing config ?
 
@@ -176,7 +227,13 @@ Entities exist of type <em class="placeholder">Shortcut link</em> and <em class=
 entities need to be deleted before importing.
 ```
 
-Solution: Delete all your shortcuts from the Drupal Admin on [admin/config/user-interface/shortcut/manage/default/customize](admin/config/user-interface/shortcut/manage/default/customize).
+Solution 1: Delete all your shortcuts from the Drupal Admin on [admin/config/user-interface/shortcut/manage/default/customize](admin/config/user-interface/shortcut/manage/default/customize).
+
+Solution 2: Delete all your shortcuts with drush
+
+```
+drush ev '\Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();'
+```
 
 ### How to disable the Drupal Cache for dev ?
 The tricks is to add this two lines in your `settings.php`:

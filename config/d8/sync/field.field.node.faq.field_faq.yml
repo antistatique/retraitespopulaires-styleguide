@@ -1,0 +1,27 @@
+uuid: e8d41be3-14f7-41bc-9a10-ce744de3eb2d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq
+    - node.type.faq
+id: node.faq.field_faq
+field_name: field_faq
+entity_type: node
+bundle: faq
+label: Question(s)-Réponse(s)
+description: 'Nous conseillons de ne pas lier plus de 3 questions-réponses pour une navigation optimale.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      faq: faq
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

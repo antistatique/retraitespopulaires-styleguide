@@ -2,11 +2,8 @@ uuid: 6b4de14b-21f3-4c91-90c5-c36337d3743f
 langcode: fr
 status: false
 dependencies:
-  config:
-    - views.view.search
   module:
     - system
-    - views
   theme:
     - retraitespopulaires
 id: formulaireexposesearchpage_1

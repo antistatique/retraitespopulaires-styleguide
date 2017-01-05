@@ -90,6 +90,10 @@ class BuildingForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = '#rp-contact-building-form';
 
+        // Disable caching & HTML5 validation
+        $form['#cache']['max-age'] = 0;
+        $form['#attributes']['novalidate'] = 'novalidate';
+
         $form['#attached'] = array(
            'library' =>  array('rp_contact/contact_building_form'),
        );
@@ -110,11 +114,6 @@ class BuildingForm extends FormBase {
             );
         }
 
-        if( isset($this->session->get('errors')['email']) && $error_msg = $this->session->get('errors')['email'] ){
-            $error_class = 'error';
-            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
-        }
-
         $form['building'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
@@ -132,8 +131,8 @@ class BuildingForm extends FormBase {
         }
         $form['building']['title'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => true],
-            '#required'    => true,
+            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => false],
+            '#required'    => false,
             '#options'     => array(
                 'Madame'   => t('Madame'),
                 'Monsieur' => t('Monsieur'),
@@ -222,7 +221,7 @@ class BuildingForm extends FormBase {
         }
         $form['building']['company'] = array(
             '#title'       => t('Votre raison sociale'),
-            '#placeholder' => t('Schaffter pives'),
+            '#placeholder' => t('Retraites Populaires'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
@@ -241,11 +240,11 @@ class BuildingForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['email'] = array(
-            '#title'       => t('Votre e-mail'),
+            '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
-            '#type'        => 'email',
+            '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -260,10 +259,10 @@ class BuildingForm extends FormBase {
         }
         $form['building']['phone'] = array(
             '#title'       => t('Votre numéro de téléphone'),
-            '#placeholder' => t('079 123 45 67'),
+            '#placeholder' => t('079 123 45 67 *'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 20, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
         );
@@ -277,11 +276,11 @@ class BuildingForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['address'] = array(
-            '#title'       => t('Votre adresse'),
+            '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -300,11 +299,11 @@ class BuildingForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['row_2']['zip'] = array(
-            '#title'       => t('Votre code postal (NPA)'),
+            '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -318,11 +317,11 @@ class BuildingForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['building']['row_2']['city'] = array(
-            '#title'       => t('Votre ville'),
+            '#title'       => t('Votre ville *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -356,10 +355,10 @@ class BuildingForm extends FormBase {
             }
         }
         $form['more']['row_1']['rate'] = array(
-            '#title'       => t('Réserver le taux'),
+            '#title'       => t('Réserver le taux *'),
             '#type'        => 'select',
             '#attributes'  => ['theme' => $theme],
-            '#required'    => true,
+            '#required'    => false,
             '#options'     => $options,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
@@ -372,11 +371,11 @@ class BuildingForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['more']['row_1']['amount'] = array(
-            '#title'       => t('Pour un montant'),
+            '#title'       => t('Pour un montant *'),
             '#placeholder' => t('CHF'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 20, 'theme' => $theme, 'class' => array('form-chf-numeric', 'text-right')],
-            '#required'    => true,
+            '#required'    => false,
             '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div></div>',
         );
@@ -447,7 +446,7 @@ class BuildingForm extends FormBase {
 
         // Assert the address is valid
         if (!$form_state->getValue('address') || empty($form_state->getValue('address'))) {
-            $errors['address'] = t('Votre addresse est obligatoire.');
+            $errors['address'] = t('Votre adresse est obligatoire.');
         }
 
         // Assert the zip is valid

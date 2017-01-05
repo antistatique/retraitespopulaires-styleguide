@@ -4,6 +4,7 @@ namespace Drupal\rp_mortgage\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\rp_mortgage\Service\Rate;
+
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -55,12 +56,12 @@ class TableRateBlock extends BlockBase implements ContainerFactoryPluginInterfac
         return new self($configuration, $plugin_id, $plugin_definition, $container->get('rp_mortgage.rate'));
     }
 
-
     /**
      * {@inheritdoc}
      */
     public function build($params = array()) {
         $variables = $params;
+        $theme = 'rp_mortgage_table_rate_block';
 
         if ($params['type']) {
             $rates = $this->rateService->getRates($params['type']);
@@ -71,22 +72,25 @@ class TableRateBlock extends BlockBase implements ContainerFactoryPluginInterfac
 
             switch ($params['type']) {
                 case 'Prêts hypothécaires standard':
-                    $variables['headers'] = [
-                        'name' => $this->t("Taux d'avance"),
-                        'first_rate' => $this->t('1er rang (70%)'),
-                        'second_rate' => $this->t('2e rang (10%)'),
-                    ];
+                    $theme = 'rp_mortgage_table_hypothec_rate_block';
                     break;
-                default:
-                    $variables['headers'] = FALSE;
+                case 'Taux credit de construction':
+                    $theme = 'rp_mortgage_table_building_rate_block';
+                    break;
+                case 'Prêts corporations':
+                    $theme = 'rp_mortgage_table_company_rate_block';
+                    break;
             }
 
             $variables['rates'] = $rates;
         }
 
         return [
-            '#theme'     => 'rp_mortgage_table_rate_block',
+            '#theme'     => $theme,
             '#variables' => $variables,
+            '#cache' => [
+                'tags'=> ['rp_mortage_rates'], // invalidate cache when importing new data.
+            ],
         ];
     }
 }

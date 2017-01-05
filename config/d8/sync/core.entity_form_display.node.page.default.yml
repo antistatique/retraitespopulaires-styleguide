@@ -9,8 +9,11 @@ dependencies:
     - field.field.node.page.field_cover
     - field.field.node.page.field_document
     - field.field.node.page.field_document_page
+    - field.field.node.page.field_document_random
     - field.field.node.page.field_faq
+    - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_profil
@@ -21,6 +24,7 @@ dependencies:
     - field_group
     - file
     - image
+    - metatag
     - path
     - text
 third_party_settings:
@@ -102,7 +106,9 @@ third_party_settings:
       children:
         - field_products
         - field_faq
+        - field_faq_random
         - field_document
+        - field_document_random
       parent_name: group_attachment
       weight: 14
       label: 'Positionner au pied du contenu'
@@ -151,7 +157,7 @@ content:
     third_party_settings: {  }
     type: image_image
   field_document:
-    weight: 19
+    weight: 20
     settings:
       match_operator: CONTAINS
       size: 60
@@ -166,6 +172,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_document_random:
+    weight: 21
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_faq:
     weight: 18
     settings:
@@ -174,12 +186,23 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_faq_random:
+    weight: 19
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_file_page:
     weight: 14
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+  field_metatags:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
   field_products:
     weight: 17
     settings:

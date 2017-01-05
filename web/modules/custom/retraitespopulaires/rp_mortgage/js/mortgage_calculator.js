@@ -9,7 +9,7 @@
       return;
     }
 
-    
+
     var $amountInput = $('.js-amount-input'),
       $amountWithFeeInput = $('.js-amount-with-fee-input'),
       $minimalIncomeForAmountInput = $('.js-minimal-income-for-amount'),
@@ -25,17 +25,17 @@
       ;
 
     $amountInput.bind('keyup change', function (e) {
-      var amount = parseFloat($(this).val());
+      var amount = parseFloat($(this).autoNumeric('get'));
       updateAmountInputs(amount);
     });
 
     $equityCapitalInput.bind('keyup change', function(e) {
-      var equityCapital = parseFloat($(this).val());
+      var equityCapital = parseFloat($(this).autoNumeric('get'));
       updateEquityCapitalInputs(equityCapital);
     });
 
     $incomeInput.bind('keyup change', function(e) {
-      var income = parseFloat($(this).val());
+      var income = parseFloat($(this).autoNumeric('get'));
       updateIncomeInputs(income);
     });
 
@@ -51,9 +51,9 @@
       updateResults();
     });
 
-    updateAmountInputs(parseFloat($amountInput.val()));
-    updateEquityCapitalInputs(parseFloat($equityCapitalInput.val()));
-    updateIncomeInputs(parseFloat($incomeInput.val()));
+    updateAmountInputs(parseFloat($amountInput.autoNumeric('get')));
+    updateEquityCapitalInputs(parseFloat($equityCapitalInput.autoNumeric('get')));
+    updateIncomeInputs(parseFloat($incomeInput.autoNumeric('get')));
     updateRateInputs(parseFloat($rateSelect.val()), parseFloat($rateSelect.find(':selected').data('second-rate')));
 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -77,9 +77,9 @@
         minimalEquityCapital = getFondsPropresMinPourPrixAchat(amount, MORTGAGE_SETTINGS.equityCapitalMinRate);
       }
 
-      $amountWithFeeInput.val(amountWithFee);
-      $minimalIncomeForAmountInput.val(minimalIncome);
-      $minimalEquityCapitalForAmount.val(minimalEquityCapital);
+      $amountWithFeeInput.autoNumeric('set', amountWithFee);
+      $minimalIncomeForAmountInput.autoNumeric('set', minimalIncome);
+      $minimalEquityCapitalForAmount.autoNumeric('set', minimalEquityCapital);
     }
 
     function updateEquityCapitalInputs(equityCapital) {
@@ -99,8 +99,8 @@
         );
       }
 
-      $maxAmountForEquityCapitalInput.val(maxAmount);
-      $minimalIncomeForEquityCapitalInput.val(minIncome);
+      $maxAmountForEquityCapitalInput.autoNumeric('set', maxAmount);
+      $minimalIncomeForEquityCapitalInput.autoNumeric('set', minIncome);
     }
 
     function updateIncomeInputs(income) {
@@ -119,19 +119,19 @@
         minEquityCapital = getFondsPropresMinPourRevenuAnnuel(maxAmount, MORTGAGE_SETTINGS.equityCapitalMinRate);
       }
 
-      $maxAmountForIncomeInput.val(maxAmount);
-      $minEquityCapitalForIncomeInput.val(minEquityCapital);
+      $maxAmountForIncomeInput.autoNumeric('set', maxAmount);
+      $minEquityCapitalForIncomeInput.autoNumeric('set', minEquityCapital);
     }
 
     function updateRateInputs(firstRate, secondRate) {
-      $rateInput.val(firstRate);
+      $rateInput.autoNumeric('set', firstRate);
     }
 
     function updateResults() {
-      var amount = parseFloat($amountInput.val());
-      var equityCapital = parseFloat($equityCapitalInput.val());
-      var income = parseFloat($incomeInput.val());
-      var firstRate = parseFloat($rateInput.val());
+      var amount = parseFloat($amountInput.autoNumeric('get'));
+      var equityCapital = parseFloat($equityCapitalInput.autoNumeric('get'));
+      var income = parseFloat($incomeInput.autoNumeric('get'));
+      var firstRate = parseFloat($rateInput.autoNumeric('get'));
       var secondRate = parseFloat($rateSelect.find(':selected').data('second-rate'));
 
       if (!amount || isNaN(amount) || !equityCapital || isNaN(equityCapital) || !income || isNaN(income)) {
@@ -209,8 +209,8 @@
       $firstAmortisation.text(formatPrice(firstAmortisation));
       $secondAmortisation.text(formatPrice(secondAmortisation));
       $maintenanceFee.text(formatPrice(maintenanceFee));
-      $monthlyLivingCost.text(monthlyLivingCost);
-      $yearlyLivingCost.text(yearlyLivingCost);
+      $monthlyLivingCost.text(formatPrice(monthlyLivingCost));
+      $yearlyLivingCost.text(formatPrice(yearlyLivingCost));
 
       $loanVisualisation
         .find('.progress-bar')
@@ -256,7 +256,18 @@
   });
 
   function formatPrice(price) {
-    return price;
+    return price.formatMoney(2, '.', '\'') + ' CHF';
   }
+
+  Number.prototype.formatMoney = function (c, d, t) {
+    var n = this,
+    c = isNaN(c = Math.abs(c)) ? 2 : c,
+    d = d === undefined ? '.' : d,
+    t = t === undefined ? ',' : t,
+    s = n < 0 ? '-' : '',
+    i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+    j = (j = i.length) > 3 ? j % 3 : 0;
+    return s + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, '$1' + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '');
+  };
 
 })(jQuery, window.MORTGAGE_RATES, window.MORTGAGE_SETTINGS);

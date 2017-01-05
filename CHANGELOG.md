@@ -1,6 +1,49 @@
 CHANGELOG
 ---------
 
+## 1.1.8 (2016-12-21))
+ - Added ConversionForm (Demande de conversion d'un taux variable en taux fixe)
+ - Added DepreciationForm (Demande de modification de l'amortissement du 1er rang)
+ - Added TaxAttestationForm (Demande d'attestation d'intérêts)
+ - Added LoanIncreaseForm (Demande d'augmentation de prêt)
+ - Added BuildingForm (Demande de réservation d'un taux)
+ - Fix issue on admin hen an Offer is deleted and already has subscribers
+ - Improve cachability of list and purge of them
+
+## 1.1.7 (2016-12-01)
+ - Metatags og:image resized
+
+## 1.1.6 (2016-12-01)
+ - Remove kint from module dependencies
+
+## 1.1.5 (2016-12-01)
+ - Solr integration finalized
+ - Metatags integration and configuration
+
+## 1.1.3 (2016-12-01)
+ - Fix rates imports dates
+ - Improve cache of rates
+
+## 1.1.2 (2016-12-01)
+ - Update Drupal to 8.2.3
+
+## 1.1.1 (2016-11-28)
+ - Fix error when searching by NPA
+
+## 1.1.0 (2016-11-25)
+ - New ACL Bella vita
+ - Query condition using timezone (News)
+ - New Empty State Search by NPA
+ - Solr integration
+ - Attachments for every Content Types & Checkbox for random
+ - Improvment  Mortgage tables
+ - Open Graph 
+ - Fix breadcrumb color on Building
+ - FAQ & Documents collection use color of selected filter profession
+ - Fix filter products
+ - Add Body to every Forms
+ - Improvment Bella vita detail page
+
 ## 1.0.3 (2016-11-18)
  - Fix typo `Changement d'adresses` to `Changement d'adresse`
 

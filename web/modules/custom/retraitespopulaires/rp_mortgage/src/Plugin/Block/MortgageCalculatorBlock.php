@@ -102,7 +102,10 @@ class MortgageCalculatorBlock extends BlockBase implements ContainerFactoryPlugi
             '#variables' => $variables,
             '#attached' => array(
                'library' =>  array('rp_mortgage/calculator'),
-            )
+           ),
+           '#cache' => [
+               'tags'=> ['rp_mortage_rates'], // invalidate cache when importing new data.
+           ],
         ];
     }
 

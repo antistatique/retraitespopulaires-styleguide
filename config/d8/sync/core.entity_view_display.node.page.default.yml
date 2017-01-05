@@ -9,8 +9,11 @@ dependencies:
     - field.field.node.page.field_cover
     - field.field.node.page.field_document
     - field.field.node.page.field_document_page
+    - field.field.node.page.field_document_random
     - field.field.node.page.field_faq
+    - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_profil
@@ -19,6 +22,7 @@ dependencies:
   module:
     - file
     - image
+    - metatag
     - text
     - user
 _core:
@@ -63,6 +67,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_document_random:
+    weight: 12
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_faq:
     weight: 5
     label: above
@@ -70,12 +83,27 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_faq_random:
+    weight: 13
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_file_page:
     weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: file_default
+  field_metatags:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
   field_products:
     weight: 7
     label: above

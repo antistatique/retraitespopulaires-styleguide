@@ -10,7 +10,7 @@ id: node.page.field_faq
 field_name: field_faq
 entity_type: node
 bundle: page
-label: Questions-réponses
+label: Question(s)-Réponse(s)
 description: 'Nous conseillons de ne pas lier plus de 3 questions-réponses pour une navigation optimale.'
 required: false
 translatable: false

@@ -1,3 +1,4 @@
+{% if variables.contacts %}
 <div id="contactez-nous" class="attachments-contact">
   <div class="container">
     <div class="row">
@@ -8,7 +9,7 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
         {% if variables.contacts %}
           {% for contact in variables.contacts %}
             {{ load_block('rp_contact_contact_teaser_block', {'node': variables.node, 'contact': contact, 'theme': variables.theme, 'search_npa': variables.node.field_search_npa.value}) }}
@@ -20,3 +21,4 @@
     </div>
   </div>
 </div>
+{% endif %}

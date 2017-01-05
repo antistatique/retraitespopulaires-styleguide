@@ -7,7 +7,10 @@ dependencies:
     - field.field.node.offer.field_available_offers
     - field.field.node.offer.field_cover
     - field.field.node.offer.field_date_end
-    - field.field.node.offer.field_profession
+    - field.field.node.offer.field_document
+    - field.field.node.offer.field_document_random
+    - field.field.node.offer.field_faq
+    - field.field.node.offer.field_faq_random
     - field.field.node.offer.field_web_site
     - image.style.thumbnail
     - node.type.offer
@@ -27,7 +30,6 @@ third_party_settings:
         - body
         - field_date_end
         - field_available_offers
-        - field_profession
         - field_web_site
       parent_name: group_tabs
       weight: 2
@@ -42,12 +44,41 @@ third_party_settings:
     group_tabs:
       children:
         - group_attachments
+        - group_attachment
       parent_name: ''
       weight: 1
       label: Tabs
       format_type: tabs
       format_settings:
         direction: vertical
+        classes: ''
+        id: ''
+    group_attachment:
+      children:
+        - group_attachments_footer
+      parent_name: group_tabs
+      weight: 3
+      label: 'Elements attachés'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_attachments_footer:
+      children:
+        - field_document
+        - field_document_random
+        - field_faq
+        - field_faq_random
+      parent_name: group_attachment
+      weight: 110
+      label: 'Positionner au pied du contenu'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
         classes: ''
         id: ''
 id: node.offer.default
@@ -81,11 +112,34 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
-  field_profession:
-    weight: 6
-    settings: {  }
+  field_document:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
+  field_document_random:
+    weight: 28
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_faq:
+    weight: 29
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_faq_random:
+    weight: 30
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_web_site:
     weight: 7
     settings:

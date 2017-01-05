@@ -1,16 +1,14 @@
-uuid: c8ca92e3-0773-44a1-99de-59458fbc2d32
+uuid: 26822eb7-ec96-418b-87a8-37407c533524
 langcode: fr
 status: true
 dependencies:
   module:
     - node
-id: node.field_zip
-field_name: field_zip
+id: node.field_faq_random
+field_name: field_faq_random
 entity_type: node
-type: integer
-settings:
-  unsigned: false
-  size: normal
+type: boolean
+settings: {  }
 module: core
 locked: false
 cardinality: 1

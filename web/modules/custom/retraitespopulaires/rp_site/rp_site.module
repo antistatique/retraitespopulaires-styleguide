@@ -231,6 +231,14 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'blocks/documents_collection'
         ),
+        'rp_site_search_teaser_block' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'template'  => 'blocks/search_teaser'
+        ),
         // Pages themes
         // ---------------------------------------------------------------------
         'rp_site_launcher_page' => array(
@@ -241,6 +249,27 @@ function rp_site_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
             'template'  => 'pages/launcher'
         ),
+        'rp_site_search_page' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'template'  => 'pages/search'
+        ),
+
 
     );
+}
+
+function rp_site_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+    Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
+}
+
+function rp_site_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
+    Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
+}
+
+function rp_site_entity_delete(Drupal\Core\Entity\EntityInterface $entity) {
+    Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
 }
