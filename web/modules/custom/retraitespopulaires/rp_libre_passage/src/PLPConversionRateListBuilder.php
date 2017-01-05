@@ -31,6 +31,12 @@ class PLPConversionRateListBuilder extends EntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\rp_libre_passage\Entity\PLPInterestRate */
+
+    // Dont display disabled entities
+    if (!$entity->getStatus()) {
+        return;
+    }
+
     $row['gender']   = $entity->getGender();
     $row['age']      = $entity->getAge();
     $row['rate_0']   = $entity->getRate(0) . '%';
