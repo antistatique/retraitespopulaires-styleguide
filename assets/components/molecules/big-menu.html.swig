@@ -11,7 +11,7 @@ notes: |
     <li><a class="btn btn-primary" href="/" accesskey="1">Page d'accueil du site Retraites Populaires</a></li>
     <li><a class="btn btn-primary" href="#main-content" accesskey="2" >Passer la navigation</a></li>
     <li><a class="btn btn-primary" href="#full-accessible-navigation" accesskey="3" >Accéder à la navigation</a></li>
-    <li><a class="btn btn-primary" href="#global-search" accesskey="4" >Accéder au champ de recherche</a></li>
+    <li><a class="btn btn-primary" href="/recherche" accesskey="4" >Accéder au champ de recherche</a></li>
     <li><a class="btn btn-primary" href="mailto:info@retraitespopulaires.ch" accesskey="9">Contacter un conseiller</a></li>
   </ul>
 </nav>
