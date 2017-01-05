@@ -14,6 +14,7 @@ use \DateTime;
 use Drupal\user\PrivateTempStoreFactory;
 use Drupal\Core\State\StateInterface;
 use Drupal\rp_libre_passage\Service\PLPCalculator;
+use Drupal\rp_libre_passage\Service\PLPConversionRate;
 
 class PLPCalculatorForm extends FormBase {
 
@@ -36,11 +37,18 @@ class PLPCalculatorForm extends FormBase {
     protected $plp_calculator;
 
     /**
+    * The PLP Conversion Rate (Taux de conversions).
+    * @var PLPConversionRate
+    */
+    protected $plp_conversion_rate;
+
+    /**
      * Class constructor.
      */
-    public function __construct(PrivateTempStoreFactory $private_tempstore, StateInterface $state, PLPCalculator $plp_calculator) {
+    public function __construct(PrivateTempStoreFactory $private_tempstore, StateInterface $state, PLPCalculator $plp_calculator, PLPConversionRate $plp_conversion_rate) {
         $this->state = $state;
         $this->plp_calculator = $plp_calculator;
+        $this->plp_conversion_rate = $plp_conversion_rate;
 
         // Init session
         // TODO Found better solution to inline errors than hack session to
@@ -56,7 +64,8 @@ class PLPCalculatorForm extends FormBase {
         // Load the service required to construct this class.
         $container->get('user.private_tempstore'),
         $container->get('state'),
-        $container->get('rp_libre_passage.plp_calculator')
+        $container->get('rp_libre_passage.plp_calculator'),
+        $container->get('rp_libre_passage.plp_conversion_rate')
       );
     }
 
@@ -241,20 +250,29 @@ class PLPCalculatorForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
+
+        // Get Men ages
         $options = array();
-        foreach (explode(';',$this->state->get('rp_libre_passage.settings.age_men')) as $age) {
+        $age_men = $this->plp_conversion_rate->getAges('man');
+        asort($age_men);
+        foreach ($age_men as $age) {
             $options[$age] = $age;
             $form['#attached']['drupalSettings']['age_men'][] = array(
                 'value' => $age,
             );
         }
-        foreach (explode(';',$this->state->get('rp_libre_passage.settings.age_women')) as $age) {
+
+        // Get Women ages
+        $options = array();
+        $age_women = $this->plp_conversion_rate->getAges('woman');
+        asort($age_women);
+        foreach ($age_women as $age) {
             $options[$age] = $age;
             $form['#attached']['drupalSettings']['age_women'][] = array(
                 'value' => $age,
             );
         }
-        asort($options);
+
         $form['libre_passage']['age'] = array(
             '#title'       => t('Âge souhaité pour le versement des prestations *'),
             '#type'        => 'select',

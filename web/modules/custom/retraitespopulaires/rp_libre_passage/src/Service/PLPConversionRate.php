@@ -38,6 +38,7 @@ class PLPConversionRate {
             ->get('plp_conversion_rate')
             ->condition('gender', $gender)
             ->condition('age', $age, '<=')
+            ->condition('status', 1)
             ->sort('age', 'DESC')
             ->range(0, 1)
             ->execute()
@@ -54,5 +55,37 @@ class PLPConversionRate {
         }
 
         return $rate->getRate($percent);
+    }
+
+    /**
+     * Retrieve the availables ages according the given gender
+     * (Âge souhaité pour le versement des prestations)
+     * @return \Drupal\Core\Entity\EntityInterface[]
+     */
+    public function getAges($gender) {
+        $ids = $this->entity_query
+            ->get('plp_conversion_rate')
+            ->condition('gender', $gender)
+            ->condition('status', 1)
+            ->sort('age', 'DESC')
+            ->execute()
+        ;
+
+        // Fetch the result
+        $ages = array();
+        if (!empty($ids)) {
+            $entites = $this->entity_conversion_rate->loadMultiple($ids);
+
+            foreach ($entites as $entity) {
+                $age = $entity->getAge();
+                $ages[$age] = $age;
+            }
+        }
+
+        if (empty($ages)) {
+            return null;
+        }
+
+        return $ages;
     }
 }
