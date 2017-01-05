@@ -30,7 +30,10 @@
             </tr>
           {% else %}
             <tr>
-              <td>Rente annuelle de retraite de couple dès {{ pension }}</td>
+              <td>
+                <p>{% trans %}Rente annuelle de retraite de couple dès {{ pension }}{% endtrans %}</p>
+                <p class="m-b-0">{% trans %}Taux de réversibilité de {{ variables.results.percent }}%{% endtrans %}</p>
+              </td>
               <td>
                 <div class="form-group readonly">
                   <input type="text" readonly="" name="annual_pension_single" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.annual_pension_couple }}">
@@ -39,7 +42,7 @@
             </tr>
 
             <tr>
-              <td>Rente annuelle de conjoint/partenaire survivant</td>
+              <td>{% trans %}Rente annuelle de conjoint/partenaire survivant{% endtrans %}</td>
               <td>
                 <div class="form-group readonly">
                   <input type="text" readonly="" name="annual_pension_single" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.pension_survivor }}">
@@ -55,12 +58,12 @@
 
       <div class="spacer spacer-md"></div>
       <div class="alert alert-info">
-        Les prestations mentionnées ci-dessus sont indicatives et ne sauraient engager contractuellement Retraites Populaires.
+        {% trans %}Les prestations mentionnées ci-dessus sont indicatives et ne sauraient engager contractuellement Retraites Populaires.{% endtrans %}
       </div>
 
       <div class="spacer spacer-md"></div>
 
-      <p>Notre offre vous intéresse ? N'hésitez pas à compléter le formulaire ci-dessous. Un conseiller de Retraites Populaires prendra contact avec vous.</p>
+      <p>{% trans %}Notre offre vous intéresse ? N'hésitez pas à compléter le formulaire ci-dessous. Un conseiller de Retraites Populaires prendra contact avec vous.{% endtrans %}</p>
       <div class="spacer spacer-md"></div>
 
       <div class="row">
