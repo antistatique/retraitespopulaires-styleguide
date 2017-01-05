@@ -5,7 +5,7 @@ collection: examples
 styleguide: true
 layout: examples.html.swig
 ---
-{% include '../atoms/alert.html.swig' with {'type': 'info'} %}
+{% include '../atoms/alert.html.swig' %}
 
 <div class="alert alert-success">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
