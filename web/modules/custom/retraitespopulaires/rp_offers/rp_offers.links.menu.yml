@@ -7,6 +7,6 @@ rp_offers.admin.settings:
     parent: rp_offers.admin
     route_name: rp_offers.admin.settings
 rp_offers.admin.requests:
-    title: Participations
+    title: Offres
     parent: rp_offers.admin
     route_name: rp_offers.admin.requests
