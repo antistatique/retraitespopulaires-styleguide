@@ -7,7 +7,7 @@ layout: website.html.swig
 ---
 {% include '../organisms/header.html.swig' %}
 
-{% include '../atoms/funky-waves.html.swig' with {img: 'https://www.retraitespopulaires.ch/upload/docs/image/jpeg/2016-07/banner-pilier3a.jpg'} %}
+{% include '../atoms/funky-waves.html.swig' with {img: 'https://www.retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/coucher-soleil-champs-echallens_2.jpg?itok=Poi819cm'} %}
 
 <div class="container-fluid">
   <div class="row">
