@@ -87,7 +87,7 @@ third_party_settings:
         - group_details
         - group_contacts
       parent_name: ''
-      weight: 11
+      weight: 0
       label: Tabs
       format_type: tabs
       format_settings:
@@ -238,7 +238,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_metatags:
-    weight: 117
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -270,8 +270,14 @@ content:
     type: boolean_checkbox
   path:
     type: path
-    weight: 12
+    weight: 1
     settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 3
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -283,6 +289,5 @@ content:
 hidden:
   created: true
   langcode: true
-  promote: true
   sticky: true
   uid: true
