@@ -93,7 +93,8 @@
               "Fix Ckeditor warning when local file not found": "patches/CKEDITOR_fix_No_such_file_or_directory_in__locale_parse_js_file_warning.patch"
             },
             "drupal/search_api_attachments": {
-              "Assert configuration form is displayed": "patches/search_api_attachments.FileExtractor-configform-alpha4.patch"
+              "Assert configuration form is displayed": "patches/search_api_attachments.FileExtractor-configform-alpha4.patch",
+              "FilesExtrator processor should use new getFieldsHelper()": "https://www.drupal.org/files/issues/use-getFieldsHelper-in-FilesExtrator-class-2827028-2.patch"
             }
         }
     }
