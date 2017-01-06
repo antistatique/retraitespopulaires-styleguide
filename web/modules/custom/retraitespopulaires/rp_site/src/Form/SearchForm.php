@@ -52,7 +52,6 @@ class SearchForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
         $form['#action'] = Url::fromRoute('rp_site.search')->toString();
         $form['#method'] = 'GET';
-        $form['#attributes']['class'] = array('global-search');
 
         $form['form-wrapper_start'] = array(
             '#markup' => '<div class="form-group">',
