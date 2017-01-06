@@ -11,7 +11,7 @@
   <div class="search-body">
     {% if variables.result.body %}
       {% set body = variables.result.body %}
-      <p class="m-0">{{ body|replace({'<strong>': '<mark>', '</strong>': '</mark>'})|raw }}</p>
+      <p class="m-0">{{ body|raw }}</p>
     {% endif %}
   </div>
 </a>

@@ -105,6 +105,22 @@ field_settings:
         - field.storage.node.field_file_document
       module:
         - file
+datasource_settings:
+  'entity:node':
+    plugin_id: 'entity:node'
+    settings:
+      bundles:
+        default: true
+        selected: {  }
+      languages:
+        default: true
+        selected: {  }
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
 processor_settings:
   add_url:
     plugin_id: add_url
@@ -117,39 +133,58 @@ processor_settings:
     settings:
       weights:
         preprocess_query: -10
+    weights:
+      preprocess_query: -10
   highlight:
-    plugin_id: highlight
-    settings:
-      highlight: always
-      excerpt: true
-      excerpt_length: 256
-      exclude_fields: {  }
-      prefix: '<strong>'
-      suffix: '</strong>'
-      weights:
-        postprocess_query: 0
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<mark>'
+    suffix: '</mark>'
+    weights:
+      postprocess_query: 0
   html_filter:
-    plugin_id: html_filter
-    settings:
-      fields: {  }
-      title: true
-      alt: true
-      tags:
-        h1: 5
-        h2: 3
-        h3: 2
-        strong: 2
-        b: 2
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
+    fields:
+      - node_grants
+      - url
+      - rendered_item
+      - saa_field_file_document
+      - saa_field_file_page
+      - saa_field_file_news
+      - title
+      - body
+      - type
+      - filename
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
+      em: 1
+      u: 1
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
   ignorecase:
-    plugin_id: ignorecase
-    settings:
-      fields: {  }
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
+    fields:
+      - node_grants
+      - url
+      - rendered_item
+      - saa_field_file_document
+      - saa_field_file_page
+      - saa_field_file_news
+      - title
+      - body
+      - type
+      - filename
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
   node_status:
     plugin_id: node_status
     settings: {  }
@@ -157,185 +192,67 @@ processor_settings:
     plugin_id: rendered_item
     settings: {  }
   stopwords:
-    plugin_id: stopwords
-    settings:
-      fields:
-        - rendered_item
-      stopwords:
-        - alors
-        - au
-        - aucuns
-        - aussi
-        - autre
-        - avant
-        - avec
-        - avoir
-        - bon
-        - car
-        - ce
-        - cela
-        - ces
-        - ceux
-        - chaque
-        - ci
-        - comme
-        - comment
-        - dans
-        - des
-        - du
-        - dedans
-        - dehors
-        - depuis
-        - deux
-        - devrait
-        - doit
-        - donc
-        - dos
-        - droite
-        - début
-        - elle
-        - elles
-        - en
-        - encore
-        - essai
-        - est
-        - et
-        - eu
-        - fait
-        - faites
-        - fois
-        - font
-        - force
-        - haut
-        - hors
-        - ici
-        - il
-        - ils
-        - je
-        - juste
-        - la
-        - le
-        - les
-        - leur
-        - là
-        - ma
-        - maintenant
-        - mais
-        - mes
-        - mine
-        - moins
-        - mon
-        - mot
-        - même
-        - ni
-        - nommés
-        - notre
-        - nous
-        - nouveaux
-        - ou
-        - où
-        - par
-        - parce
-        - parole
-        - pas
-        - personnes
-        - peut
-        - peu
-        - pièce
-        - plupart
-        - pour
-        - pourquoi
-        - quand
-        - que
-        - quel
-        - quelle
-        - quelles
-        - quels
-        - qui
-        - sa
-        - sans
-        - ses
-        - seulement
-        - si
-        - sien
-        - son
-        - sont
-        - sous
-        - soyez
-        - sujet
-        - sur
-        - ta
-        - tandis
-        - tellement
-        - tels
-        - tes
-        - ton
-        - tous
-        - tout
-        - trop
-        - très
-        - tu
-        - valeur
-        - voie
-        - voient
-        - vont
-        - votre
-        - vous
-        - vu
-        - ça
-        - étaient
-        - état
-        - étions
-        - été
-        - être
-        - a
-        - an
-        - and
-        - are
-        - as
-        - at
-        - be
-        - but
-        - by
-        - for
-        - if
-        - in
-        - into
-        - is
-        - it
-        - 'no'
-        - not
-        - of
-        - 'on'
-        - or
-        - s
-        - such
-        - t
-        - that
-        - the
-        - their
-        - then
-        - there
-        - these
-        - they
-        - this
-        - to
-        - was
-        - will
-        - with
-      weights:
-        preprocess_index: -5
-        preprocess_query: -2
+    fields:
+      - rendered_item
+      - saa_field_file_document
+      - saa_field_file_page
+      - saa_field_file_news
+      - title
+      - body
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
   transliteration:
-    plugin_id: transliteration
-    settings:
-      fields:
-        - title
-        - body
-        - filename
-      weights:
-        preprocess_index: -10
-        preprocess_query: -10
+    fields:
+      - node_grants
+      - url
+      - rendered_item
+      - saa_field_file_document
+      - saa_field_file_page
+      - saa_field_file_news
+      - title
+      - body
+      - type
+      - filename
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
   file_attachments:
     plugin_id: file_attachments
     settings:
@@ -343,21 +260,11 @@ processor_settings:
       number_indexed: 0
       max_filesize: 0
       excluded_private: 1
-options:
-  index_directly: true
-  cron_limit: 50
-datasource_settings:
-  'entity:node':
-    plugin_id: 'entity:node'
-    settings:
-      bundles:
-        default: true
-        selected: {  }
-      languages:
-        default: true
-        selected: {  }
 tracker_settings:
   default:
     plugin_id: default
     settings: {  }
+options:
+  index_directly: true
+  cron_limit: 50
 server: solr
