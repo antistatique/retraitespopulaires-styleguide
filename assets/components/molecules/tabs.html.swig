@@ -24,7 +24,7 @@ notes: |
       </div>
       <div role="tabpanel" class="tab-pane" id="yverdon">
         <a href="tel:+41213482821" class="text-large text-no-wrap d-block text-{{tabs_theme}}">021 348 <strong>28 21</strong></a>
-        <a href="mailto:yverdon@retraitespopulaires.ch" class="text-large d-block">yverdon@retraitespopulaires.ch</a>
+        <a href="mailto:yverdon@retraitespopulaires.ch" class="text-large d-block text-{{tabs_theme}}">yverdon@retraitespopulaires.ch</a>
       </div>
       <div role="tabpanel" class="tab-pane" id="nyon">
         <a href="tel:+41213482020" class="text-large text-no-wrap d-block text-{{tabs_theme}}">021 348 <strong>20 20</strong></a>
