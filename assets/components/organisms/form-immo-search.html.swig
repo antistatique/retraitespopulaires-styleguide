@@ -73,7 +73,7 @@ notes: |
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <label class="d-block">Loyer maximum</label>
+          <label class="d-block">Loyer&nbsp;max.</label>
           <div class="input-text">
             <input type="text" name="max_rent" class="form-control form-control-immobilier form-chf-numeric text-right full-width" placeholder="CHF" value="">
           </div>
@@ -81,7 +81,7 @@ notes: |
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <label class="d-block">Surface min.</label>
+          <label class="d-block">Surface&nbsp;min.</label>
           <div class="input-text">
             <input type="text" name="max_rent" class="form-control form-control-immobilier text-right full-width form-surface-numeric" placeholder="m²" value="">
           </div>
@@ -90,14 +90,12 @@ notes: |
       <div class="col-sm-4">
         <div class="form-group d-inline-block">
           <label class="d-block">Disponible dès.</label>
-          <select class="form-control form-control-immobilier full-width">
+          <select class="form-control form-control-immobilier d-inline-block">
             <option value="01">Janvier</option>
             <option value="02">Février</option>
             <option value="02">...</option>
           </select>
-        </div>
-        <div class="form-group d-inline-block">
-          <select class="form-control form-control-immobilier full-width">
+          <select class="form-control form-control-immobilier d-inline-block">
             <option value="2016">2016</option>
             <option value="2017">2017</option>
           </select>
