@@ -38,16 +38,16 @@ layout: website.html.swig
         </div>
 
         <div class="col-md-4">
-          {% include '../atoms/filters-list.html.swig' with {'title_filters_list': 'Votre versement', 'links_filters_list': ['Une seule prime', 'Plusieurs prime'], 'theme_filters_list': 'assurance'} %}
+          {% include '../atoms/filters-list.html.swig' with {'filters_list_title': 'Votre versement', 'filters_list_links': ['Une seule prime', 'Plusieurs prime'], 'filters_list_theme': 'assurance'} %}
 
           <div class="spacer spacer-sm"></div>
-          {% include '../atoms/filters-list.html.swig' with {'title_filters_list': 'Fiscalité', 'links_filters_list': ['3e pillier B', 'Plusieurs prime'], 'theme_filters_list': 'assurance'} %}
+          {% include '../atoms/filters-list.html.swig' with {'filters_list_title': 'Fiscalité', 'filters_list_links': ['3e pillier B', 'Plusieurs prime'], 'filters_list_theme': 'assurance'} %}
 
           <div class="spacer spacer-sm"></div>
-          {% include '../atoms/filters-list.html.swig' with {'title_filters_list': 'Forme de prestation', 'links_filters_list': ['Capital', 'Plusieurs prime'], 'theme_filters_list': 'assurance'} %}
+          {% include '../atoms/filters-list.html.swig' with {'filters_list_title': 'Forme de prestation', 'filters_list_links': ['Capital', 'Plusieurs prime'], 'filters_list_theme': 'assurance'} %}
 
           <div class="spacer spacer-sm"></div>
-          {% include '../atoms/filters-list.html.swig' with {'title_filters_list': 'Couverture', 'links_filters_list': ['Prestation en cas de vie', 'Prestation en cas de décès'], 'theme_filters_list': 'assurance'} %}
+          {% include '../atoms/filters-list.html.swig' with {'filters_list_title': 'Couverture', 'filters_list_links': ['Prestation en cas de vie', 'Prestation en cas de décès'], 'filters_list_theme': 'assurance'} %}
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-8">

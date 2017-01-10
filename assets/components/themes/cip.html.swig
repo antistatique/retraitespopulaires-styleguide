@@ -8,7 +8,7 @@ theme: cip
 arrow_theme: cip
 bubble_theme: cip
 facets_theme: cip
-theme_filters_list: cip
+filters_list_theme: cip
 funky_waves_theme: cip
 hamburger_theme: cip
 icon_text_theme: cip
