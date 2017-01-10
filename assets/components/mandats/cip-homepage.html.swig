@@ -19,13 +19,13 @@ layout: mandats.html.swig
           <div class="spacer"></div>
           <div class="row">
             <div class="col-xs-12 col-sm-4">
-            {% include '../molecules/teaser-basicpage.html.swig' with {'theme_basicpage' : 'cip', 'title_basicpage': 'Simulateurs', 'body_basicpage': "Planifier votre retraite en fonction d'une date ou d'une rente souhaitée"} %}
+            {% include '../molecules/teaser-basicpage.html.swig' with {'basicpage_theme' : 'cip', 'basicpage_title': 'Simulateurs', 'basicpage_body': "Planifier votre retraite en fonction d'une date ou d'une rente souhaitée"} %}
           </div>
           <div class="col-xs-12 col-sm-4">
-            {% include '../molecules/teaser-basicpage.html.swig' with {'theme_basicpage' : 'cip', 'title_basicpage': 'Résultats', 'body_basicpage': 'Résultats du 3e trimestre 2016. Au 30 septembre 2016, la CIP a réalisé une performance cumulée estimée à 1,6%. '} %}
+            {% include '../molecules/teaser-basicpage.html.swig' with {'basicpage_theme' : 'cip', 'basicpage_title': 'Résultats', 'basicpage_body': 'Résultats du 3e trimestre 2016. Au 30 septembre 2016, la CIP a réalisé une performance cumulée estimée à 1,6%. '} %}
           </div>
           <div class="col-xs-12 col-sm-4">
-            {% include '../molecules/teaser-basicpage.html.swig' with {'theme_basicpage' : 'cip', 'title_basicpage': 'Documentation', 'body_basicpage': 'Publications, formulaires, lois.'} %}
+            {% include '../molecules/teaser-basicpage.html.swig' with {'basicpage_theme' : 'cip', 'basicpage_title': 'Documentation', 'basicpage_body': 'Publications, formulaires, lois.'} %}
           </div>
           </div>
         </div>

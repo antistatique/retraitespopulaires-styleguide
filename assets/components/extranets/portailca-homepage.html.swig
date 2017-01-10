@@ -33,19 +33,19 @@ layout: extranets.html.swig
   <div class="spacer spacer-sm"></div>
   <div class="row">
     <div class="col-md-4">
-      {% include '../molecules/teaser-basicpage.html.swig' with {'links_basicpage': ['Cum sint illum', 'Voluptas sed', 'Minima sit vero eos iste alias']} %}
+      {% include '../molecules/teaser-basicpage.html.swig' with {'basicpage_links': ['Cum sint illum', 'Voluptas sed', 'Minima sit vero eos iste alias']} %}
     </div>
     <div class="col-md-4">
-      {% include '../molecules/teaser-basicpage.html.swig' with {'links_basicpage': ['Liens 1', 'Liens 2' , 'Asperiores']} %}
+      {% include '../molecules/teaser-basicpage.html.swig' with {'basicpage_links': ['Liens 1', 'Liens 2' , 'Asperiores']} %}
     </div>
     <div class="col-md-4">
-      {% include '../molecules/teaser-basicpage.html.swig' with {'links_basicpage': ['Cum dolores tempora autem in aut', 'Et quas placeat voluptatem', 'Nihil quis hic veniam', 'Et est est non ratione ducimus', 'Autem quasi']} %}
+      {% include '../molecules/teaser-basicpage.html.swig' with {'basicpage_links': ['Cum dolores tempora autem in aut', 'Et quas placeat voluptatem', 'Nihil quis hic veniam', 'Et est est non ratione ducimus', 'Autem quasi']} %}
     </div>
     <div class="col-md-4">
-      {% include '../molecules/teaser-basicpage.html.swig' with {'links_basicpage': ['Liens 1', 'Liens 2' , 'Asperiores', 'nesciunt']} %}
+      {% include '../molecules/teaser-basicpage.html.swig' with {'basicpage_links': ['Liens 1', 'Liens 2' , 'Asperiores', 'nesciunt']} %}
     </div>
     <div class="col-md-4">
-      {% include '../molecules/teaser-basicpage.html.swig' with {'links_basicpage': ['Et quas placeat voluptatem', 'Nihil quis hic veniam', 'Et est est non ratione ducimus', 'Autem quasi']} %}
+      {% include '../molecules/teaser-basicpage.html.swig' with {'basicpage_links': ['Et quas placeat voluptatem', 'Nihil quis hic veniam', 'Et est est non ratione ducimus', 'Autem quasi']} %}
     </div>
   </div>
 </div>
