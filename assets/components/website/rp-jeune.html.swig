@@ -117,7 +117,7 @@ layout: website.html.swig
       </div>
     </div>
   </div>
-  {% include '../atoms/organic-lines.html.swig' with {'theme': 'assurance'} %}
+  {% include '../atoms/organic-lines.html.swig' with {'organic_lines_theme': 'assurance'} %}
 </div>
 
 <div class="spacer"></div>

@@ -91,7 +91,7 @@ notes: |
   {% endif %}
 
 
-  {% include '../atoms/organic-lines.html.swig' with {'theme': theme} %}
+  {% include '../atoms/organic-lines.html.swig' with {'organic_lines_theme': theme} %}
 
   <div class="spacer"></div>
 
