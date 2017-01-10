@@ -6,7 +6,7 @@ notes: |
   ##### Usage : `attachments-ca`
   - **attachment_ca_title** - <i>String</i>
   - **attachment_ca_version** - <i>String</i>
-  - **attachment_ca_theme** - <b>btn-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **attachment_ca_theme** - <b>['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 
 ---
 <div class="row">
