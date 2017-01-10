@@ -4,7 +4,7 @@ name: teaser-offer
 collection: molecules
 notes: |
   ##### Usage : `teaser-offer`
-  - **teaser_offer_theme** - <i>String</i> - <b>hamburger-['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **teaser_offer_theme** - <i>String</i> - <b>teaser-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <a href="#" class="teaser teaser-{{teaser_offer_theme}} teaser-fullclick teaser-offer shadow shadow-down">
   <div class="offer-heading">

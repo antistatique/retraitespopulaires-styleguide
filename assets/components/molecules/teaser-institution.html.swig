@@ -6,7 +6,7 @@ notes: |
   ##### Usage : `teaser-institution`
   ##### Options :
   - **logo** - <i>String</i>
-  - **teaser_theme** - <i>String</i> - <b>hamburger-['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **teaser_theme** - <i>String</i> - <b>teaser-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <a href="#" class="teaser teaser-{{teaser_theme}} teaser-fullclick teaser-institution teaser-institution shadow shadow-down">
   <div class="institution-heading">
