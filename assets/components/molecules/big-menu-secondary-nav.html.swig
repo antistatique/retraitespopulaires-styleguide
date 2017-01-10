@@ -4,7 +4,7 @@ name: big-menu-secondary-nav
 collection: molecules
 notes: |
   ##### Usage : `big-menu-secondary-nav`
-  - **big_menu_secondary_nav_theme** - <b>btn-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **big_menu_secondary_nav_theme** - <b>['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 
 ---
 <div class="big-menu-secondary-nav-wrapper">
