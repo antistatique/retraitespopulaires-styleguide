@@ -5,13 +5,13 @@ collection: atoms
 notes: |
   ##### Usage : `hamburger`
   ##### Options :
-  - **link** - <i>Boolean</i>
+  - **hamburger_link** - <i>Boolean</i>
   - **hamburger_theme** - <i>String</i> - <b>hamburger-['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-{% if link %}
-  <a href="#" class="hamburger-wrapper hamburger-{{hamburger_theme}}">
+{% if hamburger_link %}
+  <a href="#" class="hamburger-wrapper hamburger-{{ hamburger_theme }}">
 {% else %}
-  <div class="hamburger-wrapper hamburger-{{hamburger_theme}}">
+  <div class="hamburger-wrapper hamburger-{{ hamburger_theme }}">
 {% endif %}
   <div class="hamburger-button">
     <div class="hamburger">
@@ -27,7 +27,7 @@ notes: |
     <div class="helper-when-close">Menu</div>
     <div class="helper-when-open">Fermer</div>
   </div>
-{% if link %}
+{% if hamburger_link %}
   </a>
 {% else %}
   </div>

@@ -22,6 +22,6 @@ notes: |
   </div>
   {% endif %}
   <div class="header-nav" aria-hidden="true">
-    {% include '../atoms/hamburger.html.swig' with {'link': light, 'theme': theme} %}
+    {% include '../atoms/hamburger.html.swig' with {'hamburger_link': light, 'hamburger_theme': theme} %}
   </div>
 </header>
