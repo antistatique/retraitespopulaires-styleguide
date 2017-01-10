@@ -7,8 +7,7 @@ layout: website.html.swig
 ---
 {% include '../organisms/header.html.swig' %}
 
-{% include '../atoms/funky-waves.html.swig' with {img: 'https://www.retraitespopulaires.ch/upload/docs/image/png/2011-07/banner-changement-pro.png'} %}
-
+{% include '../atoms/funky-waves.html.swig' with {funky_waves_img: 'https://www.retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-10/couple-terrain.jpg'} %}
 
 <div class="container">
   <div class="row">

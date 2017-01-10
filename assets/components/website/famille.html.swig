@@ -7,7 +7,7 @@ layout: website.html.swig
 ---
 {% include '../organisms/header.html.swig' %}
 
-{% include '../atoms/funky-waves.html.swig' with {img: 'http://www.famillesausommet.com/images/famille_accueil.jpg'} %}
+{% include '../atoms/funky-waves.html.swig' with {funky_waves_img: 'https://www.retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-10/jardin_0.jpg'} %}
 
 <div class="container">
   <div class="row">

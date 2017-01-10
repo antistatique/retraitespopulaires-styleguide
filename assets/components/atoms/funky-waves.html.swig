@@ -5,15 +5,15 @@ collection: atoms
 notes: |
   ##### Usage : `funky-waves`
   ##### Options :
-  - **img** - <i>String</i>
+  - **funky_waves_img** - <i>String</i>
   - **funky_waves_theme** - <i>String</i> - <b>wrapper-funky-waves-['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
   - **funky_waves_disable** - <i>Boolean</i>
   - **funky_waves_no_header** - <i>Boolean</i>
 ---
 
 <div class="wrapper-funky-waves {% if not funky_waves_no_header %}has-header{% endif %} wrapper-funky-waves-{{ funky_waves_theme }}">
-  {% if img  %}
-    <img class="img-responsive center-block" src="{{ img }}" />
+  {% if funky_waves_img  %}
+    <img class="img-responsive center-block" src="{{ funky_waves_img }}" />
   {% else  %}
     <picture>
       <source srcset="https://unsplash.it/544/250?image=1057" media="(max-width: 544px)">

@@ -7,7 +7,7 @@ layout: mandats.html.swig
 ---
 {% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
 
-{% include '../atoms/funky-waves.html.swig' with {img: 'http://www.cipvd.ch/upload/docs/image/png/2016-07/banner_salleconseilcip.png', 'funky_waves_theme': 'cip', 'funky_waves_disable': true, 'funky_waves_no_header': true} %}
+{% include '../atoms/funky-waves.html.swig' with {funky_waves_img: 'http://www.cipvd.ch/upload/docs/image/png/2016-07/banner_salleconseilcip.png', 'funky_waves_theme': 'cip', 'funky_waves_disable': true, 'funky_waves_no_header': true} %}
 
 <div class="container-fluid">
   <div class="row">
