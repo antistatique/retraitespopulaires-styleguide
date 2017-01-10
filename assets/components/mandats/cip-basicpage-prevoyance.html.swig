@@ -93,4 +93,4 @@ layout: mandats.html.swig
 {% include '../organisms/attachments-contact.html.swig' with {'attachments_contact_theme': 'cip', 'attachments_contact_title': 'La CIP est à votre disposition', 'attachments_contact_more': 'Contacter la CIP'} %}
 <div class="spacer"></div>
 
-{% include '../organisms/footer-mandats.html.swig' with {'theme': 'cip'} %}
+{% include '../organisms/footer-mandats.html.swig' with {'footer_mandats_theme': 'cip'} %}

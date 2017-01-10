@@ -59,4 +59,4 @@ layout: mandats.html.swig
 </div>
 
 <div class="spacer"></div>
-{% include '../organisms/footer-mandats.html.swig' with {'theme': 'cip'} %}
+{% include '../organisms/footer-mandats.html.swig' with {'footer_mandats_theme': 'cip'} %}
