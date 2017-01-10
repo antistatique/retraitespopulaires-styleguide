@@ -42,12 +42,12 @@ layout: mandats.html.swig
 
           <div class="row last-news-content">
             <div class="col-xs-12 col-md-6">
-              {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+              {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
             </div>
             <div class="col-xs-12 col-md-6">
-              {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Le rapport de gestion 2015 est sorti", 'body_news': "En 2015, la CIP réalise une performance de 3,7% dans un contexte économique mondial chahuté. Ce résultat reste toutefois en dessous du besoin en rendement du plan de prévoyance", 'date_news' : 'Juin 2016', 'type_news' : 'Bulletin CIP', 'theme_news' : 'cip'} %}
+              {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Le rapport de gestion 2015 est sorti", 'news_body': "En 2015, la CIP réalise une performance de 3,7% dans un contexte économique mondial chahuté. Ce résultat reste toutefois en dessous du besoin en rendement du plan de prévoyance", 'news_date' : 'Juin 2016', 'news_type' : 'Bulletin CIP', 'news_theme' : 'cip'} %}
             </div>
           </div>
         </div>

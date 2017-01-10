@@ -23,7 +23,7 @@ big_menu_secondary_nav_theme: cip
 collapse_theme: cip
 immo_result_theme: cip
 basicpage_theme: cip
-theme_news: cip
+news_theme: cip
 teaser_theme: cip
 teaser_offer_theme: cip
 teaser_profil_theme: cip

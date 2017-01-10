@@ -66,52 +66,52 @@ layout: mandats.html.swig
           <div class="col-xs-10 col-xs-offset-1 col-md-6">
             <div class="row flex-row">
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
               <div class="col-xs-12">
-                {% include '../molecules/teaser-news.html.swig' with {'title_news': "
-        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'body_news': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'date_news' : 'Juillet 2016', 'type_news' : 'Infos et communiqués', 'theme_news' : 'cip'} %}
+                {% include '../molecules/teaser-news.html.swig' with {'news_title': "
+        Nouvelle composition du Conseil d'administration au 1er juillet 2016", 'news_body': "Laurence Favre et Fabienne Freymond Cantone succèdent à Didier Tenthorey et Laurent Ballif, arrivant au terme de leur mandat. Jean-François Niklaus reprend la présidence et Gilbert Gubler la vice-présidence.", 'news_date' : 'Juillet 2016', 'news_type' : 'Infos et communiqués', 'news_theme' : 'cip'} %}
               </div>
             </div>
           </div>
