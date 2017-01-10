@@ -5,8 +5,7 @@ collection: extranets
 styleguide: false
 layout: extranets.html.swig
 ---
-{% include '../organisms/header-extranet.html.swig' with {'theme': ''} %}
-
+{% include '../organisms/header-extranet.html.swig' with {'header_extranet_theme': ''} %}
 
 <div class="container">
   <div class="row">
