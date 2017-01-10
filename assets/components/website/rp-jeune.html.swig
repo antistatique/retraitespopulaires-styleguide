@@ -79,7 +79,7 @@ layout: website.html.swig
         </div>
 
         <div class="col-md-4">
-          {% include '../atoms/facets-list.html.swig' with {'title': '', 'links': ['RP Rente Immédiate', 'RP Rente Immédiate certain', 'RP Rente différéee', 'RP Jeune', 'RP Duo primes périodiques', 'RP Prime unique', 'RP Épargne', 'RP Refuge']} %}
+          {% include '../atoms/facets-list.html.swig' with {'facets_title': '', 'facets_links': ['RP Rente Immédiate', 'RP Rente Immédiate certain', 'RP Rente différéee', 'RP Jeune', 'RP Duo primes périodiques', 'RP Prime unique', 'RP Épargne', 'RP Refuge'], 'facets_theme': 'assurance'} %}
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-8">
