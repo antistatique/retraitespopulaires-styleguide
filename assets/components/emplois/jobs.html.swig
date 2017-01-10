@@ -57,28 +57,28 @@ layout: emplois.html.swig
                <td>Assurance vie</td>
                <td>Contrat à durée indéterminée (CDI)</td>
                <td>Lausanne</td>
-               <td>{% include '../atoms/button.html.swig' with {theme: 'primary', btn_label: 'Postuler'} %}</td>
+               <td>{% include '../atoms/button.html.swig' with {btn_theme: 'primary', btn_label: 'Postuler'} %}</td>
             </tr>
             <tr>
                <td><strong>Conseiller/-ère en communication (réf. 3316)</strong></td>
                <td>Marketing et communication</td>
                <td>Contrat à durée indéterminée (CDI)</td>
                <td>Lausanne</td>
-               <td>{% include '../atoms/button.html.swig' with {theme: 'primary', btn_label: 'Postuler'} %}</td>
+               <td>{% include '../atoms/button.html.swig' with {btn_theme: 'primary', btn_label: 'Postuler'} %}</td>
             </tr>
             <tr>
                <td><strong>Assistant(e) administratif/-ve à 80% (réf. 3416)</strong></td>
                <td>Immobilier</td>
                <td>Contrat à durée indéterminée (CDI)</td>
                <td>Lausanne</td>
-               <td>{% include '../atoms/button.html.swig' with {theme: 'primary', btn_label: 'Postuler'} %}</td>
+               <td>{% include '../atoms/button.html.swig' with {btn_theme: 'primary', btn_label: 'Postuler'} %}</td>
             </tr>
             <tr>
                <td><strong>Concierge professionnel à Morges (réf. 3716)</strong></td>
                <td>Immobiliere</td>
                <td>Contrat à durée indéterminée (CDI)</td>
                <td>Lausanne</td>
-               <td>{% include '../atoms/button.html.swig' with {theme: 'primary', btn_label: 'Postuler'} %}</td>
+               <td>{% include '../atoms/button.html.swig' with {btn_theme: 'primary', btn_label: 'Postuler'} %}</td>
             </tr>
            </tbody>
           </table>

@@ -101,7 +101,7 @@ layout: immobiliers.html.swig
           <div class="spacer spacer-sm"></div>
           <div class="row">
             <div class="col-sm-12">
-              {% include '../atoms/button.html.swig' with {theme: 'immobilier', btn_label: 'Demande de renseignement'} %}
+              {% include '../atoms/button.html.swig' with {btn_theme: 'immobilier', btn_label: 'Demande de renseignement'} %}
             </div>
           </div>
         </div>
