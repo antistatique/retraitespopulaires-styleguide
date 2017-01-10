@@ -16,7 +16,7 @@ datepicker_theme: cip
 input_radio_btn_theme: cip
 input_textarea_theme: cip
 loader_theme: cip
-theme_pagination: cip
+pagination_theme: cip
 section_bloc_theme: cip
 theme_attachment: cip
 big_menu_secondary_nav_theme: cip

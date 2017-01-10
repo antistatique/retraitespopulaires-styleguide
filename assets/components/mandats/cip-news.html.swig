@@ -119,7 +119,7 @@ layout: mandats.html.swig
       </div>
     </div>
     <div class="col-xs-10 col-xs-offset-1 text-center">
-      {% include '../atoms/pagination.html.swig' with {'theme_pagination': 'cip'} %}
+      {% include '../atoms/pagination.html.swig' with {'pagination_theme': 'cip'} %}
     </div>
   </div>
 </div>
