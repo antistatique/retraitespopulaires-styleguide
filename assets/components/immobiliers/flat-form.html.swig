@@ -31,7 +31,7 @@ layout: immobiliers.html.swig
         "rental_rooms": data.flats.universite.rental_rooms,
         "rental_surface": data.flats.universite.rental_surface,
         "rental_rent": data.flats.universite.rental_rent,
-        "theme": 'immobilier',
+        "rental_theme": 'immobilier',
       } %}
       <div class="spacer spacer-sm"></div>
       <div class="row">
