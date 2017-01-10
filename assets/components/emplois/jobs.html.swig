@@ -12,7 +12,7 @@ layout: emplois.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'À propos', 'Emplois']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-primary', breadcrumb_links: ['Accueil', 'À propos', 'Emplois']} %}
       <div class="spacer"></div>
     </div>
   </div>

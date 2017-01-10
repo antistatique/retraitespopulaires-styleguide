@@ -19,7 +19,7 @@ layout: mandats.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {'primary_theme': 'text-cip', 'theme': 'text-cip', 'links': ['Accueil', 'Actualités']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {'breadcrumb_primary_theme': 'text-cip', 'breadcrumb_theme': 'text-cip', 'breadcrumb_links': ['Accueil', 'Actualités']} %}
       <div class="spacer"></div>
     </div>
   </div>

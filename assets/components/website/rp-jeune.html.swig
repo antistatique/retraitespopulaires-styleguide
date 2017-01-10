@@ -11,7 +11,7 @@ layout: website.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'assurance-vie', links: ['Accueil', 'Assurance vie', 'RP Jeune']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-assurance', breadcrumb_links: ['Accueil', 'Assurance vie', 'RP Jeune']} %}
       <div class="spacer"></div>
     </div>
   </div>

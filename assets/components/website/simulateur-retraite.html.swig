@@ -11,7 +11,7 @@ layout: website.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-prevoyance', links: ['Accueil', 'Prévoyance professionnelle', 'Déjà assuré ?', 'Simulateur de retraite CP ECA-RP']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-prevoyance', breadcrumb_links: ['Accueil', 'Prévoyance professionnelle', 'Déjà assuré ?', 'Simulateur de retraite CP ECA-RP']} %}
       <div class="spacer"></div>
     </div>
   </div>
