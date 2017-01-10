@@ -4,7 +4,7 @@ name: input-textarea
 collection: atoms
 notes: |
   ##### Usage : `input-textarea`
-  - **input_textarea_theme** - <i>String</i> - <b>datepicker-['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **input_textarea_theme** - <i>String</i> - <b>datepicker-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="form-group">
   <label for="inputID">Label</label>

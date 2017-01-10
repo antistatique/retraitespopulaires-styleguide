@@ -4,7 +4,7 @@ name: input-datepicker
 collection: atoms
 notes: |
   ##### Usage : `input-datepicker`
-  - **datepicker_theme** - <i>String</i> - <b>datepicker-['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **datepicker_theme** - <i>String</i> - <b>datepicker-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="form-group">
   <label>label</label>

@@ -4,7 +4,7 @@ name: progresschart
 collection: molecules
 notes: |
   ##### Usage : `progresschart`
-  - **progresschart_theme** - <i>String</i> - <b>['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **progresschart_theme** - <i>String</i> - <b>['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 
 ---
 

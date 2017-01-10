@@ -7,7 +7,7 @@ notes: |
   ##### Options :
   - **facets_title** - <i>String</i>
   - **facets_links** - <i>Array</i>
-  - **facets_theme** - <i>String</i> - <b>['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **facets_theme** - <i>String</i> - <b>['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <p class="media-heading text-muted">{{ facets_title }}</p>
 <ul class="facets-list">

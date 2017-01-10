@@ -4,7 +4,7 @@ name: input-radio-btn
 collection: atoms
 notes: |
   ##### Usage : `input-radio-btn`
-  - **input_radio_btn_theme** - <i>String</i> - <b>text-['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **input_radio_btn_theme** - <i>String</i> - <b>text-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="form-group">
   <div class="input-radio-btn">

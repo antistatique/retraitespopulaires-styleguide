@@ -6,7 +6,7 @@ notes: |
   ##### Usage : `search-form`
   - **visible** - <i>Boolean</i>
   - **placeholder** - <i>String</i>
-  - **search_form_theme** - <i>String</i> - <b>['outline'|'primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **search_form_theme** - <i>String</i> - <b>['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 {% if visible %}
 <form class="global-search global-search-visible">
