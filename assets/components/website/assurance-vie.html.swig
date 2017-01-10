@@ -53,40 +53,40 @@ layout: website.html.swig
         <div class="col-md-8">
           <div class="row row-flex">
             <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Rente Immédiate', 'body': 'Profitez de votre retraite! Placez un capital de manière sûre et bénéficiez tout de suite de rentes à vie..'} %}
+              {% include '../molecules/teaser-product.html.swig' with {'teaser_product_theme':'assurance', 'teaser_product_title': 'Rente Immédiate', 'teaser_product_body': 'Profitez de votre retraite! Placez un capital de manière sûre et bénéficiez tout de suite de rentes à vie..'} %}
             </div>
             <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Rente Immédiate certain', 'body': 'Réalisez vos projets! Transformez votre capital en revenu supplémentaire garanti.'} %}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Rente différée', 'body': 'Simplifiez-vous l’avenir! Préparez votre retraite à votre rythme et sans contrainte.'} %}
-            </div>
-            <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Jeune', 'body': 'Réalisez vos projets! Transformez votre capital en revenu supplémentaire garanti.'} %}
+              {% include '../molecules/teaser-product.html.swig' with {'teaser_product_theme':'assurance', 'teaser_product_title': 'Rente Immédiate certain', 'teaser_product_body': 'Réalisez vos projets! Transformez votre capital en revenu supplémentaire garanti.'} %}
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Duo primes périodiques', 'body': 'Donnez de la valeur à votre avenir! Constituez un capital tout en économisant des impôts.'} %}
+              {% include '../molecules/teaser-product.html.swig' with {'teaser_product_theme':'assurance', 'teaser_product_title': 'Rente différée', 'teaser_product_body': 'Simplifiez-vous l’avenir! Préparez votre retraite à votre rythme et sans contrainte.'} %}
+            </div>
+            <div class="col-sm-6">
+              {% include '../molecules/teaser-product.html.swig' with {'teaser_product_theme':'assurance', 'teaser_product_title': 'Jeune', 'teaser_product_body': 'Réalisez vos projets! Transformez votre capital en revenu supplémentaire garanti.'} %}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              {% include '../molecules/teaser-product.html.swig' with {'teaser_product_theme':'assurance', 'teaser_product_title': 'Duo primes périodiques', 'teaser_product_body': 'Donnez de la valeur à votre avenir! Constituez un capital tout en économisant des impôts.'} %}
 
             </div>
             <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Prime unique', 'body': 'Donnez du tonus à votre avenir! Investissez dans un placement garanti et bénéficiez d’avantages fiscaux.'} %}
+              {% include '../molecules/teaser-product.html.swig' with {'teaser_product_theme':'assurance', 'teaser_product_title': 'Prime unique', 'teaser_product_body': 'Donnez du tonus à votre avenir! Investissez dans un placement garanti et bénéficiez d’avantages fiscaux.'} %}
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Épargne', 'body': 'Prenez soin de votre épargne! Capitalisez sans risque.'} %}
+              {% include '../molecules/teaser-product.html.swig' with {'teaser_product_theme':'assurance', 'teaser_product_title': 'Épargne', 'teaser_product_body': 'Prenez soin de votre épargne! Capitalisez sans risque.'} %}
             </div>
             <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Refuge', 'body': 'Sécurisez votre avenir! Protégez votre conjoint ou votre famille, garantissez un emprunt bancaire ou assurez la pérennité de votre entreprise.'} %}
+              {% include '../molecules/teaser-product.html.swig' with {'teaser_product_theme':'assurance', 'teaser_product_title': 'Refuge', 'teaser_product_body': 'Sécurisez votre avenir! Protégez votre conjoint ou votre famille, garantissez un emprunt bancaire ou assurez la pérennité de votre entreprise.'} %}
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Securifonds', 'body': 'Prenez votre avenir en main! Gérez votre patrimoine en alliant sécurité et opportunités de rendement à long terme.'} %}
+              {% include '../molecules/teaser-product.html.swig' with {'teaser_product_theme':'assurance', 'teaser_product_title': 'Securifonds', 'teaser_product_body': 'Prenez votre avenir en main! Gérez votre patrimoine en alliant sécurité et opportunités de rendement à long terme.'} %}
             </div>
           </div>
         </div>
