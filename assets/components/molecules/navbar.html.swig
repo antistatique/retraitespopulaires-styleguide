@@ -5,7 +5,7 @@ collection: molecules
 notes: |
   ##### Usage : `navbar`
   ##### Options :
-    - **theme** - <i>String</i> - <b>card-attachement-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+    - **theme** - <i>String</i> - <b>navbar-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <nav class="navbar navbar-default navbar-{{theme}}">
   <div class="container-fluid">
