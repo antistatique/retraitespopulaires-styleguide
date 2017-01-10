@@ -12,7 +12,7 @@ collection: mandats
 styleguide: false
 layout: mandats.html.swig
 ---
-{% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
+{% include '../organisms/header-mandats.html.swig' with {'header_mandats_theme': 'cip'} %}
 
 {% include '../atoms/funky-waves.html.swig' with {funky_waves_img: 'none', 'funky_waves_theme': 'cip', 'funky_waves_disable': true, 'funky_waves_no_header': true} %}
 

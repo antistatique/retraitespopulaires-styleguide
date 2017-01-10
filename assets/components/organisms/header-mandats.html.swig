@@ -5,7 +5,7 @@ collection: organisms
 notes: |
   ##### Usage : `header-mandats`
   ##### Options :
-  - **theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **header_mandats_theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 {# NEED REFACORING #}
 <style media="screen">
