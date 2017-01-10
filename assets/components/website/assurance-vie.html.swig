@@ -94,7 +94,7 @@ layout: website.html.swig
     </div>
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance', 'json': 'assurance-vie'} %}
+      {% include '../molecules/secondary-nav.html.swig' with {'secondary_nav_theme': 'assurance', 'secondary_nav_json': 'assurance-vie'} %}
     </div>
   </div>
   {% include '../organisms/attachments-contact.html.swig' with {'attachments_contact_theme': 'assurance'} %}
