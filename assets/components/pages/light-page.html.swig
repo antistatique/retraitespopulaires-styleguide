@@ -12,4 +12,4 @@ layout: page.html.swig
 <div class="container" style="height: 250px"></div>
 
 <div class="spacer"></div>
-{% include '../organisms/footer.html.swig' with {'light': true} %}
+{% include '../organisms/footer.html.swig' with {'footer_light': true} %}

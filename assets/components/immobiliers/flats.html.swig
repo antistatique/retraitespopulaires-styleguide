@@ -67,4 +67,4 @@ layout: immobiliers.html.swig
 </div>
 
 <div class="spacer"></div>
-{% include '../organisms/footer.html.swig' with {'light': true, 'theme': 'immobilier'} %}
+{% include '../organisms/footer.html.swig' with {'footer_light': true, 'footer_theme': 'immobilier'} %}
