@@ -27,25 +27,6 @@ field_settings:
     label: URI
     property_path: search_api_url
     type: string
-  rendered_item:
-    label: 'Rendered HTML output'
-    property_path: rendered_item
-    type: text
-    configuration:
-      roles:
-        anonymous: anonymous
-      view_mode:
-        'entity:node':
-          advisor: default
-          building: default
-          contact: default
-          document: default
-          faq: default
-          management_contracts: default
-          news: default
-          page: default
-          partnership: default
-          product: default
   saa_field_file_document:
     label: 'Search api attachments: Fichier attaché'
     property_path: saa_field_file_document
@@ -149,7 +130,6 @@ processor_settings:
     fields:
       - node_grants
       - url
-      - rendered_item
       - saa_field_file_document
       - saa_field_file_page
       - saa_field_file_news
@@ -174,7 +154,6 @@ processor_settings:
     fields:
       - node_grants
       - url
-      - rendered_item
       - saa_field_file_document
       - saa_field_file_page
       - saa_field_file_news
@@ -193,7 +172,6 @@ processor_settings:
     settings: {  }
   stopwords:
     fields:
-      - rendered_item
       - saa_field_file_document
       - saa_field_file_page
       - saa_field_file_news
@@ -242,7 +220,6 @@ processor_settings:
     fields:
       - node_grants
       - url
-      - rendered_item
       - saa_field_file_document
       - saa_field_file_page
       - saa_field_file_news
