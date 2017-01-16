@@ -331,7 +331,7 @@ class PLPCalculatorForm extends FormBase {
         // Assert the percent is valid
         if (!empty($form_state->getValue('civil_status')) && $form_state->getValue('civil_status') == 'Oui') {
             if (!$form_state->getValue('percent')) {
-                $errors['percent'] = t('Le pourcentage souhaité est obligatoire.');
+                $errors['percent'] = t('Merci de spécifier un pourcentage si vous êtes en partenariat enregistré.');
             }
         }
 
