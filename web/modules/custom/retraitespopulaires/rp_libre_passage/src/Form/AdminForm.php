@@ -82,7 +82,7 @@ class AdminForm extends FormBase {
             '#title'           => t('Demande d\'affiliation'),
             '#default_value'   => !empty($this->state->get('rp_libre_passage.settings.form_pdf')) ? array($this->state->get('rp_libre_passage.settings.form_pdf')) : null,
             '#upload_location' => 'public://rp_libre_passage/form_pdf',
-            '#description'     => t('Merci de déposer une fichier PDF.'),
+            '#description'     => t('Merci de déposer un fichier PDF.'),
         );
 
         $form['simulator']['calculator_nid'] = array(
