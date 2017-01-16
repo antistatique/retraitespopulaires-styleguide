@@ -258,7 +258,7 @@ layout: page.html.swig
   <!-- /Container -->
 
   <!-- contact -->
-  <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" height="auto" style="color: #ffffff;">
+  <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" height="auto" style="color: #ffffff; text-align: center;">
 
     <!-- spacer -->
     <tr>
@@ -276,7 +276,7 @@ layout: page.html.swig
       </td>
       <!-- /spacer-side -->
 
-      <td colspan="2" align="left" style="vertical-align: top; margin: 0; padding: 0; font-size: 12px; color: #000; line-height: 14px;">
+      <td colspan="2" align="center" style="vertical-align: top; margin: 0; padding: 0; font-size: 12px; color: #000; line-height: 14px; text-align: center;">
         <b>Pour nous contacter</b><br/><br/>
          Retraites Populaires, Caroline 9, Case postale 288 - 1001 Lausanne ou utilisez le formulaire de contact accessible depuis notre site <a href="https://www.retraitespopulaires.ch">retraitespopulaires.ch</a>.
       </td>
