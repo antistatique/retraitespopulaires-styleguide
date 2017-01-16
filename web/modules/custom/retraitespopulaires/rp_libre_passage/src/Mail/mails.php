@@ -24,7 +24,7 @@ function rp_libre_passage_mail($key, &$message, $params) {
     switch($key) {
         // Sended to admin when contactintg
         case 'contact':
-            $message['subject'] = t('Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
+            $message['subject'] = t('Calculateur PLP - Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
 
             $message['body'][] = Markup::create( '<b>'. t('Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]) . '</b><br /><br />');
 
