@@ -152,7 +152,9 @@ class PLPCalculator {
         // (Taux de rente 1 tête, en fonction du genre (homme/femme) et de l'age)
         $rate1_head = $this->ratesRepo->getConversionRate($gender, $age, 0);
 
-        $annual_pension_raw = ($capital * $rate1_head / 100 / 12);
+        // We divide by 12 (months) here and multiply after the percent format
+        // to gain somes centimes by months.
+        $annual_pension_raw = (($capital * $rate1_head) / 100) / 12;
         return $this->formatCents($annual_pension_raw) * 12;
     }
 
