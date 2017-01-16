@@ -364,7 +364,7 @@ class PLPCalculatorForm extends FormBase {
             $errors['payment_date'] = t('La date de versement doit au moins être le @date.', ['@date' => $payment_validity->format('d/m/Y')]);
         } else {
             $age   = $birthdate->diff($today)->y;
-            $rest  = $form_state->getValue('age') - $age;
+            $rest  = (int)$form_state->getValue('age')); - $age;
 
             // Assert the age is not already passed
             if ($rest <= 0 ) {
