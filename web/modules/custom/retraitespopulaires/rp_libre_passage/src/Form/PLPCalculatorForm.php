@@ -340,13 +340,6 @@ class PLPCalculatorForm extends FormBase {
             $errors['amount'] = t('Le montant est obligatoire.');
         }
 
-        // Assert the payment_date is valid
-        if (!$form_state->getValue('payment_date') || empty($form_state->getValue('payment_date'))) {
-            $errors['payment_date'] = t('La date de versement est obligatoire.');
-        } else if (\DateTime::createFromFormat('d/m/Y', $form_state->getValue('payment_date')) === false) {
-            $errors['payment_date'] = t('La date de versement semble invalide.');
-        }
-
         // Error handler for formatted birthdate
         if (\DateTime::createFromFormat('d/m/Y', $form_state->getValue('birthdate')) === false) {
             $errors['birthdate'] = $this->t('Le format de la date semble incorrecte.');
