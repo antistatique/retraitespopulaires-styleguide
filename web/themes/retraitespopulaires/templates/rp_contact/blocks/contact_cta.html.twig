@@ -1,35 +1,36 @@
-{% set theme = variables.theme %}
-
-<a href="#contactez-nous" class="pull-right teaser teaser-{{ theme }} teaser-fullclick teaser-contact-cta teaser-contact-cta-{{ theme }} shadow shadow-down">
-  {% if not variables.cover is empty %}
-  <div class="teaser-contact-cta-heading">
-    <div class="heading-image" style="background-image: url({{ file_url(variables.cover.xl) }})"></div>
-    <div class="loader-image">
-      <div class="loader">
-        <div class="loader-yingyang loader-{{ theme }}"></div>
+{% if variables.contacts %}
+  {% set theme = variables.theme %}
+  <a href="#contactez-nous" class="pull-right teaser teaser-{{ theme }} teaser-fullclick teaser-contact-cta teaser-contact-cta-{{ theme }} shadow shadow-down">
+    {% if not variables.cover is empty %}
+    <div class="teaser-contact-cta-heading">
+      <div class="heading-image" style="background-image: url({{ file_url(variables.cover.xl) }})"></div>
+      <div class="loader-image">
+        <div class="loader">
+          <div class="loader-yingyang loader-{{ theme }}"></div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="spacer spacer-xs"></div>
-  {% endif %}
-  <div class="teaser-contact-cta-body text-center">
-    <p class="text-small m-0">
-      {% set display = [] %}
-      {% if variables.contact|length == 1 %}
-        {% if variables.contact.field_firstname.value %}
-          {% set display = display|merge([variables.contact.field_firstname.value]) %}
+    <div class="spacer spacer-xs"></div>
+    {% endif %}
+    <div class="teaser-contact-cta-body text-center">
+      <p class="text-small m-0">
+        {% set display = [] %}
+        {% if variables.contacts|length == 1 %}
+          {% if variables.contacts[0].field_firstname.value %}
+            {% set display = display|merge([variables.contacts[0].field_firstname.value]) %}
+          {% endif %}
+          {% if variables.contacts[0].field_lastname.value %}
+            {% set display = display|merge([variables.contacts[0].field_lastname.value]) %}
+          {% endif %}
         {% endif %}
-        {% if variables.contact.field_lastname.value %}
-          {% set display = display|merge([variables.contact.field_lastname.value]) %}
-        {% endif %}
-      {% endif %}
 
-      {% if display is empty %}
-        {% trans %}Contactez-nous.{% endtrans %}
-      {% else %}
-        {% set display = display|join(' ') %}
-        {% trans %}Contacter {{ display }}.{% endtrans %}
-      {% endif %}
-    </p>
-  </div>
-</a>
+        {% if display is empty %}
+          {% trans %}Contactez-nous.{% endtrans %}
+        {% else %}
+          {% set display = display|join(' ') %}
+          {% trans %}Contactez {{ display }}.{% endtrans %}
+        {% endif %}
+      </p>
+    </div>
+  </a>
+{% endif %}
