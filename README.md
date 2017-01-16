@@ -22,7 +22,7 @@ to use the search engine, add this tools to your path:
 The git repository of Retraites Populaires is:
 
 ```
- $ git add dplmgr@192.168.188.51:/data/git/retraitespopulaires.git
+ $ git remote add rp dplmgr@192.168.188.51:/data/git/retraitespopulaires.git
 ```
 
 Got an error ? Like:
