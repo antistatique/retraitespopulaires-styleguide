@@ -16,7 +16,7 @@ class PLPInterestRateListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildHeader() {
-    $header['start__year'] = $this->t('Date de début');
+    $header['start_year'] = $this->t('Date de début');
     $header['end_year']    = $this->t('Date de fin');
     $header['rate']        = $this->t('Taux d\'intérêt');
     return $header + parent::buildHeader();
