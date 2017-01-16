@@ -149,31 +149,157 @@ layout: page.html.swig
   </table>
   <!-- /spacer -->
 
-  <!-- Container -->
-  <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" height="auto" style="background-color:#FFFFFF; color: #000000;">
-
-    <!-- spacer -->
+  <!-- Container for bordering-->
+  <table border="0" bgcolor="#000000" width="600" cellpadding="0" cellspacing="0" align="center">
     <tr>
-      <td height="68" colspan="4">
-        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
-      </td>
-    </tr>
-    <!-- /spacer -->
-
-    <!-- logo -->
-    <tr>
-
       <!-- spacer-side -->
       <td height="68">
         <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
       </td>
       <!-- /spacer-side -->
 
-      <td align="left">
-          <img src="/retraitespopulaires-styleguide/build/img/mail/logo-cip.jpg" width="200" height="82.5" alt="Caisse intercommunale de pensions">
-      </td>
-      <td align="right" style="vertical-align: top;">
-        1 Janvier 2016
+      <td height="68" colspan="2">
+        <!-- Container -->
+        <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" height="auto" style="background-color:#FFFFFF; color: #000000;">
+
+          <!-- spacer -->
+          <tr>
+            <td height="68" colspan="4">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
+            </td>
+          </tr>
+          <!-- /spacer -->
+
+          <!-- logo -->
+          <tr>
+
+            <!-- spacer-side -->
+            <td height="68">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
+            </td>
+            <!-- /spacer-side -->
+
+            <td align="left">
+                <img src="/retraitespopulaires-styleguide/build/img/mail/logo-cip.jpg" width="200" height="82.5" alt="Caisse intercommunale de pensions">
+            </td>
+            <td align="right" style="vertical-align: top;">
+              1 Janvier 2016
+            </td>
+
+            <!-- spacer-side -->
+            <td height="68">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
+            </td>
+            <!-- /spacer-side -->
+
+          </tr>
+          <!-- /logo -->
+
+          <!-- spacer -->
+          <tr>
+            <td height="32" colspan="4">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="32" alt="">
+            </td>
+          </tr>
+          <!-- /spacer -->
+
+          <tr>
+
+            <!-- spacer-side -->
+            <td height="68">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
+            </td>
+            <!-- /spacer-side -->
+
+            <td align="left" colspan="2">
+              <p style="font-weight: bold; font-size: 20px; color: #000000; line-height: 1.4em;">
+                Merci Alain Rochat pour votre demande de changement d'adresse.
+              </p>
+            </td>
+
+            <!-- spacer-side -->
+            <td height="68">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
+            </td>
+            <!-- /spacer-side -->
+
+          </tr>
+
+          <!-- spacer -->
+          <tr>
+            <td height="32" colspan="4">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="32" alt="">
+            </td>
+          </tr>
+          <!-- /spacer -->
+
+          <tr>
+
+            <!-- spacer-side -->
+            <td height="68">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
+            </td>
+            <!-- /spacer-side -->
+
+            <td style="color: #000000;" colspan="2">
+                <p style="vertical-align: top; margin: 0; padding: 0; font-weight: normal; font-size: 16px; color: #000000;">
+                Nous allons rapidement traiter votre demande et vous recontacter. <br />
+                Etiam blandit volutpat libero, sed vulputate ante tempus sed. Mauris facilisis nisl vitae orci facilisis congue. Ut non tristique arcu. Vivamus sed tempor leo. Donec non nunc arcu. Donec dictum aliquet orci sit amet fringilla. Phasellus ipsum dui, sollicitudin sed dictum et, finibus a nunc. Aliquam erat volutpat. Donec condimentum risus sed sem ornare elementum. Curabitur felis enim, fermentum eget ex sed, varius condimentum lorem. Donec nec nunc accumsan, tincidunt orci id, lobortis nibh. Praesent ornare mi ut urna gravida, sed ultrices neque aliquet. Sed nunc ipsum, volutpat sed lacus ut, auctor mollis dui. Aliquam erat volutpat.
+                </p>
+            </td>
+
+            <!-- spacer-side -->
+            <td height="68">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
+            </td>
+            <!-- /spacer-side -->
+
+          </tr>
+
+          <!-- spacer -->
+          <tr>
+            <!-- 74 instead of 68 for visual trick -->
+            <td height="74" colspan="4">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="74" alt="">
+            </td>
+          </tr>
+          <!-- /spacer -->
+
+        </table>
+        <!-- /Container -->
+
+        <!-- contact -->
+        <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" height="auto" style="color: #ffffff; text-align: center;">
+
+          <!-- spacer -->
+          <tr>
+            <td height="32" colspan="4">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="32" alt="">
+            </td>
+          </tr>
+          <!-- /spacer -->
+
+          <tr>
+
+            <!-- spacer-side -->
+            <td height="68">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="16" height="68" alt="">
+            </td>
+            <!-- /spacer-side -->
+
+            <td colspan="2" align="center" style="vertical-align: top; margin: 0; padding: 0; font-size: 12px; color: #000; line-height: 14px; text-align: center;">
+              <b>Pour nous contacter</b><br/><br/>
+               Retraites Populaires, Caroline 9, Case postale 288 - 1001 Lausanne ou utilisez le formulaire de contact accessible depuis notre site <a href="https://www.retraitespopulaires.ch">retraitespopulaires.ch</a>.
+            </td>
+
+            <!-- spacer-side -->
+            <td height="68">
+              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="16" height="68" alt="">
+            </td>
+            <!-- /spacer-side -->
+          </tr>
+        </table>
+        <!-- /contact -->
       </td>
 
       <!-- spacer-side -->
@@ -181,114 +307,8 @@ layout: page.html.swig
         <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
       </td>
       <!-- /spacer-side -->
-
     </tr>
-    <!-- /logo -->
-
-    <!-- spacer -->
-    <tr>
-      <td height="32" colspan="4">
-        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="32" alt="">
-      </td>
-    </tr>
-    <!-- /spacer -->
-
-    <tr>
-
-      <!-- spacer-side -->
-      <td height="68">
-        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
-      </td>
-      <!-- /spacer-side -->
-
-      <td align="left" colspan="2">
-        <p style="font-weight: bold; font-size: 20px; color: #000000; line-height: 1.4em;">
-          Merci Alain Rochat pour votre demande de changement d'adresse.
-        </p>
-      </td>
-
-      <!-- spacer-side -->
-      <td height="68">
-        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
-      </td>
-      <!-- /spacer-side -->
-
-    </tr>
-
-    <!-- spacer -->
-    <tr>
-      <td height="32" colspan="4">
-        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="32" alt="">
-      </td>
-    </tr>
-    <!-- /spacer -->
-
-    <tr>
-
-      <!-- spacer-side -->
-      <td height="68">
-        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
-      </td>
-      <!-- /spacer-side -->
-
-      <td style="color: #000000;" colspan="2">
-          <p style="vertical-align: top; margin: 0; padding: 0; font-weight: normal; font-size: 16px; color: #000000;">
-          Nous allons rapidement traiter votre demande et vous recontacter. <br />
-          Etiam blandit volutpat libero, sed vulputate ante tempus sed. Mauris facilisis nisl vitae orci facilisis congue. Ut non tristique arcu. Vivamus sed tempor leo. Donec non nunc arcu. Donec dictum aliquet orci sit amet fringilla. Phasellus ipsum dui, sollicitudin sed dictum et, finibus a nunc. Aliquam erat volutpat. Donec condimentum risus sed sem ornare elementum. Curabitur felis enim, fermentum eget ex sed, varius condimentum lorem. Donec nec nunc accumsan, tincidunt orci id, lobortis nibh. Praesent ornare mi ut urna gravida, sed ultrices neque aliquet. Sed nunc ipsum, volutpat sed lacus ut, auctor mollis dui. Aliquam erat volutpat.
-          </p>
-      </td>
-
-      <!-- spacer-side -->
-      <td height="68">
-        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
-      </td>
-      <!-- /spacer-side -->
-
-    </tr>
-
-    <!-- spacer -->
-    <tr>
-      <td height="68" colspan="4">
-        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="68" alt="">
-      </td>
-    </tr>
-    <!-- /spacer -->
-
   </table>
-  <!-- /Container -->
-
-  <!-- contact -->
-  <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" height="auto" style="color: #ffffff; text-align: center;">
-
-    <!-- spacer -->
-    <tr>
-      <td height="32" colspan="4">
-        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="68" height="32" alt="">
-      </td>
-    </tr>
-    <!-- /spacer -->
-
-    <tr>
-
-      <!-- spacer-side -->
-      <td height="68">
-        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="16" height="68" alt="">
-      </td>
-      <!-- /spacer-side -->
-
-      <td colspan="2" align="center" style="vertical-align: top; margin: 0; padding: 0; font-size: 12px; color: #000; line-height: 14px; text-align: center;">
-        <b>Pour nous contacter</b><br/><br/>
-         Retraites Populaires, Caroline 9, Case postale 288 - 1001 Lausanne ou utilisez le formulaire de contact accessible depuis notre site <a href="https://www.retraitespopulaires.ch">retraitespopulaires.ch</a>.
-      </td>
-
-      <!-- spacer-side -->
-      <td height="68">
-        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="16" height="68" alt="">
-      </td>
-      <!-- /spacer-side -->
-    </tr>
-  </table>
-  <!-- /contact -->
 
   <!-- spacer -->
   <table border="0" bgcolor="#000000" width="600" cellpadding="0" cellspacing="0" align="center">
