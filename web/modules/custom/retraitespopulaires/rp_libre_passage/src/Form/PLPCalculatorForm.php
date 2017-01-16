@@ -325,7 +325,7 @@ class PLPCalculatorForm extends FormBase {
 
         // Assert the civil_status is valid
         if (!$form_state->getValue('civil_status') || empty($form_state->getValue('civil_status'))) {
-            $errors['civil_status'] = t('Votre partenariat obligatoire.');
+            $errors['civil_status'] = t('Merci de saisir le champ Partenariat.');
         }
 
         // Assert the percent is valid
