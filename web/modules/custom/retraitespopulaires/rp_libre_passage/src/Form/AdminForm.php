@@ -176,11 +176,9 @@ class AdminForm extends FormBase {
     }
 
     /**
-     * New files are uploaded with a status of 0 and are treated as temporary files which are removed after 6 hours
-     * We are responsible for changing the $file objects status to FILE_STATUS_PERMANENT
+     * Chane the $file objects status to FILE_STATUS_PERMANENT
      * @method saveFile
-     * @param  File     $file [description]
-     * @return [type]         [description]
+     * @param  File $file
      */
     protected function saveFileAsPermanent(File $file) {
         if( !$file->isPermanent() ){
