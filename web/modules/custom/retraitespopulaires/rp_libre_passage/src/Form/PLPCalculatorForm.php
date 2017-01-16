@@ -262,8 +262,7 @@ class PLPCalculatorForm extends FormBase {
             );
         }
 
-        // Get Women ages
-        $options = array();
+        // Get Women ages & append it to $options
         $age_women = $this->plp_conversion_rate->getAges('woman');
         asort($age_women);
         foreach ($age_women as $age) {
