@@ -1,0 +1,21 @@
+rp_libre_passage.admin:
+    title: Libre Passage
+    parent: rp_toolbar.admin
+    route_name: rp_libre_passage.admin
+rp_libre_passage.admin.settings:
+    title: Settings
+    parent: rp_libre_passage.admin
+    route_name: rp_libre_passage.admin.settings
+    weight: 1
+
+# PLP Conversion Rate menu items definition
+entity.plp_interest_rate.collection:
+  title: 'Taux d''intérêt'
+  parent: rp_libre_passage.admin
+  route_name: entity.plp_interest_rate.collection
+
+# PLP Conversion Rate menu items definition
+entity.plp_conversion_rate.collection:
+  title: 'Taux de conversion'
+  route_name: entity.plp_conversion_rate.collection
+  parent: rp_libre_passage.admin

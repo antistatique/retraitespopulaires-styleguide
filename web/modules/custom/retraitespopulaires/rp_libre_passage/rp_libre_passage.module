@@ -1,0 +1,21 @@
+<?php
+/**
+* Theme hook
+*/
+function rp_libre_passage_theme($existing, $type, $theme, $path) {
+    return array(
+        // Blocks themes
+        // ---------------------------------------------------------------------
+        'rp_libre_passage_plp_block' => array(
+            // Use the following syntax to retrieve all variables in the "variables" container
+            'variables' => ['variables' => []],
+            // Set the template attribute to force the theme suggestions into a sub folder
+            // using [template].html.twig
+            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'template'  => 'blocks/plp'
+        ),
+    );
+}
+
+require_once('src/Mail/mails.php');
+require_once('src/Suggestion/suggestions.php');
