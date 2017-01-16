@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.offer.field_date_end
     - field.field.node.offer.field_document
     - field.field.node.offer.field_document_random
+    - field.field.node.offer.field_draw_at
     - field.field.node.offer.field_faq
     - field.field.node.offer.field_faq_random
     - field.field.node.offer.field_web_site
@@ -141,7 +142,7 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
   field_web_site:
-    weight: 7
+    weight: 6
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -161,6 +162,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_draw_at: true
   langcode: true
   promote: true
   sticky: true

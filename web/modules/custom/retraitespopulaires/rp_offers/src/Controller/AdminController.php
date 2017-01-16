@@ -100,7 +100,7 @@ class AdminController extends ControllerBase {
 
         $output['table'] = array(
             '#type'    => 'table',
-            '#header'  => array(t('Coupon'), t('Participants'), t('Date de création'), t('Date de fin'), t('Jours restants'), t('Operations')),
+            '#header'  => array(t('Coupon'), t('Participants'), t('Date de création'), t('Date de fin'), t('Jours restants'), t('Tirage au sort'), t('Operations')),
         );
 
         $query = $this->entity_query->get('node')
@@ -152,9 +152,19 @@ class AdminController extends ControllerBase {
             );
 
             $dt = new \DateTime('tomorrow');
-            $output['table'][$i]['remaining'] = array(
-              '#plain_text' => t('@day jour(s)', ['@day' => ceil(($node->field_date_end->date->getTimestamp() - $dt->getTimestamp()) / 86400)]),
-            );
+            $output['table'][$i]['remaining']['#plain_text'] = '-';
+            if ($node->field_date_end->date->getTimestamp() > $dt->getTimestamp()) {
+                $output['table'][$i]['remaining'] = array(
+                  '#plain_text' => t('@day jour(s)', ['@day' => ceil(($node->field_date_end->date->getTimestamp() - $dt->getTimestamp()) / 86400)]),
+                );
+            }
+
+            $output['table'][$i]['draw']['#plain_text'] = '';
+            if (!empty($node->field_draw_at->date)) {
+                $output['table'][$i]['draw'] = array(
+                    '#plain_text' => $node->field_draw_at->date->format('d/m/Y'),
+                );
+            }
 
             // Operations
             $output['table'][$i]['operations'] = array(
@@ -183,50 +193,8 @@ class AdminController extends ControllerBase {
         $filename = 'Offres Bella vita - Results.csv';
 
         $response = new StreamedResponse();
-        $response->setCallback(function() {
-            $handle = fopen('php://output', 'w+');
-
-            // Add the header of the CSV file
-            fputcsv($handle, array('Demande du', 'Prénom', 'Nom de famille', 'Adresse', 'Npa', 'Ville', 'Coupon', 'Gagnant'), ';');
-            // Query data from database
-            $query = $this->entity_query->get('rp_offers_request');
-            // Add Filter conditions
-            $filter = $this->request->get('filter');
-            if (!empty($node)) {
-                $query->condition('offer_target_id', $node->nid->value);
-            }else if (!empty($filter)) {
-                $query->condition('offer_target_id', $filter);
-            }
-
-            $query->sort('winner', 'DESC');
-
-            $ids = $query->execute();
-            $requests = $this->entity_offers_request->loadMultiple($ids);
-            // Add the data queried from database
-            foreach ($requests as $key => $request) {
-                $dt = new \DateTime();
-                $dt->setTimestamp($request->created->value);
-
-                $node = $this->entity_node->load($request->offer_target_id->entity->nid->value);
-
-                fputcsv(
-                    $handle,
-                    // The fields
-                    array(
-                        $dt->format('d/m/Y'),
-                        $request->firstname->value,
-                        $request->lastname->value,
-                        $request->address->value,
-                        $request->zip->value,
-                        $request->city->value,
-                        $node->title->value,
-                        $request->winner->value ? 'X' : '',
-                    ),
-                    ';'
-                );
-            }
-
-            fclose($handle);
+        $response->setCallback(function() use ($node) {
+            $this->exportStreamedResponse($node, false);
         });
 
         $response->setStatusCode(200);
@@ -234,6 +202,72 @@ class AdminController extends ControllerBase {
         $response->headers->set('Content-Disposition', 'attachment; filename="'.$filename.'"');
 
         return $response;
+    }
+
+    /**
+    * Admin requests winner csv.
+    */
+    public function requestsWinnerCsv(Node $node = null) {
+        $filename = 'Offres Bella vita - Gagnants - Results.csv';
+
+        $response = new StreamedResponse();
+        $response->setCallback(function() use ($node) {
+            $this->exportStreamedResponse($node, true);
+        });
+
+        $response->setStatusCode(200);
+        $response->headers->set('Content-Type', 'text/csv; charset=utf-8');
+        $response->headers->set('Content-Disposition', 'attachment; filename="'.$filename.'"');
+
+        return $response;
+    }
+
+    private function exportStreamedResponse(Node $node, $winner_only = false) {
+        $handle = fopen('php://output', 'w+');
+
+        // Add the header of the CSV file
+        fputcsv($handle, array('Demande du', 'Prénom', 'Nom de famille', 'Adresse', 'Npa', 'Ville', 'Coupon', 'Gagnant'), ';');
+        // Query data from database
+        $query = $this->entity_query->get('rp_offers_request');
+        // Add Filter conditions
+        $filter = $this->request->get('filter');
+        if (!empty($node)) {
+            $query->condition('offer_target_id', $node->nid->value);
+        }else if (!empty($filter)) {
+            $query->condition('offer_target_id', $filter);
+        }
+
+        if ($winner_only) {
+            $query->condition('winner', 1);
+        }
+
+        $query->sort('winner', 'DESC');
+
+        $ids = $query->execute();
+        $requests = $this->entity_offers_request->loadMultiple($ids);
+        // Add the data queried from database
+        foreach ($requests as $key => $request) {
+            $dt = new \DateTime();
+            $dt->setTimestamp($request->created->value);
+
+            fputcsv(
+                $handle,
+                // The fields
+                array(
+                    $dt->format('d/m/Y'),
+                    $request->firstname->value,
+                    $request->lastname->value,
+                    $request->address->value,
+                    $request->zip->value,
+                    $request->city->value,
+                    $node->title->value,
+                    $request->winner->value ? 'X' : '',
+                ),
+                ';'
+            );
+        }
+
+        fclose($handle);
     }
 
     /**
@@ -314,6 +348,11 @@ class AdminController extends ControllerBase {
                 $request->winner->value = 1;
                 $request->save();
             }
+
+            // Set the draw date on the node
+            $now = new \DateTime();
+            $node->set('field_draw_at', $now->format('Y-m-d\Th:i:s'));
+            $node->save();
         }
 
         drupal_set_message(t('Tirage au sort terminée, @winners gagnants sélectionnés.', ['@winners' => $tickets]));
