@@ -352,31 +352,34 @@ class PLPCalculatorForm extends FormBase {
             $errors['payment_date'] = $this->t('Le format de la date semble incorrecte.');
         }
 
-        // Assert the birthdate and payment_date seems legit
-        $payment_date = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('payment_date'));
-        $birthdate = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('birthdate'));
-        $today = new DateTime('today');
-
-        // Payment validity only for the current and the previous year
-        $payment_validity = new DateTime('today');
-        $payment_validity->modify('1st January Previous Year');
-        if ($birthdate > $today) {
-            $errors['birthdate'] = t('Votre date de naissance semble erronée.');
-        } else if ($payment_date < $payment_validity) {
-            $errors['payment_date'] = t('La date de versement doit au moins être le @date.', ['@date' => $payment_validity->format('d/m/Y')]);
-        } else {
-            $age   = $birthdate->diff($today)->y;
-            $rest  = (int)$form_state->getValue('age') - $age;
-
-            // Assert the age is not already passed
-            if ($rest <= 0 ) {
-                $errors['age'] = t('L\'âge souahité pour le versement entre en contradiction avec votre date de naissance.');
-            }
-        }
-
         // Assert the age is valid
         if (!$form_state->getValue('age') || empty($form_state->getValue('age'))) {
             $errors['age'] = t('L\'âge souhaité pour le versement est obligatoire.');
+        }
+
+        // Check we have no error still here and continue
+        if (empty($errors)) {
+            // Assert the birthdate and payment_date seems legit
+            $payment_date = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('payment_date'));
+            $birthdate = \DateTime::createFromFormat('d/m/Y', $form_state->getValue('birthdate'));
+            $today = new DateTime('today');
+
+            // Payment validity only for the current and the previous year
+            $payment_validity = new DateTime('today');
+            $payment_validity->modify('1st January Previous Year');
+            if ($birthdate > $today) {
+                $errors['birthdate'] = t('Votre date de naissance semble erronée.');
+            } else if ($payment_date < $payment_validity) {
+                $errors['payment_date'] = t('La date de versement doit au moins être le @date.', ['@date' => $payment_validity->format('d/m/Y')]);
+            } else {
+                $age   = $birthdate->diff($today)->y;
+                $rest  = (int)$form_state->getValue('age') - $age;
+
+                // Assert the age is not already passed
+                if ($rest <= 0 ) {
+                    $errors['age'] = t('L\'âge souahité pour le versement entre en contradiction avec votre date de naissance.');
+                }
+            }
         }
 
         // Save errors in sessions to use it on the form builder
