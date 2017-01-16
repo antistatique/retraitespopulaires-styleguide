@@ -23,6 +23,7 @@
 
     $civilStatusInputs.bind('change', function (e) {
       var $this = $(this);
+      console.log($this);
 
       switch ($this.val()) {
         case 'Oui':
@@ -37,7 +38,12 @@
           break;
       }
     });
-    $civilStatusInputs.change();
+    $civilStatusInputs.each(function() {
+      var $this = $(this);
+      if ($this.is(':checked')) {
+        $this.change();
+      }
+    });
 
     $civilStateInput.bind('change', function (e) {
       var $this = $(this);
