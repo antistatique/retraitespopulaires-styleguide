@@ -254,7 +254,6 @@ class PLPCalculatorForm extends FormBase {
         // Get Men ages
         $options = array();
         $age_men = $this->plp_conversion_rate->getAges('man');
-        asort($age_men);
         foreach ($age_men as $age) {
             $options[$age] = $age;
             $form['#attached']['drupalSettings']['age_men'][] = array(
@@ -264,7 +263,6 @@ class PLPCalculatorForm extends FormBase {
 
         // Get Women ages & append it to $options
         $age_women = $this->plp_conversion_rate->getAges('woman');
-        asort($age_women);
         foreach ($age_women as $age) {
             $options[$age] = $age;
             $form['#attached']['drupalSettings']['age_women'][] = array(
@@ -272,6 +270,7 @@ class PLPCalculatorForm extends FormBase {
             );
         }
 
+        asort($options);
         $form['libre_passage']['age'] = array(
             '#title'       => t('Âge souhaité pour le versement des prestations *'),
             '#type'        => 'select',
