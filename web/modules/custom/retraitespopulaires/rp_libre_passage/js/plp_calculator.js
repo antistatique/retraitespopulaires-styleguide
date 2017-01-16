@@ -37,6 +37,7 @@
           break;
       }
     });
+    $civilStatusInputs.change();
 
     $civilStateInput.bind('change', function (e) {
       var $this = $(this);
@@ -72,5 +73,7 @@
         );
       }
     });
+    $civilStateInput.change();
+
   });
 })(jQuery);
