@@ -159,7 +159,7 @@ class AdminForm extends FormBase {
 
         // Save file(s)
         $files = array(
-            'rp_libre_passage.settings.form_pdf' =>$form_state->getValue('form_pdf') ,
+            'rp_libre_passage.settings.form_pdf' => $form_state->getValue('form_pdf') ,
         );
         foreach ($files as $key => $value) {
             if (!empty($value)) {
