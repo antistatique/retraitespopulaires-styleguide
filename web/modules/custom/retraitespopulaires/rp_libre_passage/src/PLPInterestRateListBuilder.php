@@ -29,7 +29,7 @@ class PLPInterestRateListBuilder extends EntityListBuilder {
     /* @var $entity \Drupal\rp_libre_passage\Entity\PLPInterestRate */
     $row['start_year'] = '01.01.'.$entity->getStartYear();
     $row['end_year']   = '31.12.'.$entity->getEndYear();
-    $row['rate']       = $entity->getRate() . ' %';
+    $row['rate']       = $entity->getRate() . '%';
     return $row + parent::buildRow($entity);
   }
 
