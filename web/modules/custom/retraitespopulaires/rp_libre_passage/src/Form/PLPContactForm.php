@@ -90,7 +90,7 @@ class PLPContactForm extends FormBase {
         }
         if (!empty($this->session->get('errors'))) {
             $form['errors'] = array(
-                '#markup' => '<div class="well well-danger well-lg"><p>'.t('Attention, des erreurs sont subvenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
+                '#markup' => '<div class="well well-danger well-lg"><p>'.t('Attention, des erreurs sont survenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
             );
         }
 
