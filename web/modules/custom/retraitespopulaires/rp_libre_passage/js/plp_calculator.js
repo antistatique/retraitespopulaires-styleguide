@@ -65,11 +65,11 @@
 
       // Add elements to select
       for (var key in data) {
-          var obj = data[key];
-           $ageInput.append($('<option></option>')
-             .attr('value', obj.value)
-             .text(obj.value)
-           );
+        var obj = data[key];
+        $ageInput.append($('<option></option>')
+          .attr('value', obj.value)
+          .text(obj.value)
+        );
       }
     });
   });
