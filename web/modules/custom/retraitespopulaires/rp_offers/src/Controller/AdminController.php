@@ -98,63 +98,63 @@ class AdminController extends ControllerBase {
     public function requests() {
         $output = array();
 
-        $output['download'] = array(
-            '#markup' => '<a class="button button-action button--primary button--small" href="'.$this->url->generateFromRoute('rp_offers.admin.requests.csv').'" target="_blank">'.t('Download').'</a>',
-        );
-
-        $output['filter'] = \Drupal::formBuilder()->getForm('Drupal\rp_offers\Form\\AdminFilterRequestsForm');
-
         $output['table'] = array(
             '#type'    => 'table',
-            '#header'  => array(t('Date de participations'), t('Informations'), t('Coupon'), t('Operations')),
+            '#header'  => array(t('Coupon'), t('Participants'), t('Date de création'), t('Date de fin'), t('Jours restants'), t('Operations')),
         );
 
-        $query = $this->entity_query->get('rp_offers_request');
-
-        // Add Filter conditions
-        $filter = $this->request->get('filter');
-        if (!empty($filter)) {
-            $query->condition('offer_target_id', $filter);
-        }
+        $query = $this->entity_query->get('node')
+            ->condition('type', 'offer')
+            ->condition('status', 1)
+        ;
 
         // Pager
-        $ids = $query->execute();
-        pager_default_initialize(count($ids), $this->limit);
+        $nids = $query->execute();
+        pager_default_initialize(count($nids), $this->limit);
         $output[] = array(
             '#type' => 'pager',
             '#quantity' => '3',
         );
 
+        $query->sort('field_date_end');
+
         // Paged query
         $page = pager_find_page();
         $query->range($page*$this->limit, $this->limit);
-        $ids = $query->execute();
-        $requests = $this->entity_offers_request->loadMultiple($ids);
+        $nids = $query->execute();
+        $nodes = $this->entity_node->loadMultiple($nids);
 
-        foreach ($requests as $i => $request) {
-            $node = null;
-            if ($request->offer_target_id->entity) {
-                $node = $this->entity_node->load($request->offer_target_id->entity->nid->value);
-            }
+        foreach ($nodes as $i => $node) {
+
+            // Get Title
+            $output['table'][$i]['offer'] = array(
+              '#markup' => '<a href="'.$this->url->generateFromRoute('entity.node.canonical', ['node' => $node->nid->value]).'" target="_blank">'.$node->title->value.'</a>',
+            );
+
+            // Get requests
+            $requests = $this->entity_query->get('rp_offers_request')
+                ->condition('offer_target_id', $node->nid->value)
+                ->count()
+                ->execute()
+            ;
+            $output['table'][$i]['participant'] = array(
+              '#markup' => t('@number participant(s)', ['@number' => $requests]),
+            );
 
             $dt = new \DateTime();
-            $dt->setTimestamp($request->created->value);
-            $output['table'][$i]['date'] = array(
+            $dt->setTimestamp($node->created->value);
+            $output['table'][$i]['created'] = array(
               '#plain_text' => $dt->format('d/m/Y'),
             );
 
-            $output['table'][$i]['info'] = array(
-              '#markup' => ucfirst($request->firstname->value) .' · <strong>'. $request->lastname->value . '</strong>'
-              . '<br/><a href="mailto:'.$request->email->value.'">' . strtolower($request->email->value) .'</a>'
-              . '<br/>' . ucfirst($request->address->value)
-              . '<br/>' . $request->zip->value . ' ' . $request->city->value,
+            $output['table'][$i]['field_date_end'] = array(
+              '#plain_text' => $node->field_date_end->date->format('d/m/Y'),
             );
 
-            if ($node) {
-                $output['table'][$i]['offer'] = array(
-                  '#markup' => '<a href="'.$this->url->generateFromRoute('entity.node.canonical', ['node' => $node->nid->value]).'" target="_blank">'.$node->title->value.'</a>',
-                );
-            }
+            $dt = new \DateTime('tomorrow');
+            $output['table'][$i]['remaining'] = array(
+              '#plain_text' => t('@day jour(s)', ['@day' => ceil(($node->field_date_end->date->getTimestamp() - $dt->getTimestamp()) / 86400)]),
+            );
 
             // Operations
             $output['table'][$i]['operations'] = array(
@@ -242,11 +242,25 @@ class AdminController extends ControllerBase {
     public function request(Node $node) {
         $variables = array('node' => $node);
 
+        $variables['search'] = \Drupal::formBuilder()->getForm('Drupal\rp_offers\Form\AdminRequestSearchForm');
+
         $query = $this->entity_query->get('rp_offers_request');
         $query->condition('offer_target_id', $node->nid->value);
 
+        // Add Seach conditions from AdminRequestSearchForm
+        $search = $this->request->get('q');
+        if (!empty($search)) {
+            $group = $query->orConditionGroup()
+                ->condition('email', $search, 'CONTAINS')
+                ->condition('firstname', $search, 'CONTAINS')
+                ->condition('lastname', $search, 'CONTAINS')
+            ;
+            $query->condition($group);
+        }
+
         // Pager
         $ids = $query->execute();
+        $total = count($ids);
         pager_default_initialize(count($ids), $this->limit);
         $variables['pager'] = array(
             '#type' => 'pager',
@@ -260,6 +274,7 @@ class AdminController extends ControllerBase {
         $query->range($page*$this->limit, $this->limit);
         $ids = $query->execute();
         $variables['requests'] = $this->entity_offers_request->loadMultiple($ids);
+        $variables['total'] = $total;
 
         return [
             '#theme'     => 'rp_offers_admin_request_page',

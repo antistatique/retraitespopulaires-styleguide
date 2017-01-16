@@ -13,7 +13,12 @@ don't forget to add bins to your path such:
 
   * php
   * mysql
-add m
+
+to use the search engine, add this tools to your path:
+
+  * solr
+  * tika
+
 The git repository of Retraites Populaires is:
 
 ```
