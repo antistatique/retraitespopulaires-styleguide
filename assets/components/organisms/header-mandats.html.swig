@@ -35,7 +35,7 @@ notes: |
       </div>
 
       <div class="hamburger-mandat-toggle">
-        {% include '../atoms/hamburger-mandat.html.swig' with {'hamburger_theme': header_mandats_theme} %}
+        {% include '../atoms/hamburger-mandat.html.swig' with {'hamburger_mandat_theme': header_mandats_theme} %}
       </div>
 
     </div>

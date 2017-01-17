@@ -9,6 +9,24 @@
   cursor: pointer;
   z-index: 2001;
 
+  @each $label, $color in $themes {
+    &.hamburger-mandat-#{$label} {
+      .hamburger-mandat-button .hamburger-mandat-circle circle {
+        stroke: $color;
+      }
+
+      .hamburger-mandat-helper .helper-when-open,
+      .hamburger-mandat-helper .helper-when-close {
+        color: $color;
+      }
+
+      &.active .hamburger-mandat span:nth-child(1),
+      &.active .hamburger-mandat span:nth-child(3) {
+        background: $color;
+      }
+    }
+  }
+
   .hamburger-mandat-button {
     position: absolute;
     right: 0.5em;

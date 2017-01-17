@@ -3,19 +3,18 @@
 .push-menu {
   position: fixed;
   top: 0;
-  width: 71%;
+  right: -70vw;
+  width: 70vw;
   height: 100%;
   padding: $grid-gutter-width;
   background: $brand-primary;
   color: $white;
   z-index: $zindex-modal + 10;
-  transform: translateX(89%);
-  transition: transform 0.3s ease-in-out;
   overflow: auto;
 
   @media only screen and (min-width: $screen-sm-min) {
-    width: 40%;
-    transform: translateX(160%);
+    right: -40vw;
+    width: 40vw;
   }
 
   @media only screen and (min-width: $screen-md-min) {
@@ -24,6 +23,12 @@
 
   a {
     color: $white;
+  }
+
+  @each $label, $color in $themes {
+    &.push-menu-#{$label} {
+      background: $color;
+    }
   }
 }
 
@@ -36,13 +41,13 @@ body {
 
   @media only screen and (max-width: $screen-md-min) {
     &.menu-push-toright {
-      position: fixed;
+      position: relative;
       height: 100%;
       overflow: hidden;
-      transform: translateX(-70%);
+      transform: translateX(-70vw);
 
       @media only screen and (min-width: $screen-sm-min) {
-        transform: translateX(-40%);
+        transform: translateX(-40vw);
       }
     }
   }
