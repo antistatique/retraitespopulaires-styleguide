@@ -1,17 +1,44 @@
 @charset 'UTF-8';
 
-@each $label, $color in $themes {
-  .navbar-#{$label} .navbar-nav > li.active {
-    & > a {
-      color: $color;
-    }
-  }
-}
-
-.navbar-brand {
-  margin-top: -35px;
-}
-
 .navbar {
   margin-bottom: 0;
+  min-height: auto;
+  border: 0;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    padding-bottom: 1.2em;
+
+    a {
+      color: $black;
+      transition: color 0.25s ease-in-out;
+
+      &:hover {
+        color: $brand-primary;
+        text-decoration: none;
+      }
+    }
+
+    &.active {
+      border-bottom: 4px solid $brand-primary;
+    }
+  }
+
+  @each $label, $color in $themes {
+    &.navbar-#{$label} li > a:hover {
+      color: $color;
+    }
+
+    &.navbar-#{$label} li.active {
+      border-bottom: 4px solid $color;
+
+      > a {
+        color: $color;
+      }
+    }
+  }
 }

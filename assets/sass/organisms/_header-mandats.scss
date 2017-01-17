@@ -1,10 +1,66 @@
 @charset 'UTF-8';
 
 .header-mandat {
-  padding: 0.6em 0;
-  background-color: $ligthen-gray;
+  position: relative;
+  padding-top: 1.6em;
+  background-color: $white;
+  box-shadow: 0 5px 30px rgba(100, 100, 100, 0.3);
+  z-index: 2;
+
+  .wrapper-navs {
+    display: none;
+  }
+
+  @media only screen and (min-width: $screen-md-min) {
+    .hamburger-mandat-toggle {
+      display: none;
+    }
+
+    .wrapper-navs {
+      display: block;
+    }
+  }
+}
+
+.wrapper-prenavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  .prenavbar-separator {
+    width: 2px;
+    height: $grid-gutter-width/2;
+    margin: 0 $grid-gutter-width/2;
+    background-color: $light-gray;
+  }
+}
+
+.wrapper-navbar {
+  margin-top: $grid-gutter-width/2;
 }
 
 .header-mandat-logo {
   height: 90px;
+}
+
+.search-box {
+  i {
+    font-size: 40px;
+    color: $brand-primary;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  @each $label, $color in $themes {
+    &.search-box-#{$label} i {
+      color: $color;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
 }

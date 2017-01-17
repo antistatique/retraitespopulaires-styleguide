@@ -1,0 +1,49 @@
+@charset 'UTF-8';
+
+.push-menu {
+  position: fixed;
+  top: 0;
+  width: 71%;
+  height: 100%;
+  padding: $grid-gutter-width;
+  background: $brand-primary;
+  color: $white;
+  z-index: $zindex-modal + 10;
+  transform: translateX(89%);
+  transition: transform 0.3s ease-in-out;
+  overflow: auto;
+
+  @media only screen and (min-width: $screen-sm-min) {
+    width: 40%;
+    transform: translateX(160%);
+  }
+
+  @media only screen and (min-width: $screen-md-min) {
+    display: none;
+  }
+
+  a {
+    color: $white;
+  }
+}
+
+/* Trick the body to allow push from left */
+
+body {
+  position: relative;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+
+  @media only screen and (max-width: $screen-md-min) {
+    &.menu-push-toright {
+      position: fixed;
+      height: 100%;
+      overflow: hidden;
+      transform: translateX(-70%);
+
+      @media only screen and (min-width: $screen-sm-min) {
+        transform: translateX(-40%);
+      }
+    }
+  }
+}
