@@ -116,7 +116,7 @@ class PLPContactForm extends FormBase {
         }
         $form['personnal']['row_1']['firstname'] = array(
             '#title'       => t('Votre prénom *'),
-            '#placeholder' => t('John'),
+            '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
             '#required'    => false,
@@ -134,7 +134,7 @@ class PLPContactForm extends FormBase {
         }
         $form['personnal']['row_1']['lastname'] = array(
             '#title'       => t('Votre nom de famille *'),
-            '#placeholder' => t('Doe'),
+            '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#required'    => false,
