@@ -97,8 +97,8 @@ class PLPContactForm extends FormBase {
         $form['personnal'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend', 'fieldset-bordered')],
-          '#title'      => t('Je suis intressé(e)'),
-          '#prefix'     => '<h3>'.t('Je suis intressé(e)').'</h3>',
+          '#title'      => t('Je suis intéressé(e)'),
+          '#prefix'     => '<h3>'.t('Je suis intéressé(e)').'</h3>',
         );
 
         $form['personnal']['row_1'] = array(
