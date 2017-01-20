@@ -179,10 +179,11 @@ class PLPCalculatorForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $options = array(
-            0   => '0%',
-            60  => '60%',
-            80  => '80%',
-            100 => '100%',
+            '_none' => 'Sélectionner un pourcentage',
+            0       => '0%',
+            60      => '60%',
+            80      => '80%',
+            100     => '100%',
         );
         $form['personnal']['percent'] = array(
             '#title'       => t('Pourcentage souhaité de la rente de vieillesse versée au conjoint (ou partenaire enregistré) survivant'),
@@ -332,7 +333,7 @@ class PLPCalculatorForm extends FormBase {
 
         // Assert the percent is valid
         if (!empty($form_state->getValue('civil_status')) && $form_state->getValue('civil_status') == 'Oui') {
-            if (!$form_state->getValue('percent')) {
+            if ($form_state->getValue('percent') == '_none') {
                 $errors['percent'] = t('Merci de spécifier un pourcentage si vous êtes en partenariat enregistré.');
             }
         }
