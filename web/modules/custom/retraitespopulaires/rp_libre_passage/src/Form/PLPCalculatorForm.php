@@ -123,13 +123,14 @@ class PLPCalculatorForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['birthdate'] = array(
-            '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
-            '#placeholder' => t('jj/mm/aaaa'),
-            '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#required'    => false,
-            '#prefix'      => '<div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div>',
+            '#title'         => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
+            '#placeholder'   => t('jj/mm/aaaa'),
+            '#type'          => 'textfield',
+            '#attributes'    => ['size' => 10, 'theme' => $theme],
+            '#required'      => false,
+            '#prefix'        => '<div class="form-group '.$error_class.'">',
+            '#suffix'        => $error. '</div>',
+            '#default_value' => $this->session->get('data')['birthdate'],
         );
 
         // Get error to inline it as suffix
@@ -141,13 +142,14 @@ class PLPCalculatorForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['civil_state'] = array(
-            '#title'       => t('Votre état civil *'),
-            '#type'        => 'select',
-            '#attributes'  => ['theme' => $theme],
-            '#options'     => array('woman' => t('Madame'), 'man' => t('Monsieur')),
-            '#required'    => false,
-            '#prefix'      => '<div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div>',
+            '#title'         => t('Votre état civil *'),
+            '#type'          => 'select',
+            '#attributes'    => ['theme' => $theme],
+            '#options'       => array('woman' => t('Madame'), 'man' => t('Monsieur')),
+            '#required'      => false,
+            '#prefix'        => '<div class="form-group '.$error_class.'">',
+            '#suffix'        => $error. '</div>',
+            '#default_value' => $this->session->get('data')['civil_state'],
         );
 
         // Get error to inline it as suffix
@@ -440,6 +442,7 @@ class PLPCalculatorForm extends FormBase {
                     'pension_survivor'      => $pension_survivor_formatted,
                 );
                 $this->session->set('data', $data);
+                $this->session->set('view_result', TRUE);
 
                 $form_state->setRedirect('entity.node.canonical', [
                     'node' => $this->state->get('rp_libre_passage.settings.page.calculator')['nid']

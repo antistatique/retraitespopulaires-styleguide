@@ -100,8 +100,9 @@ class PLPBlock extends BlockBase implements ContainerFactoryPluginInterface {
         $variables['node'] = $this->route->getParameter('node');
 
         if ($this->request->get('reset')) {
-            $this->session->delete('data');
+            $this->session->delete('view_result');
         }
+        $variables['view_result'] = $this->session->get('view_result');
         $variables['results'] = $this->session->get('data');
 
         return [
