@@ -205,7 +205,7 @@ class DocumentsForm extends FormBase {
         }
         $form['personnal']['birthdate'] = array(
             '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
-            '#placeholder' => t('24/12/2016'),
+            '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
             '#required'    => false,
@@ -282,7 +282,7 @@ class DocumentsForm extends FormBase {
         }
         $form['personnal']['birthdate'] = array(
             '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
-            '#placeholder' => t('24/12/2016'),
+            '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
             '#required'    => false,

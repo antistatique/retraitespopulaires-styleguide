@@ -124,7 +124,7 @@ class PLPCalculatorForm extends FormBase {
         }
         $form['personnal']['birthdate'] = array(
             '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
-            '#placeholder' => t('24/12/2016'),
+            '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
             '#required'    => false,
@@ -231,7 +231,7 @@ class PLPCalculatorForm extends FormBase {
             '#suffix' => '</div>'.$error.'</div>',
         );
         $form['libre_passage']['group_start']['payment_date'] = array(
-            '#placeholder' => t('24/12/2016'),
+            '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 15, 'theme' => $theme, 'class' => array('datepicker')],
             '#required'    => false,
