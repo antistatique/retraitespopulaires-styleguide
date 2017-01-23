@@ -294,6 +294,11 @@ A better way is to use the `example.settings.local.php` that do more for your de
 
 ## 💻 Drush Commands
 
+### Solr index
+
+ 1. You must add every thing to be index with `drush search-api-reset-tracker`.
+ 2. Once done, reindex all with `drush search-api-index`.
+
 ### import_zip
 
 To importe all zips and associate it with advisor, use the drush command `rp:contact:import_zip` and the option `file` as full csv file path that contain zips to be imported.
