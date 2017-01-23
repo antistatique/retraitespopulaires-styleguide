@@ -15,11 +15,11 @@ class Profession {
         if ($type == 'faq') {
             switch ($tid) {
                 case 1:
-                    return t('la prévoyance professionnelle');
+                    return t('à la prévoyance professionnelle');
                 break;
 
                 case 2:
-                    return t('l\'immobilier');
+                    return t('à l\'immobilier');
                 break;
 
                 case 6:
@@ -27,7 +27,7 @@ class Profession {
                 break;
 
                 case 7:
-                    return t('l\'assurance vie');
+                    return t('à l\'assurance vie');
                 break;
             }
         } elseif ($type == 'document') {
