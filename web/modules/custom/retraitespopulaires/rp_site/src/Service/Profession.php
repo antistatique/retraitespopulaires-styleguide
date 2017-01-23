@@ -23,7 +23,7 @@ class Profession {
                 break;
 
                 case 6:
-                    return t('la finance');
+                    return t('aux prêts');
                 break;
 
                 case 7:
@@ -41,7 +41,7 @@ class Profession {
                 break;
 
                 case 6:
-                    return t('de financement');
+                    return t('de prêts');
                 break;
 
                 case 7:
