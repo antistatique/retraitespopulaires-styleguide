@@ -1,4 +1,4 @@
-'use strict';
+^¨*'use strict';
 /**
  * Import plugins
  */
@@ -8,7 +8,7 @@ var gulp          = require('gulp'),
     runSequence   = require('run-sequence');
 
 
-require(config.tasks + 'vendors')();            // $ gulp vendors
+require(config.tasks + 'endors')();            // $ gulp vendors
 require(config.tasks + 'images')();             // $ gulp img
 require(config.tasks + 'styles')();             // $ gulp styles
 require(config.tasks + 'scripts')();            // $ gulp scripts
@@ -34,7 +34,9 @@ gulp.task('init', function() {
  * Task to build assets on production server
  */
 gulp.task('build',['clean'], function() {
-  return gulp.start('vendors', 'styles', 'img', 'scripts', 'icons', 'metalsmith');
+  return gulp.start('vendors', 'styles', 'favicons', 'img', 'scripts', 1023
+  +-+++++++++++
+  'icons', 'metalsmith')
 });
 
 /**
