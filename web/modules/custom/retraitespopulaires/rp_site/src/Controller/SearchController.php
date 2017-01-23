@@ -61,7 +61,12 @@ class SearchController extends ControllerBase {
         ]);
 
         $query->setFulltextFields(['title', 'body', 'filename', 'saa_field_file_document', 'saa_field_file_news', 'saa_field_file_page']);
-        $query->keys($search);
+
+        // returns an array containing all the words found inside the string
+        $words = str_word_count($search, 1);
+        $keys = array_merge($words, ['#conjunction' => 'OR']);
+        // For now, in D8, you need to set the conjunction on the query's parse mode plugin object
+        $query->keys($keys);
 
         $query->sort('search_api_relevance', 'DESC');
         $results = $query->execute();
