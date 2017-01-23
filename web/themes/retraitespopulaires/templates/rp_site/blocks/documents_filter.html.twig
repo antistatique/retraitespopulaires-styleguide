@@ -1,36 +1,63 @@
 {% set theme = variables.theme %}
 
-{% if variables.categories %}
 <h4>{% trans %}Filtrer par:{% endtrans %}</h4>
 <div class="spacer spacer-sm"></div>
-
+{% if variables.professions %}
 <div class="{{ theme_hook_original }}">
-  <p class="media-heading text-muted">{% trans %}Nos documents utiles{% endtrans %}</p>
-  <ul class="filters-list  filters-list-{{ theme }}">
+  <p class="media-heading text-muted">{% trans %}Nos métiers{% endtrans %}</p>
+  <ul class="filters-list">
+    {% for category in variables.professions %}
+      <li class="{{ category.alias == variables.profession_alias ? 'active' }}">
 
-    <li class="{{ variables.taxonomy_term_alias is empty ? 'active' }}">
-      {% if variables.taxonomy_term_alias is empty %}
-        <a href="{{ path('entity.node.canonical', {'node': variables.collection}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ theme }}"></a>
-      {% else %}
-        <a href="{{ path('entity.node.canonical', {'node': variables.collection}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked text-{{ theme }}"></a>
-      {% endif %}
+        {# Build filtres for the current selected item - to remove himself on second click #}
+        {% set profession_alias = '' %}
+         {% if variables.profession_alias != category.alias %}
+           {% set profession_alias = category.alias %}
+         {% endif %}
 
-      <a class="pretty-link text-{{ theme }}" href="{{ path('entity.node.canonical', {'node': variables.collection}) }}">{% trans %}Tous{% endtrans %}</a>
-    </li>
+        {% set classes = [
+          'text-' ~ theme|default('primary'),
+          'retraitespopulaires-icon',
+          'retraitespopulaires-icon-2x',
+          category.alias != variables.profession_alias ? 'retraitespopulaires-icon-unchecked',
+          category.alias == variables.profession_alias ? 'retraitespopulaires-icon-checked',
+        ] %}
 
-    {% for category in variables.categories %}
-      <li class="{{ category.alias == variables.taxonomy_term_alias ? 'active' }}">
-       {% if category.alias == variables.taxonomy_term_alias %}
-         <a href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ theme }}"></a>
-       {% else %}
-         <a href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked text-{{ theme }}"></a>
-       {% endif %}
+        <a href="{{ path('<current>', {'profession_alias': profession_alias, 'category_alias': variables.category_alias}) }}" class="{{ classes|join(' ') }}"></a>
 
-       <a class="pretty-link text-{{ theme }}" href="{{ path('entity.node.canonical', {'node': variables.collection, 'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
+       <a class="pretty-link text-{{ theme|default('primary') }}" href="{{ path('<current>', {'profession_alias': profession_alias, 'category_alias': variables.category_alias}) }}">{{ category.term.name }}</a>
      </li>
     {% endfor %}
-
   </ul>
+</div>
+{% endif %}
+
+
+{% if variables.categories %}
+<div class="{{ theme_hook_original }}">
+  <p class="media-heading text-muted">{% trans %}Nos catégories{% endtrans %}</p>
+  <ul class="filters-list">
+    {% for category in variables.categories %}
+      <li class="{{ category.alias == variables.category_alias ? 'active' }}">
+        {# Build filtres for the current selected item - to remove himself on second click #}
+        {% set category_alias = '' %}
+         {% if variables.category_alias != category.alias %}
+           {% set category_alias = category.alias %}
+         {% endif %}
+
+        {% set classes = [
+          'text-' ~ theme|default('primary'),
+          'retraitespopulaires-icon',
+          'retraitespopulaires-icon-2x',
+          category.alias != variables.category_alias ? 'retraitespopulaires-icon-unchecked',
+          category.alias == variables.category_alias ? 'retraitespopulaires-icon-checked',
+        ] %}
+
+        <a href="{{ path('<current>', {'category_alias': category_alias, 'profession_alias': variables.profession_alias}) }}" class="{{ classes|join(' ') }}"></a>
+
+       <a class="pretty-link text-{{ theme|default('primary') }}" href="{{ path('<current>', {'category_alias': category_alias, 'profession_alias': variables.profession_alias}) }}">{{ category.term.name }}</a>
+     </li>
+    {% endfor %}
   </ul>
 </div>
 {% endif %}

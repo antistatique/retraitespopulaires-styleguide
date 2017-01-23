@@ -90,8 +90,11 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
     public function build($params = array()) {
         $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.documents')['nid']);
 
-        $taxonomy_term_alias = \Drupal::request()->query->get('taxonomy_term_alias');
-        $variables['taxonomy_term_alias'] = $taxonomy_term_alias;
+        $profession_alias = \Drupal::request()->query->get('profession_alias');
+        $variables['profession_alias'] = $profession_alias;
+
+        $category_alias = \Drupal::request()->query->get('category_alias');
+        $variables['category_alias'] = $category_alias;
 
         if (isset($params['theme'])) {
             $variables['theme'] = $params['theme'];
@@ -99,20 +102,31 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
 
         // Professions
         $professions = $this->entity_taxonomy->loadTree('profession');
-
-        $categories = $professions;
-        foreach ($categories as $profession) {
+        foreach ($professions as $profession) {
             $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$profession->tid);
             if( !empty($alias) ){
                 $alias = str_replace('/metier/', '', $alias);
-                $variables['categories'][] = array(
+                $variables['professions'][] = array(
                     'term'  => $profession,
                     'alias' => ltrim($alias, '/'),
                 );
 
-                if($alias == $taxonomy_term_alias) {
+                if($alias == $profession_alias) {
                     $variables['theme'] = $this->profession->theme($profession->tid);
                 }
+            }
+        }
+
+        // Category
+        $categories = $this->entity_taxonomy->loadTree('category_document');
+        foreach ($categories as $category) {
+            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$category->tid);
+            if( !empty($alias) ){
+                $alias = str_replace('/metier/', '', $alias);
+                $variables['categories'][] = array(
+                    'term'  => $category,
+                    'alias' => ltrim($alias, '/'),
+                );
             }
         }
 
