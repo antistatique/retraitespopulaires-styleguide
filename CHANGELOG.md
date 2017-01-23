@@ -1,6 +1,12 @@
 CHANGELOG
 ---------
 
+## 1.2.0 (2017-01-23)
+ - Added Simulatore "Police de Libre Passage (PLP)"
+ - Improved conjuction of Search API with OR
+ - Added "Usefull document(s)" on News body
+ - Improved Bella Vita admin & export
+
 ## 1.1.8 (2016-12-21))
  - Added ConversionForm (Demande de conversion d'un taux variable en taux fixe)
  - Added DepreciationForm (Demande de modification de l'amortissement du 1er rang)
