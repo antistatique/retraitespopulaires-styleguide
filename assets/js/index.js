@@ -5,6 +5,7 @@ import { organic_generate } from './organicJS.js';
 import { datepicker } from './datepicker.js';
 import { number_format } from './number_format.js';
 import { smoothscroll_load } from './smoothscroll.js';
+import { gallery } from './gallery.js';
 
 (function(){
   big_menu();
@@ -14,4 +15,5 @@ import { smoothscroll_load } from './smoothscroll.js';
   input_files();
   datepicker();
   number_format();
+  gallery();
 }());
