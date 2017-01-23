@@ -8,7 +8,7 @@ var gulp          = require('gulp'),
     runSequence   = require('run-sequence');
 
 
-require(config.tasks + 'endors')();            // $ gulp vendors
+require(config.tasks + 'vendors')();            // $ gulp vendors
 require(config.tasks + 'images')();             // $ gulp img
 require(config.tasks + 'styles')();             // $ gulp styles
 require(config.tasks + 'scripts')();            // $ gulp scripts
