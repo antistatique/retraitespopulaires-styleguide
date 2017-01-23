@@ -10,8 +10,10 @@
   </div>
   <div class="search-body">
     {% if variables.result.body %}
-      {% set body = variables.result.body|striptags %}
-      <p class="m-0">{{ body|slice(0, 120)|raw }}{% if body|length > 120 %}...{% endif %}</p>
+      <p class="m-0">{{ variables.result.body|raw }}</p>
+    {% elseif variables.result.original_body %}
+      {% set body = variables.result.original_body|striptags %}
+      <p class="m-0">... {{ body|slice(0, 120)|raw }} ...</p>
     {% endif %}
   </div>
 </a>

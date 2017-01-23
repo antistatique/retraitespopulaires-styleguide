@@ -17,7 +17,7 @@ rp_offers.admin.requests:
     path: '/admin/retraites-populaires/offers/requests'
     defaults:
         _controller: '\Drupal\rp_offers\Controller\AdminController::requests'
-        _title: 'Offre Bella vita - Admin - Requests'
+        _title: 'Offre Bella vita - Admin - Offres'
     requirements:
         _permission: 'administer rp offers'
 rp_offers.admin.requests.csv:
@@ -25,6 +25,14 @@ rp_offers.admin.requests.csv:
     defaults:
         _controller: '\Drupal\rp_offers\Controller\AdminController::requestsCsv'
         _title: 'Offre Bella vita - Admin - Requests CSV'
+        node: null
+    requirements:
+        _permission: 'administer rp offers'
+rp_offers.admin.requests_winner.csv:
+    path: '/admin/retraites-populaires/offers/requests_winner/csv/{node}'
+    defaults:
+        _controller: '\Drupal\rp_offers\Controller\AdminController::requestsWinnerCsv'
+        _title: 'Offre Bella vita - Admin - Requests Winner CSV'
         node: null
     requirements:
         _permission: 'administer rp offers'

@@ -60,7 +60,14 @@ class SearchController extends ControllerBase {
           'offset' => !is_null($this->request->get('page')) ? $this->request->get('page') * $this->limit : 0,
         ]);
 
-        $query->setFulltextFields(['title', 'body'])->keys($search);
+        $query->setFulltextFields(['title', 'body', 'filename', 'saa_field_file_document', 'saa_field_file_news', 'saa_field_file_page']);
+
+        // returns an array containing all the words found inside the string
+        $words = str_word_count($search, 1);
+        $keys = array_merge($words, ['#conjunction' => 'OR']);
+        // For now, in D8, you need to set the conjunction on the query's parse mode plugin object
+        $query->keys($keys);
+
         $query->sort('search_api_relevance', 'DESC');
         $results = $query->execute();
 
@@ -71,11 +78,48 @@ class SearchController extends ControllerBase {
 
         foreach ($results as $key => $result) {
             $variables['results'][$key] = array(
-                'nid'   => $result->getField('nid')->getValues()[0],
-                'title' => $result->getField('title')->getValues()[0],
-                'body'  => !empty($result->getField('body')->getValues()) ? $result->getField('body')->getValues()[0] : '',
-                'type'  => $result->getField('type')->getValues()[0],
+                'nid'           => $result->getField('nid')->getValues()[0],
+                'title'         => $result->getField('title')->getValues()[0],
+                'body'          => $result->getExcerpt(),
+                'original_body' => $result->getField('body')->getValues() ? $result->getField('body')->getValues()[0] : ''
             );
+
+
+            if ($result->getField('type')->getValues()[0]) {
+                switch ($result->getField('type')->getValues()[0]) {
+                    case 'news':
+                        $variables['results'][$key]['type'] = t('Actualités');
+                        break;
+
+                    case 'advisor':
+                        $variables['results'][$key]['type'] = t('Conseiller');
+                        break;
+
+                    case 'product':
+                        $variables['results'][$key]['type'] = t('Produit');
+                        break;
+
+                    case 'faq':
+                        $variables['results'][$key]['type'] = t('Questions-réponses');
+                        break;
+
+                    case 'partnership':
+                        $variables['results'][$key]['type'] = t('Partenaire');
+                        break;
+
+                    case 'offer':
+                        $variables['results'][$key]['type'] = t('Coupons Bella Vita');
+                        break;
+
+                    case 'management_contracts':
+                        $variables['results'][$key]['type'] = t('Mandats de gestion');
+                        break;
+
+                    default:
+                        $variables['results'][$key]['type'] = $result->getField('type')->getValues()[0];
+                        break;
+                }
+            }
         }
 
         // Pager

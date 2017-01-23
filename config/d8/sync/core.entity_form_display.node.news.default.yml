@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.field_cover
     - field.field.node.news.field_date
     - field.field.node.news.field_document
+    - field.field.node.news.field_document_news
     - field.field.node.news.field_document_random
     - field.field.node.news.field_faq
     - field.field.node.news.field_faq_random
@@ -132,6 +133,7 @@ third_party_settings:
     group_attachments_content:
       children:
         - field_file_news
+        - field_document_news
       parent_name: group_details
       weight: 120
       label: 'Positionner dans le contenu'
@@ -184,6 +186,14 @@ content:
     type: datetime_default
   field_document:
     weight: 124
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_document_news:
+    weight: 123
     settings:
       match_operator: CONTAINS
       size: 60

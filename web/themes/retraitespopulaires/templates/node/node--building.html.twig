@@ -99,53 +99,9 @@
       </div>
     {% endif %}
 
-    <!-- Linked Files -->
-    {% if not node.field_file_building is empty %}
-      <div class="spacer spacer-sm"></div>
-      <p class="media-heading text-muted">
-        {% trans %}
-          Fichier attaché
-        {% plural node.field_file_building|length %}
-          Fichiers attachés
-        {% endtrans %}
-      </p>
-      <ul class="unordered-list">
-      {% for file in node.field_file_building %}
-          <li>
-            {% set file_title = file.description ? file.description : file.entity.filename.value %}
-            {% set file_type = file.entity.mimeType ? file.entity.mimeType %}
-            <a href="{{ file_url(file.entity.uri.value) }}" target="_blank" class="pretty-link text-immobilier">
-              {{ file_title }}
-              <span class="text-muted text-small">- {{ file_type|extension_guesser|upper }}</span>
-            </a>
-          </li>
-      {% endfor %}
-      </ul>
-    {% endif %}
+    {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_building, 'theme': 'immobilier'} %}{% endembed %}
 
-    <!-- Linked Plans -->
-    {% if content.field_file_plan %}
-      <div class="spacer spacer-sm"></div>
-      <p class="media-heading text-muted">
-        {% trans %}
-          Fichier de plan
-        {% plural node.field_file_plan|length %}
-          Fichiers de plan
-        {% endtrans %}
-      </p>
-      <ul class="unordered-list">
-      {% for file in node.field_file_plan %}
-          <li>
-            {% set file_title = file.description ? file.description : file.entity.filename.value %}
-            {% set file_type = file.entity.mimeType ? file.entity.mimeType %}
-            <a href="{{ file_url(file.entity.uri.value) }}" target="_blank" class="pretty-link text-immobilier">
-              {{ file_title }}
-              <span class="text-muted text-small">- {{ file_type|extension_guesser|upper }}</span>
-            </a>
-          </li>
-      {% endfor %}
-      </ul>
-    {% endif %}
+    {% embed "@retraitespopulaires/node/partials/attached_plans.html.twig" with {'plans': node.field_file_building, 'theme': 'immobilier'} %}{% endembed %}
 
     <!-- TODO ICI Image(s) virtuelle(s) -->
     <!-- TODO ICI Visite(s) virtuelle(s) -->

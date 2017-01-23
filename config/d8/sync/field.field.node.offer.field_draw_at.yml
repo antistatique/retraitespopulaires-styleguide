@@ -1,0 +1,21 @@
+uuid: c8b13880-428d-4a2f-8f55-6c38598e7157
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_draw_at
+    - node.type.offer
+  module:
+    - datetime
+id: node.offer.field_draw_at
+field_name: field_draw_at
+entity_type: node
+bundle: offer
+label: 'Tirage au sort'
+description: 'Date effective du tirage au sort, ce champ se remplit automatiquement lorsque le tirage au sort est lancé.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,10 +1,32 @@
 <div class="admin--detail-item container-fluid">
-	<div class="block block--secondary">
-		<h2 class="">Participants ({{ variables.requests|length }})</h2>
-    <p>
-      <a class="button button-action button--primary button--small" href="{{ path('rp_offers.admin.requests.csv', {'node' : variables.node.nid.value}) }}" target="_blank">{% trans %}Télécharger la liste{% endtrans %}</a>
-      <a class="button button--secondary button--small" href="{{ path('rp_offers.admin.requests.draw', {'node' : variables.node.nid.value}) }}" target="_blank">{% trans %}Lancer le tirage au sort ({{ variables.node.field_available_offers.value }} coupons){% endtrans %}</a>
-    </p>
+    <div class="block block--secondary">
+
+    <div style="float:left;">
+      <h2 class="">{{ variables.node.title.value }} - {{ variables.total }} {% trans %}participant(s){% endtrans %}</h2>
+
+      <p style="float:left;">
+        <a class="button button-action button--primary button--small" href="{{ path('rp_offers.admin.requests.csv', {'node' : variables.node.nid.value}) }}" target="_blank">{% trans %}Télécharger la liste{% endtrans %}</a>
+      </p>
+      <p style="float:left; margin-left:10px;">
+        <a class="button button-action button--primary button--small" href="{{ path('rp_offers.admin.requests_winner.csv', {'node' : variables.node.nid.value}) }}" target="_blank">{% trans %}Télécharger la liste des gagnants{% endtrans %}</a>
+      </p>
+      <div style="clear: both;"></div>
+
+      {% if not variables.node.field_draw_at.date %}
+      <p>
+        <a class="button button--secondary button--small" href="{{ path('rp_offers.admin.requests.draw', {'node' : variables.node.nid.value}) }}" target="_blank">{% trans %}Lancer le tirage au sort ({{ variables.node.field_available_offers.value }} coupons){% endtrans %}</a>
+      </p>
+      {% else %}
+      <p class="clearfix">
+        {% trans %}Le tirage au sort a été effectué le {{ variables.node.field_draw_at.date }}{% endtrans %}
+      </p>
+      {% endif %}
+    </div>
+
+    <div style="float:right;">
+        {{ variables.search }}
+    </div>
+
     <table class="responsive-enabled" data-striping="1">
       <thead>
         <tr>
@@ -30,5 +52,5 @@
     </table>
 
     {{ variables.pager }}
-	</div>
+    </div>
 </div>

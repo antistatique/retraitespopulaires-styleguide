@@ -13,11 +13,16 @@ don't forget to add bins to your path such:
 
   * php
   * mysql
-add m
+
+to use the search engine, add this tools to your path:
+
+  * solr
+  * tika
+
 The git repository of Retraites Populaires is:
 
 ```
- $ git add dplmgr@192.168.188.51:/data/git/retraitespopulaires.git
+ $ git remote add rp dplmgr@192.168.188.51:/data/git/retraitespopulaires.git
 ```
 
 Got an error ? Like:
@@ -288,6 +293,11 @@ A better way is to use the `example.settings.local.php` that do more for your de
 [Read More about it](https://www.drupal.org/node/1903374)
 
 ## 💻 Drush Commands
+
+### Solr index
+
+ 1. You must add every thing to be index with `drush search-api-reset-tracker`.
+ 2. Once done, reindex all with `drush search-api-index`.
 
 ### import_zip
 

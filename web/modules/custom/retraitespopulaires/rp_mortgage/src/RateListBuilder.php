@@ -46,7 +46,13 @@ class RateListBuilder extends EntityListBuilder {
       )
     );
     $row['name'] = $entity->getName();
-    $row['date'] = $entity->getDate();
+
+    $date = $entity->getDate();
+    $row['date'] = '';
+    if (!empty($date) && $date instanceof \DateTime) {
+        $row['date'] = $entity->getDate()->format('d/m/Y');
+    }
+
     $row['first_rate'] = $entity->getFirstRate();
     $row['second_rate'] = $entity->getSecondRate();
     $row['year'] = $entity->getYear();
