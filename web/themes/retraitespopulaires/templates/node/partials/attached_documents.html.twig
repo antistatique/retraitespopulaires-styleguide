@@ -1,0 +1,23 @@
+<!-- Linked Useful Documents -->
+{% if not documents is empty %}
+  <div class="spacer spacer-sm"></div>
+  <p class="media-heading text-muted">
+    {% trans %}
+      Document utile attaché
+    {% plural documents|length %}
+      Documents utiles attachés
+    {% endtrans %}
+  </p>
+  <ul class="unordered-list">
+  {% for document in documents %}
+      <li>
+        {% set document_title = document.entity.title.value %}
+        {% set document_type = document.entity.field_file_document.entity.mimeType %}
+        <a href="{{ file_url(document.entity.field_file_document.entity.uri.value) }}" target="_blank" class="pretty-link text-{{ theme|default('primary') }}">
+          {{ document_title }}
+          <span class="text-muted text-small">- {{ document_type|extension_guesser|upper }}</span>
+        </a>
+      </li>
+  {% endfor %}
+  </ul>
+{% endif %}

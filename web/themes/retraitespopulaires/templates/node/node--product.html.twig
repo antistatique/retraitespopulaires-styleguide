@@ -99,53 +99,9 @@
       </div>
     {% endif %}
 
-    <!-- Linked Useful Documents -->
-    {% if not node.field_document_page is empty %}
-      <div class="spacer spacer-sm"></div>
-      <p class="media-heading text-muted">
-        {% trans %}
-          Document utile attaché
-        {% plural node.field_document_page|length %}
-          Documents utiles attachés
-        {% endtrans %}
-      </p>
-      <ul class="unordered-list">
-      {% for document in node.field_document_page %}
-          <li>
-            {% set document_title = document.entity.title.value %}
-            {% set document_type = document.entity.field_file_document.entity.mimeType %}
-            <a href="{{ file_url(document.entity.field_file_document.entity.uri.value) }}" target="_blank" class="pretty-link text-{{ node.field_profession.entity.tid.value|theme_profession }}">
-              {{ document_title }}
-              <span class="text-muted text-small">- {{ document_type|extension_guesser|upper }}</span>
-            </a>
-          </li>
-      {% endfor %}
-      </ul>
-    {% endif %}
+    {% embed "@retraitespopulaires/node/partials/attached_documents.html.twig" with {'documents': node.field_document_page, 'theme':node.field_profession.entity.tid.value|theme_profession} %}{% endembed %}
 
-    <!-- Linked Files -->
-    {% if not node.field_file_product is empty %}
-      <div class="spacer spacer-sm"></div>
-      <p class="media-heading text-muted">
-        {% trans %}
-          Fichier attaché
-        {% plural node.field_file_product|length %}
-          Fichiers attachés
-        {% endtrans %}
-      </p>
-      <ul class="unordered-list">
-      {% for file in node.field_file_product %}
-          <li>
-            {% set file_title = file.description ? file.description : file.entity.filename.value %}
-            {% set file_type = file.entity.mimeType ? file.entity.mimeType %}
-            <a href="{{ file_url(file.entity.uri.value) }}" target="_blank" class="pretty-link text-{{ node.field_profession.entity.tid.value|theme_profession }}">
-              {{ file_title }}
-              <span class="text-muted text-small">- {{ file_type|extension_guesser|upper }}</span>
-            </a>
-          </li>
-      {% endfor %}
-      </ul>
-    {% endif %}
+    {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_product, 'theme':node.field_profession.entity.tid.value|theme_profession} %}{% endembed %}
 
     {{ content|without('body', 'field_cover', 'field_search_npa', 'field_weight', 'field_document', 'field_document_random', 'field_faq_random', 'field_document_page', 'field_product_plan', 'field_profession', 'field_profil', 'field_faq', 'field_contact', 'field_advisor', 'field_file_product') }}
 

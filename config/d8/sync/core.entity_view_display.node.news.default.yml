@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.field_cover
     - field.field.node.news.field_date
     - field.field.node.news.field_document
+    - field.field.node.news.field_document_news
     - field.field.node.news.field_document_random
     - field.field.node.news.field_faq
     - field.field.node.news.field_faq_random
@@ -73,6 +74,13 @@ content:
     type: datetime_default
   field_document:
     weight: 120
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_document_news:
+    weight: 122
     label: above
     settings:
       link: true
