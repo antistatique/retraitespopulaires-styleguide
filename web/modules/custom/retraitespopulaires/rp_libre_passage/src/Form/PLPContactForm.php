@@ -10,11 +10,10 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use \libphonenumber\PhoneNumberUtil;
-use \libphonenumber\PhoneNumberFormat;
-
+// Injection.
 use Drupal\user\PrivateTempStoreFactory;
 use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Core\State\StateInterface;
 
 class PLPContactForm extends FormBase {
 
@@ -31,10 +30,17 @@ class PLPContactForm extends FormBase {
     protected $mail;
 
     /**
+    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
+    * @var StateInterface
+    */
+    protected $state;
+
+    /**
      * Class constructor.
      */
-    public function __construct(PrivateTempStoreFactory $private_tempstore, MailManagerInterface $mail) {
+    public function __construct(PrivateTempStoreFactory $private_tempstore, MailManagerInterface $mail, StateInterface $state) {
         $this->mail = $mail;
+        $this->state = $state;
 
         // Init session
         // TODO Found better solution to inline errors than hack session to
@@ -49,7 +55,8 @@ class PLPContactForm extends FormBase {
       return new static(
         // Load the service required to construct this class.
         $container->get('user.private_tempstore'),
-        $container->get('plugin.manager.mail')
+        $container->get('plugin.manager.mail'),
+        $container->get('state')
       );
     }
 
@@ -274,8 +281,9 @@ class PLPContactForm extends FormBase {
                 'results'   => $form_state->getValue('results')
             );
 
-            // Send to admin
-            $to = 'dev@antistatique.net';
+            // Send to admin rp_libre_passage.settings.receivers
+            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_libre_passage.settings.receivers'));
+            $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_libre_passage', 'contact', $to, 'fr', $data, $reply);
 
