@@ -31,7 +31,7 @@ notes: |
     <div class="form-group">
       <label class="">Votre date de naissance <span class="text-small text-muted">(jj/mm/aaaa)</span></label>
       <div class="input-text">
-        <input type="text" size="10" name="birthdate" class="form-control" placeholder="24/12/2016" value="">
+        <input type="text" size="10" name="birthdate" class="form-control" placeholder="jj/mm/aaaa" value="">
       </div>
     </div>
     <div class="form-group">

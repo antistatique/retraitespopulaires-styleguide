@@ -56,6 +56,10 @@
 
 .text-break-all {
   word-break: break-all;
+
+  @media (min-width: $screen-xs-min) {
+    word-break: initial;
+  }
 }
 
 /**

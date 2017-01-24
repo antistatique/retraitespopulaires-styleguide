@@ -11,7 +11,7 @@ layout: website.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'Actualités', 'Avec la Nuit des images, samedi 25 juin 2016']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-primary', breadcrumb_links: ['Accueil', 'Actualités', 'Avec la Nuit des images, samedi 25 juin 2016']} %}
       <div class="spacer"></div>
     </div>
   </div>

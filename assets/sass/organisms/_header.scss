@@ -12,23 +12,24 @@
   &.active {
     border-bottom-color: transparent;
   }
+
+  .global-search {
+    margin-top: 30px;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+
+    @media (min-width: $screen-sm-min) {
+      margin-left: 3.56rem; // to align logo
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
 }
 
 .header-vertical-center {
   margin-top: 30px;
-}
-
-.global-search {
-  margin-top: 30px;
-  opacity: 0;
-  transition: opacity 0.25s ease-in-out;
-  @media (min-width: $screen-sm-min) {
-    margin-left: 3.56rem; // to align logo
-  }
-
-  &.active {
-    opacity: 1;
-  }
 }
 
 .global-search-visible {

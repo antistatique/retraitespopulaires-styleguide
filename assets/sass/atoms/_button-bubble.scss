@@ -3,6 +3,13 @@
 .button-bubble {
   margin: 0 $grid-gutter-width / 2;
 
+  @each $label, $color in $themes {
+    &.button-bubble-#{$label} .bubble-icon {
+      background: $color;
+      border-color: $color;
+    }
+  }
+
   .bubble-icon {
     display: inline-block;
     padding: 1.5em 1.6em;
@@ -55,6 +62,10 @@
     a {
       position: relative;
       z-index: 3;
+    }
+
+    i {
+      color: $ligthen-gray;
     }
   }
 

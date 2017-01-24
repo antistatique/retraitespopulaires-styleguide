@@ -12,7 +12,7 @@ layout: immobiliers.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-immobilier', links: ['Accueil', 'Immobilier', 'Appartements à louer']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-immobilier', breadcrumb_links: ['Accueil', 'Immobilier', 'Appartements à louer']} %}
       <div class="spacer"></div>
     </div>
   </div>
@@ -49,7 +49,7 @@ layout: immobiliers.html.swig
               "rental_rooms": flat.rental_rooms,
               "rental_surface": flat.rental_surface,
               "rental_rent": flat.rental_rent,
-              "theme": "immobilier",
+              "rental_theme": "immobilier",
             } %}
           </div>
         {% endfor %}
@@ -67,4 +67,4 @@ layout: immobiliers.html.swig
 </div>
 
 <div class="spacer"></div>
-{% include '../organisms/footer.html.swig' with {'light': true, 'theme': 'immobilier'} %}
+{% include '../organisms/footer.html.swig' with {'footer_light': true, 'footer_theme': 'immobilier'} %}

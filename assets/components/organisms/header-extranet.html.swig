@@ -5,19 +5,19 @@ collection: organisms
 notes: |
   ##### Usage : `header-extranet`
   ##### Options :
-  - **theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **header_extranet_theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <header class="header-extranet">
   {% include '../atoms/logo-retraitespopulaires.html.swig'%}
 
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4 hidden-xs">
-    {% include '../molecules/search-form.html.swig' with {'visible':true, 'placeholder':'Chercher dans le portail ...'} %}
+    {% include '../molecules/search-form.html.swig' with {'search_form_visible':true, 'search_form_placeholder':'Chercher dans le portail ...'} %}
     </div>
     <div class="col-xs-6 col-xs-offset-6 col-sm-3 col-sm-offset-1">
     <!-- Single button -->
     <div class="btn-group pull-right header-vertical-center m-r-1">
-      <button type="button" class="btn btn-xs btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type="button" class="btn btn-xs btn-{{ header_extranet_theme|default('primary') }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <i class="retraitespopulaires-icon retraitespopulaires-icon-lock"></i> Marc Friederich <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">

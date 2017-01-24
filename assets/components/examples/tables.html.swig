@@ -8,28 +8,28 @@ layout: examples.html.swig
 <div class="row">
   <div class="col-xs-12">
     <h6>Tableau long</h6>
-    {% include '../molecules/table.html.swig' with {size: 'wide'} %}
+    {% include '../molecules/table.html.swig' with {table_size: 'wide'} %}
   </div>
 </div>
 <div class="spacer"></div>
 <div class="row">
   <div class="col-xs-12">
     <h6>Tableau condenser</h6>
-    {% include '../molecules/table.html.swig' with {size: 'condensed'} %}
+    {% include '../molecules/table.html.swig' with {table_size: 'condensed'} %}
   </div>
 </div>
 <div class="spacer"></div>
 <div class="row">
   <div class="col-xs-12">
     <h6>Tableau long - Thème</h6>
-    {% include '../molecules/table.html.swig' with {size: 'wide', theme: 'assurance'} %}
+    {% include '../molecules/table.html.swig' with {table_size: 'wide', table_theme: 'assurance'} %}
   </div>
 </div>
 <div class="spacer"></div>
 <div class="row">
   <div class="col-xs-12">
     <h6>Tableau condenser - Thème</h6>
-    {% include '../molecules/table.html.swig' with {size: 'condensed', theme: 'assurance'} %}
+    {% include '../molecules/table.html.swig' with {table_size: 'condensed', table_theme: 'assurance'} %}
   </div>
 </div>
 

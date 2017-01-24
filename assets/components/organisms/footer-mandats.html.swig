@@ -5,12 +5,12 @@ collection: organisms
 notes: |
   ##### Usage : `footer-mandats`
   ##### Options :
-  - **light** - <i>Boolean</i>
-  - **theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **footer_mandats_light** - <i>Boolean</i>
+  - **footer_mandats_theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="footer">
   <h2 class="sr-only">Footer</h2>
-  {% if not light %}
+  {% if not footer_mandats_light %}
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-5">
@@ -50,7 +50,7 @@ notes: |
       </div>
       <div class="col-xs-12 col-md-4">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
-        <p>Géré par <a href="#">Retraites&nbsp;Populaires</a></p>
+        <p>Géré par <a class="pretty-link text-{{ footer_mandats_theme }}" href="#">Retraites&nbsp;Populaires</a></p>
       </div>
     </div>
   </div>

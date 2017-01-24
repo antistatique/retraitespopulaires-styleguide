@@ -34,6 +34,7 @@
 @import 'atoms/input-checkbox';
 @import 'atoms/logo-retraitespopulaires';
 @import 'atoms/hamburger';
+@import 'atoms/hamburger-mandat';
 @import 'atoms/shadow';
 @import 'atoms/teaser';
 @import 'atoms/alert';
@@ -46,11 +47,13 @@
 @import 'atoms/highlight';
 @import 'atoms/button-bubble';
 @import 'atoms/socials';
+@import 'atoms/search-box';
 
 // molecules:
-@import 'molecules/attachments-ca';
-@import 'molecules/breadcrumb-ca';
+@import 'molecules/breadcrumb-extranet';
 @import 'molecules/navbar';
+@import 'molecules/prenavbar';
+@import 'molecules/prenavbar';
 @import 'molecules/teaser-search';
 @import 'molecules/progresschart';
 @import 'molecules/teaser-contact-detail';
@@ -76,6 +79,7 @@
 @import 'molecules/big-menu-secondary-nav';
 @import 'molecules/collapse';
 @import 'molecules/big-menu';
+@import 'molecules/push-menu';
 @import 'molecules/card-attachement';
 @import 'molecules/form';
 
