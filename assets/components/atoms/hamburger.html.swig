@@ -6,7 +6,7 @@ notes: |
   ##### Usage : `hamburger`
   ##### Options :
   - **hamburger_link** - <i>Boolean</i>
-  - _theme** - <i>String</i> - <b>hamburger-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - hamburger_theme** - <i>String</i> - <b>hamburger-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 {% if hamburger_link %}
   <a href="#" class="hamburger-wrapper hamburger-{{ hamburger_theme }}">
