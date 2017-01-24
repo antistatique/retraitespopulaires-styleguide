@@ -10,6 +10,7 @@
   </p>
   <ul class="unordered-list">
   {% for document in documents %}
+    {% if document.entity.isPublished %}
       <li>
         {% set document_title = document.entity.title.value %}
         {% set document_type = document.entity.field_file_document.entity.mimeType %}
@@ -18,6 +19,7 @@
           <span class="text-muted text-small">- {{ document_type|extension_guesser|upper }}</span>
         </a>
       </li>
+    {% endif %}
   {% endfor %}
   </ul>
 {% endif %}
