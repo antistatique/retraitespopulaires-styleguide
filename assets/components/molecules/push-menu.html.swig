@@ -4,6 +4,7 @@ name: push-menu
 collection: molecules
 notes: |
   ##### Usage : `push-menu`
+  Responsive tray for mobile. Specially used as mobile main navigation.
   ##### Options :
     - **push-menu_theme** - <i>String</i> - <b>push-menu-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
