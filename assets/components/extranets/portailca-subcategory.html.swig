@@ -36,19 +36,19 @@ layout: extranets.html.swig
         </div>
         <div class="spacer spacer-sm"></div>
 
-        {% include '../molecules/attachments-ca.html.swig' with {
-          'attachment_ca_title': 'All inclusive de la séance du 22 avril 2016',
-          'attachment_ca_version': 'Version: 20160422 OJ AI - v1'
+        {% include '../molecules/teaser-document-extranet.html.swig' with {
+          'teaser_document_extranet_title': 'All inclusive de la séance du 22 avril 2016',
+          'teaser_document_extranet_version': 'Version: 20160422 OJ AI - v1'
           }
         %}
-        {% include '../molecules/attachments-ca.html.swig' with {
-          'attachment_ca_title': 'All inclusive de la séance du 21 mars 2016',
-          'attachment_ca_version': 'Version: 20160321 OJ AI - v1.2'
+        {% include '../molecules/teaser-document-extranet.html.swig' with {
+          'teaser_document_extranet_title': 'All inclusive de la séance du 21 mars 2016',
+          'teaser_document_extranet_version': 'Version: 20160321 OJ AI - v1.2'
           }
         %}
-        {% include '../molecules/attachments-ca.html.swig' with {
-          'attachment_ca_title': 'All inclusive de la séance du 15 février 2016',
-          'attachment_ca_version': 'Version: 20160215 OJ AI - v2.3'
+        {% include '../molecules/teaser-document-extranet.html.swig' with {
+          'teaser_document_extranet_title': 'All inclusive de la séance du 15 février 2016',
+          'teaser_document_extranet_version': 'Version: 20160215 OJ AI - v2.3'
           }
         %}
       </div>
