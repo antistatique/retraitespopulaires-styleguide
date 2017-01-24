@@ -1,0 +1,66 @@
+---
+title: CIP
+name: cip
+collection: themes
+styleguide: true
+layout: themes.html.swig
+theme: cip
+arrow_theme: cip
+bubble_theme: cip
+facets_theme: cip
+filters_list_theme: cip
+funky_waves_theme: cip
+hamburger_theme: cip
+icon_text_theme: cip
+datepicker_theme: cip
+input_radio_btn_theme: cip
+input_textarea_theme: cip
+loader_theme: cip
+pagination_theme: cip
+section_bloc_theme: cip
+theme_attachment: cip
+big_menu_secondary_nav_theme: cip
+collapse_theme: cip
+immo_result_theme: cip
+basicpage_theme: cip
+news_theme: cip
+teaser_theme: cip
+teaser_offer_theme: cip
+teaser_profil_theme: cip
+teaser_search_theme: cip
+input_select_theme: cip
+progresschart_theme: cip
+search_form_theme: cip
+attachments_contact_theme: cip
+attachments_job_theme: cip
+attachements_theme: cip
+attachements_rentals: cip
+attachements_lastnews_theme: cip
+tabs_theme: cip
+teaser_document_extranet_theme: cip
+btn_theme: cip
+input_file_theme: cip
+input_text_theme: cip
+organic_lines_theme: cip
+socials_theme: cip
+breadcrumb_primary_theme: cip
+breadcrumb_theme: cip
+breadcrumb_extranet_theme: cip
+card_attachement_theme: cip
+navbar_theme: cip
+secondary_nav_theme: cip
+table_theme: cip
+teaser_contact_theme: cip
+teaser_contact_cta_theme: cip
+teaser_contact_detail_theme: cip
+teaser_contact_placeholder_theme: cip
+teaser_product_theme: cip
+rental_theme: cip
+footer_theme: cip
+footer_mandats_theme: cip
+header_extranet_theme: cip
+highlight_theme: cip
+---
+
+{# This page is an examples page listing all the components (Atoms, Molecules, Organisms) available in the styleguide with a specific coloring theme.
+Because of the complexity of the styleguide & the lack of scoping variables in swig we have no other choice than specifying all the (as much as possible) unique variable used for theming here above #}

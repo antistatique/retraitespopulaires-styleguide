@@ -5,6 +5,6 @@ collection: atoms
 notes: |
   ##### Usage : `organic-lines`
   ##### Options :
-  - **theme** - <i>String</i> - <b>lines-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **organic_lines_theme** - <i>String</i> - <b>lines-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<div class="organic-lines lines-{{theme}}"></div>
+<div class="organic-lines lines-{{ organic_lines_theme|default('primary') }}"></div>

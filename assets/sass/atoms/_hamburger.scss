@@ -9,6 +9,25 @@
   cursor: pointer;
   z-index: 2001;
 
+  @each $label, $color in $themes {
+    &.hamburger-#{$label} {
+      .hamburger-button .hamburger-circle circle {
+        stroke: $color;
+      }
+
+      .hamburger-helper .helper-when-open,
+      .hamburger-helper .helper-when-close {
+        color: $color;
+      }
+
+      &.active .hamburger span:nth-child(1),
+      &.active .hamburger span:nth-child(3) {
+        background: $color;
+      }
+    }
+
+  }
+
   .hamburger-button {
     position: absolute;
     right: 0.5em;

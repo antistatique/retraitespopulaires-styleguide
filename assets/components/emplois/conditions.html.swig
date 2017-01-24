@@ -5,13 +5,6 @@ collection: emplois
 styleguide: false
 layout: emplois.html.swig
 ---
----
-title: cree-mon-compte-validation
-name: signup-validation
-collection: emplois
-styleguide: false
-layout: emplois.html.swig
----
 {% include '../organisms/header.html.swig' with {'light': true} %}
 <div class="spacer spacer-xl"></div>
 <div class="spacer spacer-xl hidden-md hidden-lg"></div>
@@ -19,7 +12,7 @@ layout: emplois.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'Emploi', "Conditions d'utilisation"]} %}
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-primary', breadcrumb_links: ['Accueil', 'Emploi', "Conditions d'utilisation"]} %}
       <div class="spacer"></div>
     </div>
   </div>
@@ -53,9 +46,9 @@ layout: emplois.html.swig
   </div>
   <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
     <div class="spacer spacer-xl visible-xs visible-sm"></div>
-    {% include '../molecules/secondary-nav.html.swig' with {'theme': '', 'json': 'emploi'} %}
+    {% include '../molecules/secondary-nav.html.swig' with {'secondary_nav_theme': '', 'secondary_nav_json': 'emploi'} %}
   </div>
 </div>
 
 <div class="spacer"></div>
-{% include '../organisms/footer.html.swig' with {'light': true} %}
+{% include '../organisms/footer.html.swig' with {'footer_light': true} %}

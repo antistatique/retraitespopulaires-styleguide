@@ -7,13 +7,12 @@ layout: website.html.swig
 ---
 {% include '../organisms/header.html.swig' %}
 
-{% include '../atoms/funky-waves.html.swig' with {img: 'https://www.retraitespopulaires.ch/upload/docs/image/png/2011-07/banner-changement-pro.png'} %}
-
+{% include '../atoms/funky-waves.html.swig' with {funky_waves_img: 'https://www.retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-10/couple-terrain.jpg'} %}
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'Particuliers']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-primary', breadcrumb_links: ['Accueil', 'Particuliers']} %}
       <div class="spacer"></div>
     </div>
   </div>

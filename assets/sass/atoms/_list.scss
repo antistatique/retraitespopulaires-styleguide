@@ -118,13 +118,24 @@ ol.filters-list {
       font-size: 0.6em;
       color: $black;
 
-      &:hover { color: $brand-primary; }
+      &:hover {
+        cursor: pointer;
+        color: $brand-primary;
+      }
     }
 
     &.active {
       .retraitespopulaires-icon { color: $brand-primary; }
     }
   }
+
+  @each $label, $color in $themes {
+    &.filters-list-#{$label} {
+      > li .retraitespopulaires-icon:hover { color: $color; }
+      > li.active .retraitespopulaires-icon { color: $color; }
+    }
+  }
+
 }
 
 @each $label, $color in $themes {

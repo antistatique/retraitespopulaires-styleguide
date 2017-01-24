@@ -7,12 +7,12 @@ layout: website.html.swig
 ---
 {% include '../organisms/header.html.swig' %}
 
-{% include '../atoms/funky-waves.html.swig' with {img: 'http://www.famillesausommet.com/images/famille_accueil.jpg'} %}
+{% include '../atoms/funky-waves.html.swig' with {funky_waves_img: 'https://www.retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-10/jardin_0.jpg'} %}
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'Particuliers', 'Famille']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-primary', breadcrumb_links: ['Accueil', 'Particuliers', 'Famille']} %}
       <div class="spacer"></div>
     </div>
   </div>
@@ -43,7 +43,7 @@ layout: website.html.swig
     </div>
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      {% include '../molecules/secondary-nav.html.swig' with {'theme': 'primary', 'json': 'particuliers'} %}
+      {% include '../molecules/secondary-nav.html.swig' with {'secondary_nav_theme': 'primary', 'secondary_nav_json': 'particuliers'} %}
     </div>
   </div>
 </div>

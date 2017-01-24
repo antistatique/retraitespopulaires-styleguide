@@ -5,18 +5,18 @@ collection: molecules
 notes: |
   ##### Usage : `card-attachement`
   ##### Options :
-  - **title** - <i>String</i>
-  - **type** - <i>String</i> ['faq'|'document']
-  - **links** - <i>Array</i>
-  - **more** - <i>String</i>
-  - **theme** - <i>String</i> - <b>card-attachement-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **card_attachement_title** - <i>String</i>
+  - **card_attachement_type** - <i>String</i> ['faq'|'document']
+  - **card_attachement_links** - <i>Array</i>
+  - **card_attachement_more** - <i>String</i>
+  - **card_attachement_theme** - <i>String</i> - <b>card-attachement-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<div class="card-attachement card-attachement-{{theme}} shadow shadow-down">
-  <div class="card-title h2">{{ title|default('Lorem') }}</div>
+<div class="card-attachement card-attachement-{{card_attachement_theme}} shadow shadow-down">
+  <div class="card-title h2">{{ card_attachement_title|default('Lorem') }}</div>
   <ul class="card-content list-spaced list-unstyled">
-    {% for link in links %}
+    {% for link in card_attachement_links %}
       <li>
-        {% if type == 'document' %}
+        {% if card_attachement_type == 'document' %}
           <div class="media">
             <div class="media-left">
               <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
@@ -33,12 +33,12 @@ notes: |
   </ul>
   <div class="card-footer">
     <div class="icon-text icon-text-center">
-      {% if type == 'document' %}
+      {% if card_attachement_type == 'document' %}
         <span class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-documents-thick"></span>
       {% else %}
         <span class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-faq-thick"></span>
       {% endif %}
-      <div class="icon-text-txt"><a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="#">{{ more|default('En apprendre plus') }}</a></div>
+      <div class="icon-text-txt"><a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="#">{{ card_attachement_more|default('En apprendre plus') }}</a></div>
     </div>
   </div>
 </div>

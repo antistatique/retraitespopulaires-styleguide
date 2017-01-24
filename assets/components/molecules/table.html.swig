@@ -5,10 +5,10 @@ collection: molecules
 notes: |
   ##### Usage : `table`
   ##### Options :
-  - **size** - <i>String</i> - <b>table-['wide'|'condensed']</b>
-  - **theme** - <i>String</i> - <b>table-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **table_size** - <i>String</i> - <b>table-['wide'|'condensed']</b>
+  - **table_theme** - <i>String</i> - <b>table-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<table class="table-{{size}} table-{{theme}} tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+<table class="table-{{ table_size }} table-{{ table_theme|default('primary') }} tablesaw tablesaw-stack" data-tablesaw-mode="stack">
  <thead>
   <tr>
      <th><strong>Entête importante</strong></th>

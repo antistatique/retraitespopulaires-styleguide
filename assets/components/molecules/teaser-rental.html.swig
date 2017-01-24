@@ -13,12 +13,12 @@ notes: |
   - **rental_surface** - <i>String</i>
   - **rental_rent** - <i>String</i>
   - **rental_orientation** - <i>String</i> - <b>teaser-rental-orientation-['portrait'|'landscape']</b>
-  - **theme** - <i>String</i> - <b>teaser-rental-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **rental_theme** - <i>String</i> - <b>teaser-rental-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<a href="#" class="teaser teaser-{{ theme }} teaser-fullclick teaser-rental teaser-rental-{{ theme }} teaser-rental-orientation-{{ rental_orientation }} shadow shadow-down">
+<a href="#" class="teaser teaser-{{ rental_theme }} teaser-fullclick teaser-rental teaser-rental-{{ rental_theme }} teaser-rental-orientation-{{ rental_orientation }} shadow shadow-down">
   <div class="rental-heading">
     <div class="heading-image" style="background-image: url({% if rental_heading  %} {{ rental_heading }} {% else  %} https://unsplash.it/780/780?image=1005 {% endif %})"></div>
-    <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>
+    <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': rental_theme} %}</div>
   </div>
   <div class="rental-body">
     <div class="row">

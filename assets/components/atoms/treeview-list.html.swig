@@ -5,7 +5,7 @@ collection: atoms
 notes: |
   ##### Usage : `treeview-list`
 ---
-<!-- Ordered List  -->
+<!-- Treeview List  -->
 <ul class="treeview-list">
   <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
   <li>Calcul des intérêts uniquement sur les fonds utilisés</li>

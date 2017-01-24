@@ -5,9 +5,9 @@ collection: molecules
 notes: |
   ##### Usage : `navbar`
   ##### Options :
-    - **theme** - <i>String</i> - <b>card-attachement-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+    - **navbar_theme** - <i>String</i> - <b>navbar-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<nav class="navbar navbar-default navbar-{{theme}}">
+<nav class="navbar navbar-default navbar-{{ navbar_theme|default('primary') }}">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">

@@ -12,7 +12,7 @@ layout: emplois.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'À propos', 'Emplois']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-primary', breadcrumb_links: ['Accueil', 'À propos', 'Emplois']} %}
       <div class="spacer"></div>
     </div>
   </div>
@@ -57,28 +57,28 @@ layout: emplois.html.swig
                <td>Assurance vie</td>
                <td>Contrat à durée indéterminée (CDI)</td>
                <td>Lausanne</td>
-               <td>{% include '../atoms/button.html.swig' with {theme: 'primary', btn_label: 'Postuler'} %}</td>
+               <td>{% include '../atoms/button.html.swig' with {btn_theme: 'primary', btn_label: 'Postuler'} %}</td>
             </tr>
             <tr>
                <td><strong>Conseiller/-ère en communication (réf. 3316)</strong></td>
                <td>Marketing et communication</td>
                <td>Contrat à durée indéterminée (CDI)</td>
                <td>Lausanne</td>
-               <td>{% include '../atoms/button.html.swig' with {theme: 'primary', btn_label: 'Postuler'} %}</td>
+               <td>{% include '../atoms/button.html.swig' with {btn_theme: 'primary', btn_label: 'Postuler'} %}</td>
             </tr>
             <tr>
                <td><strong>Assistant(e) administratif/-ve à 80% (réf. 3416)</strong></td>
                <td>Immobilier</td>
                <td>Contrat à durée indéterminée (CDI)</td>
                <td>Lausanne</td>
-               <td>{% include '../atoms/button.html.swig' with {theme: 'primary', btn_label: 'Postuler'} %}</td>
+               <td>{% include '../atoms/button.html.swig' with {btn_theme: 'primary', btn_label: 'Postuler'} %}</td>
             </tr>
             <tr>
                <td><strong>Concierge professionnel à Morges (réf. 3716)</strong></td>
                <td>Immobiliere</td>
                <td>Contrat à durée indéterminée (CDI)</td>
                <td>Lausanne</td>
-               <td>{% include '../atoms/button.html.swig' with {theme: 'primary', btn_label: 'Postuler'} %}</td>
+               <td>{% include '../atoms/button.html.swig' with {btn_theme: 'primary', btn_label: 'Postuler'} %}</td>
             </tr>
            </tbody>
           </table>
@@ -87,10 +87,10 @@ layout: emplois.html.swig
     </div>
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      {% include '../molecules/secondary-nav.html.swig' with {'theme': '', 'json': 'emploi'} %}
+      {% include '../molecules/secondary-nav.html.swig' with {'secondary_nav_theme': '', 'secondary_nav_json': 'emploi'} %}
     </div>
   </div>
 </div>
 
 <div class="spacer"></div>
-{% include '../organisms/footer.html.swig' with {'light': true} %}
+{% include '../organisms/footer.html.swig' with {'footer_light': true} %}

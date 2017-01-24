@@ -6,8 +6,9 @@ notes: |
   ##### Usage : `teaser-institution`
   ##### Options :
   - **logo** - <i>String</i>
+  - **teaser_theme** - <i>String</i> - <b>teaser-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<a href="#" class="teaser teaser-fullclick teaser-institution teaser-institution shadow shadow-down">
+<a href="#" class="teaser teaser-{{teaser_theme}} teaser-fullclick teaser-institution teaser-institution shadow shadow-down">
   <div class="institution-heading">
     <img class="img-responsive" src="{{ logo|default('https://3.bp.blogspot.com/-AJNG3A2-QIw/VjTFNFpJjsI/AAAAAAAAACQ/3lkytAva6oY/s600-c/NoImage.png') }}" alt="Logo de l'institution">
   </div>

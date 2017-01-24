@@ -6,16 +6,6 @@
       border-color: $input-border;
       border-width: $input-border-size;
       transition: background-color 0.25s ease-in-out;
-
-      &.active {
-        background-color: darken($brand-primary, 05%);
-        color: $white;
-      }
-
-      &:hover {
-        background-color: lighten($brand-primary, 05%);
-        color: $white;
-      }
     }
   }
 
