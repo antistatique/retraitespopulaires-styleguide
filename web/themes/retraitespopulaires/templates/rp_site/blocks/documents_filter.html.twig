@@ -6,7 +6,7 @@
 
 <div class="{{ theme_hook_original }}">
   <p class="media-heading text-muted">{% trans %}Nos documents utiles{% endtrans %}</p>
-  <ul class="filters-list">
+  <ul class="filters-list  filters-list-{{ theme }}">
 
     <li class="{{ variables.taxonomy_term_alias is empty ? 'active' }}">
       {% if variables.taxonomy_term_alias is empty %}
