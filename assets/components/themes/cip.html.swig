@@ -38,6 +38,27 @@ attachements_rentals: cip
 attachements_lastnews_theme: cip
 tabs_theme: cip
 teaser_document_extranet_theme: cip
+btn_theme: cip
+input_file_theme: cip
+input_text_theme: cip
+organic_lines_theme: cip
+socials_theme: cip
+breadcrumb_primary_theme: cip
+breadcrumb_theme: cip
+breadcrumb_extranet_theme: cip
+card_attachement_theme: cip
+navbar_theme: cip
+secondary_nav_theme: cip
+table_theme: cip
+teaser_contact_theme: cip
+teaser_contact_cta_theme: cip
+teaser_contact_detail_theme: cip
+teaser_contact_placeholder_theme: cip
+teaser_product_theme: cip
+rental_theme: cip
+footer_theme: cip
+footer_mandats_theme: cip
+header_extranet_theme: cip
 ---
 
 {# This page is an examples page listing all the components (Atoms, Molecules, Organisms) available in the styleguide with a specific coloring theme.

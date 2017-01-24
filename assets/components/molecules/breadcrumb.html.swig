@@ -32,9 +32,9 @@ notes: |
     {% if !loop.last %} <li class="text-muted" aria-label=">">›</li> {% endif %}
     {% endfor %}
     {% else %}
-      <li class="{{ breadcrumb_theme|default('text-primary') }}" aria-label="Accueil">Accueil</li>
+      <li class="text-{{ breadcrumb_theme|default('primary') }}" aria-label="Accueil">Accueil</li>
       <li class="text-muted" aria-label=">">›</li>
-      <li class="{{ breadcrumb_theme|default('text-primary') }}" aria-label="Emploi">Emploi</li>
+      <li class="text-{{ breadcrumb_theme|default('primary') }}" aria-label="Emploi">Emploi</li>
       <li class="text-muted" aria-label=">">›</li>
       <li class="text-muted" aria-label="Connexion">Connexion</li>
     {% endif %}
