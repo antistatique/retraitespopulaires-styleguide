@@ -24,6 +24,10 @@ $themes: (
   .text-#{$label} {
     color: $color;
   }
+
+  .text-highlight-#{$label} {
+    background-color: lighten($color, 40%);
+  }
 }
 
 /**
