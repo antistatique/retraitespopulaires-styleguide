@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-.breadcrumb-ca {
+.breadcrumb-extranet {
   .dropdown-toggle {
     border: 1px solid $brand-primary;
     font-family: $font-family-sans-serif;
@@ -13,7 +13,7 @@
   }
 
   @each $label, $color in $themes {
-    &.breadcrumb-ca-#{$label} {
+    &.breadcrumb-extranet-#{$label} {
       .dropdown-toggle {
         border-color: $color;
         color: $color;

@@ -11,7 +11,7 @@ layout: extranets.html.swig
     <div class="row">
       <div class="col-xs-12 text-center">
         <div class="spacer spacer-md"></div>
-        {% include '../molecules/breadcrumb-ca.html.swig' with {'breadcrumb_ca_links': ['Accueil', 'Retraites Populaires']} %}
+        {% include '../molecules/breadcrumb-extranet.html.swig' with {'breadcrumb_extranet_links': ['Accueil', 'Retraites Populaires']} %}
         <div class="spacer spacer-xs"></div>
         <div class="spacer spacer-md"></div>
         <h1>2016</h1>
