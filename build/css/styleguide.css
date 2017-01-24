@@ -406,6 +406,7 @@ body {
           box-sizing: border-box; }
 
 #atoms .styleguide-item-preview .hamburger-wrapper,
+#atoms .styleguide-item-preview .hamburger-mandat-wrapper,
 #atoms .styleguide-item-preview .logo-retraitespopulaires {
   position: relative;
   top: 0;
@@ -468,3 +469,6 @@ body {
       max-width: 100%; }
   .styleguide-item-group > .styleguide-item-group .styleguide-item-code .language-markup {
     margin: 0; }
+
+.rp-access-nav {
+  display: none; }

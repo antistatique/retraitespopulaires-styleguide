@@ -149,6 +149,8 @@ function datepicker() {
 
 var _big_menu = require('./big_menu.js');
 
+var _navbar = require('./navbar.js');
+
 var _input_dynamic_label = require('./input_dynamic_label.js');
 
 var _input_files = require('./input_files.js');
@@ -163,6 +165,7 @@ var _smoothscroll = require('./smoothscroll.js');
 
 (function () {
   (0, _big_menu.big_menu)();
+  (0, _navbar.navbar)();
   (0, _smoothscroll.smoothscroll_load)();
   (0, _organicJS.organic_generate)();
   (0, _input_dynamic_label.input_dynamic_label)();
@@ -171,7 +174,7 @@ var _smoothscroll = require('./smoothscroll.js');
   (0, _number_format.number_format)();
 })();
 
-},{"./big_menu.js":1,"./datepicker.js":2,"./input_dynamic_label.js":4,"./input_files.js":5,"./number_format.js":6,"./organicJS.js":7,"./smoothscroll.js":8}],4:[function(require,module,exports){
+},{"./big_menu.js":1,"./datepicker.js":2,"./input_dynamic_label.js":4,"./input_files.js":5,"./navbar.js":6,"./number_format.js":7,"./organicJS.js":8,"./smoothscroll.js":9}],4:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -250,6 +253,57 @@ function input_files() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.navbar = navbar;
+
+var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function navbar() {
+  (0, _jquery2.default)(document).on('click', '.hamburger-mandat-toggle, .menu-access .menu', function (e) {
+    var $this = (0, _jquery2.default)(this);
+
+    navbar_toggle();
+
+    // Open the menu when using skip-link
+    if ($this.attr('href') != '#main-navigation') {
+      e.preventDefault();
+    }
+  });
+
+  // Close the menu when ESC is pressed
+  (0, _jquery2.default)(document).keyup(function (e) {
+    if (e.keyCode == 27) {
+      var $body = (0, _jquery2.default)(document.body);
+      if ($body.hasClass('menu-push-toright')) {
+        navbar_toggle();
+      }
+    }
+  });
+
+  function navbar_toggle() {
+    var $hamburger = (0, _jquery2.default)('.hamburger-mandat-wrapper');
+    var $body = (0, _jquery2.default)(document.body);
+    var $menu = (0, _jquery2.default)('.menu-push');
+    var $overlay = (0, _jquery2.default)('.body-overlay');
+
+    $hamburger.toggleClass('active');
+    $body.toggleClass('menu-push-toright');
+    $menu.toggleClass('menu-open');
+    $overlay.toggleClass('visible');
+  }
+}
+
+}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],7:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.number_format = number_format;
 
 var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
@@ -300,7 +354,7 @@ function number_format() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -433,7 +487,7 @@ function organic_generate() {
 })(jQuery);
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (global){
 'use strict';
 

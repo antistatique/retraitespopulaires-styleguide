@@ -50,15 +50,16 @@
 
 
   
-<nav class="sr-only access-navigation">
+<nav class="rp-access-nav">
   <ul>
-    <li><a href="#" accesskey="1">Page d'accueil du site Retraites Populaires</a></li>
-    <li><a href="#startcontent" accesskey="2" >Passer la navigation</a></li>
-    <li><a href="#global-search" accesskey="4" >Accéder au champ de recherche</a></li>
-    <li><a href="mailto:info@retraitespopulaires.ch" accesskey="9">Contacter un conseiller</a></li>
+    <li><a class="btn btn-primary" href="/" accesskey="1">Page d'accueil du site Retraites Populaires</a></li>
+    <li><a class="btn btn-primary" href="#main-content" accesskey="2" >Passer la navigation</a></li>
+    <li><a class="btn btn-primary" href="#full-accessible-navigation" accesskey="3" >Accéder à la navigation</a></li>
+    <li><a class="btn btn-primary" href="/recherche" accesskey="4" >Accéder au champ de recherche</a></li>
+    <li><a class="btn btn-primary" href="mailto:info@retraitespopulaires.ch" accesskey="9">Contacter un conseiller</a></li>
   </ul>
 </nav>
-<nav class="sr-only" role="navigation">
+<nav id="full-accessible-navigation" class="sr-only" role="navigation">
   <ul>
     <li>
       <h2>Navigation principale</h2>
@@ -145,9 +146,11 @@
   <h2 name="global-search" class="sr-only">Formulaire de recherche</h2>
   <div class="input-group full-width">
     <h2 class="sr-only">Rechercher</h2>
-    <input type="text" class="form-control full-width" aria-label="Champ de recherche" placeholder="Chercher un produit, un document, un contact, ...">
+
+    <input type="text" class="form-control form-control- full-width" aria-label="Champ de recherche" placeholder="Chercher un produit, un document, un contact, ...">
+
     <span class="input-group-btn">
-      <button class="btn btn-default btn-icon" type="button" aria-label="Rechercher sur le site"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
+      <button class="btn btn-default btn-icon btn-" type="button" aria-label="Rechercher sur le site"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
     </span>
   </div>
 </form>
@@ -172,7 +175,7 @@
     </div>
   </div>
   
-<div class="organic-lines lines-"></div>
+<div class="organic-lines lines-primary"></div>
 
 </div>
 
@@ -631,29 +634,29 @@
       <div class="spacer spacer-sm"></div>
       <div class="col-xs-6">
         <ul class="list-no-style text-right">
-          <li><a class="pretty-link pretty-link-berrylight-gray" href="#">À propos</a></li>
-          <li><a class="pretty-link pretty-link-berrylight-gray" href="#">Contact</a></li>
-          <li><a class="pretty-link pretty-link-berrylight-gray" href="#">Actualités</a></li>
+          <li><a class="pretty-link text-primary" href="#">À propos</a></li>
+          <li><a class="pretty-link text-primary" href="#">Contact</a></li>
+          <li><a class="pretty-link text-primary" href="#">Actualités</a></li>
         </ul>
       </div>
       <div class="col-xs-6">
         <ul class="list-no-style list-no-padding">
-        <li><a class="pretty-link pretty-link-berrylight-gray" href="#">Press</a></li>
-        <li><a class="pretty-link pretty-link-berrylight-gray" href="#">Emplois</a></li>
-        <li><a class="pretty-link pretty-link-berrylight-gray" href="#">Connexion <i class="fa fa-lock"></i></a></li>
+        <li><a class="pretty-link text-primary" href="#">Press</a></li>
+        <li><a class="pretty-link text-primary" href="#">Emplois</a></li>
+        <li><a class="pretty-link text-primary" href="#">Connexion <i class="fa fa-lock text-primary"></i></a></li>
         </ul>
       </div>
       <div class="spacer"></div>
     </div>
   </div>
   <ul class="list-spaced list-no-style list-no-padding hidden-xs hidden-sm" role="navigation">
-    <li><a class="pretty-link" href="#">À propos</a></li>
-    <li><a class="pretty-link" href="#">Contact</a></li>
-    <li><a class="pretty-link" href="#">Actualités</a></li>
-    <li><a class="pretty-link" href="#">Press</a></li>
-    <li><a class="pretty-link" href="#">Emplois</a></li>
-    <li><a class="pretty-link" href="#">Connexion <i class="text-primary fa fa-lock"></i></a></li>
-    <li><a class="pretty-link" href="#">FAQ</a></li>
+    <li><a class="pretty-link text-primary" href="#">À propos</a></li>
+    <li><a class="pretty-link text-primary" href="#">Contact</a></li>
+    <li><a class="pretty-link text-primary" href="#">Actualités</a></li>
+    <li><a class="pretty-link text-primary" href="#">Press</a></li>
+    <li><a class="pretty-link text-primary" href="#">Emplois</a></li>
+    <li><a class="pretty-link text-primary" href="#">Connexion <i class="text-primary fa fa-lock text-primary"></i></a></li>
+    <li><a class="pretty-link text-primary" href="#">FAQ</a></li>
   </ul>
 </div>
 
@@ -748,9 +751,11 @@
   <h2 name="global-search" class="sr-only">Formulaire de recherche</h2>
   <div class="input-group full-width">
     <h2 class="sr-only">Rechercher</h2>
-    <input type="text" class="form-control full-width" aria-label="Champ de recherche" placeholder="Chercher un produit, un document, un contact, ...">
+
+    <input type="text" class="form-control form-control- full-width" aria-label="Champ de recherche" placeholder="Chercher un produit, un document, un contact, ...">
+
     <span class="input-group-btn">
-      <button class="btn btn-default btn-icon" type="button" aria-label="Rechercher sur le site"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
+      <button class="btn btn-default btn-icon btn-" type="button" aria-label="Rechercher sur le site"><i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i></button>
     </span>
   </div>
 </form>
@@ -761,7 +766,7 @@
   <div class="header-nav" aria-hidden="true">
     
 
-  <div class="hamburger-wrapper">
+  <div class="hamburger-wrapper hamburger-">
 
   <div class="hamburger-button">
     <div class="hamburger">
@@ -830,6 +835,7 @@
   <h1 class="hidden" aria-level="3">Vous êtes sur ce chemin.</h1>
   <ul class="list-inline list-no-style list-no-padding">
     
+    
       
       
         
@@ -841,7 +847,7 @@
       
         
       
-      <li class="assurance-vie" aria-label="Assurance vie">Assurance vie</li>
+      <li class="text-assurance" aria-label="Assurance vie">Assurance vie</li>
      <li class="text-muted" aria-label=">">›</li> 
     
       
@@ -849,6 +855,7 @@
         
       
       <li class="text-muted" aria-label="RP Jeune">RP Jeune</li>
+    
     
     
   </ul>
@@ -925,21 +932,23 @@
 <p class="media-heading text-muted"></p>
 <ul class="facets-list">
   
-    <li><a href="#" class="pretty-link">RP Rente Immédiate</a></li>
-  
-    <li><a href="#" class="pretty-link">RP Rente Immédiate certain</a></li>
-  
-    <li><a href="#" class="pretty-link">RP Rente différéee</a></li>
-  
-    <li><a href="#" class="pretty-link">RP Jeune</a></li>
-  
-    <li><a href="#" class="pretty-link">RP Duo primes périodiques</a></li>
-  
-    <li><a href="#" class="pretty-link">RP Prime unique</a></li>
-  
-    <li><a href="#" class="pretty-link">RP Épargne</a></li>
-  
-    <li><a href="#" class="pretty-link">RP Refuge</a></li>
+    
+      <li><a href="#" class="pretty-link text-assurance">RP Rente Immédiate</a></li>
+    
+      <li><a href="#" class="pretty-link text-assurance">RP Rente Immédiate certain</a></li>
+    
+      <li><a href="#" class="pretty-link text-assurance">RP Rente différéee</a></li>
+    
+      <li><a href="#" class="pretty-link text-assurance">RP Jeune</a></li>
+    
+      <li><a href="#" class="pretty-link text-assurance">RP Duo primes périodiques</a></li>
+    
+      <li><a href="#" class="pretty-link text-assurance">RP Prime unique</a></li>
+    
+      <li><a href="#" class="pretty-link text-assurance">RP Épargne</a></li>
+    
+      <li><a href="#" class="pretty-link text-assurance">RP Refuge</a></li>
+    
   
 </ul>
 
@@ -1232,35 +1241,35 @@
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a aria-label="Accéder au compte Twitter des Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Twitter des Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color retraitespopulaires-icon-hover-primary" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a aria-label="Accéder au compte Facebook des Retraites Populaires" href="https://www.facebook.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Facebook des Retraites Populaires" href="https://www.facebook.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color retraitespopulaires-icon-hover-primary" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a aria-label="Accéder au compte Youtube des Retraites Populaires" href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Youtube des Retraites Populaires" href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color retraitespopulaires-icon-hover-primary" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a aria-label="Accéder au compte Instagram des Retraites Populaires" href="https://www.instagram.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte Instagram des Retraites Populaires" href="https://www.instagram.com/retraitespopulaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color retraitespopulaires-icon-hover-primary" aria-hidden="true"></i></a>
           </div>
         </div>
 
         <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
           <div class="spacer spacer-xs"></div>
           <div class="bubble-icon">
-            <a aria-label="Accéder au compte LinkedIn des Retraites Populaires" href="https://www.linkedin.com/company/retraites-populaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            <a aria-label="Accéder au compte LinkedIn des Retraites Populaires" href="https://www.linkedin.com/company/retraites-populaires" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color retraitespopulaires-icon-hover-primary" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -1272,13 +1281,13 @@
     <div class="row">
       <div class="col-xs-12 col-md-5 col-md-offset-1">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
-        <p>Recevez <a href="/savoir-faire" class="pretty-link text-italic"><i>Savoir-faire</i></a>, le bulletin des spécialistes de Retraites&nbsp;Populaires, trois fois par année via e-mail:</p>
+        <p>Recevez <a href="/savoir-faire" class="pretty-link text-italic text-primary"><i>Savoir-faire</i></a>, le bulletin des spécialistes de Retraites&nbsp;Populaires, trois fois par année via e-mail:</p>
         <form>
           <div class="form-group">
             <div class="input-group full-width">
-              <input type="text" class="form-control full-width" placeholder="Ex: aline.rochat@retraitespopulaires.ch" aria-label="Saisissez votre adresse e-mail.">
+              <input type="text" class="form-control full-width form-control-primary" placeholder="Ex: aline.rochat@retraitespopulaires.ch" aria-label="Saisissez votre adresse e-mail.">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Je m'inscris</button>
+                <button class="btn btn-default btn-primary" type="button">Je m'inscris</button>
               </span>
             </div>
           </div>
@@ -1301,16 +1310,16 @@
   <div class="col-xs-12">
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="lausanne">
-        <a href="tel:+41213482111" class="text-large text-no-wrap d-block">021 348 <strong>21 11</strong></a>
-        <a href="mailto:info@retraitespopulaires.ch" class="text-large d-block">info@retraitespopulaires.ch</a>
+        <a href="tel:+41213482111" class="text-large text-no-wrap d-block text-">021 348 <strong>21 11</strong></a>
+        <a href="mailto:info@retraitespopulaires.ch" class="text-large d-block text-">info@retraitespopulaires.ch</a>
       </div>
       <div role="tabpanel" class="tab-pane" id="yverdon">
-        <a href="tel:+41213482821" class="text-large text-no-wrap d-block">021 348 <strong>28 21</strong></a>
-        <a href="mailto:yverdon@retraitespopulaires.ch" class="text-large d-block">yverdon@retraitespopulaires.ch</a>
+        <a href="tel:+41213482821" class="text-large text-no-wrap d-block text-">021 348 <strong>28 21</strong></a>
+        <a href="mailto:yverdon@retraitespopulaires.ch" class="text-large d-block text-">yverdon@retraitespopulaires.ch</a>
       </div>
       <div role="tabpanel" class="tab-pane" id="nyon">
-        <a href="tel:+41213482020" class="text-large text-no-wrap d-block">021 348 <strong>20 20</strong></a>
-        <a href="mailto:nyon@retraitespopulaires.ch" class="text-large d-block">nyon@retraitespopulaires.ch</a>
+        <a href="tel:+41213482020" class="text-large text-no-wrap d-block text-">021 348 <strong>20 20</strong></a>
+        <a href="mailto:nyon@retraitespopulaires.ch" class="text-large d-block text-">nyon@retraitespopulaires.ch</a>
       </div>
     </div>
   </div>
@@ -1325,7 +1334,7 @@
 
 
   
-<div class="organic-lines lines-"></div>
+<div class="organic-lines lines-primary"></div>
 
 
   <div class="spacer"></div>
@@ -1334,9 +1343,9 @@
     <div class="row">
       <div class="col-xs-12 text-center">
         <ul class="menu-footer unordered-list list-inline list-unstyle-first">
-          <li><a href="#" class="pretty-link text-">Impressum</a></li>
-          <li><a href="#" class="pretty-link text-">Mentions juridiques</a></li>
-          <li><a href="#" class="pretty-link text-">Glossaire</a></li>
+          <li><a href="#" class="pretty-link text-primary">Impressum</a></li>
+          <li><a href="#" class="pretty-link text-primary">Mentions juridiques</a></li>
+          <li><a href="#" class="pretty-link text-primary">Glossaire</a></li>
         </ul>
       </div>
     </div>
