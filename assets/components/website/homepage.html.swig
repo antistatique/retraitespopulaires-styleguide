@@ -7,11 +7,7 @@ layout: website.html.swig
 ---
 {% include '../organisms/header.html.swig' %}
 
-<<<<<<< 552218dc79a1e2a5a025b6665d0f89204cc1922b
 {% include '../atoms/funky-waves.html.swig' with {funky_waves_img: 'https://www.retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/coucher-soleil-champs-echallens_2.jpg'} %}
-=======
-{% include '../atoms/funky-waves.html.swig' with {img: 'https://www.retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/coucher-soleil-champs-echallens_2.jpg?itok=Poi819cm'} %}
->>>>>>> Change placeholder image
 
 <div class="container-fluid">
   <div class="row">
