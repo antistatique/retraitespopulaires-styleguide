@@ -1,12 +1,17 @@
 CHANGELOG
 =========
 
+* 1.0.5 (2017-02-01)
+ - Refactoring on styleguide for easy fonts alternatives
+ - Rename `.text-frutiger` to `.text-primary`
+ - Rename `.text-cocon` to `.text-secondary`
+
 * 1.0.4 (2016-12-21)
  - Fix teaser detail contact/advisor page links color
 
 * 1.0.3 (2016-11-25)
  - Improvments hovers
- - Improvments on BigMenu 
+ - Improvments on BigMenu
  - Fix Inline images on CKEditor
 
 * 1.0.2 (2016-11-21)

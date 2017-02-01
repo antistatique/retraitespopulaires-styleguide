@@ -13,9 +13,9 @@ notes: |
 <a href="{{ teaser_search_link|default('#') }}" class="teaser teaser-{{teaser_search_theme}} teaser-fullclick teaser-search shadow shadow-down">
   <div class="search-heading">
     <div class="text-primary">
-      <div class="text-cocon h4 text-{{teaser_search_theme}}">{{ teaser_search_title|default('Lorem Ipsum') }}</div>
+      <div class="text-secondary h4 text-{{teaser_search_theme}}">{{ teaser_search_title|default('Lorem Ipsum') }}</div>
       <div class="spacer spacer-xs"></div>
-      <div class="text-cocon h6 text-muted">{{ teaser_search_type|default('Dolore')|upper }}</div>
+      <div class="text-secondary h6 text-muted">{{ teaser_search_type|default('Dolore')|upper }}</div>
       <div class="spacer spacer-xs"></div>
     </div>
   </div>

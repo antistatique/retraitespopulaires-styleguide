@@ -23,7 +23,7 @@ notes: |
       <circle fill="transparent" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
     </svg>
   </div>
-  <div class="hamburger-helper text-cocon">
+  <div class="hamburger-helper text-secondary">
     <div class="helper-when-close">Menu</div>
     <div class="helper-when-open">Fermer</div>
   </div>

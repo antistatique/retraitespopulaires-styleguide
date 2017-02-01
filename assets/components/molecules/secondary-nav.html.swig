@@ -30,7 +30,7 @@ notes: |
       {% set nav = data.nav.lorem %}
     {% endif %}
 
-    <div class="title h5 text-cocon">{{ nav.title }}</div>
+    <div class="title h5 text-secondary">{{ nav.title }}</div>
     <ul class="links list-no-style list-no-padding">
       {% for link in nav.links %}
 

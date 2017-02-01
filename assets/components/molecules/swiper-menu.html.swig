@@ -34,15 +34,15 @@ notes: |
       <p class="media-heading text-small swiper-padding text-muted">Vous êtes</p>
       <ul class="swiper-list swiper-list-first swiper-list-secondary list-no-style list-no-padding" role="navigation">
         <li class="text-primary icon-text icon-text-center">
-          <span class="retraitespopulaires-icon retraitespopulaires-icon-particuliers retraitespopulaires-icon-2x"></span> <a href="/retraitespopulaires-styleguide/particuliers" class="icon-text-txt text-cocon h5">Particuliers</a>
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-particuliers retraitespopulaires-icon-2x"></span> <a href="/retraitespopulaires-styleguide/particuliers" class="icon-text-txt text-secondary h5">Particuliers</a>
           <a href="swiper-particuliers" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
         </li>
         <li class="text-primary icon-text icon-text-center">
-          <span class="retraitespopulaires-icon retraitespopulaires-icon-entreprises retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Professionnels</a>
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-entreprises retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-secondary h5">Professionnels</a>
           <a href="swiper-professionnels" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
         </li>
         <li class="text-primary icon-text icon-text-center">
-          <span class="retraitespopulaires-icon retraitespopulaires-icon-collectivites retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-cocon h5">Collectivés</a>
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-collectivites retraitespopulaires-icon-2x"></span> <a href="#" class="icon-text-txt text-secondary h5">Collectivés</a>
           <a href="swiper-collectivites" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
         </li>
       </ul>
@@ -55,72 +55,72 @@ notes: |
       <ul data-list="swiper-particuliers" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="/retraitespopulaires-styleguide/particuliers" class="text-muted pretty-link pretty-link-light-gray text-primary text-cocon">Particuliers</a>
+          <a href="/retraitespopulaires-styleguide/particuliers" class="text-muted pretty-link pretty-link-light-gray text-primary text-secondary">Particuliers</a>
         </li>
         <li>
           <p class="media-heading text-small text-muted">Nouveau projet</p>
         </li>
         <li>
-          <a href="#" class="pretty-link text-cocon">Fortune</a>
+          <a href="#" class="pretty-link text-secondary">Fortune</a>
           <a href="swiper-particulier-fortune" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-particuliers"></a>
         </li>
         <li>
-          <a href="/retraitespopulaires-styleguide/famille" class="pretty-link text-cocon">Famille</a>
+          <a href="/retraitespopulaires-styleguide/famille" class="pretty-link text-secondary">Famille</a>
           <a href="swiper-particulier-famille" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-particuliers"></a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-cocon">Travail</a>
+          <a href="#" class="pretty-link text-secondary">Travail</a>
           <a href="swiper-particulier-travail" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-particuliers"></a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-cocon">Retraite</a>
+          <a href="#" class="pretty-link text-secondary">Retraite</a>
           <a href="swiper-particulier-retraite" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-particuliers"></a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-cocon">Logement</a>
+          <a href="#" class="pretty-link text-secondary">Logement</a>
           <a href="swiper-particulier-logement" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-particuliers"></a>
         </li>
         <li>
           <p class="media-heading text-small text-muted">Déjà client</p>
         </li>
          <li>
-          <a href="#" class="pretty-link text-cocon">Assuré 2e pilier</a>
+          <a href="#" class="pretty-link text-secondary">Assuré 2e pilier</a>
         </li>
          <li>
-          <a href="#" class="pretty-link text-cocon">Assuré 3e pilier</a>
+          <a href="#" class="pretty-link text-secondary">Assuré 3e pilier</a>
           <a href="swiper-particulier-3pilier" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-small arrow-particuliers"></a>
         </li>
          <li>
-          <a href="#" class="pretty-link text-cocon">Locataire en place</a>
+          <a href="#" class="pretty-link text-secondary">Locataire en place</a>
         </li>
       </ul>
 
       <ul data-list="swiper-professionnels" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-primary text-cocon">Professionnels</a>
+          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-primary text-secondary">Professionnels</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-cocon">Prévoyance professionnelle</a>
+          <a href="#" class="pretty-link text-secondary">Prévoyance professionnelle</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-cocon">Location de local commercial</a>
+          <a href="#" class="pretty-link text-secondary">Location de local commercial</a>
         </li>
       </ul>
 
        <ul data-list="swiper-collectivites" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style" role="navigation">
         <li class="swiper-back visible-xs visible-sm">
           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-particuliers"></a>
-          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-primary text-cocon">Collectivités</a>
+          <a href="#" class="text-muted pretty-link pretty-link-light-gray text-primary text-secondary">Collectivités</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-cocon">Gestion d'institutions de prévoyance</a>
+          <a href="#" class="pretty-link text-secondary">Gestion d'institutions de prévoyance</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-cocon">Financement d'infrastructures</a>
+          <a href="#" class="pretty-link text-secondary">Financement d'infrastructures</a>
         </li>
         <li>
-          <a href="#" class="pretty-link text-cocon">Construction de logements</a>
+          <a href="#" class="pretty-link text-secondary">Construction de logements</a>
         </li>
       </ul>
 
