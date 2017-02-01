@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-* 1.0.5 (2017-02-01)
+* 1.8.2 (2017-02-01)
  - Refactoring on styleguide for easy fonts alternatives
  - Rename `.text-frutiger` to `.text-primary`
  - Rename `.text-cocon` to `.text-secondary`
