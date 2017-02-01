@@ -25,7 +25,22 @@ function rp_contact_mail($key, &$message, $params) {
 
         // Sended to admin new main contact
         case 'main_contact':
-            $message['subject'] = t('Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
+            $message['subject'] = t('Nouvelle demande de contact par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
+            $message['body'][] = Markup::create( '<b>'. t('Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]) . '</b><br /><br />');
+
+            $message['body'][] = Markup::create( '<b>'. t('Demande: '). '</b><br />');
+            $message['body'][] = Markup::create( t('Sujet: '). $params['subject'] . '<br />');
+            $message['body'][] = Markup::create( t('Message: '). '<br />'. nl2br($params['message']) . '<br />');
+
+            $message['body'][] = Markup::create( '<br /><br />');
+            $message['body'][] = Markup::create( '<b>'. t('Informations de contact: '). '</b><br />');
+            $message['body'][] = Markup::create( t('Nom: '). $params['lastname'] . '<br />');
+            $message['body'][] = Markup::create( t('Prénom: '). $params['firstname'] . '<br />');
+            $message['body'][] = Markup::create( t('Date de naissance (jj/mm/aaaa): '). $params['birthdate'] . '<br />');
+            $message['body'][] = Markup::create( t('Npa: '). $params['zip'] . '<br />');
+            $message['body'][] = Markup::create( t('Localité: '). $params['city'] . '<br />');
+            $message['body'][] = Markup::create( t('E-mail: '). $params['email'] . '<br />');
+            $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
         break;
 
         // Sended when contacting contact/advisor

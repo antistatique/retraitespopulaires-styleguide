@@ -9,12 +9,16 @@
             "role": ""
         }
     ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packagist.drupal-composer.org"
-        }
-    ],
+    "repositories": {
+      "0": {
+          "type": "composer",
+          "url": "https://packagist.drupal-composer.org"
+      },
+      "sandboxes": {
+          "type": "vcs",
+          "url": "https://git.drupal.org/sandbox/wengerk/2846301.git"
+      }
+  },
     "require": {
         "composer/installers": "^1.0.20",
         "drupal-composer/drupal-scaffold": "^2.0.1",
@@ -39,7 +43,8 @@
         "drupal/focal_point": "^8",
         "drupal/ckeditor_media_embed": "^8",
         "drupal/redirect": "^8",
-        "drupal/crop": "8.1.0@stable"
+        "drupal/crop": "8.1.0@stable",
+        "drupal/backerymails": "dev-8.x-1.x"
       },
     "require-dev": {
       "behat/mink": "~1.7",

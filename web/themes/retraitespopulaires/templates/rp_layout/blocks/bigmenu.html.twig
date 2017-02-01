@@ -201,7 +201,7 @@
 
                                     {% set target = item.link.options.external ? '_blank' %}
                                       <a href="{{ item.link.urlObject }}" class="retraitespopulaires-icon retraitespopulaires-icon-{{ profil_icon }} retraitespopulaires-icon-3x" target="{{ target }}"></a>
-                                      <a href="{{ item.link.urlObject }}" class="icon-text-txt text-cocon h5" target="{{ target }}">{{ item.link.title }}</a>
+                                      <a href="{{ item.link.urlObject }}" class="icon-text-txt text-secondary h5" target="{{ target }}">{{ item.link.title }}</a>
                                       {% if item.hasChildren %}
                                         <a href="swiper-{{ item.link.pluginId }}"  class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
                                       {% endif %}
@@ -238,7 +238,7 @@
                                       <!-- First item is a back link to previous links  -->
                                       <li class="swiper-back visible-xs visible-sm">
                                        <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-{{ theme|join }}"></a>
-                                       <a href="{{ item.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-{{ theme|join }} text-cocon">{{ item.link.title }}</a>
+                                       <a href="{{ item.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-{{ theme|join }} text-secondary">{{ item.link.title }}</a>
                                      </li>
 
                                      {% for subitem in item.subtree %}
@@ -272,7 +272,7 @@
                                         <!-- First item is a back link to previous links  -->
                                         <li class="swiper-back visible-xs visible-sm">
                                          <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-primary"></a>
-                                         <a href="{{ item.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-primary text-cocon">{{ item.link.title }}</a>
+                                         <a href="{{ item.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-primary text-secondary">{{ item.link.title }}</a>
                                        </li>
 
                                        {% for subitem in item.subtree %}
@@ -328,7 +328,7 @@
                                          <!-- First subitem is a back link to previous links  -->
                                          <li class="swiper-back visible-xs visible-sm">
                                           <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-{{ theme|join }}"></a>
-                                          <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-{{ theme|join }} text-cocon">{{ subitem.link.title }}</a>
+                                          <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-{{ theme|join }} text-secondary">{{ subitem.link.title }}</a>
                                         </li>
 
                                         {% for lastitem in subitem.subtree %}
@@ -362,7 +362,7 @@
                                        <!-- First subitem is a back link to previous links  -->
                                        <li class="swiper-back visible-xs visible-sm">
                                         <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-primary"></a>
-                                        <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-primary text-cocon">{{ subitem.link.title }}</a>
+                                        <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-primary text-secondary">{{ subitem.link.title }}</a>
                                       </li>
 
                                       {% for lastitem in subitem.subtree %}
