@@ -4,7 +4,7 @@
     "web/themes/retraitespopulaires/assets/sass/main-variables.scss",
     "web/themes/retraitespopulaires/assets/sass/bootstrap-variables.scss",
     "web/themes/retraitespopulaires/assets/sass/bootstrap.scss",
-    "web/themes/retraitespopulaires_cip/assets/sass/retraitespopulaires.scss"
+    "web/themes/retraitespopulaires/assets/sass/retraitespopulaires.scss"
   ],
   "extends": "stylelint-config-standard",
   "rules": {
