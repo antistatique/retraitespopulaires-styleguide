@@ -18,13 +18,13 @@ namespace :styleguide do
       end
 
       # Retrieve styleguide from npm
-      execute 'yarn', '--silent', 'install'
+      execute 'npm', '--no-spin', '--silent', 'install'
 
       # Assert the dependencied styleguide is build
       if not File.exists?(fetch(:styleguide_path)+fetch(:build_path))
         # Build the dependencied styleguide localy
         within fetch(:styleguide_path) do
-          execute 'yarn', '--silent', 'install'
+          execute 'npm', '--no-spin', '--silent', 'install'
           execute './node_modules/.bin/gulp', 'build', '--silent', '--production'
         end
       end
@@ -47,7 +47,7 @@ namespace :styleguide do
 
       # Build the dependencied styleguide localy
       within fetch(:styleguide_path) do
-        execute 'yarn', '--silent', 'install'
+        execute 'npm', '--no-spin', '--silent', 'install'
         execute './node_modules/.bin/gulp', 'build', '--silent', '--production'
       end
 
