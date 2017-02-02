@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+* 1.8.3 (2017-02-02)
+ - Fix eslint and gulp-eslint version to avoid conflict with futur rules
+ - Fix issue crash styleguide build when rules warning on production, do it in development instead
+
 * 1.8.2 (2017-02-01)
  - Refactoring on styleguide for easy fonts alternatives
  - Rename `.text-frutiger` to `.text-primary`
