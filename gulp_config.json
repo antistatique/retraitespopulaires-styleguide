@@ -1,0 +1,86 @@
+{
+  "app": {
+    "env": "dev",
+    "basedir": "styleguide",
+    "ghpages": "styleguide"
+  },
+  "vendors": {
+    "css": [
+      "node_modules/@antistatique/retraitespopulaires-styleguide/build/css/vendors.min.css"
+    ],
+    "js": [
+      "node_modules/@antistatique/retraitespopulaires-styleguide/build/js/vendors.min.js",
+      "node_modules/@antistatique/retraitespopulaires-styleguide/build/js/bundle.js"
+    ],
+    "singlejs": [
+      "node_modules/@antistatique/retraitespopulaires-styleguide/build/js/MorphSVGPlugin.min.js"
+    ],
+    "fonts": [
+      "web/themes/retraitespopulaires/assets/fonts/*",
+      "node_modules/@antistatique/retraitespopulaires-styleguide/build/fonts/*"
+    ],
+    "polyfills": [
+      "node_modules/html5shiv/dist/html5shiv.js",
+      "node_modules/respond.js/dest/respond.src.js"
+    ]
+  },
+  "images": [
+    "web/themes/retraitespopulaires/assets/img/**/*",
+    "node_modules/@antistatique/retraitespopulaires-styleguide/build/img/**/*"
+  ],
+  "svg": [
+    "web/themes/retraitespopulaires/assets/svg/**/*",
+    "node_modules/@antistatique/retraitespopulaires-styleguide/build/svg/**/*"
+  ],
+  "tasks":  "./tasks/",
+  "assets": "web/themes/retraitespopulaires/assets/",
+  "iconsFontName": "retraitespopulaires-icon",
+  "build": "web/themes/retraitespopulaires/build/",
+  "browsers": ["last 2 versions", "safari 5", "ie 8", "ie 9", "ff 27", "opera 12.1"],
+  "singles": [],
+  "metalsmith": {
+    "assets": "node_modules/toolbox-utils/styleguide/",
+    "dist": "styleguide/",
+    "url": "https://user.github.io/repo/",
+    "plugins": {
+      "permalinks": {
+        "pattern": ":title",
+        "linksets": [{
+          "match": { "collection": "pages" },
+          "pattern": ":title"
+        }]
+      },
+      "collections": {
+        "atoms": {
+          "sortBy": "title",
+          "reverse": false
+        },
+        "molecules": {
+          "sortBy": "title",
+          "reverse": false
+        },
+        "organisms": {
+          "sortBy": "title",
+          "reverse": false
+        },
+        "pages": {
+          "sortBy": "title",
+          "reverse": false
+        },
+        "docs": {
+          "sortBy": "title",
+          "reverse": false
+        }
+      },
+      "layouts": {
+        "engine": "swig",
+        "default": "default.html.swig",
+        "directory": "web/themes/retraitespopulaires/assets/templates",
+        "rename": true
+      },
+      "metalsmithinplace": {
+        "engine": "swig"
+      }
+    }
+  }
+}

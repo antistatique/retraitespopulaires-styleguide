@@ -4,13 +4,12 @@ lock '3.5.0'
 set :application, 'retraites-populaires'
 set :repo_url, 'dplmgr@192.168.188.51:/data/git/retraitespopulaires.git'
 
-# Used only if styleguide is external of the repository
-set :styleguide_repo, 'git@github.com:antistatique/retraitespopulaires-styleguide.git'
-
 set :app_path, "web"
-set :styleguide_path, "node_modules/@antistatique/retraitespopulaires-styleguide"
 set :theme_path, "themes/retraitespopulaires"
 set :build_path, "build"
+
+set :styleguide_path, "node_modules/@antistatique/retraitespopulaires-styleguide"
+set :styleguide_repo, 'git@github.com:antistatique/retraitespopulaires-styleguide.git'
 
 # Link file settings.php & drushcr.php
 set :linked_files, fetch(:linked_files, []).push("#{fetch(:app_path)}/sites/default/settings.php", "#{fetch(:app_path)}/sites/default/drushrc.php")
@@ -30,10 +29,8 @@ set :scm, :git
 # Default value for :log_level is :debug
 set :log_level, :debug
 
-
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
 
 # Default value for keep_releases is 5
 set :keep_releases, 3
@@ -52,18 +49,9 @@ set :slack_run_updating, -> { false } # Set to false to disable deploy starting 
 # Rake::Task['deploy:updated'];
 
 namespace :deploy do
-  # before :starting, "drupal:backup"
-
-  # Used only if styleguide is external of the repository
-  after :updated, "styleguide:clone"
-
-  # Used only if styleguide is internal of the repository
-  # after :updated, "styleguide:build"
-
   after :updated, "styleguide:deploy_build"
 
   after :updated, "drupal:config:import"
-  after :updated, "drupal:module:disable"
   after :updated, "drupal:updatedb"
   after :updated, "drupal:cache:clear"
   after :updated, "drupal:set_permissions"
