@@ -5,10 +5,10 @@ collection: molecules
 notes: |
   ##### Usage : `secondary-nav`
   ##### Options :
-  - **json** - <i>String</i>
-  - **theme** - <i>String</i> - <b>secondary-nav-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **secondary_nav_json** - <i>String</i>
+  - **secondary_nav_theme** - <i>String</i> - <b>secondary-nav-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<div class="secondary-nav secondary-nav-{{ theme }}">
+<div class="secondary-nav secondary-nav-{{ secondary_nav_theme|default('primary') }}">
   <h2 class="sr-only">Navigation secondaire</h2>
   <div class="back">
     <a aria-label="Back" href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></a>
@@ -16,21 +16,21 @@ notes: |
   <div class="secondary-nav-content">
 
     {% set nav = null %}
-    {% if json == 'particuliers'  %}
+    {% if secondary_nav_json == 'particuliers'  %}
       {% set nav = data.nav.particuliers %}
-    {% elseif json == 'assurance-vie'  %}
+    {% elseif secondary_nav_json == 'assurance-vie'  %}
       {% set nav = data.nav.assurancevie %}
-    {% elseif json == 'emploi'  %}
+    {% elseif secondary_nav_json == 'emploi'  %}
       {% set nav = data.nav.emploi %}
-    {% elseif json == 'cip'  %}
+    {% elseif secondary_nav_json == 'cip'  %}
       {% set nav = data.nav.cip %}
-    {% elseif json == 'portailca'  %}
+    {% elseif secondary_nav_json == 'portailca'  %}
       {% set nav = data.nav.portailca %}
     {% else  %}
       {% set nav = data.nav.lorem %}
     {% endif %}
 
-    <div class="title h5 text-cocon">{{ nav.title }}</div>
+    <div class="title h5 text-secondary">{{ nav.title }}</div>
     <ul class="links list-no-style list-no-padding">
       {% for link in nav.links %}
 

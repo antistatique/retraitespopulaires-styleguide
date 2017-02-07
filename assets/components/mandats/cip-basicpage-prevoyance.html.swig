@@ -5,14 +5,14 @@ collection: mandats
 styleguide: false
 layout: mandats.html.swig
 ---
-{% include '../organisms/header-mandats.html.swig' with {'theme': 'cip'} %}
+{% include '../organisms/header-mandats.html.swig' with {'header_mandats_theme': 'cip'} %}
 
-{% include '../atoms/funky-waves.html.swig' with {img: 'http://www.cipvd.ch/upload/docs/image/png/2016-06/banner_rente_ou_capital.png', 'funky_waves_theme': 'cip', 'funky_waves_disable': true, 'funky_waves_no_header': true} %}
+{% include '../atoms/funky-waves.html.swig' with {funky_waves_img: 'http://www.cipvd.ch/upload/docs/image/png/2016-06/banner_rente_ou_capital.png', 'funky_waves_theme': 'cip', 'funky_waves_disable': true, 'funky_waves_no_header': true} %}
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {'primary_theme': 'text-cip', theme: 'text-cip', links: ['Accueil', 'Prévoyance', 'Transiter entre deux emplois', 'Plans de prévoyance']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {'breadcrumb_primary_theme': 'text-cip', breadcrumb_theme: 'text-cip', breadcrumb_links: ['Accueil', 'Prévoyance', 'Transiter entre deux emplois', 'Plans de prévoyance']} %}
       <div class="spacer"></div>
     </div>
   </div>
@@ -84,7 +84,7 @@ layout: mandats.html.swig
     </div>
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      {% include '../molecules/secondary-nav.html.swig' with {'theme': 'cip', 'json': 'cip'} %}
+      {% include '../molecules/secondary-nav.html.swig' with {'secondary_nav_theme': 'cip', 'secondary_nav_json': 'cip'} %}
     </div>
   </div>
 </div>
@@ -93,4 +93,4 @@ layout: mandats.html.swig
 {% include '../organisms/attachments-contact.html.swig' with {'attachments_contact_theme': 'cip', 'attachments_contact_title': 'La CIP est à votre disposition', 'attachments_contact_more': 'Contacter la CIP'} %}
 <div class="spacer"></div>
 
-{% include '../organisms/footer-mandats.html.swig' with {'theme': 'cip'} %}
+{% include '../organisms/footer-mandats.html.swig' with {'footer_mandats_theme': 'cip'} %}

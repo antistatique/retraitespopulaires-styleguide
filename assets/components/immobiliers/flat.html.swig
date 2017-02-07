@@ -12,7 +12,7 @@ layout: immobiliers.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-immobilier', links: ['Accueil', 'Immobilier',  'Appartements à louer', 'Ch. de Pierrefleur 54, 1004 Lausanne
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-immobilier', breadcrumb_links: ['Accueil', 'Immobilier',  'Appartements à louer', 'Ch. de Pierrefleur 54, 1004 Lausanne
 ']} %}
       <div class="spacer"></div>
     </div>
@@ -103,7 +103,7 @@ layout: immobiliers.html.swig
           <div class="spacer spacer-sm"></div>
           <div class="row">
             <div class="col-sm-12">
-              {% include '../atoms/button.html.swig' with {theme: 'immobilier', btn_label: 'Demande de renseignement'} %}
+              {% include '../atoms/button.html.swig' with {btn_theme: 'immobilier', btn_label: 'Demande de renseignement'} %}
             </div>
           </div>
         </div>
@@ -113,4 +113,4 @@ layout: immobiliers.html.swig
 </div>
 
 <div class="spacer"></div>
-{% include '../organisms/footer.html.swig' with {'light': true, 'theme': 'immobilier'} %}
+{% include '../organisms/footer.html.swig' with {'footer_light': true, 'footer_theme': 'immobilier'} %}

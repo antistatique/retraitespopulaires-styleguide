@@ -4,7 +4,7 @@
   display: inline-block;
   padding: 0.7em;
   border: 1px solid $transparent;
-  font-family: Cocon Pro;
+  font-family: $font-secondary;
   font-weight: 300;
   transition:
     background 0.25s ease,

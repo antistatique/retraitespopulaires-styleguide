@@ -12,7 +12,7 @@ layout: emplois.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'text-primary', links: ['Accueil', 'Emploi', 'Crée un compte']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-primary', breadcrumb_links: ['Accueil', 'Emploi', 'Crée un compte']} %}
       <div class="spacer"></div>
     </div>
   </div>
@@ -38,4 +38,4 @@ layout: emplois.html.swig
 </div>
 
 <div class="spacer"></div>
-{% include '../organisms/footer.html.swig' with {'light': true} %}
+{% include '../organisms/footer.html.swig' with {'footer_light': true} %}

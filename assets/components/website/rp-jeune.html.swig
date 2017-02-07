@@ -11,7 +11,7 @@ layout: website.html.swig
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-offset-4 col-lg-8 col-lg-offset-3 col-xl-6 col-xl-offset-3 text-center">
-      {% include '../molecules/breadcrumb.html.swig' with {theme: 'assurance-vie', links: ['Accueil', 'Assurance vie', 'RP Jeune']} %}
+      {% include '../molecules/breadcrumb.html.swig' with {breadcrumb_theme: 'text-assurance', breadcrumb_links: ['Accueil', 'Assurance vie', 'RP Jeune']} %}
       <div class="spacer"></div>
     </div>
   </div>
@@ -79,16 +79,16 @@ layout: website.html.swig
         </div>
 
         <div class="col-md-4">
-          {% include '../atoms/facets-list.html.swig' with {'title': '', 'links': ['RP Rente Immédiate', 'RP Rente Immédiate certain', 'RP Rente différéee', 'RP Jeune', 'RP Duo primes périodiques', 'RP Prime unique', 'RP Épargne', 'RP Refuge']} %}
+          {% include '../atoms/facets-list.html.swig' with {'facets_title': '', 'facets_links': ['RP Rente Immédiate', 'RP Rente Immédiate certain', 'RP Rente différéee', 'RP Jeune', 'RP Duo primes périodiques', 'RP Prime unique', 'RP Épargne', 'RP Refuge'], 'facets_theme': 'assurance'} %}
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-8">
           <div class="row">
             <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Rente Immédiate', 'body': 'Profitez de votre retraite! Placez un capital de manière sûre et bénéficiez tout de suite de rentes à vie.'} %}
+              {% include '../molecules/teaser-product.html.swig' with {'teaser_product_theme':'assurance', 'teaser_product_title': 'Rente Immédiate', 'teaser_product_body': 'Profitez de votre retraite! Placez un capital de manière sûre et bénéficiez tout de suite de rentes à vie.'} %}
             </div>
             <div class="col-sm-6">
-              {% include '../molecules/teaser-product.html.swig' with {'theme':'assurance', 'title': 'Rente Immédiate certain', 'body': 'Réalisez vos projets! Transformez votre capital en revenu supplémentaire garanti.'} %}
+              {% include '../molecules/teaser-product.html.swig' with {'teaser_product_theme':'assurance', 'teaser_product_title': 'Rente Immédiate certain', 'teaser_product_body': 'Réalisez vos projets! Transformez votre capital en revenu supplémentaire garanti.'} %}
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ layout: website.html.swig
     </div>
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      {% include '../molecules/secondary-nav.html.swig' with {'theme': 'assurance', 'json': 'assurance-vie'} %}
+      {% include '../molecules/secondary-nav.html.swig' with {'secondary_nav_theme': 'assurance', 'secondary_nav_json': 'assurance-vie'} %}
     </div>
   </div>
 </div>
@@ -106,18 +106,18 @@ layout: website.html.swig
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        {% include '../molecules/card-attachement.html.swig' with {'theme': 'assurance', 'type': 'faq', 'title':'Questions fréquentes', 'links': ['Qu’est-ce qu’un 3e pilier A ou prévoyance liée?', 'Comment maintenir son niveau de vie à la retraite?', 'Qu’en est-il du 3e pilier en cas de divorce?'], 'more': 'Accéder à toutes les questions sur l’assurance vie'} %}
+        {% include '../molecules/card-attachement.html.swig' with {'card_attachement_theme': 'assurance', 'card_attachement_type': 'faq', 'card_attachement_title':'Questions fréquentes', 'card_attachement_links': ['Qu’est-ce qu’un 3e pilier A ou prévoyance liée?', 'Comment maintenir son niveau de vie à la retraite?', 'Qu’en est-il du 3e pilier en cas de divorce?'], 'card_attachement_more': 'Accéder à toutes les questions sur l’assurance vie'} %}
       </div>
       <div class="col-xs-12 col-md-6">
-        {% include '../molecules/card-attachement.html.swig' with {'theme': 'assurance', 'type': 'document', 'title':'Documents utiles', 'links': [
+        {% include '../molecules/card-attachement.html.swig' with {'card_attachement_theme': 'assurance', 'card_attachement_type': 'document', 'card_attachement_title':'Documents utiles', 'card_attachement_links': [
         'Brochure Conseil global',
         'Procuration',
         'Modification des primes et prestations'],
-        'more': "Tous les documents d'assurance vie"} %}
+        'card_attachement_more': "Tous les documents d'assurance vie"} %}
       </div>
     </div>
   </div>
-  {% include '../atoms/organic-lines.html.swig' with {'theme': 'assurance'} %}
+  {% include '../atoms/organic-lines.html.swig' with {'organic_lines_theme': 'assurance'} %}
 </div>
 
 <div class="spacer"></div>

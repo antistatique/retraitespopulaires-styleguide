@@ -5,30 +5,30 @@ collection: molecules
 notes: |
   ##### Usage : `teaser-basicpage`
   ##### Options :
-  - **icon** - <i>Boolean</i>
-  - **title_basicpage** - <i>String</i>
-  - **links_basicpage** - <i>Array</i>
-  - **body_basicpage** - <i>String</i>
-  - **theme_basicpage** - <i>String</i> - <b>teaser-basicpage-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **basicpage_icon** - <i>Boolean</i>
+  - **basicpage_title** - <i>String</i>
+  - **basicpage_links** - <i>Array</i>
+  - **basicpage_body** - <i>String</i>
+  - **basicpage_theme** - <i>String</i> - <b>teaser-basicpage-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<div class="teaser-basicpage teaser-basicpage-{{ theme_basicpage }} shadow shadow-down">
+<div class="teaser-basicpage teaser-basicpage-{{ basicpage_theme }} shadow shadow-down">
   <div class="basicpage-heading">
-    <div class="text-primary {% if icon %} icon-text icon-text-center {% endif %}">
-    {% if icon %}
+<div class="text-primary {% if basicpage_icon %} icon-text icon-text-center {% endif %}">
+    {% if basicpage_icon %}
       <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span>
-      <a href="#" class="icon-text-txt text-cocon h4">{{ title_basicpage|default('Lorem Ipsum') }}</a>
+      <a href="#" class="icon-text-txt text-secondary h4">{{ basicpage_title|default('Lorem Ipsum') }}</a>
     {% else %}
-      <a href="#" class="text-cocon text-{{ theme_basicpage }} h4">{{ title_basicpage|default('Lorem Ipsum') }}</a>
+      <a href="#" class="text-secondary text-{{ basicpage_theme }} h4">{{ basicpage_title|default('Lorem Ipsum') }}</a>
     {% endif %}
     </div>
   </div>
   <div class="basicpage-body">
-    {% if body_basicpage %}
-      <p>{{ body_basicpage }}</p>
+    {% if basicpage_body %}
+      <p>{{ basicpage_body }}</p>
     {% endif %}
-    {% if links_basicpage %}
+    {% if basicpage_links %}
       <ul class="facets-list">
-        {% for link in links_basicpage %}
+        {% for link in basicpage_links %}
           <li><a href="#" class="pretty-link">{{ link }}</a></li>
         {% endfor %}
       </ul>

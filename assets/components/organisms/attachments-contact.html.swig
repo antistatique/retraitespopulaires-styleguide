@@ -20,7 +20,7 @@ notes: |
     </div>
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-        {% include '../molecules/teaser-contact.html.swig' with {theme: attachments_contact_theme} %}
+        {% include '../molecules/teaser-contact.html.swig' with {teaser_contact_theme: attachments_contact_theme} %}
       </div>
     </div>
   </div>

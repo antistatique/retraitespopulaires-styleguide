@@ -5,13 +5,13 @@ collection: extranets
 styleguide: false
 layout: extranets.html.swig
 ---
-{% include '../organisms/header-extranet.html.swig' with {'theme': ''} %}
+{% include '../organisms/header-extranet.html.swig' with {'header_extranet_theme': ''} %}
 <div class="portailca-categories">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
         <div class="spacer spacer-md"></div>
-        {% include '../molecules/breadcrumb-ca.html.swig' with {'links': ['Accueil', 'Retraites Populaires']} %}
+        {% include '../molecules/breadcrumb-extranet.html.swig' with {'breadcrumb_extranet_links': ['Accueil', 'Retraites Populaires']} %}
         <div class="spacer spacer-xs"></div>
         <div class="spacer spacer-md"></div>
         <h1>2016</h1>
@@ -36,30 +36,30 @@ layout: extranets.html.swig
         </div>
         <div class="spacer spacer-sm"></div>
 
-        {% include '../molecules/attachments-ca.html.swig' with {
-          'title_attachment': 'All inclusive de la séance du 22 avril 2016',
-          'version_attachment': 'Version: 20160422 OJ AI - v1'
+        {% include '../molecules/teaser-document-extranet.html.swig' with {
+          'teaser_document_extranet_title': 'All inclusive de la séance du 22 avril 2016',
+          'teaser_document_extranet_version': 'Version: 20160422 OJ AI - v1'
           }
         %}
-        {% include '../molecules/attachments-ca.html.swig' with {
-          'title_attachment': 'All inclusive de la séance du 21 mars 2016',
-          'version_attachment': 'Version: 20160321 OJ AI - v1.2'
+        {% include '../molecules/teaser-document-extranet.html.swig' with {
+          'teaser_document_extranet_title': 'All inclusive de la séance du 21 mars 2016',
+          'teaser_document_extranet_version': 'Version: 20160321 OJ AI - v1.2'
           }
         %}
-        {% include '../molecules/attachments-ca.html.swig' with {
-          'title_attachment': 'All inclusive de la séance du 15 février 2016',
-          'version_attachment': 'Version: 20160215 OJ AI - v2.3'
+        {% include '../molecules/teaser-document-extranet.html.swig' with {
+          'teaser_document_extranet_title': 'All inclusive de la séance du 15 février 2016',
+          'teaser_document_extranet_version': 'Version: 20160215 OJ AI - v2.3'
           }
         %}
       </div>
       <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
         <div class="spacer spacer-xl visible-xs visible-sm"></div>
-        {% include '../molecules/secondary-nav.html.swig' with {'theme': '', 'json': 'portailca'} %}
+        {% include '../molecules/secondary-nav.html.swig' with {'secondary_nav_theme': '', 'secondary_nav_json': 'portailca'} %}
       </div>
     </div>
   </div>
 
-  {% include '../atoms/organic-lines.html.swig' with {'theme': theme} %}
+  {% include '../atoms/organic-lines.html.swig' with {'organic_lines_theme': theme} %}
 
   <div class="spacer"></div>
 
