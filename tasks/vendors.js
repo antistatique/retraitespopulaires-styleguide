@@ -9,11 +9,20 @@ module.exports = function() {
  /*
   * CSS Vendors
   */
-  gulp.task('css-vendors', function() {
+  gulp.task('css-vendors', ['img-vendors'], function() {
     return gulp.src(config.vendors.css)
       .pipe($.concat('vendors.min.css'))
       .pipe($.cleanCss())
       .pipe($.size({title: 'CSS VENDORS', showFiles: true}))
+      .pipe(gulp.dest(config.build + 'css'));
+  });
+
+  /*
+   *  IMG Vendors
+   */
+  gulp.task('img-vendors', function() {
+    return gulp.src(config.vendors.img)
+      .pipe($.size({title: 'IMG CSS VENDORS', showFiles: true}))
       .pipe(gulp.dest(config.build + 'css'));
   });
 

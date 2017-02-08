@@ -40,6 +40,8 @@ layout: immobiliers.html.swig
           <div class="spacer spacer-xs"></div>
           {% include '../atoms/map-card.html.swig' %}
           <div class="spacer spacer-xs"></div>
+          {% include '../organisms/gallery.html.swig' %}
+          <div class="spacer spacer-xs"></div>
           <table class="table-wide table-immobilier tablesaw tablesaw-stack" data-tablesaw-mode="stack">
              <thead>
               <tr>
