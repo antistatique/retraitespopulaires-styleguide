@@ -84,12 +84,12 @@ class AddressForm extends FormBase {
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
             $form['status'] = array(
-                '#markup' => '<div class="well well-success well-lg"><p>'.$status['status'][0].'</p></div>',
+                '#markup' => '<div class="well well-success well-lg"><p class="m-b-0">'.$status['status'][0].'</p></div>',
             );
         }
         if (!empty($this->session->get('errors'))) {
             $form['errors'] = array(
-                '#markup' => '<div class="well well-danger well-lg"><p>'.t('Attention, des erreurs sont survenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
+                '#markup' => '<div class="well well-danger well-lg"><p class="class="m-b-0">'.t('Attention, des erreurs sont survenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
             );
         }
 
@@ -534,10 +534,13 @@ class AddressForm extends FormBase {
             // Send to admin
             $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.page.address')['receivers']);
             $to = str_replace(';', ',', $to);
-            $reply = $form_state->getValue('email');
+            $reply = $form_state->getValue('new_email');
             $this->mail->mail('rp_contact', 'contact_address', $to, 'fr', $data, $reply);
 
-            drupal_set_message(t('Merci @firstname @lastname pour votre demande de changement d\'adresse. Nous allons rapidement traiter votre demande et vous recontacter.', [
+            // Send to client
+            $this->mail->mail('rp_contact', 'feedback_contact_address', $form_state->getValue('new_email'), 'fr');
+
+            drupal_set_message(t('Merci @firstname @lastname Nous allons rapidement traiter votre changement d\'adresse.', [
                 '@firstname' => $form_state->getValue('firstname'),
                 '@lastname'  => $form_state->getValue('lastname'),
             ]));

@@ -22,6 +22,8 @@ function rp_contact_mail($key, &$message, $params) {
     }
 
     switch($key) {
+        // Admin Mails
+        // ---------------------------------------------------------------------
 
         // Sended to admin new main contact
         case 'main_contact':
@@ -43,7 +45,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
         break;
 
-        // Sended when contacting contact/advisor
+        // Sended to admin when contacting contact/advisor
         case 'contact':
             $message['subject'] = t('Nouvelle demande de @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
 
@@ -64,7 +66,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
         break;
 
-        // Sended when contacting of Demande de documents
+        // Sended to admin when contacting of Demande de documents
         case 'contact_documents':
             $message['subject'] = t('Nouvelle commande de documents par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
 
@@ -97,7 +99,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('E-mail: '). $params['email'] . '<br />');
         break;
 
-        // Sended when contacting of Changement d'adresse
+        // Sended to admin when contacting of Changement d'adresse
         case 'contact_address':
 
             $message['subject'] = t('Nouvelle demande de changement d\'adresse par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
@@ -145,7 +147,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('Remarque: '). '<br />'. nl2br($params['remarque']) . '<br />');
         break;
 
-        // Sended when contacting of Demande de réservation d'un taux
+        // Sended to admin when contacting of Demande de réservation d'un taux
         case 'contact_building':
             $message['subject'] = t('Nouvelle demande de réservation d\'un taux par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
 
@@ -171,7 +173,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
         break;
 
-        // Sended when contacting of Nouvelle demande de conversion d'un taux variable en taux fixe
+        // Sended to admin when contacting of Nouvelle demande de conversion d'un taux variable en taux fixe
         case 'contact_conversion':
             $message['subject'] = t('Nouvelle demande de conversion d\'un taux variable en taux fixe par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
 
@@ -280,7 +282,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['params']['files'] = $attachments;
         break;
 
-        // Sended when contacting of Demande de modification de l'amortissement du 1er rang
+        // Sended to admin when contacting of Demande de modification de l'amortissement du 1er rang
         case 'contact_depreciation':
             $message['subject'] = t('Nouvelle demande de modification de l\'amortissement du 1er rang par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
 
@@ -310,19 +312,19 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
         break;
 
-       // Sended when contacting of Demande d'attestation d'intérêts Form
+       // Sended to admin when contacting of Demande d'attestation d'intérêts Form
        case 'contact_tax_attestation':
            $message['subject'] = t('Nouvelle demande d\'attestation d\'intérêts par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]);
-        +
+
            $message['body'][] = Markup::create( '<b>'. t('Nouvelle demande d\'attestation d\'intérêts par @firstname @lastname.', ['@firstname' => $params['firstname'], '@lastname' => $params['lastname']]) . '</b><br /><br />');
-        +
+
            $message['body'][] = Markup::create( '<b>'. t('Demande: '). '</b><br />');
            $message['body'][] = Markup::create( t('Bien adresse: '). $params['building_address'] . '<br />');
            $message['body'][] = Markup::create( t('Bien NPA: '). $params['building_zip'] . '<br />');
            $message['body'][] = Markup::create( t('Bien localité: '). $params['building_city'] . '<br />');
            $message['body'][] = Markup::create( t('Année: '). $params['year'] . '<br />');
            $message['body'][] = Markup::create( t('Remarque: '). '<br />'. nl2br($params['remarque']) . '<br />');
-        +
+
            $message['body'][] = Markup::create( '<br /><br />');
            $message['body'][] = Markup::create( '<b>'. t('Informations de contact: '). '</b><br />');
            $message['body'][] = Markup::create( t('Nnuméro crédit de construction: '). $params['policy'] . '<br />');
@@ -336,6 +338,32 @@ function rp_contact_mail($key, &$message, $params) {
            $message['body'][] = Markup::create( t('E-mail: '). $params['email'] . '<br />');
            $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
        break;
+
+       // Client Mails
+       // ---------------------------------------------------------------------
+
+       // Generical feedback
+       case 'feedback_generical':
+           $message['subject'] = t('Retraites Populaires - mail de confirmation');
+
+           $message['body'][] = Markup::create(t('Madame, Monsieur,') . '<br /><br />');
+
+           $message['body'][] = Markup::create(t('Nous vous remercions pour votre demande. Nous allons la traiter dans les plus brefs délais.') . '<br /><br />');
+
+           $message['body'][] = Markup::create(t('Recevez, Madame, Monsieur, nos meilleures salutations.'));
+       break;
+
+       // Feedback when contacting of Changement d'adresse
+       case 'feedback_contact_address':
+        $message['subject'] = t('Retraites Populaires - changement d\'adresse');
+
+        $message['body'][] = Markup::create(t('Madame, Monsieur,') . '<br /><br />');
+        $message['body'][] = Markup::create(t('Nous avons bien pris note de votre demande de changement d’adresse et vous en remercions. Nous allons la traiter dans les plus brefs délais') . '<br /><br />');
+
+        $message['body'][] = Markup::create(t('Recevez, Madame, Monsieur, nos meilleures salutations.'));
+
+       break;
+
     }
 
     $message['body'][] = Markup::create( '<br /><br />'.t('Retraites Populaires') );

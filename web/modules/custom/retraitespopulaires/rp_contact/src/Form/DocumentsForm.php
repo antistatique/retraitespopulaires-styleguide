@@ -84,12 +84,12 @@ class DocumentsForm extends FormBase {
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
             $form['status'] = array(
-                '#markup' => '<div class="well well-success well-lg"><p>'.$status['status'][0].'</p></div>',
+                '#markup' => '<div class="well well-success well-lg"><p class="class="m-b-0">'.$status['status'][0].'</p></div>',
             );
         }
         if (!empty($this->session->get('errors'))) {
             $form['errors'] = array(
-                '#markup' => '<div class="well well-danger well-lg"><p>'.t('Attention, des erreurs sont survenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
+                '#markup' => '<div class="well well-danger well-lg"><p class="class="m-b-0">'.t('Attention, des erreurs sont survenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
             );
         }
 
@@ -452,6 +452,9 @@ class DocumentsForm extends FormBase {
             $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_contact', 'contact_documents', $to, 'fr', $data, $reply);
+
+            // Send to client
+            $this->mail->mail('rp_contact', 'feedback_generical', $form_state->getValue('email'), 'fr');
 
             drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l\'adresse @email.', [
                 '@firstname' => $form_state->getValue('firstname'),
