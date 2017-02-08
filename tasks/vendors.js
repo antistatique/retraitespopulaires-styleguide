@@ -59,8 +59,14 @@ export const polyfillsVendors = () => {
     .pipe(gulp.dest(`${config.build}js`));
 };
 
+export const ImgVendors = () => {
+  return gulp.src(config.vendors.img)
+  .pipe($.size({title: 'IMG CSS VENDORS', showFiles: true}))
+    .pipe(gulp.dest(`${config.build}css`));
+};
+
 /*
 * Build vendors dependencies
 */
-export const vendors = gulp.series(cssVendors, jsVendors, jsVendorsSingle, fontsVendors, polyfillsVendors);
+export const vendors = gulp.series(cssVendors, ImgVendors, jsVendors, jsVendorsSingle, fontsVendors, polyfillsVendors);
 export const vendorsTask = gulp.task('vendors', vendors);

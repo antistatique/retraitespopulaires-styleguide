@@ -1,0 +1,25 @@
+<figure itemprop="associatedMedia" class="teaser-gallery teaser-gallery-{{ theme|default('primary') }}" itemscope itemtype="http://schema.org/ImageObject">
+  <div class="wrapper-figure">
+    <div class="figure-cover">
+
+      {% set details = load_image(image.entity.uri.value) %}
+      <a
+        href="{{ file_url(image.entity.uri.value) }}"
+        data-height="{{ details.height }}"
+        data-width="{{ details.width }}"
+        data-size="{{ details.height }}x{{ details.width }}"
+        data-index="{{ index|default(0) }}"
+      >
+        <div class="figure-overlay">
+          <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-search" aria-hidden="true"></i>
+          <p class="text-uppercase small m-b-0">{% trans %}voir l'image{% endtrans %}</p>
+        </div>
+
+        {% set thumb = load_image_style_file(image.entity.fid.value, {'thumb': 'rp_gallery'}) %}
+        <picture>
+          <img class="img-responsive" src="{{ file_url(thumb.thumb) }}">
+        </picture>
+      </a>
+      </div>
+  </div>
+</figure>

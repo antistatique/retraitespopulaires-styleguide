@@ -8,6 +8,10 @@
     "css": [
       "node_modules/@antistatique/retraitespopulaires-styleguide/build/css/vendors.min.css"
     ],
+    "img": [
+      "node_modules/@antistatique/retraitespopulaires-styleguide/build/css/default-skin.svg",
+      "node_modules/@antistatique/retraitespopulaires-styleguide/build/css/default-skin.png"
+    ],
     "js": [
       "node_modules/@antistatique/retraitespopulaires-styleguide/build/js/vendors.min.js",
       "node_modules/@antistatique/retraitespopulaires-styleguide/build/js/bundle.js"

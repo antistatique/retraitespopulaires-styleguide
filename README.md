@@ -128,12 +128,18 @@ then, run the `$ gulp build -—production` in the project root
 
 **Frontend development workflow:**
 
-As the styleguide is a separated repository, you should create a symlink between `node_modules/@antistatique/retraitespopulaires-styleguide/build` -> `[retraitespopulaires-styleguide-folder]/build`.
+As the styleguide is a separated repository, you should create a symlink between `node_modules/@antistatique/retraitespopulaires-styleguide` -> `[retraitespopulaires-styleguide-folder]`.
 
   $ npm install -g gulp
 
   ```bash
-    $ ln -s [retraitespopulaires-styleguide-folder]/build [retraitespopulaires-website-folder]/node_modules/@antistatique/retraitespopulaires-styleguide/build
+    $ ln -s [retraitespopulaires-styleguide-folder] [retraitespopulaires-website-folder]/node_modules/@antistatique/retraitespopulaires-styleguide
+  ```
+
+A simple script to execute on the root folder of Retraites Populaires
+
+  ```bash
+  $ ln -s `pwd`/../retraitespopulaires-styleguide `pwd`/node_modules/@antistatique/retraitespopulaires-styleguide
   ```
 
 Each time you make a changes you then will run `$ gulp build` from both repository !

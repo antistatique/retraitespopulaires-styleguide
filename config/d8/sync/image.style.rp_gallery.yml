@@ -1,0 +1,16 @@
+uuid: b15f831a-a268-4350-9377-29671cde86dd
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: rp_gallery
+label: 'Retraites Populaires - Gallery - Thumbnail'
+effects:
+  a65fd686-5240-48da-96fe-ac3a17b68bce:
+    uuid: a65fd686-5240-48da-96fe-ac3a17b68bce
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 800
