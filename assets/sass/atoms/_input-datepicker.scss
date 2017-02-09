@@ -18,18 +18,19 @@
   color: $light-gray;
 }
 
-.datepicker table tr td.active.active {
-  background: $black;
-}
-
 .table-condensed > tbody > tr > td.day {
   padding: 6px 7px 3px;
   border-radius: 50%;
 }
 
+/* stylelint-disable declaration-no-important */
+/* The datepicker don't allow me to choose a wrapper class */
+
+.datepicker table tr td.active.active,
 .datepicker table tr td.active:hover.active {
-  background: $black;
+  background: $black !important;
 }
+/* stylelint-enable declaration-no-important */
 
 .table-condensed > thead > tr > th.prev,
 .table-condensed > thead > tr > th.next {
