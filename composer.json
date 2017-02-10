@@ -101,6 +101,9 @@
             "drupal/search_api_attachments": {
               "Assert configuration form is displayed": "patches/search_api_attachments.FileExtractor-configform-alpha4.patch",
               "FilesExtrator processor should use new getFieldsHelper()": "https://www.drupal.org/files/issues/use-getFieldsHelper-in-FilesExtrator-class-2827028-2.patch"
+            },
+            "drupal/editor_advanced_link": {
+              "Fix php71 ArgumentCountError": "https://www.drupal.org/files/issues/editor_advanced_link.php71.patch"
             }
         }
     }
