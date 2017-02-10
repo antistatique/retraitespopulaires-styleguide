@@ -18,6 +18,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Render\MetadataBubblingUrlGenerator;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\rp_offers\Service\Request;
 
 /**
 * AdminController.
@@ -58,17 +59,24 @@ class AdminController extends ControllerBase {
     * Request stack that controls the lifecycle of requests
     * @var RequestStack
     */
-    private $request;
+    private $request_stack;
+
+    /**
+     * Request Custom Service
+     * @var Request
+     */
+    protected $request;
 
     /**
     * Class constructor.
     */
-    public function __construct(EntityTypeManagerInterface $entity, QueryFactory $query, MetadataBubblingUrlGenerator $url, RequestStack $request) {
+    public function __construct(EntityTypeManagerInterface $entity, QueryFactory $query, MetadataBubblingUrlGenerator $url, RequestStack $request_stack, Request $request) {
         $this->entity_offers_request = $entity->getStorage('rp_offers_request');
         $this->entity_node           = $entity->getStorage('node');
         $this->entity_query          = $query;
         $this->url                   = $url;
-        $this->request               = $request->getMasterRequest();
+        $this->request_stack         = $request_stack->getMasterRequest();
+        $this->request               = $request;
     }
 
     /**
@@ -81,7 +89,8 @@ class AdminController extends ControllerBase {
         $container->get('entity_type.manager'),
         $container->get('entity.query'),
         $container->get('url_generator'),
-        $container->get('request_stack')
+        $container->get('request_stack'),
+        $container->get('rp_offers.request')
       );
     }
 
@@ -230,7 +239,7 @@ class AdminController extends ControllerBase {
         // Query data from database
         $query = $this->entity_query->get('rp_offers_request');
         // Add Filter conditions
-        $filter = $this->request->get('filter');
+        $filter = $this->request_stack->get('filter');
         if (!empty($node)) {
             $query->condition('offer_target_id', $node->nid->value);
         }else if (!empty($filter)) {
@@ -282,7 +291,7 @@ class AdminController extends ControllerBase {
         $query->condition('offer_target_id', $node->nid->value);
 
         // Add Seach conditions from AdminRequestSearchForm
-        $search = $this->request->get('q');
+        $search = $this->request_stack->get('q');
         if (!empty($search)) {
             $group = $query->orConditionGroup()
                 ->condition('email', $search, 'CONTAINS')
@@ -356,6 +365,35 @@ class AdminController extends ControllerBase {
         }
 
         drupal_set_message(t('Tirage au sort terminée, @winners gagnants sélectionnés.', ['@winners' => $tickets]));
+
+        $response = new RedirectResponse(\Drupal::url('rp_offers.admin.request', ['node' => $node->nid->value]));
+        return $response;
+    }
+
+    /**
+    * Admin send winning message from draw.
+    */
+    public function sendDraw(Node $node) {
+        // Retrieve winners
+        $ids = $this->entity_query->get('rp_offers_request')
+            ->condition('offer_target_id', $node->nid->value)
+            ->condition('winner', 1)
+            ->execute()
+        ;
+
+        if (!empty($ids)) {
+            $requests = $this->entity_offers_request->loadMultiple($ids);
+            foreach ($requests as $request) {
+                $this->request->WinnerEmail($request->email->value);
+            }
+
+            // Set the draw date on the node
+            $now = new \DateTime();
+            $node->set('field_draw_send_at', $now->format('Y-m-d\Th:i:s'));
+            $node->save();
+
+            drupal_set_message(t('Envoie aux gagnants du tirage au sort terminée, @winners gagnants sélectionnés.', ['@winners' => count($ids)]));
+        }
 
         $response = new RedirectResponse(\Drupal::url('rp_offers.admin.request', ['node' => $node->nid->value]));
         return $response;

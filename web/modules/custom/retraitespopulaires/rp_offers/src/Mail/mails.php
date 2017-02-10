@@ -24,24 +24,14 @@ function rp_offers_mail($key, &$message, $params) {
 
     switch($key) {
 
-        // Sended to user when requesting an offer
-        case 'confirmation':
-            $message['subject'] = t('Welcome');
+        // Sended to user when retrieve from draw
+        case 'winner':
+            $message['subject'] = t('Retraites Populaires - Tirage au sort de Vos offres Bella vita');
 
-            // Add headers
-            foreach ($headers as $key => $value) {
-                $message['headers'][$key] = $value;
-            }
-
-            $firstname  = $params['account']->field_user_firstname->value;
-            $message['body'][] = Markup::create( t('Hi @firstname,', ['@firstname' => $firstname]) .' <br />');
-
-            $message['body'][] = Markup::create( t('The Davidoff team is glad you subscribed!').' <br />');
-
-            $link = Link::fromTextAndUrl(t('create my password'), $params['url']);
-            $message['body'][] = Markup::create( t('Just click on that link to create your password: @passwordlink.', ['@passwordlink' => $link->toString()]) . '<br />');
-
-            $message['body'][] = Markup::create( t('We will update you regularly about our contests, our events and special offers via our newsletter.'));
+            $message['body'][] = Markup::create(t('Félicitations !') . '<br /><br />');
+            $message['body'][] = Markup::create(t('Vous avez participé au tirage au sort de Vos offres Bella vita dans le magazine clientèle de Retraites Populaires et vous avez gagné.') . '<br /><br />');
+            $message['body'][] = Markup::create(t('Vous allez recevoir ces prochains jours un courrier de confirmation.') . '<br /><br />');
+            $message['body'][] = Markup::create(t('Recevez, Madame, Monsieur, nos meilleures salutations.'));
         break;
 
         // Sended to admin new request of offer

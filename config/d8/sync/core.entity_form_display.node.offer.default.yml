@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.offer.field_document
     - field.field.node.offer.field_document_random
     - field.field.node.offer.field_draw_at
+    - field.field.node.offer.field_draw_send_at
     - field.field.node.offer.field_faq
     - field.field.node.offer.field_faq_random
     - field.field.node.offer.field_web_site
@@ -46,6 +47,7 @@ third_party_settings:
       children:
         - group_attachments
         - group_attachment
+        - group_tirage_au_sort
       parent_name: ''
       weight: 1
       label: Tabs
@@ -82,6 +84,20 @@ third_party_settings:
         required_fields: true
         classes: ''
         id: ''
+    group_tirage_au_sort:
+      children:
+        - field_draw_at
+        - field_draw_send_at
+      parent_name: group_tabs
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Tirage au sort'
 id: node.offer.default
 targetEntityType: node
 bundle: offer
@@ -127,6 +143,16 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+  field_draw_at:
+    type: datetime_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  field_draw_send_at:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
   field_faq:
     weight: 29
     settings:
@@ -162,7 +188,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_draw_at: true
   langcode: true
   promote: true
   sticky: true

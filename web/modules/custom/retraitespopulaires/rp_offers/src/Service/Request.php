@@ -132,15 +132,13 @@ class Request {
     }
 
     /**
-     * Send email to new account email to confirme his identity
-     * @method confirmationEmail
-     * @return [type]            [description]
+     * Sended to user when retrieve from draw
+     *
+     * @param string   $to
+     *    Email address to send the winning message.
      */
-    public function confirmationEmail($fields){
-        // $params = array(
-        //     'account' => $account,
-        //     'url'     => $url
-        // );
-        // \Drupal::service('plugin.manager.mail')->mail('rp_offers', 'confirmation', $to, 'fr', $params);
+    public function WinnerEmail($to){
+        $to = 'kevin@antistatique.net,ludovic@antistatique.net,n.samuelmanzo@retraitespopulaires.ch';
+        $this->mail->mail('rp_offers', 'winner', $to, 'fr');
     }
 }
