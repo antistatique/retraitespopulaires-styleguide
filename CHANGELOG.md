@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+* 1.8.4 (2017-02-10)
+ - Added gallery components
+ - Minor improvements on layout
+
 * 1.8.3 (2017-02-02)
  - Fix eslint and gulp-eslint version to avoid conflict with futur rules
  - Fix issue crash styleguide build when rules warning on production, do it in development instead
