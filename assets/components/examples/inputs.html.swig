@@ -120,5 +120,15 @@ layout: examples.html.swig
     {% include '../atoms/input-textarea.html.swig' %}
     {% include '../atoms/input-file.html.swig' %}
 
+    <form method="post" action="#" enctype="multipart/form-data">
+      <div class="form-group form-file">
+        <div class="label">Vos documents</div>
+        <div class="form-file-handler btn btn-lg btn-primary">
+          <label for="files">Télécharger vos fichiers</label>
+          <input name="files[]" id="filesToUpload" type="file" multiple="" />
+        </div>
+      </div>
+    </form>
+
 </div>
 </div>
