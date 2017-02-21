@@ -145,6 +145,57 @@ function datepicker() {
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],3:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.gallery = gallery;
+
+var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function gallery() {
+
+  // Define click event on gallery item
+  (0, _jquery2.default)('.gallery').on('click', 'a', function (event) {
+
+    // Prevent location change
+    event.preventDefault();
+
+    // Generate the tree
+    var container = [];
+    (0, _jquery2.default)('.gallery [itemprop="associatedMedia"]').each(function () {
+      var $this = (0, _jquery2.default)(this);
+      container.push({
+        src: $this.find('a').attr('href'),
+        w: $this.find('a').data('width'),
+        h: $this.find('a').data('height')
+      });
+    });
+
+    // Define object and gallery options
+    var $pswp = (0, _jquery2.default)('.pswp')[0],
+        options = {
+      index: (0, _jquery2.default)(this).data('index'),
+      bgOpacity: 0.85,
+      showHideOpacity: true,
+      shareEl: true,
+      shareButtons: [{ id: 'download', label: 'Download', url: '{{raw_image_url}}', download: true }]
+    };
+
+    // Initialize PhotoSwipe
+    var gallery = new PhotoSwipe($pswp, PhotoSwipeUI_Default, container, options);
+    gallery.init();
+  });
+}
+
+}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],4:[function(require,module,exports){
 'use strict';
 
 var _big_menu = require('./big_menu.js');
@@ -163,6 +214,8 @@ var _number_format = require('./number_format.js');
 
 var _smoothscroll = require('./smoothscroll.js');
 
+var _gallery = require('./gallery.js');
+
 (function () {
   (0, _big_menu.big_menu)();
   (0, _navbar.navbar)();
@@ -172,9 +225,10 @@ var _smoothscroll = require('./smoothscroll.js');
   (0, _input_files.input_files)();
   (0, _datepicker.datepicker)();
   (0, _number_format.number_format)();
+  (0, _gallery.gallery)();
 })();
 
-},{"./big_menu.js":1,"./datepicker.js":2,"./input_dynamic_label.js":4,"./input_files.js":5,"./navbar.js":6,"./number_format.js":7,"./organicJS.js":8,"./smoothscroll.js":9}],4:[function(require,module,exports){
+},{"./big_menu.js":1,"./datepicker.js":2,"./gallery.js":3,"./input_dynamic_label.js":5,"./input_files.js":6,"./navbar.js":7,"./number_format.js":8,"./organicJS.js":9,"./smoothscroll.js":10}],5:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -205,7 +259,7 @@ function input_dynamic_label() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -223,30 +277,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function input_files() {
 
   (0, _jquery2.default)('.form-file').each(function () {
-    var $label = (0, _jquery2.default)(this).find('label'),
-        labelVal = $label.text(),
-        $handler = (0, _jquery2.default)(this).find('.form-file-handler'),
-        $this = (0, _jquery2.default)(this);
+    var $handler = (0, _jquery2.default)(this).find('.form-file-handler'),
+        $this = (0, _jquery2.default)(this),
+        $input = (0, _jquery2.default)(this).find('[type="file"]');
 
-    $this.on('change', function (e) {
-      var fileName = '';
-      if (this.files && this.files.length > 1) {
-        fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+    $this.on('change', function () {
+      var files = $input[0].files;
+      var $files = (0, _jquery2.default)(this).find('.files');
+      if ($files.length == 0) {
+        (0, _jquery2.default)('<div class="files"></div>').insertAfter($handler);
+        $files = (0, _jquery2.default)(this).find('.files');
       } else {
-        fileName = e.target.value.split('\\').pop();
+        // Clean the list
+        $files.html('');
       }
 
-      if (fileName) {
-        (0, _jquery2.default)('<small><i class="retraitespopulaires-icon retraitespopulaires-icon-documents-thick" aria-hidden="true"></i> <span>' + fileName + '</span></small>').insertAfter($handler);
+      if (files.length == 1) {
+        $files.html('<small><i class="retraitespopulaires-icon retraitespopulaires-icon-documents-thick" aria-hidden="true"></i> <span>' + files[0].name + '</span></small>');
       } else {
-        $label.text(labelVal);
+        for (var x = 0; x < files.length; x++) {
+          $files.append('<small><i class="retraitespopulaires-icon retraitespopulaires-icon-documents-thick" aria-hidden="true"></i> <span>' + files[x].name + '</span></small>');
+        }
       }
     });
   });
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -297,7 +355,7 @@ function navbar() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -354,7 +412,7 @@ function number_format() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -487,7 +545,7 @@ function organic_generate() {
 })(jQuery);
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -535,5 +593,5 @@ var smoothscroll_to = function smoothscroll_to(dest) {
 };
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}]},{},[3])
+},{}]},{},[4])
 //# sourceMappingURL=bundle.js.map
