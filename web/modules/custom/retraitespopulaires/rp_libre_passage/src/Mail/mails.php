@@ -53,6 +53,8 @@ function rp_libre_passage_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( '<b>'. t('Informations de contact: '). '</b><br />');
             $message['body'][] = Markup::create( t('Nom: '). $params['lastname'] . '<br />');
             $message['body'][] = Markup::create( t('Prénom: '). $params['firstname'] . '<br />');
+            $message['body'][] = Markup::create( t('Npa: '). $params['zip'] . '<br />');
+            $message['body'][] = Markup::create( t('Localité: '). $params['city'] . '<br />');
             $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
         break;
     }
