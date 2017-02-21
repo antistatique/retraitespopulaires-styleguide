@@ -199,6 +199,24 @@ class DocumentsForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         $error = '';
         $error_class = '';
+        if( isset($this->session->get('errors')['phone']) && $error_msg = $this->session->get('errors')['phone'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['personnal']['phone'] = array(
+            '#title'       => t('Votre numéro de téléphone *'),
+            '#placeholder' => t('079 123 45 67'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#required'    => false,
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
+        );
+
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
         if( isset($this->session->get('errors')['birthdate']) && $error_msg = $this->session->get('errors')['birthdate'] ){
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
@@ -392,6 +410,11 @@ class DocumentsForm extends FormBase {
         }
 
         // Assert the birthdate is valid
+        if (!$form_state->getValue('phone') || empty($form_state->getValue('phone'))) {
+            $errors['phone'] = t('Le numéro de téléphone est obligatoire.');
+        }
+
+        // Assert the birthdate is valid
         if (!$form_state->getValue('birthdate') || empty($form_state->getValue('birthdate'))) {
             $errors['birthdate'] = t('Votre date de naissance est obligatoire.');
         } else if (\DateTime::createFromFormat('d/m/Y', $form_state->getValue('birthdate')) === false) {
@@ -436,6 +459,7 @@ class DocumentsForm extends FormBase {
                 'firstname'    => $form_state->getValue('firstname'),
                 'lastname'     => $form_state->getValue('lastname'),
                 'email'        => $form_state->getValue('email'),
+                'phone'        => $form_state->getValue('phone'),
                 'birthdate'    => $form_state->getValue('birthdate'),
                 'address'      => $form_state->getValue('address'),
                 'zip'          => $form_state->getValue('zip'),

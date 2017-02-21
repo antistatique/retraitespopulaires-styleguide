@@ -97,6 +97,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['body'][] = Markup::create( t('Npa: '). $params['zip'] . '<br />');
             $message['body'][] = Markup::create( t('Localité: '). $params['city'] . '<br />');
             $message['body'][] = Markup::create( t('E-mail: '). $params['email'] . '<br />');
+            $message['body'][] = Markup::create( t('Numéro de téléphone: '). $params['phone'] . '<br />');
         break;
 
         // Sended to admin when contacting of Changement d'adresse

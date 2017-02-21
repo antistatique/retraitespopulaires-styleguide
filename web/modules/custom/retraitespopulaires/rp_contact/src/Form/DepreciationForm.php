@@ -498,7 +498,7 @@ class DepreciationForm extends FormBase {
 
         // Assert the birthdate is valid
         if (!$form_state->getValue('phone') || empty($form_state->getValue('phone'))) {
-            $errors['phone'] = t('Votre date de naissance est obligatoire.');
+            $errors['phone'] = t('Le numéro de téléphone est obligatoire.');
         }
 
         // Assert the address is valid
