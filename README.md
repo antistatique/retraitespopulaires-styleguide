@@ -1,6 +1,8 @@
 # RP - Retraites Populaires
 Retraites Populaires website. Drupal 8 powered.
 
+Check the Technical Documentation (French) that explain all development strategies: https://docs.google.com/a/antistatique.net/document/d/1SYNL7aYZC4tOP81cQ4st7kPsPEBrhm1q7IR1MMgwQMI/edit?usp=sharing
+
 ## 🔧 Prerequisites
 
 First of all, you need to have the following tools installed globally on your environment:
@@ -240,6 +242,23 @@ Solution 2: Delete all your shortcuts with drush
 
 ```
 drush ev '\Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();'
+```
+
+### Error on Windows `no CSS styles or Javascript files shown` ?
+
+Drupal need to create a lot of temporary files to work properly.   
+By default, with our installation running on UNIX, we use a temporary path as `/tmp`. A folder that not exist on Windows.
+
+Solution 1: Change the default temporary folder for a Writable one using drush.
+
+```
+$ drush config-set system.file path.temporary /path/to/tmp
+```
+
+Solution 2: Forcing yours `settings.php` to use a specific temporary folder:
+
+```php
+$config['system.file']['path']['temporary'] = '/path/to/tmp';
 ```
 
 ### How to disable the Drupal Cache for dev ?
