@@ -498,7 +498,7 @@ class DepreciationForm extends FormBase {
 
         // Assert the birthdate is valid
         if (!$form_state->getValue('phone') || empty($form_state->getValue('phone'))) {
-            $errors['phone'] = t('Votre date de naissance est obligatoire.');
+            $errors['phone'] = t('Le numéro de téléphone est obligatoire.');
         }
 
         // Assert the address is valid
@@ -583,6 +583,9 @@ class DepreciationForm extends FormBase {
             $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_contact', 'contact_depreciation', $to, 'fr', $data, $reply);
+
+            // Send to client
+            $this->mail->mail('rp_contact', 'feedback_generical', $form_state->getValue('email'), 'fr');
 
             drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l\'adresse @email ou par téléphone au @phone.', [
                 '@firstname' => $form_state->getValue('firstname'),

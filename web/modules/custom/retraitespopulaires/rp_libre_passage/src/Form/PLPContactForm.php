@@ -167,6 +167,47 @@ class PLPContactForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
+        $form['personnal']['row_2'] = array(
+            '#prefix'      => '<div class="row">',
+            '#suffix'      => '</div>',
+        );
+
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['zip']) && $error_msg = $this->session->get('errors')['zip'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['personnal']['row_2']['zip'] = array(
+            '#title'       => t('Votre code postal (NPA) *'),
+            '#placeholder' => t('1000'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#required'    => false,
+            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div></div>',
+        );
+
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['city']) && $error_msg = $this->session->get('errors')['city'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['personnal']['row_2']['city'] = array(
+            '#title'       => t('Votre localité *'),
+            '#placeholder' => t('Lausanne'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#required'    => false,
+            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div></div>',
+        );
+
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
         $error = '';
@@ -244,6 +285,16 @@ class PLPContactForm extends FormBase {
             $errors['email'] = t('Cette adresse e-mail semble invalide.');
         }
 
+        // Assert the zip is valid
+        if (!$form_state->getValue('zip') || empty($form_state->getValue('zip'))) {
+            $errors['zip'] = t('Votre code postal est obligatoire.');
+        }
+
+        // Assert the city is valid
+        if (!$form_state->getValue('city') || empty($form_state->getValue('city'))) {
+            $errors['city'] = t('Votre localité est obligatoire.');
+        }
+
         // Assert the phone is valid
         if (!$form_state->getValue('phone') || empty($form_state->getValue('phone'))) {
             $errors['phone'] = t('Le numéro de téléphone est obligatoire.');
@@ -276,6 +327,8 @@ class PLPContactForm extends FormBase {
                 'firstname' => $form_state->getValue('firstname'),
                 'lastname'  => $form_state->getValue('lastname'),
                 'email'     => $form_state->getValue('email'),
+                'zip'       => $form_state->getValue('zip'),
+                'city'      => $form_state->getValue('city'),
                 'phone'     => $form_state->getValue('phone'),
                 'message'   => $form_state->getValue('message'),
                 'results'   => $form_state->getValue('results')
@@ -286,6 +339,9 @@ class PLPContactForm extends FormBase {
             $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_libre_passage', 'contact', $to, 'fr', $data, $reply);
+
+            // Send to client
+            $this->mail->mail('rp_contact', 'feedback_generical', $form_state->getValue('email'), 'fr');
 
             drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l\'adresse @email ou par téléphone au @phone.', [
                 '@firstname' => $form_state->getValue('firstname'),

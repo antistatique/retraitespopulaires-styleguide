@@ -1,6 +1,8 @@
 # RP - Retraites Populaires
 Retraites Populaires website. Drupal 8 powered.
 
+Check the Technical Documentation (French) that explain all development strategies: https://docs.google.com/a/antistatique.net/document/d/1SYNL7aYZC4tOP81cQ4st7kPsPEBrhm1q7IR1MMgwQMI/edit?usp=sharing
+
 ## 🔧 Prerequisites
 
 First of all, you need to have the following tools installed globally on your environment:
@@ -111,44 +113,38 @@ On common errors, see the Troubleshootings section.
 
 ## 🎨 Build the theme
 
-**Production workflow:**
+The main styleguide of Retraites Populaires is a `npm` dependency named `@antistatique/retraitespopulaires-styleguide`.
+The Drupal theme use the builds of `@antistatique/retraitespopulaires-styleguide` as dependecies and add also his own files.
 
-The first solution is to retrieve *styleguide as `npm` dependency* .
-To build the theme from vendor, `npm`, you should publish it. You then need to setup the work environment by running `$ npm install`.
+**No Frontend development workflow (styleguide build and run)**
 
-**Development workflow:**
+Install @antistatique/retraitespopulaires-styleguide project with npm
 
-The second solution is to retrieve *styleguide from `git` repo*.
-To build the theme from the repository whitout publishing on `npm`, you then need to clone the [`retraitespopulaires-styleguide`](https://github.com/antistatique/retraitespopulaires-styleguide) repo and put it as a sibling of this repo in your local directory.
+  ```bash
+    $ npm login
+    # enter the dev@antistatique.net npm credentials, ask Antistatique if you don't have these. (they should normally be in 1Password)
+    $ npm install
+  ```
 
-### For windows
+then, run the `$ gulp build -—production` in the project root
 
-**Production workflow:**
+**Frontend development workflow:**
 
-    # copy all built files from the vendor styleguide
-    $ ./bin/styleguide.bat
+As the styleguide is a separated repository, you should create a symlink between `node_modules/@antistatique/retraitespopulaires-styleguide` -> `[retraitespopulaires-styleguide-folder]`.
 
-**Development workflow:**
+  $ npm install -g gulp
 
-    # copy all built files from the repo styleguide
-    $ ./bin/styleguide-dev.bat
+  ```bash
+    $ ln -s [retraitespopulaires-styleguide-folder] [retraitespopulaires-website-folder]/node_modules/@antistatique/retraitespopulaires-styleguide
+  ```
 
-### For Unix
+A simple script to execute on the root folder of Retraites Populaires
 
-**Production workflow:**
+  ```bash
+  $ ln -s `pwd`/../retraitespopulaires-styleguide `pwd`/node_modules/@antistatique/retraitespopulaires-styleguide
+  ```
 
-    # copy all built files from the vendor styleguide
-    $ ./bin/styleguide.sh
-
-**Development workflow:**
-
-    # create a symlink
-    $ ln -s /path/to/retraitespopulaires-styleguide/build /web/themes/retraitespopulaires/build
-
-    Or
-
-    # copy all built files from the repo styleguide
-    $ ./bin/styleguide-dev.sh
+Each time you make a changes you then will run `$ gulp build` from both repository !
 
 ## 🚀 Deploy
 
@@ -166,6 +162,14 @@ We use Capistrano to deploy:
     $ bundle exec cap -T
     $ bundle exec cap rpeti deploy
 
+#### Deployment on staging
+
+When you deploy on the staging environment, the styleguide used for deploy is the styleguide repo on the dev branch.
+We use the repository on staging to avoid creating NPM version everytime we deploy on staging.
+
+#### Deployment on production
+
+When you deploy on the production environment, the styleguide used for deploy is the latest NPM version.
 
 ## 🔍 Solr (6.1.0+) search Engine & Tika (1.13+) Extractor
 We are using solr for search index.
@@ -238,6 +242,23 @@ Solution 2: Delete all your shortcuts with drush
 
 ```
 drush ev '\Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();'
+```
+
+### Error on Windows `no CSS styles or Javascript files shown` ?
+
+Drupal need to create a lot of temporary files to work properly.   
+By default, with our installation running on UNIX, we use a temporary path as `/tmp`. A folder that not exist on Windows.
+
+Solution 1: Change the default temporary folder for a Writable one using drush.
+
+```
+$ drush config-set system.file path.temporary /path/to/tmp
+```
+
+Solution 2: Forcing yours `settings.php` to use a specific temporary folder:
+
+```php
+$config['system.file']['path']['temporary'] = '/path/to/tmp';
 ```
 
 ### How to disable the Drupal Cache for dev ?

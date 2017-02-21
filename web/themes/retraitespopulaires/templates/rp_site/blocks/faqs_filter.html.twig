@@ -3,7 +3,7 @@
     <p class="media-heading text-muted">
       {% trans %}Questions et réponses{% endtrans %}
     </p>
-    <ul class="filters-list">
+    <ul class="filters-list filters-list-{{ variables.theme }}">
       <li class="{{ variables.current_aliases is empty ? 'active' }}">
         {% if variables.current_aliases is empty %}
           <a href="{{ path('entity.node.canonical', {'node': variables.collection}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ variables.theme }}"></a>

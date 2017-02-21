@@ -84,12 +84,12 @@ class DocumentsForm extends FormBase {
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
             $form['status'] = array(
-                '#markup' => '<div class="well well-success well-lg"><p>'.$status['status'][0].'</p></div>',
+                '#markup' => '<div class="well well-success well-lg"><p class="class="m-b-0">'.$status['status'][0].'</p></div>',
             );
         }
         if (!empty($this->session->get('errors'))) {
             $form['errors'] = array(
-                '#markup' => '<div class="well well-danger well-lg"><p>'.t('Attention, des erreurs sont survenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
+                '#markup' => '<div class="well well-danger well-lg"><p class="class="m-b-0">'.t('Attention, des erreurs sont survenues dans le formulaire. Merci de vérifier les champs en rouge.').'</p></div>',
             );
         }
 
@@ -193,6 +193,24 @@ class DocumentsForm extends FormBase {
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
+        );
+
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['phone']) && $error_msg = $this->session->get('errors')['phone'] ){
+            $error_class = 'error';
+            $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['personnal']['phone'] = array(
+            '#title'       => t('Votre numéro de téléphone *'),
+            '#placeholder' => t('079 123 45 67'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#required'    => false,
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         // Get error to inline it as suffix
@@ -392,6 +410,11 @@ class DocumentsForm extends FormBase {
         }
 
         // Assert the birthdate is valid
+        if (!$form_state->getValue('phone') || empty($form_state->getValue('phone'))) {
+            $errors['phone'] = t('Le numéro de téléphone est obligatoire.');
+        }
+
+        // Assert the birthdate is valid
         if (!$form_state->getValue('birthdate') || empty($form_state->getValue('birthdate'))) {
             $errors['birthdate'] = t('Votre date de naissance est obligatoire.');
         } else if (\DateTime::createFromFormat('d/m/Y', $form_state->getValue('birthdate')) === false) {
@@ -436,6 +459,7 @@ class DocumentsForm extends FormBase {
                 'firstname'    => $form_state->getValue('firstname'),
                 'lastname'     => $form_state->getValue('lastname'),
                 'email'        => $form_state->getValue('email'),
+                'phone'        => $form_state->getValue('phone'),
                 'birthdate'    => $form_state->getValue('birthdate'),
                 'address'      => $form_state->getValue('address'),
                 'zip'          => $form_state->getValue('zip'),
@@ -452,6 +476,9 @@ class DocumentsForm extends FormBase {
             $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_contact', 'contact_documents', $to, 'fr', $data, $reply);
+
+            // Send to client
+            $this->mail->mail('rp_contact', 'feedback_generical', $form_state->getValue('email'), 'fr');
 
             drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l\'adresse @email.', [
                 '@firstname' => $form_state->getValue('firstname'),

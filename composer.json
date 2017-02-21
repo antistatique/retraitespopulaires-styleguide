@@ -9,12 +9,16 @@
             "role": ""
         }
     ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packagist.drupal-composer.org"
-        }
-    ],
+    "repositories": {
+      "0": {
+          "type": "composer",
+          "url": "https://packagist.drupal-composer.org"
+      },
+      "sandboxes": {
+          "type": "vcs",
+          "url": "https://git.drupal.org/sandbox/wengerk/2846301.git"
+      }
+  },
     "require": {
         "composer/installers": "^1.0.20",
         "drupal-composer/drupal-scaffold": "^2.0.1",
@@ -39,7 +43,8 @@
         "drupal/focal_point": "^8",
         "drupal/ckeditor_media_embed": "^8",
         "drupal/redirect": "^8",
-        "drupal/crop": "8.1.0@stable"
+        "drupal/crop": "8.1.0@stable",
+        "drupal/backerymails": "dev-8.x-1.x"
       },
     "require-dev": {
       "behat/mink": "~1.7",
@@ -96,6 +101,9 @@
             "drupal/search_api_attachments": {
               "Assert configuration form is displayed": "patches/search_api_attachments.FileExtractor-configform-alpha4.patch",
               "FilesExtrator processor should use new getFieldsHelper()": "https://www.drupal.org/files/issues/use-getFieldsHelper-in-FilesExtrator-class-2827028-2.patch"
+            },
+            "drupal/editor_advanced_link": {
+              "Fix php71 ArgumentCountError": "https://www.drupal.org/files/issues/editor_advanced_link.php71.patch"
             }
         }
     }

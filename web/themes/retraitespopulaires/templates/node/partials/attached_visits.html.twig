@@ -1,0 +1,21 @@
+<!-- Linked Visits -->
+{% if visits %}
+  <div class="spacer spacer-sm"></div>
+  <p class="media-heading text-muted">
+    {% trans %}
+      Visite virtuelle
+    {% plural visits|length %}
+      Visites virtuelles
+    {% endtrans %}
+  </p>
+  <ul class="unordered-list">
+  {% for link in visits %}
+      <li>
+        {% set link_title = link.title ? link.title : link.uri %}
+        <a href="{{ link.uri }}" target="_blank" class="pretty-link text-{{ theme|default('primary') }}">
+          {{ link_title }}
+        </a>
+      </li>
+  {% endfor %}
+  </ul>
+{% endif %}

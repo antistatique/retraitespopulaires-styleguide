@@ -1,0 +1,21 @@
+uuid: bc14e6e0-513a-487b-a6f6-5199ada29d85
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_draw_send_at
+    - node.type.offer
+  module:
+    - datetime
+id: node.offer.field_draw_send_at
+field_name: field_draw_send_at
+entity_type: node
+bundle: offer
+label: 'Envoi du tirage au sort'
+description: "Date effective de l'envoi des mails aux gagnants du tirage au sort, ce champ se remplit automatiquement lorsque l'envoi des mails est lancé.\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

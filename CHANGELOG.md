@@ -1,5 +1,9 @@
 CHANGELOG
 ---------
+## 1.2.5 (2017-02-21)
+ - Added Gallery to Buildings content type
+ - Added Feedback e-mail to every contact forms
+ - Added Winner e-mail for Bella Vita
 
 ## 1.2.0 (2017-01-23)
  - Added Simulatore "Police de Libre Passage (PLP)"

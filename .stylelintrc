@@ -1,0 +1,42 @@
+{
+  "ignoreFiles": [
+    "web/themes/retraitespopulaires/assets/sass/main.scss",
+    "web/themes/retraitespopulaires/assets/sass/main-variables.scss",
+    "web/themes/retraitespopulaires/assets/sass/bootstrap-variables.scss",
+    "web/themes/retraitespopulaires/assets/sass/bootstrap.scss",
+    "web/themes/retraitespopulaires/assets/sass/retraitespopulaires.scss"
+  ],
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-vendor-prefix": true,
+    "media-feature-name-no-vendor-prefix" : true,
+    "property-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": true,
+    "value-no-vendor-prefix": true,
+    "declaration-block-properties-order": [
+      "content",
+      "display",
+      "flex",
+      "position",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "float",
+      "width",
+      "height",
+      "margin",
+      "padding",
+      "background",
+      "border",
+      "font-familly",
+      "font-size",
+      "line-height",
+      "font-weight",
+      "font-style",
+      "color",
+      "transform",
+      "transition"
+    ],
+  }
+}

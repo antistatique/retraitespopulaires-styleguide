@@ -50,3 +50,10 @@ rp_offers.admin.requests.draw:
         _title: 'Offre Bella vita - Admin - Requests Draw'
     requirements:
         _permission: 'administer rp offers'
+rp_offers.admin.requests.draw.send:
+    path: '/admin/retraites-populaires/offers/requests/draw/send/{node}'
+    defaults:
+        _controller: '\Drupal\rp_offers\Controller\AdminController::sendDraw'
+        _title: 'Offre Bella vita - Admin - Send Draw'
+    requirements:
+        _permission: 'administer rp offers'

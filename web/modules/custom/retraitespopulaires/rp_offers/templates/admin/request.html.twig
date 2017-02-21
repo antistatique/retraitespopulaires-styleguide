@@ -19,6 +19,17 @@
       {% else %}
       <p class="clearfix">
         {% trans %}Le tirage au sort a été effectué le {{ variables.node.field_draw_at.date }}{% endtrans %}
+
+        <div class="">
+          {% if not variables.node.field_draw_send_at.date %}
+            <a class="button button--secondary button--small" href="{{ path('rp_offers.admin.requests.draw.send', {'node' : variables.node.nid.value}) }}" target="_blank">{% trans %}Envoyer aux gagnants{% endtrans %}</a>
+          {% else %}
+          <p class="clearfix">
+            {% trans %}Les emails ont été envoyée le {{ variables.node.field_draw_send_at.date }}{% endtrans %}
+          </p>
+          {% endif %}
+        </div>
+
       </p>
       {% endif %}
     </div>

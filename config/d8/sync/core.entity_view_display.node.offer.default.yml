@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.offer.field_document
     - field.field.node.offer.field_document_random
     - field.field.node.offer.field_draw_at
+    - field.field.node.offer.field_draw_send_at
     - field.field.node.offer.field_faq
     - field.field.node.offer.field_faq_random
     - field.field.node.offer.field_web_site
@@ -104,4 +105,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_draw_at: true
+  field_draw_send_at: true
   langcode: true

@@ -1,19 +1,16 @@
-# www2.retraitespopulaires.ch
+# overwrite deploy_to
 server '192.168.188.50', user: 'dplweb', roles: %w{app db web}
 set :deploy_to, '/data/sites/www.retraitespopulaires.ch/'
-set :styleguide_path, './styleguide'
 
 # set a branch for this release
 set :branch, 'master'
-set :styleguide_branch, 'master'
 
 # set :slack_run, -> { true }
 
-# Used only if styleguide is external of the repository
-# set :styleguide_branch, 'dev'
-
 # Module that will be disabled by drush
 set :disable_modules, ['devel']
+
+before "styleguide:deploy_build", "styleguide:build_from_npm"
 
 # Map composer and drush commands
 # NOTE: If stage have different deploy_to

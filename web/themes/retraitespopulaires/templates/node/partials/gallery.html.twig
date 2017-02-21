@@ -1,0 +1,38 @@
+<!-- Gallery -->
+{% if not images is empty %}
+<div class="spacer spacer-sm"></div>
+
+{% if not title is empty %}
+  <p class="media-heading text-muted">{{ title }}</p>
+{% endif %}
+
+{% set big = images|first %}
+{% set sides = images[1:4] %}
+{% set belows = images[5:] %}
+<div class="gallery media-gallery-media" itemscope itemtype="http://schema.org/ImageGallery">
+  <div class="row">
+
+    <div class="gallery-wrapper-item gallery-wrapper-item-lg col-xs-12 col-sm-6">
+      <div class="gallery-item">
+        {% include '@retraitespopulaires/node/partials/gallery-teaser.html.twig' with {index:0, theme:theme, image:big} %}
+      </div>
+    </div>
+
+    <div class="gallery-wrapper-item gallery-wrapper-item-side col-xs-12 col-sm-6">
+      {% for side in sides %}
+      <div class="gallery-item">
+        {% include '@retraitespopulaires/node/partials/gallery-teaser.html.twig' with {index:loop.index0 + 1, theme:theme, image:side} %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="row">
+    {% for below in belows %}
+    <div class="gallery-item col-xs-12  col-sm-4 col-md-3">
+      {% include '@retraitespopulaires/node/partials/gallery-teaser.html.twig' with {index:loop.index0 + 5, theme:theme, image:below} %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

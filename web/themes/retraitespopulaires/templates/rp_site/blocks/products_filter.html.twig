@@ -3,7 +3,7 @@
 <div class="spacer spacer-sm"></div>
   {% for category in variables.categories %}
   <p class="media-heading text-muted">{{ category.term.name.value }}</p>
-  <ul class="filters-list">
+  <ul class="filters-list filters-list-{{ variables.theme }}">
     {% for child in category.children %}
       <li class="{{ child.alias in variables.current_aliases ? 'active' }}">
         {% set filtres = [child.alias] %}

@@ -5,7 +5,7 @@
 <div class="spacer spacer-sm"></div>
 <div class="{{ theme_hook_original }}">
   <p class="media-heading text-muted">{% trans %}Nos constructions{% endtrans %}</p>
-  <ul class="filters-list">
+  <ul class="filters-list filters-list-{{ theme }}">
 
     <li class="{{ variables.building_status_alias is empty ? 'active' }}">
       {% if variables.building_status_alias is empty %}

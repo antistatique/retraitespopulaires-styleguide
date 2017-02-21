@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "07d552be29768b967d580539b7e33415",
-    "content-hash": "1bbc19af4dbff2f0cd7f0cfb759505f0",
+    "hash": "508d821c206e4301adc0bd824e1d8f06",
+    "content-hash": "939c5a2a355526a6138996773788dfb9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1118,7 +1118,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.18.zip",
-                "reference": null,
+                "reference": "06d0fa89dfca5adade537b24e9593b5af6350b4a",
                 "shasum": null
             },
             "require": {
@@ -1152,6 +1152,29 @@
             "time": "2016-12-01 17:01:53"
         },
         {
+            "name": "drupal/backerymails",
+            "version": "dev-8.x-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/sandbox/wengerk/2846301.git",
+                "reference": "2e95a1f22ad8166955cbe203477fc7ed453420da"
+            },
+            "require-dev": {
+                "drupal/coder": "^8.2.10",
+                "squizlabs/php_codesniffer": "^2.7"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Save every going out mails using the MailManagerInterface & provides a user interface to retrieve them.",
+            "homepage": "https://www.drupal.org/sandbox/wengerk/2846301",
+            "support": {
+                "issues": "https://www.drupal.org/project/issues/2846301"
+            },
+            "time": "2017-01-24 18:30:25"
+        },
+        {
             "name": "drupal/ckeditor_media_embed",
             "version": "8.1.0",
             "source": {
@@ -1162,7 +1185,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/ckeditor_media_embed-8.x-1.0.zip",
-                "reference": null,
+                "reference": "4762ba8a871a591cf3112d57bf8bd9cd58654263",
                 "shasum": null
             },
             "require": {
@@ -1803,7 +1826,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/menu_breadcrumb-8.x-1.0-rc1.zip",
-                "reference": null,
+                "reference": "2a11c8b2562af40e170c6b08cfcadc8413ef39a4",
                 "shasum": null
             },
             "require": {
@@ -1834,7 +1857,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.0-beta12.zip",
-                "reference": null,
+                "reference": "c311a026eb1fe5fce2ebf44f2bf1f64fc8ae59a3",
                 "shasum": null
             },
             "require": {
@@ -1928,7 +1951,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.0-alpha2.zip",
-                "reference": null,
+                "reference": "dbd3992c8d235f25f88d818d8528932da4032c33",
                 "shasum": null
             },
             "require": {
@@ -1967,7 +1990,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.0-beta4.zip",
-                "reference": null,
+                "reference": "008941adbf48434b0b28c97ec347a44f11b2a98b",
                 "shasum": null
             },
             "require": {
@@ -2021,7 +2044,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/search_api_attachments-8.x-1.0-alpha4.zip",
-                "reference": null,
+                "reference": "dba776462514617c926b743c07be53aae381db67",
                 "shasum": null
             },
             "require": {
@@ -2130,7 +2153,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/token-8.x-1.0-rc1.zip",
-                "reference": null,
+                "reference": "a3b68ccb7c5657a8138c999731dca293ed7991a8",
                 "shasum": null
             },
             "require": {
@@ -5818,7 +5841,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/devel-8.x-1.0-beta1.zip",
-                "reference": null,
+                "reference": "e6fdb5fcf7c7de92e6b0d72425cd627642f227ac",
                 "shasum": null
             },
             "require": {
@@ -7125,7 +7148,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/crop": 0
+        "drupal/crop": 0,
+        "drupal/backerymails": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

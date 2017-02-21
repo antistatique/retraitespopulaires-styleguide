@@ -1,13 +1,13 @@
 global-styling:
   css:
     theme:
-      build/css/vendors.min.css: {}
       build/css/main.css: {}
-      # build/css/ckeditor.css: {}
+      build/css/vendors.min.css: {}
   js:
+    build/js/bundle.js: {}
     build/js/vendors.min.js: {}
     build/js/MorphSVGPlugin.min.js: {}
-    build/js/bundle.js: {}
+
   dependencies:
     - core/jquery
     - core/drupal
