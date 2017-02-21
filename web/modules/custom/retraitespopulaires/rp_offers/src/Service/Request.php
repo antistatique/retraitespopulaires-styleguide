@@ -138,7 +138,6 @@ class Request {
      *    Email address to send the winning message.
      */
     public function WinnerEmail($to){
-        $to = 'kevin@antistatique.net,ludovic@antistatique.net,n.samuelmanzo@retraitespopulaires.ch';
         $this->mail->mail('rp_offers', 'winner', $to, 'fr');
     }
 }
