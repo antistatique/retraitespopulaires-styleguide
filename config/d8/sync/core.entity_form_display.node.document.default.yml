@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.document.field_document_type
     - field.field.node.document.field_file_document
     - field.field.node.document.field_profession
     - node.type.document
@@ -28,6 +29,7 @@ third_party_settings:
         - title
         - field_file_document
         - field_profession
+        - field_document_type
       parent_name: group_tabs
       weight: 5
       label: 'Données principales'
@@ -43,6 +45,11 @@ targetEntityType: node
 bundle: document
 mode: default
 content:
+  field_document_type:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
   field_file_document:
     weight: 1
     settings:

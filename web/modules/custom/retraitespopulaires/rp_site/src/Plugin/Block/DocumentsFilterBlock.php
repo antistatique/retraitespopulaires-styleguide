@@ -9,11 +9,12 @@ namespace Drupal\rp_site\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Url;
 
+// Injection.
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\State\StateInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\rp_site\Service\Profession;
 
 /**
@@ -44,10 +45,18 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
     private $alias_manager;
 
     /**
-    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-    * @var StateInterface
-    */
-    private $state;
+     * State API for storing variables that shouldn't travel between instances.
+     *
+     * @var StateInterface
+     */
+    protected $state;
+
+    /**
+     * Request stack that controls the lifecycle of requests.
+     *
+     * @var RequestStack
+     */
+    private $request;
 
     /**
      * Profession Service
@@ -58,11 +67,12 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
     /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity,  AliasManagerInterface $alias_manager, StateInterface $state, Profession $profession) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity,  AliasManagerInterface $alias_manager, StateInterface $state, RequestStack $request, Profession $profession) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_taxonomy = $entity->getStorage('taxonomy_term');
         $this->alias_manager   = $alias_manager;
         $this->state           = $state;
+        $this->request        = $request->getMasterRequest();
         $this->profession      = $profession;
     }
 
@@ -80,6 +90,7 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
             $container->get('entity_type.manager'),
             $container->get('path.alias_manager'),
             $container->get('state'),
+            $container->get('request_stack'),
             $container->get('rp_site.profession')
         );
     }
@@ -90,29 +101,43 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
     public function build($params = array()) {
         $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.documents')['nid']);
 
-        $taxonomy_term_alias = \Drupal::request()->query->get('taxonomy_term_alias');
-        $variables['taxonomy_term_alias'] = $taxonomy_term_alias;
+        // Get the current profession (only on sub section)
+        $variables['profession_alias'] = $this->request->query->get('profession_alias');
+
+        // Get the current category (only on sub section)
+        $variables['category_alias'] = $this->request->query->get('category_alias');
 
         if (isset($params['theme'])) {
             $variables['theme'] = $params['theme'];
         }
 
-        // Professions
+        // Retrieve professions.
         $professions = $this->entity_taxonomy->loadTree('profession');
-
-        $categories = $professions;
-        foreach ($categories as $profession) {
+        foreach ($professions as $profession) {
             $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$profession->tid);
             if( !empty($alias) ){
                 $alias = str_replace('/metier/', '', $alias);
-                $variables['categories'][] = array(
+                $variables['professions'][] = array(
                     'term'  => $profession,
                     'alias' => ltrim($alias, '/'),
                 );
 
-                if($alias == $taxonomy_term_alias) {
+                if($alias == $variables['profession_alias']) {
                     $variables['theme'] = $this->profession->theme($profession->tid);
                 }
+            }
+        }
+
+        // Retrieve categories.
+        $categories = $this->entity_taxonomy->loadTree('category_document');
+        foreach ($categories as $category) {
+            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$category->tid);
+            if( !empty($alias) ){
+                $alias = str_replace('/metier/', '', $alias);
+                $variables['categories'][] = array(
+                    'term'  => $category,
+                    'alias' => ltrim($alias, '/'),
+                );
             }
         }
 
