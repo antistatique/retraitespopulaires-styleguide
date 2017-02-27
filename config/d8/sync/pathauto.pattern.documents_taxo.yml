@@ -8,16 +8,16 @@ dependencies:
 id: documents_taxo
 label: 'Documents Taxo'
 type: 'canonical_entities:taxonomy_term'
-pattern: '[term:name]'
+pattern: 'categorie-document/[term:name]'
 selection_criteria:
-  2479fdba-cc9b-4e18-9cc5-d1199f94033a:
+  e5d17a07-2b65-4dad-aedf-c6bdf6d73d69:
     id: 'entity_bundle:taxonomy_term'
     bundles:
       category_document: category_document
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 2479fdba-cc9b-4e18-9cc5-d1199f94033a
+    uuid: e5d17a07-2b65-4dad-aedf-c6bdf6d73d69
 selection_logic: and
 weight: -5
 relationships: {  }
