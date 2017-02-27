@@ -131,13 +131,11 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
             ->condition('status', 1)
         ;
 
-        $profession_alias = \Drupal::request()->query->get('profession_alias');
+        $profession_alias = $this->request->query->get('profession_alias');
         $variables['profession_alias'] = $profession_alias;
 
-        $category_alias = \Drupal::request()->query->get('category_alias');
+        $category_alias = $this->request->query->get('category_alias');
         $variables['category_alias'] = $category_alias;
-
-        $taxonomy_term_alias = $this->request->query->get('taxonomy_term_alias');
 
         // Only interested by alias of Profession taxonomy
         if (!empty($profession_alias)) {
