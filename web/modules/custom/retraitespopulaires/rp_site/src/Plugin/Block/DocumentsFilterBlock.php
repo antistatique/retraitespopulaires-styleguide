@@ -133,7 +133,7 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
         foreach ($categories as $category) {
             $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$category->tid);
             if( !empty($alias) ){
-                $alias = str_replace('/metier/', '', $alias);
+                $alias = str_replace('/categorie-document/', '', $alias);
                 $variables['categories'][] = array(
                     'term'  => $category,
                     'alias' => ltrim($alias, '/'),
