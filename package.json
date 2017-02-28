@@ -10,7 +10,7 @@
     "npm": "3.10.3"
   },
   "dependencies": {
-    "@antistatique/retraitespopulaires-styleguide": "^1.8.2",
+    "@antistatique/retraitespopulaires-styleguide": "^1.8.4",
     "autoprefixer": "^6.4.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.5",
