@@ -60,6 +60,11 @@
   @media (min-width: $screen-xs-min) {
     word-break: initial;
   }
+
+  /* Hack Internet Explorer/Edge ≥ 10 */
+  @media screen and (min-width: 0\0) {
+    word-break: break-all;
+  }
 }
 
 /**
