@@ -74,6 +74,8 @@ First you have to launch Gulp to watch your files
 $ gulp serve
 ````
 
+To then access the styleguide, go to [http://localhost:3000/retraitespopulaires-styleguide/](http://localhost:3000/retraitespopulaires-styleguide/) (`/retraitespopulaires-styleguide/` is added here because the styleguide is published on npm)
+
 ## Deploy
 The deployment of branch `dev` and `master` is managed yourself and publish on NPM!
 
