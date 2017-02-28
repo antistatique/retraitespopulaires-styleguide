@@ -105,8 +105,11 @@
 
     {{ content|without('body', 'field_document', 'field_faq', 'field_document_random', 'field_faq_random', 'field_search_npa', 'field_cover', 'field_profession', 'field_date_end', 'field_web_site', 'field_available_offers') }}
 
-    {% set days_left = date_diff('now'|date('Y-m-d'), node.field_date_end.value) %}
-    {% if days_left >= 0 %}
+    {# Get diff days before the offer is finished #}
+    {% set end_date = node.field_date_end.date|date_modify('tomorrow - 1 second') %}
+    {% set left = (end_date.timestamp - date('now').timestamp) / 60 / 60 / 24 %}
+
+    {% if left >= 0 %}
       <div class="spacer"></div>
       <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
