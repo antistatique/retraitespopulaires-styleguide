@@ -16,8 +16,8 @@
         variables.profession_alias is empty ? 'retraitespopulaires-icon-checked' : 'retraitespopulaires-icon-unchecked',
       ] %}
 
-      <a aria-hidden="true" href="{{ path('<current>') }}" class="{{ classes|join(' ') }}"></a>
-      <a class="pretty-link text-{{ variables.theme }}" href="{{ path('<current>', {'category_alias': category_alias}) }}">{% trans %}Tous{% endtrans %}</a>
+      <a aria-hidden="true" href="{{ path('<current>', {'category_alias': variables.category_alias}) }}" class="{{ classes|join(' ') }}"></a>
+      <a class="pretty-link text-{{ variables.theme }}" href="{{ path('<current>', {'category_alias': variables.category_alias}) }}">{% trans %}Tous{% endtrans %}</a>
     </li>
 
     {% for category in variables.professions %}
@@ -60,7 +60,7 @@
         variables.category_alias is empty ? 'retraitespopulaires-icon-checked' : 'retraitespopulaires-icon-unchecked',
       ] %}
 
-      <a aria-hidden="true" href="{{ path('<current>') }}" class="{{ classes|join(' ') }}"></a>
+      <a aria-hidden="true" href="{{ path('<current>', {'profession_alias': variables.profession_alias}) }}" class="{{ classes|join(' ') }}"></a>
       <a class="pretty-link text-{{ variables.theme }}" href="{{ path('<current>', {'profession_alias': variables.profession_alias}) }}">{% trans %}Toutes{% endtrans %}</a>
     </li>
 
