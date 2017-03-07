@@ -13,11 +13,11 @@
     <meta name="viewport" content="width=device-width">
 
     {% if styleguide %}
-      <link rel="stylesheet" href="/retraitespopulaires-styleguide/build/css/styleguide.css">
+      <link rel="stylesheet" href="{{data.path}}build/css/styleguide.css">
     {% endif %}
 
-    <link rel="stylesheet" href="/retraitespopulaires-styleguide/build/css/vendors.min.css">
-    <link rel="stylesheet" href="/retraitespopulaires-styleguide/build/css/main.css">
+    <link rel="stylesheet" href="{{data.path}}build/css/vendors.min.css">
+    <link rel="stylesheet" href="{{data.path}}build/css/main.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-57x57.png">
@@ -39,7 +39,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <!--[if lt IE 9]>
-      <script src="/build/js/polyfills.min.js"></script>
+      <script src="{{data.path}}build/js/polyfills.min.js"></script>
     <![endif]-->
   </head>
   <body>
@@ -100,8 +100,9 @@
     {% endif %}
 
     <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
-    <script src="/retraitespopulaires-styleguide/build/js/vendors.min.js"></script>
-    <script src="/retraitespopulaires-styleguide/build/js/bundle.js"></script>
+    <script src="{{data.path}}build/js/vendors.min.js"></script>
+    <script src="{{data.scriptsPath}}vendors.bundle.js"></script>
+    <script src="{{data.scriptsPath}}app.bundle.js"></script>
 
     {% if styleguide %}
       <script>
@@ -113,7 +114,7 @@
           });
         }(jQuery));
       </script>
-      <script src="/retraitespopulaires-styleguide/build/js/styleguide.min.js"></script>
+      <script src="{{data.path}}build/js/styleguide.min.js"></script>
     {% endif %}
 
     {% block javascripts %}{% endblock %}
