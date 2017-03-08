@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, `./${config.build}js`),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js' // not used in retraitespopulaires
   },
   module: {
     loaders: [
@@ -40,8 +40,8 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendors',
-      minChunks: 1,
-      filename: 'vendors.bundle.js'
+      minChunks: 1, // don't change this magic number
+      filename: 'bundle.js'
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin()

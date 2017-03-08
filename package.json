@@ -22,6 +22,7 @@
     "npm": "3.10.3"
   },
   "dependencies": {
+    "autonumeric": "^1.9.46",
     "autoprefixer": "^6.4.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.5",

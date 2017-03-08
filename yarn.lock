@@ -341,6 +341,12 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
+autonumeric@^1.9.46:
+  version "1.9.46"
+  resolved "https://registry.yarnpkg.com/autonumeric/-/autonumeric-1.9.46.tgz#b7b058a717049af45abe0bf6eed0e81038d2a617"
+  dependencies:
+    jquery ">=1.7"
+
 autoprefixer@^6.0.0, autoprefixer@^6.4.1:
   version "6.7.6"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-6.7.6.tgz#00f05656c7ef73de9d2fd9b4668f6ef6905a855a"
@@ -3868,7 +3874,7 @@ jodid25519@^1.0.0:
   dependencies:
     jsbn "~0.1.0"
 
-jquery@>=1.7.1, jquery@^2.2.4:
+jquery@>=1.7, jquery@>=1.7.1, jquery@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
 
