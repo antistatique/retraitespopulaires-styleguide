@@ -20,6 +20,19 @@ export const cssVendors = (done) => {
 };
 
 /*
+* IMG Vendors
+*/
+export const imgVendors = (done) => {
+  if (config.vendors.img.length > 0) {
+    return gulp.src(config.vendors.img)
+      .pipe($.size({title: 'IMG CSS VENDORS', showFiles: true}))
+      .pipe(gulp.dest(`${config.build}css`));
+  } else {
+    return done();
+  }
+};
+
+/*
 * JS Vendors
 */
 export const jsVendors = () => {
@@ -36,7 +49,7 @@ export const jsVendorsSingle = () => {
 };
 
 
-/*
+/*∏
 * Fonts Sources
 */
 export const fontsVendors = () => {
@@ -59,5 +72,5 @@ export const polyfillsVendors = () => {
 /*
 * Build vendors dependencies
 */
-export const vendors = gulp.series(cssVendors, jsVendors, jsVendorsSingle, fontsVendors, polyfillsVendors);
+export const vendors = gulp.series(cssVendors, imgVendors, jsVendors, jsVendorsSingle, fontsVendors, polyfillsVendors);
 export const vendorsTask = gulp.task('vendors', vendors);

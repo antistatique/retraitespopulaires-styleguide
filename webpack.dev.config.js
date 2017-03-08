@@ -15,7 +15,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, `./${config.app.basedir}/build/js`),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js' // not used in retraitespopulaires
   },
   externals: {
     'jquery': 'jQuery'
@@ -46,8 +46,8 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendors',
-      minChunks: 1,
-      filename: 'vendors.bundle.js'
+      minChunks: 1, // don't change this magic number
+      filename: 'bundle.js'
     }),
     // new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
