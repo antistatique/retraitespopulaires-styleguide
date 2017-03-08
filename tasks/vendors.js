@@ -48,8 +48,7 @@ export const jsVendorsSingle = () => {
    .pipe(gulp.dest(config.build + 'js'));
 };
 
-
-/*∏
+/*
 * Fonts Sources
 */
 export const fontsVendors = () => {

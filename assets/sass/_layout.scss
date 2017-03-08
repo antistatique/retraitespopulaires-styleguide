@@ -350,3 +350,11 @@ $screen-xl-min: 1600px;
 }
 
 /* stylelint-enable declaration-no-important, media-feature-no-missing-punctuation */
+
+.retraitespopulaires-icon:before {
+  display: inline-block;
+  font-family: "retraitespopulaires-icon";
+  line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+}
