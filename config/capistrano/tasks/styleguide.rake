@@ -39,7 +39,7 @@ namespace :styleguide do
       # Build the dependencied styleguide localy
       within fetch(:styleguide_path) do
         execute 'npm', '--no-spin', '--silent', 'install'
-        execute './node_modules/.bin/gulp', 'build', '--silent', '--production'
+        execute './node_modules/.bin/gulp', 'build', '--production'
       end
 
       # Build the styleguide localy

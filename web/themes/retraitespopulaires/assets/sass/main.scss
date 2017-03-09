@@ -1,8 +1,6 @@
 @charset "UTF-8";
-
 // init:
-@import 'main-variables';
-@import 'retraitespopulaires';
+@import '../../../../../node_modules/@antistatique/retraitespopulaires-styleguide/assets/sass/main-variables';
 
-// Specific drupal
+// Specific this styleguide
 @import 'drupal';
