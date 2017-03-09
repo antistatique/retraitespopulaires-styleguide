@@ -33,7 +33,7 @@
       "node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
       "node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.fr-CH.min.js",
       "node_modules/gsap/src/minified/TweenMax.min.js",
-      "node_modules/autonumeric/autonumeric.js",
+      "node_modules/autonumeric/autoNumeric.js",
       "node_modules/photoswipe/dist/photoswipe.js",
       "node_modules/photoswipe/dist/photoswipe-ui-default.js"
     ],

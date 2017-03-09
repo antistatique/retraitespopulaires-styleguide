@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+* 2.0.0 (2017-03-xx)
+ - Massive update styleguide
+
 * 1.8.4 (2017-02-10)
  - Added gallery components
  - Minor improvements on layout
