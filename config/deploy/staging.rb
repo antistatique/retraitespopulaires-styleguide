@@ -4,7 +4,7 @@ set :deploy_to, '/data/sites/wwweti2.retraitespopulaires.ch/'
 
 # set a branch for this release
 set :branch, 'dev'
-set :styleguide_branch, 'feature/styleguide-update'
+set :styleguide_branch, 'dev'
 
 # Module that will be disabled by drush
 set :disable_modules, ['devel']
