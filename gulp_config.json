@@ -2,7 +2,7 @@
   "app": {
     "env": "dev",
     "basedir": "styleguide",
-    "ghpages": "styleguide/retraitespopulaires-styleguide"
+    "ghpages": "styleguide"
   },
   "vendors": {
     "css": [
@@ -33,7 +33,7 @@
       "node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
       "node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.fr-CH.min.js",
       "node_modules/gsap/src/minified/TweenMax.min.js",
-      "node_modules/autonumeric/autonumeric.js",
+      "node_modules/autonumeric/autoNumeric.js",
       "node_modules/photoswipe/dist/photoswipe.js",
       "node_modules/photoswipe/dist/photoswipe-ui-default.js"
     ],
@@ -61,9 +61,11 @@
   "iconsFontName": "retraitespopulaires-icon",
   "build": "build/",
   "browsers": ["last 2 versions", "safari 5", "ie 8", "ie 9", "ff 27", "opera 12.1"],
+  "singles": [],
   "metalsmith": {
     "assets": "node_modules/toolbox-utils/styleguide/",
-    "dist": "styleguide/retraitespopulaires-styleguide",
+    "dist": "styleguide/",
+    "url": "https://antistatique.github.io/retraitespopulaires-styleguide/",
     "plugins": {
       "permalinks": {
         "pattern": ":title",
