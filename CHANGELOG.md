@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-* 2.0.0 (2017-03-xx)
+* 2.0.0 (2017-03-09)
  - Massive update styleguide
  - Add font alternative as font-mandant on body
 
