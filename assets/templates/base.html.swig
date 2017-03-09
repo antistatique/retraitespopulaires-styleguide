@@ -101,8 +101,7 @@
 
     <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
     <script src="{{data.path}}build/js/vendors.min.js"></script>
-    <script src="{{data.scriptsPath}}vendors.bundle.js"></script>
-    <script src="{{data.scriptsPath}}bundle.js"></script>
+    <script src="{{data.path}}build/js/bundle.js"></script>
 
     {% if styleguide %}
       <script>
