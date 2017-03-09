@@ -220,12 +220,12 @@ var _gallery = require('./gallery.js');
   (0, _big_menu.big_menu)();
   (0, _navbar.navbar)();
   (0, _smoothscroll.smoothscroll_load)();
-  (0, _organicJS.organic_generate)();
   (0, _input_dynamic_label.input_dynamic_label)();
   (0, _input_files.input_files)();
+  (0, _gallery.gallery)();
+  (0, _organicJS.organic_generate)();
   (0, _datepicker.datepicker)();
   (0, _number_format.number_format)();
-  (0, _gallery.gallery)();
 })();
 
 },{"./big_menu.js":1,"./datepicker.js":2,"./gallery.js":3,"./input_dynamic_label.js":5,"./input_files.js":6,"./navbar.js":7,"./number_format.js":8,"./organicJS.js":9,"./smoothscroll.js":10}],5:[function(require,module,exports){
