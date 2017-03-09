@@ -1,0 +1,22 @@
+@charset 'UTF-8';
+
+.teaser-document-extranet {
+  .teaser-document-extranet-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $screen-sm-min) {
+      justify-content: flex-end;
+    }
+
+    .btn {
+      margin: $grid-gutter-width / 4 $grid-gutter-width/2 0 0;
+
+      &:last-child() {
+        margin-right: 0;
+      }
+    }
+  }
+}

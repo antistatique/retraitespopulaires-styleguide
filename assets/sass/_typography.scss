@@ -25,7 +25,7 @@ h1,
 .h1,
 h2,
 .h2 {
-  font-family: $font-cocon;
+  font-family: $font-secondary;
   font-weight: 300;
 }
 
@@ -35,13 +35,13 @@ h4,
 .h4,
 h5,
 .h5 {
-  font-family: $font-frutiger;
+  font-family: $font-primary;
   font-weight: 700;
 }
 
 h6,
 .h6 {
-  font-family: $font-frutiger;
+  font-family: $font-primary;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -52,7 +52,7 @@ abbr,
 cite,
 li,
 ol {
-  font-family: $font-frutiger;
+  font-family: $font-primary;
 }
 
 .text-small {
@@ -61,6 +61,7 @@ ol {
 
 .text-large {
   font-size: ceil(($font-size-base * 1.2));
+
   @media (min-width: $screen-sm-min) {
     font-size: $font-size-large;
   }

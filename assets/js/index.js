@@ -6,14 +6,16 @@ import { organic_generate } from './organicJS.js';
 import { datepicker } from './datepicker.js';
 import { number_format } from './number_format.js';
 import { smoothscroll_load } from './smoothscroll.js';
+import { gallery } from './gallery.js';
 
 (function(){
   big_menu();
   navbar();
   smoothscroll_load();
-  organic_generate();
   input_dynamic_label();
   input_files();
+  gallery();
+  organic_generate();
   datepicker();
   number_format();
 }());

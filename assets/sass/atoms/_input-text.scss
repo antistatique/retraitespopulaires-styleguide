@@ -6,7 +6,7 @@
   max-width: 100%;
   padding: 0.7em;
   border-width: $input-border-size;
-  font-family: $font-cocon;
+  font-family: $font-secondary;
   box-shadow: none;
 
   &.full-width {
@@ -43,7 +43,7 @@
   label {
     margin-left: 0;
     margin-bottom: 0.3em;
-    font-family: $font-frutiger;
+    font-family: $font-primary;
     font-size: ceil($font-size-h6);
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -68,7 +68,7 @@
 
   .input-error-desc {
     padding-top: 0.5em;
-    font-family: $font-frutiger;
+    font-family: $font-primary;
     font-size: ceil($font-size-h6);
     font-weight: 700;
     color: $brand-danger;

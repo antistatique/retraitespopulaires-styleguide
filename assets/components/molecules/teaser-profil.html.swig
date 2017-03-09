@@ -14,9 +14,9 @@ notes: |
     <div class="text-primary {% if teaser_profil_icon %} icon-text icon-text-center {% endif %}">
     {% if teaser_profil_icon %}
       <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span>
-      <div class="icon-text-txt text-cocon h4 text-{{teaser_profil_theme}}">{{ teaser_profil_title|default('Profil') }}</div>
+      <div class="icon-text-txt text-secondary h4 text-{{teaser_profil_theme}}">{{ teaser_profil_title|default('Profil') }}</div>
     {% else %}
-      <div class="text-cocon h4 text-{{teaser_profil_theme}}">{{ teaser_profil_title|default('Profil') }}</div>
+      <div class="text-secondary h4 text-{{teaser_profil_theme}}">{{ teaser_profil_title|default('Profil') }}</div>
     {% endif %}
     </div>
   </div>

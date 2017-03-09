@@ -2,6 +2,7 @@
 
 // init:
 @import 'fonts';
+@import 'retraitespopulaires-icon';
 @import 'main-variables';
 @import 'mixin';
 @import 'bootstrap';
@@ -50,6 +51,7 @@
 @import 'atoms/search-box';
 
 // molecules:
+@import 'molecules/teaser-gallery';
 @import 'molecules/breadcrumb-extranet';
 @import 'molecules/navbar';
 @import 'molecules/prenavbar';
@@ -82,8 +84,10 @@
 @import 'molecules/push-menu';
 @import 'molecules/card-attachement';
 @import 'molecules/form';
+@import 'molecules/teaser-document-extranet';
 
 // organisms:
+@import 'organisms/gallery';
 @import 'organisms/header-extranet';
 @import 'organisms/footer';
 @import 'organisms/footer-mandats';
@@ -95,3 +99,4 @@
 @import 'organisms/attachments-rentals';
 @import 'organisms/attachments-last-news';
 @import 'organisms/attachments-contact';
+@import 'organisms/actions-extranet';

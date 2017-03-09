@@ -16,5 +16,5 @@ notes: |
 
 <div class="text-primary icon-text icon-text-center" style="max-width: 200px;">
   <span class="retraitespopulaires-icon retraitespopulaires-icon-collectivites retraitespopulaires-icon-3x text-{{icon_text_theme}}"></span>
-  <div class="icon-text-txt text-cocon h4 text-{{icon_text_theme}}">Collectivités publiques</div>
+  <div class="icon-text-txt text-secondary h4 text-{{icon_text_theme}}">Collectivités publiques</div>
 </div>

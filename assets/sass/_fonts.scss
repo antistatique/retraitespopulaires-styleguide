@@ -3,22 +3,51 @@
 * Fonts
 */
 
-$font-frutiger: 'Frutiger Neue', arial, sans-serif;
-$font-cocon: 'Cocon Pro', arial, sans-serif;
+$font-primary: 'Frutiger Neue', arial, sans-serif !default;
+$font-secondary: 'Cocon Pro', arial, sans-serif !default;
+$font-mandant: 'Maven Pro', arial, sans-serif !default;
 
+// Fallback for external partners, TODO removed when contacted partners
+
+.text-primary,
 .text-frutiger {
   /* stylelint-disable declaration-no-important */
   /* Need it to override */
-  font-family: $font-frutiger !important;
+  font-family: $font-primary !important;
   /* stylelint-enable declaration-no-important */
 }
 
+// Fallback for external partners, TODO removed when contacted partners
+
+.text-secondary,
 .text-cocon {
   /* stylelint-disable declaration-no-important */
   /* Need it to override */
-  font-family: $font-cocon !important;
+  font-family: $font-secondary !important;
   /* stylelint-enable declaration-no-important */
 }
+
+/* stylelint-disable declaration-no-important */
+/* Need it to override */
+body.font-mandant {
+  .text-secondary { font-family: $font-mandant !important; }
+
+  h1,
+  .h1,
+  h2,
+  .h2 { font-family: $font-mandant; }
+
+  .product-heading { font-family: $font-mandant; }
+
+  .pagination .number > a { font-family: $font-mandant; }
+
+  .form-control { font-family: $font-mandant; }
+
+  .btn { font-family: $font-mandant; }
+
+  blockquote { font-family: $font-mandant; }
+}
+/* stylelint-enable declaration-no-important */
 
 @font-face {
   font-family: Cocon Pro;

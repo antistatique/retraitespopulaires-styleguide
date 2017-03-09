@@ -13,11 +13,11 @@
     <meta name="viewport" content="width=device-width">
 
     {% if styleguide %}
-      <link rel="stylesheet" href="/retraitespopulaires-styleguide/build/css/styleguide.css">
+      <link rel="stylesheet" href="{{data.path}}build/css/styleguide.css">
     {% endif %}
 
-    <link rel="stylesheet" href="/retraitespopulaires-styleguide/build/css/vendors.min.css">
-    <link rel="stylesheet" href="/retraitespopulaires-styleguide/build/css/main.css">
+    <link rel="stylesheet" href="{{data.path}}build/css/vendors.min.css">
+    <link rel="stylesheet" href="{{data.path}}build/css/main.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-57x57.png">
@@ -39,7 +39,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <!--[if lt IE 9]>
-      <script src="/build/js/polyfills.min.js"></script>
+      <script src="{{data.path}}build/js/polyfills.min.js"></script>
     <![endif]-->
   </head>
   <body>
@@ -55,13 +55,53 @@
 
     {% block content %}{% endblock %}
 
+    {# Photoswipe Wrapper #}
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          </button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          </button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     {% if styleguide %}
       </div>
     {% endif %}
 
     <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
-    <script src="/retraitespopulaires-styleguide/build/js/vendors.min.js"></script>
-    <script src="/retraitespopulaires-styleguide/build/js/bundle.js"></script>
+    <script src="{{data.path}}build/js/vendors.min.js"></script>
+    <script src="{{data.path}}build/js/bundle.js"></script>
 
     {% if styleguide %}
       <script>
@@ -73,7 +113,7 @@
           });
         }(jQuery));
       </script>
-      <script src="/retraitespopulaires-styleguide/build/js/styleguide.min.js"></script>
+      <script src="{{data.path}}build/js/styleguide.min.js"></script>
     {% endif %}
 
     {% block javascripts %}{% endblock %}

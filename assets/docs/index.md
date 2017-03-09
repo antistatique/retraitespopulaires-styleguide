@@ -378,6 +378,12 @@ permalink: false
         </div>
         <div class="square">
           <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-document-group"></i>
+            <div class="text-muted">.retraitespopulaires-icon-document-group</div>
+          </div>  
+        </div>
+        <div class="square">
+          <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram"></i>
             <div class="text-muted">.retraitespopulaires-icon-instagram</div>
           </div>  

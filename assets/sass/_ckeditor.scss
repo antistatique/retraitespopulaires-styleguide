@@ -33,12 +33,14 @@
 
   ul {
     @extend .unordered-list;
+
     margin-top: 0;
     margin-bottom: 10px;
   }
 
   ol {
     @extend .ordered-list;
+
     margin-top: 0;
     margin-bottom: 10px;
   }

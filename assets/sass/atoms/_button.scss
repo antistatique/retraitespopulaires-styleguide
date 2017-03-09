@@ -4,7 +4,7 @@
   display: inline-block;
   padding: 0.7em;
   border: 1px solid $transparent;
-  font-family: Cocon Pro;
+  font-family: $font-secondary;
   font-weight: 300;
   transition:
     background 0.25s ease,
@@ -12,6 +12,7 @@
     border-color 0.25s ease,
     opacity 0.5s ease;
   white-space: normal;
+
   @include button-variant($white, $brand-primary, $brand-primary);
 
   &:first-letter {

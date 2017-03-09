@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+.actions-extranet {
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+    margin-top: -$grid-gutter-width / 4;
+    margin-right: -($grid-gutter-width/2);
+
+    @media screen and (min-width: $screen-md-min) {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    a {
+      margin: $grid-gutter-width / 4 $grid-gutter-width/2 0 0;
+    }
+  }
+}

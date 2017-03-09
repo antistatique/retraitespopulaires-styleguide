@@ -30,6 +30,7 @@
   .hamburger-button {
     position: absolute;
     right: 0.5em;
+
     @media (min-width: $screen-sm-min) {
       right: 1.5em;
     }
@@ -39,6 +40,7 @@
     position: absolute;
     top: 30px;
     right: 4.8em;
+
     @media (min-width: $screen-sm-min) {
       right: 5.8em;
     }

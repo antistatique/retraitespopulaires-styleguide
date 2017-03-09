@@ -16,9 +16,9 @@ notes: |
 <div class="text-primary {% if basicpage_icon %} icon-text icon-text-center {% endif %}">
     {% if basicpage_icon %}
       <span class="retraitespopulaires-icon retraitespopulaires-icon-placeholder retraitespopulaires-icon-2x"></span>
-      <a href="#" class="icon-text-txt text-cocon h4">{{ basicpage_title|default('Lorem Ipsum') }}</a>
+      <a href="#" class="icon-text-txt text-secondary h4">{{ basicpage_title|default('Lorem Ipsum') }}</a>
     {% else %}
-      <a href="#" class="text-cocon text-{{ basicpage_theme }} h4">{{ basicpage_title|default('Lorem Ipsum') }}</a>
+      <a href="#" class="text-secondary text-{{ basicpage_theme }} h4">{{ basicpage_title|default('Lorem Ipsum') }}</a>
     {% endif %}
     </div>
   </div>
