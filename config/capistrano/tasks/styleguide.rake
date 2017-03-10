@@ -28,6 +28,9 @@ namespace :styleguide do
   desc "Build assets locally from Git"
   task :build_from_git do
     run_locally do
+      # Retrieve styleguide from npm
+      execute 'npm', '--no-spin', '--silent', 'install'
+
       # Delete existing styleguide
       if File.exists?(fetch(:styleguide_path))
         FileUtils.rm_rf(fetch(:styleguide_path))
