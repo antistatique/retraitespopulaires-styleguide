@@ -17,10 +17,6 @@
       "drupal": {
           "type": "composer",
           "url": "https://packages.drupal.org/8"
-      },
-      "Backerymails": {
-          "type": "vcs",
-          "url": "https://git.drupal.org/sandbox/wengerk/2846301.git"
       }
   },
     "require": {
@@ -47,7 +43,7 @@
         "drupal/focal_point": "~1.0",
         "drupal/ckeditor_media_embed": "~1.0",
         "drupal/redirect": "~1.0",
-        "drupal/backerymails": "dev-8.x-1.x"
+        "drupal/backerymails": "~1.0"
       },
     "require-dev": {
       "behat/mink": "~1.7",
