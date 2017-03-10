@@ -9,7 +9,7 @@ set :theme_path, "themes/retraitespopulaires"
 set :build_path, "build"
 
 set :styleguide_path, "node_modules/@antistatique/retraitespopulaires-styleguide"
-set :styleguide_repo, 'git@github.com:antistatique/retraitespopulaires-styleguide.git'
+set :styleguide_repo, 'https://github.com/antistatique/retraitespopulaires-styleguide.git'
 
 # Link file settings.php & drushcr.php
 set :linked_files, fetch(:linked_files, []).push("#{fetch(:app_path)}/sites/default/settings.php", "#{fetch(:app_path)}/sites/default/drushrc.php")
