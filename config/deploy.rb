@@ -20,6 +20,9 @@ set :linked_dirs, fetch(:linked_dirs, []).push("#{fetch(:app_path)}/sites/defaul
 # Default value for :scm is :git
 set :scm, :git
 
+# forward ssh agent
+set :ssh_options, { :forward_agent => true }
+
 # Default value for :pty is false
 # set :pty, true
 
