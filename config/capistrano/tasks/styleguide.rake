@@ -29,7 +29,7 @@ namespace :styleguide do
   task :build_from_git do
     run_locally do
       # Retrieve styleguide from npm
-      execute 'npm', '--no-spin', '--silent', 'install'
+      execute 'npm', '--no-spin', 'install'
 
       # Delete existing styleguide
       if File.exists?(fetch(:styleguide_path))
