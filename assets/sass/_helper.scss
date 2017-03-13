@@ -219,4 +219,18 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+/**
+ * Flex same-height
+ */
+
+@media screen and (min-width: $screen-md-min) {
+  .same-height-group {
+    display: flex;
+  }
+
+  .same-height-group .same-height {
+    display: flex;
+  }
+}
 /* stylelint-enable declaration-no-important */
