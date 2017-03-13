@@ -2,7 +2,7 @@
 
 .header-mandat {
   position: relative;
-  padding-top: 1.6em;
+  padding: 1.6em 0;
   background-color: $white;
   box-shadow: 0 5px 30px rgba(100, 100, 100, 0.3);
   z-index: 2;
@@ -12,6 +12,8 @@
   }
 
   @media only screen and (min-width: $screen-md-min) {
+    padding-bottom: 0;
+
     .hamburger-mandat-toggle {
       display: none;
     }
@@ -41,7 +43,12 @@
 }
 
 .header-mandat-logo {
-  height: 90px;
+  width: 190px;
+  max-height: 90px;
+
+  @media only screen and (min-width: $screen-md-min) {
+    max-width: 240px;
+  }
 }
 
 .search-box {

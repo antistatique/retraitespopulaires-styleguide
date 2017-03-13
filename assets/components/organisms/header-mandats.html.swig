@@ -12,7 +12,7 @@ notes: |
   <div class="row">
     <div class="col-xs-4 col-lg-6">
        <a class="" href="#">
-          <img class="header-mandat-logo" src="/retraitespopulaires-styleguide/build/svg/logo_cip.svg" alt="Logo CIP" title="Page d'accueil">
+          <img class="header-mandat-logo" src="/build/svg/logo-{{ header_mandats_theme }}.svg" alt="Logo {{ header_mandats_theme }}" title="Page d'accueil">
        </a>
     </div>
 

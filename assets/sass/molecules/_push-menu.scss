@@ -1,24 +1,63 @@
 @charset 'UTF-8';
 
 .push-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   right: -70vw;
   width: 70vw;
-  height: 100%;
-  padding: $grid-gutter-width;
+  height: 100vh;
+  padding: $grid-gutter-width 0;
   background: $brand-primary;
   color: $white;
   z-index: $zindex-modal + 10;
   overflow: auto;
 
-  @media only screen and (min-width: $screen-sm-min) {
+  @media only screen and (min-width: $screen-xs-min) {
     right: -40vw;
     width: 40vw;
   }
 
+  @media only screen and (min-width: $screen-sm-min) {
+    right: -30vw;
+    width: 30vw;
+  }
+
   @media only screen and (min-width: $screen-md-min) {
     display: none;
+  }
+
+  .main-navigation {
+    li {
+      margin-bottom: $grid-gutter-width;
+    }
+  }
+
+  .secondary-navigation {
+    li {
+      margin-bottom: $grid-gutter-width / 4;
+      font-weight: normal;
+
+      &.active a {
+        color: $white;
+      }
+    }
+  }
+
+  .main-navigation li,
+  .secondary-navigation li {
+    padding: 0 $grid-gutter-width;
+
+    &.active {
+      padding-left: $grid-gutter-width - 6px;
+      border-left: 6px solid white;
+    }
+
+    a:hover {
+      @include pretty-link($white, $brand-primary, $white);
+    }
   }
 
   a {
@@ -28,6 +67,11 @@
   @each $label, $color in $themes {
     &.push-menu-#{$label} {
       background: $color;
+
+      .main-navigation li a:hover,
+      .secondary-navigation li a:hover {
+        @include pretty-link($white, $color, $white);
+      }
     }
   }
 }
@@ -45,8 +89,12 @@ body {
       overflow: hidden;
       transform: translateX(-70vw);
 
-      @media only screen and (min-width: $screen-sm-min) {
+      @media only screen and (min-width: $screen-xs-min) {
         transform: translateX(-40vw);
+      }
+
+      @media only screen and (min-width: $screen-sm-min) {
+        transform: translateX(-30vw);
       }
     }
   }
