@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+* 2.0.1 (2017-xx-xx)
+ - Removed shadow on well
+ - Add the "tag" component
+
 * 2.0.0 (2017-03-09)
  - Massive update styleguide
  - Add font alternative as font-mandant on body
