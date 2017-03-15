@@ -60,6 +60,7 @@ footer_theme: cip
 footer_mandats_theme: cip
 header_extranet_theme: cip
 highlight_theme: cip
+tag_theme: cip
 ---
 
 {# This page is an examples page listing all the components (Atoms, Molecules, Organisms) available in the styleguide with a specific coloring theme.

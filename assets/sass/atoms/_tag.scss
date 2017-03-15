@@ -1,0 +1,62 @@
+.tag {
+  display: inline-block;
+  position: relative;
+  padding: 6px $grid-gutter-width / 3 5px;
+  background: $brand-primary;
+  color: $white;
+  text-decoration: none;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    width: 12px;
+    height: 50%;
+  }
+
+  &:before {
+    top: 0;
+    background: linear-gradient(to right top, $brand-primary 50%, transparent 50%);
+  }
+
+  &:after {
+    top: 50%;
+    background: linear-gradient(to right bottom, $brand-primary 50%, transparent 50%);
+  }
+
+  &:active,
+  &:hover {
+    text-decoration: none;
+    background: darken($brand-primary, 10%);
+
+    &:before { background: linear-gradient(to right top, darken($brand-primary, 10%) 50%, transparent 50%); }
+    &:after { background: linear-gradient(to right bottom, darken($brand-primary, 10%) 50%, transparent 50%); }
+  }
+
+  @each $label, $color in $themes {
+    &.tag-#{$label} {
+      background: $color;
+
+      &:before { background: linear-gradient(to right top, $color 50%, transparent 50%); }
+      &:after { background: linear-gradient(to right bottom, $color 50%, transparent 50%); }
+
+      &:active,
+      &:hover {
+        background: darken($color, 10%);
+        color: $white;
+
+        &:before { background: linear-gradient(to right top, darken($color, 10%) 50%, transparent 50%); }
+        &:after { background: linear-gradient(to right bottom, darken($color, 10%) 50%, transparent 50%); }
+      }
+    }
+  }
+}
+
+.tag-hole {
+  position: absolute;
+  top: 52%;
+  right: -4px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
