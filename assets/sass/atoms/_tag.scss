@@ -1,8 +1,12 @@
 .tag {
   display: inline-block;
   position: relative;
+  margin-right: $grid-gutter-width / 3;
+  margin-bottom: $grid-gutter-width / 3;
   padding: 6px $grid-gutter-width / 3 5px;
   background: $brand-primary;
+  border-radius: $border-radius-base 0 0 $border-radius-base;
+  font-size: $font-size-base;
   color: $white;
   text-decoration: none;
 
