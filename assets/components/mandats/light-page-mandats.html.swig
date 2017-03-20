@@ -14,6 +14,15 @@ layout: mandats.html.swig
         </a>
         <div class="spacer spacer-sm"></div>
       </div>
+      <div class="col-xs-8 col-lg-6">
+        <div class="pull-right">
+          <div class="spacer spacer-sm"></div>
+          <a href="#" class="text-cip">
+            <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin retraitespopulaires-icon-flip-horizontal retraitespopulaires-icon-lg" aria-hidden="true"></span>
+            Retour au site
+          </a>
+        </div>
+      </div>
     </div><!-- /.container -->
   </div>
 </header>
