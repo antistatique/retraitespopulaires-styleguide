@@ -34,12 +34,20 @@
   ul {
     @extend .unordered-list;
 
+    > li {
+      line-height: 1.5em;
+    }
+
     margin-top: 0;
     margin-bottom: 10px;
   }
 
   ol {
     @extend .ordered-list;
+
+    > li {
+      line-height: 1.5em;
+    }
 
     margin-top: 0;
     margin-bottom: 10px;

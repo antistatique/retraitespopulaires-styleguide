@@ -1,6 +1,8 @@
 @charset 'UTF-8';
 
 .well {
+  box-shadow: none;
+
   &.well-danger {
     background-color: lighten($brand-danger, 45%);
     color: $brand-danger;

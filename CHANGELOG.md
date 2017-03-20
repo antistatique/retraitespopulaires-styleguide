@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+* 2.0.1 (2017-20-03)
+ - Removed shadow on well
+ - Add the "tag" component
+ - Add Light page for Mandats
+ - Fixed footer Mandats using theme
+ - Fixed scrolling on styleguide
+
 * 2.0.0 (2017-03-09)
  - Massive update styleguide
  - Add font alternative as font-mandant on body

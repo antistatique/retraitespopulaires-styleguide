@@ -1,11 +1,17 @@
 @charset 'UTF-8';
 
 .teaser-news {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 900px;
   background-color: $white;
   border: 1px solid $brand-primary;
   border-radius: $border-radius-base;
+
+  &.teaser-fullclick {
+    display: flex;
+  }
 
   .news-heading {
     position: relative;
@@ -24,6 +30,9 @@
   }
 
   .news-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
     margin: 0;
     padding: $grid-gutter-width/2;
     color: $text-color;
@@ -32,6 +41,9 @@
   .news-extra {
     display: flex;
     justify-content: space-between;
+    align-self: flex-end;
+    width: 100%;
+    margin-top: auto;
     line-height: 1em;
 
     .news-type { text-align: right; }
