@@ -32,6 +32,10 @@
     color: $line;
   }
 
+  &:focus {
+    text-decoration: none;
+  }
+
   // Style selected links (or else text-shadow makes it look crazy ugly)
   // Pseudo selectors must go separately, or they break each other
 
