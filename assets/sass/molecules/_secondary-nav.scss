@@ -44,7 +44,7 @@
     &.active {
       background-color: rgba($brand-primary, 0.7);
 
-      a.pretty-link {
+      .pretty-link {
         @include pretty-link($black, $transparent, $black);
       }
     }
@@ -69,7 +69,7 @@
       color: $color;
     }
 
-    .secondary-nav-content li a.pretty-link {
+    .secondary-nav-content li .pretty-link {
       @include pretty-link($text-color, $white, $color);
     }
 

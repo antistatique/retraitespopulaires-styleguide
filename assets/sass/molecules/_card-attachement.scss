@@ -70,13 +70,13 @@
     /* More readable with 4 levels sorry */
 
     &.card-attachement-#{$label} .card-content {
-      a.pretty-link {
+      .pretty-link {
         @include pretty-link($black, $white, $color);
       }
     }
 
     &.card-attachement-#{$label} .card-footer {
-      a.pretty-link {
+      .pretty-link {
         @include pretty-link($black, $ligthen-gray, $color);
       }
     }

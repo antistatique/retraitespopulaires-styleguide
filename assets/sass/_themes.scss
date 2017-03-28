@@ -38,7 +38,7 @@ $themes: (
 /* Make the code unreadable otherwise */
 
 p a,
-a.pretty-link {
+.pretty-link {
   @include pretty-link($black, $white, $brand-primary);
 
   &.pretty-link-light-gray {
@@ -79,17 +79,17 @@ a.no-style {
   .text-#{$label},
   a.text-#{$label} {
     &.pretty-link,
-    a.pretty-link {
+    .pretty-link {
       @include pretty-link($black, $white, $color);
     }
 
     &.pretty-link-berrylight-gray,
-    a.pretty-link-berrylight-gray {
+    .pretty-link-berrylight-gray {
       @include pretty-link($black, $berrylight-gray, $color);
     }
 
     &.pretty-link-light-gray,
-    a.pretty-link-light-gray {
+    .pretty-link-light-gray {
       @include pretty-link($black, $berrylight-gray, $color);
     }
   }
@@ -98,17 +98,17 @@ a.no-style {
 .text-danger,
 a.text-danger {
   &.pretty-link,
-  a.pretty-link {
+  .pretty-link {
     @include pretty-link($black, $white, $brand-danger);
   }
 
   &.pretty-link-berrylight-gray,
-  a.pretty-link-berrylight-gray {
+  .pretty-link-berrylight-gray {
     @include pretty-link($black, $berrylight-gray, $brand-danger);
   }
 
   &.pretty-link-light-gray,
-  a.pretty-link-light-gray {
+  .pretty-link-light-gray {
     @include pretty-link($black, $berrylight-gray, $brand-danger);
   }
 }
