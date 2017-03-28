@@ -80,13 +80,13 @@
       border-color: $brand-danger;
     }
   }
+}
 
-  &.readonly {
-    .form-control {
-      background: $input-bg-disabled;
-      border-color: $input-border-disabled;
-      color: $input-color-placeholder;
-    }
+.readonly {
+  .form-control {
+    background: $input-bg-disabled;
+    border-color: $input-border-disabled;
+    color: $input-color-placeholder;
   }
 }
 
