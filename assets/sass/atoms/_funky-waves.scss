@@ -25,26 +25,6 @@
     }
   }
 
-  &.wrapper-funky-waves-background {
-    min-height: 17.5vh;
-
-    @media (min-width: $screen-sm-min) {
-      min-height: 12.5vh;
-    }
-
-    @media (min-width: $screen-md-min) {
-      min-height: 150px;
-    }
-
-    @media (min-width: $screen-lg-min) {
-      min-height: 175px;
-    }
-
-    @media (min-width: $screen-xl-min) {
-      min-height: 200px;
-    }
-  }
-
   // Add padding of the header size
   &.has-header { padding-top: 84px; }
 
