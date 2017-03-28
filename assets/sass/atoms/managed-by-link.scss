@@ -8,8 +8,10 @@
 
   img {
     display: inline;
-    margin-top: -35px;
-    max-width: 140px;
-    line-height: 0;
+    position: relative;
+    top: -53px;
+    max-width: 179px;
+    line-height: 1;
+    vertical-align: top;
   }
 }
