@@ -3,7 +3,7 @@
   <ul class="card-content list-spaced list-unstyled">
     {% for faq in variables.links %}
     <li>
-      <a class="text-bold pretty-link h5" href="{{ path('entity.node.canonical', {'node':faq.nid.value}) }}">{{ faq.title.value }}</a>
+      <a class="text-bold h5" href="{{ path('entity.node.canonical', {'node':faq.nid.value}) }}"><span class="pretty-link">{{ faq.title.value }}</span></a>
     </li>
     {% endfor %}
   </ul>
