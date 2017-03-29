@@ -66,7 +66,7 @@ namespace :deploy do
         directories = (releases - releases.last(fetch(:keep_releases)))
         if directories.any?
           directories_str = directories.map do |release|
-            releases_path.join(release).join("#{fetch(:app_path)}")
+            releases_path.join(release)
           end.join(" ")
           execute :chmod, '-R' ,'u+w', directories_str
         end
