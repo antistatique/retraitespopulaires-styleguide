@@ -13,6 +13,9 @@
 @import 'drupal';
 @import 'ckeditor';
 
+// import tablesaw, we need the mixin
+@import '../../node_modules/tablesaw/src/tables.stack-mixin.scss';
+
 // atoms:
 @import 'atoms/input-file';
 @import 'atoms/logo-management-contract';
