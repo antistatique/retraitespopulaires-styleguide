@@ -1,0 +1,12 @@
+uuid: dc09ac99-909a-49e0-9a2f-5104f0f7440a
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: egUVOkBF8Rfzd-cuycbVPEBBfN8PpBQAyq_8iRd7Nns
+id: time_zones
+label: 'Time zones'
+options: ''

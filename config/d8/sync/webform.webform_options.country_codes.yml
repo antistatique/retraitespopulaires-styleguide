@@ -1,0 +1,12 @@
+uuid: 60356844-28ea-4388-bdb5-402a933f4be2
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: WKyw6_wHd1Ls-12ra-byuG23rJPOaCO9o6QrLYo0fbY
+id: country_codes
+label: 'Country codes'
+options: ''

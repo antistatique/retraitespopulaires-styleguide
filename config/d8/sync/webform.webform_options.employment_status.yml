@@ -1,0 +1,12 @@
+uuid: 573d7b71-188f-4fb1-bbe8-1e8de9d6693f
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: 6iKOLiv3WqdDwbLEYesK2txBl-1W8frLFe3PbT8-AaE
+id: employment_status
+label: 'Employment status'
+options: "'Full Time': 'Full Time'\n'Part Time': 'Part Time'\n'Military': 'Military'\nUnemployed: Unemployed\nRetired: Retired\n"
