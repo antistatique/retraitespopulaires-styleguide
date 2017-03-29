@@ -44,10 +44,10 @@ display:
         options:
           items_per_page: 50
           tags:
-            previous: '‹ Précédent'
-            next: 'Suivant ›'
-            first: '« Premier'
-            last: 'Dernier »'
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
       style:
         type: table
         options:
@@ -551,7 +551,7 @@ display:
           table: views
           field: area_text_custom
           empty: true
-          content: 'Aucun contenu disponible.'
+          content: 'No content available.'
           plugin_id: text_custom
       arguments: {  }
       relationships:
