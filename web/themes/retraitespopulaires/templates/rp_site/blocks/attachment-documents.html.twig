@@ -3,14 +3,14 @@
   <ul class="card-content list-spaced list-unstyled">
     {% for doc in variables.links %}
     <li>
-      <div class="media">
+      <a href="{{ path('entity.node.canonical', {'node': doc.nid.value}) }}" target="_blank" class="media">
         <div class="media-left">
-          <a aria-hidden="true" href="{{ path('entity.node.canonical', {'node': doc.nid.value}) }}" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
+          <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></span>
         </div>
         <div class="media-body">
-          <a href="{{ path('entity.node.canonical', {'node': doc.nid.value}) }}" target="_blank" class="pretty-link h5">{{ doc.title.value }} <span class="text-muted text-small">- {{ doc.field_file_document.entity.mimeType|extension_guesser|upper }}</span></a>
+          <span class="h5"><span class="pretty-link">{{ doc.title.value }}</span> <span class="text-muted text-small">- {{ doc.field_file_document.entity.mimeType|extension_guesser|upper }}</span></span>
         </div>
-      </div>
+      </a>
     </li>
     {% endfor %}
   </ul>

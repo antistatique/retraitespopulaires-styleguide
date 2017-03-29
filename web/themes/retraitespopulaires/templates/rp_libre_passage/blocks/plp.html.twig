@@ -12,7 +12,7 @@
             {% set deadline = variables.results.deadline|date_format('d.m.Y') %}
             <td>{% trans %}Capital de retraite au {{ deadline }}{% endtrans %}</td>
             <td>
-              <div class="form-group readonly">
+              <div class="readonly">
                 <input type="text" readonly="" name="capital" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.capital }}">
               </div>
             </td>
@@ -23,7 +23,7 @@
             <tr>
               <td>{% trans %}Rente annuelle de retraite dès le {{ pension }}{% endtrans %}</td>
               <td>
-                <div class="form-group readonly">
+                <div class="readonly">
                   <input type="text" readonly="" name="annual_pension_single" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.annual_pension_single }}">
                 </div>
               </td>
@@ -35,7 +35,7 @@
                 <p class="m-b-0">{% trans %}Taux de réversibilité de {{ variables.results.percent }}%{% endtrans %}</p>
               </td>
               <td>
-                <div class="form-group readonly">
+                <div class="readonly">
                   <input type="text" readonly="" name="annual_pension_single" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.annual_pension_couple }}">
                 </div>
               </td>
@@ -44,7 +44,7 @@
             <tr>
               <td>{% trans %}Rente annuelle de conjoint/partenaire survivant{% endtrans %}</td>
               <td>
-                <div class="form-group readonly">
+                <div class="readonly">
                   <input type="text" readonly="" name="annual_pension_single" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.pension_survivor }}">
                 </div>
               </td>
