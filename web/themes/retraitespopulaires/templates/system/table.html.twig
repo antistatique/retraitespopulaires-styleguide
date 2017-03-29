@@ -50,6 +50,10 @@
   context.condensed is not empty or theme.settings.table_condensed ? 'table-condensed',
   context.hover is not empty or theme.settings.table_hover ? 'table-hover',
   context.striped is not empty or theme.settings.table_striped ? 'table-striped',
+  'table-wide',
+  'table-primary',
+  'tablesaw',
+  'tablesaw-stack',
 ] %}
 <table{{ attributes.addClass(classes) }}>
   {% if caption %}
