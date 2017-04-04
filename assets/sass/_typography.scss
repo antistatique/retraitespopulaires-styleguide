@@ -76,6 +76,11 @@ ol {
 }
 
 /**
+ * Text color variants
+ */
+@include text-emphasis-variant('.text-gray', $gray);
+
+/**
 * Responsive Typography
 */
 
