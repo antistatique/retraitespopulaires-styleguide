@@ -50,7 +50,7 @@ notes: |
       </div>
       <div class="col-xs-12 col-md-4">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
-        <p>Géré par <a class="pretty-link text-{{ footer_mandats_theme|default('cip') }}" href="#">Retraites&nbsp;Populaires</a></p>
+        {% include "../atoms/managed-by-link.html.swig" %}
       </div>
     </div>
   </div>

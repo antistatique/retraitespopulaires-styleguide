@@ -37,8 +37,6 @@
 }
 
 .form-group {
-  margin-top: 20px;
-
   .label,
   label {
     margin-left: 0;
@@ -82,13 +80,13 @@
       border-color: $brand-danger;
     }
   }
+}
 
-  &.readonly {
-    .form-control {
-      background: $input-bg-disabled;
-      border-color: $input-border-disabled;
-      color: $input-color-placeholder;
-    }
+.readonly {
+  .form-control {
+    background: $input-bg-disabled;
+    border-color: $input-border-disabled;
+    color: $input-color-placeholder;
   }
 }
 

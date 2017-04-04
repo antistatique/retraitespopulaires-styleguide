@@ -1,8 +1,6 @@
 @charset 'UTF-8';
 
-form {
-  .row {
-    margin-top: -20px;
-    margin-bottom: -20px;
-  }
+// mailchimp errors
+.mce_inline_error {
+  border-color: $alert-danger-text;
 }

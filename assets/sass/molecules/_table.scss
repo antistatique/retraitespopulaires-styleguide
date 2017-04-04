@@ -184,6 +184,8 @@ table.tablesaw.table-condensed {
 /* Make the code unreadable otherwise */
 
 table.tablesaw {
+  margin-bottom: $grid-gutter-width;
+
   @each $label, $color in $themes {
     &.table-#{$label} {
       border-color: $color;
@@ -220,3 +222,20 @@ table.tablesaw {
   }
 }
 /* stylelint-enable */
+
+.table-likert {
+  max-width: 100%;
+  overflow-x: scroll;
+
+  @media screen and (min-width: 39.9375em) {
+    .option {
+      @include sr-only();
+    }
+
+    td {
+      .input-radio {
+        text-align: center;
+      }
+    }
+  }
+}
