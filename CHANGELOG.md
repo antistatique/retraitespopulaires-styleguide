@@ -1,6 +1,22 @@
 CHANGELOG
 =========
 
+* 2.1.0
+ - fix logo width
+ - fix padding in search form in header
+ - add likert styles for webform
+ - remove background-funky-waves
+ - fix focus effect on pretty links
+ - fix form readonly styles
+ - increase rp logo size in footer
+ - fix form-group margins
+ - fix pretty-link applied to all parapgraph links
+ - display mailchimp error in red
+ - fix card-attachment links in body
+ - fix news tiles size on IE
+ - add an atom managed-by-link
+ - add button in header of light header
+
 * 2.0.1 (2017-20-03)
  - Removed shadow on well
  - Add the "tag" component
