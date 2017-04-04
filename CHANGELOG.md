@@ -1,7 +1,10 @@
 CHANGELOG
 =========
 
-* 2.1.0
+* 2.1.2 (2017-04-04)
+ - fix logo SVG
+
+* 2.1.0 (2017-04-04)
  - fix logo width
  - fix padding in search form in header
  - add likert styles for webform
