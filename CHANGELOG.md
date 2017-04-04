@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+* 2.1.2 (2017-04-04)
+ - fix logo SVG
+
 * 2.0.1 (2017-20-03)
  - Removed shadow on well
  - Add the "tag" component
