@@ -2,9 +2,15 @@
 
 .table-borderless {
   > tbody > tr {
+    &:first-child {
+      > td {
+        border-top: 2px solid darken($table-border-color, 15%);
+      }
+    }
+
     &:last-child {
       > td {
-        border-bottom: 1px solid $table-border-color;
+        border-bottom: 2px solid darken($table-border-color, 15%);
       }
     }
 
