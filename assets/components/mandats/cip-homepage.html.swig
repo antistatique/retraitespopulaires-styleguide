@@ -7,8 +7,6 @@ layout: mandats.html.swig
 ---
 {% include '../organisms/header-mandats.html.swig' with {'header_mandats_theme': 'cip'} %}
 
-{% include '../atoms/funky-waves.html.swig' with {funky_waves_img: 'http://www.cipvd.ch/upload/docs/image/png/2016-07/banner_salleconseilcip.png', 'funky_waves_theme': 'cip', 'funky_waves_disable': true, 'funky_waves_no_header': true} %}
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
