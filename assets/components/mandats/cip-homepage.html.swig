@@ -52,8 +52,6 @@ layout: mandats.html.swig
           </div>
         </div>
       </div>
-      <div class="spacer spacer-lg"></div>
-
     </div>
   </div>
 </div>

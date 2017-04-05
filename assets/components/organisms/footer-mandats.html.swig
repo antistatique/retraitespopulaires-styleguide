@@ -15,46 +15,28 @@ notes: |
     <div class="row">
       <div class="col-xs-12 col-md-5">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
-        <p>Recevez le Bulletin <a href="#" class="pretty-link text-italic text-{{ footer_mandats_theme|default('cip') }}"><i>cipvd</i></a>, via e-mail:</p>
-        <form>
-          <div class="form-group">
-            <div class="input-group full-width">
-              <input type="text" class="form-control full-width" placeholder="Ex: aline.rochat@retraitespopulaires.ch" aria-label="Saisissez votre adresse e-mail.">
-              <span class="input-group-btn">
-                <button class="btn btn-default btn-{{ footer_mandats_theme|default('cip') }}" type="button">Je m'inscris</button>
-              </span>
-            </div>
-          </div>
-        </form>
+        <p>Recevez le <a href="#" class="pretty-link text-italic text-{{ footer_mandats_theme|default('cip') }}"><i>Bulletin CIP</i></a>, via e-mail:</p></p>
+        <p><a class="btn btn-primary btn-{{ footer_mandats_theme|default('cip') }}" href="#">Je m'inscris au Bulletin CIP</a></p>
       </div>
 
       <div class="col-xs-12 col-md-3 ">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
         <p>Contactez-nous</p>
 
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#lausanne" aria-controls="lausanne" role="tab" data-toggle="tab">Lausanne (siège)</a></li>
-        </ul>
-        <div class="spacer spacer-sm"></div>
         <div class="row">
           <div class="col-xs-12">
-            <div class="tab-content">
-              <div role="tabpanel" class="tab-pane active" id="lausanne">
-                <a href="tel:+41213482111" class="text-large text-no-wrap d-block text-{{ footer_mandats_theme|default('cip') }}">021 348 <strong>21 11</strong></a>
-                <a href="mailto:info@cipvd.ch" class="text-large d-block text-{{ footer_mandats_theme|default('cip') }}">info@cipvd.ch</a>
-              </div>
-            </div>
+            <a href="tel:+41213482111" class="text-large text-no-wrap text-{{ footer_mandats_theme|default('cip') }}">021 348 21 11</a><br>
+            <a href="mailto:info@cipvd.ch" class="text-large text-{{ footer_mandats_theme|default('cip') }}">info@cipvd.ch</a>
           </div>
         </div>
-
       </div>
+
       <div class="col-xs-12 col-md-4">
         <div class="spacer spacer-md visible-xs visible-sm"></div>
         {% include "../atoms/managed-by-link.html.swig" %}
       </div>
     </div>
   </div>
-
   <div class="spacer spacer-xs"></div>
   {% endif %}
 
