@@ -1,67 +1,37 @@
 @charset 'UTF-8';
 
 .btn {
-  display: inline-block;
-  padding: 0.7em;
-  border: 1px solid $transparent;
-  font-family: $font-secondary;
-  font-weight: 300;
+  border-color: $transparent;
   transition:
     background 0.25s ease,
     color 0.25s ease,
     border-color 0.25s ease,
     opacity 0.5s ease;
-  white-space: normal;
 
-  @include button-variant($white, $brand-primary, $brand-primary);
+  @media screen and (max-width: $screen-xs-max) {
+    white-space: normal;
+  }
+
+  @include font-secondary;
 
   &:first-letter {
     text-transform: uppercase;
   }
 
-  @media screen and (min-width: $screen-sm-min) {
-    white-space: nowrap;
-  }
-
-  &.btn-sm {
-    padding-right: $grid-gutter-width/3;
-    padding-left: $grid-gutter-width/3;
-    font-size: 1em;
-  }
-
-  &.btn-md {
-    padding-right: $grid-gutter-width;
-    padding-left: $grid-gutter-width;
-    font-size: 1em;
-  }
-
-  &.btn-lg {
-    padding-right: $grid-gutter-width*2;
-    padding-left: $grid-gutter-width*2;
-    font-size: 1em;
-  }
-
-  &:focus,
-  &.focus,
   &:active,
-  &.active,
-  &:active:focus,
-  &:active.focus,
-  &.active:focus,
-  &.active.focus {
-    outline: 0;
+  &.active {
     box-shadow: none;
   }
+}
 
-  &.btn-secondary {
-    @include button-variant($btn-default-color, $deep-yellow, $btn-default-border);
+@each $label, $color in $themes {
+  .btn-#{$label} {
+    @include button-variant($white, $color, $btn-default-border);
   }
+}
 
-  @each $label, $color in $themes {
-    &.btn-#{$label} {
-      @include button-variant($white, $color, $btn-default-border);
-    }
-  }
+.btn-secondary {
+  @include button-variant($btn-default-color, $deep-yellow, $btn-default-border);
 }
 
 .btn-icon {
@@ -74,22 +44,18 @@
 }
 
 .btn-default-invert {
-  background-color: $white;
   border: none;
-  color: $brand-primary;
 
-  &:hover {
-    color: darken($brand-primary, 5%);
-  }
+  @include button-variant($brand-primary, $white, $btn-default-border);
 }
 
-.btn-group {
+.btn-group { // @TODO check in which wrapper those links are
   .btn {
     border: 1px solid $white;
   }
 }
 
-.btn-invisible {
+.btn-invisible { // @TODO really useful? Can't find it in the swig templates (swap to .btn-link)
   background: $transparent;
 }
 
