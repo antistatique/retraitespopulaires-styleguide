@@ -6,9 +6,10 @@ notes: |
   ##### Usage : `table`
   ##### Options :
   - **table_size** - <i>String</i> - <b>table-['wide'|'condensed']</b>
+  - **table_style** - <i>String</i> - <b>table-borderless</b>
   - **table_theme** - <i>String</i> - <b>table-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-<table class="table-{{ table_size }} table-{{ table_theme|default('primary') }} tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+<table class="table-{{ table_size }} table-{{ table_style }} table-{{ table_theme|default('primary') }} tablesaw tablesaw-stack" data-tablesaw-mode="stack">
  <thead>
   <tr>
      <th><strong>Entête importante</strong></th>
