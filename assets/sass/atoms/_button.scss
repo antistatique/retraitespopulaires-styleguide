@@ -55,14 +55,49 @@
   }
 }
 
-.btn-invisible { // @TODO really useful? Can't find it in the swig templates (swap to .btn-link)
-  background: $transparent;
+.btn-invisible {
+  @include button-variant($text-color, $transparent, $btn-default-border);
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:active {
+    border-color: $light-gray;
+  }
 }
 
 .btn-outline {
   @include button-variant($brand-primary, $transparent, $brand-primary);
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:active {
+    background: $gray-lighter;
+  }
 }
 
 .btn-outline-secondary {
   @include button-variant($white, $transparent, $white);
+}
+
+// Button toggling collapse
+.btn-collapse {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  .retraitespopulaires-icon { line-height: 0; }
+  .retraitespopulaires-icon-document-file { margin-left: 10px; }
+
+  .caret {
+    color: $brand-primary;
+    transition: transform 0.2s ease-in;
+  }
+
+  &.collapsed {
+    .caret {
+      transform: rotate(-90deg);
+    }
+  }
 }
