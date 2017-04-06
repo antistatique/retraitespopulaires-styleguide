@@ -1,0 +1,302 @@
+{
+  "atoms": {
+    "alert": {
+      "name": "#element-alert"
+    },
+    "arrow": {
+      "name": "#element-arrow"
+    },
+    "blockquote": {
+      "name": "#element-blockquote"
+    },
+    "button-bubble": {
+      "name": "#element-button-bubble"
+    },
+    "button": {
+      "name": "#element-button"
+    },
+    "facets-list": {
+      "name": "#element-facets-list"
+    },
+    "favicon": {
+      "name": "#element-favicon"
+    },
+    "filters-list": {
+      "name": "#element-filters-list"
+    },
+    "funky-waves": {
+      "name": "#element-funky-waves"
+    },
+    "hamburger-mandat": {
+      "name": "#element-hamburger-mandat"
+    },
+    "hamburger": {
+      "name": "#element-hamburger"
+    },
+    "highlight": {
+      "name": "#element-highlight"
+    },
+    "hr": {
+      "name": "#element-hr"
+    },
+    "icon-text": {
+      "name": "#element-icon-text"
+    },
+    "input-checkbox": {
+      "name": "#element-input-checkbox"
+    },
+    "input-datepicker": {
+      "name": "#element-input-datepicker"
+    },
+    "input-file": {
+      "name": "#element-input-file"
+    },
+    "input-group": {
+      "name": "#element-input-group"
+    },
+    "input-radio-btn": {
+      "name": "#element-input-radio-btn"
+    },
+    "input-radio": {
+      "name": "#element-input-radio"
+    },
+    "input-select": {
+      "name": "#element-input-select"
+    },
+    "input-text": {
+      "name": "#element-input-text"
+    },
+    "input-textarea": {
+      "name": "#element-input-textarea"
+    },
+    "loader": {
+      "name": "#element-loader"
+    },
+    "logo-management-contract": {
+      "name": "#element-logo-management-contract"
+    },
+    "logo-retraitespopulaires": {
+      "name": "#element-logo-retraitespopulaires"
+    },
+    "map-card": {
+      "name": "#element-map-card"
+    },
+    "ordered-list": {
+      "name": "#element-ordered-list"
+    },
+    "organic-lines": {
+      "name": "#element-organic-lines"
+    },
+    "pagination": {
+      "name": "#element-pagination"
+    },
+    "search-box": {
+      "name": "#element-search-box"
+    },
+    "section-bloc": {
+      "name": "#element-section-bloc"
+    },
+    "socials": {
+      "name": "#element-socials"
+    },
+    "spacer": {
+      "name": "#element-spacer"
+    },
+    "tag": {
+      "name": "#element-tag"
+    },
+    "treeview-list": {
+      "name": "#element-treeview-list"
+    },
+    "unordered-list": {
+      "name": "#element-unordered-list"
+    },
+    "well": {
+      "name": "#element-well"
+    }
+  },
+  "molecules": {
+    "big-menu-empty": {
+      "name": "#element-big-menu-empty"
+    },
+    "big-menu-secondary-nav": {
+      "name": "#element-big-menu-secondary-nav"
+    },
+    "big-menu": {
+      "name": "#element-big-menu"
+    },
+    "breadcrumb-extranet": {
+      "name": "#element-breadcrumb-extranet"
+    },
+    "breadcrumb": {
+      "name": "#element-breadcrumb"
+    },
+    "card-attachement": {
+      "name": "#element-card-attachement"
+    },
+    "collapse": {
+      "name": "#element-collapse"
+    },
+    "fieldset": {
+      "name": "#element-fieldset"
+    },
+    "immo-heading": {
+      "name": "#element-immo-heading"
+    },
+    "immo-results": {
+      "name": "#element-immo-results"
+    },
+    "navbar": {
+      "name": "#element-navbar"
+    },
+    "prenavbar": {
+      "name": "#element-prenavbar"
+    },
+    "progresschart": {
+      "name": "#element-progresschart"
+    },
+    "push-menu": {
+      "name": "#element-push-menu"
+    },
+    "search-form": {
+      "name": "#element-search-form"
+    },
+    "secondary-nav": {
+      "name": "#element-secondary-nav"
+    },
+    "swiper-menu": {
+      "name": "#element-swiper-menu"
+    },
+    "table": {
+      "name": "#element-table"
+    },
+    "tabs": {
+      "name": "#element-tabs"
+    },
+    "teaser-basicpage": {
+      "name": "#element-teaser-basicpage"
+    },
+    "teaser-contact-cta": {
+      "name": "#element-teaser-contact-cta"
+    },
+    "teaser-contact-detail": {
+      "name": "#element-teaser-contact-detail"
+    },
+    "teaser-contact-placeholder": {
+      "name": "#element-teaser-contact-placeholder"
+    },
+    "teaser-contact": {
+      "name": "#element-teaser-contact"
+    },
+    "teaser-document-extranet": {
+      "name": "#element-teaser-document-extranet"
+    },
+    "teaser-gallery": {
+      "name": "#element-teaser-gallery"
+    },
+    "teaser-institution": {
+      "name": "#element-teaser-institution"
+    },
+    "teaser-news": {
+      "name": "#element-teaser-news"
+    },
+    "teaser-offer": {
+      "name": "#element-teaser-offer"
+    },
+    "teaser-product": {
+      "name": "#element-teaser-product"
+    },
+    "teaser-profil": {
+      "name": "#element-teaser-profil"
+    },
+    "teaser-rental": {
+      "name": "#element-teaser-rental"
+    },
+    "teaser-search": {
+      "name": "#element-teaser-search"
+    }
+  },
+  "organisms": {
+    "actions-extranet": {
+      "name": "#element-actions-extranet"
+    },
+    "attachements": {
+      "name": "#element-attachements"
+    },
+    "attachments-contact": {
+      "name": "#element-attachments-contact"
+    },
+    "attachments-job": {
+      "name": "#element-attachments-job"
+    },
+    "attachments-last-news": {
+      "name": "#element-attachments-last-news"
+    },
+    "attachments-offers": {
+      "name": "#element-attachments-offers"
+    },
+    "attachments-rentals": {
+      "name": "#element-attachments-rentals"
+    },
+    "footer-mandats": {
+      "name": "#element-footer-mandats"
+    },
+    "footer": {
+      "name": "#element-footer"
+    },
+    "form-contact-advisor": {
+      "name": "#element-form-contact-advisor"
+    },
+    "form-hypotheque": {
+      "name": "#element-form-hypotheque"
+    },
+    "form-immo-alert": {
+      "name": "#element-form-immo-alert"
+    },
+    "form-immo-contact": {
+      "name": "#element-form-immo-contact"
+    },
+    "form-immo-search": {
+      "name": "#element-form-immo-search"
+    },
+    "form-immobilier": {
+      "name": "#element-form-immobilier"
+    },
+    "form-job-add-file": {
+      "name": "#element-form-job-add-file"
+    },
+    "form-job-contactinfo": {
+      "name": "#element-form-job-contactinfo"
+    },
+    "form-job-signin": {
+      "name": "#element-form-job-signin"
+    },
+    "form-job-signup": {
+      "name": "#element-form-job-signup"
+    },
+    "form-job-skill": {
+      "name": "#element-form-job-skill"
+    },
+    "form-offer-bella-vita": {
+      "name": "#element-form-offer-bella-vita"
+    },
+    "form-simulateur-libre-passage": {
+      "name": "#element-form-simulateur-libre-passage"
+    },
+    "form-simulateur-retraite": {
+      "name": "#element-form-simulateur-retraite"
+    },
+    "gallery": {
+      "name": "#element-gallery"
+    },
+    "header-extranet": {
+      "name": "#element-header-extranet"
+    },
+    "header-mandats": {
+      "name": "#element-header-mandats"
+    },
+    "header": {
+      "name": "#element-header"
+    }
+  }
+}

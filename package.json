@@ -34,6 +34,7 @@
     "browser-sync": "^2.16.0",
     "del": "~2.2.2",
     "font-awesome": "^4.6.3",
+    "gemini-babel": "^1.0.0",
     "gsap": "^1.19.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-clean-css": "^2.0.13",
