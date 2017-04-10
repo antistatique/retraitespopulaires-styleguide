@@ -44,7 +44,8 @@
         "drupal/ckeditor_media_embed": "~1.0",
         "drupal/redirect": "~1.0",
         "drupal/backerymails": "~1.0",
-        "drupal/webform": "^5.0@beta"
+        "drupal/webform": "^5.0@beta",
+        "drupal/config_ignore": "^1.4"
       },
     "require-dev": {
       "behat/mink": "~1.7",
