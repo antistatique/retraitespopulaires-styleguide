@@ -42,10 +42,10 @@
     padding: 8px $grid-gutter-width / 1.5;
 
     &.active {
-      background-color: rgba($brand-primary, 0.7);
+      background-color: $brand-primary;
 
       .pretty-link {
-        @include pretty-link($black, $transparent, $black);
+        @include pretty-link($white, $brand-primary, $white);
       }
     }
   }
