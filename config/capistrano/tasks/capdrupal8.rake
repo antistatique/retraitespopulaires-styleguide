@@ -102,9 +102,7 @@ namespace :drupal do
       within release_path.join(fetch(:app_path)) do
         execute :chmod, '-R', '550', '.'
       end
-      within shared_path do
-        execute :chmod, '-R', '770', 'web/sites/default/files'
-      end
+      # "web/sites/default/files" is a shared dir and should have write permissions.
     end
   end
 end
