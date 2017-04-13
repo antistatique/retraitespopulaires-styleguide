@@ -17,4 +17,3 @@ system:
     - node_modules/**
   plugins:
     gemini-babel: true
-compositeImage: true
