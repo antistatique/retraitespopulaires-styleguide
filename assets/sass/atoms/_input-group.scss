@@ -28,9 +28,11 @@
     right: $input-border-size;
     width: auto;
     max-width: 100%;
+    height: calc(100% - 2px);
     z-index: 10;
 
     .btn {
+      height: 100%;
       margin-left: 0;
       padding-bottom: 0.6em;
       border-radius: $btn-border-radius-base - $input-border-size;
