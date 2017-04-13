@@ -13,6 +13,7 @@
   }
 
   @include font-secondary;
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 
   &:first-letter {
     text-transform: uppercase;
@@ -22,22 +23,20 @@
   &.active {
     box-shadow: none;
   }
+
+  @each $label, $color in $themes {
+    &.btn-#{$label} {
+      @include button-variant($white, $color, $btn-default-border);
+    }
+  }
 }
 
 .btn-icon {
-  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
-
   i {
     width: 26px;
     height: 26px;
     vertical-align: middle;
     font-size: 1.6em;
-  }
-}
-
-@each $label, $color in $themes {
-  .btn-#{$label} {
-    @include button-variant($white, $color, $btn-default-border);
   }
 }
 
