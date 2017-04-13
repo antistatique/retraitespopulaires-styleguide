@@ -30,7 +30,7 @@ ul.treeview-list,
 ul.unordered-list,
 ul.facets-list {
   list-style: none;
-  margin-left: $grid-gutter-width / 2;
+  margin-left: 0;
 
   > ul {
     padding-left: 0.4em;
@@ -39,13 +39,13 @@ ul.facets-list {
   > li {
     position: relative;
     margin-bottom: 0.3em;
-    padding-left: 0.5em;
+    padding-left: 1em;
 
     &:before {
       content: '\0025A0'; // ■
       position: absolute;
       top: -0.2em;
-      left: -0.5em;
+      left: 0;
       font-size: 0.8em;
       color: $gray;
     }
@@ -57,7 +57,11 @@ ul.facets-list {
 }
 
 ul.treeview-list {
+  margin-left: $grid-gutter-width / 2;
+
   > li {
+    padding-left: 0.5em;
+
     &:before {
       content: '\231E'; // →
       top: 0;
@@ -72,7 +76,6 @@ ul.facets-list {
     &:before {
       content: '→'; // →
       top: 0;
-      left: -0.5em;
       font-size: 0.9em;
       color: $black;
     }
