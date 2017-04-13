@@ -24,9 +24,6 @@
     "filters-list": {
       "name": "#element-filters-list"
     },
-    "funky-waves": {
-      "name": "#element-funky-waves"
-    },
     "hamburger-mandat": {
       "name": "#element-hamburger-mandat"
     },
@@ -35,9 +32,6 @@
     },
     "highlight": {
       "name": "#element-highlight"
-    },
-    "hr": {
-      "name": "#element-hr"
     },
     "icon-text": {
       "name": "#element-icon-text"
@@ -69,12 +63,6 @@
     "input-textarea": {
       "name": "#element-input-textarea"
     },
-    "loader": {
-      "name": "#element-loader"
-    },
-    "logo-management-contract": {
-      "name": "#element-logo-management-contract"
-    },
     "logo-retraitespopulaires": {
       "name": "#element-logo-retraitespopulaires"
     },
@@ -83,9 +71,6 @@
     },
     "ordered-list": {
       "name": "#element-ordered-list"
-    },
-    "organic-lines": {
-      "name": "#element-organic-lines"
     },
     "pagination": {
       "name": "#element-pagination"

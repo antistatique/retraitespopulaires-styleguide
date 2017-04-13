@@ -2,8 +2,8 @@ rootUrl: http://localhost:3000
 gridUrl: http://127.0.0.1:4444/wd/hub
 windowSize: 1400x900
 compositeImage: true
-sessionsPerBrowser: 2
-tolerance: 3.5
+sessionsPerBrowser: 3
+retry: 1
 
 browsers:
   chrome-latest:
