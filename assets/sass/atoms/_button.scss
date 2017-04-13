@@ -57,6 +57,14 @@
   }
 }
 
+.btn-lg {
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-base, $line-height-base, $btn-border-radius-large);
+
+  @media screen and (min-width: $screen-sm-min) {
+    @include button-size($padding-large-vertical, $padding-large-horizontal * 4, $font-size-base, $line-height-base, $btn-border-radius-large);
+  }
+}
+
 .btn-invisible {
   @include button-variant($text-color, $transparent, $btn-default-border);
 
