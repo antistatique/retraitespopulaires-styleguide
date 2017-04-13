@@ -298,5 +298,126 @@
     "header": {
       "name": "#element-header"
     }
+  },
+  "pages": {
+    "basic-page": {
+      "url": "basic-page"
+    },
+    "light-page": {
+      "url": "light-page"
+    },
+    "mail": {
+      "url": "mail"
+    },
+    "account": {
+      "url": "mon-compte"
+    },
+    "conditions": {
+      "url": "conditions-d-utilisation"
+    },
+    "connection": {
+      "url": "connexion"
+    },
+    "jobs": {
+      "url": "liste-emplois"
+    },
+    "signup-validation": {
+      "url": "cree-mon-compte-validation"
+    },
+    "signup": {
+      "url": "cree-mon-compte"
+    },
+    "portailca-categories": {
+      "url": "portailca-categories"
+    },
+    "portailca-homepage": {
+      "url": "portailca-homepage"
+    },
+    "portailca-subcategory": {
+      "url": "portailca-subcategory"
+    },
+    "flat-form": {
+      "url": "flat-form"
+    },
+    "flat": {
+      "url": "appartement"
+    },
+    "flats": {
+      "url": "flats"
+    },
+    "shops": {
+      "url": "shops"
+    },
+    "cip-basicpage-prevoyance": {
+      "url": "cip-basicpage-prevoyance"
+    },
+    "cip-homepage": {
+      "url": "cip-homepage"
+    },
+    "cip-news": {
+      "url": "cip-news"
+    },
+    "advisor": {
+      "url": "advisor"
+    },
+    "assurance-vie": {
+      "url": "assurance-vie"
+    },
+    "calculateur-hypotheque": {
+      "url": "calculateur-hypotheque"
+    },
+    "famille": {
+      "url": "famille"
+    },
+    "homepage": {
+      "url": "homepage"
+    },
+    "managementcontracts": {
+      "url": "managementcontracts"
+    },
+    "news": {
+      "url": "news"
+    },
+    "offre-bella-vita": {
+      "url": "offre-bella-vita"
+    },
+    "particuliers": {
+      "url": "particuliers"
+    },
+    "rp-jeune": {
+      "url": "rp-jeune"
+    },
+    "simulateur-libre-passage": {
+      "url": "simulateur-libre-passage"
+    },
+    "simulateur-retraite": {
+      "url": "simulateur-retraite"
+    }
+  },
+  "examples": {
+    "alerts": {
+      "url": "alerts"
+    },
+    "buttons": {
+      "url": "buttons"
+    },
+    "cards": {
+      "url": "cards"
+    },
+    "inputs": {
+      "url": "inputs"
+    },
+    "links": {
+      "url": "links"
+    },
+    "loaders": {
+      "url": "loaders"
+    },
+    "navigations": {
+      "url": "navigations"
+    },
+    "tables": {
+      "url": "tables"
+    }
   }
 }

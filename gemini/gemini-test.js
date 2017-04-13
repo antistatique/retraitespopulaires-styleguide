@@ -1,6 +1,6 @@
 /* global gemini */
 
-import { atoms, molecules, organisms } from '../gemini-config.json';
+import { atoms, molecules, organisms, pages, examples } from '../gemini-config.json';
 
 // Alerts
 // gemini.suite('alert', (suite)=> {
@@ -33,6 +33,24 @@ Object.keys(organisms).map((key) => {
   return gemini.suite(key, (suite) => {
     suite.setUrl('/organisms/index.html')
       .setCaptureElements(organisms[key].name)
+      .capture('plain');
+  });
+});
+
+// Generate all pages elements
+Object.keys(pages).map((key) => {
+  return gemini.suite(key, (suite) => {
+    suite.setUrl(pages[key].url)
+    .setCaptureElements('body')
+      .capture('plain');
+  });
+});
+
+// Generate all examples elements
+Object.keys(examples).map((key) => {
+  return gemini.suite(key, (suite) => {
+    suite.setUrl(examples[key].url)
+    .setCaptureElements('#page-wrapper')
       .capture('plain');
   });
 });
