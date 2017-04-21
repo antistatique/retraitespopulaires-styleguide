@@ -39,19 +39,19 @@ Object.keys(organisms).map((key) => {
 });
 
 // Generate all pages elements
-Object.keys(pages).map((key) => {
-  return gemini.suite(key, (suite) => {
-    suite.setUrl(pages[key].url)
-    .setCaptureElements('body')
-      .capture('plain');
-  });
-});
+// Object.keys(pages).map((key) => {
+//   return gemini.suite(key, (suite) => {
+//     suite.setUrl(pages[key].url)
+//     .setCaptureElements('body')
+//       .capture('plain');
+//   });
+// });
 
 // Generate all examples elements
-Object.keys(examples).map((key) => {
-  return gemini.suite(key, (suite) => {
-    suite.setUrl(examples[key].url)
-    .setCaptureElements('#page-wrapper')
-      .capture('plain');
-  });
-});
+// Object.keys(examples).map((key) => {
+//   return gemini.suite(key, (suite) => {
+//     suite.setUrl(examples[key].url)
+//     .setCaptureElements('#page-wrapper')
+//       .capture('plain');
+//   });
+// });
