@@ -101,9 +101,6 @@
     }
   },
   "molecules": {
-    "big-menu-empty": {
-      "name": "#element-big-menu-empty"
-    },
     "big-menu-secondary-nav": {
       "name": "#element-big-menu-secondary-nav"
     },
