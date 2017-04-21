@@ -76,6 +76,46 @@ $ gulp serve
 
 To then access the styleguide, go to [http://localhost:3000/retraitespopulaires-styleguide/](http://localhost:3000/retraitespopulaires-styleguide/) (`/retraitespopulaires-styleguide/` is added here because the styleguide is published on npm)
 
+## Regression Testing
+
+To test all components against what they should look like, we use [Gemini](https://github.com/gemini-testing/gemini), a utility for visual regression testing.
+
+**Installation**
+
+You have to install some modules globally
+
+```bash
+$ yarn add global gemini gemini-babel gemini-gui selenium-standalone
+# then install selenium-standalone
+$ selenium-standalone install
+```
+
+**Generate references**
+
+Once a component has been updated and validated, you can regenerate the reference screenshot by running this in your project root:
+
+```bash
+# first start selenium-standalone
+$ selenium-standalone start
+# then update gemini tests ONLY for one component!
+$ gemini update --grep [name-of-component]
+```
+
+If this is a new component, you have to add it to the `gemini-config.json` file first, or create a custom test suite in the `/gemini` directory.
+
+We will be implementing interaction testing and responsive soon. The branch `feature/regression-testing` is used as a point of reference for the first draft. You must cherry-pick any changes you make elsewhere in the gemini config before updating the screenshots.
+
+**Gemini GUI**
+
+Gemini provides a useful UI that you can run in your project root with:
+
+```bash
+$ gemini-gui gemini
+```
+
+You can then run tests and approve them on the fly.
+
+
 ## Deploy
 The deployment of branch `dev` and `master` is managed yourself and publish on NPM!
 

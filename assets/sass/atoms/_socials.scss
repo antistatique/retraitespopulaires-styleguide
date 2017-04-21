@@ -9,63 +9,65 @@ i.retraitespopulaires-icon {
   line-height: 0;
 }
 
-.retraitespopulaires-icon {
-  transition: color 0.25s ease;
+.social-list {
+  .retraitespopulaires-icon {
+    transition: color 0.25s ease;
 
-  &:hover,
-  .hover {
-    color: $brand-primary;
-  }
-
-  &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-dark,
-  &.retraitespopulaires-icon-facebook.retraitespopulaires-icon-dark,
-  &.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-dark,
-  &.retraitespopulaires-icon-youtube.retraitespopulaires-icon-dark,
-  &.retraitespopulaires-icon-instagram.retraitespopulaires-icon-dark {
-    color: $mine-shaft;
-  }
-
-  &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-brand,
-  &.retraitespopulaires-icon-facebook.retraitespopulaires-icon-brand,
-  &.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-brand,
-  &.retraitespopulaires-icon-youtube.retraitespopulaires-icon-brand,
-  &.retraitespopulaires-icon-instagram.retraitespopulaires-icon-brand {
-    color: $brand-primary;
-  }
-
-  &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-color {
-    color: $color-twitter;
-  }
-
-  &.retraitespopulaires-icon-facebook.retraitespopulaires-icon-color {
-    color: $color-facebook;
-  }
-
-  &.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-color {
-    color: $color-linkedin;
-  }
-
-  &.retraitespopulaires-icon-youtube.retraitespopulaires-icon-color {
-    color: $color-youtube;
-  }
-
-  &.retraitespopulaires-icon-instagram.retraitespopulaires-icon-color {
-    color: $color-instagram;
-  }
-
-  @each $label, $color in $themes {
-    &.retraitespopulaires-icon-#{$label} {
-      color: $color;
-
-      &:hover,
-      .hover {
-        color: darken($color, 20%);
-      }
+    &:hover,
+    .hover {
+      color: $brand-primary;
     }
 
-    &.retraitespopulaires-icon-color.retraitespopulaires-icon-hover-#{$label}:hover,
-    &.retraitespopulaires-icon-color.retraitespopulaires-icon-hover-#{$label}.hover {
-      color: $color;
+    &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-dark,
+    &.retraitespopulaires-icon-facebook.retraitespopulaires-icon-dark,
+    &.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-dark,
+    &.retraitespopulaires-icon-youtube.retraitespopulaires-icon-dark,
+    &.retraitespopulaires-icon-instagram.retraitespopulaires-icon-dark {
+      color: $mine-shaft;
+    }
+
+    &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-brand,
+    &.retraitespopulaires-icon-facebook.retraitespopulaires-icon-brand,
+    &.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-brand,
+    &.retraitespopulaires-icon-youtube.retraitespopulaires-icon-brand,
+    &.retraitespopulaires-icon-instagram.retraitespopulaires-icon-brand {
+      color: $brand-primary;
+    }
+
+    &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-color {
+      color: $color-twitter;
+    }
+
+    &.retraitespopulaires-icon-facebook.retraitespopulaires-icon-color {
+      color: $color-facebook;
+    }
+
+    &.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-color {
+      color: $color-linkedin;
+    }
+
+    &.retraitespopulaires-icon-youtube.retraitespopulaires-icon-color {
+      color: $color-youtube;
+    }
+
+    &.retraitespopulaires-icon-instagram.retraitespopulaires-icon-color {
+      color: $color-instagram;
+    }
+
+    @each $label, $color in $themes {
+      &.retraitespopulaires-icon-#{$label} {
+        color: $color;
+
+        &:hover,
+        .hover {
+          color: darken($color, 20%);
+        }
+      }
+
+      &.retraitespopulaires-icon-color.retraitespopulaires-icon-hover-#{$label}:hover,
+      &.retraitespopulaires-icon-color.retraitespopulaires-icon-hover-#{$label}.hover {
+        color: $color;
+      }
     }
   }
 }

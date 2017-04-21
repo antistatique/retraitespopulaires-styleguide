@@ -22,7 +22,7 @@ notes: |
         <ul class="list-no-style list-no-padding">
         <li><a class="pretty-link text-{{big_menu_secondary_nav_theme|default('primary')}}" href="#">Press</a></li>
         <li><a class="pretty-link text-{{big_menu_secondary_nav_theme|default('primary')}}" href="#">Emplois</a></li>
-        <li><a class="pretty-link text-{{big_menu_secondary_nav_theme|default('primary')}}" href="#">Connexion <i class="fa fa-lock text-{{big_menu_secondary_nav_theme|default('primary') }}"></i></a></li>
+        <li><a class="pretty-link text-{{big_menu_secondary_nav_theme|default('primary')}}" href="#">Connexion <i class="retraitespopulaires-icon retraitespopulaires-icon-lock text-{{big_menu_secondary_nav_theme|default('primary') }}"></i></a></li>
         </ul>
       </div>
       <div class="spacer"></div>
@@ -34,7 +34,7 @@ notes: |
     <li><a class="pretty-link text-{{big_menu_secondary_nav_theme|default('primary')}}" href="#">Actualités</a></li>
     <li><a class="pretty-link text-{{big_menu_secondary_nav_theme|default('primary')}}" href="#">Press</a></li>
     <li><a class="pretty-link text-{{big_menu_secondary_nav_theme|default('primary')}}" href="#">Emplois</a></li>
-    <li><a class="pretty-link text-{{big_menu_secondary_nav_theme|default('primary')}}" href="#">Connexion <i class="text-primary fa fa-lock text-{{big_menu_secondary_nav_theme|default('primary') }}"></i></a></li>
+    <li><a class="pretty-link text-{{big_menu_secondary_nav_theme|default('primary')}}" href="#">Connexion <i class="text-primary retraitespopulaires-icon retraitespopulaires-icon-lock text-{{big_menu_secondary_nav_theme|default('primary') }}"></i></a></li>
     <li><a class="pretty-link text-{{big_menu_secondary_nav_theme|default('primary')}}" href="#">FAQ</a></li>
   </ul>
 </div>

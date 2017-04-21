@@ -90,7 +90,7 @@
   @each $label, $color in $themes {
     &.body-#{$label} {
       p a:not(.btn),
-      .pretty-link {
+      a.pretty-link {
         @include pretty-link($black, $berrylight-gray, $color);
       }
     }

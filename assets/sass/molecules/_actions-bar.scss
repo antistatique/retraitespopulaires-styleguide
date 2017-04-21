@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+
+.actions-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.actions-bar-title {
+  margin: ($grid-gutter-width / 2) auto ($grid-gutter-width / 2) 0;
+}

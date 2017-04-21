@@ -67,6 +67,21 @@
   }
 }
 
+// wrap in a {% spaceless %} block (twig) to to handle the spacing correctly
+// Please don't put links as first children though :(
+.text-square-separation {
+  > *:not(:last-child) {
+    &:after {
+      content: '\0025A0'; // ■
+      position: relative;
+      top: -0.55em;
+      margin: 1em;
+      font-size: 40%;
+      color: $text-color;
+    }
+  }
+}
+
 /**
 * Alignments of blocks
 */
@@ -222,6 +237,10 @@
 .row-flex {
   display: flex;
   flex-wrap: wrap;
+}
+
+.flex-center {
+  justify-content: center;
 }
 
 /**

@@ -17,16 +17,16 @@ notes: |
     {% for link in card_attachement_links %}
       <li>
         {% if card_attachement_type == 'document' %}
-          <a href="#" class="media">
+          <div class="media">
             <div class="media-left">
-              <span class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></span>
+              <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
             </div>
             <div class="media-body">
-              <span class="h5"><span class="pretty-link">{{ link }}</span> <span class="text-muted text-small">- PDF</span></span>
+              <a href="#" class="pretty-link h5">{{ link }} <span class="text-muted text-small">- PDF</span></a>
             </div>
-          </a>
+          </div>
         {% else %}
-          <a class="text-bold h5" href="#"><span class="pretty-link">{{ link }}</span></a>
+          <a class="text-bold pretty-link h5" href="#">{{ link }}</a>
         {% endif %}
       </li>
     {% endfor %}

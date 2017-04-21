@@ -6,8 +6,9 @@
   max-width: 100%;
   padding: 0.7em;
   border-width: $input-border-size;
-  font-family: $font-secondary;
   box-shadow: none;
+
+  @include font-secondary;
 
   &.full-width {
     width: 100%;

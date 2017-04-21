@@ -26,11 +26,14 @@
     position: absolute;
     top: $input-border-size;
     right: $input-border-size;
+    bottom: $input-border-size;
     width: auto;
     max-width: 100%;
     z-index: 10;
+    border: none;
 
     .btn {
+      height: 100%;
       margin-left: 0;
       padding-bottom: 0.6em;
       border-radius: $btn-border-radius-base - $input-border-size;
@@ -52,6 +55,12 @@
           max-height: 47px;
         }
         /* stylelint-enable max-nesting-depth */
+      }
+
+      // Hotfix crado for the search bar, which doesn't use the .btn-icon class
+      // for whatever reason
+      .retraitespopulaires-icon-search {
+        display: table-cell;
       }
     }
   }

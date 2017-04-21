@@ -37,17 +37,7 @@ export const serve = () => {
     server: {
       baseDir: [config.app.basedir],
     },
-    notify: {
-      styles: {
-        padding: "5px",
-        fontSize: "0.7em",
-        top: 'auto',
-        bottom: 0,
-        borderBottomLeftRadius: 0,
-        borderTopLeftRadius: "5px",
-        backgroundColor: "#ef2678",
-      }
-    },
+    notify: false,
     open: false
   });
 

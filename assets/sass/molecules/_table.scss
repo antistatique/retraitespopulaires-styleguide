@@ -1,5 +1,31 @@
 @charset 'UTF-8';
 
+.table-borderless {
+  > tbody > tr {
+    &:first-child {
+      > td {
+        border-top: 2px solid darken($table-border-color, 15%);
+      }
+    }
+
+    &:last-child {
+      > td {
+        border-bottom: 2px solid darken($table-border-color, 15%);
+      }
+    }
+
+    > td {
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
 table.tablesaw {
   border-collapse: collapse;
   border: 1px solid $brand-primary;
