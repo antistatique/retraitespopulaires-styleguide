@@ -26,10 +26,11 @@
     position: absolute;
     top: $input-border-size;
     right: $input-border-size;
+    bottom: $input-border-size;
     width: auto;
     max-width: 100%;
-    height: calc(100% - 2px);
     z-index: 10;
+    border: none;
 
     .btn {
       height: 100%;

@@ -6946,6 +6946,10 @@ undertaker@^1.0.0:
   dependencies:
     bufferstream ">= 0.6.2"
 
+unicode@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/unicode/-/unicode-9.0.1.tgz#104706272c6464c574801be1b086f7245cf25158"
+
 uniq@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/uniq/-/uniq-0.0.2.tgz#614e868ba288651d351262369317acc43b901823"
