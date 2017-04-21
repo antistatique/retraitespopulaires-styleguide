@@ -1,6 +1,6 @@
 {
   "name": "@antistatique/retraitespopulaires-styleguide",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "main": "index.html",
   "browserify-shim": {
     "jquery": "global:jQuery"

@@ -1,7 +1,10 @@
 CHANGELOG
 =========
 
-* 2.2.0 (2017-04-04)
+* 2.2.1 (2017-04-21)
+ - ignore gemini test directory
+
+* 2.2.0 (2017-04-21)
  - setup gemini for regression testing
  - apply numerous small improvements to various components
 
