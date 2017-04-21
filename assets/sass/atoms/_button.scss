@@ -64,6 +64,17 @@
   }
 }
 
+.btn-xs {
+  @include button-size($padding-xs-vertical * 2, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+
+  &.dropdown-toggle {
+    .retraitespopulaires-icon {
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
 .btn-invisible {
   @include button-variant($text-color, $transparent, $btn-default-border);
 
