@@ -10,6 +10,7 @@ node_modules
 
 tests/regression/compare
 tests/regression/temp
+gemini
 
 # npm specific
 /tasks
