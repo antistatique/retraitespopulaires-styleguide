@@ -34,9 +34,10 @@
       padding: 0;
       background: none;
       border: 0;
-      font-family: $font-secondary;
       line-height: 0;
       transform: translate(-50%, -50%);
+
+      @include font-secondary;
     }
 
     &.active > a { color: $white; }

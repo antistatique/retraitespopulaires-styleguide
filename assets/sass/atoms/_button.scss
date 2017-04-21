@@ -1,60 +1,27 @@
 @charset 'UTF-8';
 
 .btn {
-  display: inline-block;
-  padding: 0.7em;
-  border: 1px solid $transparent;
-  font-family: $font-secondary;
-  font-weight: 300;
+  border-color: $transparent;
   transition:
     background 0.25s ease,
     color 0.25s ease,
     border-color 0.25s ease,
     opacity 0.5s ease;
-  white-space: normal;
 
-  @include button-variant($white, $brand-primary, $brand-primary);
+  @media screen and (max-width: $screen-xs-max) {
+    white-space: normal;
+  }
+
+  @include font-secondary;
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 
   &:first-letter {
     text-transform: uppercase;
   }
 
-  @media screen and (min-width: $screen-sm-min) {
-    white-space: nowrap;
-  }
-
-  &.btn-sm {
-    padding-right: $grid-gutter-width/3;
-    padding-left: $grid-gutter-width/3;
-    font-size: 1em;
-  }
-
-  &.btn-md {
-    padding-right: $grid-gutter-width;
-    padding-left: $grid-gutter-width;
-    font-size: 1em;
-  }
-
-  &.btn-lg {
-    padding-right: $grid-gutter-width*2;
-    padding-left: $grid-gutter-width*2;
-    font-size: 1em;
-  }
-
-  &:focus,
-  &.focus,
   &:active,
-  &.active,
-  &:active:focus,
-  &:active.focus,
-  &.active:focus,
-  &.active.focus {
-    outline: 0;
+  &.active {
     box-shadow: none;
-  }
-
-  &.btn-secondary {
-    @include button-variant($btn-default-color, $deep-yellow, $btn-default-border);
   }
 
   @each $label, $color in $themes {
@@ -73,30 +40,91 @@
   }
 }
 
-.btn-default-invert {
-  background-color: $white;
-  border: none;
-  color: $brand-primary;
-
-  &:hover {
-    color: darken($brand-primary, 5%);
-  }
+.btn-secondary {
+  @include button-variant($btn-default-color, $deep-yellow, $btn-default-border);
 }
 
-.btn-group {
+.btn-default-invert {
+  border: none;
+
+  @include button-variant($brand-primary, $white, $btn-default-border);
+}
+
+.btn-group { // @TODO check in which wrapper those links are
   .btn {
     border: 1px solid $white;
   }
 }
 
+.btn-lg {
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-base, $line-height-base, $btn-border-radius-large);
+
+  @media screen and (min-width: $screen-sm-min) {
+    @include button-size($padding-large-vertical, $padding-large-horizontal * 4, $font-size-base, $line-height-base, $btn-border-radius-large);
+  }
+}
+
+.btn-xs {
+  @include button-size($padding-xs-vertical * 2, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+
+  &.dropdown-toggle {
+    .retraitespopulaires-icon {
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
 .btn-invisible {
-  background: $transparent;
+  @include button-variant($text-color, $transparent, $btn-default-border);
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:active {
+    border-color: $light-gray;
+  }
 }
 
 .btn-outline {
   @include button-variant($brand-primary, $transparent, $brand-primary);
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:active {
+    background: $gray-lighter;
+  }
 }
 
 .btn-outline-secondary {
   @include button-variant($white, $transparent, $white);
+}
+
+// Button toggling collapse
+.btn-collapse {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  .retraitespopulaires-icon { line-height: 0; }
+
+  .caret {
+    color: $brand-primary;
+    transition: transform 0.2s ease-in;
+  }
+
+  &.collapsed {
+    .caret {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+// inside forms
+.form-group {
+  .btn {
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+  }
 }

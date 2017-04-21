@@ -20,7 +20,6 @@
 @import 'atoms/input-group';
 @import 'atoms/input-textarea';
 @import 'atoms/well';
-@import 'atoms/hr';
 @import 'atoms/input-radio-btn';
 @import 'atoms/input-datepicker';
 @import 'atoms/input-select';
@@ -87,6 +86,8 @@
 @import 'molecules/card-attachement';
 @import 'molecules/form';
 @import 'molecules/teaser-document-extranet';
+@import 'molecules/dropdown';
+@import 'molecules/actions-bar';
 
 // organisms:
 @import 'organisms/gallery';
@@ -101,4 +102,3 @@
 @import 'organisms/attachments-rentals';
 @import 'organisms/attachments-last-news';
 @import 'organisms/attachments-contact';
-@import 'organisms/actions-extranet';

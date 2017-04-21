@@ -11,7 +11,7 @@
       </div>
     {% endif %}
   </div>
-  <div class="styleguide-item-preview"{% if content.background %} style="background: {{ content.background }};"{% endif %}>
+  <div id="element-{{ content.name }}" class="styleguide-item-preview"{% if content.background %} style="background: {{ content.background }};"{% endif %}>
     {% if content.wrapper %}
       <div class="{{ content.wrapper }}">
         {% include path %}

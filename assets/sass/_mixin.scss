@@ -56,3 +56,9 @@
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+// Font Cocon Pro always has a font-weight: 300
+@mixin font-secondary {
+  font-family: $font-secondary;
+  font-weight: 300;
+}

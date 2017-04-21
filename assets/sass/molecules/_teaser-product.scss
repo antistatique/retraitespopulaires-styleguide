@@ -7,9 +7,10 @@
 
   .product-heading {
     padding: $grid-gutter-width/2;
-    font-family: $font-secondary;
     font-size: 32px;
     color: $brand-primary;
+
+    @include font-secondary;
   }
 
   .product-prefix {
