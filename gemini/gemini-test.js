@@ -24,7 +24,6 @@ Object.keys(molecules).map((key) => {
   return gemini.suite(key, (suite) => {
     suite.setUrl('/molecules/index.html')
       .setCaptureElements(molecules[key].name)
-      .ignoreElements(['.loader-yingyang'])
       .capture('plain');
   });
 });

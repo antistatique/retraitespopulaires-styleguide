@@ -4,6 +4,7 @@ windowSize: 1400x900
 compositeImage: true
 sessionsPerBrowser: 5
 tolerance: 3
+sessionRequestTimeout: 2000
 
 browsers:
   chrome-latest:

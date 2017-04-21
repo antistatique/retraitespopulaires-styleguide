@@ -146,9 +146,6 @@
     "secondary-nav": {
       "name": "#element-secondary-nav"
     },
-    "swiper-menu": {
-      "name": "#element-swiper-menu"
-    },
     "table": {
       "name": "#element-table"
     },
@@ -172,9 +169,6 @@
     },
     "teaser-document-extranet": {
       "name": "#element-teaser-document-extranet"
-    },
-    "teaser-gallery": {
-      "name": "#element-teaser-gallery"
     },
     "teaser-institution": {
       "name": "#element-teaser-institution"
