@@ -56,6 +56,12 @@
         }
         /* stylelint-enable max-nesting-depth */
       }
+
+      // Hotfix crado for the search bar, which doesn't use the .btn-icon class
+      // for whatever reason
+      .retraitespopulaires-icon-search {
+        display: table-cell;
+      }
     }
   }
 }

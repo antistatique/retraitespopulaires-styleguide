@@ -75,6 +75,10 @@
 
     .secondary-nav-content li.active {
       background-color: rgba($color, 0.4);
+
+      a.pretty-link {
+        @include pretty-link($black, $transparent, $black);
+      }
     }
   }
 }
