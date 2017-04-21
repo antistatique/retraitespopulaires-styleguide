@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 * 2.2.1 (2017-04-21)
- - don't upload gemini files to NPM
+ - ignore gemini test directory
 
 * 2.2.0 (2017-04-21)
  - setup gemini for regression testing
