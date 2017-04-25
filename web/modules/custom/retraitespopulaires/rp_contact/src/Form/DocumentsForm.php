@@ -93,6 +93,61 @@ class DocumentsForm extends FormBase {
             );
         }
 
+        $form['documents'] = array(
+          '#type'       => 'fieldset',
+          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#title'      => t('Votre demande de commande de document'),
+          '#prefix'     => '<h3>'.t('Votre demande de commande de document').'</h3>' . '<div class="well m-t-1">' . $this->t('Merci de bien vouloir sélectionner au minimum un document.'). '</div>',
+        );
+
+        $form['documents']['policies'] = array(
+            '#type'        => 'checkboxes',
+            '#attributes'  => ['theme' => $theme, 'title' => t('Police d\'assurance')],
+            '#options'     => array(
+                'Copie de police' => t('Copie de police'),
+                'Déclaration de perte de police' => t('Déclaration de perte de police'),
+                'Provision de certificats de vie' => t('Provision de certificats de vie'),
+                'Valeur de rachat actuelle à titre informatif' => t('Valeur de rachat actuelle à titre informatif')
+            ),
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
+        );
+
+        $form['documents']['attestations'] = array(
+            '#type'        => 'checkboxes',
+            '#attributes'  => ['theme' => $theme, 'title' => t('Attestations fiscales')],
+            '#options'     => array(
+                'Dernière année' => t('Dernière année'),
+                'Autre(s) année(s)' => t('Autre(s) année(s)')
+            ),
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
+        );
+
+        $form['documents']['other_year'] = array(
+            '#title'       => t('Autre(s) année(s)'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['theme' => $theme],
+        );
+
+        $form['documents']['payments'] = array(
+            '#type'        => 'checkboxes',
+            '#attributes'  => ['theme' => $theme, 'title' => t('Moyen de paiement')],
+            '#options'     => array(
+                'Copie des factures ouvertes' => t('Copie des factures ouvertes'),
+                'Stock de BVR+' => t('Stock de BVR+'),
+                'Relevé des factures et encaissements' => t('Relevé des factures et encaissements')
+            ),
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
+        );
+
+        $form['documents']['message'] = array(
+            '#title'       => t('Votre message'),
+            '#type'        => 'textarea',
+            '#attributes'  => ['cols' => 59, 'theme' => $theme],
+        );
+
         $form['personnal'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
@@ -306,61 +361,6 @@ class DocumentsForm extends FormBase {
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
-        );
-
-        $form['documents'] = array(
-          '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
-          '#title'      => t('Votre demande'),
-          '#prefix'     => '<h3>'.t('Votre demande').'</h3>',
-        );
-
-        $form['documents']['policies'] = array(
-            '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Police d\'assurance')],
-            '#options'     => array(
-                'Copie de police' => t('Copie de police'),
-                'Déclaration de perte de police' => t('Déclaration de perte de police'),
-                'Provision de certificats de vie' => t('Provision de certificats de vie'),
-                'Valeur de rachat actuelle à titre informatif' => t('Valeur de rachat actuelle à titre informatif')
-            ),
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['documents']['attestations'] = array(
-            '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Attestations fiscales')],
-            '#options'     => array(
-                'Dernière année' => t('Dernière année'),
-                'Autre(s) année(s)' => t('Autre(s) année(s)')
-            ),
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['documents']['other_year'] = array(
-            '#title'       => t('Autre(s) année(s)'),
-            '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
-        );
-
-        $form['documents']['payments'] = array(
-            '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Moyen de paiement')],
-            '#options'     => array(
-                'Copie des factures ouvertes' => t('Copie des factures ouvertes'),
-                'Stock de BVR+' => t('Stock de BVR+'),
-                'Relevé des factures et encaissements' => t('Relevé des factures et encaissements')
-            ),
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['documents']['message'] = array(
-            '#title'       => t('Votre message'),
-            '#type'        => 'textarea',
-            '#attributes'  => ['cols' => 59, 'theme' => $theme],
         );
 
         $form['separator'] = array( '#markup' => '<hr />' );
