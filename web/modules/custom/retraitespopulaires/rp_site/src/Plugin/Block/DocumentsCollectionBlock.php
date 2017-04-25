@@ -137,6 +137,9 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
         $category_alias = $this->request->query->get('category_alias');
         $variables['category_alias'] = $category_alias;
 
+        $institution_alias = $this->request->query->get('institution_alias');
+        $variables['institution_alias'] = $institution_alias;
+
         // Only interested by alias of Profession taxonomy
         if (!empty($profession_alias)) {
             // Retreive filter from slug alias
@@ -162,6 +165,20 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
                 $term = $this->entity_taxonomy->load($taxonomy_term_tid);
                 if ($term->vid->target_id == 'category_document') {
                     $query->condition('field_document_type', $taxonomy_term_tid);
+                }
+            }
+        }
+
+        // Only interested by alias of Category Document (Institution) taxonomy
+        if (!empty($institution_alias)) {
+            // Retreive filter from slug alias
+            $taxonomy_term_tid = null;
+            $taxonomy_term_url = $this->alias_manager->getPathByAlias('/categorie-document/'.$institution_alias);
+            if( !empty($taxonomy_term_url) ){
+                $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
+                $term = $this->entity_taxonomy->load($taxonomy_term_tid);
+                if ($term->vid->target_id == 'category_document_institutions') {
+                    $query->condition('field_document_type_institution', $taxonomy_term_tid);
                 }
             }
         }

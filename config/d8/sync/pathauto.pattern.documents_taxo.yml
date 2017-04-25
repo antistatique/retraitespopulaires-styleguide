@@ -10,14 +10,15 @@ label: 'Documents Taxo'
 type: 'canonical_entities:taxonomy_term'
 pattern: 'categorie-document/[term:name]'
 selection_criteria:
-  e5d17a07-2b65-4dad-aedf-c6bdf6d73d69:
+  8066abac-0e7c-492a-affc-b88981841f69:
     id: 'entity_bundle:taxonomy_term'
     bundles:
+      category_document_institutions: category_document_institutions
       category_document: category_document
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: e5d17a07-2b65-4dad-aedf-c6bdf6d73d69
+    uuid: 8066abac-0e7c-492a-affc-b88981841f69
 selection_logic: and
 weight: -5
 relationships: {  }

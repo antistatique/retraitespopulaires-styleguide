@@ -105,6 +105,15 @@ namespace :drupal do
       # "web/sites/default/files" is a shared dir and should have write permissions.
     end
   end
+
+  desc 'Initalize shared path permissions'
+  task :set_shared_permissions do
+    on roles(:app) do
+      within shared_path do
+        execute :chmod, '-R', '770', "#{fetch(:app_path)}/sites/default/files"
+      end
+    end
+  end
 end
 
 namespace :files do

@@ -54,6 +54,9 @@ set :slack_run_updating, -> { false } # Set to false to disable deploy starting 
 namespace :deploy do
   after :updated, "styleguide:deploy_build"
 
+  # Must updatedb before import configurations, E.g. when composer install new
+  # version of Drupal and need updatedb scheme before importing new config.
+  after :updated, "drupal:updatedb"
   after :updated, "drupal:config:import"
   after :updated, "drupal:updatedb"
   after :updated, "drupal:cache:clear"

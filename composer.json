@@ -96,8 +96,7 @@
         },
         "patches": {
             "drupal/core": {
-              "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch",
-              "Fix Ckeditor warning when local file not found": "patches/CKEDITOR_fix_No_such_file_or_directory_in__locale_parse_js_file_warning.patch"
+              "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch"
             },
             "drupal/search_api_attachments": {
               "Default excluded extensions not working correctly": "https://www.drupal.org/files/issues/2773343-18.files-extractor-processor-configuration-form.patch"

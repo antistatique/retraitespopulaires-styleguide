@@ -107,6 +107,9 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
         // Get the current category (only on sub section)
         $variables['category_alias'] = $this->request->query->get('category_alias');
 
+        // Get the current category (only on sub section)
+        $variables['institution_alias'] = $this->request->query->get('institution_alias');
+
         if (isset($params['theme'])) {
             $variables['theme'] = $params['theme'];
         }
@@ -135,6 +138,19 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
             if( !empty($alias) ){
                 $alias = str_replace('/categorie-document/', '', $alias);
                 $variables['categories'][] = array(
+                    'term'  => $category,
+                    'alias' => ltrim($alias, '/'),
+                );
+            }
+        }
+
+        // Retrieve categories (institution).
+        $institutions = $this->entity_taxonomy->loadTree('category_document_institutions');
+        foreach ($institutions as $category) {
+            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$category->tid);
+            if( !empty($alias) ){
+                $alias = str_replace('/categorie-document/', '', $alias);
+                $variables['institutions'][] = array(
                     'term'  => $category,
                     'alias' => ltrim($alias, '/'),
                 );
