@@ -1,0 +1,56 @@
+_          _   _     _        _   _
+/ \   _ __ | |_(_)___| |_ __ _| |_(_) __ _ _   _  ___
+/ _ \ | '_ \| __| / __| __/ _` | __| |/ _` | | | |/ _ \
+/ ___ \| | | | |_| \__ \ || (_| | |_| | (_| | |_| |  __/
+/_/   \_\_| |_|\__|_|___/\__\__,_|\__|_|\__, |\__,_|\___|
+                                       |_|
+
+/* TEAM */
+Digital Strategist : Alberto Gomez
+Twitter: @kidvaldez
+From: Lausanne, Switzerland
+
+Web Software Engineer : Gilles Doge
+Twitter: @gido
+Github: gido
+From: Lausanne, Switzerland
+
+Software Designer : Marc Friederich
+Twitter: @zufrieden
+Github: zufrieden
+From: Lausanne, Switzerland
+
+Artistic Director : Guillaume Berry
+Twitter: @guillaumeberry
+From: Lausanne, Switzerland - Lyon, France
+
+Visual Designer : Sepehr Milani
+Twitter: @donsepito
+From: Lausanne, Switzerland
+
+Frontend Developer: Toni Filser
+Twitter: @tonifisler
+Github: tonifisler
+From: Fribourg, Switzerland
+
+UX Designer : Noemie Sandoz
+Twitter: @noemiesandoz
+From: Payerne, Switzerland
+
+Project Manager : Ludovic Renevey
+Twitter: @ludovicrenevey
+From: Fribourg, Switzerland
+
+Fullstack Developer: Kevin Wenger
+Twitter: @wengerk
+Github: wengerk
+From: Vevey, Switzerland
+
+/* THANKS */
+Name: Nicole Samuel Manzo - https://www.retraitespopulaires.ch/contact/samuel
+Name: Marco Ferrara - https://www.retraitespopulaires.ch/contact/ferrara
+
+/* SITE */
+Language: Français
+Standards: HTML5, CSS3, Drupal 8
+Software: Sublime Text 3, Atom, Visual Studio Code, PHPStorm
