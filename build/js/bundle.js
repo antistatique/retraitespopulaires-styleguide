@@ -216,6 +216,8 @@ var _smoothscroll = require('./smoothscroll.js');
 
 var _gallery = require('./gallery.js');
 
+var _popover = require('./popover.js');
+
 (function () {
   (0, _big_menu.big_menu)();
   (0, _navbar.navbar)();
@@ -226,9 +228,10 @@ var _gallery = require('./gallery.js');
   (0, _organicJS.organic_generate)();
   (0, _datepicker.datepicker)();
   (0, _number_format.number_format)();
+  (0, _popover.popover)();
 })();
 
-},{"./big_menu.js":1,"./datepicker.js":2,"./gallery.js":3,"./input_dynamic_label.js":5,"./input_files.js":6,"./navbar.js":7,"./number_format.js":8,"./organicJS.js":9,"./smoothscroll.js":10}],5:[function(require,module,exports){
+},{"./big_menu.js":1,"./datepicker.js":2,"./gallery.js":3,"./input_dynamic_label.js":5,"./input_files.js":6,"./navbar.js":7,"./number_format.js":8,"./organicJS.js":9,"./popover.js":10,"./smoothscroll.js":11}],5:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -546,6 +549,26 @@ function organic_generate() {
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],10:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.popover = popover;
+
+var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function popover() {
+  (0, _jquery2.default)('[data-toggle="popover"]').popover();
+}
+
+}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],11:[function(require,module,exports){
 (function (global){
 'use strict';
 

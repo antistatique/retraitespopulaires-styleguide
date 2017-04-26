@@ -202,10 +202,6 @@
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#hr">hr</a>
-      </li>
-      
-      <li>
         <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#icon-text">icon-text</a>
       </li>
       
@@ -298,6 +294,10 @@
       </li>
       
       <li>
+        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#tooltip">tooltip</a>
+      </li>
+      
+      <li>
         <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#treeview-list">treeview-list</a>
       </li>
       
@@ -315,6 +315,10 @@
   <li>
     <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/" class="styleguide-menu-heading">Molecules</a>
     <ul>
+      
+      <li>
+        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#actions-bar">Actions Bar</a>
+      </li>
       
       <li>
         <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#big-menu">big-menu</a>
@@ -458,10 +462,6 @@
   <li>
     <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/" class="styleguide-menu-heading">Organisms</a>
     <ul>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#actions-extranet">actions-extranet</a>
-      </li>
       
       <li>
         <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachements">attachements</a>
@@ -802,6 +802,25 @@
       <label>Validation PAS OK</label>
       <input type="text" class="form-control full-width" placeholder="Houston… Nous avons un problème! Houston?"></input>
       <div class="input-error-desc">Voici comment résoudre ton problème.</div>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Champ avec label
+        <span class="text-small text-muted font-weight-normal d-block">
+          <span class="sr-only">Aide additionnel</span>
+          Sous-label
+        </span>
+      </label>
+      <input type="text" class="form-control full-width" placeholder="Quelque chose dans l'air..."></input>
+    </div>
+
+    <div class="form-group">
+      <label class="d-block">Champ avec label et infobulle</label>
+      <input type="text" class="form-control d-inline-block" placeholder="Quelque chose dans l'air de compliqué..."></input>
+      <div class="tooltip tooltip-info d-inline-block m-l-1">
+        <div class="tooltip-symbol" aria-label="Sample text" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="right" tabindex="0" data-toggle="popover"></div>
+      </div>
     </div>
 
     <div class="form-group">

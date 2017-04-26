@@ -473,5 +473,8 @@ body {
   .styleguide-item-group > .styleguide-item-group .styleguide-item-code .language-markup {
     margin: 0; }
 
+.styleguide-item-preview {
+  margin-top: 0; }
+
 .rp-access-nav {
   display: none; }
