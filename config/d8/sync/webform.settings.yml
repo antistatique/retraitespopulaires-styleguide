@@ -3,7 +3,7 @@ settings:
   default_form_closed_message: 'Sorry...This form is closed to new submissions.'
   default_form_exception_message: 'Unable to display this webform. Please contact the site administrator.'
   default_form_confidential_message: 'This form is confidential. You must <a href="[site:login-url]/logout?destination=[current-page:url:relative]">Log out</a> to submit it.'
-  default_form_submit_label: Submit
+  default_form_submit_label: Soumettre
   default_form_submit_once: false
   default_form_disable_back: false
   default_form_unsaved: false
@@ -32,10 +32,10 @@ assets:
   javascript: ''
 export:
   exporter: delimited
-  delimiter: ','
+  delimiter: ;
   excel: false
   file_name: 'submission-[webform_submission:serial]'
-  multiple_delimiter: ;
+  multiple_delimiter: ','
   header_format: label
   header_prefix: true
   header_prefix_label_delimiter: ': '
