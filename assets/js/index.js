@@ -7,6 +7,7 @@ import { datepicker } from './datepicker.js';
 import { number_format } from './number_format.js';
 import { smoothscroll_load } from './smoothscroll.js';
 import { gallery } from './gallery.js';
+import { popover } from './popover.js';
 
 (function(){
   big_menu();
@@ -18,4 +19,5 @@ import { gallery } from './gallery.js';
   organic_generate();
   datepicker();
   number_format();
+  popover();
 }());

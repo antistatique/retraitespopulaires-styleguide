@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+.tooltip {
+  cursor: pointer;
+}
+
+.tooltip-symbol {
+  width: 18px;
+  height: 18px;
+}
+
+.tooltip-info {
+  .tooltip-symbol {
+    background: url('../svg/information.svg');
+  }
+}
