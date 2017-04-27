@@ -1,0 +1,14 @@
+uuid: 7f91a67b-1b78-48ed-86b9-1a85d8490e26
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.gestion_webform
+  module:
+    - user
+id: user_add_role_action.gestion_webform
+label: 'Ajouter le rôle Gestion Webform aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: gestion_webform

@@ -1,0 +1,14 @@
+uuid: e7b88d49-b663-4e53-a042-4d3ac10bfe91
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.gestion_webform
+  module:
+    - user
+id: user_remove_role_action.gestion_webform
+label: 'Retirer le rôle Gestion Webform aux utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: gestion_webform
