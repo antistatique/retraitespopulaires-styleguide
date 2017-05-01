@@ -72,19 +72,7 @@
 </div>
 {% endif %}
 
-{# Breadcrumbs #}
-{% if page.breadcrumb %}
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      {% block breadcrumb %}
-          {{ page.breadcrumb }}
-      {% endblock %}
-      <div class="spacer"></div>
-    </div>
-  </div>
-</div>
-{% endif %}
+{% embed "@retraitespopulaires/pages/partials/breadcrumbs.html.twig" %}{% endembed %}
 
 {# Main #}
 {% block main %}
