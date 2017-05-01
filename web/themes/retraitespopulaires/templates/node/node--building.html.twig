@@ -65,6 +65,9 @@
  *   in different view modes.
  */
 #}
+
+{% extends "@retraitespopulaires/node/node.html.twig" %}
+
 {%
   set classes = [
     node.bundle|clean_class,
@@ -73,30 +76,23 @@
   ]
 %}
 
-<article{{ attributes.addClass(classes) }}>
-  <div{{ content_attributes.addClass('content') }}>
-    {{ load_block('rp_contact_contact_cta_block', {'theme': 'immobilier'}) }}
+{% set node_body_classes = [
+  'entity-body',
+  'body-immobilier'
+] %}
 
-    {% if node.body.summary %}
-      <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
-      <div class="spacer spacer-sm"></div>
-    {% endif %}
+{% block node_top %}
+  {{ load_block('rp_contact_contact_cta_block', {'theme': 'immobilier'}) }}
+{% endblock %}
 
-    {% if content.body %}
-      <div class="entity-body body-immobilier">
-        {{ content.body }}
-      </div>
-    {% endif %}
+{% block node_bottom %}
+  {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_building, 'theme': 'immobilier'} %}{% endembed %}
 
-    {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_building, 'theme': 'immobilier'} %}{% endembed %}
+  {% embed "@retraitespopulaires/node/partials/attached_plans.html.twig" with {'plans': node.field_file_plan, 'theme': 'immobilier'} %}{% endembed %}
 
-    {% embed "@retraitespopulaires/node/partials/attached_plans.html.twig" with {'plans': node.field_file_plan, 'theme': 'immobilier'} %}{% endembed %}
+  <!-- Visite(s) virtuelle(s) -->
+  {% embed "@retraitespopulaires/node/partials/attached_visits.html.twig" with {'visits': node.field_virtual_visit, 'theme': 'immobilier'} %}{% endembed %}
 
-    <!-- Visite(s) virtuelle(s) -->
-    {% embed "@retraitespopulaires/node/partials/attached_visits.html.twig" with {'visits': node.field_virtual_visit, 'theme': 'immobilier'} %}{% endembed %}
-
-    <!-- Image(s) virtuelle(s) -->
-    {% embed "@retraitespopulaires/node/partials/gallery.html.twig" with {title: 'Images virtuelles', 'images': node.field_virtual_image, 'theme': 'immobilier'} %}{% endembed %}
-
-  </div>
-</article>
+  <!-- Image(s) virtuelle(s) -->
+  {% embed "@retraitespopulaires/node/partials/gallery.html.twig" with {title: 'Images virtuelles', 'images': node.field_virtual_image, 'theme': 'immobilier'} %}{% endembed %}
+{% endblock %}

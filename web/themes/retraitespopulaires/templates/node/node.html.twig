@@ -76,8 +76,28 @@
   ]
 %}
 
+{% set node_body_classes = [
+  'entity-body',
+  'body-' ~ node.field_profession.entity.tid.value|theme_profession
+] %}
+
 <article{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('content') }}>
-    {% embed "@retraitespopulaires/node/partials/body.html.twig" %}{% endembed %}
+    {% block node_top %}
+      {{ load_block('rp_contact_contact_cta_block') }}
+    {% endblock %}
+
+    {% if node.body.summary %}
+      <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
+      <div class="spacer spacer-sm"></div>
+    {% endif %}
+
+    {% if content.body %}
+      <div class="{{ node_body_classes|join(' ') }}">
+        {{ content.body }}
+      </div>
+    {% endif %}
+
+    {% block node_bottom %}{% endblock %}
   </div>
 </article>
