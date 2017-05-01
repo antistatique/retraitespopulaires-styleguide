@@ -56,57 +56,12 @@
 #}
 {# page.header #}
 
-{{ load_block('rp_layout_cover_block') }}
-<div class="spacer"></div>
+{% extends "@retraitespopulaires/pages/page.html.twig" %}
 
-{# Page Header #}
-{% embed "@retraitespopulaires/pages/partials/header.html.twig" %}{% endembed %}
-
-{% embed "@retraitespopulaires/pages/partials/breadcrumbs.html.twig" %}{% endembed %}
-
-{# Main #}
-{% block main %}
-  <div role="main" class="main-container container-fluid js-quickedit-main-content">
-    <div class="row">
-
-      <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-6 col-xl-push-3">
-
-        <div class="entity-content">
-          <section{{ content_attributes.addClass(content_classes) }}>
-            {# Content #}
-            {% block content %}
-              <a id="main-content"></a>
-              {{ page.content }}
-            {% endblock %}
-          </section>
-        </div>
-
-      </div>
-      <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
-        {{ load_block('rp_layout_secondarynav_block') }}
-
-        {# Sidebar First #}
-        {% if page.sidebar_first %}
-          {% block sidebar_first %}
-            <aside class="col-sm-3" role="complementary">
-              {{ page.sidebar_first }}
-            </aside>
-          {% endblock %}
-        {% endif %}
-      </div>
-    </div>
-  </div>
-
+{% block attachments %}
   <div class="spacer"></div>
   {{ load_block('rp_site_buildings_collection_block') }}
 
   <div class="spacer"></div>
   {{ load_block('rp_contact_contact_attachment_block', {'theme': 'immobilier'}) }}
-
-  {# Content Bottom #}
-  {% embed "@retraitespopulaires/pages/partials/bottom.html.twig" %}{% endembed %}
-
 {% endblock %}
-
-{# Content footer #}
-{% embed "@retraitespopulaires/pages/partials/footer.html.twig" %}{% endembed %}

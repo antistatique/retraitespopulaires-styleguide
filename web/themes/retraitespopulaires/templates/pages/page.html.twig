@@ -60,9 +60,29 @@
 <div class="spacer"></div>
 
 {# Page Header #}
-{% embed "@retraitespopulaires/pages/partials/header.html.twig" %}{% endembed %}
+{% if page.header %}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-push-1 col-xl-6 col-xl-push-3">
+      {% block header %} {{ page.header }} {% endblock %}
+    </div>
+  </div>
+</div>
+{% endif %}
 
-{% embed "@retraitespopulaires/pages/partials/breadcrumbs.html.twig" %}{% endembed %}
+{# Breadcrumbs #}
+{% if page.breadcrumb %}
+  {% block breadcrumb %}
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          {{ page.breadcrumb }}
+          <div class="spacer"></div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+{% endif %
 
 {# Main #}
 {% block main %}
@@ -97,12 +117,30 @@
     </div>
   </div>
 
-  {% embed "@retraitespopulaires/pages/partials/attachments.html.twig" %}{% endembed %}
+  {% block attachments %}
+    <div class="spacer"></div>
+    {% block attachments_contact %}{{ load_block('rp_contact_contact_attachment_block') }}{% endblock %}
+    {% block attachments_attachments %}{{ load_block('rp_site_attachments_block') }}{% endblock %}
+    {% block attachments_news_latest %}{{ load_block('rp_site_news_latest_block') }}{% endblock %}
+  {% endblock attachments %}
 
   {# Content Bottom #}
-  {% embed "@retraitespopulaires/pages/partials/bottom.html.twig" %}{% endembed %}
+  {% if page.content_bottom %}
+  <div class="col-sm-12">
+    <div class="row">
+        {% block content_bottom %}
+            {{ page.content_bottom }}
+        {% endblock %}
+    </div>
+  </div>
+  {% endif %}
 
 {% endblock %}
 
 {# Content footer #}
-{% embed "@retraitespopulaires/pages/partials/footer.html.twig" %}{% endembed %}
+{% if page.content_footer %}
+  {% block content_footer %}
+    {{ page.content_footer }}
+  {% endblock %}
+{% endif %}
+
