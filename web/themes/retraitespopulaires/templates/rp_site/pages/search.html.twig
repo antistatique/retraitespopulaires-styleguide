@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <div class="h1 text-center">
+    <h1 class="page-title text-center">
     {% if variables.results and variables.search.search %}
       {% trans %}
         Voici l'unique résultat de votre recherche <span class="text-primary">"{{ variables.search.search }}"</span>.
@@ -12,7 +12,7 @@
     {% else %}
       {% trans %}Rechercher un produit, un document, un contact...{% endtrans %}
     {% endif %}
-    </div>
+    </h1>
     <div class="spacer spacer-md"></div>
   </div>
 </div>

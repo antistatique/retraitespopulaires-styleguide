@@ -3,13 +3,13 @@
 <div class="row" id="produits-recommandes">
   {% if variables.products %}
   <div class="col-xs-12">
-    <div class="h1 text-center">
+    <h2 class="h1 text-center">
       {% trans %}
           Produit recommandé dans cette situation
       {% plural variables.products|length %}
           Produits recommandés dans cette situation
       {% endtrans %}
-    </div>
+    </h2>
     <div class="spacer spacer-md"></div>
   </div>
   {% endif %}
