@@ -1,4 +1,4 @@
-uuid: 591230c8-c784-49cb-a20a-086ba16e79ea
+uuid: 109dde93-c465-4d7f-89bc-6d9b58f09d5d
 langcode: fr
 status: open
 dependencies: {  }
@@ -6,11 +6,11 @@ open: null
 close: null
 uid: 1
 template: false
-id: landing_page_assurance_vie
-title: 'Landing Page - Assurance Vie'
-description: 'Formulaire des landings pages pour Assurance Vie'
+id: landing_page_pret
+title: 'Landing Page - Prêt'
+description: 'Formulaire des landings pages pour Prêt hypothécaire'
 category: ''
-elements: "titre_du_form:\n  '#type': webform_markup\n  '#markup': '<h3>Vos informations</h3>'\nposez_nous_vos_questions:\n  '#type': fieldset\n  '#title': 'Posez-nous vos questions'\n  '#title_display': invisible\n  '#attributes':\n    class:\n      - fieldset-no-legend\n  prenom:\n    '#type': textfield\n    '#title': 'Votre prénom'\n    '#title_display': before\n    '#placeholder': Alain\n    '#required': true\n  nom_de_famille:\n    '#type': textfield\n    '#title': 'Votre nom de famille'\n    '#title_display': before\n    '#placeholder': Rochat\n    '#required': true\n  votre_e_mail:\n    '#type': email\n    '#title': 'Votre e-mail'\n    '#title_display': before\n    '#placeholder': alain.rochat@retraitespopulaires.ch\n    '#required': true\n  votre_code_postal_npa_:\n    '#type': textfield\n    '#title': 'Votre code postal (NPA)'\n    '#title_display': before\n    '#placeholder': '1000'\n    '#required': true\n  votre_message:\n    '#type': textarea\n    '#title': 'Votre message'\n    '#title_display': before\n    '#required': true\nhr:\n  '#type': webform_markup\n  '#markup': '<hr>'\n"
+elements: "titre_du_form:\n  '#type': webform_markup\n  '#markup': '<h3>Vos informations</h3>'\nposez_nous_vos_questions:\n  '#type': fieldset\n  '#title': 'Posez-nous vos questions'\n  '#title_display': invisible\n  '#attributes':\n    class:\n      - fieldset-no-legend\n  prenom:\n    '#type': textfield\n    '#title': 'Votre prénom'\n    '#title_display': before\n    '#placeholder': Alain\n    '#required': true\n  nom_de_famille:\n    '#type': textfield\n    '#title': 'Votre nom de famille'\n    '#title_display': before\n    '#placeholder': Rochat\n    '#required': true\n  votre_e_mail:\n    '#type': email\n    '#title': 'Votre e-mail'\n    '#title_display': before\n    '#placeholder': alain.rochat@retraitespopulaires.ch\n    '#required': true\n  votre_message:\n    '#type': textarea\n    '#title': 'Votre message'\n    '#title_display': before\n    '#required': true\nhr:\n  '#type': webform_markup\n  '#markup': '<hr>'\n"
 css: ''
 javascript: ''
 settings:
@@ -126,7 +126,7 @@ handlers:
       from_options: {  }
       from_name: default
       subject: 'Nouvelle prise de contact - Landing - Assurance Vie'
-      body: "<b>Nouvelle prise de contact - Landing - Assurance Vie par [webform_submission:values:prenom] [webform_submission:values:nom_de_famille].</b>\n\n<p><b>Demande</b></p><br />\n[webform_submission:values]\n\n<br /><br />\n<p>Retraites Populaires</p>"
+      body: "<b>Nouvelle prise de contact - Landing - Prêt hypothécaire par [webform_submission:values:prenom] [webform_submission:values:nom_de_famille].</b>\n\n<p><b>Demande</b></p><br />\n[webform_submission:values]\n\n<br /><br />\n<p>Retraites Populaires</p>"
       excluded_elements: {  }
       html: true
       attachments: false
