@@ -1,0 +1,20 @@
+uuid: cde816bf-252b-4bbd-9477-0f0cc641f55b
+langcode: fr
+status: true
+dependencies: {  }
+id: gestion_webform
+label: 'Gestion Webform'
+weight: 4
+is_admin: null
+permissions:
+  0: 'use text format full_html'
+  1: 'access administration pages'
+  2: 'view the administration theme'
+  4: 'change own username'
+  5: 'access webform overview'
+  6: 'administer webform element access'
+  7: 'administer webform submission'
+  8: 'edit any webform'
+  9: 'edit own webform'
+  10: 'view any webform submission'
+  11: 'access toolbar'
