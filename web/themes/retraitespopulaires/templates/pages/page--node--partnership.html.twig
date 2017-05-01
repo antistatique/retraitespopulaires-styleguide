@@ -101,8 +101,4 @@
 {% endblock %}
 
 {# Content footer #}
-{% if page.content_footer %}
-  {% block content_footer %}
-    {{ page.content_footer }}
-  {% endblock %}
-{% endif %}
+{% embed "@retraitespopulaires/pages/partials/footer.html.twig" %}{% endembed %}
