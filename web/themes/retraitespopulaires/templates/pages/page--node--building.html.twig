@@ -59,18 +59,7 @@
 {{ load_block('rp_layout_cover_block',{'theme': 'immobilier'}) }}
 <div class="spacer"></div>
 
-{# Page Header #}
-{% if page.header %}
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-10 col-md-push-1 col-xl-6 col-xl-push-3">
-    {% block header %}
-        {{ page.header }}
-    {% endblock %}
-    </div>
-  </div>
-</div>
-{% endif %}
+{% embed "@retraitespopulaires/pages/partials/header.html.twig" %}{% endembed %}
 
 {% embed "@retraitespopulaires/pages/partials/breadcrumbs.html.twig" %}{% endembed %}
 
