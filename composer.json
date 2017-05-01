@@ -17,10 +17,6 @@
       "drupal": {
           "type": "composer",
           "url": "https://packages.drupal.org/8"
-      },
-      "Template Whisperer Sandbox": {
-        "type": "git",
-        "url": "git.drupal.org:sandbox/wengerk/2857588.git"
       }
   },
     "require": {
@@ -50,7 +46,7 @@
         "drupal/backerymails": "~1.0",
         "drupal/webform": "^5.0@beta",
         "drupal/config_ignore": "^1.4",
-        "drupal/template_whisperer": "dev-8.x-2.x"
+        "drupal/template_whisperer": "2.x-dev"
       },
     "require-dev": {
       "behat/mink": "~1.7",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f76f96157b5b2300834a3be40dcedeb8",
+    "content-hash": "47b0465f25bacef1937b0d7305ecfd95",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2589,37 +2589,51 @@
         },
         {
             "name": "drupal/template_whisperer",
-            "version": "dev-8.x-2.x",
+            "version": "dev-2.x",
             "source": {
                 "type": "git",
-                "url": "git.drupal.org:sandbox/wengerk/2857588.git",
+                "url": "https://git.drupal.org/project/template_whisperer",
                 "reference": "0bc0d353bd2aaab7f6ed6cdd90891b446c3b3251"
             },
+            "require": {
+                "drupal/core": "*"
+            },
             "require-dev": {
-                "drupal/coder": "^8.2.10",
+                "drupal/coder": "^2.10",
                 "squizlabs/php_codesniffer": "^2.7"
             },
             "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.x-dev",
+                    "datestamp": "1493643843"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
                 "GPL-2.0+"
             ],
             "authors": [
                 {
                     "name": "Antistatique",
-                    "email": "info@antistaique.net",
                     "homepage": "https://www.antistatique.net",
+                    "email": "info@antistaique.net",
                     "role": "Sponsor"
                 },
                 {
                     "name": "Kevin Wenger",
-                    "email": "contact@kevin-wenger.ch",
                     "homepage": "https://www.drupal.org/u/wengerk",
+                    "email": "contact@kevin-wenger.ch",
                     "role": "Author & Maintainer"
                 }
             ],
             "description": "Provides a formalized way to declare and suggest page templates.",
             "homepage": "https://www.drupal.org/project/template_whisperer",
             "support": {
+                "source": "http://cgit.drupalcode.org/template_whisperer",
                 "issues": "https://www.drupal.org/project/issues/template_whisperer"
             },
             "time": "2017-04-22 16:03:39"
