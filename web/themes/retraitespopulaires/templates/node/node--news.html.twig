@@ -73,8 +73,11 @@
   ]
 %}
 
-{% set date = node.field_date.date|date_format('d F Y')|capitalize %}
-<p class="text-muted page-title">{{ date }}</p>
+<p>
+  <time class="text-muted page-title" datetime="{{ node.field_date.date|date_format('c') }}">
+  {{ node.field_date.date|date_format('d F Y')|capitalize }}
+  </time>
+</p>
 
 <article{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('content') }}>
