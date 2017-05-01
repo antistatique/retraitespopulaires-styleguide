@@ -88,19 +88,18 @@
   <div class="spacer"></div>
   {{ load_block('rp_contact_advisors_collection_block') }}
 
-  <div class="spacer"></div>
-  {{ load_block('rp_site_attachments_block') }}
+  {% embed "@retraitespopulaires/pages/partials/attachments.html.twig" %}{% endembed %}
 
-   {# Content Bottom #}
-   {% if page.content_bottom %}
-   <div class="col-sm-12">
-     <div class="row">
-         {% block content_bottom %}
-             {{ page.content_bottom }}
-         {% endblock %}
-     </div>
-   </div>
-   {% endif %}
+  {# Content Bottom #}
+  {% if page.content_bottom %}
+  <div class="col-sm-12">
+    <div class="row">
+        {% block content_bottom %}
+            {{ page.content_bottom }}
+        {% endblock %}
+    </div>
+  </div>
+  {% endif %}
 
 {% endblock %}
 

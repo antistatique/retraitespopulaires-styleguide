@@ -83,11 +83,8 @@
     </div>
   </div>
   {{ load_block('rp_offers_linked_block') }}
-  <div class="spacer"></div>
 
-  {{ load_block('rp_contact_contact_attachment_block') }}
-  {{ load_block('rp_site_attachments_block') }}
-  {{ load_block('rp_site_news_latest_block') }}
+  {% embed "@retraitespopulaires/pages/partials/attachments.html.twig" %}{% endembed %}
 
    {# Content Bottom #}
    {% if page.content_bottom %}
