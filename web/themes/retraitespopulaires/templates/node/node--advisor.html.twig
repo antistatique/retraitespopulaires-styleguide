@@ -74,14 +74,6 @@
 %}
 
 <article{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
   <div{{ content_attributes.addClass('content') }}>
 
     {% if node.field_email_form.value %}
