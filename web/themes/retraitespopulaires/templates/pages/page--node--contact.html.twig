@@ -86,15 +86,7 @@
   {% embed "@retraitespopulaires/pages/partials/attachments.html.twig" %}{% endembed %}
 
   {# Content Bottom #}
-  {% if page.content_bottom %}
-  <div class="col-sm-12">
-    <div class="row">
-        {% block content_bottom %}
-            {{ page.content_bottom }}
-        {% endblock %}
-    </div>
-  </div>
-  {% endif %}
+  {% embed "@retraitespopulaires/pages/partials/bottom.html.twig" %}{% endembed %}
 
 {% endblock %}
 
