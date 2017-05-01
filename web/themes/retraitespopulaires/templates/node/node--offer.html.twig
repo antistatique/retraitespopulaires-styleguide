@@ -73,9 +73,6 @@
   ]
 %}
 
-<!-- Admin Button to edit quickly the node  -->
-{{ load_block('rp_site_node_edit_block') }}
-
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if not page %}
@@ -102,8 +99,6 @@
       <div class="spacer"></div>
       <a class="btn btn-lg" href="{{ node.field_web_site.uri }}">{% trans %}Lien vers le magazine{% endtrans %}</a>
     {% endif %}
-
-    {{ content|without('body', 'field_document', 'field_faq', 'field_document_random', 'field_faq_random', 'field_search_npa', 'field_cover', 'field_profession', 'field_date_end', 'field_web_site', 'field_available_offers') }}
 
     {# Get diff days before the offer is finished #}
     {% set end_date = node.field_date_end.date|date_modify('tomorrow - 1 second') %}
