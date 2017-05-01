@@ -262,14 +262,38 @@ function rp_site_theme($existing, $type, $theme, $path) {
     );
 }
 
+/**
+ * Hook Entity Insert.
+ *
+ * Implements hook_entity_insert().
+ *
+ * Improve cache management by creating custom tag [entity]_list:[type]
+ * Eg. node_list:news.
+ */
 function rp_site_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
     Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
 }
 
+/**
+ * Hook Entity Update.
+ *
+ * Implements hook_entity_update().
+ *
+ * Improve cache management by creating custom tag [entity]_list:[type]
+ * Eg. node_list:news.
+ */
 function rp_site_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
     Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
 }
 
+/**
+ * Hook Entity Delete.
+ *
+ * Implements hook_entity_delete().
+ */
 function rp_site_entity_delete(Drupal\Core\Entity\EntityInterface $entity) {
     Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
 }
+
+// Includes.
+require_once 'inc/form_user_login.inc';
