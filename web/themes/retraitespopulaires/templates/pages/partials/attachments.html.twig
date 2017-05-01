@@ -1,4 +1,4 @@
 <div class="spacer"></div>
-{{ load_block('rp_contact_contact_attachment_block') }}
-{{ load_block('rp_site_attachments_block') }}
-{{ load_block('rp_site_news_latest_block') }}
+{% block attachments_contact %}{{ load_block('rp_contact_contact_attachment_block') }}{% endblock %}
+{% block attachments_attachments %}{{ load_block('rp_site_attachments_block') }}{% endblock %}
+{% block attachments_news_latest %}{{ load_block('rp_site_news_latest_block') }}{% endblock %}

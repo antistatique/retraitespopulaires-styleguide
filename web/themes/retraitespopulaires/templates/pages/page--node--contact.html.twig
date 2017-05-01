@@ -83,7 +83,9 @@
     </div>
   </div>
 
-  {% embed "@retraitespopulaires/pages/partials/attachments.html.twig" %}{% endembed %}
+  {% embed "@retraitespopulaires/pages/partials/attachments.html.twig" %}
+    {% block attachments_attachments %}{% endblock %}
+  {% endembed %}
 
   {# Content Bottom #}
   {% embed "@retraitespopulaires/pages/partials/bottom.html.twig" %}{% endembed %}

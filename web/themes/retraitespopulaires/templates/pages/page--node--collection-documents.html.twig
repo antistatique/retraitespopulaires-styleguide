@@ -88,9 +88,10 @@
   <div class="spacer"></div>
   {{ load_block('rp_site_documents_collection_block') }}
 
-  {% embed "@retraitespopulaires/pages/partials/attachments.html.twig" %}{% endembed %}
+  {% embed "@retraitespopulaires/pages/partials/attachments.html.twig" %}
+    {% block attachments_news_latest %}{% endblock %}
+  {% endembed %}
 
-  {# Content Bottom #}
   {% embed "@retraitespopulaires/pages/partials/bottom.html.twig" %}{% endembed %}
 
 {% endblock %}
