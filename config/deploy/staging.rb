@@ -3,7 +3,7 @@ server '192.168.188.51', user: 'dplweb', roles: %w{app db web}
 set :deploy_to, '/data/sites/wwweti2.retraitespopulaires.ch/'
 
 # set a branch for this release
-set :branch, 'dev'
+set :branch, 'feature/landing-page-webform'
 set :styleguide_branch, 'dev'
 
 # Module that will be disabled by drush
