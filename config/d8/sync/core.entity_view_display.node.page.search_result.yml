@@ -9,11 +9,16 @@ dependencies:
     - field.field.node.page.field_contact
     - field.field.node.page.field_cover
     - field.field.node.page.field_document
+    - field.field.node.page.field_document_page
+    - field.field.node.page.field_document_random
     - field.field.node.page.field_faq
+    - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_profil
+    - field.field.node.page.field_search_npa
     - node.type.page
   module:
     - file
@@ -33,6 +38,7 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_advisor:
     weight: 4
     label: above
@@ -40,6 +46,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_contact:
     weight: 3
     label: above
@@ -47,6 +54,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_cover:
     weight: 1
     label: hidden
@@ -55,6 +63,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_document:
     weight: 5
     label: above
@@ -62,6 +71,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_faq:
     weight: 6
     label: above
@@ -69,12 +79,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_file_page:
     weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: file_default
+    region: content
   field_products:
     weight: 8
     label: above
@@ -82,6 +94,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_profession:
     weight: 7
     label: above
@@ -89,10 +102,17 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   links:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
+  field_document_page: true
+  field_document_random: true
+  field_faq_random: true
+  field_metatags: true
   field_profil: true
+  field_search_npa: true
   langcode: true

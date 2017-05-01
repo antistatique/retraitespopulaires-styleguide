@@ -5,6 +5,17 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.faq.body
+    - field.field.node.faq.field_advisor
+    - field.field.node.faq.field_contact
+    - field.field.node.faq.field_document
+    - field.field.node.faq.field_document_random
+    - field.field.node.faq.field_faq
+    - field.field.node.faq.field_faq_random
+    - field.field.node.faq.field_faq_type
+    - field.field.node.faq.field_file_faq
+    - field.field.node.faq.field_metatags
+    - field.field.node.faq.field_profession
+    - field.field.node.faq.field_search_npa
     - node.type.faq
   module:
     - text
@@ -21,11 +32,21 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
+  field_advisor: true
   field_contact: true
+  field_document: true
+  field_document_random: true
+  field_faq: true
+  field_faq_random: true
+  field_faq_type: true
   field_file_faq: true
+  field_metatags: true
   field_profession: true
   field_profil: true
+  field_search_npa: true
   langcode: true

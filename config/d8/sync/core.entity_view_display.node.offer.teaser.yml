@@ -5,6 +5,16 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.offer.body
+    - field.field.node.offer.field_available_offers
+    - field.field.node.offer.field_cover
+    - field.field.node.offer.field_date_end
+    - field.field.node.offer.field_document
+    - field.field.node.offer.field_document_random
+    - field.field.node.offer.field_draw_at
+    - field.field.node.offer.field_draw_send_at
+    - field.field.node.offer.field_faq
+    - field.field.node.offer.field_faq_random
+    - field.field.node.offer.field_web_site
     - node.type.offer
   module:
     - text
@@ -21,12 +31,20 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
   field_available_offers: true
   field_cover: true
   field_date_end: true
+  field_document: true
+  field_document_random: true
+  field_draw_at: true
+  field_draw_send_at: true
+  field_faq: true
+  field_faq_random: true
   field_profession: true
   field_web_site: true
   langcode: true

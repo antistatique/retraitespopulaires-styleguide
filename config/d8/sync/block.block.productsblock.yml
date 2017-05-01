@@ -8,7 +8,7 @@ dependencies:
     - retraitespopulaires
 id: productsblock
 theme: retraitespopulaires
-region: '-1'
+region: header
 weight: 0
 provider: null
 plugin: rp_site_products

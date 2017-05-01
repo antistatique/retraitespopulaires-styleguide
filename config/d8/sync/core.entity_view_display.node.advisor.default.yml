@@ -32,6 +32,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_cover:
     weight: 101
     label: above
@@ -40,18 +41,21 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_email:
     weight: 107
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_email_form:
     weight: 110
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_entity:
     weight: 109
     label: above
@@ -59,6 +63,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_firstname:
     weight: 103
     label: above
@@ -66,6 +71,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_function:
     weight: 106
     label: above
@@ -73,6 +79,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_lastname:
     weight: 104
     label: above
@@ -80,12 +87,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_phone:
     weight: 108
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_profession:
     weight: 112
     label: above
@@ -93,6 +102,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_region:
     weight: 102
     label: above
@@ -100,6 +110,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_specialty:
     weight: 105
     label: above
@@ -107,6 +118,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_zip_codes:
     weight: 111
     label: above
@@ -114,7 +126,9 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
   langcode: true

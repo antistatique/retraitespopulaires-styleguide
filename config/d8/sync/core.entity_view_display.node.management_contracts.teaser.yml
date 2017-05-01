@@ -5,6 +5,17 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.management_contracts.body
+    - field.field.node.management_contracts.field_administrator
+    - field.field.node.management_contracts.field_contact
+    - field.field.node.management_contracts.field_document
+    - field.field.node.management_contracts.field_document_random
+    - field.field.node.management_contracts.field_faq
+    - field.field.node.management_contracts.field_faq_random
+    - field.field.node.management_contracts.field_logo
+    - field.field.node.management_contracts.field_profession
+    - field.field.node.management_contracts.field_search_npa
+    - field.field.node.management_contracts.field_web_site
+    - field.field.node.management_contracts.field_weight
     - node.type.management_contracts
   module:
     - text
@@ -21,10 +32,20 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
+  field_administrator: true
   field_contact: true
+  field_document: true
+  field_document_random: true
+  field_faq: true
+  field_faq_random: true
   field_logo: true
+  field_profession: true
+  field_search_npa: true
   field_web_site: true
+  field_weight: true
   langcode: true

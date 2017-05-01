@@ -17,6 +17,10 @@
       "drupal": {
           "type": "composer",
           "url": "https://packages.drupal.org/8"
+      },
+      "Template Whisperer Sandbox": {
+        "type": "git",
+        "url": "git.drupal.org:sandbox/wengerk/2857588.git"
       }
   },
     "require": {
@@ -45,7 +49,8 @@
         "drupal/redirect": "~1.0",
         "drupal/backerymails": "~1.0",
         "drupal/webform": "^5.0@beta",
-        "drupal/config_ignore": "^1.4"
+        "drupal/config_ignore": "^1.4",
+        "drupal/template_whisperer": "dev-8.x-2.x"
       },
     "require-dev": {
       "behat/mink": "~1.7",
@@ -98,11 +103,8 @@
             "drupal/core": {
               "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch"
             },
-            "drupal/search_api_attachments": {
-              "Default excluded extensions not working correctly": "https://www.drupal.org/files/issues/2773343-18.files-extractor-processor-configuration-form.patch"
-            },
-            "drupal/editor_advanced_link": {
-              "Fix php71 ArgumentCountError": "https://www.drupal.org/files/issues/editor_advanced_link.php71.patch"
+            "drupal/config_ignore": {
+              "Fix undefined drush_config_get_storage_filters": "https://www.drupal.org/files/issues/config_ignore-remove-storage-filters.patch"
             }
         }
     }

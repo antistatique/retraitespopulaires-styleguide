@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.page.field_faq
     - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
+    - field.field.node.page.field_form
     - field.field.node.page.field_metatags
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
@@ -27,6 +28,7 @@ dependencies:
     - metatag
     - path
     - text
+    - webform
 third_party_settings:
   field_group:
     group_attachments:
@@ -45,6 +47,7 @@ third_party_settings:
     group_attachment:
       children:
         - group_attachments_content
+        - group_formulaire_s_
         - group_attachments_footer
       parent_name: group_attachments
       weight: 15
@@ -93,7 +96,7 @@ third_party_settings:
         - field_file_page
         - field_document_page
       parent_name: group_attachment
-      weight: 13
+      weight: 22
       label: 'Positionner dans le contenu'
       format_type: details
       format_settings:
@@ -110,7 +113,7 @@ third_party_settings:
         - field_document
         - field_document_random
       parent_name: group_attachment
-      weight: 14
+      weight: 24
       label: 'Positionner au pied du contenu'
       format_type: details
       format_settings:
@@ -118,6 +121,19 @@ third_party_settings:
         required_fields: true
         classes: ''
         id: ''
+    group_formulaire_s_:
+      children:
+        - field_form
+      parent_name: group_attachment
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Formulaire(s)
 _core:
   default_config_hash: KSvzyFhdLuxniTsunUnUfpfMmod2l57GibtVjL8ymHM
 id: node.page.default
@@ -133,6 +149,7 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_advisor:
     weight: 27
     settings:
@@ -141,6 +158,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_contact:
     weight: 28
     settings:
@@ -149,6 +167,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_cover:
     weight: 1
     settings:
@@ -156,6 +175,7 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
   field_document:
     weight: 20
     settings:
@@ -164,6 +184,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_document_page:
     weight: 15
     settings:
@@ -172,12 +193,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_document_random:
     weight: 21
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
   field_faq:
     weight: 18
     settings:
@@ -186,23 +209,33 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_faq_random:
     weight: 19
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
   field_file_page:
     weight: 14
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+    region: content
+  field_form:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: webform_entity_reference_select
+    region: content
   field_metatags:
     weight: 29
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
+    region: content
   field_products:
     weight: 17
     settings:
@@ -211,27 +244,32 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_profession:
     weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_profil:
     weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_search_npa:
     weight: 26
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
   path:
     type: path
     weight: 6
     settings: {  }
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -239,6 +277,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   langcode: true

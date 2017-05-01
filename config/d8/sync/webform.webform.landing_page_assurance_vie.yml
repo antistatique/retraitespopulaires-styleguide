@@ -1,34 +1,31 @@
-uuid: f0452f7b-85d0-4898-b2f9-1d3f5dc94fc6
+uuid: 591230c8-c784-49cb-a20a-086ba16e79ea
 langcode: fr
 status: open
-dependencies:
-  enforced:
-    module:
-      - webform
-_core:
-  default_config_hash: 60Y_Mb8Wnw4EJBuq9xuQ0Lsq9IJvjQQfTs-rw4gZ-z8
+dependencies: {  }
 open: null
 close: null
-uid: null
+uid: 1
 template: false
-id: contact
-title: Contact
-description: 'Basic email contact webform.'
+id: landing_page_assurance_vie
+title: 'Landing Page - Assurance Vie'
+description: 'Formulaire des landings pages pour Assurance Vie'
 category: ''
-elements: "name:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\n  '#default_value': '[webform-authenticated-user:display-name]'\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\n  '#default_value': '[webform-authenticated-user:mail]'\nsubject:\n  '#title': Subject\n  '#type': textfield\n  '#required': true\n  '#test': 'Testing contact webform from [site:name]'\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\n  '#test': 'Please ignore this email.'\n"
+elements: "prenom:\n  '#type': textfield\n  '#title': 'Votre prénom'\n  '#title_display': before\n  '#placeholder': Alain\n  '#required': true\nnom_de_famille:\n  '#type': textfield\n  '#title': 'Votre nom de famille'\n  '#title_display': before\n  '#placeholder': Rochat\n  '#required': true\nvotre_e_mail:\n  '#type': email\n  '#title': 'Votre e-mail'\n  '#title_display': before\n  '#placeholder': alain.rochat@retraitespopulaires.ch\n  '#required': true\nvotre_code_postal_npa_:\n  '#type': textfield\n  '#title': 'Votre code postal (NPA)'\n  '#title_display': before\n  '#placeholder': '1000'\n  '#required': true\nvotre_message:\n  '#type': textarea\n  '#title': 'Votre message'\n  '#title_display': before\n  '#required': true\nhr:\n  '#type': webform_markup\n  '#markup': '<hr>'\n"
 css: ''
 javascript: ''
 settings:
   page: true
   page_submit_path: ''
   page_confirm_path: ''
-  form_submit_label: 'Send message'
+  form_submit_label: Envoyer
   form_submit_once: false
-  form_submit_attributes: {  }
+  form_submit_attributes:
+    class:
+      - pull-right
   form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
-  form_previous_submissions: true
+  form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
   form_convert_anonymous: false
@@ -63,10 +60,10 @@ settings:
   draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
-  confirmation_type: url_message
+  confirmation_type: message
   confirmation_title: ''
-  confirmation_message: 'Your message has been sent.'
-  confirmation_url: '<front>'
+  confirmation_message: 'Merci [webform_submission:values:prenom] [webform_submission:values:nom_de_famille] pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l''adresse [webform_submission:values: votre_e_mail].'
+  confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -110,16 +107,16 @@ access:
     roles: {  }
     users: {  }
 handlers:
-  email_confirmation:
+  courriel_admin:
     id: email
-    label: 'Email confirmation'
-    handler_id: email_confirmation
+    label: 'Courriel - Admin'
+    handler_id: courriel_admin
     status: true
-    weight: 1
+    weight: 0
     settings:
       states:
         - completed
-      to_mail: '[webform_submission:values:email:raw]'
+      to_mail: kevin@antistatique.net
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
@@ -128,37 +125,37 @@ handlers:
       from_mail: default
       from_options: {  }
       from_name: default
-      subject: '[webform_submission:values:subject:value]'
-      body: '[webform_submission:values:message:value]'
+      subject: 'Nouvelle prise de contact - Landing - Assurance Vie'
+      body: "<b>Nouvelle prise de contact - Landing - Assurance Vie par [webform_submission:values:prenom] [webform_submission:values:nom_de_famille].</b>\n\n<p><b>Demande</b></p><br />\n[webform_submission:values]\n\n<br /><br />\n<p>Retraites Populaires</p>"
       excluded_elements: {  }
       html: true
       attachments: false
       debug: false
       reply_to: ''
       return_path: ''
-  email_notification:
+  courriel_feedback:
     id: email
-    label: 'Email notification'
-    handler_id: email_notification
+    label: 'Courriel - Feedback'
+    handler_id: courriel_feedback
     status: true
     weight: 1
     settings:
       states:
         - completed
-      to_mail: default
+      to_mail: '[webform_submission:values:votre_e_mail:raw]'
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: '[webform_submission:values:email:raw]'
+      from_mail: default
       from_options: {  }
-      from_name: '[webform_submission:values:name:value]'
-      subject: '[webform_submission:values:subject:value]'
-      body: '[webform_submission:values:message:value]'
+      from_name: default
+      subject: 'Retraites Populaires - mail de confirmation'
+      body: "<p>Madame, Monsieur</p> <br />\n\n<p>Nous vous remercions pour votre demande. Nous allons la traiter dans les plus brefs délais.</p> <br />\n\n<p>Recevez, Madame, Monsieur, nos meilleures salutations.</p>\n\n<br /><br />\n<p>Retraites Populaires</p>"
       excluded_elements: {  }
       html: true
       attachments: false
       debug: false
-      reply_to: ''
+      reply_to: info@retraitespopulaires.ch
       return_path: ''

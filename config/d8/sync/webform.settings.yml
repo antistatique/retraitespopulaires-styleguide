@@ -1,16 +1,18 @@
 settings:
   default_page_base_path: form
-  default_form_closed_message: 'Sorry...This form is closed to new submissions.'
+  default_form_open_message: 'This form has not yet been opened to submissions.'
+  default_form_close_message: 'Sorry...This form is closed to new submissions.'
   default_form_exception_message: 'Unable to display this webform. Please contact the site administrator.'
   default_form_confidential_message: 'This form is confidential. You must <a href="[site:login-url]/logout?destination=[current-page:url:relative]">Log out</a> to submit it.'
   default_form_submit_label: Submit
+  form_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
+  button_classes: ''
   default_form_submit_once: false
   default_form_disable_back: false
   default_form_unsaved: false
   default_form_novalidate: false
   default_form_details_toggle: true
-  form_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
-  button_classes: ''
+  default_submission_log: false
   default_wizard_prev_button_label: '< Previous Page'
   default_wizard_next_button_label: 'Next Page >'
   default_wizard_start_label: Start
@@ -57,6 +59,7 @@ elements:
   wrapper_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
   classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
   default_description_display: ''
+  default_icheck: ''
   default_google_maps_api_key: ''
   excluded_types:
     captcha: captcha
@@ -67,7 +70,6 @@ elements:
     datetime: datetime
     details: details
     entity_autocomplete: entity_autocomplete
-    fieldset: fieldset
     item: item
     label: label
     language_select: language_select
@@ -84,7 +86,6 @@ elements:
     tableselect: tableselect
     tel: tel
     text_format: text_format
-    textarea: textarea
     url: url
     value: value
     webform_address: webform_address
@@ -108,7 +109,6 @@ elements:
     webform_image_file: webform_image_file
     webform_link: webform_link
     webform_location: webform_location
-    webform_markup: webform_markup
     webform_message: webform_message
     webform_name: webform_name
     webform_radios_other: webform_radios_other
@@ -136,8 +136,11 @@ format:
   webform_likert:
     item: table
 mail:
+  roles: {  }
   default_from_mail: '[site:mail]'
   default_from_name: '[site:name]'
+  default_reply_to: ''
+  default_return_path: ''
   default_subject: 'Webform submission from: [webform_submission:source-entity]'
   default_body_text: "Submitted on [webform_submission:created]\r\nSubmitted by: [webform_submission:user]\r\n\r\nSubmitted values are:\r\n[webform_submission:values]\r\n"
   default_body_html: "<p>Submitted on [webform_submission:created]</p>\r\n<p>Submitted by: [webform_submission:user]</p>\r\n<p>Submitted values are:</p>\r\n[webform_submission:values]\r\n"
@@ -150,9 +153,9 @@ ui:
   dialog_disabled: false
   offcanvas_disabled: false
   html_editor_disabled: false
-library:
+libraries:
+  excluded_libraries:
+    - jquery.chosen
   cdn: false
 langcode: fr
 third_party_settings: {  }
-_core:
-  default_config_hash: SCMmRNOIlKXCV4kwgZt4A45-lnoRPqsAPKA8T4czegQ

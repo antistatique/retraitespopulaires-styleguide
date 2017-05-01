@@ -32,6 +32,9 @@ display:
           label: Size
         status:
           label: Status
+          settings:
+            format_custom_false: Temporary
+            format_custom_true: Permanent
         created:
           label: 'Upload date'
         changed:

@@ -11,7 +11,7 @@ dependencies:
 _core:
   default_config_hash: YIwhIF9MSP1E_HMam6MrYeti_UqMXQiLDMjDsPFKK8s
 id: content
-label: Content
+label: Contenu
 module: node
 description: 'Trouver et gérer le contenu.'
 tag: default
@@ -34,8 +34,8 @@ display:
         options:
           submit_button: Filtrer
           reset_button: true
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -44,10 +44,10 @@ display:
         options:
           items_per_page: 50
           tags:
-            previous: '‹ Previous'
+            previous: '‹ Précédent'
             next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
+            first: '« Premier'
+            last: 'Dernier »'
       style:
         type: table
         options:
@@ -281,8 +281,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Published
-            format_custom_false: Unpublished
+            format_custom_true: Publié
+            format_custom_false: 'Non publié'
           plugin_id: field
           entity_type: node
           entity_field: status
@@ -544,14 +544,14 @@ display:
           entity_type: node
           entity_field: title
       sorts: {  }
-      title: Content
+      title: Contenu
       empty:
         area_text_custom:
           id: area_text_custom
           table: views
           field: area_text_custom
           empty: true
-          content: 'No content available.'
+          content: 'Aucun contenu disponible.'
           plugin_id: text_custom
       arguments: {  }
       relationships:
@@ -569,7 +569,7 @@ display:
           1: AND
       display_extenders: {  }
     display_plugin: default
-    display_title: Master
+    display_title: Maître
     id: default
     position: 0
     cache_metadata:
@@ -588,14 +588,14 @@ display:
       path: admin/content/node
       menu:
         type: 'default tab'
-        title: Content
+        title: Contenu
         description: ''
         menu_name: admin
         weight: -10
         context: ''
       tab_options:
         type: normal
-        title: Content
+        title: Contenu
         description: 'Trouver et gérer le contenu'
         menu_name: admin
         weight: -10

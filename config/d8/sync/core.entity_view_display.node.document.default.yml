@@ -23,6 +23,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_document_type_institution:
     weight: 104
     label: above
@@ -30,12 +31,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_file_document:
     weight: 102
     label: above
     settings: {  }
     third_party_settings: {  }
     type: file_default
+    region: content
   field_profession:
     weight: 101
     label: above
@@ -43,7 +46,9 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
   langcode: true

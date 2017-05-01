@@ -9,6 +9,7 @@ template: false
 id: satisfaction_imm
 title: 'Satisfaction IMM'
 description: 'formulaire de satisfaction pour IMM.'
+category: ''
 elements: "id:\n  '#type': hidden\netes_vous_satisfait_e_:\n  '#type': webform_likert\n  '#title': 'Etes-vous satisfait(e):'\n  '#title_display': before\n  '#description_display': invisible\n  '#questions':\n    1: '1. De l''amabilité des collaborateurs de votre régie ?'\n    2: '2. De la qualité et la clarté des documents (courriers, contrats, etc.) ?'\n    3: '3. Du service de conciergerie ?'\n    4: '4. De l''entretien général du bâtiment ?'\n    5: '5. D’une manière globale, des prestations qui vous sont offertes ?'\n  '#answers': likert_satisfaction\n  '#na_answer': true\n  '#na_answer_value': '0'\n  '#na_answer_text': 'Pas d’avis'\n  '#required': true\ntext_field_01:\n  '#type': textfield\n  '#title': 'Auriez-vous des commentaires, suggestions à nous faire parvenir ?'\n  '#title_display': before\n  '#description_display': after\n  '#size': '200'\n  '#placeholder': 'je trouve que ...'\n"
 css: ''
 javascript: ''
@@ -20,10 +21,12 @@ settings:
   form_submit_once: false
   form_submit_attributes: {  }
   form_exception_message: ''
-  form_closed_message: ''
+  form_open_message: ''
+  form_close_message: ''
   form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
+  form_convert_anonymous: false
   form_prepopulate: true
   form_prepopulate_source_entity: false
   form_disable_autocomplete: false
@@ -32,6 +35,7 @@ settings:
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: false
+  submission_log: false
   wizard_progress_bar: false
   wizard_progress_pages: false
   wizard_progress_percentage: false
@@ -48,7 +52,7 @@ settings:
   preview_prev_button_label: ''
   preview_prev_button_attributes: {  }
   preview_message: ''
-  draft: false
+  draft: none
   draft_auto_save: false
   draft_button_label: ''
   draft_button_attributes: {  }

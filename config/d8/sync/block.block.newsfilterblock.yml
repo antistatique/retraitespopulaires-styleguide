@@ -8,7 +8,7 @@ dependencies:
     - retraitespopulaires
 id: newsfilterblock
 theme: retraitespopulaires
-region: '-1'
+region: header
 weight: -4
 provider: null
 plugin: rp_site_news_filter

@@ -164,9 +164,6 @@ processor_settings:
     weights:
       preprocess_index: -10
       preprocess_query: -10
-  node_status:
-    plugin_id: node_status
-    settings: {  }
   rendered_item:
     plugin_id: rendered_item
     settings: {  }
@@ -237,6 +234,9 @@ processor_settings:
       number_indexed: 0
       max_filesize: 0
       excluded_private: 1
+  entity_status:
+    plugin_id: node_status
+    settings: {  }
 tracker_settings:
   default:
     plugin_id: default

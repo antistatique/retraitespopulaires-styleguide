@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.page.field_faq
     - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
+    - field.field.node.page.field_form
     - field.field.node.page.field_metatags
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
@@ -25,6 +26,7 @@ dependencies:
     - metatag
     - text
     - user
+    - webform
 _core:
   default_config_hash: oZ-7vpIJxjxL2up9B5KrJGD0lazQ9aN0P-fIPo6OrSU
 id: node.page.default
@@ -38,6 +40,7 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_advisor:
     weight: 4
     label: above
@@ -45,6 +48,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_contact:
     weight: 3
     label: above
@@ -52,6 +56,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_cover:
     weight: 1
     label: hidden
@@ -60,6 +65,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_document_page:
     weight: 10
     label: above
@@ -67,6 +73,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_document_random:
     weight: 12
     label: above
@@ -76,6 +83,7 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
   field_faq:
     weight: 5
     label: above
@@ -83,6 +91,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_faq_random:
     weight: 13
     label: above
@@ -92,18 +101,29 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
   field_file_page:
     weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: file_default
+    region: content
+  field_form:
+    weight: 14
+    label: hidden
+    settings:
+      source_entity: '1'
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
   field_metatags:
     weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
   field_products:
     weight: 7
     label: above
@@ -111,6 +131,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_profession:
     weight: 6
     label: above
@@ -118,6 +139,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_search_npa:
     weight: 11
     label: above
@@ -127,8 +149,10 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
   links:
     weight: 9
+    region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
