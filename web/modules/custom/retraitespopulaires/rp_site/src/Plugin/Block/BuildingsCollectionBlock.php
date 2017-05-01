@@ -34,7 +34,7 @@ class BuildingsCollectionBlock extends BlockBase implements ContainerFactoryPlug
      * Number of buildings per page
      * @var integer
      */
-    private $limit = 20;
+    private $limit = 12;
 
     /**
     * EntityTypeManagerInterface to load Nodes
