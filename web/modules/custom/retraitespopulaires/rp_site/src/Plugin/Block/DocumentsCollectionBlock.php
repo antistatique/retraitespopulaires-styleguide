@@ -36,7 +36,7 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
      * Number of documents per page
      * @var integer
      */
-    private $limit = 20;
+    private $limit = 10;
 
     /**
      * AliasManagerInterface Service
