@@ -6,6 +6,9 @@ set :deploy_to, '/data/sites/wwweti2.retraitespopulaires.ch/'
 set :branch, 'feature/landing-page-webform'
 set :styleguide_branch, 'dev'
 
+# Default value for :log_level is :debug
+set :log_level, :debug
+
 # Module that will be disabled by drush
 set :disable_modules, ['devel']
 

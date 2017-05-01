@@ -46,7 +46,7 @@
 #}
 {%
   set classes = [
-    'form-group',
+    'form-group' not in element['#prefix'] ? 'form-group',
     'js-form-item',
     'form-item',
     'js-form-type-' ~ type|clean_class,
