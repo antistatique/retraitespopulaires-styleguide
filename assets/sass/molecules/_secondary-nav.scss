@@ -26,6 +26,7 @@
 .secondary-nav-content {
   display: block;
   margin-left: $grid-gutter-width * 1.5;
+  background: $white;
   border: 1px solid $ligthen-gray;
 
   @media only screen and (min-width: $screen-md-min) {

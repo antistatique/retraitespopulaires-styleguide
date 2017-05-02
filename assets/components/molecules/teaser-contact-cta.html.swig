@@ -12,8 +12,8 @@ notes: |
     <div class="heading-image" style="background-image: url(https://unsplash.it/780/780?image=1005)"></div>
     <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': teaser_contact_cta_theme} %}</div>
   </div>
-  <div class="teaser-contact-cta-body text-center">
+  <div class="teaser-contact-cta-body">
     <div class="spacer spacer-xs"></div>
-    <p class="text-small">Contactez notre conseiller Dominique Schmid</p>
+    <p class="m-0 text-secondary">Contactez-nous maintenant.</p>
   </div>
 </a>
