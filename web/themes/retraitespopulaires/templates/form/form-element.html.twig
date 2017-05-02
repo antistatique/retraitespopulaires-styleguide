@@ -58,6 +58,7 @@
     type == 'radio' ? 'input-radio',
     type == 'checkbox' ? 'input-checkbox',
     type == 'webform_likert' ? 'table-likert',
+    element['#webform_id'] is not empty ? 'form-group-'~theme_guesser(),
   ]
 %}
 {%
