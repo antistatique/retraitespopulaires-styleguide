@@ -56,8 +56,10 @@
 #}
 {# page.header #}
 
-{{ load_block('rp_layout_cover_block') }}
-<div class="spacer"></div>
+{% block cover %}
+  {{ load_block('rp_layout_cover_block') }}
+  <div class="spacer"></div>
+{% endblock %}
 
 {# Page Header #}
 {% if page.header %}
@@ -82,40 +84,43 @@
       </div>
     </div>
   {% endblock %}
-{% endif %
+{% endif %}
+
 
 {# Main #}
 {% block main %}
-  <div role="main" class="main-container container-fluid js-quickedit-main-content">
-    <div class="row">
 
-      <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-6 col-xl-push-3">
-
-        <div class="entity-content">
-          <section{{ content_attributes.addClass(content_classes) }}>
-            {# Content #}
-            {% block content %}
-              <a id="main-content"></a>
-              {{ page.content }}
-            {% endblock %}
-          </section>
+  {# Main Content #}
+  {% block main_content %}
+    <div role="main" class="main-container container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-6 col-xl-push-3">
+          <div class="entity-content">
+            <section{{ content_attributes.addClass(content_classes) }}>
+              {# Content #}
+              {% block content %}
+                <a id="main-content"></a>
+                {{ page.content }}
+              {% endblock %}
+            </section>
+          </div>
+          {% block main_bottom_content %}{% endblock %}
         </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
+          {{ load_block('rp_layout_secondarynav_block') }}
 
-      </div>
-      <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
-        {{ load_block('rp_layout_secondarynav_block') }}
-
-        {# Sidebar First #}
-        {% if page.sidebar_first %}
-          {% block sidebar_first %}
-            <aside class="col-sm-3" role="complementary">
-              {{ page.sidebar_first }}
-            </aside>
-          {% endblock %}
-        {% endif %}
+          {# Sidebar First #}
+          {% if page.sidebar_first %}
+            {% block sidebar_first %}
+              <aside class="col-sm-3" role="complementary">
+                {{ page.sidebar_first }}
+              </aside>
+            {% endblock %}
+          {% endif %}
+        </div>
       </div>
     </div>
-  </div>
+  {% endblock %}
 
   {% block attachments %}
     <div class="spacer"></div>

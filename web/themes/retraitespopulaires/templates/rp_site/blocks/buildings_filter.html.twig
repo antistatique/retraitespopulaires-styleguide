@@ -1,8 +1,9 @@
 {% set theme = 'immobilier' %}
 
-{% if variables.categories %}
 <h4>{% trans %}Filtrer par:{% endtrans %}</h4>
 <div class="spacer spacer-sm"></div>
+
+{% if variables.categories %}
 <div class="{{ theme_hook_original }}">
   <p class="media-heading text-muted">{% trans %}Nos constructions{% endtrans %}</p>
   <ul class="filters-list filters-list-{{ theme }}">

@@ -1,0 +1,21 @@
+{% extends "@retraitespopulaires/pages/page.html.twig" %}
+
+{# Main Content #}
+{% block main_content %}
+  <div role="main" class="main-container container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-md-10 col-md-push-1 col-xl-6 col-xl-push-3">
+        <div class="entity-content">
+          <section{{ content_attributes.addClass(content_classes) }}>
+            {# Content #}
+            {% block content %}
+              <a id="main-content"></a>
+              {{ page.content }}
+            {% endblock %}
+          </section>
+        </div>
+        {% block main_bottom_content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
