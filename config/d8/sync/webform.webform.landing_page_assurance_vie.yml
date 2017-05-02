@@ -125,7 +125,7 @@ handlers:
       from_mail: default
       from_options: {  }
       from_name: default
-      subject: 'Nouvelle prise de contact - Landing - Assurance Vie'
+      subject: 'Nouvelle prise de contact - Landing - Assurance Vie [webform_submission:values:votre_code_postal_npa_]'
       body: "<b>Nouvelle prise de contact - Landing - Assurance Vie par [webform_submission:values:prenom] [webform_submission:values:nom_de_famille].</b>\n\n<p><b>Demande</b></p><br />\n[webform_submission:values]\n\n<br /><br />\n<p>Retraites Populaires</p>"
       excluded_elements: {  }
       html: true
