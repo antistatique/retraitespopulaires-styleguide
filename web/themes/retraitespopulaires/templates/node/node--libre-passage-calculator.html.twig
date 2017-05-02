@@ -1,25 +1,8 @@
-{%
-set classes = [
-node.bundle|clean_class,
-view_mode ? view_mode|clean_class,
-'clearfix',
-]
-%}
+{% extends "@retraitespopulaires/node/node.html.twig" %}
 
-<article{{ attributes.addClass(classes) }}>
-  <div{{ content_attributes.addClass('content') }}>
-    {% if node.body.summary %}
-        <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
-        <div class="spacer spacer-sm"></div>
-    {% endif %}
+{% block node_top %}{% endblock %}
 
-    {% if node.body.value %}
-        <div class="entity-body body-{{ node.field_profession.entity.tid.value|theme_profession }}">
-            {{ node.body.value|raw }}
-        </div>
-    {% endif %}
-
-    <div class="spacer"></div>
-    {{ load_block('rp_libre_passage_plp_block') }}
-  </div>
-</article>
+{% block node_bottom_outer %}
+  <div class="spacer"></div>
+  {{ load_block('rp_libre_passage_plp_block') }}
+{% endblock %}

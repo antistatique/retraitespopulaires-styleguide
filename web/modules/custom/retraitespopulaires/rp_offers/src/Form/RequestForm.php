@@ -105,7 +105,7 @@ class RequestForm extends FormBase {
         }
         $form['personnal'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-bordered fieldset-no-legend')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => $title,
           '#prefix'     => '<h3>'.$title.'</h3>',
         );

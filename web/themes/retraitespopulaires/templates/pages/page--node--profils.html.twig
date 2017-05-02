@@ -2,6 +2,7 @@
 
 {% block attachments %}
   <div class="spacer"></div>
-  {{ load_block('rp_site_news_collection_block') }}
-  {{ parent() }}
+  {{ load_block('rp_site_pages_collection_block', {'node': node}) }}
+  {{ load_block('rp_site_news_latest_block') }}
 {% endblock %}
+

@@ -6,10 +6,11 @@
         <div class="h2 pull-left">{% trans %}Coupons Bella vita{% endtrans %}</div>
       </div>
     </div>
-	<div class="spacer spacer-sm"></div>
-    <div class="row">
+	  <div class="spacer spacer-sm"></div>
+    <div class="row same-height-group">
       {% for offer in variables.offers %}
-        <div class="col-xs-12 col-md-6">
+        {% if loop.index0 % 2 == 0 %}</div><div class="row same-height-group">{% endif %}
+        <div class="col-xs-12 col-md-6 same-height">
           {{ load_block('rp_offers_offer_teaser_block', {'offer': offer}) }}
         </div>
       {% endfor %}

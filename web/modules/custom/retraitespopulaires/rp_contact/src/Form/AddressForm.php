@@ -95,7 +95,7 @@ class AddressForm extends FormBase {
 
         $form['address'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Changement d\'adresse'),
           '#prefix'     => '<h3>'.t('Changement d\'adresse').'</h3>',
         );
@@ -118,11 +118,6 @@ class AddressForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['address']['row_1'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
         $error = '';
@@ -131,14 +126,14 @@ class AddressForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['address']['row_1']['firstname'] = array(
+        $form['address']['firstname'] = array(
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         // Get error to inline it as suffix
@@ -149,14 +144,14 @@ class AddressForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['address']['row_1']['lastname'] = array(
+        $form['address']['lastname'] = array(
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         // Get error to inline it as suffix
@@ -230,7 +225,7 @@ class AddressForm extends FormBase {
 
         $form['old'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos anciennes coordonnées'),
           '#prefix'     => '<h3>'.t('Vos anciennes coordonnées').'</h3>',
         );
@@ -261,27 +256,22 @@ class AddressForm extends FormBase {
             '#suffix'      => '</div>',
         );
 
-        $form['old']['row_1'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['old']['row_1']['old_zip'] = array(
+        $form['old']['old_zip'] = array(
             '#title'       => t('Votre ancien code postal (NPA)'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group">',
-            '#suffix'      => '</div></div>',
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
         );
 
-        $form['old']['row_1']['old_city'] = array(
+        $form['old']['old_city'] = array(
             '#title'       => t('Votre ancienne ville'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group">',
-            '#suffix'      => '</div></div>',
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
         );
 
         $form['old']['old_phone_private'] = array(
@@ -313,7 +303,7 @@ class AddressForm extends FormBase {
 
         $form['new'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos nouvelles coordonnées'),
           '#prefix'     => '<h3>'.t('Vos nouvelles coordonnées').'</h3>',
         );
@@ -344,27 +334,22 @@ class AddressForm extends FormBase {
             '#suffix'      => '</div>',
         );
 
-        $form['new']['row_1'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['new']['row_1']['new_zip'] = array(
+        $form['new']['new_zip'] = array(
             '#title'       => t('Votre nouveau code postal (NPA)'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group">',
-            '#suffix'      => '</div></div>',
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
         );
 
-        $form['new']['row_1']['new_city'] = array(
+        $form['new']['new_city'] = array(
             '#title'       => t('Votre nouvelle ville'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group">',
-            '#suffix'      => '</div></div>',
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
         );
 
         $form['new']['new_phone_private'] = array(

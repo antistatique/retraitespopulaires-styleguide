@@ -103,14 +103,9 @@ class PLPContactForm extends FormBase {
 
         $form['personnal'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend', 'fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Je suis intéressé(e)'),
           '#prefix'     => '<h3>'.t('Je suis intéressé(e)').'</h3>',
-        );
-
-        $form['personnal']['row_1'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
         );
 
         // Get error to inline it as suffix
@@ -121,14 +116,14 @@ class PLPContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_1']['firstname'] = array(
+        $form['personnal']['firstname'] = array(
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         // Get error to inline it as suffix
@@ -139,14 +134,14 @@ class PLPContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_1']['lastname'] = array(
+        $form['personnal']['lastname'] = array(
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         // Get error to inline it as suffix
@@ -167,11 +162,6 @@ class PLPContactForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['personnal']['row_2'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
         $error = '';
@@ -180,14 +170,14 @@ class PLPContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_2']['zip'] = array(
+        $form['personnal']['zip'] = array(
             '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         // Get error to inline it as suffix
@@ -198,14 +188,14 @@ class PLPContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_2']['city'] = array(
+        $form['personnal']['city'] = array(
             '#title'       => t('Votre localité *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         // Get error to inline it as suffix

@@ -116,7 +116,7 @@ class BuildingForm extends FormBase {
 
         $form['building'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos informations'),
           '#prefix'     => '<h3>'.t('Vos informations').'</h3>',
         );
@@ -151,11 +151,6 @@ class BuildingForm extends FormBase {
             '#suffix'      => '</div>',
         );
 
-        $form['building']['row_1'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
         // Get readonly
         $readonly = '';
         if (isset($form_state->getUserInput()['title']) && $form_state->getUserInput()['title'] == 'Société') {
@@ -169,16 +164,16 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['row_1']['firstname'] = array(
+        $form['building']['firstname'] = array(
             '#title'       => t('Votre prénom'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.' '.$readonly.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
+            '#suffix'      => $error. '</div>',
         );
         if (!empty($readonly)) {
-            $form['building']['row_1']['firstname']['#attributes']['readonly'] = $readonly;
+            $form['building']['firstname']['#attributes']['readonly'] = $readonly;
         }
 
         // Get readonly
@@ -194,16 +189,16 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['row_1']['lastname'] = array(
+        $form['building']['lastname'] = array(
             '#title'       => t('Votre nom de famille'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.' '.$readonly.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
+            '#suffix'      => $error. '</div>',
         );
         if (!empty($readonly)) {
-            $form['building']['row_1']['lastname']['#attributes']['readonly'] = $readonly;
+            $form['building']['lastname']['#attributes']['readonly'] = $readonly;
         }
 
         // Get readonly
@@ -285,11 +280,6 @@ class BuildingForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['building']['row_2'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
         $error = '';
@@ -298,14 +288,14 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['row_2']['zip'] = array(
+        $form['building']['zip'] = array(
             '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         // Get error to inline it as suffix
@@ -316,26 +306,21 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['row_2']['city'] = array(
+        $form['building']['city'] = array(
             '#title'       => t('Votre ville *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         $form['more'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Votre demande'),
           '#prefix'     => '<h3>'.t('Votre demande').'</h3>',
-        );
-
-        $form['more']['row_1'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
         );
 
         // Get error to inline it as suffix
@@ -354,14 +339,14 @@ class BuildingForm extends FormBase {
                 $options[$rate->id->value] = $rate->getName() . ' ('.number_format($rate->getFirstRate(), 2).')';
             }
         }
-        $form['more']['row_1']['rate'] = array(
+        $form['more']['rate'] = array(
             '#title'       => t('Réserver le taux *'),
             '#type'        => 'select',
             '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#options'     => $options,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         $error = '';
@@ -370,14 +355,14 @@ class BuildingForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['more']['row_1']['amount'] = array(
+        $form['more']['amount'] = array(
             '#title'       => t('Pour un montant *'),
             '#placeholder' => t('CHF'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 20, 'theme' => $theme, 'class' => array('form-chf-numeric', 'text-right')],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         $form['more']['remarque'] = array(

@@ -66,17 +66,31 @@
       <p>{% trans %}Notre offre vous intéresse ? N'hésitez pas à compléter le formulaire ci-dessous. Un conseiller de Retraites Populaires prendra contact avec vous.{% endtrans %}</p>
       <div class="spacer spacer-md"></div>
 
-      <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
-        {{ load_form('rp_libre_passage', 'PLPContactForm', {'theme': theme, 'results': variables.results}) }}
+      <!-- Form -->
+      <div class="background-overflow">
+        <div class="spacer"></div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+              <div class="form-card form-card-{{ theme|default('primary') }} shadow shadow-down">
+                {{ load_form('rp_libre_passage', 'PLPContactForm', {'theme': theme, 'results': variables.results}) }}
+              </div>
+          </div>
         </div>
       </div>
   </div>
 
 {% else %}
 
-  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-    {{ load_form('rp_libre_passage', 'PLPCalculatorForm', {'theme': theme}) }}
+  <!-- Form -->
+  <div class="background-overflow">
+    <div class="spacer"></div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+          <div class="form-card form-card-{{ theme|default('primary') }} shadow shadow-down">
+            {{ load_form('rp_libre_passage', 'PLPCalculatorForm', {'theme': theme}) }}
+          </div>
+      </div>
+    </div>
   </div>
 
 {% endif %}
