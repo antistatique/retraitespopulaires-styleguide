@@ -1,0 +1,47 @@
+.antistatique-quick-edit {
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 32px;
+  padding: 16px 32px;
+  background: #fff;
+  border: 1px solid #008e4f;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  z-index: 999;
+}
+
+.antistatique-quick-edit--icon {
+  margin-bottom: 8px;
+  padding: 30px 5px;
+  background: #008e4f;
+  border: 1px solid #008e4f;
+  border-radius: 4em;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.antistatique-quick-edit--icon img {
+  width: 100%;
+  max-width: 22px;
+}
+
+.antistatique-quick-edit--text {
+  font-size: 2rem;
+  color: #008e4f;
+}
+
+.antistatique-quick-edit--id {
+  font-size: 1.2rem;
+  color: #97978f;
+}
+
+.antistatique-quick-edit:hover {
+  text-decoration: none;
+}
+
+.antistatique-quick-edit:hover .antistatique-quick-edit--text {
+  text-decoration: underline;
+}

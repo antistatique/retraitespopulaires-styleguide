@@ -1,0 +1,11 @@
+{% if variables.node %}
+<a href="{{ variables.link }}" class="antistatique-quick-edit">
+  <div class="">
+    <div class="antistatique-quick-edit--icon">
+      <img src="/{{ variables.path }}/assets/svg/pen.svg" alt="{{ variables.text }}">
+    </div>
+    <span class="antistatique-quick-edit--text">{{ variables.text }}</span>
+    <div class="antistatique-quick-edit--id">#{{ variables.node.nid.value }}</div>
+  </div>
+</a>
+{% endif %}

@@ -76,32 +76,28 @@
   ]
 %}
 
-<!-- Admin Button to edit quickly the node  -->
-{{ load_block('rp_site_node_edit_block') }}
+{% set node_body_classes = [
+  'entity-body',
+  'body-' ~ node.field_profession.entity.tid.value|theme_profession
+] %}
 
 <article{{ attributes.addClass(classes) }}>
-
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('author') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
   <div{{ content_attributes.addClass('content') }}>
-    {{ load_block('rp_contact_contact_cta_block') }}
-    {{ content }}
-  </div>
+    {% block node_top %}
+      {{ load_block('rp_contact_contact_cta_block') }}
+    {% endblock %}
 
+    {% if node.body.summary %}
+      <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
+      <div class="spacer spacer-sm"></div>
+    {% endif %}
+
+    {% if content.body %}
+      <div class="{{ node_body_classes|join(' ') }}">
+        {{ content.body }}
+      </div>
+    {% endif %}
+
+    {% block node_bottom %}{% endblock %}
+  </div>
 </article>

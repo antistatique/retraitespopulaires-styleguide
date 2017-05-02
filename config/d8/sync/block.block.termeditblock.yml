@@ -1,0 +1,20 @@
+uuid: ea780cb0-f509-4c8f-a621-c2fcadd75073
+langcode: fr
+status: true
+dependencies:
+  module:
+    - antistatique_quick_edit
+  theme:
+    - retraitespopulaires
+id: termeditblock
+theme: retraitespopulaires
+region: content
+weight: 0
+provider: null
+plugin: antistatique_quick_edit_term_edit_block
+settings:
+  id: antistatique_quick_edit_term_edit_block
+  label: 'Term Edit block'
+  provider: antistatique_quick_edit
+  label_display: '0'
+visibility: {  }

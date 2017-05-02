@@ -15,14 +15,6 @@ function rp_site_theme($existing, $type, $theme, $path) {
     return array(
         // Blocks themes
         // ---------------------------------------------------------------------
-        'rp_site_node_edit_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/node_edit'
-        ),
         'rp_site_attachments_block' => array(
             // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
@@ -262,14 +254,38 @@ function rp_site_theme($existing, $type, $theme, $path) {
     );
 }
 
+/**
+ * Hook Entity Insert.
+ *
+ * Implements hook_entity_insert().
+ *
+ * Improve cache management by creating custom tag [entity]_list:[type]
+ * Eg. node_list:news.
+ */
 function rp_site_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
     Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
 }
 
+/**
+ * Hook Entity Update.
+ *
+ * Implements hook_entity_update().
+ *
+ * Improve cache management by creating custom tag [entity]_list:[type]
+ * Eg. node_list:news.
+ */
 function rp_site_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
     Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
 }
 
+/**
+ * Hook Entity Delete.
+ *
+ * Implements hook_entity_delete().
+ */
 function rp_site_entity_delete(Drupal\Core\Entity\EntityInterface $entity) {
     Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
 }
+
+// Includes.
+require_once 'inc/form_user_login.inc';

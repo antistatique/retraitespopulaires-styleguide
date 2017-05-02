@@ -1,0 +1,5 @@
+icons:
+    version: 1.0
+    css:
+        theme:
+            assets/css/antistatique_quick_edit.icons.css: {}
