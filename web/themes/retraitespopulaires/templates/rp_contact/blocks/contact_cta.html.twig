@@ -1,18 +1,22 @@
 {% if variables.contacts %}
   {% set theme = variables.theme %}
   <a href="#contactez-nous" class="pull-right teaser teaser-{{ theme }} teaser-fullclick teaser-contact-cta teaser-contact-cta-{{ theme }} shadow shadow-down">
+    <div class="teaser-contact-cta-heading {% if not variables.cover is empty %}image{% endif %}">
     {% if not variables.cover is empty %}
-    <div class="teaser-contact-cta-heading">
       <div class="heading-image" style="background-image: url({{ file_url(variables.cover.xl) }})"></div>
       <div class="loader-image">
         <div class="loader">
           <div class="loader-yingyang loader-{{ theme }}"></div>
         </div>
       </div>
-    </div>
-    <div class="spacer spacer-xs"></div>
+    {% else %}
+      <div class="heading-icon text-{{ theme }}">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-5x retraitespopulaires-icon-contact-us-borderless"></span>
+      </div>
     {% endif %}
+    </div>
     <div class="teaser-contact-cta-body">
+      {% if not variables.cover is empty %}<div class="spacer spacer-xs"></div>{% endif %}
       <p class="text-secondary m-0">
         {% set display = [] %}
         {% if variables.contacts|length == 1 %}
