@@ -18,17 +18,19 @@
   {% endif %}
 
   <div class="teaser-contact-body">
+    {% set display = [] %}
+    {% if variables.contact.field_firstname.value %}
+      {% set display = display|merge([variables.contact.field_firstname.value])  %}
+    {% endif %}
+    {% if variables.contact.field_lastname.value %}
+      {% set display = display|merge([variables.contact.field_lastname.value])  %}
+    {% endif %}
+    {% if not display %}
+      {% set display = [variables.contact.title.value] %}
+    {% endif %}
+
+    <h3 class="sr-only">{% trans %}Information de contact pour{% endtrans %} {{ display|join(' ') }}</h3>
     <a href="{{ link }}" class="h3 pretty-link text-{{ theme }}">
-      {% set display = [] %}
-      {% if variables.contact.field_firstname.value %}
-        {% set display = display|merge([variables.contact.field_firstname.value])  %}
-      {% endif %}
-      {% if variables.contact.field_lastname.value %}
-        {% set display = display|merge([variables.contact.field_lastname.value])  %}
-      {% endif %}
-      {% if not display %}
-        {% set display = [variables.contact.title.value] %}
-      {% endif %}
       {{ display|join(' ') }}
     </a>
     <div class="spacer spacer-sm"></div>

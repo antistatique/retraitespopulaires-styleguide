@@ -6,33 +6,21 @@ view_mode ? view_mode|clean_class,
 ]
 %}
 
-<!-- Admin Button to edit quickly the node  -->
-{{ load_block('rp_site_node_edit_block') }}
-
 <article{{ attributes.addClass(classes) }}>
-    {{ title_prefix }}
-    {% if not page %}
-        <h2{{ title_attributes }}>
-            <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-        </h2>
+  <div{{ content_attributes.addClass('content') }}>
+    {% if node.body.summary %}
+        <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
+        <div class="spacer spacer-sm"></div>
     {% endif %}
-    {{ title_suffix }}
 
-    <div{{ content_attributes.addClass('content') }}>
+    {% if node.body.value %}
+        <div class="entity-body body-{{ node.field_profession.entity.tid.value|theme_profession }}">
+            {{ node.body.value|raw }}
+        </div>
+    {% endif %}
 
-        {% if node.body.summary %}
-            <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
-            <div class="spacer spacer-sm"></div>
-        {% endif %}
+    {{ content|without('body', 'field_document', 'field_document_random', 'field_faq_random', 'field_search_npa', 'field_products', 'field_profession', 'field_profil', 'field_faq', 'field_contact', 'field_advisor') }}
 
-        {% if node.body.value %}
-            <div class="entity-body body-{{ node.field_profession.entity.tid.value|theme_profession }}">
-                {{ node.body.value|raw }}
-            </div>
-        {% endif %}
-
-        {{ content|without('body', 'field_document', 'field_document_random', 'field_faq_random', 'field_search_npa', 'field_products', 'field_profession', 'field_profil', 'field_faq', 'field_contact', 'field_advisor') }}
-
-         {{ load_block('rp_mortgage_calculator_block') }}
-    </div>
+      {{ load_block('rp_mortgage_calculator_block') }}
+  </div>
 </article>

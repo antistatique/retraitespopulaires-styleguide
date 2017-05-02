@@ -35,7 +35,7 @@ class FAQsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
      * Number of faqs per page
      * @var integer
      */
-    private $limit = 20;
+    private $limit = 10;
 
     /**
      * AliasManagerInterface Service

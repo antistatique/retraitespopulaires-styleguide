@@ -1,0 +1,5 @@
+name: Quick Edit
+description: 'Floating block on page to edit Node/Term quickly'
+package: Antistatique Developpement
+type: module
+core: 8.x

@@ -12,8 +12,8 @@
     </div>
     <div class="spacer spacer-xs"></div>
     {% endif %}
-    <div class="teaser-contact-cta-body text-center">
-      <p class="text-small m-0">
+    <div class="teaser-contact-cta-body">
+      <p class="text-secondary m-0">
         {% set display = [] %}
         {% if variables.contacts|length == 1 %}
           {% if variables.contacts[0].field_firstname.value %}
@@ -25,7 +25,7 @@
         {% endif %}
 
         {% if display is empty %}
-          {% trans %}Contactez-nous.{% endtrans %}
+          {% trans %}Nous contacter maintenant.{% endtrans %}
         {% else %}
           {% set display = display|join(' ') %}
           {% trans %}Contactez {{ display }}.{% endtrans %}

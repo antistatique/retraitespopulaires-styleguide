@@ -34,7 +34,7 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
      * Number of news per page
      * @var integer
      */
-    private $limit = 20;
+    private $limit = 5;
 
     /**
      * AliasManagerInterface Service
