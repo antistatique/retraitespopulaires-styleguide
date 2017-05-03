@@ -44,9 +44,10 @@
  * @see template_preprocess_form_element()
  */
 #}
+{% set isSoloCheckbox = type == 'checkbox' and not element['#tree'] %}
 {%
   set classes = [
-    'form-group' not in element['#prefix'] ? 'form-group',
+    'form-group' not in element['#prefix'] and (type not in ['radio', 'checkbox'] or isSoloCheckbox) ? 'form-group',
     'js-form-item',
     'form-item',
     'js-form-type-' ~ type|clean_class,
@@ -91,7 +92,7 @@
   {% if suffix is not empty %}
     <span class="field-suffix">{{ suffix }}</span>
   {% endif %}
-  {% if label_display == 'after' %}
+  {% if label_display == 'after' and type != 'radio' and type != 'checkbox' %}
     {{ label }}
   {% endif %}
   {% if errors %}
