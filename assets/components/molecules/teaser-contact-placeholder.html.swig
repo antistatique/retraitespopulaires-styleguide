@@ -22,7 +22,7 @@ notes: |
         <input class="form-control form-control-{{ teaser_contact_placeholder_theme }}" id="zip" type="text" placeholder="Votre NPA"></input>
       </div>
       <div class="form-group">
-        <input class="btn btn-{{ teaser_contact_placeholder_theme }}" type="submit" value="Trouver"></input>
+        <input class="btn btn-{{ teaser_contact_placeholder_theme|default('primary') }}" type="submit" value="Trouver"></input>
       </div>
     </form>
   </div>

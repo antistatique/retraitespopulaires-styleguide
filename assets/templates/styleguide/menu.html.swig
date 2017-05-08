@@ -20,6 +20,16 @@
       </ul>
     </li>
 
+    <li>
+      <span class="styleguide-menu-heading">Examples</span>
+      <ul>
+        {% for example in collections.examples %}
+        <li>
+          <a href="{{data.path}}{{example.title|lower}}">{{example.title}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
    <li>
     <a href="{{data.path}}atoms/" class="styleguide-menu-heading">Atoms</a>
     <ul>

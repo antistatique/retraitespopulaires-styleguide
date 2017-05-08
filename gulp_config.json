@@ -91,6 +91,10 @@
           "sortBy": "title",
           "reverse": false
         },
+        "examples": {
+          "sortBy": "title",
+          "reverse": false
+        },
         "docs": {
           "sortBy": "title",
           "reverse": false

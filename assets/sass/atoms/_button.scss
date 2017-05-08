@@ -1,7 +1,6 @@
 @charset 'UTF-8';
 
 .btn {
-  border-color: $transparent;
   transition:
     background 0.25s ease,
     color 0.25s ease,
@@ -13,7 +12,6 @@
   }
 
   @include font-secondary;
-  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 
   &:first-letter {
     text-transform: uppercase;
@@ -22,12 +20,6 @@
   &:active,
   &.active {
     box-shadow: none;
-  }
-
-  @each $label, $color in $themes {
-    &.btn-#{$label} {
-      @include button-variant($white, $color, $btn-default-border);
-    }
   }
 }
 
@@ -90,10 +82,13 @@
   @include button-variant($brand-primary, $transparent, $brand-primary);
 
   &:hover,
-  &:active,
-  &:focus,
-  &:hover:active {
+  &:focus, {
     background: $gray-lighter;
+  }
+
+  &:active,
+  &:hover:active {
+    background: darken($gray-lighter, 10%);
   }
 }
 
