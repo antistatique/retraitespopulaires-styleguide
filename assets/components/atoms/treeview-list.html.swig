@@ -1,5 +1,5 @@
 ---
-title: treeview-list
+title: treeview-list [DEPRECATED]
 name: treeview-list
 collection: atoms
 notes: |

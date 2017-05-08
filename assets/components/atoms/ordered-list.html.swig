@@ -1,5 +1,5 @@
 ---
-title: ordered-list
+title: ordered-list [DEPRECATED]
 name: ordered-list
 collection: atoms
 notes: |

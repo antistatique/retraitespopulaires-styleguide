@@ -8,8 +8,17 @@
     <a class="btn btn-secondary btn-sm float-xs-right ml-1" href="{{ content.bootstrap }}"><span class="fa fa-book" aria-hidden="true"></span> Bootstrap doc</a>
   {% endif %}
 
-  {% if content.notes %}
+  {% if content.notes or content.changes %}
     <div class="styleguide-item-notes">
+    {% if content.changes %}
+      <div class="alert alert-warning">
+        <ul>
+          {% for key, change in content.changes %}
+            <li><strong>{{ key }}</strong> {{ change }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
     {{content.notes|markdown|raw}}
     </div>
   {% endif %}
@@ -17,14 +26,22 @@
 </div>
 
 {% if content.variants %}
+  {% if Object.keys(content.variants)|first == 'default' %}
+    {% set name = content.variants|first %}
+  {% else %}
+    {% set name = 'Default' %}
+  {% endif %}
+
   <ul class="styleguide-tabs nav nav-tabs" role="tablist">
     <li class="active">
-      <a data-toggle="tab" href="#{{content.name}}-default" role="tab">Default</a>
+      <a data-toggle="tab" href="#{{content.name}}-default" role="tab">{{ name }}</a>
     </li>
   {% for slug, variant in content.variants %}
-    <li>
-      <a data-toggle="tab" href="#{{slug}}" role="tab">{{variant}}</a>
-    </li>
+    {% if slug != 'default' %}
+      <li>
+        <a data-toggle="tab" href="#{{slug}}" role="tab">{{variant}}</a>
+      </li>
+    {% endif %}
   {% endfor %}
   </ul>
 {% endif %}

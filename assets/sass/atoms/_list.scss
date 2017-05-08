@@ -9,16 +9,16 @@
 /* stylelint-disable no-duplicate-selectors */
 /* Make the code unreadable otherwise */
 
-ul.unstyled-list,
-ol.unstyled-list {
+.unstyled-list,
+.unstyled-list {
   list-style: none;
   padding-left: 0.5em;
 }
 
-ul.unordered-list,
-ol.ordered-list,
-ul.treeview-list,
-ul.facets-list {
+.unordered-list,
+.ordered-list,
+.treeview-list,
+.facets-list {
   padding: 0;
 
   > li {
@@ -26,9 +26,9 @@ ul.facets-list {
   }
 }
 
-ul.treeview-list,
-ul.unordered-list,
-ul.facets-list {
+.treeview-list,
+.unordered-list,
+.facets-list {
   list-style: none;
   margin-left: 0;
 
@@ -56,7 +56,7 @@ ul.facets-list {
   }
 }
 
-ul.treeview-list {
+.treeview-list {
   margin-left: $grid-gutter-width / 2;
 
   > li {
@@ -71,7 +71,7 @@ ul.treeview-list {
   }
 }
 
-ul.facets-list {
+.facets-list {
   > li {
     &:before {
       content: '→'; // →
@@ -82,7 +82,7 @@ ul.facets-list {
   }
 }
 
-ol.ordered-list {
+.ordered-list {
   list-style: none;
   counter-reset: item;
   margin-left: $grid-gutter-width / 2;
@@ -106,8 +106,8 @@ ol.ordered-list {
   }
 }
 
-ul.filters-list,
-ol.filters-list {
+.filters-list,
+.filters-list {
   list-style: none;
   padding-left: 0.5em;
 
@@ -143,7 +143,7 @@ ol.filters-list {
 }
 
 @each $label, $color in $themes {
-  ul.filters-list > li.active {
+  .filters-list > li.active {
     .retraitespopulaires-icon.text-#{$label} {
       color: $color;
 

@@ -1,5 +1,5 @@
 ---
-title: facets-list
+title: facets-list [DEPRECATED]
 name: facets-list
 collection: atoms
 notes: |

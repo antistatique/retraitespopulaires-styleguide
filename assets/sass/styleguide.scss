@@ -92,7 +92,7 @@
 
 .styleguide-item-group > .styleguide-item-group {
   padding-bottom: 0;
-  border: 1px solid;
+  border: 1px solid #ddd;
 
   .styleguide-item-heading-group {
     margin: 0;
@@ -121,9 +121,17 @@
   }
 
   .styleguide-item-code {
+    margin-top: 0;
+
     .language-markup {
       margin: 0;
     }
+  }
+
+  pre[class*='language-'] {
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid #ddd;
   }
 }
 

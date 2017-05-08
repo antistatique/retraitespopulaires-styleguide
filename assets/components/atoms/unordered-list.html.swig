@@ -1,5 +1,5 @@
 ---
-title: unordered-list
+title: unordered-list [DEPRECATED]
 name: unordered-list
 collection: atoms
 notes: |

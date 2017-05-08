@@ -1,5 +1,5 @@
 ---
-title: filters-list
+title: filters-list [DEPRECATED]
 name: filters-list
 collection: atoms
 notes: |
