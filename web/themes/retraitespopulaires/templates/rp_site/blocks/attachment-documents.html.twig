@@ -7,7 +7,7 @@
         <a aria-hidden="true" href="{{ path('entity.node.canonical', {'node': doc.nid.value}) }}" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
       </div>
       <div class="media-body">
-        <a href="{{ path('entity.node.canonical', {'node': doc.nid.value}) }}" target="_blank" class="pretty-link h5">{{ doc.title.value }} <span class="text-muted text-small">- {{ doc.field_file_document.entity.mimeType|extension_guesser|upper }}</span></a>
+        <a href="{{ path('entity.node.canonical', {'node': doc.nid.value}) }}" target="_blank" class="h5"><span class="pretty-link">{{ doc.title.value }}</span> <span class="text-muted text-small">- {{ doc.field_file_document.entity.mimeType|extension_guesser|upper }}</span></a>
       </div>
     </li>
     {% endfor %}
