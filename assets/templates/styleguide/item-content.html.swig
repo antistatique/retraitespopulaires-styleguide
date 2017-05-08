@@ -14,7 +14,7 @@
       <div class="alert alert-warning">
         <ul>
           {% for key, change in content.changes %}
-            <li><strong>{{ key }}</strong> {{ change }}</li>
+            <li><strong>{{ key }}</strong> {{ change|markdown|raw }}</li>
           {% endfor %}
         </ul>
       </div>
