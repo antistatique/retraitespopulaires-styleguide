@@ -8,9 +8,8 @@ notes: |
   - **teaser_contact_detail_theme** - <i>String</i> - <b>teaser-contact-detail-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="teaser-contact-detail teaser-contact-detail-{{ teaser_contact_detail_theme }}">
-  <h2>Dominique Schmid</h2>
+  <h2 class="teaser-contact-detail-title">Dominique Schmid</h2>
   <div class="teaser-contact-detail-body">
-    <div class="spacer spacer-sm"></div>
     <p>
       <strong>Integer dictum</strong> <br />
       Maecenas a condimentum <br />

@@ -5,7 +5,7 @@
 {% endmacro %}
 
 {% macro preview(content, path, slug) %}
-<div class="styleguide-item-preview"{% if content.background %} style="background: {{ content.background }};"{% endif %}>
+<div id="element-{{ content.name }}" class="styleguide-item-preview"{% if content.background %} style="background: {{ content.background }};"{% endif %}>
   {% if content.wrapper %}
     <div class="{{ content.wrapper }}">
       {% if slug|default(false) %}{% include path with {variant: slug} %}{% else %}{% include path %}{% endif %}

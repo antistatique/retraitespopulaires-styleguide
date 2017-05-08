@@ -16,7 +16,7 @@ notes: |
     <div class="loader-image">{% include '../atoms/loader.html.swig' with {'loader_type': 'yingyang', 'loader_theme': theme} %}</div>
   </div>
   <div class="news-body">
-    <div class="news-title h1 pretty-link">{{ news_title|default('Bella Vita') }}</div>
+    <h3 class="news-title h1">{{ news_title|default('Bella Vita') }}</h3>
     <div class="spacer spacer-xs"></div>
     <p>{{ news_body|default('Le magazine clientèle de Retraites Populaires') }}</p>
     <div class="spacer spacer-sm"></div>
