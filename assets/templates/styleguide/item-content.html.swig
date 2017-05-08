@@ -53,10 +53,12 @@
       {{ item.code(path) }}
     </div>
     {% for slug, variant in content.variants %}
-      <div class="styleguide-tab-pane tab-pane" id="{{slug}}">
-        {{ item.preview(content, path, slug) }}
-        {{ item.code(path, slug) }}
-      </div>
+      {% if slug != 'default' %}
+        <div class="styleguide-tab-pane tab-pane" id="{{slug}}">
+          {{ item.preview(content, path, slug) }}
+          {{ item.code(path, slug) }}
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 {% else %}
