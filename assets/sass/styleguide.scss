@@ -34,6 +34,10 @@
 
 .styleguide-header-container {
   background-color: $menu-bg;
+
+  h1 {
+    margin: 0;
+  }
 }
 
 .styleguide-menu-active .styleguide-container {
@@ -78,20 +82,34 @@
   }
 }
 
+.styleguide-item-heading {
+  font-size: 18px;
+}
+
+.styleguide-item-group {
+  margin-top: 0;
+}
+
 .styleguide-item-group > .styleguide-item-group {
   padding-bottom: 0;
   border: 1px solid;
 
   .styleguide-item-heading-group {
     margin: 0;
-    padding: 20px;
+    padding: 10px;
     background: #eee;
   }
 
   .styleguide-item-notes {
     max-width: 100%;
-    padding: 20px;
+    padding: 10px;
     background: #eee;
+
+    p,
+    h5,
+    li {
+      font-size: 16px;
+    }
   }
 
   .styleguide-item-preview {
