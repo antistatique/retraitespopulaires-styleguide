@@ -1,7 +1,6 @@
 @charset 'UTF-8';
 
 .arrow {
-  cursor: pointer;
   display: inline-block;
 
   @each $label, $color in $themes {
