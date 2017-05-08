@@ -100,8 +100,7 @@
 
         {% block node_summary %}
             {% if node.body.summary %}
-            <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
-            <div class="spacer spacer-sm"></div>
+            <p class="lead text-secondary">{{ node.body.summary|nl2br }}</p>
           {% endif %}
         {% endblock %}
 

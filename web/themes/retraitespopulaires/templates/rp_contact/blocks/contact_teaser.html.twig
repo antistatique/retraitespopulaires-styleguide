@@ -29,11 +29,12 @@
       {% set display = [variables.contact.title.value] %}
     {% endif %}
 
-    <h3 class="sr-only">{% trans %}Information de contact pour{% endtrans %} {{ display|join(' ') }}</h3>
-    <a href="{{ link }}" class="h3 pretty-link text-{{ theme }}">
-      {{ display|join(' ') }}
-    </a>
-    <div class="spacer spacer-sm"></div>
+    <h3 class="m-t-0">
+      <p class="sr-only">{% trans %}Information de contact pour{% endtrans %} {{ display|join(' ') }}</p>
+      <a href="{{ link }}" class="h3 pretty-link text-{{ theme }}">
+        {{ display|join(' ') }}
+      </a>
+    </h3>
     <p>
       {%- if variables.contact.field_firstname.value or variables.contact.field_lastname.value -%}
         {% trans %}Joindre directement votre contact{% endtrans %}
