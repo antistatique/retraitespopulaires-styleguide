@@ -12,4 +12,6 @@
     background-color: lighten($brand-success, 45%);
     color: $brand-success;
   }
+
+  > :last-child { margin-bottom: 0; }
 }

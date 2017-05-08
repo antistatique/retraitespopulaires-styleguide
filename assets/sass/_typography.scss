@@ -7,51 +7,17 @@
 h1,
 .h1,
 h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  margin: 0;
-  padding: 0;
-  word-wrap: break-word;
-}
-
-h1,
-.h1,
-h2,
 .h2 {
+  font-weight: 500;
+
   @include font-secondary;
 }
 
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5 {
-  font-family: $font-primary;
-  font-weight: 700;
-}
-
 h6,
 .h6 {
-  font-family: $font-primary;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-}
-
-p,
-abbr,
-cite,
-li,
-ol {
-  font-family: $font-primary;
 }
 
 .text-small {
