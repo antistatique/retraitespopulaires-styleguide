@@ -1,5 +1,11 @@
 ignored_config_entities:
-  - 'webform.webform.*'
+  0: webform.webform.satisfaction
+  2: webform.webform.satisfaction_cge
+  4: webform.webform.satisfaction_imm
+  6: webform.webform.satisfaction_pret
+  8: webform.webform.satisfaction_retraite
+  10: webform.webform.satisfaction_valogement
+  12: webform.webform.contact
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 langcode: fr
