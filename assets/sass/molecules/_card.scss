@@ -93,6 +93,7 @@ a.card-light {
 }
 
 .card-subhead {
+  margin-bottom: 0;
   font-size: $font-size-h5;
   font-weight: 700;
   color: $text-muted;
@@ -100,6 +101,9 @@ a.card-light {
 
 .card-title {
   margin-top: 0;
+  margin-bottom: $grid-gutter-width / 2;
+
+  @include font-secondary;
 
   .card-light & {
     color: $gray;

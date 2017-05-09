@@ -9,13 +9,12 @@ variants:
   card-light: Card Light
   card-justify: Card Justify
 notes: |
-  - `card` (`card-light`, `card-horizontal`)
+  - `card` (`card-light`, `card-horizontal`): modifiers to have a light border or horizontal layout
   - `card-img-top` > `card-img-bg`/`card-img` (`card-img-top-center` to center small image), fallback to loader (if broken) or icon
-  - image side
-  - `card-subhead`
-  - `card-title`
-  - `card-body`
-  - `card-footer` (+ `bg-berrylight-gray`) (`card-justify`)
+  - `card-subhead`: creates a simple subtitle with gray color
+  - `card-title`: can be whatever size ou want, with classes or semantically
+  - `card-body` (`card-justify`): can hold rows and cols, all the content
+  - `card-footer` (+ `bg-berrylight-gray`) (`card-justify`): add modifiers to change color, or justify (flex) content
 ---
 {% if variant == 'card-light' -%}
 <div class="card card-light">
