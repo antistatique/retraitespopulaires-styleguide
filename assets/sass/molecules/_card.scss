@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+.card {
+  margin-bottom: 50px;
+  border: 1px solid $brand-primary;
+  border-radius: $border-radius-base;
+  box-shadow: 0 50px 75px -45px $shadow-gray;
+  overflow: hidden;
+}
+
+a.card {
+  display: block;
+  color: $text-color;
+  transition:
+    border 0.25s ease-in-out,
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &:focus,
+  &:active,
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:hover {
+    border-color: darken($brand-primary, 10);
+    box-shadow: 0 65px 75px -45px darken($shadow-gray, 0.3);
+  }
+}
+
+.card-img-top {
+  display: flex;
+  position: relative;
+  min-height: 200px;
+}
+
+.card-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.card-img-bg {
+  flex: 1 1 auto;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  z-index: 2;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    background: linear-gradient(to bottom, $brand-primary 0%, $transparent 100%);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .card:hover & {
+    &:before {
+      opacity: 0.1;
+    }
+  }
+}
+
+.card-subhead {
+  font-size: $font-size-h5;
+  font-weight: 700;
+  color: $text-muted;
+}
+
+.card-title {
+  margin-top: 0;
+}
+
+.card-body {
+  padding: $grid-gutter-width / 2;
+}
+
+.card-footer {
+  padding: $grid-gutter-width / 2;
+}
+
+.card-horizontal,
+a.card-horizontal {
+  @media (min-width: $screen-sm-min) {
+    display: flex;
+
+    > * {
+      width: 100%;
+    }
+  }
+}
+
+.teaser.shadow.teaser-fullclick {
+  &:active.shadow-down,
+  &:focus.shadow-down {
+    border-color: $mine-shaft;
+    box-shadow: 0 45px 75px -45px $shadow-gray;
+  }
+
+  @each $label, $color in $themes {
+    &.teaser-#{$label} {
+      border-color: $color;
+
+      .heading-image:before {
+        background: linear-gradient(to bottom, $color 0%, $transparent 100%);
+      }
+
+      &:hover {
+        border-color: darken($color, 10);
+      }
+    }
+  }
+}

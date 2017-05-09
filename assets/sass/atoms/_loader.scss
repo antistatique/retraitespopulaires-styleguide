@@ -1,36 +1,8 @@
 @charset 'UTF-8';
 
-.loader {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-
-  @each $label, $color in $themes {
-    .loader-#{$label} {
-      background: $color;
-    }
-  }
-}
-
-.loader-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -50px;
-}
-
-.loader-snake {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: $brand-primary;
-  border-radius: 50%;
-  animation: rotate 5s linear infinite;
-
+%snake {
   /* stylelint-disable no-indistinguishable-colors */
   /* Need HSLA for my loader so stfu */
-
   &:before {
     content: '';
     position: absolute;
@@ -61,17 +33,9 @@
   /* stylelint-enable no-indistinguishable-colors */
 }
 
-.loader-yingyang {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: $brand-primary;
-  border-radius: 50%;
-  animation: rotate 5s linear infinite;
-
+%yinyang {
   /* stylelint-disable no-indistinguishable-colors */
   /* Need HSLA for my loader so stfu */
-
   &:before {
     content: '';
     position: absolute;
@@ -102,7 +66,69 @@
   /* stylelint-enable no-indistinguishable-colors */
 }
 
+.loader {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+
+  @each $label, $color in $themes {
+    .loader-#{$label} {
+      background: $color;
+    }
+  }
+}
+
+.loader-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+.loader-snake {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: $brand-primary;
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+
+  @extend %snake;
+}
+
+.loader-yingyang {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: $brand-primary;
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+
+  @extend %yinyang;
+}
+
+.loader-light {
+  position: relative;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+    border-radius: 50%;
+    animation: rotate 5s linear infinite;
+  }
+
+  @extend %yinyang;
+}
+
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
