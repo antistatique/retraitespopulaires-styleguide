@@ -125,6 +125,12 @@ a.card-horizontal {
   }
 }
 
+.card-justify {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 // LEGACY
 .teaser.shadow.teaser-fullclick {
   &:active.shadow-down,

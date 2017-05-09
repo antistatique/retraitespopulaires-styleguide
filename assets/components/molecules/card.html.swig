@@ -7,6 +7,7 @@ variants:
   default: Standard Card
   img-bg: Image as Background
   card-light: Card Light
+  card-justify: Card Justify
 notes: |
   - `card` (`card-light`, `card-horizontal`)
   - `card-img-top` > `card-img-bg`/`card-img` (`card-img-top-center` to center small image), fallback to loader (if broken) or icon
@@ -14,7 +15,7 @@ notes: |
   - `card-subhead`
   - `card-title`
   - `card-body`
-  - `card-footer` (+ `bg-berrylight-gray`) (`card-footer-justify`)
+  - `card-footer` (+ `bg-berrylight-gray`) (`card-justify`)
 ---
 {% if variant == 'card-light' -%}
 <div class="card card-light">
@@ -43,6 +44,11 @@ notes: |
   {%- if variant == 'card-light' %}
   <div class="card-footer bg-berrylight-gray">
     Footer here
+  </div>
+  {% elseif variant == 'card-justify' %}
+  <div class="card-footer card-justify">
+    <span>Décembre 2015</span>
+    <span>Bella Vita</span>
   </div>
   {%- endif %}
 {% if variant == 'card-light' -%}
