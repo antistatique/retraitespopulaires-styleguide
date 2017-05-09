@@ -4,9 +4,6 @@ name: icon-text
 collection: atoms
 variants:
   back: Back Icon
-
-notes: |
-  ##### Usage : `icon-text`
 ---
 {% if variant == 'back' -%}
 <div class="icon-text" style="max-width: 200px;">

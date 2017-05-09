@@ -2,8 +2,6 @@
 title: logo-retraitespopulaires
 name: logo-retraitespopulaires
 collection: atoms
-notes: |
-  ##### Usage : `logo-retraitespopulaires`
 ---
 <div class="logo-retraitespopulaires svg-responsive">
   <a href="/retraitespopulaires-styleguide/homepage">
@@ -73,6 +71,6 @@ notes: |
   		c5.4-2.1,10.3-4.9,14.3-8.2C116,20.8,111.2,20,105.6,20z"/>
   </g>
   </svg>
-    
+
   </a>
 </div>

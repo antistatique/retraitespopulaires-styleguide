@@ -2,8 +2,6 @@
 title: big-menu-empty
 name: big-menu-empty
 collection: molecules
-notes: |
-  ##### Usage : `big-menu-empty`
 ---
 <div class="swiper-empty-state">
   <div class="row">

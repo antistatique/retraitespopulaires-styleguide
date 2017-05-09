@@ -2,8 +2,6 @@
 title: swiper-menu
 name: swiper-menu
 collection: molecules
-notes: |
-  ##### Usage : `swiper-menu`
 ---
 <div class="swiper-menu">
   <h2 class="sr-only">Navigation principale</h2>

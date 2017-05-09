@@ -2,8 +2,6 @@
 title: input-radio
 name: input-radio
 collection: atoms
-notes: |
-  ##### Usage : `input-radio`
 ---
 <div class="form-group">
   <div class="input-radio">
