@@ -8,6 +8,10 @@
   overflow: hidden;
 }
 
+.card-light {
+  border-color: $ligthen-gray;
+}
+
 a.card {
   display: block;
   color: $text-color;
@@ -27,6 +31,12 @@ a.card {
   }
 }
 
+a.card-light {
+  &:hover {
+    border-color: darken($ligthen-gray, 10%);
+  }
+}
+
 .card-img-top {
   display: flex;
   position: relative;
@@ -38,12 +48,23 @@ a.card {
   width: 100%;
   height: 100%;
   z-index: 2;
+
+  .card-img-top-center & {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .card-img-bg {
   flex: 1 1 auto;
   position: relative;
   background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
   z-index: 2;
 
@@ -65,6 +86,10 @@ a.card {
       opacity: 0.1;
     }
   }
+
+  .card-img-top-center & {
+    background-size: initial;
+  }
 }
 
 .card-subhead {
@@ -75,6 +100,10 @@ a.card {
 
 .card-title {
   margin-top: 0;
+
+  .card-light & {
+    color: $gray;
+  }
 }
 
 .card-body {
@@ -96,6 +125,7 @@ a.card-horizontal {
   }
 }
 
+// LEGACY
 .teaser.shadow.teaser-fullclick {
   &:active.shadow-down,
   &:focus.shadow-down {
