@@ -16,6 +16,8 @@
 
       path {
         stroke: $brand-primary;
+
+        @include theme(stroke);
       }
     }
 
@@ -26,14 +28,6 @@
 
     .path-small {
       top: 20px;
-    }
-  }
-
-  @each $label, $color in $themes {
-    &.lines-#{$label} {
-      .organicjs-container svg path {
-        stroke: $color;
-      }
     }
   }
 }

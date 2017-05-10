@@ -13,11 +13,7 @@
   border: 1px solid $brand-primary;
   border-radius: $border-radius-base;
 
-  @each $label, $color in $themes {
-    &.form-card-#{$label} {
-      border: 1px solid $color;
-    }
-  }
+  @include theme(border-color);
 
   &:after {
     content: "";

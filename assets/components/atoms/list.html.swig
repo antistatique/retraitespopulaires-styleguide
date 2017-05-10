@@ -4,6 +4,7 @@ name: list
 collection: atoms
 changes:
   3.0.0: New component grouping all `-list` components
+wrapper: theme-cip
 variants:
   default: Unordered List
   ordered-list: Ordered List

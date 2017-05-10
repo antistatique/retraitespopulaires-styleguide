@@ -71,11 +71,7 @@
   height: 100px;
   margin: 0 auto;
 
-  @each $label, $color in $themes {
-    .loader-#{$label} {
-      background: $color;
-    }
-  }
+  @include theme(background-color);
 }
 
 .loader-image {

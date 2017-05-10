@@ -32,6 +32,10 @@
   }
 }
 
+.btn-primary {
+  @include btn-theme();
+}
+
 .btn-secondary {
   @include button-variant($btn-default-color, $deep-yellow, $btn-default-border);
 }
@@ -80,15 +84,25 @@
 
 .btn-outline {
   @include button-variant($brand-primary, $transparent, $brand-primary);
+  @include theme(border-color color);
 
   &:hover,
   &:focus, {
-    background: $gray-lighter;
+    background-color: $link-color;
+    border-color: $link-color;
+    color: $white !important;
+
+    @include theme(background-color);
   }
 
   &:active,
-  &:hover:active {
-    background: darken($gray-lighter, 10%);
+  &:hover:active,
+  &:active:focus {
+    background-color: $link-hover-color;
+    border-color: $link-hover-color;
+    color: $white;
+
+    @include theme(background-color border-color, hover-color);
   }
 }
 
@@ -121,5 +135,28 @@
   .btn {
     padding-top: 0.7em;
     padding-bottom: 0.7em;
+  }
+}
+
+// Button looking like a circle
+.btn-circle {
+  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 50%;
+
+  .retraitespopulaires-icon {
+    line-height: $line-height-base;
+  }
+
+  &.btn-sm {
+    width: 30px;
+    height: 30px;
   }
 }

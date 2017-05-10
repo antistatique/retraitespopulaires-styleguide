@@ -126,28 +126,17 @@
       &:hover {
         cursor: pointer;
         color: $brand-primary;
+
+        @include theme(color);
       }
     }
 
     &.active {
-      .retraitespopulaires-icon { color: $brand-primary; }
-    }
-  }
+      .retraitespopulaires-icon {
+        color: $brand-primary;
 
-  @each $label, $color in $themes {
-    &.filters-list-#{$label} {
-      > li .retraitespopulaires-icon:hover { color: $color; }
-      > li.active .retraitespopulaires-icon { color: $color; }
-    }
-  }
-}
-
-@each $label, $color in $themes {
-  .filters-list > li.active {
-    .retraitespopulaires-icon.text-#{$label} {
-      color: $color;
-
-      &:hover { color: $black; }
+        @include theme(color);
+      }
     }
   }
 }

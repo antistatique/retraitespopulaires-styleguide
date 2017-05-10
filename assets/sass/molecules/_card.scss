@@ -6,10 +6,12 @@
   border-radius: $border-radius-base;
   box-shadow: 0 50px 75px -45px $shadow-gray;
   overflow: hidden;
+
+  @include theme(border-color);
 }
 
 .card-light {
-  border-color: $ligthen-gray;
+  border-color: $ligthen-gray !important;
 }
 
 a.card {
@@ -28,6 +30,8 @@ a.card {
   &:hover {
     border-color: darken($brand-primary, 10);
     box-shadow: 0 65px 75px -45px darken($shadow-gray, 0.3);
+
+    @include theme(border-color, hover-color);
   }
 }
 
@@ -41,6 +45,29 @@ a.card-light {
   display: flex;
   position: relative;
   min-height: 200px;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    background: linear-gradient(to bottom, $brand-primary 0%, $transparent 100%);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+    @include theme-custom() {
+      background-image: linear-gradient(to bottom, $color 0%, $transparent 100%);
+    }
+  }
+
+  .card:hover & {
+    &:before {
+      opacity: 0.1;
+    }
+  }
 }
 
 .card-img {
@@ -67,25 +94,6 @@ a.card-light {
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 2;
-
-  &:before {
-    content: ' ';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 4;
-    width: 100%;
-    background: linear-gradient(to bottom, $brand-primary 0%, $transparent 100%);
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-  }
-
-  .card:hover & {
-    &:before {
-      opacity: 0.1;
-    }
-  }
 
   .card-img-top-center & {
     background-size: initial;
@@ -133,27 +141,4 @@ a.card-horizontal {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-// LEGACY
-.teaser.shadow.teaser-fullclick {
-  &:active.shadow-down,
-  &:focus.shadow-down {
-    border-color: $mine-shaft;
-    box-shadow: 0 45px 75px -45px $shadow-gray;
-  }
-
-  @each $label, $color in $themes {
-    &.teaser-#{$label} {
-      border-color: $color;
-
-      .heading-image:before {
-        background: linear-gradient(to bottom, $color 0%, $transparent 100%);
-      }
-
-      &:hover {
-        border-color: darken($color, 10);
-      }
-    }
-  }
 }

@@ -3,25 +3,20 @@
 @mixin pretty-link($color: $link-color, $bg: $white, $line: $link-color) {
   text-decoration: none;
   // Underline via gradient background
-  background-image: linear-gradient(rgba($line, 0.25) 0%, $line 100%);
+  background-image: linear-gradient($line 0%, $line 100%);
   background-repeat: repeat-x;
   background-size: 1px 1px;
   background-position: 0 95%;
   color: $color;
   // Clear descendors from underline
-  text-shadow:
-    3px 0 $bg,
-    2px 0 $bg,
-    1px 0 $bg,
-    -1px 0 $bg,
-    -2px 0 $bg,
-    -3px 0 $bg;
   transition: color 0.25s ease-in-out;
+
+  @include pretty-link-text-shadow($bg);
 
   // Tweak position + thickness for high res (1.75x and up) displays
 
   @media (min-resolution: 168dpi) {
-    background-image: linear-gradient(rgba($line, 0.25) 0%, $line 100%);
+    background-image: linear-gradient($line 0%, $line 100%);
     background-position: 0 93%;
   }
 
@@ -44,6 +39,16 @@
     color: $text-color;
     text-shadow: none;
   }
+}
+
+@mixin pretty-link-text-shadow($color) {
+  text-shadow:
+    3px 0 $color,
+    2px 0 $color,
+    1px 0 $color,
+    -1px 0 $color,
+    -2px 0 $color,
+    -3px 0 $color;
 }
 
 @mixin sr-only() {

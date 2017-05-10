@@ -3,13 +3,6 @@
 .button-bubble {
   margin: 0 $grid-gutter-width / 2;
 
-  @each $label, $color in $themes {
-    &.button-bubble-#{$label} .bubble-icon {
-      background: $color;
-      border-color: $color;
-    }
-  }
-
   .bubble-icon {
     display: inline-block;
     padding: 1.5em 1.6em;
@@ -18,6 +11,8 @@
     border-radius: 4em;
     line-height: 0;
     cursor: pointer;
+
+    @include theme(background-color border-color);
 
     i {
       color: $white;

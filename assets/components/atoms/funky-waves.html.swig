@@ -3,7 +3,6 @@ title: funky-waves
 name: funky-waves
 collection: atoms
 notes: |
-  ##### Usage : `funky-waves`
   ##### Options :
   - **funky_waves_img** - <i>String</i>
   - **funky_waves_theme** - <i>String</i> - <b>wrapper-funky-waves-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>

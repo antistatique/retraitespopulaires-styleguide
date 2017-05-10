@@ -45,6 +45,7 @@ h6,
  * Text color variants
  */
 @include text-emphasis-variant('.text-gray', $gray);
+@include text-emphasis-variant('.text-gray-dark', $gray-dark);
 
 /**
 * Responsive Typography

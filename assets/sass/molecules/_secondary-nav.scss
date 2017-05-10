@@ -12,6 +12,8 @@
     background: $brand-primary;
     text-align: center;
 
+    @include theme(background-color);
+
     .retraitespopulaires-icon {
       display: block;
       color: $white;
@@ -37,6 +39,8 @@
     padding: $grid-gutter-width / 1.5;
     border-bottom: 1px solid $ligthen-gray;
     color: $brand-primary;
+
+    @include theme(color);
   }
 
   .links li {
@@ -53,33 +57,5 @@
 
   .links-children li {
     padding-left: $grid-gutter-width * 1.5;
-  }
-}
-
-/**
-* Themes
-*/
-
-@each $label, $color in $themes {
-  .secondary-nav-#{$label} {
-    .back {
-      background: $color;
-    }
-
-    .secondary-nav-content .title {
-      color: $color;
-    }
-
-    .secondary-nav-content li .pretty-link {
-      @include pretty-link($text-color, $white, $color);
-    }
-
-    .secondary-nav-content li.active {
-      background-color: rgba($color, 0.4);
-
-      a.pretty-link {
-        @include pretty-link($black, $transparent, $black);
-      }
-    }
   }
 }

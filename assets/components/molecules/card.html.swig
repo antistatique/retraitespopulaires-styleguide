@@ -1,7 +1,7 @@
 ---
 title: Card
 name: card
-wrapper: col-sm-6
+wrapper: col-sm-6 theme-assurance
 collection: molecules
 variants:
   default: Standard Card

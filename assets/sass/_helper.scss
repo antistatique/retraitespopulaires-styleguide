@@ -247,6 +247,7 @@
  * Background helpers
  */
 @include bg-variant('.bg-berrylight-gray', $berrylight-gray);
+@include bg-variant('.bg-light-gray', $light-gray);
 
 /**
  * Fonts modifiers

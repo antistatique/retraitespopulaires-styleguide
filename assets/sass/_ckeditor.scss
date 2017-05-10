@@ -25,36 +25,4 @@
     margin: 0 auto 10px;
     max-width: 100%;
   }
-
-  @each $label, $color in $themes {
-    &.body-#{$label} {
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      strong {
-        @extend .text-#{$label};
-      }
-
-      table.tablesaw {
-        @extend .table-#{$label};
-      }
-
-      a:not(.no-style) {
-        @extend .text-#{$label}.pretty-link;
-      }
-    }
-  }
-}
-
-.entity-body-berrylight-gray {
-  @each $label, $color in $themes {
-    &.body-#{$label} {
-      p a:not(.btn),
-      .pretty-link {
-        @include pretty-link($black, $berrylight-gray, $color);
-      }
-    }
-  }
 }

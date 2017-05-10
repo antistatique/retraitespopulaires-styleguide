@@ -85,13 +85,4 @@
   &.active {
     display: block;
   }
-
-  // @each $label, $color in $themes {
-  //   &.tab-pane-#{$label} {
-  //     a {
-  //       color: $color;
-  //       text-decoration: none;
-  //     }
-  //   }
-  // }
 }

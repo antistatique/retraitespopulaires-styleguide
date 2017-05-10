@@ -9,51 +9,37 @@
   cursor: pointer;
   z-index: 2001;
 
-  @each $label, $color in $themes {
-    &.hamburger-#{$label} {
-      .hamburger-button .hamburger-circle circle {
-        stroke: $color;
-      }
 
-      .hamburger-helper .helper-when-open,
-      .hamburger-helper .helper-when-close {
-        color: $color;
-      }
+  // @TODO: What's that?? it was in the themes loop
 
-      &.active .hamburger span:nth-child(1),
-      &.active .hamburger span:nth-child(3) {
-        background: $color;
-      }
-    }
-  }
+  // .hamburger-button {
+  //   position: absolute;
+  //   right: 0.5em;
 
-  .hamburger-button {
-    position: absolute;
-    right: 0.5em;
-
-    @media (min-width: $screen-sm-min) {
-      right: 1.5em;
-    }
-  }
-
-  .hamburger-helper {
-    position: absolute;
-    top: 30px;
-    right: 4.8em;
-
-    @media (min-width: $screen-sm-min) {
-      right: 5.8em;
-    }
-  }
+  //   @media (min-width: $screen-sm-min) {
+  //     right: 1.5em;
+  //   }
 }
 
 .hamburger-helper {
+  position: absolute;
+  top: 30px;
+  right: 4.8em;
+
+  @media (min-width: $screen-sm-min) {
+    right: 5.8em;
+  }
+
   .helper-when-open {
     display: none;
+
+    @include theme(color);
   }
 
   .helper-when-close {
     color: $brand-primary;
+
+    @include theme(color);
   }
 }
 
@@ -92,6 +78,8 @@
     circle {
       stroke: $brand-primary;
       transition: stroke-dashoffset 0.5s;
+
+      @include theme(stroke);
     }
   }
 }
@@ -104,6 +92,8 @@
       &:nth-child(1) {
         background: $brand-primary;
         transform: rotateZ(45deg) scaleX(1) translate(6.5px, 6.5px);
+
+        @include theme(background-color);
       }
 
       &:nth-child(2) {
@@ -113,6 +103,8 @@
       &:nth-child(3) {
         background: $brand-primary;
         transform: rotateZ(-45deg) scaleX(1) translate(5px, -5px);
+
+        @include theme(background-color);
       }
     }
   }

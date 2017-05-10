@@ -25,11 +25,9 @@
 @import 'atoms/input-datepicker';
 @import 'atoms/input-select';
 @import 'atoms/pagination';
-@import 'atoms/section-bloc';
 @import 'atoms/favicon';
 @import 'atoms/loader';
 @import 'atoms/icon-text';
-@import 'atoms/arrow';
 @import 'atoms/input-text';
 @import 'atoms/input-radio';
 @import 'atoms/input-checkbox';
@@ -47,7 +45,7 @@
 @import 'atoms/button-bubble';
 @import 'atoms/socials';
 @import 'atoms/search-box';
-@import 'atoms/tag';
+@import 'atoms/label';
 @import 'atoms/managed-by-link';
 @import 'atoms/tooltip';
 
@@ -58,18 +56,8 @@
 @import 'molecules/prenavbar';
 @import 'molecules/teaser-search';
 @import 'molecules/progresschart';
-@import 'molecules/teaser-contact-detail';
-@import 'molecules/teaser-contact-cta';
 @import 'molecules/immo-results';
-@import 'molecules/teaser-offer';
 @import 'molecules/fieldset';
-@import 'molecules/teaser-institution';
-@import 'molecules/teaser-profil';
-@import 'molecules/teaser-basicpage';
-@import 'molecules/teaser-product';
-@import 'molecules/teaser-news';
-@import 'molecules/teaser-rental';
-@import 'molecules/teaser-contact';
 @import 'molecules/breadcrumb';
 @import 'molecules/big-menu-empty';
 @import 'molecules/search-form';
@@ -81,7 +69,6 @@
 @import 'molecules/collapse';
 @import 'molecules/big-menu';
 @import 'molecules/push-menu';
-@import 'molecules/card-attachement';
 @import 'molecules/form';
 @import 'molecules/teaser-document-extranet';
 @import 'molecules/dropdown';
