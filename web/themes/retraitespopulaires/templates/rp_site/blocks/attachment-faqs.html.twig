@@ -1,13 +1,15 @@
-<div class="card-attachement card-attachement-{{ variables.theme }} shadow shadow-down">
-  <h2 class="card-title">{% trans %}Questions et réponses{% endtrans %}</h2>
-  <ul class="card-content list-spaced list-unstyled">
-    {% for faq in variables.links %}
-    <li>
-      <a class="text-bold h5" href="{{ path('entity.node.canonical', {'node':faq.nid.value}) }}"><span class="pretty-link">{{ faq.title.value }}</span></a>
-    </li>
-    {% endfor %}
-  </ul>
-  <div class="card-footer">
+<div class="card card-light">
+  <div class="card-body">
+    <h2 class="card-title">{% trans %}Questions et réponses{% endtrans %}</h2>
+    <ul class="list-spaced list-unstyled">
+      {% for faq in variables.links %}
+      <li>
+        <a class="h5 pretty-link" href="{{ path('entity.node.canonical', {'node':faq.nid.value}) }}">{{ faq.title.value }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="card-footer card-berrylight-gray">
     <div class="icon-text icon-text-center">
         <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-faq-thick"></span>
         <div class="icon-text-txt">

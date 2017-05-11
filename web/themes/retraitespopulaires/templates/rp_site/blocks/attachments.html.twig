@@ -1,22 +1,21 @@
 {% if variables.attachments[0].links or variables.attachments[1].links  %}
-<div class="attachements-wrapper">
-  <div class="container">
-    <div class="row">
-      {% set cols = [
-        variables.attachments[0].links and variables.attachments[1].links ? 'col-xs-12 col-md-6',
-        not variables.attachments[0].links and variables.attachments[1].links ? 'col-md-6 col-md-offset-3',
-        variables.attachments[0].links and not variables.attachments[1].links ? 'col-md-6 col-md-offset-3',
-      ]  %}
+<div class="container">
+  <div class="spacer"></div>
+  <div class="row">
+    {% set cols = [
+      variables.attachments[0].links and variables.attachments[1].links ? 'col-xs-12 col-md-6',
+      not variables.attachments[0].links and variables.attachments[1].links ? 'col-md-6 col-md-offset-3',
+      variables.attachments[0].links and not variables.attachments[1].links ? 'col-md-6 col-md-offset-3',
+    ]  %}
 
-      {% for attachment in variables.attachments %}
-        {% if attachment.links  %}
-        <div class=" {{ cols|join(' ') }}">
-          {{ load_block('rp_site_attachment_block', {'theme': attachment.theme, 'type': attachment.type, 'title': attachment.title, 'links': attachment.links, 'collection': attachment.collection}) }}
-        </div>
-        {% endif %}
-      {% endfor %}
-    </div>
+    {% for attachment in variables.attachments %}
+      {% if attachment.links  %}
+      <div class=" {{ cols|join(' ') }}">
+        {{ load_block('rp_site_attachment_block', {'theme': attachment.theme, 'type': attachment.type, 'title': attachment.title, 'links': attachment.links, 'collection': attachment.collection}) }}
+      </div>
+      {% endif %}
+    {% endfor %}
   </div>
-  <div class="organic-lines hidden-print lines-{{ variables.theme }}"></div>
 </div>
+<div class="organic-lines hidden-print lines-{{ variables.theme }}"></div>
 {% endif %}
