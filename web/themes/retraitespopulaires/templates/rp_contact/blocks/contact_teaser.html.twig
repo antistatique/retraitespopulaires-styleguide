@@ -40,16 +40,16 @@
 
         {% if variables.contact.field_phone.value %}
           {% set tel = variables.contact.field_phone.value|replace({' ': ''}) %}
-          {% trans %} au <a class="pretty-link text-bold text-no-wrap text-{{ theme }}" href="tel:{{ tel }}">{{ variables.contact.field_phone.value }}</a>{% endtrans %}
+          {% trans %} au <a class="pretty-link text-bold text-no-wrap" href="tel:{{ tel }}">{{ variables.contact.field_phone.value }}</a>{% endtrans %}
         {%- endif -%}
 
         {%- if variables.contact.field_email.value -%}
-          {% trans %}, par e-mail via <a class="pretty-link text-bold text-break-all text-{{ theme }}" href="mailto:{{ variables.contact.field_email.value }}">{{ variables.contact.field_email.value }}</a>{% endtrans %}
+          {% trans %}, par e-mail via <a class="pretty-link text-bold text-break-all" href="mailto:{{ variables.contact.field_email.value }}">{{ variables.contact.field_email.value }}</a>{% endtrans %}
         {%- endif -%}
 
         {%- if variables.contact.field_fax.value -%}
           {% set fax = variables.contact.field_fax.value|replace({' ': ''}) %}
-          {% trans %} ou par fax au <a class="pretty-link text-no-wrap text-bold text-{{ theme }}" href="tel:{{ fax }}">{{ variables.contact.field_fax.value }}</a>.{% endtrans %}
+          {% trans %} ou par fax au <a class="pretty-link text-no-wrap text-bold" href="tel:{{ fax }}">{{ variables.contact.field_fax.value }}</a>.{% endtrans %}
         {%- else -%}
           .
         {%- endif -%}
@@ -58,7 +58,7 @@
 
     {% if variables.btn %}
       <p>
-        <a href="{{ link }}" class="btn btn-{{ theme|default('primary') }}">Contacter</a>
+        <a href="{{ link }}" class="btn btn-primary">Contacter</a>
       </p>
     {% endif %}
 
