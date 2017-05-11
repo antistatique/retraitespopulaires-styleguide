@@ -1,31 +1,26 @@
 {% if variables.news.nid.value %}
-<a href="{{ path('entity.node.canonical', {'node': variables.news.nid.value}) }}" class="teaser teaser-fullclick teaser-news shadow shadow-down">
+<a href="{{ path('entity.node.canonical', {'node': variables.news.nid.value}) }}" class="card">
   {% if not variables.news.field_cover.entity.uri.value is empty %}
-  <div class="news-heading">
-    <div class="heading-image" style="background-image: url({{ file_url(variables.cover.xl) }})"></div>
-    <div class="loader-image">
-      <div class="loader">
-        <div class="loader-yingyang loader-{{ theme }}"></div>
-      </div>
-    </div>
+  <div class="card-img-top">
+    <img class="card-img" src="{{ file_url(variables.cover.xl) }}" alt="{{ variables.news.title.value }}">
+    <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div></div>
   </div>
   {% endif %}
-  <div class="news-body">
-    <h3 class="news-title h1">{{ variables.news.title.value }}</h3>
-    <div class="spacer spacer-xs"></div>
-    <p>{{ variables.news.body.summary }}</p><p>
-    </p><div class="spacer spacer-sm"></div>
-    <div class="news-extra">
-      <div class="news-date">
-        <time datetime="{{ variables.news.field_date.date|date_format('c') }}">
-          <span class="sr-only">{% trans %}Date de publication: {% endtrans %}</span>
-          {{ variables.news.field_date.date|date_format('d F Y')|capitalize }}
-        </time>
-      </div>
-      <div class="news-type">
+
+  <div class="card-body">
+    <h3 class="card-title h1">{{ variables.news.title.value }}</h3>
+    <p>{{ variables.news.body.summary }}</p>
+  </div>
+  <div class="card-footer">
+    <div class="card-justify">
+      <time datetime="{{ variables.news.field_date.date|date_format('c') }}">
+        <span class="sr-only">{% trans %}Date de publication: {% endtrans %}</span>
+        {{ variables.news.field_date.date|date_format('d F Y')|capitalize }}
+      </time>
+      <span>
         <span class="sr-only">{% trans %}Catégorie de l'actualité: {% endtrans %}</span>
         {{ variables.news.field_news_type.entity.name.value }}
-      </div>
+      </span>
     </div>
   </div>
 </a>
