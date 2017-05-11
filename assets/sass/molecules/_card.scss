@@ -25,6 +25,18 @@
   border-color: $ligthen-gray !important;
 }
 
+.card-white {
+  background-color: $white;
+
+  .pretty-link { @include pretty-link-text-shadow($white); }
+}
+
+.card-berrylight-gray {
+  background-color: $berrylight-gray;
+
+  .pretty-link { @include pretty-link-text-shadow($berrylight-gray); }
+}
+
 a.card {
   color: $text-color;
   transition:
@@ -35,6 +47,7 @@ a.card {
   &:active,
   &:hover {
     text-decoration: none;
+    color: $text-color;
   }
 
   &:hover {
@@ -42,6 +55,10 @@ a.card {
     box-shadow: 0 65px 75px -45px darken($shadow-gray, 0.3);
 
     @include theme(border-color, hover-color);
+  }
+
+  .card-title {
+    @include theme(color);
   }
 }
 
@@ -73,7 +90,7 @@ a.card-light {
     }
   }
 
-  .card:hover & {
+  a.card:hover & {
     &:before {
       opacity: 0.1;
     }
@@ -81,6 +98,14 @@ a.card-light {
 
   .retraitespopulaires-icon {
     margin: ($grid-gutter-width / 2) auto;
+  }
+}
+
+a.card-img-top {
+  &:hover {
+    &:before {
+      opacity: 0.1;
+    }
   }
 }
 
@@ -144,7 +169,7 @@ a.card-light {
 .card-horizontal,
 a.card-horizontal {
   @media (min-width: $screen-sm-min) {
-    display: flex;
+    flex-direction: row;
 
     > * {
       width: 100%;

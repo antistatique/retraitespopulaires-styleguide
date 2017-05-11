@@ -8,6 +8,4 @@ variants:
 notes: |
   Can be wrapped in `.theme-[theme]` to change look
 ---
-<div class="loader">
-  <div class="{{ variant|default('loader-snake') }}"></div>
-</div>
+<div class="loader"><div class="{{ variant|default('loader-snake') }}"></div></div>

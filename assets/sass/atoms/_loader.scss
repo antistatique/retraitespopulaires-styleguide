@@ -70,8 +70,6 @@
   width: 100px;
   height: 100px;
   margin: 0 auto;
-
-  @include theme(background-color);
 }
 
 .loader-image {
@@ -86,9 +84,11 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background: $brand-primary;
+  background-color: $brand-primary;
   border-radius: 50%;
   animation: rotate 5s linear infinite;
+
+  @include theme(background-color);
 
   @extend %snake;
 }
