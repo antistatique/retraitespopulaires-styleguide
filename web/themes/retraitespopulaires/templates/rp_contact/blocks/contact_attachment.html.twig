@@ -1,11 +1,9 @@
 {% if variables.contacts %}
-<div id="contactez-nous" class="attachments-contact">
+<div id="contactez-nous" class="bg-berrylight-gray">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 attachments-contact-heading">
-        <h2>{% trans %}Retraites&nbspPopulaires est à votre disposition{% endtrans %}</h2>
-        <div><a href="{{ path('entity.node.canonical', {'node': 50 }) }}" class="pretty-link pretty-link-berrylight-gray text-{{ variables.theme }}">{% trans %}Contacter Retraites&nbsp;Populaires{% endtrans %}</a></div>
-      </div>
+    <div class="section-title">
+      <h2>{% trans %}Retraites&nbsp;Populaires est à votre disposition{% endtrans %}</h2>
+      <div><a href="{{ path('entity.node.canonical', {'node': 50 }) }}" class="pretty-link">{% trans %}Contacter Retraites&nbsp;Populaires{% endtrans %}</a></div>
     </div>
 
     <div class="row">
@@ -13,8 +11,6 @@
         {% if variables.contacts %}
           {% for contact in variables.contacts %}
             {{ load_block('rp_contact_contact_teaser_block', {'node': variables.node, 'contact': contact, 'theme': variables.theme, 'search_npa': variables.node.field_search_npa.value}) }}
-
-            {% if not loop.last %}<div class="spacer spacer-sm"></div>{% endif %}
           {% endfor %}
         {% endif %}
       </div>

@@ -4,10 +4,10 @@
     <li>
       <div class="media">
         <div class="media-left">
-          <a data-id="{{ advisor.nid.value }}" data-value="{{ advisor.title.value }}" href="{{ path('entity.node.canonical', {'node': advisor.nid.value}) }}" class="text-{{ variables.theme }} retraitespopulaires-icon retraitespopulaires-icon-frontdesk retraitespopulaires-icon-2x"></a>
+          <a data-id="{{ advisor.nid.value }}" data-value="{{ advisor.title.value }}" href="{{ path('entity.node.canonical', {'node': advisor.nid.value}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-frontdesk retraitespopulaires-icon-2x"></a>
         </div>
         <div class="media-body">
-          <a data-id="{{ advisor.nid.value }}" data-value="{{ advisor.title.value }}" href="{{ path('entity.node.canonical', {'node': advisor.nid.value}) }}" class="pretty-link h5 text-{{ variables.theme }}">
+          <a data-id="{{ advisor.nid.value }}" data-value="{{ advisor.title.value }}" href="{{ path('entity.node.canonical', {'node': advisor.nid.value}) }}" class="pretty-link">
             {% set display = [] %}
             {% if advisor|length == 1 %}
               {% if advisor.field_firstname.value %}
