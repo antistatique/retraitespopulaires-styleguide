@@ -6,6 +6,7 @@ collection: molecules
 variants:
   default: Standard Card
   img-bg: Image as Background
+  card-icon: Icon
   card-light: Card Light
   card-justify: Card Justify
 notes: |
@@ -22,16 +23,22 @@ notes: |
 <a href="#" class="card">
 {% endif -%}
   {% if variant != 'card-light' -%}
-  <div class="card-img-top">
-    {% if variant == 'img-bg' -%}
-    <div class="card-img-bg" style="background-image: url('https://unsplash.it/780/780?image=1005');"></div>
-    {% else -%}
-    <img class="card-img" src="https://unsplash.it/780/380?image=1005" alt="card image">
-    {% endif -%}
-    <div class="loader-image">
-    {%- include '../atoms/loader.html.swig' with {'loader_type': 'yingyang'} %}
-    </div>
-  </div>
+    {% if variant != 'card-icon' %}
+      <div class="card-img-top">
+        {% if variant == 'img-bg' -%}
+        <div class="card-img-bg" style="background-image: url('https://unsplash.it/780/780?image=1005');"></div>
+        {% else -%}
+        <img class="card-img" src="https://unsplash.it/780/380?image=1005" alt="card image">
+        {% endif -%}
+        <div class="loader-image">
+        {%- include '../atoms/loader.html.swig' with {'loader_type': 'yingyang'} %}
+        </div>
+      </div>
+    {% else %}
+      <div class="card-img-top">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-5x retraitespopulaires-icon-contact-us-borderless" aria-hidden="true"></span>
+      </div>
+    {% endif %}
   {% endif -%}
   <div class="card-body">
     {% if variant != 'card-light' -%}

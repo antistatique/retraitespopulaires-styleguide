@@ -263,7 +263,14 @@
 
 @media screen and (min-width: $screen-md-min) {
   .same-height-group {
-    display: flex;
+    @supports (display: flex) {
+      display: flex;
+
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
   }
 
   .same-height-group .same-height {
