@@ -2,18 +2,15 @@
 title: funky-waves
 name: funky-waves
 collection: atoms
+variants:
+  no-funky: Whitout Funky
+  no-cover: Whitout cover
 notes: |
-  ##### Options :
-  - **funky_waves_img** - <i>String</i>
-  - **funky_waves_theme** - <i>String</i> - <b>wrapper-funky-waves-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
-  - **funky_waves_disable** - <i>Boolean</i>
-  - **funky_waves_no_header** - <i>Boolean</i>
+  Can be wrapped in `.theme-[theme]` to change look. <br>
+  Can be used with the modifier `has-header` to add margin-top when used with fixed header.
 ---
-
-<div class="wrapper-funky-waves {% if not funky_waves_no_header %}has-header{% endif %} wrapper-funky-waves-{{ funky_waves_theme }}">
-  {% if funky_waves_img  %}
-    <img class="img-responsive center-block" src="{{ funky_waves_img }}" />
-  {% else  %}
+<div class="wrapper-funky-waves {% if variant != 'no-cover' -%}wrapper-funky-waves-with-cover{% endif %}">
+  {% if variant != 'no-cover' -%}
     <picture>
       <source srcset="https://unsplash.it/544/250?image=1057" media="(max-width: 544px)">
       <source srcset="https://unsplash.it/992/350?image=1057" media="(max-width: 992px)">
@@ -22,7 +19,7 @@ notes: |
     </picture>
   {% endif %}
 
-  {% if not funky_waves_disable %}
+  {% if variant != 'no-funky' -%}
     <div class="funky-waves-container">
       <svg class="wave-1" version="1.1" viewBox="0 0 1920 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
           <path fill="#FFFFFF" d="M1920,136V73 c-189,83-636,77-980-6 C504-40,274-1,0,65.0277l0,70.7052L1920,136z"/>
@@ -44,6 +41,6 @@ notes: |
   {% endif %}
 </div>
 
-{% if funky_waves_disable %}
+{% if variant != 'no-funky' -%}
   <div class="spacer"></div>
 {% endif %}

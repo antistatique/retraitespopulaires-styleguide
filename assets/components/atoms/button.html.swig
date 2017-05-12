@@ -2,7 +2,7 @@
 title: button
 name: button
 collection: atoms
-bootstrap: http://getbootstrap.com/css/#buttons
+bootstrap: https://getbootstrap.com/css/#buttons
 variants:
   default: Button Primary
   btn-secondary: Button Secondary

@@ -2,6 +2,8 @@
 title: alert
 name: alert
 collection: atoms
+bootstrap: https:///getbootstrap.com/components/#alerts
+
 variants:
   default: Alert Info
   alert-success: Alert Success

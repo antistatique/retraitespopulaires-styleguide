@@ -3,8 +3,7 @@ title: input-radio-btn
 name: input-radio-btn
 collection: atoms
 notes: |
-  ##### Usage : `input-radio-btn`
-  - **input_radio_btn_theme** - <i>String</i> - <b>text-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look.
 ---
 <div class="form-group">
   <div class="input-radio-btn">

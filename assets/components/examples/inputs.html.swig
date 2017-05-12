@@ -7,17 +7,6 @@ layout: examples.html.swig
 ---
 
 <div class="row">
-  <div class="col-xs-6 col-xs-offet-3">
-    <label>Confirmation de réussit d'un formulaire</label>
-    {% include '../atoms/well.html.swig' with {'well_status': 'success'} %}
-    <div class="spacer spacer-sm"></div>
-
-    <label>Affichage des erreurs d'un formulaire</label>
-    {% include '../atoms/well.html.swig' with {'well_status': 'danger'} %}
-  </div>
-</div>
-
-<div class="row">
   <div class="col-xs-12">
     <div class="form-group readonly">
       <label>Champ lecture seule</label>
@@ -79,16 +68,16 @@ layout: examples.html.swig
     <div class="form-group">
       <div class="form-group-inline">
         <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="choice" value="pistache">
-          <label class="option">Pistache</label>
+          <input type="checkbox" name="choice" id="pistache" value="pistache">
+          <label class="option" for="pistache">Pistache</label>
         </div>
         <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="choice" value="menthe-fraiche">
-          <label class="option">Menthe fraîche</label>
+          <input type="checkbox" name="choice" id="menthe" value="menthe-fraiche">
+          <label class="option" for="menthe">Menthe fraîche</label>
         </div>
         <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="choice" value="chocolat">
-          <label class="option">chocolat</label>
+          <input type="checkbox" name="choice" id="chocolat" value="chocolat">
+          <label class="option" for="chocolat">chocolat</label>
         </div>
       </div>
     </div>
@@ -97,24 +86,18 @@ layout: examples.html.swig
     <div class="form-group">
       <div class="form-group-inline">
         <div class="input-radio radio-inline">
-          <input type="radio" name="choice" value="meringue-creme-double">
-          <label class="option">Meringue crème double</label>
+          <input type="radio" name="choice" id="choice-meringue" value="meringue-creme-double">
+          <label class="option" for="choice-meringue">Meringue crème double</label>
         </div>
         <div class="input-radio radio-inline">
-          <input type="radio" name="choice" value="miel">
-          <label class="option">Miel</label>
+          <input type="radio" name="choice" id="choice-miel" value="miel">
+          <label class="option" for="choice-miel">Miel</label>
         </div>
       </div>
     </div>
 
     {% include '../atoms/input-select.html.swig' %}
     {% include '../atoms/input-datepicker.html.swig' %}
-    <div class="input-group">
-      <input aria-label="Saisissez la date au format (JJ/MM/AAAA)" type="text" class="form-control datepicker" value="02/12/2016">
-      <span class="input-group-btn no-events">
-        <button class="btn btn-default-invert btn-icon" type="button" aria-label="Choisir la date"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
-      </span>
-    </div>
 
     {% include '../atoms/input-radio-btn.html.swig' %}
     {% include '../atoms/input-textarea.html.swig' %}
@@ -122,7 +105,7 @@ layout: examples.html.swig
 
     <form method="post" action="#" enctype="multipart/form-data">
       <div class="form-group form-file">
-        <div class="label">Vos documents</div>
+        <div class="form-control-label">Vos documents</div>
         <div class="form-file-handler btn btn-lg btn-primary">
           <label for="files">Télécharger vos fichiers</label>
           <input name="files[]" id="filesToUpload" type="file" multiple="" />

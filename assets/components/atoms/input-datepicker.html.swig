@@ -2,6 +2,9 @@
 title: input-datepicker
 name: input-datepicker
 collection: atoms
+notes: |
+  Can be wrapped in `.theme-[theme]` to change look. <br>
+  We use the `jQuery` plugin [bootstrap-datepicker](https://bootstrap-datepicker.readthedocs.io/en/latest), check the documentation for advanced usage & parameters.
 ---
 <div class="form-group">
   <label for="dateinput" >label</label>

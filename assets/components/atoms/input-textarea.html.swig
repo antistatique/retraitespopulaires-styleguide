@@ -3,8 +3,7 @@ title: input-textarea
 name: input-textarea
 collection: atoms
 notes: |
-  ##### Usage : `input-textarea`
-  - **input_textarea_theme** - <i>String</i> - <b>datepicker-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look.
 ---
 <div class="form-group">
   <label for="inputID">Label</label>

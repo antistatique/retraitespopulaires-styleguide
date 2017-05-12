@@ -2,16 +2,15 @@
 title: hamburger
 name: hamburger
 collection: atoms
+variants:
+  link-only: Hamburger as Link
 notes: |
-  ##### Usage : `hamburger`
-  ##### Options :
-  - **hamburger_link** - <i>Boolean</i>
-  - hamburger_theme** - <i>String</i> - <b>hamburger-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look.
 ---
-{% if hamburger_link %}
-  <a href="#0" class="hamburger-wrapper hamburger-{{ hamburger_theme }}">
+{% if variant == 'link-only' -%}
+  <a href="//www.retraitespopulaires.ch/launcher" class="hamburger-wrapper d-block">
 {% else %}
-  <div class="hamburger-wrapper hamburger-{{ hamburger_theme }}">
+  <div class="hamburger-wrapper">
 {% endif %}
   <div class="hamburger-button">
     <div class="hamburger">
@@ -27,7 +26,7 @@ notes: |
     <div class="helper-when-close">Menu</div>
     <div class="helper-when-open">Fermer</div>
   </div>
-{% if hamburger_link %}
+{% if variant == 'link-only' -%}
   </a>
 {% else %}
   </div>

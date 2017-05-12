@@ -3,11 +3,9 @@ title: hamburger-mandat
 name: hamburger-mandat
 collection: atoms
 notes: |
-  ##### Usage : `hamburger-mandat`
-  ##### Options :
-  - hamburger_mandat_theme** - <i>String</i> - <b>hamburger-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look.
 ---
-<div class="hamburger-mandat-wrapper hamburger-{{ hamburger_mandat_theme }}">
+<div class="hamburger-mandat-wrapper">
   <div class="hamburger-mandat-button">
     <div class="hamburger">
       <span></span>

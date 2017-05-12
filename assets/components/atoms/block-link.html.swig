@@ -1,6 +1,8 @@
 ---
 title: block-link
 name: block-link
+background: "#eee"
+wrapper: col-xs-4
 collection: atoms
 ---
 <a class="block-link" href="tel:+41211234567">
