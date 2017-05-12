@@ -120,6 +120,17 @@
 .flex-row {
   display: flex;
   flex-wrap: wrap;
+
+  @supports (display: flex) {
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+
+  [class*=col-] {
+    display: flex;
+  }
 }
 
 .d-block {

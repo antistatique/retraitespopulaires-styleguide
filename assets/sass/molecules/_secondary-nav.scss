@@ -47,14 +47,19 @@
     padding: 8px $grid-gutter-width / 1.5;
 
     &.active {
-      @include theme-custom() {
-        background-color: lighten(desaturate($color, 28), 37);
+      background-color: $brand-primary;
 
-        .pretty-link {
-          @include pretty-link-text-shadow(lighten(desaturate($color, 28), 37));
-        }
+      .pretty-link {
+        @include pretty-link($text-color, $brand-primary, $white);
       }
 
+      @include theme-custom() {
+        background-color: tint($color, 50%);
+
+        .pretty-link {
+          @include pretty-link-text-shadow(tint($color, 50%));
+        }
+      }
     }
   }
 

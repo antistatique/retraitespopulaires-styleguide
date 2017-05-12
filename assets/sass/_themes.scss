@@ -64,6 +64,7 @@ $themes: (
     .theme-#{$theme} & {
       @include pretty-link($black, $bg, map-deep-get($themes, $theme, $line));
     }
+
   }
 }
 

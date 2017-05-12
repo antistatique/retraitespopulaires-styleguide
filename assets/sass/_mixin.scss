@@ -1,6 +1,8 @@
 @charset 'UTF-8';
 
-@mixin pretty-link($color: $link-color, $bg: $white, $line: $link-color) {
+@mixin pretty-link($color: $link-color, $bg: $white, $line-color: $link-color) {
+  $line: color_contrast($bg, $line-color);
+
   text-decoration: none;
   // Underline via gradient background
   background-image: linear-gradient($line 0%, $line 100%);
@@ -8,13 +10,13 @@
   background-size: 1px 1px;
   background-position: 0 95%;
   color: $color;
+  color: color_contrast($bg, $color, $white);
   // Clear descendors from underline
   transition: color 0.25s ease-in-out;
 
   @include pretty-link-text-shadow($bg);
 
   // Tweak position + thickness for high res (1.75x and up) displays
-
   @media (min-resolution: 168dpi) {
     background-image: linear-gradient($line 0%, $line 100%);
     background-position: 0 93%;
@@ -66,4 +68,33 @@
 @mixin font-secondary {
   font-family: $font-secondary;
   font-weight: 300;
+}
+
+@function tint($color, $percent) {
+  @return mix(white, $color, $percent);
+}
+
+/**
+ * From
+ * https://codepen.io/bluesaunders/pen/FCLaz/?editors=0100
+ */
+
+// Calculeate brightness of a given color.
+@function brightness($color) {
+  @return ((red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114)) / 255 * 100%;
+}
+
+// Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
+@function color-contrast($color, $dark: $text-color, $light: $white) {
+  @if $color == null {
+    @return null;
+  }
+
+  @else {
+    $color-brightness: brightness($color);
+    $light-text-brightness: brightness($light);
+    $dark-text-brightness: brightness($dark);
+
+    @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
+  }
 }
