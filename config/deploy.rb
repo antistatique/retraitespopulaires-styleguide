@@ -57,6 +57,8 @@ namespace :deploy do
   # Must updatedb before import configurations, E.g. when composer install new
   # version of Drupal and need updatedb scheme before importing new config.
   after :updated, "drupal:updatedb"
+  # Remove the cache after the database update
+  after :updated, "drupal:cache:clear"
   after :updated, "drupal:config:import"
   after :updated, "drupal:updatedb"
   after :updated, "drupal:cache:clear"
