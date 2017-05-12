@@ -1,5 +1,5 @@
 {% if variables.faqs %}
-<div class="container">
+<div class="container theme-{{ variables.theme }}">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <h2 class="h1 text-center">
@@ -15,11 +15,12 @@
     </div>
     <div class="col-xs-10 col-xs-offset-1 col-md-6">
       {% for faq in variables.faqs %}
-        {{ load_block('rp_site_faq_teaser_block', {'faq': faq, 'theme': variables.theme}) }}
+        {{ load_block('rp_site_faq_teaser_block', {'faq': faq}) }}
         {% if not loop.last %} <div class="spacer spacer-sm"></div> {% endif %}
       {% endfor %}
     </div>
   </div>
+  <div class="spacer spacer-md"></div>
 
   {% if variables.pager %}
   <div class="row">
