@@ -19,6 +19,7 @@ notes: |
   - `card-footer` (`card-justify`): add modifiers to change color, or justify (flex) content
   - `card-white` or `card-berrylight-gray` to set background colors
   - `card-sm` to have a small card of maximum 150px width
+  - `card-no-border` to remove borders
 ---
 {% if variant == 'card-light' or variant == 'card-horizontal' -%}
 <div class="card {{ variant }}">

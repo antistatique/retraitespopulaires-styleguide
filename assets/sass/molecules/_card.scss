@@ -38,6 +38,10 @@
   .pretty-link { @include pretty-link-text-shadow($berrylight-gray); }
 }
 
+.card-no-border {
+  border: none;
+}
+
 a.card {
   color: $text-color;
   transition:
