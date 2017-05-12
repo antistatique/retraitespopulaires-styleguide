@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+* 2.2.2 (2047-05-12)
+ - Fix webform table likert
+
 * 2.2.1 (2017-04-21)
  - ignore gemini test directory
 
