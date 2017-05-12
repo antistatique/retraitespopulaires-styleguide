@@ -1,13 +1,14 @@
 {% extends "@retraitespopulaires/node/node.html.twig" %}
 
 {% block node_top_outer %}
-  <img class="logo-management-contract img-responsive" src="{{ file_url(node.field_logo.entity.uri.value) }}" alt="Logo - {{ node.title.value }}">
+  <img class="center-block img-responsive" src="{{ file_url(node.field_logo.entity.uri.value) }}" alt="Logo - {{ node.title.value }}">
+  <div class="spacer spacer-md"></div>
   {{ parent() }}
 {% endblock %}
 
 {% block node_bottom %}
   {% if node.field_web_site.uri %}
-    <a class="btn btn-lg btn-{{ node.field_profession.entity.tid.value|theme_profession }}" href="{{ node.field_web_site.uri }}" target="_blank">{% trans %}Site internet{% endtrans %}</a>
+    <a class="btn btn-lg btn-primary" href="{{ node.field_web_site.uri }}" target="_blank">{% trans %}Site internet{% endtrans %}</a>
   {% endif %}
 {% endblock %}
 

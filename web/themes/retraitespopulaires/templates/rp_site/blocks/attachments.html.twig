@@ -1,6 +1,6 @@
 {% if variables.attachments[0].links or variables.attachments[1].links  %}
 <div class="container">
-  <div class="row">
+  <div class="row flex-row">
     {% set cols = [
       variables.attachments[0].links and variables.attachments[1].links ? 'col-xs-12 col-md-6',
       not variables.attachments[0].links and variables.attachments[1].links ? 'col-md-6 col-md-offset-3',
@@ -17,4 +17,5 @@
   </div>
 </div>
 <div class="organic-lines hidden-print lines-{{ variables.theme }}"></div>
+<div class="spacer spacer-sm"></div>
 {% endif %}
