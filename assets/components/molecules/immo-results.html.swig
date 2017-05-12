@@ -3,8 +3,7 @@ title: immo-results
 name: immo-results
 collection: molecules
 notes: |
-  ##### Usage : `immo-results`
-  - **immo_result_theme** - <i>String</i> - <b>text-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look.
 ---
 <div class="immo-results">
   <div class="immo-result pull-left">Résultats: <span class="text-bold">105</span> objet(s) trouvé(s)</div>

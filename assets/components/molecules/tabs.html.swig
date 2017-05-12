@@ -2,10 +2,9 @@
 title: tabs
 name: tabs
 collection: molecules
+bootstrap: https://getbootstrap.com/javascript/#tabs
 notes: |
-  ##### Usage : `tabs`
-  - **tabs_theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
-
+  Can be wrapped in `.theme-[theme]` to change look.
 ---
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#lausanne" aria-controls="lausanne" role="tab" data-toggle="tab">Lausanne (siège)</a></li>

@@ -1,6 +1,9 @@
 ---
 title: swiper-menu
 name: swiper-menu
+wrapper: hidden
+notes: |
+  This component is visible into the `Big Menu` on the [basic page](/basic-page).
 collection: molecules
 ---
 <div class="swiper-menu">

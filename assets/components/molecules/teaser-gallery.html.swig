@@ -2,10 +2,9 @@
 title: teaser-gallery
 name: teaser-gallery
 collection: molecules
+wrapper: col-xs-4
 notes: |
-  ##### Usage : `teaser-gallery`
-  ##### Options :
-  - **teaser_gallery_theme** - <i>String</i> - <b>teaser-gallery-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look.
 ---
 <figure itemprop="associatedMedia" class="teaser-gallery teaser-gallery-{{ teaser_gallery_theme|default('primary') }}" itemscope itemtype="http://schema.org/ImageObject">
   <div class="wrapper-figure">

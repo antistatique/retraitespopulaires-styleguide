@@ -3,8 +3,7 @@ title: big-menu
 name: big-menu
 collection: molecules
 notes: |
-  ##### Usage : `big-menu`
-  Ce composant est visible dans le template "<a href="/retraitespopulaires-styleguide/basic-page">Page de base</a>".
+  This component is visible into the [basic page](/basic-page).
 ---
 <nav class="rp-access-nav">
   <ul>

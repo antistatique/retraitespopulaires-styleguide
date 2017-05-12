@@ -3,9 +3,7 @@ title: navbar
 name: navbar
 collection: molecules
 notes: |
-  ##### Usage : `navbar`
-  ##### Options :
-  - **navbar_theme** - <i>String</i> - <b>navbar-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look.
 ---
 <nav class="navbar" id="bs-example-navbar-collapse-1" aria-label="Navigation principale">
   <ul class="list-unstyled m-0">
