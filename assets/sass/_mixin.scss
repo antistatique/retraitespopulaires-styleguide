@@ -9,8 +9,7 @@
   background-repeat: repeat-x;
   background-size: 1px 1px;
   background-position: 0 95%;
-  color: $color;
-  color: color_contrast($bg, $color, $white);
+  color: color_contrast($bg);
   // Clear descendors from underline
   transition: color 0.25s ease-in-out;
 
