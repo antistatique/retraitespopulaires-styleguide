@@ -12,14 +12,12 @@
 {% if breadcrumb %}
 <div class="breadcrumb">
   <ul class="list-inline list-no-style list-no-padding">
-    {% set theme = theme_guesser() %}
 
     {% for item in breadcrumb %}
       {% set classes = [
         (not loop.first and not loop.last) ? 'pretty-link',
         loop.first ? 'text-primary',
         loop.last ? 'text-muted',
-        (not loop.first and not loop.last) ? 'text-' ~ theme,
       ] %}
 
       {# Breadcrumb link #}

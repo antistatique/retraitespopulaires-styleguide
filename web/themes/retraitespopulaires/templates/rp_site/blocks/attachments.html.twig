@@ -10,12 +10,12 @@
     {% for attachment in variables.attachments %}
       {% if attachment.links  %}
       <div class=" {{ cols|join(' ') }}">
-        {{ load_block('rp_site_attachment_block', {'theme': attachment.theme, 'type': attachment.type, 'title': attachment.title, 'links': attachment.links, 'collection': attachment.collection}) }}
+        {{ load_block('rp_site_attachment_block', {'type': attachment.type, 'title': attachment.title, 'links': attachment.links, 'collection': attachment.collection}) }}
       </div>
       {% endif %}
     {% endfor %}
   </div>
 </div>
-<div class="organic-lines hidden-print lines-{{ variables.theme }}"></div>
+<div class="organic-lines hidden-print"></div>
 <div class="spacer spacer-sm"></div>
 {% endif %}

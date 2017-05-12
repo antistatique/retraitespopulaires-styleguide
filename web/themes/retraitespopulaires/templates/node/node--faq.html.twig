@@ -1,6 +1,6 @@
 {% extends "@retraitespopulaires/node/node.html.twig" %}
 
 {% block node_bottom %}
-  {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_faq, 'theme': node.field_profession.entity.tid.value|theme_profession} %}{% endembed %}
+  {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_faq} %}{% endembed %}
 {% endblock %}
 

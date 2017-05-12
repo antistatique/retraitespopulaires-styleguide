@@ -76,11 +76,6 @@ class ContactForm extends FormBase {
         $form['#cache']['max-age'] = 0;
         $form['#attributes']['novalidate'] = 'novalidate';
 
-        $theme = '';
-        if (isset($params['theme'])) {
-            $theme = $params['theme'];
-        }
-
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
             $form['status'] = array(
@@ -119,7 +114,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 25, 'theme' => $theme],
+            '#attributes'  => ['size' => 25],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -137,7 +132,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -155,7 +150,6 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -173,7 +167,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
             '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -183,7 +177,6 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
@@ -193,7 +186,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre code postal (NPA)'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -202,7 +195,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre localité'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -220,7 +213,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre numéro de téléphone *'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#attributes'  => ['size' => 20],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -244,7 +237,6 @@ class ContactForm extends FormBase {
         $form['message']['subject'] = array(
             '#title'       => t('Sujet de votre demande *'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -262,7 +254,7 @@ class ContactForm extends FormBase {
             '#title'       => t('Votre message *'),
             '#type'        => 'textarea',
             '#required'    => false,
-            '#attributes'  => ['cols' => 59, 'theme' => $theme],
+            '#attributes'  => ['cols' => 59],
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -272,7 +264,7 @@ class ContactForm extends FormBase {
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Envoyer'),
-            '#attributes'  => ['class' => array('btn-primary pull-right'), 'theme' => $theme],
+            '#attributes'  => ['class' => array('btn-primary pull-right')],
             '#button_type' => 'primary',
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',

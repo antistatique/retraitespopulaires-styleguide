@@ -31,10 +31,6 @@ class DocumentTeaserBlock extends BlockBase {
         $variables = array();
         $variables = $params;
 
-        if (isset($params['theme'])) {
-            $variables['theme'] = $params['theme'];
-        }
-
         return [
             '#theme'     => 'rp_site_document_teaser_block',
             '#variables' => $variables,

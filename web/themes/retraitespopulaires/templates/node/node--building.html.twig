@@ -10,21 +10,20 @@
 
 {% set node_body_classes = [
   'entity-body',
-  'theme-immobilier'
 ] %}
 
 {% block node_top %}
-  {{ load_block('rp_contact_contact_cta_block', {'theme': 'immobilier'}) }}
+  {{ load_block('rp_contact_contact_cta_block'}) }}
 {% endblock %}
 
 {% block node_bottom %}
-  {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_building, 'theme': 'immobilier'} %}{% endembed %}
+  {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_building} %}{% endembed %}
 
-  {% embed "@retraitespopulaires/node/partials/attached_plans.html.twig" with {'plans': node.field_file_plan, 'theme': 'immobilier'} %}{% endembed %}
+  {% embed "@retraitespopulaires/node/partials/attached_plans.html.twig" with {'plans': node.field_file_plan} %}{% endembed %}
 
   <!-- Visite(s) virtuelle(s) -->
-  {% embed "@retraitespopulaires/node/partials/attached_visits.html.twig" with {'visits': node.field_virtual_visit, 'theme': 'immobilier'} %}{% endembed %}
+  {% embed "@retraitespopulaires/node/partials/attached_visits.html.twig" with {'visits': node.field_virtual_visit} %}{% endembed %}
 
   <!-- Image(s) virtuelle(s) -->
-  {% embed "@retraitespopulaires/node/partials/gallery.html.twig" with {title: 'Images virtuelles', 'images': node.field_virtual_image, 'theme': 'immobilier'} %}{% endembed %}
+  {% embed "@retraitespopulaires/node/partials/gallery.html.twig" with {title: 'Images virtuelles', 'images': node.field_virtual_image} %}{% endembed %}
 {% endblock %}

@@ -14,14 +14,14 @@
 
     <div class="gallery-wrapper-item gallery-wrapper-item-lg col-xs-12 col-sm-6">
       <div class="gallery-item">
-        {% include '@retraitespopulaires/node/partials/gallery-teaser.html.twig' with {index:0, theme:theme, image:big} %}
+        {% include '@retraitespopulaires/node/partials/gallery-teaser.html.twig' with {index:0, image:big} %}
       </div>
     </div>
 
     <div class="gallery-wrapper-item gallery-wrapper-item-side col-xs-12 col-sm-6">
       {% for side in sides %}
       <div class="gallery-item">
-        {% include '@retraitespopulaires/node/partials/gallery-teaser.html.twig' with {index:loop.index0 + 1, theme:theme, image:side} %}
+        {% include '@retraitespopulaires/node/partials/gallery-teaser.html.twig' with {index:loop.index0 + 1, image:side} %}
       </div>
       {% endfor %}
     </div>
@@ -30,7 +30,7 @@
   <div class="row">
     {% for below in belows %}
     <div class="gallery-item col-xs-12  col-sm-4 col-md-3">
-      {% include '@retraitespopulaires/node/partials/gallery-teaser.html.twig' with {index:loop.index0 + 5, theme:theme, image:below} %}
+      {% include '@retraitespopulaires/node/partials/gallery-teaser.html.twig' with {index:loop.index0 + 5, image:below} %}
     </div>
     {% endfor %}
   </div>

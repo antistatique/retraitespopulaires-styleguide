@@ -1,9 +1,3 @@
-{% if not variables.theme %}
-  {% set theme = variables.node.field_profession.entity.tid.value|theme_profession %}
-{% else %}
-  {% set theme = variables.theme %}
-{% endif %}
-
 {% set link = path('entity.node.canonical', {'node': variables.contact.nid.value}) %}
 
 {% set display = [] %}

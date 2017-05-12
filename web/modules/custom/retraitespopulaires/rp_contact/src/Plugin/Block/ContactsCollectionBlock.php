@@ -98,11 +98,6 @@ class ContactsCollectionBlock extends BlockBase implements ContainerFactoryPlugi
     public function build($params = array()) {
         $variables = array();
 
-        // Set the theme using the current node profession
-        if ($node = $this->route->getParameter('node')) {
-            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
-        }
-
         $query = $this->entity_query->get('node')
             ->condition('type', 'contact')
             ->condition('status', 1)

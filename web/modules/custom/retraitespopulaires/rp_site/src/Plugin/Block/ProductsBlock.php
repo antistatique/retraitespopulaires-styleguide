@@ -101,10 +101,6 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
         //Load the current node's field_products
         $products_nids = array();
         if ($node = $this->route->getParameter('node')) {
-
-            // Set the theme using the current node profession
-            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
-
             if( isset($node->field_products) && !empty($node->field_products) ){
                 foreach ($node->field_products as $key => $rpoduct) {
                     $products_nids[] = $rpoduct->target_id;

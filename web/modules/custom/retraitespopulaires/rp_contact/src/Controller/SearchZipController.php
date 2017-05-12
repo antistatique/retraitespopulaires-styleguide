@@ -72,7 +72,6 @@ class SearchZipController extends ControllerBase {
     */
     public function advisors($zip = null) {
         $variables = array('advisors' => array());
-        $variables['theme'] = $this->request->query->get('theme');
 
         // Retrieve all matched terms with the searched link
         $query = $this->database->select('node_field_data', 'n');
