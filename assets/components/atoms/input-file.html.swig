@@ -8,9 +8,9 @@ notes: |
   - **input_file_theme** - <i>String</i> - <b>btn-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="form-group form-file">
-  <label>Certificat de salaire</label><br>
-  <div class="form-file-handler btn btn-lg btn-{{ input_file_theme|default('primary') }}">
+  <span class="form-control-label">Certificat de salaire</span><br>
+  <div class="form-file-handler btn btn-lg btn-primary">
     <label for="inputID">Télécharger votre fichier</label>
-    <input class="" id="inputID" type="file"></input>
+    <input id="inputID" type="file"></input>
   </div>
 </div>
