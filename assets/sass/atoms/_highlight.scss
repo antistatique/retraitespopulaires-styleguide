@@ -1,9 +1,10 @@
 @charset 'UTF-8';
 
-/**
-* Highlight
-*/
-
-mark {
+mark,
+.text-highlight {
   background-color: lighten($link-color, 25%);
+
+  @include theme-custom() {
+    background-color: lighten($color, 25%);
+  }
 }
