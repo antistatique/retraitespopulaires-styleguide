@@ -1,5 +1,31 @@
 @charset 'UTF-8';
 
+.table-borderless {
+  > tbody > tr {
+    &:first-child {
+      > td {
+        border-top: 2px solid darken($table-border-color, 15%);
+      }
+    }
+
+    &:last-child {
+      > td {
+        border-bottom: 2px solid darken($table-border-color, 15%);
+      }
+    }
+
+    > td {
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
 table.tablesaw {
   border-collapse: collapse;
   border: 1px solid $brand-primary;
@@ -184,6 +210,8 @@ table.tablesaw.table-condensed {
 /* Make the code unreadable otherwise */
 
 table.tablesaw {
+  margin-bottom: $grid-gutter-width;
+
   @each $label, $color in $themes {
     &.table-#{$label} {
       border-color: $color;
@@ -220,3 +248,21 @@ table.tablesaw {
   }
 }
 /* stylelint-enable */
+
+.table-likert {
+  @media screen and (min-width: 39.9375em) {
+    .option {
+      @include sr-only();
+    }
+
+    td {
+      .form-group {
+        margin-bottom: 0;
+      }
+
+      .input-radio {
+        text-align: center;
+      }
+    }
+  }
+}

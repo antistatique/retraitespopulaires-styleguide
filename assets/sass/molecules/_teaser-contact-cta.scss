@@ -11,7 +11,10 @@
   .teaser-contact-cta-heading {
     position: relative;
     width: 100%;
-    min-height: 150px;
+
+    &.image {
+      min-height: 150px;
+    }
 
     .heading-image {
       position: absolute;
@@ -22,11 +25,16 @@
       background-size: cover;
       z-index: 2;
     }
+
+    .heading-icon {
+      width: 100%;
+      padding: $grid-gutter-width/2 $grid-gutter-width/2 0;
+    }
   }
 
   .teaser-contact-cta-body {
     margin: 0;
-    padding: $grid-gutter-width/2;
+    padding: 0 $grid-gutter-width/2 $grid-gutter-width/2;
     color: $text-color;
   }
 

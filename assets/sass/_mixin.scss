@@ -32,6 +32,10 @@
     color: $line;
   }
 
+  &:focus {
+    text-decoration: none;
+  }
+
   // Style selected links (or else text-shadow makes it look crazy ugly)
   // Pseudo selectors must go separately, or they break each other
 
@@ -40,4 +44,21 @@
     color: $text-color;
     text-shadow: none;
   }
+}
+
+@mixin sr-only() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+// Font Cocon Pro always has a font-weight: 300
+@mixin font-secondary {
+  font-family: $font-secondary;
+  font-weight: 300;
 }

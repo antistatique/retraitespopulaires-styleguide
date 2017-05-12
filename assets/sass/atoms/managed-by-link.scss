@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.managed-by-link {
+  a,
+  a:hover {
+    background: none; // remove pretty-link on all a inside a p (O.o)
+  }
+
+  img {
+    display: inline;
+    position: relative;
+    top: -53px;
+    max-width: 179px;
+    line-height: 1;
+    vertical-align: top;
+  }
+}

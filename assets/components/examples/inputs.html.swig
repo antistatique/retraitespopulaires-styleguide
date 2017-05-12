@@ -37,6 +37,25 @@ layout: examples.html.swig
     </div>
 
     <div class="form-group">
+      <label>
+        Champ avec label
+        <span class="text-small text-muted font-weight-normal d-block">
+          <span class="sr-only">Aide additionnel</span>
+          Sous-label
+        </span>
+      </label>
+      <input type="text" class="form-control full-width" placeholder="Quelque chose dans l'air..."></input>
+    </div>
+
+    <div class="form-group">
+      <label class="d-block">Champ avec label et infobulle</label>
+      <input type="text" class="form-control d-inline-block" placeholder="Quelque chose dans l'air de compliqué..."></input>
+      <div class="tooltip tooltip-info d-inline-block m-l-1">
+        <div class="tooltip-symbol" aria-label="Sample text" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="right" tabindex="0" data-toggle="popover"></div>
+      </div>
+    </div>
+
+    <div class="form-group">
       <label>Groupe</label>
       <div class="input-group full-width">
         <input type="text" class="form-control full-width" placeholder="Rechercher des documents, articles, ...">

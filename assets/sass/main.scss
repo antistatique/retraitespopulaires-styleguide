@@ -14,13 +14,13 @@
 @import 'ckeditor';
 
 // atoms:
+@import 'atoms/background-overflow';
 @import 'atoms/input-file';
 @import 'atoms/logo-management-contract';
 @import 'atoms/map-card';
 @import 'atoms/input-group';
 @import 'atoms/input-textarea';
 @import 'atoms/well';
-@import 'atoms/hr';
 @import 'atoms/input-radio-btn';
 @import 'atoms/input-datepicker';
 @import 'atoms/input-select';
@@ -50,6 +50,8 @@
 @import 'atoms/socials';
 @import 'atoms/search-box';
 @import 'atoms/tag';
+@import 'atoms/managed-by-link';
+@import 'atoms/tooltip';
 
 // molecules:
 @import 'molecules/teaser-gallery';
@@ -86,6 +88,8 @@
 @import 'molecules/card-attachement';
 @import 'molecules/form';
 @import 'molecules/teaser-document-extranet';
+@import 'molecules/dropdown';
+@import 'molecules/actions-bar';
 
 // organisms:
 @import 'organisms/gallery';
@@ -100,4 +104,3 @@
 @import 'organisms/attachments-rentals';
 @import 'organisms/attachments-last-news';
 @import 'organisms/attachments-contact';
-@import 'organisms/actions-extranet';

@@ -11,3 +11,5 @@ tests/regression/compare
 tests/regression/temp
 
 /npm-debug.log
+/gemini-report
+yarn-error.log

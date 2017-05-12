@@ -1,8 +1,27 @@
 @charset 'UTF-8';
 
-form {
-  .row {
-    margin-top: -20px;
-    margin-bottom: -20px;
+// mailchimp errors
+.mce_inline_error {
+  border-color: $alert-danger-text;
+}
+
+.form-card {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: $grid-gutter-width;
+  background-color: $white;
+  border: 1px solid $brand-primary;
+  border-radius: $border-radius-base;
+
+  @each $label, $color in $themes {
+    &.form-card-#{$label} {
+      border: 1px solid $color;
+    }
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
   }
 }

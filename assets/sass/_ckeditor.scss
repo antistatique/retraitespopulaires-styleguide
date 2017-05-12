@@ -89,7 +89,7 @@
 .entity-body-berrylight-gray {
   @each $label, $color in $themes {
     &.body-#{$label} {
-      p a,
+      p a:not(.btn),
       a.pretty-link {
         @include pretty-link($black, $berrylight-gray, $color);
       }

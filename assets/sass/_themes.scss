@@ -37,7 +37,7 @@ $themes: (
 /* stylelint-disable no-duplicate-selectors */
 /* Make the code unreadable otherwise */
 
-p a,
+.entit-body a:not(.btn),
 a.pretty-link {
   @include pretty-link($black, $white, $brand-primary);
 
