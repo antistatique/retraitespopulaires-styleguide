@@ -1,0 +1,14 @@
+uuid: 5f8bdc00-5d3c-4b67-8fbf-1c8d5829782f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.immobilier
+  module:
+    - user
+id: user_remove_role_action.immobilier
+label: 'Retirer le rôle Immobilier aux utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: immobilier
