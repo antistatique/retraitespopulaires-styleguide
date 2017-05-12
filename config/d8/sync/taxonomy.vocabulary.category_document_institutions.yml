@@ -1,0 +1,9 @@
+uuid: b7a47169-1112-4354-abf9-67c45e15b2ca
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Category Documents (Institutions)'
+vid: category_document_institutions
+description: ''
+hierarchy: 0
+weight: 0

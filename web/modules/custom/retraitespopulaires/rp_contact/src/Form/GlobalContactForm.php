@@ -100,11 +100,6 @@ class GlobalContactForm extends FormBase {
           '#prefix'     => '<h3>'.t('Vos informations').'</h3>',
         );
 
-        $form['personnal']['row_1'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
         $error = '';
@@ -113,14 +108,14 @@ class GlobalContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_1']['firstname'] = array(
+        $form['personnal']['firstname'] = array(
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         // Get error to inline it as suffix
@@ -131,14 +126,14 @@ class GlobalContactForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_1']['lastname'] = array(
+        $form['personnal']['lastname'] = array(
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         // Get error to inline it as suffix
@@ -185,27 +180,22 @@ class GlobalContactForm extends FormBase {
             '#suffix'      => '</div>',
         );
 
-        $form['personnal']['row_2'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['personnal']['row_2']['zip'] = array(
+        $form['personnal']['zip'] = array(
             '#title'       => t('Votre code postal (NPA)'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10],
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group">',
-            '#suffix'      => '</div></div>',
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
         );
 
-        $form['personnal']['row_2']['city'] = array(
+        $form['personnal']['city'] = array(
             '#title'       => t('Votre localité'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24],
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group">',
-            '#suffix'      => '</div></div>',
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
         );
 
 

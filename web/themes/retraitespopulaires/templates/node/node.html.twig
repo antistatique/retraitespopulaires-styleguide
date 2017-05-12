@@ -76,32 +76,47 @@
   ]
 %}
 
-<!-- Admin Button to edit quickly the node  -->
-{{ load_block('rp_site_node_edit_block') }}
+{% set theme = node.field_profession.entity.tid.value|theme_profession %}
+
+{% set node_body_classes = [
+  'entity-body',
+  'body-' ~ theme
+] %}
+
+{% set node_content_width = [
+  'col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2',
+] %}
 
 <article{{ attributes.addClass(classes) }}>
-
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('author') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
   <div{{ content_attributes.addClass('content') }}>
-    {{ load_block('rp_contact_contact_cta_block') }}
-    {{ content }}
-  </div>
 
+    {% block node_top_outer %}{% endblock %}
+
+    <div class="row">
+      <div class="{{ node_content_width|join(' ') }}">
+        {% block node_top %}
+          {{ load_block('rp_contact_contact_cta_block') }}
+        {% endblock %}
+
+        {% block node_summary %}
+            {% if node.body.summary %}
+            <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
+            <div class="spacer spacer-sm"></div>
+          {% endif %}
+        {% endblock %}
+
+        {% block node_body %}
+          {% if content.body %}
+            <div class="{{ node_body_classes|join(' ') }}">
+              {{ content.body }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+        {% block node_bottom %}{% endblock %}
+        </div>
+    </div>
+
+    {% block node_bottom_outer %}{% endblock %}
+  </div>
 </article>

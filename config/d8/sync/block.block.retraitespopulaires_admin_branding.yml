@@ -10,7 +10,7 @@ _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
 id: retraitespopulaires_admin_branding
 theme: retraitespopulaires_admin
-region: '-1'
+region: header
 weight: -1
 provider: null
 plugin: system_branding_block

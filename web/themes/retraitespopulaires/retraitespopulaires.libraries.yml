@@ -4,9 +4,8 @@ global-styling:
       build/css/main.css: {}
       build/css/vendors.min.css: {}
   js:
-    build/js/bundle.js: {}
-    build/js/vendors.min.js: {}
     build/js/MorphSVGPlugin.min.js: {}
+    build/js/vendors.min.js: {}
 
   dependencies:
     - core/jquery

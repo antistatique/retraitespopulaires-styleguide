@@ -116,7 +116,7 @@ class ConversionForm extends FormBase {
 
         $form['conversion'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend ')],
           '#title'      => t('Vos informations'),
           '#prefix'     => '<h3>'.t('Vos informations').'</h3>',
         );
@@ -151,11 +151,6 @@ class ConversionForm extends FormBase {
             '#suffix'      => '</div>',
         );
 
-        $form['conversion']['row_1'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
         // Get readonly
         $readonly = '';
         if (isset($form_state->getUserInput()['title']) && $form_state->getUserInput()['title'] == 'Société') {
@@ -169,16 +164,16 @@ class ConversionForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['conversion']['row_1']['firstname'] = array(
+        $form['conversion']['firstname'] = array(
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.' '.$readonly.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
+            '#suffix'      => $error. '</div>',
         );
         if (!empty($readonly)) {
-            $form['conversion']['row_1']['firstname']['#attributes']['readonly'] = $readonly;
+            $form['conversion']['firstname']['#attributes']['readonly'] = $readonly;
         }
 
         // Get readonly
@@ -194,16 +189,16 @@ class ConversionForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['conversion']['row_1']['lastname'] = array(
+        $form['conversion']['lastname'] = array(
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.' '.$readonly.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
+            '#suffix'      => $error. '</div>',
         );
         if (!empty($readonly)) {
-            $form['conversion']['row_1']['lastname']['#attributes']['readonly'] = $readonly;
+            $form['conversion']['lastname']['#attributes']['readonly'] = $readonly;
         }
 
         // Get readonly
@@ -285,11 +280,6 @@ class ConversionForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['conversion']['row_2'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
         $error = '';
@@ -298,14 +288,14 @@ class ConversionForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['conversion']['row_2']['zip'] = array(
+        $form['conversion']['zip'] = array(
             '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         // Get error to inline it as suffix
@@ -316,19 +306,19 @@ class ConversionForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['conversion']['row_2']['city'] = array(
+        $form['conversion']['city'] = array(
             '#title'       => t('Votre ville *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         $form['building'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend ')],
           '#title'      => t('Votre bien'),
           '#prefix'     => '<h3>'.t('Votre bien').'</h3>',
         );
@@ -351,11 +341,6 @@ class ConversionForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['building']['row_2'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
         $error = '';
@@ -364,14 +349,14 @@ class ConversionForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['row_2']['building_zip'] = array(
+        $form['building']['building_zip'] = array(
             '#title'       => t('Code postal (NPA) de votre bien *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         // Get error to inline it as suffix
@@ -382,19 +367,19 @@ class ConversionForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['building']['row_2']['building_city'] = array(
+        $form['building']['building_city'] = array(
             '#title'       => t('Ville de votre bien *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         $form['more'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend ')],
           '#title'      => t('Votre demande'),
           '#prefix'     => '<h3>'.t('Votre demande de conversion').'</h3>',
         );

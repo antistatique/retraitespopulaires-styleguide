@@ -5,6 +5,25 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.building.body
+    - field.field.node.building.field_building_status
+    - field.field.node.building.field_building_type
+    - field.field.node.building.field_city
+    - field.field.node.building.field_contact
+    - field.field.node.building.field_cover
+    - field.field.node.building.field_date
+    - field.field.node.building.field_document
+    - field.field.node.building.field_document_random
+    - field.field.node.building.field_faq
+    - field.field.node.building.field_faq_random
+    - field.field.node.building.field_file_building
+    - field.field.node.building.field_file_plan
+    - field.field.node.building.field_latitude
+    - field.field.node.building.field_longitude
+    - field.field.node.building.field_metatags
+    - field.field.node.building.field_search_npa
+    - field.field.node.building.field_situation
+    - field.field.node.building.field_virtual_image
+    - field.field.node.building.field_virtual_visit
     - node.type.building
   module:
     - text
@@ -21,17 +40,29 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
+  field_building_status: true
+  field_building_type: true
   field_city: true
   field_contact: true
   field_cover: true
+  field_date: true
+  field_document: true
+  field_document_random: true
+  field_faq: true
+  field_faq_random: true
   field_file_building: true
   field_file_plan: true
   field_latitude: true
   field_longitude: true
+  field_metatags: true
   field_profil: true
+  field_search_npa: true
   field_situation: true
+  field_virtual_image: true
   field_virtual_visit: true
   langcode: true

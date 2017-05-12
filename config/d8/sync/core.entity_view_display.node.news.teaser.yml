@@ -5,6 +5,25 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
+    - field.field.node.news.field_advisor
+    - field.field.node.news.field_contact
+    - field.field.node.news.field_cover
+    - field.field.node.news.field_date
+    - field.field.node.news.field_document
+    - field.field.node.news.field_document_news
+    - field.field.node.news.field_document_random
+    - field.field.node.news.field_faq
+    - field.field.node.news.field_faq_random
+    - field.field.node.news.field_file_news
+    - field.field.node.news.field_firstname
+    - field.field.node.news.field_function
+    - field.field.node.news.field_lastname
+    - field.field.node.news.field_metatags
+    - field.field.node.news.field_news_type
+    - field.field.node.news.field_offer
+    - field.field.node.news.field_profession
+    - field.field.node.news.field_profil
+    - field.field.node.news.field_search_npa
     - node.type.news
   module:
     - text
@@ -21,14 +40,31 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
+  field_advisor: true
+  field_contact: true
   field_cover: true
   field_date: true
+  field_document: true
+  field_document_news: true
+  field_document_random: true
+  field_faq: true
+  field_faq_random: true
   field_file_news: true
+  field_firstname: true
+  field_function: true
+  field_lastname: true
+  field_metatags: true
+  field_news_type: true
+  field_offer: true
   field_present_end_date: true
+  field_profession: true
   field_profil: true
   field_reference: true
+  field_search_npa: true
   field_video: true
   langcode: true

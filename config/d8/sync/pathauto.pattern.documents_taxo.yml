@@ -1,0 +1,24 @@
+uuid: d94a36d4-12df-4ff2-94ec-3a1f2b319878
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: documents_taxo
+label: 'Documents Taxo'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'categorie-document/[term:name]'
+selection_criteria:
+  8066abac-0e7c-492a-affc-b88981841f69:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      category_document_institutions: category_document_institutions
+      category_document: category_document
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 8066abac-0e7c-492a-affc-b88981841f69
+selection_logic: and
+weight: -5
+relationships: {  }

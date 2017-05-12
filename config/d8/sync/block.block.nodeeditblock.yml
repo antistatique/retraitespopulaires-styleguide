@@ -1,0 +1,20 @@
+uuid: 11d0a293-7ebb-441f-9f11-da59e22c8a35
+langcode: fr
+status: true
+dependencies:
+  module:
+    - antistatique_quick_edit
+  theme:
+    - retraitespopulaires
+id: nodeeditblock
+theme: retraitespopulaires
+region: header
+weight: 0
+provider: null
+plugin: antistatique_quick_edit_node_edit_block
+settings:
+  id: antistatique_quick_edit_node_edit_block
+  label: 'Node Edit block'
+  provider: antistatique_quick_edit
+  label_display: '0'
+visibility: {  }

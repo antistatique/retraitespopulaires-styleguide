@@ -44,8 +44,10 @@
  * @see template_preprocess_form_element()
  */
 #}
+{% set isSoloCheckbox = type == 'checkbox' and not element['#tree'] %}
 {%
   set classes = [
+    'form-group' not in element['#prefix'] and (type not in ['radio', 'checkbox'] or isSoloCheckbox) ? 'form-group',
     'js-form-item',
     'form-item',
     'js-form-type-' ~ type|clean_class,
@@ -56,6 +58,8 @@
     errors ? 'form-item--error',
     type == 'radio' ? 'input-radio',
     type == 'checkbox' ? 'input-checkbox',
+    type == 'webform_likert' ? 'table-likert',
+    element['#webform_id'] is not empty ? 'form-group-'~theme_guesser(),
   ]
 %}
 {%
@@ -71,7 +75,7 @@
       ]
     %}
     {% if type != 'file' %}
-    <div{{ attributes.addClass(label_classes) }}>
+    <div{{ attributes.addClass(label_classes).removeClass(['form-group']) }}>
       {{ label }}
     </div>
     {% endif %}
@@ -80,7 +84,7 @@
     <span class="field-prefix">{{ prefix }}</span>
   {% endif %}
   {% if description_display == 'before' and description.content %}
-    <div{{ description.attributes }}>
+    <div{{ description.attributes.removeClass(['form-group']) }}>
       {{ description.content }}
     </div>
   {% endif %}
@@ -88,7 +92,7 @@
   {% if suffix is not empty %}
     <span class="field-suffix">{{ suffix }}</span>
   {% endif %}
-  {% if label_display == 'after' %}
+  {% if label_display == 'after' and type != 'radio' and type != 'checkbox' %}
     {{ label }}
   {% endif %}
   {% if errors %}

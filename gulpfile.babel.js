@@ -20,12 +20,11 @@ import { favicons, faviconsTask } from './tasks/favicons';
 import { clean, cleanTask } from './tasks/clean';
 import { single, singleTask } from './tasks/single';
 import { deploy, deployTask } from './tasks/deploy';
-import { serve } from './tasks/server';
 
 
 
 
-const conditionalStyleguide = yargs.argv.production ? '' : './tasks/metalsmith';
+const conditionalStyleguide = '';
 const inprod = done => done();
 
 /**
@@ -50,28 +49,18 @@ const defaultFunc = (done, isServe) => loader.import(conditionalStyleguide)
  .then(m => {
    $.util.log('DEVELOPMENT MODE');
    if (isServe) {
-     done(gulp.series(build, favicons, m.default.metalsmith, serve));
+     done(gulp.series(build, favicons));
    } else {
-     done(gulp.series(build, favicons, m.default.metalsmith));
+     done(gulp.series(build, favicons));
    }
  })
  .catch(err => {
    $.util.log('PRODUCTION MODE');
    if (isServe) {
-     done(gulp.series(build, favicons, serve));
+     done(gulp.series(build, favicons));
    } else {
      done(gulp.series(build, favicons));
    }
  });
 
 gulp.task('default', () => defaultFunc(res => res(), false));
-
-/**
-* Serve task
-*/
-const serveTask = gulp.task('serve', () => defaultFunc(res => res(), true));
-
-/**
- * Metalsmith task
- */
-const metalsmithTask = gulp.task('metalsmith', yargs.argv.production ? inprod : require('./tasks/metalsmith').metalsmith);

@@ -1,5 +1,6 @@
 module:
   admin_toolbar: 0
+  antistatique_quick_edit: 0
   automated_cron: 0
   backerymails: 0
   block: 0
@@ -9,6 +10,7 @@ module:
   ckeditor_media_embed: 0
   color: 0
   config: 0
+  config_ignore: 0
   config_translation: 0
   content_translation: 0
   contextual: 0
@@ -70,6 +72,8 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  webform: 0
+  webform_ui: 0
   menu_link_content: 1
   pathauto: 1
   views: 10
@@ -83,3 +87,4 @@ theme:
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 langcode: fr
+profile: standard

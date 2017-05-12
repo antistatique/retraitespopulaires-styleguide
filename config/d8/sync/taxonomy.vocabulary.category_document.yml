@@ -1,0 +1,9 @@
+uuid: a06113f4-f96c-481e-afb5-11b88c7d454d
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Category Documents'
+vid: category_document
+description: 'Catégorie des documents utiles'
+hierarchy: 0
+weight: 0

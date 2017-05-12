@@ -18,17 +18,19 @@
   {% endif %}
 
   <div class="teaser-contact-body">
+    {% set display = [] %}
+    {% if variables.contact.field_firstname.value %}
+      {% set display = display|merge([variables.contact.field_firstname.value])  %}
+    {% endif %}
+    {% if variables.contact.field_lastname.value %}
+      {% set display = display|merge([variables.contact.field_lastname.value])  %}
+    {% endif %}
+    {% if not display %}
+      {% set display = [variables.contact.title.value] %}
+    {% endif %}
+
+    <h3 class="sr-only">{% trans %}Information de contact pour{% endtrans %} {{ display|join(' ') }}</h3>
     <a href="{{ link }}" class="h3 pretty-link text-{{ theme }}">
-      {% set display = [] %}
-      {% if variables.contact.field_firstname.value %}
-        {% set display = display|merge([variables.contact.field_firstname.value])  %}
-      {% endif %}
-      {% if variables.contact.field_lastname.value %}
-        {% set display = display|merge([variables.contact.field_lastname.value])  %}
-      {% endif %}
-      {% if not display %}
-        {% set display = [variables.contact.title.value] %}
-      {% endif %}
       {{ display|join(' ') }}
     </a>
     <div class="spacer spacer-sm"></div>
@@ -64,10 +66,10 @@
         <hr />
         <p class="m-0">{% trans %}Ou retrouvez votre contact régional en entrant votre code postal{% endtrans %}</p>
         <form class="form-inline js-search-zip" method="GET" data-theme="{{ theme }}" data-ajax="{{ path('rp_contact.search_zip') }}">
-          <div class="form-group m-t-0">
+          <div class="form-group">
             <input class="form-control form-control-{{ theme }} js-zip-input" name="zip" type="text" placeholder="Votre NPA"></input>
           </div>
-          <div class="form-group m-t-0">
+          <div class="form-group">
             <input class="btn btn-{{ theme }}" type="submit" value="Trouver"></input>
           </div>
           <div class="zip-results js-zip-results">

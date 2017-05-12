@@ -10,7 +10,7 @@ _core:
   default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
 id: retraitespopulaires_help
 theme: retraitespopulaires
-region: '-1'
+region: header
 weight: -8
 provider: null
 plugin: help_block

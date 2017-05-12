@@ -129,6 +129,7 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_contact:
     weight: 118
     settings:
@@ -137,6 +138,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_cover:
     weight: 3
     settings:
@@ -144,6 +146,7 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
   field_document:
     weight: 121
     settings:
@@ -152,6 +155,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_document_page:
     weight: 119
     settings:
@@ -160,12 +164,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_document_random:
     weight: 122
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
   field_faq:
     weight: 123
     settings:
@@ -174,50 +180,59 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_faq_random:
     weight: 124
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
   field_file_product:
     weight: 118
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+    region: content
   field_metatags:
     weight: 121
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
+    region: content
   field_product_plan:
     weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
   field_profession:
     weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_search_npa:
     weight: 117
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
   field_weight:
     weight: 7
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   path:
     type: path
     weight: 7
     settings: {  }
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 2
@@ -225,6 +240,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   langcode: true

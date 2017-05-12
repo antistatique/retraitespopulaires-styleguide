@@ -1,8 +1,12 @@
 import gulp from 'gulp';
-import webpack from 'webpack';
 import config from '../gulp_config.json';
-import webpackSettings from '../webpack.prod.config';
 import yargs from 'yargs';
+
+import browserify from 'browserify';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
+import babelify from 'babelify';
+import browserifyshim from 'browserify-shim';
 
 import loadPlugins from 'gulp-load-plugins';
 const $ = loadPlugins();
@@ -21,17 +25,47 @@ function errorAlert(error){
  * And jshint check to highlight errors as we go.
  */
 export const scriptsBuild = (done) => {
-  // run webpack
-  if (yargs.argv.production || yargs.argv.ghpages) {
-    webpack(webpackSettings, function(err, stats) {
-      if(err) throw new $.util.PluginError('webpack', err);
-      $.util.log('[webpack]', stats.toString({
-        cached: false,
-        colors: true,
-      }));
-      done();
-    });
-  } else { done(); }
+  if (yargs.argv.local) {
+    return browserify(
+      {
+        entries: ['./' + config.assets + 'js/index.js'],
+        debug: true
+      })
+      .transform(babelify.configure({
+        presets: ['es2015'],
+        sourceMaps: true
+      }))
+      .bundle()
+      .on('error', errorAlert)
+      .pipe(source('bundle.js'))
+      .pipe(buffer())
+      .pipe($.sourcemaps.init({loadMaps: true}))
+          .pipe($.if(yargs.argv.production, $.uglify()))
+          .on('error', errorAlert)
+      .pipe(yargs.argv.production ? $.util.noop() : $.sourcemaps.write('./'))
+      .pipe(gulp.dest(config.build + '/js'));
+  } else {
+    return browserify(
+      {
+        entries: ['./' + config.assets + 'js/index.js'],
+        debug: true
+      })
+      .transform(babelify.configure({
+        presets: ['es2015'],
+        sourceMaps: true
+      }))
+      .transform(browserifyshim)
+      .bundle()
+      .on('error', errorAlert)
+      .pipe(source('bundle.js'))
+      .pipe(buffer())
+      .pipe($.sourcemaps.init({loadMaps: true}))
+          .pipe($.if(yargs.argv.production, $.uglify()))
+          .on('error', errorAlert)
+      .pipe(yargs.argv.production ? $.util.noop() : $.sourcemaps.write('./'))
+      .pipe($.size({title: 'BUNDLE SIZE', showFiles: true}))
+      .pipe(gulp.dest(config.build + '/js'));
+  }
 };
 
 export const scriptsLint = () => {

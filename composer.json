@@ -4,47 +4,49 @@
     "type": "project",
     "license": "GPL-2.0+",
     "authors": [
-        {
-            "name": "",
-            "role": ""
-        }
+      {
+          "name": "Antistatique SA",
+          "role": "Development Agency"
+      },
+      {
+          "name": "Kevin Wenger",
+          "role": "Full Stack deveopper at Antistatique SA"
+      }
     ],
     "repositories": {
-      "0": {
+      "drupal": {
           "type": "composer",
-          "url": "https://packagist.drupal-composer.org"
-      },
-      "sandboxes": {
-          "type": "vcs",
-          "url": "https://git.drupal.org/sandbox/wengerk/2846301.git"
+          "url": "https://packages.drupal.org/8"
       }
   },
     "require": {
         "composer/installers": "^1.0.20",
         "drupal-composer/drupal-scaffold": "^2.0.1",
         "cweagans/composer-patches": "~1.0",
-        "drupal/core": "~8.0",
+        "drupal/core": "^8.2",
         "drush/drush": "~8.0",
         "drupal/console": "~1.0",
-        "drupal/admin_toolbar": "^8.0",
-        "drupal/pathauto": "^8.0",
-        "drupal/field_group": "^8",
-        "drupal/search_api": "^8",
-        "drupal/search_api_attachments": "^8",
-        "drupal/search_api_solr": "^8",
+        "drupal/admin_toolbar": "~1.0",
+        "drupal/pathauto": "~1.0",
+        "drupal/field_group": "~1.0",
+        "drupal/search_api": "~1.0",
+        "drupal/search_api_attachments": "~1.0",
+        "drupal/search_api_solr": "~1.0",
         "drewm/mailchimp-api": "^2.2",
-        "drupal/metatag": "~8.1.0-beta9",
-        "drupal/menu_breadcrumb": "^8",
-        "drupal/editor_advanced_link": "^8",
-        "drupal/mailsystem": "^8",
-        "drupal/swiftmailer": "^8",
+        "drupal/metatag": "~1.0",
+        "drupal/menu_breadcrumb": "~1.0",
+        "drupal/editor_advanced_link": "~1.0",
+        "drupal/mailsystem": "~4.1",
+        "drupal/swiftmailer": "~1.0",
         "swiftmailer/swiftmailer": "~5.4.0",
         "giggsey/libphonenumber-for-php": "^7.3",
-        "drupal/focal_point": "^8",
-        "drupal/ckeditor_media_embed": "^8",
-        "drupal/redirect": "^8",
-        "drupal/crop": "8.1.0@stable",
-        "drupal/backerymails": "dev-8.x-1.x"
+        "drupal/focal_point": "~1.0",
+        "drupal/ckeditor_media_embed": "~1.0",
+        "drupal/redirect": "~1.0",
+        "drupal/backerymails": "~1.0",
+        "drupal/webform": "^5.0@beta",
+        "drupal/config_ignore": "^1.4",
+        "drupal/template_whisperer": "2.x-dev"
       },
     "require-dev": {
       "behat/mink": "~1.7",
@@ -53,7 +55,7 @@
       "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
       "mikey179/vfsStream": "~1.2",
       "symfony/css-selector": "~2.8",
-      "drupal/devel": "^8",
+      "drupal/devel": "~1.0",
       "phpunit/phpunit": "5.4.6",
       "phpunit/phpunit-mock-objects": "^3.2"
     },
@@ -95,15 +97,10 @@
         },
         "patches": {
             "drupal/core": {
-              "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch",
-              "Fix Ckeditor warning when local file not found": "patches/CKEDITOR_fix_No_such_file_or_directory_in__locale_parse_js_file_warning.patch"
+              "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch"
             },
-            "drupal/search_api_attachments": {
-              "Assert configuration form is displayed": "patches/search_api_attachments.FileExtractor-configform-alpha4.patch",
-              "FilesExtrator processor should use new getFieldsHelper()": "https://www.drupal.org/files/issues/use-getFieldsHelper-in-FilesExtrator-class-2827028-2.patch"
-            },
-            "drupal/editor_advanced_link": {
-              "Fix php71 ArgumentCountError": "https://www.drupal.org/files/issues/editor_advanced_link.php71.patch"
+            "drupal/config_ignore": {
+              "Fix undefined drush_config_get_storage_filters": "https://www.drupal.org/files/issues/config_ignore-remove-storage-filters.patch"
             }
         }
     }

@@ -36,7 +36,7 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
      * Number of documents per page
      * @var integer
      */
-    private $limit = 20;
+    private $limit = 10;
 
     /**
      * AliasManagerInterface Service
@@ -131,19 +131,54 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
             ->condition('status', 1)
         ;
 
-        $taxonomy_term_alias = $this->request->query->get('taxonomy_term_alias');
+        $profession_alias = $this->request->query->get('profession_alias');
+        $variables['profession_alias'] = $profession_alias;
+
+        $category_alias = $this->request->query->get('category_alias');
+        $variables['category_alias'] = $category_alias;
+
+        $institution_alias = $this->request->query->get('institution_alias');
+        $variables['institution_alias'] = $institution_alias;
 
         // Only interested by alias of Profession taxonomy
-        if (!empty($taxonomy_term_alias)) {
+        if (!empty($profession_alias)) {
             // Retreive filter from slug alias
             $taxonomy_term_tid = null;
-            $taxonomy_term_url = $this->alias_manager->getPathByAlias('/metier/'.$taxonomy_term_alias);
+            $taxonomy_term_url = $this->alias_manager->getPathByAlias('/metier/'.$profession_alias);
             if( !empty($taxonomy_term_url) ){
                 $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
                 $term = $this->entity_taxonomy->load($taxonomy_term_tid);
                 if ($term->vid->target_id == 'profession') {
                     $query->condition('field_profession', $taxonomy_term_tid);
                     $variables['theme'] = $this->profession->theme($taxonomy_term_tid);
+                }
+            }
+        }
+
+        // Only interested by alias of Category Document taxonomy
+        if (!empty($category_alias)) {
+            // Retreive filter from slug alias
+            $taxonomy_term_tid = null;
+            $taxonomy_term_url = $this->alias_manager->getPathByAlias('/categorie-document/'.$category_alias);
+            if( !empty($taxonomy_term_url) ){
+                $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
+                $term = $this->entity_taxonomy->load($taxonomy_term_tid);
+                if ($term->vid->target_id == 'category_document') {
+                    $query->condition('field_document_type', $taxonomy_term_tid);
+                }
+            }
+        }
+
+        // Only interested by alias of Category Document (Institution) taxonomy
+        if (!empty($institution_alias)) {
+            // Retreive filter from slug alias
+            $taxonomy_term_tid = null;
+            $taxonomy_term_url = $this->alias_manager->getPathByAlias('/categorie-document/'.$institution_alias);
+            if( !empty($taxonomy_term_url) ){
+                $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
+                $term = $this->entity_taxonomy->load($taxonomy_term_tid);
+                if ($term->vid->target_id == 'category_document_institutions') {
+                    $query->condition('field_document_type_institution', $taxonomy_term_tid);
                 }
             }
         }

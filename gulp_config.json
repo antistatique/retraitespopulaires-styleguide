@@ -6,6 +6,7 @@
   },
   "vendors": {
     "css": [
+      "node_modules/@antistatique/retraitespopulaires-styleguide/build/css/main.css",
       "node_modules/@antistatique/retraitespopulaires-styleguide/build/css/vendors.min.css"
     ],
     "img": [

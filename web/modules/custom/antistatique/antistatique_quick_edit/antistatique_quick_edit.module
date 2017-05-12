@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Legacy Drupal 7 code to implements hooks.
+ */
+
+/**
+ * Theme hook.
+ *
+ * Implements hook_theme().
+ */
+function antistatique_quick_edit_theme($existing, $type, $theme, $path) {
+  return [
+    'antistatique_quick_edit_node_edit_block' => [
+      'variables' => ['variables' => []],
+      'template'  => 'blocks/node_edit',
+    ],
+    'antistatique_quick_edit_term_edit_block' => [
+      'variables' => ['variables' => []],
+      'template'  => 'blocks/term_edit',
+    ],
+  ];
+}

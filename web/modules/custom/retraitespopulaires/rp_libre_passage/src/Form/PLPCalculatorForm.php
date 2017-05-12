@@ -109,7 +109,7 @@ class PLPCalculatorForm extends FormBase {
 
         $form['personnal'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend', 'fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos données personnelles'),
           '#prefix'     => '<h3>'.t('Vos données personnelles').'</h3>',
         );
@@ -198,7 +198,7 @@ class PLPCalculatorForm extends FormBase {
 
         $form['libre_passage'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend', 'fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Votre apport de libre passage'),
           '#prefix'     => '<h3>'.t('Votre apport de libre passage').'</h3>',
         );

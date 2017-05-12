@@ -11,12 +11,21 @@
   </div>
   {% endif %}
   <div class="news-body">
-    <div class="news-title h1 pretty-link">{{ variables.news.title.value }}</div>
+    <h3 class="news-title h1">{{ variables.news.title.value }}</h3>
     <div class="spacer spacer-xs"></div>
     <p>{{ variables.news.body.summary }}</p><p>
     </p><div class="spacer spacer-sm"></div>
     <div class="news-extra">
-      <span class="news-date">{{ variables.news.field_date.date|date_format('d F Y')|capitalize }}</span> <span class="news-type">{{ variables.news.field_news_type.entity.name.value }}</span>
+      <div class="news-date">
+        <time datetime="{{ variables.news.field_date.date|date_format('c') }}">
+          <span class="sr-only">{% trans %}Date de publication: {% endtrans %}</span>
+          {{ variables.news.field_date.date|date_format('d F Y')|capitalize }}
+        </time>
+      </div>
+      <div class="news-type">
+        <span class="sr-only">{% trans %}Catégorie de l'actualité: {% endtrans %}</span>
+        {{ variables.news.field_news_type.entity.name.value }}
+      </div>
     </div>
   </div>
 </a>

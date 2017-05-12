@@ -8,7 +8,7 @@ dependencies:
     - retraitespopulaires
 id: formulaireexposesearchpage_1
 theme: retraitespopulaires
-region: '-1'
+region: header
 weight: 9
 provider: null
 plugin: 'views_exposed_filter_block:search-page_1'

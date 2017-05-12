@@ -1,0 +1,17 @@
+{% extends "@retraitespopulaires/node/node.html.twig" %}
+
+{% block node_bottom_outer %}
+  <!-- Form -->
+  <div class="spacer"></div>
+  <div class="background-overflow">
+    <div class="spacer"></div>
+    <div class="row">
+      <div class="{{ node_content_width|join(' ') }}">
+        <div class="form-card form-card-{{ theme|default('primary') }} shadow shadow-down">
+          {% block node_form %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

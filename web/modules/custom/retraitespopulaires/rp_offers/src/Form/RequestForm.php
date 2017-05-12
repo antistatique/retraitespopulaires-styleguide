@@ -91,6 +91,7 @@ class RequestForm extends FormBase {
         $title = t('Cette offre est terminée, vous ne pouvez plus participer au tirage au sort');
         $now = new \DateTime();
         $date_end = \DateTime::createFromFormat('Y-m-d', $params['node']->field_date_end->value);
+        $date_end->setTime(23,59);
         if ($now <= $date_end) {
             $interval = $now->diff($date_end);
             $days = $interval->format('%a');
@@ -104,7 +105,7 @@ class RequestForm extends FormBase {
         }
         $form['personnal'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-bordered fieldset-no-legend')],
+          '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => $title,
           '#prefix'     => '<h3>'.$title.'</h3>',
         );

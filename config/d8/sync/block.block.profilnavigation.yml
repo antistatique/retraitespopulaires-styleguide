@@ -10,7 +10,7 @@ dependencies:
     - retraitespopulaires
 id: profilnavigation
 theme: retraitespopulaires
-region: '-1'
+region: header
 weight: 2
 provider: null
 plugin: 'system_menu_block:profil'

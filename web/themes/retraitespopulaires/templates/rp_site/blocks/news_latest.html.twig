@@ -4,16 +4,17 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 last-news-heading">
-        <div class="h2">{{ variables.title }}</div>
+        <h2>{{ variables.title }}</h2>
         <div>
           <a href="{{ variables.collection.link }}" class="pretty-link pretty-link-berrylight-gray">{% trans %}Voir toutes les actualités{% endtrans %}</a>
         </div>
       </div>
     </div>
 
-    <div class="row last-news-content">
+    <div class="row last-news-content same-height-group">
       {% for news in variables.news %}
-        <div class="col-xs-12 col-md-6">
+        {% if loop.index0 % 2 == 0 %}</div><div class="row same-height-group">{% endif %}
+        <div class="col-xs-12 col-md-6 same-height">
           {{ load_block('rp_site_news_teaser_block', {'news': news}) }}
         </div>
       {% endfor %}

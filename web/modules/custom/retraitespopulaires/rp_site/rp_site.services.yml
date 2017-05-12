@@ -26,5 +26,5 @@ services:
   # Custom Event Subscrbiber
   rp_site.entity_access:
     class: Drupal\rp_site\EventSubscriber\EntityAccess
-    tags: 
+    tags:
       - {name: event_subscriber}

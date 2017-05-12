@@ -162,10 +162,19 @@ class AdminController extends ControllerBase {
 
             $dt = new \DateTime('tomorrow');
             $output['table'][$i]['remaining']['#plain_text'] = '-';
-            if ($node->field_date_end->date->getTimestamp() > $dt->getTimestamp()) {
-                $output['table'][$i]['remaining'] = array(
-                  '#plain_text' => t('@day jour(s)', ['@day' => ceil(($node->field_date_end->date->getTimestamp() - $dt->getTimestamp()) / 86400)]),
-                );
+            $node->field_date_end->date->setTime(23,59);
+            if ($node->field_date_end->date->getTimestamp() >= $dt->getTimestamp()) {
+                $left_days = ($node->field_date_end->date->getTimestamp() - $dt->getTimestamp()) / 86400;
+
+                if ((int)$left_days > 0) {
+                    $output['table'][$i]['remaining'] = array(
+                      '#plain_text' => t('@day jour(s)', ['@day' =>(int)$left_days]),
+                    );
+                } else {
+                    $output['table'][$i]['remaining'] = array(
+                      '#plain_text' => t('< 1 jour'),
+                    );
+                }
             }
 
             $output['table'][$i]['draw']['#plain_text'] = '';

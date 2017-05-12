@@ -1,0 +1,35 @@
+{% extends "@retraitespopulaires/pages/page.html.twig" %}
+
+{# Breadcrumbs #}
+{% if page.breadcrumb %}
+  {% block breadcrumb %}
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          {{ page.breadcrumb }}
+          <div class="spacer"></div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+{% endif %}
+
+{# Main Content #}
+{% block main_content %}
+  <div role="main" class="main-container container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+        <div class="entity-content">
+          <section{{ content_attributes.addClass(content_classes) }}>
+            {# Content #}
+            {% block content %}
+              <a id="main-content"></a>
+              {{ page.content }}
+            {% endblock %}
+          </section>
+        </div>
+        {% block main_bottom_content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

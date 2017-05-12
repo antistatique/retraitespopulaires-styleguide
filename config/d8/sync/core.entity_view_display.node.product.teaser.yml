@@ -5,6 +5,19 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.product.body
+    - field.field.node.product.field_contact
+    - field.field.node.product.field_cover
+    - field.field.node.product.field_document
+    - field.field.node.product.field_document_page
+    - field.field.node.product.field_document_random
+    - field.field.node.product.field_faq
+    - field.field.node.product.field_faq_random
+    - field.field.node.product.field_file_product
+    - field.field.node.product.field_metatags
+    - field.field.node.product.field_product_plan
+    - field.field.node.product.field_profession
+    - field.field.node.product.field_search_npa
+    - field.field.node.product.field_weight
     - node.type.product
   module:
     - text
@@ -21,13 +34,24 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
   field_advisor: true
   field_contact: true
   field_cover: true
+  field_document: true
+  field_document_page: true
+  field_document_random: true
   field_faq: true
+  field_faq_random: true
   field_file_product: true
+  field_metatags: true
+  field_product_plan: true
+  field_profession: true
   field_profil: true
+  field_search_npa: true
+  field_weight: true
   langcode: true

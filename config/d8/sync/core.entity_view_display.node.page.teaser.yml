@@ -9,11 +9,16 @@ dependencies:
     - field.field.node.page.field_contact
     - field.field.node.page.field_cover
     - field.field.node.page.field_document
+    - field.field.node.page.field_document_page
+    - field.field.node.page.field_document_random
     - field.field.node.page.field_faq
+    - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_profil
+    - field.field.node.page.field_search_npa
     - node.type.page
   module:
     - image
@@ -33,6 +38,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   field_cover:
     type: image
     weight: 1
@@ -41,6 +47,7 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
+    region: content
   field_products:
     type: entity_reference_entity_view
     weight: 3
@@ -49,6 +56,7 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
+    region: content
   field_profession:
     type: entity_reference_entity_view
     weight: 2
@@ -57,15 +65,22 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
+    region: content
   links:
     weight: 4
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_advisor: true
   field_contact: true
   field_document: true
+  field_document_page: true
+  field_document_random: true
   field_faq: true
+  field_faq_random: true
   field_file_page: true
+  field_metatags: true
   field_profil: true
+  field_search_npa: true
   langcode: true

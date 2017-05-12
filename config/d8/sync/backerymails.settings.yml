@@ -3,3 +3,12 @@ excluded:
 _core:
   default_config_hash: 4EMDY-gywIHHd7Ml5-JlOsEYcqCHTv1bFuFocjQkCVY
 langcode: fr
+excludes:
+  customs:
+    - update.status_notify
+  sensitives:
+    - user.password_reset
+reroute:
+  status: false
+  recipients: ''
+verbose: false

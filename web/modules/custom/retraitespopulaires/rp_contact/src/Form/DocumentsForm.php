@@ -93,9 +93,64 @@ class DocumentsForm extends FormBase {
             );
         }
 
+        $form['documents'] = array(
+          '#type'       => 'fieldset',
+          '#attributes' => ['class' => array('fieldset-no-legend ')],
+          '#title'      => t('Votre demande de commande de document'),
+          '#prefix'     => '<h3>'.t('Votre demande de commande de document').'</h3>' . '<div class="well m-t-1">' . $this->t('Merci de bien vouloir sélectionner au minimum un document.'). '</div>',
+        );
+
+        $form['documents']['policies'] = array(
+            '#type'        => 'checkboxes',
+            '#attributes'  => ['theme' => $theme, 'title' => t('Police d\'assurance')],
+            '#options'     => array(
+                'Copie de police' => t('Copie de police'),
+                'Déclaration de perte de police' => t('Déclaration de perte de police'),
+                'Provision de certificats de vie' => t('Provision de certificats de vie'),
+                'Valeur de rachat actuelle à titre informatif' => t('Valeur de rachat actuelle à titre informatif')
+            ),
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
+        );
+
+        $form['documents']['attestations'] = array(
+            '#type'        => 'checkboxes',
+            '#attributes'  => ['theme' => $theme, 'title' => t('Attestations fiscales')],
+            '#options'     => array(
+                'Dernière année' => t('Dernière année'),
+                'Autre(s) année(s)' => t('Autre(s) année(s)')
+            ),
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
+        );
+
+        $form['documents']['other_year'] = array(
+            '#title'       => t('Autre(s) année(s)'),
+            '#type'        => 'textfield',
+            '#attributes'  => ['theme' => $theme],
+        );
+
+        $form['documents']['payments'] = array(
+            '#type'        => 'checkboxes',
+            '#attributes'  => ['theme' => $theme, 'title' => t('Moyen de paiement')],
+            '#options'     => array(
+                'Copie des factures ouvertes' => t('Copie des factures ouvertes'),
+                'Stock de BVR+' => t('Stock de BVR+'),
+                'Relevé des factures et encaissements' => t('Relevé des factures et encaissements')
+            ),
+            '#prefix'      => '<div class="form-group">',
+            '#suffix'      => '</div>',
+        );
+
+        $form['documents']['message'] = array(
+            '#title'       => t('Votre message'),
+            '#type'        => 'textarea',
+            '#attributes'  => ['cols' => 59, 'theme' => $theme],
+        );
+
         $form['personnal'] = array(
           '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
+          '#attributes' => ['class' => array('fieldset-no-legend ')],
           '#title'      => t('Vos informations'),
           '#prefix'     => '<h3>'.t('Vos informations').'</h3>',
         );
@@ -136,11 +191,6 @@ class DocumentsForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['personnal']['row_1'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
         $error = '';
@@ -149,14 +199,14 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_1']['firstname'] = array(
+        $form['personnal']['firstname'] = array(
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 25, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         // Get error to inline it as suffix
@@ -167,14 +217,14 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_1']['lastname'] = array(
+        $form['personnal']['lastname'] = array(
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error. '</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error. '</div>',
         );
 
         // Get error to inline it as suffix
@@ -249,11 +299,6 @@ class DocumentsForm extends FormBase {
             '#suffix'      => $error. '</div>',
         );
 
-        $form['personnal']['row_2'] = array(
-            '#prefix'      => '<div class="row">',
-            '#suffix'      => '</div>',
-        );
-
         // Get error to inline it as suffix
         // TODO Found better solution to inline errors than hack session to
         $error = '';
@@ -262,14 +307,14 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_2']['zip'] = array(
+        $form['personnal']['zip'] = array(
             '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         // Get error to inline it as suffix
@@ -280,14 +325,14 @@ class DocumentsForm extends FormBase {
             $error_class = 'error';
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
-        $form['personnal']['row_2']['city'] = array(
+        $form['personnal']['city'] = array(
             '#title'       => t('Votre localité *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 24, 'theme' => $theme],
             '#required'    => false,
-            '#prefix'      => '<div class="col-xs-12 col-md-6"><div class="form-group '.$error_class.'">',
-            '#suffix'      => $error.'</div></div>',
+            '#prefix'      => '<div class="form-group '.$error_class.'">',
+            '#suffix'      => $error.'</div>',
         );
 
         // Get error to inline it as suffix
@@ -306,61 +351,6 @@ class DocumentsForm extends FormBase {
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
-        );
-
-        $form['documents'] = array(
-          '#type'       => 'fieldset',
-          '#attributes' => ['class' => array('fieldset-no-legend fieldset-bordered')],
-          '#title'      => t('Votre demande'),
-          '#prefix'     => '<h3>'.t('Votre demande').'</h3>',
-        );
-
-        $form['documents']['policies'] = array(
-            '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Police d\'assurance')],
-            '#options'     => array(
-                'Copie de police' => t('Copie de police'),
-                'Déclaration de perte de police' => t('Déclaration de perte de police'),
-                'Provision de certificats de vie' => t('Provision de certificats de vie'),
-                'Valeur de rachat actuelle à titre informatif' => t('Valeur de rachat actuelle à titre informatif')
-            ),
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['documents']['attestations'] = array(
-            '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Attestations fiscales')],
-            '#options'     => array(
-                'Dernière année' => t('Dernière année'),
-                'Autre(s) année(s)' => t('Autre(s) année(s)')
-            ),
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['documents']['other_year'] = array(
-            '#title'       => t('Autre(s) année(s)'),
-            '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
-        );
-
-        $form['documents']['payments'] = array(
-            '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Moyen de paiement')],
-            '#options'     => array(
-                'Copie des factures ouvertes' => t('Copie des factures ouvertes'),
-                'Stock de BVR+' => t('Stock de BVR+'),
-                'Relevé des factures et encaissements' => t('Relevé des factures et encaissements')
-            ),
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
-        );
-
-        $form['documents']['message'] = array(
-            '#title'       => t('Votre message'),
-            '#type'        => 'textarea',
-            '#attributes'  => ['cols' => 59, 'theme' => $theme],
         );
 
         $form['separator'] = array( '#markup' => '<hr />' );

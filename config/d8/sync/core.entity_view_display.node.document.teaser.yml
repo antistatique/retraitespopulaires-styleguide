@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.document.field_document_type
+    - field.field.node.document.field_document_type_institution
+    - field.field.node.document.field_file_document
+    - field.field.node.document.field_profession
     - node.type.document
   module:
     - user
@@ -14,7 +18,10 @@ mode: teaser
 content:
   links:
     weight: 100
+    region: content
 hidden:
+  field_document_type: true
+  field_document_type_institution: true
   field_file_document: true
   field_profession: true
   langcode: true

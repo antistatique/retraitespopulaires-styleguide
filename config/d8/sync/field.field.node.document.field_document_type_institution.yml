@@ -1,0 +1,28 @@
+uuid: 50777d7e-d23d-42a4-8b67-8499cfcb36a1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_type_institution
+    - node.type.document
+    - taxonomy.vocabulary.category_document_institutions
+id: node.document.field_document_type_institution
+field_name: field_document_type_institution
+entity_type: node
+bundle: document
+label: 'Catégorie de document (Institution)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      category_document_institutions: category_document_institutions
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

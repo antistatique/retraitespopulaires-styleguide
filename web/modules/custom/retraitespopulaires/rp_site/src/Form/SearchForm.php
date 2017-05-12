@@ -54,7 +54,7 @@ class SearchForm extends FormBase {
         $form['#method'] = 'GET';
 
         $form['form-wrapper_start'] = array(
-            '#markup' => '<div class="form-group">',
+            '#markup' => '<div class="m-t-1">',
         );
 
         $form['input-group_start'] = array(
