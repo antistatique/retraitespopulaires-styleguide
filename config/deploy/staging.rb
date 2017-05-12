@@ -3,7 +3,7 @@ server '192.168.188.51', user: 'web_rp', roles: %w{app db web}
 set :deploy_to, '/data/sites/wwweti2.retraitespopulaires.ch/'
 
 # set a branch for this release
-set :branch, 'feature/landing-page-webform'
+set :branch, 'dev'
 set :styleguide_branch, 'dev'
 
 # Default value for :log_level is :debug
