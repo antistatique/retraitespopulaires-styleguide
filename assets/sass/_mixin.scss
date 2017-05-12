@@ -1,15 +1,13 @@
 @charset 'UTF-8';
 
-@mixin pretty-link($color: $link-color, $bg: $white, $line-color: $link-color) {
-  $line: color_contrast($bg, $line-color);
-
+@mixin pretty-link($color: $link-color, $bg: $white, $line: $link-color) {
   text-decoration: none;
   // Underline via gradient background
   background-image: linear-gradient($line 0%, $line 100%);
   background-repeat: repeat-x;
   background-size: 1px 1px;
   background-position: 0 95%;
-  color: color_contrast($bg);
+  color: $color;
   // Clear descendors from underline
   transition: color 0.25s ease-in-out;
 

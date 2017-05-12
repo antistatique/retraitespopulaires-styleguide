@@ -57,7 +57,9 @@
         background-color: tint($color, 50%);
 
         .pretty-link {
-          @include pretty-link-text-shadow(tint($color, 50%));
+          $bg: tint($color, 50%);
+
+          @include pretty-link(color-contrast($bg), $bg, color-contrast($bg));
         }
       }
     }

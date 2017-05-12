@@ -2,6 +2,7 @@
 
 .block-link {
   display: block;
+  margin-bottom: $grid-gutter-width / 2;
   padding: $grid-gutter-width / 4;
   background-color: $white;
   transition:
@@ -11,7 +12,7 @@
   &:hover {
     text-decoration: none;
     background-color: $brand-primary;
-    color: $white;
+    color: $white !important; // override theme
 
     @include theme(background-color);
   }
