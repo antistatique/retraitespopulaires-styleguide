@@ -24,7 +24,7 @@
 }
 
 .btn-icon {
-  i {
+  .retraitespopulaires-icon {
     width: 26px;
     height: 26px;
     vertical-align: middle;
@@ -40,10 +40,14 @@
   @include button-variant($btn-default-color, $deep-yellow, $btn-default-border);
 }
 
-.btn-default-invert {
+.btn-invert {
   border: none;
 
   @include button-variant($brand-primary, $white, $btn-default-border);
+
+  @include theme-custom() {
+    @include button-variant($color, $white, $btn-default-border);
+  }
 }
 
 .btn-group { // @TODO check in which wrapper those links are

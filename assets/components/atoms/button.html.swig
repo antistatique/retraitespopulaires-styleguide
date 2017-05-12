@@ -2,7 +2,7 @@
 title: button
 name: button
 collection: atoms
-wrapper: theme-cip
+bootstrap: http://getbootstrap.com/css/#buttons
 variants:
   default: Button Primary
   btn-secondary: Button Secondary

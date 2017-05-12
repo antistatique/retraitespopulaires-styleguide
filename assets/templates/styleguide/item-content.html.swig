@@ -4,15 +4,11 @@
 {% set path = '../../components/' + type + 's/' + content.name + '.html.swig' %}
 
 <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-  {% if content.bootstrap %}
-    <a class="btn btn-secondary btn-sm float-xs-right ml-1" href="{{ content.bootstrap }}"><span class="fa fa-book" aria-hidden="true"></span> Bootstrap doc</a>
-  {% endif %}
-
   {% if content.notes or content.changes %}
     <div class="styleguide-item-notes">
     {% if content.changes %}
       <div class="alert alert-warning">
-        <ul>
+        <ul class="list-unstyled">
           {% for key, change in content.changes %}
             <li><strong>{{ key }}</strong> {{ change|markdown|raw }}</li>
           {% endfor %}

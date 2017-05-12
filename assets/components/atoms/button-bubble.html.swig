@@ -2,7 +2,6 @@
 title: button-bubble
 name: button-bubble
 collection: atoms
-wrapper: theme-cip
 notes: |
   Can be wrapped in `.theme-[theme]` to change look
 ---

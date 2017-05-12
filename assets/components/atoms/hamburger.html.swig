@@ -2,7 +2,6 @@
 title: hamburger
 name: hamburger
 collection: atoms
-wrapper: theme-cip
 notes: |
   ##### Usage : `hamburger`
   ##### Options :

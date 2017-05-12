@@ -2,7 +2,6 @@
 title: secondary-nav
 name: secondary-nav
 collection: molecules
-wrapper: theme-cip
 notes: |
   ##### Options :
   - **secondary_nav_json** - <i>String</i>

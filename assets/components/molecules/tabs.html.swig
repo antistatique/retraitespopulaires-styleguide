@@ -2,7 +2,6 @@
 title: tabs
 name: tabs
 collection: molecules
-wrapper: theme-cip
 notes: |
   ##### Usage : `tabs`
   - **tabs_theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>

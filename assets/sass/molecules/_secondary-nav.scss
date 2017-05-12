@@ -50,7 +50,7 @@
       background-color: $brand-primary;
 
       .pretty-link {
-        @include pretty-link($text-color, $brand-primary, $white);
+        @include pretty-link($white, $brand-primary, $white);
       }
 
       @include theme-custom() {

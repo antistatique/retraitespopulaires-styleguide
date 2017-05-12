@@ -33,12 +33,12 @@
     border: none;
 
     .btn {
-      height: calc(100% - 1px);
       margin-left: 0;
       padding-bottom: 0.6em;
       border-radius: $btn-border-radius-base - $input-border-size;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+      border: none;
 
       /* IE10+ CSS */
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

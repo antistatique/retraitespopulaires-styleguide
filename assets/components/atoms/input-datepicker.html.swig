@@ -2,16 +2,15 @@
 title: input-datepicker
 name: input-datepicker
 collection: atoms
-notes: |
-  ##### Usage : `input-datepicker`
-  - **datepicker_theme** - <i>String</i> - <b>datepicker-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="form-group">
-  <label>label</label>
+  <label for="dateinput" >label</label>
   <div class="input-group">
-    <input type="text" class="form-control form-control-{{datepicker_theme}}  datepicker" aria-label="Saisissez la date au format (JJ/MM/AAAA)" value="02/12/2016">
-    <span class="input-group-btn">
-      <button class="btn btn-primary btn-icon" type="button" aria-label="Choisir la date"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
+    <input id="dateinput" size="15" class="datepicker form-text form-control" type="text" value="02/12/2016" maxlength="10" placeholder="jj/mm/aaaa">
+    <span class="input-group-btn no-events">
+      <div class="btn btn-invert btn-icon">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>
+      </div>
     </span>
   </div>
 </div>
