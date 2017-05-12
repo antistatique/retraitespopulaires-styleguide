@@ -6,6 +6,7 @@ variants:
   link-only: Hamburger as Link
 notes: |
   Can be wrapped in `.theme-[theme]` to change look.
+
 ---
 {% if variant == 'link-only' -%}
   <a href="//www.retraitespopulaires.ch/launcher" class="hamburger-wrapper d-block">

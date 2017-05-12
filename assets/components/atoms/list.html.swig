@@ -2,8 +2,6 @@
 title: list
 name: list
 collection: atoms
-changes:
-  3.0.0: New component grouping all `-list` components
 variants:
   default: Unordered List
   ordered-list: Ordered List
