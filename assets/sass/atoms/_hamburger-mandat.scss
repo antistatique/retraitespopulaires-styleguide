@@ -1,19 +1,5 @@
 @charset 'UTF-8';
 
 .hamburger-mandat-wrapper {
-  @extend .hamburger-wrapper;
-
   top: 0;
-}
-
-.hamburger-mandat-helper {
-  @extend .hamburger-helper;
-}
-
-.hamburger-mandat-button {
-  @extend .hamburger-button;
-}
-
-.hamburger-mandat-wrapper.active {
-  @extend .hamburger-mandat-wrapper.active;
 }

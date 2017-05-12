@@ -2,11 +2,6 @@
 title: hamburger
 name: hamburger
 collection: atoms
-notes: |
-  ##### Usage : `hamburger`
-  ##### Options :
-  - **hamburger_link** - <i>Boolean</i>
-  - hamburger_theme** - <i>String</i> - <b>hamburger-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 {% if hamburger_link %}
   <a href="#0" class="hamburger-wrapper hamburger-{{ hamburger_theme }}">

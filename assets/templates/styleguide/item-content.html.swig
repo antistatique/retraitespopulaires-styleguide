@@ -10,7 +10,7 @@
       <div class="alert alert-warning">
         <ul class="list-unstyled">
           {% for key, change in content.changes %}
-            <li><strong>{{ key }}</strong> {{ change|markdown|raw }}</li>
+            <li><strong>{{ key }} –</strong> {{ change|markdown|raw }}</li>
           {% endfor %}
         </ul>
       </div>

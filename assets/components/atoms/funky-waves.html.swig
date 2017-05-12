@@ -2,12 +2,6 @@
 title: funky-waves
 name: funky-waves
 collection: atoms
-notes: |
-  ##### Options :
-  - **funky_waves_img** - <i>String</i>
-  - **funky_waves_theme** - <i>String</i> - <b>wrapper-funky-waves-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
-  - **funky_waves_disable** - <i>Boolean</i>
-  - **funky_waves_no_header** - <i>Boolean</i>
 ---
 
 <div class="wrapper-funky-waves {% if not funky_waves_no_header %}has-header{% endif %} wrapper-funky-waves-{{ funky_waves_theme }}">
