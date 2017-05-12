@@ -98,10 +98,6 @@ class LoanIncreaseForm extends FormBase {
            'library' =>  array('rp_contact/contact_loan_increase_form'),
        );
 
-        if (isset($params['theme'])) {
-            $theme = $params['theme'];
-        }
-
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
             $form['status'] = array(
@@ -131,7 +127,7 @@ class LoanIncreaseForm extends FormBase {
         }
         $form['personnal']['title'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => false],
+            '#attributes'  => ['title' => t('Votre titre *'), 'required' => false],
             '#required'    => false,
             '#options'     => array(
                 'Madame'   => t('Madame'),
@@ -146,7 +142,6 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Votre numéro de prêt'),
             '#placeholder' => t('123456789'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -168,7 +163,7 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 25, 'theme' => $theme],
+            '#attributes'  => ['size' => 25],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
             '#suffix'      => $error. '</div>',
@@ -194,7 +189,7 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
             '#suffix'      => $error. '</div>',
@@ -220,7 +215,6 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Votre raison sociale'),
             '#placeholder' => t('Retraites Populaires'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -240,7 +234,6 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -258,7 +251,7 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Votre numéro de téléphone *'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#attributes'  => ['size' => 20],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -276,7 +269,6 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -294,7 +286,7 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -312,7 +304,7 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Votre ville *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -338,7 +330,6 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Adresse de votre bien *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -356,7 +347,7 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Code postal (NPA) de votre bien *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -374,7 +365,7 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Ville de votre bien *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -397,7 +388,7 @@ class LoanIncreaseForm extends FormBase {
             '#title'       => t('Pour un montant *'),
             '#placeholder' => t('CHF'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme, 'class' => array('form-chf-numeric', 'text-right')],
+            '#attributes'  => ['size' => 20, 'class' => array('form-chf-numeric', 'text-right')],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -422,7 +413,6 @@ class LoanIncreaseForm extends FormBase {
         $form['loan_increase']['rate'] = array(
             '#title'       => t('Réserver le taux *'),
             '#type'        => 'select',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#options'     => $options,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
@@ -432,7 +422,7 @@ class LoanIncreaseForm extends FormBase {
         $form['loan_increase']['purpose'] = array(
             '#title'       => t('But'),
             '#type'        => 'textarea',
-            '#attributes'  => ['cols' => 59, 'theme' => $theme],
+            '#attributes'  => ['cols' => 59],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -440,7 +430,7 @@ class LoanIncreaseForm extends FormBase {
         $form['loan_increase']['remarque'] = array(
             '#title'       => t('Remarque'),
             '#type'        => 'textarea',
-            '#attributes'  => ['cols' => 59, 'theme' => $theme],
+            '#attributes'  => ['cols' => 59],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -454,28 +444,28 @@ class LoanIncreaseForm extends FormBase {
 
         $form['files']['file_estimate'] = array(
             '#type'       => 'file',
-            '#attributes' => ['theme' => $theme, 'title' => t('Choisissez votre fichier'), 'label' => t('Devis (en cas de travaux)')],
+            '#attributes' => ['title' => t('Choisissez votre fichier'), 'label' => t('Devis (en cas de travaux)')],
             '#prefix'     => '<div class="form-group form-file">',
             '#suffix'     => '</div>',
         );
 
         $form['files']['file_certificat'] = array(
             '#type'       => 'file',
-            '#attributes' => ['theme' => $theme, 'title' => t('Choisissez votre fichier'), 'label' => t('Certificat de salaire')],
+            '#attributes' => ['title' => t('Choisissez votre fichier'), 'label' => t('Certificat de salaire')],
             '#prefix'     => '<div class="form-group form-file">',
             '#suffix'     => '</div>',
         );
 
         $form['files']['file_tax'] = array(
             '#type'       => 'file',
-            '#attributes' => ['theme' => $theme, 'title' => t('Choisissez votre fichier'), 'label' => t('Dernière déclaration fiscale')],
+            '#attributes' => ['title' => t('Choisissez votre fichier'), 'label' => t('Dernière déclaration fiscale')],
             '#prefix'     => '<div class="form-group form-file">',
             '#suffix'     => '</div>',
         );
 
         $form['files']['file_other'] = array(
             '#type'       => 'file',
-            '#attributes' => ['theme' => $theme, 'title' => t('Choisissez votre fichier'), 'label' => t('Autre')],
+            '#attributes' => ['title' => t('Choisissez votre fichier'), 'label' => t('Autre')],
             '#prefix'     => '<div class="form-group form-file">',
             '#suffix'     => '</div>',
         );
@@ -485,7 +475,7 @@ class LoanIncreaseForm extends FormBase {
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Envoyer'),
-            '#attributes'  => ['class' => array('btn-primary pull-right'), 'theme' => $theme],
+            '#attributes'  => ['class' => array('btn-primary pull-right')],
             '#button_type' => 'primary',
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
