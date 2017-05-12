@@ -17,7 +17,7 @@
   {% set display = [variables.contact.title.value] %}
 {% endif %}
 
-<div class="card card-horizontal">
+<div class="card card-horizontal card-white">
   {% if not variables.contact.field_cover.entity.uri.value is empty %}
   <a href="{{ link }}" class="card-img-top card-img-top-center">
     <div class="card-img-bg" style="background-image:url({{ file_url(variables.cover.xl) }})';"></div>

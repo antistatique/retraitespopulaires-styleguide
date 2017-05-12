@@ -56,6 +56,7 @@
 #}
 {# page.header #}
 
+<div class="theme-{{ theme_guesser() }}">
 {% block cover %}
   {{ load_block('rp_layout_cover_block') }}
 {% endblock %}
@@ -147,4 +148,4 @@
     {{ page.content_footer }}
   {% endblock %}
 {% endif %}
-
+</div>

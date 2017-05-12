@@ -2,7 +2,7 @@
   <div class="attachements-wrapper">
     <div class="container">
       <h2 class="h2">{{ profil.title }}</h2>
-      <div class="row">
+      <div class="row flex-row">
           {% for item in profil.menu %}
             {% if item.hasChildren %}
                {% for subitem in item.subtree %}
