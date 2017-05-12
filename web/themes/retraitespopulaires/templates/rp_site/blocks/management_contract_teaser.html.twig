@@ -1,13 +1,13 @@
 {% if variables.management_contract.nid.value %}
-<a href="{{ path('entity.node.canonical', {'node': variables.management_contract.nid.value}) }}" class="teaser teaser-fullclick teaser-institution shadow shadow-down">
-  <div class="institution-heading">
-    <img class="img-responsive" src="{{ file_url(variables.management_contract.field_logo.entity.uri.value) }}" alt="{% trans %}Logo - {{ variables.management_contract.title.value }}{% endtrans %}">
+<a href="{{ path('entity.node.canonical', {'node': variables.management_contract.nid.value}) }}" class="card">
+  <div class="card-img-top">
+    <img class="card-img" src="{{ file_url(variables.management_contract.field_logo.entity.uri.value) }}" alt="{% trans %}Logo - {{ variables.management_contract.title.value }}{% endtrans %}">
+    <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div></div>
   </div>
-  <div class="institution-body">
-    <div class="institution-title h3 pretty-link">{{ variables.management_contract.title.value }}</div>
+  <div class="card-body">
+    <h3 class="card-title">{{ variables.management_contract.title.value }}</h3>
     {% if variables.management_contract.field_administrator.value %}
-      <div class="spacer spacer-sm"></div>
-      <p class="m-b-0">{{ variables.management_contract.field_administrator.value }}</p>
+      <p>{{ variables.management_contract.field_administrator.value }}</p>
     {% endif %}
   </div>
 </a>
