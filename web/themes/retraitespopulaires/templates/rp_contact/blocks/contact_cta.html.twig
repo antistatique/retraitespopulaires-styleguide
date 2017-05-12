@@ -1,6 +1,6 @@
 {% if variables.contacts %}
   {% set theme = variables.theme %}
-  <a href="#contactez-nous" class="card pull-right">
+  <a href="#contactez-nous" class="card card-sm pull-right">
     {% if variables.cover is not empty %}
     <div class="card-img-top">
       <img class="card-img" src="{{ file_url(variables.cover.xl) }}" alt="card image">
@@ -12,7 +12,7 @@
     </div>
     {% endif %}
 
-    <div class="card-body">
+    <div class="card-body text-center">
       <small>
         {%- spaceless %}
           {% set display = [] %}
