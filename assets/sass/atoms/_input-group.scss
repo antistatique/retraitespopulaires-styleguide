@@ -33,6 +33,7 @@
     border: none;
 
     .btn {
+      height: 100%;
       margin-left: 0;
       padding-bottom: 0.6em;
       border-radius: $btn-border-radius-base - $input-border-size;

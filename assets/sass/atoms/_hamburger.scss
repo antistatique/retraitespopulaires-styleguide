@@ -9,20 +9,19 @@
   cursor: pointer;
   z-index: 2001;
 
-  // @TODO: What's that?? it was in the themes loop
+  .hamburger-button {
+    position: absolute;
+    right: 0.5em;
 
-  // .hamburger-button {
-  //   position: absolute;
-  //   right: 0.5em;
-
-  //   @media (min-width: $screen-sm-min) {
-  //     right: 1.5em;
-  //   }
+    @media (min-width: $screen-sm-min) {
+      right: 1.5em;
+    }
+  }
 }
 
 .hamburger-helper {
   position: absolute;
-  top: 30px;
+  top: 27px;
   right: 4.8em;
 
   @media (min-width: $screen-sm-min) {
