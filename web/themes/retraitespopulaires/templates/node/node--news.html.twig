@@ -11,9 +11,9 @@
 
 {% block node_bottom %}
   {% block node_bottom_outer %}
-    {% embed "@retraitespopulaires/node/partials/attached_documents.html.twig" with {'documents': node.field_document_page, 'theme':node.field_profession.entity.tid.value|theme_profession} %}{% endembed %}
+    {% embed "@retraitespopulaires/node/partials/attached_documents.html.twig" with {'documents': node.field_document_page} %}{% endembed %}
 
-    {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_page, 'theme':node.field_profession.entity.tid.value|theme_profession} %}{% endembed %}
+    {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_page} %}{% endembed %}
   {% endblock %}
 {% endblock %}
 
