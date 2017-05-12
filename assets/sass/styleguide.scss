@@ -162,3 +162,11 @@
     padding: 5px 10px;
   }
 }
+
+// Toggle themes
+.styleguide-toggle-theme {
+  position: fixed;
+  z-index: 999999;
+  top: 20px;
+  right: 20px;
+}

@@ -43,6 +43,10 @@
     <![endif]-->
   </head>
   <body>
+    <div class="styleguide-toggle-container">
+      <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
+    </div>
+
     {% if styleguide %}
       {% include 'styleguide/icons.html.swig' %}
       {% include 'styleguide/menu.html.swig' %}
@@ -52,6 +56,7 @@
           <h1>{{title}}</h1>
         </div>
     {% endif %}
+
 
     {% block content %}{% endblock %}
 
@@ -109,6 +114,11 @@
           $(document).ready(function(){
             $('.styleguide-item-code code').each(function(){
               $(this).html($(this).html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'));
+            });
+
+            // Toggle theme
+            $('.styleguide-toggle-theme').on('click', function() {
+              $('.styleguide-item-preview, .styleguide-toggle-container').toggleClass('theme-cip');
             });
           });
         }(jQuery));
