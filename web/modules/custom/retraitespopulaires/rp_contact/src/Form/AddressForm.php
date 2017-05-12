@@ -393,18 +393,18 @@ class AddressForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['more']['group_start'] = array(
-            '#prefix' => '<div class="form-group '.$error_class.'"><label>'. t('Valable dès <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</label><div class="input-group">',
-            '#suffix' => '</div></div>',
+            '#prefix' => '<div class="form-group '.$error_class.'"><div class="form-control-label">'. t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</div><div class="input-group">',
+            '#suffix' => '</div>'.$error.'</div>',
         );
         $form['more']['group_start']['due_date'] = array(
             '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 15, 'theme' => $theme, 'class' => array('datepicker')],
+            '#attributes'  => ['size' => 15, 'class' => array('datepicker')],
             '#required'    => false,
         );
         $form['more']['group_start']['picker'] = array(
-            '#prefix' => '<span class="input-group-btn no-events"><div class="btn btn-default-invert btn-icon">',
-            '#markup' => '<i class="retraitespopulaires-icon retraitespopulaires-icon-calendar text-'.$theme.'"></i>',
+            '#prefix' => '<span class="input-group-btn no-events"><div class="btn btn-invert btn-icon">',
+            '#markup' => '<span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>',
             '#suffix' => '</div></span>',
         );
 

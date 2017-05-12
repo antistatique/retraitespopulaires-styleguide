@@ -1,7 +1,7 @@
-{% set theme = 'prevoyance' %}
 {% if variables.view_result %}
-  <div>
-      <table class="table-wide table-{{ theme }} tablesaw tablesaw-stack">
+  <div class="card">
+    <div class="card-body">
+      <table class="table-wide tablesaw tablesaw-stack">
         <thead>
           <tr>
             <th colspan="2">{% trans %}Nos prestations estimées à {{ variables.results.age }} ans{% endtrans %}</th>
@@ -54,7 +54,7 @@
       </table>
 
       <div class="spacer spacer-md"></div>
-      <a href="{{ path('entity.node.canonical', {'node': variables.node.nid.value, 'reset': true}) }}" class="btn btn-{{ theme }}">{% trans %}Retourner au calculateur{% endtrans %}</a>
+      <a href="{{ path('entity.node.canonical', {'node': variables.node.nid.value, 'reset': true}) }}" class="btn btn-primary">{% trans %}Retourner au calculateur{% endtrans %}</a>
 
       <div class="spacer spacer-md"></div>
       <div class="alert alert-info">
@@ -71,12 +71,15 @@
         <div class="spacer"></div>
           <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-              <div class="form-card form-card-{{ theme|default('primary') }} shadow shadow-down">
-                {{ load_form('rp_libre_passage', 'PLPContactForm', {'theme': theme, 'results': variables.results}) }}
+              <div class="card">
+                <div class="card-body">
+                  {{ load_form('rp_libre_passage', 'PLPContactForm', {'results': variables.results}) }}
+                </div>
               </div>
           </div>
         </div>
       </div>
+    </div>
   </div>
 
 {% else %}
@@ -86,8 +89,10 @@
     <div class="spacer"></div>
       <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-          <div class="form-card form-card-{{ theme|default('primary') }} shadow shadow-down">
-            {{ load_form('rp_libre_passage', 'PLPCalculatorForm', {'theme': theme}) }}
+          <div class="card">
+            <div class="card-body">
+              {{ load_form('rp_libre_passage', 'PLPCalculatorForm') }}
+            </div>
           </div>
       </div>
     </div>
