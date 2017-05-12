@@ -8,7 +8,9 @@ notes: |
   - **header_extranet_theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
 <header class="header-extranet">
-  {% include '../atoms/logo-retraitespopulaires.html.swig'%}
+  <div class="logo-retraitespopulaires svg-responsive">
+    <a href="#"><img src="{{data.path}}build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>
+  </div>
 
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4 hidden-xs">

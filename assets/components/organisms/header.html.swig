@@ -12,7 +12,9 @@ notes: |
   {% include '../molecules/big-menu.html.swig' %}
 {% endif %}
 <header class="header">
-  {% include '../atoms/logo-retraitespopulaires.html.swig' %}
+  <div class="logo-retraitespopulaires svg-responsive">
+    <a href="#"><img src="{{data.path}}build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>
+  </div>
 
   {% if not light %}
   <div class="row">
