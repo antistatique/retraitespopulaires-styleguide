@@ -2,10 +2,10 @@
 
 <div class="media">
   <div class="media-left">
-    <a href="{{ path('entity.node.canonical', {'node': variables.document.nid.value}) }}" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x text-{{ variables.theme }}"></a>
+    <a href="{{ path('entity.node.canonical', {'node': variables.document.nid.value}) }}" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
   </div>
   <div class="media-body">
-    <a href="{{ path('entity.node.canonical', {'node': variables.document.nid.value}) }}" target="_blank" class="pretty-link h5 text-{{ variables.theme }}">{{ variables.document.title.value }} <span class="text-muted text-small">- {{ variables.document.field_file_document.entity.mimeType|extension_guesser|upper }}</span></a>
+    <a href="{{ path('entity.node.canonical', {'node': variables.document.nid.value}) }}" target="_blank" class="pretty-link h5">{{ variables.document.title.value }} <span class="text-muted text-small">- {{ variables.document.field_file_document.entity.mimeType|extension_guesser|upper }}</span></a>
   </div>
 </div>
 
