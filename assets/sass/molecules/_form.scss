@@ -4,20 +4,3 @@
 .mce_inline_error {
   border-color: $alert-danger-text;
 }
-
-.form-card {
-  margin: 0 auto;
-  max-width: 900px;
-  padding: $grid-gutter-width;
-  background-color: $white;
-  border: 1px solid $brand-primary;
-  border-radius: $border-radius-base;
-
-  @include theme(border-color);
-
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
