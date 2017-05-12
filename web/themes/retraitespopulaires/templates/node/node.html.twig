@@ -76,28 +76,47 @@
   ]
 %}
 
+{% set theme = node.field_profession.entity.tid.value|theme_profession %}
+
 {% set node_body_classes = [
   'entity-body',
-  'body-' ~ node.field_profession.entity.tid.value|theme_profession
+  'body-' ~ theme
+] %}
+
+{% set node_content_width = [
+  'col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2',
 ] %}
 
 <article{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('content') }}>
-    {% block node_top %}
-      {{ load_block('rp_contact_contact_cta_block') }}
-    {% endblock %}
 
-    {% if node.body.summary %}
-      <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
-      <div class="spacer spacer-sm"></div>
-    {% endif %}
+    {% block node_top_outer %}{% endblock %}
 
-    {% if content.body %}
-      <div class="{{ node_body_classes|join(' ') }}">
-        {{ content.body }}
-      </div>
-    {% endif %}
+    <div class="row">
+      <div class="{{ node_content_width|join(' ') }}">
+        {% block node_top %}
+          {{ load_block('rp_contact_contact_cta_block') }}
+        {% endblock %}
 
-    {% block node_bottom %}{% endblock %}
+        {% block node_summary %}
+            {% if node.body.summary %}
+            <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
+            <div class="spacer spacer-sm"></div>
+          {% endif %}
+        {% endblock %}
+
+        {% block node_body %}
+          {% if content.body %}
+            <div class="{{ node_body_classes|join(' ') }}">
+              {{ content.body }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+        {% block node_bottom %}{% endblock %}
+        </div>
+    </div>
+
+    {% block node_bottom_outer %}{% endblock %}
   </div>
 </article>

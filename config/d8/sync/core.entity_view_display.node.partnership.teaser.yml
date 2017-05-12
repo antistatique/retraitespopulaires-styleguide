@@ -5,6 +5,20 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.partnership.body
+    - field.field.node.partnership.field_contact
+    - field.field.node.partnership.field_cover
+    - field.field.node.partnership.field_date_end
+    - field.field.node.partnership.field_date_start
+    - field.field.node.partnership.field_document
+    - field.field.node.partnership.field_document_random
+    - field.field.node.partnership.field_faq
+    - field.field.node.partnership.field_faq_random
+    - field.field.node.partnership.field_latitude
+    - field.field.node.partnership.field_longitude
+    - field.field.node.partnership.field_partnership
+    - field.field.node.partnership.field_search_npa
+    - field.field.node.partnership.field_situation
+    - field.field.node.partnership.field_web_site
     - node.type.partnership
   module:
     - text
@@ -21,13 +35,24 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
   field_contact: true
   field_cover: true
   field_date: true
+  field_date_end: true
+  field_date_start: true
+  field_document: true
+  field_document_random: true
+  field_faq: true
+  field_faq_random: true
   field_latitude: true
   field_longitude: true
+  field_partnership: true
+  field_search_npa: true
+  field_situation: true
   field_web_site: true
   langcode: true

@@ -1,6 +1,27 @@
 
 <?php
 
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+/**
+ * Implements hook_theme_suggestions_hook_alter().
+ *
+ * Since Durpal 8.3.x, the 404 & 403 pages don't provide any
+ * sugestions by default.
+ */
+function rp_site_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $request = Drupal::service('request_stack')->getCurrentRequest();
+
+  if (($request->attributes->get('exception') instanceof AccessDeniedHttpException)) {
+    $suggestions[] = 'page__system__403';
+  }
+
+  if (($request->attributes->get('exception') instanceof NotFoundHttpException)) {
+    $suggestions[] = 'page__system__404';
+  }
+}
+
 /**
  * Implementation of hook_query_TAG_alter
  */

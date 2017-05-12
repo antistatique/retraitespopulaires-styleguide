@@ -8,7 +8,7 @@ dependencies:
     - retraitespopulaires
 id: contactblock
 theme: retraitespopulaires
-region: '-1'
+region: header
 weight: -11
 provider: null
 plugin: rp_site_contact

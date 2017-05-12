@@ -23,10 +23,12 @@ backend_config:
     password: ''
     solr_version: ''
     http_method: AUTO
+    commit_within: 1000
   retrieve_data: false
   highlight_data: false
   excerpt: false
   skip_schema_check: false
   site_hash: true
-  autocorrect_spell: true
-  autocorrect_suggest_words: true
+  suggest_suffix: true
+  suggest_corrections: true
+  suggest_words: false

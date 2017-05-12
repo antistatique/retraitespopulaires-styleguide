@@ -75,6 +75,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea_with_summary
+    region: content
   field_cover:
     weight: 3
     settings:
@@ -82,6 +83,7 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
   field_email:
     weight: 4
     settings:
@@ -89,6 +91,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: email_default
+    region: content
   field_email_form:
     weight: 5
     settings:
@@ -96,6 +99,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: email_default
+    region: content
   field_entity:
     weight: 10
     settings:
@@ -103,12 +107,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_fax:
     weight: 7
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
+    region: content
   field_firstname:
     weight: 2
     settings:
@@ -116,6 +122,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_function:
     weight: 8
     settings:
@@ -123,6 +130,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_lastname:
     weight: 1
     settings:
@@ -130,17 +138,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_phone:
     weight: 6
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
+    region: content
   field_profession:
     weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_specialty:
     weight: 9
     settings:
@@ -148,11 +159,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   path:
     type: path
     weight: 9
     settings: {  }
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -160,6 +173,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   langcode: true

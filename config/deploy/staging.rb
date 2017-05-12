@@ -1,10 +1,13 @@
 # overwrite deploy_to
-server '192.168.188.51', user: 'dplweb', roles: %w{app db web}
+server '192.168.188.51', user: 'web_rp', roles: %w{app db web}
 set :deploy_to, '/data/sites/wwweti2.retraitespopulaires.ch/'
 
 # set a branch for this release
 set :branch, 'dev'
 set :styleguide_branch, 'dev'
+
+# Default value for :log_level is :debug
+set :log_level, :debug
 
 # Module that will be disabled by drush
 set :disable_modules, ['devel']

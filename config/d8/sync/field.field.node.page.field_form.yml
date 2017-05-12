@@ -1,0 +1,29 @@
+uuid: 79797b5a-28f5-4142-889a-7649d7cb37c1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_form
+    - node.type.page
+  module:
+    - webform
+id: node.page.field_form
+field_name: field_form
+entity_type: node
+bundle: page
+label: Formulaire
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  default_data: ''
+  status: open
+  open: ''
+  close: ''
+field_type: webform

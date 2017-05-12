@@ -8,7 +8,7 @@ dependencies:
     - retraitespopulaires_admin
 id: retraitespopulaires_admin_layoutfooterblock
 theme: retraitespopulaires_admin
-region: '-1'
+region: header
 weight: -3
 provider: null
 plugin: rp_layout_footer_block

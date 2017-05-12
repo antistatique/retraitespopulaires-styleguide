@@ -4,6 +4,19 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.advisor.body
+    - field.field.node.advisor.field_cover
+    - field.field.node.advisor.field_email
+    - field.field.node.advisor.field_email_form
+    - field.field.node.advisor.field_entity
+    - field.field.node.advisor.field_firstname
+    - field.field.node.advisor.field_function
+    - field.field.node.advisor.field_lastname
+    - field.field.node.advisor.field_phone
+    - field.field.node.advisor.field_profession
+    - field.field.node.advisor.field_region
+    - field.field.node.advisor.field_specialty
+    - field.field.node.advisor.field_zip_codes
     - node.type.advisor
   module:
     - user
@@ -14,11 +27,19 @@ mode: teaser
 content:
   links:
     weight: 100
+    region: content
 hidden:
+  body: true
   field_cover: true
+  field_email: true
+  field_email_form: true
+  field_entity: true
   field_firstname: true
   field_function: true
   field_lastname: true
+  field_phone: true
+  field_profession: true
   field_region: true
   field_specialty: true
+  field_zip_codes: true
   langcode: true
