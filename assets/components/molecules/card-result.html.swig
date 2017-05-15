@@ -4,6 +4,8 @@ name: card-result
 collection: molecules
 variants:
   file: File Result
+notes: |
+  This is an implementation of the card component.
 ---
 <div class="card card-light card-hover card-no-shadow">
   <div class="card-body">

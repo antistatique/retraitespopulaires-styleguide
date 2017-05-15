@@ -1,7 +1,18 @@
 @charset 'UTF-8';
 
+.organic-wrapper {
+  position: relative;
+}
+
 .organic-lines {
   width: 100%;
+
+  .organic-wrapper & {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
 
   .organicjs-container {
     position: relative;
