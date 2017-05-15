@@ -92,7 +92,7 @@ class AddressForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Changement d\'adresse'),
-          '#prefix'     => '<h3>'.t('Changement d\'adresse').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Changement d\'adresse').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -221,7 +221,7 @@ class AddressForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos anciennes coordonnées'),
-          '#prefix'     => '<h3>'.t('Vos anciennes coordonnées').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Vos anciennes coordonnées').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -297,7 +297,7 @@ class AddressForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos nouvelles coordonnées'),
-          '#prefix'     => '<h3>'.t('Vos nouvelles coordonnées').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Vos nouvelles coordonnées').'</h3>',
         );
 
         // Get error to inline it as suffix

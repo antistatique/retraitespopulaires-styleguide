@@ -106,7 +106,7 @@ class PLPCalculatorForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos données personnelles'),
-          '#prefix'     => '<h3>'.t('Vos données personnelles').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Vos données personnelles').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -193,7 +193,7 @@ class PLPCalculatorForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Votre apport de libre passage'),
-          '#prefix'     => '<h3>'.t('Votre apport de libre passage').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Votre apport de libre passage').'</h3>',
         );
 
         // Get error to inline it as suffix

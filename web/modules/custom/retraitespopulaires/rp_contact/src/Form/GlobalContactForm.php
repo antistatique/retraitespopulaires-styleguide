@@ -97,7 +97,7 @@ class GlobalContactForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos informations'),
-          '#prefix'     => '<h3>'.t('Vos informations').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Vos informations').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -221,7 +221,7 @@ class GlobalContactForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Votre demande'),
-          '#prefix'     => '<h3>'.t('Votre demande').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Votre demande').'</h3>',
         );
 
         // Get error to inline it as suffix

@@ -92,7 +92,7 @@ class DocumentsForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend ')],
           '#title'      => t('Votre demande de commande de document'),
-          '#prefix'     => '<h3>'.t('Votre demande de commande de document').'</h3>' . '<div class="well m-t-1">' . $this->t('Merci de bien vouloir sélectionner au minimum un document.'). '</div>',
+          '#prefix'     => '<h3 class="card-title">'.t('Votre demande de commande de document').'</h3>' . '<div class="well m-t-1">' . $this->t('Merci de bien vouloir sélectionner au minimum un document.'). '</div>',
         );
 
         $form['documents']['policies'] = array(
@@ -146,7 +146,7 @@ class DocumentsForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend ')],
           '#title'      => t('Vos informations'),
-          '#prefix'     => '<h3>'.t('Vos informations').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Vos informations').'</h3>',
         );
 
         // Get error to inline it as suffix

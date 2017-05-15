@@ -101,7 +101,7 @@ class PLPContactForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Je suis intéressé(e)'),
-          '#prefix'     => '<h3>'.t('Je suis intéressé(e)').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Je suis intéressé(e)').'</h3>',
         );
 
         // Get error to inline it as suffix
