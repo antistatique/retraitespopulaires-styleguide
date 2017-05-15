@@ -403,15 +403,16 @@
                    </div>
                    <div class="col-xs-12 col-md-2 col-md-offset-1">
                     <div class="big-menu-secondary-nav-wrapper">
-                      <div class="big-menu-secondary-nav visible-xs visible-sm">
+                      <div class="big-menu-secondary-nav bg-berrylight-gray visible-xs visible-sm">
                         <div class="row">
                           <div class="spacer spacer-sm"></div>
                           {% set linksPerColumn = (variables.secondary_menu|length / 2)|round(0, 'ceil') %}
                             {% for item in variables.secondary_menu %}
                               {% set classes = [
-                              item.link.pluginId,
+                                item.link.pluginId,
+                                item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text',
+                                item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text-locker',
                               ] %}
-
                               {% if linksPerColumn == 1 or loop.index % linksPerColumn == 1 %}
                                 <div class="col-xs-6">
                                   <ul class="list-no-style list-no-padding {{ loop.first ? 'text-right'}}">
@@ -436,18 +437,18 @@
                           <ul class="list-spaced list-no-style list-no-padding hidden-xs hidden-sm" role="navigation">
                             {% for item in variables.secondary_menu %}
                               {% set classes = [
-                              item.link.pluginId,
-                              item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text',
-                              item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text-locker',
+                                item.link.pluginId,
+                                item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text',
+                                item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text-locker',
                               ] %}
                               {% set target = item.link.options.external ? '_blank' %}
                                 <li class="{{ classes|join(' ') }}">
                                   <a class="pretty-link" href="{{ item.link.urlObject }}" target="{{ target }}">
                                     {{ item.link.title }}
+                                    {% if item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' %}
+                                      <i class="text-primary retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i>
+                                    {% endif %}
                                   </a>
-                                  {% if item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' %}
-                                    <i class="text-primary retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i>
-                                  {% endif %}
                                 </li>
                               {% endfor %}
                             </ul>
