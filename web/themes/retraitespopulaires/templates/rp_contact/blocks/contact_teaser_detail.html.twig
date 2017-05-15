@@ -1,9 +1,3 @@
-{% if not variables.theme %}
-  {% set theme = variables.node.field_profession.entity.tid.value|theme_profession %}
-{% else %}
-  {% set theme = variables.theme %}
-{% endif %}
-
 {% set display = [] %}
 {% if variables.contact.field_firstname.value %}
   {% set display = display|merge([variables.contact.field_firstname.value])  %}

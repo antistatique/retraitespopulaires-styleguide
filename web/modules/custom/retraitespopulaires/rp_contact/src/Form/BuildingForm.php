@@ -127,7 +127,7 @@ class BuildingForm extends FormBase {
         }
         $form['building']['title'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => false],
+            '#attributes'  => ['title' => t('Votre titre *'), 'required' => false],
             '#required'    => false,
             '#options'     => array(
                 'Madame'   => t('Madame'),
