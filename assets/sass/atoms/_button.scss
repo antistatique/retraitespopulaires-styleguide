@@ -149,19 +149,20 @@
   justify-content: center;
   align-content: center;
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 2.666em;
+  height: 2.666em;
   padding-right: 0;
   padding-left: 0;
   border-radius: 50%;
 
-  .retraitespopulaires-icon {
-    line-height: $line-height-base;
+  &.btn-sm {
+    width: 2em;
+    height: 2em;
   }
 
-  &.btn-sm {
-    width: 30px;
-    height: 30px;
+  &.btn-xs {
+    width: 1.666em;
+    height: 1.666em;
   }
 }
 

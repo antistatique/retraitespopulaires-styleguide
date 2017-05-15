@@ -1,5 +1,9 @@
 @charset 'UTF-8';
 
+.tooltip-container {
+  position: relative;
+}
+
 .tooltip {
   cursor: pointer;
 }
@@ -12,5 +16,33 @@
 .tooltip-info {
   .tooltip-symbol {
     background: url('../svg/information.svg');
+  }
+}
+
+.tooltip-shift {
+  + .popover {
+    left: -8px !important;
+    max-width: 100%;
+
+    > .arrow {
+      left: 19px !important;
+    }
+
+    .popover-content {
+      padding: 5px 8px 3px;
+      text-transform: uppercase;
+      font-size: 80%;
+      font-weight: 700;
+      color: $text-muted;
+    }
+  }
+}
+
+// flip retraitespopulaires-icon-angle on popover toggle
+.btn[data-toggle="popover"][aria-describedby*="popover"] {
+  .retraitespopulaires-icon-angle {
+    &:before {
+      transform: scaleY(-1);
+    }
   }
 }
