@@ -3,10 +3,6 @@
 // inspired by https://www.sassmeister.com/gist/39483fdd90c7c6c3e00a35cf77ec4516
 
 $themes: (
-  primary: (
-    color: $brand-primary,
-    hover-color: darken($brand-primary, 10%)
-  ),
   assurance: (
     color: $deep-yellow,
     hover-color: darken($deep-yellow, 10%)
@@ -38,6 +34,10 @@ $themes: (
   cip: (
     color: $light-blue,
     hover-color: darken($light-blue, 10%)
+  ),
+  primary: (
+    color: $brand-primary,
+    hover-color: darken($brand-primary, 10%)
   ),
 ) !default;
 
