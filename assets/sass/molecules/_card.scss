@@ -124,13 +124,9 @@ a.card-img-top {
   z-index: 2;
 
   .card-img-top-center & {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    transform: translate(-50%, -50%);
+    display: block;
+    max-height: 196px;
+    margin: 0 auto;
   }
 }
 
