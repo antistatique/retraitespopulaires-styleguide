@@ -96,7 +96,7 @@
     border-color: $link-color;
     color: $white !important;
 
-    @include theme(background-color);
+    @include theme(background-color border-color);
   }
 
   &:active,

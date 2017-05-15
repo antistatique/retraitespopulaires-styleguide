@@ -19,5 +19,5 @@ notes: |
   {{ btn_label|default('Mon bouton') }}
 </button>
 {%- else -%}
-<button class="btn btn-circle btn-outline">1</button>
+<button class="btn btn-circle btn-outline" aria-label="Next"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></button>
 {%- endif -%}
