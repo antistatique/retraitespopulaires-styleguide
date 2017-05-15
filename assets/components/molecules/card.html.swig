@@ -10,6 +10,7 @@ variants:
   card-light: Card Light
   card-justify: Card Justify
   card-horizontal: Card Horizontal
+  card-logo: Card Logo
 notes: |
   - `card` (`card-light`, `card-horizontal`): modifiers to have a light border or horizontal layout
   - `card-img-top` > `card-img-bg`/`card-img` (`card-img-top-center` to center small image), fallback to loader (if broken) or icon
@@ -31,9 +32,11 @@ notes: |
 {%- endif -%}
   {%- if variant != 'card-light' -%}
   {%- if variant != 'card-icon' %}
-  <div class="card-img-top">
+  <div class="card-img-top {% if variant == 'card-logo' -%}card-img-top-center card-berrylight-gray{% endif -%}">
     {% if variant == 'img-bg' or variant == 'card-horizontal' -%}
-    <div class="card-img-bg" style="background-image: url('https://unsplash.it/780/780?image=1005');"></div>
+    <div class="card-img-bg" style="background-image: url('https://unsplash.it/512/512?image=1005');"></div>
+    {% elseif variant == 'card-logo' %}
+    <img class="card-img" src="https://3.bp.blogspot.com/-AJNG3A2-QIw/VjTFNFpJjsI/AAAAAAAAACQ/3lkytAva6oY/s600-c/NoImage.png" alt="card logo">
     {% else -%}
     <img class="card-img" src="https://unsplash.it/780/380?image=1005" alt="card image">
     {% endif -%}
