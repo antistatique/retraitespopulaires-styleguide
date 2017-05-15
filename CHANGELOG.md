@@ -4,6 +4,9 @@ CHANGELOG
 * 3.0.0 (2017-05-XX)
 Massive refactoring of Styleguide components to avoid legacy code.
  - 
+ 
+* 2.2.2 (2047-05-12)
+ - Fix webform table likert
 
 * 2.2.1 (2017-04-21)
  - ignore gemini test directory
