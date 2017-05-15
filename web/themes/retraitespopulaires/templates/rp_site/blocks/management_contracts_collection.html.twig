@@ -1,5 +1,5 @@
 {% if variables.management_contracts %}
-<div class="row flex-row">
+<div class="row flex-row theme-primary">
   {% for management_contract in variables.management_contracts %}
   <div class="col-xs-12 col-md-6">
     {{ load_block('rp_site_management_contract_teaser_block', {'management_contract': management_contract}) }}
