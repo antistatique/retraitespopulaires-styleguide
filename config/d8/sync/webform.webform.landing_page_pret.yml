@@ -10,7 +10,7 @@ id: landing_page_pret
 title: 'Landing Page - Prêt'
 description: 'Formulaire des landings pages pour Prêt hypothécaire'
 category: ''
-elements: "titre_du_form:\n  '#type': webform_markup\n  '#markup': '<h3>Vos informations</h3>'\nposez_nous_vos_questions:\n  '#type': fieldset\n  '#title': 'Posez-nous vos questions'\n  '#title_display': invisible\n  '#attributes':\n    class:\n      - fieldset-no-legend\n  prenom:\n    '#type': textfield\n    '#title': 'Votre prénom'\n    '#title_display': before\n    '#size': '25'\n    '#placeholder': Alain\n    '#required': true\n  nom_de_famille:\n    '#type': textfield\n    '#title': 'Votre nom de famille'\n    '#title_display': before\n    '#size': '25'\n    '#placeholder': Rochat\n    '#required': true\n  votre_e_mail:\n    '#type': email\n    '#title': 'Votre e-mail'\n    '#title_display': before\n    '#size': '60'\n    '#placeholder': alain.rochat@retraitespopulaires.ch\n    '#required': true\n  votre_message:\n    '#type': textarea\n    '#title': 'Votre message'\n    '#title_display': before\n    '#required': true\nhr:\n  '#type': webform_markup\n  '#markup': '<hr>'\n"
+elements: "titre_du_form:\n  '#type': webform_markup\n  '#markup': '<h3>Nous prendrons contact avec vous</h3>'\nposez_nous_vos_questions:\n  '#type': fieldset\n  '#title': 'Posez-nous vos questions'\n  '#title_display': invisible\n  '#attributes':\n    class:\n      - fieldset-no-legend\n  prenom:\n    '#type': textfield\n    '#title': 'Votre prénom'\n    '#title_display': before\n    '#size': '25'\n    '#placeholder': Alain\n    '#required': true\n  nom_de_famille:\n    '#type': textfield\n    '#title': 'Votre nom de famille'\n    '#title_display': before\n    '#size': '25'\n    '#placeholder': Rochat\n    '#required': true\n  votre_e_mail:\n    '#type': email\n    '#title': 'Votre e-mail'\n    '#title_display': before\n    '#size': '60'\n    '#placeholder': alain.rochat@retraitespopulaires.ch\n    '#required': true\n  votre_numero_de_telephone:\n    '#type': textfield\n    '#title': 'Votre numéro de téléphone'\n    '#title_display': before\n    '#size': '20'\n    '#placeholder': '079 123 45 67'\n    '#required': true\n  votre_message:\n    '#type': textarea\n    '#title': 'Votre message'\n    '#title_display': before\nhr:\n  '#type': webform_markup\n  '#markup': '<hr>'\n"
 css: ''
 javascript: ''
 settings:
@@ -125,8 +125,8 @@ handlers:
       from_mail: default
       from_options: {  }
       from_name: default
-      subject: 'Nouvelle prise de contact - Landing - Assurance Vie'
-      body: "<b>Nouvelle prise de contact - Landing - Prêt hypothécaire par [webform_submission:values:prenom] [webform_submission:values:nom_de_famille].</b>\n\n<p><b>Demande</b></p><br />\n[webform_submission:values]\n\n<br /><br />\n<p>Retraites Populaires</p>"
+      subject: 'Nouvelle prise de contact - [current-page:title] - Prêt hypothécaire'
+      body: "<b>Nouvelle prise de contact - [current-page:title] - Prêt hypothécaire par [webform_submission:values:prenom] [webform_submission:values:nom_de_famille].</b>\n\n<p><b>Demande</b></p><br />\n[webform_submission:values]\n\n<br /><br />\n<p>Retraites Populaires</p>"
       excluded_elements: {  }
       html: true
       attachments: false

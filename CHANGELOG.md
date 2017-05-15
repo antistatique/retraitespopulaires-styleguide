@@ -1,5 +1,16 @@
 CHANGELOG
 ---------
+## 1.3.1 (2017-05-15)
+ - Fixed issue, attached files/news to news node doesn't appear on the bottom of the page
+
+## 1.3.0 (2017-05-12)
+ - Update to Drupal 8.3.1
+ - Add Landing Pages
+ - Add Webform
+ - Massive refactoring layout
+ - Prepare Layout Twig for version 2.0 - breaking changes everywhere (Styleguide 3.0)
+ - For now fix version of Styleguide to ^2.0
+
 ## 1.2.5 (2017-02-21)
  - Added Gallery to Buildings content type
  - Added Feedback e-mail to every contact forms
