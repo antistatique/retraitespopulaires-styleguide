@@ -37,23 +37,26 @@
   }
 
   > li {
-    position: relative;
     margin-bottom: 0.3em;
-    padding-left: 1em;
 
-    &:before {
-      content: '\0025A0'; // ■
-      position: absolute;
-      top: -0.2em;
-      left: 0;
-      font-size: 0.8em;
-      color: $gray;
-    }
+    @extend %square-bullet; // see typography.scss
   }
 
   &.list-inline li {
     margin-right: 0.3em;
+
+    &:first-child {
+      padding-left: 0;
+
+      &:before {
+        content: none;
+      }
+    }
   }
+}
+
+.unordered-list.list-inline li {
+  margin-right: 0;
 }
 
 .treeview-list {

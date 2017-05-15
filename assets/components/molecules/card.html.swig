@@ -20,6 +20,9 @@ notes: |
   - `card-white` or `card-berrylight-gray` to set background colors
   - `card-sm` to have a small card of maximum 150px width
   - `card-no-border` to remove borders
+  - `card-no-shadow` to remove shadow
+  - `card-separator` to a `<hr>` to add a separator
+  - `card-hover` to hover hover effects on a `div.card`
 ---
 {% if variant == 'card-light' or variant == 'card-horizontal' -%}
 <div class="card {{ variant }}">

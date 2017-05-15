@@ -22,31 +22,36 @@
   }
 }
 
-.card-light {
-  border-color: $ligthen-gray !important;
-}
+/**
+ * Border variants
+ */
 
-.card-white {
-  background-color: $white;
+.card-light { border-color: $ligthen-gray !important; }
+.card-no-border { border: none; }
 
-  .pretty-link { @include pretty-link-text-shadow($white); }
-}
+/**
+ * Card as a Link
+ */
 
-.card-berrylight-gray {
-  background-color: $berrylight-gray;
+a.card,
+.card-hover {
+  transition:
+    border 0.25s ease-in-out,
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-  .pretty-link { @include pretty-link-text-shadow($berrylight-gray); }
-}
+  &:hover {
+    border-color: darken($brand-primary, 10);
 
-.card-no-border {
-  border: none;
+    & {
+      box-shadow: 0 65px 75px -45px darken($shadow-gray, 0.3);
+    }
+
+    @include theme(border-color, hover-color);
+  }
 }
 
 a.card {
   color: $text-color;
-  transition:
-    border 0.25s ease-in-out,
-    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:focus,
   &:active,
@@ -55,23 +60,21 @@ a.card {
     color: $text-color;
   }
 
-  &:hover {
-    border-color: darken($brand-primary, 10);
-    box-shadow: 0 65px 75px -45px darken($shadow-gray, 0.3);
-
-    @include theme(border-color, hover-color);
-  }
-
   .card-title {
     @include theme(color);
   }
 }
 
-a.card-light {
+a.card-light,
+.card-hover.card-light {
   &:hover {
-    border-color: darken($ligthen-gray, 10%);
+    border-color: darken($ligthen-gray, 20%) !important; // override card-light
   }
 }
+
+/**
+ * Card Image
+ */
 
 .card-img-top {
   display: flex;
@@ -144,6 +147,10 @@ a.card-img-top {
   }
 }
 
+/**
+ * Card Texts
+ */
+
 .card-subhead {
   margin-bottom: 0;
   font-size: $font-size-h5;
@@ -164,15 +171,26 @@ a.card-img-top {
 
 .card-body {
   padding: $grid-gutter-width / 2;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
 }
+
+/**
+ * Card Footer
+ */
 
 .card-footer {
   margin-top: auto;
   padding: $grid-gutter-width / 2;
 }
 
-.card-horizontal,
-a.card-horizontal {
+/**
+ * Card layout
+ */
+
+.card-horizontal {
   @media (min-width: $screen-sm-min) {
     flex-direction: row;
 
@@ -182,11 +200,43 @@ a.card-horizontal {
   }
 }
 
+.card-separator {
+  margin: ($line-height-computed / 2) 0;
+  border-color: lighten($hr-border, 20%);
+}
+
+/**
+ * Card formats
+ */
+
 .card-justify {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: baseline;
 }
+
+/**
+ * Background variants
+ */
+@mixin card-bg-variant($color) {
+  background-color: $color;
+
+  .pretty-link { @include pretty-link-text-shadow($color); }
+}
+
+.card-white { @include card-bg-variant($white); }
+.card-berrylight-gray { @include card-bg-variant($berrylight-gray); }
+
+/**
+ * Styles
+ */
+
+.card-no-shadow { box-shadow: none; }
+
+/**
+ * Card sizes
+ */
 
 .card-sm {
   max-width: 150px;

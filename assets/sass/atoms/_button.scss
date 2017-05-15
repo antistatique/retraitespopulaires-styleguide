@@ -164,3 +164,10 @@
     height: 30px;
   }
 }
+
+// button with the default font-family and strong text
+.btn-normal {
+  padding-top: 0.6em;
+  font-family: $font-family-base;
+  font-weight: 700;
+}
