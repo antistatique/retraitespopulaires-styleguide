@@ -1,5 +1,8 @@
 CHANGELOG
 ---------
+## 1.3.1 (2017-05-15)
+ - Fixed issue, attached files/news to news node doesn't appear on the bottom of the page
+
 ## 1.3.0 (2017-05-12)
  - Update to Drupal 8.3.1
  - Add Landing Pages
