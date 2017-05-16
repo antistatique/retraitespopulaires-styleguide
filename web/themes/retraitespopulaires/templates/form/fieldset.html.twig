@@ -36,7 +36,7 @@
       required ? 'form-required',
     ]
   %}
-{% if legend.title is not empty %}
+{% if legend.title is not empty and element['#type'] != 'radios' and element['#type'] != 'checkboxes' and attributes.title is not empty %}
   {#  Always wrap fieldset legends in a SPAN for CSS positioning. #}
   <legend{{ legend.attributes }}>
     <h2{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</h2>
