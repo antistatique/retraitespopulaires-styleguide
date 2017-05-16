@@ -6,13 +6,13 @@
       <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div></div>
     </div>
     {% else %}
-    <div class="card-img-top card-img-top-center">
+    <div class="card-img-top card-img-top-left">
       <span class="retraitespopulaires-icon retraitespopulaires-icon-5x retraitespopulaires-icon-contact-us-borderless" aria-hidden="true"></span>
     </div>
     {% endif %}
 
-    <div class="card-body text-center">
-      <small>
+    <div class="card-body text-secondary">
+      <p>
         {%- spaceless %}
           {% set display = [] %}
           {% if variables.contacts|length == 1 %}
@@ -30,7 +30,7 @@
             {% trans %}Contactez {{ display }}.{% endtrans %}
           {% endif %}
         {% endspaceless -%}
-      </small>
+      </p>
     </div>
   </a>
 {% endif %}
