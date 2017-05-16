@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
     - field.field.node.page.field_form
+    - field.field.node.page.field_full_screen_content
     - field.field.node.page.field_metatags
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
@@ -64,6 +65,7 @@ third_party_settings:
         - title
         - field_cover
         - body
+        - field_full_screen_content
         - field_profil
         - field_profession
       parent_name: group_attachments
@@ -230,6 +232,13 @@ content:
     third_party_settings: {  }
     type: webform_entity_reference_select
     region: content
+  field_full_screen_content:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_metatags:
     weight: 29
     settings: {  }
@@ -246,13 +255,13 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_profession:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_profil:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
