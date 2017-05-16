@@ -22,4 +22,8 @@
 
   <!-- Image(s) virtuelle(s) -->
   {% embed "@retraitespopulaires/node/partials/gallery.html.twig" with {title: 'Images virtuelles', 'images': node.field_virtual_image} %}{% endembed %}
+
+  {% if node.field_file_building is not empty or node.field_file_plan is not empty or node.field_virtual_visit is not empty or node.field_virtual_image is not empty %}
+    <div class="spacer spacer-md"></div>
+  {% endif %}
 {% endblock %}

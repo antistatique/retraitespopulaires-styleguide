@@ -2,5 +2,9 @@
 
 {% block node_bottom %}
   {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_faq} %}{% endembed %}
+
+  {% if node.field_file_faq is not empty %}
+    <div class="spacer spacer-md"></div>
+  {% endif %}
 {% endblock %}
 

@@ -9,6 +9,7 @@
 {% block node_bottom %}
   {% if node.field_web_site.uri %}
     <a class="btn btn-lg btn-primary" href="{{ node.field_web_site.uri }}" target="_blank">{% trans %}Site internet{% endtrans %}</a>
+    <div class="spacer spacer-md"></div>
   {% endif %}
 {% endblock %}
 

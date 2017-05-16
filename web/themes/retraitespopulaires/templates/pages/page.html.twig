@@ -55,8 +55,7 @@
  */
 #}
 {# page.header #}
-
-{% set fullscreen = node.field_full_screen_content.value == 1 %}
+{% set fullscreen = node.field_full_screen_content.value == 1 or node.type == 'webform' %}
 
 <div class="theme-{{ theme_guesser() }}">
 {% block cover %}
@@ -151,7 +150,6 @@
         </div>
       </div>
     </div>
-    <div class="spacer"></div>
   {% endblock %}
 
   {% block attachments %}

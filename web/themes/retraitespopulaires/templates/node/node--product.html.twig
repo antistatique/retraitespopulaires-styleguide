@@ -4,4 +4,8 @@
   {% embed "@retraitespopulaires/node/partials/attached_documents.html.twig" with {'documents': node.field_document_page} %}{% endembed %}
 
   {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_product} %}{% endembed %}
+
+  {% if node.field_document_page is not empty or node.field_file_product is not empty %}
+    <div class="spacer spacer-md"></div>
+  {% endif %}
 {% endblock %}

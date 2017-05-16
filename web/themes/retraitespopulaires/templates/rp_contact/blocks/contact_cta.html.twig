@@ -1,36 +1,38 @@
 {% if variables.contacts %}
-  <a href="#contactez-nous" class="card card-sm pull-right">
-    {% if variables.cover is not empty %}
-    <div class="card-img-top">
-      <img class="card-img" src="{{ file_url(variables.cover.xl) }}" alt="card image">
-      <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div></div>
-    </div>
-    {% else %}
-    <div class="card-img-top card-img-top-left">
-      <span class="retraitespopulaires-icon retraitespopulaires-icon-5x retraitespopulaires-icon-contact-us-borderless" aria-hidden="true"></span>
-    </div>
-    {% endif %}
+  <div class="pull-right">
+    <a href="#contactez-nous" class="card card-sm">
+      {% if variables.cover is not empty %}
+      <div class="card-img-top">
+        <img class="card-img" src="{{ file_url(variables.cover.xl) }}" alt="card image">
+        <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div></div>
+      </div>
+      {% else %}
+      <div class="card-img-top card-img-top-left">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-5x retraitespopulaires-icon-contact-us-borderless" aria-hidden="true"></span>
+      </div>
+      {% endif %}
 
-    <div class="card-body text-secondary">
-      <p>
-        {%- spaceless %}
-          {% set display = [] %}
-          {% if variables.contacts|length == 1 %}
-            {% if variables.contacts[0].field_firstname.value %}
-              {% set display = display|merge([variables.contacts[0].field_firstname.value]) %}
+      <div class="card-body text-secondary">
+        <p>
+          {%- spaceless %}
+            {% set display = [] %}
+            {% if variables.contacts|length == 1 %}
+              {% if variables.contacts[0].field_firstname.value %}
+                {% set display = display|merge([variables.contacts[0].field_firstname.value]) %}
+              {% endif %}
+              {% if variables.contacts[0].field_lastname.value %}
+                {% set display = display|merge([variables.contacts[0].field_lastname.value]) %}
+              {% endif %}
             {% endif %}
-            {% if variables.contacts[0].field_lastname.value %}
-              {% set display = display|merge([variables.contacts[0].field_lastname.value]) %}
+            {% if display is empty %}
+              {% trans %}Nous contacter maintenant.{% endtrans %}
+            {% else %}
+              {% set display = display|join(' ') %}
+              {% trans %}Contactez {{ display }}.{% endtrans %}
             {% endif %}
-          {% endif %}
-          {% if display is empty %}
-            {% trans %}Nous contacter maintenant.{% endtrans %}
-          {% else %}
-            {% set display = display|join(' ') %}
-            {% trans %}Contactez {{ display }}.{% endtrans %}
-          {% endif %}
-        {% endspaceless -%}
-      </p>
-    </div>
-  </a>
+          {% endspaceless -%}
+        </p>
+      </div>
+    </a>
+  </div>
 {% endif %}

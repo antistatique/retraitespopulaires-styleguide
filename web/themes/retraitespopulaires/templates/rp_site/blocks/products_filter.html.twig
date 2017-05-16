@@ -1,5 +1,5 @@
 {% if variables.categories %}
-<h4>{% trans %}Filtrer par:{% endtrans %}</h4>
+  <h4 class="m-t-0">{% trans %}Filtrer par:{% endtrans %}</h4>
   {% for category in variables.categories %}
   <p class="media-heading text-muted">{{ category.term.name.value }}</p>
   <ul class="filters-list">

@@ -9,19 +9,16 @@
 
   <div class="card-body">
     <h3 class="card-title h1">{{ variables.news.title.value }}</h3>
+    <time datetime="{{ variables.news.field_date.date|date_format('c') }}">
+      <span class="sr-only">{% trans %}Date de publication: {% endtrans %}</span>
+      {{ variables.news.field_date.date|date_format('d F Y')|capitalize }}
+    </time> -
+    <span>
+      <span class="sr-only">{% trans %}Catégorie de l'actualité: {% endtrans %}</span>
+      {{ variables.news.field_news_type.entity.name.value }}
+    </span>
+    <div class="spacer spacer-sm"></div>
     <p>{{ variables.news.body.summary }}</p>
-  </div>
-  <div class="card-footer">
-    <div class="card-justify">
-      <time datetime="{{ variables.news.field_date.date|date_format('c') }}">
-        <span class="sr-only">{% trans %}Date de publication: {% endtrans %}</span>
-        {{ variables.news.field_date.date|date_format('d F Y')|capitalize }}
-      </time>
-      <span>
-        <span class="sr-only">{% trans %}Catégorie de l'actualité: {% endtrans %}</span>
-        {{ variables.news.field_news_type.entity.name.value }}
-      </span>
-    </div>
   </div>
 </a>
 {% endif %}
