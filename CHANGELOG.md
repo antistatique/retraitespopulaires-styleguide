@@ -1,5 +1,8 @@
 CHANGELOG
 ---------
+## 1.3.2 (2017-05-16)
+ - finalize configurations for landing pages
+
 ## 1.3.1 (2017-05-15)
  - Fixed issue, attached files/news to news node doesn't appear on the bottom of the page
 
