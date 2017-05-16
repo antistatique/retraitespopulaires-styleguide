@@ -54,7 +54,7 @@ table.tablesaw {
 
     th {
       padding: $grid-gutter-width / 4 $grid-gutter-width / 2;
-      line-height: 1.1em;
+      line-height: 1.1;
       font-weight: 400;
     }
 
@@ -97,8 +97,13 @@ table.tablesaw {
     line-height: 0;
   }
 
-  &.table-wide {
-    width: 100%;
+  @media screen and (min-width: $screen-md-min) {
+    .entity-body &.table-wide {
+      position: relative;
+      left: 50%;
+      width: 80vw;
+      transform: translateX(-50%);
+    }
   }
 }
 

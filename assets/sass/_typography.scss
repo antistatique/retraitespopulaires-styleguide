@@ -12,6 +12,10 @@ h2,
   font-weight: 500;
 
   @include font-secondary;
+
+  &.page-title {
+    margin-top: 0;
+  }
 }
 
 h6,

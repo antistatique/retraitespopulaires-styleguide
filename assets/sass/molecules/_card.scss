@@ -13,11 +13,11 @@
 
   @include theme(border-color);
 
-  &.pull-left {
+  .pull-left & {
     margin: 0 ($grid-gutter-width / 2) ($grid-gutter-width / 2) 0;
   }
 
-  &.pull-right {
+  .pull-right & {
     margin: 0 0 ($grid-gutter-width / 2) ($grid-gutter-width / 2);
   }
 }
@@ -187,7 +187,7 @@ a.card-img-top {
 
 .card-footer {
   margin-top: auto;
-  padding: ($grid-gutter-width / 2) $grid-gutter-width;
+  padding: $grid-gutter-width;
 }
 
 /**
@@ -244,4 +244,9 @@ a.card-img-top {
 
 .card-sm {
   max-width: 150px;
+
+  .card-body,
+  .card-footer {
+    padding: ($line-height-computed / 2);
+  }
 }

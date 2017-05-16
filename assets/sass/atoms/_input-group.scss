@@ -47,7 +47,7 @@
       }
 
       &.btn-icon {
-        max-height: 2.9em;
+        max-height: calc(100% - 1px);
         padding-bottom: 0.6em;
 
         /* stylelint-disable max-nesting-depth */
