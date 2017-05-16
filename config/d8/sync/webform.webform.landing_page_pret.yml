@@ -60,10 +60,10 @@ settings:
   draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
-  confirmation_type: message
+  confirmation_type: url_message
   confirmation_title: ''
   confirmation_message: 'Merci [webform_submission:values:prenom] [webform_submission:values:nom_de_famille] pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l''adresse [webform_submission:values: votre_e_mail].'
-  confirmation_url: ''
+  confirmation_url: 'https://www.retraitespopulaires.ch/solutions/pret-remerciement'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -116,7 +116,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: default
+      to_mail: 'b.eggimann@retraitespopulaires.ch,c.graf@retraitespopulaires.ch,d.moriero@retraitespopulaires.ch'
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
