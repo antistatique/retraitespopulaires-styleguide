@@ -9,7 +9,7 @@
  * @ingroup templates
  */
 #}
-{% if breadcrumb %}
+{% if breadcrumb and breadcrumb|length > 1 %}
 <div class="breadcrumb">
   <ul class="list-inline list-no-style list-no-padding">
 
