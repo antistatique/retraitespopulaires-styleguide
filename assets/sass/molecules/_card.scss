@@ -187,7 +187,7 @@ a.card-img-top {
 
 .card-footer {
   margin-top: auto;
-  padding: $grid-gutter-width / 2;
+  padding: ($grid-gutter-width / 2) $grid-gutter-width;
 }
 
 /**
