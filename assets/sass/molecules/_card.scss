@@ -105,8 +105,15 @@ a.card-light,
   }
 
   .retraitespopulaires-icon {
-    margin: ($grid-gutter-width / 2) auto;
+    margin: ($grid-gutter-width / 2) auto 0;
   }
+}
+
+.card-img-top-left .retraitespopulaires-icon {
+  margin-left: ($grid-gutter-width / 2);
+  color: $brand-primary;
+
+  @include theme(color);
 }
 
 a.card-img-top {
