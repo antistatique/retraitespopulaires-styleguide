@@ -73,7 +73,7 @@ namespace :deploy do
           directories_str = directories.map do |release|
             releases_path.join(release)
           end.join(" ")
-          execute :chmod, '-R' ,'g+w', directories_str
+          execute :chmod, '-R' ,'ug+w', directories_str
         end
       end
     end
