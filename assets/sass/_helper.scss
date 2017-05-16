@@ -245,9 +245,21 @@
 * Flexible rows
 */
 
+// TODO: DUPLICATED from flex-row, must be fixed one day :)
 .row-flex {
   display: flex;
   flex-wrap: wrap;
+
+  @supports (display: flex) {
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+}
+
+.d-flex {
+  display: flex;
 }
 
 .flex-center {
