@@ -1,5 +1,9 @@
 CHANGELOG
 ---------
+## 1.3.3 (2017-05-16)
+ - Fix radios buttons with fieldset legend before
+ - Fix deploy permissions before cleanup
+
 ## 1.3.2 (2017-05-16)
  - finalize configurations for landing pages
 
