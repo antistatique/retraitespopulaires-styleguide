@@ -28,7 +28,8 @@
 
 .treeview-list,
 .unordered-list,
-.facets-list {
+.facets-list,
+.filters-list {
   list-style: none;
   margin-left: 0;
 
@@ -38,8 +39,6 @@
 
   > li {
     margin-bottom: 0.3em;
-
-    @extend %square-bullet; // see typography.scss
   }
 
   &.list-inline li {
@@ -55,8 +54,14 @@
   }
 }
 
-.unordered-list.list-inline li {
-  margin-right: 0;
+.unordered-list {
+  &.list-inline li {
+    margin-right: 0;
+  }
+
+  > li {
+    @extend %square-bullet; // see typography.scss
+  }
 }
 
 .treeview-list {
@@ -109,19 +114,25 @@
   }
 }
 
-.filters-list,
 .filters-list {
-  list-style: none;
   padding-left: 0.5em;
+
+  &.list-inline li {
+    margin-right: 1.4em;
+
+    &:first-child {
+      padding-left: 0.6em;
+    }
+  }
 
   > li {
     position: relative;
-    margin-bottom: 0.3em;
-    padding-left: 0.5em;
+    padding-left: 0.6em;
+    line-height: 1.2em;
 
     .retraitespopulaires-icon {
       position: absolute;
-      top: 0.6em;
+      top: 0.4em;
       left: -0.5em;
       font-size: 0.6em;
       color: $black;
