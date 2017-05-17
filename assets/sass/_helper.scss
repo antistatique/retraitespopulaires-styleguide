@@ -151,7 +151,7 @@
 
 // Fix flex columns on mobile
 @media screen and (max-width: $screen-xs-max) {
-  [class*=col-] {
+  [class*=col-]:not([class*=col-xs]) {
     width: 100%;
   }
 }
