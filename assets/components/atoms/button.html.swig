@@ -10,7 +10,7 @@ variants:
   btn-outline: Button Outline
   btn-circle: Button Circle
 changes:
-  3.0.0: Improvements to CSS, the `.btn` class has to have the `.btn-primary` class to be green.
+  3.0.0: Improvements to CSS, the `.btn` class has to have the `.btn-primary` class to be green. `.btn-circle` replaces the `.arrow` component
 notes: |
   Can be wrapped in `.theme-[theme]` to change look
 ---
