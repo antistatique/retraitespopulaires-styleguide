@@ -8,7 +8,7 @@
   {% endif %}
 
   <div class="card-body">
-    <h3 class="card-title h1">{{ variables.news.title.value }}</h3>
+    <h3 class="card-title h2">{{ variables.news.title.value }}</h3>
     <time datetime="{{ variables.news.field_date.date|date_format('c') }}">
       <span class="sr-only">{% trans %}Date de publication: {% endtrans %}</span>
       {{ variables.news.field_date.date|date_format('d F Y')|capitalize }}
