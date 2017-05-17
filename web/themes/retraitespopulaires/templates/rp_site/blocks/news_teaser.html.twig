@@ -2,7 +2,7 @@
 <a href="{{ path('entity.node.canonical', {'node': variables.news.nid.value}) }}" class="card">
   {% if not variables.news.field_cover.entity.uri.value is empty %}
   <div class="card-img-top">
-    <img class="card-img" src="{{ file_url(variables.cover.xl) }}" alt="{{ variables.news.title.value }}">
+    <img class="card-img" src="{{ file_url(variables.cover.image) }}" alt="{{ variables.news.title.value }}">
     <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div></div>
   </div>
   {% endif %}
