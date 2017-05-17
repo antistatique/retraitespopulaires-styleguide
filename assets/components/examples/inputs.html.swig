@@ -1,5 +1,5 @@
 ---
-title: inputs
+title: Inputs
 name: inputs
 collection: examples
 styleguide: true

@@ -1,5 +1,5 @@
 ---
-title: light-page
+title: Light Page
 name: light-page
 collection: pages
 styleguide: false

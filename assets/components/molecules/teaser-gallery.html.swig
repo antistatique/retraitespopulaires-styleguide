@@ -1,5 +1,5 @@
 ---
-title: teaser-gallery
+title: Teaser Gallery
 name: teaser-gallery
 collection: molecules
 wrapper: col-xs-4

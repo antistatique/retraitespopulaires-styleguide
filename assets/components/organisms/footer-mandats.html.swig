@@ -1,5 +1,5 @@
 ---
-title: footer-mandats
+title: Footer Mandats
 name: footer-mandats
 collection: organisms
 notes: |

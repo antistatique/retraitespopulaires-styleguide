@@ -1,5 +1,5 @@
 ---
-title: dropdown
+title: Dropdown
 name: dropdown
 bootstrap: http://getbootstrap.com/javascript/#dropdowns
 notes: |

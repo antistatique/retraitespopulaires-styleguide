@@ -1,5 +1,5 @@
 ---
-title: input-datepicker
+title: Input Datepicker
 name: input-datepicker
 collection: atoms
 notes: |

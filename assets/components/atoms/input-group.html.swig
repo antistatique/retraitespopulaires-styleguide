@@ -1,5 +1,5 @@
 ---
-title: input-group
+title: Input Group
 name: input-group
 collection: atoms
 ---

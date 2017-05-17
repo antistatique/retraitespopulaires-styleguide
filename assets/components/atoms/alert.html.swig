@@ -1,5 +1,5 @@
 ---
-title: alert
+title: Alert
 name: alert
 collection: atoms
 bootstrap: https:///getbootstrap.com/components/#alerts

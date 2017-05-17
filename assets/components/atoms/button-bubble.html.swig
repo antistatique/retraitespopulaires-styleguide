@@ -1,5 +1,5 @@
 ---
-title: button-bubble
+title: Button Bubble
 name: button-bubble
 collection: atoms
 notes: |

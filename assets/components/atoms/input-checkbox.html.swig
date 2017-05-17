@@ -1,5 +1,5 @@
 ---
-title: input-checkbox
+title: Input Checkbox
 name: input-checkbox
 notes: |
   Can be wrapped in `.theme-[theme]` to change look.

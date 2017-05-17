@@ -1,5 +1,5 @@
 ---
-title: block-link
+title: Block Link
 name: block-link
 background: "#eee"
 wrapper: col-xs-4

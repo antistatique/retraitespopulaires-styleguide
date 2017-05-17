@@ -1,5 +1,5 @@
 ---
-title: spacer
+title: Spacer
 name: spacer
 collection: atoms
 notes: |

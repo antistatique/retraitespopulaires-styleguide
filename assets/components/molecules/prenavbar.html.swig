@@ -1,5 +1,5 @@
 ---
-title: prenavbar
+title: Prenavbar
 name: prenavbar
 collection: molecules
 notes: |

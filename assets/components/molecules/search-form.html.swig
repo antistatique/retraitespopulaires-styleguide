@@ -1,5 +1,5 @@
 ---
-title: search-form
+title: Search Form
 name: search-form
 collection: molecules
 notes: |

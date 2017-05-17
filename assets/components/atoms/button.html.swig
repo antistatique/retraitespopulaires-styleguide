@@ -1,5 +1,5 @@
 ---
-title: button
+title: Button
 name: button
 collection: atoms
 bootstrap: https://getbootstrap.com/css/#buttons

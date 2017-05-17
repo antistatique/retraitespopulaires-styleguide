@@ -1,5 +1,5 @@
 ---
-title: immo-results
+title: Immo Results
 name: immo-results
 collection: molecules
 notes: |

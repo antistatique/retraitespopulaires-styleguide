@@ -1,5 +1,5 @@
 ---
-title: secondary-nav
+title: Secondary Nav
 name: secondary-nav
 collection: molecules
 notes: |

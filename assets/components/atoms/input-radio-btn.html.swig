@@ -1,5 +1,5 @@
 ---
-title: input-radio-btn
+title: Input Radio Button
 name: input-radio-btn
 collection: atoms
 notes: |

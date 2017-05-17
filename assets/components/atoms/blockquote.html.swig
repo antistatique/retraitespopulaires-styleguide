@@ -1,5 +1,5 @@
 ---
-title: blockquote
+title: Blockquote
 name: blockquote
 collection: atoms
 ---

@@ -1,5 +1,5 @@
 ---
-title: input-textarea
+title: Input Textarea
 name: input-textarea
 collection: atoms
 notes: |

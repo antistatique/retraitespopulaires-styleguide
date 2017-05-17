@@ -1,5 +1,5 @@
 ---
-title: funky-waves
+title: Funky Waves
 name: funky-waves
 collection: atoms
 variants:

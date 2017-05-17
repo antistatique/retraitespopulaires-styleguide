@@ -1,5 +1,5 @@
 ---
-title: socials
+title: Socials
 name: socials
 collection: atoms
 variants:

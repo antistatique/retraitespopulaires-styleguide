@@ -1,5 +1,5 @@
 ---
-title: progresschart
+title: Progresschart
 name: progresschart
 bootstrap: https://getbootstrap.com/components/#progress
 collection: molecules

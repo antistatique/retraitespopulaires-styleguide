@@ -1,5 +1,5 @@
 ---
-title: navbar
+title: Navbar
 name: navbar
 collection: molecules
 notes: |

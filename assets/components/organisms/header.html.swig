@@ -1,5 +1,5 @@
 ---
-title: header
+title: Header
 name: header
 collection: organisms
 notes: |

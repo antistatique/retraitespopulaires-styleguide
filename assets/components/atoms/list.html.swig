@@ -1,5 +1,5 @@
 ---
-title: list
+title: List
 name: list
 collection: atoms
 variants:

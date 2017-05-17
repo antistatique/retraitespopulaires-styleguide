@@ -1,5 +1,5 @@
 ---
-title: swiper-menu
+title: Swiper Menu
 name: swiper-menu
 wrapper: hidden
 notes: |

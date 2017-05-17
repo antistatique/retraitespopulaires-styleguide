@@ -1,5 +1,5 @@
 ---
-title: tables
+title: Tables
 name: tables
 collection: examples
 styleguide: true

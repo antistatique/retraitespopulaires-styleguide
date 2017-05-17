@@ -1,5 +1,5 @@
 ---
-title: input-select
+title: Input Select
 name: input-select
 collection: atoms
 notes: |

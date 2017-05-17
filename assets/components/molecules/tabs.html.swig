@@ -1,5 +1,5 @@
 ---
-title: tabs
+title: Tabs
 name: tabs
 collection: molecules
 bootstrap: https://getbootstrap.com/javascript/#tabs

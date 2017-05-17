@@ -1,5 +1,5 @@
 ---
-title: pagination
+title: Pagination
 name: pagination
 collection: atoms
 notes: |

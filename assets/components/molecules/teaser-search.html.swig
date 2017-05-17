@@ -1,5 +1,5 @@
 ---
-title: teaser-search
+title: Teaser Search
 name: teaser-search
 collection: molecules
 notes: |

@@ -1,5 +1,5 @@
 ---
-title: tooltip
+title: Tooltip
 name: tooltip
 collection: atoms
 bootstrap: https://getbootstrap.com/javascript/#popovers

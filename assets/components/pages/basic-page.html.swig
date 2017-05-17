@@ -1,5 +1,5 @@
 ---
-title: basic-page
+title: Basic Page
 name: basic-page
 collection: pages
 styleguide: false

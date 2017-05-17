@@ -1,5 +1,5 @@
 ---
-title: search-box
+title: Search Box
 name: search-box
 collection: atoms
 notes: |

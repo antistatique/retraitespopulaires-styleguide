@@ -1,5 +1,5 @@
 ---
-title: well
+title: Well
 name: well
 collection: atoms
 bootstrap: https://getbootstrap.com/javascript/#popovers

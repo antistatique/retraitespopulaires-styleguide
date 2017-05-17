@@ -1,5 +1,5 @@
 ---
-title: table
+title: Table
 name: table
 collection: molecules
 variants:

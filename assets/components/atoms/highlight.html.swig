@@ -1,5 +1,5 @@
 ---
-title: highlight
+title: Highlight
 name: highlight
 collection: atoms
 notes: |

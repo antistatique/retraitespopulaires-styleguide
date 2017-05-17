@@ -1,5 +1,5 @@
 ---
-title: managed-by-link
+title: Managed-by Link
 name: managed-by-link
 collection: atoms
 ---

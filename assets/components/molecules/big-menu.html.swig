@@ -1,5 +1,5 @@
 ---
-title: big-menu
+title: Big Menu
 name: big-menu
 collection: molecules
 notes: |

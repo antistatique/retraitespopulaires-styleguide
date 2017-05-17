@@ -1,5 +1,5 @@
 ---
-title: big-menu-empty
+title: Big Menu Empty
 name: big-menu-empty
 collection: molecules
 ---

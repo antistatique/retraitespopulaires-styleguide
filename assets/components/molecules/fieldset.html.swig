@@ -1,5 +1,5 @@
 ---
-title: fieldset
+title: Fieldset
 name: fieldset
 collection: molecules
 variants:

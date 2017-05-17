@@ -1,5 +1,5 @@
 ---
-title: links
+title: Links
 name: links
 collection: examples
 styleguide: true

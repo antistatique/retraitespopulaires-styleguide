@@ -1,5 +1,5 @@
 ---
-title: buttons
+title: Buttons
 name: buttons
 collection: examples
 styleguide: true

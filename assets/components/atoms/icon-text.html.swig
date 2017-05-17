@@ -1,5 +1,5 @@
 ---
-title: icon-text
+title: Icon Text
 name: icon-text
 collection: atoms
 variants:

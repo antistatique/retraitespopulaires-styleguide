@@ -1,5 +1,5 @@
 ---
-title: input-radio
+title: Input Radio
 name: input-radio
 notes: |
   Can be wrapped in `.theme-[theme]` to change look.

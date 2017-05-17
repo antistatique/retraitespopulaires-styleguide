@@ -1,5 +1,5 @@
 ---
-title: loader
+title: Loader
 name: loader
 collection: atoms
 variants:

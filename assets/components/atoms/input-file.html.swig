@@ -1,5 +1,5 @@
 ---
-title: input-file
+title: Input File
 name: input-file
 changes:
   3.0.0: Improvements to CSS, the `.label` class became `.form-control-label`.

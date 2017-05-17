@@ -1,5 +1,5 @@
 ---
-title: hamburger
+title: Hamburger
 name: hamburger
 collection: atoms
 variants:

@@ -1,5 +1,5 @@
 ---
-title: hamburger-mandat
+title: Hamburger Mandat
 name: hamburger-mandat
 collection: atoms
 notes: |

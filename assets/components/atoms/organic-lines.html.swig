@@ -1,5 +1,5 @@
 ---
-title: organic-lines
+title: Organic Lines
 name: organic-lines
 collection: atoms
 notes: |

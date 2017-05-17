@@ -1,5 +1,5 @@
 ---
-title: breadcrumb
+title: Breadcrumb
 name: breadcrumb
 collection: molecules
 variants:

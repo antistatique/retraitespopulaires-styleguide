@@ -1,5 +1,5 @@
 ---
-title: label
+title: Label
 name: label
 collection: atoms
 notes: |
