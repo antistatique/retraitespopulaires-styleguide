@@ -289,10 +289,11 @@
   bottom: 0;
   left: 50%;
   width: 100vw;
-  padding-bottom: 30%;
+  padding-bottom: 45%;
   background: url('../svg/grey-waves.svg') no-repeat left top $white;
   background-size: 100% auto;
   transform: translateX(-50%);
+  pointer-events: none;
 }
 
 /**
