@@ -61,7 +61,7 @@ class OfferTeaserBlock extends BlockBase implements ContainerFactoryPluginInterf
     public function build($params = array()) {
         $variables = array();
         $variables = $params;
-        $variables['cover'] = $this->cover->fromNode($params['offer'], array('xl' => 'rp_teaser_xl'));
+        $variables['cover'] = $this->cover->fromNode($params['offer'], array('image' => 'rp_image_700_350'));
         return [
             '#theme'     => 'rp_offers_offer_teaser_block',
             '#variables' => $variables,
