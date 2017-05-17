@@ -3,8 +3,8 @@ server '192.168.188.51', user: 'web_rp', roles: %w{app db web}
 set :deploy_to, '/data/sites/wwweti2.retraitespopulaires.ch/'
 
 # set a branch for this release
-set :branch, 'dev'
-set :styleguide_branch, 'dev'
+set :branch, 'feature/refactoring'
+set :styleguide_branch, 'feature/refactoring'
 
 # Default value for :log_level is :debug
 set :log_level, :debug
