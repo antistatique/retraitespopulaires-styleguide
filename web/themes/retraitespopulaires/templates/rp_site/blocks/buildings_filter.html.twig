@@ -1,10 +1,9 @@
 <h4>{% trans %}Filtrer par:{% endtrans %}</h4>
-<div class="spacer spacer-sm"></div>
 
 {% if variables.categories %}
 <div class="{{ theme_hook_original }}">
   <p class="media-heading text-muted">{% trans %}Nos constructions{% endtrans %}</p>
-  <ul class="filters-list">
+  <ul class="filters-list list-inline">
 
     <li class="{{ variables.building_status_alias is empty ? 'active' }}">
       {% if variables.building_status_alias is empty %}
