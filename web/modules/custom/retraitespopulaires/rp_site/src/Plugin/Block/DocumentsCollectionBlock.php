@@ -121,6 +121,10 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
     public function build($params = array()) {
         $variables = array();
 
+        // Set the theme using the current node profession
+        if ($node = $this->route->getParameter('node')) {
+            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
+        }
 
         $query = $this->entity_query->get('node')
             ->condition('type', 'document')
@@ -145,7 +149,9 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
                 $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
                 $term = $this->entity_taxonomy->load($taxonomy_term_tid);
                 if ($term->vid->target_id == 'profession') {
-                    $query->condition('field_profession', $taxonomy_term_tid);                }
+                    $query->condition('field_profession', $taxonomy_term_tid);
+                    $variables['theme'] = $this->profession->theme($taxonomy_term_tid);
+                }
             }
         }
 
