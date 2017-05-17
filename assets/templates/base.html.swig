@@ -33,7 +33,9 @@
   </head>
   <body>
     <div class="styleguide-toggle-container">
-      <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
+      <div class="styleguide-toggle-theme-hide">
+        <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
+      </div>
     </div>
 
     {% if styleguide %}

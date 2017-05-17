@@ -179,9 +179,17 @@
 }
 
 // Toggle themes
-.styleguide-toggle-theme {
+
+.styleguide-toggle-theme-hide {
   position: fixed;
   z-index: 999999;
-  top: 20px;
-  right: 20px;
+  bottom: 20px;
+  left: calc(100% - 3em);
+  padding-left: 2em;
+  transition: padding-left 0.2s;
+  will-change: padding-left;
+
+  &:hover {
+    padding-left: 0;
+  }
 }
