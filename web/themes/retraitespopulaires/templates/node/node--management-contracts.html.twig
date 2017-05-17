@@ -1,7 +1,11 @@
 {% extends "@retraitespopulaires/node/node.html.twig" %}
 
 {% block node_top_outer %}
-  <img class="center-block img-responsive" src="{{ file_url(node.field_logo.entity.uri.value) }}" alt="Logo - {{ node.title.value }}">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4  col-xl-2 col-xl-offset-5">
+      <img class="center-block img-responsive" src="{{ file_url(node.field_logo.entity.uri.value) }}" alt="Logo - {{ node.title.value }}">
+    </div>
+  </div>
   <div class="spacer spacer-md"></div>
   {{ parent() }}
 {% endblock %}
