@@ -149,6 +149,13 @@
   width: 100%;
 }
 
+// Fix flex columns on mobile
+@media screen and (max-width: $screen-xs-max) {
+  [class*=col-] {
+    width: 100%;
+  }
+}
+
 /**
 * Images
 */
