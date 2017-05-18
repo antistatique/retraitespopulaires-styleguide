@@ -1,5 +1,8 @@
 CHANGELOG
 ---------
+## 2.0.1 (2017-05-18)
+ - Fix contact teaser cover image
+
 ## 2.0.0 (2017-05-18)
  - Implementation of Styleguide Retraites Populaires v3
 

@@ -13,8 +13,8 @@
 
 <div class="card card-horizontal card-white">
   {% if not variables.contact.field_cover.entity.uri.value is empty %}
-  <a href="{{ link }}" class="card-img-top card-img-top-center">
-    <div class="card-img-bg" style="background-image:url({{ file_url(variables.cover.xl) }})';"></div>
+  <a href="{{ link }}" class="card-img-top">
+    <div class="card-img-bg" style="background-image:url({{ file_url(variables.cover.xl) }});"></div>
     <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div></div>
   </a>
   {% endif %}
