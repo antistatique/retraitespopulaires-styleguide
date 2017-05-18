@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+## 3.1.0 (2017-05-XX)
+
+  - Update label component look
+
 ## 3.0.1 (2017-05-18)
 
   - fix special grey waves on IE11

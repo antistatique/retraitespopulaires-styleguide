@@ -1,5 +1,11 @@
 @charset 'UTF-8';
 
+.collapse-open-hide {
+  &:not(.collapsed) {
+    display: none;
+  }
+}
+
 .collapse-wrapper {
   border-bottom: 1px solid $light-gray;
 }
