@@ -1,36 +1,17 @@
 {% if variables.building.nid.value %}
-<a href="{{ path('entity.node.canonical', {'node': variables.building.nid.value}) }}" class="teaser teaser-immobilier teaser-fullclick teaser-rental teaser-rental-immobilier teaser-rental-orientation- shadow shadow-down">
-  {% if not variables.building.field_cover.entity.uri.value is empty %}
-  <div class="rental-heading">
-    <div class="heading-image" style="background-image: url({{ file_url(variables.cover.xl) }})"></div>
-    <div class="loader-image">
-      <div class="loader">
-        <div class="loader-yingyang loader-immobilier"></div>
-      </div>
-    </div>
+
+<a href="{{ path('entity.node.canonical', {'node': variables.building.nid.value}) }}" class="card">
+  <div class="card-img-top">
+    <img class="card-img" src="{{ file_url(variables.cover.image) }}" alt="{{ variables.building.title.value }}">
+    <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div>
   </div>
-  {% endif %}
-  <div class="rental-body">
-    <div class="row">
-       <div class="col-sm-12">
-        <h5 class="rental-type h5 text-muted">{{ variables.building.field_building_type.entity.name.value }}</h5>
-      </div>
-    </div>
-    <div class="spacer spacer-xs"></div>
-    <div class="row">
-      <div class="col-sm-12">
-        <h1 class="rental-title h1 link-immobilier">{{ variables.building.title.value }}</h1>
-      </div>
-    </div>
-
-    <div class="spacer spacer-sm"></div>
-    <div class="row info">
-      <div class="col-xs-12 text-right">
-        {{ variables.building.field_building_status.settings.allowed_values[variables.building.field_building_status.value] }}
-      </div>
-    </div>
-
+  </div>
+  <div class="card-body">
+    <p class="card-subhead">{{ variables.building.field_building_type.entity.name.value }}</p>
+    <h3 class="card-title h1">{{ variables.building.title.value }}</h3>
+  </div>
+  <div class="card-footer card-justify">
+    <span>{{ variables.building.field_building_status.settings.allowed_values[variables.building.field_building_status.value] }}</span>
   </div>
 </a>
-
 {% endif %}

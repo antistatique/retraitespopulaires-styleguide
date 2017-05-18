@@ -147,14 +147,10 @@ class SearchController extends ControllerBase {
         }
 
         return [
-            '#theme'     => 'rp_site_search_page',
-            '#variables' => $variables,
-            '#cache' => [
-                'contexts' => [
-                    'url.path',
-                    'url.query_args'
-                ],
-            ]
+          '#theme'     => 'rp_site_search_page',
+          '#variables' => $variables,
+          // Set cache for 0 seconds.
+          '#cache' => ['max-age' => 0],
         ];
     }
 }

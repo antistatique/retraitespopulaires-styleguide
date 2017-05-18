@@ -1,93 +1,96 @@
-{% set theme = 'prevoyance' %}
 {% if variables.view_result %}
-  <div>
-      <table class="table-wide table-{{ theme }} tablesaw tablesaw-stack">
-        <thead>
-          <tr>
-            <th colspan="2">{% trans %}Nos prestations estimées à {{ variables.results.age }} ans{% endtrans %}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {% set deadline = variables.results.deadline|date_format('d.m.Y') %}
-            <td>{% trans %}Capital de retraite au {{ deadline }}{% endtrans %}</td>
-            <td>
-              <div class="readonly">
-                <input type="text" readonly="" name="capital" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.capital }}">
-              </div>
-            </td>
-          </tr>
 
-          {% set pension = variables.results.deadline|date_modify('+1 day')|date_format('d.m.Y') %}
-          {% if variables.results.civil_status == 'Non' %}
-            <tr>
-              <td>{% trans %}Rente annuelle de retraite dès le {{ pension }}{% endtrans %}</td>
-              <td>
-                <div class="readonly">
-                  <input type="text" readonly="" name="annual_pension_single" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.annual_pension_single }}">
-                </div>
-              </td>
-            </tr>
-          {% else %}
-            <tr>
-              <td>
-                <p>{% trans %}Rente annuelle de retraite de couple dès {{ pension }}{% endtrans %}</p>
-                <p class="m-b-0">{% trans %}Taux de réversibilité de {{ variables.results.percent }}%{% endtrans %}</p>
-              </td>
-              <td>
-                <div class="readonly">
-                  <input type="text" readonly="" name="annual_pension_single" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.annual_pension_couple }}">
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td>{% trans %}Rente annuelle de conjoint/partenaire survivant{% endtrans %}</td>
-              <td>
-                <div class="readonly">
-                  <input type="text" readonly="" name="annual_pension_single" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.pension_survivor }}">
-                </div>
-              </td>
-            </tr>
-          {% endif %}
-        </tbody>
-      </table>
-
-      <div class="spacer spacer-md"></div>
-      <a href="{{ path('entity.node.canonical', {'node': variables.node.nid.value, 'reset': true}) }}" class="btn btn-{{ theme }}">{% trans %}Retourner au calculateur{% endtrans %}</a>
-
-      <div class="spacer spacer-md"></div>
-      <div class="alert alert-info">
-        {% trans %}Les prestations mentionnées ci-dessus sont indicatives et ne sauraient engager contractuellement Retraites Populaires.{% endtrans %}
-      </div>
-
-      <div class="spacer spacer-md"></div>
-
-      <p>{% trans %}Notre offre vous intéresse ? N'hésitez pas à compléter le formulaire ci-dessous. Un conseiller de Retraites Populaires prendra contact avec vous.{% endtrans %}</p>
-      <div class="spacer spacer-md"></div>
-
-      <!-- Form -->
-      <div class="background-overflow">
-        <div class="spacer"></div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-              <div class="form-card form-card-{{ theme|default('primary') }} shadow shadow-down">
-                {{ load_form('rp_libre_passage', 'PLPContactForm', {'theme': theme, 'results': variables.results}) }}
-              </div>
+  <table class="table-wide tablesaw tablesaw-stack">
+    <thead>
+      <tr>
+        <th colspan="2">{% trans %}Nos prestations estimées à {{ variables.results.age }} ans{% endtrans %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% set deadline = variables.results.deadline|date_format('d.m.Y') %}
+        <td>{% trans %}Capital de retraite au {{ deadline }}{% endtrans %}</td>
+        <td>
+          <div class="readonly">
+            <input type="text" readonly="" name="capital" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.capital }}">
           </div>
-        </div>
+        </td>
+      </tr>
+
+      {% set pension = variables.results.deadline|date_modify('+1 day')|date_format('d.m.Y') %}
+      {% if variables.results.civil_status == 'Non' %}
+        <tr>
+          <td>{% trans %}Rente annuelle de retraite dès le {{ pension }}{% endtrans %}</td>
+          <td>
+            <div class="readonly">
+              <input type="text" readonly="" name="annual_pension_single" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.annual_pension_single }}">
+            </div>
+          </td>
+        </tr>
+      {% else %}
+        <tr>
+          <td>
+            <p>{% trans %}Rente annuelle de retraite de couple dès {{ pension }}{% endtrans %}</p>
+            <p class="m-b-0">{% trans %}Taux de réversibilité de {{ variables.results.percent }}%{% endtrans %}</p>
+          </td>
+          <td>
+            <div class="readonly">
+              <input type="text" readonly="" name="annual_pension_single" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.annual_pension_couple }}">
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>{% trans %}Rente annuelle de conjoint/partenaire survivant{% endtrans %}</td>
+          <td>
+            <div class="readonly">
+              <input type="text" readonly="" name="annual_pension_single" class="form-control js-amount-with-fee-input form-chf-numeric text-right" value="{{ variables.results.pension_survivor }}">
+            </div>
+          </td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
+
+  <div class="spacer spacer-md"></div>
+  <a href="{{ path('entity.node.canonical', {'node': variables.node.nid.value, 'reset': true}) }}" class="btn btn-primary">{% trans %}Retourner au calculateur{% endtrans %}</a>
+
+  <div class="spacer spacer-md"></div>
+  <div class="alert alert-info">
+    {% trans %}Les prestations mentionnées ci-dessus sont indicatives et ne sauraient engager contractuellement Retraites Populaires.{% endtrans %}
+  </div>
+
+  <div class="spacer spacer-md"></div>
+
+  <p>{% trans %}Notre offre vous intéresse ? N'hésitez pas à compléter le formulaire ci-dessous. Un conseiller de Retraites Populaires prendra contact avec vous.{% endtrans %}</p>
+  <div class="spacer spacer-md"></div>
+
+  <!-- Form -->
+  <div class="background-overflow bg-berrylight-gray">
+    <div class="spacer"></div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+          <div class="card">
+            <div class="card-body">
+              {{ load_form('rp_libre_passage', 'PLPContactForm', {'results': variables.results}) }}
+            </div>
+          </div>
       </div>
+    </div>
   </div>
 
 {% else %}
 
   <!-- Form -->
-  <div class="background-overflow">
+  <div class="background-overflow bg-berrylight-gray">
+    <div class="bg-special-waves"></div>
     <div class="spacer"></div>
       <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-          <div class="form-card form-card-{{ theme|default('primary') }} shadow shadow-down">
-            {{ load_form('rp_libre_passage', 'PLPCalculatorForm', {'theme': theme}) }}
+          <div class="card">
+            <div class="card-body">
+              {{ load_form('rp_libre_passage', 'PLPCalculatorForm') }}
+            </div>
           </div>
       </div>
     </div>

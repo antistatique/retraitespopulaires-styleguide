@@ -11,18 +11,18 @@
             Produits recommandés dans cette situation
         {% endtrans %}
       </h2>
-      <div class="spacer spacer-md"></div>
     </div>
     {% endif %}
 
     <div class="col-md-4">
-      {{ load_block('rp_site_products_filter_block', {'theme': variables.theme}) }}
+      {{ load_block('rp_site_products_filter_block') }}
     </div>
     <div class="col-md-8">
-      <div class="row row-flex">
+      <div class="row flex-row">
         {% if variables.products %}
           {% for product in variables.products %}
-            <div class="col-sm-6">
+            {% set theme = product.field_profession.target_id|theme_profession %}
+            <div class="col-lg-6 theme-{{ theme }}">
               {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
             </div>
           {% endfor %}

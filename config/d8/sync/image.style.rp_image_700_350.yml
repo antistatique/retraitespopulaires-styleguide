@@ -1,0 +1,16 @@
+uuid: 6e160bde-0ad4-44ec-978b-ec4333a96b14
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: rp_image_700_350
+label: 'Retraites Populaires - 700x350'
+effects:
+  8dfa79b3-4530-44d0-9bf1-fb03020352b4:
+    uuid: 8dfa79b3-4530-44d0-9bf1-fb03020352b4
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 350

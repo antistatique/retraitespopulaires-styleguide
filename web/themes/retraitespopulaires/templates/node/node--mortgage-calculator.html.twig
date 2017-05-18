@@ -2,4 +2,9 @@
 
 {% block node_top %}{% endblock %}
 
-{% block node_bottom_outer %}{{ load_block('rp_mortgage_calculator_block') }}{% endblock %}
+{% block node_bottom_outer %}
+  <div class="clearfix">
+    {{ load_block('rp_mortgage_calculator_block') }}
+  </div>
+  <div class="spacer spacer-md"></div>
+{% endblock %}

@@ -1,4 +1,4 @@
-<div class="wrapper-funky-waves wrapper-funky-waves-{{ variables.theme }} {% if variables.cover %} wrapper-funky-waves-with-cover {% endif %} has-header hidden-print">
+<div class="wrapper-funky-waves{% if variables.cover %} wrapper-funky-waves-with-cover {% endif %} has-header hidden-print">
   {% if variables.cover %}
     <picture>
       <source srcset="{{ file_url(variables.cover.xs) }}" media="(max-width: 544px)">

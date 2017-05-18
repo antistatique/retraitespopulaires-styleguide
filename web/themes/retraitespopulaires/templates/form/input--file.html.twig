@@ -14,14 +14,13 @@
   set btn = [
     'form-file-handler',
     'btn',
-    attributes.button_primary.__toString == empty ? '' : 'btn-primary',
+    'btn-primary',
     attributes.button_block.__toString == empty ? '' : 'btn-block',
-    attributes.theme.__toString == empty ? '' : 'btn-'~attributes.theme.__toString,
   ]
 %}
 
 {% if attributes.label is not empty %}
-  <div class="label">{{ attributes.label|raw }}</div>
+  <span class="form-control-label">{{ attributes.label|raw }}</span>
 {% endif %}
 
 <div class="{{ btn|join(' ') }}">

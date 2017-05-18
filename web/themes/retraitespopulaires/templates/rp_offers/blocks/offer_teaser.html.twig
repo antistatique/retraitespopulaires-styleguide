@@ -1,52 +1,40 @@
 {% if variables.offer.nid.value %}
-<a href="{{ path('entity.node.canonical', {'node': variables.offer.nid.value}) }}" class="teaser teaser-fullclick teaser-offer shadow shadow-down">
+<a href="{{ path('entity.node.canonical', {'node': variables.offer.nid.value}) }}" class="card">
   {% if not variables.offer.field_cover.entity.uri.value is empty %}
-  <div class="offer-heading">
-    <div class="heading-image" style="background-image: url({{ file_url(variables.cover.xl) }})"></div>
-    <div class="loader-image">
-      <div class="loader">
-        <div class="loader-yingyang loader-{{ theme }}"></div>
-      </div>
-    </div>
+  <div class="card-img-top">
+    <img class="card-img" src="{{ file_url(variables.cover.image) }}" alt="{{ variables.offer.title.value }}">
+    <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div></div>
   </div>
   {% endif %}
-  <div class="offer-body">
-    <div class="offer-title h1 pretty-link">{{ variables.offer.title.value }}</div>
-    <div class="spacer spacer-sm"></div>
-
-    <div class="offer-extra">
-      <div class="pull-left offer-date">
-        {% if variables.offer.field_available_offers.value %}
-          <div>
-            {% trans %}
-              {{ variables.offer.field_available_offers.value }} ticket
-            {% plural variables.offer.field_available_offers.value %}
-              {{ variables.offer.field_available_offers.value }} tickets
-            {% endtrans %}
-          </div>
+  <div class="card-body">
+    <h3 class="card-title h1 text-center">{{ variables.offer.title.value }}</h3>
+  </div>
+  <div class="card-footer card-justify">
+    {% if variables.offer.field_available_offers.value %}
+    <div>
+      {% trans %}
+        {{ variables.offer.field_available_offers.value }} ticket
+      {% plural variables.offer.field_available_offers.value %}
+        {{ variables.offer.field_available_offers.value }} tickets
+      {% endtrans %}
+    </div>
         {% endif %}
-      </div>
-      <div class="pull-right offer-infos">
-        <div>
-
-          {# Get diff days before the offer is finished #}
-          {% set end_date = variables.offer.field_date_end.date|date_modify('tomorrow - 1 second') %}
-          {% set left = (end_date.timestamp - date('now').timestamp) / 60 / 60 / 24 %}
-          {% set left_days = left|number_format %}
-
-          {% if left >= 1 %}
-            {% trans %}
-              Se termine dans {{ left_days }} jour
-            {% plural left %}
-              Se termine dans {{ left_days }} jours
-            {% endtrans %}
-          {% elseif left >= 0 %}
-            {% trans %}Cette offre se termine aujourd'hui{% endtrans %}
-          {% else %}
-            {% trans %}Cette offre est terminée{% endtrans %}
-          {% endif %}
-        </div>
-      </div>
+    {# Get diff days before the offer is finished #}
+    {% set end_date = variables.offer.field_date_end.date|date_modify('tomorrow - 1 second') %}
+    {% set left = (end_date.timestamp - date('now').timestamp) / 60 / 60 / 24 %}
+    {% set left_days = left|number_format %}
+    <div>
+      {% if left >= 1 %}
+        {% trans %}
+          Se termine dans {{ left_days }} jour
+        {% plural left %}
+          Se termine dans {{ left_days }} jours
+        {% endtrans %}
+      {% elseif left >= 0 %}
+        {% trans %}Cette offre se termine aujourd'hui{% endtrans %}
+      {% else %}
+        {% trans %}Cette offre est terminée{% endtrans %}
+      {% endif %}
     </div>
   </div>
 </a>

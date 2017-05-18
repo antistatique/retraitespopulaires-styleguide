@@ -80,11 +80,12 @@
 
 {% set node_body_classes = [
   'entity-body',
-  'body-' ~ theme
+  'theme-' ~ theme,
+  'clearfix',
 ] %}
 
 {% set node_content_width = [
-  'col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2',
+    'col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2',
 ] %}
 
 <article{{ attributes.addClass(classes) }}>
@@ -100,8 +101,7 @@
 
         {% block node_summary %}
             {% if node.body.summary %}
-            <h2 class="h4 text-secondary">{{ node.body.summary|nl2br }}</h2>
-            <div class="spacer spacer-sm"></div>
+            <p class="lead text-secondary">{{ node.body.summary|nl2br }}</p>
           {% endif %}
         {% endblock %}
 
@@ -110,11 +110,12 @@
             <div class="{{ node_body_classes|join(' ') }}">
               {{ content.body }}
             </div>
+            <div class="spacer spacer-md"></div>
           {% endif %}
         {% endblock %}
 
         {% block node_bottom %}{% endblock %}
-        </div>
+      </div>
     </div>
 
     {% block node_bottom_outer %}{% endblock %}

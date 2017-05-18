@@ -154,7 +154,6 @@ class AdminForm extends FormBase {
 
         $this->state->set('rp_libre_passage.settings.page.calculator', array(
             'nid' => trim($form_state->getValue('calculator_nid')),
-            'theme' => trim($form_state->getValue('calculator_theme')),
         ));
 
         // Save file(s)

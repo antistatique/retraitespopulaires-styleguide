@@ -1,14 +1,8 @@
 {% for profil in variables.profil %}
-  {% if loop.index0 > 0 %} <div class="spacer spacer-md"></div> {% endif %}
   <div class="attachements-wrapper">
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="h2 pull-left">{{ profil.title }}</div>
-        </div>
-      </div>
-      <div class="spacer"></div>
-      <div class="row">
+      <h2 class="h2">{{ profil.title }}</h2>
+      <div class="row flex-row">
           {% for item in profil.menu %}
             {% if item.hasChildren %}
                {% for subitem in item.subtree %}

@@ -62,10 +62,24 @@ class ResponsiveTablesFilter extends FilterBase {
       // Find all tables in text.
       if ($tables->length !== 0) {
         foreach ($tables as $table) {
+
           // Find existing class attributes, if any, and append tablesaw class.
           $existing_classes = $table->getAttribute('class');
           $new_classes = !empty($existing_classes) ? $existing_classes . ' tablesaw tablesaw-stack' : 'tablesaw tablesaw-stack';
           $table->setAttribute('class', $new_classes);
+
+          // remove width attributes and replace nbsp.
+          $tds = $table->getElementsByTagName('td');
+          $ths = $table->getElementsByTagName('th');
+
+          foreach ($tds as $td) {
+            $td->setAttribute('width', null);
+          }
+
+          foreach ($ths as $th) {
+            $th->setAttribute('width', null);
+            $th->nodeValue = str_replace(" ", ' ', $th->nodeValue);
+          }
 
           // Force data-tablesaw-mode attribute to be "stack".
           $table->setAttribute('data-tablesaw-mode', 'stack');

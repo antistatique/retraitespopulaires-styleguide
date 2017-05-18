@@ -3,15 +3,15 @@
 {% block breadcrumb %}{% endblock %}
 
 {% block content %}
-  <h1 class="page-title text-center">{% trans %}Page <span class="text-primary">404</span>{% endtrans %}</h1>
-  <h2 class="page-title text-center">{% trans %}Cette page profite de sa retraite{% endtrans %}</h2>
-  <div class="spacer"></div>
+  <h1 class="page-title text-center media-heading">{% trans %}Page <span class="text-primary">404</span>{% endtrans %}</h1>
+  <h2 class="page-title text-center m-t-0">{% trans %}Cette page profite de sa retraite{% endtrans %}</h2>
   <p class="text-center">
     {% trans %}Peut-être trouverez-vous votre bonheur dans {% endtrans %} <a class="pretty-link text-assurance" href="{{ path('entity.node.canonical', {'node': 54}) }}">{% trans %}nos produits{% endtrans %}</a> {% trans %}ou{% endtrans %} <a class="pretty-link text-immobilier" href="{{ path('entity.node.canonical', {'node': 29}) }}">{% trans %}nos appartements à louer{% endtrans %}</a>.
   </p>
   <p class="text-center">
     {% trans %}Quoi qu'il en soit, n'hésitez pas à {% endtrans %} <a class="pretty-link" href="{{ path('entity.node.canonical', {'node': 50}) }}">{% trans %}nous contacter{% endtrans %}</a> {% trans %}ou à vous promener sur le site de{% endtrans %} <a class="pretty-link " href="{{ path('<front>') }}">Retraites&nbsp;Populaires</a>.
   </p>
+  <div class="spacer"></div>
 {% endblock %}
 
 {% block attachments %}

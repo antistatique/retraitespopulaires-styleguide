@@ -13,8 +13,6 @@
 {%
   set classes = [
     attributes.type != 'checkbox' and attributes.type != 'radio' ? 'form-control',
-    attributes.theme.__toString == empty ? '' : 'form-control-'~attributes.theme.__toString,
-    element['#webform_id'] is not empty and attributes.theme.__toString == empty ? 'form-control-'~theme_guesser(),
   ]
 %}
 <input{{ attributes.addClass(classes) }} />{{ children }}

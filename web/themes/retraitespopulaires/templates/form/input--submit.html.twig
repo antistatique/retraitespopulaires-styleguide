@@ -14,10 +14,8 @@
 {%
   set classes = [
     'btn',
-    attributes.button_primary.__toString == empty ? '' : 'btn-primary',
+    'btn-primary',
     attributes.button_block.__toString == empty ? '' : 'btn-block',
-    attributes.theme.__toString == empty ? '' : 'btn-'~attributes.theme.__toString,
-    'webform-button--submit' in attributes.class and attributes.theme.__toString == empty ? 'btn-'~theme_guesser(),
   ]
 %}
 {% if attributes.icon.__toString == empty %}

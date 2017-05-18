@@ -1,12 +1,11 @@
 {% if variables.offers %}
-<div class="attachements-wrapper">
+<div class="attachements-wrapper organic-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 last-news-heading">
-        <div class="h2 pull-left">{% trans %}Coupons Bella vita{% endtrans %}</div>
+        <h2 class="h2 pull-left">{% trans %}Coupons Bella vita{% endtrans %}</h2>
       </div>
     </div>
-	  <div class="spacer spacer-sm"></div>
     <div class="row same-height-group">
       {% for offer in variables.offers %}
         {% if loop.index0 % 2 == 0 %}</div><div class="row same-height-group">{% endif %}
@@ -16,6 +15,6 @@
       {% endfor %}
     </div>
   </div>
-  <div class="organic-lines hidden-print lines-{{ variables.theme }}"></div>
+  <div class="organic-lines hidden-print"></div>
 </div>
 {% endif %}

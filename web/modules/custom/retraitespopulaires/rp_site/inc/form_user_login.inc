@@ -12,6 +12,9 @@
  * Alter Drupal login form with custom markup and submission.
  */
 function rp_site_form_user_login_form_alter(&$form, $form_state) {
+  $form['#prefix'] = '<div class="row"><div class="col-sm-6 col-sm-offset-3">';
+  $form['#suffix'] = '</div></div><div class="spacer"></div>';
+
   $form['fieldset'] = [
     '#type'       => 'fieldset',
     '#attributes' => ['class' => ['fieldset-no-legend fieldset-bordered']],

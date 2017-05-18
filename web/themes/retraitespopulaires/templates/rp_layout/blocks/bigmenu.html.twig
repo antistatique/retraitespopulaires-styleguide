@@ -152,10 +152,6 @@
                     <!-- Main menu  -->
                     <ul data-list="swiper-main" class="swiper-list swiper-list-first list-no-padding swiper-list-primary list-no-style" role="navigation">
                       {% for item in variables.main_menu %}
-                        {% set classes = [
-                        item.inActiveTrail ? 'active',
-                        item.link.pluginId,
-                        ] %}
                         <!-- Get Theme from position into the menu -->
                         {% set theme = [
                         loop.index0 == 0 ? 'assurance',
@@ -165,11 +161,17 @@
                         loop.index0 >= 4 ? 'primary',
                         ] %}
 
+                        {% set classes = [
+                        item.inActiveTrail ? 'active',
+                        item.link.pluginId,
+                        'theme-' ~ theme|join,
+                        ] %}
+
                         <li class="{{ classes|join(' ') }}">
                           {% set target = item.link.options.external ? '_blank' %}
-                            <a href="{{ item.link.urlObject }}" class="pretty-link text-{{ theme|join }}" target="{{ target }}">{{ item.link.title }}</a>
+                            <a href="{{ item.link.urlObject }}" class="pretty-link" target="{{ target }}">{{ item.link.title }}</a>
                             {% if item.hasChildren %}
-                              <a href="swiper-{{ item.link.pluginId }}" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-{{ theme|join }}"></a>
+                              <a href="swiper-{{ item.link.pluginId }}" class="arrow-next btn btn-circle btn-outline" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': item.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
                             {% endif %}
                           </li>
                         {% endfor %}
@@ -182,11 +184,11 @@
                       <ul class="swiper-list swiper-list-first swiper-list-secondary list-no-style list-no-padding" role="navigation">
                         {% for item in variables.profil_menu %}
                           {% set classes = [
-                          'text-primary',
                           'icon-text',
                           'icon-text-center',
                           item.inActiveTrail ? 'active',
                           item.link.pluginId,
+                          'theme-' ~ theme|join,
                           ] %}
 
                           <li class="{{ classes|join(' ') }}">
@@ -203,7 +205,7 @@
                                       <a href="{{ item.link.urlObject }}" class="retraitespopulaires-icon retraitespopulaires-icon-{{ profil_icon }} retraitespopulaires-icon-3x" target="{{ target }}"></a>
                                       <a href="{{ item.link.urlObject }}" class="icon-text-txt text-secondary h5" target="{{ target }}">{{ item.link.title }}</a>
                                       {% if item.hasChildren %}
-                                        <a href="swiper-{{ item.link.pluginId }}"  class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small"></a>
+                                        <a href="swiper-{{ item.link.pluginId }}" class="arrow-next btn btn-circle btn-outline" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': item.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
                                       {% endif %}
                                     </li>
                                   {% endfor %}
@@ -231,15 +233,18 @@
                                     {% set classes = [
                                     item.inActiveTrail ? 'active',
                                     item.link.pluginId,
+                                    'theme-' ~ theme|join
                                     ] %}
 
                                     <ul data-list="swiper-{{ item.link.pluginId }}" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style {{ classes|join(' ') }}" role="navigation">
 
                                       <!-- First item is a back link to previous links  -->
-                                      <li class="swiper-back visible-xs visible-sm">
-                                       <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-{{ theme|join }}"></a>
-                                       <a href="{{ item.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-{{ theme|join }} text-secondary">{{ item.link.title }}</a>
-                                     </li>
+                                      <li class="swiper-back visible-xs visible-sm theme-{{ theme|join }} bg-berrylight-gray">
+                                       <a href="swiper-main" class="btn btn-circle btn-outline arrow-back" title="{{ 'Retour en arrière'|t }}">
+                                         <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span>
+                                       </a>
+                                       <a href="{{ item.link.urlObject }}" class="text-muted pretty-link">{{ item.link.title }}</a>
+                                      </li>
 
                                      {% for subitem in item.subtree %}
                                        {% set classes = [
@@ -249,9 +254,9 @@
 
                                        <li class="{{ classes|join(' ') }}">
                                          {% set target = subitem.link.options.external ? '_blank' %}
-                                           <a href="{{ subitem.link.urlObject }}" class="pretty-link text-{{ theme|join }}" target="{{ target }}">{{ subitem.link.title }}</a>
+                                           <a href="{{ subitem.link.urlObject }}" class="pretty-link" target="{{ target }}">{{ subitem.link.title }}</a>
                                            {% if subitem.hasChildren %}
-                                             <a href="swiper-{{ subitem.link.pluginId }}" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-{{ theme|join }}"></a>
+                                             <a href="swiper-{{ subitem.link.pluginId }}" class="arrow-next btn btn-circle btn-outline" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': subitem.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
                                            {% endif %}
                                          </li>
                                        {% endfor %}
@@ -266,14 +271,17 @@
                                       {% set classes = [
                                       item.inActiveTrail ? 'active',
                                       item.link.pluginId,
+                                      'theme-' ~ theme|join,
                                       ] %}
                                       <ul data-list="swiper-{{ item.link.pluginId }}" class="swiper-list swiper-list-alternative swiper-list-middle list-no-padding list-spaced list-no-style {{ classes|join(' ') }}" role="navigation">
 
                                         <!-- First item is a back link to previous links  -->
-                                        <li class="swiper-back visible-xs visible-sm">
-                                         <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-primary"></a>
-                                         <a href="{{ item.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-primary text-secondary">{{ item.link.title }}</a>
-                                       </li>
+                                        <li class="swiper-back visible-xs visible-sm theme-{{ theme|join }} bg-berrylight-gray">
+                                          <a href="swiper-main" class="btn btn-circle btn-outline arrow-back" title="{{ 'Retour en arrière'|t }}">
+                                            <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span>
+                                          </a>
+                                          <a href="{{ item.link.urlObject }}" class="text-muted pretty-link">{{ item.link.title }}</a>
+                                        </li>
 
                                        {% for subitem in item.subtree %}
                                          {% set classes = [
@@ -290,7 +298,7 @@
                                          {% set target = subitem.link.options.external ? '_blank' %}
                                            <a href="{{ subitem.link.urlObject }}" class="pretty-link text-primary" {{ target|e }}>{{ subitem.link.title }}</a>
                                            {% if subitem.hasChildren %}
-                                             <a href="swiper-{{ subitem.link.pluginId }}" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-next arrow-rounded arrow-small arrow-primary"></a>
+                                             <a href="swiper-{{ subitem.link.pluginId }}" class="arrow-next btn btn-circle btn-outline" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': subitem.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
                                            {% endif %}
                                          </li>
                                        {% endfor %}
@@ -321,14 +329,17 @@
                                      {% set classes = [
                                      subitem.inActiveTrail ? 'active',
                                      subitem.link.pluginId,
+                                     'theme-' ~ theme|join,
                                      ] %}
                                      {% if subitem.hasChildren %}
                                        <ul data-list="swiper-{{ subitem.link.pluginId }}" class="swiper-list swiper-list-alternative swiper-list-last list-no-padding list-spaced list-no-style {{ classes|join(' ') }}" role="navigation">
 
-                                         <!-- First subitem is a back link to previous links  -->
-                                         <li class="swiper-back visible-xs visible-sm">
-                                          <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-{{ theme|join }}"></a>
-                                          <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-{{ theme|join }} text-secondary">{{ subitem.link.title }}</a>
+                                        <!-- First item is a back link to previous links  -->
+                                        <li class="swiper-back visible-xs visible-sm theme-{{ theme|join }} bg-berrylight-gray">
+                                          <a href="swiper-main" class="btn btn-circle btn-outline arrow-back" title="{{ 'Retour en arrière'|t }}">
+                                            <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span>
+                                          </a>
+                                          <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link">{{ subitem.link.title }}</a>
                                         </li>
 
                                         {% for lastitem in subitem.subtree %}
@@ -339,7 +350,7 @@
 
                                          <li class="{{ classes|join(' ') }}">
                                            {% set target = lastitem.link.options.external ? '_blank' %}
-                                             <a href="{{ lastitem.link.urlObject }}" class="pretty-link text-{{ theme|join }}" target="{{ target }}">{{ lastitem.link.title }}</a>
+                                             <a href="{{ lastitem.link.urlObject }}" class="pretty-link" target="{{ target }}">{{ lastitem.link.title }}</a>
                                            </li>
                                          {% endfor %}
                                        </ul>
@@ -361,8 +372,10 @@
 
                                        <!-- First subitem is a back link to previous links  -->
                                        <li class="swiper-back visible-xs visible-sm">
-                                        <a href="swiper-main" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow arrow-back arrow-small arrow-flip arrow-primary"></a>
-                                        <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link pretty-link-light-gray text-primary text-secondary">{{ subitem.link.title }}</a>
+                                        <a href="swiper-main" class="btn btn-circle btn-outline arrow-back" title="{{ 'Retour en arrière'|t }}">
+                                          <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span>
+                                        </a>
+                                        <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link text-secondary">{{ subitem.link.title }}</a>
                                       </li>
 
                                       {% for lastitem in subitem.subtree %}
@@ -373,7 +386,7 @@
 
                                        <li class="{{ classes|join(' ') }}">
                                          {% set target = lastitem.link.options.external ? '_blank' %}
-                                           <a href="{{ lastitem.link.urlObject }}" class="pretty-link text-primary" target="{{ target }}">{{ lastitem.link.title }}</a>
+                                           <a href="{{ lastitem.link.urlObject }}" class="pretty-link" target="{{ target }}">{{ lastitem.link.title }}</a>
                                          </li>
                                        {% endfor %}
                                      </ul>
@@ -390,15 +403,16 @@
                    </div>
                    <div class="col-xs-12 col-md-2 col-md-offset-1">
                     <div class="big-menu-secondary-nav-wrapper">
-                      <div class="big-menu-secondary-nav visible-xs visible-sm">
+                      <div class="big-menu-secondary-nav bg-berrylight-gray visible-xs visible-sm">
                         <div class="row">
                           <div class="spacer spacer-sm"></div>
                           {% set linksPerColumn = (variables.secondary_menu|length / 2)|round(0, 'ceil') %}
                             {% for item in variables.secondary_menu %}
                               {% set classes = [
-                              item.link.pluginId,
+                                item.link.pluginId,
+                                item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text',
+                                item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text-locker',
                               ] %}
-
                               {% if linksPerColumn == 1 or loop.index % linksPerColumn == 1 %}
                                 <div class="col-xs-6">
                                   <ul class="list-no-style list-no-padding {{ loop.first ? 'text-right'}}">
@@ -408,7 +422,7 @@
                                       <a class="pretty-link pretty-link-berrylight-gray" href="{{ item.link.urlObject }}" target="{{ target }}">
                                         {{ item.link.title }}
                                         {% if item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' %}
-                                          <i class="text-primary retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i>
+                                          <i class="text-primary retraitespopulaires-icon retraitespopulaires-icon-lock"></i>
                                         {% endif %}
                                       </a>
                                     </li>
@@ -423,18 +437,18 @@
                           <ul class="list-spaced list-no-style list-no-padding hidden-xs hidden-sm" role="navigation">
                             {% for item in variables.secondary_menu %}
                               {% set classes = [
-                              item.link.pluginId,
-                              item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text',
-                              item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text-locker',
+                                item.link.pluginId,
+                                item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text',
+                                item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text-locker',
                               ] %}
                               {% set target = item.link.options.external ? '_blank' %}
                                 <li class="{{ classes|join(' ') }}">
                                   <a class="pretty-link" href="{{ item.link.urlObject }}" target="{{ target }}">
                                     {{ item.link.title }}
+                                    {% if item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' %}
+                                      <i class="text-primary retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i>
+                                    {% endif %}
                                   </a>
-                                  {% if item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' %}
-                                    <i class="text-primary retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i>
-                                  {% endif %}
                                 </li>
                               {% endfor %}
                             </ul>

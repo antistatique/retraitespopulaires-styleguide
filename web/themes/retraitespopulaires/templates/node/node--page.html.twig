@@ -1,21 +1,27 @@
 {% extends "@retraitespopulaires/node/node.html.twig" %}
 
 {% block node_bottom %}
-  {% embed "@retraitespopulaires/node/partials/attached_documents.html.twig" with {'documents': node.field_document_page, 'theme':node.field_profession.entity.tid.value|theme_profession} %}{% endembed %}
+  {% embed "@retraitespopulaires/node/partials/attached_documents.html.twig" with {'documents': node.field_document_page} %}{% endembed %}
 
-  {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_page, 'theme':node.field_profession.entity.tid.value|theme_profession} %}{% endembed %}
+  {% embed "@retraitespopulaires/node/partials/attached_files.html.twig" with {'files': node.field_file_page} %}{% endembed %}
+
+  {% if node.field_document_page is not empty or node.field_file_page is not empty %}
+    <div class="spacer spacer-md"></div>
+  {% endif %}
 {% endblock %}
 
 {% block node_bottom_outer %}
   <!-- Form -->
   {% if content.field_form is not empty and content.field_form['#field_type'] == 'webform' %}
-    <div class="spacer"></div>
-    <div class="background-overflow">
+    <div class="background-overflow bg-berrylight-gray">
+      <div class="bg-special-waves"></div>
       <div class="spacer"></div>
       <div class="row">
         <div class="{{ node_content_width|join(' ') }}">
-          <div class="form-card form-card-{{ theme|default('primary') }} shadow shadow-down">
-            {{ content.field_form }}
+          <div class="card">
+            <div class="card-body">
+              {{ content.field_form }}
+            </div>
           </div>
         </div>
       </div>

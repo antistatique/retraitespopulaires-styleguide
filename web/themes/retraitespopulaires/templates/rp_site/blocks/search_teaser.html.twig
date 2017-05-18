@@ -1,20 +1,25 @@
 {% if variables.result.nid %}
-<a href="{{ path('entity.node.canonical', {'node': variables.result.nid}) }}" class="teaser teaser-fullclick teaser-search shadow shadow-down">
-  <div class="search-heading">
-    <div class="text-primary">
-      <div class="text-secondary h4">{{ variables.result.title }}</div>
-      <div class="spacer spacer-xs"></div>
-      <div class="text-secondary h6 text-muted">{{ variables.result.type|upper }}</div>
-      <div class="spacer spacer-xs"></div>
+<div class="card card-light card-hover card-no-shadow">
+  <div class="card-body">
+    <div class="card-justify">
+      <h3 class="card-title">
+        <a href="{{ path('entity.node.canonical', {'node': variables.result.nid}) }}">{{ variables.result.title }}</a>
+      </h3>
+      <div class="card-actions">
+        <a href="{{ path('entity.node.canonical', {'node': variables.result.nid}) }}" class="btn btn-sm btn-outline text-uppercase btn-normal">{% trans %}Détails{% endtrans %}</a>
+      </div>
     </div>
+    <hr class="card-separator">
+    <p class="text-muted">
+      <strong>{{ variables.result.type|upper }}</strong>
+    </p>
+    <h4 class="title-mini">{% trans %}Extrait{% endtrans %}</h4>
+      {% if variables.result.body %}
+        <p>{{ variables.result.body|raw }}</p>
+      {% elseif variables.result.original_body %}
+        {% set body = variables.result.original_body|striptags %}
+        <p>... {{ body|slice(0, 120)|raw }} ...</p>
+      {% endif %}
   </div>
-  <div class="search-body">
-    {% if variables.result.body %}
-      <p class="m-0">{{ variables.result.body|raw }}</p>
-    {% elseif variables.result.original_body %}
-      {% set body = variables.result.original_body|striptags %}
-      <p class="m-0">... {{ body|slice(0, 120)|raw }} ...</p>
-    {% endif %}
-  </div>
-</a>
+</div>
 {% endif %}

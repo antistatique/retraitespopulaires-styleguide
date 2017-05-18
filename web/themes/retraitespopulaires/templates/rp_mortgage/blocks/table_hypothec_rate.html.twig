@@ -10,7 +10,7 @@
   {% set formatted_date = variables.date|date_format('F Y') %}
 
   {% set variables_rates = [variables.rates|first] %}
-  <table class="table table-wide tablesaw tablesaw-stack table-hypotheque" data-tablesaw-mode="stack" id="table-{{ variable.type|clean_id }}-variables">
+  <table class="table table-wide tablesaw tablesaw-stack" data-tablesaw-mode="stack" id="table-{{ variable.type|clean_id }}-variables">
     {% if formatted_date %}
       <caption>{% trans %}Taux de {{ formatted_date }}{% endtrans %}</caption>
     {% endif %}

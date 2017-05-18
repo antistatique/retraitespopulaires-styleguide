@@ -90,11 +90,6 @@ class PLPCalculatorForm extends FormBase {
             'library' =>  array('rp_libre_passage/plp_calculator'),
         );
 
-        $theme = '';
-        if (isset($params['theme'])) {
-            $theme = $params['theme'];
-        }
-
         $status = drupal_get_messages('status', false);
         if (!empty($status['status'])) {
             $form['status'] = array(
@@ -111,7 +106,7 @@ class PLPCalculatorForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos données personnelles'),
-          '#prefix'     => '<h3>'.t('Vos données personnelles').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Vos données personnelles').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -126,7 +121,7 @@ class PLPCalculatorForm extends FormBase {
             '#title'         => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
             '#placeholder'   => t('jj/mm/aaaa'),
             '#type'          => 'textfield',
-            '#attributes'    => ['size' => 10, 'theme' => $theme],
+            '#attributes'    => ['size' => 10],
             '#required'      => false,
             '#prefix'        => '<div class="form-group '.$error_class.'">',
             '#suffix'        => $error. '</div>',
@@ -144,7 +139,6 @@ class PLPCalculatorForm extends FormBase {
         $form['personnal']['civil_state'] = array(
             '#title'         => t('Votre état civil *'),
             '#type'          => 'select',
-            '#attributes'    => ['theme' => $theme],
             '#options'       => array('woman' => t('Madame'), 'man' => t('Monsieur')),
             '#required'      => false,
             '#prefix'        => '<div class="form-group '.$error_class.'">',
@@ -162,7 +156,7 @@ class PLPCalculatorForm extends FormBase {
         }
         $form['personnal']['civil_status'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Marié(e) ou lié(e) par un partenariat enregistré *')],
+            '#attributes'  => ['title' => t('Marié(e) ou lié(e) par un partenariat enregistré *')],
             '#required'    => false,
             '#options'     => array(
                 'Oui' => t('Oui'),
@@ -190,7 +184,6 @@ class PLPCalculatorForm extends FormBase {
         $form['personnal']['percent'] = array(
             '#title'       => t('Pourcentage souhaité de la rente de vieillesse versée au conjoint (ou partenaire enregistré) survivant'),
             '#type'        => 'select',
-            '#attributes'  => ['theme' => $theme],
             '#options'     => $options,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -200,7 +193,7 @@ class PLPCalculatorForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Votre apport de libre passage'),
-          '#prefix'     => '<h3>'.t('Votre apport de libre passage').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Votre apport de libre passage').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -215,7 +208,7 @@ class PLPCalculatorForm extends FormBase {
             '#title'       => t('Montant *'),
             '#type'        => 'textfield',
             '#placeholder' => t('CHF'),
-            '#attributes'  => ['size' => 20, 'theme' => $theme, 'class' => array('form-chf-numeric text-right')],
+            '#attributes'  => ['size' => 20, 'class' => array('form-chf-numeric text-right')],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -230,18 +223,18 @@ class PLPCalculatorForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['libre_passage']['group_start'] = array(
-            '#prefix' => '<div class="form-group '.$error_class.'"><div class="label">'. t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</div><div class="input-group">',
+            '#prefix' => '<div class="form-group '.$error_class.'"><div class="form-control-label">'. t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</div><div class="input-group">',
             '#suffix' => '</div>'.$error.'</div>',
         );
         $form['libre_passage']['group_start']['payment_date'] = array(
             '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 15, 'theme' => $theme, 'class' => array('datepicker')],
+            '#attributes'  => ['size' => 15, 'class' => array('datepicker')],
             '#required'    => false,
         );
         $form['libre_passage']['group_start']['picker'] = array(
-            '#prefix' => '<span class="input-group-btn no-events"><div class="btn btn-default-invert btn-icon">',
-            '#markup' => '<i class="retraitespopulaires-icon retraitespopulaires-icon-calendar text-'.$theme.'"></i>',
+            '#prefix' => '<span class="input-group-btn no-events"><div class="btn btn-invert btn-icon">',
+            '#markup' => '<span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>',
             '#suffix' => '</div></span>',
         );
 
@@ -279,7 +272,6 @@ class PLPCalculatorForm extends FormBase {
         $form['libre_passage']['age'] = array(
             '#title'       => t('Âge souhaité pour le versement des prestations *'),
             '#type'        => 'select',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#options'     => $options,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
@@ -291,7 +283,7 @@ class PLPCalculatorForm extends FormBase {
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Calculer'),
-            '#attributes'  => ['class' => array('btn-primary pull-right'), 'theme' => $theme],
+            '#attributes'  => ['class' => array('btn-primary pull-right')],
             '#button_type' => 'primary',
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',

@@ -63,10 +63,6 @@ class ContactTeaserDetailBlock extends BlockBase implements ContainerFactoryPlug
         $variables = array();
         $variables = $params;
 
-        if (isset($params['theme'])) {
-            $variables['theme'] = $params['theme'];
-        }
-
         $variables['cover'] = $this->cover->fromNode($params['contact'], array('xl' => 'rp_teaser_contact_xl'));
 
         return [

@@ -76,11 +76,6 @@ class DocumentsForm extends FormBase {
         $form['#cache']['max-age'] = 0;
         $form['#attributes']['novalidate'] = 'novalidate';
 
-        $theme = '';
-        if (isset($params['theme'])) {
-            $theme = $params['theme'];
-        }
-
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
             $form['status'] = array(
@@ -97,12 +92,12 @@ class DocumentsForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend ')],
           '#title'      => t('Votre demande de commande de document'),
-          '#prefix'     => '<h3>'.t('Votre demande de commande de document').'</h3>' . '<div class="well m-t-1">' . $this->t('Merci de bien vouloir sélectionner au minimum un document.'). '</div>',
+          '#prefix'     => '<h3 class="card-title">'.t('Votre demande de commande de document').'</h3>' . '<div class="well m-t-1">' . $this->t('Merci de bien vouloir sélectionner au minimum un document.'). '</div>',
         );
 
         $form['documents']['policies'] = array(
             '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Police d\'assurance')],
+            '#attributes'  => ['title' => t('Police d\'assurance')],
             '#options'     => array(
                 'Copie de police' => t('Copie de police'),
                 'Déclaration de perte de police' => t('Déclaration de perte de police'),
@@ -115,7 +110,7 @@ class DocumentsForm extends FormBase {
 
         $form['documents']['attestations'] = array(
             '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Attestations fiscales')],
+            '#attributes'  => ['title' => t('Attestations fiscales')],
             '#options'     => array(
                 'Dernière année' => t('Dernière année'),
                 'Autre(s) année(s)' => t('Autre(s) année(s)')
@@ -127,12 +122,11 @@ class DocumentsForm extends FormBase {
         $form['documents']['other_year'] = array(
             '#title'       => t('Autre(s) année(s)'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
         );
 
         $form['documents']['payments'] = array(
             '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Moyen de paiement')],
+            '#attributes'  => ['title' => t('Moyen de paiement')],
             '#options'     => array(
                 'Copie des factures ouvertes' => t('Copie des factures ouvertes'),
                 'Stock de BVR+' => t('Stock de BVR+'),
@@ -145,14 +139,14 @@ class DocumentsForm extends FormBase {
         $form['documents']['message'] = array(
             '#title'       => t('Votre message'),
             '#type'        => 'textarea',
-            '#attributes'  => ['cols' => 59, 'theme' => $theme],
+            '#attributes'  => ['cols' => 59],
         );
 
         $form['personnal'] = array(
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend ')],
           '#title'      => t('Vos informations'),
-          '#prefix'     => '<h3>'.t('Vos informations').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Vos informations').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -167,7 +161,6 @@ class DocumentsForm extends FormBase {
             '#title'       => t('Numéro(s) de police(s) *'),
             '#placeholder' => t('123456789'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -184,7 +177,6 @@ class DocumentsForm extends FormBase {
         $form['personnal']['civil_state'] = array(
             '#title'       => t('Votre état civil *'),
             '#type'        => 'select',
-            '#attributes'  => ['theme' => $theme],
             '#options'     => array('Madame' => t('Madame'), 'Monsieur' => t('Monsieur')),
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
@@ -203,7 +195,7 @@ class DocumentsForm extends FormBase {
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 25, 'theme' => $theme],
+            '#attributes'  => ['size' => 25],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -221,7 +213,7 @@ class DocumentsForm extends FormBase {
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -239,7 +231,6 @@ class DocumentsForm extends FormBase {
             '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -257,7 +248,7 @@ class DocumentsForm extends FormBase {
             '#title'       => t('Votre numéro de téléphone *'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#attributes'  => ['size' => 20],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -275,7 +266,7 @@ class DocumentsForm extends FormBase {
             '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
             '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -293,7 +284,6 @@ class DocumentsForm extends FormBase {
             '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -311,7 +301,7 @@ class DocumentsForm extends FormBase {
             '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -329,7 +319,7 @@ class DocumentsForm extends FormBase {
             '#title'       => t('Votre localité *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -347,7 +337,7 @@ class DocumentsForm extends FormBase {
             '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
             '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -358,7 +348,7 @@ class DocumentsForm extends FormBase {
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Envoyer'),
-            '#attributes'  => ['class' => array('btn-primary pull-right'), 'theme' => $theme],
+            '#attributes'  => ['class' => array('btn-primary pull-right')],
             '#button_type' => 'primary',
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
