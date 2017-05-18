@@ -288,10 +288,10 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 100vw;
-  padding-bottom: 45%;
-  background: url('../svg/grey-waves.svg') no-repeat left top $white;
-  background-size: 100% auto;
+  width: 200vw;
+  padding-bottom: 47%;
+  background: url('../svg/grey-waves.svg') repeat-x $white;
+  background-size: 50% auto;
   transform: translateX(-50%);
   pointer-events: none;
 }
