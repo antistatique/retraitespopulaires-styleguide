@@ -1,5 +1,5 @@
 ---
-title: header
+title: Header
 name: header
 collection: organisms
 notes: |
@@ -12,12 +12,14 @@ notes: |
   {% include '../molecules/big-menu.html.swig' %}
 {% endif %}
 <header class="header">
-  {% include '../atoms/logo-retraitespopulaires.html.swig' %}
+  <div class="logo-retraitespopulaires svg-responsive">
+    <a href="#"><img src="{{data.path}}build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>
+  </div>
 
   {% if not light %}
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3 hidden-xs">
-    {% include '../molecules/search-form.html.swig' %}
+    search form here
     </div>
   </div>
   {% endif %}

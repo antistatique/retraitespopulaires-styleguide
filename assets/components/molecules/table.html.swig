@@ -1,15 +1,16 @@
 ---
-title: table
+title: Table
 name: table
 collection: molecules
+variants:
+  tablesaw: Tablesaw
+  table-borderless: Borderless
 notes: |
-  ##### Usage : `table`
-  ##### Options :
-  - **table_size** - <i>String</i> - <b>table-['wide'|'condensed']</b>
-  - **table_style** - <i>String</i> - <b>table-borderless</b>
-  - **table_theme** - <i>String</i> - <b>table-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  We use the `jQuery` plugin [Tablesaw](https://github.com/filamentgroup/tablesaw) for responsivness, check the documentation for advanced usage & parameters. <br>
+  Can be used with the modifier `table-['wide'|'condensed']` to change look. <br>
+  Can be used with the modifier `table-borderless` to remove borders.
 ---
-<table class="table-{{ table_size }} table-{{ table_style }} table-{{ table_theme|default('primary') }} tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+<table class="table {% if variant == 'tablesaw' %}tablesaw tablesaw-stack{% endif %} {% if variant == 'table-condensed' or variant == 'table-borderless' %}{{ variant }}{% endif %}" {% if variant == 'tablesaw' %}data-tablesaw-mode="stack"{% endif %}>
  <thead>
   <tr>
      <th><strong>Entête importante</strong></th>

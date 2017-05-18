@@ -1,10 +1,9 @@
 ---
-title: input-select
+title: Input Select
 name: input-select
 collection: atoms
 notes: |
-  ##### Usage : `input-select`
-  - **input_select_theme** - <i>String</i> - <b>form-control-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look.
 ---
 <div class="form-group">
   <label for="inputID">Label</label>

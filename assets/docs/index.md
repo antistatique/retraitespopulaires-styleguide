@@ -90,88 +90,27 @@ permalink: false
       <h2>Typographie</h2>
       <div class="spacer spacer-xs"></div>
       <!-- Heading 1  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H1</b>
-          <div class="text-muted">Cocon Pro Light</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h1>Le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle</h1>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h1>H1 - Cocon Pro Light - Le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle</h1>
       <!-- Heading 2  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H2</b>
-          <div class="text-muted">Cocon Pro Light</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h2>Notre raison sociale, notre identité</h2>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h2>H2 - Cocon Pro Light - Notre raison sociale, notre identité</h2>
       <!-- Heading 3  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H3</b>
-          <div class="text-muted">Frutiger Neue Bold</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h3>Plus de cent ans au service des Vaudoises et des Vaudois</h3>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h3>H3 - Frutiger Neue Bold - Plus de cent ans au service des Vaudoises et des Vaudois</h3>
       <!-- Heading 4  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H4</b>
-          <div class="text-muted">Frutiger Neue Bold</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h4>Partenaire de vos projets</h4>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h4>H4 - Frutiger Neue Bold - Partenaire de vos projets</h4>
       <!-- Heading 5  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H5</b>
-          <div class="text-muted">Frutiger Neue Bold</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h5>Les mêmes conditions pour tous les clients</h5>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h5>H5 - Frutiger Neue Bold - Les mêmes conditions pour tous les clients</h5>
       <!-- Heading 6  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H6</b>
-          <div class="text-muted">Frutiger Neue Bold</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h6>Labels obtenus par Retraites Populaires</h6>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h6>H6 - Frutiger Neue Bold - Labels obtenus par Retraites Populaires</h6>
       <!-- Paragraphe  -->
       <div class="row">
         <div class="col-md-2">
           <b>Paragraphe</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <p>Fondée il y a plus de <b>100 ans</b>, <a href="http://retraites-populaires.ch">Retraites Populaires</a> cultive des valeurs humaines fortes et un esprit de mutualité. <br/> Notre mission: être le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle. Notre détermination: demeurer toujours ce partenaire proche sur lequel vous pouvez compter. Active également dans l’immobilier, l'hypothèque et crédit et la gestion d'institutions de prévoyance, Retraites Populaires met au service des personnes, des entreprises et des institutions une plateforme de compétences et tout son savoir-faire.</p>
           <p><a href="http://retraites-populaires.ch">Retraites Populaires</a> est proche de ses clients. Avec son siège de <i>Lausanne</i> et ses deux agences à <i>Yverdon-les-Bains</i> et <i>Nyon</i>, elle offre des <b>prestations simples</b> et <b>de qualité</b> pour chacune des étapes de la vie.</p>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Quote  -->
@@ -179,11 +118,10 @@ permalink: false
         <div class="col-md-2">
           <b>Citation</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <blockquote>Retraites Populaires est fiable. Fondée il y a plus de 100 ans, elle est une partenaire de confiance sur laquelle la population et les entreprises peuvent compter en toute sécurité, en tant qu’institution de droit public avec des prestations garanties.</blockquote>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Highlight  -->
@@ -191,11 +129,10 @@ permalink: false
         <div class="col-md-2">
           <b>Surligner</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <p>Retraites Populaires est <mark>responsable</mark>. Au coeur de sa raison d’être se trouve le <mark>respect des engagements</mark>.</p>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Unordered List  -->
@@ -203,7 +140,7 @@ permalink: false
         <div class="col-md-2">
           <b>Liste non ordonnée</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <ul class="unordered-list">
@@ -214,7 +151,6 @@ permalink: false
             </ul>
             <li>Flexibilité du produit: prestations et financement en fonction de votre situation</li>
           </ul>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Ordered List  -->
@@ -222,7 +158,7 @@ permalink: false
         <div class="col-md-2">
           <b>Liste ordonnée</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <ol class="ordered-list">
@@ -233,7 +169,6 @@ permalink: false
             </ol>
             <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
           </ol>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Treeview List  -->
@@ -241,7 +176,7 @@ permalink: false
         <div class="col-md-2">
           <b>Liste en arbre</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <ul class="treeview-list">
@@ -252,7 +187,6 @@ permalink: false
             </ul>
             <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
           </ul>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Facets List  -->
@@ -260,7 +194,7 @@ permalink: false
         <div class="col-md-2">
           <b>Liste en facettes</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <ul class="facets-list">
@@ -271,7 +205,6 @@ permalink: false
             </ul>
             <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
           </ul>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Filters List  -->
@@ -279,7 +212,7 @@ permalink: false
         <div class="col-md-2">
           <b>Liste en facettes</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <ul class="filters-list">
@@ -290,7 +223,6 @@ permalink: false
             </ul>
             <li><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checkbox"></i> Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
           </ul>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Table  -->
@@ -298,7 +230,7 @@ permalink: false
         <div class="col-md-2">
           <b>Tableau</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <table>
@@ -315,7 +247,6 @@ permalink: false
             </tr>
            </tbody>
           </table>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Number  -->
@@ -323,11 +254,10 @@ permalink: false
         <div class="col-md-2">
           <b>Nombres</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <div class="">1'000.10</div>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- SuperScript & SubScript  -->
@@ -335,12 +265,11 @@ permalink: false
         <div class="col-md-2">
           <b>Exposant et Indice</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <div class="">D'une surface de 150m<sup>3</sup>.</div>
           <div class="">Nouvelle mollecule découverte: Hlop<sub>22</sub>, révolution scientifique en vue.</div>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
     </div>
@@ -554,4 +483,3 @@ permalink: false
     </div>
   </div>
 </div>
-<div class="spacer"></div>

@@ -1,5 +1,5 @@
 ---
-title: mail
+title: Mail
 name: mail
 collection: pages
 styleguide: false

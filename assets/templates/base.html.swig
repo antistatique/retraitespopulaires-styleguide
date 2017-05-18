@@ -20,29 +20,24 @@
     <link rel="stylesheet" href="{{data.path}}build/css/main.css">
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/retraitespopulaires-styleguide/build/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/retraitespopulaires-styleguide/build/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/retraitespopulaires-styleguide/build/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/retraitespopulaires-styleguide/build/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/retraitespopulaires-styleguide/build/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/retraitespopulaires-styleguide/build/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{data.path}}build/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{data.path}}build/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{data.path}}build/favicons/favicon-16x16.png">
+    <link rel="manifest" href="{{data.path}}build/favicons/manifest.json">
+    <link rel="mask-icon" href="{{data.path}}build/favicons/safari-pinned-tab.svg" color="#008e4f">
+    <meta name="theme-color" content="#008e4f">
 
     <!--[if lt IE 9]>
       <script src="{{data.path}}build/js/polyfills.min.js"></script>
     <![endif]-->
   </head>
   <body>
+    <div class="styleguide-toggle-container">
+      <div class="styleguide-toggle-theme-hide">
+        <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
+      </div>
+    </div>
+
     {% if styleguide %}
       {% include 'styleguide/icons.html.swig' %}
       {% include 'styleguide/menu.html.swig' %}
@@ -52,6 +47,7 @@
           <h1>{{title}}</h1>
         </div>
     {% endif %}
+
 
     {% block content %}{% endblock %}
 
@@ -109,6 +105,11 @@
           $(document).ready(function(){
             $('.styleguide-item-code code').each(function(){
               $(this).html($(this).html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'));
+            });
+
+            // Toggle theme
+            $('.styleguide-toggle-theme').on('click', function() {
+              $('.styleguide-item-preview, .styleguide-toggle-container').toggleClass('theme-cip');
             });
           });
         }(jQuery));

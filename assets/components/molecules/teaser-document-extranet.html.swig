@@ -1,5 +1,5 @@
 ---
-title: teaser-document-extranet
+title: Teaser Document Extranet
 name: teaser-document-extranet
 collection: molecules
 notes: |

@@ -1,7 +1,18 @@
 @charset 'UTF-8';
 
+.organic-wrapper {
+  position: relative;
+}
+
 .organic-lines {
   width: 100%;
+
+  .organic-wrapper & {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
 
   .organicjs-container {
     position: relative;
@@ -16,6 +27,8 @@
 
       path {
         stroke: $brand-primary;
+
+        @include theme(stroke);
       }
     }
 
@@ -26,14 +39,6 @@
 
     .path-small {
       top: 20px;
-    }
-  }
-
-  @each $label, $color in $themes {
-    &.lines-#{$label} {
-      .organicjs-container svg path {
-        stroke: $color;
-      }
     }
   }
 }

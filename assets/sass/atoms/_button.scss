@@ -1,7 +1,6 @@
 @charset 'UTF-8';
 
 .btn {
-  border-color: $transparent;
   transition:
     background 0.25s ease,
     color 0.25s ease,
@@ -13,7 +12,6 @@
   }
 
   @include font-secondary;
-  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 
   &:first-letter {
     text-transform: uppercase;
@@ -23,16 +21,10 @@
   &.active {
     box-shadow: none;
   }
-
-  @each $label, $color in $themes {
-    &.btn-#{$label} {
-      @include button-variant($white, $color, $btn-default-border);
-    }
-  }
 }
 
 .btn-icon {
-  i {
+  .retraitespopulaires-icon {
     width: 26px;
     height: 26px;
     vertical-align: middle;
@@ -40,14 +32,22 @@
   }
 }
 
+.btn-primary {
+  @include btn-theme();
+}
+
 .btn-secondary {
   @include button-variant($btn-default-color, $deep-yellow, $btn-default-border);
 }
 
-.btn-default-invert {
+.btn-invert {
   border: none;
 
   @include button-variant($brand-primary, $white, $btn-default-border);
+
+  @include theme-custom() {
+    @include button-variant($color, $white, $btn-default-border);
+  }
 }
 
 .btn-group { // @TODO check in which wrapper those links are
@@ -88,12 +88,25 @@
 
 .btn-outline {
   @include button-variant($brand-primary, $transparent, $brand-primary);
+  @include theme(border-color color);
 
   &:hover,
+  &:focus, {
+    background-color: $link-color;
+    border-color: $link-color;
+    color: $white !important;
+
+    @include theme(background-color border-color);
+  }
+
   &:active,
-  &:focus,
-  &:hover:active {
-    background: $gray-lighter;
+  &:hover:active,
+  &:active:focus {
+    background-color: $link-hover-color;
+    border-color: $link-hover-color;
+    color: $white;
+
+    @include theme(background-color border-color, hover-color);
   }
 }
 
@@ -127,4 +140,35 @@
     padding-top: 0.7em;
     padding-bottom: 0.7em;
   }
+}
+
+// Button looking like a circle
+.btn-circle {
+  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 2.666em;
+  height: 2.666em;
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 50%;
+
+  &.btn-sm {
+    width: 2em;
+    height: 2em;
+  }
+
+  &.btn-xs {
+    width: 1.666em;
+    height: 1.666em;
+  }
+}
+
+// button with the default font-family and strong text
+.btn-normal {
+  padding-top: 0.6em;
+  font-family: $font-family-base;
+  font-weight: 700;
 }

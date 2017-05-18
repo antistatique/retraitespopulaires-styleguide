@@ -61,13 +61,9 @@
     }
   }
 
-  @each $label, $color in $themes {
-    &.search-box-#{$label} i {
-      color: $color;
+  @include theme(color);
 
-      &:hover {
-        color: $black;
-      }
-    }
+  &:hover {
+    @include theme(color, hover-color);
   }
 }

@@ -4,7 +4,7 @@
 * FontIcon
 */
 
-i.retraitespopulaires-icon {
+.retraitespopulaires-icon {
   display: inline-block;
   line-height: 0;
 }
@@ -13,61 +13,19 @@ i.retraitespopulaires-icon {
   .retraitespopulaires-icon {
     transition: color 0.25s ease;
 
-    &:hover,
-    .hover {
-      color: $brand-primary;
-    }
+    @include theme(color);
 
-    &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-dark,
-    &.retraitespopulaires-icon-facebook.retraitespopulaires-icon-dark,
-    &.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-dark,
-    &.retraitespopulaires-icon-youtube.retraitespopulaires-icon-dark,
-    &.retraitespopulaires-icon-instagram.retraitespopulaires-icon-dark {
-      color: $mine-shaft;
-    }
-
-    &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-brand,
-    &.retraitespopulaires-icon-facebook.retraitespopulaires-icon-brand,
-    &.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-brand,
-    &.retraitespopulaires-icon-youtube.retraitespopulaires-icon-brand,
-    &.retraitespopulaires-icon-instagram.retraitespopulaires-icon-brand {
-      color: $brand-primary;
-    }
-
-    &.retraitespopulaires-icon-twitter.retraitespopulaires-icon-color {
-      color: $color-twitter;
-    }
-
-    &.retraitespopulaires-icon-facebook.retraitespopulaires-icon-color {
-      color: $color-facebook;
-    }
-
-    &.retraitespopulaires-icon-linkedin.retraitespopulaires-icon-color {
-      color: $color-linkedin;
-    }
-
-    &.retraitespopulaires-icon-youtube.retraitespopulaires-icon-color {
-      color: $color-youtube;
-    }
-
-    &.retraitespopulaires-icon-instagram.retraitespopulaires-icon-color {
-      color: $color-instagram;
-    }
-
-    @each $label, $color in $themes {
-      &.retraitespopulaires-icon-#{$label} {
-        color: $color;
-
-        &:hover,
-        .hover {
-          color: darken($color, 20%);
-        }
-      }
-
-      &.retraitespopulaires-icon-color.retraitespopulaires-icon-hover-#{$label}:hover,
-      &.retraitespopulaires-icon-color.retraitespopulaires-icon-hover-#{$label}.hover {
-        color: $color;
-      }
+    &:hover {
+      @include theme(color, hover-color);
     }
   }
+}
+
+.social-list .retraitespopulaires-icon-color,
+.retraitespopulaires-icon-color {
+  &.retraitespopulaires-icon-twitter { color: $color-twitter; }
+  &.retraitespopulaires-icon-facebook { color: $color-facebook; }
+  &.retraitespopulaires-icon-linkedin { color: $color-linkedin; }
+  &.retraitespopulaires-icon-youtube { color: $color-youtube; }
+  &.retraitespopulaires-icon-instagram { color: $color-instagram; }
 }

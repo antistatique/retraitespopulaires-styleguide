@@ -1,5 +1,5 @@
 ---
-title: tables
+title: Tables
 name: tables
 collection: examples
 styleguide: true
@@ -14,32 +14,32 @@ layout: examples.html.swig
 <div class="spacer"></div>
 <div class="row">
   <div class="col-xs-12">
-    <h6>Tableau condenser</h6>
+    <h6>Tableau condensé</h6>
     {% include '../molecules/table.html.swig' with {table_size: 'condensed'} %}
   </div>
 </div>
 <div class="spacer"></div>
-<div class="row">
+<div class="row theme-assurance">
   <div class="col-xs-12">
     <h6>Tableau long - Thème</h6>
-    {% include '../molecules/table.html.swig' with {table_size: 'wide', table_theme: 'assurance'} %}
+    {% include '../molecules/table.html.swig' with {table_size: 'wide'} %}
   </div>
 </div>
 <div class="spacer"></div>
-<div class="row">
+<div class="row theme-assurance">
   <div class="col-xs-12">
-    <h6>Tableau condenser - Thème</h6>
-    {% include '../molecules/table.html.swig' with {table_size: 'condensed', table_theme: 'assurance'} %}
+    <h6>Tableau condensé - Thème</h6>
+    {% include '../molecules/table.html.swig' with {table_size: 'condensed'} %}
   </div>
 </div>
 
 <div class="spacer"></div>
-<div class="row">
+<div class="row theme-assurance">
   <div class="col-xs-12">
-    <h6>Tableau condenser - Thème</h6>
+    <h6>Tableau condensé - Thème</h6>
 
 
-    <table border="1" cellpadding="1" cellspacing="1" class="table-wide tablesaw table-assurance tablesaw-stack" data-tablesaw-mode="stack" style="width: 100%;" summary="Situation au 31 décembre">
+    <table border="1" cellpadding="1" cellspacing="1" class="table-wide tablesaw tablesaw-stack" data-tablesaw-mode="stack" style="width: 100%;" summary="Situation au 31 décembre">
       <caption>Chiffres clés 2015 des institutions gérées</caption>
       <thead>
         <tr>

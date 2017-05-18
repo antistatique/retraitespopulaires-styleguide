@@ -7,51 +7,22 @@
 h1,
 .h1,
 h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  margin: 0;
-  padding: 0;
-  word-wrap: break-word;
-}
-
-h1,
-.h1,
-h2,
 .h2 {
-  @include font-secondary;
-}
+  margin-bottom: 1em;
+  font-weight: 500;
 
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5 {
-  font-family: $font-primary;
-  font-weight: 700;
+  @include font-secondary;
+
+  &.page-title {
+    margin-top: 0;
+  }
 }
 
 h6,
 .h6 {
-  font-family: $font-primary;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-}
-
-p,
-abbr,
-cite,
-li,
-ol {
-  font-family: $font-primary;
 }
 
 .text-small {
@@ -74,10 +45,41 @@ ol {
   font-weight: 200;
 }
 
+.title-mini {
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  font-size: 80%;
+  font-weight: 400;
+  color: $text-muted;
+}
+
 /**
  * Text color variants
  */
 @include text-emphasis-variant('.text-gray', $gray);
+@include text-emphasis-variant('.text-gray-dark', $gray-dark);
+
+.text-primary {
+  @include theme(color);
+}
+
+%square-bullet {
+  position: relative;
+  padding-left: 1em;
+
+  &:before {
+    content: '\0025A0'; // ■
+    position: absolute;
+    top: -0.1em;
+    left: 0.25em;
+    font-size: 0.7em;
+    color: $gray;
+  }
+}
+
+.text-square-bullet {
+  @extend %square-bullet;
+}
 
 /**
 * Responsive Typography

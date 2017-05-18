@@ -5,20 +5,7 @@
     transition: color 0.25s ease-in-out;
 
     &:hover {
-      color: $brand-primary;
       text-decoration: none;
-    }
-  }
-
-  @each $label, $color in $themes {
-    &.prenavbar-#{$label} li > a:hover {
-      color: $color;
-    }
-
-    &.prenavbar-#{$label} li.active {
-      > a {
-        color: $color;
-      }
     }
   }
 }

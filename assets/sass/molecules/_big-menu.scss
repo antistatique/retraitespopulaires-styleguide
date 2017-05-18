@@ -38,12 +38,16 @@
       left: 25px;
       z-index: 3003;
       transform: translateY(-100%);
-      transition: transform 0.2s;
+      transition:
+        opacity 0.2s,
+        transform 0.2s;
+      opacity: 0;
     }
 
     a:focus {
       top: 25px;
       transform: translateY(0%);
+      opacity: 1;
     }
   }
 }
