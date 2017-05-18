@@ -9,8 +9,8 @@ set :styleguide_branch, 'dev'
 # Default value for :log_level is :debug
 set :log_level, :debug
 
-# Notification on slack
-set :slack_run, -> { true }
+# Disable Notification on slack
+# set :slackistrano, false
 
 # Module that will be disabled by drush
 set :disable_modules, ['devel']
