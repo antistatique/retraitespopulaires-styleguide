@@ -2,16 +2,7 @@
 
 <div class="spacer spacer-xl visible-xs visible-sm"></div>
 
-<!-- Get Theme from position into the menu -->
-{% set theme = ['primary'] %}
-{% set theme = [
-  variables.index == 'menu_link_content:386d0bf4-1ec6-4f07-bfb2-58aac135ac15' ? 'assurance',
-  variables.index == 'menu_link_content:a0be6622-b6ba-4cab-aa7a-6b979f7901bf' ? 'prevoyance',
-  variables.index == 'menu_link_content:dbddcf09-9898-46dd-ba6b-593e8e3f01ab' ? 'immobilier',
-  variables.index == 'menu_link_content:4fa3b81d-caee-49a8-87a2-4f8d66aa12aa' ? 'hypotheque',
-] %}
-
-<div class="secondary-nav secondary-nav-{{ theme|join }} hidden-print">
+<div class="secondary-nav hidden-print">
   <div class="back">
     <a href="{{ variables.secondary_nav.link.urlObject }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></a>
   </div>
@@ -55,5 +46,6 @@
       {% endfor %}
     </ul>
   </div>
+  <div class="spacer spacer-md"></div>
 </div>
 {% endif %}

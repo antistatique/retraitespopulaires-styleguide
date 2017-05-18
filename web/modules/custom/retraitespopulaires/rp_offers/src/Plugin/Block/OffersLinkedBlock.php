@@ -91,8 +91,6 @@ class OffersLinkedBlock extends BlockBase implements ContainerFactoryPluginInter
         $variables = array('offers' => []);
         $node = $this->route->getParameter('node');
         if (!empty($node) && $node->getType() == 'news') {
-            $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
-
             $offers = array();
             foreach ($node->field_offer as $offer) {
                 $offers[] = $offer->target_id;

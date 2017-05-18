@@ -1,9 +1,8 @@
 {% if variables.categories %}
-<h4>{% trans %}Filtrer par:{% endtrans %}</h4>
-<div class="spacer spacer-sm"></div>
+  <h4 class="m-t-0">{% trans %}Filtrer par:{% endtrans %}</h4>
   {% for category in variables.categories %}
   <p class="media-heading text-muted">{{ category.term.name.value }}</p>
-  <ul class="filters-list filters-list-{{ variables.theme }}">
+  <ul class="filters-list">
     {% for child in category.children %}
       <li class="{{ child.alias in variables.current_aliases ? 'active' }}">
         {% set filtres = [child.alias] %}
@@ -20,11 +19,11 @@
                {% set filtres = filtres|merge([alias]) %}
              {% endif %}
           {% endfor %}
-          <a href="{{ path('<current>', {'filtres': filtres}, {'fragment': 'produits-recommandes'}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ variables.theme }}"></a>
+          <a href="{{ path('<current>', {'filtres': filtres}, {'fragment': 'produits-recommandes'}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></a>
         {% else %}
-          <a href="{{ path('<current>', {'filtres': filtres}, {'fragment': 'produits-recommandes'}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked text-{{ variables.theme }}"></a>
+          <a href="{{ path('<current>', {'filtres': filtres}, {'fragment': 'produits-recommandes'}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked"></a>
         {% endif %}
-        <a href="{{ path('<current>', {'filtres': filtres}, {'fragment': 'produits-recommandes'}) }}" class="pretty-link text-{{ variables.theme }}">{{ child.term.name.value }}</a></li>
+        <a href="{{ path('<current>', {'filtres': filtres}, {'fragment': 'produits-recommandes'}) }}" class="pretty-link">{{ child.term.name.value }}</a></li>
     {% endfor %}
   </ul>
   <div class="spacer spacer-sm"></div>

@@ -63,10 +63,6 @@ class ContactTeaserBlock extends BlockBase implements ContainerFactoryPluginInte
         $variables = array();
         $variables = $params;
 
-        if (isset($params['theme'])) {
-            $variables['theme'] = $params['theme'];
-        }
-
         $variables['btn'] = true;
         if (isset($params['btn'])) {
             $variables['btn'] = $params['btn'];

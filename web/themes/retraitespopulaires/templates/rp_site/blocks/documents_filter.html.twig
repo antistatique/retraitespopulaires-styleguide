@@ -1,7 +1,4 @@
-{% set theme = variables.theme %}
-
-<h4>{% trans %}Filtrer par:{% endtrans %}</h4>
-<div class="spacer spacer-sm"></div>
+<h4 class="m-t-0">{% trans %}Filtrer par:{% endtrans %}</h4>
 
 {# Filters institutions #}
 {% if variables.institutions %}
@@ -16,7 +13,6 @@
          {% endif %}
 
         {% set classes = [
-          'text-' ~ theme|default('primary'),
           'retraitespopulaires-icon',
           'retraitespopulaires-icon-2x',
           category.alias != variables.institution_alias ? 'retraitespopulaires-icon-unchecked',
@@ -25,7 +21,7 @@
 
         <a href="{{ path('<current>', {'institution_alias': institution_alias, 'category_alias': variables.category_alias, 'profession_alias': variables.profession_alias}) }}" class="{{ classes|join(' ') }}"></a>
 
-       <a class="pretty-link text-{{ theme|default('primary') }}" href="{{ path('<current>', {'institution_alias': institution_alias, 'category_alias': variables.category_alias, 'profession_alias': variables.profession_alias}) }}">{{ category.term.name }}</a>
+       <a class="pretty-link" href="{{ path('<current>', {'institution_alias': institution_alias, 'category_alias': variables.category_alias, 'profession_alias': variables.profession_alias}) }}">{{ category.term.name }}</a>
      </li>
     {% endfor %}
   </ul>
@@ -43,12 +39,11 @@
       {% set classes = [
         'retraitespopulaires-icon',
         'retraitespopulaires-icon-2x',
-        'text-' ~ variables.theme,
         variables.profession_alias is empty ? 'retraitespopulaires-icon-checked' : 'retraitespopulaires-icon-unchecked',
       ] %}
 
       <a aria-hidden="true" href="{{ path('<current>', {'category_alias': variables.category_alias, 'institution_alias': variables.institution_alias}) }}" class="{{ classes|join(' ') }}"></a>
-      <a class="pretty-link text-{{ variables.theme }}" href="{{ path('<current>', {'category_alias': variables.category_alias, 'institution_alias': variables.institution_alias}) }}">{% trans %}Tous{% endtrans %}</a>
+      <a class="pretty-link" href="{{ path('<current>', {'category_alias': variables.category_alias, 'institution_alias': variables.institution_alias}) }}">{% trans %}Tous{% endtrans %}</a>
     </li>
 
     {% for category in variables.professions %}
@@ -61,7 +56,6 @@
          {% endif %}
 
         {% set classes = [
-          'text-' ~ theme|default('primary'),
           'retraitespopulaires-icon',
           'retraitespopulaires-icon-2x',
           category.alias != variables.profession_alias ? 'retraitespopulaires-icon-unchecked',
@@ -70,7 +64,7 @@
 
         <a href="{{ path('<current>', {'profession_alias': profession_alias, 'category_alias': variables.category_alias, 'institution_alias': variables.institution_alias}) }}" class="{{ classes|join(' ') }}"></a>
 
-       <a class="pretty-link text-{{ theme|default('primary') }}" href="{{ path('<current>', {'profession_alias': profession_alias, 'category_alias': variables.category_alias, 'institution_alias': variables.institution_alias}) }}">{{ category.term.name }}</a>
+       <a class="pretty-link" href="{{ path('<current>', {'profession_alias': profession_alias, 'category_alias': variables.category_alias, 'institution_alias': variables.institution_alias}) }}">{{ category.term.name }}</a>
      </li>
     {% endfor %}
   </ul>
@@ -88,12 +82,11 @@
       {% set classes = [
         'retraitespopulaires-icon',
         'retraitespopulaires-icon-2x',
-        'text-' ~ variables.theme,
         variables.category_alias is empty ? 'retraitespopulaires-icon-checked' : 'retraitespopulaires-icon-unchecked',
       ] %}
 
       <a aria-hidden="true" href="{{ path('<current>', {'profession_alias': variables.profession_alias, 'institution_alias': variables.institution_alias}) }}" class="{{ classes|join(' ') }}"></a>
-      <a class="pretty-link text-{{ variables.theme }}" href="{{ path('<current>', {'profession_alias': variables.profession_alias, 'institution_alias': variables.institution_alias}) }}">{% trans %}Toutes{% endtrans %}</a>
+      <a class="pretty-link" href="{{ path('<current>', {'profession_alias': variables.profession_alias, 'institution_alias': variables.institution_alias}) }}">{% trans %}Toutes{% endtrans %}</a>
     </li>
 
     {% for category in variables.categories %}
@@ -105,7 +98,6 @@
          {% endif %}
 
         {% set classes = [
-          'text-' ~ theme|default('primary'),
           'retraitespopulaires-icon',
           'retraitespopulaires-icon-2x',
           category.alias != variables.category_alias ? 'retraitespopulaires-icon-unchecked',
@@ -114,7 +106,7 @@
 
         <a href="{{ path('<current>', {'category_alias': category_alias, 'profession_alias': variables.profession_alias, 'institution_alias': variables.institution_alias}) }}" class="{{ classes|join(' ') }}"></a>
 
-       <a class="pretty-link text-{{ theme|default('primary') }}" href="{{ path('<current>', {'category_alias': category_alias, 'profession_alias': variables.profession_alias, 'institution_alias': variables.institution_alias}) }}">{{ category.term.name }}</a>
+       <a class="pretty-link" href="{{ path('<current>', {'category_alias': category_alias, 'profession_alias': variables.profession_alias, 'institution_alias': variables.institution_alias}) }}">{{ category.term.name }}</a>
      </li>
     {% endfor %}
   </ul>

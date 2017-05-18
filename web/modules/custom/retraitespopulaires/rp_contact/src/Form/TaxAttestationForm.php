@@ -80,10 +80,6 @@ class TaxAttestationForm extends FormBase {
            'library' =>  array('rp_contact/contact_tax_attestation_form'),
        );
 
-        if (isset($params['theme'])) {
-            $theme = $params['theme'];
-        }
-
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
             $form['status'] = array(
@@ -100,7 +96,7 @@ class TaxAttestationForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos informations'),
-          '#prefix'     => '<h3>'.t('Vos informations').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Vos informations').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -113,7 +109,7 @@ class TaxAttestationForm extends FormBase {
         }
         $form['building']['title'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Votre titre *'), 'required' => false],
+            '#attributes'  => ['title' => t('Votre titre *'), 'required' => false],
             '#required'    => false,
             '#options'     => array(
                 'Madame'   => t('Madame'),
@@ -128,7 +124,6 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Votre numéro de prêt ou crédit de construction'),
             '#placeholder' => t('123456789'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -150,7 +145,7 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 25, 'theme' => $theme],
+            '#attributes'  => ['size' => 25],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
             '#suffix'      => $error. '</div>',
@@ -176,7 +171,7 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
             '#suffix'      => $error. '</div>',
@@ -202,7 +197,6 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Votre raison sociale'),
             '#placeholder' => t('Retraites Populaires'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.' '.$readonly.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -222,7 +216,6 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Votre e-mail *'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -240,7 +233,7 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Votre numéro de téléphone *'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#attributes'  => ['size' => 20],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -258,7 +251,6 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Votre adresse *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -276,7 +268,7 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Votre code postal (NPA) *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -294,7 +286,7 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Votre ville *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -304,7 +296,7 @@ class TaxAttestationForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Votre demande'),
-          '#prefix'     => '<h3>'.t('Votre demande').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Votre demande').'</h3>',
         );
 
 
@@ -320,7 +312,6 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Adresse de votre bien *'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -338,7 +329,7 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Code postal (NPA) de votre bien *'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -356,7 +347,7 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Ville de votre bien *'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error.'</div>',
@@ -374,7 +365,7 @@ class TaxAttestationForm extends FormBase {
             '#title'       => t('Recevoir le décompte pour l\'année *'),
             '#placeholder' => t('2000'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -383,7 +374,7 @@ class TaxAttestationForm extends FormBase {
         $form['more']['remarque'] = array(
             '#title'       => t('Remarque'),
             '#type'        => 'textarea',
-            '#attributes'  => ['cols' => 59, 'theme' => $theme],
+            '#attributes'  => ['cols' => 59],
         );
 
         $form['separator'] = array( '#markup' => '<hr />' );
@@ -391,7 +382,7 @@ class TaxAttestationForm extends FormBase {
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Envoyer'),
-            '#attributes'  => ['class' => array('btn-primary pull-right'), 'theme' => $theme],
+            '#attributes'  => ['class' => array('btn-primary pull-right')],
             '#button_type' => 'primary',
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',

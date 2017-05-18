@@ -14,7 +14,7 @@
       <div class="row flex-row">
         {% for advisor in variables.advisors %}
         <div class="col-xs-12">
-          {{ load_block('rp_contact_contact_teaser_block', {'contact': advisor, 'theme': variables.theme,  'search_npa': false}) }}
+          {{ load_block('rp_contact_contact_teaser_block', {'contact': advisor,  'search_npa': false}) }}
         </div>
         {% endfor %}
       </div>

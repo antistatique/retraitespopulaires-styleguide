@@ -89,15 +89,7 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
     public function build($params = array()) {
         $variables = array('contacts' => array());
 
-        if (isset($params['theme'])) {
-            $variables['theme'] = $params['theme'];
-        }
-
         if ($node = $this->route->getParameter('node')) {
-            if (isset($node->field_profession) && $node->field_profession->target_id) {
-                $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
-            }
-
             $variables['node'] = $node;
 
             // List all advisor(s)

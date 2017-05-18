@@ -1,54 +1,44 @@
-{% if not variables.theme %}
-  {% set theme = variables.node.field_profession.entity.tid.value|theme_profession %}
-{% else %}
-  {% set theme = variables.theme %}
+{% set display = [] %}
+{% if variables.contact.field_firstname.value %}
+  {% set display = display|merge([variables.contact.field_firstname.value])  %}
+{% endif %}
+{% if variables.contact.field_lastname.value %}
+  {% set display = display|merge([variables.contact.field_lastname.value])  %}
+{% endif %}
+{% if not display %}
+  {% set display = [variables.contact.title.value] %}
 {% endif %}
 
-<div class="teaser-contact-detail teaser-contact-detail-{{ theme }} align-h">
-
-  {% set display = [] %}
-  {% if variables.contact.field_firstname.value %}
-    {% set display = display|merge([variables.contact.field_firstname.value])  %}
-  {% endif %}
-  {% if variables.contact.field_lastname.value %}
-    {% set display = display|merge([variables.contact.field_lastname.value])  %}
-  {% endif %}
-  {% if not display %}
-    {% set display = [variables.contact.title.value] %}
-  {% endif %}
-
-  <h2>{{ display|join(' ') }}</h2>
-  <div class="teaser-contact-detail-body">
-    <div class="spacer spacer-sm"></div>
+<div class="card card-no-border">
+  <div class="card-body card-berrylight-gray">
+    <h2 class="card-title">{{ display|join(' ') }}</h2>
     <p>
       {% if variables.contact.field_function.value %}<strong>{{ variables.contact.field_function.value }}</strong> <br />{% endif %}
       {% if variables.contact.field_specialty.value %}{{ variables.contact.field_specialty.value }} <br />{% endif %}
       {% if variables.contact.field_entity.value %}{{ variables.contact.field_entity.value }}{% endif %}
     </p>
-
-    {% if variables.contact.body %}
-      <div class="entity-body-berrylight-gray body-{{ theme }}">{{ variables.contact.body.value|raw }}</div>
-    {% endif %}
-  </div>
-  <div class="teaser-contact-detail-infos">
+    <div>{{ variables.contact.body.value|raw }}</div>
 
     {% if variables.contact.field_phone.value %}
       {% set tel = variables.contact.field_phone.value|replace({' ': ''}) %}
-      <a href="tel:{{ tel }}">
-        <div class="text-{{ theme }} text-small label">{% trans %}Par téléphone{% endtrans %}</div>
-        <div class="text-{{ theme }} text-bold text-no-wrap">{{ variables.contact.field_phone.value }}</div>
+      <a class="block-link" href="tel:{{ tel }}">
+        <div class="text-small block-link-label">{% trans %}Par téléphone{% endtrans %}</div>
+        <div class="text-bold text-no-wrap">{{ variables.contact.field_phone.value }}</div>
       </a>
     {%- endif -%}
 
     {%- if variables.contact.field_email.value -%}
-      <a class="text-{{ theme }} text-bold text-break-all" href="mailto:{{ variables.contact.field_email.value }}">{% trans %}Par e-mail{% endtrans %}</a>
+      <a class="block-link" href="mailto:{{ variables.contact.field_email.value }}">
+        <span class="text-bold text-break-all">{% trans %}Par e-mail{% endtrans %}</span>
+      </a>
     {%- endif -%}
 
     {%- if variables.contact.field_fax.value -%}
-      <a href="tel:{{ variables.contact.field_fax.value|replace(' ', '') }}">
-        <div class="text-{{ theme }} text-small label">{% trans %}Par fax{% endtrans %}</div>
-        <div class="text-{{ theme }} text-bold text-no-wrap">{{ variables.contact.field_fax.value }}</div>
+      <a class="block-link" href="tel:{{ variables.contact.field_fax.value|replace(' ', '') }}">
+        <div class="text-small block-link-label">{% trans %}Par fax{% endtrans %}</div>
+        <div class="text-bold text-no-wrap">{{ variables.contact.field_fax.value }}</div>
       </a>
-      {%- endif -%}
+    {%- endif -%}
+
   </div>
 </div>

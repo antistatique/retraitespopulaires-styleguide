@@ -143,7 +143,6 @@ class AdminForm extends FormBase {
         // Collection pages settings
         $this->state->set('rp_offers.settings.collection.offers', array(
             'nid'   => trim($form_state->getValue('offers_nid')),
-            'theme' => trim($form_state->getValue('offers_theme')),
         ));
     }
 }

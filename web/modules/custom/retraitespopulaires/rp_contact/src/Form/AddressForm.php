@@ -76,11 +76,6 @@ class AddressForm extends FormBase {
         $form['#cache']['max-age'] = 0;
         $form['#attributes']['novalidate'] = 'novalidate';
 
-        $theme = '';
-        if (isset($params['theme'])) {
-            $theme = $params['theme'];
-        }
-
         $status = drupal_get_messages('status');
         if (!empty($status['status'])) {
             $form['status'] = array(
@@ -97,7 +92,7 @@ class AddressForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Changement d\'adresse'),
-          '#prefix'     => '<h3>'.t('Changement d\'adresse').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Changement d\'adresse').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -111,7 +106,7 @@ class AddressForm extends FormBase {
         $form['address']['civil_state'] = array(
             '#title'       => t('Votre état civil *'),
             '#type'        => 'select',
-            '#attributes'  => ['theme' => $theme],
+
             '#options'     => array('Madame' => t('Madame'), 'Monsieur' => t('Monsieur')),
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
@@ -130,7 +125,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre prénom *'),
             '#placeholder' => t('Alain'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 25, 'theme' => $theme],
+            '#attributes'  => ['size' => 25],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -148,7 +143,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre nom de famille *'),
             '#placeholder' => t('Rochat'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -166,7 +161,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
             '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -182,7 +177,7 @@ class AddressForm extends FormBase {
         }
         $form['address']['client'] = array(
             '#type'        => 'radios',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Êtes-vous déjà client Retraites Populaires ? *')],
+            '#attributes'  => ['title' => t('Êtes-vous déjà client Retraites Populaires ? *')],
             '#required'    => false,
             '#options'     => array(
                 'Oui' => t('Oui'),
@@ -194,7 +189,7 @@ class AddressForm extends FormBase {
 
         $form['address']['client_of'] = array(
             '#type'        => 'checkboxes',
-            '#attributes'  => ['theme' => $theme, 'title' => t('Dans quel domaine êtes-vous client ? *')],
+            '#attributes'  => ['title' => t('Dans quel domaine êtes-vous client ? *')],
             '#required'    => false,
             '#options'     => array(
                 '2ème ou 3ème pillier' => t('2<sup>e</sup> ou 3<sup>e</sup> pilier'),
@@ -217,7 +212,6 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre référence ou numéro de client *'),
             '#placeholder' => t('123456789'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
@@ -227,7 +221,7 @@ class AddressForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos anciennes coordonnées'),
-          '#prefix'     => '<h3>'.t('Vos anciennes coordonnées').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Vos anciennes coordonnées').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -242,7 +236,6 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre ancien e-mail'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -251,7 +244,6 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre ancienne adresse'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -260,7 +252,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre ancien code postal (NPA)'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -269,7 +261,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre ancienne ville'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -278,7 +270,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre ancien numéro de téléphone privé'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#attributes'  => ['size' => 20],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -287,7 +279,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre ancien numéro de téléphone professionnel'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#attributes'  => ['size' => 20],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -296,7 +288,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre ancien numéro de téléphone mobile'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#attributes'  => ['size' => 20],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -305,7 +297,7 @@ class AddressForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos nouvelles coordonnées'),
-          '#prefix'     => '<h3>'.t('Vos nouvelles coordonnées').'</h3>',
+          '#prefix'     => '<h3 class="card-title">'.t('Vos nouvelles coordonnées').'</h3>',
         );
 
         // Get error to inline it as suffix
@@ -320,7 +312,6 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre nouvel e-mail'),
             '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group '.$error_class.'">',
             '#suffix'      => $error. '</div>',
         );
@@ -329,7 +320,6 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre nouvelle adresse'),
             '#placeholder' => t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
-            '#attributes'  => ['theme' => $theme],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -338,7 +328,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre nouveau code postal (NPA)'),
             '#placeholder' => t('1000'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 10, 'theme' => $theme],
+            '#attributes'  => ['size' => 10],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -347,7 +337,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre nouvelle ville'),
             '#placeholder' => t('Lausanne'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 24, 'theme' => $theme],
+            '#attributes'  => ['size' => 24],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -356,7 +346,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre nouveau numéro de téléphone privé'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#attributes'  => ['size' => 20],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -365,7 +355,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre nouveau numéro de téléphone professionnel'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#attributes'  => ['size' => 20],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -374,7 +364,7 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre nouveau numéro de téléphone mobile'),
             '#placeholder' => t('079 123 45 67'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 20, 'theme' => $theme],
+            '#attributes'  => ['size' => 20],
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',
         );
@@ -393,25 +383,25 @@ class AddressForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['more']['group_start'] = array(
-            '#prefix' => '<div class="form-group '.$error_class.'"><label>'. t('Valable dès <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</label><div class="input-group">',
-            '#suffix' => '</div></div>',
+            '#prefix' => '<div class="form-group '.$error_class.'"><div class="form-control-label">'. t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</div><div class="input-group">',
+            '#suffix' => '</div>'.$error.'</div>',
         );
         $form['more']['group_start']['due_date'] = array(
             '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 15, 'theme' => $theme, 'class' => array('datepicker')],
+            '#attributes'  => ['size' => 15, 'class' => array('datepicker')],
             '#required'    => false,
         );
         $form['more']['group_start']['picker'] = array(
-            '#prefix' => '<span class="input-group-btn no-events"><div class="btn btn-default-invert btn-icon">',
-            '#markup' => '<i class="retraitespopulaires-icon retraitespopulaires-icon-calendar text-'.$theme.'"></i>',
+            '#prefix' => '<span class="input-group-btn no-events"><div class="btn btn-invert btn-icon">',
+            '#markup' => '<span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>',
             '#suffix' => '</div></span>',
         );
 
         $form['more']['remarque'] = array(
             '#title'       => t('Remarque'),
             '#type'        => 'textarea',
-            '#attributes'  => ['cols' => 59, 'theme' => $theme],
+            '#attributes'  => ['cols' => 59],
         );
 
         $form['separator'] = array( '#markup' => '<hr />' );
@@ -419,7 +409,7 @@ class AddressForm extends FormBase {
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => t('Envoyer'),
-            '#attributes'  => ['class' => array('btn-primary pull-right'), 'theme' => $theme],
+            '#attributes'  => ['class' => array('btn-primary pull-right')],
             '#button_type' => 'primary',
             '#prefix'      => '<div class="form-group">',
             '#suffix'      => '</div>',

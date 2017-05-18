@@ -110,10 +110,6 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
         // Get the current category (only on sub section)
         $variables['institution_alias'] = $this->request->query->get('institution_alias');
 
-        if (isset($params['theme'])) {
-            $variables['theme'] = $params['theme'];
-        }
-
         // Retrieve professions.
         $professions = $this->entity_taxonomy->loadTree('profession');
         foreach ($professions as $profession) {
@@ -124,10 +120,6 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
                     'term'  => $profession,
                     'alias' => ltrim($alias, '/'),
                 );
-
-                if($alias == $variables['profession_alias']) {
-                    $variables['theme'] = $this->profession->theme($profession->tid);
-                }
             }
         }
 

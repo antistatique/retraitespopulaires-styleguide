@@ -108,7 +108,6 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
 
                 if($alias == $taxonomy_term_alias) {
                     $variables['selected'] = $this->entity_taxonomy->load($profession->tid);
-                    $variables['theme'] = $this->profession->theme($profession->tid);
                 }
             }
         }

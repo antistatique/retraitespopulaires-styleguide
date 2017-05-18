@@ -4,6 +4,7 @@
   {% if node.field_web_site.uri %}
     <div class="spacer"></div>
     <a class="btn btn-lg" href="{{ node.field_web_site.uri }}">{% trans %}Lien vers le magazine{% endtrans %}</a>
+    <div class="spacer spacer-md"></div>
   {% endif %}
 {% endblock %}
 
@@ -13,13 +14,14 @@
   {% set left = (end_date.timestamp - date('now').timestamp) / 60 / 60 / 24 %}
 
   {% if left >= 0 %}
-    <div class="spacer"></div>
-    <div class="background-overflow">
-      <div class="spacer"></div>
+    <div class="background-overflow bg-berrylight-gray">
       <div class="row">
         <div class="{{ node_content_width|join(' ') }}">
-          <div class="form-card form-card-{{ theme|default('primary') }} shadow shadow-down">
-            {{ load_form('rp_offers', 'RequestForm', {'node': node}) }}
+          <div class="spacer spacer-md"></div>
+          <div class="card">
+            <div class="card-body">
+              {{ load_form('rp_offers', 'RequestForm', {'node': node}) }}
+            </div>
           </div>
         </div>
       </div>
