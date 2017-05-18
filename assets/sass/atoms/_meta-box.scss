@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+.meta-box {
+  margin-bottom: $grid-gutter-width;
+  padding: ($grid-gutter-width / 2) 0;
+  border-top: 1px solid $hr-border;
+  border-bottom: 1px solid $hr-border;
+
+  > p {
+    margin: 0;
+  }
+}
