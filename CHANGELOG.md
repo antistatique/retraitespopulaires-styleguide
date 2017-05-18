@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+## 3.0.1 (2017-05-18)
+
+  - fix special grey waves on IE11
+
 ## 3.0.0 (2017-05-18)
 Massive refactoring of Styleguide components to avoid legacy code.
 
