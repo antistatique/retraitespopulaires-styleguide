@@ -10,7 +10,7 @@ id: satisfaction
 title: Satisfaction
 description: ''
 category: ''
-elements: "satisfaction_table:\n  '#type': webform_likert\n  '#title': 'Satisfaction table'\n  '#questions':\n    'Une question 1': 'Une question 1'\n    'Une question 2': 'Une question 2'\n    'Une question 3': 'Une question 3'\n  '#answers': likert_satisfaction\n  '#na_answer_text': ''\n  '#required': true\n"
+elements: "satisfaction_table:\n  '#type': webform_likert\n  '#title': 'Satisfaction table'\n  '#questions':\n    'Une question 1': 'Une question 1'\n    'Une question 2': 'Une question 2'\n    'Une question 3': 'Une question 3'\n  '#answers': likert_satisfaction\n  '#na_answer_text': ''\n  '#required': true\ntest:\n  '#type': radios\n  '#title': test\n  '#title_display': attribute\n  '#description_display': invisible\n  '#options': likert_agreement\n  '#required': true\n"
 css: ''
 javascript: ''
 settings:
@@ -52,7 +52,7 @@ settings:
   preview_prev_button_label: ''
   preview_prev_button_attributes: {  }
   preview_message: ''
-  draft: none
+  draft: true
   draft_auto_save: false
   draft_button_label: ''
   draft_button_attributes: {  }
