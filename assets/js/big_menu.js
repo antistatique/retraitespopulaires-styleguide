@@ -5,8 +5,7 @@ export function big_menu () {
   const $body    = $('body'),
         $wrapper = $('.hamburger-wrapper'),
         $header  = $('header'),
-        $navbar  = $('.big-menu'),
-        $search  = $('.global-search');
+        $navbar  = $('.big-menu');
 
   $wrapper.on('click', function() {
     if ($wrapper.hasClass('active')) {
@@ -14,14 +13,12 @@ export function big_menu () {
       $header.toggleClass('active');
       $wrapper.toggleClass('active');
       $navbar.toggleClass('active');
-      $search.toggleClass('active');
     }else{
       $body.toggleClass('no-scroll');
       $header.toggleClass('active');
       $navbar.css({'display': 'block'});
       $wrapper.toggleClass('active');
       $navbar.toggleClass('active');
-      $search.toggleClass('active');
     }
   });
 

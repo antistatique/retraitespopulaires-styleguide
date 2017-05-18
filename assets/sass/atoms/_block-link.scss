@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+.block-link {
+  display: block;
+  margin-bottom: $grid-gutter-width / 2;
+  padding: $grid-gutter-width / 4;
+  background-color: $white;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    text-decoration: none;
+    background-color: $brand-primary;
+    color: $white !important; // override theme
+
+    @include theme(background-color);
+  }
+}
+
+.block-link-label {
+  color: $text-color;
+  transition: color 0.2s;
+
+  .block-link:hover & {
+    color: $white;
+  }
+}

@@ -120,6 +120,17 @@
 .flex-row {
   display: flex;
   flex-wrap: wrap;
+
+  @supports (display: flex) {
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+
+  [class*=col-] {
+    display: flex;
+  }
 }
 
 .d-block {
@@ -136,6 +147,13 @@
 
 .w-100 {
   width: 100%;
+}
+
+// Fix flex columns on mobile
+@media screen and (max-width: $screen-xs-max) {
+  [class*=col-]:not([class*=col-xs]) {
+    width: 100%;
+  }
 }
 
 /**
@@ -234,13 +252,48 @@
 * Flexible rows
 */
 
+// TODO: DUPLICATED from flex-row, must be fixed one day :)
 .row-flex {
   display: flex;
   flex-wrap: wrap;
+
+  @supports (display: flex) {
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+}
+
+.d-flex {
+  display: flex;
 }
 
 .flex-center {
   justify-content: center;
+}
+
+.flex-1 {
+  flex: 1 1 auto;
+}
+
+/**
+ * Background helpers
+ */
+@include bg-variant('.bg-berrylight-gray', $berrylight-gray);
+@include bg-variant('.bg-light-gray', $light-gray);
+
+// Add a `<div class="bg-special-waves"></div>` inside a `.background-overflow.bg-berrylight-gray` element.
+.bg-special-waves {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  padding-bottom: 45%;
+  background: url('../svg/grey-waves.svg') no-repeat left top $white;
+  background-size: 100% auto;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 /**
@@ -257,7 +310,14 @@
 
 @media screen and (min-width: $screen-md-min) {
   .same-height-group {
-    display: flex;
+    @supports (display: flex) {
+      display: flex;
+
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
   }
 
   .same-height-group .same-height {

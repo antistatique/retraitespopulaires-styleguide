@@ -1,5 +1,5 @@
 ---
-title: footer
+title: Footer
 name: footer
 collection: organisms
 notes: |

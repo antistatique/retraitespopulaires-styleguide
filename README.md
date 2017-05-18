@@ -43,6 +43,10 @@ Retraites Populaires Styleguide.
   <!-- bottom scripts -->
   <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
   <script src="/build/js/vendors.min.js"></script>
+
+  <!-- Include this script if you want to use the organic lines -->
+  <script src="/build/js/MorphSVGPlugin.min.js"></script>
+
   <script src="/build/js/bundle.js"></script>
 </body>
 </html>  

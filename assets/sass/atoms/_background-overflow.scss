@@ -1,9 +1,7 @@
-// mailchimp errors
 .background-overflow {
   position: relative;
   margin: 0 ($grid-gutter-width * -1);
   padding: 0.25rem $grid-gutter-width;
-  background: $berrylight-gray;
 
   &:before,
   &:after {
@@ -12,8 +10,8 @@
     top: 0;
     bottom: 0;
     width: 100vw;
-    background: $berrylight-gray;
-    z-index: 0;
+    background: inherit;
+    z-index: -1;
   }
 
   &:before { left: 100%; }

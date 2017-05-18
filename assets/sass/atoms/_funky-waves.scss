@@ -33,11 +33,7 @@
     height: auto;
   }
 
-  @each $label, $color in $themes {
-    &.wrapper-funky-waves-#{$label} {
-      background: $color;
-    }
-  }
+  @include theme(background-color);
 
   .funky-waves-container {
     position: absolute;

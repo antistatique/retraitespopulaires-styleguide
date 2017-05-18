@@ -1,5 +1,5 @@
 ---
-title: alerts
+title: Alerts
 name: alerts
 collection: examples
 styleguide: true

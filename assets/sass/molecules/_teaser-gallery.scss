@@ -19,6 +19,11 @@ figure.teaser-gallery {
     opacity: 0;
     transition: opacity 0.5s ease;
 
+    @include theme-custom() {
+      background-color: rgba($color, 0.3);
+      border-color: $color;
+    }
+
     i,
     p {
       color: $white;
@@ -36,12 +41,5 @@ figure.teaser-gallery {
 
   img {
     width: 100%;
-  }
-
-  @each $label, $color in $themes {
-    &.teaser-gallery-#{$label} .figure-overlay {
-      background-color: rgba($color, 0.3);
-      border: 4px solid $color;
-    }
   }
 }

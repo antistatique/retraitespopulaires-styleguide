@@ -15,6 +15,8 @@
   z-index: $zindex-modal + 10;
   overflow: auto;
 
+  @include theme(background-color);
+
   @media only screen and (min-width: $screen-xs-min) {
     right: -40vw;
     width: 40vw;
@@ -62,17 +64,6 @@
 
   a {
     color: $white;
-  }
-
-  @each $label, $color in $themes {
-    &.push-menu-#{$label} {
-      background: $color;
-
-      .main-navigation li a:hover,
-      .secondary-navigation li a:hover {
-        @include pretty-link($white, $color, $white);
-      }
-    }
   }
 }
 

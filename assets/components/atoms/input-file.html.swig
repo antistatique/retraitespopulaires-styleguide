@@ -1,17 +1,14 @@
 ---
-title: input-file
+title: Input File
 name: input-file
+changes:
+  3.0.0: Improvements to CSS, the `.label` class became `.form-control-label`.
 collection: atoms
-notes: |
-  ##### Usage : `input-file`
-  ##### Options :
-  - **input_file_theme** - <i>String</i> - <b>btn-['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 ---
-
 <div class="form-group form-file">
-  <div class="label">Certificat de salaire</div>
-  <div class="form-file-handler btn btn-lg btn-{{ input_file_theme|default('primary') }}">
+  <span class="form-control-label">Certificat de salaire</span>
+  <div class="form-file-handler btn btn-lg btn-primary">
     <label for="inputID">Télécharger votre fichier</label>
-    <input class="" id="inputID" type="file"></input>
+    <input id="inputID" type="file"></input>
   </div>
 </div>

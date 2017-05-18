@@ -1,21 +1,10 @@
 ---
-title: inputs
+title: Inputs
 name: inputs
 collection: examples
 styleguide: true
 layout: examples.html.swig
 ---
-
-<div class="row">
-  <div class="col-xs-6 col-xs-offet-3">
-    <label>Confirmation de réussit d'un formulaire</label>
-    {% include '../atoms/well.html.swig' with {'well_status': 'success'} %}
-    <div class="spacer spacer-sm"></div>
-
-    <label>Affichage des erreurs d'un formulaire</label>
-    {% include '../atoms/well.html.swig' with {'well_status': 'danger'} %}
-  </div>
-</div>
 
 <div class="row">
   <div class="col-xs-12">
@@ -34,25 +23,6 @@ layout: examples.html.swig
       <label>Validation PAS OK</label>
       <input type="text" class="form-control full-width" placeholder="Houston… Nous avons un problème! Houston?"></input>
       <div class="input-error-desc">Voici comment résoudre ton problème.</div>
-    </div>
-
-    <div class="form-group">
-      <label>
-        Champ avec label
-        <span class="text-small text-muted font-weight-normal d-block">
-          <span class="sr-only">Aide additionnel</span>
-          Sous-label
-        </span>
-      </label>
-      <input type="text" class="form-control full-width" placeholder="Quelque chose dans l'air..."></input>
-    </div>
-
-    <div class="form-group">
-      <label class="d-block">Champ avec label et infobulle</label>
-      <input type="text" class="form-control d-inline-block" placeholder="Quelque chose dans l'air de compliqué..."></input>
-      <div class="tooltip tooltip-info d-inline-block m-l-1">
-        <div class="tooltip-symbol" aria-label="Sample text" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="right" tabindex="0" data-toggle="popover"></div>
-      </div>
     </div>
 
     <div class="form-group">
@@ -98,16 +68,16 @@ layout: examples.html.swig
     <div class="form-group">
       <div class="form-group-inline">
         <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="choice" value="pistache">
-          <label class="option">Pistache</label>
+          <input type="checkbox" name="choice" id="pistache" value="pistache">
+          <label class="option" for="pistache">Pistache</label>
         </div>
         <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="choice" value="menthe-fraiche">
-          <label class="option">Menthe fraîche</label>
+          <input type="checkbox" name="choice" id="menthe" value="menthe-fraiche">
+          <label class="option" for="menthe">Menthe fraîche</label>
         </div>
         <div class="input-checkbox checkbox-inline">
-          <input type="checkbox" name="choice" value="chocolat">
-          <label class="option">chocolat</label>
+          <input type="checkbox" name="choice" id="chocolat" value="chocolat">
+          <label class="option" for="chocolat">chocolat</label>
         </div>
       </div>
     </div>
@@ -116,24 +86,18 @@ layout: examples.html.swig
     <div class="form-group">
       <div class="form-group-inline">
         <div class="input-radio radio-inline">
-          <input type="radio" name="choice" value="meringue-creme-double">
-          <label class="option">Meringue crème double</label>
+          <input type="radio" name="choice" id="choice-meringue" value="meringue-creme-double">
+          <label class="option" for="choice-meringue">Meringue crème double</label>
         </div>
         <div class="input-radio radio-inline">
-          <input type="radio" name="choice" value="miel">
-          <label class="option">Miel</label>
+          <input type="radio" name="choice" id="choice-miel" value="miel">
+          <label class="option" for="choice-miel">Miel</label>
         </div>
       </div>
     </div>
 
     {% include '../atoms/input-select.html.swig' %}
     {% include '../atoms/input-datepicker.html.swig' %}
-    <div class="input-group">
-      <input aria-label="Saisissez la date au format (JJ/MM/AAAA)" type="text" class="form-control datepicker" value="02/12/2016">
-      <span class="input-group-btn no-events">
-        <button class="btn btn-default-invert btn-icon" type="button" aria-label="Choisir la date"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
-      </span>
-    </div>
 
     {% include '../atoms/input-radio-btn.html.swig' %}
     {% include '../atoms/input-textarea.html.swig' %}
@@ -141,7 +105,7 @@ layout: examples.html.swig
 
     <form method="post" action="#" enctype="multipart/form-data">
       <div class="form-group form-file">
-        <div class="label">Vos documents</div>
+        <div class="form-control-label">Vos documents</div>
         <div class="form-file-handler btn btn-lg btn-primary">
           <label for="files">Télécharger vos fichiers</label>
           <input name="files[]" id="filesToUpload" type="file" multiple="" />

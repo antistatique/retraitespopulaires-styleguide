@@ -1,13 +1,15 @@
 ---
-title: well
+title: Well
 name: well
 collection: atoms
+bootstrap: https://getbootstrap.com/javascript/#popovers
+variants:
+  well-success: Success
+  well-danger: Danger
 notes: |
-  ##### Usage : `well`
-  ##### Options :
-  - **well_status** - <i>String</i> <b>[success|danger]</b>
+  Can be used with the modifier `.well-[success|danger]` to change look.
 ---
-<div class="well well-{{ well_status }}">
+<div class="well {% if variant %}{{ variant }}{% endif %}">
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>

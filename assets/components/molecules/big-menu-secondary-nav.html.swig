@@ -1,5 +1,5 @@
 ---
-title: big-menu-secondary-nav
+title: Big Menu Secondary Nav
 name: big-menu-secondary-nav
 collection: molecules
 notes: |

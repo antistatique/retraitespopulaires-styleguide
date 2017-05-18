@@ -1,6 +1,9 @@
 ---
-title: dropdown
+title: Dropdown
 name: dropdown
+bootstrap: http://getbootstrap.com/javascript/#dropdowns
+notes: |
+  Can be wrapped in `.theme-[theme]` to change look.
 collection: molecules
 ---
 <div class="dropdown open">

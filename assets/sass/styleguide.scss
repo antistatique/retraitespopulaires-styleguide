@@ -34,64 +34,103 @@
 
 .styleguide-header-container {
   background-color: $menu-bg;
+
+  h1 {
+    margin: 0;
+  }
 }
 
 .styleguide-menu-active .styleguide-container {
   transform: translate(300px, 0);
 
   @media (min-width: 60em) {
-    margin-left: 300px;
+    margin-left: 250px;
     transform: translate(0, 0);
   }
 }
 
 .styleguide-menu {
-  width: 300px;
+  width: 250px;
+  border-right: 1px solid #eee;
 
   a {
-    padding: 0 1em;
+    padding: 0.2em 1em 0.1em;
+    font-size: 80%;
+    color: #424242;
     transition: all 0.25s ease-in-out;
+
+    &.styleguide-active {
+      padding-left: 2rem;
+    }
 
     &.styleguide-menu-heading:hover,
     &:hover {
       cursor: pointer;
-      background: darken($menu-bg, 25%);
+      background: $accent-color;
       color: $white;
     }
   }
 
+  > ul {
+    > li {
+      margin-top: 0.5em;
+    }
+  }
+
   span.styleguide-menu-heading {
-    padding-left: 1rem;
+    padding: 0.2em 1em 0.1em 1rem;
+    color: #424242;
   }
 
   .styleguide-menu-heading {
     margin-bottom: 0.5em;
     padding-left: 1rem;
-    border-bottom: 1px solid darken($menu-bg, 25%);
+    border-bottom: 1px solid #eee;
   }
 
   a.styleguide-menu-heading {
     &:hover {
       background: none;
       cursor: pointer;
+      color: $accent-color;
     }
   }
 }
 
+.styleguide-item-heading {
+  font-size: 18px;
+}
+
+.styleguide-item-group {
+  margin-top: 0;
+}
+
 .styleguide-item-group > .styleguide-item-group {
   padding-bottom: 0;
-  border: 1px solid;
+  border: 1px solid #ddd;
 
   .styleguide-item-heading-group {
     margin: 0;
-    padding: 20px;
+    padding: 5px 10px;
     background: #eee;
   }
 
   .styleguide-item-notes {
     max-width: 100%;
-    padding: 20px;
+    padding: 10px;
     background: #eee;
+
+    .alert {
+      margin-bottom: 10px;
+
+      p { display: inline; }
+    }
+
+    p,
+    h5,
+    li {
+      font-size: 16px;
+    }
   }
 
   .styleguide-item-preview {
@@ -103,9 +142,17 @@
   }
 
   .styleguide-item-code {
+    margin-top: 0;
+
     .language-markup {
       margin: 0;
     }
+  }
+
+  pre[class*='language-'] {
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid #ddd;
   }
 }
 
@@ -113,4 +160,36 @@
 
 .rp-access-nav {
   display: none;
+}
+
+// TABS!
+.styleguide-tabs.nav-tabs {
+  padding-right: 10px;
+  padding-left: 10px;
+  background: #eee;
+
+  li:hover,
+  li.active {
+    border-bottom: none !important;
+  }
+
+  a {
+    padding: 5px 10px;
+  }
+}
+
+// Toggle themes
+
+.styleguide-toggle-theme-hide {
+  position: fixed;
+  z-index: 999999;
+  bottom: 20px;
+  left: calc(100% - 3em);
+  padding-left: 2em;
+  transition: padding-left 0.2s;
+  will-change: padding-left;
+
+  &:hover {
+    padding-left: 0;
+  }
 }

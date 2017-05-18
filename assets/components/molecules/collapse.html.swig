@@ -1,5 +1,5 @@
 ---
-title: collapse
+title: Collapse
 name: collapse
 collection: molecules
 notes: |

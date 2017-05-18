@@ -1,0 +1,44 @@
+.label {
+  position: relative;
+  margin-right: $grid-gutter-width / 3;
+  padding: 6px $grid-gutter-width / 3 5px;
+  background-color: $brand-primary;
+  border-radius: $border-radius-base 0 0 $border-radius-base;
+  font-size: $font-size-base;
+
+  @include theme(background-color);
+
+  &[href] {
+    color: $white;
+
+    &:hover,
+    &:focus {
+      @include theme(background-color, hover-color);
+
+      &:after {
+        @include theme(border-left-color, hover-color);
+      }
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    width: 0;
+    height: 0;
+    margin-top: -2px;
+    border: 14px solid transparent;
+    border-left-color: $brand-primary;
+
+    @include theme(border-left-color);
+  }
+}
+
+.label-hole {
+  position: absolute;
+  top: 52%;
+  right: -4px;
+  transform: translateY(-50%);
+  z-index: 2;
+}

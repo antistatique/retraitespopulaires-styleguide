@@ -1,22 +1,14 @@
 @charset 'UTF-8';
 
 .search-box {
-  i {
+  .retraitespopulaires-icon {
     font-size: 40px;
     color: $brand-primary;
 
+    @include theme(color);
+
     &:hover {
       color: $black;
-    }
-  }
-
-  @each $label, $color in $themes {
-    &.search-box-#{$label} i {
-      color: $color;
-
-      &:hover {
-        color: $black;
-      }
     }
   }
 }

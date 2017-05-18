@@ -1,13 +1,15 @@
 ---
-title: fieldset
+title: Fieldset
 name: fieldset
 collection: molecules
+variants:
+  fieldset-bordered: Bordered
 notes: |
-  ##### Usage : `fieldset`
+  Can be used with the modifier `fieldset-bordered` to add border left. <br>
 ---
 <form>
-  <h1>Vos données personnelles</h1>
-  <fieldset class="fieldset-bordered">
+  <h3>Vos données personnelles</h3>
+  <fieldset class="{% if variant %}{{ variant}}{% endif %}">
     {% include '../atoms/input-text.html.swig' %}
     {% include '../atoms/input-datepicker.html.swig' %}
     {% include '../atoms/input-radio-btn.html.swig' %}

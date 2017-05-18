@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: baseline;
+  margin: $grid-gutter-width 0;
+
+  @media only screen and (min-width: $screen-sm-min) {
+    flex-direction: row;
+  }
+
+  > * {
+    margin: 0;
+  }
+}

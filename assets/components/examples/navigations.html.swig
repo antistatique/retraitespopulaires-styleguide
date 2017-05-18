@@ -1,5 +1,5 @@
 ---
-title: navigations
+title: Navigations
 name: navigations
 collection: examples
 styleguide: true

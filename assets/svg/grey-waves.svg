@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 258" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>grey-waves</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="grey-waves" fill-rule="nonzero">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="2" width="1917" height="256"></rect>
+            <path d="M1920,0.26 C1681.77,-5.22 1389.67,77 1068.44,167.42 C714.43,267 354.15,302 0,169.14 L0,0.53 L1920,0.26 Z" id="mask-3.svg" fill="#EEEEEE" opacity="0.33"></path>
+            <path d="M1920,0 L1920,188 C1425.73,297.9 706.86,120.31 458.41,128.07 C209.96,135.83 0,187.27 0,187.27 L0,0 L1920,0 Z" id="mask-2.svg" fill="#EEEEEE" opacity="0.33"></path>
+            <path d="M1920,0 L1920,62.77 C1730.7,-20.84 1283.46,-14.6 939.72,69.55 C504.85,176 274.93,137.93 0,71 L0,0.27 L1920,0 Z" id="mask-1.svg" fill="#EEEEEE"></path>
+        </g>
+    </g>
+</svg>
