@@ -1,5 +1,8 @@
 CHANGELOG
 ---------
+## 2.0.0 (2017-05-18)
+ - Implementation of Styleguide Retraites Populaires v3
+
 ## 1.3.3 (2017-05-16)
  - Fix radios buttons with fieldset legend before
  - Fix deploy permissions before cleanup
