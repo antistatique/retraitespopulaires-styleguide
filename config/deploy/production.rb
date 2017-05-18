@@ -5,7 +5,8 @@ set :deploy_to, '/data/sites/www.retraitespopulaires.ch/'
 # set a branch for this release
 set :branch, 'master'
 
-# set :slack_run, -> { true }
+# Notification on slack
+set :slack_run, -> { true }
 
 # Module that will be disabled by drush
 set :disable_modules, ['devel']
