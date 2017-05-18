@@ -1,6 +1,47 @@
 CHANGELOG
 =========
 
+## 3.0.0 (2017-05-18)
+Massive refactoring of Styleguide components to avoid legacy code.
+
+### Added
+
+  - added new component "Block Link"
+  - added new component "Label"
+  - added Boostrap documentation to some elements
+  - added optional `.organic-wrapper` to Organic Lines
+  - added optional `.tooltip-shift` to Tooltip
+  - added card, card-result components to regroup all card-like components **Major refactoring of all card-like components**
+  - added helpers: `.bg-special-waves`, `background-overflow`, 
+
+### Removed
+
+  - removed all theme functionality from all components (use a `theme-[theme]` wrapper)
+  - removed favicon component
+  - removed major logic inside swig templates
+  - removed shadow, hamburger-mandat, logo-management-contract, logo-retraitespopulaires, map-card, section-bloc, tag, account, conditions, connection, jobs, signup-validation, signup, portailca-categories, portailca-homepage, portailca-subcategory, flat-form, flat, flats, shops, cip-basicpage-prevoyance, cip-homepage, light-page-mandats, cip-news, breadcrumb-extranet, form, immo-heading, teaser-basicpage, teaser-contact-cta, teaser-contact-detail, teaser-contact-placeholder, teaser-contact, teaser-institution, teaser-news, teaser-offer, teaser-profil, teaser-rental, attachements, attachments-contact, attachments-job, attachments-last-news, attachments-offers, attachments-rentals, form-contact-advisor, form-hypotheque, form-immo-alert, form-immo-contact, form-immo-search, form-immobilier, form-job-add-file, form-job-contactinfo, form-job-signin, form-job-signup, form-job-skill, form-offer-bella-vita, form-simulateur-libre-passage, form-simulateur-retraite, header-extranet, header-mandats, advisor, assurance-vie, calculateur-hypotheque, famille, homepage, managementcontracts, news, offre-bella-vita, particuliers, rp-jeune, simulateur-libre-passage, simulateur-retraite components
+  - removed cards, loaders examples
+
+### Changed
+  
+  - `.btn` class has to have the `.btn-primary` to be green
+  - `.btn-default` is now the gray button
+  - grouped lists components together
+  - changed to `.form-control-label` in form-group instead of `.label`
+  - rewrote components Pagination, Breadcrumb - Bootstrap way
+  - swapped `<i>` to `<span>` for icons
+  - re-exported favicons
+  - improved the whole theme coloring system
+  - improved typography
+  - rewrote arrow component to `.btn-circle`
+  - improved look and feel of styleguide
+
+ 
+## Version 2
+
+* 2.2.2 (2047-05-12)
+ - Fix webform table likert
+
 * 2.2.1 (2017-04-21)
  - ignore gemini test directory
 

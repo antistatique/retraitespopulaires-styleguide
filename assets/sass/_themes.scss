@@ -1,32 +1,115 @@
 @charset 'UTF-8';
 
-/**
-* Colors Profession
-*/
+// inspired by https://www.sassmeister.com/gist/39483fdd90c7c6c3e00a35cf77ec4516
 
 $themes: (
-  primary: $brand-primary,
-  assurance: $deep-yellow,
-  prevoyance: $deep-orange,
-  immobilier: $deep-red,
-  hypotheque: $deep-blue,
-  institutionnel: $deep-brown,
-  profelia: $deep-green,
-  cpev: $light-green,
-  cip: $light-blue,
-);
+  assurance: (
+    color: $deep-yellow,
+    hover-color: darken($deep-yellow, 10%)
+  ),
+  prevoyance: (
+    color: $deep-orange,
+    hover-color: darken($deep-orange, 10%)
+  ),
+  immobilier: (
+    color: $deep-red,
+    hover-color: darken($deep-red, 10%)
+  ),
+  hypotheque: (
+    color: $deep-blue,
+    hover-color: darken($deep-blue, 10%)
+  ),
+  institutionnel: (
+    color: $deep-brown,
+    hover-color: darken($deep-brown, 10%)
+  ),
+  profelia: (
+    color: $deep-green,
+    hover-color: darken($deep-green, 10%)
+  ),
+  cpev: (
+    color: $light-green,
+    hover-color: darken($light-green, 10%)
+  ),
+  cip: (
+    color: $light-blue,
+    hover-color: darken($light-blue, 10%)
+  ),
+  primary: (
+    color: $brand-primary,
+    hover-color: darken($brand-primary, 10%)
+  ),
+) !default;
+
+@mixin theme($properties, $key: color) {
+  @each $theme in map-keys($themes) {
+    .theme-#{$theme} & {
+      @each $property in $properties {
+        #{$property}: map-deep-get($themes, $theme, $key);
+      }
+    }
+  }
+}
+
+@mixin btn-theme($key: color) {
+  @each $theme in map-keys($themes) {
+    .theme-#{$theme} & {
+      @include button-variant($white, map-deep-get($themes, $theme, $key), transparent);
+    }
+  }
+}
+
+@mixin pretty-link-theme($color: color, $bg: $white, $line: color) {
+  @each $theme in map-keys($themes) {
+    .theme-#{$theme} & {
+      @include pretty-link($black, $bg, map-deep-get($themes, $theme, $line));
+    }
+  }
+}
+
+@mixin local($local) {
+  $old: $color;
+  $color: $local !global;
+
+  @content;
+
+  $color: $old !global;
+}
+
+@mixin theme-custom($key: color) {
+  @each $theme in map-keys($themes) {
+    .theme-#{$theme} & {
+      @include local(map-deep-get($themes, $theme, $key)) {
+        @content;
+      }
+    }
+  }
+}
+
+/// Map deep get
+/// @author Hugo Giraudel
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} - Desired value
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
 
 /**
 * Text colors
+* @TODO: removed .text-highlight-theme, will break something somewhere
 */
 
-@each $label, $color in $themes {
-  .text-#{$label} {
-    color: $color;
-  }
+a {
+  @include theme(color);
 
-  .text-highlight-#{$label} {
-    background-color: lighten($color, 40%);
+  &:hover {
+    @include theme(color, hover-color);
   }
 }
 
@@ -37,16 +120,17 @@ $themes: (
 /* stylelint-disable no-duplicate-selectors */
 /* Make the code unreadable otherwise */
 
-.entit-body a:not(.btn),
-a.pretty-link {
+.entity-body a:not(.btn),
+.pretty-link {
   @include pretty-link($black, $white, $brand-primary);
+  @include pretty-link-theme();
 
-  &.pretty-link-light-gray {
-    @include pretty-link($black, $light-gray, $brand-primary);
+  .bg-light-gray & {
+    @include pretty-link-text-shadow($light-gray);
   }
 
-  &.pretty-link-berrylight-gray {
-    @include pretty-link($black, $berrylight-gray, $brand-primary);
+  .bg-berrylight-gray & {
+    @include pretty-link-text-shadow($berrylight-gray);
   }
 }
 
@@ -67,48 +151,16 @@ a.no-style {
 }
 /* stylelint-enable declaration-no-important */
 
-@each $label, $color in $themes {
-  a.text-#{$label} {
-    color: $color;
-
-    &:hover {
-      color: $black;
-    }
-  }
-
-  .text-#{$label},
-  a.text-#{$label} {
-    &.pretty-link,
-    a.pretty-link {
-      @include pretty-link($black, $white, $color);
-    }
-
-    &.pretty-link-berrylight-gray,
-    a.pretty-link-berrylight-gray {
-      @include pretty-link($black, $berrylight-gray, $color);
-    }
-
-    &.pretty-link-light-gray,
-    a.pretty-link-light-gray {
-      @include pretty-link($black, $berrylight-gray, $color);
-    }
-  }
-}
-
-.text-danger,
-a.text-danger {
-  &.pretty-link,
-  a.pretty-link {
+.text-danger {
+  &.pretty-link {
     @include pretty-link($black, $white, $brand-danger);
   }
 
-  &.pretty-link-berrylight-gray,
-  a.pretty-link-berrylight-gray {
+  &.pretty-link-berrylight-gray {
     @include pretty-link($black, $berrylight-gray, $brand-danger);
   }
 
-  &.pretty-link-light-gray,
-  a.pretty-link-light-gray {
+  &.pretty-link-light-gray {
     @include pretty-link($black, $berrylight-gray, $brand-danger);
   }
 }

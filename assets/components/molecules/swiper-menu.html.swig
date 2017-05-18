@@ -1,9 +1,10 @@
 ---
-title: swiper-menu
+title: Swiper Menu
 name: swiper-menu
-collection: molecules
+wrapper: hidden
 notes: |
-  ##### Usage : `swiper-menu`
+  This component is visible into the `Big Menu` on the [basic page](/basic-page).
+collection: molecules
 ---
 <div class="swiper-menu">
   <h2 class="sr-only">Navigation principale</h2>

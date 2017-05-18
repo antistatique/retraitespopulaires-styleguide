@@ -1,13 +1,11 @@
 ---
-title: prenavbar
+title: Prenavbar
 name: prenavbar
 collection: molecules
 notes: |
-  ##### Usage : `prenavbar`
-  ##### Options :
-    - **prenavbar_theme** - <i>String</i> - <b>prenavbar-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look
 ---
-<ul class="prenavbar prenavbar-{{ prenavbar_theme|default('primary') }} list-unstyled list-inline m-0" role="navigation" aria-label="Navigation d'en-tête">
+<ul class="prenavbar list-unstyled list-inline m-0" role="navigation" aria-label="Navigation d'en-tête">
   <li>
     <a href="#" class="text-muted small" target="">Press</a>
   </li>

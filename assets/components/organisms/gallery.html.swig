@@ -1,5 +1,5 @@
 ---
-title: gallery
+title: Gallery
 name: gallery
 collection: organisms
 notes: |

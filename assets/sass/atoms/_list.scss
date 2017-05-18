@@ -9,16 +9,16 @@
 /* stylelint-disable no-duplicate-selectors */
 /* Make the code unreadable otherwise */
 
-ul.unstyled-list,
-ol.unstyled-list {
+.unstyled-list,
+.unstyled-list {
   list-style: none;
   padding-left: 0.5em;
 }
 
-ul.unordered-list,
-ol.ordered-list,
-ul.treeview-list,
-ul.facets-list {
+.unordered-list,
+.ordered-list,
+.treeview-list,
+.facets-list {
   padding: 0;
 
   > li {
@@ -26,9 +26,10 @@ ul.facets-list {
   }
 }
 
-ul.treeview-list,
-ul.unordered-list,
-ul.facets-list {
+.treeview-list,
+.unordered-list,
+.facets-list,
+.filters-list {
   list-style: none;
   margin-left: 0;
 
@@ -37,26 +38,33 @@ ul.facets-list {
   }
 
   > li {
-    position: relative;
     margin-bottom: 0.3em;
-    padding-left: 1em;
-
-    &:before {
-      content: '\0025A0'; // ■
-      position: absolute;
-      top: -0.2em;
-      left: 0;
-      font-size: 0.8em;
-      color: $gray;
-    }
   }
 
   &.list-inline li {
     margin-right: 0.3em;
+
+    &:first-child {
+      padding-left: 0;
+
+      &:before {
+        content: none;
+      }
+    }
   }
 }
 
-ul.treeview-list {
+.unordered-list {
+  &.list-inline li {
+    margin-right: 0;
+  }
+
+  > li {
+    @extend %square-bullet; // see typography.scss
+  }
+}
+
+.treeview-list {
   margin-left: $grid-gutter-width / 2;
 
   > li {
@@ -71,7 +79,7 @@ ul.treeview-list {
   }
 }
 
-ul.facets-list {
+.facets-list {
   > li {
     &:before {
       content: '→'; // →
@@ -82,7 +90,7 @@ ul.facets-list {
   }
 }
 
-ol.ordered-list {
+.ordered-list {
   list-style: none;
   counter-reset: item;
   margin-left: $grid-gutter-width / 2;
@@ -106,19 +114,25 @@ ol.ordered-list {
   }
 }
 
-ul.filters-list,
-ol.filters-list {
-  list-style: none;
+.filters-list {
   padding-left: 0.5em;
+
+  &.list-inline li {
+    margin-right: 1.4em;
+
+    &:first-child {
+      padding-left: 0.6em;
+    }
+  }
 
   > li {
     position: relative;
-    margin-bottom: 0.3em;
-    padding-left: 0.5em;
+    padding-left: 0.6em;
+    line-height: 1.2em;
 
     .retraitespopulaires-icon {
       position: absolute;
-      top: 0.6em;
+      top: 0.4em;
       left: -0.5em;
       font-size: 0.6em;
       color: $black;
@@ -126,28 +140,17 @@ ol.filters-list {
       &:hover {
         cursor: pointer;
         color: $brand-primary;
+
+        @include theme(color);
       }
     }
 
     &.active {
-      .retraitespopulaires-icon { color: $brand-primary; }
-    }
-  }
+      .retraitespopulaires-icon {
+        color: $brand-primary;
 
-  @each $label, $color in $themes {
-    &.filters-list-#{$label} {
-      > li .retraitespopulaires-icon:hover { color: $color; }
-      > li.active .retraitespopulaires-icon { color: $color; }
-    }
-  }
-}
-
-@each $label, $color in $themes {
-  ul.filters-list > li.active {
-    .retraitespopulaires-icon.text-#{$label} {
-      color: $color;
-
-      &:hover { color: $black; }
+        @include theme(color);
+      }
     }
   }
 }

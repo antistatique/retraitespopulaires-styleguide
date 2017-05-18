@@ -1,13 +1,11 @@
 ---
-title: navbar
+title: Navbar
 name: navbar
 collection: molecules
 notes: |
-  ##### Usage : `navbar`
-  ##### Options :
-  - **navbar_theme** - <i>String</i> - <b>navbar-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look.
 ---
-<nav class="navbar navbar-{{ navbar_theme|default('primary') }}" id="bs-example-navbar-collapse-1" aria-label="Navigation principale">
+<nav class="navbar" id="bs-example-navbar-collapse-1" aria-label="Navigation principale">
   <ul class="list-unstyled m-0">
     <li><a href="#">Prévoyance</a></li>
     <li class="active">

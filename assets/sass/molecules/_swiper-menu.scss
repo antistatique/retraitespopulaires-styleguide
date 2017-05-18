@@ -23,14 +23,12 @@
         position: absolute;
         top: 50%;
         right: $grid-gutter-width;
-        padding: 15px;
-        line-height: 0;
         transform: translateY(-50%);
       }
 
       &.swiper-back {
         margin-top: 0;
-        padding-left: 2.1em;
+        padding-left: 4.1em;
         padding-right: $grid-gutter-width/2;
       }
 
@@ -38,7 +36,6 @@
         position: absolute;
         top: 50%;
         left: $grid-gutter-width / 2;
-        padding: 0;
         line-height: 0;
         transform: translateY(-50%) rotate(180deg);
       }
@@ -128,10 +125,6 @@
   .swiper-column-waiting {
     border: 1px dashed $light-gray;
     border-left: 0;
-  }
-
-  .swiper-back {
-    background: $gray-lighter;
   }
 
   .swiper-list-first > li {

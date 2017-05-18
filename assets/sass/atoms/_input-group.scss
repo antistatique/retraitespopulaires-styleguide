@@ -39,6 +39,7 @@
       border-radius: $btn-border-radius-base - $input-border-size;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+      border: none;
 
       /* IE10+ CSS */
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -46,7 +47,7 @@
       }
 
       &.btn-icon {
-        max-height: 2.9em;
+        max-height: calc(100% - 1px);
         padding-bottom: 0.6em;
 
         /* stylelint-disable max-nesting-depth */

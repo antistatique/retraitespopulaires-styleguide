@@ -1,5 +1,5 @@
 ---
-title: push-menu
+title: Push Menu
 name: push-menu
 collection: molecules
 notes: |

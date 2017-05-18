@@ -1,15 +1,13 @@
 ---
-title: search-box
+title: Search Box
 name: search-box
 collection: atoms
 notes: |
-  ##### Usage : `search-box`
-  ##### Options :
-  - **search_box_theme** - <i>String</i> - <b>navbar-['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look
 ---
-<div class="search-box search-box-{{ search_box_theme|default('primary') }}">
+<div class="search-box">
   <a href="#" class="search-toggle">
-    <i aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
+    <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></span>
     <div class="sr-only">Recherche</div>
   </a>
 </div>

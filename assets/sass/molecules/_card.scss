@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  margin-bottom: 50px;
+  background-color: $white;
+  border: 1px solid $brand-primary;
+  border-radius: $border-radius-base;
+  box-shadow: 0 50px 75px -45px $shadow-gray;
+  overflow: hidden;
+
+  @include theme(border-color);
+
+  .pull-left & {
+    margin: 0 ($grid-gutter-width / 2) ($grid-gutter-width / 2) 0;
+  }
+
+  .pull-right & {
+    margin: 0 0 ($grid-gutter-width / 2) ($grid-gutter-width / 2);
+  }
+}
+
+/**
+ * Border variants
+ */
+
+.card-light { border-color: $ligthen-gray !important; }
+.card-no-border { border: none; }
+
+/**
+ * Card as a Link
+ */
+
+a.card,
+.card-hover {
+  transition:
+    border 0.25s ease-in-out,
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &:hover {
+    border-color: darken($brand-primary, 10);
+
+    & {
+      box-shadow: 0 65px 75px -45px darken($shadow-gray, 0.3);
+    }
+
+    @include theme(border-color, hover-color);
+  }
+}
+
+a.card {
+  color: $text-color;
+
+  &:focus,
+  &:active,
+  &:hover {
+    text-decoration: none;
+    color: $text-color;
+  }
+
+  .card-title {
+    @include theme(color);
+  }
+}
+
+a.card-light,
+.card-hover.card-light {
+  &:hover {
+    border-color: darken($ligthen-gray, 20%) !important; // override card-light
+  }
+}
+
+/**
+ * Card Image
+ */
+
+.card-img-top {
+  display: flex;
+  position: relative;
+  min-height: 100px;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    background: linear-gradient(to bottom, $brand-primary 0%, $transparent 100%);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+    @include theme-custom() {
+      background-image: linear-gradient(to bottom, $color 0%, $transparent 100%);
+    }
+  }
+
+  a.card:hover & {
+    &:before {
+      opacity: 0.1;
+    }
+  }
+
+  .retraitespopulaires-icon {
+    margin: ($grid-gutter-width / 2) auto 0;
+  }
+}
+
+.card-img-top-left .retraitespopulaires-icon {
+  margin-left: ($grid-gutter-width / 2);
+  color: $brand-primary;
+
+  @include theme(color);
+}
+
+a.card-img-top {
+  &:hover {
+    &:before {
+      opacity: 0.1;
+    }
+  }
+}
+
+.card-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+  .card-img-top-center & {
+    display: block;
+    width: auto;
+    max-height: 196px;
+    margin: 0 auto;
+  }
+}
+
+.card-img-bg {
+  flex: 1 1 auto;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+
+  .card-img-top-center & {
+    background-size: initial;
+  }
+}
+
+/**
+ * Card Texts
+ */
+
+.card-subhead {
+  margin-bottom: 0;
+  font-size: $font-size-h5;
+  font-weight: 700;
+  color: $text-muted;
+}
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: $grid-gutter-width / 2;
+
+  @include font-secondary;
+
+  .card-light & {
+    color: $gray;
+  }
+}
+
+.card-body {
+  padding: $grid-gutter-width;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Card Footer
+ */
+
+.card-footer {
+  margin-top: auto;
+  padding: $grid-gutter-width;
+}
+
+/**
+ * Card layout
+ */
+
+.card-horizontal {
+  @media (min-width: $screen-sm-min) {
+    flex-direction: row;
+
+    > * {
+      width: 100%;
+    }
+  }
+}
+
+.card-separator {
+  margin: ($line-height-computed / 2) 0;
+  border-color: lighten($hr-border, 20%);
+}
+
+/**
+ * Card formats
+ */
+
+.card-justify {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/**
+ * Background variants
+ */
+@mixin card-bg-variant($color) {
+  background-color: $color;
+
+  .pretty-link { @include pretty-link-text-shadow($color); }
+}
+
+.card-white { @include card-bg-variant($white); }
+.card-berrylight-gray { @include card-bg-variant($berrylight-gray); }
+
+/**
+ * Styles
+ */
+
+.card-no-shadow { box-shadow: none; }
+
+/**
+ * Card sizes
+ */
+
+.card-sm {
+  max-width: 150px;
+
+  .card-body,
+  .card-footer {
+    padding: ($line-height-computed / 2);
+  }
+}
