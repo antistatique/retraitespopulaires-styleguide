@@ -3,7 +3,8 @@ CHANGELOG
 
 ## 3.1.0 (2017-05-XX)
 
-  - Update label component look
+  - updated label component look
+  - added new meta-box component
 
 ## 3.0.1 (2017-05-18)
 
