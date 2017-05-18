@@ -40,7 +40,7 @@ set :keep_releases, 3
 
 set :slackistrano, {
   klass: Slackistrano::CustomMessaging,
-  channel: '#dev-notification',
+  channel: '#dev-notifications',
   webhook: 'https://hooks.slack.com/services/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'
 }
 
