@@ -8,7 +8,7 @@ notes: |
 
 ---
 <div class="big-menu-secondary-nav-wrapper">
-  <div class="big-menu-secondary-nav visible-xs visible-sm">
+  <div class="big-menu-secondary-nav bg-berrylight-gray visible-xs visible-sm">
     <div class="row">
       <div class="spacer spacer-sm"></div>
       <div class="col-xs-6">

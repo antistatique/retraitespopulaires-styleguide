@@ -9,6 +9,12 @@
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  &:before,
+  &:after {
+    content: none;
+  }
 
   .logo-retraitespopulaires {
     margin: 10px;
@@ -22,4 +28,34 @@
   .form-group {
     margin-bottom: 0;
   }
+}
+
+// Special navbars in header for mandats
+.wrapper-navs {
+  display: none;
+  flex: 1 1 auto;
+  max-width: 900px;
+  margin-top: $grid-gutter-width / 2;
+  margin-left: $grid-gutter-width;
+
+  @media screen and (min-width: $screen-md-min) {
+    display: block;
+  }
+}
+
+.wrapper-prenavbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .prenavbar-separator {
+    width: 2px;
+    height: ($grid-gutter-width / 2);
+    margin: 0 ($grid-gutter-width / 2);
+    background-color: $light-gray;
+  }
+}
+
+.wrapper-navbar {
+  margin-top: $grid-gutter-width / 2;
 }

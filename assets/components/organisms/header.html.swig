@@ -24,6 +24,6 @@ notes: |
     <!-- /input-group -->
   </div>
   <div class="header-nav" aria-hidden="true">
-    {% include '../atoms/hamburger.html.swig' with {'hamburger_link': light, 'hamburger_theme': theme} %}
+    {% include '../atoms/hamburger.html.swig' %}
   </div>
 </header>

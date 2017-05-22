@@ -2,7 +2,8 @@
 
 .logo-retraitespopulaires {
   width: 16rem;
-  height: 8rem;
+  height: auto;
+  max-height: 8rem;
 
   svg {
     width: 100%;
