@@ -32,13 +32,13 @@
     <![endif]-->
   </head>
   <body>
-    <div class="styleguide-toggle-container">
-      <div class="styleguide-toggle-theme-hide">
-        <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
-      </div>
-    </div>
-
     {% if styleguide %}
+      <div class="styleguide-toggle-container">
+        <div class="styleguide-toggle-theme-hide">
+          <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
+        </div>
+      </div>
+
       {% include 'styleguide/icons.html.swig' %}
       {% include 'styleguide/menu.html.swig' %}
       <div class="styleguide-container">
