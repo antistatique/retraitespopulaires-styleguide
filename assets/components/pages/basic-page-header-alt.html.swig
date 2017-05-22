@@ -10,7 +10,7 @@ layout: page.html.swig
   <div class="container header-container">
     <div class="logo-retraitespopulaires">
       <a class="" href="#">
-        <img src="{{data.path}}build/svg/logo-cip.svg" alt="Logo CIP" title="Page d'accueil">
+        <img class="img-responsive" src="{{data.path}}build/svg/logo-cip.svg" alt="Logo CIP" title="Page d'accueil">
       </a>
     </div>
 

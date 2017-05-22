@@ -33,8 +33,7 @@
 // Special navbars in header for mandats
 .wrapper-navs {
   display: none;
-  flex: 1 1 auto;
-  max-width: 900px;
+  flex: 0 1 900px;
   margin-top: $grid-gutter-width / 2;
   margin-left: $grid-gutter-width;
 
