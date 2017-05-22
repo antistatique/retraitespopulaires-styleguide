@@ -1,32 +1,21 @@
 @charset 'UTF-8';
 
 .hamburger-wrapper {
-  position: absolute;
-  top: 1rem;
-  right: 0;
-  width: 160px;
-  height: 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
   cursor: pointer;
-  z-index: 2001;
 
   .hamburger-button {
-    position: absolute;
-    right: 0.5em;
-
-    @media (min-width: $screen-sm-min) {
-      right: 1.5em;
-    }
+    position: relative;
   }
 }
 
 .hamburger-helper {
-  position: absolute;
-  top: 27px;
-  right: 4.8em;
-
-  @media (min-width: $screen-sm-min) {
-    right: 5.8em;
-  }
+  position: relative;
+  order: -1;
+  width: 80px;
+  text-align: right;
 
   .helper-when-open {
     display: none;
@@ -42,18 +31,17 @@
 }
 
 .hamburger-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 80px;
   height: 80px;
   box-sizing: border-box;
 
   .hamburger {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: relative;
     width: 32px;
     height: 32px;
-    margin-top: -15px;
-    margin-left: -13px;
 
     span {
       display: block;
@@ -70,8 +58,9 @@
 
   .hamburger-circle {
     position: absolute;
-    top: 13px;
-    left: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     circle {
       stroke: $brand-primary;
