@@ -59,7 +59,7 @@ settings:
   draft_saved_message: ''
   draft_loaded_message: ''
   confirmation_type: page
-  confirmation_title: 'Votre opinion nous est bien parvenu.'
+  confirmation_title: 'Votre opinion nous est bien parvenue.'
   confirmation_message: 'Nous vous remercions d''avoir pris le temps de répondre à notre enquête de satisfaction.'
   confirmation_url: ''
   confirmation_attributes: {  }
@@ -82,7 +82,8 @@ access:
     roles:
       - anonymous
       - authenticated
-    users: {  }
+    users:
+      - 45
   view_any:
     roles: {  }
     users: {  }
