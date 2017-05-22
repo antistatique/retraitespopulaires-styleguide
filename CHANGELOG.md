@@ -1,5 +1,8 @@
 CHANGELOG
 ---------
+## 2.0.2 (2017-05-22)
+ - Change the Newsletter subscription message
+
 ## 2.0.1 (2017-05-18)
  - Fix contact teaser cover image
 
