@@ -12,3 +12,5 @@ permissions:
   - 'view the administration theme'
   - 'access toolbar'
   - 'change own username'
+  - 'access site in maintenance mode'
+  - 'access user profiles'
