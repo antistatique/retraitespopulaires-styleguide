@@ -1,6 +1,6 @@
 CHANGELOG
 ---------
-## 2.0.2 (2017-05-22)
+## 2.0.2 (2017-05-23)
  - Change the Newsletter subscription message
  - Update webform config for form IMM
 
