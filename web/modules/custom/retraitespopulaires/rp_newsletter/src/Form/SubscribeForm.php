@@ -108,7 +108,7 @@ class SubscribeForm extends FormBase {
         if ( isset($error) AND !empty($error) && $result['title'] != 'Member Exists' ){
             drupal_set_message(t('Erreur lors de l\'inscription.').' - '.$error, 'error');
         }else{
-            drupal_set_message(t('Inscription réussie.').' - '.t('Merci de votre inscription à notre newsletter. Un e-mail de confirmation va vous être envoyé dans un instant.'));
+            drupal_set_message(t('Inscription réussie.').' - '.t('Merci de votre inscription à notre newsletter.'));
         }
     }
 }

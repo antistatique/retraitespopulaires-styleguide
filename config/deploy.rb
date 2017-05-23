@@ -38,11 +38,11 @@ set :log_level, :info
 # Default value for keep_releases is 5
 set :keep_releases, 3
 
-set :slack_run, -> { false } # only enabled for production
-set :slack_deploy_user, -> { ENV['CI_COMMITTER_NAME'] || ENV['USER'] || ENV['USERNAME'] }
-set :slack_webhook, "https://hooks.slack.com/services/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"
-set :slack_username, -> { 'Slackistrano' }
-set :slack_run_updating, -> { false } # Set to false to disable deploy starting message.
+set :slackistrano, {
+  klass: Slackistrano::CustomMessaging,
+  channel: '#dev-notifications',
+  webhook: 'https://hooks.slack.com/services/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'
+}
 
 # Used only if composer.json isn't on root
 # set :composer_working_dir, -> { fetch(:release_path).join(fetch(:app_path)) }
