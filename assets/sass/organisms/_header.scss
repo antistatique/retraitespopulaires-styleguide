@@ -23,7 +23,7 @@
 
 .header-search {
   flex: 0 1 620px;
-  margin: 0 auto;
+  margin: -1px auto 0; // browser sometimes rounds pixels the wrong way. This seems to fix it
 
   .form-group {
     margin-bottom: 0;
