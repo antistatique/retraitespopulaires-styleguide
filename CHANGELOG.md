@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+## 3.1.0 (2017-05-XX)
+
+  - replace teaser-document-extranet component by Bootstrap Media component
+
 ## 3.0.1 (2017-05-18)
 
   - fix special grey waves on IE11
