@@ -25,10 +25,8 @@
 
 .btn-icon {
   .retraitespopulaires-icon {
-    width: 26px;
-    height: 26px;
     vertical-align: middle;
-    font-size: 1.6em;
+    font-size: 1.2em;
   }
 }
 
@@ -47,12 +45,6 @@
 
   @include theme-custom() {
     @include button-variant($color, $white, $btn-default-border);
-  }
-}
-
-.btn-group { // @TODO check in which wrapper those links are
-  .btn {
-    border: 1px solid $white;
   }
 }
 
@@ -95,6 +87,10 @@
     background-color: $link-color;
     border-color: $link-color;
     color: $white !important;
+
+    .open &.dropdown-toggle {
+      color: $link-hover-color !important;
+    }
 
     @include theme(background-color border-color);
   }
