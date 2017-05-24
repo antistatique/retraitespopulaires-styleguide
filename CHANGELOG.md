@@ -5,6 +5,9 @@ CHANGELOG
 
   - updated label component look
   - added new meta-box component
+  - refactored header component with push-menu and swiper-menu
+  - improved navigation in new header (mandants)
+  - added text-dimmed helper
 
 ## 3.0.1 (2017-05-18)
 
