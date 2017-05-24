@@ -229,7 +229,6 @@ a.card-img-top {
   .pretty-link { @include pretty-link-text-shadow($color); }
 }
 
-.card-white { @include card-bg-variant($white); }
 .card-berrylight-gray { @include card-bg-variant($berrylight-gray); }
 
 /**
