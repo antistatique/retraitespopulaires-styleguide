@@ -8,6 +8,7 @@ CHANGELOG
   - refactored header component with push-menu and swiper-menu
   - improved navigation in new header (mandants)
   - added text-dimmed helper
+  - replace teaser-document-extranet component by Bootstrap Media component
 
 ## 3.0.1 (2017-05-18)
 
