@@ -32,7 +32,7 @@
   }
 
   .main-navigation {
-    li {
+    > li {
       margin-bottom: $grid-gutter-width;
     }
   }
@@ -48,7 +48,7 @@
     }
   }
 
-  .main-navigation li,
+  .main-navigation > li,
   .secondary-navigation li {
     padding: 0 $grid-gutter-width;
 
