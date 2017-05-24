@@ -179,6 +179,8 @@ a.card-img-top {
   > *:last-child {
     margin-bottom: 0;
   }
+
+  .card-no-padding & { padding: 0; }
 }
 
 /**
@@ -231,6 +233,7 @@ a.card-img-top {
 
 .card-white { @include card-bg-variant($white); }
 .card-berrylight-gray { @include card-bg-variant($berrylight-gray); }
+.card-no-bg { background-color: transparent; }
 
 /**
  * Styles
