@@ -3,11 +3,14 @@ CHANGELOG
 
 ## 3.1.0 (2017-05-XX)
 
-  - updated label component look
+  - added `.text-dimmed` helper
   - added new meta-box component
+  - added `.table-middle` class to center cells vertically
+  - added `.text-normal` helper (mainly for text-color on links)
   - refactored header component with push-menu and swiper-menu
-  - improved navigation in new header (mandants)
-  - added text-dimmed helper
+  - refactored btn-outline component (it has to have `.btn-primary` or others to be colored correctly)
+  - updated label component look
+  - updated navigation in new header (mandants)
   - replace teaser-document-extranet component by Bootstrap Media component
 
 ## 3.0.1 (2017-05-18)
