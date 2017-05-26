@@ -79,30 +79,76 @@
 }
 
 .btn-outline {
-  @include button-variant($brand-primary, $transparent, $brand-primary);
-  @include theme(border-color color);
+  background-color: transparent;
 
   &:hover,
   &:focus, {
-    background-color: $link-color;
-    border-color: $link-color;
     color: $white !important;
+  }
+
+  &.btn-primary {
+    background: transparent;
+    border-color: $link-color;
+    color: $link-color;
+
+    @include theme(border-color color);
+
+    &:hover,
+    &:focus, {
+      background-color: $link-color;
+      border-color: $link-color;
+      color: $white !important;
+
+      @include theme(background-color border-color);
+    }
 
     .open &.dropdown-toggle {
       color: $link-hover-color !important;
     }
 
-    @include theme(background-color border-color);
+    &:active,
+    &:hover:active,
+    &:active:focus {
+      background-color: $link-hover-color;
+      border-color: $link-hover-color;
+
+      @include theme(background-color border-color, hover-color);
+    }
   }
 
-  &:active,
-  &:hover:active,
-  &:active:focus {
-    background-color: $link-hover-color;
-    border-color: $link-hover-color;
-    color: $white;
+  &.btn-default {
+    border-color: $btn-default-bg;
+    color: $btn-default-bg;
 
-    @include theme(background-color border-color, hover-color);
+    &:hover { background: $btn-default-bg; }
+  }
+
+  &.btn-success {
+    border-color: $btn-success-bg;
+    color: $btn-success-bg;
+
+    &:hover { background: $btn-success-bg; }
+  }
+
+  &.btn-danger {
+    border-color: $btn-danger-bg;
+    color: $btn-danger-bg;
+
+    &:hover { background: $btn-danger-bg; }
+  }
+
+  &.btn-info {
+    border-color: $btn-info-bg;
+    color: $btn-info-bg;
+
+    &:hover { background: $btn-info-bg; }
+  }
+
+  &.btn-warning {
+    border-color: $btn-warning-bg;
+    color: $btn-warning-bg;
+
+    &:hover { background: $btn-warning-bg; }
   }
 }
 

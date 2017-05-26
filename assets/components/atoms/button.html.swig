@@ -12,11 +12,12 @@ variants:
   btn-icon: Button Icon
 changes:
   3.0.0: Improvements to CSS, the `.btn` class has to have the `.btn-primary` class to be green. `.btn-circle` replaces the `.arrow` component
+  3.1.0: The `btn-outline` must have the `btn-primary` class to work correctly
 notes: |
   Can be wrapped in `.theme-[theme]` to change look
 ---
 {% if variant != 'btn-circle' and variant != 'btn-icon' -%}
-<button class="btn {{ variant|default('btn-primary') }}{% if variant == 'btn-icon' %} btn-icon{% endif %}">
+<button class="btn {{ variant|default('btn-primary') }}{% if variant == 'btn-icon' %} btn-icon{% endif %}{% if variant == 'btn-outline' %} btn-primary{% endif %}">
   {{ btn_label|default('Mon bouton') }}
 </button>
 {%- elseif variant != 'btn-icon' -%}
