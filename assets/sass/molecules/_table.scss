@@ -8,6 +8,19 @@
       }
     }
   }
+
+  > tbody {
+    > tr {
+      > th,
+      > td {
+        vertical-align: inherit;
+      }
+    }
+  }
+}
+
+.table-middle {
+  vertical-align: middle;
 }
 
 .table-borderless {
