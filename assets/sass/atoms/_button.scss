@@ -102,10 +102,6 @@
       @include theme(background-color border-color);
     }
 
-    .open &.dropdown-toggle {
-      color: $link-hover-color !important;
-    }
-
     &:active,
     &:hover:active,
     &:active:focus {

@@ -96,6 +96,7 @@
     {% endif %}
 
     <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+    <script src="{{data.path}}build/js/selectize.min.js"></script>
     <script src="{{data.path}}build/js/vendors.min.js"></script>
     <script src="{{data.path}}build/js/bundle.js"></script>
 

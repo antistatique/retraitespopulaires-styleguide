@@ -5,3 +5,16 @@
     padding: 0.3em 0.7em;
   }
 }
+
+.selectize-dropdown-content {
+  > div {
+    padding: 2px 10px;
+    cursor: pointer;
+    color: $dropdown-link-color;
+
+    &.active {
+      background-color: $dropdown-link-hover-bg;
+      color: $dropdown-link-hover-color;
+    }
+  }
+}

@@ -61,7 +61,16 @@
   "iconsFontName": "retraitespopulaires-icon",
   "build": "build/",
   "browsers": ["last 3 versions", "ie >= 10"],
-  "singles": [],
+  "singles": [
+    {
+      "source": "node_modules/selectize/dist/js/standalone/selectize.min.js",
+      "destination": "build/js"
+    },
+    {
+      "source": "node_modules/selectize/dist/css/selectize.bootstrap3.css",
+      "destination": "build/css"
+    }
+  ],
   "metalsmith": {
     "assets": "node_modules/toolbox-utils/styleguide/",
     "dist": "styleguide/",
