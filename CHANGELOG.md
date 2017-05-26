@@ -7,6 +7,7 @@ CHANGELOG
   - added new meta-box component
   - added `.table-middle` class to center cells vertically
   - added `.text-normal` helper (mainly for text-color on links)
+  - added `.tablesaw-lite` class to table for a light version of responsive tables
   - refactored header component with push-menu and swiper-menu
   - refactored btn-outline component (it has to have `.btn-primary` or others to be colored correctly)
   - updated label component look
