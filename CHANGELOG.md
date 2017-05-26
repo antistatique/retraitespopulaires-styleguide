@@ -11,6 +11,7 @@ CHANGELOG
   - refactored btn-outline component (it has to have `.btn-primary` or others to be colored correctly)
   - updated label component look
   - updated navigation in new header (mandants)
+  - updated table header when borderless
   - replace teaser-document-extranet component by Bootstrap Media component
 
 ## 3.0.1 (2017-05-18)

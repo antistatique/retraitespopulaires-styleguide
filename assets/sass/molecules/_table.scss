@@ -36,8 +36,12 @@
         border-bottom: 2px solid darken($table-border-color, 15%);
       }
     }
+  }
 
-    > td {
+  > thead > tr,
+  > tbody > tr {
+    > td,
+    > th {
       &:first-child {
         padding-left: 0;
       }
