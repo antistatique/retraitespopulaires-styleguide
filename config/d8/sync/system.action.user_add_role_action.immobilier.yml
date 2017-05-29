@@ -1,0 +1,14 @@
+uuid: 06a9c837-48a3-401d-9cc8-5408ce633b05
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.immobilier
+  module:
+    - user
+id: user_add_role_action.immobilier
+label: 'Ajouter le rôle Immobilier aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: immobilier

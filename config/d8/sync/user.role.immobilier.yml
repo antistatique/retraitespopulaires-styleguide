@@ -1,0 +1,16 @@
+uuid: ddc221aa-0526-4bc3-a64b-955422de5d64
+langcode: fr
+status: true
+dependencies: {  }
+id: immobilier
+label: Immobilier
+weight: 5
+is_admin: null
+permissions:
+  - 'use text format full_html'
+  - 'access administration pages'
+  - 'view the administration theme'
+  - 'access toolbar'
+  - 'change own username'
+  - 'access site in maintenance mode'
+  - 'access user profiles'
