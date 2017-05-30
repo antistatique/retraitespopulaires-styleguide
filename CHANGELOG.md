@@ -3,6 +3,17 @@ CHANGELOG
 
 ## 3.1.0 (2017-05-XX)
 
+  - added `.text-dimmed` helper
+  - added new meta-box component
+  - added `.table-middle` class to center cells vertically
+  - added `.text-normal` helper (mainly for text-color on links)
+  - added `.tablesaw-lite` class to table for a light version of responsive tables
+  - added `.flex-space-between` helper class
+  - refactored header component with push-menu and swiper-menu ⚠️ **BREAKING**
+  - refactored btn-outline component (it has to have `.btn-primary` or others to be colored correctly) ⚠️ **BREAKING**
+  - updated label component look with js behaviour in list-inlines
+  - updated navigation in new header (mandants)
+  - updated table header when borderless
   - replace teaser-document-extranet component by Bootstrap Media component
 
 ## 3.0.1 (2017-05-18)

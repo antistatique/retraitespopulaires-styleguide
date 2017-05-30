@@ -3,28 +3,10 @@
 .big-menu-secondary-nav {
   position: relative;
   margin: 0 $grid-gutter-width*-1;
-  background: $berrylight-gray;
 
   @media only screen and (min-width: $screen-sm-min) {
     margin-left: -6.56rem;
   }
-
-  // &:before,
-  // &:after {
-  //   content: '';
-  //   display: block;
-  //   position: absolute;
-  //   top: 0;
-  //   right: 100%;
-  //   width: 100vw;
-  //   height: 100%;
-  //   background: inherit;
-  // }
-  //
-  // &:after {
-  //   right: auto;
-  //   left: 100%;
-  // }
 
   @media only screen and (min-width: $screen-md-min) {
     margin: 0;

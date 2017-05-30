@@ -54,6 +54,7 @@
     "postcss-reporter": "^1.4.1",
     "respond.js": "^1.4.2",
     "run-sequence": "^1.2.2",
+    "selectize": "^0.12.4",
     "slug": "^0.9.1",
     "stylelint-order": "^0.3.0",
     "swig": "^1.4.2",

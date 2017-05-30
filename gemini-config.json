@@ -60,9 +60,6 @@
     "list": {
       "name": "#element-list"
     },
-    "loader": {
-      "name": "#element-loader"
-    },
     "managed-by-link": {
       "name": "#element-managed-by-link"
     },

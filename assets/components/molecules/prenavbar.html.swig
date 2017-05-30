@@ -7,15 +7,12 @@ notes: |
 ---
 <ul class="prenavbar list-unstyled list-inline m-0" role="navigation" aria-label="Navigation d'en-tête">
   <li>
-    <a href="#" class="text-muted small" target="">Press</a>
+    <a href="#" class="text-muted small" target="">Contact</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Presse</a>
   </li>
   <li>
     <a href="#" class="text-muted small" target="">Extranet</a>
-  </li>
-  <li>
-    <a href="#" class="text-muted small" target="">Questions-réponses</a>
-  </li>
-  <li>
-    <a href="#" class="text-muted small" target="">Documents utiles</a>
   </li>
 </ul>

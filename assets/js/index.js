@@ -8,6 +8,8 @@ import { number_format } from './number_format.js';
 import { smoothscroll_load } from './smoothscroll.js';
 import { gallery } from './gallery.js';
 import { popover } from './popover.js';
+import { selectize } from './selectize.js';
+import { labels } from './labels.js';
 
 (function(){
   big_menu();
@@ -20,4 +22,6 @@ import { popover } from './popover.js';
   datepicker();
   number_format();
   popover();
+  selectize();
+  labels();
 }());

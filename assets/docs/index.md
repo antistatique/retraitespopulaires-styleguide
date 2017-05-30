@@ -1,8 +1,12 @@
 ---
-title: Moodboard
+title: Retraites Populaires
 styleguide: true
 permalink: false
 ---
+## Styleguide - <span class="label label-primary">VERSION 3.X</span>
+
+Cette nouvelle version du styleguide apporte différentes améliorations au niveau du code (maintenabilité et clarté). Les exemples de pages ne sont plus inclus dans le styleguide et sont fournis sur demande via Codepen.
+
 <div class="moodboard">
   <div class="row">
     <div class="col-xs-12">

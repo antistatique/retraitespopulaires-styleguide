@@ -50,6 +50,36 @@
     -3px 0 $color;
 }
 
+@mixin btn-outline-variant($color) {
+  background: transparent;
+  border-color: $link-color;
+  color: $link-color;
+
+  @include theme(border-color color);
+
+  &:hover,
+  &:focus, {
+    background-color: $link-color;
+    border-color: $link-color;
+    color: $white !important;
+
+    @include theme(background-color border-color);
+  }
+
+  .open &.dropdown-toggle {
+    color: $link-hover-color !important;
+  }
+
+  &:active,
+  &:hover:active,
+  &:active:focus {
+    background-color: $link-hover-color;
+    border-color: $link-hover-color;
+
+    @include theme(background-color border-color, hover-color);
+  }
+}
+
 @mixin sr-only() {
   position: absolute;
   width: 1px;
