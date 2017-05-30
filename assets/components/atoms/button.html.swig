@@ -12,7 +12,7 @@ variants:
   btn-icon: Button Icon
 changes:
   3.0.0: Improvements to CSS, the `.btn` class has to have the `.btn-primary` class to be green. `.btn-circle` replaces the `.arrow` component
-  3.1.0: The `btn-outline` must have the `btn-primary` class to work correctly
+  3.1.0: The `btn-outline` must have the `btn-primary` class to display the correct color and border-color
 notes: |
   Can be wrapped in `.theme-[theme]` to change look
 ---

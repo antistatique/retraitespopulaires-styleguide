@@ -2,6 +2,8 @@
 title: Header
 name: header
 collection: organisms
+changes:
+  3.1.0: "**Component is refactored**. Must be updated in all instances."
 notes: |
   Add the `.header-container` to enable the flex header (add a `.container.header-container` inside the `.header`)
 ---
