@@ -9,6 +9,7 @@ import { smoothscroll_load } from './smoothscroll.js';
 import { gallery } from './gallery.js';
 import { popover } from './popover.js';
 import { selectize } from './selectize.js';
+import { labels } from './labels.js';
 
 (function(){
   big_menu();
@@ -22,4 +23,5 @@ import { selectize } from './selectize.js';
   number_format();
   popover();
   selectize();
+  labels();
 }());
