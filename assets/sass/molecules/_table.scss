@@ -75,6 +75,9 @@
             display: block;
             font-family: $headings-font-family;
             font-size: $font-size-h4;
+            font-size: 88%;
+            text-transform: uppercase;
+            color: $text-muted;
           }
         }
       }
