@@ -53,10 +53,6 @@ class SearchForm extends FormBase {
         $form['#action'] = Url::fromRoute('rp_site.search')->toString();
         $form['#method'] = 'GET';
 
-        $form['form-wrapper_start'] = array(
-            '#markup' => '<div class="m-t-1">',
-        );
-
         $form['input-group_start'] = array(
             '#markup' => '<div class="input-group full-width">',
         );
@@ -78,10 +74,6 @@ class SearchForm extends FormBase {
         );
 
         $form['input-group_end'] = array(
-            '#markup' => '</div>',
-        );
-
-        $form['form-wrapper_end'] = array(
             '#markup' => '</div>',
         );
 

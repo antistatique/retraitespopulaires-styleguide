@@ -116,9 +116,12 @@ processor_settings:
         preprocess_query: -10
     weights:
       preprocess_query: -10
+  entity_status:
+    plugin_id: node_status
+    settings: {  }
   highlight:
     highlight: always
-    highlight_partial: false
+    highlight_partial: true
     excerpt: true
     excerpt_length: 256
     exclude_fields: {  }
@@ -145,8 +148,6 @@ processor_settings:
       h3: 2
       strong: 2
       b: 2
-      em: 1
-      u: 1
     weights:
       preprocess_index: -10
       preprocess_query: -10
@@ -228,15 +229,11 @@ processor_settings:
       preprocess_index: -10
       preprocess_query: -10
   file_attachments:
-    plugin_id: file_attachments
-    settings:
-      excluded_extensions: 'aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv jpg mp4 tif'
-      number_indexed: 0
-      max_filesize: 0
-      excluded_private: 1
-  entity_status:
-    plugin_id: node_status
-    settings: {  }
+    excluded_extensions: 'aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv'
+    number_indexed: 0
+    max_filesize: '0'
+    excluded_private: 1
+    excluded_mimes: 'audio/x-aiff image/x-jg video/x-msvideo image/x-ms-bmp image/gif image/vnd.microsoft.icon video/quicktime audio/ogg video/ogg image/png image/x-photoshop audio/x-realaudio audio/x-pn-realaudio image/x-rgb video/x-flv'
 tracker_settings:
   default:
     plugin_id: default
