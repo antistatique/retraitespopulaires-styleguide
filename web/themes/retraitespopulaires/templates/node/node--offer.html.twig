@@ -2,8 +2,7 @@
 
 {% block node_bottom %}
   {% if node.field_web_site.uri %}
-    <div class="spacer"></div>
-    <a class="btn btn-lg" href="{{ node.field_web_site.uri }}">{% trans %}Lien vers le magazine{% endtrans %}</a>
+    <a class="btn btn-primary btn-lg" href="{{ node.field_web_site.uri }}">{% trans %}Lien vers le magazine{% endtrans %}</a>
     <div class="spacer spacer-md"></div>
   {% endif %}
 {% endblock %}
