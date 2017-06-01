@@ -9,7 +9,6 @@ template: false
 id: satisfaction_imm
 title: 'Votre opinion nous intéresse: enquête de satisfaction'
 description: 'formulaire de satisfaction pour IMM.'
-category: ''
 elements: "id:\n  '#type': hidden\netes_vous_satisfait_e_:\n  '#type': webform_likert\n  '#title': 'Etes-vous satisfait(e):'\n  '#title_display': before\n  '#description_display': invisible\n  '#required': true\n  '#questions':\n    Q1: '1. De l''amabilité des collaborateurs de votre régie ?'\n    Q2: '2. De la qualité et la clarté des documents (courriers, contrats, etc.) ?'\n    Q3: '3. Du service de conciergerie ?'\n    Q4: '4. De l''entretien général du bâtiment ?'\n    Q5: '5. D’une manière globale, des prestations qui vous sont offertes ?'\n  '#answers':\n    4: 'Tout à fait satisfait(e)'\n    3: 'Plutôt satisfait(e)'\n    2: 'Plutôt pas satisfait(e)'\n    1: 'Pas du tout satisfait(e)'\n  '#na_answer': true\n  '#na_answer_value': '0'\n  '#na_answer_text': 'Pas d’avis'\nten_scale_01:\n  '#type': radios\n  '#title': 'Recommanderiez-vous votre régie à votre entourage ?'\n  '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n  '#title_display': attribute\n  '#description_display': after\n  '#options':\n    - '0'\n    - '1'\n    - '2'\n    - '3'\n    - '4'\n    - '5'\n    - '6'\n    - '7'\n    - '8'\n    - '9'\n    - '10'\n  '#options_display': side_by_side\n  '#required': true\ntextarea_01:\n  '#type': textarea\n  '#title': 'Auriez-vous des commentaires, suggestions à nous faire parvenir ?'\n  '#title_display': before\n  '#placeholder': 'Je trouve que ...'\n"
 css: ''
 javascript: ''
@@ -21,12 +20,10 @@ settings:
   form_submit_once: false
   form_submit_attributes: {  }
   form_exception_message: ''
-  form_open_message: ''
-  form_close_message: ''
+  form_closed_message: ''
   form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
-  form_convert_anonymous: false
   form_prepopulate: true
   form_prepopulate_source_entity: false
   form_disable_autocomplete: false
@@ -35,7 +32,6 @@ settings:
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: false
-  submission_log: false
   wizard_progress_bar: false
   wizard_progress_pages: false
   wizard_progress_percentage: false
@@ -52,7 +48,7 @@ settings:
   preview_prev_button_label: ''
   preview_prev_button_attributes: {  }
   preview_message: ''
-  draft: none
+  draft: false
   draft_auto_save: false
   draft_button_label: ''
   draft_button_attributes: {  }
@@ -82,10 +78,10 @@ access:
     roles:
       - anonymous
       - authenticated
-    users:
-      - 45
+    users: {  }
   view_any:
-    roles: {  }
+    roles:
+      - immobilier
     users: {  }
   update_any:
     roles: {  }
