@@ -1,5 +1,8 @@
 CHANGELOG
 ---------
+## 2.0.3 (2017-06-01)
+ - Fix Removed "theme" state config that remove template for page (Promise of Template Whisperer)
+
 ## 2.0.2 (2017-05-23)
  - Change the Newsletter subscription message
  - Update webform config for form IMM

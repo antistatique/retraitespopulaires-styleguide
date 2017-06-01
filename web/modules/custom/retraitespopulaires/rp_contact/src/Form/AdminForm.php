@@ -318,45 +318,54 @@ class AdminForm extends FormBase {
         // Page with forms settings
         $this->state->set('rp_contact.settings.page.documents', array(
             'nid'   => $form_state->getValue('documents_nid'),
+            'theme' => trim($form_state->getValue('documents_theme')),
             'receivers' => trim($form_state->getValue('documents_receivers')),
         ));
 
         $this->state->set('rp_contact.settings.page.address', array(
             'nid'   => $form_state->getValue('address_nid'),
+            'theme' => trim($form_state->getValue('address_theme')),
             'receivers' => trim($form_state->getValue('address_receivers')),
         ));
 
         $this->state->set('rp_contact.settings.page.building', array(
             'nid'   => $form_state->getValue('building_nid'),
+            'theme' => trim($form_state->getValue('building_theme')),
             'receivers' => trim($form_state->getValue('building_receivers')),
         ));
 
         $this->state->set('rp_contact.settings.page.conversion', array(
             'nid'   => $form_state->getValue('conversion_nid'),
+            'theme' => trim($form_state->getValue('conversion_theme')),
             'receivers' => trim($form_state->getValue('conversion_receivers')),
         ));
 
         $this->state->set('rp_contact.settings.page.depreciation', array(
             'nid'   => $form_state->getValue('depreciation_nid'),
+            'theme' => trim($form_state->getValue('depreciation_theme')),
             'receivers' => trim($form_state->getValue('depreciation_receivers')),
         ));
 
         $this->state->set('rp_contact.settings.page.loan_increase', array(
             'nid'   => $form_state->getValue('loan_increase_nid'),
+            'theme' => trim($form_state->getValue('loan_increase_theme')),
             'receivers' => trim($form_state->getValue('loan_increase_receivers')),
         ));
 
         $this->state->set('rp_contact.settings.page.tax_attestation', array(
             'nid'   => $form_state->getValue('tax_attestation_nid'),
+            'theme' => trim($form_state->getValue('tax_attestation_theme')),
             'receivers' => trim($form_state->getValue('tax_attestation_receivers')),
         ));
 
         // Collection pages settings
         $this->state->set('rp_contact.settings.collection.advisors', array(
             'nid'   => trim($form_state->getValue('advisors_nid')),
+            'theme' => trim($form_state->getValue('advisors_theme')),
         ));
         $this->state->set('rp_contact.settings.collection.contacts', array(
             'nid'   => trim($form_state->getValue('contacts_nid')),
+            'theme' => trim($form_state->getValue('contacts_theme')),
         ));
     }
 }
