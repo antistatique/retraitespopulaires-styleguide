@@ -13,37 +13,32 @@
     <meta name="viewport" content="width=device-width">
 
     
-      <link rel="stylesheet" href="https://antistatique.github.io/retraitespopulaires-styleguide/build/css/styleguide.css">
+      <link rel="stylesheet" href="/build/css/styleguide.css">
     
 
-    <link rel="stylesheet" href="https://antistatique.github.io/retraitespopulaires-styleguide/build/css/vendors.min.css">
-    <link rel="stylesheet" href="https://antistatique.github.io/retraitespopulaires-styleguide/build/css/main.css">
+    <link rel="stylesheet" href="/build/css/vendors.min.css">
+    <link rel="stylesheet" href="/build/css/main.css">
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/retraitespopulaires-styleguide/build/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/retraitespopulaires-styleguide/build/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/retraitespopulaires-styleguide/build/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/retraitespopulaires-styleguide/build/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/retraitespopulaires-styleguide/build/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/retraitespopulaires-styleguide/build/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/build/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/build/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/build/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/build/favicons/manifest.json">
+    <link rel="mask-icon" href="/build/favicons/safari-pinned-tab.svg" color="#008e4f">
+    <meta name="theme-color" content="#008e4f">
 
     <!--[if lt IE 9]>
-      <script src="https://antistatique.github.io/retraitespopulaires-styleguide/build/js/polyfills.min.js"></script>
+      <script src="/build/js/polyfills.min.js"></script>
     <![endif]-->
   </head>
   <body>
     
+      <div class="styleguide-toggle-container">
+        <div class="styleguide-toggle-theme-hide">
+          <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
+        </div>
+      </div>
+
       <!-- fabricator icons -->
 <svg style="display: none;">
   <symbol id="styleguide-icon-code" viewBox="0 0 512 512">
@@ -61,6 +56,7 @@
   <symbol id="styleguide-icon-settings" viewBox="0 0 512 512">
     <path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
   </symbol>
+  <symbol id="styleguide-icon-bootstrap" viewBox="0 0 256 256"><path d="M0 222.991C0 241.223 14.779 256 33.009 256H222.99C241.223 256 256 241.221 256 222.991V33.01C256 14.777 241.221 0 222.991 0H33.01C14.777 0 0 14.779 0 33.009V222.99z" fill="#563D7C"/><path d="M106.158 113.238V76.985h31.911c3.04 0 5.97.253 8.792.76 2.822.506 5.319 1.41 7.49 2.713 2.17 1.303 3.907 3.112 5.21 5.427 1.302 2.316 1.954 5.283 1.954 8.9 0 6.513-1.954 11.217-5.862 14.111-3.907 2.895-8.9 4.342-14.979 4.342h-34.516zM72.075 50.5v155h75.112c6.947 0 13.713-.868 20.298-2.605 6.585-1.737 12.446-4.414 17.584-8.032 5.137-3.618 9.226-8.286 12.265-14.002 3.04-5.717 4.559-12.483 4.559-20.298 0-9.697-2.352-17.982-7.055-24.856-4.704-6.875-11.832-11.687-21.384-14.437 6.947-3.328 12.194-7.598 15.74-12.808 3.545-5.21 5.318-11.722 5.318-19.538 0-7.236-1.194-13.314-3.582-18.235-2.388-4.92-5.753-8.864-10.095-11.831-4.341-2.967-9.551-5.102-15.63-6.404-6.078-1.303-12.808-1.954-20.189-1.954H72.075zm34.083 128.515v-42.549h37.121c7.381 0 13.315 1.7 17.802 5.102 4.486 3.401 6.73 9.081 6.73 17.041 0 4.053-.688 7.381-2.063 9.986-1.375 2.605-3.22 4.668-5.536 6.187-2.315 1.52-4.993 2.605-8.032 3.257-3.04.65-6.223.976-9.552.976h-36.47z" fill="#FFF"/></symbol>
 </svg>
 <!-- /fabricator icons -->
 
@@ -89,12 +85,16 @@
   <ul>
 
     <li>
-      <a href="https://antistatique.github.io/retraitespopulaires-styleguide/index.html" class="styleguide-menu-heading">Styleguide</a>
+      <a href="/index.html" class="styleguide-menu-heading">Styleguide</a>
     </li>
 
     <li>
       <span class="styleguide-menu-heading">Documentation</span>
       <ul>
+        
+        <li>
+          <a href="/helpers">Helpers</a>
+        </li>
         
       </ul>
     </li>
@@ -104,467 +104,267 @@
       <ul>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/alerts">alerts</a>
+          <a href="/alerts">Alerts</a>
         </li>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/buttons">buttons</a>
+          <a href="/buttons">Buttons</a>
         </li>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cards">cards</a>
+          <a href="/inputs">Inputs</a>
         </li>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/inputs">inputs</a>
+          <a href="/links">Links</a>
         </li>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/links">links</a>
+          <a href="/navigations">Navigations</a>
         </li>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/loaders">loaders</a>
-        </li>
-        
-        <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/navigations">navigations</a>
-        </li>
-        
-        <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/tables">tables</a>
+          <a href="/tables">Tables</a>
         </li>
         
       </ul>
     </li>
-
-    <li>
-     <span class="styleguide-menu-heading">Themes</span>
-     <ul>
-       
-       <li>
-         <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cip">CIP</a>
-       </li>
-       
-     </ul>
-   </li>
-
    <li>
-    <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/" class="styleguide-menu-heading">Atoms</a>
+    <a href="/atoms/" class="styleguide-menu-heading">Atoms</a>
     <ul>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#alert">alert</a>
+        <a href="/atoms/#alert">Alert</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#arrow">arrow</a>
+        <a href="/atoms/#block-link">Block Link</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#blockquote">blockquote</a>
+        <a href="/atoms/#blockquote">Blockquote</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#button">button</a>
+        <a href="/atoms/#button">Button</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#button-bubble">button-bubble</a>
+        <a href="/atoms/#button-bubble">Button Bubble</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#facets-list">facets-list</a>
+        <a href="/atoms/#funky-waves">Funky Waves</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#favicon">favicon</a>
+        <a href="/atoms/#hamburger">Hamburger</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#filters-list">filters-list</a>
+        <a href="/atoms/#highlight">Highlight</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#funky-waves">funky-waves</a>
+        <a href="/atoms/#icon-text">Icon Text</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#hamburger">hamburger</a>
+        <a href="/atoms/#input-checkbox">Input Checkbox</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#hamburger-mandat">hamburger-mandat</a>
+        <a href="/atoms/#input-datepicker">Input Datepicker</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#highlight">highlight</a>
+        <a href="/atoms/#input-file">Input File</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#icon-text">icon-text</a>
+        <a href="/atoms/#input-group">Input Group</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-checkbox">input-checkbox</a>
+        <a href="/atoms/#input-radio">Input Radio</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-datepicker">input-datepicker</a>
+        <a href="/atoms/#input-radio-btn">Input Radio Button</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-file">input-file</a>
+        <a href="/atoms/#input-select">Input Select</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-group">input-group</a>
+        <a href="/atoms/#input-text">Input Text</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-radio">input-radio</a>
+        <a href="/atoms/#input-textarea">Input Textarea</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-radio-btn">input-radio-btn</a>
+        <a href="/atoms/#label">Label</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-select">input-select</a>
+        <a href="/atoms/#list">List</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-text">input-text</a>
+        <a href="/atoms/#loader">Loader</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-textarea">input-textarea</a>
+        <a href="/atoms/#managed-by-link">Managed-by Link</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#loader">loader</a>
+        <a href="/atoms/#meta-box">Meta Box</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#logo-management-contract">logo-management-contract</a>
+        <a href="/atoms/#organic-lines">Organic Lines</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#logo-retraitespopulaires">logo-retraitespopulaires</a>
+        <a href="/atoms/#pagination">Pagination</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#managed-by-link">managed-by-link</a>
+        <a href="/atoms/#search-box">Search Box</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#map-card">map-card</a>
+        <a href="/atoms/#socials">Socials</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#ordered-list">ordered-list</a>
+        <a href="/atoms/#spacer">Spacer</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#organic-lines">organic-lines</a>
+        <a href="/atoms/#tooltip">Tooltip</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#pagination">pagination</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#search-box">search-box</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#section-bloc">section-bloc</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#socials">socials</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#spacer">spacer</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#tag">tag</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#tooltip">tooltip</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#treeview-list">treeview-list</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#unordered-list">unordered-list</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#well">well</a>
+        <a href="/atoms/#well">Well</a>
       </li>
       
     </ul>
   </li>
 
   <li>
-    <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/" class="styleguide-menu-heading">Molecules</a>
+    <a href="/molecules/" class="styleguide-menu-heading">Molecules</a>
     <ul>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#actions-bar">Actions Bar</a>
+        <a href="/molecules/#actions-bar">Actions Bar</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#big-menu">big-menu</a>
+        <a href="/molecules/#big-menu">Big Menu</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#big-menu-empty">big-menu-empty</a>
+        <a href="/molecules/#big-menu-empty">Big Menu Empty</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#big-menu-secondary-nav">big-menu-secondary-nav</a>
+        <a href="/molecules/#big-menu-secondary-nav">Big Menu Secondary Nav</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#breadcrumb">breadcrumb</a>
+        <a href="/molecules/#breadcrumb">Breadcrumb</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#breadcrumb-extranet">breadcrumb-extranet</a>
+        <a href="/molecules/#card">Card</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#card-attachement">card-attachement</a>
+        <a href="/molecules/#card-result">Card Result</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#collapse">collapse</a>
+        <a href="/molecules/#collapse">Collapse</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#dropdown">dropdown</a>
+        <a href="/molecules/#dropdown">Dropdown</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#fieldset">fieldset</a>
+        <a href="/molecules/#fieldset">Fieldset</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#immo-heading">immo-heading</a>
+        <a href="/molecules/#immo-results">Immo Results</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#immo-results">immo-results</a>
+        <a href="/molecules/#media">Media</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#navbar">navbar</a>
+        <a href="/molecules/#navbar">Navbar</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#prenavbar">prenavbar</a>
+        <a href="/molecules/#prenavbar">Prenavbar</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#progresschart">progresschart</a>
+        <a href="/molecules/#progresschart">Progresschart</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#push-menu">push-menu</a>
+        <a href="/molecules/#push-menu">Push Menu</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#search-form">search-form</a>
+        <a href="/molecules/#secondary-nav">Secondary Nav</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#secondary-nav">secondary-nav</a>
+        <a href="/molecules/#selectize">Selectize</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#swiper-menu">swiper-menu</a>
+        <a href="/molecules/#swiper-menu">Swiper Menu</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#table">table</a>
+        <a href="/molecules/#table">Table</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#tabs">tabs</a>
+        <a href="/molecules/#tabs">Tabs</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-basicpage">teaser-basicpage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-contact">teaser-contact</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-contact-cta">teaser-contact-cta</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-contact-detail">teaser-contact-detail</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-contact-placeholder">teaser-contact-placeholder</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-document-extranet">teaser-document-extranet</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-gallery">teaser-gallery</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-institution">teaser-institution</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-news">teaser-news</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-offer">teaser-offer</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-product">teaser-product</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-profil">teaser-profil</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-rental">teaser-rental</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-search">teaser-search</a>
+        <a href="/molecules/#teaser-gallery">Teaser Gallery</a>
       </li>
       
     </ul>
   </li>
 
   <li>
-    <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/" class="styleguide-menu-heading">Organisms</a>
+    <a href="/organisms/" class="styleguide-menu-heading">Organisms</a>
     <ul>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachements">attachements</a>
+        <a href="/organisms/#footer">Footer</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachments-contact">attachments-contact</a>
+        <a href="/organisms/#gallery">Gallery</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachments-job">attachments-job</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachments-last-news">attachments-last-news</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachments-offers">attachments-offers</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachments-rentals">attachments-rentals</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#footer">footer</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#footer-mandats">footer-mandats</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-contact-advisor">form-contact-advisor</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-hypotheque">form-hypotheque</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-immo-alert">form-immo-alert</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-immo-contact">form-immo-contact</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-immo-search">form-immo-search</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-immobilier">form-immobilier</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-job-add-file">form-job-add-file</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-job-contactinfo">form-job-contactinfo</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-job-signin">form-job-signin</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-job-signup">form-job-signup</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-job-skill">form-job-skill</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-offer-bella-vita">form-offer-bella-vita</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-simulateur-libre-passage">form-simulateur-libre-passage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-simulateur-retraite">form-simulateur-retraite</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#gallery">gallery</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#header">header</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#header-extranet">header-extranet</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#header-mandats">header-mandats</a>
+        <a href="/organisms/#header">Header</a>
       </li>
       
     </ul>
@@ -575,166 +375,19 @@
     <ul>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/basic-page">basic-page</a>
+        <a href="/basic-page">Basic Page</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/light-page">light-page</a>
+        <a href="/basic-page-header-alt">Basic Page (Header Alt)</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/mail">mail</a>
-      </li>
-      
-    </ul>
-  </li>
-
-  <li>
-    <span class="styleguide-menu-heading">RetraitesPopulaires.ch</span>
-    <ul>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/assurance-vie">assurance-vie</a>
+        <a href="/light-page">Light Page</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/calculateur-hypotheque">calculateur-hypotheque</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/dominique-schmid">dominique-schmid</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/famille">famille</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/homepage">homepage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/managementcontracts">managementcontracts</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/news">news</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/offre-bella-vita">offre-bella-vita</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/particuliers">particuliers</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/rp-jeune">rp-jeune</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/simulateur-libre-passage">simulateur-libre-passage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/simulateur-retraite">simulateur-retraite</a>
-      </li>
-      
-    </ul>
-  </li>
-
-  <li>
-    <span class="styleguide-menu-heading">Mandats</span>
-    <ul>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cip-basicpage-prevoyance">cip-basicpage-prevoyance</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cip-homepage">cip-homepage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cip-news">cip-news</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/light-page-mandats">light-page-mandats</a>
-      </li>
-      
-    </ul>
-  </li>
-
-  <li>
-    <span class="styleguide-menu-heading">Extranets</span>
-    <ul>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/portailca-categories">portailca-categories</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/portailca-homepage">portailca-homepage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/portailca-subcategory">portailca-subcategory</a>
-      </li>
-      
-    </ul>
-  </li>
-
-  <li>
-    <span class="styleguide-menu-heading">Immobiliers</span>
-    <ul>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/flat-form">flat-form</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/appartement">appartement</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/liste-appartements">liste-appartements</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/liste-commerces">liste-commerces</a>
-      </li>
-      
-    </ul>
-  </li>
-
-  <li>
-    <span class="styleguide-menu-heading">Emplois</span>
-    <ul>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/mon-compte">mon-compte</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/conditions-d-utilisation">conditions-d-utilisation</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/connexion">connexion</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/liste-emplois">liste-emplois</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cree-mon-compte-validation">cree-mon-compte-validation</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cree-mon-compte">cree-mon-compte</a>
+        <a href="/mail">Mail</a>
       </li>
       
     </ul>
@@ -760,112 +413,236 @@
         </div>
     
 
+
     
   <div class="styleguide-item-group" id="atoms">
 
   
-    <div class="styleguide-item-heading-group">
-      <div class="lead"><p>Les Atoms sont des composants minuscules</p>
+    <div class="lead"><p>Les Atoms sont des composants minuscules</p>
 </div>
-    </div>
     
       
 <div class="styleguide-item-group" id="alert">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#alert">alert</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#alert">Alert</a></h3>
     
   <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
+    
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
       <svg>
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    <a title="View Bootstrap documentation" target="_blank" href="https:///getbootstrap.com/components/#alerts" class="styleguide-control styleguide-icon">
+      <svg>
+        <use xlink:href="#styleguide-icon-bootstrap" />
+      </svg>
+    </a>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-alert-">Usage : <code>alert</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>alert_type</strong> - <i>String</i> - <b>alert-[&#39;success&#39;|&#39;danger&#39;|&#39;info&#39;|&#39;warning&#39;]</b></li>
-</ul>
-
-      </div>
-    
-  </div>
-  <div id="element-alert" class="styleguide-item-preview">
-    
-      <div class="alert alert-info">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>Info!</strong> Indique un changement ou une action d'information neutre.
 </div>
 
+
+  
     
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="alert alert-info">
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#alert-default" role="tab">Alert Info</a>
+    </li>
+  
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#alert-success" role="tab">Alert Success</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#alert-danger" role="tab">Alert Danger</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#alert-warning" role="tab">Alert Warning</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="alert-default">
+      
+<div id="element-alert" class="styleguide-item-preview">
+  
+    <div class="alert alert-info">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>Info!</strong> Indique un changement ou une action d'information neutre.
+  <strong>Lorem!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, commodi.
+</div>
+
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="alert alert-info">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Lorem!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, commodi.
 </div>
 </code></pre>
+</div>
+
+    </div>
+    
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="alert-success">
+          
+<div id="element-alertalert-success" class="styleguide-item-preview">
+  
+    <div class="alert alert-success">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Lorem!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, commodi.
+</div>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="alert alert-success">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Lorem!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, commodi.
+</div>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="alert-danger">
+          
+<div id="element-alertalert-danger" class="styleguide-item-preview">
+  
+    <div class="alert alert-danger">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Lorem!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, commodi.
+</div>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="alert alert-danger">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Lorem!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, commodi.
+</div>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="alert-warning">
+          
+<div id="element-alertalert-warning" class="styleguide-item-preview">
+  
+    <div class="alert alert-warning">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Lorem!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, commodi.
+</div>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="alert alert-warning">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Lorem!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, commodi.
+</div>
+</code></pre>
+</div>
+
+        </div>
+      
+    
   </div>
+
+
+
 
 </div>
 
     
       
-<div class="styleguide-item-group" id="arrow">
+<div class="styleguide-item-group" id="block-link">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#arrow">arrow</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#block-link">Block Link</a></h3>
     
   <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
+    
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
       <svg>
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-arrow-">Usage : <code>arrow</code></h5>
-<ul>
-<li><strong>arrow_theme</strong> - <i>String</i> - <b>arrow-[&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+</div>
 
-      </div>
-    
-  </div>
-  <div id="element-arrow" class="styleguide-item-preview">
-    
-      <a aria-label="right" href="#" class="arrow retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded arrow-"></a>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><a aria-label="right" href="#" class="arrow retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded arrow-"></a>
+
+
+  
+<div id="element-block-link" class="styleguide-item-preview" style="background: #eee;">
+  
+    <div class="col-xs-4">
+      <a class="block-link" href="tel:+41211234567">
+  <div class="text-small block-link-label">Par téléphone</div>
+  <div class="text-bold text-no-wrap">021 123 12 12</div>
+</a>
+
+    </div>
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><a class="block-link" href="tel:+41211234567">
+  <div class="text-small block-link-label">Par téléphone</div>
+  <div class="text-bold text-no-wrap">021 123 12 12</div>
+</a>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -873,43 +650,46 @@
       
 <div class="styleguide-item-group" id="blockquote">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#blockquote">blockquote</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#blockquote">Blockquote</a></h3>
     
   <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
+    
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
       <svg>
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-blockquote-">Usage : <code>blockquote</code></h5>
+</div>
 
-      </div>
-    
-  </div>
-  <div id="element-blockquote" class="styleguide-item-preview">
-    
-        <blockquote>Retraites Populaires est fiable. Fondée il y a plus de 100 ans, elle est une partenaire de confiance sur laquelle la population et les entreprises peuvent compter en toute sécurité, en tant qu’institution de droit public avec des prestations garanties.</blockquote>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup">  <blockquote>Retraites Populaires est fiable. Fondée il y a plus de 100 ans, elle est une partenaire de confiance sur laquelle la population et les entreprises peuvent compter en toute sécurité, en tant qu’institution de droit public avec des prestations garanties.</blockquote>
+
+
+  
+<div id="element-blockquote" class="styleguide-item-preview">
+  
+      <blockquote>Retraites Populaires est fiable. Fondée il y a plus de 100 ans, elle est une partenaire de confiance sur laquelle la population et les entreprises peuvent compter en toute sécurité, en tant qu’institution de droit public avec des prestations garanties.</blockquote>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup">  <blockquote>Retraites Populaires est fiable. Fondée il y a plus de 100 ans, elle est une partenaire de confiance sur laquelle la population et les entreprises peuvent compter en toute sécurité, en tant qu’institution de droit public avec des prestations garanties.</blockquote>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -917,7 +697,7 @@
       
 <div class="styleguide-item-group" id="button">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#button">button</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#button">Button</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -930,40 +710,217 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    <a title="View Bootstrap documentation" target="_blank" href="https://getbootstrap.com/css/#buttons" class="styleguide-control styleguide-icon">
+      <svg>
+        <use xlink:href="#styleguide-icon-bootstrap" />
+      </svg>
+    </a>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
-
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-button-">Usage : <code>button</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>btn_label</strong> - <i>String</i></li>
-<li><strong>btn_size</strong> - <i>String</i> - <b>btn-[&#39;lg&#39;]</b></li>
-<li><strong>btn_theme</strong> - <i>String</i> - <b>btn-[&#39;outline&#39;|&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
-
+      <div class="alert alert-warning">
+        <ul class="list-unstyled">
+          
+            <li><strong>3.0.0 –</strong> <p>Improvements to CSS, the <code>.btn</code> class has to have the <code>.btn-primary</code> class to be green. <code>.btn-circle</code> replaces the <code>.arrow</code> component</p>
+</li>
+          
+            <li><strong>3.1.0 –</strong> <p>The <code>btn-outline</code> must have the <code>btn-primary</code> class to display the correct color and border-color</p>
+</li>
+          
+        </ul>
       </div>
     
-  </div>
-  <div id="element-button" class="styleguide-item-preview">
-    
-      <button class="btn btn-0 btn-primary">
-  Mon bouton
-</button>
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look</p>
 
+    </div>
+  
+
+</div>
+
+
+  
     
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><button class="btn btn-0 btn-primary">
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#button-default" role="tab">Button Primary</a>
+    </li>
+  
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#btn-secondary" role="tab">Button Secondary</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#btn-default" role="tab">Button Default</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#btn-outline" role="tab">Button Outline</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#btn-circle" role="tab">Button Circle</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#btn-icon" role="tab">Button Icon</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="button-default">
+      
+<div id="element-button" class="styleguide-item-preview">
+  
+    <button class="btn btn-primary">
   Mon bouton
 </button>
-</code></pre>
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><button class="btn btn-primary">
+  Mon bouton
+</button></code></pre>
+</div>
+
+    </div>
+    
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="btn-secondary">
+          
+<div id="element-buttonbtn-secondary" class="styleguide-item-preview">
+  
+    <button class="btn btn-secondary">
+  Mon bouton
+</button>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><button class="btn btn-secondary">
+  Mon bouton
+</button></code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="btn-default">
+          
+<div id="element-buttonbtn-default" class="styleguide-item-preview">
+  
+    <button class="btn btn-default">
+  Mon bouton
+</button>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><button class="btn btn-default">
+  Mon bouton
+</button></code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="btn-outline">
+          
+<div id="element-buttonbtn-outline" class="styleguide-item-preview">
+  
+    <button class="btn btn-outline btn-primary">
+  Mon bouton
+</button>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><button class="btn btn-outline btn-primary">
+  Mon bouton
+</button></code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="btn-circle">
+          
+<div id="element-buttonbtn-circle" class="styleguide-item-preview">
+  
+    <button class="btn btn-circle btn-outline" aria-label="Next">
+  <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span>
+</button>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><button class="btn btn-circle btn-outline" aria-label="Next">
+  <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span>
+</button></code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="btn-icon">
+          
+<div id="element-buttonbtn-icon" class="styleguide-item-preview">
+  
+    <button class="btn btn-primary btn-icon">
+  <i aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
+</button>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><button class="btn btn-primary btn-icon">
+  <i aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
+</button></code></pre>
+</div>
+
+        </div>
+      
+    
   </div>
+
+
+
 
 </div>
 
@@ -971,7 +928,7 @@
       
 <div class="styleguide-item-group" id="button-bubble">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#button-bubble">button-bubble</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#button-bubble">Button Bubble</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -984,265 +941,59 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-button-bubble-">Usage : <code>button-bubble</code></h5>
-<ul>
-<li><strong>bubble_theme</strong> - <i>String</i> - <b>button-bubble-[&#39;outline&#39;|&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
-    
-  </div>
-  <div id="element-button-bubble" class="styleguide-item-preview">
-    
-      <div class="button-bubble button-bubble- text-center">
+</div>
+
+
+
+
+  
+<div id="element-button-bubble" class="styleguide-item-preview">
+  
+    <div class="button-bubble text-center">
   <div class="spacer spacer-xs"></div>
   <div class="bubble-icon">
     <a aria-label="Lien" href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i></a>
   </div>
   <div class="bubble-link">
-    <a href="#" class="pretty-link text-">Lien</a>
+    <a href="#" class="pretty-link">Lien</a>
   </div>
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="button-bubble button-bubble- text-center">
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="button-bubble text-center">
   <div class="spacer spacer-xs"></div>
   <div class="bubble-icon">
     <a aria-label="Lien" href="#"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i></a>
   </div>
   <div class="bubble-link">
-    <a href="#" class="pretty-link text-">Lien</a>
+    <a href="#" class="pretty-link">Lien</a>
   </div>
 </div>
 </code></pre>
-  </div>
-
 </div>
 
-    
-      
-<div class="styleguide-item-group" id="facets-list">
-  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#facets-list">facets-list</a></h3>
-    
-  <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
-      <svg>
-        <use xlink:href="#styleguide-icon-code" />
-      </svg>
-    </span>
-  </div>
 
-  </div>
-  
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-facets-list-">Usage : <code>facets-list</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>facets_title</strong> - <i>String</i></li>
-<li><strong>facets_links</strong> - <i>Array</i></li>
-<li><strong>facets_theme</strong> - <i>String</i> - <b>[&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
 
-      </div>
-    
-  </div>
-  <div id="element-facets-list" class="styleguide-item-preview">
-    
-      <p class="media-heading text-muted"></p>
-<ul class="facets-list">
-  
-      <li><a href="#" class="pretty-link text-">Liens 1</a></li>
-      <li><a href="#" class="pretty-link text-">Velit quia eum est dolore quod et repellat.</a></li>
-  
-</ul>
-
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><p class="media-heading text-muted"></p>
-<ul class="facets-list">
-  
-      <li><a href="#" class="pretty-link text-">Liens 1</a></li>
-      <li><a href="#" class="pretty-link text-">Velit quia eum est dolore quod et repellat.</a></li>
-  
-</ul>
-</code></pre>
-  </div>
-
-</div>
-
-    
-      
-<div class="styleguide-item-group" id="favicon">
-  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#favicon">favicon</a></h3>
-    
-  <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
-      <svg>
-        <use xlink:href="#styleguide-icon-code" />
-      </svg>
-    </span>
-  </div>
-
-  </div>
-  
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
-
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-favicon-">Usage : <code>favicon</code></h5>
-
-      </div>
-    
-  </div>
-  <div id="element-favicon" class="styleguide-item-preview">
-    
-      <img src="/retraitespopulaires-styleguide/build/favicons/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="57x57" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/retraitespopulaires-styleguide/build/favicons/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/retraitespopulaires-styleguide/build/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/retraitespopulaires-styleguide/build/favicons/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/retraitespopulaires-styleguide/build/favicons/favicon-16x16.png">
-<link rel="manifest" href="/retraitespopulaires-styleguide/build/favicons/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/retraitespopulaires-styleguide/build/favicons/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><img src="/retraitespopulaires-styleguide/build/favicons/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="57x57" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/retraitespopulaires-styleguide/build/favicons/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/retraitespopulaires-styleguide/build/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/retraitespopulaires-styleguide/build/favicons/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/retraitespopulaires-styleguide/build/favicons/favicon-16x16.png">
-<link rel="manifest" href="/retraitespopulaires-styleguide/build/favicons/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/retraitespopulaires-styleguide/build/favicons/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-</code></pre>
-  </div>
-
-</div>
-
-    
-      
-<div class="styleguide-item-group" id="filters-list">
-  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#filters-list">filters-list</a></h3>
-    
-  <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
-      <svg>
-        <use xlink:href="#styleguide-icon-code" />
-      </svg>
-    </span>
-  </div>
-
-  </div>
-  
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
-
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-filters-list-">Usage : <code>filters-list</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>filters_list_title</strong> - <i>String</i></li>
-<li><strong>filters_list_links</strong> - <i>Array</i></li>
-<li><strong>filters_list_theme</strong> - <i>String</i> - <b>[&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
-
-      </div>
-    
-  </div>
-  <div id="element-filters-list" class="styleguide-item-preview">
-    
-      <p class="media-heading text-muted">Votre versement</p>
-<ul class="filters-list filters-list-">
-  
-    <li>
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></i>
-      <a href="#" class="pretty-link text-">Une seule prime</a>
-    </li>
-  
-    <li>
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></i>
-      <a href="#" class="pretty-link text-">Plusieurs prime</a>
-    </li>
-  
-</ul>
-
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><p class="media-heading text-muted">Votre versement</p>
-<ul class="filters-list filters-list-">
-  
-    <li>
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></i>
-      <a href="#" class="pretty-link text-">Une seule prime</a>
-    </li>
-  
-    <li>
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></i>
-      <a href="#" class="pretty-link text-">Plusieurs prime</a>
-    </li>
-  
-</ul>
-</code></pre>
-  </div>
 
 </div>
 
@@ -1250,7 +1001,7 @@
       
 <div class="styleguide-item-group" id="funky-waves">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#funky-waves">funky-waves</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#funky-waves">Funky Waves</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -1263,33 +1014,57 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look. <br>
+Can be used with the modifier <code>has-header</code> to add margin-top when used with fixed header.</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-funky-waves-">Usage : <code>funky-waves</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>funky_waves_img</strong> - <i>String</i></li>
-<li><strong>funky_waves_theme</strong> - <i>String</i> - <b>wrapper-funky-waves-[&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-<li><strong>funky_waves_disable</strong> - <i>Boolean</i></li>
-<li><strong>funky_waves_no_header</strong> - <i>Boolean</i></li>
-</ul>
+    </div>
+  
 
-      </div>
+</div>
+
+
+  
     
-  </div>
-  <div id="element-funky-waves" class="styleguide-item-preview">
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#funky-waves-default" role="tab">Default</a>
+    </li>
+  
     
+      <li>
+        <a data-toggle="tab" href="#no-funky" role="tab">Whitout Funky</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#no-cover" role="tab">Whitout cover</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="funky-waves-default">
       
-<div class="wrapper-funky-waves has-header wrapper-funky-waves-">
+<div id="element-funky-waves" class="styleguide-item-preview">
   
-    <picture>
+    <div class="wrapper-funky-waves wrapper-funky-waves-with-cover">
+  <picture>
       <source srcset="https://unsplash.it/544/250?image=1057" media="(max-width: 544px)">
       <source srcset="https://unsplash.it/992/350?image=1057" media="(max-width: 992px)">
       <source srcset="https://unsplash.it/1600/436?image=1057" media="(max-width: 1600px)">
@@ -1297,8 +1072,7 @@
     </picture>
   
 
-  
-    <div class="funky-waves-container">
+  <div class="funky-waves-container">
       <svg class="wave-1" version="1.1" viewBox="0 0 1920 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
           <path fill="#FFFFFF" d="M1920,136V73 c-189,83-636,77-980-6 C504-40,274-1,0,65.0277l0,70.7052L1920,136z"/>
           <rect fill="#FFFFFF" y="133" width="100%" height="80px" />
@@ -1319,15 +1093,16 @@
   
 </div>
 
+<div class="spacer"></div>
 
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup">
-<div class="wrapper-funky-waves has-header wrapper-funky-waves-">
   
-    <picture>
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="wrapper-funky-waves wrapper-funky-waves-with-cover">
+  <picture>
       <source srcset="https://unsplash.it/544/250?image=1057" media="(max-width: 544px)">
       <source srcset="https://unsplash.it/992/350?image=1057" media="(max-width: 992px)">
       <source srcset="https://unsplash.it/1600/436?image=1057" media="(max-width: 1600px)">
@@ -1335,8 +1110,7 @@
     </picture>
   
 
-  
-    <div class="funky-waves-container">
+  <div class="funky-waves-container">
       <svg class="wave-1" version="1.1" viewBox="0 0 1920 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
           <path fill="#FFFFFF" d="M1920,136V73 c-189,83-636,77-980-6 C504-40,274-1,0,65.0277l0,70.7052L1920,136z"/>
           <rect fill="#FFFFFF" y="133" width="100%" height="80px" />
@@ -1354,12 +1128,132 @@
         <path opacity="0.33" fill="#FFFFFF" d="M3839.76,105.23c-318.75,96.5-566.89,87.44-884.92,6.43C2598.46,20.88,2223,8.74,1919.76,105c-318.75,96.5-566.89,87.43-884.92,6.43C678.45,20.61,303,8.47-.24,104.69L0,273l1920,.27,1920,.27Z"/>
       </svg>
     </div>
+  
+</div>
+
+<div class="spacer"></div>
+
+</code></pre>
+</div>
+
+    </div>
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="no-funky">
+          
+<div id="element-funky-wavesno-funky" class="styleguide-item-preview">
+  
+    <div class="wrapper-funky-waves wrapper-funky-waves-with-cover">
+  <picture>
+      <source srcset="https://unsplash.it/544/250?image=1057" media="(max-width: 544px)">
+      <source srcset="https://unsplash.it/992/350?image=1057" media="(max-width: 992px)">
+      <source srcset="https://unsplash.it/1600/436?image=1057" media="(max-width: 1600px)">
+      <img class="img-responsive center-block" src="https://unsplash.it/2200/600?image=1057" alt="Image de couverture">
+    </picture>
+  
+
+  
+</div>
+
+
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="wrapper-funky-waves wrapper-funky-waves-with-cover">
+  <picture>
+      <source srcset="https://unsplash.it/544/250?image=1057" media="(max-width: 544px)">
+      <source srcset="https://unsplash.it/992/350?image=1057" media="(max-width: 992px)">
+      <source srcset="https://unsplash.it/1600/436?image=1057" media="(max-width: 1600px)">
+      <img class="img-responsive center-block" src="https://unsplash.it/2200/600?image=1057" alt="Image de couverture">
+    </picture>
+  
+
   
 </div>
 
 
 </code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="no-cover">
+          
+<div id="element-funky-wavesno-cover" class="styleguide-item-preview">
+  
+    <div class="wrapper-funky-waves ">
+  
+
+  <div class="funky-waves-container">
+      <svg class="wave-1" version="1.1" viewBox="0 0 1920 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+          <path fill="#FFFFFF" d="M1920,136V73 c-189,83-636,77-980-6 C504-40,274-1,0,65.0277l0,70.7052L1920,136z"/>
+          <rect fill="#FFFFFF" y="133" width="100%" height="80px" />
+      </svg>
+
+      
+      <svg class="wave-2" version="1.1" viewBox="0 0 3840 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+       
+        <path opacity="0.33" fill="#FFFFFF" d="M2378.24,133.4C2131.57,125.71,1923,74.22,1920,73.48h0C1425.73-36.43,706.86,141.16,458.41,133.4S0,74.21,0,74.21V261.48H3839.83v-188C3345.56-36.43,2626.69,141.16,2378.24,133.4Z"/>
+      </svg>
+
+      
+      <svg class="wave-3" version="1.1" viewBox="0 0 3840 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+       
+        <path opacity="0.33" fill="#FFFFFF" d="M3839.76,105.23c-318.75,96.5-566.89,87.44-884.92,6.43C2598.46,20.88,2223,8.74,1919.76,105c-318.75,96.5-566.89,87.43-884.92,6.43C678.45,20.61,303,8.47-.24,104.69L0,273l1920,.27,1920,.27Z"/>
+      </svg>
+    </div>
+  
+</div>
+
+<div class="spacer"></div>
+
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="wrapper-funky-waves ">
+  
+
+  <div class="funky-waves-container">
+      <svg class="wave-1" version="1.1" viewBox="0 0 1920 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+          <path fill="#FFFFFF" d="M1920,136V73 c-189,83-636,77-980-6 C504-40,274-1,0,65.0277l0,70.7052L1920,136z"/>
+          <rect fill="#FFFFFF" y="133" width="100%" height="80px" />
+      </svg>
+
+      
+      <svg class="wave-2" version="1.1" viewBox="0 0 3840 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+       
+        <path opacity="0.33" fill="#FFFFFF" d="M2378.24,133.4C2131.57,125.71,1923,74.22,1920,73.48h0C1425.73-36.43,706.86,141.16,458.41,133.4S0,74.21,0,74.21V261.48H3839.83v-188C3345.56-36.43,2626.69,141.16,2378.24,133.4Z"/>
+      </svg>
+
+      
+      <svg class="wave-3" version="1.1" viewBox="0 0 3840 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+       
+        <path opacity="0.33" fill="#FFFFFF" d="M3839.76,105.23c-318.75,96.5-566.89,87.44-884.92,6.43C2598.46,20.88,2223,8.74,1919.76,105c-318.75,96.5-566.89,87.43-884.92,6.43C678.45,20.61,303,8.47-.24,104.69L0,273l1920,.27,1920,.27Z"/>
+      </svg>
+    </div>
+  
+</div>
+
+<div class="spacer"></div>
+
+</code></pre>
+</div>
+
+        </div>
+      
+    
   </div>
+
+
+
 
 </div>
 
@@ -1367,7 +1261,7 @@
       
 <div class="styleguide-item-group" id="hamburger">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#hamburger">hamburger</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#hamburger">Hamburger</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -1380,29 +1274,50 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look.</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-hamburger-">Usage : <code>hamburger</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>hamburger_link</strong> - <i>Boolean</i></li>
-<li>hamburger_theme** - <i>String</i> - <b>hamburger-[&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
+</div>
+
+
+  
     
-  </div>
-  <div id="element-hamburger" class="styleguide-item-preview">
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#hamburger-default" role="tab">Default</a>
+    </li>
+  
     
+      <li>
+        <a data-toggle="tab" href="#link-only" role="tab">Hamburger as Link</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="hamburger-default">
       
-  <div class="hamburger-wrapper hamburger-">
+<div id="element-hamburger" class="styleguide-item-preview">
+  
+    
+  <div class="hamburger-wrapper">
 
   <div class="hamburger-button">
     <div class="hamburger">
@@ -1422,11 +1337,13 @@
   </div>
 
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup">
-  <div class="hamburger-wrapper hamburger-">
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup">
+  <div class="hamburger-wrapper">
 
   <div class="hamburger-button">
     <div class="hamburger">
@@ -1446,49 +1363,18 @@
   </div>
 
 </code></pre>
-  </div>
-
 </div>
 
+    </div>
     
       
-<div class="styleguide-item-group" id="hamburger-mandat">
-  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#hamburger-mandat">hamburger-mandat</a></h3>
-    
-  <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
-      <svg>
-        <use xlink:href="#styleguide-icon-code" />
-      </svg>
-    </span>
-  </div>
-
-  </div>
+        <div class="styleguide-tab-pane tab-pane" id="link-only">
+          
+<div id="element-hamburgerlink-only" class="styleguide-item-preview">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
+    <a href="//www.retraitespopulaires.ch/launcher" class="hamburger-wrapper d-block">
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-hamburger-mandat-">Usage : <code>hamburger-mandat</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li>hamburger_mandat_theme** - <i>String</i> - <b>hamburger-[&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
-
-      </div>
-    
-  </div>
-  <div id="element-hamburger-mandat" class="styleguide-item-preview">
-    
-      <div class="hamburger-mandat-wrapper hamburger-">
-  <div class="hamburger-mandat-button">
+  <div class="hamburger-button">
     <div class="hamburger">
       <span></span>
       <span></span>
@@ -1498,17 +1384,21 @@
       <circle fill="transparent" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
     </svg>
   </div>
-  <div class="hamburger-mandat-helper text-secondary">
+  <div class="hamburger-helper text-secondary">
     <div class="helper-when-close">Menu</div>
     <div class="helper-when-open">Fermer</div>
   </div>
+</a>
+
+
+  
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="hamburger-mandat-wrapper hamburger-">
-  <div class="hamburger-mandat-button">
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><a href="//www.retraitespopulaires.ch/launcher" class="hamburger-wrapper d-block">
+
+  <div class="hamburger-button">
     <div class="hamburger">
       <span></span>
       <span></span>
@@ -1518,13 +1408,22 @@
       <circle fill="transparent" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
     </svg>
   </div>
-  <div class="hamburger-mandat-helper text-secondary">
+  <div class="hamburger-helper text-secondary">
     <div class="helper-when-close">Menu</div>
     <div class="helper-when-open">Fermer</div>
   </div>
-</div>
+</a>
+
 </code></pre>
+</div>
+
+        </div>
+      
+    
   </div>
+
+
+
 
 </div>
 
@@ -1532,7 +1431,7 @@
       
 <div class="styleguide-item-group" id="highlight">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#highlight">highlight</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#highlight">Highlight</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -1545,33 +1444,43 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look.</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-highlight-">Usage : <code>highlight</code></h5>
-<ul>
-<li><strong>highlight_theme</strong> - <i>String</i> - <b>[&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
-    
-  </div>
-  <div id="element-highlight" class="styleguide-item-preview">
-    
-      <p>Retraites Populaires est <mark class="text-highlight-primary">responsable</mark>. Au coeur de sa raison d’être se trouve le <mark class="text-highlight-primary">respect des engagements</mark>.</p>
+</div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><p>Retraites Populaires est <mark class="text-highlight-primary">responsable</mark>. Au coeur de sa raison d’être se trouve le <mark class="text-highlight-primary">respect des engagements</mark>.</p>
+
+
+
+  
+<div id="element-highlight" class="styleguide-item-preview">
+  
+    <p>Retraites Populaires est <mark>responsable</mark>. Au coeur de sa raison d’être se trouve le <mark>respect des engagements</mark>.</p>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><p>Retraites Populaires est <mark>responsable</mark>. Au coeur de sa raison d’être se trouve le <mark>respect des engagements</mark>.</p>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -1579,67 +1488,99 @@
       
 <div class="styleguide-item-group" id="icon-text">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#icon-text">icon-text</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#icon-text">Icon Text</a></h3>
     
   <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
+    
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
       <svg>
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-icon-text-">Usage : <code>icon-text</code></h5>
+</div>
 
-      </div>
+
+  
     
-  </div>
-  <div id="element-icon-text" class="styleguide-item-preview">
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#icon-text-default" role="tab">Default</a>
+    </li>
+  
     
-      <div class="icon-text" style="max-width: 200px;">
+      <li>
+        <a data-toggle="tab" href="#back" role="tab">Back Icon</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="icon-text-default">
+      
+<div id="element-icon-text" class="styleguide-item-preview">
+  
+    <a href="#0" class="icon-text icon-text-center" style="max-width: 200px;">
+  <span class="retraitespopulaires-icon retraitespopulaires-icon-collectivites retraitespopulaires-icon-3x"></span>
+  <h4 class="icon-text-txt text-secondary">Collectivités publiques</h4>
+</a>
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><a href="#0" class="icon-text icon-text-center" style="max-width: 200px;">
+  <span class="retraitespopulaires-icon retraitespopulaires-icon-collectivites retraitespopulaires-icon-3x"></span>
+  <h4 class="icon-text-txt text-secondary">Collectivités publiques</h4>
+</a></code></pre>
+</div>
+
+    </div>
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="back">
+          
+<div id="element-icon-textback" class="styleguide-item-preview">
+  
+    <div class="icon-text" style="max-width: 200px;">
   <a href="#0" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-left no-underline text-"></a>
   <div class="icon-text-txt">
-    <a href="/contact/questions-reponses" class="pretty-link text-">Retour aux questions et réponses</a>
+    <a href="#0" class="pretty-link text-">Retour aux questions et réponses</a>
   </div>
 </div>
-
-<div class="spacer"></div>
-
-<div class="text-primary icon-text icon-text-center" style="max-width: 200px;">
-  <span class="retraitespopulaires-icon retraitespopulaires-icon-collectivites retraitespopulaires-icon-3x text-"></span>
-  <div class="icon-text-txt text-secondary h4 text-">Collectivités publiques</div>
+  
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="icon-text" style="max-width: 200px;">
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="icon-text" style="max-width: 200px;">
   <a href="#0" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-left no-underline text-"></a>
   <div class="icon-text-txt">
-    <a href="/contact/questions-reponses" class="pretty-link text-">Retour aux questions et réponses</a>
+    <a href="#0" class="pretty-link text-">Retour aux questions et réponses</a>
   </div>
+</div></code></pre>
 </div>
 
-<div class="spacer"></div>
-
-<div class="text-primary icon-text icon-text-center" style="max-width: 200px;">
-  <span class="retraitespopulaires-icon retraitespopulaires-icon-collectivites retraitespopulaires-icon-3x text-"></span>
-  <div class="icon-text-txt text-secondary h4 text-">Collectivités publiques</div>
-</div>
-</code></pre>
+        </div>
+      
+    
   </div>
+
+
+
 
 </div>
 
@@ -1647,7 +1588,7 @@
       
 <div class="styleguide-item-group" id="input-checkbox">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#input-checkbox">input-checkbox</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#input-checkbox">Input Checkbox</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -1660,48 +1601,61 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look.</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-input-checkbox-">Usage : <code>input-checkbox</code></h5>
+    </div>
+  
 
-      </div>
-    
-  </div>
-  <div id="element-input-checkbox" class="styleguide-item-preview">
-    
-      <div class="form-group">
+</div>
+
+
+
+
+  
+<div id="element-input-checkbox" class="styleguide-item-preview">
+  
+    <div class="form-group">
   <div class="input-checkbox">
-    <input type="checkbox" value="meringue-crème-double">
-    <label>Meringue crème double</label>
+    <input type="checkbox" id="meringue" value="meringue-crème-double">
+    <label for="meringue">Meringue crème double</label>
   </div>
   <div class="input-checkbox">
-    <input type="checkbox" value="miel" checked>
-    <label>Miel</label>
+    <input type="checkbox" id="miel" value="miel" checked>
+    <label for="miel">Miel</label>
   </div>
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="form-group">
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="form-group">
   <div class="input-checkbox">
-    <input type="checkbox" value="meringue-crème-double">
-    <label>Meringue crème double</label>
+    <input type="checkbox" id="meringue" value="meringue-crème-double">
+    <label for="meringue">Meringue crème double</label>
   </div>
   <div class="input-checkbox">
-    <input type="checkbox" value="miel" checked>
-    <label>Miel</label>
+    <input type="checkbox" id="miel" value="miel" checked>
+    <label for="miel">Miel</label>
   </div>
 </div>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -1709,7 +1663,7 @@
       
 <div class="styleguide-item-group" id="input-datepicker">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#input-datepicker">input-datepicker</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#input-datepicker">Input Datepicker</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -1722,49 +1676,121 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look. <br>
+We use the <code>jQuery</code> plugin <a href="https://bootstrap-datepicker.readthedocs.io/en/latest">bootstrap-datepicker</a>, check the documentation for advanced usage &amp; parameters.</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-input-datepicker-">Usage : <code>input-datepicker</code></h5>
-<ul>
-<li><strong>datepicker_theme</strong> - <i>String</i> - <b>datepicker-[&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
+</div>
+
+
+  
     
-  </div>
-  <div id="element-input-datepicker" class="styleguide-item-preview">
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#input-datepicker-default" role="tab">Default</a>
+    </li>
+  
     
-      <div class="form-group">
-  <label>label</label>
+      <li>
+        <a data-toggle="tab" href="#input-group" role="tab">With Button</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="input-datepicker-default">
+      
+<div id="element-input-datepicker" class="styleguide-item-preview">
+  
+    <div class="form-group">
+  <label for="dateinput" >label</label>
   <div class="input-group">
-    <input type="text" class="form-control form-control-  datepicker" aria-label="Saisissez la date au format (JJ/MM/AAAA)" value="02/12/2016">
-    <span class="input-group-btn">
-      <button class="btn btn- btn-icon" type="button" aria-label="Choisir la date"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
+    <input id="dateinput" size="15" class="datepicker form-text form-control" type="text" value="02/12/2016" maxlength="10" placeholder="jj/mm/aaaa">
+    <span class="input-group-btn no-events" aria-hidden="true">
+      <div class="btn btn-invert btn-icon">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>
+      </div>
     </span>
   </div>
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="form-group">
-  <label>label</label>
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="form-group">
+  <label for="dateinput" >label</label>
   <div class="input-group">
-    <input type="text" class="form-control form-control-  datepicker" aria-label="Saisissez la date au format (JJ/MM/AAAA)" value="02/12/2016">
-    <span class="input-group-btn">
-      <button class="btn btn- btn-icon" type="button" aria-label="Choisir la date"><i class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></i></button>
+    <input id="dateinput" size="15" class="datepicker form-text form-control" type="text" value="02/12/2016" maxlength="10" placeholder="jj/mm/aaaa">
+    <span class="input-group-btn no-events" aria-hidden="true">
+      <div class="btn btn-invert btn-icon">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>
+      </div>
     </span>
   </div>
 </div>
 </code></pre>
+</div>
+
+    </div>
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="input-group">
+          
+<div id="element-input-datepickerinput-group" class="styleguide-item-preview">
+  
+    <div class="form-group">
+  <label for="dateinput" >label</label>
+  <div class="input-group">
+    <input id="dateinput" size="15" class="datepicker form-text form-control" type="text" value="02/12/2016" maxlength="10" placeholder="jj/mm/aaaa">
+    <span class="input-group-btn">
+      <button class="btn btn-primary" type="button"><span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-calendar" aria-hidden="true"></span></button>
+    </span>
   </div>
+</div>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="form-group">
+  <label for="dateinput" >label</label>
+  <div class="input-group">
+    <input id="dateinput" size="15" class="datepicker form-text form-control" type="text" value="02/12/2016" maxlength="10" placeholder="jj/mm/aaaa">
+    <span class="input-group-btn">
+      <button class="btn btn-primary" type="button"><span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-calendar" aria-hidden="true"></span></button>
+    </span>
+  </div>
+</div>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+  </div>
+
+
+
 
 </div>
 
@@ -1772,61 +1798,72 @@
       
 <div class="styleguide-item-group" id="input-file">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#input-file">input-file</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#input-file">Input File</a></h3>
     
   <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
+    
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
       <svg>
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
-
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-input-file-">Usage : <code>input-file</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>input_file_theme</strong> - <i>String</i> - <b>btn-[&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
-
+      <div class="alert alert-warning">
+        <ul class="list-unstyled">
+          
+            <li><strong>3.0.0 –</strong> <p>Improvements to CSS, the <code>.label</code> class became <code>.form-control-label</code>.</p>
+</li>
+          
+        </ul>
       </div>
     
-  </div>
-  <div id="element-input-file" class="styleguide-item-preview">
     
-      
-<div class="form-group form-file">
-  <div class="label">Certificat de salaire</div>
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-input-file" class="styleguide-item-preview">
+  
+    <div class="form-group form-file">
+  <span class="form-control-label">Certificat de salaire</span>
   <div class="form-file-handler btn btn-lg btn-primary">
     <label for="inputID">Télécharger votre fichier</label>
-    <input class="" id="inputID" type="file"></input>
+    <input id="inputID" type="file"></input>
   </div>
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup">
-<div class="form-group form-file">
-  <div class="label">Certificat de salaire</div>
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="form-group form-file">
+  <span class="form-control-label">Certificat de salaire</span>
   <div class="form-file-handler btn btn-lg btn-primary">
     <label for="inputID">Télécharger votre fichier</label>
-    <input class="" id="inputID" type="file"></input>
+    <input id="inputID" type="file"></input>
   </div>
 </div>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -1834,41 +1871,62 @@
       
 <div class="styleguide-item-group" id="input-group">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#input-group">input-group</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#input-group">Input Group</a></h3>
     
   <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
+    
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
       <svg>
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-input-group-">Usage : <code>input-group</code></h5>
+</div>
 
-      </div>
-    
+
+
+
+  
+<div id="element-input-group" class="styleguide-item-preview">
+  
+    <div class="form-group">
+  <label>Groupe</label>
+  <div class="input-group full-width">
+    <input type="text" class="form-control full-width" placeholder="Rechercher des documents, articles, ...">
+    <span class="input-group-btn">
+      <button class="btn btn-primary" type="button">Rechercher</button>
+    </span>
   </div>
-  <div id="element-input-group" class="styleguide-item-preview">
-    
-      
-    
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="form-group">
+  <label>Groupe</label>
+  <div class="input-group full-width">
+    <input type="text" class="form-control full-width" placeholder="Rechercher des documents, articles, ...">
+    <span class="input-group-btn">
+      <button class="btn btn-primary" type="button">Rechercher</button>
+    </span>
   </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"></code></pre>
-  </div>
+</div>
+</code></pre>
+</div>
+
+
+
+
 
 </div>
 
@@ -1876,7 +1934,7 @@
       
 <div class="styleguide-item-group" id="input-radio">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#input-radio">input-radio</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#input-radio">Input Radio</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -1889,56 +1947,69 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look.</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-input-radio-">Usage : <code>input-radio</code></h5>
+    </div>
+  
 
-      </div>
-    
-  </div>
-  <div id="element-input-radio" class="styleguide-item-preview">
-    
-      <div class="form-group">
+</div>
+
+
+
+
+  
+<div id="element-input-radio" class="styleguide-item-preview">
+  
+    <div class="form-group">
   <div class="input-radio">
-    <input aria-label="Parfum pistache" type="radio" name="taste" value="pistache">
-    <label class="option">Pistache</label>
+    <input aria-label="Parfum pistache" type="radio" name="taste" id="taste-pistache" value="pistache" checked>
+    <label class="option" for="taste-pistache">Pistache</label>
   </div>
   <div class="input-radio">
-    <input aria-label="Parfum menthe fraîche" type="radio" name="taste" value="menth-fraiche">
-    <label class="option">Menthe fraîche</label>
+    <input aria-label="Parfum menthe fraîche" type="radio" name="taste" id="taste-menth" value="menth-fraiche">
+    <label class="option" for="taste-menth">Menthe fraîche</label>
   </div>
   <div class="input-radio">
-    <input aria-label="Parfum chocolat" type="radio" name="taste" value="chocolat" checked="checked" />
-    <label class="option">Chocolat</label>
+    <input aria-label="Parfum chocolat" type="radio" name="taste" id="taste-chocolat" value="chocolat" checked="checked" />
+    <label class="option" for="taste-chocolat">Chocolat</label>
   </div>
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="form-group">
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="form-group">
   <div class="input-radio">
-    <input aria-label="Parfum pistache" type="radio" name="taste" value="pistache">
-    <label class="option">Pistache</label>
-  </div>
-  <div class="input-radio">
-    <input aria-label="Parfum menthe fraîche" type="radio" name="taste" value="menth-fraiche">
-    <label class="option">Menthe fraîche</label>
+    <input aria-label="Parfum pistache" type="radio" name="taste" id="taste-pistache" value="pistache" checked>
+    <label class="option" for="taste-pistache">Pistache</label>
   </div>
   <div class="input-radio">
-    <input aria-label="Parfum chocolat" type="radio" name="taste" value="chocolat" checked="checked" />
-    <label class="option">Chocolat</label>
+    <input aria-label="Parfum menthe fraîche" type="radio" name="taste" id="taste-menth" value="menth-fraiche">
+    <label class="option" for="taste-menth">Menthe fraîche</label>
+  </div>
+  <div class="input-radio">
+    <input aria-label="Parfum chocolat" type="radio" name="taste" id="taste-chocolat" value="chocolat" checked="checked" />
+    <label class="option" for="taste-chocolat">Chocolat</label>
   </div>
 </div>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -1946,7 +2017,7 @@
       
 <div class="styleguide-item-group" id="input-radio-btn">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#input-radio-btn">input-radio-btn</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#input-radio-btn">Input Radio Button</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -1959,35 +2030,39 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look.</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-input-radio-btn-">Usage : <code>input-radio-btn</code></h5>
-<ul>
-<li><strong>input_radio_btn_theme</strong> - <i>String</i> - <b>text-[&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
-    
-  </div>
-  <div id="element-input-radio-btn" class="styleguide-item-preview">
-    
-      <div class="form-group">
+</div>
+
+
+
+
+  
+<div id="element-input-radio-btn" class="styleguide-item-preview">
+  
+    <div class="form-group">
   <div class="input-radio-btn">
     <div class="btn-group" data-toggle="buttons">
-      <label class="btn  btn- active">
+      <label class="btn  btn-primary active">
         <input type="radio" name="options" id="caramel_beurre-sale" aria-label="Parfum caramel beurre salé" autocomplete="off" checked> Caramel beurre salé
       </label>
-      <label class="btn btn- ">
+      <label class="btn btn-primary ">
         <input type="radio" name="options" id="stracciatella" aria-label="Parfum stracciatella" autocomplete="off"> Stracciatella
       </label>
-      <label class="btn btn- ">
+      <label class="btn btn-primary ">
         <input type="radio" name="options" id="framboise" aria-label="Parfum framboise" autocomplete="off"> Framboise
       </label>
     </div>
@@ -1995,19 +2070,21 @@
   </div>
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="form-group">
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="form-group">
   <div class="input-radio-btn">
     <div class="btn-group" data-toggle="buttons">
-      <label class="btn  btn- active">
+      <label class="btn  btn-primary active">
         <input type="radio" name="options" id="caramel_beurre-sale" aria-label="Parfum caramel beurre salé" autocomplete="off" checked> Caramel beurre salé
       </label>
-      <label class="btn btn- ">
+      <label class="btn btn-primary ">
         <input type="radio" name="options" id="stracciatella" aria-label="Parfum stracciatella" autocomplete="off"> Stracciatella
       </label>
-      <label class="btn btn- ">
+      <label class="btn btn-primary ">
         <input type="radio" name="options" id="framboise" aria-label="Parfum framboise" autocomplete="off"> Framboise
       </label>
     </div>
@@ -2015,7 +2092,11 @@
   </div>
 </div>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -2023,7 +2104,7 @@
       
 <div class="styleguide-item-group" id="input-select">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#input-select">input-select</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#input-select">Input Select</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -2036,26 +2117,30 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look.</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-input-select-">Usage : <code>input-select</code></h5>
-<ul>
-<li><strong>input_select_theme</strong> - <i>String</i> - <b>form-control-[&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
-    
-  </div>
-  <div id="element-input-select" class="styleguide-item-preview">
-    
-      <div class="form-group">
+</div>
+
+
+
+
+  
+<div id="element-input-select" class="styleguide-item-preview">
+  
+    <div class="form-group">
   <label for="inputID">Label</label>
   <select class="form-control form-control-">
     <option>Choisir, c'est renoncer...</option>
@@ -2064,10 +2149,12 @@
   </select>
   </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="form-group">
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="form-group">
   <label for="inputID">Label</label>
   <select class="form-control form-control-">
     <option>Choisir, c'est renoncer...</option>
@@ -2076,7 +2163,11 @@
   </select>
   </div>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -2084,7 +2175,7 @@
       
 <div class="styleguide-item-group" id="input-text">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#input-text">input-text</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#input-text">Input Text</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -2097,40 +2188,49 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-input-text-">Usage : <code>input-text</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>input_text_theme</strong> - <i>String</i> - <b>form-control-[&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
-    
-  </div>
-  <div id="element-input-text" class="styleguide-item-preview">
-    
-      <div class="form-group">
-  <label for="inputID">Label</label>
-  <input class="form-control form-control-" id="inputID" type="text" placeholder="Placeholder"></input>
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="form-group">
+
+
+
+  
+<div id="element-input-text" class="styleguide-item-preview">
+  
+    <div class="form-group">
   <label for="inputID">Label</label>
-  <input class="form-control form-control-" id="inputID" type="text" placeholder="Placeholder"></input>
+  <input class="form-control" id="inputID" type="text" placeholder="Placeholder"></input>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="form-group">
+  <label for="inputID">Label</label>
+  <input class="form-control" id="inputID" type="text" placeholder="Placeholder"></input>
 </div>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -2138,7 +2238,7 @@
       
 <div class="styleguide-item-group" id="input-textarea">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#input-textarea">input-textarea</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#input-textarea">Input Textarea</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -2151,39 +2251,347 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look.</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-input-textarea-">Usage : <code>input-textarea</code></h5>
-<ul>
-<li><strong>input_textarea_theme</strong> - <i>String</i> - <b>datepicker-[&#39;primary&#39;|&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
-    
-  </div>
-  <div id="element-input-textarea" class="styleguide-item-preview">
-    
-      <div class="form-group">
+</div>
+
+
+
+
+  
+<div id="element-input-textarea" class="styleguide-item-preview">
+  
+    <div class="form-group">
   <label for="inputID">Label</label>
   <textarea name="name" class="form-control form-control-" rows="8" placeholder="Soyez le plus précis possible, merci."></textarea>
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="form-group">
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="form-group">
   <label for="inputID">Label</label>
   <textarea name="name" class="form-control form-control-" rows="8" placeholder="Soyez le plus précis possible, merci."></textarea>
 </div>
 </code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="label">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#label">Label</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
   </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-label" class="styleguide-item-preview">
+  
+    <a href="#" class="label label-primary">Immobilier</a>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><a href="#" class="label label-primary">Immobilier</a>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="list">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#list">List</a></h3>
+    
+  <div class="styleguide-item-controls">
+    
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+
+</div>
+
+
+  
+    
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#list-default" role="tab">Unordered List</a>
+    </li>
+  
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#ordered-list" role="tab">Ordered List</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#facets-list" role="tab">Facets List</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#treeview-list" role="tab">Treeview List</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#filters-list" role="tab">Filters List</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="list-default">
+      
+<div id="element-list" class="styleguide-item-preview">
+  
+    <ul class="unordered-list">
+  <li>
+    <a href="#" class="pretty-link">Liens 1</a>
+  </li>
+  <li>
+    <a href="#" class="pretty-link">Velit quia eum est dolore quod et repellat.</a>
+  </li>
+</ul>
+
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><ul class="unordered-list">
+  <li>
+    <a href="#" class="pretty-link">Liens 1</a>
+  </li>
+  <li>
+    <a href="#" class="pretty-link">Velit quia eum est dolore quod et repellat.</a>
+  </li>
+</ul>
+</code></pre>
+</div>
+
+    </div>
+    
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="ordered-list">
+          
+<div id="element-listordered-list" class="styleguide-item-preview">
+  
+    <ol class="ordered-list">
+  <li>
+    <a href="#" class="pretty-link">Liens 1</a>
+  </li>
+  <li>
+    <a href="#" class="pretty-link">Velit quia eum est dolore quod et repellat.</a>
+  </li>
+</ol>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><ol class="ordered-list">
+  <li>
+    <a href="#" class="pretty-link">Liens 1</a>
+  </li>
+  <li>
+    <a href="#" class="pretty-link">Velit quia eum est dolore quod et repellat.</a>
+  </li>
+</ol>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="facets-list">
+          
+<div id="element-listfacets-list" class="styleguide-item-preview">
+  
+    <ul class="facets-list">
+  <li>
+    <a href="#" class="pretty-link">Liens 1</a>
+  </li>
+  <li>
+    <a href="#" class="pretty-link">Velit quia eum est dolore quod et repellat.</a>
+  </li>
+</ul>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><ul class="facets-list">
+  <li>
+    <a href="#" class="pretty-link">Liens 1</a>
+  </li>
+  <li>
+    <a href="#" class="pretty-link">Velit quia eum est dolore quod et repellat.</a>
+  </li>
+</ul>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="treeview-list">
+          
+<div id="element-listtreeview-list" class="styleguide-item-preview">
+  
+    <ul class="treeview-list">
+  <li>
+    <a href="#" class="pretty-link">Liens 1</a>
+  </li>
+  <li>
+    <a href="#" class="pretty-link">Velit quia eum est dolore quod et repellat.</a>
+  </li>
+</ul>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><ul class="treeview-list">
+  <li>
+    <a href="#" class="pretty-link">Liens 1</a>
+  </li>
+  <li>
+    <a href="#" class="pretty-link">Velit quia eum est dolore quod et repellat.</a>
+  </li>
+</ul>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="filters-list">
+          
+<div id="element-listfilters-list" class="styleguide-item-preview">
+  
+    <ul class="filters-list">
+  <li>
+    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></i>
+    <a href="#" class="pretty-link">Liens 1</a>
+  </li>
+  <li>
+    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></i>
+    <a href="#" class="pretty-link">Velit quia eum est dolore quod et repellat.</a>
+  </li>
+</ul>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><ul class="filters-list">
+  <li>
+    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></i>
+    <a href="#" class="pretty-link">Liens 1</a>
+  </li>
+  <li>
+    <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></i>
+    <a href="#" class="pretty-link">Velit quia eum est dolore quod et repellat.</a>
+  </li>
+</ul>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+  </div>
+
+
+
 
 </div>
 
@@ -2191,7 +2599,7 @@
       
 <div class="styleguide-item-group" id="loader">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#loader">loader</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#loader">Loader</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -2204,269 +2612,88 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-loader-">Usage : <code>loader</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>loader_type</strong> - <i>String</i> - <b>loader-[&#39;snake&#39;|&#39;yinyang&#39;]</b></li>
-<li><strong>loader_theme</strong> - <i>String</i> - <b>loader-[&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
-    
-  </div>
-  <div id="element-loader" class="styleguide-item-preview">
-    
-        
-<div class="loader">
-  <div class="loader-snake loader-"></div>
 </div>
 
+
+  
     
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup">
-<div class="loader">
-  <div class="loader-snake loader-"></div>
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#loader-default" role="tab">Loader Snake</a>
+    </li>
+  
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#loader-yingyang" role="tab">Loader YingYang</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="loader-default">
+      
+<div id="element-loader" class="styleguide-item-preview">
+  
+    <div class="loader"><div class="loader-snake"></div></div>
+
+  
 </div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="loader"><div class="loader-snake"></div></div>
 </code></pre>
-  </div>
-
 </div>
 
+    </div>
     
       
-<div class="styleguide-item-group" id="logo-management-contract">
-  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#logo-management-contract">logo-management-contract</a></h3>
-    
-  <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
-      <svg>
-        <use xlink:href="#styleguide-icon-code" />
-      </svg>
-    </span>
-  </div>
-
-  </div>
-  
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
-
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-logo-management-contract-">Usage : <code>logo-management-contract</code></h5>
-
-      </div>
-    
-  </div>
-  <div id="element-logo-management-contract" class="styleguide-item-preview">
-    
-      <img class="img-responsive logo-management-contract" src="https://unsplash.it/544/250?image=1057" alt="Logo - Caisse cantonale d’assurance populaire (CCAP)">
-
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><img class="img-responsive logo-management-contract" src="https://unsplash.it/544/250?image=1057" alt="Logo - Caisse cantonale d’assurance populaire (CCAP)">
-</code></pre>
-  </div>
-
-</div>
-
     
       
-<div class="styleguide-item-group" id="logo-retraitespopulaires">
-  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#logo-retraitespopulaires">logo-retraitespopulaires</a></h3>
-    
-  <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
-      <svg>
-        <use xlink:href="#styleguide-icon-code" />
-      </svg>
-    </span>
-  </div>
-
-  </div>
+        <div class="styleguide-tab-pane tab-pane" id="loader-yingyang">
+          
+<div id="element-loaderloader-yingyang" class="styleguide-item-preview">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
+    <div class="loader"><div class="loader-yingyang"></div></div>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-logo-retraitespopulaires-">Usage : <code>logo-retraitespopulaires</code></h5>
-
-      </div>
-    
-  </div>
-  <div id="element-logo-retraitespopulaires" class="styleguide-item-preview">
-    
-      <div class="logo-retraitespopulaires svg-responsive">
-  <a href="/retraitespopulaires-styleguide/homepage">
-  <?xml version="1.0" encoding="utf-8"?>
-  <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-  <svg version="1.1" id="XMLID_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-  	 viewBox="0 0 230 120" style="enable-background:new 0 0 230 120;" xml:space="preserve">
-  <style type="text/css">
-  	.st0{fill:none;}
-  	.st1{fill:#1A171B;}
-  	.st2{fill:#008F4F;}
-  </style>
-  <rect class="st0" width="230" height="120"/>
-  <g id="logo">
-  	<g>
-  		<path class="st1" d="M102.5,68.4c-1.1,1.1-2.8,1.6-4.6,1.6c-2.6,0-4.3-1.5-4.7-3.8c0.3,0,3.6,0,3.6,0c4.9,0,6.5-0.9,6.5-3.7
-  			c0-3.1-3-5.1-5.8-5.1c-4.1,0-7.1,3.3-7.1,7.9c0,4.2,3,7.3,7.2,7.3c3.2,0,5.2-1.1,5.2-2.8v-1.3H102.5z M93.3,63.4
-  			c0.1-1.8,1.6-3.7,4-3.7c2.5,0,3.4,1.5,3.4,2.8c0,0.9-0.4,1.3-4.1,1.3c0,0-2.7,0-3.3,0.1C93.3,63.8,93.3,63.4,93.3,63.4z"/>
-  		<path class="st1" d="M194.5,91.6c-1.1,1.1-2.8,1.6-4.6,1.6c-2.6,0-4.3-1.5-4.7-3.8c0.3,0,3.6,0,3.6,0c4.9,0,6.5-0.9,6.5-3.7
-  			c0-3.1-3-5.1-5.8-5.1c-4.1,0-7.1,3.3-7.1,7.8c0,4.2,3,7.3,7.2,7.3c3.2,0,5.2-1.1,5.2-2.8v-1.3H194.5z M185.3,86.7
-  			c0.1-1.8,1.6-3.7,4-3.7c2.5,0,3.4,1.5,3.4,2.8c0,0.9-0.4,1.3-4.1,1.3c0,0-2.7,0-3.3,0C185.3,87,185.3,86.7,185.3,86.7z"/>
-  		<path class="st1" d="M174.1,68.4c-1.1,1.1-2.7,1.6-4.6,1.6c-2.6,0-4.3-1.5-4.7-3.8c0.3,0,3.6,0,3.6,0c4.9,0,6.5-0.9,6.5-3.7
-  			c0-3.1-3-5.1-5.8-5.1c-4.1,0-7.1,3.3-7.1,7.9c0,4.2,3,7.3,7.2,7.3c3.2,0,5.2-1.1,5.2-2.8v-1.3H174.1z M164.8,63.4
-  			c0.1-1.8,1.6-3.7,4-3.7c2.5,0,3.4,1.5,3.4,2.8c0,0.9-0.4,1.3-4.1,1.3c0,0-2.7,0-3.3,0C164.8,63.8,164.8,63.4,164.8,63.4z"/>
-  		<path class="st1" d="M184.1,63.6c-3.1-0.6-3.6-1-3.6-1.9c0-1.6,1.9-1.9,3.4-1.9c0,0,1.1,0,1.9,0.2c1,0.3,1.8,0.8,2.2,1.3h0.2v-1.3
-  			c0-1.9-2.3-2.8-4.5-2.8c-3.9,0-6.1,2.4-6.1,4.6c0,2.4,1.7,3.2,4.2,3.7c3.5,0.7,3.9,1.4,3.9,2.2c0.1,1.4-1,2-3.1,2
-  			c-0.6,0-1.3-0.1-2-0.3c-1.2-0.3-2.1-0.9-2.5-1.4H178v1.2c0,1.7,2,3,4.7,3c3.7,0,6-1.8,6-4.7C188.6,65.6,187.1,64.3,184.1,63.6z
-  			 M204.5,86.9c-3.1-0.6-3.6-1-3.6-1.9c0-1.6,1.9-1.9,3.4-1.9c0,0,1.1,0,1.9,0.2c1,0.3,1.8,0.8,2.2,1.3h0.2v-1.3
-  			c0-1.9-2.3-2.8-4.5-2.8c-3.9,0-6.1,2.4-6.1,4.6c0,2.4,1.7,3.2,4.2,3.7c3.5,0.7,3.9,1.4,3.9,2.2c0.1,1.4-1,2-3.1,2
-  			c-0.6,0-1.3-0.1-2-0.3c-1.2-0.3-2.1-0.9-2.5-1.4h-0.2v1.2c0,1.7,2,3,4.7,3c3.7,0,6-1.8,6-4.7C209.1,88.9,207.5,87.5,204.5,86.9z
-  			 M96.5,80.6c-4.4,0-7.1,3-7.1,7.8c0,4.2,3,7.3,7.1,7.3c4.2,0,6.8-3,6.8-7.9C103.4,83.5,100.6,80.6,96.5,80.6z M96.8,93.1
-  			c-2.8,0-4.5-2-4.5-5.3c0-2.9,1.5-4.7,3.9-4.7c2.9,0,4.4,1.8,4.4,5.3C100.6,91.3,99.1,93.1,96.8,93.1z M88.8,71.7
-  			c-0.2-0.3-0.5-0.8-0.7-1.2l-1.8-4.1c-0.4-0.9-1-2.2-2.6-2.9c2.6-0.5,4.2-2.2,4.2-4.8c0-3.2-2.5-5.1-6.4-5.2c-0.7,0-3.7,0-6.6,0.9
-  			c0,0.4,0,16.1,0,16.1c0,1.1,0.6,1.7,1.7,1.7h1.1c0,0,0-7.7,0-8c0.7,0.1,2,0.3,3.1,0.4c1.1,0.1,1.9,0.3,3.1,3l1.4,3.3
-  			c0.4,1,1.1,1.4,2.2,1.4c0.4,0,1.2-0.1,1.6-0.1V72C89,71.9,88.9,71.8,88.8,71.7z M81,62.2c-1.1,0-2.2-0.1-3.3-0.3v-5.7
-  			c1.6-0.3,3.3-0.3,3.7-0.3c2.3,0.1,3.7,1,3.7,3.1C85,61.4,83,62.2,81,62.2z M81.3,76.9c-2.5-0.1-5.3,0.5-6.5,0.9c0,0.4,0,16,0,16
-  			c0,1.1,0.7,1.7,1.7,1.7h1.1c0,0,0-7.2,0-7.5c0.8,0.4,2.1,0.7,3.7,0.7c3.8,0,6.7-2.6,6.7-6.1C88,79.2,85.3,77,81.3,76.9z
-  			 M81.4,86.3c-1.6,0-2.8-0.2-3.7-0.7v-6c0.9-0.2,2.3-0.4,3.6-0.3c2.6,0.1,3.9,1.2,3.9,3.6C85.2,85.1,83.9,86.3,81.4,86.3z
-  			 M144.3,55.9c1,0,1.8-0.8,1.8-1.8c0-1-0.8-1.8-1.8-1.8c-1,0-1.9,0.8-1.9,1.8C142.4,55.1,143.3,55.9,144.3,55.9z M111.6,72.4
-  			c1.8,0,2.8-0.7,2.8-2v-0.9l0,0v-0.2h-0.2c-0.1,0.1-0.1,0.1-0.2,0.1c-0.2,0.1-0.7,0.3-1.6,0.4c-0.3,0-0.7,0-1,0c-1.4-0.1-2-1-2-2.8
-  			c0,0,0-6.8,0-7c0.2,0,3.1,0,3.1,0c1.3,0,2.1-0.6,2.1-1.6v-0.9c0,0-4.9,0-5.2,0c0-0.2,0-2.9,0-2.9h-0.1c-0.9,0-1.6,0.6-1.9,1.1
-  			c-0.4,0.6-0.7,1.4-0.7,2.3v9.3C106.6,70.8,108.2,72.4,111.6,72.4z M156.6,72.4c1.8,0,2.8-0.7,2.8-2v-0.9l0,0v-0.2h-0.2
-  			c0,0-0.1,0.1-0.2,0.1c-0.2,0.1-0.7,0.3-1.6,0.4c-0.3,0-0.7,0-1-0.1c-1.4-0.1-2-1-2-2.8c0,0,0-6.8,0-7c0.2,0,3.1,0,3.1,0
-  			c1.3,0,2.1-0.6,2.1-1.6v-0.9c0,0-4.9,0-5.2,0c0-0.2,0-3,0-3h-0.2c-0.9,0-1.6,0.6-1.9,1.1c-0.4,0.6-0.7,1.4-0.7,2.3v9.3
-  			C151.7,70.7,153.3,72.4,156.6,72.4z M166.8,90.9v-8c0-1.3-1-2-1.9-2H164v10.3c0,2.9,1.5,4.4,4.6,4.4c1,0,1.6-0.6,1.6-1.6v-0.9H169
-  			C167.5,93.2,166.8,92.5,166.8,90.9z M132.6,57.2c-3.6,0-5.3,1.9-5.3,3.2v1.3v0v0.2h0.2c0.1-0.1,0.3-0.5,1.1-1c0.8-0.6,2.3-1,3.8-1
-  			c2.4,0,3.4,0.9,3.4,2.8c0,0,0,0.4,0,0.6c-0.2,0-1.9,0-1.9,0c-4.6,0-7.1,1.7-7.1,4.9c0,2.5,2.5,4.4,5.9,4.4c4.9,0,6-2.8,6-5.1v-4.5
-  			C138.6,59.2,136.5,57.2,132.6,57.2z M135.9,67.1c0,2-0.9,2.8-3.1,2.8c-1.8,0-3.1-0.9-3.1-2.1c0-1.6,1.4-2.4,4.3-2.4
-  			c0,0,1.7,0,1.9,0C135.9,65.6,135.9,67.1,135.9,67.1z M153.9,80.5c-3.6,0-5.3,1.9-5.3,3.2v1.3l0,0V85h0.2c0.1-0.1,0.3-0.5,1-1
-  			c0.8-0.6,2.3-1,3.8-1c2.4,0,3.4,0.9,3.4,2.9c0,0,0,0.4,0,0.6c-0.2,0-1.9,0-1.9,0c-4.6,0-7.1,1.8-7.1,4.9c0,2.5,2.5,4.4,5.9,4.4
-  			c4.9,0,6-2.8,6-5.1V86C159.9,82.4,157.8,80.5,153.9,80.5z M157.1,90.4c0,2-0.9,2.8-3.1,2.8c-1.8,0-3.1-0.9-3.1-2.1
-  			c0-1.6,1.4-2.4,4.3-2.4c0,0,1.7,0,1.9,0C157.1,88.9,157.1,90.4,157.1,90.4z M149.1,70.8v-0.9h-1.2c-1.5,0-2.2-0.7-2.2-2.2v-8
-  			c0-1.3-0.9-2-1.9-2h-0.9V68c0,2.9,1.5,4.4,4.6,4.4C148.4,72.4,149.1,71.8,149.1,70.8z M165.5,79.2c1,0,1.8-0.8,1.8-1.8
-  			c0-1-0.8-1.8-1.8-1.8c-1,0-1.9,0.8-1.9,1.8C163.6,78.4,164.5,79.2,165.5,79.2z M142.2,91V78c0-1.2-0.7-2-1.9-2h-0.9v15.3
-  			c0,2.9,1.6,4.4,4.7,4.4c1.5,0,2.2-0.5,2.2-1.6v-0.9h-1.8C142.9,93.2,142.2,92.5,142.2,91z M113.2,80.5c-4.7,0-7.3,2.8-7.3,8V98
-  			c0,1.3,0.6,2,1.8,2h1c0,0,0-5.9,0-6.6c0.9,1.4,2.5,2.3,4.2,2.3c4.1,0,6.9-3.2,6.9-7.9C119.8,83.3,116.4,80.5,113.2,80.5z
-  			 M113.2,93.2c-2.9,0-4.5-1.9-4.5-5.3c0-3,1.5-4.7,4-4.7c2.8,0,4.3,1.9,4.3,5.4C117,91.4,115.6,93.2,113.2,93.2z M125.2,61.1h0.2
-  			l0-1.4c0-0.6-0.3-1.9-2.9-1.9c-3.1,0-5.1,2.4-5.1,6.2v6.6c0,1.1,0.6,1.8,1.6,1.8h1.2v-8.2c0-2.9,0.7-3.9,2.6-3.9
-  			C123.8,60.3,124.7,60.5,125.2,61.1z M180.7,84.3h0.2v-1.4c0-0.6-0.3-2-2.9-2c-3.1,0-5.1,2.4-5.1,6.2v6.6c0,1,0.5,1.8,1.5,1.8h1.2
-  			l0.1-8.2c0-2.9,0.7-3.9,2.6-3.9C179.2,83.5,180.2,83.8,180.7,84.3z M133.6,80.8h-0.8v8.1c0,2.9-1.1,4.3-3.4,4.3
-  			c-2.3,0-3.6-1.6-3.6-4.4v-5.9c0-1.3-0.7-2-1.9-2H123v8.1c0,4.2,2.4,6.8,6.2,6.8c4.1,0,6.4-2.3,6.4-6.6v-6.3
-  			C135.6,81.5,134.9,80.8,133.6,80.8z"/>
-  	</g>
-  	<path class="st2" d="M101.6,20c-5.4,0.3-11.7,1.3-17.1,2.8c-3.2,0.9-11.2,2.9-23.5,9.6c-7.9,4.3-17.4,10.8-25.2,19.7
-  		c-7.9,9-12.9,19.3-14.8,29.1c7.8,0.6,19.1-3.1,31.8-11.8c2.7-1.8,5.4-4.2,8.1-6.6c0,0,7.2-7.2,12.6-14.1c3-3.9,7.1-9,11.1-13.5
-  		c0.1-0.1,0.8-0.9,0.8-0.9C85.7,33.7,94,23.7,101.6,20z M105.6,20c-2.7,1.2-9.7,5.1-17.4,14.2c4-0.3,12.1-1.3,18.1-3.6
-  		c5.4-2.1,10.3-4.9,14.3-8.2C116,20.8,111.2,20,105.6,20z"/>
-  </g>
-  </svg>
-    
-  </a>
+  
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="logo-retraitespopulaires svg-responsive">
-  <a href="/retraitespopulaires-styleguide/homepage">
-  <?xml version="1.0" encoding="utf-8"?>
-  <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-  <svg version="1.1" id="XMLID_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-  	 viewBox="0 0 230 120" style="enable-background:new 0 0 230 120;" xml:space="preserve">
-  <style type="text/css">
-  	.st0{fill:none;}
-  	.st1{fill:#1A171B;}
-  	.st2{fill:#008F4F;}
-  </style>
-  <rect class="st0" width="230" height="120"/>
-  <g id="logo">
-  	<g>
-  		<path class="st1" d="M102.5,68.4c-1.1,1.1-2.8,1.6-4.6,1.6c-2.6,0-4.3-1.5-4.7-3.8c0.3,0,3.6,0,3.6,0c4.9,0,6.5-0.9,6.5-3.7
-  			c0-3.1-3-5.1-5.8-5.1c-4.1,0-7.1,3.3-7.1,7.9c0,4.2,3,7.3,7.2,7.3c3.2,0,5.2-1.1,5.2-2.8v-1.3H102.5z M93.3,63.4
-  			c0.1-1.8,1.6-3.7,4-3.7c2.5,0,3.4,1.5,3.4,2.8c0,0.9-0.4,1.3-4.1,1.3c0,0-2.7,0-3.3,0.1C93.3,63.8,93.3,63.4,93.3,63.4z"/>
-  		<path class="st1" d="M194.5,91.6c-1.1,1.1-2.8,1.6-4.6,1.6c-2.6,0-4.3-1.5-4.7-3.8c0.3,0,3.6,0,3.6,0c4.9,0,6.5-0.9,6.5-3.7
-  			c0-3.1-3-5.1-5.8-5.1c-4.1,0-7.1,3.3-7.1,7.8c0,4.2,3,7.3,7.2,7.3c3.2,0,5.2-1.1,5.2-2.8v-1.3H194.5z M185.3,86.7
-  			c0.1-1.8,1.6-3.7,4-3.7c2.5,0,3.4,1.5,3.4,2.8c0,0.9-0.4,1.3-4.1,1.3c0,0-2.7,0-3.3,0C185.3,87,185.3,86.7,185.3,86.7z"/>
-  		<path class="st1" d="M174.1,68.4c-1.1,1.1-2.7,1.6-4.6,1.6c-2.6,0-4.3-1.5-4.7-3.8c0.3,0,3.6,0,3.6,0c4.9,0,6.5-0.9,6.5-3.7
-  			c0-3.1-3-5.1-5.8-5.1c-4.1,0-7.1,3.3-7.1,7.9c0,4.2,3,7.3,7.2,7.3c3.2,0,5.2-1.1,5.2-2.8v-1.3H174.1z M164.8,63.4
-  			c0.1-1.8,1.6-3.7,4-3.7c2.5,0,3.4,1.5,3.4,2.8c0,0.9-0.4,1.3-4.1,1.3c0,0-2.7,0-3.3,0C164.8,63.8,164.8,63.4,164.8,63.4z"/>
-  		<path class="st1" d="M184.1,63.6c-3.1-0.6-3.6-1-3.6-1.9c0-1.6,1.9-1.9,3.4-1.9c0,0,1.1,0,1.9,0.2c1,0.3,1.8,0.8,2.2,1.3h0.2v-1.3
-  			c0-1.9-2.3-2.8-4.5-2.8c-3.9,0-6.1,2.4-6.1,4.6c0,2.4,1.7,3.2,4.2,3.7c3.5,0.7,3.9,1.4,3.9,2.2c0.1,1.4-1,2-3.1,2
-  			c-0.6,0-1.3-0.1-2-0.3c-1.2-0.3-2.1-0.9-2.5-1.4H178v1.2c0,1.7,2,3,4.7,3c3.7,0,6-1.8,6-4.7C188.6,65.6,187.1,64.3,184.1,63.6z
-  			 M204.5,86.9c-3.1-0.6-3.6-1-3.6-1.9c0-1.6,1.9-1.9,3.4-1.9c0,0,1.1,0,1.9,0.2c1,0.3,1.8,0.8,2.2,1.3h0.2v-1.3
-  			c0-1.9-2.3-2.8-4.5-2.8c-3.9,0-6.1,2.4-6.1,4.6c0,2.4,1.7,3.2,4.2,3.7c3.5,0.7,3.9,1.4,3.9,2.2c0.1,1.4-1,2-3.1,2
-  			c-0.6,0-1.3-0.1-2-0.3c-1.2-0.3-2.1-0.9-2.5-1.4h-0.2v1.2c0,1.7,2,3,4.7,3c3.7,0,6-1.8,6-4.7C209.1,88.9,207.5,87.5,204.5,86.9z
-  			 M96.5,80.6c-4.4,0-7.1,3-7.1,7.8c0,4.2,3,7.3,7.1,7.3c4.2,0,6.8-3,6.8-7.9C103.4,83.5,100.6,80.6,96.5,80.6z M96.8,93.1
-  			c-2.8,0-4.5-2-4.5-5.3c0-2.9,1.5-4.7,3.9-4.7c2.9,0,4.4,1.8,4.4,5.3C100.6,91.3,99.1,93.1,96.8,93.1z M88.8,71.7
-  			c-0.2-0.3-0.5-0.8-0.7-1.2l-1.8-4.1c-0.4-0.9-1-2.2-2.6-2.9c2.6-0.5,4.2-2.2,4.2-4.8c0-3.2-2.5-5.1-6.4-5.2c-0.7,0-3.7,0-6.6,0.9
-  			c0,0.4,0,16.1,0,16.1c0,1.1,0.6,1.7,1.7,1.7h1.1c0,0,0-7.7,0-8c0.7,0.1,2,0.3,3.1,0.4c1.1,0.1,1.9,0.3,3.1,3l1.4,3.3
-  			c0.4,1,1.1,1.4,2.2,1.4c0.4,0,1.2-0.1,1.6-0.1V72C89,71.9,88.9,71.8,88.8,71.7z M81,62.2c-1.1,0-2.2-0.1-3.3-0.3v-5.7
-  			c1.6-0.3,3.3-0.3,3.7-0.3c2.3,0.1,3.7,1,3.7,3.1C85,61.4,83,62.2,81,62.2z M81.3,76.9c-2.5-0.1-5.3,0.5-6.5,0.9c0,0.4,0,16,0,16
-  			c0,1.1,0.7,1.7,1.7,1.7h1.1c0,0,0-7.2,0-7.5c0.8,0.4,2.1,0.7,3.7,0.7c3.8,0,6.7-2.6,6.7-6.1C88,79.2,85.3,77,81.3,76.9z
-  			 M81.4,86.3c-1.6,0-2.8-0.2-3.7-0.7v-6c0.9-0.2,2.3-0.4,3.6-0.3c2.6,0.1,3.9,1.2,3.9,3.6C85.2,85.1,83.9,86.3,81.4,86.3z
-  			 M144.3,55.9c1,0,1.8-0.8,1.8-1.8c0-1-0.8-1.8-1.8-1.8c-1,0-1.9,0.8-1.9,1.8C142.4,55.1,143.3,55.9,144.3,55.9z M111.6,72.4
-  			c1.8,0,2.8-0.7,2.8-2v-0.9l0,0v-0.2h-0.2c-0.1,0.1-0.1,0.1-0.2,0.1c-0.2,0.1-0.7,0.3-1.6,0.4c-0.3,0-0.7,0-1,0c-1.4-0.1-2-1-2-2.8
-  			c0,0,0-6.8,0-7c0.2,0,3.1,0,3.1,0c1.3,0,2.1-0.6,2.1-1.6v-0.9c0,0-4.9,0-5.2,0c0-0.2,0-2.9,0-2.9h-0.1c-0.9,0-1.6,0.6-1.9,1.1
-  			c-0.4,0.6-0.7,1.4-0.7,2.3v9.3C106.6,70.8,108.2,72.4,111.6,72.4z M156.6,72.4c1.8,0,2.8-0.7,2.8-2v-0.9l0,0v-0.2h-0.2
-  			c0,0-0.1,0.1-0.2,0.1c-0.2,0.1-0.7,0.3-1.6,0.4c-0.3,0-0.7,0-1-0.1c-1.4-0.1-2-1-2-2.8c0,0,0-6.8,0-7c0.2,0,3.1,0,3.1,0
-  			c1.3,0,2.1-0.6,2.1-1.6v-0.9c0,0-4.9,0-5.2,0c0-0.2,0-3,0-3h-0.2c-0.9,0-1.6,0.6-1.9,1.1c-0.4,0.6-0.7,1.4-0.7,2.3v9.3
-  			C151.7,70.7,153.3,72.4,156.6,72.4z M166.8,90.9v-8c0-1.3-1-2-1.9-2H164v10.3c0,2.9,1.5,4.4,4.6,4.4c1,0,1.6-0.6,1.6-1.6v-0.9H169
-  			C167.5,93.2,166.8,92.5,166.8,90.9z M132.6,57.2c-3.6,0-5.3,1.9-5.3,3.2v1.3v0v0.2h0.2c0.1-0.1,0.3-0.5,1.1-1c0.8-0.6,2.3-1,3.8-1
-  			c2.4,0,3.4,0.9,3.4,2.8c0,0,0,0.4,0,0.6c-0.2,0-1.9,0-1.9,0c-4.6,0-7.1,1.7-7.1,4.9c0,2.5,2.5,4.4,5.9,4.4c4.9,0,6-2.8,6-5.1v-4.5
-  			C138.6,59.2,136.5,57.2,132.6,57.2z M135.9,67.1c0,2-0.9,2.8-3.1,2.8c-1.8,0-3.1-0.9-3.1-2.1c0-1.6,1.4-2.4,4.3-2.4
-  			c0,0,1.7,0,1.9,0C135.9,65.6,135.9,67.1,135.9,67.1z M153.9,80.5c-3.6,0-5.3,1.9-5.3,3.2v1.3l0,0V85h0.2c0.1-0.1,0.3-0.5,1-1
-  			c0.8-0.6,2.3-1,3.8-1c2.4,0,3.4,0.9,3.4,2.9c0,0,0,0.4,0,0.6c-0.2,0-1.9,0-1.9,0c-4.6,0-7.1,1.8-7.1,4.9c0,2.5,2.5,4.4,5.9,4.4
-  			c4.9,0,6-2.8,6-5.1V86C159.9,82.4,157.8,80.5,153.9,80.5z M157.1,90.4c0,2-0.9,2.8-3.1,2.8c-1.8,0-3.1-0.9-3.1-2.1
-  			c0-1.6,1.4-2.4,4.3-2.4c0,0,1.7,0,1.9,0C157.1,88.9,157.1,90.4,157.1,90.4z M149.1,70.8v-0.9h-1.2c-1.5,0-2.2-0.7-2.2-2.2v-8
-  			c0-1.3-0.9-2-1.9-2h-0.9V68c0,2.9,1.5,4.4,4.6,4.4C148.4,72.4,149.1,71.8,149.1,70.8z M165.5,79.2c1,0,1.8-0.8,1.8-1.8
-  			c0-1-0.8-1.8-1.8-1.8c-1,0-1.9,0.8-1.9,1.8C163.6,78.4,164.5,79.2,165.5,79.2z M142.2,91V78c0-1.2-0.7-2-1.9-2h-0.9v15.3
-  			c0,2.9,1.6,4.4,4.7,4.4c1.5,0,2.2-0.5,2.2-1.6v-0.9h-1.8C142.9,93.2,142.2,92.5,142.2,91z M113.2,80.5c-4.7,0-7.3,2.8-7.3,8V98
-  			c0,1.3,0.6,2,1.8,2h1c0,0,0-5.9,0-6.6c0.9,1.4,2.5,2.3,4.2,2.3c4.1,0,6.9-3.2,6.9-7.9C119.8,83.3,116.4,80.5,113.2,80.5z
-  			 M113.2,93.2c-2.9,0-4.5-1.9-4.5-5.3c0-3,1.5-4.7,4-4.7c2.8,0,4.3,1.9,4.3,5.4C117,91.4,115.6,93.2,113.2,93.2z M125.2,61.1h0.2
-  			l0-1.4c0-0.6-0.3-1.9-2.9-1.9c-3.1,0-5.1,2.4-5.1,6.2v6.6c0,1.1,0.6,1.8,1.6,1.8h1.2v-8.2c0-2.9,0.7-3.9,2.6-3.9
-  			C123.8,60.3,124.7,60.5,125.2,61.1z M180.7,84.3h0.2v-1.4c0-0.6-0.3-2-2.9-2c-3.1,0-5.1,2.4-5.1,6.2v6.6c0,1,0.5,1.8,1.5,1.8h1.2
-  			l0.1-8.2c0-2.9,0.7-3.9,2.6-3.9C179.2,83.5,180.2,83.8,180.7,84.3z M133.6,80.8h-0.8v8.1c0,2.9-1.1,4.3-3.4,4.3
-  			c-2.3,0-3.6-1.6-3.6-4.4v-5.9c0-1.3-0.7-2-1.9-2H123v8.1c0,4.2,2.4,6.8,6.2,6.8c4.1,0,6.4-2.3,6.4-6.6v-6.3
-  			C135.6,81.5,134.9,80.8,133.6,80.8z"/>
-  	</g>
-  	<path class="st2" d="M101.6,20c-5.4,0.3-11.7,1.3-17.1,2.8c-3.2,0.9-11.2,2.9-23.5,9.6c-7.9,4.3-17.4,10.8-25.2,19.7
-  		c-7.9,9-12.9,19.3-14.8,29.1c7.8,0.6,19.1-3.1,31.8-11.8c2.7-1.8,5.4-4.2,8.1-6.6c0,0,7.2-7.2,12.6-14.1c3-3.9,7.1-9,11.1-13.5
-  		c0.1-0.1,0.8-0.9,0.8-0.9C85.7,33.7,94,23.7,101.6,20z M105.6,20c-2.7,1.2-9.7,5.1-17.4,14.2c4-0.3,12.1-1.3,18.1-3.6
-  		c5.4-2.1,10.3-4.9,14.3-8.2C116,20.8,111.2,20,105.6,20z"/>
-  </g>
-  </svg>
-    
-  </a>
-</div>
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="loader"><div class="loader-yingyang"></div></div>
 </code></pre>
+</div>
+
+        </div>
+      
+    
   </div>
+
+
+
 
 </div>
 
@@ -2474,7 +2701,7 @@
       
 <div class="styleguide-item-group" id="managed-by-link">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#managed-by-link">managed-by-link</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#managed-by-link">Managed-by Link</a></h3>
     
   <div class="styleguide-item-controls">
     
@@ -2483,137 +2710,92 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
 
-    
-  </div>
-  <div id="element-managed-by-link" class="styleguide-item-preview">
-    
-      <p class="managed-by-link text-right">
-  Géré par <a href="#"><img src="https://antistatique.github.io/retraitespopulaires-styleguide/build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>
+</div>
+
+
+
+
+  
+<div id="element-managed-by-link" class="styleguide-item-preview">
+  
+    <p class="managed-by-link text-right">
+  Géré par <a href="#"><img src="/build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>
 </p>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><p class="managed-by-link text-right">
-  Géré par <a href="#"><img src="https://antistatique.github.io/retraitespopulaires-styleguide/build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><p class="managed-by-link text-right">
+  Géré par <a href="#"><img src="/build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>
 </p>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
     
       
-<div class="styleguide-item-group" id="map-card">
+<div class="styleguide-item-group" id="meta-box">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#map-card">map-card</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#meta-box">Meta Box</a></h3>
     
   <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
+    
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
       <svg>
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-map-card-">Usage : <code>map-card</code></h5>
-
-      </div>
-    
-  </div>
-  <div id="element-map-card" class="styleguide-item-preview">
-    
-      <div class="map-card shadow shadow-down">
-  <img class="img-responsive img-fullwidth" src="/retraitespopulaires-styleguide/build/img/immo-staticmap-detail.png" alt="" title="map">
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="map-card shadow shadow-down">
-  <img class="img-responsive img-fullwidth" src="/retraitespopulaires-styleguide/build/img/immo-staticmap-detail.png" alt="" title="map">
+
+
+
+  
+<div id="element-meta-box" class="styleguide-item-preview">
+  
+    <div class="meta-box">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, laborum.</p>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="meta-box">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, laborum.</p>
 </div>
 </code></pre>
-  </div>
-
 </div>
 
-    
-      
-<div class="styleguide-item-group" id="ordered-list">
-  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#ordered-list">ordered-list</a></h3>
-    
-  <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
-      <svg>
-        <use xlink:href="#styleguide-icon-code" />
-      </svg>
-    </span>
-  </div>
 
-  </div>
-  
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-ordered-list-">Usage : <code>ordered-list</code></h5>
 
-      </div>
-    
-  </div>
-  <div id="element-ordered-list" class="styleguide-item-preview">
-    
-      <!-- Ordered List  -->
-<ol class="ordered-list">
-  <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
-  <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
-  <ol class="ordered-list">
-    <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
-  </ol>
-  <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
-</ol>
-
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><!-- Ordered List  -->
-<ol class="ordered-list">
-  <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
-  <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
-  <ol class="ordered-list">
-    <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
-  </ol>
-  <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
-</ol>
-</code></pre>
-  </div>
 
 </div>
 
@@ -2621,7 +2803,7 @@
       
 <div class="styleguide-item-group" id="organic-lines">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#organic-lines">organic-lines</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#organic-lines">Organic Lines</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -2634,34 +2816,50 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>This component requires <code>MorphSVGPlugin</code> library (shipped in /build directory) to work properly (animation).</p>
+<p>You only need to insert the following div in your HTML, the rest is injected with Javascript:</p>
+<pre>
+  &lt;div class="organic-lines lines-assurance"&gt;&lt;/div&lt;
+</pre>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-organic-lines-">Usage : <code>organic-lines</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>organic_lines_theme</strong> - <i>String</i> - <b>lines-[&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+<p>Can be wrapped in <code>.theme-[theme]</code> to change look.
+Wrap in a <code>.organic-wrapper</code> class to position the lines behind the content.</p>
 
-      </div>
-    
-  </div>
-  <div id="element-organic-lines" class="styleguide-item-preview">
-    
-      <div class="organic-lines lines-primary"></div>
+    </div>
+  
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="organic-lines lines-primary"></div>
+</div>
+
+
+
+
+  
+<div id="element-organic-lines" class="styleguide-item-preview">
+  
+    <div class="organic-lines"></div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="organic-lines"></div>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -2669,7 +2867,7 @@
       
 <div class="styleguide-item-group" id="pagination">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#pagination">pagination</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#pagination">Pagination</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -2682,69 +2880,83 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-pagination-">Usage : <code>pagination</code></h5>
-<ul>
-<li><strong>pagination_theme</strong> - <i>String</i> - <b>pagination-[&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
-    
-  </div>
-  <div id="element-pagination" class="styleguide-item-preview">
-    
-      <nav aria-label="Pagination">
-  <ul class="pagination pagination-">
-    <li class="arrow">
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded arrow arrow-flip arrow-"></span>
+</div>
+
+
+
+
+  
+<div id="element-pagination" class="styleguide-item-preview">
+  
+    <nav aria-label="Pagination">
+  <ul class="pagination">
+    <li>
+      <a class="btn btn-primary btn-outline btn-circle" href="#">
+        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin retraitespopulaires-icon-flip-horizontal" ></span>
+        <span class="sr-only">Previous</span>
       </a>
     </li>
-    <li class="number"><a href="#">1</a></li>
-    <li class="active number"><a href="#">2</a></li>
-    <li class="number"><a href="#">3</a></li>
-    <li class="number"><a href="#">4</a></li>
-    <li class="number"><a href="#">5</a></li>
-    <li class="arrow">
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded arrow arrow-"></span>
+    <li><a class="btn btn-primary btn-outline btn-circle" href="#">1</a></li>
+    <li class="active"><a href="#" class="btn btn-primary btn-outline btn-circle">2</a></li>
+    <li><a href="#" class="btn btn-primary btn-outline btn-circle">3</a></li>
+    <li><a href="#" class="btn btn-primary btn-outline btn-circle">4</a></li>
+    <li><a href="#" class="btn btn-primary btn-outline btn-circle">5</a></li>
+    <li>
+      <a href="#" class="btn btn-primary btn-outline btn-circle">
+        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" ></span>
+          <span class="sr-only">Next</span>
       </a>
     </li>
   </ul>
 </nav>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><nav aria-label="Pagination">
-  <ul class="pagination pagination-">
-    <li class="arrow">
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded arrow arrow-flip arrow-"></span>
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><nav aria-label="Pagination">
+  <ul class="pagination">
+    <li>
+      <a class="btn btn-primary btn-outline btn-circle" href="#">
+        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin retraitespopulaires-icon-flip-horizontal" ></span>
+        <span class="sr-only">Previous</span>
       </a>
     </li>
-    <li class="number"><a href="#">1</a></li>
-    <li class="active number"><a href="#">2</a></li>
-    <li class="number"><a href="#">3</a></li>
-    <li class="number"><a href="#">4</a></li>
-    <li class="number"><a href="#">5</a></li>
-    <li class="arrow">
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin arrow-rounded arrow arrow-"></span>
+    <li><a class="btn btn-primary btn-outline btn-circle" href="#">1</a></li>
+    <li class="active"><a href="#" class="btn btn-primary btn-outline btn-circle">2</a></li>
+    <li><a href="#" class="btn btn-primary btn-outline btn-circle">3</a></li>
+    <li><a href="#" class="btn btn-primary btn-outline btn-circle">4</a></li>
+    <li><a href="#" class="btn btn-primary btn-outline btn-circle">5</a></li>
+    <li>
+      <a href="#" class="btn btn-primary btn-outline btn-circle">
+        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" ></span>
+          <span class="sr-only">Next</span>
       </a>
     </li>
   </ul>
 </nav>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -2752,7 +2964,7 @@
       
 <div class="styleguide-item-group" id="search-box">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#search-box">search-box</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#search-box">Search Box</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -2765,97 +2977,53 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-search-box-">Usage : <code>search-box</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>search_box_theme</strong> - <i>String</i> - <b>navbar-[&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
-    
-  </div>
-  <div id="element-search-box" class="styleguide-item-preview">
-    
-      <div class="search-box search-box-primary">
+</div>
+
+
+
+
+  
+<div id="element-search-box" class="styleguide-item-preview">
+  
+    <div class="search-box">
   <a href="#" class="search-toggle">
-    <i aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
+    <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></span>
     <div class="sr-only">Recherche</div>
   </a>
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="search-box search-box-primary">
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="search-box">
   <a href="#" class="search-toggle">
-    <i aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
+    <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></span>
     <div class="sr-only">Recherche</div>
   </a>
 </div>
 </code></pre>
-  </div>
-
 </div>
 
-    
-      
-<div class="styleguide-item-group" id="section-bloc">
-  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#section-bloc">section-bloc</a></h3>
-    
-  <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
-      <svg>
-        <use xlink:href="#styleguide-icon-code" />
-      </svg>
-    </span>
-  </div>
 
-  </div>
-  
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-section-bloc-">Usage : <code>section-bloc</code></h5>
-<ul>
-<li><strong>section_bloc_theme</strong> - <i>String</i> - <b>form-control-[&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
 
-      </div>
-    
-  </div>
-  <div id="element-section-bloc" class="styleguide-item-preview">
-    
-      <a href="#" class="section-bloc section-bloc-">
-  <h3 class="section-title pretty-link">Plan de base</h3>
-  <p class="section-content">Une offe de prévoyance profesionnelle proche de vous et des prestations garanties à 100%.</p>
-</a>
-
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><a href="#" class="section-bloc section-bloc-">
-  <h3 class="section-title pretty-link">Plan de base</h3>
-  <p class="section-content">Une offe de prévoyance profesionnelle proche de vous et des prestations garanties à 100%.</p>
-</a>
-</code></pre>
-  </div>
 
 </div>
 
@@ -2863,7 +3031,7 @@
       
 <div class="styleguide-item-group" id="socials">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#socials">socials</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#socials">Socials</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -2876,85 +3044,180 @@
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p><code>.retraitespopulaires-icon-color</code> <i>(Takes the branded color of the social network)</i></p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-socials-">Usage : <code>socials</code></h5>
-<ul>
-<li><strong>socials_theme</strong> - <i>String</i> - <b>form-control-[&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b>
-Other availables classes includes:</li>
-<li><code>.retraitespopulaires-icon-dark</code> <i>(Dark &amp; monochromatique)</i></li>
-<li><code>.retraitespopulaires-icon-brand</code> <i>(Retraites Populaires branded green)</i></li>
-<li><code>.retraitespopulaires-icon-color</code> <i>(Takes the branded color of the social network)</i></li>
-</ul>
+    </div>
+  
 
-      </div>
+</div>
+
+
+  
     
-  </div>
-  <div id="element-socials" class="styleguide-item-preview">
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#socials-default" role="tab">Default</a>
+    </li>
+  
     
-      <ul class="social-list list-no-style list-inline">
+      <li>
+        <a data-toggle="tab" href="#retraitespopulaires-icon-color" role="tab">Colored</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="socials-default">
+      
+<div id="element-socials" class="styleguide-item-preview">
+  
+    <ul class="social-list list-no-style list-inline">
   <li>
-    <a aria-label="Cliquez pour accéder au compte Twitter de Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter retraitespopulaires-icon-primary" aria-hidden="true"></i></a>
+    <a aria-label="Cliquez pour accéder au compte Twitter de Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter " aria-hidden="true"></i></a>
   </li>
   <li>
     <a aria-label="Cliquez pour accéder au compte Facebook de Retraites Populaires" href="https://www.facebook.com/retraitespopulaires" target="_blank">
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-facebook retraitespopulaires-icon-primary" aria-hidden="true"></i>
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
     <a aria-label="Cliquez pour accéder au compte LinkedIn de Retraites Populaires" href="https://www.linkedin.com/company/retraites-populaires" target="_blank">
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-linkedin retraitespopulaires-icon-primary" aria-hidden="true"></i>
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
     <a aria-label="Cliquez pour accéder au compte Youtube de Retraites Populaires" href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank">
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-youtube retraitespopulaires-icon-primary" aria-hidden="true"></i>
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-youtube " aria-hidden="true"></i>
     </a>
   </li>
   <li>
     <a aria-label="Cliquez pour accéder au compte Instagram de Retraites Populaires" href="https://www.instagram.com/retraitespopulaires" target="_blank">
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram retraitespopulaires-icon-primary" aria-hidden="true"></i>
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram " aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><ul class="social-list list-no-style list-inline">
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><ul class="social-list list-no-style list-inline">
   <li>
-    <a aria-label="Cliquez pour accéder au compte Twitter de Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter retraitespopulaires-icon-primary" aria-hidden="true"></i></a>
+    <a aria-label="Cliquez pour accéder au compte Twitter de Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter " aria-hidden="true"></i></a>
   </li>
   <li>
     <a aria-label="Cliquez pour accéder au compte Facebook de Retraites Populaires" href="https://www.facebook.com/retraitespopulaires" target="_blank">
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-facebook retraitespopulaires-icon-primary" aria-hidden="true"></i>
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
     <a aria-label="Cliquez pour accéder au compte LinkedIn de Retraites Populaires" href="https://www.linkedin.com/company/retraites-populaires" target="_blank">
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-linkedin retraitespopulaires-icon-primary" aria-hidden="true"></i>
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
     <a aria-label="Cliquez pour accéder au compte Youtube de Retraites Populaires" href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank">
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-youtube retraitespopulaires-icon-primary" aria-hidden="true"></i>
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-youtube " aria-hidden="true"></i>
     </a>
   </li>
   <li>
     <a aria-label="Cliquez pour accéder au compte Instagram de Retraites Populaires" href="https://www.instagram.com/retraitespopulaires" target="_blank">
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram retraitespopulaires-icon-primary" aria-hidden="true"></i>
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram " aria-hidden="true"></i>
     </a>
   </li>
 </ul>
 </code></pre>
+</div>
+
+    </div>
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="retraitespopulaires-icon-color">
+          
+<div id="element-socialsretraitespopulaires-icon-color" class="styleguide-item-preview">
+  
+    <ul class="social-list list-no-style list-inline">
+  <li>
+    <a aria-label="Cliquez pour accéder au compte Twitter de Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+  </li>
+  <li>
+    <a aria-label="Cliquez pour accéder au compte Facebook de Retraites Populaires" href="https://www.facebook.com/retraitespopulaires" target="_blank">
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a aria-label="Cliquez pour accéder au compte LinkedIn de Retraites Populaires" href="https://www.linkedin.com/company/retraites-populaires" target="_blank">
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a aria-label="Cliquez pour accéder au compte Youtube de Retraites Populaires" href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank">
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a aria-label="Cliquez pour accéder au compte Instagram de Retraites Populaires" href="https://www.instagram.com/retraitespopulaires" target="_blank">
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><ul class="social-list list-no-style list-inline">
+  <li>
+    <a aria-label="Cliquez pour accéder au compte Twitter de Retraites Populaires" href="https://twitter.com/RetraitesPop" target="_blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+  </li>
+  <li>
+    <a aria-label="Cliquez pour accéder au compte Facebook de Retraites Populaires" href="https://www.facebook.com/retraitespopulaires" target="_blank">
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a aria-label="Cliquez pour accéder au compte LinkedIn de Retraites Populaires" href="https://www.linkedin.com/company/retraites-populaires" target="_blank">
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a aria-label="Cliquez pour accéder au compte Youtube de Retraites Populaires" href="https://www.youtube.com/user/RetraitesPopulaires" target="_blank">
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a aria-label="Cliquez pour accéder au compte Instagram de Retraites Populaires" href="https://www.instagram.com/retraitespopulaires" target="_blank">
+      <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+</code></pre>
+</div>
+
+        </div>
+      
+    
   </div>
+
+
+
 
 </div>
 
@@ -2962,7 +3225,7 @@ Other availables classes includes:</li>
       
 <div class="styleguide-item-group" id="spacer">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#spacer">spacer</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#spacer">Spacer</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -2975,83 +3238,44 @@ Other availables classes includes:</li>
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>The spacer is used to create space between components ! <br>
+Can be used with the modifier <code>spacer-[xs|sm|md|lg|xlg]</code> to change look.</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-spacer-">Usage : <code>spacer</code></h5>
-
-      </div>
-    
-  </div>
-  <div id="element-spacer" class="styleguide-item-preview">
-    
-      <div class="spacer"></div>
-
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="spacer"></div>
-</code></pre>
-  </div>
+    </div>
+  
 
 </div>
 
-    
-      
-<div class="styleguide-item-group" id="tag">
-  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#tag">tag</a></h3>
-    
-  <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
-      <svg>
-        <use xlink:href="#styleguide-icon-code" />
-      </svg>
-    </span>
-  </div>
 
-  </div>
+
+
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
+<div id="element-spacer" class="styleguide-item-preview">
+  
+    <div class="spacer"></div>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-tag-">Usage : <code>tag</code></h5>
-<ul>
-<li><strong>tag_theme</strong> - <i>String</i> - <b>tag-[&#39;assurance&#39;|&#39;prevoyance&#39;|&#39;immobilier&#39;|&#39;hypotheque&#39;|&#39;institutionnel&#39;|&#39;profelia&#39;|&#39;cpev&#39;|&#39;cip&#39;]</b></li>
-</ul>
+  
+</div>
 
-      </div>
-    
-  </div>
-  <div id="element-tag" class="styleguide-item-preview">
-    
-      <a href="#" class="tag tag-primary">
-  Immobilier
-  <span class="tag-hole" aria-hidden="true">•</span>
-</a>
-
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><a href="#" class="tag tag-primary">
-  Immobilier
-  <span class="tag-hole" aria-hidden="true">•</span>
-</a>
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="spacer"></div>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -3059,46 +3283,7 @@ Other availables classes includes:</li>
       
 <div class="styleguide-item-group" id="tooltip">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#tooltip">tooltip</a></h3>
-    
-  <div class="styleguide-item-controls">
-    
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
-      <svg>
-        <use xlink:href="#styleguide-icon-code" />
-      </svg>
-    </span>
-  </div>
-
-  </div>
-  
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
-
-    
-  </div>
-  <div id="element-tooltip" class="styleguide-item-preview">
-    
-      <div class="tooltip tooltip-info">
-  <div class="tooltip-symbol" aria-label="Sample text" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="right" tabindex="0" data-toggle="popover"></div>
-</div>
-
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="tooltip tooltip-info">
-  <div class="tooltip-symbol" aria-label="Sample text" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="right" tabindex="0" data-toggle="popover"></div>
-</div>
-</code></pre>
-  </div>
-
-</div>
-
-    
-      
-<div class="styleguide-item-group" id="treeview-list">
-  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#treeview-list">treeview-list</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#tooltip">Tooltip</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -3111,106 +3296,52 @@ Other availables classes includes:</li>
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    <a title="View Bootstrap documentation" target="_blank" href="https://getbootstrap.com/javascript/#popovers" class="styleguide-control styleguide-icon">
+      <svg>
+        <use xlink:href="#styleguide-icon-bootstrap" />
+      </svg>
+    </a>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Add <code>tooltip-shift</code> to make the tooltip shift to the right</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-treeview-list-">Usage : <code>treeview-list</code></h5>
-
-      </div>
-    
-  </div>
-  <div id="element-treeview-list" class="styleguide-item-preview">
-    
-      <!-- Treeview List  -->
-<ul class="treeview-list">
-  <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
-  <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
-  <ul class="treeview-list">
-    <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
-  </ul>
-  <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
-</ol>
-
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><!-- Treeview List  -->
-<ul class="treeview-list">
-  <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
-  <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
-  <ul class="treeview-list">
-    <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
-  </ul>
-  <li>Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
-</ol>
-</code></pre>
-  </div>
+    </div>
+  
 
 </div>
 
-    
-      
-<div class="styleguide-item-group" id="unordered-list">
-  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#unordered-list">unordered-list</a></h3>
-    
-  <div class="styleguide-item-controls">
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
-      <svg>
-        <use xlink:href="#styleguide-icon-notes" />
-      </svg>
-    </span>
-    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
-      <svg>
-        <use xlink:href="#styleguide-icon-code" />
-      </svg>
-    </span>
-  </div>
 
-  </div>
+
+
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
-    
+<div id="element-tooltip" class="styleguide-item-preview">
+  
+    <div class="tooltip tooltip-info">
+  <div class="tooltip-symbol" aria-label="Sample text" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="right" tabindex="0" data-toggle="popover"></div>
+</div>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-unordered-list-">Usage : <code>unordered-list</code></h5>
+  
+</div>
 
-      </div>
-    
-  </div>
-  <div id="element-unordered-list" class="styleguide-item-preview">
-    
-      <!-- Unordered List  -->
-<ul class="unordered-list">
-  <li>Maintien de votre 2e pilier</li>
-  <li>Possibilité de financer une couverture décès et invalidité</li>
-  <ul class="unordered-list">
-    <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
-  </ul>
-  <li>Flexibilité du produit: prestations et financement en fonction de votre situation</li>
-</ul>
-
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><!-- Unordered List  -->
-<ul class="unordered-list">
-  <li>Maintien de votre 2e pilier</li>
-  <li>Possibilité de financer une couverture décès et invalidité</li>
-  <ul class="unordered-list">
-    <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
-  </ul>
-  <li>Flexibilité du produit: prestations et financement en fonction de votre situation</li>
-</ul>
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="tooltip tooltip-info">
+  <div class="tooltip-symbol" aria-label="Sample text" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="right" tabindex="0" data-toggle="popover"></div>
+</div>
 </code></pre>
-  </div>
+</div>
+
+
+
+
 
 </div>
 
@@ -3218,7 +3349,7 @@ Other availables classes includes:</li>
       
 <div class="styleguide-item-group" id="well">
   <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
-    <h3 class="styleguide-item-heading"><a href="#well">well</a></h3>
+    <h3 class="styleguide-item-heading"><a href="#well">Well</a></h3>
     
   <div class="styleguide-item-controls">
     <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
@@ -3231,42 +3362,138 @@ Other availables classes includes:</li>
         <use xlink:href="#styleguide-icon-code" />
       </svg>
     </span>
+    <a title="View Bootstrap documentation" target="_blank" href="https://getbootstrap.com/javascript/#popovers" class="styleguide-control styleguide-icon">
+      <svg>
+        <use xlink:href="#styleguide-icon-bootstrap" />
+      </svg>
+    </a>
+    
   </div>
 
   </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
   
-  <div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+    <div class="styleguide-item-notes">
     
+    <p>Can be used with the modifier <code>.well-[success|danger]</code> to change look.</p>
 
-    
-      <div class="styleguide-item-notes">
-      <h5 id="usage-well-">Usage : <code>well</code></h5>
-<h5 id="options-">Options :</h5>
-<ul>
-<li><strong>well_status</strong> - <i>String</i> <b>[success|danger]</b></li>
-</ul>
+    </div>
+  
 
-      </div>
+</div>
+
+
+  
     
-  </div>
-  <div id="element-well" class="styleguide-item-preview">
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#well-default" role="tab">Default</a>
+    </li>
+  
     
-      <div class="well well-">
+      <li>
+        <a data-toggle="tab" href="#well-success" role="tab">Success</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#well-danger" role="tab">Danger</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="well-default">
+      
+<div id="element-well" class="styleguide-item-preview">
+  
+    <div class="well ">
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
 </div>
 
-    
-  </div>
-  <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-    <pre><code class="language-markup"><div class="well well-">
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="well ">
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
 </div>
 </code></pre>
+</div>
+
+    </div>
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="well-success">
+          
+<div id="element-wellwell-success" class="styleguide-item-preview">
+  
+    <div class="well well-success">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</div>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="well well-success">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</div>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="well-danger">
+          
+<div id="element-wellwell-danger" class="styleguide-item-preview">
+  
+    <div class="well well-danger">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</div>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="well well-danger">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</div>
+</code></pre>
+</div>
+
+        </div>
+      
+    
   </div>
+
+
+
 
 </div>
 
@@ -3321,8 +3548,9 @@ Other availables classes includes:</li>
     
 
     <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
-    <script src="https://antistatique.github.io/retraitespopulaires-styleguide/build/js/vendors.min.js"></script>
-    <script src="https://antistatique.github.io/retraitespopulaires-styleguide/build/js/bundle.js"></script>
+    <script src="/build/js/selectize.min.js"></script>
+    <script src="/build/js/vendors.min.js"></script>
+    <script src="/build/js/bundle.js"></script>
 
     
       <script>
@@ -3331,10 +3559,15 @@ Other availables classes includes:</li>
             $('.styleguide-item-code code').each(function(){
               $(this).html($(this).html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'));
             });
+
+            // Toggle theme
+            $('.styleguide-toggle-theme').on('click', function() {
+              $('.styleguide-item-preview, .styleguide-toggle-container').toggleClass('theme-cip');
+            });
           });
         }(jQuery));
       </script>
-      <script src="https://antistatique.github.io/retraitespopulaires-styleguide/build/js/styleguide.min.js"></script>
+      <script src="/build/js/styleguide.min.js"></script>
     
 
     

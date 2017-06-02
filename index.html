@@ -13,37 +13,32 @@
     <meta name="viewport" content="width=device-width">
 
     
-      <link rel="stylesheet" href="https://antistatique.github.io/retraitespopulaires-styleguide/build/css/styleguide.css">
+      <link rel="stylesheet" href="/build/css/styleguide.css">
     
 
-    <link rel="stylesheet" href="https://antistatique.github.io/retraitespopulaires-styleguide/build/css/vendors.min.css">
-    <link rel="stylesheet" href="https://antistatique.github.io/retraitespopulaires-styleguide/build/css/main.css">
+    <link rel="stylesheet" href="/build/css/vendors.min.css">
+    <link rel="stylesheet" href="/build/css/main.css">
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/retraitespopulaires-styleguide/build/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/retraitespopulaires-styleguide/build/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/retraitespopulaires-styleguide/build/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/retraitespopulaires-styleguide/build/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/retraitespopulaires-styleguide/build/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/retraitespopulaires-styleguide/build/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/retraitespopulaires-styleguide/build/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/build/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/build/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/build/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/build/favicons/manifest.json">
+    <link rel="mask-icon" href="/build/favicons/safari-pinned-tab.svg" color="#008e4f">
+    <meta name="theme-color" content="#008e4f">
 
     <!--[if lt IE 9]>
-      <script src="https://antistatique.github.io/retraitespopulaires-styleguide/build/js/polyfills.min.js"></script>
+      <script src="/build/js/polyfills.min.js"></script>
     <![endif]-->
   </head>
   <body>
     
+      <div class="styleguide-toggle-container">
+        <div class="styleguide-toggle-theme-hide">
+          <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
+        </div>
+      </div>
+
       <!-- fabricator icons -->
 <svg style="display: none;">
   <symbol id="styleguide-icon-code" viewBox="0 0 512 512">
@@ -61,6 +56,7 @@
   <symbol id="styleguide-icon-settings" viewBox="0 0 512 512">
     <path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
   </symbol>
+  <symbol id="styleguide-icon-bootstrap" viewBox="0 0 256 256"><path d="M0 222.991C0 241.223 14.779 256 33.009 256H222.99C241.223 256 256 241.221 256 222.991V33.01C256 14.777 241.221 0 222.991 0H33.01C14.777 0 0 14.779 0 33.009V222.99z" fill="#563D7C"/><path d="M106.158 113.238V76.985h31.911c3.04 0 5.97.253 8.792.76 2.822.506 5.319 1.41 7.49 2.713 2.17 1.303 3.907 3.112 5.21 5.427 1.302 2.316 1.954 5.283 1.954 8.9 0 6.513-1.954 11.217-5.862 14.111-3.907 2.895-8.9 4.342-14.979 4.342h-34.516zM72.075 50.5v155h75.112c6.947 0 13.713-.868 20.298-2.605 6.585-1.737 12.446-4.414 17.584-8.032 5.137-3.618 9.226-8.286 12.265-14.002 3.04-5.717 4.559-12.483 4.559-20.298 0-9.697-2.352-17.982-7.055-24.856-4.704-6.875-11.832-11.687-21.384-14.437 6.947-3.328 12.194-7.598 15.74-12.808 3.545-5.21 5.318-11.722 5.318-19.538 0-7.236-1.194-13.314-3.582-18.235-2.388-4.92-5.753-8.864-10.095-11.831-4.341-2.967-9.551-5.102-15.63-6.404-6.078-1.303-12.808-1.954-20.189-1.954H72.075zm34.083 128.515v-42.549h37.121c7.381 0 13.315 1.7 17.802 5.102 4.486 3.401 6.73 9.081 6.73 17.041 0 4.053-.688 7.381-2.063 9.986-1.375 2.605-3.22 4.668-5.536 6.187-2.315 1.52-4.993 2.605-8.032 3.257-3.04.65-6.223.976-9.552.976h-36.47z" fill="#FFF"/></symbol>
 </svg>
 <!-- /fabricator icons -->
 
@@ -89,12 +85,16 @@
   <ul>
 
     <li>
-      <a href="https://antistatique.github.io/retraitespopulaires-styleguide/index.html" class="styleguide-menu-heading">Styleguide</a>
+      <a href="/index.html" class="styleguide-menu-heading">Styleguide</a>
     </li>
 
     <li>
       <span class="styleguide-menu-heading">Documentation</span>
       <ul>
+        
+        <li>
+          <a href="/helpers">Helpers</a>
+        </li>
         
       </ul>
     </li>
@@ -104,467 +104,267 @@
       <ul>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/alerts">alerts</a>
+          <a href="/alerts">Alerts</a>
         </li>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/buttons">buttons</a>
+          <a href="/buttons">Buttons</a>
         </li>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cards">cards</a>
+          <a href="/inputs">Inputs</a>
         </li>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/inputs">inputs</a>
+          <a href="/links">Links</a>
         </li>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/links">links</a>
+          <a href="/navigations">Navigations</a>
         </li>
         
         <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/loaders">loaders</a>
-        </li>
-        
-        <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/navigations">navigations</a>
-        </li>
-        
-        <li>
-          <a href="https://antistatique.github.io/retraitespopulaires-styleguide/tables">tables</a>
+          <a href="/tables">Tables</a>
         </li>
         
       </ul>
     </li>
-
-    <li>
-     <span class="styleguide-menu-heading">Themes</span>
-     <ul>
-       
-       <li>
-         <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cip">CIP</a>
-       </li>
-       
-     </ul>
-   </li>
-
    <li>
-    <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/" class="styleguide-menu-heading">Atoms</a>
+    <a href="/atoms/" class="styleguide-menu-heading">Atoms</a>
     <ul>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#alert">alert</a>
+        <a href="/atoms/#alert">Alert</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#arrow">arrow</a>
+        <a href="/atoms/#block-link">Block Link</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#blockquote">blockquote</a>
+        <a href="/atoms/#blockquote">Blockquote</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#button">button</a>
+        <a href="/atoms/#button">Button</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#button-bubble">button-bubble</a>
+        <a href="/atoms/#button-bubble">Button Bubble</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#facets-list">facets-list</a>
+        <a href="/atoms/#funky-waves">Funky Waves</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#favicon">favicon</a>
+        <a href="/atoms/#hamburger">Hamburger</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#filters-list">filters-list</a>
+        <a href="/atoms/#highlight">Highlight</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#funky-waves">funky-waves</a>
+        <a href="/atoms/#icon-text">Icon Text</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#hamburger">hamburger</a>
+        <a href="/atoms/#input-checkbox">Input Checkbox</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#hamburger-mandat">hamburger-mandat</a>
+        <a href="/atoms/#input-datepicker">Input Datepicker</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#highlight">highlight</a>
+        <a href="/atoms/#input-file">Input File</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#icon-text">icon-text</a>
+        <a href="/atoms/#input-group">Input Group</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-checkbox">input-checkbox</a>
+        <a href="/atoms/#input-radio">Input Radio</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-datepicker">input-datepicker</a>
+        <a href="/atoms/#input-radio-btn">Input Radio Button</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-file">input-file</a>
+        <a href="/atoms/#input-select">Input Select</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-group">input-group</a>
+        <a href="/atoms/#input-text">Input Text</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-radio">input-radio</a>
+        <a href="/atoms/#input-textarea">Input Textarea</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-radio-btn">input-radio-btn</a>
+        <a href="/atoms/#label">Label</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-select">input-select</a>
+        <a href="/atoms/#list">List</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-text">input-text</a>
+        <a href="/atoms/#loader">Loader</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#input-textarea">input-textarea</a>
+        <a href="/atoms/#managed-by-link">Managed-by Link</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#loader">loader</a>
+        <a href="/atoms/#meta-box">Meta Box</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#logo-management-contract">logo-management-contract</a>
+        <a href="/atoms/#organic-lines">Organic Lines</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#logo-retraitespopulaires">logo-retraitespopulaires</a>
+        <a href="/atoms/#pagination">Pagination</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#managed-by-link">managed-by-link</a>
+        <a href="/atoms/#search-box">Search Box</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#map-card">map-card</a>
+        <a href="/atoms/#socials">Socials</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#ordered-list">ordered-list</a>
+        <a href="/atoms/#spacer">Spacer</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#organic-lines">organic-lines</a>
+        <a href="/atoms/#tooltip">Tooltip</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#pagination">pagination</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#search-box">search-box</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#section-bloc">section-bloc</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#socials">socials</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#spacer">spacer</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#tag">tag</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#tooltip">tooltip</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#treeview-list">treeview-list</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#unordered-list">unordered-list</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/atoms/#well">well</a>
+        <a href="/atoms/#well">Well</a>
       </li>
       
     </ul>
   </li>
 
   <li>
-    <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/" class="styleguide-menu-heading">Molecules</a>
+    <a href="/molecules/" class="styleguide-menu-heading">Molecules</a>
     <ul>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#actions-bar">Actions Bar</a>
+        <a href="/molecules/#actions-bar">Actions Bar</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#big-menu">big-menu</a>
+        <a href="/molecules/#big-menu">Big Menu</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#big-menu-empty">big-menu-empty</a>
+        <a href="/molecules/#big-menu-empty">Big Menu Empty</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#big-menu-secondary-nav">big-menu-secondary-nav</a>
+        <a href="/molecules/#big-menu-secondary-nav">Big Menu Secondary Nav</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#breadcrumb">breadcrumb</a>
+        <a href="/molecules/#breadcrumb">Breadcrumb</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#breadcrumb-extranet">breadcrumb-extranet</a>
+        <a href="/molecules/#card">Card</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#card-attachement">card-attachement</a>
+        <a href="/molecules/#card-result">Card Result</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#collapse">collapse</a>
+        <a href="/molecules/#collapse">Collapse</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#dropdown">dropdown</a>
+        <a href="/molecules/#dropdown">Dropdown</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#fieldset">fieldset</a>
+        <a href="/molecules/#fieldset">Fieldset</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#immo-heading">immo-heading</a>
+        <a href="/molecules/#immo-results">Immo Results</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#immo-results">immo-results</a>
+        <a href="/molecules/#media">Media</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#navbar">navbar</a>
+        <a href="/molecules/#navbar">Navbar</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#prenavbar">prenavbar</a>
+        <a href="/molecules/#prenavbar">Prenavbar</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#progresschart">progresschart</a>
+        <a href="/molecules/#progresschart">Progresschart</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#push-menu">push-menu</a>
+        <a href="/molecules/#push-menu">Push Menu</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#search-form">search-form</a>
+        <a href="/molecules/#secondary-nav">Secondary Nav</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#secondary-nav">secondary-nav</a>
+        <a href="/molecules/#selectize">Selectize</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#swiper-menu">swiper-menu</a>
+        <a href="/molecules/#swiper-menu">Swiper Menu</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#table">table</a>
+        <a href="/molecules/#table">Table</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#tabs">tabs</a>
+        <a href="/molecules/#tabs">Tabs</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-basicpage">teaser-basicpage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-contact">teaser-contact</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-contact-cta">teaser-contact-cta</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-contact-detail">teaser-contact-detail</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-contact-placeholder">teaser-contact-placeholder</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-document-extranet">teaser-document-extranet</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-gallery">teaser-gallery</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-institution">teaser-institution</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-news">teaser-news</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-offer">teaser-offer</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-product">teaser-product</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-profil">teaser-profil</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-rental">teaser-rental</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/molecules/#teaser-search">teaser-search</a>
+        <a href="/molecules/#teaser-gallery">Teaser Gallery</a>
       </li>
       
     </ul>
   </li>
 
   <li>
-    <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/" class="styleguide-menu-heading">Organisms</a>
+    <a href="/organisms/" class="styleguide-menu-heading">Organisms</a>
     <ul>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachements">attachements</a>
+        <a href="/organisms/#footer">Footer</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachments-contact">attachments-contact</a>
+        <a href="/organisms/#gallery">Gallery</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachments-job">attachments-job</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachments-last-news">attachments-last-news</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachments-offers">attachments-offers</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#attachments-rentals">attachments-rentals</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#footer">footer</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#footer-mandats">footer-mandats</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-contact-advisor">form-contact-advisor</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-hypotheque">form-hypotheque</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-immo-alert">form-immo-alert</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-immo-contact">form-immo-contact</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-immo-search">form-immo-search</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-immobilier">form-immobilier</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-job-add-file">form-job-add-file</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-job-contactinfo">form-job-contactinfo</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-job-signin">form-job-signin</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-job-signup">form-job-signup</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-job-skill">form-job-skill</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-offer-bella-vita">form-offer-bella-vita</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-simulateur-libre-passage">form-simulateur-libre-passage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#form-simulateur-retraite">form-simulateur-retraite</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#gallery">gallery</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#header">header</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#header-extranet">header-extranet</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/organisms/#header-mandats">header-mandats</a>
+        <a href="/organisms/#header">Header</a>
       </li>
       
     </ul>
@@ -575,166 +375,19 @@
     <ul>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/basic-page">basic-page</a>
+        <a href="/basic-page">Basic Page</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/light-page">light-page</a>
+        <a href="/basic-page-header-alt">Basic Page (Header Alt)</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/mail">mail</a>
-      </li>
-      
-    </ul>
-  </li>
-
-  <li>
-    <span class="styleguide-menu-heading">RetraitesPopulaires.ch</span>
-    <ul>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/assurance-vie">assurance-vie</a>
+        <a href="/light-page">Light Page</a>
       </li>
       
       <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/calculateur-hypotheque">calculateur-hypotheque</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/dominique-schmid">dominique-schmid</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/famille">famille</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/homepage">homepage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/managementcontracts">managementcontracts</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/news">news</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/offre-bella-vita">offre-bella-vita</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/particuliers">particuliers</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/rp-jeune">rp-jeune</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/simulateur-libre-passage">simulateur-libre-passage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/simulateur-retraite">simulateur-retraite</a>
-      </li>
-      
-    </ul>
-  </li>
-
-  <li>
-    <span class="styleguide-menu-heading">Mandats</span>
-    <ul>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cip-basicpage-prevoyance">cip-basicpage-prevoyance</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cip-homepage">cip-homepage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cip-news">cip-news</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/light-page-mandats">light-page-mandats</a>
-      </li>
-      
-    </ul>
-  </li>
-
-  <li>
-    <span class="styleguide-menu-heading">Extranets</span>
-    <ul>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/portailca-categories">portailca-categories</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/portailca-homepage">portailca-homepage</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/portailca-subcategory">portailca-subcategory</a>
-      </li>
-      
-    </ul>
-  </li>
-
-  <li>
-    <span class="styleguide-menu-heading">Immobiliers</span>
-    <ul>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/flat-form">flat-form</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/appartement">appartement</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/liste-appartements">liste-appartements</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/liste-commerces">liste-commerces</a>
-      </li>
-      
-    </ul>
-  </li>
-
-  <li>
-    <span class="styleguide-menu-heading">Emplois</span>
-    <ul>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/mon-compte">mon-compte</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/conditions-d-utilisation">conditions-d-utilisation</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/connexion">connexion</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/liste-emplois">liste-emplois</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cree-mon-compte-validation">cree-mon-compte-validation</a>
-      </li>
-      
-      <li>
-        <a href="https://antistatique.github.io/retraitespopulaires-styleguide/cree-mon-compte">cree-mon-compte</a>
+        <a href="/mail">Mail</a>
       </li>
       
     </ul>
@@ -756,13 +409,16 @@
   </div>
 </div>
 
-          <h1>Moodboard</h1>
+          <h1>Retraites Populaires</h1>
         </div>
     
 
+
     
   
-  <div class="moodboard">
+  <h2 id="styleguide-span-class-label-label-primary-version-3-x-span-">Styleguide - <span class="label label-primary">VERSION 3.X</span></h2>
+<p>Cette nouvelle version du styleguide apporte différentes améliorations au niveau du code (maintenabilité et clarté). Les exemples de pages ne sont plus inclus dans le styleguide et sont fournis sur demande via Codepen.</p>
+<div class="moodboard">
   <div class="row">
     <div class="col-xs-12">
       <h2>Couleurs principales</h2>
@@ -849,88 +505,27 @@
       <h2>Typographie</h2>
       <div class="spacer spacer-xs"></div>
       <!-- Heading 1  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H1</b>
-          <div class="text-muted">Cocon Pro Light</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h1>Le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle</h1>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h1>H1 - Cocon Pro Light - Le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle</h1>
       <!-- Heading 2  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H2</b>
-          <div class="text-muted">Cocon Pro Light</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h2>Notre raison sociale, notre identité</h2>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h2>H2 - Cocon Pro Light - Notre raison sociale, notre identité</h2>
       <!-- Heading 3  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H3</b>
-          <div class="text-muted">Frutiger Neue Bold</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h3>Plus de cent ans au service des Vaudoises et des Vaudois</h3>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h3>H3 - Frutiger Neue Bold - Plus de cent ans au service des Vaudoises et des Vaudois</h3>
       <!-- Heading 4  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H4</b>
-          <div class="text-muted">Frutiger Neue Bold</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h4>Partenaire de vos projets</h4>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h4>H4 - Frutiger Neue Bold - Partenaire de vos projets</h4>
       <!-- Heading 5  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H5</b>
-          <div class="text-muted">Frutiger Neue Bold</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h5>Les mêmes conditions pour tous les clients</h5>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h5>H5 - Frutiger Neue Bold - Les mêmes conditions pour tous les clients</h5>
       <!-- Heading 6  -->
-      <div class="row">
-        <div class="col-md-2">
-          <b>H6</b>
-          <div class="text-muted">Frutiger Neue Bold</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
-        </div>
-        <div class="col-md-10">
-          <h6>Labels obtenus par Retraites Populaires</h6>
-          <div class="spacer"></div>
-        </div>
-      </div>
+      <h6>H6 - Frutiger Neue Bold - Labels obtenus par Retraites Populaires</h6>
       <!-- Paragraphe  -->
       <div class="row">
         <div class="col-md-2">
           <b>Paragraphe</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <p>Fondée il y a plus de <b>100 ans</b>, <a href="http://retraites-populaires.ch">Retraites Populaires</a> cultive des valeurs humaines fortes et un esprit de mutualité. <br/> Notre mission: être le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle. Notre détermination: demeurer toujours ce partenaire proche sur lequel vous pouvez compter. Active également dans l’immobilier, l&#39;hypothèque et crédit et la gestion d&#39;institutions de prévoyance, Retraites Populaires met au service des personnes, des entreprises et des institutions une plateforme de compétences et tout son savoir-faire.</p>
           <p><a href="http://retraites-populaires.ch">Retraites Populaires</a> est proche de ses clients. Avec son siège de <i>Lausanne</i> et ses deux agences à <i>Yverdon-les-Bains</i> et <i>Nyon</i>, elle offre des <b>prestations simples</b> et <b>de qualité</b> pour chacune des étapes de la vie.</p>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Quote  -->
@@ -938,11 +533,10 @@
         <div class="col-md-2">
           <b>Citation</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <blockquote>Retraites Populaires est fiable. Fondée il y a plus de 100 ans, elle est une partenaire de confiance sur laquelle la population et les entreprises peuvent compter en toute sécurité, en tant qu’institution de droit public avec des prestations garanties.</blockquote>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Highlight  -->
@@ -950,11 +544,10 @@
         <div class="col-md-2">
           <b>Surligner</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <p>Retraites Populaires est <mark>responsable</mark>. Au coeur de sa raison d’être se trouve le <mark>respect des engagements</mark>.</p>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Unordered List  -->
@@ -962,7 +555,7 @@
         <div class="col-md-2">
           <b>Liste non ordonnée</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <ul class="unordered-list">
@@ -973,7 +566,6 @@
             </ul>
             <li>Flexibilité du produit: prestations et financement en fonction de votre situation</li>
           </ul>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Ordered List  -->
@@ -981,7 +573,7 @@
         <div class="col-md-2">
           <b>Liste ordonnée</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <ol class="ordered-list">
@@ -992,7 +584,6 @@
             </ol>
             <li>Consolidation partielle possible pendant construction (tranche min. CHF 100&#39;000)</li>
           </ol>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Treeview List  -->
@@ -1000,7 +591,7 @@
         <div class="col-md-2">
           <b>Liste en arbre</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <ul class="treeview-list">
@@ -1011,7 +602,6 @@
             </ul>
             <li>Consolidation partielle possible pendant construction (tranche min. CHF 100&#39;000)</li>
           </ul>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Facets List  -->
@@ -1019,7 +609,7 @@
         <div class="col-md-2">
           <b>Liste en facettes</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <ul class="facets-list">
@@ -1030,7 +620,6 @@
             </ul>
             <li>Consolidation partielle possible pendant construction (tranche min. CHF 100&#39;000)</li>
           </ul>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Filters List  -->
@@ -1038,7 +627,7 @@
         <div class="col-md-2">
           <b>Liste en facettes</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <ul class="filters-list">
@@ -1049,7 +638,6 @@
             </ul>
             <li><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checkbox"></i> Consolidation partielle possible pendant construction (tranche min. CHF 100&#39;000)</li>
           </ul>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Table  -->
@@ -1057,7 +645,7 @@
         <div class="col-md-2">
           <b>Tableau</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <table>
@@ -1074,7 +662,6 @@
             </tr>
            </tbody>
           </table>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- Number  -->
@@ -1082,11 +669,10 @@
         <div class="col-md-2">
           <b>Nombres</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <div class="">1&#39;000.10</div>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
       <!-- SuperScript & SubScript  -->
@@ -1094,12 +680,11 @@
         <div class="col-md-2">
           <b>Exposant et Indice</b>
           <div class="text-muted">Frutiger Neue Regular</div>
-          <div class="spacer spacer-sm visible-xs visible-sm"></div>
+          <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <div class="">D&#39;une surface de 150m<sup>3</sup>.</div>
           <div class="">Nouvelle mollecule découverte: Hlop<sub>22</sub>, révolution scientifique en vue.</div>
-          <div class="spacer spacer-md"></div>
         </div>
       </div>
     </div>
@@ -1115,162 +700,204 @@
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-collectivites"></i>
             <div class="text-muted">.retraitespopulaires-icon-collectivites</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-entreprises"></i>
             <div class="text-muted">.retraitespopulaires-icon-entreprises</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-particuliers"></i>
             <div class="text-muted">.retraitespopulaires-icon-particuliers</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-document-file"></i>
             <div class="text-muted">.retraitespopulaires-icon-document-file</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-document-group"></i>
             <div class="text-muted">.retraitespopulaires-icon-document-group</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram"></i>
             <div class="text-muted">.retraitespopulaires-icon-instagram</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter"></i>
             <div class="text-muted">.retraitespopulaires-icon-twitter</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-linkedin"></i>
             <div class="text-muted">.retraitespopulaires-icon-linkedin</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-youtube"></i>
             <div class="text-muted">.retraitespopulaires-icon-youtube</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-facebook"></i>
             <div class="text-muted">.retraitespopulaires-icon-facebook</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-angle"></i>
             <div class="text-muted">.retraitespopulaires-icon-angle</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-search"></i>
             <div class="text-muted">.retraitespopulaires-icon-search</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-location-pin"></i>
             <div class="text-muted">.retraitespopulaires-icon-location-pin</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-mail"></i>
             <div class="text-muted">.retraitespopulaires-icon-mail</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-phone"></i>
             <div class="text-muted">.retraitespopulaires-icon-phone</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-up"></i>
             <div class="text-muted">.retraitespopulaires-icon-arrow-up</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-up-right"></i>
             <div class="text-muted">.retraitespopulaires-icon-arrow-up-right</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-right"></i>
             <div class="text-muted">.retraitespopulaires-icon-arrow-right</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-down-right"></i>
             <div class="text-muted">.retraitespopulaires-icon-arrow-down-right</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-down"></i>
             <div class="text-muted">.retraitespopulaires-icon-arrow-down</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-down-left"></i>
             <div class="text-muted">.retraitespopulaires-icon-arrow-down-left</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></i>
             <div class="text-muted">.retraitespopulaires-icon-arrow-left</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-up-left"></i>
             <div class="text-muted">.retraitespopulaires-icon-arrow-up-left</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-thin"></i>
             <div class="text-muted">.retraitespopulaires-icon-arrow-thin</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i>
             <div class="text-muted">.retraitespopulaires-icon-lock</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-calendar"></i>
             <div class="text-muted">.retraitespopulaires-icon-calendar</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-faq-thick"></i>
             <div class="text-muted">.retraitespopulaires-icon-faq-thick</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-documents-thick"></i>
             <div class="text-muted">.retraitespopulaires-icon-documents-thick</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-placeholder"></i>
             <div class="text-muted">.retraitespopulaires-icon-placeholder</div>
-          </div><br>        </div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-contact-us"></i>
+            <div class="text-muted">.retraitespopulaires-icon-contact-us</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-contact-us-borderless"></i>
+            <div class="text-muted">.retraitespopulaires-icon-contact-us-borderless</div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></i>
             <div class="text-muted">.retraitespopulaires-icon-checked</div>
-          </div><br>        </div>
+          </div>
+        </div>
         <div class="square">
           <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked"></i>
             <div class="text-muted">.retraitespopulaires-icon-unchecked</div>
-          </div><br>        </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div class="spacer"></div>
 
   
 
@@ -1320,8 +947,9 @@
     
 
     <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
-    <script src="https://antistatique.github.io/retraitespopulaires-styleguide/build/js/vendors.min.js"></script>
-    <script src="https://antistatique.github.io/retraitespopulaires-styleguide/build/js/bundle.js"></script>
+    <script src="/build/js/selectize.min.js"></script>
+    <script src="/build/js/vendors.min.js"></script>
+    <script src="/build/js/bundle.js"></script>
 
     
       <script>
@@ -1330,10 +958,15 @@
             $('.styleguide-item-code code').each(function(){
               $(this).html($(this).html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'));
             });
+
+            // Toggle theme
+            $('.styleguide-toggle-theme').on('click', function() {
+              $('.styleguide-item-preview, .styleguide-toggle-container').toggleClass('theme-cip');
+            });
           });
         }(jQuery));
       </script>
-      <script src="https://antistatique.github.io/retraitespopulaires-styleguide/build/js/styleguide.min.js"></script>
+      <script src="/build/js/styleguide.min.js"></script>
     
 
     
