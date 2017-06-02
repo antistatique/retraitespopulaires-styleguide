@@ -4,6 +4,7 @@ CHANGELOG
 ## 2.1.0 (2017-06-02)
  - Apply new header
  - Fix component card
+ - Fix btn-outline component
 
 ## 2.0.3 (2017-06-01)
  - Fix Removed "theme" state config that remove template for page (Promise of Template Whisperer)
