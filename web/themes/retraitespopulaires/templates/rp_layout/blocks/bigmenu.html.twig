@@ -171,7 +171,7 @@
                           {% set target = item.link.options.external ? '_blank' %}
                             <a href="{{ item.link.urlObject }}" class="pretty-link" target="{{ target }}">{{ item.link.title }}</a>
                             {% if item.hasChildren %}
-                              <a href="swiper-{{ item.link.pluginId }}" class="arrow-next btn btn-circle btn-outline" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': item.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
+                              <a href="swiper-{{ item.link.pluginId }}" class="arrow-next btn btn-circle btn-outline btn-primary" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': item.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
                             {% endif %}
                           </li>
                         {% endfor %}
@@ -205,7 +205,7 @@
                                       <a href="{{ item.link.urlObject }}" class="retraitespopulaires-icon retraitespopulaires-icon-{{ profil_icon }} retraitespopulaires-icon-3x" target="{{ target }}"></a>
                                       <a href="{{ item.link.urlObject }}" class="icon-text-txt text-secondary h5" target="{{ target }}">{{ item.link.title }}</a>
                                       {% if item.hasChildren %}
-                                        <a href="swiper-{{ item.link.pluginId }}" class="arrow-next btn btn-circle btn-outline" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': item.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
+                                        <a href="swiper-{{ item.link.pluginId }}" class="arrow-next btn btn-circle btn-outline btn-primary" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': item.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
                                       {% endif %}
                                     </li>
                                   {% endfor %}
@@ -240,7 +240,7 @@
 
                                       <!-- First item is a back link to previous links  -->
                                       <li class="swiper-back visible-xs visible-sm theme-{{ theme|join }} bg-berrylight-gray">
-                                       <a href="swiper-main" class="btn btn-circle btn-outline arrow-back" title="{{ 'Retour en arrière'|t }}">
+                                       <a href="swiper-main" class="btn btn-circle btn-outline btn-primary arrow-back" title="{{ 'Retour en arrière'|t }}">
                                          <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span>
                                        </a>
                                        <a href="{{ item.link.urlObject }}" class="text-muted pretty-link">{{ item.link.title }}</a>
@@ -256,7 +256,7 @@
                                          {% set target = subitem.link.options.external ? '_blank' %}
                                            <a href="{{ subitem.link.urlObject }}" class="pretty-link" target="{{ target }}">{{ subitem.link.title }}</a>
                                            {% if subitem.hasChildren %}
-                                             <a href="swiper-{{ subitem.link.pluginId }}" class="arrow-next btn btn-circle btn-outline" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': subitem.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
+                                             <a href="swiper-{{ subitem.link.pluginId }}" class="arrow-next btn btn-circle btn-outline btn-primary" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': subitem.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
                                            {% endif %}
                                          </li>
                                        {% endfor %}
@@ -277,7 +277,7 @@
 
                                         <!-- First item is a back link to previous links  -->
                                         <li class="swiper-back visible-xs visible-sm theme-{{ theme|join }} bg-berrylight-gray">
-                                          <a href="swiper-main" class="btn btn-circle btn-outline arrow-back" title="{{ 'Retour en arrière'|t }}">
+                                          <a href="swiper-main" class="btn btn-circle btn-outline btn-primary arrow-back" title="{{ 'Retour en arrière'|t }}">
                                             <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span>
                                           </a>
                                           <a href="{{ item.link.urlObject }}" class="text-muted pretty-link">{{ item.link.title }}</a>
@@ -298,7 +298,7 @@
                                          {% set target = subitem.link.options.external ? '_blank' %}
                                            <a href="{{ subitem.link.urlObject }}" class="pretty-link text-primary" {{ target|e }}>{{ subitem.link.title }}</a>
                                            {% if subitem.hasChildren %}
-                                             <a href="swiper-{{ subitem.link.pluginId }}" class="arrow-next btn btn-circle btn-outline" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': subitem.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
+                                             <a href="swiper-{{ subitem.link.pluginId }}" class="arrow-next btn btn-circle btn-outline btn-primary" title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': subitem.link.title}) }}"><span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span></a>
                                            {% endif %}
                                          </li>
                                        {% endfor %}
@@ -336,7 +336,7 @@
 
                                         <!-- First item is a back link to previous links  -->
                                         <li class="swiper-back visible-xs visible-sm theme-{{ theme|join }} bg-berrylight-gray">
-                                          <a href="swiper-main" class="btn btn-circle btn-outline arrow-back" title="{{ 'Retour en arrière'|t }}">
+                                          <a href="swiper-main" class="btn btn-circle btn-outline btn-primary arrow-back" title="{{ 'Retour en arrière'|t }}">
                                             <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span>
                                           </a>
                                           <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link">{{ subitem.link.title }}</a>
@@ -372,7 +372,7 @@
 
                                        <!-- First subitem is a back link to previous links  -->
                                        <li class="swiper-back visible-xs visible-sm">
-                                        <a href="swiper-main" class="btn btn-circle btn-outline arrow-back" title="{{ 'Retour en arrière'|t }}">
+                                        <a href="swiper-main" class="btn btn-circle btn-outline btn-primary arrow-back" title="{{ 'Retour en arrière'|t }}">
                                           <span class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" aria-hidden="true"></span>
                                         </a>
                                         <a href="{{ subitem.link.urlObject }}" class="text-muted pretty-link text-secondary">{{ subitem.link.title }}</a>
