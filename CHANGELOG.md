@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## 3.1.0 (2017-05-XX)
+## 3.1.0 (2017-06-02)
 
   - added `.text-dimmed` helper
   - added new meta-box component
