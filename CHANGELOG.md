@@ -9,11 +9,13 @@ CHANGELOG
   - added `.text-normal` helper (mainly for text-color on links)
   - added `.tablesaw-lite` class to table for a light version of responsive tables
   - added `.flex-space-between` helper class
+  - added back version of input datepicker in an input-group (with button)
   - refactored header component with push-menu and swiper-menu ⚠️ **BREAKING**
   - refactored btn-outline component (it has to have `.btn-primary` or others to be colored correctly) ⚠️ **BREAKING**
   - updated label component look with js behaviour in list-inlines
   - updated navigation in new header (mandants)
   - updated table header when borderless
+  - changed datepicker config to display on button click only
   - replace teaser-document-extranet component by Bootstrap Media component
 
 ## 3.0.1 (2017-05-18)

@@ -1,8 +1,16 @@
 import $ from 'jquery';
 
 export function datepicker () {
-  $('.datepicker').datepicker({
+  const options = {
     language: 'fr',
-    format: 'dd/mm/yyyy'
-  });
+    format: 'dd/mm/yyyy',
+    showOnFocus: false,
+    todayHighlight: true,
+  };
+
+  $('.datepicker').datepicker(options);
+
+  $('.datepicker + .input-group-btn').on('click', 'button', function() {
+    $(this).parents('.form-group').find('.datepicker').datepicker('show');
+  })
 }
