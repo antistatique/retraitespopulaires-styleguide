@@ -7,10 +7,9 @@ close: null
 uid: 1
 template: false
 id: satisfaction_retraite
-title: 'Satisfaction retraite'
-description: 'formulaire de satisfaction pour le secteur retraite.'
-category: ''
-elements: null
+title: 'Votre opinion nous intéresse: enquête de satisfaction'
+description: 'formulaire de satisfaction pour le secteur Retraite.'
+elements: "id:\n  '#type': hidden\nlikert_01:\n  '#type': webform_likert\n  '#title': 'Etes-vous satisfait(e):'\n  '#description': '1. de l’accueil qui vous a été réservé par nos collaborateurs :'\n  '#title_display': before\n  '#description_display': before\n  '#required': true\n  '#questions':\n    Q1: '- au téléphone ?'\n    Q2: '- à notre réception ?'\n    Q3: '- lors de votre visite ?'\n  '#answers':\n    4: 'Tout à fait satisfait(e)'\n    3: 'Plutôt satisfait(e)'\n    2: 'Plutôt pas satisfait(e)'\n    1: 'Pas du tout satisfait(e)'\n  '#na_answer': true\n  '#na_answer_value': '0'\n  '#na_answer_text': 'Pas d''avis'\nlikert_02:\n  '#type': webform_likert\n  '#title': 'Etes-vous satisfait(e):'\n  '#title_display': before\n  '#description_display': before\n  '#required': true\n  '#questions':\n    Q1: '2. de la clarté des informations ?'\n    Q2: '3. de la compréhension des documents remis ?'\n    Q3: '4. des délais pour le traitement de votre demande ?'\n    Q4: '5. de nos services de manière globale ?'\n  '#answers':\n    4: 'Tout à fait satisfait(e)'\n    3: 'Plutôt satisfait(e)'\n    2: 'Plutôt pas satisfait(e)'\n    1: 'Pas du tout satisfait(e)'\n  '#na_answer': true\n  '#na_answer_value': '0'\n  '#na_answer_text': 'Pas d''avis'\nten_scale_01:\n  '#type': radios\n  '#title': 'Recommanderiez-vous Retraites Populaires à votre entourage ?'\n  '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n  '#title_display': attribute\n  '#description_display': after\n  '#options':\n    - '0'\n    - '1'\n    - '2'\n    - '3'\n    - '4'\n    - '5'\n    - '6'\n    - '7'\n    - '8'\n    - '9'\n    - '10'\n  '#options_display': side_by_side\n  '#required': true\ntextarea_01:\n  '#type': textarea\n  '#title': 'Auriez-vous des commentaires, suggestions à nous faire parvenir ?'\n  '#title_display': before\n  '#placeholder': 'Je trouve que ...'\n"
 css: ''
 javascript: ''
 settings:
@@ -21,13 +20,11 @@ settings:
   form_submit_once: false
   form_submit_attributes: {  }
   form_exception_message: ''
-  form_open_message: ''
-  form_close_message: ''
-  form_previous_submissions: true
+  form_closed_message: ''
+  form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
-  form_convert_anonymous: false
-  form_prepopulate: false
+  form_prepopulate: true
   form_prepopulate_source_entity: false
   form_disable_autocomplete: false
   form_novalidate: false
@@ -35,35 +32,34 @@ settings:
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: false
-  submission_log: false
-  wizard_progress_bar: true
+  wizard_progress_bar: false
   wizard_progress_pages: false
   wizard_progress_percentage: false
-  wizard_next_button_label: ''
+  wizard_next_button_label: Suivant
   wizard_next_button_attributes: {  }
-  wizard_prev_button_label: ''
+  wizard_prev_button_label: Précedent
   wizard_prev_button_attributes: {  }
-  wizard_start_label: ''
+  wizard_start_label: COmmencer
   wizard_complete: true
-  wizard_complete_label: ''
+  wizard_complete_label: Finir
   preview: 0
   preview_next_button_label: ''
   preview_next_button_attributes: {  }
   preview_prev_button_label: ''
   preview_prev_button_attributes: {  }
   preview_message: ''
-  draft: none
+  draft: false
   draft_auto_save: false
   draft_button_label: ''
   draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
   confirmation_type: page
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_title: 'Votre opinion nous est bien parvenue.'
+  confirmation_message: 'Nous vous remercions d''avoir pris le temps de répondre à notre enquête de satisfaction.'
   confirmation_url: ''
   confirmation_attributes: {  }
-  confirmation_back: true
+  confirmation_back: false
   confirmation_back_label: ''
   confirmation_back_attributes: {  }
   limit_total: null
