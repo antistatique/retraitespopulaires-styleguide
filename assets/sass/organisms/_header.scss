@@ -1,37 +1,64 @@
 @charset 'UTF-8';
 
 .header {
-  position: absolute;
-  overflow: hidden;
-  width: 100%;
-  height: 104px;
+  position: relative;
+  z-index: $zindex-navbar-fixed + 2;
   background: $white;
-  z-index: 2002;
-  transition: border 0.25s ease-in-out;
+}
 
-  &.active {
-    border-bottom-color: transparent;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:before,
+  &:after {
+    content: none;
   }
 
-  .global-search {
-    margin-top: 30px;
-    opacity: 0;
-    transition: opacity 0.25s ease-in-out;
-
-    @media (min-width: $screen-sm-min) {
-      margin-left: 3.56rem; // to align logo
-    }
-
-    &.active {
-      opacity: 1;
-    }
+  .logo-retraitespopulaires {
+    margin: 10px;
   }
 }
 
-.header-vertical-center {
-  margin-top: 14px;
+.header-search {
+  flex: 0 1 620px;
+  margin: -1px auto 0; // browser sometimes rounds pixels the wrong way. This seems to fix it
+
+  .form-group {
+    margin-bottom: 0;
+  }
 }
 
-.global-search-visible {
-  opacity: 1;
+.header-shadow {
+  box-shadow: 0 5px 30px rgba($black, 0.3);
+}
+
+// Special navbars in header for mandats
+.wrapper-navs {
+  display: none;
+  flex: 0 1 900px;
+  margin-top: $grid-gutter-width / 2;
+  margin-left: $grid-gutter-width;
+
+  @media screen and (min-width: $screen-md-min) {
+    display: block;
+  }
+}
+
+.wrapper-prenavbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .prenavbar-separator {
+    width: 2px;
+    height: ($grid-gutter-width / 2);
+    margin: 0 ($grid-gutter-width / 2);
+    background-color: $light-gray;
+  }
+}
+
+.wrapper-navbar {
+  margin-top: $grid-gutter-width / 2;
 }

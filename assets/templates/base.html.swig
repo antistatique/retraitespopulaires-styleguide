@@ -32,13 +32,13 @@
     <![endif]-->
   </head>
   <body>
-    <div class="styleguide-toggle-container">
-      <div class="styleguide-toggle-theme-hide">
-        <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
-      </div>
-    </div>
-
     {% if styleguide %}
+      <div class="styleguide-toggle-container">
+        <div class="styleguide-toggle-theme-hide">
+          <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
+        </div>
+      </div>
+
       {% include 'styleguide/icons.html.swig' %}
       {% include 'styleguide/menu.html.swig' %}
       <div class="styleguide-container">
@@ -96,6 +96,7 @@
     {% endif %}
 
     <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+    <script src="{{data.path}}build/js/selectize.min.js"></script>
     <script src="{{data.path}}build/js/vendors.min.js"></script>
     <script src="{{data.path}}build/js/bundle.js"></script>
 

@@ -68,7 +68,7 @@
     <ul>
       {% for page in collections.pages %}
       <li>
-        <a href="{{data.path}}{{page.title}}">{{page.title}}</a>
+        <a href="{{data.path}}{{page.name}}">{{page.title}}</a>
       </li>
       {% endfor %}
     </ul>

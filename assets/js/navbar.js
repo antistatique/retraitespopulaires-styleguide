@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 export function navbar () {
-  $(document).on('click', '.hamburger-mandat-toggle, .menu-access .menu', function(e){
+  $(document).on('click', '.js-header-push .hamburger-wrapper, .menu-access .menu', function(e){
     const $this = $(this);
 
     navbar_toggle();
@@ -23,12 +23,10 @@ export function navbar () {
   });
 
   function navbar_toggle() {
-    const $hamburger = $('.hamburger-mandat-wrapper');
     const $body      = $(document.body);
     const $menu      = $('.menu-push');
     const $overlay   = $('.body-overlay');
 
-    $hamburger.toggleClass('active');
     $body.toggleClass('menu-push-toright');
     $menu.toggleClass('menu-open');
     $overlay.toggleClass('visible');

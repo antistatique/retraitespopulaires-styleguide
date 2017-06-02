@@ -54,6 +54,10 @@
   white-space: nowrap;
 }
 
+.text-normal {
+  color: $text-color;
+}
+
 .text-break-all {
   word-break: break-all;
 
@@ -273,8 +277,16 @@
   justify-content: center;
 }
 
+.flex-space-between {
+  justify-content: space-between;
+}
+
 .flex-1 {
   flex: 1 1 auto;
+}
+
+.flex-baseline {
+  align-items: baseline;
 }
 
 /**

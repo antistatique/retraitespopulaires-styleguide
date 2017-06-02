@@ -2,28 +2,30 @@
 title: Header
 name: header
 collection: organisms
+changes:
+  3.1.0: "**Component is refactored**. Must be updated in all instances."
 notes: |
-  ##### Usage : `header`
-  ##### Options :
-  - **light** - <i>Boolean</i>
-  - **theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  Add the `.header-container` to enable the flex header (add a `.container.header-container` inside the `.header`)
 ---
-{% if not light %}
-  {% include '../molecules/big-menu.html.swig' %}
-{% endif %}
-<header class="header">
+{% include '../molecules/big-menu.html.swig' %}
+<header class="header header-container">
   <div class="logo-retraitespopulaires svg-responsive">
     <a href="#"><img src="{{data.path}}build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>
   </div>
 
-  {% if not light %}
-  <div class="row">
-    <div class="col-xs-6 col-xs-offset-3 hidden-xs">
-    search form here
+  <div class="header-search hidden-xs">
+    <!-- see input-group component -->
+    <div class="form-group">
+      <div class="input-group full-width">
+        <input type="text" class="form-control full-width" placeholder="Rechercher des documents, articles, ...">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button">Rechercher</button>
+        </span>
+      </div>
     </div>
+    <!-- /input-group -->
   </div>
-  {% endif %}
   <div class="header-nav" aria-hidden="true">
-    {% include '../atoms/hamburger.html.swig' with {'hamburger_link': light, 'hamburger_theme': theme} %}
+    {% include '../atoms/hamburger.html.swig' %}
   </div>
 </header>

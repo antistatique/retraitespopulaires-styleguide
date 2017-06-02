@@ -88,3 +88,14 @@ layout: examples.html.swig
   </div>
   <div class="spacer spacer-xs"></div>
 </div>
+
+<div class="spacer spacer-sm"></div>
+
+<div class="bg-berrylight-gray container-fluid">
+  <div class="spacer spacer-md"></div>
+  <div class="card card-white">
+    <div class="card-body">
+      <p>Lorem ipsum dolor sit amet, <a class="pretty-link" href="#">consectetur</a> adipisicing elit. Nemo, molestias.</p>
+    </div>
+  </div>
+</div>

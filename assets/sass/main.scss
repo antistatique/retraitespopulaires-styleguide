@@ -45,9 +45,11 @@
 @import 'atoms/tooltip';
 @import 'atoms/input-file';
 @import 'atoms/block-link';
+@import 'atoms/meta-box';
 
 // molecules:
 @import 'molecules/teaser-gallery';
+@import 'molecules/nav';
 @import 'molecules/navbar';
 @import 'molecules/prenavbar';
 @import 'molecules/prenavbar';
@@ -64,17 +66,15 @@
 @import 'molecules/big-menu';
 @import 'molecules/push-menu';
 @import 'molecules/form';
-@import 'molecules/teaser-document-extranet';
 @import 'molecules/dropdown';
 @import 'molecules/actions-bar';
 @import 'molecules/card';
 @import 'molecules/section-title';
+@import 'molecules/selectize';
 
 // organisms:
 @import 'organisms/gallery';
-@import 'organisms/header-extranet';
 @import 'organisms/footer';
 @import 'organisms/header';
-@import 'organisms/header-mandats';
 @import 'organisms/attachments-job';
 @import 'organisms/attachments-offers';

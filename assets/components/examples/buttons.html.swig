@@ -14,7 +14,16 @@ layout: examples.html.swig
       <a href="#" class="btn btn-primary">Assurance vie</a>
     </p>
     <p>
-      <a href="#" class="btn btn-outline">Bouton outline</a>
+      <a href="#" class="btn btn-outline">Bouton outline [deprecated]</a>
+    </p>
+    <p>
+      <a href="#" class="btn btn-primary btn-outline">Bouton primary outline</a>
+    </p>
+    <p>
+      <a href="#" class="btn btn-danger btn-outline">Bouton danger outline</a>
+    </p>
+    <p class="theme-cip">
+      <a href="#" class="btn btn-primary btn-outline">Bouton primary outline CIP</a>
     </p>
     <p>
       <button class="btn btn-invisible btn-collapse btn-xs collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="true">
