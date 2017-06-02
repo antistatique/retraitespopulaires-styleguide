@@ -26,9 +26,9 @@ notes: |
   - `card-hover` to hover hover effects on a `div.card`
 ---
 {% if variant == 'card-light' or variant == 'card-horizontal' -%}
-<div class="card {{ variant }}">
+<div class="card card-white {{ variant }}">
 {% else -%}
-<a href="#" class="card">
+<a href="#" class="card card-white">
 {%- endif -%}
   {%- if variant != 'card-light' -%}
   {%- if variant != 'card-icon' %}

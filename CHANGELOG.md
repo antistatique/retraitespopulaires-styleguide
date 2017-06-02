@@ -12,6 +12,7 @@ CHANGELOG
   - added back version of input datepicker in an input-group (with button)
   - refactored header component with push-menu and swiper-menu ⚠️ **BREAKING**
   - refactored btn-outline component (it has to have `.btn-primary` or others to be colored correctly) ⚠️ **BREAKING**
+  - refactored card component to remove base background-color, you need the `.card-white` class now ⚠️ **BREAKING**
   - updated label component look with js behaviour in list-inlines
   - updated navigation in new header (mandants)
   - updated table header when borderless
