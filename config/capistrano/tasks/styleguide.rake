@@ -18,7 +18,8 @@ namespace :styleguide do
       end
 
       # Retrieve styleguide from npm
-      execute 'npm', '--no-spin', '--silent', 'install'
+      # execute 'npm', '--no-spin', '--silent', 'install'
+      execute 'yarn', 'install', '--no-progress', '--silent'
 
       # Build the styleguide localy
       execute './node_modules/.bin/gulp', 'build', '--production'
@@ -34,7 +35,9 @@ namespace :styleguide do
       end
 
       # Retrieve styleguide from npm (needed to build the git styleguide)
-      execute 'npm', '--no-spin', '--silent', 'install'
+      # execute 'npm', '--no-spin', '--silent', 'install'
+      execute 'yarn', 'install', '--no-progress', '--silent'
+
 
       # Delete existing styleguide downloaded by npm
       if File.exists?(fetch(:styleguide_path))
@@ -46,7 +49,8 @@ namespace :styleguide do
 
       # Build the dependencied styleguide localy
       within fetch(:styleguide_path) do
-        execute 'npm', '--no-spin', '--silent', 'install'
+        execute 'yarn', 'install', '--no-progress', '--silent'
+        # execute 'npm', '--no-spin', '--silent', 'install'
         execute './node_modules/.bin/gulp', 'build', '--production'
       end
 
