@@ -1,0 +1,14 @@
+uuid: 22d23e1f-5e30-48ff-abb6-beab1d431417
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.cge
+  module:
+    - user
+id: user_add_role_action.cge
+label: 'Ajouter le rôle CGE aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: cge

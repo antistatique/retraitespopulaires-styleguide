@@ -1,0 +1,14 @@
+uuid: e9ed8492-0614-4c34-85be-ac212b8c11ea
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.cge
+  module:
+    - user
+id: user_remove_role_action.cge
+label: 'Retirer le rôle CGE aux utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cge
