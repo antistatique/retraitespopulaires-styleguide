@@ -89,7 +89,7 @@ class TableRateBlock extends BlockBase implements ContainerFactoryPluginInterfac
             '#theme'     => $theme,
             '#variables' => $variables,
             '#cache' => [
-                'tags'=> ['rp_mortage_rates'], // invalidate cache when importing new data.
+              'tags'=> ['rp_mortage_rates'], // invalidate cache when importing new data.
             ],
         ];
     }

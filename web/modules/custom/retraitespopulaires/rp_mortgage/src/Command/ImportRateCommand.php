@@ -77,6 +77,7 @@ class ImportRateCommand {
         $this->deleteAll();
 
         $success = $this->_readFileLinebyLine($file, $callback);
+        $this->cache_tags_invalidator->invalidateTags(['rp_mortage_rates']);
 
         if (!$success) {
             drush_print('Failed on ' . $file);

@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE 2.1.x (2017-xx-xx)
+ - Fix rates cache cleared by `rp:mortgage:import-rates`
+
 ## 2.1.0 (2017-06-02)
  - Apply new header
  - Fix component card
