@@ -4,7 +4,8 @@ name: teaser-gallery
 collection: molecules
 wrapper: col-xs-4
 notes: |
-  Can be wrapped in `.theme-[theme]` to change look.
+  Can be wrapped in `.theme-[theme]` to change look. <br>
+  We use the `jQuery` plugin [Photoswipe](http://photoswipe.com/documentation/getting-started.html), check the documentation for advanced usage & parameters.
 ---
 <figure itemprop="associatedMedia" class="teaser-gallery teaser-gallery-{{ teaser_gallery_theme|default('primary') }}" itemscope itemtype="http://schema.org/ImageObject">
   <div class="wrapper-figure">
