@@ -80,7 +80,8 @@ access:
       - authenticated
     users: {  }
   view_any:
-    roles: {  }
+    roles:
+      - prets
     users: {  }
   update_any:
     roles: {  }

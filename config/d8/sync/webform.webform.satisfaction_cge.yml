@@ -80,7 +80,8 @@ access:
       - authenticated
     users: {  }
   view_any:
-    roles: {  }
+    roles:
+      - cge
     users: {  }
   update_any:
     roles: {  }
