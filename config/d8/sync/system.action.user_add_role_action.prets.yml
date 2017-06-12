@@ -1,0 +1,14 @@
+uuid: abf2c38f-3ff8-4520-ab36-3fa1a7550513
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.prets
+  module:
+    - user
+id: user_add_role_action.prets
+label: 'Ajouter le rôle Prêts aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: prets

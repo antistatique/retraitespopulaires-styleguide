@@ -1,0 +1,16 @@
+uuid: 3e803da4-5c8d-47fc-bf0c-88635db36b13
+langcode: fr
+status: true
+dependencies: {  }
+id: prets
+label: Prêts
+weight: 6
+is_admin: null
+permissions:
+  - 'use text format full_html'
+  - 'access administration pages'
+  - 'access site in maintenance mode'
+  - 'view the administration theme'
+  - 'access toolbar'
+  - 'change own username'
+  - 'access user profiles'
