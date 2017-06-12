@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+## XXXXX
+
+ - improved lists indentations when break line
+
 ## 3.1.0 (2017-06-02)
 
   - added `.text-dimmed` helper
