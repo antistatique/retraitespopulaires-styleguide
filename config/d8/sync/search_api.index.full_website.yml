@@ -58,11 +58,13 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: title
     type: text
+    boost: !!float 21
   body:
     label: Body
     datasource_id: 'entity:node'
     property_path: body
     type: text
+    boost: !!float 13
     dependencies:
       config:
         - field.storage.node.body
