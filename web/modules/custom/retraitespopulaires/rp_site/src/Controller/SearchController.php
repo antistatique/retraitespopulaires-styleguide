@@ -11,6 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Component\Transliteration\TransliterationInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\search_api\Entity\Index;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Url;
 
 /**
 * SearchController.
@@ -36,11 +38,19 @@ class SearchController extends ControllerBase {
     private $transliteration;
 
     /**
+     * The node Storage.
+     *
+     * @var \Drupal\node\NodeStorageInterface
+     */
+    protected $nodeStorage;
+
+    /**
     * Class constructor.
     */
-    public function __construct(RequestStack $request, TransliterationInterface $transliteration) {
-        $this->request = $request->getMasterRequest();
-        $this->transliteration = $transliteration;
+    public function __construct(EntityTypeManagerInterface $entity, RequestStack $request, TransliterationInterface $transliteration) {
+      $this->nodeStorage     = $entity->getStorage('node');
+      $this->request         = $request->getMasterRequest();
+      $this->transliteration = $transliteration;
     }
 
     /**
@@ -49,15 +59,21 @@ class SearchController extends ControllerBase {
     public static function create(ContainerInterface $container) {
         // Instantiates this form class.
         return new static(
-            $container->get('request_stack'),
-            $container->get('transliteration')
+          $container->get('entity_type.manager'),
+          $container->get('request_stack'),
+          $container->get('transliteration')
         );
     }
 
     public function search() {
         $variables = array('results' => array(), 'search' => array());
 
+        // Retrieve routes with parameters
+        $route = $this->request->attributes->get('_route');
+        $params = $this->request->query->all();
+
         $search = $this->request->query->get('q');
+        $type = $this->request->query->get('type');
 
         if (!empty($search)) {
 
@@ -84,11 +100,52 @@ class SearchController extends ControllerBase {
             $query->keys($keys);
 
             $query->sort('search_api_relevance', 'DESC');
+
+            // Facets
+            $server = $search_api_index->getServerInstance();
+            if ($server->supportsFeature('search_api_facets')) {
+              $query->setOption('search_api_facets', [
+                'type' => [
+                  'field' => 'type',
+                  'limit' => 20,
+                  'operator' => 'AND',
+                  'min_count' => 1,
+                  'missing' => TRUE,
+                ],
+              ]);
+            }
+
+            // Retrieve facets before.
+            $query_facets = clone $query;
+            $results_facets = $query_facets->execute();
+            $facets = $results_facets->getExtraData('search_api_facets', []);
+
+            if (!empty($type)) {
+              $query = $query->addCondition('type', $type);
+            }
             $results = $query->execute();
 
+            if (isset($facets['type']) && !empty($facets['type'])) {
+              foreach ($facets['type'] as $key => $facet) {
+                $facets['type'][$key]['filter'] = trim($facet['filter'], '"');
+                $facets['type'][$key]['filter_name'] = $this->typeMachineNameToHuman(trim($facet['filter'], '"'));
+
+                $params['type'] = $facets['type'][$key]['filter'];
+                $facets['type'][$key]['url'] = Url::fromRoute($route, $params);
+              }
+            }
+
+            if (!empty($type)) {
+              # code...
+            }
+            $params = $this->request->query->all();
+
             $variables['search'] = array(
-                'search' => $search,
-                'count'  => $results->getResultCount(),
+                'search'    => $search,
+                'count'     => $results->getResultCount(),
+                'facets'    => $facets,
+                'type'      => $type,
+                'type_name' => $this->typeMachineNameToHuman($type),
             );
 
             foreach ($results as $key => $result) {
@@ -99,45 +156,10 @@ class SearchController extends ControllerBase {
                     'original_body' => $result->getField('body')->getValues() ? $result->getField('body')->getValues()[0] : ''
                 );
 
-
                 if ($result->getField('type')->getValues()[0]) {
-                    switch ($result->getField('type')->getValues()[0]) {
-                        case 'news':
-                        $variables['results'][$key]['type'] = t('Actualités');
-                        break;
+                  $label = $this->typeMachineNameToHuman($result->getField('type')->getValues()[0]);
 
-                        case 'advisor':
-                        $variables['results'][$key]['type'] = t('Conseiller');
-                        break;
-
-                        case 'product':
-                        $variables['results'][$key]['type'] = t('Produit');
-                        break;
-
-                        case 'faq':
-                        $variables['results'][$key]['type'] = t('Questions-réponses');
-                        break;
-
-                        case 'partnership':
-                        $variables['results'][$key]['type'] = t('Partenaire');
-                        break;
-
-                        case 'offer':
-                        $variables['results'][$key]['type'] = t('Coupons Bella Vita');
-                        break;
-
-                        case 'building':
-                        $variables['results'][$key]['type'] = t('Construction');
-                        break;
-
-                        case 'management_contracts':
-                        $variables['results'][$key]['type'] = t('Mandats de gestion');
-                        break;
-
-                        default:
-                        $variables['results'][$key]['type'] = $result->getField('type')->getValues()[0];
-                        break;
-                    }
+                  $variables['results'][$key]['type'] = $label;
                 }
             }
 
@@ -156,5 +178,46 @@ class SearchController extends ControllerBase {
           // Set cache for 0 seconds.
           '#cache' => ['max-age' => 0],
         ];
+    }
+
+    private function typeMachineNameToHuman($machine_name) {
+      $label = ucfirst($machine_name);
+
+      switch ($machine_name) {
+          case 'news':
+          $label = t('Actualité');
+          break;
+
+          case 'advisor':
+          $label = t('Conseiller');
+          break;
+
+          case 'product':
+          $label = t('Produit');
+          break;
+
+          case 'faq':
+          $label = t('Question-réponse');
+          break;
+
+          case 'partnership':
+          $label = t('Partenaire');
+          break;
+
+          case 'offer':
+          $label = t('Coupons Bella Vita');
+          break;
+
+          case 'building':
+          $label = t('Construction');
+          break;
+
+          case 'managementcontracts':
+          case 'management_contracts':
+          $label = t('Mandats de gestion');
+          break;
+      }
+
+      return $label;
     }
 }
