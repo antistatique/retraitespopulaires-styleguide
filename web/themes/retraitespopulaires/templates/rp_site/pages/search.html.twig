@@ -16,9 +16,8 @@
   </div>
 </div>
 
-{% if variables.results %}
 <div class="row">
-    {% set classes_search = variables.results ? 'col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-xl-3 col-xl-offset-1' : 'col-xs-12 col-sm-10 col-sm-offset-1' %}
+  {% set classes_search = variables.results ? 'col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-xl-3 col-xl-offset-1' : 'col-xs-12 col-sm-10 col-sm-offset-1' %}
     {% set classes_content = variables.results ? 'col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-0 col-xl-7' : 'col-xs-12' %}
 
   <div class="{{ classes_search }}">
@@ -55,11 +54,20 @@
         {{ load_block('rp_site_search_teaser_block', {'result': result}) }}
       {% endfor %}
     {% elseif not variables.results and variables.search.search %}
-      <p class="text-center h3">{% trans %}Aucun résultat pour votre recherche <span class="text-primary">"{{ variables.search.search }}" </span>.{% endtrans %}</p>
+      <p class="text-center h3">{% trans %}Aucun résultat pour votre recherche <span class="text-primary">"{{ variables.search.search }}"</span>.{% endtrans %}</p>
+      <div class="spacer spacer-md"></div>
+    {% else %}
+      <div class="col-xs-12 col-md-8 col-md-offset-2 col-xl-6 col-xl-offset-3">
+        <div class="text-center text-muted">
+          <div class="retraitespopulaires-icon retraitespopulaires-icon-5x retraitespopulaires-icon-search" aria-hidden="true"></div>
+          <h2 class="h2">— Voyons ce que l'on y trouve —</h2>
+          <p class="h5 text-secondary">Commencer par taper un ou plusieurs mots-clés afin de lancer votre recherche.</p>
+        </div>
+        <div class="spacer spacer-md"></div>
+      </div>
     {% endif %}
   </div>
 </div>
-{% endif %}
 
 {% if variables.pager %}
 <div class="row">
