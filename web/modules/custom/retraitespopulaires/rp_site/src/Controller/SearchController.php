@@ -22,7 +22,7 @@ class SearchController extends ControllerBase {
     * Number of result by page
     * @var Integer
     */
-    private $limit = 30;
+    private $limit = 12;
 
     /**
     * Request stack that controls the lifecycle of requests
@@ -150,13 +150,13 @@ class SearchController extends ControllerBase {
 
             foreach ($results as $key => $result) {
                 $variables['results'][$key] = array(
-                    'nid'           => $result->getField('nid')->getValues()[0],
-                    'title'         => $result->getField('title')->getValues()[0],
+                    'nid'           => isset($result->getField('nid')->getValues()[0]) ? $result->getField('nid')->getValues()[0] : NULL,
+                    'title'         => isset($result->getField('title')->getValues()[0]) ? $result->getField('title')->getValues()[0] : NULL,
                     'body'          => $result->getExcerpt(),
-                    'original_body' => $result->getField('body')->getValues() ? $result->getField('body')->getValues()[0] : ''
+                    'original_body' => isset($result->getField('body')->getValues()[0]) ? $result->getField('body')->getValues()[0] : NULL
                 );
 
-                if ($result->getField('type')->getValues()[0]) {
+                if (isset($result->getField('type')->getValues()[0])) {
                   $label = $this->typeMachineNameToHuman($result->getField('type')->getValues()[0]);
 
                   $variables['results'][$key]['type'] = $label;
@@ -167,7 +167,7 @@ class SearchController extends ControllerBase {
             pager_default_initialize($results->getResultCount(), $this->limit);
             $variables['pager'] = array(
                 '#type' => 'pager',
-                '#quantity' => '3',
+                '#quantity' => '5',
             );
 
         }
