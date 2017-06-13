@@ -44,7 +44,7 @@
         Voici les <span class="text-primary">{{ variables.search.count }}</span> résultats de votre recherche "<span class="text-primary">{{ variables.search.search }}</span>"
       {% endtrans -%}
       {%- if variables.search.type %}
-        {% trans %}dans "<span class="text-primary">{{ variables.search.type_name }}</span>"{% endtrans %}
+        {% trans %}dans "<span class="text-primary">{{ variables.search.type_name }}</span>"{% endtrans -%}
       {% endif -%}
       .
     </p>
