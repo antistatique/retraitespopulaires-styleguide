@@ -135,9 +135,6 @@ class SearchController extends ControllerBase {
               }
             }
 
-            if (!empty($type)) {
-              # code...
-            }
             $params = $this->request->query->all();
 
             $variables['search'] = array(
