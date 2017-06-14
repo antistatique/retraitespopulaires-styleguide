@@ -33,6 +33,9 @@
     "web/themes/retraitespopulaires/assets/img/**/*",
     "node_modules/@antistatique/retraitespopulaires-styleguide/build/img/**/*"
   ],
+  "favicons": [
+    "node_modules/@antistatique/retraitespopulaires-styleguide/build/favicons/*"
+  ],
   "svg": [
     "web/themes/retraitespopulaires/assets/svg/**/*",
     "node_modules/@antistatique/retraitespopulaires-styleguide/build/svg/**/*"

@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - Fixed favicons build styleguide
+
 ## 2.1.4 (2017-06-14)
  - Added Yarn lock to used the latest version of styleguide
 
