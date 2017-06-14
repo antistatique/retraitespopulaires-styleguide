@@ -1,5 +1,5 @@
 {% if variables.news.nid.value %}
-<a href="{{ path('entity.node.canonical', {'node': variables.news.nid.value}) }}" class="card">
+<a href="{{ path('entity.node.canonical', {'node': variables.news.nid.value}) }}" class="card card-white">
   {% if not variables.news.field_cover.entity.uri.value is empty %}
   <div class="card-img-top">
     <img class="card-img" src="{{ file_url(variables.cover.image) }}" alt="{{ variables.news.title.value }}">

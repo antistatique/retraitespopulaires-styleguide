@@ -1,0 +1,16 @@
+uuid: 7a958ecf-4da4-410b-99c7-0341f6fee090
+langcode: fr
+status: true
+dependencies: {  }
+id: cge
+label: CGE
+weight: 7
+is_admin: null
+permissions:
+  - 'use text format full_html'
+  - 'access administration pages'
+  - 'access site in maintenance mode'
+  - 'view the administration theme'
+  - 'access toolbar'
+  - 'change own username'
+  - 'access user profiles'

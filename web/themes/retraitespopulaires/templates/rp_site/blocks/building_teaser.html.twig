@@ -1,6 +1,6 @@
 {% if variables.building.nid.value %}
 
-<a href="{{ path('entity.node.canonical', {'node': variables.building.nid.value}) }}" class="card">
+<a href="{{ path('entity.node.canonical', {'node': variables.building.nid.value}) }}" class="card card-white">
   <div class="card-img-top">
     <img class="card-img" src="{{ file_url(variables.cover.image) }}" alt="{{ variables.building.title.value }}">
     <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div>

@@ -1,0 +1,14 @@
+uuid: 2f0050e3-e14a-4571-9527-07b4afc438d5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.prets
+  module:
+    - user
+id: user_remove_role_action.prets
+label: 'Retirer le rôle Prêts aux utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: prets

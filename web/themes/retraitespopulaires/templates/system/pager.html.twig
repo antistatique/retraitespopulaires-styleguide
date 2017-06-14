@@ -38,7 +38,7 @@
 
     {% if items.previous %}
     <li>
-      <a class="btn btn-outline btn-circle" href="{{ items.previous.href }}" title="{{ 'Aller à la page précédente'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
+      <a class="btn btn-outline btn-primary btn-circle" href="{{ items.previous.href }}" title="{{ 'Aller à la page précédente'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
         <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin retraitespopulaires-icon-flip-horizontal" ></span>
         <span class="sr-only">{{ 'Page précédente'|t }}</span>
       </a>
@@ -53,7 +53,7 @@
       {% endif %}
 
       <li{{ current == key ? ' class="active"' }}>
-        <a class="btn btn-outline btn-circle" href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }}>
+        <a class="btn btn-outline btn-primary btn-circle" href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }}>
           <span class="sr-only">{{ current == key ? 'Page courante'|t : 'Page'|t }}</span>
           {{- key -}}
         </a>
@@ -62,7 +62,7 @@
 
     {% if items.next %}
     <li>
-      <a href="{{ items.next.href }}" class="btn btn-outline btn-circle" title="{{ 'Aller à la page suivante'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
+      <a href="{{ items.next.href }}" class="btn btn-outline btn-primary btn-circle" title="{{ 'Aller à la page suivante'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
         <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin" ></span>
           <span class="sr-only">{{ 'Page suivante'|t }}</span>
       </a>

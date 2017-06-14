@@ -126,6 +126,10 @@ class SearchController extends ControllerBase {
                         $variables['results'][$key]['type'] = t('Coupons Bella Vita');
                         break;
 
+                        case 'building':
+                        $variables['results'][$key]['type'] = t('Construction');
+                        break;
+
                         case 'management_contracts':
                         $variables['results'][$key]['type'] = t('Mandats de gestion');
                         break;

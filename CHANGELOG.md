@@ -1,5 +1,15 @@
 CHANGELOG
 ---------
+
+## 2.1.1 (2017-06-14)
+ - Fix rates cache cleared by `rp:mortgage:import-rates`
+ - Improved webforms by Retraites Populaires
+
+## 2.1.0 (2017-06-02)
+ - Apply new header
+ - Fix component card
+ - Fix btn-outline component
+
 ## 2.0.3 (2017-06-01)
  - Fix Removed "theme" state config that remove template for page (Promise of Template Whisperer)
 
@@ -20,7 +30,7 @@ CHANGELOG
 ## 1.3.2 (2017-05-16)
  - finalize configurations for landing pages
 
-## 1.3.1 (2017-05-15)
+## 1.3.1 (2017-05-15)
  - Fixed issue, attached files/news to news node doesn't appear on the bottom of the page
 
 ## 1.3.0 (2017-05-12)
