@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.1.2 (2017-06-14)
+ - Use Yarn instead of NPM for deploy styleguide
+
 ## 2.1.1 (2017-06-14)
  - Fix rates cache cleared by `rp:mortgage:import-rates`
  - Improved webforms by Retraites Populaires
