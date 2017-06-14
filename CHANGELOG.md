@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.1.3 (2017-06-14)
+ - Use Yarn - still bugged
+
 ## 2.1.2 (2017-06-14)
  - Use Yarn instead of NPM for deploy styleguide
 
