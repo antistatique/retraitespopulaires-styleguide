@@ -1,8 +1,9 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE 2.1.x (2017-xx-xx)
+## 2.1.1 (2017-06-14)
  - Fix rates cache cleared by `rp:mortgage:import-rates`
+ - Improved webforms by Retraites Populaires
 
 ## 2.1.0 (2017-06-02)
  - Apply new header
