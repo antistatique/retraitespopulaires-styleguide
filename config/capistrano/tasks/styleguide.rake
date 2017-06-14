@@ -18,8 +18,8 @@ namespace :styleguide do
       end
 
       # Retrieve styleguide from npm
-      execute 'npm', '--no-spin', '--silent', 'install'
-      # execute 'yarn', 'install', '--no-progress', '--silent'
+      # execute 'npm', '--no-spin', '--silent', 'install'
+      execute 'yarn', 'install', '--no-progress', '--silent'
 
       # Build the styleguide localy
       execute './node_modules/.bin/gulp', 'build', '--production'
