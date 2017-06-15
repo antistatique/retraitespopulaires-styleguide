@@ -1,8 +1,9 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## 2.1.5
  - Fixed favicons build styleguide
+ - Remove node access check on search results (fixes results not showing for anonymous users)
 
 ## 2.1.4 (2017-06-14)
  - Added Yarn lock to used the latest version of styleguide
