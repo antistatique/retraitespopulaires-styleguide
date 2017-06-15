@@ -13,6 +13,8 @@ rp_site.search:
         _title: 'Recherche'
     requirements:
         _permission: 'access content'
+    options:
+        no_cache: TRUE
 
 # Admin link
 rp_site.admin:
