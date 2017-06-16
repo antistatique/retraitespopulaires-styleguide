@@ -8,6 +8,7 @@ node_modules
 .bundle
 .env
 npm-debug.log
+yarn-error.log
 /dist
 /build
 /styleguide
