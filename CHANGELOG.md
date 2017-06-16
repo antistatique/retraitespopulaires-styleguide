@@ -1,8 +1,22 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE 2.1.x (2017-xx-xx)
+## 2.1.5
+ - Fixed favicons build styleguide
+ - Remove node access check on search results (fixes results not showing for anonymous users)
+
+## 2.1.4 (2017-06-14)
+ - Added Yarn lock to used the latest version of styleguide
+
+## 2.1.3 (2017-06-14)
+ - Use Yarn - still bugged
+
+## 2.1.2 (2017-06-14)
+ - Use Yarn instead of NPM for deploy styleguide
+
+## 2.1.1 (2017-06-14)
  - Fix rates cache cleared by `rp:mortgage:import-rates`
+ - Improved webforms by Retraites Populaires
 
 ## 2.1.0 (2017-06-02)
  - Apply new header
