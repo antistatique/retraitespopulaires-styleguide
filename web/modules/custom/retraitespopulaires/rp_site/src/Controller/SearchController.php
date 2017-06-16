@@ -8,7 +8,7 @@ namespace Drupal\rp_site\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Component\Transliteration\TransliterationInterface;
+use Drupal\search_api\ParseMode\ParseModePluginManager;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\search_api\Entity\Index;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -31,13 +31,6 @@ class SearchController extends ControllerBase {
     private $request;
 
     /**
-    * Transliteration Manager.
-    *
-    * @var \Drupal\Component\Transliteration\TransliterationInterface
-    */
-    private $transliteration;
-
-    /**
      * The node Storage.
      *
      * @var \Drupal\node\NodeStorageInterface
@@ -45,12 +38,19 @@ class SearchController extends ControllerBase {
     protected $nodeStorage;
 
     /**
+     * The parse mode manager.
+     *
+     * @var \Drupal\search_api\ParseMode\ParseModePluginManager
+     */
+    private $parseModeManager;
+
+    /**
     * Class constructor.
     */
-    public function __construct(EntityTypeManagerInterface $entity, RequestStack $request, TransliterationInterface $transliteration) {
-      $this->nodeStorage     = $entity->getStorage('node');
-      $this->request         = $request->getMasterRequest();
-      $this->transliteration = $transliteration;
+    public function __construct(EntityTypeManagerInterface $entity, RequestStack $request, ParseModePluginManager $parse_mode_manager) {
+      $this->nodeStorage      = $entity->getStorage('node');
+      $this->request          = $request->getMasterRequest();
+      $this->parseModeManager = $parse_mode_manager;
     }
 
     /**
@@ -61,7 +61,7 @@ class SearchController extends ControllerBase {
         return new static(
           $container->get('entity_type.manager'),
           $container->get('request_stack'),
-          $container->get('transliteration')
+          $container->get('plugin.manager.search_api.parse_mode')
         );
     }
 
@@ -88,16 +88,10 @@ class SearchController extends ControllerBase {
 
             $query->setFulltextFields(['title', 'body', 'filename', 'saa_field_file_document', 'saa_field_file_news', 'saa_field_file_page']);
 
-            // For now, in D8, you need to set the conjunction
-            // on the query's parse mode plugin object.
-            // $query->getParseMode()->setConjunction('OR');
-            $sanitized_search = $this->transliteration->transliterate($search);
-
-            // returns an array containing all the words found inside the string
-            $words = str_word_count($sanitized_search, 1);
-            $keys = array_merge($words, ['#conjunction' => 'OR']);
-            // For now, in D8, you need to set the conjunction on the query's parse mode plugin object
-            $query->keys($keys);
+            $parse_mode = $this->parseModeManager->createInstance('terms');
+            $query->setParseMode($parse_mode);
+            // $parse_mode->setConjunction('OR');
+            $query->keys($search);
 
             $query->sort('search_api_relevance', 'DESC');
 
