@@ -208,10 +208,49 @@ Check your Solr status with `solr status` and with `http://localhost:8983/solr/#
 Start Solr with:
     $ bin/solr start
 
+Index all your content with:
+    $ drush cron
+
 ### Drupal Configuration
 
 Check the Solr configuration on `admin/config/search/search-api/server/solr/edit` and the Tika under `admin/config/search/search_api_attachments`
 
+### Add partial search
+
+By default Solr don't match partial search, you should edit the *schema.xml*
+file and add the following filters on the `fieldType name="text"`.
+
+  ```xml
+  <fieldType name="text" class="solr.TextField" positionIncrementGap="100">
+  ```
+
+  ```xml
+  <filter class="solr.LowerCaseFilterFactory"/>
+  <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="25" />
+  ```
+
+### Improved natural language search
+
+You should improved the natural search by editing the *stopwords.txt* file.
+Check stopwords on [stopwords-iso](https://github.com/stopwords-iso/)
+
+Replace the default `SnowballPorterFilterFactory` from `language="English"`
+to `language="French"`,
+
+You should improved the natural search by editing the *synonyms.txt* file.
+ - Check synonyms for english (~1500 words) from [Roget's Thesaurus](http://www.gutenberg.org/ebooks/10681)
+ - Check synonyms (~143405 words) for french from [termsuite](https://github.com/termsuite/termsuite-core/blob/master/src/main/resources/fr/univnantes/termsuite/resources/fr/french-synonyms.txt)
+ - Check synonyms for french (~326 words) from [kevinbouge](https://sites.google.com/site/kevinbouge/synonyms-lists)
+
+### Maintenance on production
+
+The Solr instance is located in `/data/solr/data/ca-website/`.
+
+You can restart the server the following:
+
+  ```bash
+    $ service solr restart
+  ```
 
 ## 🏆 Tests
 
@@ -246,7 +285,7 @@ drush ev '\Drupal::entityManager()->getStorage("shortcut_set")->load("default")-
 
 ### Error on Windows `no CSS styles or Javascript files shown` ?
 
-Drupal need to create a lot of temporary files to work properly.   
+Drupal need to create a lot of temporary files to work properly.
 By default, with our installation running on UNIX, we use a temporary path as `/tmp`. A folder that not exist on Windows.
 
 Solution 1: Change the default temporary folder for a Writable one using drush.

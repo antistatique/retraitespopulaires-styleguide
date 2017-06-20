@@ -1,31 +1,69 @@
+
+<h1 class="page-title text-center">
+{% if variables.search.search %}
+  {% trans %}
+    Résultat(s) de votre recherche
+  {% endtrans %}
+{% else %}
+  {% trans %}Rechercher un produit, un document, un contact...{% endtrans %}
+{% endif %}
+</h1>
+
 <div class="row">
-  <div class="col-xs-12">
-    <h1 class="page-title text-center">
-    {% if variables.results and variables.search.search %}
-      {% trans %}
-        Voici l'unique résultat de votre recherche <span class="text-primary">"{{ variables.search.search }}"</span>.
-      {% plural variables.search.count %}
-        Voici les <span class="text-primary">{{ variables.search.count }}</span> résultats de votre recherche "<span class="text-primary">{{ variables.search.search }}</span>".
-      {% endtrans %}
-    {% elseif not variables.results and variables.search.search %}
-      {% trans %}Aucun résultat pour votre recherche <span class="text-primary">"{{ variables.search.search }}" </span>.{% endtrans %}
-    {% else %}
-      {% trans %}Rechercher un produit, un document, un contact...{% endtrans %}
-    {% endif %}
-    </h1>
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-xl-6 col-xl-offset-3">
+    {{ load_form('rp_site', 'SearchForm') }}
+    <div class="spacer spacer-md"></div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-    {{ load_form('rp_site', 'SearchForm') }}
-    <div class="spacer spacer-md"></div>
+  {% set classes_search = variables.results ? 'col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-xl-3 col-xl-offset-1' : 'col-xs-12 col-sm-10 col-sm-offset-1' %}
+    {% set classes_content = variables.results ? 'col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-0 col-xl-7' : 'col-xs-12' %}
+
+  <div class="{{ classes_search }}">
+    {% if variables.search.facets.type %}
+      <p class="media-heading text-muted">{% trans %}Affiner ma recherche{% endtrans %}</p>
+      <ul class="facets-list">
+        {% for facet in variables.search.facets.type %}
+        <li class="{{ variables.building_status_alias is empty ? 'active' }}">
+          <a class="{{ facet.filter != variables.search.type ? 'pretty-link' }}" href="{{ facet.url }}">{{ facet.filter_name }}&nbsp;<span class="text-muted">({{ facet.count }})</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   </div>
-  <div class="col-xs-12">
+
+  <div class="{{ classes_content }}">
+    {% if variables.results and variables.search.search %}
+    <p class="text-center h4 m-b-1">
+      {% trans %}
+        Voici l'unique résultat de votre recherche <span class="text-primary">"{{ variables.search.search }}"</span>
+      {% plural variables.search.count %}
+        Voici les <span class="text-primary">{{ variables.search.count }}</span> résultats de votre recherche "<span class="text-primary">{{ variables.search.search }}</span>"
+      {% endtrans -%}
+      {%- if variables.search.type %}
+        {% trans %}dans "<span class="text-primary">{{ variables.search.type_name }}</span>"{% endtrans -%}
+      {% endif -%}
+      .
+    </p>
+    {% endif %}
+
     {% if variables.results %}
       {% for result in variables.results %}
         {{ load_block('rp_site_search_teaser_block', {'result': result}) }}
       {% endfor %}
+    {% elseif not variables.results and variables.search.search %}
+      <p class="text-center h3">{% trans %}Aucun résultat pour votre recherche <span class="text-primary">"{{ variables.search.search }}"</span>.{% endtrans %}</p>
+      <div class="spacer spacer-md"></div>
+    {% else %}
+      <div class="col-xs-12 col-md-8 col-md-offset-2 col-xl-6 col-xl-offset-3">
+        <div class="text-center text-muted">
+          <div class="retraitespopulaires-icon retraitespopulaires-icon-5x retraitespopulaires-icon-search" aria-hidden="true"></div>
+          <p class="h5 text-secondary">{% trans %}Commencez par taper un ou plusieurs mots-clés afin de lancer votre recherche.{% endtrans %}</p>
+        </div>
+        <div class="spacer spacer-md"></div>
+      </div>
     {% endif %}
   </div>
 </div>
