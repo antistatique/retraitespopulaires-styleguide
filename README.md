@@ -208,6 +208,9 @@ Check your Solr status with `solr status` and with `http://localhost:8983/solr/#
 Start Solr with:
     $ bin/solr start
 
+Index all your content with:
+    $ drush cron
+
 ### Drupal Configuration
 
 Check the Solr configuration on `admin/config/search/search-api/server/solr/edit` and the Tika under `admin/config/search/search_api_attachments`
