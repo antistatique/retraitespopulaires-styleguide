@@ -214,9 +214,12 @@ a.card-img-top {
 
 .card-justify {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
+
+  .card-title {
+    margin-right: $grid-gutter-width / 2;
+  }
 }
 
 /**
