@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - Improved search page with facets 
+ - Improved search page empty state
+
 ## 2.1.5
  - Fixed favicons build styleguide
  - Remove node access check on search results (fixes results not showing for anonymous users)
