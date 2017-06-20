@@ -1,11 +1,12 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## 2.2.0 (2017-06-20)
  - Improved search page with facets 
  - Improved search page empty state
+ - Fixed favicons on MSIE
 
-## 2.1.5
+## 2.1.5 (2017-06-15)
  - Fixed favicons build styleguide
  - Remove node access check on search results (fixes results not showing for anonymous users)
 
