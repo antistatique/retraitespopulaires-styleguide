@@ -1,9 +1,11 @@
 CHANGELOG
 =========
 
-## XXXXX
+## NEXT RELEASE
 
  - improved lists indentations when break line
+ - added favicons portailca
+ - added favicons mp
 
 ## 3.1.0 (2017-06-02)
 
