@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.2.1 (2017-06-23)
+ - Update to Drupal 8.3.4
+
 ## 2.2.0 (2017-06-20)
  - Improved search page with facets 
  - Improved search page empty state
