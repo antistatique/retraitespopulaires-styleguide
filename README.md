@@ -194,7 +194,7 @@ Here is the the resumed instructions:
    $ mkdir -p /data/solr/data/$CORE/conf
    $ cp -R web/modules/contrib/search_api_solr/solr_conf/6.x/* /data/solr/data/$CORE/conf
    $ cp -R config/solr/* /data/solr/data/$CORE/conf
-   $ echo "name=$CORE" > /data/solr/data/$CORE/conf/core.properties
+   $ echo "name=$CORE" > /data/solr/data/$CORE/core.properties
 
 
 ### For windows
