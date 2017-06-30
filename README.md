@@ -172,6 +172,7 @@ We use the repository on staging to avoid creating NPM version everytime we depl
 When you deploy on the production environment, the styleguide used for deploy is the latest NPM version.
 
 ## 🔍 Solr (6.1.0+) search Engine & Tika (1.13+) Extractor
+
 We are using solr for search index.
 
 Solr need to be configured for drupal. Follow the INSTALL.txt found in the `search_api_solr` module.
@@ -206,10 +207,29 @@ Check your Solr status with `solr status` and with `http://localhost:8983/solr/#
 ### Usage
 
 Start Solr with:
-    $ bin/solr start
 
-Index all your content with:
+  ```bash
+    $ bin/solr start
+  ```
+
+Debug with
+
+  ```bash
+    $ bin/solr start -f -v
+  ```
+
+Manual clear and index
+
+  ```bash
+    $ drush sapi-c full_website
+    $ drush sapi-i full_website
+  ```
+
+Automatic index via cron
+
+  ```bash
     $ drush cron
+  ```
 
 ### Drupal Configuration
 
