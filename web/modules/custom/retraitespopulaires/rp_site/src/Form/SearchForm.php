@@ -55,8 +55,8 @@ class SearchForm extends FormBase {
 
         $form['#token'] = FALSE;
         $form['#build_id'] = FALSE;
-        unset($form['form_build_id']);
-        unset($form['form_id']);
+//        unset($form['form_build_id']);
+//        unset($form['form_id']);
 
         $form['input-group_start'] = array(
             '#markup' => '<div class="input-group full-width">',
