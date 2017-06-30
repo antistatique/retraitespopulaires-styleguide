@@ -88,11 +88,27 @@ class SearchController extends ControllerBase {
 
             $query->setFulltextFields(['title', 'body', 'filename', 'saa_field_file_document', 'saa_field_file_news', 'saa_field_file_page']);
 
-            $parse_mode = $this->parseModeManager->createInstance('terms');
-            $query->setParseMode($parse_mode);
-            // $parse_mode->setConjunction('OR');
-            $query->keys($search);
+// WORKING
 
+// {df=content&echoParams=explicit&fl=ss_search_api_id,score&f.ss_type.facet.missing=true&facet.missing=false&fq=index_id:"full_website"&fq=hash:"e5bny1"&f.ss_type.facet.limit=20&tie=0.01&defType=edismax&qf=ts_title^21+ts_body^13+tm_saa_field_file_document^1+tm_saa_field_file_news^1+tm_saa_field_file_page^1&wt=json&facet.field={!key%3Dss_type}ss_type&q.alt=*:*&json.nl=flat&start=0&sort=score+desc&rows=12&spellcheck.extendedResults=false&q=2e+pilier&facet.limit=10&omitHeader=true&spellcheck=false&spellcheck.onlyMorePopular=true&facet.mincount=1&timeAllowed=-1&spellcheck.count=1&facet=true&facet.sort=count}
+
+            // COOL: &q=("2e"+"pilier") -- DIRECT
+            // PAS COOL &q=("2e"+"pilier") -- TERMS
+
+            // PAS COOL: &q=2e+pilier -- DIRECT
+            // PAS COOL &q=balcons+du+mont -- DIRECT
+            // COOL &q=(%2B"balcon"+%2B"mont") -- TERMS (18 results)
+
+            $parse_mode = $this->parseModeManager->createInstance('direct');
+            // $parse_mode = $this->parseModeManager->createInstance('terms');
+            $query->setParseMode($parse_mode);
+            // $parse_mode->setConjunction('AND');
+            // $search = ['2e', 'pilier'];
+            // $search = '%28"balcon"+"mont"%29';
+            $query->keys($search);
+            // $query->keys('("2e"+"pilier")');
+            // $query->keys(['2e', 'pilier', '#conjunction' => 'AND']);
+            // $query->keys(['balcon', 'mont', '#conjunction' => 'OR']);
             $query->sort('search_api_relevance', 'DESC');
 
             // Facets
@@ -100,15 +116,14 @@ class SearchController extends ControllerBase {
             if ($server->supportsFeature('search_api_facets')) {
               $query->setOption('search_api_facets', [
                 'type' => [
-                  'field' => 'type',
-                  'limit' => 20,
-                  'operator' => 'AND',
+                  'field'     => 'type',
+                  'limit'     => 20,
+                  'operator'  => 'AND',
                   'min_count' => 1,
-                  'missing' => TRUE,
+                  'missing'   => TRUE,
                 ],
               ]);
             }
-
             // Retrieve facets before.
             $query_facets = clone $query;
             $results_facets = $query_facets->execute();
