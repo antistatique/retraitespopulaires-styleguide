@@ -3,7 +3,8 @@ title: Gallery
 name: gallery
 collection: organisms
 notes: |
-  ##### Usage : `gallery`
+  Can be wrapped in `.theme-[theme]` to change look. <br>
+  We use the `jQuery` plugin [Photoswipe](http://photoswipe.com/documentation/getting-started.html), check the documentation for advanced usage & parameters.
 ---
 <div class="gallery media-gallery-media" itemscope itemtype="http://schema.org/ImageGallery">
 

@@ -54,6 +54,21 @@
   }
 }
 
+.treeview-list,
+.facets-list,
+.filters-list {
+  > li {
+    position: relative;
+    padding-left: 20px;
+
+    &:before {
+      content: none;
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
 .unordered-list {
   &.list-inline li {
     margin-right: 0;
