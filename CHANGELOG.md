@@ -1,9 +1,13 @@
 CHANGELOG
 =========
 
-## XXXXX
+## NEXT RELEASE
+ - added 3rd level on the secondary-nav
 
+## 3.1.1 (2017-07-04)
  - improved lists indentations when break line
+ - added favicons portailca
+ - added favicons mp
 
 ## 3.1.0 (2017-06-02)
 
