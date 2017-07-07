@@ -5,4 +5,13 @@
     padding: $nav-link-padding;
     font-size: inherit;
   }
+
+  @media only screen and (max-width: $screen-md-max) {
+    .header & > li {
+      > a {
+        padding: 10px;
+        font-size: 85%;
+      }
+    }
+  }
 }
