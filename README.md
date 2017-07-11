@@ -126,7 +126,7 @@ Install @antistatique/retraitespopulaires-styleguide project with npm
     $ npm install
   ```
 
-then, run the `$ gulp build -—production` in the project root
+then, run the `$ gulp build --production` in the project root
 
 **Frontend development workflow:**
 
@@ -144,7 +144,7 @@ A simple script to execute on the root folder of Retraites Populaires
   $ ln -s `pwd`/../retraitespopulaires-styleguide `pwd`/node_modules/@antistatique/retraitespopulaires-styleguide
   ```
 
-Each time you make a changes you then will run `$ gulp build` from both repository !
+Each time you make a changes you then will run `$ gulp build` from **both** repository !
 
 ## 🚀 Deploy
 
@@ -235,15 +235,14 @@ Debug with
 Manual clear and index
 
   ```bash
-    $ drush sapi-c full_website
-    $ drush sapi-i full_website
+    $ drush sapi-c [index]
+    $ drush sapi-i [index]
   ```
 
 Automatic index via cron
 
   ```bash
     $ drush cron
-  ```
 
 ### Drupal Configuration
 
