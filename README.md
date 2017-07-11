@@ -126,7 +126,7 @@ Install @antistatique/retraitespopulaires-styleguide project with npm
     $ npm install
   ```
 
-then, run the `$ gulp build -—production` in the project root
+then, run the `$ gulp build --production` in the project root
 
 **Frontend development workflow:**
 
@@ -144,7 +144,7 @@ A simple script to execute on the root folder of Retraites Populaires
   $ ln -s `pwd`/../retraitespopulaires-styleguide `pwd`/node_modules/@antistatique/retraitespopulaires-styleguide
   ```
 
-Each time you make a changes you then will run `$ gulp build` from both repository !
+Each time you make a changes you then will run `$ gulp build` from **both** repository !
 
 ## 🚀 Deploy
 
@@ -206,10 +206,28 @@ Check your Solr status with `solr status` and with `http://localhost:8983/solr/#
 ### Usage
 
 Start Solr with:
-    $ bin/solr start
+
+  ```shell
+  $ bin/solr start
+  ```
 
 Index all your content with:
-    $ drush cron
+
+  ```shell
+  $ drush cron
+  ```
+
+Clean the index:
+
+  ```shell
+  $ drush sapi-c [index]
+  ```
+
+Index everything at once:
+
+  ```shell
+  $ drush sapi-i [index]
+  ```
 
 ### Drupal Configuration
 
