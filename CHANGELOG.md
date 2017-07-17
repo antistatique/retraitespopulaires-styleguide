@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.2.2 (2017-06-23)
+ - Add survey ad snippet
+ 
 ## 2.2.1 (2017-06-23)
  - Update to Drupal 8.3.4
 
