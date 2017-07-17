@@ -3,6 +3,7 @@ CHANGELOG
 
 ## NEXT RELEASE
  - added 3rd level on the secondary-nav
+ - removed margin-bottom to card-title in card-justify
 
 ## 3.1.1 (2017-07-04)
  - improved lists indentations when break line
