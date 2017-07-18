@@ -5,8 +5,22 @@
   height: auto;
   max-height: 8rem;
 
+  > a {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
   svg {
     width: 100%;
     height: 100%;
+  }
+}
+
+.logo-retraitespopulaires-lg {
+  @media screen and (min-width: $screen-md-min) {
+    width: 26rem;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }

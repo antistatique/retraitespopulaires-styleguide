@@ -22,7 +22,7 @@ variants:
     </li>
     <li class="active">PV</li>
     {% else -%}
-    <li><a href="#">Emploi</a></li>
+    <li><a class="pretty-link" href="#">Emploi</a></li>
     <li class="active"><span class="sr-only">Page active:</span>Connexion</li>
     {%- endif %}
   </ul>
