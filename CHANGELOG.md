@@ -1,7 +1,10 @@
 CHANGELOG
 ---------
 
-## 2.2.2 (2017-06-23)
+## 2.2.3 (2017-07-20)
+ - update survey ad snippet to be more visible
+ 
+## 2.2.2 (2017-07-17)
  - Add survey ad snippet
  
 ## 2.2.1 (2017-06-23)
