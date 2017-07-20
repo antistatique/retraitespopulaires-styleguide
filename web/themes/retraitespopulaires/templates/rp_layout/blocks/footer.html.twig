@@ -118,34 +118,39 @@
       </div>
     </div>
   </div>
-    <!-- BEGIN Optimal Workshop Intercept Snippet -->
-    <div id='owInviteSnippet'
-         style='position:fixed;right:20px;bottom:20px;width:280px;padding:20px;margin:0;border-radius:6px;background:#333333;color:#EEEEEE;text-align:left;z-index:2200000000;opacity:0;transition:opacity 500ms;-webkit-transition:opacity 500ms;display:none;'>
-        <div id='owInviteMessage' style='padding:0;margin:0 0 20px 0;font-size:16px;'>Aidez nous à améliorer notre site,
-            participez à un test de 5 minutes
-        </div>
-        <a id='owInviteOk'
-           href='https://ratio.optimalworkshop.com/treejack/45w870s6-0-0?tag=intercept&utm_medium=intercept'
-           target='_blank'
-           style='color:#CBB900;font-size:16px;font-weight:bold;text-decoration:underline;'>Commencer</a>
-        <a id='owInviteCancel' href='javascript:void(0)' onclick='this.parentNode.style.display="none";'
-                style='color:#EEEEEE;font-size:14px;text-decoration:underline;float:right;'>Non merci</a>
+  <!-- BEGIN Optimal Workshop Intercept Snippet -->
+  <div class="text-secondary" id="owInviteSnippet" style="position: fixed;right: 00px;bottom: 00px;width: 100%;padding: 30px;margin: 0px;border-radius: 0;background: #eee;color: rgb(0, 0, 0);text-align: left;z-index: 2147483647;opacity: 1;transition: opacity 500ms;display: block;-webkit-box-shadow: 0px -2px 62px -23px rgba(0,0,0,0.75);-moz-box-shadow: 0px -2px 62px -23px rgba(0,0,0,0.75);box-shadow: 0px -2px 62px -23px rgba(0,0,0,0.75);border-top: 1px solid #ececec;">
+    <a class="close" href="javascript:void(0)" id="owInviteCancel" onclick="this.parentNode.style.display=&quot;none&quot;;" style="color: #fff;opacity: .8;position: absolute;right: 30px;font-size: 2em;z-index: 10;">
+      <div aria-hidden="true" style="color: #000;">
+        ×
+      </div></a>
+    <div class="" id="owInviteMessage" style="padding:0;margin:0 0 20px 0;font-size: 32px;">
+      <div class="retraitespopulaires-icon retraitespopulaires-icon-edit retraitespopulaires-icon-3x" style="/* font-size: 2em; */ float: left; /* vertical-align: top; */ font-size: 2em; margin-right: 2rem;"></div>
+      <div style="float: left;width: 75%;">
+        <h2 style="margin-top: 0px; margin-bottom: 1rem;">Aidez nous à améliorer notre site, participez à un test de 5 minutes</h2><a class="btn btn-primary" href="https://ratio.optimalworkshop.com/treejack/45w870s6-0-0?tag=intercept&amp;utm_medium=intercept" id="owInviteOk" target="_blank">Commencer</a>
+        <div></div>
+        <div style="clear:both"></div>
+      </div>
     </div>
-    <script>var owOldOnload = window.onload;
-        window.onload = function () {
-            if (owOldOnload && owOldOnload(), -1 == document.cookie.indexOf('owInvite')) {
-                var o = new XMLHttpRequest;
-                o.onloadend = function () {
-                    try {
-                        var o = document.getElementById('owInviteSnippet');
-                        this.response && JSON.parse(this.response).active === !0 && (document.cookie = 'owInvite=Done', setTimeout(function () {
-                            o.style.display = 'block', o.style.opacity = 1
-                        }, 2e3))
-                    } catch (e) {
-                    }
-                }, o.open('POST', 'https://www.optimalworkshop.com/survey_status/treejack/0y52ziqf/active'), o.send()
-            }
-        };
-    </script><!-- END Optimal Workshop snippet -->
+  </div>
+
+  <script>
+      var owOldOnload = window.onload;
+      window.onload = function () {
+          if (owOldOnload && owOldOnload(), -1 == document.cookie.indexOf('owInvite')) {
+              var o = new XMLHttpRequest;
+              o.onloadend = function () {
+                  try {
+                      var o = document.getElementById('owInviteSnippet');
+                      this.response && JSON.parse(this.response).active === !0 && (document.cookie = 'owInvite=Done', setTimeout(function () {
+                          o.style.display = 'block', o.style.opacity = 1
+                      }, 2e3))
+                  } catch (e) {
+                  }
+              }, o.open('POST', 'https://www.optimalworkshop.com/survey_status/treejack/0y52ziqf/active'), o.send()
+          }
+      };
+  </script>
+  <!-- END Optimal Workshop snippet -->
   <div class="spacer"></div>
 </div>
