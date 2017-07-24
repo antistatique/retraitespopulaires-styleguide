@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.2.4 (2017-07-24)
+ - update survey ad snippet to be less intrusive (especially on mobile)
+ 
 ## 2.2.3 (2017-07-20)
  - update survey ad snippet to be more visible
  
