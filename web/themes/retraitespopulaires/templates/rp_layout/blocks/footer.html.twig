@@ -123,19 +123,20 @@
     <a class="close" href="javascript:void(0)" id="owInviteCancel" onclick="this.parentNode.style.display=&quot;none&quot;;" style="color: #fff;opacity: .8;position: absolute;right: 30px;font-size: 2em;z-index: 10;">
       <div aria-hidden="true" style="color: #000;">
         ×
-      </div></a>
+      </div>
+    </a>
     <div class="" id="owInviteMessage" style="padding:0;margin:0 0 20px 0;font-size: 32px;">
-      <div class="retraitespopulaires-icon retraitespopulaires-icon-edit retraitespopulaires-icon-3x" style="/* font-size: 2em; */ float: left; /* vertical-align: top; */ font-size: 2em; margin-right: 2rem;"></div>
+      <div class="retraitespopulaires-icon retraitespopulaires-icon-edit retraitespopulaires-icon-3x" style="/* font-size: 1em; */ float: left; /* vertical-align: top; */ font-size: 1em; margin-right: 2rem;"></div>
       <div style="float: left;width: 75%;">
-        <h2 style="margin-top: 0px; margin-bottom: 1rem;">Aidez nous à améliorer notre site, participez à un test de 5 minutes</h2><a class="btn btn-primary" href="https://ratio.optimalworkshop.com/treejack/45w870s6-0-0?tag=intercept&amp;utm_medium=intercept" id="owInviteOk" target="_blank">Commencer</a>
+        <h2 style="margin-top: 0px; margin-bottom: 1rem; font-size:24px;">Aidez nous à améliorer notre site, participez à un test de 5 minutes</h2>
+        <a class="btn btn-primary" href="https://ratio.optimalworkshop.com/treejack/45w870s6-0-0?tag=intercept&amp;utm_medium=intercept" id="owInviteOk" target="_blank">Commencer</a>
         <div></div>
         <div style="clear:both"></div>
       </div>
     </div>
   </div>
 
-  <script>
-      var owOldOnload = window.onload;
+  <script>var owOldOnload = window.onload;
       window.onload = function () {
           if (owOldOnload && owOldOnload(), -1 == document.cookie.indexOf('owInvite')) {
               var o = new XMLHttpRequest;
