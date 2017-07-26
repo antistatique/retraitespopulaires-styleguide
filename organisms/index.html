@@ -1334,7 +1334,8 @@ We use the <code>jQuery</code> plugin <a href="http://photoswipe.com/documentati
         </ul>
       </div>
     
-    <p>Add the <code>.header-container</code> to enable the flex header (add a <code>.container.header-container</code> inside the <code>.header</code>)</p>
+    <p>Add the <code>.header-container</code> to enable the flex header (add a <code>.container.header-container</code> inside the <code>.header</code>).</p>
+<p>Add the <code>.header-shadow</code> to add a drop shadow below the header. Designers don&#39;t recommend it though.</p>
 
     </div>
   
@@ -1342,12 +1343,32 @@ We use the <code>jQuery</code> plugin <a href="http://photoswipe.com/documentati
 </div>
 
 
-
-
   
+    
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#header-default" role="tab">Default</a>
+    </li>
+  
+    
+      <li>
+        <a data-toggle="tab" href="#mandat" role="tab">Header Mandat</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="header-default">
+      
 <div id="element-header" class="styleguide-item-preview">
   
-    <nav class="rp-access-nav">
+    
+<nav class="rp-access-nav">
   <ul>
     <li><a class="btn btn-primary" href="/" accesskey="1">Page d'accueil du site Retraites Populaires</a></li>
     <li><a class="btn btn-primary" href="#main-content" accesskey="2" >Passer la navigation</a></li>
@@ -1985,12 +2006,14 @@ We use the <code>jQuery</code> plugin <a href="http://photoswipe.com/documentati
   </div>
 </header>
 
+
   
 </div>
 
-  
+      
 <div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
-  <pre><code class="language-markup"><nav class="rp-access-nav">
+  <pre><code class="language-markup">
+<nav class="rp-access-nav">
   <ul>
     <li><a class="btn btn-primary" href="/" accesskey="1">Page d'accueil du site Retraites Populaires</a></li>
     <li><a class="btn btn-primary" href="#main-content" accesskey="2" >Passer la navigation</a></li>
@@ -2627,9 +2650,236 @@ We use the <code>jQuery</code> plugin <a href="http://photoswipe.com/documentati
 
   </div>
 </header>
+
 </code></pre>
 </div>
 
+    </div>
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="mandat">
+          
+<div id="element-headermandat" class="styleguide-item-preview">
+  
+    
+<header class="header">
+  <div class="container header-container">
+    <div class="logo-retraitespopulaires logo-retraitespopulaires-lg">
+      <a class="" href="#">
+        <img class="img-responsive" src="https://antistatique.github.io/retraitespopulaires-styleguide/build/svg/logo-cip.svg" alt="Logo CIP" title="Page d'accueil">
+      </a>
+    </div>
+
+    <div class="wrapper-navs">
+      <div class="wrapper-prenavbar">
+        <ul class="prenavbar list-unstyled list-inline m-0" role="navigation" aria-label="Navigation d'en-tête">
+  <li>
+    <a href="#" class="text-muted small" target="">Contact</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Presse</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Extranet</a>
+  </li>
+</ul>
+
+
+        <div class="prenavbar-separator" aria-hidden="true"></div>
+
+        <div class="search-box">
+  <a href="#" class="search-toggle">
+    <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></span>
+    <div class="sr-only">Recherche</div>
+  </a>
+</div>
+
+      </div>
+
+      <div class="wrapper-navbar">
+        <nav class="navbar" id="bs-example-navbar-collapse-1" aria-label="Navigation principale">
+  <ul class="list-unstyled m-0">
+    <li><a href="#">Prévoyance</a></li>
+    <li class="active">
+      <a href="#main-content"><span class="sr-only">Page active</span> Immobilier</a>
+    </li>
+    <li><a href="#">Prêts</a></li>
+    <li><a href="#">Actualités <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">CIP</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+      </div>
+    </div>
+
+    <div class="header-nav js-header-push hidden-md hidden-lg hidden-xl">
+      
+  <div class="hamburger-wrapper">
+
+  <div class="hamburger-button">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <svg class="hamburger-circle" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+      <circle fill="transparent" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+    </svg>
+  </div>
+  <div class="hamburger-helper text-secondary">
+    <div class="helper-when-close">Menu</div>
+    <div class="helper-when-open">Fermer</div>
+  </div>
+
+  </div>
+
+
+    </div>
+  </div>
+  <nav class="push-menu" aria-label="Navigation principale - Mobile">
+  <ul class="list-unstyled m-b-1 main-navigation">
+    <li><a class="h3" href="#">Prévoyance</a></li>
+    <li class="active">
+      <a class="h3" href="#main-content"><span class="sr-only">Page active</span> Immobilier</a>
+    </li>
+    <li><a class="h3" href="#">Prêts</a></li>
+    <li><a class="h3" href="#">Actualités</a></li>
+    <li><a class="h3" href="#">CIP</a></li>
+    <li><a class="h3" href="#">Contact</a></li>
+  </ul>
+
+  <ul class="prenavbar list-unstyled m-0 secondary-navigation" role="navigation" aria-label="Navigation d'en-tête">
+    <li class="active">
+      <a href="#" class="active h6" target=""><span class="sr-only">Page active</span> Contact</a>
+    </li>
+    <li>
+      <a href="#" class="h6" target="">Presse</a>
+    </li>
+    <li>
+      <a href="#" class="h6" target="">Extranet</a>
+    </li>
+  </ul>
+</nav>
+
+</header>
+
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup">
+<header class="header">
+  <div class="container header-container">
+    <div class="logo-retraitespopulaires logo-retraitespopulaires-lg">
+      <a class="" href="#">
+        <img class="img-responsive" src="https://antistatique.github.io/retraitespopulaires-styleguide/build/svg/logo-cip.svg" alt="Logo CIP" title="Page d'accueil">
+      </a>
+    </div>
+
+    <div class="wrapper-navs">
+      <div class="wrapper-prenavbar">
+        <ul class="prenavbar list-unstyled list-inline m-0" role="navigation" aria-label="Navigation d'en-tête">
+  <li>
+    <a href="#" class="text-muted small" target="">Contact</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Presse</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Extranet</a>
+  </li>
+</ul>
+
+
+        <div class="prenavbar-separator" aria-hidden="true"></div>
+
+        <div class="search-box">
+  <a href="#" class="search-toggle">
+    <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></span>
+    <div class="sr-only">Recherche</div>
+  </a>
+</div>
+
+      </div>
+
+      <div class="wrapper-navbar">
+        <nav class="navbar" id="bs-example-navbar-collapse-1" aria-label="Navigation principale">
+  <ul class="list-unstyled m-0">
+    <li><a href="#">Prévoyance</a></li>
+    <li class="active">
+      <a href="#main-content"><span class="sr-only">Page active</span> Immobilier</a>
+    </li>
+    <li><a href="#">Prêts</a></li>
+    <li><a href="#">Actualités <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">CIP</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+      </div>
+    </div>
+
+    <div class="header-nav js-header-push hidden-md hidden-lg hidden-xl">
+      
+  <div class="hamburger-wrapper">
+
+  <div class="hamburger-button">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <svg class="hamburger-circle" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+      <circle fill="transparent" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+    </svg>
+  </div>
+  <div class="hamburger-helper text-secondary">
+    <div class="helper-when-close">Menu</div>
+    <div class="helper-when-open">Fermer</div>
+  </div>
+
+  </div>
+
+
+    </div>
+  </div>
+  <nav class="push-menu" aria-label="Navigation principale - Mobile">
+  <ul class="list-unstyled m-b-1 main-navigation">
+    <li><a class="h3" href="#">Prévoyance</a></li>
+    <li class="active">
+      <a class="h3" href="#main-content"><span class="sr-only">Page active</span> Immobilier</a>
+    </li>
+    <li><a class="h3" href="#">Prêts</a></li>
+    <li><a class="h3" href="#">Actualités</a></li>
+    <li><a class="h3" href="#">CIP</a></li>
+    <li><a class="h3" href="#">Contact</a></li>
+  </ul>
+
+  <ul class="prenavbar list-unstyled m-0 secondary-navigation" role="navigation" aria-label="Navigation d'en-tête">
+    <li class="active">
+      <a href="#" class="active h6" target=""><span class="sr-only">Page active</span> Contact</a>
+    </li>
+    <li>
+      <a href="#" class="h6" target="">Presse</a>
+    </li>
+    <li>
+      <a href="#" class="h6" target="">Extranet</a>
+    </li>
+  </ul>
+</nav>
+
+</header>
+
+</code></pre>
+</div>
+
+        </div>
+      
+    
+  </div>
 
 
 
