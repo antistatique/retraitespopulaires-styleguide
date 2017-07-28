@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.2.4 (2017-07-28)
+ - update survey ad snippet to another survey
+ 
 ## 2.2.4 (2017-07-24)
  - update survey ad snippet to be less intrusive (especially on mobile)
  
