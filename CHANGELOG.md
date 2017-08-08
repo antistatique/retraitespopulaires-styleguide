@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.2.51 (2017-08-08)
+ - fix JCMS redirections on .htaccess
+
 ## 2.2.4 (2017-07-28)
  - update survey ad snippet to another survey
  
