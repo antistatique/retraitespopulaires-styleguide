@@ -7,10 +7,10 @@ label: Immobilier
 weight: 5
 is_admin: null
 permissions:
-  - 'use text format full_html'
   - 'access administration pages'
-  - 'view the administration theme'
-  - 'access toolbar'
-  - 'change own username'
   - 'access site in maintenance mode'
+  - 'access toolbar'
   - 'access user profiles'
+  - 'change own username'
+  - 'use text format full_html'
+  - 'view the administration theme'

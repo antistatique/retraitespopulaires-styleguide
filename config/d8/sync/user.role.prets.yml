@@ -7,10 +7,10 @@ label: Prêts
 weight: 6
 is_admin: null
 permissions:
-  - 'use text format full_html'
   - 'access administration pages'
   - 'access site in maintenance mode'
-  - 'view the administration theme'
   - 'access toolbar'
-  - 'change own username'
   - 'access user profiles'
+  - 'change own username'
+  - 'use text format full_html'
+  - 'view the administration theme'
