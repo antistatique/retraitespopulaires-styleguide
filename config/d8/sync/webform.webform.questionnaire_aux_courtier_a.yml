@@ -1,0 +1,103 @@
+uuid: aceabed3-a4ce-4c9b-8731-7ea01d560d4e
+langcode: fr
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 35
+template: false
+id: questionnaire_aux_courtier_a
+title: 'Votre opinion nous intéresse : enquête de satisfaction'
+description: 'Formulaire de satisfaction pour les courtiers A.'
+elements: "service_intermediaire:\n  '#type': processed_text\n  '#display_on': both\n  '#text': \"<h2>Notre service aux intermédiaires</h2>\\r\\n\"\n  '#format': full_html\n  ts_1:\n    '#type': radios\n    '#title': 'Etes-vous globalement satisfait de la relation que vous entretenez avec nos collaborateurs?'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\n  ts_2:\n    '#type': radios\n    '#title': 'Etes-vous satisfait du soutien de notre Service aux intermédiaires, notamment pour des produits plus complexes, tel que la LPP o'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\nprogramme_offre:\n  '#type': processed_text\n  '#display_on': both\n  '#text': \"<h2>Programme d’offre</h2>\\r\\n\"\n  '#format': full_html\n  ts_3:\n    '#type': radios\n    '#title': 'Etes-vous satisfait de notre programme d’offre pour le 3e pilier ?'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\nprocessus_acceptation:\n  '#type': processed_text\n  '#display_on': both\n  '#text': \"<h2>Processus d’acceptation</h2>\\r\\n\"\n  '#format': full_html\n  ts_4:\n    '#type': radios\n    '#title': 'Etes-vous satisfait du processus d’acceptation pour le 2e pilier ?'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\n  ts_5:\n    '#type': radios\n    '#title': 'Etes-vous satisfait du processus d’acceptation pour le 3e pilier ?'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\ngestion_administrative:\n  '#type': processed_text\n  '#display_on': both\n  '#text': \"<h2>Gestion administrative</h2>\\r\\n\"\n  '#format': full_html\n  ts_6:\n    '#type': radios\n    '#title': 'Etes-vous satisfait de la gestion administrative pour le 2e pilier ?'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\n  ts_7:\n    '#type': radios\n    '#title': 'Etes-vous satisfait de la gestion administrative pour le 3e pilier ?'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\nformation:\n  '#type': processed_text\n  '#display_on': both\n  '#text': \"<h2>Formation</h2>\\r\\n\"\n  '#format': full_html\n  ts_8:\n    '#type': radios\n    '#title': 'Etes-vous satisfait de la formation dispensée sur nos produits et leur fiscalité ?'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\n  ts_9:\n    '#type': radios\n    '#title': 'Etes-vous satisfait de la formation dispensée sur la LBA ?'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\ncommissionnement:\n  '#type': processed_text\n  '#display_on': both\n  '#text': \"<h2>Commissionnement</h2>\\r\\n\"\n  '#format': full_html\n  ts_10:\n    '#type': radios\n    '#title': 'Etes-vous satisfait de la clarté de notre politique de commissionnement ?'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\n  ts_11:\n    '#type': radios\n    '#title': 'Etes-vous satisfait du délai de paiement du versement des commissions ?'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\nsoutien_commercial:\n  '#type': processed_text\n  '#display_on': both\n  '#text': \"<h2>Soutien commercial</h2>\\r\\n\"\n  '#format': full_html\n  yes_or_no_1:\n    '#type': radios\n    '#title': 'Avez-vous besoin d’un soutien commercial pour développer votre portefeuille clients ?'\n    '#description': 'par exemple des alertes ou des actions de marketing direct.'\n    '#title_display': attribute\n    '#description_display': after\n    '#options':\n      oui: Oui\n      non: Non\n    '#options_display': side_by_side\n    '#required': true\n  text_area_remark:\n    '#type': textarea\n    '#title': 'réponse soutien commerical'\n    '#description': 'Veuillez décrire la nature du soutien souhaité.'\n    '#title_display': invisible\n    '#description_display': before\n    '#placeholder': 'je souhaiterais...'\n    '#states':\n      visible:\n        ':input[name=\"yes_or_no_1\"]':\n          value: oui\n      required:\n        ':input[name=\"yes_or_no_1\"]':\n          value: oui\nrecommandation:\n  '#type': processed_text\n  '#display_on': both\n  '#text': \"<h2>Recommandation</h2>\\r\\n\"\n  '#format': full_html\n  ts_12:\n    '#type': radios\n    '#title': 'Recommanderiez-vous Retraites Populaires à votre entourage ?'\n    '#description': '(0 = Non, pas du tout / 10 = Oui, absolument)'\n    '#title_display': attribute\n    '#description_display': after\n    '#options': ten_scale\n    '#options_display': side_by_side\n    '#required': true\n  text_area_2:\n    '#type': textarea\n    '#title': 'Auriez-vous des commentaires, suggestions à nous faire parvenir ?'\n    '#title_display': before\n    '#placeholder': 'je trouve que...'\n"
+css: ''
+javascript: ''
+settings:
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_label: ''
+  form_submit_once: false
+  form_submit_attributes: {  }
+  form_exception_message: ''
+  form_closed_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_unsaved: false
+  form_disable_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_next_button_attributes: {  }
+  wizard_prev_button_label: ''
+  wizard_prev_button_attributes: {  }
+  wizard_start_label: Commencer
+  wizard_complete: false
+  wizard_complete_label: Terminer
+  preview: 0
+  preview_next_button_label: ''
+  preview_next_button_attributes: {  }
+  preview_prev_button_label: ''
+  preview_prev_button_attributes: {  }
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_button_attributes: {  }
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  purge: none
+  purge_days: null
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers: {  }
