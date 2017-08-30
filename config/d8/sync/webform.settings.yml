@@ -122,7 +122,6 @@ elements:
     webform_toggle: webform_toggle
     webform_toggles: webform_toggles
     webform_video_file: webform_video_file
-    webform_wizard_page: webform_wizard_page
 file:
   file_public: false
   default_max_filesize: ''
