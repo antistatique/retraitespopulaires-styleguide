@@ -3,6 +3,7 @@ CHANGELOG
 
 ## NEXT RELEASE
  - update to drupal 8.3.7
+ - remove updates notifications
 
 ## 2.2.7 (2017-08-15)
  - remove survey ad snippet
