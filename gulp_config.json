@@ -37,8 +37,11 @@
       "node_modules/photoswipe/dist/photoswipe.js",
       "node_modules/photoswipe/dist/photoswipe-ui-default.js"
     ],
+    "singlecss": [
+      "assets/vendors/ui-fancytree.css"
+    ],
     "singlejs": [
-      "assets/vendors/MorphSVGPlugin.min.js"
+      "assets/vendors/**/*"
     ],
     "fonts": [
       "node_modules/bootstrap-sass/assets/fonts/bootstrap/*",
