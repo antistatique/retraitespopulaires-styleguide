@@ -38,10 +38,10 @@
       "node_modules/photoswipe/dist/photoswipe-ui-default.js"
     ],
     "singlecss": [
-      "assets/vendors/ui-fancytree.css"
+      "assets/vendors/css/**/*"
     ],
     "singlejs": [
-      "assets/vendors/**/*"
+      "assets/vendors/js/**/*"
     ],
     "fonts": [
       "node_modules/bootstrap-sass/assets/fonts/bootstrap/*",
