@@ -102,7 +102,10 @@
       @include theme(background-color border-color);
     }
 
-    &:active,
+    .active & {
+      color: $white !important;
+    }
+
     &:hover:active,
     &:active:focus {
       background-color: $link-hover-color;

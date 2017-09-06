@@ -2,8 +2,8 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/themes/retraitespopulaires_cpev/build/favicons/cpev/mstile-150x150.png"/>
-            <TileColor>#00a261</TileColor>
+            <square150x150logo src="/mstile-150x150.png"/>
+            <TileColor>#009352</TileColor>
         </tile>
     </msapplication>
 </browserconfig>

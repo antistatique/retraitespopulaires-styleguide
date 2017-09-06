@@ -172,85 +172,34 @@
 * Spacers
 */
 
-.m-0 {
-  margin: 0 !important;
-}
+.m-auto { margin: auto !important; }
+.m-t-auto { margin-top: auto !important; }
+.m-r-auto { margin-right: auto !important; }
+.m-b-auto { margin-bottom: auto !important; }
+.m-l-auto { margin-left: auto !important; }
 
-.m-t-0 {
-  margin-top: 0 !important;
-}
+/* stylelint-disable, block-opening-brace-space-before, declaration-colon-space-after, rule-empty-line-before */
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $lengths in $spacers {
+    $length-x: map-get($lengths, x);
+    $length-y: map-get($lengths, y);
 
-.m-r-0 {
-  margin-right: 0 !important;
+    .#{$abbrev}-#{$size}   { #{$prop}:        $length-y $length-x !important; }
+    .#{$abbrev}-t-#{$size} { #{$prop}-top:    $length-y !important; }
+    .#{$abbrev}-r-#{$size} { #{$prop}-right:  $length-x !important; }
+    .#{$abbrev}-b-#{$size} { #{$prop}-bottom: $length-y !important; }
+    .#{$abbrev}-l-#{$size} { #{$prop}-left:   $length-x !important; }
+    .#{$abbrev}-x-#{$size} {
+      #{$prop}-right: $length-x !important;
+      #{$prop}-left:  $length-x !important;
+    }
+    .#{$abbrev}-y-#{$size} {
+      #{$prop}-top:    $length-y !important;
+      #{$prop}-bottom: $length-y !important;
+    }
+  }
 }
-
-.m-b-0 {
-  margin-bottom: 0 !important;
-}
-
-.m-l-0 {
-  margin-left: 0 !important;
-}
-
-.m-1 {
-  margin: $grid-gutter-width / 2 !important;
-}
-
-.m-t-1 {
-  margin-top: $grid-gutter-width / 2 !important;
-}
-
-.m-r-1 {
-  margin-right: $grid-gutter-width / 2 !important;
-}
-
-.m-b-1 {
-  margin-bottom: $grid-gutter-width / 2 !important;
-}
-
-.m-l-1 {
-  margin-left: $grid-gutter-width / 2 !important;
-}
-
-.p-0 {
-  padding: 0 !important;
-}
-
-.p-t-0 {
-  padding-top: 0 !important;
-}
-
-.p-r-0 {
-  padding-right: 0 !important;
-}
-
-.p-b-0 {
-  padding-bottom: 0 !important;
-}
-
-.p-l-0 {
-  padding-left: 0 !important;
-}
-
-.p-1 {
-  padding: $grid-gutter-width / 2 !important;
-}
-
-.p-t-1 {
-  padding-top: $grid-gutter-width / 2 !important;
-}
-
-.p-r-1 {
-  padding-right: $grid-gutter-width / 2 !important;
-}
-
-.p-b-1 {
-  padding-bottom: $grid-gutter-width / 2 !important;
-}
-
-.p-l-1 {
-  padding-left: $grid-gutter-width / 2 !important;
-}
+/* stylelint-enable block-opening-brace-space-before, declaration-colon-space-after, rule-empty-line-before */
 
 /**
 * Flexible rows
