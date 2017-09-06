@@ -14,6 +14,7 @@ CHANGELOG
  - add missing mandants logos
  - implement spacers from Bootstrap 4 inside styleguide
  - fix favicons cpev & cip
+ - fix ie9-ie10 svg logo scaling
 
 ## 3.1.1 (2017-07-04)
  - improved lists indentations when break line

@@ -18,6 +18,15 @@
 
   &.svg-responsive {
     max-height: initial;
+
+    /**
+    * IE9 & IE10 Hack SVG scaling.
+    */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      img[src$=".svg"] {
+        width: 100%;
+      }
+    }
   }
 }
 
