@@ -2,6 +2,7 @@ CHANGELOG
 =========
 
 ## NEXT RELEASE
+
  - added 3rd level on the secondary-nav
  - removed margin-bottom to card-title in card-justify
  - add Fancytree
