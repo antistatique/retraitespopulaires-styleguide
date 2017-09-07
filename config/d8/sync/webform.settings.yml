@@ -3,8 +3,9 @@ settings:
   default_form_open_message: 'This form has not yet been opened to submissions.'
   default_form_close_message: 'Sorry...This form is closed to new submissions.'
   default_form_exception_message: 'Unable to display this webform. Please contact the site administrator.'
-  default_form_confidential_message: 'This form is confidential. You must <a href="[site:login-url]/logout?destination=[current-page:url:relative]">Log out</a> to submit it.'
-  default_form_submit_label: Soumettre
+  default_form_confidential_message: 'This form is confidential. You must Log out to submit it.'
+  default_submit_button_label: Soumettre
+  default_reset_button_label: Réinitialiser
   form_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
   button_classes: ''
   default_form_submit_once: false
@@ -12,14 +13,16 @@ settings:
   default_form_unsaved: false
   default_form_novalidate: false
   default_form_details_toggle: true
-  default_submission_log: false
-  default_wizard_prev_button_label: '< Previous Page'
-  default_wizard_next_button_label: 'Next Page >'
-  default_wizard_start_label: Start
-  default_wizard_complete_label: Complete
-  default_preview_next_button_label: Preview
-  default_preview_prev_button_label: '< Previous'
-  default_preview_message: 'Please review your submission. Your submission is not complete until you press the "Submit" button!'
+  default_wizard_prev_button_label: '< Page Précédente'
+  default_wizard_next_button_label: 'Page Suivante >'
+  default_wizard_start_label: Commencer
+  default_wizard_complete_label: Soumettre
+  default_preview_next_button_label: Aperçu
+  default_preview_prev_button_label: '< Précedent'
+  default_preview_label: Aperçu
+  default_preview_title: Aperçu
+  default_preview_message: 'Please review your submission. Your submission is not complete until you press the &quot;Submit&quot; button!'
+  preview_classes: ''
   default_draft_button_label: 'Save Draft'
   default_draft_saved_message: 'Submission saved. You may return to this form later and it will restore the current values.'
   default_draft_loaded_message: 'A partially-completed form was found. Please complete the remaining portions.'
@@ -27,6 +30,8 @@ settings:
   default_confirmation_back_label: 'Back to form'
   confirmation_classes: "messages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
   confirmation_back_classes: "button\r\n"
+  default_form_submit_label: Soumettre
+  default_submission_log: false
   default_limit_total_message: 'No more submissions are permitted.'
   default_limit_user_message: 'No more submissions are permitted.'
 assets:
