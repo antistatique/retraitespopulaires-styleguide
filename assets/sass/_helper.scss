@@ -71,6 +71,10 @@
   }
 }
 
+.text-break-all-always {
+  word-break: break-all;
+}
+
 // wrap in a {% spaceless %} block (twig) to to handle the spacing correctly
 // Please don't put links as first children though :(
 .text-square-separation {

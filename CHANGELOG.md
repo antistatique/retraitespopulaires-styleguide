@@ -15,6 +15,7 @@ CHANGELOG
  - fix favicons cpev & cip
  - fix ie9-ie10 svg logo scaling
  - add new favicon portail ca
+ - add helper text-break-all-always 
 
 ## 3.1.1 (2017-07-04)
  - improved lists indentations when break line
