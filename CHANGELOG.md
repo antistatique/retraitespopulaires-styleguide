@@ -2,7 +2,6 @@ CHANGELOG
 =========
 
 ## NEXT RELEASE
-
  - added 3rd level on the secondary-nav
  - removed margin-bottom to card-title in card-justify
  - add Fancytree
@@ -15,6 +14,7 @@ CHANGELOG
  - implement spacers from Bootstrap 4 inside styleguide
  - fix favicons cpev & cip
  - fix ie9-ie10 svg logo scaling
+ - add new favicon portail ca
 
 ## 3.1.1 (2017-07-04)
  - improved lists indentations when break line
