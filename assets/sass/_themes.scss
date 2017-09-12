@@ -111,6 +111,10 @@ a {
   &:hover {
     @include theme(color, hover-color);
   }
+
+  &.text-muted {
+    color: $text-muted;
+  }
 }
 
 /**

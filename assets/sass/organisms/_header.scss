@@ -19,6 +19,10 @@
   .logo-retraitespopulaires {
     margin: 10px;
   }
+
+  .logo-retraitespopulaires {
+    margin-top: 0;
+  }
 }
 
 .header-search {
@@ -34,10 +38,14 @@
   box-shadow: 0 5px 30px rgba($black, 0.3);
 }
 
+.header-border {
+  border-bottom: 1px solid $ligthen-gray;
+}
+
 // Special navbars in header for mandats
 .wrapper-navs {
   display: none;
-  flex: 0 1 900px;
+  flex: 0 1 800px;
   margin-top: $grid-gutter-width / 2;
   margin-left: $grid-gutter-width;
 

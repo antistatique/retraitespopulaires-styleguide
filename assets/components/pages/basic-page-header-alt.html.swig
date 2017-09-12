@@ -8,7 +8,7 @@ layout: page.html.swig
 <div class="theme-cip">
 <header class="header">
   <div class="container header-container">
-    <div class="logo-retraitespopulaires">
+    <div class="logo-retraitespopulaires logo-retraitespopulaires-lg">
       <a class="" href="#">
         <img class="img-responsive" src="{{data.path}}build/svg/logo-cip.svg" alt="Logo CIP" title="Page d'accueil">
       </a>

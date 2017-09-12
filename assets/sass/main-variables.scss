@@ -40,3 +40,17 @@ $color-instagram: #000;
 $input-bg-focus: $white;
 $input-border-disabled: lighten($gray, 50%);
 $input-border-size: 1px;
+
+// Copied from Bootstrap 4 for helpers
+$spacer-x: 15px !default;
+$spacer-y: 15px !default;
+$spacers: (
+  0: (
+    x: 0,
+    y: 0
+  ),
+  1: (
+    x: $spacer-x,
+    y: $spacer-y
+  ),
+) !default;

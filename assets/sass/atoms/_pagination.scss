@@ -6,12 +6,12 @@
   > li {
     display: inline-block;
 
-    + li:not(:last-child) > a {
+    + li:not(:last-child) > .btn-outline {
       border-color: transparent;
     }
 
     &.active {
-      > a {
+      > .btn-outline {
         background-color: $brand-primary;
         color: $white;
 
