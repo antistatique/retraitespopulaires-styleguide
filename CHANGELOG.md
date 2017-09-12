@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## NEXT RELEASE
+## 3.1.4 (2017-09-12)
  - added 3rd level on the secondary-nav
  - removed margin-bottom to card-title in card-justify
  - add Fancytree
@@ -10,12 +10,17 @@ CHANGELOG
  - optimize SVG code for logos
  - avoid stylelint crashing the whole build on error
  - fix stylelint error
+
+## 3.1.3 (2017-09-04)
  - add missing mandants logos
  - implement spacers from Bootstrap 4 inside styleguide
  - fix favicons cpev & cip
  - fix ie9-ie10 svg logo scaling
  - add new favicon portail ca
- - add helper text-break-all-always 
+ - add helper text-break-all-always
+
+## 3.1.2 (2017-08-04)
+ - back-port header mandat in header component
 
 ## 3.1.1 (2017-07-04)
  - improved lists indentations when break line
