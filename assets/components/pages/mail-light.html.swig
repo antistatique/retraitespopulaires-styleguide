@@ -1,20 +1,16 @@
 ---
-title: Mail
-name: mail
+title: Mail light
+name: mail-light
 collection: pages
 styleguide: false
 layout: page.html.swig
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-  "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="fr">
+<html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="initial-scale=1.0">    <!-- So that mobile webkit will display zoomed in -->
   <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
-
   <title>Retraites Populaires</title>
-
    <style type="text/css">
  
     /* Resets: see reset.css for details */
@@ -101,13 +97,12 @@ layout: page.html.swig
       text-align: left;
       border-bottom : 1px solid grey;
     }
-   .date
-       {
-        text-align: right;
-       color: #000000;
-      font-family: helvetica, arial, Sans-serif;
-      font-size: 14px;
+   
+       .meta {
+        color : #777777;
+       font-size: 14px;
        }
+
     .text_footer{
       font-family: helvetica, arial, Sans-serif;
       font-size: 12px;
@@ -144,72 +139,64 @@ layout: page.html.swig
       </tr>
         <tr>
           <td align="center">
-          <!-- header -->
+            <!-- intro -->
                 <table class="container" border="0" width="600" cellpadding="0" cellspacing="0" align="center">
                   <tr>
                     <td align="center">
-                          <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
+                          <table border="0" width="95%" cellpadding="0" cellspacing="0" align="center">
                               <tr>
-                                  <td align="left">
-                                        <img src="/retraitespopulaires-styleguide/build/img/mail/logo-retraitespopulaires.jpg" width="200" height="82.5" alt="Retraites Populaires">
-                                    </td>
-                                    <td align="right">
-                                        <p class="date">1 Janvier 2016</p>
-                                    </td>
+                                  <td>
+                                      <div class="bloc-title">
+                                            <p>De nouveaux documents sont publiés sur le site intranet <a href="#">Marché de la prévoyance</a> :</p>
+                                      </div>
+                                  </td>
                               </tr>
                           </table>
                       </td>                 
                 </tr>
               </table>
-            <!-- fin header -->
-            </td>
-        </tr>
-        <tr>
-            <td height="20">
-                <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
+                <!-- fin intro -->
             </td>
         </tr>
         <tr>
             <td align="center">
-              <table class="container" border="0" width="600" cellpadding="0" cellspacing="0" align="center">
-                    <tr>
-                      <td width="45">
-                            <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="45" height="20" alt="">
-                        </td>
-                        <td>
-                            <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
-                                <tr>
-                                    <td align="center">
-                                        <div class="bloc-title">
-                                            <p>Retraites Populaires - Tirage au sort de Vos offres Bella vita</p>
-                                        </div>
-                                    </td>                 
-                                </tr>
-                                <tr>
-                                <tr>
-                                    <td width="10">
-                                        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="50" height="10" alt="">
+        <!-- articles -->          
+                <table class="container" border="0" width="600" cellpadding="0" cellspacing="0" align="center">
+                <tr>
+                    <td align="center">
+                        <table border="0" width="95%" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                                  <td width="10">
+                                      <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="50" height="10" alt="">
                                     </td>
-                                </tr>
+                              </tr>
+                              <tr>
+                              <td>
+                                  <div class="bloc_article">
+                                            <h3><a href="#">Recapitalisée en 2014, la Caisse de pensions de l'Etata de Vaud envisage déjà des réformes douloureuses.</a></h3>
+                                            <p>Chaudes batailles en vue</p>
+                                            <p class="meta">15 juillet 2017, par <a href="#">Darius Rochebin</a> - Source : <a href="#">Le Temps</a></p>
+                                      </div>
+                              </td>
+                              </tr>
                                 <tr>
-                                    <td>
-                                        <div class="bloc_text">
-                                            <p>Félicitations !<br><br>
-                                            Vous avez participé au tirage au sort de Vos offres Bella vita dans le magazine clientèle de Retraites Populaires et vous avez gagné.<br><br>
-                                            Vous allez recevoir ces prochains jours un courrier de confirmation.<br><br>
-                                            Recevez, Madame, Monsieur, nos meilleures salutations.<br><br>
-                                            Retraites Populaires
-                                            </p>
-                                        </div>
+                                  <td width="10">
+                                      <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="50" height="10" alt="">
                                     </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td width="45">
-                            <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="45" height="20" alt="">
-                        </td>
-                    </tr>
-                </table>
+                              </tr>
+                                <tr>
+                              <td>
+                                  <div class="bloc_article">
+                                            <h3><a href="#">Caisse cantonale de Fribourg</a></h3>
+                                            <p>Etiam blandit volutpat libero, sed vulputate ante tempus sed. Mauris facilisis nisl vitae orci facilisis congue. Ut non tristique arcu. Vivamus sed tempor leo. Donec non nunc arcu. Donec dictum aliquet orci sit amet fringilla. </p>
+                                            <p class="meta">24 août 2017, par <a href="#">Retraites Populaires</a> - Source : <a href="#">La Liberté</a></p>
+                                      </div>
+                              </td>
+                              </tr>
+                          </table>
+                      </td>                 
+                  </tr>
+              </table>
             </td>
         </tr>
         <tr>
@@ -223,31 +210,29 @@ layout: page.html.swig
       <tr>
           <td align="center">
                 <!--header -->
-              <table class="container" border="0" width="600" cellpadding="0" cellspacing="0" align="center">
-                <tr>
-                    <td height="20">
-                      <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
-                    </td>
-                </tr>
-                    <tr>
-                  <td align="center">
-                      <div class="text_footer">
-                                <multiline>
-                                        <p class="text_footer"><b>Pour nous contacter :</b></p>
-                                        <p class="text_footer">Retraites Populaires, Caroline 9, Case postale 288 - 1001 Lausanne <br>ou utilisez le formulaire de contact accessible depuis notre site <a href="https://www.retraitespopulaires.ch">retraitespopulaires.ch</a></p>.
-                              </multiline>
-                      </div>
-                  </td>
-                </tr>
-                    <tr>
-                    <td height="20">
-                      <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
-                    </td>
-                </tr>
-            </table>
+                  <table class="container" border="0" width="600" cellpadding="0" cellspacing="0" align="center">
+                        <tr>
+                            <td height="20">
+                              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                          <td align="center">
+                              <div class="text_footer">
+                                    <p class="text_footer"><b>Pour contacter l'administrateur : <a href="mailto:i#">info@retraitespopulaires.ch</a></b>
+                                    <br><br>
+                                    <b>Cliquer ici pour <a href="#">gérer vos abonnements</a></b></p>
+                              </div>
+                          </td>
+                        </tr>
+                        <tr>
+                            <td height="20">
+                              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
+                            </td>
+                        </tr>
+                </table>
           </td>
       </tr>
-    </table>
+    </table>  
 </body>
 </html>
-
