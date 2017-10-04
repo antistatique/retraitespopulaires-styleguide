@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## NEXT RELEASE
+ - add new favicon portail d'actualité
+
 ## 3.1.4 (2017-09-12)
  - added 3rd level on the secondary-nav
  - removed margin-bottom to card-title in card-justify
