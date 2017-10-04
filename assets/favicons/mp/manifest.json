@@ -1,5 +1,5 @@
 {
-    "name": "Retraites Populaires",
+    "name": "Portail d'actualit\u00e9",
     "icons": [
         {
             "src": "/themes/retraitespopulaires_mp/build/favicons/mp/android-chrome-192x192.png",
@@ -7,12 +7,12 @@
             "type": "image/png"
         },
         {
-            "src": "/themes/retraitespopulaires_mp/build/favicons/mp/android-chrome-256x256.png",
-            "sizes": "256x256",
+            "src": "/themes/retraitespopulaires_mp/build/favicons/mp/android-chrome-512x512.png",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "theme_color": "#008e4f",
-    "background_color": "#008e4f",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
     "display": "standalone"
 }
