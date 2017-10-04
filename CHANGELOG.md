@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## NEXT RELEASE
+## 3.1.5 (2017-10-04) 
  - add new favicon portail d'actualité
 
 ## 3.1.4 (2017-09-12)
