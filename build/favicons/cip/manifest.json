@@ -2,12 +2,12 @@
     "name": "CIP",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/themes/retraitespopulaires_mandats/build/favicons/cip/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-256x256.png",
+            "src": "/themes/retraitespopulaires_mandats/build/favicons/cip/android-chrome-256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         }
