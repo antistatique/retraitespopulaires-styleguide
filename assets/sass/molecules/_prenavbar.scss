@@ -14,4 +14,25 @@
       @include theme(color);
     }
   }
+
+  // Language select in push menu
+  @media screen and (max-width: $screen-sm-max) {
+    &.list-inline {
+      margin: $grid-gutter-width $grid-gutter-width 0 $grid-gutter-width !important; // override m-0
+
+      li {
+        margin-right: 5px;
+        padding: 0;
+      }
+
+      .active span {
+        padding: 5px 8px 3px;
+        background-color: $white;
+      }
+
+      a {
+        padding: 5px 8px 3px;
+      }
+    }
+  }
 }
