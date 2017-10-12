@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## 3.1.7 (2017-10-11)
+ - revert to gulp-sass 2.3.2, waiting on RP to update node on the server
+
 ## 3.1.6 (2017-10-11) 
  - update gulp-sass version
  - update styles for lang nav in push-menu on mobile
