@@ -13,6 +13,10 @@ layout: page.html.swig
   <meta name="viewport" content="initial-scale=1.0">    <!-- So that mobile webkit will display zoomed in -->
   <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
 
+  <meta property="og:title" content="<%=appname%>">
+  <meta property="og:description" content="<%=appname%>">
+  <meta property="og:site_name" content="<%=appname%>">
+
   <title>Retraites Populaires</title>
 
    <style type="text/css">
@@ -139,7 +143,7 @@ layout: page.html.swig
     <table  border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
         <tr>
           <td width="20">
-              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="50" height="20" alt="">
+              <img src="px.gif" width="50" height="20" alt="">
             </td>
       </tr>
         <tr>
@@ -151,7 +155,7 @@ layout: page.html.swig
                           <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
                               <tr>
                                   <td align="left">
-                                        <img src="/retraitespopulaires-styleguide/build/img/mail/logo-retraitespopulaires.jpg" width="200" height="82.5" alt="Retraites Populaires">
+                                        <img src="logo-retraitespopulaires.jpg" width="200" height="82.5" alt="Caisse intercommunale de pensions">
                                     </td>
                                     <td align="right">
                                         <p class="date">1 Janvier 2016</p>
@@ -166,7 +170,7 @@ layout: page.html.swig
         </tr>
         <tr>
             <td height="20">
-                <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
+                <img src="px.gif" width="40" height="20" alt="">
             </td>
         </tr>
         <tr>
@@ -174,7 +178,7 @@ layout: page.html.swig
               <table class="container" border="0" width="600" cellpadding="0" cellspacing="0" align="center">
                     <tr>
                       <td width="45">
-                            <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="45" height="20" alt="">
+                            <img src="px.gif" width="45" height="20" alt="">
                         </td>
                         <td>
                             <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
@@ -188,7 +192,7 @@ layout: page.html.swig
                                 <tr>
                                 <tr>
                                     <td width="10">
-                                        <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="50" height="10" alt="">
+                                        <img src="px.gif" width="50" height="10" alt="">
                                     </td>
                                 </tr>
                                 <tr>
@@ -206,7 +210,7 @@ layout: page.html.swig
                             </table>
                         </td>
                         <td width="45">
-                            <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="45" height="20" alt="">
+                            <img src="px.gif" width="45" height="20" alt="">
                         </td>
                     </tr>
                 </table>
@@ -214,7 +218,7 @@ layout: page.html.swig
         </tr>
         <tr>
             <td height="20">
-                <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
+                <img src="px.gif" width="40" height="20" alt="">
             </td>
         </tr>
     </table>
@@ -226,7 +230,7 @@ layout: page.html.swig
               <table class="container" border="0" width="600" cellpadding="0" cellspacing="0" align="center">
                 <tr>
                     <td height="20">
-                      <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
+                      <img src="px.gif" width="40" height="20" alt="">
                     </td>
                 </tr>
                     <tr>
@@ -241,13 +245,14 @@ layout: page.html.swig
                 </tr>
                     <tr>
                     <td height="20">
-                      <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
+                      <img src="px.gif" width="40" height="20" alt="">
                     </td>
                 </tr>
             </table>
           </td>
       </tr>
     </table>
+    
 </body>
 </html>
 

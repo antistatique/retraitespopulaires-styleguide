@@ -5,12 +5,20 @@ collection: pages
 styleguide: false
 layout: page.html.swig
 ---
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="initial-scale=1.0">    <!-- So that mobile webkit will display zoomed in -->
   <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
+
+  <meta property="og:title" content="<%=appname%>">
+  <meta property="og:description" content="<%=appname%>">
+  <meta property="og:site_name" content="<%=appname%>">
+
   <title>Retraites Populaires</title>
+
    <style type="text/css">
  
     /* Resets: see reset.css for details */
@@ -134,7 +142,7 @@ layout: page.html.swig
     <table  border="0" width="100%" cellpadding="0" cellspacing="0" align="center">
         <tr>
           <td width="20">
-              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="50" height="20" alt="">
+              <img src="px.gif" width="50" height="20" alt="">
             </td>
       </tr>
         <tr>
@@ -147,7 +155,7 @@ layout: page.html.swig
                               <tr>
                                   <td>
                                       <div class="bloc-title">
-                                            <p>De nouveaux documents sont publiés sur le site intranet <a href="#">Marché de la prévoyance</a> :</p>
+                                            <p><a href="#">Nouveaux documents sur le Portail d'actualité</a> :</p>
                                       </div>
                                   </td>
                               </tr>
@@ -167,7 +175,7 @@ layout: page.html.swig
                         <table border="0" width="95%" cellpadding="0" cellspacing="0" align="center">
                           <tr>
                                   <td width="10">
-                                      <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="50" height="10" alt="">
+                                      <img src="px.gif" width="50" height="10" alt="">
                                     </td>
                               </tr>
                               <tr>
@@ -175,13 +183,13 @@ layout: page.html.swig
                                   <div class="bloc_article">
                                             <h3><a href="#">Recapitalisée en 2014, la Caisse de pensions de l'Etata de Vaud envisage déjà des réformes douloureuses.</a></h3>
                                             <p>Chaudes batailles en vue</p>
-                                            <p class="meta">15 juillet 2017, par <a href="#">Darius Rochebin</a> - Source : <a href="#">Le Temps</a></p>
+                                            <p class="meta">15 juillet 2017, par Darius Rochebin - Source : Le Temps</p>
                                       </div>
                               </td>
                               </tr>
                                 <tr>
-                                  <td width="10">
-                                      <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="50" height="10" alt="">
+                                  <td width="20">
+                                      <img src="px.gif" width="50" height="20" alt="">
                                     </td>
                               </tr>
                                 <tr>
@@ -189,7 +197,7 @@ layout: page.html.swig
                                   <div class="bloc_article">
                                             <h3><a href="#">Caisse cantonale de Fribourg</a></h3>
                                             <p>Etiam blandit volutpat libero, sed vulputate ante tempus sed. Mauris facilisis nisl vitae orci facilisis congue. Ut non tristique arcu. Vivamus sed tempor leo. Donec non nunc arcu. Donec dictum aliquet orci sit amet fringilla. </p>
-                                            <p class="meta">24 août 2017, par <a href="#">Retraites Populaires</a> - Source : <a href="#">La Liberté</a></p>
+                                            <p class="meta">24 août 2017, par Retraites Populaires - Source : La Liberté</p>
                                       </div>
                               </td>
                               </tr>
@@ -201,7 +209,7 @@ layout: page.html.swig
         </tr>
         <tr>
             <td height="20">
-                <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
+                <img src="px.gif" width="40" height="20" alt="">
             </td>
         </tr>
     </table>
@@ -213,21 +221,20 @@ layout: page.html.swig
                   <table class="container" border="0" width="600" cellpadding="0" cellspacing="0" align="center">
                         <tr>
                             <td height="20">
-                              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
+                              <img src="px.gif" width="40" height="20" alt="">
                             </td>
                         </tr>
                         <tr>
                           <td align="center">
                               <div class="text_footer">
-                                    <p class="text_footer"><b>Pour contacter l'administrateur : <a href="mailto:i#">info@retraitespopulaires.ch</a></b>
-                                    <br><br>
+                                    <p class="text_footer">
                                     <b>Cliquer ici pour <a href="#">gérer vos abonnements</a></b></p>
                               </div>
                           </td>
                         </tr>
                         <tr>
                             <td height="20">
-                              <img src="/retraitespopulaires-styleguide/build/img/mail/px.gif" width="40" height="20" alt="">
+                              <img src="px.gif" width="40" height="20" alt="">
                             </td>
                         </tr>
                 </table>
