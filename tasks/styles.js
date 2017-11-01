@@ -27,7 +27,7 @@ export const stylesBuild = () => {
     .pipe($.plumber({ errorHandler: errorAlert }))
     .pipe(yargs.argv.production ? $.util.noop() : $.sourcemaps.init())
     .pipe($.sass({
-      outputStyle: 'compressed',
+      outputStyle: 'compact',
       precision: 5,
       includePaths: ['.'],
     }))
