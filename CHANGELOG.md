@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-NEXT RELEASE
+## 3.1.7 (2017-11-01)
  - add selectize description
  - new mails template (light)
 
