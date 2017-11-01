@@ -1,12 +1,16 @@
 CHANGELOG
 =========
 
-## 3.1.6 (2017-10-11) 
+## 3.1.7 (2017-11-01)
+ - add selectize description
+ - new mails template (light)
+
+## 3.1.6 (2017-10-11)
  - update gulp-sass version
  - update styles for lang nav in push-menu on mobile
  - style search box in push-menu on mobile
 
-## 3.1.5 (2017-10-04) 
+## 3.1.5 (2017-10-04)
  - add new favicon portail d'actualité
 
 ## 3.1.4 (2017-09-12)

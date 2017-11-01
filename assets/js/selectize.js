@@ -11,6 +11,9 @@ export function selectize () {
       dropdownClass: 'dropdown-menu',
       render: {
         option: function(data, escape) {
+          if ($('select.selectize').is('[data-description]') && typeof data.description !== 'undefined') {
+            return `<div>${escape(data.name)} <div class="text-muted">${escape(data.description)}</div></div>`;
+          }
           return `<div>${escape(data.name)}</div>`;
         },
         item: function(data, escape) {
