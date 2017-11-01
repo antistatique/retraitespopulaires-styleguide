@@ -1,0 +1,21 @@
+ul.fancytree-container {
+  border: none;
+}
+
+.fancytree-title .fa-arrows {
+  font-size: 14px;
+  transform: translateY(-20%);
+  cursor: move;
+}
+
+ul.fancytree-container:focus {
+  outline: none;
+}
+
+span.fancytree-expander {
+  transform: translateY(50%) !important;
+}
+
+span.fancytree-title:focus {
+  outline: none;
+}
