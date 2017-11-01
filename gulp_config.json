@@ -10,7 +10,8 @@
       "node_modules/tablesaw/dist/tablesaw.css",
       "node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css",
       "node_modules/photoswipe/dist/photoswipe.css",
-      "node_modules/photoswipe/dist/default-skin/default-skin.css"
+      "node_modules/photoswipe/dist/default-skin/default-skin.css",
+      "node_modules/selectize/dist/css/selectize.css"
     ],
     "img": [
       "node_modules/photoswipe/dist/default-skin/*.{png,gif,svg}"

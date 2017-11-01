@@ -7,8 +7,6 @@ export function selectize () {
     $selectize.selectize({
       plugins: ['remove_button'],
       persist: false,
-      copyClassesToDropdown: false,
-      dropdownClass: 'dropdown-menu',
       render: {
         option: function(data, escape) {
           if ($('select.selectize').is('[data-description]') && typeof data.description !== 'undefined') {
