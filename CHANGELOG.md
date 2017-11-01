@@ -3,6 +3,7 @@ CHANGELOG
 
 NEXT RELEASE
  - add selectize description
+ - new mails template (light)
 
 ## 3.1.6 (2017-10-11)
  - update gulp-sass version
