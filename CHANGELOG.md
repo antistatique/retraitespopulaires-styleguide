@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## NEXT RELEASE
+## 3.1.8 (2017-11-03)
  - add selectize styles
  - add logos CPEV & Profelia for mails
 
