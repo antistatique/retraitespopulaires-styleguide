@@ -4,7 +4,9 @@
   position: relative;
 }
 
-.selectize-input {
+.selectize-input,
+.selectize-control.multi .selectize-input,
+.selectize-control.multi .selectize-input.has-items {
   @extend .form-control;
 
   padding: 0.4em;
@@ -40,7 +42,6 @@
   display: inline-flex;
   align-items: center;
   margin-right: 0.4em;
-  margin-bottom: -1px;
   background-color: $brand-primary;
   border-radius: $border-radius-base;
   font-family: $font-family-base;
@@ -55,30 +56,32 @@
   > span {
     padding: 0.5em 1em 0.4em;
   }
+}
 
-  .remove {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-    padding: 0.2em 0.4em;
-    border-left: 1px solid darken($brand-primary, 5%);
-    border-top-right-radius: $border-radius-base;
-    border-bottom-right-radius: $border-radius-base;
-    font-size: 1.5em;
-    line-height: 1;
-    font-weight: 200;
-    color: rgba(white, 0.7);
+.selectize-control.plugin-remove_button [data-value]
+.remove {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  width: auto;
+  padding: 0.2em 0.4em;
+  border-left: 1px solid darken($brand-primary, 5%);
+  border-top-right-radius: $border-radius-base;
+  border-bottom-right-radius: $border-radius-base;
+  font-size: 1.5em;
+  line-height: 1;
+  font-weight: 700;
+  color: rgba(white, 0.7);
 
-    &:hover,
-    &:focus {
-      background-color: darken($brand-primary, 5%);
-      text-decoration: none;
-      color: $white;
-    }
+  &:hover,
+  &:focus {
+    background-color: darken($brand-primary, 5%);
+    text-decoration: none;
+    color: $white;
+  }
 
-    &:active {
-      background-color: darken($brand-primary, 10%);
-    }
+  &:active {
+    background-color: darken($brand-primary, 10%);
   }
 }

@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+## 3.1.8 (2017-11-03)
+ - add selectize styles
+ - add logos CPEV & Profelia for mails
+
 ## 3.1.7 (2017-11-01)
  - add selectize description
  - new mails template (light)
