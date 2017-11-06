@@ -162,6 +162,8 @@ class HomepageSettings extends FormBase {
     $this->state->set('rp_homepage.blocks', $form_state->getValue('blocks'));
 
     $this->cacheTagsInvalidator->invalidateTags(['front']);
+
+    drupal_set_message(t('Configuration de la home mise à jour'));
   }
 
   /**
