@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## NEXT RELEASE
+ - fix broken rp-bigmenu arrow outline color
+
 ## 3.1.8 (2017-11-03)
  - add selectize styles
  - add logos CPEV & Profelia for mails
