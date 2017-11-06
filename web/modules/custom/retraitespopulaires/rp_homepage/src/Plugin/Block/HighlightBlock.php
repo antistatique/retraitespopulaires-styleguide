@@ -20,11 +20,6 @@ use Drupal\Core\Path\PathMatcherInterface;
  *   id = "rp_homepage_highlight",
  *   admin_label = @Translation("Block that display an highlight on the home."),
  * )
- *
- * Inline example:
- * <code>
- * load_block('rp_homepage_highlight')
- * </code>
  */
 class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
@@ -90,7 +85,6 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
         'tags' => ['front'],
       ],
     ];
-
   }
 
 }
