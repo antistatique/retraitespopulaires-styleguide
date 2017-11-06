@@ -1,0 +1,7 @@
+rp_homepage.admin.settings:
+    path: '/admin/homepage/settings'
+    defaults:
+        _form: '\Drupal\rp_homepage\Form\HomepageSettings'
+        _title: 'Homepage Settings'
+    requirements:
+        _permission: 'administer site configuration'
