@@ -1,14 +1,12 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_site\Plugin\Block\ProductTeaserBlock.
+* Contains \Drupal\rp_product\Plugin\Block\ProductTeaserBlock.
 */
 
-namespace Drupal\rp_site\Plugin\Block;
+namespace Drupal\rp_product\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
 * Provides a 'Product Teaser' Block
@@ -28,9 +26,7 @@ class ProductTeaserBlock extends BlockBase {
     * {@inheritdoc}
     */
     public function build($params = array()) {
-        $variables = array();
         $variables = $params;
-
         return [
             '#theme'     => 'rp_site_product_teaser_block',
             '#variables' => $variables,

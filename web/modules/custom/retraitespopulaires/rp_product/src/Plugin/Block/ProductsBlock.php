@@ -1,21 +1,17 @@
 <?php
 /**
 * @file
-* Contains \Drupal\rp_site\Plugin\Block\ProductsBlock.
+* Contains \Drupal\rp_product\Plugin\Block\ProductsBlock.
 */
 
-namespace Drupal\rp_site\Plugin\Block;
+namespace Drupal\rp_product\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Url;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
-use Drupal\Core\Path\AliasManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
-use Drupal\rp_site\Service\Profession;
 
 /**
 * Provides a 'Products' Block
@@ -45,33 +41,12 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
     private $route;
 
     /**
-     * AliasManagerInterface Service
-     * @var AliasManagerInterface
-     */
-    private $alias_manager;
-
-    /**
-    * QueryFactory to execute query
-    * @var QueryFactory
-    */
-    private $entity_query;
-
-    /**
-     * Profession Service
-     * @var Profession
-     */
-    private $profession;
-
-    /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, QueryFactory $query, Profession $profession) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_node   = $entity->getStorage('node');
         $this->route         = $route;
-        $this->alias_manager = $alias_manager;
-        $this->entity_query  = $query;
-        $this->profession    = $profession;
     }
 
     /**
@@ -115,16 +90,6 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
                         ->condition('n.type', 'product')
                         ->condition('n.nid', $products_nids, 'IN')
                     ;
-
-                    if ($filters = \Drupal::request()->query->get('filtres') && !empty($filters)) {
-                        foreach ($filters as $key => $filter) {
-                            $taxonomy_term_url = $this->alias_manager->getPathByAlias('/plans/'.$filter);
-                            if( !empty($taxonomy_term_url) ){
-                                $taxonomy_term_tid = str_replace('/taxonomy/term/', '', $taxonomy_term_url);
-                                $query->join('node__field_product_plan', 'plan_'.$key, 'plan_'.$key.'.entity_id = n.nid');
-                                $query->condition('plan_'.$key.'.field_product_plan_target_id', $taxonomy_term_tid);                            }
-                        }
-                    }
 
                     $result = $query->execute();
 

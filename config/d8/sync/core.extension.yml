@@ -53,6 +53,7 @@ module:
   rp_mortgage: 0
   rp_newsletter: 0
   rp_offers: 0
+  rp_product: 0
   rp_site: 0
   rp_toolbar: 0
   search_api: 0

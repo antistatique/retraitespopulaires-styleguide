@@ -13,8 +13,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Routing\CurrentRouteMatch;
-// use Drupal\Core\Path\AliasManagerInterface;
-// use Drupal\Core\Database\Connection;
 
 /**
 * Provides a 'ProductsRelated' Block
@@ -55,18 +53,6 @@ class ProductsRelatedBlock extends BlockBase implements ContainerFactoryPluginIn
     */
     private $route;
 
-    // /**
-    //  * AliasManagerInterface Service
-    //  * @var AliasManagerInterface
-    //  */
-    // private $alias_manager;
-
-    // /**
-    // * Connection to DB
-    // * @var Connection
-    // */
-    // private $database;
-
     /**
     * Class constructor.
     */
@@ -76,8 +62,6 @@ class ProductsRelatedBlock extends BlockBase implements ContainerFactoryPluginIn
         $this->entity_node     = $entity->getStorage('node');
         $this->entity_query    = $query;
         $this->route           = $route;
-        // $this->alias_manager   = $alias_manager;
-        // $this->database        = $database;
     }
 
     /**
@@ -94,8 +78,6 @@ class ProductsRelatedBlock extends BlockBase implements ContainerFactoryPluginIn
             $container->get('entity_type.manager'),
             $container->get('entity.query'),
             $container->get('current_route_match')
-            // $container->get('path.alias_manager'),
-            // $container->get('database')
         );
     }
 
