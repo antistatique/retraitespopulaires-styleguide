@@ -1,6 +1,7 @@
 <?php
 namespace Drupal\rp_homepage\Form;
 
+use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\State\StateInterface;
@@ -17,10 +18,19 @@ class HomepageSettings extends FormBase {
   protected $state;
 
   /**
-   * Class constructor.
+   * @var \Drupal\Core\Cache\CacheTagsInvalidatorInterface
    */
-  public function __construct(StateInterface $state) {
+  private $cacheTagsInvalidator;
+
+  /**
+   * Class constructor.
+   *
+   * @param \Drupal\Core\State\StateInterface                $state
+   * @param \Drupal\Core\Cache\CacheTagsInvalidatorInterface $cacheTagsInvalidator
+   */
+  public function __construct(StateInterface $state, CacheTagsInvalidatorInterface $cacheTagsInvalidator) {
     $this->state = $state;
+    $this->cacheTagsInvalidator = $cacheTagsInvalidator;
   }
 
   /**
@@ -28,7 +38,8 @@ class HomepageSettings extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('state')
+      $container->get('state'),
+      $container->get('cache_tags.invalidator')
     );
   }
 
@@ -149,6 +160,8 @@ class HomepageSettings extends FormBase {
 
     $this->state->set('rp_homepage.highlight', $form_state->getValue('highlight'));
     $this->state->set('rp_homepage.blocks', $form_state->getValue('blocks'));
+
+    $this->cacheTagsInvalidator->invalidateTags(['front']);
   }
 
   /**

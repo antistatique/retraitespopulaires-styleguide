@@ -69,6 +69,9 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
     return [
       '#theme'     => 'rp_homepage_highlight',
       '#variables' => $variables,
+      '#cache' => [
+        'tags' => ['front'],
+      ],
     ];
 
   }

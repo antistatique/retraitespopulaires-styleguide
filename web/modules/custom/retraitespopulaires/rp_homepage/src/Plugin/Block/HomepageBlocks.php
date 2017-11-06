@@ -69,6 +69,9 @@ class HomepageBlocks extends BlockBase implements ContainerFactoryPluginInterfac
         return [
             '#theme'     => 'rp_homepage_blocks',
             '#variables' => $variables,
+            '#cache' => [
+              'tags' => ['front'],
+            ],
         ];
 
     }
