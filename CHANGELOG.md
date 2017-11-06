@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+## MODULO
+ - move product into is own module
+ - remove unused 'related products'
+
 ## NEXT RELEASE
  - fix node & npm engine restriction
  - update to drupal 8.3.7
