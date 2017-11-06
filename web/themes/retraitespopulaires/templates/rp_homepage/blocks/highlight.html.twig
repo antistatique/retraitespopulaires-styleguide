@@ -1,0 +1,23 @@
+{% set highlight = variables.highlight %}
+
+{% if highlight and highlight.enabled %}
+  <div class="col-sm-12">
+    <a href="">
+      <div class="card card-white card-horizontal">
+        <div class="card-img-top ">
+          <div class="card-img-bg" style="background-image: url('https://unsplash.it/512/512?image=1005');"></div>
+          <div class="loader-image"><div class="loader"><div class="card-horizontal"></div></div>
+          </div>
+        </div>
+        <div class="card-body">
+          {#<p class="card-subhead">Subheading</p>#}
+          <h3 class="card-title h1">{{ highlight.title }}</h3>
+          <p>{{ highlight.subtitle }}</p>
+          {% if highlight.btn_label %}
+            <span class="btn btn-primary">{{ highlight.btn_label }}</span>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+  </div>
+{% endif %}
