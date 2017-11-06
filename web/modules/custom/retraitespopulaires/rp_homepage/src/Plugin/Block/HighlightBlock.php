@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\rp_homepage\Plugin\Block\ProfilsCollectionBlock.
+ * Contains \Drupal\rp_homepage\Plugin\Block\HighlightBlock.
  */
 
 namespace Drupal\rp_homepage\Plugin\Block;
@@ -10,9 +10,8 @@ namespace Drupal\rp_homepage\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\State\StateInterface;
+use Drupal\Core\Path\PathMatcherInterface;
 
 /**
  * Provides a Block to display the six blocks on the homepage
@@ -36,11 +35,19 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
   private $state;
 
   /**
+   * The path matcher.
+   *
+   * @var \Drupal\Core\Path\PathMatcherInterface
+   */
+  protected $pathMatcher;
+
+  /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, StateInterface $state) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, StateInterface $state, PathMatcherInterface $path_matcher) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->state = $state;
+    $this->pathMatcher = $path_matcher;
   }
 
   /**
@@ -54,7 +61,8 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
       $plugin_id,
       $plugin_definition,
       // Load customs services used in this class.
-      $container->get('state')
+      $container->get('state'),
+      $container->get('path.matcher')
     );
   }
 
@@ -62,14 +70,23 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
    * {@inheritdoc}
    */
   public function build($params = array()) {
-    $variables = [
-      'highlight' => $this->state->get('rp_homepage.highlight'),
-    ];
+    $variables = [];
+
+    if ($this->pathMatcher->isFrontPage()) {
+      $variables = [
+        'highlight' => $this->state->get('rp_homepage.highlight'),
+      ];
+    }
 
     return [
       '#theme'     => 'rp_homepage_highlight',
       '#variables' => $variables,
       '#cache' => [
+        '#cache' => [
+          'contexts' => [
+            'url.path',
+          ],
+        ],
         'tags' => ['front'],
       ],
     ];

@@ -71,7 +71,7 @@ class HomepageSettings extends FormBase {
 
     $form['highlight'] = [
       '#type'          => 'fieldset',
-      '#title'         => 'Bloc de mise en avant',
+      '#title'         => $this->t('Bloc de mise en avant'),
     ];
 
     $highlight_default_value = $this->state->get('rp_homepage.highlight', []);
@@ -89,13 +89,13 @@ class HomepageSettings extends FormBase {
     ];
 
     $form['highlight']['subtitle'] = [
-      '#type'          => 'textfield',
+      '#type'          => 'textarea',
       '#title'         => $this->t('Accroche'),
       '#default_value' => $highlight_default_value['subtitle'] ?? NULL,
     ];
 
     $form['highlight']['url'] = [
-      '#type'          => 'textfield',
+      '#type'          => 'url',
       '#title'         => $this->t('Lien'),
       '#default_value' => $highlight_default_value['url'] ?? NULL,
     ];
@@ -105,7 +105,6 @@ class HomepageSettings extends FormBase {
       '#title'         => $this->t('Label du bouton'),
       '#default_value' => $highlight_default_value['btn_label'] ?? NULL,
     ];
-
 
     for($i=1; $i <= self::NUMBER_OF_BLOCKS; $i++) {
       $block = 'block_'.$i;
@@ -122,7 +121,7 @@ class HomepageSettings extends FormBase {
         '#default_value' => $this->getBlockStateValue($block, 'title')
       ];
       $form['blocks'][$block]['url'] = [
-        '#type'          => 'textfield',
+        '#type'          => 'url',
         '#title'         => $this->t('URL du Titre'),
         '#default_value' => $this->getBlockStateValue($block, 'url')
       ];

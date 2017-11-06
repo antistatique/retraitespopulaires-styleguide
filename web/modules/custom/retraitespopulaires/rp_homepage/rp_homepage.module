@@ -13,7 +13,7 @@ function rp_homepage_theme($existing, $type, $theme, $path) {
             // Set the template attribute to force the theme suggestions into a sub folder
             // using [template].html.twig
             'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/blocks'
+            'template'  => 'blocks/rp--homepage--blocks'
         ),
       'rp_homepage_highlight' => array(
         // Use the following syntax to retrieve all variables in the "variables" container
@@ -21,7 +21,7 @@ function rp_homepage_theme($existing, $type, $theme, $path) {
         // Set the template attribute to force the theme suggestions into a sub folder
         // using [template].html.twig
         'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-        'template'  => 'blocks/highlight'
+        'template'  => 'blocks/rp--homepage--highlight'
       ),
        'rp_homepage_profil_teaser_block' => array(
             // Use the following syntax to retrieve all variables in the "variables" container

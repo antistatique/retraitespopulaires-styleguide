@@ -1,21 +1,17 @@
 <div class="container">
-  <div class="row">
-    {% for key, item in variables.blocks %}
-
+  <div class="row flex-row">
+    {% for key, item in variables.blocks if item.title %}
       <div class="col-xs-12 col-sm-4">
-        <div class="teaser-basicpage shadow shadow-down">
-          <div class="basicpage-heading">
-            <h4 class="text-primary">
+        <div class="card card-white">
+          <div class="card-body">
+            <h4 class="text-primary m-t-0">
               {% if item.url %}<a href="{{ item.url }}">{% endif %}
                 {{ item.title }}
               {% if item.url %}</a>{% endif %}
             </h4>
-          </div>
-          {% if item.description and item.description.value %}
-          <div class="basicpage-body">
+            <div class="spacer spacer-sm"></div>
             {{ item.description.value|raw }}
           </div>
-          {% endif %}
         </div>
       </div>
     {% endfor %}
