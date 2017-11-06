@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    {% for key, item in variables.blocks %}
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="teaser-basicpage teaser-basicpage-cip shadow shadow-down">
+          <div class="basicpage-heading">
+            <h4 class="text-primary">
+              {% if item.url %}<a href="{{ item.url }}">{% endif %}
+                {{ item.title }}
+              {% if item.url %}</a>{% endif %}
+            </h4>
+          </div>
+          {% if item.description and item.description.value %}
+          <div class="basicpage-body">
+            {{ item.description.value|raw }}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

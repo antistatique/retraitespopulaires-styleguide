@@ -102,7 +102,7 @@ class HomepageSettings extends FormBase {
       $form['blocks'][$block] = [
         '#type'  => 'details',
         '#title' => 'Bloc #' . $i,
-        '#open'  => ($i == 1) ? TRUE : FALSE,
+        '#open'  => TRUE,
       ];
 
       $form['blocks'][$block]['title'] = [

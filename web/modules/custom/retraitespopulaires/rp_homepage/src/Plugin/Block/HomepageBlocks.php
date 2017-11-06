@@ -15,24 +15,19 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\State\StateInterface;
 
 /**
-* Provides a 'Profils Collection' Block
+* Provides a Block to display the six blocks on the homepage
 *
 * @Block(
-*   id = "rp_homepage_profils_collection_block",
-*   admin_label = @Translation("Profils Collection block"),
+*   id = "rp_homepage_blocks",
+*   admin_label = @Translation("Block that display the 6 blocks for the home."),
 * )
 *
 * Inline example:
 * <code>
-* load_block('rp_homepage_profils_collection_block')
+* load_block('rp_homepage_blocks')
 * </code>
 */
-class ProfilsCollectionBlock extends BlockBase implements ContainerFactoryPluginInterface {
-    /**
-    * EntityTypeManagerInterface to load Request Offer
-    * @var EntityTypeManagerInterface
-    */
-    private $entity_offer;
+class HomepageBlocks extends BlockBase implements ContainerFactoryPluginInterface {
 
     /**
     * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
@@ -43,10 +38,9 @@ class ProfilsCollectionBlock extends BlockBase implements ContainerFactoryPlugin
     /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, StateInterface $state) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, StateInterface $state) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
-        $this->entity_node  = $entity->getStorage('node');
-        $this->state        = $state;
+        $this->state = $state;
     }
 
     /**
@@ -60,7 +54,6 @@ class ProfilsCollectionBlock extends BlockBase implements ContainerFactoryPlugin
             $plugin_id,
             $plugin_definition,
             // Load customs services used in this class.
-            $container->get('entity_type.manager'),
             $container->get('state')
         );
     }
@@ -69,14 +62,12 @@ class ProfilsCollectionBlock extends BlockBase implements ContainerFactoryPlugin
      * {@inheritdoc}
      */
     public function build($params = array()) {
-        $variables = array('profils' => [
-            'individual' => $this->entity_node->load($this->state->get('rp_site.settings.collection.profil_individual')['nid']),
-            'company'    => $this->entity_node->load($this->state->get('rp_site.settings.collection.profil_company')['nid']),
-            'public'     => $this->entity_node->load($this->state->get('rp_site.settings.collection.profil_public')['nid']),
-        ]);
+        $variables = [
+          'blocks' => $this->state->get('rp_homepage.blocks', []),
+        ];
 
         return [
-            '#theme'     => 'rp_homepage_profils_collection_block',
+            '#theme'     => 'rp_homepage_blocks',
             '#variables' => $variables,
         ];
 
