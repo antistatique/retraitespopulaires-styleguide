@@ -12,10 +12,6 @@ function rp_product_theme($existing, $type, $theme, $path) {
       'variables' => ['variables' => []],
       'template'  => 'products'
     ),
-    'rp_site_products_related_block' => array(
-      'variables' => ['variables' => []],
-      'template'  => 'products_related'
-    ),
     'rp_site_product_teaser_block' => array(
       'variables' => ['variables' => []],
       'template'  => 'product_teaser'
