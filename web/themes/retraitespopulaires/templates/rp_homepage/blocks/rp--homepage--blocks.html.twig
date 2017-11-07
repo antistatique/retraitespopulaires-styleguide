@@ -2,7 +2,7 @@
   <div class="row flex-row">
     {% for key, item in variables.blocks if item.title %}
       <div class="col-xs-12 col-sm-4">
-        <div class="card card-white">
+        <div class="card card-white card-light">
           <div class="card-body">
             <h4 class="card-title m-t-0">
               {% if item.url %}<a href="{{ item.url }}">{% endif %}
@@ -10,6 +10,10 @@
               {% if item.url %}</a>{% endif %}
             </h4>
             {{ item.description.value|raw }}
+            {% if item.btn_label and item.btn_url %}
+              <div class="spacer spacer-xs"></div>
+              <a href="{{ item.btn_url }}" class="btn btn-primary btn-group-justified">{{ item.btn_label|default('En savoir plus') }}</a>
+            {% endif %}
           </div>
         </div>
       </div>

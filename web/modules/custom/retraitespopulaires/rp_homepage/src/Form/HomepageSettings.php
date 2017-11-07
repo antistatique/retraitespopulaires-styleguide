@@ -133,6 +133,18 @@ class HomepageSettings extends FormBase {
         '#title'         => $this->t('Description'),
         '#default_value' => $description_default_value['value'] ?? NULL,
       ];
+
+      $form['blocks'][$block]['btn_url'] = [
+        '#type'          => 'url',
+        '#title'         => $this->t('Lien du bouton'),
+        '#default_value' => $this->getBlockStateValue($block, 'btn_url'),
+      ];
+
+      $form['blocks'][$block]['btn_label'] = [
+        '#type'          => 'textfield',
+        '#title'         => $this->t('Label du bouton'),
+        '#default_value' => $this->getBlockStateValue($block, 'btn_label'),
+      ];
     }
 
     $form['actions']['submit'] = [
