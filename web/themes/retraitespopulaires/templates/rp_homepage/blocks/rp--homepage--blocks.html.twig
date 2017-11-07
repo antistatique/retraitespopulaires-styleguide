@@ -4,12 +4,11 @@
       <div class="col-xs-12 col-sm-4">
         <div class="card card-white">
           <div class="card-body">
-            <h4 class="text-primary m-t-0">
+            <h4 class="card-title m-t-0">
               {% if item.url %}<a href="{{ item.url }}">{% endif %}
                 {{ item.title }}
               {% if item.url %}</a>{% endif %}
             </h4>
-            <div class="spacer spacer-sm"></div>
             {{ item.description.value|raw }}
           </div>
         </div>
