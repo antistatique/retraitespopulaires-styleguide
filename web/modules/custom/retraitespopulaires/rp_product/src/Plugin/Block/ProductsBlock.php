@@ -61,10 +61,7 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
             $plugin_definition,
             // Load customs services used in this class.
             $container->get('entity_type.manager'),
-            $container->get('current_route_match'),
-            $container->get('path.alias_manager'),
-            $container->get('entity.query'),
-            $container->get('rp_site.profession')
+            $container->get('current_route_match')
         );
     }
 

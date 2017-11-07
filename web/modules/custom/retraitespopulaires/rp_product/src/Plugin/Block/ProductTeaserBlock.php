@@ -28,8 +28,8 @@ class ProductTeaserBlock extends BlockBase {
     public function build($params = array()) {
         $variables = $params;
         return [
-            '#theme'     => 'rp_site_product_teaser_block',
-            '#variables' => $variables,
+          '#theme'     => 'rp_site_product_teaser_block',
+          '#variables' => $variables,
         ];
     }
 }

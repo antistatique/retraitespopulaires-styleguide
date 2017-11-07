@@ -16,12 +16,12 @@
     {% endif %}
 
   <div class="row">
-    <div class="col-lg-10 col-lg-offset-1">
+    <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
       <div class="row flex-row">
         {% if variables.products %}
           {% for product in variables.products %}
             {% set theme = product.field_profession.target_id|theme_profession %}
-            <div class="col-lg-6 theme-{{ theme }}">
+            <div class="col-xs-12 col-lg-6 theme-{{ theme }}">
               {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
             </div>
           {% endfor %}
