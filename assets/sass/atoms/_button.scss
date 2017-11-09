@@ -91,10 +91,6 @@
     border-color: $link-color;
     color: $link-color;
 
-    .active & {
-      color: $white;
-    }
-
     @include theme(border-color color);
 
     &:hover,
