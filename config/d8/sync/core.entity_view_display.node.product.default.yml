@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.product.field_product_plan
     - field.field.node.product.field_profession
     - field.field.node.product.field_search_npa
+    - field.field.node.product.field_subtitle
     - field.field.node.product.field_weight
     - node.type.product
   module:
@@ -136,6 +137,14 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_subtitle:
+    weight: 115
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_weight:
     weight: 111
