@@ -6,8 +6,7 @@ CHANGELOG
  - remove unused 'related products'
  - add new module entity_clone
  - add new module ddanother
-
-## NEXT RELEASE
+ - improve admin UX when creating new documents. Redirect him on the Admin Content page instead of the newly document.
  - fix node & npm engine restriction
  - update to drupal 8.3.7
  - remove updates notifications
