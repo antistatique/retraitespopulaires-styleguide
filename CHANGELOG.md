@@ -4,6 +4,8 @@ CHANGELOG
 ## MODULO
  - move product into is own module
  - remove unused 'related products'
+ - add new module entity_clone
+ - add new module ddanother
 
 ## NEXT RELEASE
  - fix node & npm engine restriction
