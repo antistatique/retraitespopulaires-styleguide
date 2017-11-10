@@ -278,3 +278,5 @@ function rp_site_entity_delete(Drupal\Core\Entity\EntityInterface $entity) {
 
 // Includes.
 require_once 'inc/form_user_login.inc';
+require_once 'inc/form_node_document.inc';
+
