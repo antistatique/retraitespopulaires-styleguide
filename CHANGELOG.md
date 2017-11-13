@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## NEXT RELEASE
+## 3.1.9 (2017-11-13)
  - fix broken rp-bigmenu arrow outline color
  - add card variation when added in funky-waves
  - improve footer & rework bubbles socials
