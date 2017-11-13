@@ -241,6 +241,14 @@ a.card-img-top {
 
 .card-no-shadow { box-shadow: none; }
 
+.card-funky-waves {
+  margin-top: -24%;
+
+  @media (min-width: $screen-md-min) {
+    margin-top: -36%;
+  }
+}
+
 /**
  * Card sizes
  */
