@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-## MODULO
+## 2.3.0 (2017-11-13)
  - move product into is own module
  - remove unused 'related products'
  - add new module entity_clone
@@ -11,6 +11,7 @@ CHANGELOG
  - update to drupal 8.3.7
  - remove updates notifications
  - update to styleguide ^3.1.9
+ - add entity-updates on deploy
 
 ## 2.2.7 (2017-08-15)
  - remove survey ad snippet
