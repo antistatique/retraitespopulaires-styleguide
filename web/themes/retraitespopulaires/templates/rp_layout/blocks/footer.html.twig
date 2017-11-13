@@ -69,39 +69,27 @@
 
         <div class="row">
           <!-- Lausanne -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card card-white card-no-shadow card-light m-b-1">
-              <div class="card-body">
-                <h4 class="card-title m-t-0">{% trans %}Lausanne{% endtrans %}</h4>
-                {% set tel = variables.contact.phone_lausanne|replace({' ': ''}) %}
-                <a href="tel:{{ tel }}" class="d-block text-no-wrap">{{ variables.contact.phone_lausanne }}</a>
-                <a href="mailto:{{ variables.contact.email }}" class="d-block">{{ variables.contact.email }}</a>
-              </div>
-            </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 m-b-1">
+            <h4 class="text-muted m-t-0 text-secondary">{% trans %}Lausanne{% endtrans %}</h4>
+            {% set tel = variables.contact.phone_lausanne|replace({' ': ''}) %}
+            <a href="tel:{{ tel }}" class=" text-no-wrap">{{ variables.contact.phone_lausanne }}</a><br>
+            <a href="mailto:{{ variables.contact.email }}" class="">{{ variables.contact.email }}</a>
           </div>
 
           <!-- Yverdon-les-Bains -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card card-white card-no-shadow card-light m-b-1">
-              <div class="card-body">
-                <h4 class="card-title m-t-0">{% trans %}Yverdon-les-Bains{% endtrans %}</h4>
-                {% set tel = variables.contact.phone_yverdon|replace({' ': ''}) %}
-                <a href="tel:{{ tel }}" class="d-block text-no-wrap">{{ variables.contact.phone_yverdon }}</a>
-                <a href="mailto:{{ variables.contact.email_yverdon }}" class="d-block">{{ variables.contact.email_yverdon }}</a>
-              </div>
-            </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 m-b-1">
+            <h4 class="text-muted m-t-0 text-secondary">{% trans %}Yverdon-les-Bains{% endtrans %}</h4>
+            {% set tel = variables.contact.phone_yverdon|replace({' ': ''}) %}
+            <a href="tel:{{ tel }}" class=" text-no-wrap">{{ variables.contact.phone_yverdon }}</a><br>
+            <a href="mailto:{{ variables.contact.email_yverdon }}" class="">{{ variables.contact.email_yverdon }}</a>
           </div>
 
           <!-- Nyon -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card card-white card-no-shadow card-light m-b-1">
-              <div class="card-body">
-                <h4 class="card-title m-t-0">{% trans %}Nyon{% endtrans %}</h4>
-                {% set tel = variables.contact.phone_nyon|replace({' ': ''}) %}
-                <a href="tel:{{ tel }}" class="d-block text-no-wrap">{{ variables.contact.phone_nyon }}</a>
-                <a href="mailto:{{ variables.contact.email_nyon }}" class="d-block">{{ variables.contact.email_nyon }}</a>
-              </div>
-            </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 m-b-1">
+            <h4 class="text-muted m-t-0 text-secondary">{% trans %}Nyon{% endtrans %}</h4>
+            {% set tel = variables.contact.phone_nyon|replace({' ': ''}) %}
+            <a href="tel:{{ tel }}" class=" text-no-wrap">{{ variables.contact.phone_nyon }}</a><br>
+            <a href="mailto:{{ variables.contact.email_nyon }}" class="">{{ variables.contact.email_nyon }}</a>
           </div>
         </div>
       </div>
