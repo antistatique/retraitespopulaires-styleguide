@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+NEXT RELEASE
+ - add ckeditor link as btn
+
 ## 2.3.0 (2017-11-13)
  - move product into is own module
  - remove unused 'related products'
