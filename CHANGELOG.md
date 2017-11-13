@@ -4,6 +4,8 @@ CHANGELOG
 NEXT RELEASE
  - add ckeditor link as btn
  - add ckeditor title colors
+ - improve breadcrumb fontsize
+ - improve breadcrum spacing
 
 ## 2.3.0 (2017-11-13)
  - move product into is own module
