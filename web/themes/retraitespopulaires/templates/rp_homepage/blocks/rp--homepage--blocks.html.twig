@@ -10,11 +10,12 @@
               {% if item.url %}</a>{% endif %}
             </h4>
             {{ item.description.value|raw }}
-            {% if item.btn_label and item.btn_url %}
-              <div class="spacer spacer-xs"></div>
-              <a href="{{ item.btn_url }}" class="btn btn-primary btn-group-justified">{{ item.btn_label|default('En savoir plus') }}</a>
-            {% endif %}
           </div>
+          {% if item.btn_label and item.btn_url %}
+          <div class="card-footer">
+              <a href="{{ item.btn_url }}" class="btn btn-primary btn-group-justified">{{ item.btn_label|default('En savoir plus') }}</a>
+          </div>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
