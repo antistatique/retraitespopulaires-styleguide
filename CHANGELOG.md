@@ -5,6 +5,7 @@ CHANGELOG
  - fix pretty-link for IE10+ using border-bottom
  - add ckeditor link as btn
  - improve header height when no cover
+ - add helper .text-small-90
 
 ## 3.1.9 (2017-11-13)
  - fix broken rp-bigmenu arrow outline color
