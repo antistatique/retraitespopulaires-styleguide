@@ -10,6 +10,7 @@ CHANGELOG
  - fix node & npm engine restriction
  - update to drupal 8.3.7
  - remove updates notifications
+ - update to styleguide ^3.1.9
 
 ## 2.2.7 (2017-08-15)
  - remove survey ad snippet
