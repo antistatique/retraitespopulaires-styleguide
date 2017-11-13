@@ -74,7 +74,7 @@ settings:
             - Source
   plugins:
     stylescombo:
-      styles: "table.table-wide|Tableau - Long\r\ntable.table-condensed|Tableau - Condenser\r\na.no-style|Lien d'image\r\na.btn.btn-primary|Lien Bouton"
+      styles: "table.table-wide|Tableau - Long\r\ntable.table-condensed|Tableau - Condenser\r\na.no-style|Lien d'image\r\na.btn.btn-primary|Lien Bouton\r\nh1.text-primary|Titre 1 Couleur\r\nh2.text-primary|Titre 2 Couleur\r\nh3.text-primary|Titre 3 Couleur\r\nh4.text-primary|Titre 4 Couleur\r\nh5.text-primary|Titre 5 Couleur\r\nh6.text-primary|Titre 6 Couleur"
     language:
       language_list: un
     autoembed:
