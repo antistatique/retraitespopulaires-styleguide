@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## NEXT RELEASE
+ - fix pretty-link for IE10+ using border-bottom
+
 ## 3.1.9 (2017-11-13)
  - fix broken rp-bigmenu arrow outline color
  - add card variation when added in funky-waves
