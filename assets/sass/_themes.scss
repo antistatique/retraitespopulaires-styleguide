@@ -124,7 +124,7 @@ a {
 /* stylelint-disable no-duplicate-selectors */
 /* Make the code unreadable otherwise */
 
-.entity-body a:not(.btn),
+.entity-body a:not(.btn):not(.no-style),
 .pretty-link {
   @include pretty-link($black, $white, $brand-primary);
   @include pretty-link-theme();
