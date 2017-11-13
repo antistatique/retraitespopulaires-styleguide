@@ -1,0 +1,19 @@
+uuid: 9e949d03-703e-42ba-8edb-5161cb4979b6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.product
+id: node.product.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: product
+label: 'Nom "grand public" pour ce produit'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

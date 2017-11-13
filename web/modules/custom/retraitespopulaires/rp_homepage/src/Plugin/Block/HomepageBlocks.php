@@ -1,7 +1,8 @@
 <?php
+
 /**
 * @file
-* Contains \Drupal\rp_homepage\Plugin\Block\ProfilTeaserBlock.
+* Contains \Drupal\rp_homepage\Plugin\Block\HomepageBlocks.
 */
 
 namespace Drupal\rp_homepage\Plugin\Block;
@@ -12,14 +13,14 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\State\StateInterface;
 
 /**
-* Provides a 'Profil Teaser' Block
+* Provides a Block to display the six blocks on the homepage
 *
 * @Block(
-*   id = "rp_homepage_profil_teaser_block",
-*   admin_label = @Translation("Profil Teaser block"),
+*   id = "rp_homepage_blocks",
+*   admin_label = @Translation("Block that display the 6 blocks for the home."),
 * )
 */
-class ProfilTeaserBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class HomepageBlocks extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
   * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
@@ -51,29 +52,18 @@ class ProfilTeaserBlock extends BlockBase implements ContainerFactoryPluginInter
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public function build($params = array()) {
-    $variables = $params;
-
-    switch ($params['profil']->nid->value) {
-      case $this->state->get('rp_site.settings.collection.profil_individual')['nid']:
-        $variables['icon'] = 'particuliers';
-        break;
-      case $this->state->get('rp_site.settings.collection.profil_company')['nid']:
-        $variables['icon'] = 'entreprises';
-        break;
-      case $this->state->get('rp_site.settings.collection.profil_public')['nid']:
-        $variables['icon'] = 'collectivites';
-        break;
-      default:
-        $variables['icon'] = 'placeholder';
-        break;
-    }
-
+    $variables = [
+      'blocks' => $this->state->get('rp_homepage.blocks', []),
+    ];
     return [
-        '#theme'     => 'rp_homepage_profil_teaser_block',
-        '#variables' => $variables,
+      '#theme'     => 'rp_homepage_blocks',
+      '#variables' => $variables,
+      '#cache' => [
+        'tags' => ['front'],
+      ],
     ];
   }
 }

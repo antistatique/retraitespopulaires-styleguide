@@ -201,6 +201,14 @@ Copy all the configs files from `web/modules/contrib/search_api_solr/solr-conf/6
 Restart Solr
     $ bin/solr restart
 
+Reload the Solr configuration
+
+To performe this operation you must be connected via SSH on the server.
+
+  ```shell
+  $ curl http://localhost:8983/solr/admin/cores?action=RELOAD\&core=retraitespopulaires-website
+  ```
+
 Check your Solr status with `solr status` and with `http://localhost:8983/solr/#/`
 
 ### Usage

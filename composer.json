@@ -45,7 +45,9 @@
         "drupal/redirect": "~1.0",
         "drupal/backerymails": "~1.0",
         "drupal/webform": "^5.0@beta",
-        "drupal/template_whisperer": "2.x-dev"
+        "drupal/template_whisperer": "2.x-dev",
+        "drupal/addanother": "^1.0@RC",
+        "drupal/entity_clone": "^1.0@alpha"
       },
     "require-dev": {
       "behat/mink": "~1.7",

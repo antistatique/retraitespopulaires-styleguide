@@ -74,6 +74,15 @@ namespace :drupal do
     end
   end
 
+  desc 'Apply pending entity schema updates'
+  task :entup do
+    on roles(:app) do
+      within release_path.join(fetch(:app_path)) do
+        execute :drush, 'entup -y'
+      end
+    end
+  end
+
   namespace :config do
     desc 'Import configuration to active stage'
     task :import do

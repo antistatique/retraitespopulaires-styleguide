@@ -1,28 +1,27 @@
 
 {% if variables.products is not empty %}
   <div class="spacer"></div>
-  <div class="row" id="produits-recommandes">
     {% if variables.products %}
-    <div class="col-xs-12">
-      <h2 class="h1 text-center">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="h1 text-center">
         {% trans %}
             Produit recommandé dans cette situation
         {% plural variables.products|length %}
             Produits recommandés dans cette situation
         {% endtrans %}
-      </h2>
+        </h2>
+      </div>
     </div>
     {% endif %}
 
-    <div class="col-md-4">
-      {{ load_block('rp_site_products_filter_block') }}
-    </div>
-    <div class="col-md-8">
+  <div class="row">
+    <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
       <div class="row flex-row">
         {% if variables.products %}
           {% for product in variables.products %}
             {% set theme = product.field_profession.target_id|theme_profession %}
-            <div class="col-lg-6 theme-{{ theme }}">
+            <div class="col-xs-12 theme-{{ theme }}">
               {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
             </div>
           {% endfor %}

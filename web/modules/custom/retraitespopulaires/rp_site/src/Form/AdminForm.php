@@ -67,19 +67,6 @@ class AdminForm extends FormBase {
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $extra = NULL) {
-        // Layout settings
-        $form['layout'] = array(
-            '#type'  => 'fieldset',
-            '#title' => t('Images'),
-        );
-        $form['layout']['homepage'] = array(
-            '#type'            => 'managed_file',
-            '#title'           => t('Image de homepage'),
-            '#default_value'   => !empty($this->state->get('rp_site.settings.homepage')) ? array($this->state->get('rp_site.settings.homepage')) : null,
-            '#upload_location' => 'public://rp_site/homepage',
-            '#description'     => t('Merci de déposer une image Retina de min. 2200x600 pixels'),
-        );
-
         $nodeEntity = $this->entity->getStorage('node');
 
         // Collection pages settings
@@ -327,16 +314,6 @@ class AdminForm extends FormBase {
     * {@inheritdoc}
     */
     public function submitForm(array &$form, FormStateInterface $form_state) {
-        // Save homepage
-        $this->state->set('rp_site.settings.homepage', '');
-        $homepage = $form_state->getValue('homepage');
-        if( !empty($homepage)  ){
-            $homepage = reset($homepage);
-            $this->state->set('rp_site.settings.homepage', $homepage);
-            $file = File::load($homepage);
-            $this->saveFileAsPermanent($file);
-        }
-
         // General settings
         $this->state->set('rp_site.settings.collection.news', array(
             'nid' => trim($form_state->getValue('news_nid')),

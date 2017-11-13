@@ -1,29 +1,41 @@
 CHANGELOG
 ---------
 
-## 2.2.7 (2017-08-18)
+## 2.3.0 (2017-11-13)
+ - move product into is own module
+ - remove unused 'related products'
+ - add new module entity_clone
+ - add new module ddanother
+ - improve admin UX when creating new documents. Redirect him on the Admin Content page instead of the newly document.
+ - fix node & npm engine restriction
+ - update to drupal 8.3.7
+ - remove updates notifications
+ - update to styleguide ^3.1.9
+ - add entity-updates on deploy
+
+## 2.2.7 (2017-08-15)
  - remove survey ad snippet
 
-## 2.2.5 (2017-08-08)
+## 2.2.6 (2017-08-08)
  - fix JCMS redirections on .htaccess
 
-## 2.2.4 (2017-07-28)
+## 2.2.5 (2017-07-28)
  - update survey ad snippet to another survey
- 
+
 ## 2.2.4 (2017-07-24)
  - update survey ad snippet to be less intrusive (especially on mobile)
- 
+
 ## 2.2.3 (2017-07-20)
  - update survey ad snippet to be more visible
- 
+
 ## 2.2.2 (2017-07-17)
  - Add survey ad snippet
- 
+
 ## 2.2.1 (2017-06-23)
  - Update to Drupal 8.3.4
 
 ## 2.2.0 (2017-06-20)
- - Improved search page with facets 
+ - Improved search page with facets
  - Improved search page empty state
  - Fixed favicons on MSIE
 
@@ -127,7 +139,7 @@ CHANGELOG
  - Solr integration
  - Attachments for every Content Types & Checkbox for random
  - Improvment  Mortgage tables
- - Open Graph 
+ - Open Graph
  - Fix breadcrumb color on Building
  - FAQ & Documents collection use color of selected filter profession
  - Fix filter products

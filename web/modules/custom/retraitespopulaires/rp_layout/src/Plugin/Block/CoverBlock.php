@@ -91,13 +91,6 @@ class CoverBlock extends BlockBase implements ContainerFactoryPluginInterface {
                 'lg' => 'rp_full_screen_lg',
                 'xl' => 'rp_full_screen_xl',
             ));
-        } elseif ($this->route->getRouteName() == 'rp_homepage') {
-            $variables['cover'] = $this->cover->fromFile($this->state->get('rp_site.settings.homepage'), array(
-                'xs' => 'rp_full_screen_xs',
-                'md' => 'rp_full_screen_md',
-                'lg' => 'rp_full_screen_lg',
-                'xl' => 'rp_full_screen_xl',
-            ));
         }
 
         return [
