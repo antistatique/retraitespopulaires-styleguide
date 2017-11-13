@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-## MODULO
+## 2.3.0 (2017-11-13)
  - move product into is own module
  - remove unused 'related products'
  - add new module entity_clone
