@@ -6,17 +6,21 @@
   background: $brand-primary;
 
   &:not(.wrapper-funky-waves-with-cover) {
-    min-height: 150px;
+    min-height: 100px;
 
     @media (min-width: $screen-sm-min) {
-      min-height: 200px;
+      min-height: 150px;
     }
 
     @media (min-width: $screen-lg-min) {
-      min-height: 250px;
+      min-height: 200px;
     }
 
     @media (min-width: $screen-xl-min) {
+      min-height: 250px;
+    }
+
+    @media (min-width: $screen-xl-min + 300) {
       min-height: 300px;
     }
   }
