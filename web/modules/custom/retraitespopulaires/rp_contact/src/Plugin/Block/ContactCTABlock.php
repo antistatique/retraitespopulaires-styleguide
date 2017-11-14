@@ -119,6 +119,11 @@ class ContactCTABlock extends BlockBase implements ContainerFactoryPluginInterfa
           $variables['cover'] = $this->cover->fromNode($variables['contacts'][0], array('xl' => 'rp_teaser_contact_portrait_xl'));
         }
 
+        // Disable the CTA when filled.
+        if ((isset($node->field_contact_cta) && $node->field_contact_cta->value)) {
+          unset($variables['contacts']);
+        }
+
         return [
             '#theme'     => 'rp_contact_contact_cta_block',
             '#variables' => $variables,
