@@ -6,6 +6,7 @@ NEXT RELEASE
  - add ckeditor title colors
  - improve breadcrumb fontsize
  - improve breadcrum spacing
+ - add option to enable/disable contact CTA
 
 ## 2.3.0 (2017-11-13)
  - move product into is own module
