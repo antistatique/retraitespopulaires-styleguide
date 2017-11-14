@@ -6,6 +6,8 @@ CHANGELOG
  - add ckeditor link as btn
  - improve header height when no cover
  - add helper .text-small-90
+ - add card variante for CTA
+ - add card variante for background hover
 
 ## 3.1.9 (2017-11-13)
  - fix broken rp-bigmenu arrow outline color

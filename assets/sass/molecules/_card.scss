@@ -71,6 +71,34 @@ a.card-light,
   }
 }
 
+.card-cta {
+  display: inline-flex;
+  padding: $grid-gutter-width;
+}
+
+a.card-bg-hover,
+.card-bg-hover {
+  background-color: $white;
+  color: $brand-primary;
+  transition:
+    color 0.25s ease-in-out,
+    background 0.25s ease-in-out,
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  @include theme(color, color);
+
+  &:hover {
+    background-color: darken($brand-primary, 10);
+    color: $white;
+
+    @include theme(background-color, hover-color);
+
+    & {
+      box-shadow: 0 65px 75px -45px darken($shadow-gray, 0.3);
+    }
+  }
+}
+
 /**
  * Card Image
  */
