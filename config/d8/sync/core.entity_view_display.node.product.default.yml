@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.product.body
     - field.field.node.product.field_contact
+    - field.field.node.product.field_contact_cta
     - field.field.node.product.field_cover
     - field.field.node.product.field_document
     - field.field.node.product.field_document_page
@@ -44,6 +45,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_contact_cta:
+    weight: 116
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_cover:
     weight: 105

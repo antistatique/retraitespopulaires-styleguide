@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.faq.body
     - field.field.node.faq.field_advisor
     - field.field.node.faq.field_contact
+    - field.field.node.faq.field_contact_cta
     - field.field.node.faq.field_document
     - field.field.node.faq.field_document_random
     - field.field.node.faq.field_faq
@@ -48,6 +49,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_contact_cta:
+    weight: 116
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_document:
     weight: 112
