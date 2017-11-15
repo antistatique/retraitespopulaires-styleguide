@@ -246,6 +246,20 @@
   align-items: baseline;
 }
 
+.flex-align-items-center {
+  align-items: center !important;
+}
+
+@media (min-width: $screen-md-min) {
+  .float-md-right {
+      float: right !important;
+  }
+
+  .float-md-left {
+    float: right !important;
+  }
+}
+
 /**
  * Background helpers
  */

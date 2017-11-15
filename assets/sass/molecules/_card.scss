@@ -278,14 +278,29 @@ a.card-img-top {
 }
 
 /**
+ * Card shadow sizes
+ */
+
+.card-shadow-md {
+  box-shadow: 0 20px 25px -20px $shadow-gray;
+}
+
+/**
  * Card sizes
  */
 
-.card-sm {
-  max-width: 150px;
-
+.card-sm,
+.card-md {
   .card-body,
   .card-footer {
     padding: ($line-height-computed / 2);
   }
+}
+
+.card-md {
+  max-width: 250px;
+}
+
+.card-sm {
+  max-width: 150px;
 }

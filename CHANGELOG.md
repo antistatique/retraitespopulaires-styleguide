@@ -8,6 +8,9 @@ CHANGELOG
  - add helper .text-small-90
  - add card variante for CTA
  - add card variante for background hover
+ - add helpers flex
+ - add 1.5 size icon
+ - add new card size .card-md
 
 ## 3.1.9 (2017-11-13)
  - fix broken rp-bigmenu arrow outline color
