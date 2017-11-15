@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## NEXT RELEASE
+## 3.1.10 (2017-11-13)
  - fix pretty-link for IE10+ using border-bottom
  - add ckeditor link as btn
  - improve header height when no cover
