@@ -58,6 +58,10 @@
   color: $text-color;
 }
 
+.text-small-90 {
+  font-size: 90%;
+}
+
 .text-break-all {
   word-break: break-all;
 
@@ -240,6 +244,20 @@
 
 .flex-baseline {
   align-items: baseline;
+}
+
+.flex-align-items-center {
+  align-items: center !important;
+}
+
+@media (min-width: $screen-md-min) {
+  .float-md-right {
+      float: right !important;
+  }
+
+  .float-md-left {
+    float: right !important;
+  }
 }
 
 /**

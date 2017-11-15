@@ -15,7 +15,7 @@
     @extend .ordered-list;
   }
 
-  a:not(.no-style) {
+  a:not(.no-style):not(.btn) {
     @include pretty-link($black, $white, $brand-primary);
   }
 
