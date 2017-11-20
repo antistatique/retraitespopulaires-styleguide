@@ -1,15 +1,20 @@
 <header class="header hidden-print">
   <div class="container header-container">
+
+    {# Logo #}
     <div class="logo-retraitespopulaires">
       <a class="" href="{{ path('<front>') }}">
         <img class="img-responsive" src="/{{ directory }}/build/svg/logo-retraitespopulaires.svg" alt="" title="{% trans %}Cliquez pour accéder à la page d'accueil de Retraites Populaires{% endtrans %}">
       </a>
     </div>
 
-    <div class="header-search hidden-xs">
-      {{ load_form('rp_site', 'SearchForm') }}
-    </div>
+    {# prenavbar with search #}
+    {% include '@retraitespopulaires/rp_layout/blocks/partials/pre-main-menu.html.twig' with {'pre_main_menu': variables.pre_main_menu} only %}
 
+    {# main navbar first level only #}
+    {% include '@retraitespopulaires/rp_layout/blocks/partials/main-menu.html.twig' with {'main_menu': variables.main_menu} only %}
+
+    {# hamburger for mobile #}
     <div class="header-nav" aria-hidden="true">
       <div class="hamburger-wrapper">
         <div class="hamburger-button">
@@ -28,4 +33,9 @@
         </div>
       </div>
     </div>
+  </div>
+
+  {# mobile navigation #}
+  {% include '@retraitespopulaires/rp_layout/blocks/partials/mobile-menu.html.twig' with {'main_menu': variables.main_menu, 'pre_main_menu': variables.pre_main_menu} only %}
+
 </header>
