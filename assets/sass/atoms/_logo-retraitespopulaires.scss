@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
 .logo-retraitespopulaires {
+  display: table;
   width: 16rem;
   height: auto;
   max-height: 8rem;
@@ -36,4 +37,8 @@
     margin-top: 0;
     margin-bottom: 0;
   }
+}
+
+.logo-retraitespopulaires-offset {
+  margin-left: -7rem !important;
 }

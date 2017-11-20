@@ -3,15 +3,17 @@
 .prenavbar {
   a {
     transition: color 0.25s ease-in-out;
-
-    &:hover {
-      text-decoration: none;
-    }
   }
 
   .active {
     a {
       @include theme(color);
+    }
+  }
+
+  &.list-inline {
+    li {
+      margin-left: ($grid-gutter-width / 2);
     }
   }
 

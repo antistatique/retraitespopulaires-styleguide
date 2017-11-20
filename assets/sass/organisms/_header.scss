@@ -64,6 +64,10 @@
     height: ($grid-gutter-width / 2);
     margin: 0 ($grid-gutter-width / 2);
     background-color: $light-gray;
+
+    &.prenavbar-separator-invisible {
+      background: none;
+    }
   }
 }
 
