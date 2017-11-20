@@ -1,41 +1,33 @@
-<header class="header hidden-print">
-  <div class="container header-container">
+<header class="header hidden-print container">
+  <div class="spacer spacer-sm"></div>
+  <div class="row">
+    <div class="col-xs-12 col-xl-8 col-xl-offset-2">
 
-    {# Logo #}
-    <div class="logo-retraitespopulaires">
-      <a class="" href="{{ path('<front>') }}">
-        <img class="img-responsive" src="/{{ directory }}/build/svg/logo-retraitespopulaires.svg" alt="" title="{% trans %}Cliquez pour accéder à la page d'accueil de Retraites Populaires{% endtrans %}">
-      </a>
-    </div>
+      <div class="header-container">
 
-    {# prenavbar with search #}
-    {% include '@retraitespopulaires/rp_layout/blocks/partials/pre-main-menu.html.twig' with {'pre_main_menu': variables.pre_main_menu} only %}
-
-    {# main navbar first level only #}
-    {% include '@retraitespopulaires/rp_layout/blocks/partials/main-menu.html.twig' with {'main_menu': variables.main_menu} only %}
-
-    {# hamburger for mobile #}
-    <div class="header-nav" aria-hidden="true">
-      <div class="hamburger-wrapper">
-        <div class="hamburger-button">
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <svg class="hamburger-circle" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
-            <circle fill="transparent" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
-          </svg>
+        {# Logo #}
+        <div class="logo-retraitespopulaires logo-retraitespopulaires-lg logo-retraitespopulaires-offset">
+          <a href="{{ path('<front>') }}">
+            <img class="img-responsive" src="/{{ directory }}/build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" title="{% trans %}Cliquez pour accéder à la page d'accueil de Retraites Populaires{% endtrans %}">
+          </a>
         </div>
-        <div class="hamburger-helper text-secondary">
-          <div class="helper-when-close">{% trans %}Menu{% endtrans %}</div>
-          <div class="helper-when-open">{% trans %}Fermer{% endtrans %}</div>
-        </div>
+
+        {# prenavbar with search #}
+        {% include '@retraitespopulaires/rp_layout/blocks/partials/pre-main-menu.html.twig' with {'pre_main_menu': variables.pre_main_menu} only %}
       </div>
+
+      {# hamburger for mobile #}
+      {% include '@retraitespopulaires/rp_layout/blocks/partials/hamburger.html.twig' %}
+
+      {# main navbar first level only #}
+      {% include '@retraitespopulaires/rp_layout/blocks/partials/main-menu.html.twig' with {'main_menu': variables.main_menu} only %}
+
     </div>
   </div>
 
-  {# mobile navigation #}
-  {% include '@retraitespopulaires/rp_layout/blocks/partials/mobile-menu.html.twig' with {'main_menu': variables.main_menu, 'pre_main_menu': variables.pre_main_menu} only %}
+      {# mobile navigation #}
+      {% include '@retraitespopulaires/rp_layout/blocks/partials/mobile-menu.html.twig' with {'main_menu': variables.main_menu, 'pre_main_menu': variables.pre_main_menu} only %}
 
+    </div>
+  </div>
 </header>
