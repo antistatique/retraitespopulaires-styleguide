@@ -22,6 +22,11 @@ function rp_layout_theme($existing, $type, $theme, $path) {
             'path' => 'themes/retraitespopulaires/templates/' . $theme,
             'template'  => 'blocks/footer'
         ),
+        'rp_layout_bigmenu_block' => array(
+            'variables' => ['variables' => []],
+            'path' => 'themes/retraitespopulaires/templates/' . $theme,
+            'template'  => 'blocks/bigmenu'
+        ),
         'rp_layout_secondarynav_block' => array(
             'variables' => ['variables' => []],
             'path' => 'themes/retraitespopulaires/templates/' . $theme,
