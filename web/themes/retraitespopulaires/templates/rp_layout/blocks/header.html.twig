@@ -14,19 +14,19 @@
 
         {# prenavbar with search #}
         {% include '@retraitespopulaires/rp_layout/blocks/partials/pre-main-menu.html.twig' with {'pre_main_menu': variables.pre_main_menu} only %}
-      </div>
 
-      {# hamburger for mobile #}
-      {% include '@retraitespopulaires/rp_layout/blocks/partials/hamburger.html.twig' %}
+        {# hamburger for mobile #}
+        {% include '@retraitespopulaires/rp_layout/blocks/partials/hamburger.html.twig' %}
+      </div>
 
       {# main navbar first level only #}
       {% include '@retraitespopulaires/rp_layout/blocks/partials/main-menu.html.twig' with {'main_menu': variables.main_menu} only %}
 
-    </div>
-  </div>
-
       {# mobile navigation #}
       {% include '@retraitespopulaires/rp_layout/blocks/partials/mobile-menu.html.twig' with {'main_menu': variables.main_menu, 'pre_main_menu': variables.pre_main_menu} only %}
+
+    </div>
+  </div>
 
     </div>
   </div>
