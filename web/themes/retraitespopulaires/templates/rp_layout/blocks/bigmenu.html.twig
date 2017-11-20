@@ -107,16 +107,14 @@
         </li>
       </ul>
     </nav>
-    <div class="big-menu {{ variables.menu_as_page ? 'active' }}">
+    <div class="big-menu">
       <div class="container-big-menu container-fuild">
-        {% if not variables.menu_as_page %}
-          <div class="row">
-            <div class="col-no-padding col-xs-12 visible-xs">
-              {{ load_form('rp_site', 'SearchForm') }}
-              <div class="spacer"></div>
-            </div>
+        <div class="row">
+          <div class="col-no-padding col-xs-12 visible-xs">
+            {{ load_form('rp_site', 'SearchForm') }}
+            <div class="spacer"></div>
           </div>
-        {% endif %}
+        </div>
 
         <div aria-hidden="true" class="row">
           <div class="col-md-9">

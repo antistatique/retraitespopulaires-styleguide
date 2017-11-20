@@ -1,4 +1,4 @@
-<header class="header hidden-print {{ variables.menu_as_page ? 'active' }}">
+<header class="header hidden-print">
   <div class="container header-container">
     <div class="logo-retraitespopulaires">
       <a class="" href="{{ path('<front>') }}">
@@ -6,14 +6,12 @@
       </a>
     </div>
 
-    {% if not variables.menu_as_page %}
     <div class="header-search hidden-xs">
       {{ load_form('rp_site', 'SearchForm') }}
     </div>
-    {% endif %}
 
     <div class="header-nav" aria-hidden="true">
-      <div class="hamburger-wrapper {{ variables.menu_as_page ? 'active' }}" {{ variables.menu_as_page ? 'onclick="history.go(-1);"' }} >
+      <div class="hamburger-wrapper">
         <div class="hamburger-button">
           <div class="hamburger">
             <span></span>

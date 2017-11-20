@@ -66,7 +66,6 @@ class BigMenuBlock extends BlockBase implements ContainerFactoryPluginInterface 
     public function build($params = array()) {
         $variables = array();
         $variables['empty_state'] = true;
-        $variables['menu_as_page'] = isset($params['menu-as-page']) ? $params['menu-as-page'] : false;
 
         // Transform the tree using the manipulators you want.
         $manipulators = array(
