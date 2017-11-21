@@ -150,6 +150,7 @@ class AdminForm extends FormBase {
             '#title'         => 'Listing Partenaires - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_site.settings.collection.partnerships')['theme'] ? $this->state->get('rp_site.settings.collection.partnerships')['theme'] : 'collection_partnerships',
+            '#suffix'        => '<br/>'
         );
 
         // Single pages settings
@@ -182,6 +183,7 @@ class AdminForm extends FormBase {
             '#title'         => 'Calculateur d\'hypothèque - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_site.settings.collection.mortgage_calculator')['theme'] ? $this->state->get('rp_site.settings.collection.mortgage_calculator')['theme'] : 'mortgage_calculator',
+            '#suffix'        => '<br/>'
         );
 
         $form['collection']['mortgage_rates_nid'] = array(
@@ -196,6 +198,7 @@ class AdminForm extends FormBase {
             '#title'         => 'Tableau de taux hypothéquaires - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_site.settings.collection.mortgage_tablerates')['theme'] ? $this->state->get('rp_site.settings.collection.mortgage_tablerates')['theme'] : 'mortgage_tablerates',
+            '#suffix'        => '<br/>'
         );
 
         $form['collection']['constructionloan_tablerates_nid'] = array(
@@ -210,6 +213,7 @@ class AdminForm extends FormBase {
             '#title'         => 'Tableau de taux pour les crédits de construction - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_site.settings.collection.constructionloan_tablerates')['theme'] ? $this->state->get('rp_site.settings.collection.constructionloan_tablerates')['theme'] : 'constructionloan_tablerates',
+            '#suffix'        => '<br/>'
         );
 
 
@@ -225,6 +229,7 @@ class AdminForm extends FormBase {
             '#title'         => 'Tableau de taux pour prêt aux collectivités - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['theme'] ? $this->state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['theme'] : 'localauthoritiesloan_tablerates',
+            '#suffix'        => '<br/>'
         );
 
         $form['actions']['submit'] = array(
