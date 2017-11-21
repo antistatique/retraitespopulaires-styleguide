@@ -21,6 +21,7 @@
     </div>
 
     <div class="spacer spacer-md"></div>
+
     <div class="bg-berrylight-gray">
       <div class="container">
         <div class="spacer"></div>
@@ -55,25 +56,15 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-<ul class="list-no-style list-no-padding">
-  {% else %}
-  <ul>
+      <ul class="list-no-style list-no-padding">
+    {% else %}
+      <ul>
     {% endif %}
 
     {% for item in items %}
-      <!-- Get Theme from position into the menu -->
-      {% set theme = [
-        loop.index0 == 0 ? 'assurance',
-        loop.index0 == 1 ? 'prevoyance',
-        loop.index0 == 2 ? 'immobilier',
-        loop.index0 == 3 ? 'hypotheque',
-        loop.index0 >= 4 ? 'primary',
-      ] %}
-
       {% set classes = [
         item.inActiveTrail ? 'active',
         item.link.pluginId|clean_class,
-        'theme-' ~ theme|join,
       ] %}
       <li class="{{ classes|join(' ') }}">
         <div class="collapser-menu-item">
