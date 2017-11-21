@@ -66,13 +66,6 @@ class HeaderBlock extends BlockBase implements ContainerFactoryPluginInterface {
     $tree = $this->menuTree->load('main', $parameters);
     $variables['main_menu'] = $this->menuTree->transform($tree, $manipulators);
 
-    // Profil menu.
-    // $parameters = $this->menuTree->getCurrentRouteMenuTreeParameters('profil');
-    // $parameters->onlyEnabledLinks();
-    // $parameters->expandedParents = [];
-    // $tree = $this->menuTree->load('profil', $parameters);
-    // $variables['profil_menu'] = $this->menuTree->transform($tree, $manipulators);
-
     // Pre main menu.
     $parameters = $this->menuTree->getCurrentRouteMenuTreeParameters('secondary');
     $parameters->onlyEnabledLinks();

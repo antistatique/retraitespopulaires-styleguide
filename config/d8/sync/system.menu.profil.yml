@@ -1,8 +1,0 @@
-uuid: ed3f4660-dd2c-4421-909c-da2af942d3bf
-langcode: fr
-status: true
-dependencies: {  }
-id: profil
-label: 'Profil navigation'
-description: 'Navigation par profil'
-locked: false

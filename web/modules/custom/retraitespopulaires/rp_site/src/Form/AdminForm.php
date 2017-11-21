@@ -152,7 +152,7 @@ class AdminForm extends FormBase {
             '#default_value' => $this->state->get('rp_site.settings.collection.partnerships')['theme'] ? $this->state->get('rp_site.settings.collection.partnerships')['theme'] : 'collection_partnerships',
         );
 
-        // Profils pages settings
+        // Single pages settings
         $form['single'] = array(
             '#type'          => 'fieldset',
             '#title'         => 'Pages spéciales',
@@ -168,78 +168,6 @@ class AdminForm extends FormBase {
             '#title'         => 'Contact Global - theme hook',
             '#disabled'      => true,
             '#default_value' => $this->state->get('rp_site.settings.contact')['theme'] ? $this->state->get('rp_site.settings.single.contact')['theme'] : 'global_contact',
-        );
-
-        // Profils pages settings
-        $form['profils'] = array(
-            '#type'          => 'fieldset',
-            '#title'         => 'Profils pages',
-        );
-
-        $form['profils']['profil_individual_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Profil Particulier - node ID',
-            '#default_value' => $this->state->get('rp_site.settings.profils.individual')['nid'],
-        );
-        $form['profils']['profil_individual_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Profil Particulier - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.profils.individual')['theme'] ? $this->state->get('rp_site.settings.profils.individual')['theme'] : 'profil_individual',
-        );
-        $form['profils']['profil_individual_menu'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Profil Particulier - menu ID',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.profils.individual')['menu'] ? $this->state->get('rp_site.settings.profils.individual')['menu'] : 'menu_link_content:5b39083f-b9e1-4b3c-9146-c6c674cf844f',
-        );
-        $form['profils']['profil_individual_menu_project'] = array(
-            '#type'          => 'textarea',
-            '#title'         => 'Profil Particulier, Nouveau projet - menu IDs',
-            '#default_value' => $this->state->get('rp_site.settings.profils.individual')['menu_project'] ? join(';', $this->state->get('rp_site.settings.profils.individual')['menu_project']) : '',
-        );
-        $form['profils']['profil_individual_menu_client'] = array(
-            '#type'          => 'textarea',
-            '#title'         => 'Profil Particulier, Déjà client - menu IDs',
-            '#default_value' => $this->state->get('rp_site.settings.profils.individual')['menu_client'] ? join(';', $this->state->get('rp_site.settings.profils.individual')['menu_client']) : '',
-            '#suffix'        => '<br/>'
-        );
-
-        $form['profils']['profil_company_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Profil Entreprise - node ID',
-            '#default_value' => $this->state->get('rp_site.settings.profils.company')['nid'],
-        );
-        $form['profils']['profil_company_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Profil Entreprise - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.profils.company')['theme'] ? $this->state->get('rp_site.settings.profils.company')['theme'] : 'profil_company',
-        );
-        $form['profils']['profil_company_menu'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Profil Entreprise - menu ID',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.profils.company')['menu'] ? $this->state->get('rp_site.settings.profils.company')['menu'] : 'menu_link_content:9d1dafdc-251b-4456-a993-cfef04d66530',
-            '#suffix'        => '<br/>'
-        );
-
-        $form['profils']['profil_public_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Profil Collectivités publiques - node ID',
-            '#default_value' => $this->state->get('rp_site.settings.profils.public')['nid'],
-        );
-        $form['profils']['profil_public_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Profil Collectivités publiques - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.profils.public')['theme'] ? $this->state->get('rp_site.settings.profils.public')['theme'] : 'profil_public',
-        );
-        $form['profils']['profil_public_menu'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Profil Collectivités publiques - menu ID',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.profils.public')['menu'] ? $this->state->get('rp_site.settings.profils.public')['menu'] : 'menu_link_content:a7007bf2-c605-4284-8a24-5c4ee23717b7',
         );
 
         $form['collection']['mortgage_calculator_nid'] = array(
@@ -349,26 +277,6 @@ class AdminForm extends FormBase {
         $this->state->set('rp_site.settings.single.contact', array(
             'nid' => trim($form_state->getValue('contact_nid')),
             'theme' => trim($form_state->getValue('contact_theme')),
-        ));
-
-        $this->state->set('rp_site.settings.profils.individual', array(
-            'nid' => trim($form_state->getValue('profil_individual_nid')),
-            'theme' => trim($form_state->getValue('profil_individual_theme')),
-            'menu' => trim($form_state->getValue('profil_individual_menu')),
-            'menu_project' => explode(';', $form_state->getValue('profil_individual_menu_project')),
-            'menu_client' => explode(';', $form_state->getValue('profil_individual_menu_client')),
-        ));
-
-        $this->state->set('rp_site.settings.profils.company', array(
-            'nid' => trim($form_state->getValue('profil_company_nid')),
-            'theme' => trim($form_state->getValue('profil_company_theme')),
-            'menu' => trim($form_state->getValue('profil_company_menu')),
-        ));
-
-        $this->state->set('rp_site.settings.profils.public', array(
-            'nid' => trim($form_state->getValue('profil_public_nid')),
-            'theme' => trim($form_state->getValue('profil_public_theme')),
-            'menu' => trim($form_state->getValue('profil_public_menu')),
         ));
 
         $this->state->set('rp_site.settings.collection.mortgage_calculator', array(
