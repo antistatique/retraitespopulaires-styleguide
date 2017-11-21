@@ -22,9 +22,18 @@ export function big_menu () {
     }
   });
 
-  /** SWIPER **/
+  /**
+   * SWIPER
+   *
+   * @deprecated 3.2.0 - The Swiper menu is deprecated and will be removed in the next
+   * major release. Don't use it anymore.
+   */
 
   const $swiper = $('.swiper-menu');
+
+  if ($swiper.length > 0) {
+    console.warn('You are using the Swiper menu, which has been deprecated in Retraites Populaires Styleguide 3.2.0. Please find an alternative.');
+  }
 
   /**
    * Open the correct pan and close the old one

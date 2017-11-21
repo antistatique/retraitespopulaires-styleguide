@@ -6,6 +6,13 @@
   background: $white;
 }
 
+// To use when you have an offseted logo
+.header-offset {
+  @media screen and (min-width: $screen-md-min) {
+    padding-left: 6rem;
+  }
+}
+
 .header-container {
   display: flex;
   align-items: center;
@@ -22,6 +29,12 @@
 
   .logo-retraitespopulaires {
     margin-top: 0;
+  }
+
+  .logo-retraitespopulaires-offset {
+    @media screen and (min-width: $screen-md-min) {
+      margin-left: -8.3rem;
+    }
   }
 }
 

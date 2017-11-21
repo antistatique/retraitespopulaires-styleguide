@@ -4,6 +4,7 @@ name: big-menu
 collection: molecules
 notes: |
   This component is visible into the [basic page](/basic-page).
+  **3.2.0 - The Swiper menu is deprecated and will be removed in the next major release. Don't use it anymore.**
 ---
 <nav class="rp-access-nav">
   <ul>

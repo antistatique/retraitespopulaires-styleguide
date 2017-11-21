@@ -1,6 +1,8 @@
 @charset 'UTF-8';
 
 .logo-retraitespopulaires {
+  // This forces the logo wrapper to fit the image (required for the
+  // alignment of the search icon at the right
   display: table;
   width: 16rem;
   height: auto;
@@ -37,8 +39,4 @@
     margin-top: 0;
     margin-bottom: 0;
   }
-}
-
-.logo-retraitespopulaires-offset {
-  margin-left: -7rem !important;
 }

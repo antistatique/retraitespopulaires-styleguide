@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+.collapser-menu ul,
+ul.collapser-menu {
+  list-style: none;
+}
+
+.collapser-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

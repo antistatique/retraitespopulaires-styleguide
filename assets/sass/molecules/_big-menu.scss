@@ -1,5 +1,7 @@
 @charset 'UTF-8';
 
+// 3.2.0 - The Swiper menu is deprecated and will be removed in the next major release. Don't use it anymore.
+
 .big-menu {
   position: fixed;
   top: 0;
@@ -63,10 +65,20 @@
   }
 }
 
+// The new collapser menu of 3.2.0
+.container-collapser-menu {
+  margin-top: 75px;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: 105px;
+  }
+}
+
 // When Drupal admin bar is display horizontal - add bigger margin
 
 body.toolbar-tray-open.toolbar-fixed.toolbar-horizontal {
-  .container-big-menu {
+  .container-big-menu,
+  .container-collapser-menu {
     margin-top: 190px;
   }
 }
