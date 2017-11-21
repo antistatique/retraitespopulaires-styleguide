@@ -1,6 +1,9 @@
+{# mobile navigation #}
+{% include '@retraitespopulaires/rp_layout/blocks/partials/mobile-menu.html.twig' with {'main_menu': variables.main_menu, 'pre_main_menu': variables.pre_main_menu} only %}
+
 <header class="header header-offset hidden-print">
   <div class="container">
-    <div class="spacer spacer-sm"></div>
+    <div class="spacer spacer-sm hidden-sm hidden-xs"></div>
     <div class="row">
       <div class="col-xs-12 col-xl-8 col-xl-offset-2">
 
@@ -22,12 +25,6 @@
 
         {# main navbar first level only #}
         {% include '@retraitespopulaires/rp_layout/blocks/partials/main-menu.html.twig' with {'main_menu': variables.main_menu} only %}
-
-        {# mobile navigation #}
-        {% include '@retraitespopulaires/rp_layout/blocks/partials/mobile-menu.html.twig' with {'main_menu': variables.main_menu, 'pre_main_menu': variables.pre_main_menu} only %}
-
-      </div>
-    </div>
 
       </div>
     </div>

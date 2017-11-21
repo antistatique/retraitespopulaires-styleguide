@@ -1,79 +1,128 @@
-<nav class="push-menu" aria-label="{% trans %}Navigation principale - Mobile{% endtrans %}">
+{% include '@retraitespopulaires/rp_layout/blocks/partials/a11y-menu.html.twig' %}
 
-  {# main menu #}
-  <ul class="list-unstyled m-b-1 main-navigation">
-  {% for item in main_menu  %}
-    {% set classes = [
-      item.inActiveTrail ? 'active',
-    ] %}
-    <li class="{{ classes|join(' ') }}">
-      {% set target = item.link.options.external ? '_blank' %}
-        <a href="{{ item.link.urlObject }}" class="pretty-link" target="{{ target }}">{{ item.link.title }}</a>
-        {% if item.hasChildren %}
-          <ul>
-            {% for subitem in item.subtree %}
-              {% set classes = [
-                subitem.inActiveTrail ? 'active',
-              ] %}
-              <li class="{{ classes|join(' ') }}">
-                {% set target = subitem.link.options.external ? '_blank' %}
-                  <a href="{{ subitem.link.urlObject }}" target="{{ target }}">{{ subitem.link.title }}</a>
-                  {% if subitem.hasChildren %}
-                  <ul>
-                    {% for lastitem in subitem.subtree %}
-                      {% set classes = [
-                        lastitem.inActiveTrail ? 'active',
-                      ] %}
-                      <li class="{{ classes|join(' ') }}">
-                        {% set target = lastitem.link.options.external ? '_blank' %}
-                        <a href="{{ lastitem.link.urlObject }}" target="{{ target }}">{{ lastitem.link.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+{% import _self as menus %}
 
-  {# search #}
-  {# We can't use the SearchForm cause it this block use caching & it would keep value of field #}
-  <form class="mandants-search-form" action="{{ path('rp_site.search') }}" method="GET" accept-charset="UTF-8">
-    <div class="form-group">
-      <div class="input-group full-width">
-        <div class="form-item form-no-label">
-          <input class="full-width form-text required form-control" id="edit-q" name="q" value="" size="60" maxlength="128" placeholder="{% trans %}Chercher un produit, un document, un contact, ...{% endtrans %}" required="required" aria-required="true" type="text">
-        </div>
-        <span class="input-group-btn">
-          <button class="btn btn-default button form-submit btn btn-primary" icon="retraitespopulaires-icon retraitespopulaires-icon-search" type="submit" id="edit-submit" name="op" value="">
-            <i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
-          </button>
-        </span>
+{# Big fancy menu with collapses #}
+<div class="mobile-menu" id="mobile-menu">
+  <div class="container-collapser-menu container">
+    <div class="collapser-menu col-xs-12">
+      {{ menus.menu_links(main_menu, 0) }}
+    </div>
+
+    <div class="row">
+      <div class="col-no-padding col-xs-12 visible-sm visible-xs">
+        {{ load_form('rp_site', 'SearchForm') }}
+        <div class="spacer"></div>
       </div>
     </div>
-  </form>
+    <div class="col-xs-12 col-md-2 col-md-offset-1">
+      <div class="big-menu-secondary-nav-wrapper">
+        <div class="big-menu-secondary-nav bg-berrylight-gray visible-xs visible-sm">
+          <div class="row">
+            <div class="spacer spacer-sm"></div>
+            {% set linksPerColumn = (pre_main_menu|length / 2)|round(0, 'ceil') %}
+            {% for item in pre_main_menu %}
+              {% set classes = [
+              item.link.pluginId,
+              item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text',
+              item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text-locker',
+              ] %}
+              {% if linksPerColumn == 1 or loop.index % linksPerColumn == 1 %}
+                <div class="col-xs-6">
+                <ul class="list-no-style list-no-padding {{ loop.first ? 'text-right' }}">
+              {% endif %}
+              <li class="{{ classes|join(' ') }}">
+                {% set target = item.link.options.external ? ' target="_blank"' %}
+                <a class="pretty-link pretty-link-berrylight-gray" href="{{ item.link.urlObject }}"{{ target }}>
+                  {{ item.link.title }}
+                  {% if item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' %}
+                    <i class="text-primary retraitespopulaires-icon retraitespopulaires-icon-lock"></i>
+                  {% endif %}
+                </a>
+              </li>
+              {% if loop.last or loop.index % linksPerColumn == 0 %}
+                </ul>
+                </div>
+              {% endif %}
+            {% endfor %}
+            <div class="spacer"></div>
+          </div>
+        </div>
+        <ul class="list-spaced list-no-style list-no-padding hidden-xs hidden-sm" role="navigation">
+          {% for item in pre_main_menu %}
+            {% set classes = [
+            item.link.pluginId,
+            item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text',
+            item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' ? 'icon-text-locker',
+            ] %}
+            {% set target = item.link.options.external ? ' target="_blank"' %}
+            <li class="{{ classes|join(' ') }}">
+              <a class="pretty-link" href="{{ item.link.urlObject }}"{{ target }}>
+                {{ item.link.title }}
+                {% if item.link.pluginId == 'menu_link_content:d6b624d3-a72e-48d7-935a-49d92b41ba1f' %}
+                  <i
+                    class="text-primary retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i>
+                {% endif %}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
 
-  {# pre main menu #}
-  <ul class="prenavbar list-unstyled list-inline m-0" role="navigation" aria-label="{% trans %}Navigation secondaire{% endtrans %}">
-    {% for item in pre_main_menu %}
+  </div>
+</div>
+
+{% macro menu_links(items, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+<ul class="list-no-style list-no-padding">
+  {% else %}
+  <ul>
+    {% endif %}
+
+    {% for item in items %}
+      <!-- Get Theme from position into the menu -->
+      {% set theme = [
+      loop.index0 == 0 ? 'assurance',
+      loop.index0 == 1 ? 'prevoyance',
+      loop.index0 == 2 ? 'immobilier',
+      loop.index0 == 3 ? 'hypotheque',
+      loop.index0 >= 4 ? 'primary',
+      ] %}
+
       {% set classes = [
-        item.inActiveTrail ? 'active'
+      item.inActiveTrail ? 'active',
+      item.link.pluginId|clean_class,
+      'theme-' ~ theme|join,
       ] %}
       <li class="{{ classes|join(' ') }}">
-        {% set classes = [
-          'text-muted',
-          'small',
-          item.inActiveTrail ? 'active',
-        ] %}
-        {% set target = item.link.options.external ? '_blank' %}
-        {% set url = item.inActiveTrail ? '#main-content' : item.link.urlObject %}
-        <a href="{{ url|default('#') }}" class="{{ classes|join(' ') }}" target="{{ target }}">
-          {% if item.inActiveTrail %}<span class="sr-only">{% trans %}Page active{% endtrans %}</span>{% endif %} {{ item.link.title }}
-        </a>
+        <div class="collapser-menu-item">
+          {% set target = item.link.options.external ? ' target="_blank"' %}
+          <span>
+            <a href="{{ item.link.urlObject }}" class="pretty-link"{{ target }}>{{ item.link.title }}</a>
+          </span>
+          {% if item.subtree %}
+            <button
+              class="btn btn-circle btn-outline btn-primary collapsed"
+              title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': item.link.title}) }}"
+              type="button"
+              data-toggle="collapse"
+              data-target="#{{ item.link.pluginId|clean_id }}"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+            </button>
+          {% endif %}
+        </div>
+        <div class="collapse" id="{{ item.link.pluginId|clean_id }}">
+          {{ menus.menu_links(item.subtree, menu_level + 1) }}
+        </div>
       </li>
     {% endfor %}
+
   </ul>
-</nav>
+  {% endif %}
+  {% endmacro %}
