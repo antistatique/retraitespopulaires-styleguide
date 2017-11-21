@@ -1,33 +1,35 @@
-<header class="header header-offset hidden-print container">
-  <div class="spacer spacer-sm"></div>
-  <div class="row">
-    <div class="col-xs-12 col-xl-8 col-xl-offset-2">
+<header class="header header-offset hidden-print">
+  <div class="container">
+    <div class="spacer spacer-sm"></div>
+    <div class="row">
+      <div class="col-xs-12 col-xl-8 col-xl-offset-2">
 
-      <div class="header-container">
+        <div class="header-container">
 
-        {# Logo #}
-        <div class="logo-retraitespopulaires logo-retraitespopulaires-lg logo-retraitespopulaires-offset">
-          <a href="{{ path('<front>') }}">
-            <img class="img-responsive" src="/{{ directory }}/build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" title="{% trans %}Cliquez pour accéder à la page d'accueil de Retraites Populaires{% endtrans %}">
-          </a>
+          {# Logo #}
+          <div class="logo-retraitespopulaires logo-retraitespopulaires-lg logo-retraitespopulaires-offset">
+            <a href="{{ path('<front>') }}">
+              <img class="img-responsive" src="/{{ directory }}/build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" title="{% trans %}Cliquez pour accéder à la page d'accueil de Retraites Populaires{% endtrans %}">
+            </a>
+          </div>
+
+          {# prenavbar with search #}
+          {% include '@retraitespopulaires/rp_layout/blocks/partials/pre-main-menu.html.twig' with {'pre_main_menu': variables.pre_main_menu} only %}
+
+          {# hamburger for mobile #}
+          {% include '@retraitespopulaires/rp_layout/blocks/partials/hamburger.html.twig' %}
         </div>
 
-        {# prenavbar with search #}
-        {% include '@retraitespopulaires/rp_layout/blocks/partials/pre-main-menu.html.twig' with {'pre_main_menu': variables.pre_main_menu} only %}
+        {# main navbar first level only #}
+        {% include '@retraitespopulaires/rp_layout/blocks/partials/main-menu.html.twig' with {'main_menu': variables.main_menu} only %}
 
-        {# hamburger for mobile #}
-        {% include '@retraitespopulaires/rp_layout/blocks/partials/hamburger.html.twig' %}
+        {# mobile navigation #}
+        {% include '@retraitespopulaires/rp_layout/blocks/partials/mobile-menu.html.twig' with {'main_menu': variables.main_menu, 'pre_main_menu': variables.pre_main_menu} only %}
+
       </div>
-
-      {# main navbar first level only #}
-      {% include '@retraitespopulaires/rp_layout/blocks/partials/main-menu.html.twig' with {'main_menu': variables.main_menu} only %}
-
-      {# mobile navigation #}
-      {% include '@retraitespopulaires/rp_layout/blocks/partials/mobile-menu.html.twig' with {'main_menu': variables.main_menu, 'pre_main_menu': variables.pre_main_menu} only %}
-
     </div>
-  </div>
 
+      </div>
     </div>
   </div>
 </header>

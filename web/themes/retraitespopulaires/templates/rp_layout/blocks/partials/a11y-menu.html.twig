@@ -1,0 +1,60 @@
+<nav id="full-accessible-navigation" class="sr-only" role="navigation">
+  <ul>
+    <li>
+      <h2>{{ 'Navigation principale'|t }}</h2>
+      <ul>
+        {% for item in variables.main_menu %}
+          {% set classes = [
+          item.inActiveTrail ? 'active',
+          ] %}
+          <li class="{{ classes|join(' ') }}">
+            {% set target = item.link.options.external ? ' target="_blank"' %}
+            <a href="{{ item.link.urlObject }}" class="pretty-link"{{ target }}>{{ item.link.title }}</a>
+            {% if item.hasChildren %}
+              <ul>
+                {% for subitem in item.subtree %}
+                  {% set classes = [
+                  subitem.inActiveTrail ? 'active',
+                  ] %}
+                  <li class="{{ classes|join(' ') }}">
+                    {% set target = subitem.link.options.external ? ' target="_blank"' %}
+                    <a href="{{ subitem.link.urlObject }}"{{ target }}>{{ subitem.link.title }}</a>
+                    {% if subitem.hasChildren %}
+                      <ul>
+                        {% for lastitem in subitem.subtree %}
+                          {% set classes = [
+                          lastitem.inActiveTrail ? 'active',
+                          ] %}
+                          <li class="{{ classes|join(' ') }}">
+                            {% set target = lastitem.link.options.external ? ' target="_blank"' %}
+                            <a href="{{ lastitem.link.urlObject }}"{{ target }}>{{ lastitem.link.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li>
+      <h2>{{ 'Navigation secondaire'|t }}</h2>
+      <ul>
+        {% for item in variables.secondary_menu %}
+          {% set classes = [
+          item.link.inActiveTrail ? 'active'
+          ] %}
+          {% set target = item.link.options.external ? ' target="_blank"' %}
+          <li class="{{ classes|join(' ') }}">
+            <a href="{{ item.link.urlObject }}"{{ target }}>
+              {{ item.link.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+</nav>
