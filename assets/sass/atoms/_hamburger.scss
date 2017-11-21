@@ -4,7 +4,11 @@
   display: flex;
   align-items: center;
   position: relative;
+  padding: 0;
   cursor: pointer;
+  background: no-clip;
+  border: none;
+  background: none;
 
   .hamburger-button {
     position: relative;

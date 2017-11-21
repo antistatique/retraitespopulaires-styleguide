@@ -3,23 +3,19 @@ import $ from 'jquery';
 export function big_menu () {
 
   const $body    = $('body'),
-        $wrapper = $('.hamburger-wrapper'),
+        $wrapper = $('.hamburger-wrapper:not(#collapser-menu-toggler)'),
         $header  = $('header'),
         $navbar  = $('.big-menu');
 
   $wrapper.on('click', function() {
-    if ($wrapper.hasClass('active')) {
-      $body.toggleClass('no-scroll');
-      $header.toggleClass('active');
-      $wrapper.toggleClass('active');
-      $navbar.toggleClass('active');
-    }else{
-      $body.toggleClass('no-scroll');
-      $header.toggleClass('active');
+    if (!$wrapper.hasClass('active')) {
       $navbar.css({'display': 'block'});
-      $wrapper.toggleClass('active');
-      $navbar.toggleClass('active');
     }
+
+    $body.toggleClass('no-scroll');
+    $header.toggleClass('active');
+    $wrapper.toggleClass('active');
+    $navbar.toggleClass('active');
   });
 
   /**

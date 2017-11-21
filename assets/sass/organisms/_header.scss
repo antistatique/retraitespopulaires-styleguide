@@ -4,6 +4,10 @@
   position: relative;
   z-index: $zindex-navbar-fixed + 2;
   background: $white;
+
+  &.active {
+    background: none;
+  }
 }
 
 // To use when you have an offseted logo
@@ -24,11 +28,8 @@
   }
 
   .logo-retraitespopulaires {
-    margin: 10px;
-  }
-
-  .logo-retraitespopulaires {
-    margin-top: 0;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 
   .logo-retraitespopulaires-offset {
