@@ -265,6 +265,7 @@
  */
 @include bg-variant('.bg-berrylight-gray', $berrylight-gray);
 @include bg-variant('.bg-light-gray', $light-gray);
+@include bg-variant('.bg-white', $white);
 
 // Add a `<div class="bg-special-waves"></div>` inside a `.background-overflow.bg-berrylight-gray` element.
 .bg-special-waves {
