@@ -17,4 +17,21 @@ export function mobile_menu () {
     $wrapper.toggleClass('active');
     $navbar.toggleClass('active');
   });
+
+  // Animate header-container to white background on scroll to avoid reading
+  // issues. Keep it transparent at first, because of the funky waves
+  const $headerContainer = $('.header-container');
+  function animateHeaderBackground(posY) {
+    if (
+        (posY > 50 && !$headerContainer.hasClass('bg-white')) ||
+        (posY <= 50 && $headerContainer.hasClass('bg-white'))
+      ) {
+      $headerContainer.toggleClass('bg-white');
+    }
+  }
+
+  $navbar.on('scroll', function() {
+    const posY = $(this).scrollTop();
+    animateHeaderBackground(posY);
+  });
 }
