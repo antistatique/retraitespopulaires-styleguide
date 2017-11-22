@@ -10,7 +10,7 @@ field_name: field_popin
 entity_type: node
 bundle: building
 label: 'Activer l''affichage de la Pop-in de contact'
-description: "L'affichage de la Pop-in est un désactiver par défaut sur retraitespopulaires.ch. <br />\r\nCependant en cochant cette case, vous pouvez activer une Pop-in de contact sur ce contenu. Attention, il est important de désactiver le \"Call To Action\" lors que vous activer la Pop-in."
+description: "L'affichage de la Pop-in est désactivée par défaut sur retraitespopulaires.ch. <br />\r\nCependant, en cochant cette case, vous pouvez activer une Pop-in de contact sur ce contenu. Attention, il est important de désactiver le \"Call To Action\" lorsque vous activez la Pop-in."
 required: false
 translatable: true
 default_value:
