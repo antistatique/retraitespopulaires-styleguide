@@ -194,3 +194,10 @@
     padding-left: 0;
   }
 }
+
+// Override for popin
+.styleguide-item-preview {
+  .popin {
+    position: static;
+  }
+}

@@ -1,0 +1,52 @@
+@charset 'UTF-8';
+
+.popin {
+  position: fixed;
+  z-index: 99;
+  right: $grid-gutter-width;
+  bottom: $grid-gutter-width;
+  padding: ($grid-gutter-width / 2) $grid-gutter-width;
+  border-radius: 4px;
+  width: 600px;
+  max-width: 100%;
+
+  &.alert {
+    margin-bottom: 0;
+  }
+
+  &.alert-primary {
+    a {
+      color: $white;
+    }
+
+    .close {
+      margin-top: 3px;
+      color: $black;
+    }
+
+    .btn-primary {
+      background-color: darken($brand-primary, 10%);
+    }
+  }
+
+  // Override for connected users (move the popin to the left to avoid overlap with edit button)
+  .toolbar-fixed & {
+    right: 205px;
+  }
+
+  .form-group:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.popin-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(.collapsed) {
+    .retraitespopulaires-icon-angle {
+      transform: scaleY(-1);
+    }
+  }
+}
