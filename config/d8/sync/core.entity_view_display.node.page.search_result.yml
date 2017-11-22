@@ -109,9 +109,12 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_contact_cta: true
   field_document_page: true
   field_document_random: true
   field_faq_random: true
+  field_form: true
+  field_full_screen_content: true
   field_metatags: true
   field_profil: true
   field_search_npa: true

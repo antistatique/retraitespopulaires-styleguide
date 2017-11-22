@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.building.field_latitude
     - field.field.node.building.field_longitude
     - field.field.node.building.field_metatags
+    - field.field.node.building.field_popin
     - field.field.node.building.field_search_npa
     - field.field.node.building.field_situation
     - field.field.node.building.field_virtual_image
@@ -103,6 +104,7 @@ third_party_settings:
     group_contacts:
       children:
         - field_contact_cta
+        - field_popin
         - field_search_npa
         - field_contact
       parent_name: group_tabs
@@ -178,7 +180,7 @@ content:
     type: options_select
     region: content
   field_contact:
-    weight: 34
+    weight: 35
     settings:
       match_operator: CONTAINS
       size: 60
@@ -273,8 +275,15 @@ content:
     third_party_settings: {  }
     type: metatag_firehose
     region: content
-  field_search_npa:
+  field_popin:
     weight: 33
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_npa:
+    weight: 34
     settings:
       display_label: true
     third_party_settings: {  }

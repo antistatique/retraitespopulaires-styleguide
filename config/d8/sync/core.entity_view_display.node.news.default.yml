@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.news.field_metatags
     - field.field.node.news.field_news_type
     - field.field.node.news.field_offer
+    - field.field.node.news.field_popin
     - field.field.node.news.field_profession
     - field.field.node.news.field_profil
     - field.field.node.news.field_search_npa
@@ -185,6 +186,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_popin:
+    weight: 124
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_profession:
     weight: 113

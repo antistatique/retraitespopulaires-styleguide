@@ -47,6 +47,7 @@ content:
 hidden:
   field_advisor: true
   field_contact: true
+  field_contact_cta: true
   field_cover: true
   field_date: true
   field_document: true

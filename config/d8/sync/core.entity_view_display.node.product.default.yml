@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.product.field_faq_random
     - field.field.node.product.field_file_product
     - field.field.node.product.field_metatags
+    - field.field.node.product.field_popin
     - field.field.node.product.field_product_plan
     - field.field.node.product.field_profession
     - field.field.node.product.field_search_npa
@@ -122,6 +123,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_popin:
+    weight: 117
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_product_plan:
     weight: 109

@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.news.field_metatags
     - field.field.node.news.field_news_type
     - field.field.node.news.field_offer
+    - field.field.node.news.field_popin
     - field.field.node.news.field_profession
     - field.field.node.news.field_profil
     - field.field.node.news.field_search_npa
@@ -70,6 +71,7 @@ third_party_settings:
     group_contacts:
       children:
         - field_contact_cta
+        - field_popin
         - field_search_npa
         - field_advisor
         - field_contact
@@ -160,7 +162,7 @@ content:
     third_party_settings: {  }
     region: content
   field_advisor:
-    weight: 130
+    weight: 131
     settings:
       match_operator: CONTAINS
       size: 60
@@ -169,7 +171,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_contact:
-    weight: 131
+    weight: 132
     settings:
       match_operator: CONTAINS
       size: 60
@@ -288,6 +290,13 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_popin:
+    weight: 129
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_profession:
     weight: 14
     settings: {  }
@@ -301,7 +310,7 @@ content:
     type: options_buttons
     region: content
   field_search_npa:
-    weight: 129
+    weight: 130
     settings:
       display_label: true
     third_party_settings: {  }

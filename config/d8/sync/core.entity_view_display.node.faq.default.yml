@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
     - field.field.node.faq.field_metatags
+    - field.field.node.faq.field_popin
     - field.field.node.faq.field_profession
     - field.field.node.faq.field_search_npa
     - node.type.faq
@@ -117,6 +118,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_popin:
+    weight: 117
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_profession:
     weight: 104

@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.partnership.field_latitude
     - field.field.node.partnership.field_longitude
     - field.field.node.partnership.field_partnership
+    - field.field.node.partnership.field_popin
     - field.field.node.partnership.field_search_npa
     - field.field.node.partnership.field_situation
     - field.field.node.partnership.field_web_site
@@ -33,6 +34,7 @@ third_party_settings:
     group_attachments:
       children:
         - field_contact_cta
+        - field_popin
         - field_search_npa
         - field_contact
       parent_name: group_tabs
@@ -136,7 +138,7 @@ content:
     third_party_settings: {  }
     region: content
   field_contact:
-    weight: 126
+    weight: 127
     settings:
       match_operator: CONTAINS
       size: 60
@@ -223,8 +225,15 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
-  field_search_npa:
+  field_popin:
     weight: 125
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_search_npa:
+    weight: 126
     settings:
       display_label: true
     third_party_settings: {  }
