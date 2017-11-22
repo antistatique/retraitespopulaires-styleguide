@@ -1,9 +1,9 @@
 ---
 title: Big Menu Secondary Nav
-name: big-menu-secondary-nav
+name: menu-secondary-nav
 collection: molecules
 notes: |
-  ##### Usage : `big-menu-secondary-nav`
+  ##### Usage : `menu-secondary-nav`
   - **big_menu_secondary_nav_theme** - <b>['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
 
 ---

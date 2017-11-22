@@ -12,7 +12,7 @@ variants:
   mandat: Header Mandat
 ---
 {% if variant !== 'mandat' %}
-{% include '../molecules/big-menu.html.swig' %}
+{% include '../molecules/menu.html.swig' %}
 <header class="header header-container">
   <div class="logo-retraitespopulaires svg-responsive">
     <a href="#"><img src="{{data.path}}build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>

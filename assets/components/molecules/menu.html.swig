@@ -1,10 +1,9 @@
 ---
-title: Big Menu
-name: big-menu
+title: Menu
+name: menu
 collection: molecules
 notes: |
   This component is visible into the [basic page](/basic-page).
-  **3.2.0 - The Swiper menu is deprecated and will be removed in the next major release. Don't use it anymore.**
 ---
 <nav class="rp-access-nav">
   <ul>
@@ -101,13 +100,8 @@ notes: |
     </div>
 
     <div class="row">
-      <div class="col-md-9">
-        <div class="row">
-          {% include '../molecules/swiper-menu.html.swig' %}
-        </div>
-      </div>
       <div class="col-xs-12 col-md-2 col-md-offset-1">
-        {% include '../molecules/big-menu-secondary-nav.html.swig' %}
+        {% include '../molecules/menu-secondary-nav.html.swig' %}
       </div>
     </div>
   </div>
