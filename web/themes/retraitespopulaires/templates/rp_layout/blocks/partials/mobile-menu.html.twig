@@ -1,5 +1,3 @@
-{% include '@retraitespopulaires/rp_layout/blocks/partials/a11y-menu.html.twig' %}
-
 {% import _self as menus %}
 
 {# Big fancy menu with collapses #}
@@ -56,7 +54,7 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul class="list-no-style list-no-padding">
+      <ul class="list-no-style list-no-padding" role="navigation" id="main-navigation">
     {% else %}
       <ul>
     {% endif %}
