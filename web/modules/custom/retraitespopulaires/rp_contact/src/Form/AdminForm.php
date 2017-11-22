@@ -98,6 +98,19 @@ class AdminForm extends FormBase {
             '#description'   => t('Séparer l\'e-mail et le secteur par un pipe (|).') .'<br />'. t('Séparer les différentes secteurs par un saut de ligne.'),
         );
 
+        // Popin settings
+        $form['popin'] = array(
+          '#type'  => 'fieldset',
+          '#title' => 'Popin',
+        );
+        $form['popin']['popin_receivers'] = array(
+          '#type'          => 'textfield',
+          '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
+          '#default_value' => $this->state->get('rp_contact.settings.popin')['receivers'],
+          '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
+          '#suffix'        => '<br/>'
+        );
+
         // Page settings
         $form['page'] = array(
             '#type'          => 'fieldset',
@@ -314,6 +327,11 @@ class AdminForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // General settings
         $this->state->set('rp_contact.settings.receivers', trim($form_state->getValue('receivers')));
+
+        // Popin settings.
+        $this->state->set('rp_contact.settings.popin', [
+          'receivers' => trim($form_state->getValue('popin_receivers')),
+        ]);
 
         // Page with forms settings
         $this->state->set('rp_contact.settings.page.documents', array(
