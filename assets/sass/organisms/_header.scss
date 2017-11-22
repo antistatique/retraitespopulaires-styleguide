@@ -11,7 +11,7 @@
 }
 
 // To use when you have an offseted logo
-.header-offset {
+.container-offset {
   @media screen and (min-width: $screen-md-min) {
     padding-left: 6rem;
   }
@@ -39,7 +39,7 @@
 
   .logo-retraitespopulaires-offset {
     @media screen and (min-width: $screen-md-min) {
-      margin-left: -8.3rem;
+      margin-left: -6.5rem;
     }
   }
 }
