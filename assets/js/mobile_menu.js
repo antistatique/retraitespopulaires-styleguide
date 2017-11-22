@@ -31,6 +31,13 @@ export function mobile_menu () {
     }
   });
 
+  // Close when resizing the window
+  $(window).on('resize', function() {
+    if ($navbar.hasClass('active')) {
+      toggleMenu();
+    }
+  });
+
   // Animate header-container to white background on scroll to avoid reading
   // issues. Keep it transparent at first, because of the funky waves
   const $headerContainer = $('.header-container');
