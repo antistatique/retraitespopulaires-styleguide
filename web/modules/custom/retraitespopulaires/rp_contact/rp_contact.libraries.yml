@@ -16,3 +16,6 @@ contact_depreciation_form:
 contact_loan_increase_form:
   js:
     js/contact_loan_increase_form.js: {}
+contact_popin_form:
+  js:
+    js/contact_popin_form.js: {}

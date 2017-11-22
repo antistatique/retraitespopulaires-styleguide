@@ -1,6 +1,9 @@
 {% if variables.popin %}
-  <div>
-    <p>Laissez-nous votre email ou votre téléphone. Nous prendrons contact avec vous rapidement.</p>
-    {{ load_form('rp_contact', 'PopinForm') }}
+  <div id="rp-popin-block">
+    {# #rp-popin-block .popin-title will be updated by the form using ajax. #}
+    <div class="popin-title">{{ 'Nous prenons contacte avec vous'|t }}</div>
+    <div class="popin-body">
+      {{ load_form('rp_contact', 'PopinForm') }}
+    </div>
   </div>
 {% endif %}
