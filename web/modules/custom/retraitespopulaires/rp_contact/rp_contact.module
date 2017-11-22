@@ -7,62 +7,47 @@ function rp_contact_theme($existing, $type, $theme, $path) {
         // Blocks themes
         // ---------------------------------------------------------------------
         'rp_contact_contact_attachment_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'path' => 'themes/retraitespopulaires/templates/' . $theme,
             'template'  => 'blocks/contact_attachment'
         ),
         'rp_contact_contact_cta_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'path' => 'themes/retraitespopulaires/templates/' . $theme,
             'template'  => 'blocks/contact_cta'
         ),
         'rp_contact_contact_teaser_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'path' => 'themes/retraitespopulaires/templates/' . $theme,
             'template'  => 'blocks/contact_teaser'
         ),
         'rp_contact_contact_teaser_detail_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'path' => 'themes/retraitespopulaires/templates/' . $theme,
             'template'  => 'blocks/contact_teaser_detail'
         ),
         'rp_contact_advisors_collection_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'path' => 'themes/retraitespopulaires/templates/' . $theme,
             'template'  => 'blocks/contact_advisors_collection'
         ),
         'rp_contact_contacts_collection_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'path' => 'themes/retraitespopulaires/templates/' . $theme,
             'template'  => 'blocks/contact_contacts_collection'
         ),
+        'rp_contact_popin_block' => array(
+          'variables' => ['variables' => []],
+          'path' => 'themes/retraitespopulaires/templates/' . $theme,
+          'template'  => 'blocks/contact_popin'
+      ),
+
 
         // Pages themes
         // ---------------------------------------------------------------------
         'rp_contact_search_zip_page' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
             'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+            'path' => 'themes/retraitespopulaires/templates/' . $theme,
             'template'  => 'pages/search_zip'
         ),
     );
