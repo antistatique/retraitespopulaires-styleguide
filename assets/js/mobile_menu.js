@@ -7,7 +7,7 @@ export function mobile_menu () {
         $header  = $('header'),
         $navbar  = $('#mobile-menu');
 
-  $wrapper.on('click', function() {
+  function toggleMenu() {
     if (!$wrapper.hasClass('active')) {
       $navbar.css({'display': 'block'});
     }
@@ -16,6 +16,19 @@ export function mobile_menu () {
     $header.toggleClass('active');
     $wrapper.toggleClass('active');
     $navbar.toggleClass('active');
+  }
+
+  $wrapper.on('click', function() {
+    toggleMenu();
+  });
+
+  // Close the menu when ESC is pressed
+  $(document).keyup(function(e) {
+    if (e.keyCode == 27) {
+      if ($navbar.hasClass('active')) {
+        toggleMenu();
+      }
+    }
   });
 
   // Animate header-container to white background on scroll to avoid reading
