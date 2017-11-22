@@ -6,11 +6,15 @@ ul.collapser-menu {
 }
 
 .container-collapser-menu {
-  margin-top: 45px;
+  margin-top: 85px;
 
   ul ul {
     padding-left: $grid-gutter-width * 0.75;
     border-left: 1px solid $ligthen-gray;
+  }
+
+  .organic-lines {
+    margin-bottom: 20px;
   }
 }
 
