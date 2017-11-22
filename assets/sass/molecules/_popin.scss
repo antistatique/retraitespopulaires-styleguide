@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
 .popin {
+  display: none;
   position: fixed;
   z-index: 99;
   right: $grid-gutter-width;
