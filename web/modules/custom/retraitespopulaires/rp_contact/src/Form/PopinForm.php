@@ -6,6 +6,7 @@
 
 namespace Drupal\rp_contact\Form;
 
+use Drupal\Core\Ajax\InvokeCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -140,9 +141,6 @@ class PopinForm extends FormBase {
 
     $this->submitForm($form, $form_state);
 
-    // Add the Javascript cookie.
-    // $response->addCommand(new InvokeCommand('#edit-event', 'selectizeClearOptions'));
-
     // Create the bag message render array.
     $status_messages = ['#type' => 'status_messages'];
     $messages = $this->renderer->renderRoot($status_messages);
@@ -151,11 +149,13 @@ class PopinForm extends FormBase {
       $response->addCommand(new PrependCommand('#rp-status-messages', $messages));
     }
 
-    // Update the popine title.
-    $response->addCommand(new ReplaceCommand('#rp-popin-block .popin-title', $this->t('Merci pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter.')));
-
-    // Close the popin.
-    // $response->addCommand(new InvokeCommand('#edit-event', 'selectizeClearOptions'));
+    // Update the popin title & close the popin.
+    // TODO handle success and errors
+    $data = [
+      'title_closed' => $this->t('Merci pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter.'),
+      'toggle' => TRUE,
+    ];
+     $response->addCommand(new InvokeCommand('#block-popinformblock .popin', 'contactPopin', [$data]));
 
     return $response;
   }
