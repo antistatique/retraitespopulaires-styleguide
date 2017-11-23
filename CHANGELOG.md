@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## MEXT RELEASE
+ - add new popin component
+
 ## 3.1.10 (2017-11-13)
  - fix pretty-link for IE10+ using border-bottom
  - add ckeditor link as btn
