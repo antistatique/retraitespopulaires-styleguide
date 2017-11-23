@@ -37,4 +37,9 @@
       }
     }
   }
+
+  // Sometimes the search icon is directly after the prenav (no separator)
+  + .search-box {
+    margin-left: 20px;
+  }
 }
