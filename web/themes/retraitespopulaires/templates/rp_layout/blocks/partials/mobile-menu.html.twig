@@ -24,22 +24,20 @@
     <div class="bg-berrylight-gray">
       <div class="container">
         <div class="spacer"></div>
-        <div class="col-xs-12">
-          <ul class="list-no-style list-no-padding two-cols">
-            {% for item in pre_main_menu %}
-              {% set classes = [
-                'm-b-1',
-                item.link.pluginId,
-              ] %}
-                <li class="{{ classes|join(' ') }}">
-                  {% set target = item.link.options.external ? ' target="_blank"' %}
-                  <a class="pretty-link pretty-link-berrylight-gray" href="{{ item.link.urlObject }}"{{ target }}>
-                    {{ item.link.title }}
-                  </a>
-                </li>
-            {% endfor %}
-          </ul>
-        </div>
+        <ul class="list-no-style list-no-padding two-cols">
+          {% for item in pre_main_menu %}
+            {% set classes = [
+              'm-b-1',
+              item.link.pluginId,
+            ] %}
+              <li class="{{ classes|join(' ') }}">
+                {% set target = item.link.options.external ? ' target="_blank"' %}
+                <a class="pretty-link pretty-link-berrylight-gray" href="{{ item.link.urlObject }}"{{ target }}>
+                  {{ item.link.title }}
+                </a>
+              </li>
+          {% endfor %}
+        </ul>
       </div>
       <div class="spacer"></div>
     </div>
