@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+.collapser-menu ul,
+ul.collapser-menu {
+  list-style: none;
+}
+
+.container-collapser-menu {
+  margin-top: 85px;
+
+  ul ul {
+    padding-left: $grid-gutter-width * 0.75;
+    border-left: 1px solid $ligthen-gray;
+  }
+
+  .organic-lines {
+    margin-bottom: 20px;
+  }
+}
+
+.collapser-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $grid-gutter-width * 0.75;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .btn-circle {
+    background: $white;
+  }
+
+  .btn:not(.collapsed) {
+    .retraitespopulaires-icon {
+      transform: scaleY(-1);
+    }
+  }
+}
+
+// When Drupal admin bar is display horizontal - add bigger margin
+body.toolbar-tray-open.toolbar-fixed.toolbar-horizontal {
+  .container-collapser-menu {
+    margin-top: 190px;
+  }
+}

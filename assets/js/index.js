@@ -1,4 +1,4 @@
-import { big_menu } from './big_menu.js';
+import { mobile_menu } from './mobile_menu.js';
 import { navbar } from './navbar.js';
 import { input_dynamic_label } from './input_dynamic_label.js';
 import { input_files } from './input_files.js';
@@ -12,7 +12,7 @@ import { selectize } from './selectize.js';
 import { labels } from './labels.js';
 
 (function(){
-  big_menu();
+  mobile_menu();
   navbar();
   smoothscroll_load();
   input_dynamic_label();

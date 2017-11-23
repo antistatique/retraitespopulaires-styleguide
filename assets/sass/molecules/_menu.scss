@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-.big-menu {
+.mobile-menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -49,24 +49,5 @@
       transform: translateY(0%);
       opacity: 1;
     }
-  }
-}
-
-.container-big-menu {
-  margin-top: 75px;
-  padding: $grid-gutter-width $grid-gutter-width 0 $grid-gutter-width;
-
-  @media (min-width: $screen-sm-min) {
-    margin-top: 105px;
-    margin-left: 6.56rem;
-    padding: 0 $grid-gutter-width 0 0;
-  }
-}
-
-// When Drupal admin bar is display horizontal - add bigger margin
-
-body.toolbar-tray-open.toolbar-fixed.toolbar-horizontal {
-  .container-big-menu {
-    margin-top: 190px;
   }
 }
