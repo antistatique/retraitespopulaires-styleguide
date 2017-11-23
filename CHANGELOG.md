@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## NEXT RELEASE
+## 3.2.0 (2017-11-23)
  - add a popin component
  - refactor the navigation component with a simpler mobile menu ⚠️ **BREAKING**
  - remove big-menu components
