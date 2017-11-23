@@ -4,6 +4,8 @@ CHANGELOG
 ## NEXT RELEASE
  - add a popin component
  - refactor the navigation component with a simpler mobile menu ⚠️ **BREAKING**
+ - remove big-menu components
+ - remove swiper components 
 
 ## 3.1.10 (2017-11-13)
  - fix pretty-link for IE10+ using border-bottom
