@@ -6,14 +6,15 @@
   <div class="container-collapser-menu">
     <div class="collapser-menu">
 
-      <div class="organic-lines"></div>
+      <div class="container">
+        <div class="spacer spacer-md"></div>
+        {{ load_form('rp_site', 'SearchForm') }}
+        <div class="spacer spacer-md"></div>
+      </div>
 
       <div class="container">
-        <div class="col-xs-12">
+        <div class="">
           {{ menus.menu_links(main_menu, 0) }}
-
-          <div class="spacer spacer-md"></div>
-          {{ load_form('rp_site', 'SearchForm') }}
         </div>
       </div>
     </div>
