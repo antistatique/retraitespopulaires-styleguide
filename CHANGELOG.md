@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## 3.2.1 (2017-11-23)
+## NEXT RELEASE - 3.2.1 (2017-11-23)
  - fix large screen logo-offset
 
 ## 3.2.0 (2017-11-23)
