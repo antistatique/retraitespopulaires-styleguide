@@ -13,6 +13,7 @@
 // To use when you have an offseted logo
 .container-offset {
   @media screen and (min-width: $screen-md-min) {
+    padding-right: 6rem;
     padding-left: 6rem;
   }
 }
