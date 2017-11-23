@@ -9,6 +9,7 @@ NEXT RELEASE
  - add option to enable/disable contact CTA
  - refactorint the whole navigation
  - remove the profils 
+ - update to styleguide 3.2.0
 
 ## 2.3.0 (2017-11-13)
  - move product into is own module
