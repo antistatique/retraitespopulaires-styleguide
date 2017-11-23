@@ -4,7 +4,10 @@
   display: flex;
   align-items: center;
   position: relative;
+  padding: 0;
   cursor: pointer;
+  background: none;
+  border: none;
 
   .hamburger-button {
     position: relative;
@@ -15,6 +18,7 @@
   position: relative;
   order: -1;
   width: 80px;
+  margin-right: -($grid-gutter-width / 4);
   text-align: right;
 
   .helper-when-open {

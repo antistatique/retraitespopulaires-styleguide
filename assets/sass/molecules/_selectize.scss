@@ -58,8 +58,7 @@
   }
 }
 
-.selectize-control.plugin-remove_button [data-value]
-.remove {
+.selectize-control.plugin-remove_button [data-value] .remove {
   display: inline-flex;
   justify-content: center;
   align-items: center;
