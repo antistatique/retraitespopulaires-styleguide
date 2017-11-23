@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## 3.2.1 (2017-11-23)
+ - fix large screen logo-offset
+
 ## 3.2.0 (2017-11-23)
  - add a popin component
  - refactor the navigation component with a simpler mobile menu ⚠️ **BREAKING**
