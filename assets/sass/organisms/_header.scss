@@ -34,8 +34,24 @@
   }
 
   .logo-retraitespopulaires {
+    margin-left: -20px;
     margin-right: 10px;
-    margin-left: 10px;
+
+    @media screen and (min-width: $screen-md-min) {
+      margin-left: -15px;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+      margin-left: 10px;
+    }
+  }
+
+  .hamburger-wrapper {
+    margin-right: -($grid-gutter-width / 2);
+
+    @media screen and (min-width: $screen-lg-min) {
+      margin-right: 0;
+    }
   }
 
   .logo-retraitespopulaires-offset {
