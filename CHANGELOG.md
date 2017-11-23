@@ -7,6 +7,8 @@ NEXT RELEASE
  - improve breadcrumb fontsize
  - improve breadcrum spacing
  - add option to enable/disable contact CTA
+ - add option to enable/disable contact popin
+ - add new popine in every page which enable it
 
 ## 2.3.0 (2017-11-13)
  - move product into is own module
