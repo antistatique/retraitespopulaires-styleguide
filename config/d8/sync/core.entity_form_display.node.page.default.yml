@@ -19,7 +19,6 @@ dependencies:
     - field.field.node.page.field_metatags
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
-    - field.field.node.page.field_profil
     - field.field.node.page.field_search_npa
     - image.style.thumbnail
     - node.type.page
@@ -265,12 +264,6 @@ content:
     region: content
   field_profession:
     weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_profil:
-    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select

@@ -22,7 +22,6 @@ dependencies:
     - field.field.node.news.field_news_type
     - field.field.node.news.field_offer
     - field.field.node.news.field_profession
-    - field.field.node.news.field_profil
     - field.field.node.news.field_search_npa
     - image.style.thumbnail
     - node.type.news
@@ -290,12 +289,6 @@ content:
     region: content
   field_profession:
     weight: 14
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-    region: content
-  field_profil:
-    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: options_buttons

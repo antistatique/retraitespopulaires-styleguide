@@ -2,11 +2,16 @@ rp_offers.admin:
     title: Offres Bella vita
     parent: rp_toolbar.admin
     route_name: rp_offers.admin
+    weight: 20
+
 rp_offers.admin.settings:
     title: Settings
     parent: rp_offers.admin
     route_name: rp_offers.admin.settings
+    weight: 10
+
 rp_offers.admin.requests:
     title: Offres
     parent: rp_offers.admin
     route_name: rp_offers.admin.requests
+    weight: 0
