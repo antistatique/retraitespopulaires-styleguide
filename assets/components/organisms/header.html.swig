@@ -13,25 +13,65 @@ variants:
 ---
 {% if variant !== 'mandat' %}
 {% include '../molecules/menu.html.swig' %}
-<header class="header header-container">
-  <div class="logo-retraitespopulaires svg-responsive">
-    <a href="#"><img src="{{data.path}}build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>
-  </div>
-
-  <div class="header-search hidden-xs">
-    <!-- see input-group component -->
-    <div class="form-group">
-      <div class="input-group full-width">
-        <input type="text" class="form-control full-width" placeholder="Rechercher des documents, articles, ...">
-        <span class="input-group-btn">
-          <button class="btn btn-primary" type="button">Rechercher</button>
-        </span>
+<header class="header hidden-print">
+  <div class="container container-offset">
+    <div class="row">
+      <div class="col-xs-12 col-xl-8 col-xl-offset-2">
+        <div class="header-container">
+          <div class="logo-retraitespopulaires logo-retraitespopulaires-lg logo-retraitespopulaires-offset svg-responsive">
+            <a class="" href="#">
+              <a href="#"><img src="{{data.path}}build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>
+            </a>
+          </div>
+          <div class="wrapper-prenavbar m-t-1 hidden-sm hidden-xs">
+            {% include '../molecules/prenavbar.html.swig' %}
+            <div class="prenavbar-separator prenavbar-separator-invisible" aria-hidden="true"></div>
+            <div class="search-box">
+              <a href="#" class="search-toggle">
+                <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></span>
+                <div class="sr-only">Recherche</div>
+              </a>
+            </div>
+          </div>
+          <div class="visible-xs-block visible-sm-block" aria-hidden="true">
+            <button class="hamburger-wrapper" id="collapser-menu-toggler">
+              <div class="hamburger-button">
+                <svg class="hamburger-circle" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+                  <circle fill="white" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+                </svg>
+                <div class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div class="hamburger-helper text-secondary">
+                <div class="helper-when-close">Menu</div>
+                <div class="helper-when-open">Fermer</div>
+              </div>
+            </button>
+          </div>
+        </div>
+        <nav class="navbar hidden-sm hidden-xs" aria-label="Navigation principale">
+          <a id="main-navigation" aria-label="Navigation principale"></a>
+          <h2 class="sr-only">Navigation principale</h2>
+          <ul class="list-unstyled m-0">
+            <li>
+              <a href="#">Assurance vie</a>
+            </li>
+            <li>
+              <a href="#">Prévoyance professionnelle</a>
+            </li>
+            <li>
+              <a href="#">Immobilier</a>
+            </li>
+            <li>
+              <a href="#">Prêts</a>
+            </li>
+              </ul>
+        </nav>
       </div>
     </div>
-    <!-- /input-group -->
-  </div>
-  <div class="header-nav" aria-hidden="true">
-    {% include '../atoms/hamburger.html.swig' %}
   </div>
 </header>
 {% else %}

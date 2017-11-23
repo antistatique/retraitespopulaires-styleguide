@@ -42,6 +42,10 @@
       margin-left: -6.5rem;
     }
   }
+
+  [class*=theme-] & {
+    margin-bottom: 0;
+  }
 }
 
 .header-search {

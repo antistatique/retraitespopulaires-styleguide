@@ -29,6 +29,8 @@
         height: 0;
         background-color: $brand-primary;
         transition: height 0.15s ease-in-out;
+
+        @include theme(background-color);
       }
 
       &:hover,

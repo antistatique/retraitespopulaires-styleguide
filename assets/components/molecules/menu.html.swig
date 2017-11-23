@@ -14,95 +14,55 @@ notes: |
     <li><a class="btn btn-primary" href="mailto:info@retraitespopulaires.ch" accesskey="9">Contacter un conseiller</a></li>
   </ul>
 </nav>
-<nav id="full-accessible-navigation" class="sr-only" role="navigation">
-  <ul>
-    <li>
-      <h2>Navigation principale</h2>
-      <ul>
-        <li>
-          <a href="#">Assurance vie</a>
-          <ul>
-            <li><a href="#">RP Rente immédiate</a></li>
-            <li><a href="#">RP Rente immédiate certaine</a></li>
-            <li><a href="#">RP Jeune</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Prévoyance professionnelle</a>
-          <ul>
-            <li><a href="#">Pour les entreprises</a></li>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="container-collapser-menu">
+    <div class="collapser-menu">
+      {% include '../atoms/organic-lines.html.swig' with {'organic_lines_theme': 'assurance'} %}
+
+      <div class="container">
+        <div class="col-xs-12">
+          <ul class="list-no-style list-no-padding" role="navigation" id="main-navigation">
             <li>
-              <a href="#">Pour les institutions de prévoyance</a>
-              <ul>
-                <li><a href="#">Assurer les employés</a></li>
-                <li><a href="#">Plans complémentaires</a></li>
-              </ul>
+              <div class="collapser-menu-item">
+                <span>
+                  <a href="/assurance-vie" class="pretty-link">Assurance vie</a>
+                </span>
+                <button class="btn btn-circle btn-outline btn-primary collapsed" title="Ouvrir le sous-menu Assurance vie" type="button" data-toggle="collapse" data-target="#submenu1" aria-expanded="false">
+                  <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="collapse" id="submenu1">
+                <ul>
+                  <li>
+                    <div class="collapser-menu-item">
+                      <span>
+                        <a href="/assurance-vie/produits" class="pretty-link">Produits</a>
+                      </span>
+                      <button class="btn btn-circle btn-outline btn-primary collapsed" title="Ouvrir le sous-menu Produits" type="button" data-toggle="collapse" data-target="#submenu2" aria-expanded="false">
+                        <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    <div class="collapse" id="submenu2">
+                      <ul>
+                        <li class=" menu-link-content5da93b14-48bd-4034-b465-4dec22b2981f">
+                          <div class="collapser-menu-item">
+                            <span>
+                              <a href="/assurance-vie/produits/rente-immediate" class="pretty-link">RP Rente immédiate</a>
+                            </span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <h2>Vous êtes</h2>
-      <ul>
-        <li>
-          <a href="#">Particuliers</a>
-          <h3>Nouveau projet</h3>
-          <ul>
-            <li>
-              <a href="#">Fortune</a>
-              <ul>
-                <li><a href="#">Épargner</a></li>
-                <li><a href="#">Payer moins d'impôts</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Famille</a></li>
-          </ul>
-          <h3>Déjà client</h3>
-          <ul>
-            <li><a href="#">Assuré 2e pilier</a></li>
-            <li>
-              <a href="#">Assuré 3e pilier</a>
-              <ul>
-                <li><a href="#">Décès</a></li>
-                <li><a href="#">Invalidité</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Professionnels</a>
-          <ul>
-            <li><a href="#">Prévoyance professionnelle</a></li>
-            <li><a href="#">Location de local commercial</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <h2>Navigation secondaire</h2>
-      <ul>
-        <li><a href="#">À propos</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Actualités</a></li>
-        <li><a href="#">Faq</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-<div class="big-menu" aria-hidden="true">
-  <div class="container-big-menu container-fuild">
-    <div class="row">
-      <div class="col-no-padding col-xs-12 visible-xs">
-        search form here
-        <div class="spacer"></div>
+        </div>
       </div>
+      <div class="spacer"></div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-12 col-md-2 col-md-offset-1">
-        {% include '../molecules/menu-secondary-nav.html.swig' %}
-      </div>
-    </div>
   </div>
 </div>
