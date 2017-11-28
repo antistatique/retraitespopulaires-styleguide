@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.3.1 (2017-11-29)
+ - Duplicate Webforms to add conversion tracking
+
 ## 2.3.0 (2017-11-13)
  - move product into is own module
  - remove unused 'related products'
