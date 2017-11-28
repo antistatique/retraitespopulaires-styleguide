@@ -28,9 +28,16 @@ notes: |
   - `card-bg-hover` to background hover effects on a `div.card`
 ---
 {% if variant == 'card-cta' -%}
-<a href="#" class="card card-light card-bg-hover card-cta">
-  <div class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-contact-us-borderless" aria-hidden="true"></div>
-</a>
+<div class="pull-right">
+  <a href="#" class="card card-white card-md">
+    <div class="card-cta">
+      <div class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-contact-us-borderless text-primary" aria-hidden="true"></div>
+    </div>
+    <div class="card-body text-secondary">
+      <div class="btn btn-primary">Nous contacter</div>
+    </div>
+  </a>
+</div>
 {% else -%}
   {% if variant == 'card-light' or variant == 'card-horizontal' -%}
   <div class="card card-white {{ variant }}">
