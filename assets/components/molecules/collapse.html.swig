@@ -4,7 +4,7 @@ name: collapse
 collection: molecules
 notes: |
   ##### Usage : `collapse`
-  - **collapse_theme** - <i>String</i> - <b>['primary'|'assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **collapse_theme** - <i>String</i> - <b>['primary'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="collapse-wrapper">
   <div class="collapse-title">

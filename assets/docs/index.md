@@ -33,43 +33,9 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
 
   <div class="row">
     <div class="col-xs-12">
-      <h2>Couleurs par métier</h2>
-      <div class="spacer spacer-xs"></div>
-      <div class="f-color-chips">
-        <div class="f-color-chip" style="border-top-color: #cbb900; border-bottom-color: #cbb900;">
-          <h5 class="">$deep-yellow</h5>
-          <h5 class="">#cbb900</h5>
-          <code>.x-assurance</code>
-        </div>
-        <div class="f-color-chip" style="border-top-color: #b35e0a; border-bottom-color: #b35e0a;">
-          <h5 class="">$deep-orange</h5>
-          <h5 class="">#b35e0a</h5>
-          <code>.x-prevoyance</code>
-        </div>
-        <div class="f-color-chip" style="border-top-color: #b21f16; border-bottom-color: #b21f16;">
-          <h5 class="">$deep-red</h5>
-          <h5 class="">#b21f16</h5>
-          <code>.x-immobilier</code>
-        </div>
-        <div class="f-color-chip" style="border-top-color: #005782; border-bottom-color: #005782;">
-          <h5 class="">$deep-blue</h5>
-          <h5 class="">#005782</h5>
-          <code>.x-hypotheque</code>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
       <h2>Couleurs des instituions et annexes</h2>
       <div class="spacer spacer-xs"></div>
       <div class="f-color-chips">
-        <div class="f-color-chip" style="border-top-color: #663d07; border-bottom-color: #663d07;">
-          <h5 class="">$deep-brown</h5>
-          <h5 class="">#663d07</h5>
-          <code>.x-institutionnel</code>
-        </div>
         <div class="f-color-chip" style="border-top-color: #009966; border-bottom-color: #009966;">
           <h5 class="">$deep-green</h5>
           <h5 class="">#009966</h5>
