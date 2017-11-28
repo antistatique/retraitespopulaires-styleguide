@@ -2,11 +2,16 @@ rp_newsletter.admin:
     title: Newsletter
     parent: rp_toolbar.admin
     route_name: rp_newsletter.admin
+    weight: 60
+
 rp_newsletter.admin.settings:
     title: Settings
     parent: rp_newsletter.admin
     route_name: rp_newsletter.admin.settings
+    weight: 10
+
 rp_newsletter.admin.campaigns:
     title: Campagnes
     parent: rp_newsletter.admin
     route_name: rp_newsletter.admin.campaigns
+    weight: 0

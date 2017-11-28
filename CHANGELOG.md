@@ -9,6 +9,10 @@ NEXT RELEASE
  - add option to enable/disable contact CTA
  - add option to enable/disable contact popin
  - add new popine in every page which enable it
+ - refactorint the whole navigation
+ - remove the profils 
+ - update to styleguide 3.2.0
+ - fix secondary-side navigation title margin-bottom
 
 ## 2.3.0 (2017-11-13)
  - move product into is own module

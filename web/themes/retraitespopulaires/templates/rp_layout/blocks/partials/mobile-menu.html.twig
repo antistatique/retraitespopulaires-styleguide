@@ -1,0 +1,90 @@
+{% import _self as menus %}
+
+{# Big fancy menu with collapses #}
+<div class="mobile-menu" id="mobile-menu">
+
+  <div class="container-collapser-menu">
+    <div class="collapser-menu">
+
+      <div class="container">
+        <div class="spacer spacer-md"></div>
+        {{ load_form('rp_site', 'SearchForm') }}
+        <div class="spacer spacer-md"></div>
+      </div>
+
+      <div class="container">
+        <div class="">
+          {{ menus.menu_links(main_menu, 0) }}
+        </div>
+      </div>
+    </div>
+
+    <div class="spacer spacer-md"></div>
+
+    <div class="bg-berrylight-gray">
+      <div class="container">
+        <div class="spacer"></div>
+        <ul class="list-no-style list-no-padding two-cols">
+          {% for item in pre_main_menu %}
+            {% set classes = [
+              'm-b-1',
+              item.link.pluginId,
+            ] %}
+              <li class="{{ classes|join(' ') }}">
+                {% set target = item.link.options.external ? ' target="_blank"' %}
+                <a class="pretty-link pretty-link-berrylight-gray" href="{{ item.link.urlObject }}"{{ target }}>
+                  {{ item.link.title }}
+                </a>
+              </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="spacer"></div>
+    </div>
+
+  </div>
+</div>
+
+{% macro menu_links(items, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul class="list-no-style list-no-padding" role="navigation" id="main-navigation">
+    {% else %}
+      <ul>
+    {% endif %}
+
+    {% for item in items %}
+      {% set classes = [
+        item.inActiveTrail ? 'active',
+        item.link.pluginId|clean_class,
+      ] %}
+      <li class="{{ classes|join(' ') }}">
+        <div class="collapser-menu-item">
+          {% set target = item.link.options.external ? ' target="_blank"' %}
+          <span>
+            <a href="{{ item.link.urlObject }}" class="pretty-link"{{ target }}>{{ item.link.title }}</a>
+          </span>
+          {% if item.subtree %}
+            <button
+              class="btn btn-circle btn-outline btn-primary collapsed"
+              title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': item.link.title}) }}"
+              type="button"
+              data-toggle="collapse"
+              data-target="#{{ item.link.pluginId|clean_id }}"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+            </button>
+          {% endif %}
+        </div>
+        <div class="collapse" id="{{ item.link.pluginId|clean_id }}">
+          {{ menus.menu_links(item.subtree, menu_level + 1) }}
+        </div>
+      </li>
+    {% endfor %}
+
+  </ul>
+  {% endif %}
+  {% endmacro %}

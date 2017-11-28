@@ -186,8 +186,7 @@ class HomepageSettings extends FormBase {
    *
    * @return mixed
    */
-  private function getBlockStateValue($block, $key, $default = NULL)
-  {
+  private function getBlockStateValue($block, $key, $default = NULL) {
     $blockData = $this->state->get('rp_homepage.blocks', []);
 
     if (empty($blockData) || !isset($blockData[$block][$key])) {

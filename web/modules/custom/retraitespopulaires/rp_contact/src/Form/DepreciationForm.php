@@ -561,7 +561,7 @@ class DepreciationForm extends FormBase {
             // Send to client
             $this->mail->mail('rp_contact', 'feedback_generical', $form_state->getValue('email'), 'fr');
 
-            drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l\'adresse @email ou par téléphone au @phone.', [
+            drupal_set_message(t('Merci @firstname @lastname pour votre demande. Nous allons la traiter rapidement et vous recontacter à l\'adresse @email ou par téléphone au @phone.', [
                 '@firstname' => $form_state->getValue('firstname'),
                 '@lastname'  => $form_state->getValue('lastname'),
                 '@email'     => $form_state->getValue('email'),
