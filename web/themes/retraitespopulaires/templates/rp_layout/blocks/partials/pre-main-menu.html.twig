@@ -11,9 +11,9 @@
           item.inActiveTrail ? 'active',
         ] %}
         {% set target = item.link.options.external ? '_blank' %}
-        {% set url = item.inActiveTrail ? '#main-content' : item.link.urlObject %}
+        {% set url = pre_main_menu_active_trail == item.link.pluginId ? '#main-content' : item.link.urlObject %}
         <a href="{{ url|default('#') }}" class="{{ classes|join(' ') }}" target="{{ target }}">
-          {% if item.inActiveTrail %}<span class="sr-only">{% trans %}Page active{% endtrans %}</span>{% endif %} {{ item.link.title }}
+          {% if pre_main_menu_active_trail == item.link.pluginId %}<span class="sr-only">{% trans %}Page active{% endtrans %}</span>{% endif %} {{ item.link.title }}
         </a>
       </li>
     {% endfor %}

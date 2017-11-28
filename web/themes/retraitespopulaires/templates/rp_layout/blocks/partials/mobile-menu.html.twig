@@ -14,7 +14,7 @@
 
       <div class="container">
         <div class="">
-          {{ menus.menu_links(main_menu, 0) }}
+          {{ menus.menu_links(main_menu, 0, main_menu_active_trail) }}
         </div>
       </div>
     </div>
@@ -32,8 +32,9 @@
             ] %}
               <li class="{{ classes|join(' ') }}">
                 {% set target = item.link.options.external ? ' target="_blank"' %}
-                <a class="pretty-link pretty-link-berrylight-gray" href="{{ item.link.urlObject }}"{{ target }}>
-                  {{ item.link.title }}
+                {% set url = pre_main_menu_active_trail == item.link.pluginId ? '#main-content' : item.link.urlObject %}
+                <a class="pretty-link pretty-link-berrylight-gray" href="{{ url }}"{{ target }}>
+                  {% if pre_main_menu_active_trail == item.link.pluginId %}<span class="sr-only">{% trans %}Page active{% endtrans %}</span>{% endif %} {{ item.link.title }}
                 </a>
               </li>
           {% endfor %}
@@ -45,7 +46,7 @@
   </div>
 </div>
 
-{% macro menu_links(items, menu_level) %}
+{% macro menu_links(items, menu_level, active_trail) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
@@ -62,25 +63,42 @@
       <li class="{{ classes|join(' ') }}">
         <div class="collapser-menu-item">
           {% set target = item.link.options.external ? ' target="_blank"' %}
+          {% set url = active_trail == item.link.pluginId ? '#main-content' : item.link.urlObject %}
           <span>
-            <a href="{{ item.link.urlObject }}" class="pretty-link"{{ target }}>{{ item.link.title }}</a>
+            <a href="{{ url }}" class="pretty-link"{{ target }}>
+              {% if active_trail == item.link.pluginId %}<span class="sr-only">{% trans %}Page active{% endtrans %}</span>{% endif %}
+              {{ item.link.title }}
+            </a>
           </span>
           {% if item.subtree %}
+            {% set classes = [
+              'btn btn-circle btn-outline btn-primary',
+              item.inActiveTrail ? 'collapsed',
+            ] %}
             <button
-              class="btn btn-circle btn-outline btn-primary collapsed"
+              class="{{ classes|join(' ') }}"
               title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': item.link.title}) }}"
               type="button"
               data-toggle="collapse"
               data-target="#{{ item.link.pluginId|clean_id }}"
-              aria-expanded="false"
+              aria-expanded="{{ item.inActiveTrail ? 'true' : 'false' }}"
               aria-controls="collapseExample"
             >
               <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
             </button>
           {% endif %}
         </div>
-        <div class="collapse" id="{{ item.link.pluginId|clean_id }}">
-          {{ menus.menu_links(item.subtree, menu_level + 1) }}
+
+        {% set classes = [
+          'collapse',
+          item.inActiveTrail ? 'in',
+        ] %}
+        <div
+          class="{{ classes|join(' ') }}"
+          id="{{ item.link.pluginId|clean_id }}"
+          aria-expanded="{{ item.inActiveTrail ? 'true' : 'false' }}"
+        >
+          {{ menus.menu_links(item.subtree, menu_level + 1, active_trail) }}
         </div>
       </li>
     {% endfor %}

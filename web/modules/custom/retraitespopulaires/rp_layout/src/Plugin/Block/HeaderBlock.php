@@ -66,6 +66,10 @@ class HeaderBlock extends BlockBase implements ContainerFactoryPluginInterface {
     $tree = $this->menuTree->load('main', $parameters);
     $variables['main_menu'] = $this->menuTree->transform($tree, $manipulators);
 
+    // Retreive the deepest element of the active trail & remove empty element.
+    $diff = array_diff($parameters->activeTrail, ['']);
+    $variables['main_menu_active_trail'] = reset($diff);
+
     // Pre main menu.
     $parameters = $this->menuTree->getCurrentRouteMenuTreeParameters('secondary');
     $parameters->onlyEnabledLinks();
@@ -73,6 +77,10 @@ class HeaderBlock extends BlockBase implements ContainerFactoryPluginInterface {
     $parameters->expandedParents = [];
     $tree = $this->menuTree->load('secondary', $parameters);
     $variables['pre_main_menu'] = $this->menuTree->transform($tree, $manipulators);
+
+    // Retreive the deepest element of the active trail & remove empty element.
+    $diff = array_diff($parameters->activeTrail, ['']);
+    $variables['pre_main_menu_active_trail'] = reset($diff);
 
     return [
       '#theme'     => 'rp_layout_header_block',
