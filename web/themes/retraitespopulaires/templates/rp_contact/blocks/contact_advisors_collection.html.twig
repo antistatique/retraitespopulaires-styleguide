@@ -1,24 +1,22 @@
 {% if variables.advisors %}
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <h2 class="h1 text-center">
+
+{% set node_content_width = [
+  'col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2',
+] %}
+
+<div class="row flex-row theme-primary">
+  <div class="{{ node_content_width|join(' ') }}">
+    <h2 class="h1 text-center">
       {% trans %}Retraites Populaires peut vous aider ! Voici la liste des conseillers.{% endtrans %}
-      </h2>
-      <div class="spacer spacer-md"></div>
-    </div>
+    </h2>
+    <div class="spacer spacer-md"></div>
   </div>
 
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-      <div class="row flex-row">
-        {% for advisor in variables.advisors %}
-        <div class="col-xs-12">
-          {{ load_block('rp_contact_contact_teaser_block', {'contact': advisor,  'search_npa': false}) }}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
+  {% for advisor in variables.advisors %}
+  <div class="{{ node_content_width|join(' ') }}">
+    {{ load_block('rp_contact_contact_teaser_block', {'contact': advisor,  'search_npa': false}) }}
   </div>
+  {% endfor %}
 </div>
+<div class="spacer spacer-md"></div>
 {% endif %}
