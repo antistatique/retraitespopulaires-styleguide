@@ -73,7 +73,8 @@ a.card-light,
 
 .card-cta {
   display: inline-flex;
-  padding: $grid-gutter-width;
+  margin: 0 auto;
+  padding-top: $grid-gutter-width/2;
 }
 
 a.card-bg-hover,

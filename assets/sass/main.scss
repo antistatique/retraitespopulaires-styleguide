@@ -56,14 +56,11 @@
 @import 'molecules/progresschart';
 @import 'molecules/fieldset';
 @import 'molecules/breadcrumb';
-@import 'molecules/big-menu-empty';
-@import 'molecules/swiper-menu';
 @import 'molecules/tabs';
 @import 'molecules/secondary-nav';
 @import 'molecules/table';
-@import 'molecules/big-menu-secondary-nav';
 @import 'molecules/collapse';
-@import 'molecules/big-menu';
+@import 'molecules/menu';
 @import 'molecules/push-menu';
 @import 'molecules/form';
 @import 'molecules/dropdown';
@@ -73,6 +70,7 @@
 @import 'molecules/selectize';
 @import 'molecules/popin';
 @import 'molecules/alerts';
+@import 'molecules/collapser-menu';
 
 // organisms:
 @import 'organisms/gallery';

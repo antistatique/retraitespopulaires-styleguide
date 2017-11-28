@@ -1,6 +1,9 @@
 @charset 'UTF-8';
 
 .logo-retraitespopulaires {
+  // This forces the logo wrapper to fit the image (required for the
+  // alignment of the search icon at the right
+  display: table;
   width: 16rem;
   height: auto;
   max-height: 8rem;
@@ -32,7 +35,7 @@
 
 .logo-retraitespopulaires-lg {
   @media screen and (min-width: $screen-md-min) {
-    width: 26rem;
+    width: 20rem;
     margin-top: 0;
     margin-bottom: 0;
   }

@@ -4,12 +4,29 @@
   position: relative;
   z-index: $zindex-navbar-fixed + 2;
   background: $white;
+
+  &.active {
+    background: none;
+  }
+}
+
+// To use when you have an offseted logo
+.container-offset {
+  @media screen and (min-width: $screen-md-min) {
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: background-color 0.25s ease;
+
+  @media screen and (min-width: $screen-md-min) {
+    margin-bottom: ($grid-gutter-width / 4);
+  }
 
   &:before,
   &:after {
@@ -17,11 +34,28 @@
   }
 
   .logo-retraitespopulaires {
-    margin: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 
-  .logo-retraitespopulaires {
-    margin-top: 0;
+  .hamburger-wrapper {
+    margin-right: -($grid-gutter-width / 2);
+
+    @media screen and (min-width: $screen-lg-min) {
+      margin-right: 0;
+    }
+  }
+
+  .logo-retraitespopulaires-offset {
+    margin-left: -20px;
+
+    @media screen and (min-width: $screen-md-min) {
+      margin-left: -6.5rem;
+    }
+  }
+
+  [class*=theme-] & {
+    margin-bottom: 0;
   }
 }
 
@@ -64,6 +98,10 @@
     height: ($grid-gutter-width / 2);
     margin: 0 ($grid-gutter-width / 2);
     background-color: $light-gray;
+
+    &.prenavbar-separator-invisible {
+      background: none;
+    }
   }
 }
 

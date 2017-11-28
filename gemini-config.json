@@ -89,15 +89,6 @@
     "actions-bar": {
       "name": "#element-actions-bar"
     },
-    "big-menu-empty": {
-      "name": "#element-big-menu-empty"
-    },
-    "big-menu-secondary-nav": {
-      "name": "#element-big-menu-secondary-nav"
-    },
-    "big-menu": {
-      "name": "#element-big-menu"
-    },
     "breadcrumb": {
       "name": "#element-breadcrumb"
     },
@@ -133,9 +124,6 @@
     },
     "secondary-nav": {
       "name": "#element-secondary-nav"
-    },
-    "swiper-menu": {
-      "name": "#element-swiper-menu"
     },
     "table": {
       "name": "#element-table"

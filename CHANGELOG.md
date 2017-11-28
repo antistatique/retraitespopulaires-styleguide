@@ -1,10 +1,18 @@
 CHANGELOG
 =========
 
-## MEXT RELEASE
- - add new popin component
+## NEXT RELEASE
+ - fix large screen logo-offset
+ - improve mobile menu item button alignments with hamburger menu
+ - reduce spaces/navbar spaces  as requested by Nicole
 
-## 3.1.10 (2017-11-13)
+## 3.2.0 (2017-11-23)
+ - add a popin component
+ - refactor the navigation component with a simpler mobile menu ⚠️ **BREAKING**
+ - remove big-menu components
+ - remove swiper components 
+
+## 3.1.10 (2017-11-13)
  - fix pretty-link for IE10+ using border-bottom
  - add ckeditor link as btn
  - improve header height when no cover

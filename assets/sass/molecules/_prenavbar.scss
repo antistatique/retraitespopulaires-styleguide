@@ -3,15 +3,17 @@
 .prenavbar {
   a {
     transition: color 0.25s ease-in-out;
-
-    &:hover {
-      text-decoration: none;
-    }
   }
 
   .active {
     a {
       @include theme(color);
+    }
+  }
+
+  &.list-inline {
+    li {
+      margin-left: ($grid-gutter-width / 2);
     }
   }
 
@@ -34,5 +36,10 @@
         padding: 5px 8px 3px;
       }
     }
+  }
+
+  // Sometimes the search icon is directly after the prenav (no separator)
+  + .search-box {
+    margin-left: 20px;
   }
 }

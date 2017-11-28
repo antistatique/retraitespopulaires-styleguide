@@ -252,7 +252,7 @@
 
 @media (min-width: $screen-md-min) {
   .float-md-right {
-      float: right !important;
+    float: right !important;
   }
 
   .float-md-left {
@@ -265,6 +265,7 @@
  */
 @include bg-variant('.bg-berrylight-gray', $berrylight-gray);
 @include bg-variant('.bg-light-gray', $light-gray);
+@include bg-variant('.bg-white', $white);
 
 // Add a `<div class="bg-special-waves"></div>` inside a `.background-overflow.bg-berrylight-gray` element.
 .bg-special-waves {
@@ -308,3 +309,10 @@
   }
 }
 /* stylelint-enable declaration-no-important */
+
+/**
+ * CSS Columns
+ */
+.two-cols {
+  columns: 2;
+}
