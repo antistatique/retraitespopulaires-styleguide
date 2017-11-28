@@ -99,6 +99,9 @@ class PopinForm extends FormBase {
       '#required'    => false,
       '#prefix'      => '<div class="form-group">',
       '#suffix'      => '</div>',
+      '#attributes' => [
+        'id' => 'tracking-popin-contact'
+      ],
     );
 
     $form['npa'] = array(
@@ -108,6 +111,9 @@ class PopinForm extends FormBase {
       '#required'    => false,
       '#prefix'      => '<div class="form-group">',
       '#suffix'      => '</div>',
+      '#attributes' => [
+        'id' => 'tracking-popin-npa'
+      ],
     );
 
     $form['actions']['submit'] = array(
@@ -117,6 +123,9 @@ class PopinForm extends FormBase {
       '#button_type' => 'primary',
       '#prefix'      => '<div class="form-group">',
       '#suffix'      => '</div>',
+      '#attributes' => [
+        'id' => 'tracking-popin-submit'
+      ],
       '#ajax'        => [
         'callback' => [$this, 'respondToAjax'],
         'event'    => 'click',
