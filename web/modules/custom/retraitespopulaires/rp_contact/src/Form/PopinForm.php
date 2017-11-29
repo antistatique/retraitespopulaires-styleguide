@@ -116,6 +116,12 @@ class PopinForm extends FormBase {
       ],
     );
 
+    $receivers = $this->state->get('rp_contact.settings.popin')['receivers'];
+    $form['mail_to'] = [
+      '#type' => 'hidden',
+      '#value' => !empty($params['mail_to']) ? $params['mail_to'] : $receivers,
+    ];
+
     $form['actions']['submit'] = array(
       '#type'        => 'submit',
       '#value'       => $this->t('Envoyer'),
@@ -178,7 +184,6 @@ class PopinForm extends FormBase {
   * {@inheritdoc}
   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $settings = $this->state->get('rp_contact.settings.popin');
 
     $data = [
       'contact' => $form_state->getValue('contact'),
@@ -187,7 +192,7 @@ class PopinForm extends FormBase {
     ];
 
     // Send to admin
-    $to = preg_replace('/\s+/', ' ', $settings['receivers']);
+    $to = preg_replace('/\s+/', ' ', $form_state->getValue('mail_to'));
     $to = str_replace(';', ',', $to);
     $this->mail->mail('rp_contact', 'contact_popin', $to, 'fr', $data);
 

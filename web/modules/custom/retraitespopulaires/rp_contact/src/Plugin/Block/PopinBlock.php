@@ -56,6 +56,7 @@ class PopinBlock extends BlockBase implements ContainerFactoryPluginInterface {
     $node = $this->route->getParameter('node');
     if ($node && $node->hasField('field_popin') && !$node->get('field_popin')->isEmpty()) {
       $variables['popin'] = TRUE;
+      $variables['popin_mail_to'] = $node->get('field_email_popin')->value;
     }
 
     return [

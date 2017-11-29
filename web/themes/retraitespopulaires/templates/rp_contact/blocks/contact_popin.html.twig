@@ -10,7 +10,7 @@
     <p class="popin-title-closed m-y-0 hidden"></p>
     <div class="collapse" id="popin-content">
       <div class="popin-body p-t-1">
-        {{ load_form('rp_contact', 'PopinForm') }}
+        {{ load_form('rp_contact', 'PopinForm', {'mail_to': variables.popin_mail_to}) }}
       </div>
     </div>
   </div>
