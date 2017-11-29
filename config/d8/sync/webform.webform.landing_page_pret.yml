@@ -133,6 +133,8 @@ handlers:
       debug: false
       reply_to: ''
       return_path: ''
+      ignore_access: false
+      exclude_empty: true
   courriel_feedback:
     id: email
     label: 'Courriel - Feedback'
@@ -159,3 +161,5 @@ handlers:
       debug: false
       reply_to: info@retraitespopulaires.ch
       return_path: ''
+      ignore_access: false
+      exclude_empty: true

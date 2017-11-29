@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.faq.field_contact_cta
     - field.field.node.faq.field_document
     - field.field.node.faq.field_document_random
+    - field.field.node.faq.field_email_popin
     - field.field.node.faq.field_faq
     - field.field.node.faq.field_faq_random
     - field.field.node.faq.field_faq_type
@@ -78,6 +79,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_email_popin:
+    weight: 118
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_faq:
     weight: 115

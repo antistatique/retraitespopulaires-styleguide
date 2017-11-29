@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.building.field_date
     - field.field.node.building.field_document
     - field.field.node.building.field_document_random
+    - field.field.node.building.field_email_popin
     - field.field.node.building.field_faq
     - field.field.node.building.field_faq_random
     - field.field.node.building.field_file_building
@@ -123,6 +124,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_email_popin:
+    weight: 122
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_faq:
     weight: 119

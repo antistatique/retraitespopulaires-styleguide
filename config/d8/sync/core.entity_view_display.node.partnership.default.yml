@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.partnership.field_date_start
     - field.field.node.partnership.field_document
     - field.field.node.partnership.field_document_random
+    - field.field.node.partnership.field_email_popin
     - field.field.node.partnership.field_faq
     - field.field.node.partnership.field_faq_random
     - field.field.node.partnership.field_latitude
@@ -101,6 +102,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_email_popin:
+    weight: 119
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_faq:
     weight: 116

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.faq.field_contact_cta
     - field.field.node.faq.field_document
     - field.field.node.faq.field_document_random
+    - field.field.node.faq.field_email_popin
     - field.field.node.faq.field_faq
     - field.field.node.faq.field_faq_random
     - field.field.node.faq.field_faq_type
@@ -60,6 +61,7 @@ third_party_settings:
       children:
         - field_contact_cta
         - field_popin
+        - field_email_popin
         - field_search_npa
         - field_advisor
         - field_contact
@@ -116,7 +118,7 @@ content:
     third_party_settings: {  }
     region: content
   field_advisor:
-    weight: 36
+    weight: 37
     settings:
       match_operator: CONTAINS
       size: 60
@@ -125,7 +127,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_contact:
-    weight: 37
+    weight: 38
     settings:
       match_operator: CONTAINS
       size: 60
@@ -155,6 +157,14 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_email_popin:
+    weight: 35
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
     region: content
   field_faq:
     weight: 12
@@ -205,7 +215,7 @@ content:
     type: options_select
     region: content
   field_search_npa:
-    weight: 35
+    weight: 36
     settings:
       display_label: true
     third_party_settings: {  }

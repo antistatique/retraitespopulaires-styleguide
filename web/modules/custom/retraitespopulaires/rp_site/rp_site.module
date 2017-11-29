@@ -30,6 +30,23 @@ function rp_site_query_random_alter($query) {
 }
 
 /**
+ * Implements hook_form_alter().
+ */
+function rp_site_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (isset($form['field_popin']) && isset($form['field_email_popin'])) {
+    $form['field_email_popin']['#states'] = [
+      'visible' => [
+        ':input[name="field_popin[value]"]' => ['checked' => TRUE],
+      ],
+    ];
+
+    $receivers = Drupal::state()->get('rp_contact.settings.popin')['receivers'];
+    // TODO fix this, it doesn't work, I must be missing something.
+    $form['field_email_popin']['#attributes']['placeholder'] = $receivers;
+  }
+}
+
+/**
 * Theme hook
 */
 function rp_site_theme($existing, $type, $theme, $path) {

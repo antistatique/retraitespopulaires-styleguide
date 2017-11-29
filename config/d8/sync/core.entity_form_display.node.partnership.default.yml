@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.partnership.field_date_start
     - field.field.node.partnership.field_document
     - field.field.node.partnership.field_document_random
+    - field.field.node.partnership.field_email_popin
     - field.field.node.partnership.field_faq
     - field.field.node.partnership.field_faq_random
     - field.field.node.partnership.field_latitude
@@ -35,6 +36,7 @@ third_party_settings:
       children:
         - field_contact_cta
         - field_popin
+        - field_email_popin
         - field_search_npa
         - field_contact
       parent_name: group_tabs
@@ -138,7 +140,7 @@ content:
     third_party_settings: {  }
     region: content
   field_contact:
-    weight: 127
+    weight: 128
     settings:
       match_operator: CONTAINS
       size: 60
@@ -189,6 +191,14 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_email_popin:
+    weight: 126
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
   field_faq:
     weight: 122
     settings:
@@ -233,7 +243,7 @@ content:
     type: boolean_checkbox
     region: content
   field_search_npa:
-    weight: 126
+    weight: 127
     settings:
       display_label: true
     third_party_settings: {  }

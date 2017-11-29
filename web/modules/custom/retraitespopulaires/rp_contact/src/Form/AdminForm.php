@@ -105,10 +105,9 @@ class AdminForm extends FormBase {
         );
         $form['popin']['popin_receivers'] = array(
           '#type'          => 'textfield',
-          '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
+          '#title'         => 'E-mail(s) notifié(s) par défaut lors d\'une nouvelle demande',
           '#default_value' => $this->state->get('rp_contact.settings.popin')['receivers'],
-          '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
-          '#suffix'        => '<br/>'
+          '#description'   => t('Séparer les adresses par le caractère point-virgule (;).<br>Il est possible de surcharger cette valeur au cas par cas lors de la création/édition d\'un contenu.'),
         );
 
         // Page settings
@@ -258,7 +257,6 @@ class AdminForm extends FormBase {
             '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
             '#default_value' => $this->state->get('rp_contact.settings.page.tax_attestation')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
-            '#suffix'        => '<br/>'
         );
 
         // Collection pages settings
