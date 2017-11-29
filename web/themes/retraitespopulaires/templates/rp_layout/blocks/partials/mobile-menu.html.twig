@@ -59,6 +59,7 @@
       {% set classes = [
         item.inActiveTrail ? 'active',
         item.link.pluginId|clean_class,
+        item.subtree and menu_level == 0 ? 'collapser-first-level',
       ] %}
       <li class="{{ classes|join(' ') }}">
         <div class="collapser-menu-item">
@@ -72,8 +73,8 @@
           </span>
           {% if item.subtree %}
             {% set classes = [
-              'btn btn-circle btn-outline btn-primary',
-              item.inActiveTrail ? 'collapsed',
+              'btn btn-circle btn-outline btn-primary collapsed',
+              not item.inActiveTrail ? 'collapsed',
             ] %}
             <button
               class="{{ classes|join(' ') }}"
@@ -89,17 +90,20 @@
           {% endif %}
         </div>
 
-        {% set classes = [
-          'collapse',
-          item.inActiveTrail ? 'in',
-        ] %}
-        <div
-          class="{{ classes|join(' ') }}"
-          id="{{ item.link.pluginId|clean_id }}"
-          aria-expanded="{{ item.inActiveTrail ? 'true' : 'false' }}"
-        >
-          {{ menus.menu_links(item.subtree, menu_level + 1, active_trail) }}
-        </div>
+        {% if item.subtree %}
+          {% set classes = [
+            'collapser-menu-collapse',
+            'collapse',
+            item.inActiveTrail ? 'in',
+          ] %}
+          <div
+            class="{{ classes|join(' ') }}"
+            id="{{ item.link.pluginId|clean_id }}"
+            aria-expanded="{{ item.inActiveTrail ? 'true' : 'false' }}"
+          >
+            {{ menus.menu_links(item.subtree, menu_level + 1, active_trail) }}
+          </div>
+        {% endif %}
       </li>
     {% endfor %}
 
