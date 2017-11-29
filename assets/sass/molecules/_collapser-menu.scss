@@ -5,12 +5,76 @@ ul.collapser-menu {
   list-style: none;
 }
 
-.container-collapser-menu {
+.collapser-menu {
   margin-top: 85px;
 
+  .collapser-first-level {
+    &:after {
+      content: '';
+      display: block;
+      position: relative;
+      left: 50%;
+      width: 100vw;
+      margin-left: -50vw;
+      border-bottom: 0 solid transparent;
+      transition:
+        margin 0.2s ease,
+        border-bottom 0.2s ease;
+    }
+
+    &.toggled {
+      position: relative;
+      background: $white;
+      margin-right: ($grid-gutter-width / -2);
+      margin-left: ($grid-gutter-width / -2);
+      border-right: ($grid-gutter-width / 2) solid $white;
+      border-left: ($grid-gutter-width / 2) solid $white;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 1.3em;
+        left: 50%;
+        width: 100vw;
+        height: 1px;
+        margin-left: -50vw;
+        border-bottom: 1px solid $light-gray;
+      }
+
+      &:after {
+        margin-bottom: ($grid-gutter-width / 2);
+        border-bottom: 1px solid $light-gray;
+      }
+    }
+  }
+
   ul ul {
+    padding-left: 1.3em;
+
+    li {
+      position: relative;
+
+      &:before {
+        content: '•';
+        position: absolute;
+        top: 0.3em;
+        left: -1.1em;
+        font-size: 1.2em;
+        color: $light-gray;
+      }
+    }
+  }
+
+  ul ul ul {
+    list-style-type: none;
     padding-left: $grid-gutter-width * 0.75;
-    border-left: 1px solid $ligthen-gray;
+    border-left: 1px solid $light-gray;
+
+    li:before {
+      content: none;
+    }
   }
 
   .organic-lines {
@@ -22,8 +86,8 @@ ul.collapser-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: $grid-gutter-width * 0.75;
-  margin-right: 2px;
+  min-height: 2.666em;
+  margin-bottom: $grid-gutter-width * 0.35;
 
   &:hover {
     text-decoration: none;
@@ -31,6 +95,11 @@ ul.collapser-menu {
 
   .btn-circle {
     background: $white;
+  }
+
+  .collapser-first-level.toggled > & .btn-circle {
+    background: $brand-primary;
+    color: $white;
   }
 
   .btn:not(.collapsed) {

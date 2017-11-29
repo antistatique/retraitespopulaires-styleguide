@@ -31,6 +31,14 @@ export function mobile_menu () {
     }
   });
 
+  $(document).on('show.bs.collapse hide.bs.collapse', function(e) {
+    const $target = $(e.target);
+    if ($target.hasClass('collapser-menu-collapse')) {
+      const $parent = $target.closest('li');
+      $parent.toggleClass('toggled');
+    }
+  });
+
   // Close when resizing the window
   $(window).on('resize', function() {
     if ($navbar.hasClass('active')) {
