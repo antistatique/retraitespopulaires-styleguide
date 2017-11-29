@@ -1,5 +1,5 @@
 {# mobile navigation #}
-{% include '@retraitespopulaires/rp_layout/blocks/partials/mobile-menu.html.twig' with {'main_menu': variables.main_menu, 'pre_main_menu': variables.pre_main_menu} only %}
+{% include '@retraitespopulaires/rp_layout/blocks/partials/mobile-menu.html.twig' with {'main_menu': variables.main_menu, 'pre_main_menu': variables.pre_main_menu, 'pre_main_menu_active_trail': variables.pre_main_menu_active_trail, 'main_menu_active_trail': variables.main_menu_active_trail} only %}
 
 <header class="header hidden-print">
   <div class="container container-offset">
@@ -16,14 +16,14 @@
           </div>
 
           {# prenavbar with search #}
-          {% include '@retraitespopulaires/rp_layout/blocks/partials/pre-main-menu.html.twig' with {'pre_main_menu': variables.pre_main_menu} only %}
+          {% include '@retraitespopulaires/rp_layout/blocks/partials/pre-main-menu.html.twig' with {'pre_main_menu': variables.pre_main_menu, 'pre_main_menu_active_trail': variables.pre_main_menu_active_trail} only %}
 
           {# hamburger for mobile #}
           {% include '@retraitespopulaires/rp_layout/blocks/partials/hamburger.html.twig' %}
         </div>
 
         {# main navbar first level only #}
-        {% include '@retraitespopulaires/rp_layout/blocks/partials/main-menu.html.twig' with {'main_menu': variables.main_menu} only %}
+        {% include '@retraitespopulaires/rp_layout/blocks/partials/main-menu.html.twig' with {'main_menu': variables.main_menu, 'main_menu_active_trail': variables.main_menu_active_trail} only %}
 
       </div>
     </div>
