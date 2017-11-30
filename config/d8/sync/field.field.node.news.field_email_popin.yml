@@ -10,7 +10,7 @@ field_name: field_email_popin
 entity_type: node
 bundle: news
 label: 'Email de réception de la Pop-in de contact'
-description: "Si la Pop-in est activée, vous pouvez paramétrer une adresse de réception pour les prises de contact faites via celle-là.<br>\r\n<b>Par défaut, l'adresse est celle <a href=\"/admin/retraites-populaires/contact/settings#edit-popin\" target=\"_blank\">paramétrée dans la configuration</a>.</b>"
+description: "Vous pouvez paramétrer une ou plusieurs adresses de réception pour les prises de contact faites via la Pop-in.<br>\r\nSéparer les adresses par le caractère point-virgule (;).<br>\r\nPar défaut, la valeur est celle <a href=\"/admin/retraites-populaires/contact/settings#edit-popin\" target=\"_blank\">paramétrée dans la configuration</a>."
 required: false
 translatable: false
 default_value: {  }
