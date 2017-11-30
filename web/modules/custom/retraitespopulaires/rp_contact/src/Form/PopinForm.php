@@ -6,7 +6,6 @@
 
 namespace Drupal\rp_contact\Form;
 
-use Drupal\Core\Ajax\InvokeCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -18,6 +17,7 @@ use Drupal\Core\Ajax\CssCommand;
 use Drupal\Core\Ajax\PrependCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Ajax\DataCommand;
+use Drupal\Core\Ajax\InvokeCommand;
 
 class PopinForm extends FormBase {
   /**
@@ -132,8 +132,7 @@ class PopinForm extends FormBase {
       '#prefix'      => '<div class="form-group">',
       '#suffix'      => '</div>',
       '#attributes' => [
-        'id' => 'tracking-popin-submit',
-        'class' => array('btn-primary', 'use-ajax-submit')
+        'class' => array('btn-primary', 'use-ajax-submit', 'tracking-popin-submit')
       ],
       '#ajax'        => [
         'callback' => [$this, 'respondToAjax'],
@@ -173,7 +172,7 @@ class PopinForm extends FormBase {
       'title_closed' => $this->t('Merci pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter.'),
       'toggle' => TRUE,
     ];
-     $response->addCommand(new InvokeCommand('#block-popinformblock .popin', 'contactPopin', [$data]));
+    $response->addCommand(new InvokeCommand('#block-popinformblock .popin', 'contactPopin', [$data]));
 
     return $response;
   }

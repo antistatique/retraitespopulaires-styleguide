@@ -84,7 +84,7 @@
       $popin.find('.popin-body').html(data.body);
     }
 
-    console.log('Contact Popin function called!');
+    setCookieHidden();
   };
 
 })(jQuery);
