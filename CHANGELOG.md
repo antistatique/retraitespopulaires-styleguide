@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## NEXT RELEASE - 3.2.1 (2017-11-23)
+## NEXT RELEASE
  - fix large screen logo-offset
  - improve mobile menu item button alignments with hamburger menu
  - reduce spaces/navbar spaces  as requested by Nicole
