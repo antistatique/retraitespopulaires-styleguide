@@ -67,15 +67,40 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
   public function build($params = array()) {
     $variables = [];
 
+    $highlight = $this->state->get('rp_homepage.highlight');
+
+    $oembed_endpoint = 'https://vimeo.com/api/oembed';
+
+    // Grab the video url from the url, or use default
+    $json_url = $oembed_endpoint . '.json?url=' . rawurlencode($highlight['vimeo_url']) . '&width=640';
+
+    // Curl helper function
+    function curl_get($url) {
+      $curl = curl_init($url);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+      curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+      $return = curl_exec($curl);
+      curl_close($curl);
+      return $return;
+    }
+
     if ($this->pathMatcher->isFrontPage()) {
+      $vimeo_oembed = json_decode(curl_get($json_url));
+//      dump($vimeo_oembed);
+
       $variables = [
-        'highlight' => $this->state->get('rp_homepage.highlight'),
+        'highlight' => $highlight,
+        'vimeo_oembed' => $vimeo_oembed,
       ];
     }
 
     return [
       '#theme'     => 'rp_homepage_highlight',
       '#variables' => $variables,
+      '#attached' => [
+        'library' => ['rp_homepage/vimeo_player'],
+      ],
       '#cache' => [
         '#cache' => [
           'contexts' => [

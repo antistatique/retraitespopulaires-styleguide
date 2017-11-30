@@ -106,6 +106,13 @@ class HomepageSettings extends FormBase {
       '#default_value' => $highlight_default_value['btn_label'] ?? NULL,
     ];
 
+    $form['highlight']['vimeo_url'] = [
+      '#type'          => 'textfield',
+      '#title'         => $this->t('URL de la vidéo (optionnel)'),
+      '#description'   => $this->t('L\'URL doit être un lien vimeo, au format <code>https://vimeo.com/242850098</code>.'),
+      '#default_value' => $highlight_default_value['vimeo_url'] ?? NULL,
+    ];
+
     for($i=1; $i <= self::NUMBER_OF_BLOCKS; $i++) {
       $block = 'block_'.$i;
 

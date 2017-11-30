@@ -3,19 +3,43 @@
 {% if highlight and highlight.enabled %}
 <div class="container">
   <div class="row">
-    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-8 col-md-6">
-      <a href="{{ highlight.url }}" class="card card-white card-light card-funky-waves">
-        <div class="card-body">
-          <h4 class="card-title m-t-0">
-            {{ highlight.title }}
-          </h4>
-          <p>{{ highlight.subtitle }}</p>
-          <div class="spacer spacer-sm"></div>
-          {% if highlight.btn_label %}
-            <span class="btn btn-primary btn-lg">{{ highlight.btn_label|default('En savoir plus') }}</span>
-          {% endif %}
-        </div>
-      </a>
+    {% set classes = [
+      variables.vimeo_oembed ? 'col-xs-10 col-xs-offset-1 col-md-offset-0 col-md-8' : 'col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-8 col-md-6',
+    ] %}
+    <div class="{{ classes|join(' ') }}">
+      {% set classes = [
+        'card card-white card-light card-funky-waves',
+        variables.vimeo_oembed ? 'flex-direction-row m-x-0 flex-row',
+      ] %}
+      <div class="{{ classes|join(' ') }}">
+        {% if variables.vimeo_oembed %}
+          <div class="col-sm-4 col-md-6 d-flex p-0">
+            {# Magnificent responsive video with padding hack #}
+            <div class="vimeo-player" style="background-image: url('{{ variables.vimeo_oembed.thumbnail_url }}');">
+              <div class="vimeo-player-container">
+                <div id="vimeo-player" data-vimeo-id="{{ variables.vimeo_oembed.video_id }}" data-ratio="{{ variables.vimeo_oembed.height / variables.vimeo_oembed.width }}" data-vimeo-defer style="padding-bottom: {{ variables.vimeo_oembed.height / variables.vimeo_oembed.width * 100 }}%"></div>
+              </div>
+              <div class="vimeo-player-play">
+                <a title="{{ 'Jouer la vidéo'|t }}" href="#">
+                  Play
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-8 col-md-6 p-0">
+            <div class="card-body">
+              <h4 class="card-title m-t-0">
+                <a href="{{ highlight.url }}">{{ highlight.title }}</a>
+              </h4>
+              <p>{{ highlight.subtitle }}</p>
+              <div class="spacer spacer-sm"></div>
+              {% if highlight.btn_label %}
+                <a href="{{ highlight.url }}" class="btn btn-primary btn-lg">{{ highlight.btn_label|default('En savoir plus') }}</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
