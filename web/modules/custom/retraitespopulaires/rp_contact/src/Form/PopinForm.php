@@ -116,10 +116,13 @@ class PopinForm extends FormBase {
       ],
     );
 
-    $receivers = $this->state->get('rp_contact.settings.popin')['receivers'];
+    // Make sure we have the config value by default for the popin email.
+    if (empty($params['mail_to'])) {
+      $params['mail_to'] = $this->state->get('rp_contact.settings.popin')['receivers'];
+    }
     $form['mail_to'] = [
       '#type' => 'hidden',
-      '#value' => !empty($params['mail_to']) ? $params['mail_to'] : $receivers,
+      '#value' => $params['mail_to'],
     ];
 
     $form['actions']['submit'] = array(
