@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news.field_document
     - field.field.node.news.field_document_news
     - field.field.node.news.field_document_random
+    - field.field.node.news.field_email_popin
     - field.field.node.news.field_faq
     - field.field.node.news.field_faq_random
     - field.field.node.news.field_file_news
@@ -21,6 +22,7 @@ dependencies:
     - field.field.node.news.field_metatags
     - field.field.node.news.field_news_type
     - field.field.node.news.field_offer
+    - field.field.node.news.field_popin
     - field.field.node.news.field_profession
     - field.field.node.news.field_search_npa
     - image.style.thumbnail
@@ -69,6 +71,9 @@ third_party_settings:
     group_contacts:
       children:
         - field_contact_cta
+        - field_popin
+        - field_email_popin
+        - group_flex
         - field_search_npa
         - field_advisor
         - field_contact
@@ -104,7 +109,6 @@ third_party_settings:
         - body
         - field_news_type
         - field_profession
-        - field_profil
       parent_name: group_tabs
       weight: 7
       label: 'Données principales'
@@ -159,7 +163,7 @@ content:
     third_party_settings: {  }
     region: content
   field_advisor:
-    weight: 130
+    weight: 133
     settings:
       match_operator: CONTAINS
       size: 60
@@ -168,7 +172,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_contact:
-    weight: 131
+    weight: 134
     settings:
       match_operator: CONTAINS
       size: 60
@@ -221,6 +225,14 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_email_popin:
+    weight: 130
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
     region: content
   field_faq:
     weight: 126
@@ -287,6 +299,13 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_popin:
+    weight: 129
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_profession:
     weight: 14
     settings: {  }
@@ -294,7 +313,7 @@ content:
     type: options_buttons
     region: content
   field_search_npa:
-    weight: 129
+    weight: 132
     settings:
       display_label: true
     third_party_settings: {  }

@@ -7,6 +7,8 @@ NEXT RELEASE
  - improve breadcrumb fontsize
  - improve breadcrum spacing
  - add option to enable/disable contact CTA
+ - add option to enable/disable contact popin
+ - add new popine in every page which enable it
  - refactorint the whole navigation
  - remove the profils 
  - update to styleguide 3.2.0

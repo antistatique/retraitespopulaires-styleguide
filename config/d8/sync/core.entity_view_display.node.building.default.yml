@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.building.field_date
     - field.field.node.building.field_document
     - field.field.node.building.field_document_random
+    - field.field.node.building.field_email_popin
     - field.field.node.building.field_faq
     - field.field.node.building.field_faq_random
     - field.field.node.building.field_file_building
@@ -20,6 +21,7 @@ dependencies:
     - field.field.node.building.field_latitude
     - field.field.node.building.field_longitude
     - field.field.node.building.field_metatags
+    - field.field.node.building.field_popin
     - field.field.node.building.field_search_npa
     - field.field.node.building.field_situation
     - field.field.node.building.field_virtual_image
@@ -123,6 +125,13 @@ content:
     third_party_settings: {  }
     type: boolean
     region: content
+  field_email_popin:
+    weight: 122
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_faq:
     weight: 119
     label: above
@@ -183,6 +192,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_popin:
+    weight: 121
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_search_npa:
     weight: 115

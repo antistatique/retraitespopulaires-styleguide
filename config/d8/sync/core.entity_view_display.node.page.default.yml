@@ -11,12 +11,14 @@ dependencies:
     - field.field.node.page.field_document
     - field.field.node.page.field_document_page
     - field.field.node.page.field_document_random
+    - field.field.node.page.field_email_popin
     - field.field.node.page.field_faq
     - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
     - field.field.node.page.field_form
     - field.field.node.page.field_full_screen_content
     - field.field.node.page.field_metatags
+    - field.field.node.page.field_popin
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_search_npa
@@ -95,6 +97,13 @@ content:
     third_party_settings: {  }
     type: boolean
     region: content
+  field_email_popin:
+    weight: 18
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_faq:
     weight: 5
     label: above
@@ -144,6 +153,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_popin:
+    weight: 17
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_products:
     weight: 7
