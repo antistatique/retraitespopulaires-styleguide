@@ -27,17 +27,21 @@
             </div>
           </div>
           <div class="col-sm-8 col-md-6 p-0">
-            <div class="card-body">
-              <h4 class="card-title m-t-0">
-                <a href="{{ highlight.url }}">{{ highlight.title }}</a>
-              </h4>
-              <p>{{ highlight.subtitle }}</p>
-              <div class="spacer spacer-sm"></div>
-              {% if highlight.btn_label %}
-                <a href="{{ highlight.url }}" class="btn btn-primary btn-lg">{{ highlight.btn_label|default('En savoir plus') }}</a>
-              {% endif %}
-            </div>
+            {% block card_body %}
+              <div class="card-body">
+                <h4 class="card-title m-t-0">
+                  <a href="{{ highlight.url }}">{{ highlight.title }}</a>
+                </h4>
+                <p>{{ highlight.subtitle }}</p>
+                <div class="spacer spacer-sm"></div>
+                {% if highlight.btn_label %}
+                  <a href="{{ highlight.url }}" class="btn btn-primary btn-lg">{{ highlight.btn_label|default('En savoir plus') }}</a>
+                {% endif %}
+              </div>
+            {% endblock %}
           </div>
+        {% else %}
+          {{ block('card_body') }}
         {% endif %}
       </div>
     </div>
