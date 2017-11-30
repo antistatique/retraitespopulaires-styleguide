@@ -58,6 +58,7 @@
     {% for item in items %}
       {% set classes = [
         item.inActiveTrail ? 'active',
+        item.inActiveTrail ? 'toggled',
         item.link.pluginId|clean_class,
         item.subtree and menu_level == 0 ? 'collapser-first-level',
       ] %}
@@ -73,8 +74,9 @@
           </span>
           {% if item.subtree %}
             {% set classes = [
-              'btn btn-sm btn-circle btn-outline btn-primary collapsed',
+              'btn btn-sm btn-circle btn-outline btn-primary',
               not item.inActiveTrail ? 'collapsed',
+              item.inActiveTrail ? 'active',
             ] %}
             <button
               class="{{ classes|join(' ') }}"
