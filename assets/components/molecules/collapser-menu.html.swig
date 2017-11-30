@@ -6,7 +6,7 @@ notes: |
   Collapser-menu is used in place of the Swiper menu from 3.2.0 and up.
 ---
 <ul class="collapser-menu">
-  <li>
+  <li class="collapser-first-level">
     <div class="collapser-menu-item">
       <a class="pretty-link" href="#">Lien</a>
       <button class="arrow-next btn btn-circle btn-outline btn-primary" title="Dérouler le sous-menu Lien" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -14,8 +14,10 @@ notes: |
       </button>
     </div>
 
-    <ul id="collapseExample">
-      ...
-    </ul>
+    <div class="collapse collapser-menu-collapse" id="collapseExample">
+      <ul>
+        ...
+      </ul>
+    </div>
   </li>
 </ul>

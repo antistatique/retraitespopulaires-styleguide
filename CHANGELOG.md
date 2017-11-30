@@ -9,6 +9,7 @@ CHANGELOG
  - remove themes colors of professions (assurance, prevoyance, immobilier, hypotheque, institutionnel)
  - fix card as CTA variant
  - fix organic-lines doc 
+ - rewamp the mobile menu with better design
 
 ## 3.2.0 (2017-11-23)
  - add a popin component
