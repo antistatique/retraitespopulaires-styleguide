@@ -13,6 +13,7 @@ NEXT RELEASE
  - remove the profils 
  - update to styleguide 3.2.0
  - fix secondary-side navigation title margin-bottom
+ - add vimeo support of highlighted card homepage
 
 ## 2.3.0 (2017-11-13)
  - move product into is own module
