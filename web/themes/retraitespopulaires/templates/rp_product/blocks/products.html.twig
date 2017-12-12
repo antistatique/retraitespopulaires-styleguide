@@ -20,8 +20,7 @@
       <div class="row flex-row">
         {% if variables.products %}
           {% for product in variables.products %}
-            {% set theme = product.field_profession.target_id|theme_profession %}
-            <div class="col-xs-12 theme-{{ theme|default('primary') }}">
+            <div class="col-xs-12 theme-primary">
               {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
             </div>
           {% endfor %}
