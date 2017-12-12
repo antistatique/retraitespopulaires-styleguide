@@ -10,6 +10,7 @@ CHANGELOG
  - fix card as CTA variant
  - fix organic-lines doc 
  - rewamp the mobile menu with better design
+ - fix organic-wraper to allow click
 
 ## 3.2.0 (2017-11-23)
  - add a popin component
