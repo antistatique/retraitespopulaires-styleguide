@@ -40,5 +40,22 @@
 }
 
 .vimeo-player-play a {
+  padding: 2em 1em;
+  background: #008e4f;
+  border: 1px solid #008e4f;
+  border-radius: 4em;
+  line-height: 0;
+  cursor: pointer;
   color: white;
+  transition:
+    background .25s ease,
+    color .25s ease,
+    border-color .25s ease;
+}
+.vimeo-player-play a:hover,
+.vimeo-player-play a:active {
+  background: #005b33;
+  border-color: #005b33;
+  color: white;
+  text-decoration: none;
 }
