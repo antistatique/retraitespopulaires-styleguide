@@ -271,10 +271,19 @@ a.card-img-top {
 .card-no-shadow { box-shadow: none; }
 
 .card-funky-waves {
-  margin-top: -24%;
+  margin-top: -70px;
 
-  @media (min-width: $screen-md-min) {
-    margin-top: -36%;
+  @media (min-width: $screen-sm-min) {
+    flex-direction: row;
+    margin-top: -110px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    margin-top: -150px;
+  }
+
+  @media (min-width: $screen-xl-min) {
+    margin-top: -200px;
   }
 }
 
