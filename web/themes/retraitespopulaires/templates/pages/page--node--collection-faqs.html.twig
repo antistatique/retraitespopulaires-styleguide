@@ -1,8 +1,6 @@
 {% extends "@retraitespopulaires/pages/page.html.twig" %}
 
 {% block attachments %}
-  <div class="spacer"></div>
-  {{ load_block('rp_site_documents_collection_block') }}
   {{ load_block('rp_site_faqs_collection_block') }}
   {{ parent() }}
 {% endblock %}
