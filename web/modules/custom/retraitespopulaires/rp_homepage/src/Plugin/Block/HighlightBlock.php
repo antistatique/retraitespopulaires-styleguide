@@ -12,6 +12,8 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\Path\PathMatcherInterface;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\TransferException;
 
 /**
  * Provides a Block to display the six blocks on the homepage
@@ -22,6 +24,8 @@ use Drupal\Core\Path\PathMatcherInterface;
  * )
  */
 class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterface {
+
+  CONST VIMEO_API = 'https://vimeo.com/api/oembed.json';
 
   /**
    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
@@ -37,12 +41,20 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
   protected $pathMatcher;
 
   /**
+   * The HTTP client to fetch the feed data with.
+   *
+   * @var \GuzzleHttp\ClientInterface
+   */
+  protected $httpClient;
+
+  /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, StateInterface $state, PathMatcherInterface $path_matcher) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, StateInterface $state, PathMatcherInterface $path_matcher, ClientInterface $http_client) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->state = $state;
     $this->pathMatcher = $path_matcher;
+    $this->httpClient = $http_client;
   }
 
   /**
@@ -57,7 +69,8 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
       $plugin_definition,
       // Load customs services used in this class.
       $container->get('state'),
-      $container->get('path.matcher')
+      $container->get('path.matcher'),
+      $container->get('http_client')
     );
   }
 
@@ -65,39 +78,9 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
    * {@inheritdoc}
    */
   public function build($params = array()) {
-    $variables = [];
-
-    $highlight = $this->state->get('rp_homepage.highlight');
-
-    $oembed_endpoint = 'https://vimeo.com/api/oembed';
-
-    // Grab the video url from the url, or use default
-    $json_url = $oembed_endpoint . '.json?url=' . rawurlencode($highlight['vimeo_url']) . '&width=640';
-
-    // Curl helper function
-    function curl_get($url) {
-      $curl = curl_init($url);
-      curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-      curl_setopt($curl, CURLOPT_TIMEOUT, 30);
-      curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-      $return = curl_exec($curl);
-      curl_close($curl);
-      return $return;
-    }
-
-    if ($this->pathMatcher->isFrontPage()) {
-      $vimeo_oembed = json_decode(curl_get($json_url));
-//      dump($vimeo_oembed);
-
-      $variables = [
-        'highlight' => $highlight,
-        'vimeo_oembed' => $vimeo_oembed,
-      ];
-    }
-
-    return [
+    $renderer = [
       '#theme'     => 'rp_homepage_highlight',
-      '#variables' => $variables,
+      '#variables' => [],
       '#attached' => [
         'library' => ['rp_homepage/vimeo_player'],
       ],
@@ -110,6 +93,43 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
         'tags' => ['front'],
       ],
     ];
+
+    // Only display on frontpage.
+    if (!$this->pathMatcher->isFrontPage()) {
+      return $renderer;
+    }
+
+    $highlight = $this->state->get('rp_homepage.highlight');
+    $renderer['#variables']['highlight'] = $highlight;
+
+    // When vimeo is not filled in config, render the card whitout video.
+    if (!isset($highlight['vimeo_url'])) {
+      return $renderer;
+    }
+
+    // Retrieive oembed from Vimeo API.
+    $embed = NULL;
+    try {
+      $response = $this->httpClient->get(self::VIMEO_API, [
+        'headers' => ['content-type' => 'application/json'],
+        'query' => [
+          'url' => $highlight['vimeo_url'],
+          'width' => '640',
+        ]
+      ]);
+      $embed = json_decode($response->getBody());
+    }
+    catch (TransferException $e) {
+      watchdog_exception('rp_homepage', $e);
+    }
+
+    if (!$embed) {
+      return $renderer;
+    }
+
+    $renderer['#variables']['vimeo_oembed'] = $embed;
+
+    return $renderer;
   }
 
 }
