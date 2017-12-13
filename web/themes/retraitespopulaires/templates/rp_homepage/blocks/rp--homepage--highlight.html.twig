@@ -35,7 +35,7 @@
                 <p>{{ highlight.subtitle }}</p>
                 <div class="spacer spacer-sm"></div>
                 {% if highlight.btn_label %}
-                  <a href="{{ highlight.url }}" class="btn btn-primary btn-lg">{{ highlight.btn_label|default('En savoir plus') }}</a>
+                  <a href="{{ highlight.url }}" class="btn btn-primary">{{ highlight.btn_label|default('En savoir plus') }}</a>
                 {% endif %}
               </div>
             {% endblock %}
