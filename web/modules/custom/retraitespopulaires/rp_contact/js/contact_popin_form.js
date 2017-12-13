@@ -87,4 +87,11 @@
     setCookieHidden();
   };
 
+  $.fn.loading = function() {
+    const $popin = $(this);
+    $popin.find('input[type="submit"]').addClass('hidden');
+    $popin.find('.ajax-progress-throbber').html('<div class="throbber-retraitespopulaires throbber-primary">&nbsp;</div>');
+  };
+
+
 })(jQuery);
