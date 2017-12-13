@@ -11,6 +11,8 @@ CHANGELOG
  - fix organic-lines doc 
  - rewamp the mobile menu with better design
  - fix organic-wraper to allow click
+ - improve pop-in
+ - add throbber as gif
 
 ## 3.2.0 (2017-11-23)
  - add a popin component
