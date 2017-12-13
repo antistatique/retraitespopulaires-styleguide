@@ -8,20 +8,17 @@ uid: 1
 template: false
 id: landing_page_pret
 title: 'Landing Page - Prêt'
-description: 'Formulaire des landings pages pour Prêt hypothécaire'
+description: 'Formulaire des landings pages pour Pr&ecirc;t hypoth&eacute;caire'
 category: ''
 elements: "titre_du_form:\n  '#type': webform_markup\n  '#markup': '<h3>Nous prendrons contact avec vous</h3>'\nposez_nous_vos_questions:\n  '#type': fieldset\n  '#title': 'Posez-nous vos questions'\n  '#title_display': invisible\n  '#attributes':\n    class:\n      - fieldset-no-legend\n  prenom:\n    '#type': textfield\n    '#title': 'Votre prénom'\n    '#title_display': before\n    '#size': '25'\n    '#placeholder': Alain\n    '#required': true\n  nom_de_famille:\n    '#type': textfield\n    '#title': 'Votre nom de famille'\n    '#title_display': before\n    '#size': '25'\n    '#placeholder': Rochat\n    '#required': true\n  votre_e_mail:\n    '#type': email\n    '#title': 'Votre e-mail'\n    '#title_display': before\n    '#size': '60'\n    '#placeholder': alain.rochat@retraitespopulaires.ch\n    '#required': true\n  votre_numero_de_telephone:\n    '#type': textfield\n    '#title': 'Votre numéro de téléphone'\n    '#title_display': before\n    '#size': '20'\n    '#placeholder': '079 123 45 67'\n    '#required': true\n  votre_message:\n    '#type': textarea\n    '#title': 'Votre message'\n    '#title_display': before\nhr:\n  '#type': webform_markup\n  '#markup': '<hr>'\n"
 css: ''
 javascript: ''
 settings:
+  ajax: false
   page: true
   page_submit_path: ''
   page_confirm_path: ''
-  form_submit_label: Envoyer
   form_submit_once: false
-  form_submit_attributes:
-    class:
-      - pull-right
   form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
@@ -31,38 +28,39 @@ settings:
   form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
   form_disable_autocomplete: false
   form_novalidate: false
   form_unsaved: false
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: false
+  submission_label: ''
   submission_log: false
+  submission_user_columns: {  }
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
-  wizard_next_button_label: ''
-  wizard_next_button_attributes: {  }
-  wizard_prev_button_label: ''
-  wizard_prev_button_attributes: {  }
   wizard_start_label: ''
   wizard_complete: true
   wizard_complete_label: ''
   preview: 0
-  preview_next_button_label: ''
-  preview_next_button_attributes: {  }
-  preview_prev_button_label: ''
-  preview_prev_button_attributes: {  }
+  preview_label: ''
+  preview_title: ''
   preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
   draft: none
+  draft_multiple: false
   draft_auto_save: false
-  draft_button_label: ''
-  draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
   confirmation_type: url_message
   confirmation_title: ''
-  confirmation_message: 'Merci [webform_submission:values:prenom] [webform_submission:values:nom_de_famille] pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l''adresse [webform_submission:values: votre_e_mail].'
+  confirmation_message: 'Merci [webform_submission:values:prenom] [webform_submission:values:nom_de_famille] pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter &agrave; l&#39;adresse [webform_submission:values:votre_e_mail].'
   confirmation_url: 'https://www.retraitespopulaires.ch/solutions/pret-remerciement'
   confirmation_attributes: {  }
   confirmation_back: true

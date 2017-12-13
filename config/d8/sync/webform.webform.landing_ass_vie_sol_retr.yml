@@ -60,7 +60,7 @@ settings:
   draft_loaded_message: ''
   confirmation_type: url_message
   confirmation_title: ''
-  confirmation_message: 'Merci [webform_submission:values:prenom] [webform_submission:values:nom_de_famille] pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l''adresse [webform_submission:values: votre_e_mail].'
+  confirmation_message: 'Merci [webform_submission:values:prenom] [webform_submission:values:nom_de_famille] pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter &agrave; l&#39;adresse [webform_submission:values:votre_e_mail].'
   confirmation_url: 'https://www.retraitespopulaires.ch/solutions/solutions-pour-retraite/confirmation'
   confirmation_attributes: {  }
   confirmation_back: true
@@ -77,20 +77,6 @@ settings:
   results_disabled: false
   results_disabled_ignore: false
   token_update: false
-  form_submit_label: Envoyer
-  form_submit_attributes:
-    class:
-      - pull-right
-  wizard_next_button_label: ''
-  wizard_next_button_attributes: {  }
-  wizard_prev_button_label: ''
-  wizard_prev_button_attributes: {  }
-  preview_next_button_label: ''
-  preview_next_button_attributes: {  }
-  preview_prev_button_label: ''
-  preview_prev_button_attributes: {  }
-  draft_button_label: ''
-  draft_button_attributes: {  }
 access:
   create:
     roles:
