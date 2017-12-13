@@ -13,6 +13,7 @@ CHANGELOG
  - remove the profils 
  - update to styleguide 3.2.0
  - fix secondary-side navigation title margin-bottom
+ - add vimeo support of highlighted card homepage
 
 ## 2.3.1 (2017-11-29)
  - Duplicate Webforms to add conversion tracking

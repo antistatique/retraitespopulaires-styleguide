@@ -1,0 +1,15 @@
+vimeo_player:
+  js:
+    js/vimeo.js: {}
+  css:
+    theme:
+      css/vimeo.css: {}
+  dependencies:
+    - rp_homepage/vimeo_api
+
+vimeo_api:
+  remote: https://player.vimeo.com/api/player.js
+  license:
+    name: MIT
+  js:
+    https://player.vimeo.com/api/player.js: { type: external, minified: true }
