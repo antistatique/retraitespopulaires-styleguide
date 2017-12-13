@@ -74,6 +74,7 @@ a.card-light,
 .card-cta {
   display: inline-flex;
   margin: 0 auto;
+  align-self: center;
   padding-top: $grid-gutter-width/2;
 }
 
