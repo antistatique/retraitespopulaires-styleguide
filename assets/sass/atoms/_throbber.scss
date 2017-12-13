@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+.ajax-progress {
+  display: inline-block;
+  padding: 12px 0;
+}
+
+// disable default Drupal throbber.
+.ajax-progress-throbber .throbber {
+  display: none;
+}
+
+.ajax-progress-throbber .throbber-retraitespopulaires {
+  display: inline;
+  padding: 25px;
+  background: transparent url('../img/throbber.gif') no-repeat 0 center;
+
+  &.throbber-primary {
+    background-image: url('../img/throbber-primary.gif');
+  }
+}
