@@ -100,20 +100,41 @@ class PopinForm extends FormBase {
       '#prefix'      => '<div class="form-group">',
       '#suffix'      => '</div>',
       '#attributes' => [
-        'id' => 'tracking-popin-contact'
+        'id' => 'tracking-popin-contact',
       ],
     );
 
-    $form['npa'] = array(
+    $form['cols'] = [
+      '#prefix' => '<div class="row d-flex flex-align-items-end">',
+      '#suffix' => '</div>',
+    ];
+
+    $form['cols']['npa'] = array(
       '#title'       => $this->t('Votre code postal (NPA) *'),
       '#placeholder' => $this->t('1000'),
       '#type'        => 'textfield',
       '#required'    => false,
-      '#prefix'      => '<div class="form-group">',
+      '#prefix'      => '<div class="form-group col-xs-6 col-sm-8">',
       '#suffix'      => '</div>',
       '#attributes' => [
         'id' => 'tracking-popin-npa'
       ],
+    );
+
+    $form['cols']['submit'] = array(
+      '#type'        => 'submit',
+      '#value'       => $this->t('Envoyer'),
+      '#button_type' => 'primary',
+      '#prefix'      => '<div class="form-group col-xs-6 col-sm-4">',
+      '#suffix'      => '</div>',
+      '#attributes' => [
+        'class' => array('btn-primary', 'use-ajax-submit', 'tracking-popin-submit')
+      ],
+      '#ajax'        => [
+        'callback' => [$this, 'respondToAjax'],
+        'event'    => 'click',
+        'progress' => ['type' => 'none']
+      ]
     );
 
     // Make sure we have the config value by default for the popin email.
@@ -124,22 +145,6 @@ class PopinForm extends FormBase {
       '#type' => 'hidden',
       '#value' => $params['mail_to'],
     ];
-
-    $form['submit'] = array(
-      '#type'        => 'submit',
-      '#value'       => $this->t('Envoyer'),
-      '#button_type' => 'primary',
-      '#prefix'      => '<div class="form-group">',
-      '#suffix'      => '</div>',
-      '#attributes' => [
-        'class' => array('btn-primary', 'use-ajax-submit', 'tracking-popin-submit')
-      ],
-      '#ajax'        => [
-        'callback' => [$this, 'respondToAjax'],
-        'event'    => 'click',
-        'progress' => []
-      ]
-    );
 
     return $form;
   }
@@ -155,6 +160,9 @@ class PopinForm extends FormBase {
    */
   public function respondToAjax(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
+
+    // Update the popin loader.
+    $response->addCommand(new InvokeCommand('#block-popinformblock .popin', 'loading'));
 
     $this->submitForm($form, $form_state);
 

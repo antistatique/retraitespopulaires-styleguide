@@ -20,7 +20,6 @@ dependencies:
     - field.field.node.product.field_profession
     - field.field.node.product.field_search_npa
     - field.field.node.product.field_subtitle
-    - field.field.node.product.field_weight
     - node.type.product
   module:
     - file
@@ -175,15 +174,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_weight:
-    weight: 111
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
     region: content
   links:
     weight: 100

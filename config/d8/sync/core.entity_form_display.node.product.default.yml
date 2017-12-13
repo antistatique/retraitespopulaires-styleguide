@@ -20,7 +20,6 @@ dependencies:
     - field.field.node.product.field_profession
     - field.field.node.product.field_search_npa
     - field.field.node.product.field_subtitle
-    - field.field.node.product.field_weight
     - image.style.thumbnail
     - node.type.product
   module:
@@ -257,13 +256,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
-  field_weight:
-    weight: 8
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
     region: content
   path:
     type: path
