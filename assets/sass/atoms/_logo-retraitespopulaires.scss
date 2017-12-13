@@ -4,6 +4,7 @@
   // This forces the logo wrapper to fit the image (required for the
   // alignment of the search icon at the right
   display: table;
+  table-layout: fixed;
   width: 16rem;
   height: auto;
   max-height: 8rem;
