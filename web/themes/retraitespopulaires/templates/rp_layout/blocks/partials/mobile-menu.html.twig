@@ -1,0 +1,114 @@
+{% import _self as menus %}
+
+{# Big fancy menu with collapses #}
+<div class="mobile-menu" id="mobile-menu">
+
+  <div class="container-collapser-menu">
+    <div class="collapser-menu">
+
+      <div class="container">
+        <div class="spacer spacer-md"></div>
+        {{ load_form('rp_site', 'SearchForm') }}
+        <div class="spacer spacer-md"></div>
+      </div>
+
+      <div class="container">
+        <div class="">
+          {{ menus.menu_links(main_menu, 0, main_menu_active_trail) }}
+        </div>
+      </div>
+    </div>
+
+    <div class="spacer spacer-md"></div>
+
+    <div class="bg-berrylight-gray">
+      <div class="container">
+        <div class="spacer"></div>
+        <ul class="list-no-style list-no-padding two-cols">
+          {% for item in pre_main_menu %}
+            {% set classes = [
+              'm-b-1',
+              item.link.pluginId,
+            ] %}
+              <li class="{{ classes|join(' ') }}">
+                {% set target = item.link.options.external ? ' target="_blank"' %}
+                {% set url = pre_main_menu_active_trail == item.link.pluginId ? '#main-content' : item.link.urlObject %}
+                <a class="pretty-link pretty-link-berrylight-gray" href="{{ url }}"{{ target }}>
+                  {% if pre_main_menu_active_trail == item.link.pluginId %}<span class="sr-only">{% trans %}Page active{% endtrans %}</span>{% endif %} {{ item.link.title }}
+                </a>
+              </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="spacer"></div>
+    </div>
+
+  </div>
+</div>
+
+{% macro menu_links(items, menu_level, active_trail) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul class="list-no-style list-no-padding" role="navigation" id="main-navigation">
+    {% else %}
+      <ul>
+    {% endif %}
+
+    {% for item in items %}
+      {% set classes = [
+        item.inActiveTrail ? 'active',
+        item.inActiveTrail ? 'toggled',
+        item.link.pluginId|clean_class,
+        item.subtree and menu_level == 0 ? 'collapser-first-level',
+      ] %}
+      <li class="{{ classes|join(' ') }}">
+        <div class="collapser-menu-item">
+          {% set target = item.link.options.external ? ' target="_blank"' %}
+          {% set url = active_trail == item.link.pluginId ? '#main-content' : item.link.urlObject %}
+          <span>
+            <a href="{{ url }}" class="pretty-link"{{ target }}>
+              {% if active_trail == item.link.pluginId %}<span class="sr-only">{% trans %}Page active{% endtrans %}</span>{% endif %}
+              {{ item.link.title }}
+            </a>
+          </span>
+          {% if item.subtree %}
+            {% set classes = [
+              'btn btn-sm btn-circle btn-outline btn-primary',
+              not item.inActiveTrail ? 'collapsed',
+              item.inActiveTrail ? 'active',
+            ] %}
+            <button
+              class="{{ classes|join(' ') }}"
+              title="{{ 'Ouvrir le sous-menu @menu'|t({'@menu': item.link.title}) }}"
+              type="button"
+              data-toggle="collapse"
+              data-target="#{{ item.link.pluginId|clean_id }}"
+              aria-expanded="{{ item.inActiveTrail ? 'true' : 'false' }}"
+              aria-controls="collapseExample"
+            >
+              <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+            </button>
+          {% endif %}
+        </div>
+
+        {% if item.subtree %}
+          {% set classes = [
+            'collapser-menu-collapse',
+            'collapse',
+            item.inActiveTrail ? 'in',
+          ] %}
+          <div
+            class="{{ classes|join(' ') }}"
+            id="{{ item.link.pluginId|clean_id }}"
+            aria-expanded="{{ item.inActiveTrail ? 'true' : 'false' }}"
+          >
+            {{ menus.menu_links(item.subtree, menu_level + 1, active_trail) }}
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+
+  </ul>
+  {% endif %}
+  {% endmacro %}

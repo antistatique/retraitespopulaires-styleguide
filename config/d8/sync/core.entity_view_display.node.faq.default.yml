@@ -6,13 +6,16 @@ dependencies:
     - field.field.node.faq.body
     - field.field.node.faq.field_advisor
     - field.field.node.faq.field_contact
+    - field.field.node.faq.field_contact_cta
     - field.field.node.faq.field_document
     - field.field.node.faq.field_document_random
+    - field.field.node.faq.field_email_popin
     - field.field.node.faq.field_faq
     - field.field.node.faq.field_faq_random
     - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
     - field.field.node.faq.field_metatags
+    - field.field.node.faq.field_popin
     - field.field.node.faq.field_profession
     - field.field.node.faq.field_search_npa
     - node.type.faq
@@ -49,6 +52,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_contact_cta:
+    weight: 116
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_document:
     weight: 112
     label: above
@@ -66,6 +79,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_email_popin:
+    weight: 118
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_faq:
     weight: 115
@@ -106,6 +126,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_popin:
+    weight: 117
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_profession:
     weight: 104

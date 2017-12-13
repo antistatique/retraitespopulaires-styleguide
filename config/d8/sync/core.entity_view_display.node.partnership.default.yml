@@ -5,16 +5,19 @@ dependencies:
   config:
     - field.field.node.partnership.body
     - field.field.node.partnership.field_contact
+    - field.field.node.partnership.field_contact_cta
     - field.field.node.partnership.field_cover
     - field.field.node.partnership.field_date_end
     - field.field.node.partnership.field_date_start
     - field.field.node.partnership.field_document
     - field.field.node.partnership.field_document_random
+    - field.field.node.partnership.field_email_popin
     - field.field.node.partnership.field_faq
     - field.field.node.partnership.field_faq_random
     - field.field.node.partnership.field_latitude
     - field.field.node.partnership.field_longitude
     - field.field.node.partnership.field_partnership
+    - field.field.node.partnership.field_popin
     - field.field.node.partnership.field_search_npa
     - field.field.node.partnership.field_situation
     - field.field.node.partnership.field_web_site
@@ -44,6 +47,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_contact_cta:
+    weight: 117
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_cover:
     weight: 104
@@ -89,6 +102,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_email_popin:
+    weight: 119
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_faq:
     weight: 116
@@ -137,6 +157,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_popin:
+    weight: 118
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_search_npa:
     weight: 112

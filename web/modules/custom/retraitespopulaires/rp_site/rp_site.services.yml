@@ -18,11 +18,6 @@ services:
     class: Drupal\rp_site\Breadcrumb\EntityBreadcrumbBuilder
     tags:
       - { name: breadcrumb_builder, priority: 100 }
-  # Custom Menu Manipulators
-  rp_site.menu_transformers:
-    class: Drupal\rp_site\Service\MenuTransformers
-    arguments:
-      - @state
   # Custom Event Subscrbiber
   rp_site.entity_access:
     class: Drupal\rp_site\EventSubscriber\EntityAccess

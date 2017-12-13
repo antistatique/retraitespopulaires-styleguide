@@ -6,9 +6,9 @@
       <div class="col-xs-12">
         <h2 class="h1 text-center">
         {% trans %}
-            Produit recommandé dans cette situation
+            Notre solution
         {% plural variables.products|length %}
-            Produits recommandés dans cette situation
+            Nos solutions
         {% endtrans %}
         </h2>
       </div>
@@ -20,8 +20,7 @@
       <div class="row flex-row">
         {% if variables.products %}
           {% for product in variables.products %}
-            {% set theme = product.field_profession.target_id|theme_profession %}
-            <div class="col-xs-12 theme-{{ theme }}">
+            <div class="col-xs-12 theme-primary">
               {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
             </div>
           {% endfor %}

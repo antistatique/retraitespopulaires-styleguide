@@ -5,16 +5,19 @@ dependencies:
   config:
     - field.field.node.partnership.body
     - field.field.node.partnership.field_contact
+    - field.field.node.partnership.field_contact_cta
     - field.field.node.partnership.field_cover
     - field.field.node.partnership.field_date_end
     - field.field.node.partnership.field_date_start
     - field.field.node.partnership.field_document
     - field.field.node.partnership.field_document_random
+    - field.field.node.partnership.field_email_popin
     - field.field.node.partnership.field_faq
     - field.field.node.partnership.field_faq_random
     - field.field.node.partnership.field_latitude
     - field.field.node.partnership.field_longitude
     - field.field.node.partnership.field_partnership
+    - field.field.node.partnership.field_popin
     - field.field.node.partnership.field_search_npa
     - field.field.node.partnership.field_situation
     - field.field.node.partnership.field_web_site
@@ -31,6 +34,9 @@ third_party_settings:
   field_group:
     group_attachments:
       children:
+        - field_contact_cta
+        - field_popin
+        - field_email_popin
         - field_search_npa
         - field_contact
       parent_name: group_tabs
@@ -134,13 +140,20 @@ content:
     third_party_settings: {  }
     region: content
   field_contact:
-    weight: 119
+    weight: 128
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_contact_cta:
+    weight: 124
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_cover:
     weight: 1
@@ -178,6 +191,14 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_email_popin:
+    weight: 126
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
   field_faq:
     weight: 122
     settings:
@@ -214,8 +235,15 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_popin:
+    weight: 125
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_search_npa:
-    weight: 118
+    weight: 127
     settings:
       display_label: true
     third_party_settings: {  }

@@ -2,6 +2,8 @@ rp_contact.admin:
     title: Contact
     parent: rp_toolbar.admin
     route_name: rp_contact.admin
+    weight: 70
+
 rp_contact.admin.settings:
     title: Settings
     parent: rp_contact.admin
