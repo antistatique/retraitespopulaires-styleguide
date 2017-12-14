@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     {% set classes = [
-      variables.vimeo_oembed ? 'col-xs-10 col-xs-offset-1 col-md-offset-0 col-md-10' : 'col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-8 col-md-6',
+      variables.vimeo_oembed ? 'col-xs-10 col-xs-offset-1 col-md-offset-0 col-md-8' : 'col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-8 col-md-6',
     ] %}
     <div class="{{ classes|join(' ') }}">
       {% set classes = [
@@ -13,7 +13,7 @@
       ] %}
       <div class="{{ classes|join(' ') }}">
         {% if variables.vimeo_oembed %}
-          <div class="col-xs-12 col-md-4 col-lg-8 d-flex p-0">
+          <div class="col-xs-12 col-md-6 col-lg-8 d-flex p-0">
             {# Magnificent responsive video with padding hack #}
             <div class="vimeo-player" style="background-image: url('{{ variables.vimeo_oembed.thumbnail_url }}');">
               <div class="vimeo-player-container">
@@ -26,7 +26,7 @@
               </div>
             </div>
           </div>
-          <div class="col-xs-12 col-md-8 col-lg-4 p-0">
+          <div class="col-xs-12 col-md-6 col-lg-4 p-0">
             {% block card_body %}
               <div class="card-body">
                 <h4 class="card-title m-t-0">
