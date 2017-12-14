@@ -177,7 +177,7 @@ class PopinForm extends FormBase {
     // Update the popin title & close the popin.
     // TODO handle success and errors
     $data = [
-      'title_closed' => $this->t('Merci pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter.'),
+      'title_closed' => $this->t('Merci de votre demande. Nous allons la traiter rapidement et vous recontacter.'),
       'toggle' => TRUE,
     ];
     $response->addCommand(new InvokeCommand('#block-popinformblock .popin', 'contactPopin', [$data]));
@@ -206,6 +206,6 @@ class PopinForm extends FormBase {
     $to = str_replace(';', ',', $to);
     $this->mail->mail('rp_contact', 'contact_popin', $to, 'fr', $data);
 
-    drupal_set_message(t('Merci pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter.'));
+    drupal_set_message(t('Merci de votre demande. Nous allons la traiter rapidement et vous recontacter.'));
   }
 }
