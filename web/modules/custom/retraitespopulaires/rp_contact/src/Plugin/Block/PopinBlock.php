@@ -54,7 +54,10 @@ class PopinBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     // Show the pop-in only when the field is checked.
     $node = $this->route->getParameter('node');
-    if ($node && $node->hasField('field_popin') && !$node->get('field_popin')->isEmpty()) {
+
+    $tags = [];
+    if ($node && $node->hasField('field_popin') && $node->field_popin->value == 1) {
+      $tags[] = 'node:'.$node->id();
       $variables['popin'] = TRUE;
       $variables['popin_mail_to'] = $node->get('field_email_popin')->value;
     }
@@ -66,6 +69,7 @@ class PopinBlock extends BlockBase implements ContainerFactoryPluginInterface {
         'contexts' => [
           'url.path',
         ],
+        'tags' => $tags,
       ]
     ];
   }
