@@ -11,7 +11,7 @@ CHANGELOG
  - add new popine in every page which enable it
  - refactorint the whole navigation
  - remove the profils 
- - update to styleguide 3.2.0
+ - update to styleguide 3.2.1
  - fix secondary-side navigation title margin-bottom
  - add vimeo support of highlighted card homepage
  - add new maintenance page
