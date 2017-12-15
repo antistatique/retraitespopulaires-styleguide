@@ -5,126 +5,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.big_menu = big_menu;
-
-var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function big_menu() {
-
-  var $body = (0, _jquery2.default)('body'),
-      $wrapper = (0, _jquery2.default)('.hamburger-wrapper'),
-      $header = (0, _jquery2.default)('header'),
-      $navbar = (0, _jquery2.default)('.big-menu');
-
-  $wrapper.on('click', function () {
-    if ($wrapper.hasClass('active')) {
-      $body.toggleClass('no-scroll');
-      $header.toggleClass('active');
-      $wrapper.toggleClass('active');
-      $navbar.toggleClass('active');
-    } else {
-      $body.toggleClass('no-scroll');
-      $header.toggleClass('active');
-      $navbar.css({ 'display': 'block' });
-      $wrapper.toggleClass('active');
-      $navbar.toggleClass('active');
-    }
-  });
-
-  /** SWIPER **/
-
-  var $swiper = (0, _jquery2.default)('.swiper-menu');
-
-  /**
-   * Open the correct pan and close the old one
-   * @type {[type]}
-   */
-  $swiper.find('.swiper-list .arrow-next').on('click', function (event) {
-    event.preventDefault ? event.preventDefault() : event.returnValue = false;
-
-    // This is under 992px, we lock body when opening children pan
-    if (!window.matchMedia('(min-width: 992px)').matches) {
-      $navbar.animate({
-        scrollTop: 0
-      }, 500, function () {
-        $navbar.addClass('no-scroll');
-
-        // Fix the height for scrolling
-        var height = (0, _jquery2.default)(window).height() - (0, _jquery2.default)('.swiper-column-wrapper.active').offset().top;
-        $swiper.find('.swiper-column-wrapper-2, .swiper-column-wrapper-3').css({ 'height': height });
-      });
-    }
-
-    // Remove the empty-state
-    $swiper.find('.swiper-empty-state').not('inactive').addClass('inactive');
-    setTimeout(function () {
-      $swiper.find('.swiper-empty-state').remove();
-    }, 250);
-
-    // Unactive all other siblings li in the column
-    (0, _jquery2.default)(this).parents('.swiper-column').find('li.active').toggleClass('active');
-    // Active the clicked one
-    (0, _jquery2.default)(this).parents('li').toggleClass('active');
-
-    var $next_pane = $swiper.find('[data-list="' + (0, _jquery2.default)(this).attr('href') + '"]');
-    var $next_pane_parent = $next_pane.parents('.swiper-column');
-    var $next_wrapper = $next_pane_parent.parents('.swiper-column-wrapper');
-    var $current_pane = (0, _jquery2.default)(this).parents('.swiper-list');
-
-    if ($next_pane_parent.hasClass('swiper-column-3') && $next_pane_parent.hasClass('swiper-column-waiting')) {
-      $next_pane_parent.removeClass('swiper-column-waiting');
-    }
-
-    // Unactive current opened pan
-    $swiper.find('.swiper-list-alternative.active').not($current_pane).each(function (index, elem) {
-      (0, _jquery2.default)(elem).removeClass('active');
-
-      var $wrapper = (0, _jquery2.default)(elem).parents('.swiper-column-wrapper');
-      $wrapper.removeClass('active');
-    });
-    // Open desired pan
-    $next_wrapper.addClass('active');
-    $next_pane.toggleClass('active');
-    $next_wrapper.animate({
-      scrollTop: 0
-    }, 500);
-  });
-
-  /**
-   * Open the correct pan and close the old one
-   * @type {[type]}
-   */
-  $swiper.find('.swiper-list .arrow-back').on('click', function (event) {
-    event.preventDefault ? event.preventDefault() : event.returnValue = false;
-
-    var $current_pane = (0, _jquery2.default)(this).parents('.swiper-list');
-    var $current_wrapper = (0, _jquery2.default)(this).parents('.swiper-column-wrapper');
-
-    // This is under 992px, we lock body when opening children pan
-    if ($current_wrapper.hasClass('swiper-column-wrapper-2') && !window.matchMedia('(min-width: 992px)').matches) {
-      $navbar.removeClass('no-scroll');
-    }
-
-    // Close current pane
-    $current_pane.removeClass('active');
-    setTimeout(function () {
-      $current_wrapper.removeClass('active');
-    }, 250);
-  });
-}
-
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],2:[function(require,module,exports){
-(function (global){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 exports.datepicker = datepicker;
 
 var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
@@ -149,7 +29,7 @@ function datepicker() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -200,10 +80,10 @@ function gallery() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 'use strict';
 
-var _big_menu = require('./big_menu.js');
+var _mobile_menu = require('./mobile_menu.js');
 
 var _navbar = require('./navbar.js');
 
@@ -228,7 +108,7 @@ var _selectize = require('./selectize.js');
 var _labels = require('./labels.js');
 
 (function () {
-  (0, _big_menu.big_menu)();
+  (0, _mobile_menu.mobile_menu)();
   (0, _navbar.navbar)();
   (0, _smoothscroll.smoothscroll_load)();
   (0, _input_dynamic_label.input_dynamic_label)();
@@ -242,7 +122,7 @@ var _labels = require('./labels.js');
   (0, _labels.labels)();
 })();
 
-},{"./big_menu.js":1,"./datepicker.js":2,"./gallery.js":3,"./input_dynamic_label.js":5,"./input_files.js":6,"./labels.js":7,"./navbar.js":8,"./number_format.js":9,"./organicJS.js":10,"./popover.js":11,"./selectize.js":12,"./smoothscroll.js":13}],5:[function(require,module,exports){
+},{"./datepicker.js":1,"./gallery.js":2,"./input_dynamic_label.js":4,"./input_files.js":5,"./labels.js":6,"./mobile_menu.js":7,"./navbar.js":8,"./number_format.js":9,"./organicJS.js":10,"./popover.js":11,"./selectize.js":12,"./smoothscroll.js":13}],4:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -273,7 +153,7 @@ function input_dynamic_label() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -318,7 +198,7 @@ function input_files() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -337,6 +217,83 @@ function labels() {
   (0, _jquery2.default)('.list-inline').on('click', '.js-toggle-labels', function () {
     console.log((0, _jquery2.default)(this));
     (0, _jquery2.default)(this).toggleClass('collapsed').parents('.list-inline').find('.hidden').toggleClass('hidden');
+  });
+}
+
+}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],7:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.mobile_menu = mobile_menu;
+
+var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function mobile_menu() {
+
+  var $body = (0, _jquery2.default)('body'),
+      $wrapper = (0, _jquery2.default)('#collapser-menu-toggler'),
+      $header = (0, _jquery2.default)('header'),
+      $navbar = (0, _jquery2.default)('#mobile-menu');
+
+  function toggleMenu() {
+    if (!$wrapper.hasClass('active')) {
+      $navbar.css({ 'display': 'block' });
+    }
+
+    $body.toggleClass('no-scroll');
+    $header.toggleClass('active');
+    $wrapper.toggleClass('active');
+    $navbar.toggleClass('active');
+  }
+
+  $wrapper.on('click', function () {
+    toggleMenu();
+  });
+
+  // Close the menu when ESC is pressed
+  (0, _jquery2.default)(document).keyup(function (e) {
+    if (e.keyCode == 27) {
+      if ($navbar.hasClass('active')) {
+        toggleMenu();
+      }
+    }
+  });
+
+  (0, _jquery2.default)(document).on('show.bs.collapse hide.bs.collapse', function (e) {
+    var $target = (0, _jquery2.default)(e.target);
+    if ($target.hasClass('collapser-menu-collapse')) {
+      var $parent = $target.closest('li');
+      $parent.toggleClass('toggled');
+    }
+  });
+
+  // Close when resizing the window
+  (0, _jquery2.default)(window).on('resize', function () {
+    if ($navbar.hasClass('active')) {
+      toggleMenu();
+    }
+  });
+
+  // Animate header-container to white background on scroll to avoid reading
+  // issues. Keep it transparent at first, because of the funky waves
+  var $headerContainer = (0, _jquery2.default)('.header-container');
+  function animateHeaderBackground(posY) {
+    if (posY > 50 && !$headerContainer.hasClass('bg-white') || posY <= 50 && $headerContainer.hasClass('bg-white')) {
+      $headerContainer.toggleClass('bg-white');
+    }
+  }
+
+  $navbar.on('scroll', function () {
+    var posY = (0, _jquery2.default)(this).scrollTop();
+    animateHeaderBackground(posY);
   });
 }
 
@@ -622,10 +579,11 @@ function selectize() {
     $selectize.selectize({
       plugins: ['remove_button'],
       persist: false,
-      copyClassesToDropdown: false,
-      dropdownClass: 'dropdown-menu',
       render: {
         option: function option(data, escape) {
+          if ((0, _jquery2.default)('select.selectize').is('[data-description]') && typeof data.description !== 'undefined') {
+            return '<div>' + escape(data.name) + ' <div class="text-muted">' + escape(data.description) + '</div></div>';
+          }
           return '<div>' + escape(data.name) + '</div>';
         },
         item: function item(data, escape) {
@@ -686,5 +644,5 @@ var smoothscroll_to = function smoothscroll_to(dest) {
 };
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}]},{},[4])
+},{}]},{},[3])
 //# sourceMappingURL=bundle.js.map

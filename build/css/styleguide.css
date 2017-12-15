@@ -391,9 +391,6 @@ body {
   top: 0;
   left: 0; }
 
-#molecules .styleguide-item-preview .swiper-empty-state {
-  position: relative; }
-
 #organisms .styleguide-item-preview .header {
   position: relative; }
 
@@ -504,3 +501,7 @@ body {
   will-change: padding-left; }
   .styleguide-toggle-theme-hide:hover {
     padding-left: 0; }
+
+.styleguide-item-preview .popin {
+  display: block;
+  position: static; }
