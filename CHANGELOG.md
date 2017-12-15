@@ -10,7 +10,7 @@ CHANGELOG
  - fix card as CTA variant
  - fix organic-lines doc 
  - rewamp the mobile menu with better design
- - fix organic-wraper to allow click
+ - fix organic-wrapper to allow click
  - improve pop-in
  - add throbber as gif
 
