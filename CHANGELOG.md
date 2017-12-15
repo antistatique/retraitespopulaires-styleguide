@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## 2.3.2 (2017-12-15)
  - add ckeditor link as btn
  - add ckeditor title colors
  - improve breadcrumb fontsize
