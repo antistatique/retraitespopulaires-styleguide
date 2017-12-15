@@ -10,6 +10,6 @@ layout: examples.html.swig
     {% include '../molecules/secondary-nav.html.swig' %}
   </div>
   <div class="col-xs-12 col-sm-6">
-    {% include '../molecules/secondary-nav.html.swig' with {secondary_nav_theme: 'assurance'} %}
+    {% include '../molecules/secondary-nav.html.swig' with {secondary_nav_json: 'cip'} %}
   </div>
 </div>

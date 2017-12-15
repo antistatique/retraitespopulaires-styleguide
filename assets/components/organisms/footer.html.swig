@@ -6,7 +6,7 @@ notes: |
   ##### Usage : `footer`
   ##### Options :
   - **footer_light** - <i>Boolean</i>
-  - **footer_theme** - <i>String</i> - <b>['assurance'|'prevoyance'|'immobilier'|'hypotheque'|'institutionnel'|'profelia'|'cpev'|'cip']</b>
+  - **footer_theme** - <i>String</i> - <b>['primary'|'profelia'|'cpev'|'cip']</b>
 ---
 <div class="footer">
   <h2 class="sr-only">Footer</h2>

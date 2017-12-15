@@ -2,17 +2,10 @@
 title: Hamburger
 name: hamburger
 collection: atoms
-variants:
-  link-only: Hamburger as Link
 notes: |
   Can be wrapped in `.theme-[theme]` to change look.
-
 ---
-{% if variant == 'link-only' -%}
-  <a href="//www.retraitespopulaires.ch/launcher" class="hamburger-wrapper d-block">
-{% else %}
-  <div class="hamburger-wrapper">
-{% endif %}
+<div class="hamburger-wrapper">
   <div class="hamburger-button">
     <div class="hamburger">
       <span></span>
@@ -27,8 +20,4 @@ notes: |
     <div class="helper-when-close">Menu</div>
     <div class="helper-when-open">Fermer</div>
   </div>
-{% if variant == 'link-only' -%}
-  </a>
-{% else %}
-  </div>
-{% endif %}
+</div>

@@ -10,16 +10,6 @@ layout: examples.html.swig
 
     <div><a href="#" class="pretty-link">Normal</a> - <a href="#">Simple Link</a></div>
 
-    <div class="theme-assurance"><a href="#" class="pretty-link">Assurance</a> - <a href="#">Simple Link</a></div>
-
-    <div class="theme-prevoyance"><a href="#" class="pretty-link">Prevoyance</a> - <a href="#">Simple Link</a></div>
-
-    <div class="theme-immobilier"><a href="#" class="pretty-link">Immobilier</a> - <a href="#">Simple Link</a></div>
-
-    <div class="theme-hypotheque"><a href="#" class="pretty-link">Hypotheque</a> - <a href="#">Simple Link</a></div>
-
-    <div class="theme-institutionnel"><a href="#" class="pretty-link">Institutionnel</a> - <a href="#">Simple Link</a></div>
-
     <div class="theme-profelia"><a href="#" class="pretty-link">Profelia</a> - <a href="#">Simple Link</a></div>
 
     <div class="theme-cpev"><a href="#" class="pretty-link">Cpev</a> - <a href="#">Simple Link</a></div>
@@ -37,16 +27,6 @@ layout: examples.html.swig
     <div class="col-xs-12">
 
       <div><a href="#" class="pretty-link">Normal</a> - <a href="#">Simple Link</a></div>
-
-      <div class="theme-assurance"><a href="#" class="pretty-link">Assurance</a> - <a href="#">Simple Link</a></div>
-
-      <div class="theme-prevoyance"><a href="#" class="pretty-link">Prevoyance</a> - <a href="#">Simple Link</a></div>
-
-      <div class="theme-immobilier"><a href="#" class="pretty-link">Immobilier</a> - <a href="#">Simple Link</a></div>
-
-      <div class="theme-hypotheque"><a href="#" class="pretty-link">Hypotheque</a> - <a href="#">Simple Link</a></div>
-
-      <div class="theme-institutionnel"><a href="#" class="pretty-link">Institutionnel</a> - <a href="#">Simple Link</a></div>
 
       <div class="theme-profelia"><a href="#" class="pretty-link">Profelia</a> - <a href="#">Simple Link</a></div>
 
@@ -67,16 +47,6 @@ layout: examples.html.swig
     <div class="col-xs-12">
 
       <div><a href="#" class="pretty-link">Normal</a> - <a href="#">Simple Link</a></div>
-
-      <div class="theme-assurance"><a href="#" class="pretty-link">Assurance</a> - <a href="#">Simple Link</a></div>
-
-      <div class="theme-prevoyance"><a href="#" class="pretty-link">Prevoyance</a> - <a href="#">Simple Link</a></div>
-
-      <div class="theme-immobilier"><a href="#" class="pretty-link">Immobilier</a> - <a href="#">Simple Link</a></div>
-
-      <div class="theme-hypotheque"><a href="#" class="pretty-link">Hypotheque</a> - <a href="#">Simple Link</a></div>
-
-      <div class="theme-institutionnel"><a href="#" class="pretty-link">Institutionnel</a> - <a href="#">Simple Link</a></div>
 
       <div class="theme-profelia"><a href="#" class="pretty-link">Profelia</a> - <a href="#">Simple Link</a></div>
 

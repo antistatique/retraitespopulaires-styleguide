@@ -1,0 +1,71 @@
+@charset 'UTF-8';
+
+.popin {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  bottom: $grid-gutter-width;
+  width: calc(100% - #{$grid-gutter-width});
+  padding: 0;
+  background-color: map-deep-get($themes, 'primary', 'color');
+  border-radius: 4px;
+
+  @media (min-width: $screen-sm-min) {
+    right: $grid-gutter-width;
+    width: 100%;
+    max-width: 414px;
+  }
+
+  &.alert {
+    margin-bottom: 0;
+  }
+
+  .popin-title-closed,
+  a {
+    color: $white;
+  }
+
+  .close {
+    margin-right: $grid-gutter-width;
+    color: $white;
+  }
+
+  .btn-primary {
+    background-color: darken($brand-primary, 10%);
+  }
+
+  // Override for connected users (move the popin to the left to avoid overlap with edit button)
+  .toolbar-fixed & {
+    right: 205px;
+  }
+
+  .form-group label {
+    color: $white;
+  }
+}
+
+.popin-header {
+  padding: 16px 10px;
+}
+
+.popin-body {
+  padding: 0 10px;
+}
+
+.popin-header {
+  display: flex;
+  background-color: map-deep-get($themes, 'primary', 'hover-color');
+}
+
+.popin-title-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+  &.collapsed {
+    .retraitespopulaires-icon-angle {
+      transform: scaleY(-1);
+    }
+  }
+}

@@ -1,6 +1,19 @@
 CHANGELOG
 =========
 
+## 3.2.1 (2017-12-15)
+ - fix large screen logo-offset
+ - improve mobile menu item button alignments with hamburger menu
+ - reduce spaces/navbar spaces  as requested by Nicole
+ - remove link-only variant of hamburger menu
+ - remove themes colors of professions (assurance, prevoyance, immobilier, hypotheque, institutionnel)
+ - fix card as CTA variant
+ - fix organic-lines doc 
+ - rewamp the mobile menu with better design
+ - fix organic-wrapper to allow click
+ - improve pop-in
+ - add throbber as gif
+
 ## 3.2.0 (2017-11-23)
  - add a popin component
  - refactor the navigation component with a simpler mobile menu ⚠️ **BREAKING**

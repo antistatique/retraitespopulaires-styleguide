@@ -250,6 +250,10 @@
   align-items: center !important;
 }
 
+.flex-align-items-end {
+  align-items: flex-end !important;
+}
+
 @media (min-width: $screen-md-min) {
   .float-md-right {
     float: right !important;

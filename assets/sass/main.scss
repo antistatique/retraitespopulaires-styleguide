@@ -46,6 +46,7 @@
 @import 'atoms/input-file';
 @import 'atoms/block-link';
 @import 'atoms/meta-box';
+@import 'atoms/throbber';
 
 // molecules:
 @import 'molecules/teaser-gallery';
@@ -68,6 +69,8 @@
 @import 'molecules/card';
 @import 'molecules/section-title';
 @import 'molecules/selectize';
+@import 'molecules/popin';
+@import 'molecules/alerts';
 @import 'molecules/collapser-menu';
 
 // organisms:

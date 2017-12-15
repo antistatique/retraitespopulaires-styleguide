@@ -19,14 +19,14 @@ layout: examples.html.swig
   </div>
 </div>
 <div class="spacer"></div>
-<div class="row theme-assurance">
+<div class="row theme-cip">
   <div class="col-xs-12">
     <h6>Tableau long - Thème</h6>
     {% include '../molecules/table.html.swig' with {table_size: 'wide'} %}
   </div>
 </div>
 <div class="spacer"></div>
-<div class="row theme-assurance">
+<div class="row theme-cip">
   <div class="col-xs-12">
     <h6>Tableau condensé - Thème</h6>
     {% include '../molecules/table.html.swig' with {table_size: 'condensed'} %}
@@ -34,7 +34,7 @@ layout: examples.html.swig
 </div>
 
 <div class="spacer"></div>
-<div class="row theme-assurance">
+<div class="row theme-cip">
   <div class="col-xs-12">
     <h6>Tableau condensé - Thème</h6>
 
