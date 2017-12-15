@@ -1,0 +1,20 @@
+uuid: 64cb1792-3bb8-48b3-8914-9ba0cb1a3410
+langcode: fr
+status: true
+dependencies:
+  module:
+    - rp_contact
+  theme:
+    - retraitespopulaires
+id: popinformblock
+theme: retraitespopulaires
+region: content
+weight: 0
+provider: null
+plugin: rp_contact_popin_block
+settings:
+  id: rp_contact_popin_block
+  label: 'Popin Form block'
+  provider: rp_contact
+  label_display: '0'
+visibility: {  }

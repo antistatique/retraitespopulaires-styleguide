@@ -60,7 +60,7 @@ settings:
   draft_loaded_message: ''
   confirmation_type: url_message
   confirmation_title: ''
-  confirmation_message: 'Merci [webform_submission:values:prenom] [webform_submission:values:nom_de_famille] pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter &agrave; l&#39;adresse [webform_submission:values:votre_e_mail].'
+  confirmation_message: 'Merci [webform_submission:values:prenom] [webform_submission:values:nom_de_famille] pour votre demande. Nous allons la traiter rapidement et vous recontacter à l''adresse [webform_submission:values: votre_e_mail].'
   confirmation_url: 'https://www.retraitespopulaires.ch/solutions/assurance-vie-remerciement'
   confirmation_attributes: {  }
   confirmation_back: true

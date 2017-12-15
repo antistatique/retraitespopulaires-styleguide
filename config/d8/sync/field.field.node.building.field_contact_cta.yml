@@ -1,0 +1,23 @@
+uuid: 3a708874-1a87-4042-826a-9fd6b5064b3c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_cta
+    - node.type.building
+id: node.building.field_contact_cta
+field_name: field_contact_cta
+entity_type: node
+bundle: building
+label: 'Désactiver l''affichage du "Call To Action" contact'
+description: "L'affichage du CTA est un comportement naturel sur retraitespopulaires.ch. Il intervient lorsque le contenu possède un  ou plusieurs contacts liés. <br />\r\nCependant en cochant cette case, vous pouvez désactiver ce comportement. Il n’y aura dès lors plus le \"Call To Action\" de contact en haut à droite du contenu que vous modifiez."
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

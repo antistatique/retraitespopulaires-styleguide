@@ -2,6 +2,8 @@ rp_site.admin:
     title: Site
     parent: rp_toolbar.admin
     route_name: rp_site.admin
+    weight: 0
+
 rp_site.admin.settings:
     title: Settings
     parent: rp_site.admin

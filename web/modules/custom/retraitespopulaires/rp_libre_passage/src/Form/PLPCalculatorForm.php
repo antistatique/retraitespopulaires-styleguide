@@ -106,7 +106,7 @@ class PLPCalculatorForm extends FormBase {
           '#type'       => 'fieldset',
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => t('Vos données personnelles'),
-          '#prefix'     => '<h3 class="card-title">'.t('Vos données personnelles').'</h3>',
+          '#prefix'     => '<h2>'.t('Calculer vos prestations à l\'âge de retraite choisi (estimation).').'</h2><h3 class="card-title">'.t('Vos données personnelles').'</h3>',
         );
 
         // Get error to inline it as suffix

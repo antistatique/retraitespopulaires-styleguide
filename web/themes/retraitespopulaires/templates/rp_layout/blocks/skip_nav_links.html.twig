@@ -1,0 +1,35 @@
+<nav class="rp-access-nav" aria-label="{% trans %}Raccourci de navigation{% endtrans %}">
+  <h2 class="sr-only">{% trans %}Raccourci de navigation{% endtrans %}</h2>
+  <ul>
+    <li>
+      <a class="btn btn-primary" href="{{ path('<front>') }}" title="[ALT + 1]" accesskey="1">{% trans %}Page d'accueil du site{% endtrans %}</a>
+    </li>
+    <li>
+      <a class="btn btn-primary" href="#main-content" title="[ALT + 2]" accesskey="2" >{% trans %}Passer la navigation{% endtrans %}</a>
+    </li>
+    <li>
+      <a class="btn btn-primary" href="#main-navigation" title="[ALT + 3]" accesskey="3" >{% trans %}Accéder à la navigation principale{% endtrans %}</a>
+    </li>
+    <li>
+      <a class="btn btn-primary" href="#secondary-navigation" title="[ALT + 4]" accesskey="4" >{% trans %}Accéder à la navigation secondaire{% endtrans %}</a>
+    </li>
+    {% if variables.node %}
+      <li>
+        <a class="btn btn-primary" href="#sub-navigation" title="[ALT + 5]" accesskey="5" >{% trans %}Accéder à la sous navigation de {{ variables.node.title.value }} {% endtrans %}</a>
+      </li>
+    {% endif %}
+    <li>
+      <a class="btn btn-primary" href="{{ path('rp_site.search') }}" title="[ALT + 6]" accesskey="6" >{% trans %}Accéder à la recherche{% endtrans %}</a>
+    </li>
+    {% if variables.params.email %}
+    <li>
+      <a class="btn btn-primary" href="mailto:{{ variables.params.email }}" title="[ALT + 7]" accesskey="7">{% trans %}Nous contacter{% endtrans %}</a>
+    </li>
+    {% endif %}
+    {% if variables.params.phone %}
+    <li>
+      <a class="btn btn-primary" href="tel:{{ variables.params.phone }}" title="[ALT + 8]" accesskey="8">{% trans %}Nous appeler{% endtrans %}</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>

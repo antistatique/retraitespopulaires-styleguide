@@ -1,0 +1,23 @@
+uuid: bbfa0789-d0b2-43a1-880a-0c0e005f5a76
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_popin
+    - node.type.faq
+id: node.faq.field_popin
+field_name: field_popin
+entity_type: node
+bundle: faq
+label: 'Activer l''affichage de la Pop-in de contact'
+description: "L'affichage de la Pop-in est désactivée par défaut sur retraitespopulaires.ch. <br />\r\nCependant, en cochant cette case, vous pouvez activer une Pop-in de contact sur ce contenu. Attention, il est important de désactiver le \"Call To Action\" lorsque vous activez la Pop-in."
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

@@ -1,0 +1,28 @@
+<div class="wrapper-prenavbar m-t-1 hidden-sm hidden-xs">
+  <ul class="prenavbar list-unstyled list-inline m-0" id="secondary-navigation" role="navigation" aria-label="{% trans %}Navigation secondaire{% endtrans %}">
+    {% for item in pre_main_menu %}
+    {% set classes = [
+      item.inActiveTrail ? 'active'
+      ] %}
+      <li class="{{ classes|join(' ') }}">
+        {% set classes = [
+          'text-muted',
+          'small',
+          item.inActiveTrail ? 'active',
+        ] %}
+        {% set target = item.link.options.external ? '_blank' %}
+        {% set url = pre_main_menu_active_trail == item.link.pluginId ? '#main-content' : item.link.urlObject %}
+        <a href="{{ url|default('#') }}" class="{{ classes|join(' ') }}" target="{{ target }}">
+          {% if pre_main_menu_active_trail == item.link.pluginId %}<span class="sr-only">{% trans %}Page active{% endtrans %}</span>{% endif %} {{ item.link.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="prenavbar-separator prenavbar-separator-invisible" aria-hidden="true"></div>
+  <div class="search-box">
+    <a href="{{  path('rp_site.search') }}" class="search-toggle">
+      <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></span>
+      <div class="sr-only">{% trans %}Recherche{% endtrans %}</div>
+    </a>
+  </div>
+</div>

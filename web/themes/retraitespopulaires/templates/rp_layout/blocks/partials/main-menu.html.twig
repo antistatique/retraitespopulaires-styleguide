@@ -1,0 +1,18 @@
+<nav class="navbar hidden-sm hidden-xs" aria-label="{% trans %}Navigation principale{% endtrans %}">
+  <a id="main-navigation" aria-label="{% trans %}Navigation principale{% endtrans %}"></a>
+  <h2 class="sr-only">{% trans %}Navigation principale{% endtrans %}</h2>
+  <ul class="list-unstyled m-0">
+    {% for item in main_menu %}
+    {% set classes = [
+      item.inActiveTrail ? 'active'
+    ] %}
+    <li class="{{ classes|join(' ') }}">
+      {% set target = item.link.options.external ? '_blank' %}
+      {% set url = main_menu_active_trail == item.link.pluginId ? '#main-content' : item.link.urlObject %}
+      <a href="{{ url|default('#') }}" class="{{ classes|join(' ') }}" target="{{ target }}">
+        {% if main_menu_active_trail == item.link.pluginId %}<span class="sr-only">{% trans %}Page active{% endtrans %}</span>{% endif %} {{ item.link.title }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

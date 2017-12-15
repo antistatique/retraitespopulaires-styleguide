@@ -1,11 +1,3 @@
-rp_site.launcher:
-    path: '/launcher/{menu_id}'
-    defaults:
-        _controller: '\Drupal\rp_site\Controller\LauncherController::launcher'
-        _title: 'Launcher'
-        menu_id: null
-    requirements:
-        _permission: 'access content'
 rp_site.search:
     path: '/recherche'
     defaults:

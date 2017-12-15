@@ -5,19 +5,21 @@ dependencies:
   config:
     - field.field.node.product.body
     - field.field.node.product.field_contact
+    - field.field.node.product.field_contact_cta
     - field.field.node.product.field_cover
     - field.field.node.product.field_document
     - field.field.node.product.field_document_page
     - field.field.node.product.field_document_random
+    - field.field.node.product.field_email_popin
     - field.field.node.product.field_faq
     - field.field.node.product.field_faq_random
     - field.field.node.product.field_file_product
     - field.field.node.product.field_metatags
+    - field.field.node.product.field_popin
     - field.field.node.product.field_product_plan
     - field.field.node.product.field_profession
     - field.field.node.product.field_search_npa
     - field.field.node.product.field_subtitle
-    - field.field.node.product.field_weight
     - node.type.product
   module:
     - file
@@ -44,6 +46,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_contact_cta:
+    weight: 116
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_cover:
     weight: 105
@@ -80,6 +92,13 @@ content:
     third_party_settings: {  }
     type: boolean
     region: content
+  field_email_popin:
+    weight: 118
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_faq:
     weight: 107
     label: above
@@ -111,6 +130,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_popin:
+    weight: 117
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_product_plan:
     weight: 109
@@ -145,15 +174,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_weight:
-    weight: 111
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
     region: content
   links:
     weight: 100

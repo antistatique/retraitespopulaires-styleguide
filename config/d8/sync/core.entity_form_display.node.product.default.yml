@@ -5,19 +5,21 @@ dependencies:
   config:
     - field.field.node.product.body
     - field.field.node.product.field_contact
+    - field.field.node.product.field_contact_cta
     - field.field.node.product.field_cover
     - field.field.node.product.field_document
     - field.field.node.product.field_document_page
     - field.field.node.product.field_document_random
+    - field.field.node.product.field_email_popin
     - field.field.node.product.field_faq
     - field.field.node.product.field_faq_random
     - field.field.node.product.field_file_product
     - field.field.node.product.field_metatags
+    - field.field.node.product.field_popin
     - field.field.node.product.field_product_plan
     - field.field.node.product.field_profession
     - field.field.node.product.field_search_npa
     - field.field.node.product.field_subtitle
-    - field.field.node.product.field_weight
     - image.style.thumbnail
     - node.type.product
   module:
@@ -45,6 +47,9 @@ third_party_settings:
         required_fields: true
     group_contacts:
       children:
+        - field_contact_cta
+        - field_popin
+        - field_email_popin
         - field_search_npa
         - field_contact
       parent_name: group_tabs
@@ -133,13 +138,20 @@ content:
     third_party_settings: {  }
     region: content
   field_contact:
-    weight: 118
+    weight: 129
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_contact_cta:
+    weight: 125
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_cover:
     weight: 4
@@ -174,6 +186,14 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_email_popin:
+    weight: 127
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
   field_faq:
     weight: 123
     settings:
@@ -203,6 +223,13 @@ content:
     third_party_settings: {  }
     type: metatag_firehose
     region: content
+  field_popin:
+    weight: 126
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_product_plan:
     weight: 6
     settings: {  }
@@ -216,7 +243,7 @@ content:
     type: options_select
     region: content
   field_search_npa:
-    weight: 117
+    weight: 128
     settings:
       display_label: true
     third_party_settings: {  }
@@ -229,13 +256,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
-  field_weight:
-    weight: 8
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
     region: content
   path:
     type: path

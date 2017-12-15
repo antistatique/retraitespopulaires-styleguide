@@ -70,36 +70,13 @@ class ProductsBlock extends BlockBase implements ContainerFactoryPluginInterface
     */
     public function build($params = array()) {
         $variables = array('products' => array());
-        //Load the current node's field_products
-        $products_nids = array();
+
         if ($node = $this->route->getParameter('node')) {
             if( isset($node->field_products) && !empty($node->field_products) ){
-                foreach ($node->field_products as $key => $rpoduct) {
-                    $products_nids[] = $rpoduct->target_id;
-                }
-
-                if( !empty($products_nids) ) {
-
-                    // Retrieve all matched terms with the searched link
-                    $query = \Drupal::database()->select('node_field_data', 'n');
-                    $query->fields('n')
-                        ->condition('n.status', 1)
-                        ->condition('n.type', 'product')
-                        ->condition('n.nid', $products_nids, 'IN')
-                    ;
-
-                    $result = $query->execute();
-
-                    // List of nodes
-                    $nids = array();
-                    foreach ($result as $node) {
-                        $nids[$node->nid] = $node->nid;
-                    }
-
-                    $variables['products'] = $this->entity_node->loadMultiple($nids);
+                foreach ($node->field_products as $key => $product) {
+                  $variables['products'][] = $product->entity;
                 }
             }
-
         }
 
         return [

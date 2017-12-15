@@ -6,11 +6,14 @@ dependencies:
     - field.field.node.management_contracts.body
     - field.field.node.management_contracts.field_administrator
     - field.field.node.management_contracts.field_contact
+    - field.field.node.management_contracts.field_contact_cta
     - field.field.node.management_contracts.field_document
     - field.field.node.management_contracts.field_document_random
+    - field.field.node.management_contracts.field_email_popin
     - field.field.node.management_contracts.field_faq
     - field.field.node.management_contracts.field_faq_random
     - field.field.node.management_contracts.field_logo
+    - field.field.node.management_contracts.field_popin
     - field.field.node.management_contracts.field_profession
     - field.field.node.management_contracts.field_search_npa
     - field.field.node.management_contracts.field_web_site
@@ -49,6 +52,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_contact_cta:
+    weight: 112
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_document:
     weight: 110
     label: above
@@ -66,6 +79,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_email_popin:
+    weight: 114
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_faq:
     weight: 111
@@ -93,6 +113,16 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
+  field_popin:
+    weight: 113
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_profession:
     weight: 105
