@@ -24,9 +24,9 @@ ul.collapser-menu {
 
     &.toggled {
       position: relative;
-      background: $white;
       margin-right: ($grid-gutter-width / -2);
       margin-left: ($grid-gutter-width / -2);
+      background: $white;
       border-right: ($grid-gutter-width / 2) solid $white;
       border-left: ($grid-gutter-width / 2) solid $white;
 
