@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+## NEXT RELEASE
+ - remove light page
+ - update documentation header/footer/menu
+ - remove unecessary 'theme' option(s)
+ - update the footer component markup
+
 ## 3.2.1 (2017-12-15)
  - fix large screen logo-offset
  - improve mobile menu item button alignments with hamburger menu
