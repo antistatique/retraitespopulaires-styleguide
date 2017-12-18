@@ -3,7 +3,8 @@ title: Navbar
 name: navbar
 collection: molecules
 notes: |
-  Can be wrapped in `.theme-[theme]` to change look.
+  Can be wrapped in `.theme-[theme]` to change look. <br />
+  This component is visible into the [basic page](/basic-page).
 ---
 <nav class="navbar" id="bs-example-navbar-collapse-1" aria-label="Navigation principale">
   <ul class="list-unstyled m-0">
