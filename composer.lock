@@ -2732,7 +2732,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/template_whisperer",
-                "reference": "799d281cf6ddb4a492253a82b440ce46e08d3565"
+                "reference": "a08e3c8f98de8cca6daa42c0c74a4c6fdaf91a12"
             },
             "require": {
                 "drupal/core": "*"
@@ -2748,7 +2748,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.x-dev",
-                    "datestamp": "1499973242",
+                    "datestamp": "1507613347",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2779,7 +2779,7 @@
                 "source": "http://cgit.drupalcode.org/template_whisperer",
                 "issues": "https://www.drupal.org/project/issues/template_whisperer"
             },
-            "time": "2017-07-13 19:09:19"
+            "time": "2017-10-10 05:28:50"
         },
         {
             "name": "drupal/token",
