@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_search_npa
+    - field.field.node.page.field_template_whisperer
     - image.style.thumbnail
     - node.type.page
   module:
@@ -30,6 +31,7 @@ dependencies:
     - image
     - metatag
     - path
+    - template_whisperer
     - text
     - webform
 third_party_settings:
@@ -292,6 +294,12 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_template_whisperer:
+    weight: 36
+    settings: {  }
+    third_party_settings: {  }
+    type: template_whisperer
     region: content
   path:
     type: path

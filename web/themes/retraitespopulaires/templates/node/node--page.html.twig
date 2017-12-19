@@ -17,7 +17,7 @@
       <div class="bg-special-waves"></div>
       <div class="spacer"></div>
       <div class="row">
-        <div class="{{ node_content_width|join(' ') }}">
+        <div class="{{ node_content_width|join(' ')|default('col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2') }}">
           <div class="card card-white">
             <div class="card-body">
               {{ content.field_form }}

@@ -15,7 +15,7 @@
   {% if left >= 0 %}
     <div class="background-overflow bg-berrylight-gray">
       <div class="row">
-        <div class="{{ node_content_width|join(' ') }}">
+        <div class="{{ node_content_width|join(' ')|default('col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2') }}">
           <div class="spacer spacer-md"></div>
           <div class="card card-white">
             <div class="card-body">

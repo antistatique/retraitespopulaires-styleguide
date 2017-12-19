@@ -1,0 +1,21 @@
+uuid: d6b67c54-f567-4779-943b-ae00be7f4ca2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_template_whisperer
+    - node.type.page
+  module:
+    - template_whisperer
+id: node.page.field_template_whisperer
+field_name: field_template_whisperer
+entity_type: node
+bundle: page
+label: template_whisperer
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: template_whisperer

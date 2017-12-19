@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_search_npa
+    - field.field.node.page.field_template_whisperer
     - node.type.page
   module:
     - file
@@ -80,7 +81,7 @@ content:
     type: image
     region: content
   field_document_page:
-    weight: 10
+    weight: 9
     label: above
     settings:
       link: true
@@ -88,7 +89,7 @@ content:
     type: entity_reference_label
     region: content
   field_document_random:
-    weight: 12
+    weight: 11
     label: above
     settings:
       format: default
@@ -181,7 +182,7 @@ content:
     type: entity_reference_label
     region: content
   field_search_npa:
-    weight: 11
+    weight: 10
     label: above
     settings:
       format: default
@@ -191,10 +192,11 @@ content:
     type: boolean
     region: content
   links:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_document: true
+  field_template_whisperer: true
   langcode: true
