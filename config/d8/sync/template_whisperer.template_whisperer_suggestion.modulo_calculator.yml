@@ -1,0 +1,7 @@
+uuid: 5fd95785-7180-4452-bab0-8e6858821a18
+langcode: fr
+status: true
+dependencies: {  }
+id: modulo_calculator
+name: 'Modulo Calculateur'
+suggestion: modulo_calculator
