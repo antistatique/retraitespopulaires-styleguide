@@ -22,11 +22,13 @@ dependencies:
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_search_npa
+    - field.field.node.page.field_template_whisperer
     - node.type.page
   module:
     - file
     - image
     - metatag
+    - template_whisperer
     - text
     - user
     - webform
@@ -189,6 +191,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_template_whisperer:
+    weight: 19
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: template_whisperer
     region: content
   links:
     weight: 9
