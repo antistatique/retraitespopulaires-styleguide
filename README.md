@@ -282,7 +282,7 @@ Open a SSH Bridge with the following command, then browser with http://127.0.0.1
 Production:
 
   ```bash
-  $ ssh -L 9983:127.0.0.1:8983 web_rp@192.168.188.50
+  $ ssh -L 9983:127.0.0.1:8983 dplweb@192.168.188.50
   ```
 
 ETI/Staging:
