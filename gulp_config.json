@@ -64,7 +64,7 @@
   "assets": "assets/",
   "iconsFontName": "retraitespopulaires-icon",
   "build": "build/",
-  "browsers": ["last 3 versions", "ie >= 10"],
+  "browsers": ["last 3 versions", "ie >= 10", ">1%"],
   "singles": [
     {
       "source": "node_modules/selectize/dist/js/standalone/selectize.min.js",

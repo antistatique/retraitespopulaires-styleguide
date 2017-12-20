@@ -16,6 +16,7 @@
     margin: 0 ($grid-gutter-width / 2) ($grid-gutter-width / 2) 0;
   }
 
+  .card-cta-container &,
   .pull-right & {
     margin: 0 0 ($grid-gutter-width / 2) ($grid-gutter-width / 2);
   }
@@ -71,11 +72,35 @@ a.card-light,
   }
 }
 
+.card-cta-container {
+  float: right;
+
+  @media screen and (max-width: $screen-xs-max) {
+    float: none;
+  }
+
+  .card {
+    @media screen and (max-width: $screen-xs-max) {
+      max-width: none;
+      margin-right: 0;
+      margin-bottom: 0;
+      margin-left: 0;
+      padding: 0;
+      border: none;
+      text-align: center;
+    }
+  }
+}
+
 .card-cta {
   display: inline-flex;
   margin: 0 auto;
   align-self: center;
   padding-top: $grid-gutter-width/2;
+
+  @media screen and (max-width: $screen-xs-max) {
+    display: none;
+  }
 }
 
 a.card-bg-hover,
