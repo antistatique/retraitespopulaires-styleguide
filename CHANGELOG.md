@@ -6,6 +6,8 @@ CHANGELOG
  - update documentation header/footer/menu
  - remove unecessary 'theme' option(s)
  - update the footer component markup
+ - improve cta-card container responsivness
+ - fix card-results files variant
 
 ## 3.2.1 (2017-12-15)
  - fix large screen logo-offset
