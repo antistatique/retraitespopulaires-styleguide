@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - add ssh documentation to access Solr browser on eti & production env.
+
 ## 2.3.2 (2017-12-15)
  - add ckeditor link as btn
  - add ckeditor title colors

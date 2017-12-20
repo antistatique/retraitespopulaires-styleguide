@@ -172,6 +172,7 @@ We use the repository on staging to avoid creating NPM version everytime we depl
 When you deploy on the production environment, the styleguide used for deploy is the latest NPM version.
 
 ## 🔍 Solr (6.1.0+) search Engine & Tika (1.13+) Extractor
+
 We are using solr for search index.
 
 Solr need to be configured for drupal. Follow the INSTALL.txt found in the `search_api_solr` module.
@@ -181,10 +182,6 @@ As a pre-requisite for running your own Solr server, you'll need Java 6 or highe
 ### Installation
 
 Install all prerequisites and configuration from `web/modules/contrib/search_api_solr/INSTALL.txt` then
-
-### For windows
-
-### For Unix
 
 Start Solr with:
     $ bin/solr start
@@ -270,12 +267,28 @@ You should improved the natural search by editing the *synonyms.txt* file.
 
 ### Maintenance on production
 
-The Solr instance is located in `/data/solr/data/ca-website/`.
+The Solr instance is located in `/data/solr/data/retraitespopulaires-website/`.
 
 You can restart the server the following:
 
   ```bash
     $ service solr restart
+  ```
+
+### Solr browser access
+
+Open a SSH Bridge with the following command, then browser with http://127.0.0.1:9983/solr/#/
+
+Production:
+
+  ```bash
+  $ ssh -L 9983:127.0.0.1:8983 web_rp@192.168.188.50
+  ```
+
+ETI/Staging:
+
+  ```bash
+  $ ssh -L 9983:127.0.0.1:8983 web_rp@192.168.188.51
   ```
 
 ## 🏆 Tests
