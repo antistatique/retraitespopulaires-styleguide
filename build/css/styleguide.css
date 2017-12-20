@@ -11,6 +11,7 @@ pre[class*='language-'] {
   white-space: pre;
   word-spacing: normal;
   -moz-tab-size: 4;
+    -o-tab-size: 4;
        tab-size: 4;
   -webkit-hyphens: none;
       -ms-hyphens: none;
@@ -131,6 +132,7 @@ pre[class*='language-'] {
   cursor: pointer;
   vertical-align: middle;
   opacity: 0.8;
+  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s; }
   .styleguide-menu-toggle:hover {
     opacity: 1; }
@@ -254,13 +256,15 @@ body {
     content: ' ';
     display: table; }
   .styleguide-menu-active .styleguide-container {
-    -ms-transform: translate(250px, 0);
-        transform: translate(250px, 0); }
+    -webkit-transform: translate(250px, 0);
+        -ms-transform: translate(250px, 0);
+            transform: translate(250px, 0); }
     @media (min-width: 60em) {
       .styleguide-menu-active .styleguide-container {
         margin-left: 250px;
-        -ms-transform: translate(0, 0);
-            transform: translate(0, 0); } }
+        -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+                transform: translate(0, 0); } }
 
 .styleguide-header-container {
   margin-left: -2em;
@@ -283,15 +287,17 @@ body {
   width: 250px;
   height: 100%;
   background-color: #fff;
-  -ms-transform: translate(-100%, 0);
-      transform: translate(-100%, 0);
+  -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
   z-index: 1;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; }
   .styleguide-menu-active .styleguide-menu {
-    -ms-transform: translate(0, 0);
-        transform: translate(0, 0); }
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0); }
   .styleguide-menu ul {
     margin-top: 0;
     margin-bottom: 0;
@@ -334,15 +340,17 @@ body {
       height: 6px;
       border-right: 2px solid rgba(0, 0, 0, 0.3);
       border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg); }
+      -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
   .styleguide-menu a.styleguide-menu-heading:hover {
     color: rgba(2, 133, 26, 0.7); }
   .styleguide-menu span.styleguide-menu-heading {
     padding: 0.33em 1.5em; }
     .styleguide-menu span.styleguide-menu-heading:after {
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg); }
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
 
 .moodboard .square {
   position: relative;
@@ -362,18 +370,21 @@ body {
 .moodboard .thebox {
   position: relative;
   top: 50%;
-  -ms-transform: translateY(-50%);
-      transform: translateY(-50%); }
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 .moodboard .f-color-chips {
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
 
 .moodboard .f-color-chip {
-  -ms-flex-positive: 1;
-      flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-bottom: 2em;
@@ -400,13 +411,15 @@ body {
     margin: 0; }
 
 .styleguide-menu-active .styleguide-container {
-  -ms-transform: translate(300px, 0);
-      transform: translate(300px, 0); }
+  -webkit-transform: translate(300px, 0);
+      -ms-transform: translate(300px, 0);
+          transform: translate(300px, 0); }
   @media (min-width: 60em) {
     .styleguide-menu-active .styleguide-container {
       margin-left: 250px;
-      -ms-transform: translate(0, 0);
-          transform: translate(0, 0); } }
+      -webkit-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+              transform: translate(0, 0); } }
 
 .styleguide-menu {
   width: 250px;
@@ -415,6 +428,7 @@ body {
     padding: 0.2em 1em 0.1em;
     font-size: 80%;
     color: #424242;
+    -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out; }
     .styleguide-menu a.styleguide-active {
       padding-left: 2rem; }
@@ -497,6 +511,7 @@ body {
   bottom: 20px;
   left: calc(100% - 3em);
   padding-left: 2em;
+  -webkit-transition: padding-left 0.2s;
   transition: padding-left 0.2s;
   will-change: padding-left; }
   .styleguide-toggle-theme-hide:hover {
@@ -505,3 +520,6 @@ body {
 .styleguide-item-preview .popin {
   display: block;
   position: static; }
+
+.styleguide-item-preview#element-managed-by-link {
+  margin-top: 53px; }
