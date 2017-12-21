@@ -1,0 +1,11 @@
+<span class="tab-selector-link">
+   <!--
+      WARNING: intentionally using ng-attr instead of ng-class.
+      For unknown reasons, and against the documentation, ng-class ends up adding both selected and unselected classes"
+      The workaround uses ng-attr to set the class, which doesn't produce that result
+   -->
+   <a id="{{$ctrl.fieldId}}" ng-attr-class="{{ $ctrl.isSelected() ? 'selected-link' : 'unselected-link' }}" href="" ng-click="$ctrl.onSelected()">
+      <span ng-cloak class="ng-cloak back-arrow" ng-show="$ctrl.isSelected()"/>
+      <span ng-bind-html="$ctrl.title"></span>
+   </a>
+</span>

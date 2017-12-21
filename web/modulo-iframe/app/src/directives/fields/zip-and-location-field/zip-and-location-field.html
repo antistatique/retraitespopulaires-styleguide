@@ -1,0 +1,37 @@
+<div class="zip-and-location-field">
+   <script type="text/ng-template" id="zip-and-location-option.html">
+      <div class="zip-and-location-option">
+         <div class="state{{match.model.state}} state"/>
+         <span ng-bind-html="match.model.zipAndLocation | typeaheadHighlight:query" class="typeahead-highlight"></span>
+      </div>
+   </script>
+   <div class="form-group">
+      <label for="{{ fieldId }}" class="custom-field-label" ng-bind-html="label"></label>
+      <!-- <div ng-class="{'inputWithGeoLocation':hasLocalizationSupport(), 'inputWithoutGeoLocation':!hasLocalizationSupport()}"> -->
+      <div ng-class="{'input-group':hasLocalizationSupport()}">
+         <div
+            ng-if="model[attribute].state !== undefined"
+            class="state{{ model[attribute].state}} div-state"
+            />
+         <input
+            id="{{ fieldId }}"
+            type="text"
+            class="form-control input-text-indent ng-valid ng-dirty ng-valid-editable"
+            ng-model="inputTextModel"
+            typeahead="zipCode as zipCode.zipAndLocation for zipCode in searchLocations($viewValue)"
+            typeahead-template-url="zip-and-location-option.html"
+            typeahead-on-select="onSelect($model)"
+            typeahead-wait-ms="300"
+            typeaheadwatchchanges
+            ng-disabled="isDisabled()"
+            ng-keyup="cancelOnEscape($event)"
+            >
+         <span class="input-group-btn" ng-if="hasLocalizationSupport()">
+            <button class="localization-button btn btn-default" ng-click="getLocation()" ng-disabled="isDisabled()">
+               <div ng-class="getButtonBackground()" ng-click="getLocation()"/>
+            </button>
+         </span>
+      </div>
+      <p class="std-text-small-note fail-message" ng-if="showMessage()" ng-bind-html="'zipAndLocationField.LocationFailedMessage'|i18n"></p>
+   </div>
+</div>

@@ -1,0 +1,90 @@
+<div class="row multicalc multicalc-saving3a">
+   <div class="col-md-12">
+      <div class="close-panel" ng-class="{ 'close-panel-border': $ctrl.collapsed, '': !$ctrl.collapsed }">
+         <a class="icon-button btn btn-color btn-circle btn-xl" href="" ng-class="{ 'collapsed': $ctrl.collapsed, 'expanded': !$ctrl.collapsed }" id="contact" ng-click="$ctrl.toggleCollapse()">
+            <span class="footer link-tag" ng-bind-html=""></span>
+         </a>
+         <div class="titles">
+            <span class="subtitle" ng-bind-html="'MulticalcSaving3a.Title' | i18n"></span>
+            <span class="maintitle" ng-bind-html="'MulticalcSaving3a.Subtitle' | i18n"></span>
+         </div>
+      </div>
+   </div>
+   <div id="saving3a" class="collapse">
+      <div class="col-md-9 left-panel col-sm-8 col-xs-12">
+         <div class="row">
+            <div class="col-md-6">
+               <slider-field type="amount"
+                  label="{{ 'MulticalcSaving3a.MonthlySavingCapacity' | i18n }}"
+                  tooltip-text="{{ 'MulticalcSaving3a.MonthlySavingCapacityTooltip' | i18n }}"
+                  ng-model="$ctrl.scenario.monthlySavingCapacity"
+                  currency="CHF"
+                  on-change="$ctrl.calculate()"
+                  options="$ctrl.baseViewParameters.monthlySavingCapacity"
+                  max="{{$ctrl.data.maxMonthlySavingCapacity}}"
+                  slider-max="{{$ctrl.data.maxMonthlySavingCapacity}}"
+                  is-show-value-handle="true"/>
+            </div>
+            <div class="col-md-6">
+               <slider-field type="amount"
+                  label="{{ 'MulticalcSaving3a.InterestRate' | i18n }}"
+                  ng-model="$ctrl.scenario.interestRate"
+                  on-change="$ctrl.calculate()"
+                  is-percentage="true"
+                  decimals="2"
+                  options="$ctrl.baseViewParameters.interestRate"
+                  is-show-value-handle="true"/>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12 col-xs-12">
+               <div id="canvas-container" ng-cloak class="ng-cloak canvas-container">
+                  <div id="saving3aStandardChartCanvas" class="canvas-box"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-3 right-panel col-sm-4 col-xs-12">
+         <div class="result-money-box">
+            <div class="result-money-header">
+               <span class="value-title" ng-bind-html="'MulticalcSaving3a.TotalTaxSaving'| i18n"></span>
+               <span class="currency" ng-bind-html="'CHF'"></span>
+               <span class="amount" ng-bind-html="$ctrl.result.taxSavings | amount"></span>
+            </div>
+            <hr>
+            <div class="result-money-body">
+               <div class="value-amount-body">
+                  <span class="value-title" ng-bind-html="'MulticalcSaving3a.Investment'| i18n"></span>
+                  <span class="currency" ng-bind-html="'CHF'"></span>
+                  <span class="amount" ng-bind-html="$ctrl.result.savings | amount"></span>
+               </div>
+               <div class="value-amount-body">
+                  <span class="value-title" ng-bind-html="'MulticalcSaving3a.Interest'| i18n"></span>
+                  <span class="currency" ng-bind-html="'CHF'"></span>
+                  <span class="amount" ng-bind-html="$ctrl.result.interest | amount"></span>
+               </div>
+               <div class="value-amount-body">
+                  <span class="value-title" ng-bind-html="'MulticalcSaving3a.CapitalizationTax'| i18n"></span>
+                  <span class="currency" ng-bind-html="'CHF'"></span>
+                  <span class="amount" ng-bind-html="- $ctrl.result.capitalizationTax | amount"></span>
+               </div>
+            </div>
+            <div class="result-money-footer">
+               <span class="footer title-big" ng-bind-html="'MulticalcSaving3a.NetCapital' | i18n"></span>
+               <div class="value-amount-footer">
+                  <span class="footer currency" ng-bind-html="'CHF'"></span>
+                  <span class="footer amount" ng-bind-html="$ctrl.result.netCapital | amount"></span>
+               </div>
+               <div class="value-additional-footer">
+                  <span class="title" ng-bind-html="'MulticalcSaving3a.NetInterestRate'| i18n"></span>
+                  <span class="footer percentage" ng-bind-html="'MulticalcSaving3a.NetInterestRateValue'| i18n:{'AMOUNT':$ctrl.result.netYield}"></span>
+               </div>
+               <a href="" id="contact" class="contact" ng-click="$ctrl.contact()">
+                  <span class="footer link-tag" ng-bind-html="'MulticalcSaving3a.Contact' | i18n"></span>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+

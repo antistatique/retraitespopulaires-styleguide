@@ -1,0 +1,66 @@
+<div class="row multicalc multicalc-risk">
+   <div class="col-md-12">
+      <div class="close-panel" ng-class="{ 'close-panel-border': $ctrl.collapsed, '': !$ctrl.collapsed }">
+         <a class="icon-button btn btn-color {{$ctrl.riskType}} btn-circle btn-xl" href="" ng-class="{ 'collapsed': $ctrl.collapsed, 'expanded': !$ctrl.collapsed }" id="contact" ng-click="$ctrl.toggleCollapse()">
+            <span class="footer link-tag" ng-bind-html=""></span>
+         </a>
+         <div class="titles">
+            <span class="subtitle" ng-bind-html="'MulticalcRisk.Title' + $ctrl.riskType | i18n"></span>
+            <span class="maintitle" ng-bind-html="'MulticalcRisk.Subtitle' + $ctrl.riskType | i18n"></span>
+         </div>
+      </div>
+   </div>
+   <div id="{{$ctrl.riskType}}" class="collapse">
+      <div class="col-md-9 left-panel col-sm-8 col-xs-12">
+         <label ng-bind-html="'MulticalcRisk.Need' + $ctrl.riskType | i18n"></label>
+         <div class="row">
+            <div class="col-md-3">
+               <numericField type="amount"
+                  ng-model="$ctrl.need"
+                  on-change="$ctrl.calculate()"
+                  options="$ctrl.baseViewParameters.need"
+                  max="{{$ctrl.data.maxNeed}}"
+                  show-range="false"/>
+            </div>
+            <div class="col-md-6">
+               <slider-field type="amount"
+                  ng-model="$ctrl.need"
+                  on-change="$ctrl.calculate()"
+                  options="$ctrl.baseViewParameters.need"
+                  slider-max="{{$ctrl.data.maxNeed}}"
+                  currency="CHF"
+                />
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12">
+               <column-graph id="{{$ctrl.chartId}}" bridge="$ctrl.chartBridge"></column-graph>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-3 right-panel col-sm-4 col-xs-12">
+         <div class="result-money-box">
+            <div class="result-money-body">
+               <div class="value-amount-body">
+                  <span class="value-title" ng-bind-html="'MulticalcRisk.Income' + $ctrl.riskType | i18n"></span>
+                  <span class="currency" ng-bind-html="'CHF'"></span>
+                  <span class="amount" ng-bind-html="$ctrl.result.firstPillarRent + $ctrl.result.secondPillarRent | amount"></span>
+               </div>
+            </div>
+            <div class="result-money-footer {{$ctrl.riskType}}">
+               <span class="footer title-big" ng-bind-html="'MulticalcRisk.GapTitle' | i18n"></span>
+               <span class="footer title-small" ng-bind-html="'MulticalcRisk.GapSubtitle' | i18n"></span>
+               <div class="value-amount-footer">
+                  <span class="footer currency" ng-bind-html="'CHF'"></span>
+                  <span class="footer amount" ng-bind-html="$ctrl.result.gap | amount"></span>
+               </div>
+               <span class="footer additional"></span>
+               <a href="" id="contact" class="contact" ng-click="$ctrl.contact()">
+                  <span class="footer link-tag" ng-bind-html="'MulticalcRisk.Contact' | i18n"></span>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
