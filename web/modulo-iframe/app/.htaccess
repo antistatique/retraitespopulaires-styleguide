@@ -1,0 +1,131 @@
+# This file should be placed in the root directory of the application, along with the index.html file.
+# 
+# About .htaccess file and server directories:
+# The configurations in the .htaccess file will affect everything in its directory and the directories under it.
+# Each time a page loads, the server scans its directory and any above it, until it reaches the highest directory or an .htaccess file.
+
+
+# Default Charset
+# HTML files are stored as utf-8.
+# This setting makes the server set the "Content-Type" to "text/html; charset=UTF-8" in the HTTP response headers
+AddDefaultCharset UTF-8
+
+# Define known mime types
+# This setting makes the server set the correct "Content-Type" in the HTTP response headers (for example: "Content-Type: application/x-javascript")
+<IfModule mod_mime.c>
+  AddType application/x-javascript .js
+  AddType application/x-woff .woff
+  AddType application/json .json
+  AddType application/x-font-ttf .ttf
+  AddType text/css .css
+  AddType text/html .html
+  AddType text/html .htm
+  AddType text/plain .lt4
+  AddType image/png .png
+  AddType image/gif .gif
+</IfModule>
+
+<IfModule mod_deflate.c>
+	<IfModule mod_setenvif.c>
+		<IfModule mod_headers.c>
+			SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+         RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+		</IfModule>
+	</IfModule>
+
+	<IfModule mod_filter.c>
+		AddOutputFilterByType DEFLATE text/text text/html text/css text/plain application/xml application/javascript application/x-javascript application/x-font-ttf application/json application/x-woff
+		BrowserMatch ^Mozilla/4 gzip-only-text/html
+		BrowserMatch ^Mozilla/4\.0[678] no-gzip
+		BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+	</IfModule>
+</IfModule>
+
+# Expires Headers
+# This settings must be adjusted to desired values on deployment.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 seconds"
+  ExpiresByType text/plain "access plus 30 day"
+  ExpiresByType text/html "access plus 30 day"
+  ExpiresByType image/gif "access plus 30 day"
+  ExpiresByType image/jpg "access plus 30 day"
+  ExpiresByType image/jpeg "access plus 30 day"
+  ExpiresByType image/png "access plus 30 day"
+  # ExpiresByType image/x-icon "access plus 30 day"
+  ExpiresByType application/x-font-ttf "access plus 30 day"
+  ExpiresByType application/x-font-woff "access plus 30 day"
+  ExpiresByType application/json "access plus 30 day"
+  ExpiresByType text/css "access plus 30 day"
+  ExpiresByType text/javascript "access plus 30 day"
+  ExpiresByType text/x-javascript "access plus 30 day"
+  ExpiresByType application/x-javascript "access plus 30 day"
+</IfModule>
+
+# Cache Headers
+# This settings must be adjusted to desired values on deployment.
+<IfModule mod_headers.c>
+  # Cache specified files 1 day
+  # <filesmatch "\.(ico|flv|jpg|jpeg|png|gif|swf|woff)$">
+  <filesmatch "\.(flv|jpg|jpeg|png|gif|swf|woff)$">
+  Header set Cache-Control "max-age=86400, public"
+  </filesmatch>
+  # Cache HTML files for 1 day
+  <filesmatch "\.(html|htm|css)$">
+  Header set Cache-Control "max-age=86400, private, must-revalidate"
+  </filesmatch>
+  # Cache Javascripts and app parts for 1 day
+  <filesmatch "\.(js|json|lt4)$">
+  Header set Cache-Control "max-age=86400, private"
+  </filesmatch>
+
+  # Keep alive
+  Header set Connection keep-alive
+
+  # Authorized containers when working inside an iframe
+  # Works on: IE, Edge, Firefox - Doesn't work on: Chrome 
+  #           ALLOW-FROM failes with multiple authorized domains
+
+  # Works on: Edge, Firefox, Chrome - Doesn't work on: IE
+
+
+
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Answer snapshots to search engine crawlers
+  RewriteCond %{REQUEST_URI}  ^/rpopulaires/app/$
+  RewriteCond %{QUERY_STRING} ^.?_escaped_fragment_=$
+  RewriteRule ^(.*)$ snapshots/index.html? [NC,L]
+
+  RewriteCond %{REQUEST_URI}  ^/rpopulaires/app/$
+  RewriteCond %{QUERY_STRING} ^.?_escaped_fragment_=/?(.*)$
+  RewriteRule ^(.*)$ snapshots/%1.html? [NC,L]
+
+  # Answer favicons from the right directory
+  # RewriteCond %{REQUEST_URI}  ^/favicon.ico$
+  # RewriteRule ^(.*)$ /rpopulaires/app/resources/favicons/favicon.ico [NC,L]
+
+  # RewriteCond %{REQUEST_URI}  ^.*/resources/favicons/.*$
+  # RewriteRule ^(.*)/resources/favicons/(.*)$ /rpopulaires/app/resources/favicons/$2 [NC,L]
+
+  # If requested resource does not exist as a file nor directory
+  # When the app is not in the root folder append the correct path before the $1 expression
+  RewriteCond %{DOCUMENT_ROOT}/rpopulaires/app/$1 !-f
+  RewriteCond %{DOCUMENT_ROOT}/rpopulaires/app/$1 !-d
+   # And requested resource is not json, css or js
+  RewriteCond %{REQUEST_URI} !^.*\.(json|css|js)$ [NC]
+  RewriteCond %{REQUEST_URI} !snapshots$
+  # Else rewrite requests for non-existent resources to /index.html
+  RewriteRule (.*) index.html?q=$1 [L]
+</IfModule>
+
+
+<IfModule mod_headers.c>
+   # allow access font files without CORS restriction
+	<FilesMatch ".(eot|ttf|otf|woff)">
+		Header set Access-Control-Allow-Origin "*"
+	</FilesMatch>
+</IfModule>

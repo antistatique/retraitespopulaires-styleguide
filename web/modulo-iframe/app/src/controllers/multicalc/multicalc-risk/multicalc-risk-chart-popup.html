@@ -1,0 +1,25 @@
+<div class="multicalc-chart-hover">
+   <span ng-if="column === 0" class="tooltip-nobullet-title" ng-bind-html="'MulticalcRiskPopup.ColumnToday'|i18n"></span>
+   <span ng-if="column === 1" class="tooltip-title" ng-bind-html="'MulticalcRiskPopup.Column' + that.riskType |i18n"></span>
+   <br>
+   <table>
+      <tbody ng-if='column === 0' >
+         <tr>
+            <td class="tooltip-item" ng-bind-html="'MulticalcRiskPopup.GrossIncome'|i18n"></td>
+            <td class='tooltip-amount' ng-bind-html="'MulticalcRiskPopup.RentValue' | i18n:{'VALUE': grossIncome}"></td>
+         </tr>
+      </tbody>
+      <tbody ng-if='column > 0' >
+         <tr>
+            <td><div class="{{'bullet bulletFirstPillarRent' + that.riskType}}"></div></td>
+            <td class="tooltip-item" ng-bind-html="'MulticalcRiskPopup.FirstPillarRent' + that.riskType |i18n"></td>
+            <td class='tooltip-amount' ng-bind-html="'MulticalcRiskPopup.RentValue' | i18n:{'VALUE': firstPillarRent}"></td>
+         </tr>
+         <tr>
+            <td><div class="{{'bullet bulletSecondPillarRent' + that.riskType}}"></div></td>
+            <td class="tooltip-item" ng-bind-html="'MulticalcRiskPopup.SecondPillarRent'+ that.riskType |i18n"></td>
+            <td class='tooltip-amount' ng-bind-html="'MulticalcRiskPopup.RentValue' | i18n:{'VALUE': secondPillarRent}"></td>
+         </tr>
+      </tbody>
+   </table>
+</div>

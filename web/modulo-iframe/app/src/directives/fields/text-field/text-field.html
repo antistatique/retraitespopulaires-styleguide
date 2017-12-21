@@ -1,0 +1,22 @@
+<div class="text-field">
+   <div class="form-group" ng-form name="{{ fieldId }}Form">
+      <div class="required-label" ng-show="showLabel">
+         <label for="{{ fieldId }}_input" class="custom-field-label" ng-class="{'required-field-label': isRequired}" ng-bind-html="label"></label>
+         <span ng-show="isRequired" class="required-character">*</span>
+      </div>
+      <div id="{{ fieldId }}_input_group" ng-class="isEditable ? 'input-group': ''">
+         <input id="{{ fieldId }}_input"
+                name="{{ fieldId }}"
+                ng-disabled="isDisabled()"
+                type="text" ng-model="ngModel"
+                ng-attr-placeholder="{{placeholder}}"
+                maxlength="{{ maxlength }}"
+                class="form-control"/>
+         <span ng-if="isEditable" class="input-group-btn" id="{{ fieldId }}_edition" ng-click="onEdit()">
+               <button class="btn btn-default button-icon">
+                  <div class="icon-expand"></div>
+               </button>
+         </span>
+      </div>
+   </div>
+</div>

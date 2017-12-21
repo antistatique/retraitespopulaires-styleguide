@@ -1,0 +1,7 @@
+<div class="radio-field" ng-class="{'inline-radio': inline}" ng-form name="{{ fieldName }}Form">
+   <div class="radio">
+      <input id="{{ fieldId }}" name="{{ fieldName }}"  type="radio" ng-model="radioModel" ng-value="{{ radioValue }}" ng-disabled="isDisabled()" ng-click="onChange()"/>
+      <label class="radio-button" for="{{ fieldId }}"></label>
+   </div>
+   <label for="{{ fieldId }}" ng-show="showLabel" ng-bind-html="label"></label>
+</div>

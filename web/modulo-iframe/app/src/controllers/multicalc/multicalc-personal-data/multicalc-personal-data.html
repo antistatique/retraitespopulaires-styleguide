@@ -1,0 +1,122 @@
+<div class="row multicalc multicalc-personal-data">
+   <div class="col-md-12 inner-container">
+      <div class="row">
+         <h3 class="information-title" ng-bind-html="'multicalcPersonalData.Title'|i18n"></h3>
+         <div class="col-md-3">
+            <div>
+               <label ng-bind-html="'multicalcPersonalData.Gender'|i18n"></label>
+               <div class="row">
+                  <div class="col-md-6">
+                     <radioField
+                        name="sexRadio"
+                        label="{{ 'Sex.Female' | i18n }}"
+                        field-id="sex_female"
+                        show-label="true"
+                        inline="true"
+                        on-change="calculate()"
+                        ng-model="base.mainPerson.sex"
+                        ng-value="SexOptions[1]"/>
+                  </div>
+                  <div class="col-md-6">
+                     <radioField
+                        name="sexRadio"
+                        label="{{ 'Sex.Male' | i18n }}"
+                        field-id="sex_male"
+                        show-label="true"
+                        inline="true"
+                        on-change="calculate()"
+                        ng-model="base.mainPerson.sex"
+                        ng-value="SexOptions[0]"/>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-5">
+            <div class="row">
+               <div class="col-md-4 col-xs-4">
+                  <numericField type="int"
+                     label="{{ 'multicalcPersonalData.Age' | i18n }}"
+                     ng-model="scenario.age"
+                     on-change="calculate()"
+                     show-range="false"
+                     options="baseViewParameters.age"/>
+               </div>
+               <div class="col-md-8 col-xs-8">
+                  <selectionField
+                     label="{{ 'multicalcPersonalData.CivilStatus' | i18n }}"
+                     ng-model="base.mainPerson.civilStatus"
+                     on-change="calculate()"
+                     enum="CivilStatus"
+                     options="CivilStatusOptions"/>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12 col-xs-12">
+                  <zipAndLocationField
+                     label="{{ 'multicalcPersonalData.ZipAndLocation' | i18n }}"
+                     model="base"
+                     attribute="zipAndLocation"
+                     on-change="calculate()"/>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4 col-xs-6">
+            <div class="row">
+               <div class="col-md-6 col-xs-10">
+                  <selectionField
+                          class="children-field"
+                          label="{{ 'multicalcPersonalData.NumberOfChildren' | i18n }}"
+                          ng-model="base.numberOfChildren"
+                          on-change="calculate()"
+                          options="NumberOfChildrenOptions"/>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-8 col-xs-12">
+            <div>
+               <label ng-bind-html="'multicalcPersonalData.ProfessionalStatus'|i18n"></label>
+               <div class="row">
+                  <div class="col-md-4">
+                     <radioField
+                        name="professionalStatusRadio"
+                        label="{{ 'ProfessionalStatus.Employee' | i18n }}"
+                        show-label="true"
+                        inline="true"
+                        on-change="onProfessionalStatusChanged()"
+                        ng-model="scenario.professionalStatus"
+                        ng-value="ProfessionalStatusOptions[0]"/>
+                  </div>
+                  <div class="col-md-4">
+                     <radioField
+                        name="professionalStatusRadio"
+                        label="{{ 'ProfessionalStatus.Self_Employee_Second_Pillar_Insured' | i18n }}"
+                        show-label="true"
+                        inline="true"
+                        on-change="onProfessionalStatusChanged()"
+                        ng-model="scenario.professionalStatus"
+                        ng-value="ProfessionalStatusOptions[1]"/>
+                  </div>
+                  <div class="col-md-4">
+                     <radioField
+                        name="professionalStatusRadio"
+                        label="{{ 'ProfessionalStatus.Self_Employee_No_Second_Pillar_Insured' | i18n }}"
+                        show-label="true"
+                        inline="true"
+                        on-change="onProfessionalStatusChanged()"
+                        ng-model="scenario.professionalStatus"
+                        ng-value="ProfessionalStatusOptions[2]"/>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4 col-xs-12">
+            <numericField
+               type="amount"
+               label="{{ 'multicalcPersonalData.GrossIncome' | i18n }}"
+               ng-model="base.mainPerson.grossIncome"
+               on-change="onIncomeChanged()"
+               options="baseViewParameters.grossIncome"/>
+         </div>
+      </div>
+   </div>
+</div>

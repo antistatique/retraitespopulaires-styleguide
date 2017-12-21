@@ -1,0 +1,8 @@
+<a id="{{getId()}}"
+   ng-show="isCalculatorAvailable()"
+   ng-href="{{getTranslatedPath()}}"
+   ng-click="onClick({'linkLocation':getPath(), '$event':$event})"
+   onclick="return false;"
+   class="dropdown-color text-align-left"
+   ng-bind-html="getText()">
+</a>

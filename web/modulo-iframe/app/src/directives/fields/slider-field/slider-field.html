@@ -1,0 +1,22 @@
+<div class="slider-field" id="{{ fieldId }}_slider_field">
+   <div class="form-group" id="{{ fieldId }}_form_group">
+      <div class="slider-field-input" id="{{ fieldId }}_slider_field_input" ng-show="showLabel">
+         <label class="slider-field-label" ng-show="showLabel" id="{{ fieldId }}_label" ng-bind-html="label"></label>
+         <a class="tooltip-link" id="{{ fieldId }}_popover" href="" ng-show="tooltipText !== undefined">
+         </a>
+      </div>
+      <div class="slider-wrap-range">
+         <label class="min-value" ng-bind-html="getMinFormated()"></label>
+         <div class="slider-field-range">
+            <div class="slider" float ng-model="ngModel" id="{{ fieldId }}_range">
+               <div id="custom-handle" class="ui-slider-handle">
+                  <div class="container-value" ng-if="isShowValueHandle">
+                     <span class="slider-value" ng-bind-html="visualModel" ng-style="{left: positionSlider}"></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <label class="max-value" ng-bind-html="getMaxFormated()"></label>
+      </div>
+   </div>
+</div>

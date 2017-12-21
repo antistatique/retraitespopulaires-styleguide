@@ -1,0 +1,7 @@
+<span class="donut-graph">
+   <div id="{{$ctrl.canvasId}}Container" class="col-md-6 left-panel">
+      <div id="{{$ctrl.canvasId}}" ng-class="$ctrl.getSizeClass()" class="donut-graph__canvas"></div>
+       <span ng-cloak class="ng-cloak donut-inner-text" ng-class="$ctrl.getInnerTextClass()" ng-bind-html="$ctrl.innerText"></span>
+       <span ng-cloak class="ng-cloak donut-inner-text" ng-class="$ctrl.getInnerSecondaryTextClass()" ng-bind-html="$ctrl.secondaryText"></span>
+   </div>
+</span>
