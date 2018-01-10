@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,UASC;EARC,WAAW,EAAE,aAAa;EAC1B,GAAG,EAAE,0CAA0C;EAC/C,GAAG,EAAE,2QAG4D;EACjE,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,MAAM",
-"sources": ["custom-icons.scss"],
-"names": [],
-"file": "custom-icons.css"
-}
