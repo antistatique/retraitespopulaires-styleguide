@@ -1,4 +1,4 @@
-var authorizedOrigins = ["http://localhost"];
+var authorizedOrigins = ["https://uat.logismata.ch"];
 var sendOnIFrameScrollMessage = true;
 
 var iFrameMessageProcessor = {

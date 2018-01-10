@@ -11,14 +11,14 @@
       </tbody>
       <tbody ng-if='column > 0' >
          <tr>
-            <td><div class="{{'bullet bulletFirstPillarRent' + that.riskType}}"></div></td>
-            <td class="tooltip-item" ng-bind-html="'MulticalcRiskPopup.FirstPillarRent' + that.riskType |i18n"></td>
-            <td class='tooltip-amount' ng-bind-html="'MulticalcRiskPopup.RentValue' | i18n:{'VALUE': firstPillarRent}"></td>
-         </tr>
-         <tr>
             <td><div class="{{'bullet bulletSecondPillarRent' + that.riskType}}"></div></td>
             <td class="tooltip-item" ng-bind-html="'MulticalcRiskPopup.SecondPillarRent'+ that.riskType |i18n"></td>
             <td class='tooltip-amount' ng-bind-html="'MulticalcRiskPopup.RentValue' | i18n:{'VALUE': secondPillarRent}"></td>
+         </tr>
+         <tr>
+            <td><div class="{{'bullet bulletFirstPillarRent' + that.riskType}}"></div></td>
+            <td class="tooltip-item" ng-bind-html="'MulticalcRiskPopup.FirstPillarRent' + that.riskType |i18n"></td>
+            <td class='tooltip-amount' ng-bind-html="'MulticalcRiskPopup.RentValue' | i18n:{'VALUE': firstPillarRent}"></td>
          </tr>
       </tbody>
    </table>

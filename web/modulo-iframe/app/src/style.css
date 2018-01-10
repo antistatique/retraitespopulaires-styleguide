@@ -7429,6 +7429,12 @@ a .base-data-summary {
   background-color: #D1A5A5;
   margin: -15px -15px 0px;
   padding: 15px 15px 0px; }
+.modal-backdrop {
+  background-color: transparent; }
+.container, .container-type, .container-type {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important; }
 .copyright-disclaimer {
   padding-top: 10px; }
 .mobile-separator {
@@ -7505,9 +7511,11 @@ radiofield .inline-radio {
     height: 60px;
     border-radius: 30px;
     float: left;
-    
-    padding: 13px 13px;
+    line-height: 60px;
+    text-align: center;
     font-size: 32px; }
+  .multicalc .close-panel .btn-circle.btn-xl.expanded {
+    font-size: 26px !important; }
   .multicalc .close-panel .btn-circle.btn-xl:before {
     vertical-align: bottom;
     font-family: "retraitespopulaires-icon"; }
@@ -7681,7 +7689,8 @@ radiofield .inline-radio {
     top: -12px !important;
     margin-left: -16px !important;
     border: 1px solid #C6C6C6 !important;
-    box-shadow: 0 0 4px 0 rgba(212, 212, 212, 0.5); }
+    box-shadow: 0 0 4px 0 rgba(212, 212, 212, 0.5);
+    outline-color: transparent !important; }
   .slider .ui-slider-range-min {
     background: black; }
 .slider-field {
@@ -7833,15 +7842,15 @@ input[type=radio]:checked + .radio-button:after {
   .multicalc-risk .result-money-footer.Death .contact {
     color: white; }
 .multicalc-chart-hover .bulletFirstPillarRentDisability {
-  background-color: #CE9B19 !important; }
-.multicalc-chart-hover .bulletSecondPillarRentDisability {
   background-color: #8C6910 !important; }
+.multicalc-chart-hover .bulletSecondPillarRentDisability {
+  background-color: #CE9B19 !important; }
 .multicalc-chart-hover .bulletFirstPillarRentDeath {
-  background-color: #008EA9 !important; }
-.multicalc-chart-hover .bulletSecondPillarRentDeath {
   background-color: #006578 !important; }
+.multicalc-chart-hover .bulletSecondPillarRentDeath {
+  background-color: #008EA9 !important; }
 .multicalc-personal-data {
-  padding: 20px; }
+  padding: 0px; }
   .multicalc-personal-data .selection-field .custom-field-label {
     overflow: visible !important; }
   .multicalc-personal-data .inner-container {

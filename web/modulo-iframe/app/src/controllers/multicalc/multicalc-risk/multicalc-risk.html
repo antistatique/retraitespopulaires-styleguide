@@ -1,12 +1,14 @@
 <div class="row multicalc multicalc-risk">
    <div class="col-md-12">
       <div class="close-panel" ng-class="{ 'close-panel-border': $ctrl.collapsed, '': !$ctrl.collapsed }">
-         <a class="icon-button btn btn-color {{$ctrl.riskType}} btn-circle btn-xl" href="" ng-class="{ 'collapsed': $ctrl.collapsed, 'expanded': !$ctrl.collapsed }" id="contact" ng-click="$ctrl.toggleCollapse()">
-            <span class="footer link-tag" ng-bind-html=""></span>
-         </a>
-         <div class="titles">
-            <span class="subtitle" ng-bind-html="'MulticalcRisk.Title' + $ctrl.riskType | i18n"></span>
-            <span class="maintitle" ng-bind-html="'MulticalcRisk.Subtitle' + $ctrl.riskType | i18n"></span>
+         <div href="" ng-click="$ctrl.toggleCollapse()">
+            <a class="icon-button btn-color {{$ctrl.riskType}} btn-circle btn-xl" ng-class="{ 'collapsed': $ctrl.collapsed, 'expanded': !$ctrl.collapsed }" id="contact">
+               <span class="footer link-tag" ng-bind-html=""></span>
+            </a>
+            <div class="titles">
+               <span class="subtitle" ng-bind-html="'MulticalcRisk.Title' + $ctrl.riskType | i18n"></span>
+               <span class="maintitle" ng-bind-html="'MulticalcRisk.Subtitle' + $ctrl.riskType | i18n"></span>
+            </div>
          </div>
       </div>
    </div>

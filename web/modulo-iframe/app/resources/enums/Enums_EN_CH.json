@@ -452,7 +452,7 @@
 "Person" : {"number" : "24", "shortValue" : "", "longValue" : "<NUMBEROFPERSONS> Person"},
 "Persons" : {"number" : "25", "shortValue" : "", "longValue" : "<NUMBEROFPERSONS> Persons"},
 "TeaserCalculate" : {"number" : "26", "shortValue" : "", "longValue" : "Calculate"},
-"Copyright" : {"number" : "27", "shortValue" : "", "longValue" : "Copyright © 2014-2017 - Logismata&nbsp;AG,&nbsp;Zürich"},
+"Copyright" : {"number" : "27", "shortValue" : "", "longValue" : "Copyright © 2014-2018 - Logismata&nbsp;AG,&nbsp;Zürich"},
 "TermsOfUse" : {"number" : "28", "shortValue" : "", "longValue" : "Conditions of Use"},
 "ResetConsulting" : {"number" : "29", "shortValue" : "", "longValue" : "Do you like to restart? All your information will be deleted."},
 "Yes" : {"number" : "30", "shortValue" : "", "longValue" : "Yes"},

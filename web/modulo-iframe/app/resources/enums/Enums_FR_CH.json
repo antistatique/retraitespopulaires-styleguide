@@ -452,7 +452,7 @@
 "Person" : {"number" : "24", "shortValue" : "", "longValue" : "<NUMBEROFPERSONS> personne"},
 "Persons" : {"number" : "25", "shortValue" : "", "longValue" : "<NUMBEROFPERSONS> personnes"},
 "TeaserCalculate" : {"number" : "26", "shortValue" : "", "longValue" : "Calculer"},
-"Copyright" : {"number" : "27", "shortValue" : "", "longValue" : "Copyright © 2014-2017 - Logismata&nbsp;SA,&nbsp;Zurich"},
+"Copyright" : {"number" : "27", "shortValue" : "", "longValue" : "Copyright © 2014-2018 - Logismata&nbsp;SA,&nbsp;Zurich"},
 "TermsOfUse" : {"number" : "28", "shortValue" : "", "longValue" : "Conditions d'utilisation"},
 "ResetConsulting" : {"number" : "29", "shortValue" : "", "longValue" : "Voulez-vous réinitialiser le calcul? Toutes vos données seront effacées."},
 "Yes" : {"number" : "30", "shortValue" : "", "longValue" : "Oui"},
@@ -491,10 +491,10 @@
 "ColumnDisability" : {"number" : "2", "shortValue" : "", "longValue" : "Incapacité de gain"},
 "ColumnDeath" : {"number" : "3", "shortValue" : "", "longValue" : "Décès"},
 "GrossIncome" : {"number" : "4", "shortValue" : "", "longValue" : "Revenu brut"},
-"SecondPillarRentDisability" : {"number" : "5", "shortValue" : "", "longValue" : "Rentes du 2ème pilier"},
-"FirstPillarRentDisability" : {"number" : "6", "shortValue" : "", "longValue" : "Rente AI"},
-"SecondPillarRentDeath" : {"number" : "7", "shortValue" : "", "longValue" : "Rentes du 2ème pilier"},
-"FirstPillarRentDeath" : {"number" : "8", "shortValue" : "", "longValue" : "Rente AVS"},
+"SecondPillarRentDisability" : {"number" : "5", "shortValue" : "", "longValue" : "Rentes LPP (2ème pilier)"},
+"FirstPillarRentDisability" : {"number" : "6", "shortValue" : "", "longValue" : "Rente AI (1er pilier)"},
+"SecondPillarRentDeath" : {"number" : "7", "shortValue" : "", "longValue" : "Rentes LPP (2ème pilier)"},
+"FirstPillarRentDeath" : {"number" : "8", "shortValue" : "", "longValue" : "Rente AVS (1er pilier)"},
 "RentValue" : {"number" : "9", "shortValue" : "", "longValue" : "<VALUE|currencyWithSymbol>"}
 },
 
