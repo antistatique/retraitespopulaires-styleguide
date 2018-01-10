@@ -14,6 +14,7 @@ define('runtime-environment-application-parameters', [], function() {
     "requirePaths": {},
     "authorizedContainers": [
         "http://rp.localhost",
+        "http://rp.test",
         "https://www.retraitespopulaires.ch",
         "https://wwweti.retraitespopulaires.ch"
     ]

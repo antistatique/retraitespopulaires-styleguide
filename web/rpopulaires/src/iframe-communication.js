@@ -1,4 +1,4 @@
-var authorizedOrigins = ["https://wwweti.retraitespopulaires.ch", "https://www.retraitespopulaires.ch", "http://rp.localhost"];
+var authorizedOrigins = ["https://wwweti.retraitespopulaires.ch", "https://www.retraitespopulaires.ch", "http://rp.localhost", "http://rp.test"];
 var sendOnIFrameScrollMessage = true;
 
 var iFrameMessageProcessor = {
