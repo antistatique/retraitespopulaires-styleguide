@@ -3,6 +3,8 @@ CHANGELOG
 
 ## NEXT RELEASE
  - add ssh documentation to access Solr browser on eti & production env.
+ - update Webform from beta-16 to rc-1
+ - update to latest dev version of Template Whisperer
 
 ## 2.3.2 (2017-12-15)
  - add ckeditor link as btn
