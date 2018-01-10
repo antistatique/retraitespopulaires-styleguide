@@ -13,8 +13,8 @@ define('runtime-environment-application-parameters', [], function() {
     "contactCustomizationUrl": "",
     "requirePaths": {},
     "authorizedContainers": [
-        "http://rp.dev",
-        "http://www.retraitespopulaires.ch",
+        "http://rp.localhost",
+        "https://www.retraitespopulaires.ch",
         "https://wwweti.retraitespopulaires.ch"
     ]
 };

@@ -1,4 +1,4 @@
-var authorizedOrigins = ["https://uat.logismata.ch"];
+var authorizedOrigins = ["https://wwweti.retraitespopulaires.ch", "https://www.retraitespopulaires.ch", "http://rp.localhost"];
 var sendOnIFrameScrollMessage = true;
 
 var iFrameMessageProcessor = {
@@ -16,7 +16,7 @@ var iFrameMessageProcessor = {
    },
 
    onDocumentTitleChanged: function(parameters) {
-      document.title = parameters;
+      // document.title = parameters;
    },
 
    onViewTitleChanged: function(parameters) {
@@ -27,7 +27,7 @@ var iFrameMessageProcessor = {
    },
 
    openContactUrl: function(parameters) {
-      console.log("received from openContactUrl %O", parameters);
+      window.location = '/contact/conseil-clients-prives';
    }
 };
 
