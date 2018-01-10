@@ -1,0 +1,29 @@
+<td class="{{col1Class}} table-cell" ng-class="{'icon-cell': hasBullet() }" ng-attr-colspan="{{ (titleColspan) ? titleColspan : '1'}}">
+   <span class="table-row__bullet" ng-if="hasBullet()" 
+         ng-class="hasSquareBullet() ? 'icon-stop2' : 'icon-minus'"
+         ng-style="{'color': getBulletColor()}"></span>
+   <span class="table-cell-text" ng-if="col1 !== undefined" id="{{getCol1Id()}}"
+         ng-bind-html="getColBindHtml(col1, col1Type, col1Decimals, 'none')"
+         ng-style="{'color': col1Color}" ng-class="getColClass(col1Type)"></span>
+</td>
+<td ng-if="!titleColspan && col3 === undefined" class="table-cell"><span></span></td>
+<td class="{{col2Class}} table-cell table-cell-align" ng-if="!titleColspan">
+   <span ng-if="col2 !== undefined" id="{{getCol2Id()}}"
+         ng-bind-html="getColBindHtml(col2, col2Type, col2Decimals, 'amount')"
+         ng-style="{'color': col2Color}" ng-class="getColClass(col2Type)"></span>
+</td>
+<td class="{{col3Class}} table-cell table-cell-align" ng-if="!titleColspan">
+   <span ng-if="col3 !== undefined" id="{{getCol3Id()}}"
+         ng-bind-html="getColBindHtml(col3, col3Type, col3Decimals, 'amount')"
+         ng-style="{'color': col3Color}" ng-class="getColClass(col3Type)"></span>
+</td>
+<td class="{{col4Class}} table-cell table-cell-align" ng-if="!titleColspan && col4 !== undefined">
+   <span ng-if="col4 !== undefined" id="{{getCol4Id()}}"
+         ng-bind-html="getColBindHtml(col4, col4Type, col4Decimals, 'amount')"
+         ng-style="{'color': col4Color}" ng-class="getColClass(col4Type)"></span>
+</td>  
+<td class="{{col5Class}} table-cell table-cell-align" ng-if="!titleColspan && col5 !== undefined">
+   <span ng-if="col5 !== undefined" id="{{getCol5Id()}}"
+         ng-bind-html="getColBindHtml(col5, col5Type, col5Decimals, 'amount')"
+         ng-style="{'color': col5Color}" ng-class="getColClass(col5Type)"></span>
+</td>  

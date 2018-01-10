@@ -1,0 +1,10 @@
+<div class="emailField">
+   <div class="form-group" ng-class="{'has-error': !isValid(), 'has-success': isValid()}" ng-form name="{{ fieldId }}Form">
+      <div class="required-label" ng-show="showLabel">
+         <label for="{{ fieldId }}_input" class="custom-field-label" ng-class="{'required-field-label': isRequired}" ng-bind-html="label"></label>
+         <span ng-show="isRequired" class="required-character">*</span>
+      </div>
+      <input id="{{ fieldId }}_input" name="{{ fieldId }}"  type="email" ng-model="emailModel" class="form-control" ng-attr-placeholder="{{placeholder}}"/>
+      <div class="display-none" id="test{{ fieldId }}" ng-bind-html="ngModel"></div>
+   </div>
+</div>

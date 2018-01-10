@@ -1,0 +1,15 @@
+<div class="theme-box" id="{{ $ctrl.target }}ThemeBox" ng-click="$ctrl.onLinkClick()">
+   <div class="theme-box__top-border"></div>
+   <div class="theme-box__content">
+      <h1 class="theme-box__title" ng-bind-html="$ctrl.themeBoxTitle"></h1>
+      <div class="image"></div>
+      <div class="theme-box__footer">
+         <div class="theme-box__text" ng-bind-html="$ctrl.text"></div>
+         <div class="theme-box__link-text">
+            <a href="">
+               <span class="right-arrow" ng-bind-html="$ctrl.linkText"></span>
+            </a>
+         </div>
+      </div>
+   </div>
+</div>
