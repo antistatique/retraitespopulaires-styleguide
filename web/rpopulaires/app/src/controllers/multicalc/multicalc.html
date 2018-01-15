@@ -1,0 +1,40 @@
+<article>
+   <multicalc-personal-data
+      data="data"
+      select-relationship="selectRelationship(relationship)"
+      base="base"
+      scenario="scenario"
+      calculate="calculate()"
+      on-income-changed="onIncomeChanged()"
+      on-professional-status-changed="onProfessionalStatusChanged()">
+   </multicalc-personal-data>
+   <multicalc-saving3a
+       id="standardSaving3a"
+       scenario="scenario"
+       result="result.saving3a"
+       calculate="calculate()"
+       contact="contact()"
+       data="data"
+       bridge="standardSaving3a">
+   </multicalc-saving3a>
+   <hr class="mobile-separator">
+   <multicalc-risk
+       id="standardDisability"
+       result="result.disability"
+       calculate="calculate()"
+       contact="contact()"
+       data="data"
+       bridge="standardDisability"
+       need="scenario.disabilityNeed">
+   </multicalc-risk>
+   <hr class="mobile-separator">
+   <multicalc-risk
+        id="standardDeath"
+        result="result.death"
+        calculate="calculate()"
+        contact="contact()"
+        data="data"
+        bridge="standardDeath"
+        need="scenario.deathNeed">
+   </multicalc-risk>
+</article>

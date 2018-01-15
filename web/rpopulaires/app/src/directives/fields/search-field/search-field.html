@@ -1,0 +1,24 @@
+<div class="search-field">
+   <script type="text/ng-template" id="search-option.html">
+      <div class="search-option">
+         <span ng-bind-html="match.model.description | typeaheadHighlight:query" class="typeahead-highlight"></span>
+      </div>
+   </script>
+   <div class="form-group">
+      <label for="{{ fieldId }}_input" class="custom-field-label" ng-class="{'required-field-label': isRequired}" ng-bind-html="label"></label>
+      <span ng-show="isRequired" class="required-character">*</span>
+      <div class="input-group">
+         <input
+            id="{{ fieldId }}"
+            type="text"
+            class="form-control input-text-indent ng-valid ng-dirty ng-valid-editable"
+            ng-model="inputTextModel"
+            typeahead="object as object.description for object in searchText($viewValue)"
+            typeahead-template-url="search-option.html"
+            typeahead-on-select="onSelect($model)"
+            typeahead-wait-ms="300"
+            typeaheadwatchchanges
+            ng-keyup="cancelOnEscape($event)" >
+      </div>
+   </div>
+</div>

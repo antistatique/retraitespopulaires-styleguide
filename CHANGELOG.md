@@ -1,6 +1,12 @@
 CHANGELOG
 ---------
 
+## 2.3.3 (2018-01-15)
+ - add ssh documentation to access Solr browser on eti & production env.
+ - update Webform from beta-16 to rc-1
+ - update to latest dev version of Template Whisperer
+ - install modulo iframe into `/web/rpopulaires` (v11.01.2018)
+
 ## 2.3.2 (2017-12-15)
  - add ckeditor link as btn
  - add ckeditor title colors

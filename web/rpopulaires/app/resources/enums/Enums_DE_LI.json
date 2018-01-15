@@ -1,0 +1,656 @@
+{
+
+"Print" : {
+"FinanceCoachTitle" : {"number" : "1", "shortValue" : "", "longValue" : "Ihr Finanzcoach"},
+"ProfileDataTitle" : {"number" : "2", "shortValue" : "", "longValue" : "Berechnungsgrundlage"},
+"AlternativeDataTitle" : {"number" : "3", "shortValue" : "", "longValue" : "Veränderungen"},
+"PlaceOfResidence" : {"number" : "4", "shortValue" : "", "longValue" : "Wohnort"},
+"NewPlaceOfResidence" : {"number" : "5", "shortValue" : "", "longValue" : "Neuer Wohnort"},
+"MaritalStatus" : {"number" : "6", "shortValue" : "", "longValue" : "Zivilstand"},
+"Confession" : {"number" : "7", "shortValue" : "", "longValue" : "Konfession"},
+"NumberOfChildren" : {"number" : "8", "shortValue" : "", "longValue" : "Kinder"},
+"BirthYear" : {"number" : "9", "shortValue" : "", "longValue" : "Jahrgang"},
+"Sex" : {"number" : "10", "shortValue" : "", "longValue" : "Geschlecht"},
+"GrossIncome" : {"number" : "11", "shortValue" : "", "longValue" : "Bruttoeinkommen pro Jahr"},
+"GrossFortune" : {"number" : "12", "shortValue" : "", "longValue" : "Bruttovermögen"},
+"Capital" : {"number" : "13", "shortValue" : "", "longValue" : "Kapital"},
+"PaymentAge" : {"number" : "14", "shortValue" : "", "longValue" : "Alter bei Auszahlung"},
+"TaxableIncome" : {"number" : "15", "shortValue" : "", "longValue" : "Steuerbares Einkommen"},
+"TaxableFortune" : {"number" : "16", "shortValue" : "", "longValue" : "Steuerbares Vermögen"},
+"Saving3a" : {"number" : "17", "shortValue" : "", "longValue" : "Einzahlung in Säule 3a"},
+"GrossIncomeChange" : {"number" : "18", "shortValue" : "", "longValue" : "Veränderung Bruttoeinkommen"},
+"GrossFortuneChange" : {"number" : "19", "shortValue" : "", "longValue" : "Veränderung Bruttovermögen"},
+"NewTaxableIncome" : {"number" : "20", "shortValue" : "", "longValue" : "Neues steuerbares Einkommen"},
+"ObjectShortNameOld" : {"number" : "21", "shortValue" : "", "longValue" : "Alt"},
+"ObjectShortNameOldTitle" : {"number" : "22", "shortValue" : "", "longValue" : "Bisherige Steuern"},
+"ObjectShortNameNew" : {"number" : "23", "shortValue" : "", "longValue" : "Neu"},
+"ObjectShortNameNewTitle" : {"number" : "24", "shortValue" : "", "longValue" : "Neue Steuern"},
+"CompareItemTicLabelBisher" : {"number" : "25", "shortValue" : "", "longValue" : "Bisher"},
+"CompareItemTicLabelNeu" : {"number" : "26", "shortValue" : "", "longValue" : "Neu"},
+"TotalTax" : {"number" : "31", "shortValue" : "", "longValue" : "Total Steuern"},
+"MunicipalityTax" : {"number" : "32", "shortValue" : "", "longValue" : "Gemeindesteuer"},
+"ChurchTax" : {"number" : "33", "shortValue" : "", "longValue" : "Kirchensteuer"},
+"StateTax" : {"number" : "34", "shortValue" : "", "longValue" : "Kantonssteuer"},
+"CountryIncomeTax" : {"number" : "35", "shortValue" : "", "longValue" : "Bundessteuer"},
+"FortuneTax" : {"number" : "36", "shortValue" : "", "longValue" : "Vermögenssteuer"},
+"PersonalTax" : {"number" : "37", "shortValue" : "", "longValue" : "Personalsteuer"},
+"TaxSaving" : {"number" : "38", "shortValue" : "", "longValue" : "Steuereinsparung"},
+"CurrentSituation" : {"number" : "39", "shortValue" : "", "longValue" : "Steuern aktuelle Situation"},
+"AlternativeSituation" : {"number" : "40", "shortValue" : "", "longValue" : "Steuern Alternative"},
+"BaseDataTitle" : {"number" : "41", "shortValue" : "", "longValue" : "Datengrundlage"},
+"NetCapital" : {"number" : "45", "shortValue" : "", "longValue" : "Nettokapital nach Steuern"},
+"NetCapitalSoFar" : {"number" : "46", "shortValue" : "", "longValue" : "Nettokapital bisher"},
+"NetCapitalNew" : {"number" : "47", "shortValue" : "", "longValue" : "Nettokapital neu"},
+"NetRediteNew" : {"number" : "48", "shortValue" : "", "longValue" : "Nettorendite neu"},
+"HintsInfoItem" : {"number" : "49", "shortValue" : "", "longValue" : "Das Ergebnis wird aufgrund von Ihren Berechnungsgrundlagen ermittelt. Weitere Berechnungsangaben, die aus Praktikabilität hier nicht erfassbar sind, können unter Umständen erheblichen Einfluss auf das Ergebnis haben."},
+"GrossCapitalPayment" : {"number" : "51", "shortValue" : "", "longValue" : "Kapitalauszahlung brutto"},
+"CapitalizationTax" : {"number" : "52", "shortValue" : "", "longValue" : "Kapitalleistungssteuer"},
+"NumberOfPayments" : {"number" : "53", "shortValue" : "", "longValue" : "Anzahl Auszahlungen"},
+"NumberOfAccounts" : {"number" : "54", "shortValue" : "", "longValue" : "Anzahl Konti"},
+"Duration" : {"number" : "55", "shortValue" : "", "longValue" : "Dauer in Jahren"},
+"YearlyInvestment" : {"number" : "56", "shortValue" : "", "longValue" : "Jährliche Spareinlage"},
+"InvestmentOptions" : {"number" : "57", "shortValue" : "", "longValue" : "Zins"},
+"InterestRate" : {"number" : "58", "shortValue" : "", "longValue" : "Zinssatz"},
+"TaxIncrement" : {"number" : "59", "shortValue" : "", "longValue" : "Steuererhöhung"},
+"CountryTax" : {"number" : "60", "shortValue" : "", "longValue" : "Landessteuer"}
+},
+
+"StorageService" : {
+"GetDossierStarted" : {"number" : "4", "shortValue" : "", "longValue" : "Die Wiederherstellung wurde gestartet..."},
+"GetDossierFailed" : {"number" : "5", "shortValue" : "", "longValue" : "Die Wiederherstellungfunktion steht zur Zeit nicht zur Verfügung."},
+"GetDossierSucceeded" : {"number" : "6", "shortValue" : "", "longValue" : "Die Wiederherstellung war erfolgreich."},
+"DossierNotFound" : {"number" : "7", "shortValue" : "", "longValue" : "Dossier nicht gefunden."},
+"GetDossierListStarted" : {"number" : "8", "shortValue" : "", "longValue" : "Die Wiederherstellung wurde gestartet..."},
+"GetDossierListFailed" : {"number" : "9", "shortValue" : "", "longValue" : "Die Wiederherstellungfunktion steht zur Zeit nicht zur Verfügung."},
+"GetDossierListSucceeded" : {"number" : "10", "shortValue" : "", "longValue" : "Die Wiederherstellung war erfolgreich."},
+"Unauthorized" : {"number" : "11", "shortValue" : "", "longValue" : "Nicht autorisiert. Bitte anmelden."},
+"DefaultDossierId" : {"number" : "12", "shortValue" : "", "longValue" : "Berechnung"},
+"LogIn" : {"number" : "13", "shortValue" : "", "longValue" : "Anmelden"},
+"DossierNotAvailable" : {"number" : "14", "shortValue" : "", "longValue" : "Das gewünschte Dossier wurde nicht gefunden."},
+"CouldNotUpdateDossier" : {"number" : "15", "shortValue" : "", "longValue" : "Das gewünschte Dossier konnte nicht aktualisiert werden"}
+},
+
+"Consultant" : {
+
+},
+
+"zipAndLocationField" : {
+"LocationFailedMessage" : {"number" : "1", "shortValue" : "", "longValue" : "Ihre Position kann nicht ermittelt werden. Bitte erfassen Sie Ihren Steuerort von Hand."}
+},
+
+"AuthenticationServiceRegistrationResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"Failed" : {"number" : "2", "shortValue" : "", "longValue" : "Failed"},
+"UserAlreadyExists" : {"number" : "3", "shortValue" : "", "longValue" : "UserAlreadyExists"}
+},
+
+"PasswordStatusMessages" : {
+"WeakPassword" : {"number" : "1", "shortValue" : "", "longValue" : "Password"},
+"MediumPassword" : {"number" : "2", "shortValue" : "", "longValue" : "Password"},
+"StrongPassword" : {"number" : "3", "shortValue" : "", "longValue" : "Password"},
+"EmptyPassword" : {"number" : "4", "shortValue" : "", "longValue" : "&nbsp;"}
+},
+
+"FileService" : {
+"SaveFailed" : {"number" : "1", "shortValue" : "", "longValue" : "Error saving file"},
+"PackageFileList" : {"number" : "2", "shortValue" : "", "longValue" : "Error packaging files"}
+},
+
+"AuthenticationServiceLoginRememberedUserResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"Failed" : {"number" : "2", "shortValue" : "", "longValue" : "Failed"},
+"InvalidUser" : {"number" : "3", "shortValue" : "", "longValue" : "InvalidUser"}
+},
+
+"FileServiceResultStatus" : {
+"Ok" : {"number" : "1", "shortValue" : "", "longValue" : "Ok"},
+"ServerError" : {"number" : "2", "shortValue" : "", "longValue" : "ServerError"},
+"PreparationError" : {"number" : "3", "shortValue" : "", "longValue" : "PreparationError"}
+},
+
+"CalculatorServiceResultStatus" : {
+"Ok" : {"number" : "1", "shortValue" : "", "longValue" : "Ok"},
+"ServerError" : {"number" : "2", "shortValue" : "", "longValue" : "ServerError"},
+"Unauthorized" : {"number" : "3", "shortValue" : "", "longValue" : "Unauthorized"}
+},
+
+"fancyBox" : {
+"edit" : {"number" : "1", "shortValue" : "", "longValue" : "Bearbeiten"},
+"close" : {"number" : "2", "shortValue" : "", "longValue" : "Schliessen"},
+"infoContentText" : {"number" : "3", "shortValue" : "", "longValue" : "Info about <TEXT>"},
+"infoIconAsText" : {"number" : "4", "shortValue" : "", "longValue" : "i"}
+},
+
+"AuthenticationServiceResetPasswordResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"Failed" : {"number" : "2", "shortValue" : "", "longValue" : "Failed"},
+"UserNotFound" : {"number" : "3", "shortValue" : "", "longValue" : "UserNotFound"}
+},
+
+"PasswordStrength" : {
+"Undefined" : {"number" : "0", "shortValue" : "", "longValue" : "Undefined"},
+"Invalid" : {"number" : "1", "shortValue" : "", "longValue" : "Invalid"},
+"Weak" : {"number" : "2", "shortValue" : "", "longValue" : "Weak"},
+"Medium" : {"number" : "3", "shortValue" : "", "longValue" : "Medium"},
+"Strong" : {"number" : "4", "shortValue" : "", "longValue" : "Strong"}
+},
+
+"ConsumptionInterestOptions" : {
+"BankSavingsAccount" : {"number" : "1", "shortValue" : "", "longValue" : "3a Banksparkonto"},
+"YouthSavingsAccount" : {"number" : "2", "shortValue" : "", "longValue" : "Jugendsparkonto"}
+},
+
+"additionalPrintingData" : {
+"title" : {"number" : "1", "shortValue" : "", "longValue" : "Angaben auf dem Deckblatt"},
+"customerInfo" : {"number" : "2", "shortValue" : "", "longValue" : "Kundenanschrift"},
+"consultantInfo" : {"number" : "3", "shortValue" : "", "longValue" : "Berateranschrift"},
+"print" : {"number" : "4", "shortValue" : "", "longValue" : "Drucken"},
+"customerNumber" : {"number" : "5", "shortValue" : "", "longValue" : "Kundennummer"},
+"HasEventText" : {"number" : "6", "shortValue" : "", "longValue" : "Massnahmen definiert."},
+"HasEventTextLink" : {"number" : "7", "shortValue" : "", "longValue" : "Weitere Massnahmen erfassen"},
+"NoEventText" : {"number" : "8", "shortValue" : "", "longValue" : "Keine Massnahmen definiert."},
+"NoEventTextLink" : {"number" : "9", "shortValue" : "", "longValue" : "Massnahmen erfassen"},
+"BankCode" : {"number" : "10", "shortValue" : "", "longValue" : "Sitzcode"}
+},
+
+"StatisticsServiceInsertStatisticResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"Failed" : {"number" : "2", "shortValue" : "", "longValue" : "Failed"}
+},
+
+"Countries" : {
+"CH" : {"number" : "1", "shortValue" : "CH", "longValue" : "Schweiz"},
+"LI" : {"number" : "2", "shortValue" : "LI", "longValue" : "Liechtenstein"}
+},
+
+"MulticalcSaving3a" : {
+"Title" : {"number" : "1", "shortValue" : "", "longValue" : "Einsparungen Modulo 3a"},
+"Subtitle" : {"number" : "2", "shortValue" : "", "longValue" : "Ich möchte für mein Projekt sparen"},
+"MonthlySavingCapacity" : {"number" : "3", "shortValue" : "", "longValue" : "Monatliche Spareinlage"},
+"InterestRate" : {"number" : "4", "shortValue" : "", "longValue" : "Zinsen"},
+"TotalTaxSaving" : {"number" : "5", "shortValue" : "", "longValue" : "Steuereinsparung"},
+"CapitalizationTax" : {"number" : "6", "shortValue" : "", "longValue" : "Steuer bei Auszahlung"},
+"NetCapital" : {"number" : "7", "shortValue" : "", "longValue" : "Nettokapital"},
+"NetInterestRate" : {"number" : "8", "shortValue" : "", "longValue" : "Nettorendite"},
+"NetInterestRateValue" : {"number" : "9", "shortValue" : "", "longValue" : "<AMOUNT|percentage:2>"},
+"Investment" : {"number" : "10", "shortValue" : "", "longValue" : "Spareinlagen"},
+"Interest" : {"number" : "11", "shortValue" : "", "longValue" : "Zinsen"},
+"Contact" : {"number" : "12", "shortValue" : "", "longValue" : "Ich möchte mehr wissen"},
+"MonthlySavingCapacityTooltip" : {"number" : "13", "shortValue" : "", "longValue" : "Zusätzliche Information über Monatliche Spareinlage"},
+"Today" : {"number" : "14", "shortValue" : "", "longValue" : "Heute"},
+"RetirementAge" : {"number" : "15", "shortValue" : "", "longValue" : "64/65 jahre"}
+},
+
+"ProfessionalStatus" : {
+"Employee" : {"number" : "1", "shortValue" : "", "longValue" : "angestellt"},
+"Self_Employee_Second_Pillar_Insured" : {"number" : "2", "shortValue" : "", "longValue" : "selbständing mit BVG"},
+"Self_Employee_No_Second_Pillar_Insured" : {"number" : "3", "shortValue" : "", "longValue" : "selbständing ohne BVG"}
+},
+
+"PrintShortTitle" : {
+"house" : {"number" : "1", "shortValue" : "", "longValue" : "Haus-Check"},
+"taxes" : {"number" : "2", "shortValue" : "", "longValue" : "Steuer-Check"},
+"pension" : {"number" : "3", "shortValue" : "", "longValue" : "Pensions-Check"},
+"saving" : {"number" : "4", "shortValue" : "", "longValue" : "Spar-Check"}
+},
+
+"PageTitles" : {
+"overview" : {"number" : "1", "shortValue" : "", "longValue" : "Online Rechner - Übersicht"},
+"house" : {"number" : "2", "shortValue" : "", "longValue" : "Online Rechner - Wohnen"},
+"taxes" : {"number" : "3", "shortValue" : "", "longValue" : "Online Rechner - Steuern"},
+"pension" : {"number" : "4", "shortValue" : "", "longValue" : "Online Rechner - Vorsorge"},
+"saving" : {"number" : "5", "shortValue" : "", "longValue" : "Online Rechner - Sparen"},
+"house_houseAffordability" : {"number" : "6", "shortValue" : "", "longValue" : "Online Rechner - Wohnen - Tragbarkeit"},
+"house_houseRentBuyComparison" : {"number" : "7", "shortValue" : "", "longValue" : "Online Rechner - Wohnen - Miete/Kauf-Vergleich"},
+"taxes_marginalTaxRate" : {"number" : "8", "shortValue" : "", "longValue" : "Online Rechner - Steuern - Steuerrechner"},
+"taxes_capitalizationTax" : {"number" : "9", "shortValue" : "", "longValue" : "Online Rechner - Steuern - Kapitalsteuer"},
+"taxes_saving3a" : {"number" : "10", "shortValue" : "", "longValue" : "Online Rechner - Steuern - 3a-Sparen"},
+"pension_incomeAtPension" : {"number" : "11", "shortValue" : "", "longValue" : "Online Rechner - Vorsorge - Pensions-Check"},
+"pension_capitalizationTax" : {"number" : "12", "shortValue" : "", "longValue" : "Online Rechner - Vorsorge - Kapitalsteuer"},
+"pension_saving3a" : {"number" : "13", "shortValue" : "", "longValue" : "Online Rechner - Vorsorge - 3a-Sparen"},
+"saving_savingGoal" : {"number" : "14", "shortValue" : "", "longValue" : "Online Rechner - Sparen - Endbetrag"},
+"saving_savingInvestment" : {"number" : "15", "shortValue" : "", "longValue" : "Online Rechner - Sparen - Spareinlage"},
+"saving_savingDuration" : {"number" : "16", "shortValue" : "", "longValue" : "Online Rechner - Sparen - Spardauer"},
+"register" : {"number" : "17", "shortValue" : "", "longValue" : "Online Rechner - Konto erstellen"},
+"login" : {"number" : "18", "shortValue" : "", "longValue" : "Online Rechner - Anmelden"},
+"save" : {"number" : "19", "shortValue" : "", "longValue" : "Online Rechner - Speichern"},
+"saveAs" : {"number" : "20", "shortValue" : "", "longValue" : "Online Rechner - Speichern unter"},
+"load" : {"number" : "21", "shortValue" : "", "longValue" : "Online Rechner - Laden"},
+"remove" : {"number" : "22", "shortValue" : "", "longValue" : "Online Rechner - Löschen"},
+"resetPassword" : {"number" : "23", "shortValue" : "", "longValue" : "Online Rechner - Neu Setzen"},
+"userAccount" : {"number" : "24", "shortValue" : "", "longValue" : "Online Rechner - Neu Setzen"},
+"confirmation" : {"number" : "25", "shortValue" : "", "longValue" : "Online Rechner - Confirmation"},
+"pension_secondPillarBuy" : {"number" : "26", "shortValue" : "", "longValue" : "Online Rechner - Vorsorge - PK-Einkauf"},
+"taxes_secondPillarBuy" : {"number" : "27", "shortValue" : "", "longValue" : "Online Rechner - Steuern - PK-Einkauf"},
+"saving_savings" : {"number" : "29", "shortValue" : "", "longValue" : "Online Rechner - Sparen - Sparrechner"},
+"pension_inheritance" : {"number" : "30", "shortValue" : "", "longValue" : "Online Rechner - Vorsorge - Nachlass"},
+"house_amortizationComparison" : {"number" : "31", "shortValue" : "", "longValue" : "Online Rechner - Amortisationsvergleich"},
+"saving_consumption" : {"number" : "32", "shortValue" : "", "longValue" : "Online Rechner - Sparen - Verzehrrechner"},
+"contact" : {"number" : "33", "shortValue" : "", "longValue" : "Online Rechner - Kontakt"},
+"pension_risk" : {"number" : "34", "shortValue" : "", "longValue" : "Online Rechner - Vorsorge - Vorsorge-Check"},
+"saving_budget" : {"number" : "35", "shortValue" : "", "longValue" : "Online Rechner - Sparen - Budget"},
+"consultantUserAccount" : {"number" : "36", "shortValue" : "", "longValue" : "Online Rechner - Neu Setzen"},
+"multicalc" : {"number" : "101", "shortValue" : "", "longValue" : "Online Rechner - Rechner"}
+},
+
+"Disclaimer" : {
+"Company" : {"number" : "1", "shortValue" : "", "longValue" : "Logismata AG"},
+"Title" : {"number" : "2", "shortValue" : "", "longValue" : "AGB für die Nutzung des Online-Rechners"},
+"Content" : {"number" : "3", "shortValue" : "", "longValue" : "<p class=\"text\">Unser Online-Rechner steht Ihnen kostenlos zur Verfügung, und wir freuen uns, wenn Sie ihn nutzen. Bitte beachten Sie aber folgendes:</p><ol><li><p class=\"text\">Wir beheben alle Fehler, von denen wir wissen, können jedoch keine Fehlerfreiheit zusichern. Wenn Sie meinen, einen Fehler gefunden zu haben, können Sie uns diesen an <a href=\"mailto:info@logismata.ch?subject=Online%2DRechner\">info@logismata.ch</a> gerne mitteilen. Wir werden uns darum kümmern; bitte haben Sie Verständnis, dass wir keine Fragen dazu beantworten oder Korrespondenzen führen.</p></li><li><p class=\"text\">Unser Online-Rechner ist ausschliesslich für die geltenden rechtlichen Grundlagen in der Schweiz und im Fürstentum Liechtenstein konzipiert. Da sich insbesondere steuerrechtliche Grundlagen laufend ändern, können wir die dem Online-Rechner zugrundeliegenden Parameter nicht tagesaktuell führen. Wir sind jedoch sehr bemüht, laufende Anpassungen zeitnah vorzunehmen.</p></li><li><p class=\"text\">Unser Online-Rechner ist ein komplexes Tool. Die Resultate hängen von zahlreichen Parametern ab, insbesondere von Ihren Eingaben und gewissen verallgemeinernden Annahmen wie zum Beispiel dem Niveau von Hypothekarzinsen. Sie sollten sich nicht voll auf die angezeigten Resultate verlassen. Optimalerweise können Sie die Plausibilität der Resultate aus Ihrer Fachkenntnis überprüfen; Sie sollten auf jeden Fall mit den Datengrundlagen spielen um zu sehen, wie sich die Resultate bei verschiedenen Eingabewerten ändern.</p></li><li><p class=\"text\">Die Resultate unseres Online-Rechners sind keine Handlungsempfehlungen. Bitte tätigen Sie aufgrund der Resultate keine unwiderruflichen Entscheidungen (z. B. für Investitionen, Pensionierung, Hauskauf etc.) ohne vorgängig einen fachkundigen Berater konsultiert zu haben. Zeigen Sie ihm die Resultate, die Sie mit unserem Online-Rechner bekommen haben. Dasselbe gilt, wenn Sie glauben, dass die rechtlichen oder steuerlichen Grundlagen nicht aktuell sind.</p></li><li><p class=\"text\">Es kann sein, dass unser Online-Rechner nicht verfügbar ist, sei es wegen einer Störung oder wegen Wartungsarbeiten oder aus anderen Gründen.</p></li><li><p class=\"text\">Aus Gründen des Datenschutzes verwenden wir Daten aus Ihrer Nutzung ausschliesslich zum Zweck, die Website zu optimieren. Unsere Website ist gegen Datenmissbrauch geschützt.</p></li><li><p class=\"text\">Der Online-Rechner ist unser geistiges Eigentum. Wir gestatten Ihnen dessen Nutzung ausschliesslich, und bis auf Widerruf, für Ihre persönlichen Zwecke. Eine kommerzielle Nutzung oder die Verlinkung aus einer kommerziellen Website ist untersagt.</p></li><li><p class=\"text\">Weil unser Online-Rechner ein Free-Service ist, weil wir Ihre Nutzung nicht kontrollieren, und weil wir Ihr Fachwissen nicht kennen, können wir keine Haftung für die Resultate übernehmen.</p></li></ol>"}
+},
+
+"AuthenticationService" : {
+"LoginStarted" : {"number" : "4", "shortValue" : "", "longValue" : "Die Anmeldung wurde gestartet..."},
+"LoginFailed" : {"number" : "5", "shortValue" : "", "longValue" : "Die Anmeldungsfunktion steht zur Zeit nicht zur Verfügung."},
+"LoginSucceeded" : {"number" : "6", "shortValue" : "", "longValue" : "Die Anmeldung war erfolgreich."},
+"InvalidUserOrPassword" : {"number" : "7", "shortValue" : "", "longValue" : "Die E-Mail-Adresse oder das Passwort ist nicht gültig."}
+},
+
+"multicalcPersonalData" : {
+"Title" : {"number" : "1", "shortValue" : "", "longValue" : "Ihre Informationen"},
+"Gender" : {"number" : "2", "shortValue" : "", "longValue" : "Geschlecht"},
+"Age" : {"number" : "3", "shortValue" : "", "longValue" : "Alter"},
+"CivilStatus" : {"number" : "4", "shortValue" : "", "longValue" : "Zivilstand"},
+"NumberOfChildren" : {"number" : "5", "shortValue" : "", "longValue" : "Kinder"},
+"ZipAndLocation" : {"number" : "6", "shortValue" : "", "longValue" : "Ort/PLZ"},
+"ProfessionalStatus" : {"number" : "7", "shortValue" : "", "longValue" : "Professioneller Status"},
+"GrossIncome" : {"number" : "8", "shortValue" : "", "longValue" : "Bruttoeinkommen pro Jahr"}
+},
+
+"ContactServiceResultStatus" : {
+"Ok" : {"number" : "1", "shortValue" : "", "longValue" : "Ok"},
+"ServerError" : {"number" : "2", "shortValue" : "", "longValue" : "ServerError"},
+"Unauthorized" : {"number" : "3", "shortValue" : "", "longValue" : "Unauthorized"},
+"DossierNotFound" : {"number" : "4", "shortValue" : "", "longValue" : "DossierNotFound"}
+},
+
+"CivilStatus" : {
+"Single" : {"number" : "1", "shortValue" : "", "longValue" : "alleinstehend"},
+"Married" : {"number" : "2", "shortValue" : "", "longValue" : "verheiratet"},
+"Single_In_Concubinage" : {"number" : "3", "shortValue" : "", "longValue" : "alleinstehend im Konkubinat"}
+},
+
+"PageDescriptions" : {
+"Main" : {"number" : "1", "shortValue" : "", "longValue" : "Finden Sie verschiedene Berechnungsmöglichkeiten gruppiert nach Themen Wohnen, Steuern, Vorsorge und Sparen. Berechnen Sie Einkommens- und Kapitalleistungssteuern, Tragbarkeit und Vergleich Miete/Kauf, Sparmöglichkeiten und Einkommen in der Pension."},
+"overview" : {"number" : "2", "shortValue" : "", "longValue" : ""},
+"house" : {"number" : "3", "shortValue" : "", "longValue" : ""},
+"taxes" : {"number" : "4", "shortValue" : "", "longValue" : ""},
+"pension" : {"number" : "5", "shortValue" : "", "longValue" : ""},
+"saving" : {"number" : "6", "shortValue" : "", "longValue" : ""},
+"house_houseAffordability" : {"number" : "7", "shortValue" : "", "longValue" : ""},
+"house_houseRentBuyComparison" : {"number" : "8", "shortValue" : "", "longValue" : ""},
+"taxes_marginalTaxRate" : {"number" : "9", "shortValue" : "", "longValue" : ""},
+"taxes_capitalizationTax" : {"number" : "10", "shortValue" : "", "longValue" : ""},
+"taxes_saving3a" : {"number" : "11", "shortValue" : "", "longValue" : ""},
+"pension_incomeAtPension" : {"number" : "12", "shortValue" : "", "longValue" : ""},
+"pension_capitalizationTax" : {"number" : "13", "shortValue" : "", "longValue" : ""},
+"pension_saving3a" : {"number" : "14", "shortValue" : "", "longValue" : ""},
+"saving_savingGoal" : {"number" : "15", "shortValue" : "", "longValue" : ""},
+"saving_savingInvestment" : {"number" : "16", "shortValue" : "", "longValue" : ""},
+"saving_savingDuration" : {"number" : "17", "shortValue" : "", "longValue" : ""},
+"register" : {"number" : "18", "shortValue" : "", "longValue" : ""},
+"login" : {"number" : "19", "shortValue" : "", "longValue" : ""},
+"saveAs" : {"number" : "20", "shortValue" : "", "longValue" : ""},
+"remove" : {"number" : "21", "shortValue" : "", "longValue" : ""},
+"resetPassword" : {"number" : "22", "shortValue" : "", "longValue" : ""},
+"userAccount" : {"number" : "23", "shortValue" : "", "longValue" : ""},
+"pension_secondPillarBuy" : {"number" : "24", "shortValue" : "", "longValue" : ""},
+"taxes_secondPillarBuy" : {"number" : "25", "shortValue" : "", "longValue" : ""},
+"taxes_inheritance" : {"number" : "26", "shortValue" : "", "longValue" : ""}
+},
+
+"AuthenticationServiceRegistrationConfirmationResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"AlreadyConfirmed" : {"number" : "2", "shortValue" : "", "longValue" : "AlreadyConfirmed"},
+"ServerError" : {"number" : "3", "shortValue" : "", "longValue" : "ServerError"},
+"NoConfirmationPending" : {"number" : "4", "shortValue" : "", "longValue" : "NoConfirmationPendig"},
+"ExpiredOrInvalidData" : {"number" : "5", "shortValue" : "", "longValue" : "ExpiredOrInvalidData"}
+},
+
+"iconButtonBar" : {
+"print" : {"number" : "1", "shortValue" : "", "longValue" : "Drucken"},
+"contact" : {"number" : "2", "shortValue" : "", "longValue" : "Kontakt"},
+"languages" : {"number" : "3", "shortValue" : "", "longValue" : "Sprachen"},
+"calculator" : {"number" : "4", "shortValue" : "", "longValue" : "Alle Rechner"},
+"facebook" : {"number" : "5", "shortValue" : "", "longValue" : "Facebook"},
+"twitter" : {"number" : "6", "shortValue" : "", "longValue" : "Twitter"},
+"googleplus" : {"number" : "7", "shortValue" : "", "longValue" : "Google&nbsp;Plus"},
+"youtube" : {"number" : "8", "shortValue" : "", "longValue" : "YouTube"},
+"new" : {"number" : "9", "shortValue" : "", "longValue" : "Neu"},
+"emailShare" : {"number" : "10", "shortValue" : "", "longValue" : "E-mail"},
+"save" : {"number" : "11", "shortValue" : "", "longValue" : "Speichern"},
+"eventPlan" : {"number" : "12", "shortValue" : "", "longValue" : "Ereignisse und Massnahmen"},
+"countries" : {"number" : "13", "shortValue" : "", "longValue" : "Länder"}
+},
+
+"Charts" : {
+"Current" : {"number" : "1", "shortValue" : "", "longValue" : "Bisher"},
+"New" : {"number" : "2", "shortValue" : "", "longValue" : "Neu"},
+"Currency" : {"number" : "3", "shortValue" : "", "longValue" : "CHF"},
+"ThousandCurrency" : {"number" : "4", "shortValue" : "", "longValue" : "TCHF"},
+"Year" : {"number" : "5", "shortValue" : "", "longValue" : "J"},
+"Age" : {"number" : "6", "shortValue" : "", "longValue" : "A"}
+},
+
+"multicalc" : {
+"Title" : {"number" : "1", "shortValue" : "", "longValue" : "Wie sieht meine Situation im Risikofall aus?"},
+"PersonalInformation" : {"number" : "2", "shortValue" : "", "longValue" : "Personenangaben"},
+"PersonalInformationInfo" : {"number" : "3", "shortValue" : "", "longValue" : "Bei verheirateten Paaren ist das Hochzeitsdatum für die Berechnung des AHV-Einkommens sowie Kinder für die entsprechenden Erziehungsgutschriften und Kinderrenten massgebend.<br><br>Lassen Sie sich für eine detaillierte Risikoplanung persönlich beraten."},
+"BaseDataSummaryForStandard" : {"number" : "6", "shortValue" : "", "longValue" : "Berechnen Sie die Auswirkung bei verändertem Bedarf oder mit zusätzlichen Renten und Vermögen."},
+"GraphicPanelTitle" : {"number" : "12", "shortValue" : "", "longValue" : "Ihr Resultat"},
+"GraphicPanelInfo" : {"number" : "13", "shortValue" : "", "longValue" : "Der Vorsorge-Check analysiert nur die langfristigen Leistungen. Das heisst jene Leistungen, welche Ihnen nach 2 Jahren ausbezahlt werden. Für eine  Analyse der Leistungen in den ersten beiden Jahren lassen Sie sich von einen Spezialisten beraten.<br><br>Die Leistungen bei Invalidität und im Todesfall sind jeweils bei Krankheit ausgewiesen. Wollen Sie sehen, wie die Situation bei einem Unfall aussieht, können Sie unter 'Jetzt mehr erfahren' die Unfallsimulation anschauen sowie weitere Anpassungen vornehmen und beispielsweise Ihren Bedarf konkret auf Ihre Bedürfnisse anpassen."},
+"BaseDataTitle" : {"number" : "31", "shortValue" : "", "longValue" : "Grundlagen"},
+"DisabilityTitle" : {"number" : "33", "shortValue" : "", "longValue" : "Erwerbsunfähigkeit"},
+"DeathTitle" : {"number" : "35", "shortValue" : "", "longValue" : "Ableben"},
+"PensionTitle" : {"number" : "37", "shortValue" : "", "longValue" : "Alter"},
+"LegalRents" : {"number" : "42", "shortValue" : "", "longValue" : "AHV und BVG"},
+"LegalRentsInfo" : {"number" : "43", "shortValue" : "", "longValue" : "Ausgehend von Ihrem heutigen Einkommen wird Ihre AHV-Rente auf Basis statistischer Lohnentwicklungen berechnet. Es werden keine Fehljahre berücksichtigt. Bei Abweichungen lassen Sie sich persönlich beraten.<br><br>Für Ihre Pensionskassenleistungen (BVG) werden die gesetzlichen Minimalleistungen ermittelt.<br><br>Sollten Sie Ihren BVG-Ausweis zur Hand haben, erfassen Sie bitte die zu erwartende Renten."},
+"MissingYears" : {"number" : "44", "shortValue" : "", "longValue" : "Fehljahre"},
+"GrossIncome" : {"number" : "51", "shortValue" : "", "longValue" : "Bruttoeinkommen pro Jahr"},
+"RentText" : {"number" : "52", "shortValue" : "", "longValue" : "Die Renten der AHV und BVG sind aufgrund von Annahmen berechnet worden."},
+"Return" : {"number" : "53", "shortValue" : "", "longValue" : "Zurücksetzen"},
+"FirstPillarTitle" : {"number" : "57", "shortValue" : "", "longValue" : "1. Säule"},
+"SecondPillarTitle" : {"number" : "58", "shortValue" : "", "longValue" : "2. Säule"},
+"FirstPillarBase" : {"number" : "59", "shortValue" : "", "longValue" : "AHV-Basis"},
+"SecondPillarPlan" : {"number" : "62", "shortValue" : "", "longValue" : "BVG-Plan"},
+"AHVRentText" : {"number" : "63", "shortValue" : "", "longValue" : "Die Rente der AHV ist aufgrund von Annahmen berechnet worden."},
+"MainPerson" : {"number" : "64", "shortValue" : "", "longValue" : "Person 1"},
+"EditRentText" : {"number" : "66", "shortValue" : "", "longValue" : "Wenn Sie Ihren <b>BVG-Ausweis</b> zur Hand haben können Sie Ihre konkreten Leistungen erfassen."},
+"EditRent" : {"number" : "67", "shortValue" : "", "longValue" : "Erfassen"},
+"ResetRent" : {"number" : "68", "shortValue" : "", "longValue" : "Zurücksetzen"},
+"DetailedRent" : {"number" : "70", "shortValue" : "", "longValue" : "Pensionskasse"},
+"DisabilityRent" : {"number" : "71", "shortValue" : "", "longValue" : "IV-Rente"},
+"DisabilityChildrenRent" : {"number" : "72", "shortValue" : "", "longValue" : "IV-Kinderrente"},
+"WidowRent" : {"number" : "73", "shortValue" : "", "longValue" : "Witwenrente"},
+"OrphanRent" : {"number" : "74", "shortValue" : "", "longValue" : "Waisenrente"},
+"PensionRent" : {"number" : "75", "shortValue" : "", "longValue" : "Altersrente"},
+"Gap" : {"number" : "78", "shortValue" : "", "longValue" : "Lücke"},
+"Gender" : {"number" : "79", "shortValue" : "", "longValue" : "Geschlecht"},
+"NumberOfChildren" : {"number" : "81", "shortValue" : "", "longValue" : "Kinder"},
+"ShowChildrenRent" : {"number" : "82", "shortValue" : "", "longValue" : "Kinderrenten zeigen"},
+"CurrentFortune" : {"number" : "83", "shortValue" : "", "longValue" : "Aktuelles Vermögen"},
+"PensionInterest" : {"number" : "84", "shortValue" : "", "longValue" : "Zins"},
+"FortuneUsablePercentage" : {"number" : "86", "shortValue" : "", "longValue" : "So viel Prozent will ich einsetzen"},
+"AdditionalDeathCapital" : {"number" : "87", "shortValue" : "", "longValue" : "Zusätzliches Todesfallkapital"},
+"AdditionalDisabilityRent" : {"number" : "88", "shortValue" : "", "longValue" : "Zusätzliche EU-Rente"},
+"NeedAfterPension" : {"number" : "89", "shortValue" : "", "longValue" : "Ihr Bedarf an Einnahmen"},
+"OtherIncomes" : {"number" : "90", "shortValue" : "", "longValue" : "Übrige Einnahmen"},
+"SavingsPerYear" : {"number" : "91", "shortValue" : "", "longValue" : "Zusätzliche Sparquote"},
+"AdditionalDeathCapitalMessage" : {"number" : "92", "shortValue" : "", "longValue" : "Ein zusätzliches Todesfallkapital wird Ihnen als Kapital ausbezahlt und hier als Verzehr bis zur Pensionierung des Partners dargestellt. Im Rahmen einer 3a-Police können weitere Risikoleistungen (Invalidität) und Erlebensfallleistungen (Pensionierung) kombiniert werden."},
+"AdditionalDisabilityRentMessage" : {"number" : "93", "shortValue" : "", "longValue" : "Zusätzliche Erwerbsunfähigkeitsrenten werden Ihnen bis zur Pensionierung ausbezahlt und können im Rahmen einer 3a-Police mit weiteren Risikoleistungen (Todesfall) und Erlebensfallleistungen (Pensionierung) kombiniert werden."},
+"OtherIncomesMessage" : {"number" : "94", "shortValue" : "", "longValue" : ""},
+"OverMaxPensionAge" : {"number" : "95", "shortValue" : "", "longValue" : "Für Ihre Situation kann keine Berechnung vorgenommen werden. Bitte ändern Sie die Grundlagen oder nehmen Sie Kontakt mit uns auf."},
+"OverMaxPensionAgeInfo" : {"number" : "96", "shortValue" : "", "longValue" : ""},
+"OverMaxPensionAgeTitle" : {"number" : "97", "shortValue" : "", "longValue" : ""},
+"SummaryText" : {"number" : "98", "shortValue" : "", "longValue" : "Ihr grösstes Risiko <b><MAIN_RISK></b><br>Ihre Lücke <b><GAP|currencyWithSymbol></b>"},
+"SummaryTextAllEquals" : {"number" : "99", "shortValue" : "", "longValue" : "Alle Risiken sind gleich"},
+"Disability" : {"number" : "100", "shortValue" : "", "longValue" : "Invalidität"},
+"Death" : {"number" : "101", "shortValue" : "", "longValue" : "Todesfall"},
+"Pension" : {"number" : "102", "shortValue" : "", "longValue" : "Alter"},
+"And" : {"number" : "103", "shortValue" : "", "longValue" : "und"},
+"AverageIncome" : {"number" : "104", "shortValue" : "", "longValue" : "Durchschn. Einkommen"},
+"BaseDataTopicTitle" : {"number" : "105", "shortValue" : "", "longValue" : "Grundlagen"},
+"DisabilityTopicTitle" : {"number" : "106", "shortValue" : "", "longValue" : "Erwerbsunfähigkeit"},
+"DeathTopicTitle" : {"number" : "107", "shortValue" : "", "longValue" : "Tod"},
+"PensionTopicTitle" : {"number" : "108", "shortValue" : "", "longValue" : "Alter"},
+"Description" : {"number" : "109", "shortValue" : "", "longValue" : ""},
+"MainPersonGraphicPanelTitle" : {"number" : "111", "shortValue" : "", "longValue" : "Ihr Resultat."}
+},
+
+"AuthenticationServiceUpdatePasswordResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"Failed" : {"number" : "2", "shortValue" : "", "longValue" : "Failed"},
+"InvalidUserOrPassword" : {"number" : "3", "shortValue" : "", "longValue" : "InvalidUserOrPassword"},
+"Unauthorized" : {"number" : "4", "shortValue" : "", "longValue" : "Unauthorized"}
+},
+
+"PrintServiceResultStatus" : {
+"Ok" : {"number" : "1", "shortValue" : "", "longValue" : "Ok"},
+"ServerError" : {"number" : "2", "shortValue" : "", "longValue" : "ServerError"},
+"NoContent" : {"number" : "3", "shortValue" : "", "longValue" : "NoContent"},
+"PreparationError" : {"number" : "4", "shortValue" : "", "longValue" : "PreparationError"}
+},
+
+"MediaServiceGetResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"Failed" : {"number" : "2", "shortValue" : "", "longValue" : "Failed"},
+"MediaNotFound" : {"number" : "3", "shortValue" : "", "longValue" : "Media not found"}
+},
+
+"StorageServiceResultStatus" : {
+"Ok" : {"number" : "1", "shortValue" : "", "longValue" : "Ok"},
+"ServerError" : {"number" : "2", "shortValue" : "", "longValue" : "ServerError"},
+"Unauthorized" : {"number" : "3", "shortValue" : "", "longValue" : "Unauthorized"},
+"DossierNotFound" : {"number" : "4", "shortValue" : "", "longValue" : "DossierNotFound"},
+"DossierNotAvailable" : {"number" : "5", "shortValue" : "", "longValue" : "DossierNotAvailable"}
+},
+
+"Application" : {
+"Title" : {"number" : "1", "shortValue" : "", "longValue" : "Online Rechner"},
+"Overview" : {"number" : "2", "shortValue" : "", "longValue" : "Übersicht"},
+"House" : {"number" : "3", "shortValue" : "", "longValue" : "Wohnen"},
+"Taxes" : {"number" : "4", "shortValue" : "", "longValue" : "Steuern"},
+"Pension" : {"number" : "5", "shortValue" : "", "longValue" : "Vorsorge"},
+"Saving" : {"number" : "6", "shortValue" : "", "longValue" : "Sparen"},
+"AllCalculators" : {"number" : "7", "shortValue" : "", "longValue" : "Alle Rechner"},
+"HouseAffordability" : {"number" : "8", "shortValue" : "", "longValue" : "Tragbarkeit berechnen"},
+"HouseRentBuyComparison" : {"number" : "9", "shortValue" : "", "longValue" : "Miete/Kauf-Vergleich"},
+"MarginalTaxRate" : {"number" : "10", "shortValue" : "", "longValue" : "Steuerrechner"},
+"CapitalizationTax" : {"number" : "11", "shortValue" : "", "longValue" : "Steuern bei Kapitalauszahlung"},
+"Saving3a" : {"number" : "12", "shortValue" : "", "longValue" : "3a-Sparen"},
+"SavingGoal" : {"number" : "13", "shortValue" : "", "longValue" : "Endbetrag berechnen"},
+"SavingInvestment" : {"number" : "14", "shortValue" : "", "longValue" : "Spareinlage berechnen"},
+"SavingDuration" : {"number" : "15", "shortValue" : "", "longValue" : "Spardauer berechnen"},
+"IncomeAtPension" : {"number" : "16", "shortValue" : "", "longValue" : "Pensions-Check"},
+"Languages" : {"number" : "17", "shortValue" : "", "longValue" : "Sprachen"},
+"SecondPillarBuy" : {"number" : "18", "shortValue" : "", "longValue" : "PK-Einkauf"},
+"Inheritance" : {"number" : "19", "shortValue" : "", "longValue" : "Nachlassrechner"},
+"Child" : {"number" : "20", "shortValue" : "", "longValue" : "<NUMBEROFCHILDREN> Kind"},
+"Children" : {"number" : "21", "shortValue" : "", "longValue" : "<NUMBEROFCHILDREN> Kinder"},
+"Account" : {"number" : "22", "shortValue" : "", "longValue" : "<NUMBEROFACCOUNTS> Konto"},
+"Accounts" : {"number" : "23", "shortValue" : "", "longValue" : "<NUMBEROFACCOUNTS> Konti"},
+"Person" : {"number" : "24", "shortValue" : "", "longValue" : "<NUMBEROFPERSONS> Person"},
+"Persons" : {"number" : "25", "shortValue" : "", "longValue" : "<NUMBEROFPERSONS> Personen"},
+"TeaserCalculate" : {"number" : "26", "shortValue" : "", "longValue" : "Berechnen"},
+"Copyright" : {"number" : "27", "shortValue" : "", "longValue" : "Copyright © 2014-2018 - Logismata&nbsp;AG,&nbsp;Zürich"},
+"TermsOfUse" : {"number" : "28", "shortValue" : "", "longValue" : "Nutzungsbestimmungen"},
+"ResetConsulting" : {"number" : "29", "shortValue" : "", "longValue" : "Wollen Sie die Berechnung neu starten? Alle Daten werden gelöscht."},
+"Yes" : {"number" : "30", "shortValue" : "", "longValue" : "Ja"},
+"No" : {"number" : "31", "shortValue" : "", "longValue" : "Nein"},
+"Save" : {"number" : "32", "shortValue" : "", "longValue" : "Speichern"},
+"SaveAs" : {"number" : "33", "shortValue" : "", "longValue" : "Speichern unter..."},
+"Load" : {"number" : "34", "shortValue" : "", "longValue" : "Laden"},
+"Remove" : {"number" : "35", "shortValue" : "", "longValue" : "Löschen"},
+"additionalPrintingData" : {"number" : "36", "shortValue" : "", "longValue" : "additionalPrintingData"},
+"CalculationError" : {"number" : "37", "shortValue" : "", "longValue" : "Die Berechnung konnte nicht ausgeführt werden."},
+"LanguageChangeFailed" : {"number" : "38", "shortValue" : "", "longValue" : "Es war nicht möglich, die Sprache zu ändern."},
+"Savings" : {"number" : "39", "shortValue" : "", "longValue" : "Sparrechner"},
+"AmortizationComparison" : {"number" : "40", "shortValue" : "", "longValue" : "Amortisationsvergleich"},
+"Consumption" : {"number" : "41", "shortValue" : "", "longValue" : "Verzehrrechner"},
+"Countries" : {"number" : "42", "shortValue" : "", "longValue" : "Länder"},
+"CountryChangeFailed" : {"number" : "43", "shortValue" : "", "longValue" : "Es war nicht möglich, das Land zu ändern."},
+"PdfLinkTeaserLabel" : {"number" : "44", "shortValue" : "", "longValue" : "PDF laden"},
+"Risk" : {"number" : "45", "shortValue" : "", "longValue" : "Vorsorge-Check"},
+"VersionInfo" : {"number" : "46", "shortValue" : "", "longValue" : "V<VERSION>"},
+"Budget" : {"number" : "47", "shortValue" : "", "longValue" : "Budget"}
+},
+
+"Sex" : {
+"Male" : {"number" : "1", "shortValue" : "", "longValue" : "männlich"},
+"Female" : {"number" : "2", "shortValue" : "", "longValue" : "weiblich"}
+},
+
+"editDialogBox" : {
+"Accept" : {"number" : "1", "shortValue" : "", "longValue" : "Übernehmen"},
+"ManualSet" : {"number" : "2", "shortValue" : "", "longValue" : "Zurücksetzen"},
+"Close" : {"number" : "3", "shortValue" : "", "longValue" : "Schliessen"}
+},
+
+"MulticalcRiskPopup" : {
+"ColumnToday" : {"number" : "1", "shortValue" : "", "longValue" : "Today"},
+"ColumnDisability" : {"number" : "2", "shortValue" : "", "longValue" : "Disability"},
+"ColumnDeath" : {"number" : "3", "shortValue" : "", "longValue" : "Death"},
+"GrossIncome" : {"number" : "4", "shortValue" : "", "longValue" : "GrossIncome"},
+"SecondPillarRentDisability" : {"number" : "5", "shortValue" : "", "longValue" : "BVG-Rente (2. Säule)"},
+"FirstPillarRentDisability" : {"number" : "6", "shortValue" : "", "longValue" : "IV-Rente"},
+"SecondPillarRentDeath" : {"number" : "7", "shortValue" : "", "longValue" : "BVG-Rente (2. Säule)"},
+"FirstPillarRentDeath" : {"number" : "8", "shortValue" : "", "longValue" : "AHV-Rente (1. Säule)"},
+"RentValue" : {"number" : "9", "shortValue" : "", "longValue" : "<VALUE|currencyWithSymbol>"}
+},
+
+"MulticalcSaving3aPopup" : {
+"PopupYear" : {"number" : "1", "shortValue" : "", "longValue" : "Jahr <YEAR>"},
+"PopupTaxSaving" : {"number" : "2", "shortValue" : "", "longValue" : "Steuereinsparung"},
+"PopupInvestment" : {"number" : "3", "shortValue" : "", "longValue" : "Spareinlagen"},
+"PopupInterest" : {"number" : "4", "shortValue" : "", "longValue" : "Zinsen"},
+"SavingValue" : {"number" : "5", "shortValue" : "", "longValue" : "<VALUE|currencyWithSymbol>"}
+},
+
+"AuthenticationServiceLoginResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"Failed" : {"number" : "2", "shortValue" : "", "longValue" : "Failed"},
+"InvalidUserOrPassword" : {"number" : "3", "shortValue" : "", "longValue" : "InvalidUserOrPassword"},
+"UserInactive" : {"number" : "4", "shortValue" : "", "longValue" : "UserInactive"},
+"UserBlocked" : {"number" : "5", "shortValue" : "", "longValue" : "UserBlocked"}
+},
+
+"GenericCharacters" : {
+"Percentage" : {"number" : "1", "shortValue" : "", "longValue" : "%"}
+},
+
+"iconButtonBarTooltips" : {
+"print" : {"number" : "1", "shortValue" : "", "longValue" : "Drucken"},
+"contact" : {"number" : "2", "shortValue" : "", "longValue" : "Kontakt"},
+"languages" : {"number" : "3", "shortValue" : "", "longValue" : "Sprachen"},
+"calculator" : {"number" : "4", "shortValue" : "", "longValue" : "Alle Rechner"},
+"facebook" : {"number" : "5", "shortValue" : "", "longValue" : "Facebook"},
+"twitter" : {"number" : "6", "shortValue" : "", "longValue" : "Twitter"},
+"googleplus" : {"number" : "7", "shortValue" : "", "longValue" : "Google Plus"},
+"youtube" : {"number" : "8", "shortValue" : "", "longValue" : "YouTube"},
+"new" : {"number" : "9", "shortValue" : "", "longValue" : "Neu"},
+"emailShare" : {"number" : "10", "shortValue" : "", "longValue" : "E-mail"},
+"save" : {"number" : "11", "shortValue" : "", "longValue" : "Speichern"},
+"eventPlan" : {"number" : "12", "shortValue" : "", "longValue" : "Ereignisse und Massnahmen"},
+"countries" : {"number" : "13", "shortValue" : "", "longValue" : "Länder"},
+"storage" : {"number" : "14", "shortValue" : "", "longValue" : "Ablage"}
+},
+
+"AuthenticationServiceResultStatus" : {
+"Ok" : {"number" : "1", "shortValue" : "", "longValue" : "Ok"},
+"ServerError" : {"number" : "2", "shortValue" : "", "longValue" : "ServerError"},
+"Unauthorized" : {"number" : "3", "shortValue" : "", "longValue" : "Unauthorized"},
+"UserNotFound" : {"number" : "4", "shortValue" : "", "longValue" : "UserNotFound"}
+},
+
+"Profile" : {
+"LogIn" : {"number" : "1", "shortValue" : "", "longValue" : "Anmelden"},
+"LogOut" : {"number" : "2", "shortValue" : "", "longValue" : "Abmelden"},
+"Register" : {"number" : "3", "shortValue" : "", "longValue" : "Registrieren"}
+},
+
+"AuthenticationServiceUpdateUserAccountResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"Failed" : {"number" : "2", "shortValue" : "", "longValue" : "Failed"},
+"InvalidUserOrPassword" : {"number" : "3", "shortValue" : "", "longValue" : "InvalidUserOrPassword"},
+"Unauthorized" : {"number" : "4", "shortValue" : "", "longValue" : "Unauthorized"}
+},
+
+"MediaServiceUpdateResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"Failed" : {"number" : "2", "shortValue" : "", "longValue" : "Failed"},
+"UserNotFound" : {"number" : "3", "shortValue" : "", "longValue" : "UserNotFound"}
+},
+
+"AuthenticationServiceCreateCalculatorServiceTokenResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"Failed" : {"number" : "2", "shortValue" : "", "longValue" : "Failed"},
+"UserNotFound" : {"number" : "3", "shortValue" : "", "longValue" : "UserNotFound"}
+},
+
+"GenericFormats" : {
+"Amount" : {"number" : "1", "shortValue" : "", "longValue" : "<VALUE|currency:<DECIMALS>>"},
+"Percentage" : {"number" : "2", "shortValue" : "", "longValue" : "<VALUE|percentage:<DECIMALS>>"},
+"CurrencyWithSymbol" : {"number" : "3", "shortValue" : "", "longValue" : "<VALUE|currencyWithSymbol:<DECIMALS>>"},
+"CurrencyWithSymbolWithConcatenatedPercentage" : {"number" : "4", "shortValue" : "", "longValue" : "<VALUE|currencyWithSymbol:<DECIMALS>> (<VALUE_PERCENTAGE|percentage:<DECIMALS_PERCENTAGE>>)"},
+"LabelWithConcatenatedPercentage" : {"number" : "5", "shortValue" : "", "longValue" : "<LABEL> (<VALUE_PERCENTAGE|percentage:<DECIMALS_PERCENTAGE>>)"},
+"XAmount" : {"number" : "101", "shortValue" : "", "longValue" : "<VALUE>"},
+"XRate" : {"number" : "102", "shortValue" : "", "longValue" : "<VALUE>%"},
+"XAmountWithSymbol" : {"number" : "103", "shortValue" : "", "longValue" : "CHF&nbsp;<VALUE>"}
+},
+
+"resultSummaryBox" : {
+"FinanceCoach" : {"number" : "1", "shortValue" : "", "longValue" : "Ihr Finanzcoach"},
+"close" : {"number" : "2", "shortValue" : "", "longValue" : "Schliessen"},
+"hints" : {"number" : "3", "shortValue" : "", "longValue" : "Hinweise"},
+"noTipsAvailable" : {"number" : "4", "shortValue" : "", "longValue" : "Für diese Situation liegen keine Hinweise oder Tipps vor."}
+},
+
+"PrintService" : {
+"PrintStarted" : {"number" : "1", "shortValue" : "", "longValue" : "Der Ausdruck wurde gestartet..."},
+"PrintFailed" : {"number" : "2", "shortValue" : "", "longValue" : "Die Druckfunktion steht zur Zeit nicht zur Verfügung."},
+"PrintSucceeded" : {"number" : "3", "shortValue" : "", "longValue" : "Der Ausdruck war erfolgreich."},
+"OpenPrintedDocument" : {"number" : "4", "shortValue" : "", "longValue" : "Open"}
+},
+
+"MulticalcRisk" : {
+"TitleDisability" : {"number" : "1", "shortValue" : "", "longValue" : "Unfähigkeit, Schutz zu zahlen"},
+"SubtitleDisability" : {"number" : "2", "shortValue" : "", "longValue" : "Ich möchte mich finanziell schützen"},
+"TitleDeath" : {"number" : "3", "shortValue" : "", "longValue" : "Todesschutz"},
+"SubtitleDeath" : {"number" : "4", "shortValue" : "", "longValue" : "Ich möchte meine Familie finanziell schützen"},
+"ColumnToday" : {"number" : "5", "shortValue" : "", "longValue" : "Heute"},
+"ColumnDisability" : {"number" : "6", "shortValue" : "", "longValue" : "Invalidität"},
+"ColumnDeath" : {"number" : "7", "shortValue" : "", "longValue" : "Todesfall"},
+"NeedDisability" : {"number" : "8", "shortValue" : "", "longValue" : "Welches Einkommen brauche ich?"},
+"SecondPillarRent" : {"number" : "9", "shortValue" : "", "longValue" : "BVG-Rente (2. Säule)"},
+"FirstPillarRent" : {"number" : "10", "shortValue" : "", "longValue" : "AHV-Rente (1. Säule)"},
+"Gap" : {"number" : "11", "shortValue" : "", "longValue" : "Lücke"},
+"NeedDeath" : {"number" : "12", "shortValue" : "", "longValue" : "Welches Einkommen braucht meine Familie, wenn ich sterbe?"},
+"ResultAmountBody" : {"number" : "13", "shortValue" : "", "longValue" : "<AMOUNT>"},
+"Contact" : {"number" : "14", "shortValue" : "", "longValue" : "Ich möchte mehr wissen"},
+"IncomeDisability" : {"number" : "15", "shortValue" : "", "longValue" : "Vorteile im Falle der Unfähigkeit zu gewinnen"},
+"IncomeDeath" : {"number" : "16", "shortValue" : "", "longValue" : "Leistungen im Todesfall"},
+"GapTitle" : {"number" : "17", "shortValue" : "", "longValue" : "Einkommensunterschied im Vergleich"},
+"GapSubtitle" : {"number" : "18", "shortValue" : "", "longValue" : "zu meinem Bedarf"}
+},
+
+"Languages" : {
+"de" : {"number" : "1", "shortValue" : "", "longValue" : "Deutsch"},
+"fr" : {"number" : "2", "shortValue" : "", "longValue" : "Français"},
+"it" : {"number" : "3", "shortValue" : "", "longValue" : "Italiano"},
+"en" : {"number" : "4", "shortValue" : "", "longValue" : "English"}
+},
+
+"UserModulesServiceResultStatus" : {
+"Succeeded" : {"number" : "1", "shortValue" : "", "longValue" : "Succeeded"},
+"Failed" : {"number" : "2", "shortValue" : "", "longValue" : "Failed"}
+},
+
+"HouseInterestOptions" : {
+"Libor" : {"number" : "1", "shortValue" : "", "longValue" : "Liborhypothek"},
+"VariableMortgage" : {"number" : "2", "shortValue" : "", "longValue" : "Variable Hypothek"},
+"FixedRateMortgage" : {"number" : "3", "shortValue" : "", "longValue" : "Festhypothek 3 Jahre"},
+"DiscountRate" : {"number" : "4", "shortValue" : "", "longValue" : "Kalkulatorischer Zinssatz"}
+},
+
+"HouseInterestOptions2" : {
+"FestHypothek1Jahr" : {"number" : "1", "shortValue" : "", "longValue" : "Fest-Hypothek 1 Jahr"},
+"FestHypothek2Jahr" : {"number" : "2", "shortValue" : "", "longValue" : "Fest-Hypothek 2 Jahre"},
+"FestHypothek3Jahr" : {"number" : "3", "shortValue" : "", "longValue" : "Fest-Hypothek 3 Jahre"},
+"VariableHypothek" : {"number" : "4", "shortValue" : "", "longValue" : "Variable Hypothek"}
+},
+
+"Saving3aInvestmentOptions" : {
+"BankAccount3a" : {"number" : "1", "shortValue" : "", "longValue" : "3a Banksparkonto"},
+"OtherInvestment3a" : {"number" : "2", "shortValue" : "", "longValue" : "Andere 3a Anlage"}
+},
+
+"FinanceCoach" : {
+"HeaderPanelInfo" : {"number" : "1", "shortValue" : "", "longValue" : "Der Finanzcoach analysiert Ihre aktuellen Eingaben und gibt bei Bedarf Tipps zu Ihrer Situation. Wenn Sie Eingaben verändern, können weitere Hinweise angezeigt werden. Schauen Sie immer wieder mal auf Ihren Finanzcoach. <br><br><b>Der Finanzcoach ersetzt keine persönliche Beratung.<b>"},
+"HeaderPanelTitle" : {"number" : "2", "shortValue" : "", "longValue" : "Ihr Finanzcoach"}
+},
+
+"baseDataSummary" : {
+
+}
+
+}

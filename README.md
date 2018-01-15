@@ -172,6 +172,7 @@ We use the repository on staging to avoid creating NPM version everytime we depl
 When you deploy on the production environment, the styleguide used for deploy is the latest NPM version.
 
 ## 🔍 Solr (6.1.0+) search Engine & Tika (1.13+) Extractor
+
 We are using solr for search index.
 
 Solr need to be configured for drupal. Follow the INSTALL.txt found in the `search_api_solr` module.
@@ -181,10 +182,6 @@ As a pre-requisite for running your own Solr server, you'll need Java 6 or highe
 ### Installation
 
 Install all prerequisites and configuration from `web/modules/contrib/search_api_solr/INSTALL.txt` then
-
-### For windows
-
-### For Unix
 
 Start Solr with:
     $ bin/solr start
@@ -270,13 +267,100 @@ You should improved the natural search by editing the *synonyms.txt* file.
 
 ### Maintenance on production
 
-The Solr instance is located in `/data/solr/data/ca-website/`.
+The Solr instance is located in `/data/solr/data/retraitespopulaires-website/`.
 
 You can restart the server the following:
 
   ```bash
     $ service solr restart
   ```
+
+### Solr browser access
+
+Open a SSH Bridge with the following command, then browser with http://127.0.0.1:9983/solr/#/
+
+Production:
+
+  ```bash
+  $ ssh -L 9983:127.0.0.1:8983 dplweb@192.168.188.50
+  ```
+
+ETI/Staging:
+
+  ```bash
+  $ ssh -L 9983:127.0.0.1:8983 web_rp@192.168.188.51
+  ```
+
+## Modulo iframe
+The Modulo calculator is developed by Logismata and integrated as an iframe into the drupal.
+The frontend application is stored into `/web/rpopulaires`.
+
+The code to include on any Drupal page is:
+
+```
+<iframe height="1800px" id="calculationFrame" name="calculationFrame" scrolling="no" seamless="" src="/rpopulaires/app/index.html" style="overflow: hidden; border: none; padding: 0px; margin: 0px" width="100%"></iframe>
+<script src="/rpopulaires/src/iframe-communication.js"></script>
+```
+
+To make it work, I patched the v1.0.0:
+
+```diff
+diff --git a/web/rpopulaires/app/src/model/runtime-environment-application-parameters.js b/web/rpopulaires/app/src/model/runtime-environment-application-parameters.js
+index 15ae7d2..424aecb 100755
+--- a/web/rpopulaires/app/src/model/runtime-environment-application-parameters.js
++++ b/web/rpopulaires/app/src/model/runtime-environment-application-parameters.js
+@@ -13,8 +13,8 @@ define('runtime-environment-application-parameters', [], function() {
+     "contactCustomizationUrl": "",
+     "requirePaths": {},
+     "authorizedContainers": [
+-        "http://rp.dev",
+-        "http://www.retraitespopulaires.ch",
++        "http://rp.localhost",
++        "https://www.retraitespopulaires.ch",
+         "https://wwweti.retraitespopulaires.ch"
+     ]
+ };
+diff --git a/web/rpopulaires/index.html b/web/rpopulaires/index.html
+index e49ef41..689ea79 100755
+--- a/web/rpopulaires/index.html
++++ b/web/rpopulaires/index.html
+@@ -18,7 +18,7 @@
+            It is also important to set the width to 768px, so the correct bootstrap rules apply.
+       -->
+       <iframe id="calculationFrame" style="overflow: hidden; border: 1px dashed blue; padding: 0px; margin: 0px" width="100%" height="1800px" scrolling="no" seamless=""
+-name="calculationFrame" src="https://uat.logismata.ch/rpopulaires/app/"
++name="calculationFrame" src="/rpopulaires/app/index.html"
+       ></iframe>
+       <script src="/rpopulaires/src/iframe-communication.js"></script>
+    </div>
+diff --git a/web/rpopulaires/src/iframe-communication.js b/web/rpopulaires/src/iframe-communication.js
+index 867bbbd..db806f6 100755
+--- a/web/rpopulaires/src/iframe-communication.js
++++ b/web/rpopulaires/src/iframe-communication.js
+@@ -1,4 +1,4 @@
+-var authorizedOrigins = ["https://uat.logismata.ch"];
++var authorizedOrigins = ["https://wwweti.retraitespopulaires.ch", "https://www.retraitespopulaires.ch", "http://rp.localhost"];
+ var sendOnIFrameScrollMessage = true;
+
+ var iFrameMessageProcessor = {
+@@ -16,7 +16,7 @@ var iFrameMessageProcessor = {
+    },
+
+    onDocumentTitleChanged: function(parameters) {
+-      document.title = parameters;
++      // document.title = parameters;
+    },
+
+    onViewTitleChanged: function(parameters) {
+@@ -27,7 +27,7 @@ var iFrameMessageProcessor = {
+    },
+
+    openContactUrl: function(parameters) {
+-      console.log("received from openContactUrl %O", parameters);
++      window.location = '/contact/conseil-clients-prives';
+    }
+ };
+```
 
 ## 🏆 Tests
 

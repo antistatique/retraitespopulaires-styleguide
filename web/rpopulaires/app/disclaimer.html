@@ -1,0 +1,34 @@
+<div class="modal fade legal-notice-modal" id="disclaimer" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">X</span></button>
+        <h4 class="modal-title" id="legal-notice-company" ng-bind-html="'Disclaimer.Company' | i18n"></h4>
+        <h4 class="modal-title" id="legal-notice-label" ng-bind-html="'Disclaimer.Title' | i18n"></h4>
+      </div>
+      <div class="modal-body" ng-bind-html="'Disclaimer.Content' | i18n">
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+   function openDisclaimer() {
+      $('#disclaimer').on('show.bs.modal', function () {
+         // Workarround T2795: bcvs, inside iframe, mobile size: finanz coach modal dialog can appear in a non visible (scrolled up) area. 
+         if (window.matchMedia("only screen and (min-width: 516px)").matches) {
+            // Workarround T2863: iframe is re-positioned when opening finance-coach in IE and when before the users scrolled down
+            // IE Fix:  bootstrap does a focus, which screws up the iframe by scrolling the parent window
+            setTimeout(function() {
+               $('#disclaimer').find('.modal-dialog').off('bsTransitionEnd');
+            }, 350);
+         }
+      }).modal('show');
+      
+      $('#disclaimer').on('shown.bs.modal', function() {
+         $('body').addClass("no-scrolling");
+         $('body').injector().get('$rootScope').$emit('modalOpen');
+      }).on('hidden.bs.modal', function() {
+         $('body').removeClass("no-scrolling");
+      });
+   }
+</script>

@@ -1,0 +1,38 @@
+<section class="fancy-box panel panel-default">
+   <div class="panel-heading">
+      <h3 class="title-text" ng-class="{titleTextWithHelp:infoContent}" ng-bind-html="fancyboxTitle"></h3>
+      <div class="info-content" ng-show="infoContent">
+         <a class="accessibility-link" data-toggle="collapse" data-parent="#accordion" href="#{{ collapsePanelId }}">
+            <span ng-bind-html="'fancyBox.infoContentText'|i18n:{'TEXT':fancyboxTitle}"></span>
+            <div class="fancy-box-info {{ showInfoImageClass() }}"></div>
+            <span class="fancy-box-info {{ showInfoTextClass() }}" ng-bind-html="'fancyBox.infoIconAsText' | i18n"></span>
+         </a>
+      </div>
+   </div>
+
+   <div class="panel-body">
+      <div class="top-border"></div>
+      <div class="info-content-text panel-collapse collapse" id="{{ collapsePanelId }}">
+         <div>
+            <div ng-bind-html="infoContent">
+            </div>
+            <div class="close-help">
+               <a class="base-link" data-toggle="collapse" data-parent="#accordion" href="#{{ collapsePanelId }}">
+                   <span ng-bind-html="'fancyBox.close'|i18n"></span>
+                   <span class="close-link-arrow toggle-btn"></span>
+               </a>
+            </div>
+         </div>
+      </div>
+         <div class="transclude-panel-body" ng-transclude>
+            Content goes here
+         </div>
+      <div class="toggle-btn-container">
+          <a class="base-link" ng-if="hasToogleFn" href="" ng-click="toggleFn()">
+             <span class="" ng-if="toggleState" ng-bind-html="'fancyBox.close'|i18n"></span>
+             <span class="" ng-if="!toggleState" ng-bind-html="'fancyBox.edit'|i18n"></span>
+             <span class="toggle-btn {{toggleState ? 'close-link-arrow' : 'open-link-arrow'}}"></span>
+          </a>
+      </div>
+   </div>
+</section>
