@@ -4,10 +4,10 @@ define('runtime-environment-application-parameters', [], function() {
    parameters = {
     "toEmail": "",
     "printServiceURL": "",
-    "productListServiceURL": "https://uat.logismata.ch/puma/productList",
+    "productListServiceURL": "https://services.logismata.ch/puma/productList",
     "serverCalculation": true,
-    "authenticationServiceURL": "https://uat.logismata.ch/puma/authentication",
-    "calculatorServiceURL": "https://uat.logismata.ch/puma/calculator",
+    "authenticationServiceURL": "https://services.logismata.ch/puma/authentication",
+    "calculatorServiceURL": "https://services.logismata.ch/puma/calculator",
     "storageServiceURL": "",
     "contactServiceURL": "",
     "contactCustomizationUrl": "",
