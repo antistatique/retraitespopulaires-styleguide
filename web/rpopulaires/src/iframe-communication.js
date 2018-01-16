@@ -1,4 +1,4 @@
-var authorizedOrigins = ["https://wwweti.retraitespopulaires.ch", "https://www.retraitespopulaires.ch", "http://rp.localhost", "http://rp.test"];
+var authorizedOrigins = ["https://wwweti.retraitespopulaires.ch", "https://www.retraitespopulaires.ch", "http://rp.test", "http://rp.localhost"];
 var sendOnIFrameScrollMessage = true;
 
 var iFrameMessageProcessor = {
@@ -16,7 +16,7 @@ var iFrameMessageProcessor = {
    },
 
    onDocumentTitleChanged: function(parameters) {
-      // document.title = parameters;
+      //document.title = parameters;
    },
 
    onViewTitleChanged: function(parameters) {
@@ -52,7 +52,7 @@ function processMessage(message, parameters) {
    if (message === "onGetDataFromQuickWin") {
       iFrameMessageProcessor.onGetDataFromQuickWin(parameters);
    }
-   
+
    if (message === "openContactUrl") {
       iFrameMessageProcessor.openContactUrl(parameters);
    }
@@ -63,9 +63,9 @@ window.addEventListener("message", receiveMessage, false);
 
 function isAuthorized(origin) {
    var result = false;
-   
+
    var authorizedOriginsToRemove = [];
-   
+
    for (var index = 0; index < authorizedOrigins.length ; index++) {
       if (origin === authorizedOrigins[index] ||
           authorizedOrigins[index] === "*") {
@@ -75,11 +75,11 @@ function isAuthorized(origin) {
          authorizedOriginsToRemove.push(authorizedOrigins[index]);
       }
    }
-   
+
    for (var index = 0; index < authorizedOriginsToRemove.length ; index++) {
       authorizedOrigins.splice(authorizedOrigins.indexOf(authorizedOriginsToRemove[index]), 1);
    }
-   
+
    return result;
 }
 
