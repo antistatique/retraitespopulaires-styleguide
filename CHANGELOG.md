@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.3.4 (2018-01-16)
+ - MD-308 - fix form node_content_width broken which prevent user to submit forms.
+
 ## 2.3.3 (2018-01-15)
  - add ssh documentation to access Solr browser on eti & production env.
  - update Webform from beta-16 to rc-1
