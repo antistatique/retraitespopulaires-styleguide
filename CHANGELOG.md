@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - add #MD-176 - add & enable health check module
+
 ## 2.3.4 (2018-01-16)
  - MD-308 - fix form node_content_width broken which prevent user to submit forms.
 
