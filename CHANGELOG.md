@@ -3,6 +3,7 @@ CHANGELOG
 
 ## NEXT RELEASE
  - add #MD-176 - add & enable health check module
+ - add #MD-309 - add .ics as allowed file
 
 ## 2.3.4 (2018-01-16)
  - MD-308 - fix form node_content_width broken which prevent user to submit forms.
