@@ -14,7 +14,7 @@ notes: |
       <a href="#0">Titre du document qui correspond à la recherche</a>
     </h3>
     <p class="tooltip-container">
-      <button class="btn btn-circle btn-outline btn-xs tooltip-shift" data-toggle="popover" data-placement="bottom" data-content="Accueil › Catégorie ou autre › Dossier ou taxonomie">
+      <button class="btn btn-circle btn-primary btn-outline btn-xs tooltip-shift" data-toggle="popover" data-placement="bottom" data-content="Accueil › Catégorie ou autre › Dossier ou taxonomie">
         <span class="retraitespopulaires-icon retraitespopulaires-icon-angle retraitespopulaires-icon-flip-vertical" aria-hidden="true"></span>
       </button>
       <span class="text-muted" title="accueil › catégorie ou autre › dossier ou taxonomie › nom_du_fichier_telechargeable.pdf"><span class="sr-only">Chemin du fichier: accueil, catégorie ou autre, dossier ou taxonomie, </span>nom_du_fichier_telechargeable.pdf</span>

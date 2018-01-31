@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+## 3.2.2 (2018-01-31)
+ - remove light page
+ - update documentation header/footer/menu
+ - remove unecessary 'theme' option(s)
+ - update the footer component markup
+ - improve cta-card container responsivness
+ - fix card-results files variant
+
 ## 3.2.1 (2017-12-15)
  - fix large screen logo-offset
  - improve mobile menu item button alignments with hamburger menu

@@ -58,31 +58,12 @@ layout: page.html.swig
     </div>
     <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-6">
       <div class="spacer spacer-xl visible-xs visible-sm"></div>
-      {% include '../molecules/secondary-nav.html.swig' with {'secondary_nav_theme': 'assurance'} %}
+      {% include '../molecules/secondary-nav.html.swig' %}
     </div>
   </div>
 </div>
 
 <div class="spacer spacer-lg"></div>
-{#{% include '../organisms/attachments-contact.html.swig' with {'attachments_contact_theme': 'assurance'} %}#}
-
-<div class="attachements-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        {#{% include '../molecules/card-attachement.html.swig' with {'card_attachement_theme': 'assurance', 'card_attachement_type': 'faq', 'card_attachement_title':'Questions fréquentes', 'card_attachement_links': ['Qu’est-ce qu’un 3e pilier A ou prévoyance liée?', 'Comment maintenir son niveau de vie à la retraite?', 'Qu’en est-il du 3e pilier en cas de divorce?'], 'card_attachement_more': 'Accéder à toutes les questions sur l’assurance vie'} %}#}
-      </div>
-      <div class="col-xs-12 col-md-6">
-        {#{% include '../molecules/card-attachement.html.swig' with {'card_attachement_theme': 'assurance', 'card_attachement_type': 'document', 'card_attachement_title':'Documents utiles', 'card_attachement_links': [
-        'Brochure Conseil global',
-        'Procuration',
-        'Modification des primes et prestations'],
-        'card_attachement_more': 'Tous les documents d’assurance vie'} %}#}
-      </div>
-    </div>
-  </div>
-  {% include '../atoms/organic-lines.html.swig' with {'organic_lines_theme': 'assurance'} %}
-</div>
 
 <div class="spacer"></div>
 {% include '../organisms/footer.html.swig' %}

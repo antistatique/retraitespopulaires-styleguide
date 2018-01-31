@@ -18,51 +18,32 @@ notes: |
 <div class="mobile-menu" id="mobile-menu">
   <div class="container-collapser-menu">
     <div class="collapser-menu">
-      {% include '../atoms/organic-lines.html.swig' with {'organic_lines_theme': 'assurance'} %}
 
+      <!-- Search -->
       <div class="container">
-        <div class="col-xs-12">
-          <ul class="list-no-style list-no-padding" role="navigation" id="main-navigation">
-            <li>
-              <div class="collapser-menu-item">
-                <span>
-                  <a href="/assurance-vie" class="pretty-link">Assurance vie</a>
-                </span>
-                <button class="btn btn-circle btn-outline btn-primary collapsed" title="Ouvrir le sous-menu Assurance vie" type="button" data-toggle="collapse" data-target="#submenu1" aria-expanded="false">
-                  <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
-                </button>
-              </div>
-              <div class="collapse" id="submenu1">
-                <ul>
-                  <li>
-                    <div class="collapser-menu-item">
-                      <span>
-                        <a href="/assurance-vie/produits" class="pretty-link">Produits</a>
-                      </span>
-                      <button class="btn btn-circle btn-outline btn-primary collapsed" title="Ouvrir le sous-menu Produits" type="button" data-toggle="collapse" data-target="#submenu2" aria-expanded="false">
-                        <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
-                      </button>
-                    </div>
-                    <div class="collapse" id="submenu2">
-                      <ul>
-                        <li class=" menu-link-content5da93b14-48bd-4034-b465-4dec22b2981f">
-                          <div class="collapser-menu-item">
-                            <span>
-                              <a href="/assurance-vie/produits/rente-immediate" class="pretty-link">RP Rente immédiate</a>
-                            </span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <div class="spacer spacer-md"></div>
+        <form class="rp-site-search-form" action="/recherche" method="GET" id="rp-site-search-form" accept-charset="UTF-8">
+          <div class="input-group full-width">
+            <div class="form-group form-no-label">
+              <input class="full-width form-text required form-control" type="text" name="q" value="" size="60" maxlength="128" placeholder="Chercher un produit, un document, un contact, ..." required="required" aria-required="true">
+            </div>
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-primary" icon="retraitespopulaires-icon retraitespopulaires-icon-search" type="submit">
+                <i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
       </div>
-      <div class="spacer"></div>
-    </div>
 
+      <!-- Mobile Nav -->
+      <div class="container">
+        {% include '../molecules/collapser-menu.html.swig' %}
+      </div>
+
+    </div>
+    <div class="spacer spacer-md"></div>
+
+    {% include '../molecules/menu-secondary-nav.html.swig' %}
   </div>
 </div>

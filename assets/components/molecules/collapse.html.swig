@@ -3,13 +3,12 @@ title: Collapse
 name: collapse
 collection: molecules
 notes: |
-  ##### Usage : `collapse`
-  - **collapse_theme** - <i>String</i> - <b>['primary'|'profelia'|'cpev'|'cip']</b>
+  Can be wrapped in `.theme-[theme]` to change look.
 ---
 <div class="collapse-wrapper">
   <div class="collapse-title">
     <h5 class="inline-block">
-      <a class="text-{{ collapse_theme|default('primary') }}" href="#">Assurance vie</a>
+      <a class="text-primary" href="#">Assurance vie</a>
     </h5>
     <a class="inline-block pull-right collapse-button" role="button" data-toggle="collapse" href="#assurance-vie" aria-expanded="true" aria-controls="assurance-vie" aria-label="Cliquez pour dérouler le contenu de la section assurance-vie.">
       <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
