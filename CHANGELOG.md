@@ -3,6 +3,7 @@ CHANGELOG
 
 ## NEXT RELEASE
  - improve popin contact with validations - MD-304
+ - add new module 'rp_modulo' to provide custom code of Logistima Iframe
 
 ## 2.3.5 (2018-01-31)
  - add #MD-176 - add & enable health check module
