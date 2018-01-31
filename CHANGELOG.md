@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## 2.3.6 (2018-01-31)
  - MD-311 - fix vimeo player when used on Safari
 
 ## 2.3.5 (2018-01-31)
