@@ -1,0 +1,15 @@
+<?php
+
+/**
+* Theme hook
+*/
+function rp_modulo_theme($existing, $type, $theme, $path) {
+  return [
+    // Blocks themes
+    // ---------------------------------------------------------------------.
+    'rp_modulo_logistima_iframe_block' => [
+      'variables' => ['variables' => []],
+      'template'  => 'rp--modulo--logistima-iframe',
+    ],
+  ];
+}
