@@ -1,6 +1,11 @@
 CHANGELOG
 ---------
 
+## 2.3.5 (2018-01-31)
+ - add #MD-176 - add & enable health check module
+ - add #MD-309 - add .ics as allowed file
+ - update to styleguide 3.2.2
+
 ## 2.3.4 (2018-01-16)
  - MD-308 - fix form node_content_width broken which prevent user to submit forms.
 
