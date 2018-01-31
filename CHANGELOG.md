@@ -2,7 +2,6 @@ CHANGELOG
 ---------
 
 ## NEXT RELEASE
- - improve popin contact with validations - MD-304
  - MD-311 - fix vimeo player when used on Safari
 
 ## 2.3.5 (2018-01-31)
