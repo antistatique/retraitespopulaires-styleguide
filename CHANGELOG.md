@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## NEXT RELEASE
+## 3.2.2 (2018-01-31)
  - remove light page
  - update documentation header/footer/menu
  - remove unecessary 'theme' option(s)
