@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.3.6 (2018-01-31)
+ - MD-311 - fix vimeo player when used on Safari
+
 ## 2.3.5 (2018-01-31)
  - add #MD-176 - add & enable health check module
  - add #MD-309 - add .ics as allowed file
