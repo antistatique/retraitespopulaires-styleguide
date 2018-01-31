@@ -15,9 +15,10 @@
         width: $('.vimeo-player').width(),
         byline: false,
         title: false,
-        autoplay: true,
+        autoplay: false,
         color: "008e4f",
       };
+
 
       const initPlayer = function() {
         vimeoPlayer = new Vimeo.Player('vimeo-player', options);
@@ -31,7 +32,6 @@
 
         vimeoPlayer.on('loaded', function() {
           $video = $(vimeoPlayer.element);
-          console.log(ratio);
         });
       };
 
@@ -41,11 +41,14 @@
         // Update the options, the window size may have changed.
         options.width = $('.vimeo-player').width();
 
-        initPlayer();
+        if (vimeoPlayer) {
+          vimeoPlayer.play();
+        }
       });
 
-      // Make the iframe responsive on resize
+      initPlayer();
 
+      // Make the iframe responsive on resize
       $(window).on('resize', function(e) {
         if ($video) {
           const newWidth = $('.vimeo-player').width();

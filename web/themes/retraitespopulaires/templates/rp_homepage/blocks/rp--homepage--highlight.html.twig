@@ -15,11 +15,11 @@
         {% if variables.vimeo_oembed %}
           <div class="col-xs-12 col-md-6 col-lg-8 d-flex p-0">
             {# Magnificent responsive video with padding hack #}
-            <div class="vimeo-player" style="background-image: url('{{ variables.vimeo_oembed.thumbnail_url }}');">
+            <div class="vimeo-player">
               <div class="vimeo-player-container">
                 <div id="vimeo-player" data-vimeo-id="{{ variables.vimeo_oembed.video_id }}" data-ratio="{{ variables.vimeo_oembed.height / variables.vimeo_oembed.width }}" data-vimeo-defer style="padding-bottom: {{ variables.vimeo_oembed.height / variables.vimeo_oembed.width * 100 }}%"></div>
               </div>
-              <div class="vimeo-player-play">
+              <div class="vimeo-player-play" style="background-image: url('{{ variables.vimeo_oembed.thumbnail_url }}');">
                 <a title="{{ 'Jouer la vidéo'|t }}" href="#">
                   Play
                 </a>
