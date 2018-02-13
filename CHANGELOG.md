@@ -2,7 +2,8 @@ CHANGELOG
 ---------
 
 ## NEXT RELEASE
-  - improve popin contact with validations - MD-304
+ - add new module 'rp_modulo' to provide custom code of Logistima Iframe
+ - improve popin contact with validations - MD-304
 
 ## 2.3.6 (2018-01-31)
  - MD-311 - fix vimeo player when used on Safari
