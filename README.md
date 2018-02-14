@@ -70,6 +70,14 @@ $ npm install
 $ gulp
 ````
 
+You will need some global dependencies such as:
+
+- metalsmith
+
+````shell
+$ npm install -g metalsmith
+````
+
 ## Development
 
 First you have to launch Gulp to watch your files
