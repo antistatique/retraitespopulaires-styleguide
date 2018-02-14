@@ -1,11 +1,80 @@
 CHANGELOG
 ---------
 
+## 2.3.7 (2018-02-14)
+ - add new module 'rp_modulo' to provide custom code of Logistima Iframe
+ - improve popin contact with validations - MD-304
+
+## 2.3.6 (2018-01-31)
+ - MD-311 - fix vimeo player when used on Safari
+
+## 2.3.5 (2018-01-31)
+ - add #MD-176 - add & enable health check module
+ - add #MD-309 - add .ics as allowed file
+ - update to styleguide 3.2.2
+
+## 2.3.4 (2018-01-16)
+ - MD-308 - fix form node_content_width broken which prevent user to submit forms.
+
+## 2.3.3 (2018-01-15)
+ - add ssh documentation to access Solr browser on eti & production env.
+ - update Webform from beta-16 to rc-1
+ - update to latest dev version of Template Whisperer
+ - install modulo iframe into `/web/rpopulaires` (v11.01.2018)
+
+## 2.3.2 (2017-12-15)
+ - add ckeditor link as btn
+ - add ckeditor title colors
+ - improve breadcrumb fontsize
+ - improve breadcrum spacing
+ - add option to enable/disable contact CTA
+ - add option to enable/disable contact popin
+ - add new popine in every page which enable it
+ - refactorint the whole navigation
+ - remove the profils
+ - update to styleguide 3.2.1
+ - fix secondary-side navigation title margin-bottom
+ - add vimeo support of highlighted card homepage
+ - add new maintenance page
+
+## 2.3.1 (2017-11-29)
+ - Duplicate Webforms to add conversion tracking
+
+## 2.3.0 (2017-11-13)
+ - move product into is own module
+ - remove unused 'related products'
+ - add new module entity_clone
+ - add new module ddanother
+ - improve admin UX when creating new documents. Redirect him on the Admin Content page instead of the newly document.
+ - fix node & npm engine restriction
+ - update to drupal 8.3.7
+ - remove updates notifications
+ - update to styleguide ^3.1.9
+ - add entity-updates on deploy
+
+## 2.2.7 (2017-08-15)
+ - remove survey ad snippet
+
+## 2.2.6 (2017-08-08)
+ - fix JCMS redirections on .htaccess
+
+## 2.2.5 (2017-07-28)
+ - update survey ad snippet to another survey
+
+## 2.2.4 (2017-07-24)
+ - update survey ad snippet to be less intrusive (especially on mobile)
+
+## 2.2.3 (2017-07-20)
+ - update survey ad snippet to be more visible
+
+## 2.2.2 (2017-07-17)
+ - Add survey ad snippet
+
 ## 2.2.1 (2017-06-23)
  - Update to Drupal 8.3.4
 
 ## 2.2.0 (2017-06-20)
- - Improved search page with facets 
+ - Improved search page with facets
  - Improved search page empty state
  - Fixed favicons on MSIE
 
@@ -109,7 +178,7 @@ CHANGELOG
  - Solr integration
  - Attachments for every Content Types & Checkbox for random
  - Improvment  Mortgage tables
- - Open Graph 
+ - Open Graph
  - Fix breadcrumb color on Building
  - FAQ & Documents collection use color of selected filter profession
  - Fix filter products

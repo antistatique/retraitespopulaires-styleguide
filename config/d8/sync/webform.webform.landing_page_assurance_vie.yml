@@ -14,14 +14,11 @@ elements: "titre_du_form:\n  '#type': webform_markup\n  '#markup': '<h3 class=\"
 css: ''
 javascript: ''
 settings:
+  ajax: false
   page: true
   page_submit_path: ''
   page_confirm_path: ''
-  form_submit_label: Envoyer
   form_submit_once: false
-  form_submit_attributes:
-    class:
-      - pull-right
   form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
@@ -31,38 +28,39 @@ settings:
   form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
   form_disable_autocomplete: false
   form_novalidate: false
   form_unsaved: false
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: false
+  submission_label: ''
   submission_log: false
+  submission_user_columns: {  }
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
-  wizard_next_button_label: ''
-  wizard_next_button_attributes: {  }
-  wizard_prev_button_label: ''
-  wizard_prev_button_attributes: {  }
   wizard_start_label: ''
   wizard_complete: true
   wizard_complete_label: ''
   preview: 0
-  preview_next_button_label: ''
-  preview_next_button_attributes: {  }
-  preview_prev_button_label: ''
-  preview_prev_button_attributes: {  }
+  preview_label: ''
+  preview_title: ''
   preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
   draft: none
+  draft_multiple: false
   draft_auto_save: false
-  draft_button_label: ''
-  draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
   confirmation_type: url_message
   confirmation_title: ''
-  confirmation_message: 'Merci [webform_submission:values:prenom] [webform_submission:values:nom_de_famille] pour votre demande. Nous allons rapidement traiter votre demande et vous recontacter à l''adresse [webform_submission:values: votre_e_mail].'
+  confirmation_message: 'Merci [webform_submission:values:prenom] [webform_submission:values:nom_de_famille] pour votre demande. Nous allons la traiter rapidement et vous recontacter à l''adresse [webform_submission:values: votre_e_mail].'
   confirmation_url: 'https://www.retraitespopulaires.ch/solutions/assurance-vie-remerciement'
   confirmation_attributes: {  }
   confirmation_back: true
@@ -133,6 +131,8 @@ handlers:
       debug: false
       reply_to: ''
       return_path: ''
+      ignore_access: false
+      exclude_empty: true
   courriel_feedback:
     id: email
     label: 'Courriel - Feedback'
@@ -159,3 +159,5 @@ handlers:
       debug: false
       reply_to: info@retraitespopulaires.ch
       return_path: ''
+      ignore_access: false
+      exclude_empty: true

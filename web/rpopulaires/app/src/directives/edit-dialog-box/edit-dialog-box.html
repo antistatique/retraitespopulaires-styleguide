@@ -1,0 +1,29 @@
+<div class="modal fade edit-dialog-box" id="editDialogBox{{ getDialogName() }}" 
+     tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" 
+     aria-hidden="true" data-backdrop="static" ng-class="{active: parent.dialogWindowOpen}">
+  <div class="modal-dialog">
+      <div class="modal-content" ng-if="parent.dialogName === dialogName">
+         <div class="modal-header dialog-title">
+           <button type="button" class="close dialog-cancel-button" ng-click="cancelDialog()"><span aria-hidden="true">&times;</span><span class="sr-only">X</span></button>
+           <h4 class="modal-title" id="editDialogTitle" ng-bind-html="getTitle()"></h4>
+         </div>
+         <div class="modal-body" ng-if="parent.dialogName">
+            <div ng-include="parent.template" ng-cloak class="ng-cloak"></div>
+         </div>
+         <div class="modal-footer">
+            <a href="" class="right-arrow dialog-button dialog-button-left dialog-manual-button" 
+                  id="editDialogManualButton"
+                  ng-show="hasManualButton()" 
+                  ng-click="manualSet()">
+               <span ng-bind-html="getCancelButtonLabel()"></span>                   
+            </a>
+            <a href="" class="right-arrow dialog-button dialog-accept-button"  
+                  id="editDialogAcceptButton"
+                  ng-show="hasAcceptButton()" 
+                  ng-click="acceptDialog()" 
+                  ng-bind-html="getAcceptButtonLabel()"> 
+            </a>
+         </div>
+      </div>
+  </div>
+</div>

@@ -45,7 +45,10 @@
         "drupal/redirect": "~1.0",
         "drupal/backerymails": "~1.0",
         "drupal/webform": "^5.0@beta",
-        "drupal/template_whisperer": "2.x-dev"
+        "drupal/template_whisperer": "2.x-dev",
+        "drupal/addanother": "^1.0@RC",
+        "drupal/entity_clone": "^1.0@alpha",
+        "drupal/health_check": "^1.0"
       },
     "require-dev": {
       "behat/mink": "~1.7",
@@ -56,7 +59,11 @@
       "symfony/css-selector": "~2.8",
       "drupal/devel": "~1.0",
       "phpunit/phpunit": "5.4.6",
-      "phpunit/phpunit-mock-objects": "^3.2"
+      "phpunit/phpunit-mock-objects": "^3.2",
+      "drupal/coder": "^8.2",
+      "squizlabs/php_codesniffer": "^2.8",
+      "phpmd/phpmd": "^2.6",
+      "sebastian/phpcpd": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"

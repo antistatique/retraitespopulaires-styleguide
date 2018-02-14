@@ -1,0 +1,7 @@
+<div class="list-selection-field">
+   <div class="form-group">
+      <label for="{{ fieldId }}" class="custom-field-label" ng-bind-html="label"></label>      
+      <select ng-disabled="disabled" id="{{ fieldId }}" class="form-control select__element required" ng-model="ngModel"
+              ng-options="getOptionKey(option) as getDescription(option) for option in options"></select>
+   </div>
+</div>

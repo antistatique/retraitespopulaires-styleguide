@@ -6,20 +6,23 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_advisor
     - field.field.node.page.field_contact
+    - field.field.node.page.field_contact_cta
     - field.field.node.page.field_cover
     - field.field.node.page.field_document
     - field.field.node.page.field_document_page
     - field.field.node.page.field_document_random
+    - field.field.node.page.field_email_popin
     - field.field.node.page.field_faq
     - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
     - field.field.node.page.field_form
     - field.field.node.page.field_full_screen_content
     - field.field.node.page.field_metatags
+    - field.field.node.page.field_popin
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
-    - field.field.node.page.field_profil
     - field.field.node.page.field_search_npa
+    - field.field.node.page.field_template_whisperer
     - image.style.thumbnail
     - node.type.page
   module:
@@ -28,6 +31,7 @@ dependencies:
     - image
     - metatag
     - path
+    - template_whisperer
     - text
     - webform
 third_party_settings:
@@ -66,7 +70,6 @@ third_party_settings:
         - field_cover
         - body
         - field_full_screen_content
-        - field_profil
         - field_profession
       parent_name: group_attachments
       weight: 13
@@ -80,6 +83,9 @@ third_party_settings:
         required_fields: true
     group_contacts:
       children:
+        - field_contact_cta
+        - field_popin
+        - field_email_popin
         - field_search_npa
         - field_advisor
         - field_contact
@@ -153,7 +159,7 @@ content:
     third_party_settings: {  }
     region: content
   field_advisor:
-    weight: 27
+    weight: 34
     settings:
       match_operator: CONTAINS
       size: 60
@@ -162,13 +168,20 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_contact:
-    weight: 28
+    weight: 35
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_contact_cta:
+    weight: 30
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_cover:
     weight: 1
@@ -202,6 +215,14 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_email_popin:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
     region: content
   field_faq:
     weight: 18
@@ -245,6 +266,13 @@ content:
     third_party_settings: {  }
     type: metatag_firehose
     region: content
+  field_popin:
+    weight: 31
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_products:
     weight: 17
     settings:
@@ -260,18 +288,18 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
-  field_profil:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_search_npa:
-    weight: 26
+    weight: 33
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_template_whisperer:
+    weight: 36
+    settings: {  }
+    third_party_settings: {  }
+    type: template_whisperer
     region: content
   path:
     type: path

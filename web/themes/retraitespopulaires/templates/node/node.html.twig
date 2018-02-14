@@ -84,23 +84,19 @@
   'clearfix',
 ] %}
 
-{% set node_content_width = [
-    'col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2',
-] %}
-
 <article{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('content') }}>
 
     {% block node_top_outer %}{% endblock %}
 
     <div class="row">
-      <div class="{{ node_content_width|join(' ') }}">
+      <div class="{{ node_content_width|join(' ')|default('col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2') }}">
         {% block node_top %}
           {{ load_block('rp_contact_contact_cta_block') }}
         {% endblock %}
 
         {% block node_summary %}
-            {% if node.body.summary %}
+          {% if node.body.summary %}
             <p class="lead text-secondary">{{ node.body.summary|nl2br }}</p>
           {% endif %}
         {% endblock %}

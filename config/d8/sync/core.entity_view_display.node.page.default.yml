@@ -6,20 +6,23 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_advisor
     - field.field.node.page.field_contact
+    - field.field.node.page.field_contact_cta
     - field.field.node.page.field_cover
     - field.field.node.page.field_document
     - field.field.node.page.field_document_page
     - field.field.node.page.field_document_random
+    - field.field.node.page.field_email_popin
     - field.field.node.page.field_faq
     - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
     - field.field.node.page.field_form
     - field.field.node.page.field_full_screen_content
     - field.field.node.page.field_metatags
+    - field.field.node.page.field_popin
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
-    - field.field.node.page.field_profil
     - field.field.node.page.field_search_npa
+    - field.field.node.page.field_template_whisperer
     - node.type.page
   module:
     - file
@@ -58,6 +61,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_contact_cta:
+    weight: 16
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_cover:
     weight: 1
     label: hidden
@@ -68,7 +81,7 @@ content:
     type: image
     region: content
   field_document_page:
-    weight: 10
+    weight: 9
     label: above
     settings:
       link: true
@@ -76,7 +89,7 @@ content:
     type: entity_reference_label
     region: content
   field_document_random:
-    weight: 12
+    weight: 11
     label: above
     settings:
       format: default
@@ -84,6 +97,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_email_popin:
+    weight: 18
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_faq:
     weight: 5
@@ -114,7 +134,7 @@ content:
     weight: 14
     label: hidden
     settings:
-      source_entity: '1'
+      source_entity: true
     third_party_settings: {  }
     type: webform_entity_reference_entity_view
     region: content
@@ -135,6 +155,16 @@ content:
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
+  field_popin:
+    weight: 17
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_products:
     weight: 7
     label: above
@@ -152,7 +182,7 @@ content:
     type: entity_reference_label
     region: content
   field_search_npa:
-    weight: 11
+    weight: 10
     label: above
     settings:
       format: default
@@ -162,11 +192,11 @@ content:
     type: boolean
     region: content
   links:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_document: true
-  field_profil: true
+  field_template_whisperer: true
   langcode: true

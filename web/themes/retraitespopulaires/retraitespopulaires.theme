@@ -6,16 +6,6 @@ function retraitespopulaires_theme_suggestions_page_alter(array &$suggestions, a
     $route_match = \Drupal::routeMatch();
     $node = $route_match->getParameter('node');
 
-    if (isset($node->nid->value)
-        && (
-            $node->nid->value == $state->get('rp_site.settings.profils.individual')['nid']
-            || $node->nid->value == $state->get('rp_site.settings.profils.company')['nid']
-            || $node->nid->value == $state->get('rp_site.settings.profils.public')['nid']
-        )
-    ) {
-        $suggestions[] = 'page__node__profils';
-    }
-
     if (isset($node->nid->value) && $node->getType() == 'news') {
         $suggestions[] = 'page__node__news';
     }
@@ -81,16 +71,6 @@ function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, a
     if (isset($variables['elements']['#node']->nid->value) &&
         $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.collection.news')['nid']) {
         $suggestions[] = 'node__' . $state->get('rp_site.settings.collection.news')['theme'];
-    }
-
-    if (isset($variables['elements']['#node']->nid->value)
-        && (
-            $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.profils.individual')['nid']
-            || $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.profils.company')['nid']
-            || $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.profils.public')['nid']
-        )
-    ) {
-        $suggestions[] = 'node__profil';
     }
 
     if (isset($variables['elements']['#node']->nid->value) && $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.single.contact')['nid']) {

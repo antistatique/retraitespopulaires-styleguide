@@ -1,0 +1,6 @@
+name: Produits
+description: 'Provide contextual blocks such Related products, Filter, Product Teaser, ...'
+package: Retraites Populaires
+type: module
+version: 1.0
+core: 8.x

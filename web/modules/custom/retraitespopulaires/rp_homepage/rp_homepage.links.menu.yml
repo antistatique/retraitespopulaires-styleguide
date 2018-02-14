@@ -1,0 +1,10 @@
+rp_homepage.admin:
+    title: Homepage
+    parent: rp_toolbar.admin
+    route_name: rp_homepage.admin.settings
+    weight: 10
+
+rp_homepage.admin.settings:
+    title: Settings
+    parent: rp_homepage.admin
+    route_name: rp_homepage.admin.settings

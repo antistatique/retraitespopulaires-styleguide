@@ -20,12 +20,14 @@ module:
   dynamic_page_cache: 0
   editor: 0
   editor_advanced_link: 0
+  entity_clone: 0
   field: 0
   field_group: 0
   field_ui: 0
   file: 0
   filter: 0
   focal_point: 0
+  health_check: 0
   help: 0
   history: 0
   image: 0
@@ -40,7 +42,6 @@ module:
   metatag_twitter_cards: 0
   node: 0
   options: 0
-  page_cache: 0
   path: 0
   rdf: 0
   redirect: 0
@@ -50,9 +51,11 @@ module:
   rp_homepage: 0
   rp_layout: 0
   rp_libre_passage: 0
+  rp_modulo: 0
   rp_mortgage: 0
   rp_newsletter: 0
   rp_offers: 0
+  rp_product: 0
   rp_site: 0
   rp_toolbar: 0
   search_api: 0
@@ -64,6 +67,7 @@ module:
   system: 0
   taxonomy: 0
   telephone: 0
+  template_whisperer: 0
   text: 0
   token: 0
   toolbar: 0

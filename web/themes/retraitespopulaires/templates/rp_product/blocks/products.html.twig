@@ -1,0 +1,31 @@
+
+{% if variables.products is not empty %}
+  <div class="spacer"></div>
+    {% if variables.products %}
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="h1 text-center">
+        {% trans %}
+            Notre solution
+        {% plural variables.products|length %}
+            Nos solutions
+        {% endtrans %}
+        </h2>
+      </div>
+    </div>
+    {% endif %}
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
+      <div class="row flex-row">
+        {% if variables.products %}
+          {% for product in variables.products %}
+            <div class="col-xs-12 theme-primary">
+              {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

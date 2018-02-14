@@ -133,27 +133,6 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
             $variables['collection'] = array(
                 'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid']])
             );
-        } else if (isset($node->field_profil->target_id)) {
-            $alias = $this->alias_manager->getAliasByPath('/taxonomy/term/'.$node->field_profil->target_id);
-            if( !empty($alias) ){
-                $alias = str_replace('/', '', $alias);
-            }
-
-            $now = new \DateTime();
-            $query = $this->entity_query->get('node')
-                ->condition('type', 'news')
-                ->condition('status', 1)
-                ->condition('field_profil', $node->field_profil->target_id)
-                ->condition('field_date', $now->format('c'), '<=')
-                ->sort('field_date', 'DESC')
-                ->range(0, 2);
-
-            $nids = $query->execute();
-            $variables['news'] = $this->entity_node->loadMultiple($nids);
-
-            $variables['collection'] = array(
-                'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid']])
-            );
         }
 
         // Fallback to retrieve news

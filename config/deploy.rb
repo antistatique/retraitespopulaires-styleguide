@@ -60,7 +60,10 @@ namespace :deploy do
   # Remove the cache after the database update
   after :updated, "drupal:cache:clear"
   after :updated, "drupal:config:import"
+  # Sometimes (due to Webform) we have to run the drush cim twice.
+  after :updated, "drupal:config:import"
   after :updated, "drupal:updatedb"
+  after :updated, "drupal:entup"
   after :updated, "drupal:cache:clear"
   after :updated, "drupal:set_permissions"
 

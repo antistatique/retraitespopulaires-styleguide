@@ -1,0 +1,61 @@
+@charset 'UTF-8';
+
+.vimeo-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.vimeo-player-container {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.vimeo-player-thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.vimeo-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.vimeo-player-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #000;
+}
+
+.vimeo-player-play a {
+  padding: 2em 1em;
+  background: #008e4f;
+  border: 1px solid #008e4f;
+  border-radius: 4em;
+  line-height: 0;
+  cursor: pointer;
+  color: white;
+  transition:
+    background .25s ease,
+    color .25s ease,
+    border-color .25s ease;
+}
+.vimeo-player-play a:hover,
+.vimeo-player-play a:active {
+  background: #005b33;
+  border-color: #005b33;
+  color: white;
+  text-decoration: none;
+}
