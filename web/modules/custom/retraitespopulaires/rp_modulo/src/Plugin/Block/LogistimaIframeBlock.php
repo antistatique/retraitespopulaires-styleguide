@@ -51,7 +51,7 @@ class LogistimaIframeBlock extends BlockBase implements ContainerFactoryPluginIn
   public function build($params = array()) {
     $variables['calculatorservicetoken'] = NULL;
 
-    // Retrieive oembed from Vimeo API.
+    // Retrieive Token from Logistama.
     $embed = NULL;
     try {
       $response = $this->httpClient->get('https://services.logismata.ch/puma/authentication/rpopulaires/createToken');
