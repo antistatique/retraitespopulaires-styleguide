@@ -14,9 +14,7 @@ use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\CssCommand;
-use Drupal\Core\Ajax\PrependCommand;
-use Drupal\Core\Ajax\ReplaceCommand;
-use Drupal\Core\Ajax\DataCommand;
+use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\InvokeCommand;
 
 class PopinForm extends FormBase {
@@ -161,18 +159,20 @@ class PopinForm extends FormBase {
   public function respondToAjax(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
 
+    // Avoid submit on error & show them.
+    if ($form_state->hasAnyErrors()) {
+      $form_state->setRebuild();
+      $this->setAjaxMessages($response);
+      $this->scrollToMessages($response);
+      return $response;
+    }
+
     // Update the popin loader.
     $response->addCommand(new InvokeCommand('#block-popinformblock .popin', 'loading'));
 
     $this->submitForm($form, $form_state);
 
-    // Create the bag message render array.
-    $status_messages = ['#type' => 'status_messages'];
-    $messages = $this->renderer->renderRoot($status_messages);
-    if (!empty($messages)) {
-      // Append the bag message(s).
-      $response->addCommand(new PrependCommand('#rp-status-messages', $messages));
-    }
+    $this->setAjaxMessages($response);
 
     // Update the popin title & close the popin.
     // TODO handle success and errors
@@ -188,7 +188,12 @@ class PopinForm extends FormBase {
   /**
   * {@inheritdoc}
   */
-  public function validateForm(array &$form, FormStateInterface $form_state) { }
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    // Assert the contact field is not empty.
+    if (!$form_state->getValue('contact') || empty($form_state->getValue('contact'))) {
+      $form_state->setErrorByName('contact', $this->t('Veuillez indiquer votre e-mail ou votre numéro de téléphone,'));
+    }
+  }
 
   /**
   * {@inheritdoc}
@@ -207,5 +212,31 @@ class PopinForm extends FormBase {
     $this->mail->mail('rp_contact', 'contact_popin', $to, 'fr', $data);
 
     drupal_set_message(t('Merci de votre demande. Nous allons la traiter rapidement et vous recontacter.'));
+  }
+
+  /**
+   * Set & render flash messages.
+   *
+   * @param AjaxResponse $response
+   *   The ajax response.
+   */
+  public function setAjaxMessages(AjaxResponse &$response) {
+    // Create the bag message render array.
+    $status_messages = ['#type' => 'status_messages'];
+    $messages = $this->renderer->renderRoot($status_messages);
+    if (!empty($messages)) {
+      // Append the bag message(s).
+      $response->addCommand(new HtmlCommand('#rp-status-messages', $messages));
+    }
+  }
+
+  /**
+   * Scroll to the flash message container.
+   *
+   * @param AjaxResponse $response
+   *   The ajax response.
+   */
+  public function scrollToMessages(AjaxResponse &$response){
+    $response->addCommand(new InvokeCommand('#block-popinformblock .popin', 'scrollToMessages', [['selector' => '#rp-status-messages']]));
   }
 }

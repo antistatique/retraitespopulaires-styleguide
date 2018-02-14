@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+## 2.3.7 (2018-02-14)
+ - add new module 'rp_modulo' to provide custom code of Logistima Iframe
+ - improve popin contact with validations - MD-304
+
 ## 2.3.6 (2018-01-31)
  - MD-311 - fix vimeo player when used on Safari
 
@@ -9,7 +13,7 @@ CHANGELOG
  - add #MD-309 - add .ics as allowed file
  - update to styleguide 3.2.2
 
-## 2.3.4 (2018-01-16)
+## 2.3.4 (2018-01-16)
  - MD-308 - fix form node_content_width broken which prevent user to submit forms.
 
 ## 2.3.3 (2018-01-15)
@@ -27,7 +31,7 @@ CHANGELOG
  - add option to enable/disable contact popin
  - add new popine in every page which enable it
  - refactorint the whole navigation
- - remove the profils 
+ - remove the profils
  - update to styleguide 3.2.1
  - fix secondary-side navigation title margin-bottom
  - add vimeo support of highlighted card homepage
@@ -36,7 +40,7 @@ CHANGELOG
 ## 2.3.1 (2017-11-29)
  - Duplicate Webforms to add conversion tracking
 
-## 2.3.0 (2017-11-13)
+## 2.3.0 (2017-11-13)
  - move product into is own module
  - remove unused 'related products'
  - add new module entity_clone

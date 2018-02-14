@@ -40,15 +40,12 @@
       return;
     }
 
-    // Show the popin after 6 seconds on the page.
+    // Show the popin after 5 seconds on the page.
     const popin = setTimeout(function() {
       if (readCookie('rp_popin') !== 'hidden') {
         showPopin();
       }
-    }, 6000);
-
-    // TODO Add Javascript Session Cookie after form submit ajax.
-
+    }, 5000);
   });
 
   /**
@@ -85,6 +82,20 @@
     }
 
     setCookieHidden();
+  };
+
+  /**
+   * Scroll the page to the message. Used when error appears on the page.
+   *
+   * @param data
+   *  - data.selector: The Selector ID to scroll to.
+   */
+  $.fn.scrollToMessages = function(data) {
+    if ($(data.selector).length > 0) {
+      $('html, body').animate({
+        scrollTop: $(data.selector).offset().top - 80
+      }, 500);
+    }
   };
 
   $.fn.loading = function() {
