@@ -184,7 +184,7 @@ As a pre-requisite for running your own Solr server, you'll need Java 6 or highe
 Install all prerequisites and configuration from `web/modules/contrib/search_api_solr/INSTALL.txt` then
 
 We customized a bit the `schema.xml`, stopwords and synonyms for this project to improve the search ("2e pilier", "balcon du mont", ...).
-The files we overrided  are stored in `config/solr` dir.
+The files we overrided are stored in `config/solr` dir.
 
 Here is the the resumed instructions:
 
@@ -192,12 +192,11 @@ Here is the the resumed instructions:
    $ CORE="retraitespopulaires-website"
 
    $ mkdir -p /data/solr/data/$CORE/conf
-   $ cp -R web/modules/contrib/search_api_solr/solr_conf/6.x/* /data/solr/data/$CORE/conf
+   $ cp -R web/modules/contrib/search_api_solr/solr-conf/6.x/* /data/solr/data/$CORE/conf
    $ cp -R config/solr/* /data/solr/data/$CORE/conf
    $ echo "name=$CORE" > /data/solr/data/$CORE/core.properties
 
-
-### For windows
+  echo "> installed solr config inside $HOME_SOLR/solr/$CORE/conf"
 
 ### For Unix
 
