@@ -95,14 +95,14 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
+  rendered_item:
+    plugin_id: rendered_item
+    settings: {  }
   add_url:
     plugin_id: add_url
     settings: {  }
   aggregated_field:
     plugin_id: aggregated_field
-    settings: {  }
-  entity_status:
-    plugin_id: node_status
     settings: {  }
   highlight:
     highlight: always
@@ -114,28 +114,11 @@ processor_settings:
     suffix: '</mark>'
     weights:
       postprocess_query: 0
-  html_filter:
-    fields:
-      - url
-      - saa_field_file_document
-      - saa_field_file_page
-      - saa_field_file_news
-      - title
-      - body
-      - type
-      - filename
-    title: true
-    alt: true
-    tags:
-      h1: 5
-      h2: 3
-      h3: 2
-      strong: 2
-      b: 2
-    weights:
-      preprocess_index: -10
-      preprocess_query: -10
+  entity_status:
+    plugin_id: node_status
+    settings: {  }
   ignorecase:
+    all_fields: false
     fields:
       - url
       - saa_field_file_document
@@ -148,7 +131,20 @@ processor_settings:
     weights:
       preprocess_index: -10
       preprocess_query: -10
+  transliteration:
+    all_fields: false
+    fields:
+      - saa_field_file_document
+      - saa_field_file_page
+      - saa_field_file_news
+      - title
+      - body
+      - filename
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
   ignore_character:
+    all_fields: false
     fields:
       - saa_field_file_document
       - saa_field_file_page
@@ -180,26 +176,34 @@ processor_settings:
     weights:
       preprocess_index: -10
       preprocess_query: -10
-  rendered_item:
-    plugin_id: rendered_item
-    settings: {  }
-  transliteration:
+  html_filter:
+    all_fields: false
     fields:
+      - url
       - saa_field_file_document
       - saa_field_file_page
       - saa_field_file_news
       - title
       - body
+      - type
       - filename
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
     weights:
-      preprocess_index: -20
-      preprocess_query: -20
+      preprocess_index: -10
+      preprocess_query: -10
   file_attachments:
-    excluded_extensions: 'aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv'
+    excluded_extensions: 'aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv jpg mp4 wma'
     number_indexed: 0
     max_filesize: '0'
     excluded_private: 1
-    excluded_mimes: 'audio/x-aiff image/x-jg video/x-msvideo image/x-ms-bmp image/gif image/vnd.microsoft.icon video/quicktime audio/ogg video/ogg image/png image/x-photoshop audio/x-realaudio audio/x-pn-realaudio image/x-rgb video/x-flv'
+    excluded_mimes: 'audio/x-aiff image/x-jg video/x-msvideo image/x-ms-bmp image/gif image/vnd.microsoft.icon video/quicktime audio/ogg video/ogg image/png image/x-photoshop audio/x-realaudio audio/x-pn-realaudio image/x-rgb video/x-flv image/jpeg video/mp4 audio/x-ms-wma'
 tracker_settings:
   default:
     plugin_id: default
