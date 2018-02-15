@@ -1,6 +1,12 @@
 CHANGELOG
 ---------
 
+# NEXT RELEASE
+ - improve Solr search with a customs configuration in `config/solr`
+ - add documentation about Solr integration with our custom config
+ - remove unecessary processors of Search API, which override our custom config
+ - remove indexation of jpg & wma files which break Drupal postquery highlighter
+
 ## 2.3.7 (2018-02-14)
  - add new module 'rp_modulo' to provide custom code of Logistima Iframe
  - improve popin contact with validations - MD-304
