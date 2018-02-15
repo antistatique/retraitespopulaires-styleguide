@@ -198,6 +198,8 @@ Here is the the resumed instructions:
 
   echo "> installed solr config inside $HOME_SOLR/solr/$CORE/conf"
 
+On the Retraites Populaires env, you should run the commands with the `dplmgr` user using a `sudo`.
+
 ### For Unix
 
 Start Solr with:
