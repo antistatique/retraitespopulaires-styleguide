@@ -6,6 +6,8 @@ CHANGELOG
  - add documentation about Solr integration with our custom config
  - remove unecessary processors of Search API, which override our custom config
  - remove indexation of jpg & wma files which break Drupal postquery highlighter
+
+## 2.3.8 (2018-02-26)
  - fix vimeo error console when no vimeo video are present in the page
  - fix popin contact with uniq ID to avoid ajax error
 
