@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+## 2.3.8 (2018-02-26)
+ - fix vimeo error console when no vimeo video are present in the page
+ - fix popin contact with uniq ID to avoid ajax error
+
 ## 2.3.7 (2018-02-14)
  - add new module 'rp_modulo' to provide custom code of Logistima Iframe
  - improve popin contact with validations - MD-304
