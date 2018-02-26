@@ -120,17 +120,18 @@ class PopinForm extends FormBase {
     );
 
     $form['cols']['submit'] = array(
+      '#id'          => 'rp_popin_form_submit',
+      '#name'        => 'rp_popin_form_submit_name',
       '#type'        => 'submit',
       '#value'       => $this->t('Envoyer'),
       '#button_type' => 'primary',
       '#prefix'      => '<div class="form-group col-xs-6 col-sm-4">',
       '#suffix'      => '</div>',
-      '#attributes' => [
+      '#attributes'  => [
         'class' => array('btn-primary', 'use-ajax-submit', 'tracking-popin-submit')
       ],
       '#ajax'        => [
         'callback' => [$this, 'respondToAjax'],
-        'event'    => 'click',
         'progress' => ['type' => 'none']
       ]
     );

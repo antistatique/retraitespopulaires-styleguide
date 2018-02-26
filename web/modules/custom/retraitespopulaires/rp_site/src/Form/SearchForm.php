@@ -70,10 +70,11 @@ class SearchForm extends FormBase {
         );
 
         $form['actions']['submit'] = array(
-            '#type'        => 'submit',
-            '#attributes'  => ['class' => array('btn btn-default'), 'icon' => 'retraitespopulaires-icon retraitespopulaires-icon-search'],
-            '#prefix'      => '<span class="input-group-btn">',
-            '#suffix'      => '</span>',
+           '#id'          => 'rp_site_search_form_submit',
+            '#type'       => 'submit',
+            '#attributes' => ['class' => array('btn btn-default'), 'icon' => 'retraitespopulaires-icon retraitespopulaires-icon-search'],
+            '#prefix'     => '<span class="input-group-btn">',
+            '#suffix'     => '</span>',
         );
 
         $form['input-group_end'] = array(
