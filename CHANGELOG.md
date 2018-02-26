@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - fix vimeo error console when no vimeo video are present in the page
+
 ## 2.3.7 (2018-02-14)
  - add new module 'rp_modulo' to provide custom code of Logistima Iframe
  - improve popin contact with validations - MD-304

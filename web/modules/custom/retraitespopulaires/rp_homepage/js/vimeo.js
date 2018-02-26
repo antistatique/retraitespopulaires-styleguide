@@ -46,7 +46,9 @@
         }
       });
 
-      initPlayer();
+      if ($('.vimeo-player').length > 0) {
+        initPlayer();
+      }
 
       // Make the iframe responsive on resize
       $(window).on('resize', function(e) {
