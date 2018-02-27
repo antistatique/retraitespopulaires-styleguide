@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## 2.3.9 (2018-02-27) 
  - fix GTM popin tracking with custom event - MD-304
 
 ## 2.3.8 (2018-02-26)
