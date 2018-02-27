@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.3.9 (2018-02-27) 
+ - fix GTM popin tracking with custom event - MD-304
+
 ## 2.3.8 (2018-02-26)
  - fix vimeo error console when no vimeo video are present in the page
  - fix popin contact with uniq ID to avoid ajax error
