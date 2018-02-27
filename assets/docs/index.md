@@ -449,6 +449,12 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
             <div class="text-muted">.retraitespopulaires-icon-unchecked</div>
           </div>
         </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-external-link"></i>
+            <div class="text-muted">.retraitespopulaires-icon-external-link</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
