@@ -8,6 +8,7 @@ namespace Drupal\rp_offers\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\rp_offers\Service\Request;
@@ -108,6 +109,24 @@ class RequestForm extends FormBase {
           '#attributes' => ['class' => array('fieldset-no-legend')],
           '#title'      => $title,
           '#prefix'     => '<h3>'.$title.'</h3>',
+        );
+
+        // Get error to inline it as suffix
+        // TODO Found better solution to inline errors than hack session to
+        $error = '';
+        $error_class = '';
+        if( isset($this->session->get('errors')['civil_state']) && $error_msg = $this->session->get('errors')['civil_state'] ){
+          $error_class = 'error';
+          $error = '<div class="input-error-desc">'.$error_msg.'</div>';
+        }
+        $form['personnal']['civil_state'] = array(
+          '#title'       => t('Votre état civil *'),
+          '#type'        => 'select',
+
+          '#options'     => array('Madame' => t('Madame'), 'Monsieur' => t('Monsieur')),
+          '#required'    => false,
+          '#prefix'      => '<div class="form-group '.$error_class.'">',
+          '#suffix'      => $error. '</div>',
         );
 
         // Get error to inline it as suffix
@@ -255,6 +274,11 @@ class RequestForm extends FormBase {
             $errors['email'] = t('Navré mais il n\'est plus possible de participer à cette offre.');
         }
 
+        // Assert the civil_state is valid
+        if (!$form_state->getValue('civil_state') || empty($form_state->getValue('civil_state'))) {
+           $errors['civil_state'] = t('Votre état civile est obligatoire.');
+        }
+
         // Assert Votre prénom is valid
         if (!$form_state->getValue('firstname') || empty($form_state->getValue('firstname'))) {
             $errors['firstname'] = t('Votre prénom est obligatoire.');
@@ -298,19 +322,25 @@ class RequestForm extends FormBase {
         // TODO Found better solution to inline errors than hack session to
         if (empty($this->session->get('errors'))) {
             $data = array(
-                'firstname' => $form_state->getValue('firstname'),
-                'lastname'  => $form_state->getValue('lastname'),
-                'email'     => $form_state->getValue('email'),
-                'address'   => $form_state->getValue('address'),
-                'zip'       => $form_state->getValue('zip'),
-                'city'      => $form_state->getValue('city'),
-                'node'      => $form_state->getValue('node'),
+                'civil_state' => $form_state->getValue('civil_state'),
+                'firstname'   => $form_state->getValue('firstname'),
+                'lastname'    => $form_state->getValue('lastname'),
+                'email'       => $form_state->getValue('email'),
+                'address'     => $form_state->getValue('address'),
+                'zip'         => $form_state->getValue('zip'),
+                'city'        => $form_state->getValue('city'),
+                'node'        => $form_state->getValue('node'),
             );
             $request = $this->request->consume($data);
 
             $this->request->adminEmail($request);
 
-            drupal_set_message(t('Merci de votre participation.'));
+            $link = Link::createFromRoute(t('retour aux offres'),
+              'entity.node.canonical',
+              ['node' => \Drupal::state()->get('rp_offers.settings.collection.offers')['nid']]
+            )->toString();
+
+            drupal_set_message(t('Merci de votre participation, ') . $link);
 
             $form_state->setRedirect('entity.node.canonical', ['node' => $form_state->getValue('node') ]);
         }

@@ -40,6 +40,7 @@ function rp_offers_mail($key, &$message, $params) {
 
             $message['body'][] = Markup::create( '<b>'. t('Une nouvelle demande d\'offre vient d\'être soumise') . '</b><br /><br />');
             $message['body'][] = Markup::create( t('E-mail: '). $params['request']->email->value . '<br />');
+            $message['body'][] = Markup::create( t('Etat civil: '). $params['request']->civil_state->value. '<br />');
             $message['body'][] = Markup::create( t('Prénom: '). $params['request']->firstname->value . '<br />');
             $message['body'][] = Markup::create( t('Nom: '). $params['request']->lastname->value . '<br />');
             $message['body'][] = Markup::create( t('Adresse: '). $params['request']->address->value . '<br />');

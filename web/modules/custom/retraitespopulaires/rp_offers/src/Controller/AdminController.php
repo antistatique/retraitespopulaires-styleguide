@@ -125,7 +125,7 @@ class AdminController extends ControllerBase {
             '#quantity' => '3',
         );
 
-        $query->sort('field_date_end');
+        $query->sort('created', 'DESC');
 
         // Paged query
         $page = pager_find_page();
@@ -244,7 +244,7 @@ class AdminController extends ControllerBase {
         $handle = fopen('php://output', 'w+');
 
         // Add the header of the CSV file
-        fputcsv($handle, array('Demande du', 'Prénom', 'Nom de famille', 'Adresse', 'Npa', 'Ville', 'Coupon', 'Gagnant'), ';');
+        fputcsv($handle, array('Demande du', 'Prénom', 'Nom de famille', 'Etat civil', 'Adresse', 'Npa', 'Ville', 'Coupon', 'Gagnant'), ';');
         // Query data from database
         $query = $this->entity_query->get('rp_offers_request');
         // Add Filter conditions
@@ -275,6 +275,7 @@ class AdminController extends ControllerBase {
                     $dt->format('d/m/Y'),
                     $request->firstname->value,
                     $request->lastname->value,
+                    $request->civil_state->value,
                     $request->address->value,
                     $request->zip->value,
                     $request->city->value,

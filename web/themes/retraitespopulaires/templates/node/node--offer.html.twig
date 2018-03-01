@@ -2,7 +2,7 @@
 
 {% block node_bottom %}
   {% if node.field_web_site.uri %}
-    <a class="btn btn-primary btn-lg" href="{{ node.field_web_site.uri }}">{% trans %}Lien vers le magazine{% endtrans %}</a>
+    <a class="btn btn-primary btn-lg" href="{{ node.field_web_site.0.url }}">{% trans %}Lien vers le magazine{% endtrans %}</a>
     <div class="spacer spacer-md"></div>
   {% endif %}
 {% endblock %}
@@ -26,6 +26,11 @@
       </div>
     </div>
   {% else %}
-
+      <div class="row">
+        <div class="{{ node_content_width|join(' ')|default('col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2') }}">
+          <p>Cette offre est terminée, <a href="/deja-client/offres" class="pretty-link">retour aux offres</a></p>
+          <div class="spacer spacer-md"></div>
+        </div>
+      </div>
   {% endif %}
 {% endblock %}
