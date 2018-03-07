@@ -5,12 +5,12 @@ Retraites Populaires Styleguide.
 
 # User documentation
 
-## Install CSS/JS dependencies with npm
+## Install CSS/JS dependencies with npm & yarn
 
   ````shell
     $ npm init
     $ npm login
-    $ npm install --save @antistatique/retraitespopulaires-styleguide
+    $ yarn install --save @antistatique/retraitespopulaires-styleguide
   ````
 
 ### Link assets to your project
@@ -62,12 +62,21 @@ First of all, you need to have the following tools installed globally on your en
 * node
 * npm
 * gulp
+* yarn
 
 ## Install
 
 ````shell
-$ npm install
-$ gulp
+$ yarn install
+$ gulp build
+````
+
+You will need some global dependencies such as:
+
+- metalsmith
+
+````shell
+$ npm install -g metalsmith
 ````
 
 ## Development
