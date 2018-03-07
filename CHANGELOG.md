@@ -3,6 +3,7 @@ CHANGELOG
 
 ## NEXT RELEASE
  - add new icon `retraitespopulaires-icon-external-link`
+ - update all favicons for extranets (portailca, mp, accueil, regies & courtiers)
 
 ## 3.2.2 (2018-01-31)
  - remove light page
