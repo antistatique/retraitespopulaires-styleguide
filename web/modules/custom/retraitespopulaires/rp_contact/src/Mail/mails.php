@@ -345,6 +345,7 @@ function rp_contact_mail($key, &$message, $params) {
             $message['subject'] = t('Nouvelle demande de contact par Pop-in.');
             $message['body'][] = Markup::create( '<b>'. t('Nouvelle demande de contact par Pop-in.') . '</b><br /><br />');
             $message['body'][] = Markup::create( '<b>'. t('Demande: '). '</b><br />');
+            $message['body'][] = Markup::create( t('Prénom, Nom: '). $params['name'] . '<br />');
             $message['body'][] = Markup::create( t('Contact: '). $params['contact'] . '<br />');
             $message['body'][] = Markup::create( t('NPA: '). $params['zip'] . '<br />');
             $message['body'][] = Markup::create( t('URL: '). $params['uri'] . '<br />');
