@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## 2.3.10 (2018-03-14)
+ - add name field to popin
+
 ## 2.3.9 (2018-02-27) 
  - fix GTM popin tracking with custom event - MD-304
 
