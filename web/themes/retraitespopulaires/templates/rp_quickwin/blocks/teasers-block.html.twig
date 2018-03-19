@@ -1,0 +1,37 @@
+{% for groupKey, group in variables.groups %}
+    <div class="collapse-wrapper">
+        <div class="collapse-title">
+            <a class="inline-block collapse-button collapsed" role="button" data-toggle="collapse" href="#{{ groupKey }}" aria-expanded="true" aria-controls="{{ groupKey }}" aria-label="Cliquez pour dérouler le contenu de la section {{ group.title }}.">
+                <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
+            </a>
+            <h5 class="inline-block">{{ group.title }}</h5>
+            <div class="clearfix"></div>
+        </div>
+        <div id="{{ groupKey }}" class="collapse-body collapse">
+            <div class="row flex-row">
+                {% for teaser in group.teasers %}
+                    {%  set teaser = variables.teasers[teaser] %}
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="card card-white card-light card-no-shadow">
+                            <div class="card-body">
+                                <div class="card-justify m-t-0">
+                                    <p class="card-title"><a href="{{ teaser.nodeLink }}">{{ teaser.title }}</a></p>
+                                    {% if teaser.info is not empty %}
+                                        <div class="tooltip tooltip-info">
+                                            <div class="tooltip-symbol" aria-label="Sample Text" title="" data-content="{{ teaser.info }}" data-placement="left" tabindex="0" data-toggle="popover" data-original-title="Information"></div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                {{ teaser.description|raw }}
+                            </div>
+                            <div class="card-footer">
+                                {{ load_form('rp_quickwin', 'TeaserForm', {'fields': teaser.fields, 'node': teaser.node}) }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+<div class="spacer"></div>

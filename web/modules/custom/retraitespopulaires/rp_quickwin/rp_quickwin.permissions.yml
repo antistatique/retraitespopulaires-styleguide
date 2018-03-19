@@ -1,0 +1,4 @@
+'administer rp quickwin':
+  title: 'Administer Retraites Populaires QuickWin - Calculator'
+  description: 'Administer Retraites Populaires QuickWin - Calculator'
+  restrict access: true

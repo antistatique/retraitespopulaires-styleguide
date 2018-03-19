@@ -1,0 +1,14 @@
+rp_quickwin.admin:
+    path: '/admin/retraites-populaires/quickwin'
+    defaults:
+        _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+        _title: 'QuickWin - Admin'
+    requirements:
+        _permission: 'administer rp quickwin'
+rp_quickwin.admin.settings:
+    path: '/admin/retraites-populaires/quickwin/settings'
+    defaults:
+        _controller: '\Drupal\rp_quickwin\Controller\AdminController::settings'
+        _title: 'QuickWin - Admin - Settings'
+    requirements:
+        _permission: 'administer rp quickwin'

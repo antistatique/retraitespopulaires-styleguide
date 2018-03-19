@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * @file
+ * Contains rp_quickwin.module.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function rp_quickwin_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'taxonomy_term_teaser_field_form') {
+    $number_field_condition =
+      [
+        [':input[name="field_type"]' => ['value' => 'chf']],
+        'or',
+        [':input[name="field_type"]' => ['value' => 'percent']],
+        'or',
+        [':input[name="field_type"]' => ['value' => 'number']],
+      ];
+
+    $form['field_slider']['#states'] = [
+      'visible' => [
+        $number_field_condition,
+      ],
+    ];
+
+    $form['field_maximum']['#states'] = [
+      'visible' => [
+        ':input[name="field_slider[value]"]' => ['checked' => TRUE],
+        $number_field_condition,
+      ],
+    ];
+
+    $form['field_minimum']['#states'] = [
+      'visible' => [
+        ':input[name="field_slider[value]"]' => ['checked' => TRUE],
+        $number_field_condition,
+      ],
+    ];
+
+    $form['field_increment']['#states'] = [
+      'visible' => [
+        ':input[name="field_slider[value]"]' => ['checked' => TRUE],
+        $number_field_condition,
+      ],
+    ];
+  }
+}
+
+/**
+ * Theme hook
+ */
+function rp_quickwin_theme($existing, $type, $theme, $path) {
+  return array(
+    // Blocks themes
+    // ---------------------------------------------------------------------
+    'rp_quickwin_teasers_block' => array(
+      // Use the following syntax to retrieve all variables in the "variables" container
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions into a sub folder
+      // using [template].html.twig
+      'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+      'template'  => 'blocks/teasers-block'
+    ),
+
+    'rp_quickwin_calculator_block' => array(
+      // Use the following syntax to retrieve all variables in the "variables" container
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions into a sub folder
+      // using [template].html.twig
+      'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+      'template'  => 'blocks/calculator-block'
+    ),
+  );
+}

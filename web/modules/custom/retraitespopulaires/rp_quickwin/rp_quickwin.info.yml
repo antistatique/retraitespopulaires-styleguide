@@ -1,0 +1,5 @@
+name: QuickWin
+type: module
+description: Intergration of QuickWin from logismata
+core: 8.x
+package: Retraites Populaires
