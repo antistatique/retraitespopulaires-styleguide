@@ -75,12 +75,8 @@
       "destination": "build/css"
     },
     {
-      "source": "node_modules/uppy/dist/uppy.js",
-      "destination": "build/js"
-    },
-    {
-      "source": "node_modules/uppy/dist/uppy.css",
-      "destination": "build/css"
+      "source": "node_modules/uppy/**/*",
+      "destination": "build/js/uppy"
     }
   ],
   "metalsmith": {
