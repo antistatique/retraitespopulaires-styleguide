@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## 3.2.5 (2018-03-20)
+ - fix uppy integration to be builded
+
 ## 3.2.4 (2018-03-20)
  - add uppy as new dependency - needed for advanced file uploader
 
