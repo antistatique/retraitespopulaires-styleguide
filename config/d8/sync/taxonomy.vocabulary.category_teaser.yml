@@ -1,0 +1,9 @@
+uuid: 6f6491ee-c70c-43fd-b5be-93763c60117e
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Category Teaser'
+vid: category_teaser
+description: ''
+hierarchy: 0
+weight: 0

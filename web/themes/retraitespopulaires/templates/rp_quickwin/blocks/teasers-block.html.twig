@@ -1,15 +1,15 @@
-{% for groupKey, group in variables.groups %}
+{% for categoryKey, category in variables.categories %}
     <div class="collapse-wrapper">
         <div class="collapse-title">
-            <a class="inline-block collapse-button collapsed" role="button" data-toggle="collapse" href="#{{ groupKey }}" aria-expanded="true" aria-controls="{{ groupKey }}" aria-label="Cliquez pour dérouler le contenu de la section {{ group.title }}.">
+            <a class="inline-block collapse-button collapsed" role="button" data-toggle="collapse" href="#{{ categoryKey }}" aria-expanded="true" aria-controls="{{ categoryKey }}" aria-label="Cliquez pour dérouler le contenu de la section {{ category.title }}.">
                 <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
             </a>
-            <h5 class="inline-block">{{ group.title }}</h5>
+            <h5 class="inline-block">{{ category.title }}</h5>
             <div class="clearfix"></div>
         </div>
-        <div id="{{ groupKey }}" class="collapse-body collapse">
+        <div id="{{ categoryKey }}" class="collapse-body collapse">
             <div class="row flex-row">
-                {% for teaser in group.teasers %}
+                {% for teaser in category.teasers %}
                     {%  set teaser = variables.teasers[teaser] %}
                     <div class="col-xs-12 col-sm-6 col-lg-4">
                         <div class="card card-white card-light card-no-shadow">

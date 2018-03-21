@@ -1,0 +1,28 @@
+uuid: 8f4d3e6b-5416-448c-baf3-1d77d255af3d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact
+    - node.type.calculator
+    - node.type.contact
+id: node.calculator.field_contact
+field_name: field_contact
+entity_type: node
+bundle: calculator
+label: Contact(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      contact: contact
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

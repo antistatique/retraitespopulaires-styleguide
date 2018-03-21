@@ -1,0 +1,20 @@
+uuid: a497bd0f-78a3-4868-acf9-bc6a5d36c986
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.calculator
+  module:
+    - path
+id: node.calculator.path
+field_name: path
+entity_type: node
+bundle: calculator
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

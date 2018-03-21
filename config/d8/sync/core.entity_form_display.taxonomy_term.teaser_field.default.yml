@@ -1,0 +1,89 @@
+uuid: 217554de-e434-40b2-8f1b-e6fdf39b6887
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.teaser_field.field_default
+    - field.field.taxonomy_term.teaser_field.field_display_name
+    - field.field.taxonomy_term.teaser_field.field_increment
+    - field.field.taxonomy_term.teaser_field.field_logismata_parameter
+    - field.field.taxonomy_term.teaser_field.field_maximum
+    - field.field.taxonomy_term.teaser_field.field_minimum
+    - field.field.taxonomy_term.teaser_field.field_slider
+    - field.field.taxonomy_term.teaser_field.field_type
+    - taxonomy.vocabulary.teaser_field
+id: taxonomy_term.teaser_field.default
+targetEntityType: taxonomy_term
+bundle: teaser_field
+mode: default
+content:
+  field_default:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_display_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_increment:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_logismata_parameter:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_maximum:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_minimum:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_slider:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_type:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true

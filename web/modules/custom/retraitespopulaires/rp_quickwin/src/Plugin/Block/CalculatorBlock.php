@@ -23,16 +23,21 @@ class CalculatorBlock extends BlockBase {
     // Create the link
     $variables['link'] = \Drupal::state()->get('rp_quickwin.settings.logismata_url'). $params['node']->field_url_logismata->value;
 
-    $teasers = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('teaser_calculator_quickwin');
+    // Get teasers
+    $teasers = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('teaser_calculator_quickwin', 0, NULL, TRUE);
 
     $isFirst = TRUE;
     foreach ($teasers as $teaser){
-      $teaser = Term::load($teaser->tid);
+      // Verify that the teaser target calculator is the current page
       if (!empty($teaser->get('field_calculator')->target_id) && $teaser->get('field_calculator')->target_id == $params['node']->nid->value) {
+        // Get field on the teaser and the logismata parameter
         $field = Term::load($teaser->get('field_field')->target_id);
         $parameter = $field->field_logismata_parameter->value;
+
+        // Add to link if needed
         if (!empty($submited[$parameter])) {
           if ($isFirst) {
+            // Start of link GET parameters
             $variables['link'] .= '?';
             $isFirst = FALSE;
           }
@@ -44,8 +49,10 @@ class CalculatorBlock extends BlockBase {
       }
     }
 
+    // Delete session values
     $temp_store->delete('submited');
 
+    // Call block for calculator
     return [
       '#theme'     => 'rp_quickwin_calculator_block',
       '#variables' => $variables,

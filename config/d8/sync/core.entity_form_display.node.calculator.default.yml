@@ -1,0 +1,287 @@
+uuid: 74793e33-ae61-4b68-ada8-75db4613df01
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.calculator.body
+    - field.field.node.calculator.field_advisor
+    - field.field.node.calculator.field_contact
+    - field.field.node.calculator.field_contact_cta
+    - field.field.node.calculator.field_cover
+    - field.field.node.calculator.field_document
+    - field.field.node.calculator.field_document_page
+    - field.field.node.calculator.field_document_random
+    - field.field.node.calculator.field_email_popin
+    - field.field.node.calculator.field_faq
+    - field.field.node.calculator.field_faq_random
+    - field.field.node.calculator.field_file_page
+    - field.field.node.calculator.field_metatags
+    - field.field.node.calculator.field_popin
+    - field.field.node.calculator.field_profession
+    - field.field.node.calculator.field_search_npa
+    - field.field.node.calculator.field_url_logismata
+    - image.style.thumbnail
+    - node.type.calculator
+  module:
+    - field_group
+    - file
+    - image
+    - metatag
+    - path
+third_party_settings:
+  field_group:
+    group_attachments:
+      children:
+        - group_info
+        - group_contacts
+        - group_attachment
+      parent_name: ''
+      weight: 0
+      label: 'Linked Contents'
+      format_type: tabs
+      format_settings:
+        direction: vertical
+        classes: ''
+        id: ''
+    group_attachment:
+      children:
+        - group_attachments_content
+        - group_formulaire_s_
+        - group_attachments_footer
+      parent_name: group_attachments
+      weight: 15
+      label: 'Elements attachés'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_info:
+      children:
+        - title
+        - field_cover
+        - field_information
+        - field_url_logismata
+        - field_profession
+      parent_name: group_attachments
+      weight: 13
+      label: 'Données principales'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_contacts:
+      children:
+        - field_contact_cta
+        - field_popin
+        - field_email_popin
+        - field_search_npa
+        - field_advisor
+        - field_contact
+      parent_name: group_attachments
+      weight: 14
+      label: 'Elements de contact'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_attachments_content:
+      children:
+        - field_file_page
+        - field_document_page
+      parent_name: group_attachment
+      weight: 22
+      label: 'Positionner dans le contenu'
+      format_type: details
+      format_settings:
+        label: 'Positionner dans le contenu'
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+    group_attachments_footer:
+      children:
+        - field_faq
+        - field_faq_random
+        - field_document
+        - field_document_random
+      parent_name: group_attachment
+      weight: 24
+      label: 'Positionner au pied du contenu'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
+    group_formulaire_s_:
+      children: {  }
+      parent_name: group_attachment
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Formulaire(s)
+_core:
+  default_config_hash: KSvzyFhdLuxniTsunUnUfpfMmod2l57GibtVjL8ymHM
+id: node.calculator.default
+targetEntityType: node
+bundle: calculator
+mode: default
+content:
+  field_advisor:
+    weight: 34
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_contact:
+    weight: 35
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_contact_cta:
+    weight: 30
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_cover:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_document:
+    weight: 20
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_document_page:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_document_random:
+    weight: 21
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_email_popin:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_faq:
+    weight: 18
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_faq_random:
+    weight: 19
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_file_page:
+    weight: 14
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_metatags:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_popin:
+    weight: 31
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_profession:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_search_npa:
+    weight: 33
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_url_logismata:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  created: true
+  langcode: true
+  promote: true
+  sticky: true
+  uid: true

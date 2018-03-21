@@ -1,0 +1,27 @@
+uuid: ffebcf8f-e301-4965-94c1-49164c198582
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_page
+    - node.type.calculator
+  module:
+    - file
+id: node.calculator.field_file_page
+field_name: field_file_page
+entity_type: node
+bundle: calculator
+label: 'Fichier(s) attaché(s)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'files-page/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx xls xlsx ppt pptx png gif jpg jpeg zip mp4 avi mov mp3 wma aac wav'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

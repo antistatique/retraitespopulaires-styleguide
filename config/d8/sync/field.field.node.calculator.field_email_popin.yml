@@ -1,0 +1,19 @@
+uuid: 14828181-ff4c-4663-97c3-611e874ddde4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_popin
+    - node.type.calculator
+id: node.calculator.field_email_popin
+field_name: field_email_popin
+entity_type: node
+bundle: calculator
+label: 'Email de réception de la Pop-in de contact'
+description: "L'affichage de la Pop-in est désactivée par défaut sur retraitespopulaires.ch. <br />\r\nCependant, en cochant cette case, vous pouvez activer une Pop-in de contact sur ce contenu. Attention, il est important de désactiver le \"Call To Action\" lorsque vous activez la Pop-in."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

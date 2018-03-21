@@ -1,0 +1,29 @@
+uuid: a4a6aebb-d774-4f65-ac0e-c604f8a9978b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq
+    - node.type.calculator
+    - node.type.faq
+id: node.calculator.field_faq
+field_name: field_faq
+entity_type: node
+bundle: calculator
+label: Question(s)-Réponse(s)
+description: 'Nous conseillons de ne pas lier plus de 3 questions-réponses pour une navigation optimale.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      faq: faq
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

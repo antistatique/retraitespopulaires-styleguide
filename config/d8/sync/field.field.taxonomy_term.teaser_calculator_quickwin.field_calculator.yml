@@ -1,0 +1,28 @@
+uuid: 3e55dcf8-bfdc-41e6-ae85-8553741cc0b7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_calculator
+    - node.type.calculator
+    - taxonomy.vocabulary.teaser_calculator_quickwin
+id: taxonomy_term.teaser_calculator_quickwin.field_calculator
+field_name: field_calculator
+entity_type: taxonomy_term
+bundle: teaser_calculator_quickwin
+label: Calculateur
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      calculator: calculator
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

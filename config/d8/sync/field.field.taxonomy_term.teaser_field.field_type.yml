@@ -1,0 +1,21 @@
+uuid: a0e27b89-187f-4d99-b467-fa9af29ce09b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_type
+    - taxonomy.vocabulary.teaser_field
+  module:
+    - options
+id: taxonomy_term.teaser_field.field_type
+field_name: field_type
+entity_type: taxonomy_term
+bundle: teaser_field
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

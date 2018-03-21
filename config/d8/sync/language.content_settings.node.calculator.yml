@@ -1,0 +1,11 @@
+uuid: 0b243191-254e-411b-bbef-aa0bde274178
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.calculator
+id: node.calculator
+target_entity_type_id: node
+target_bundle: calculator
+default_langcode: site_default
+language_alterable: false

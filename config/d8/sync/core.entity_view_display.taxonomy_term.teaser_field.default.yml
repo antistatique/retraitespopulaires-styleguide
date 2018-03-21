@@ -1,0 +1,99 @@
+uuid: 08abc09e-9f47-419e-9592-33407e96bc3a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.teaser_field.field_default
+    - field.field.taxonomy_term.teaser_field.field_display_name
+    - field.field.taxonomy_term.teaser_field.field_increment
+    - field.field.taxonomy_term.teaser_field.field_logismata_parameter
+    - field.field.taxonomy_term.teaser_field.field_maximum
+    - field.field.taxonomy_term.teaser_field.field_minimum
+    - field.field.taxonomy_term.teaser_field.field_slider
+    - field.field.taxonomy_term.teaser_field.field_type
+    - taxonomy.vocabulary.teaser_field
+  module:
+    - options
+    - text
+id: taxonomy_term.teaser_field.default
+targetEntityType: taxonomy_term
+bundle: teaser_field
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_default:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_display_name:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_increment:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_logismata_parameter:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_maximum:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_minimum:
+    weight: 4
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_slider:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_type:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  langcode: true

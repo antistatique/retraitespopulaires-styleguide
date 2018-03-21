@@ -1,0 +1,10 @@
+#Temp before add to styleguide
+slider:
+  version: 1.x
+  css:
+    theme:
+      css/slider.css: {}
+  js:
+    js/slider.js: {}
+  dependencies:
+    - core/jquery.ui.slider

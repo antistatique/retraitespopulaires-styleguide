@@ -59,12 +59,7 @@ class TeaserForm extends FormBase {
 
           // If there's a slider for number type
           if ($haveSlider){
-            $form[$fieldName.'_slider'] = [
-              '#type' => 'range',
-              '#min' => $field['min'],
-              '#max' => $field['max'],
-              '#step' => $field['step'],
-            ];
+            $form[$fieldName]['#suffix'] = '<br><div class="ui-widget-content slider" step="'.$field['step'].'" max="'.$field['max'].'" min="'.$field['min'].'"></div></div';
           }
         }
       }
@@ -75,6 +70,7 @@ class TeaserForm extends FormBase {
         '#default_value' => $params['node'],
       ];
 
+      // Add the submit button
       $form['submit'] = [
         '#type'       => 'submit',
         '#attributes' => [ 'class' => [ 'btn-group-justified' ] ],

@@ -1,0 +1,21 @@
+uuid: 514b9021-f415-42a4-99dc-8523db288fc6
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - secondary
+    parent: 'secondary:menu_link_content:28df2747-08b0-4ee1-bfff-e28c005fbf3b'
+_core:
+  default_config_hash: zhtPXoRcC6REiepM0k16zw__FDW5YOXDR6U2WlldTrs
+name: 'Calculateurs QuickWin'
+type: calculator
+description: 'Page pour un calculateur QuickWin (Logismata)'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

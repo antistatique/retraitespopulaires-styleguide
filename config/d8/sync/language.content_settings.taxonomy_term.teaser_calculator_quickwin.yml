@@ -1,0 +1,11 @@
+uuid: 938f3baa-635e-44e2-96fa-0e750be756a3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.teaser_calculator_quickwin
+id: taxonomy_term.teaser_calculator_quickwin
+target_entity_type_id: taxonomy_term
+target_bundle: teaser_calculator_quickwin
+default_langcode: site_default
+language_alterable: false

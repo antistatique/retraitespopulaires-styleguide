@@ -20,28 +20,30 @@ class TeasersBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $teasers_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('teaser_calculator_quickwin');
-    $groups_array = [];
+    // Get teasers to show
+    $teasers_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('teaser_calculator_quickwin', 0, NULL, TRUE);
+    $categories_array = [];
     $teasers_array = [];
 
     foreach ($teasers_terms as $teaser_term){
-      $teaser_id = $teaser_term->tid;
-      $teaser_term = Term::load($teaser_id);
-      $target_calculator = Node::load($teaser_term->get('field_calculator')->target_id);
+      // Get id
+      $teaser_id = $teaser_term->tid->value;
 
+      // Add teasers with value
       $teasers_array[$teaser_id] = [
         'title' => $teaser_term->name->value,
         'description' => $teaser_term->field_description->value,
         'info' => $teaser_term->field_information->value,
-        'node' => $target_calculator->nid->value,
-        'nodeLink' => Url::fromRoute('entity.node.canonical', ['node' => $target_calculator->nid->value]),
+        'node' => $teaser_term->field_calculator->target_id,
+        'nodeLink' => Url::fromRoute('entity.node.canonical', ['node' => $teaser_term->field_calculator->target_id]),
         'fields' => [
           'button' => 'Calculer',
         ],
       ];
 
-      if (!empty($teaser_term->get('field_field')->target_id)) {
-        $field = Term::load($teaser_term->get('field_field')->target_id);
+      // Add field if needed
+      if (!empty($teaser_term->field_field->target_id)) {
+        $field = Term::load($teaser_term->field_field->target_id);
         $teasers_array[$teaser_id]['fields'][$field->field_logismata_parameter->value] = [
           'type' => $field->field_type->value,
           'title' => $field->field_display_name->value,
@@ -53,13 +55,14 @@ class TeasersBlock extends BlockBase {
         ];
       }
 
-      $teaser_collections = $teaser_term->get('field_categories')->referencedEntities();
-      foreach ($teaser_collections as $collection){
-        if (isset($groups_array[$collection->tid->value])){
-          $groups_array[$collection->tid->value]['teasers'][] = $teaser_id;
+      // Get categories were the teaser is
+      $teaser_categories = $teaser_term->field_categories->referencedEntities();
+      foreach ($teaser_categories as $collection){
+        if (isset($categories_array[$collection->tid->value])){
+          $categories_array[$collection->tid->value]['teasers'][] = $teaser_id;
         }
         else{
-          $groups_array[$collection->tid->value] = [
+          $categories_array[$collection->tid->value] = [
             'title' => $collection->name->value,
             'teasers' => [$teaser_id],
           ];
@@ -68,14 +71,15 @@ class TeasersBlock extends BlockBase {
     }
 
     $variables = [
-      'groups' => $groups_array,
+      'categories' => $categories_array,
       'teasers' => $teasers_array,
     ];
 
     return [
       '#theme'     => 'rp_quickwin_teasers_block',
       '#variables' => $variables,
-      '#cache' => [ 'max-age' => 0, ],
+      // TODO: remove when is in styleguide
+      '#attached' => [ 'library' =>  [ 'rp_quickwin/slider' ], ],
     ];
   }
 

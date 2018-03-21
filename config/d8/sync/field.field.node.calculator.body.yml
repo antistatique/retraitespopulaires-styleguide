@@ -1,0 +1,24 @@
+uuid: ec09038d-c4f4-4806-a1e7-dcbd66db727d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.calculator
+  module:
+    - text
+_core:
+  default_config_hash: rUop-8b6hvxxDYbv-KobTfNIBNbPY9qOPl8f6kBNSpw
+id: node.calculator.body
+field_name: body
+entity_type: node
+bundle: calculator
+label: Corps
+description: "Les couleurs des titres et des liens s'accordent automatiquement selon le métier sélectionné (Assurance vie, ...).\r\nPour la création d'un tableau, utiliser le bouton <b>tableau</b> - définir les propriétés du tableau <b>largeur toujours vide</b> - puis sélectionner un style de tableau <b>long ou condensé</b>."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

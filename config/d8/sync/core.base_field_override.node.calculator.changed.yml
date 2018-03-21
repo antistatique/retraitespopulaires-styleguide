@@ -1,0 +1,18 @@
+uuid: fd32d27e-803f-463b-9312-ab4ab4f64343
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.calculator
+id: node.calculator.changed
+field_name: changed
+entity_type: node
+bundle: calculator
+label: Modifié
+description: 'Le moment auquel le nœud a été modifié pour la dernière fois.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

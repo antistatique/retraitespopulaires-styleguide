@@ -1,11 +1,11 @@
 rp_quickwin.admin:
-    title: QuickWin
+    title: 'QuickWin'
     parent: rp_toolbar.admin
     route_name: rp_quickwin.admin
     weight: 20
 
 rp_quickwin.admin.settings:
-    title: Settings
+    title: 'Settings'
     parent: rp_quickwin.admin
     route_name: rp_quickwin.admin.settings
     weight: 10
