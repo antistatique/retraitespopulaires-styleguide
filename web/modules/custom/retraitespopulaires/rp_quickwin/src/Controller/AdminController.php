@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class AdminController extends ControllerBase {
 
   /**
-   * Admin settings for rp_newsletter.
+   * Admin settings for rp_quickwin.
    */
   public function settings() {
     return \Drupal::formBuilder()->getForm('Drupal\rp_quickwin\Form\AdminForm');

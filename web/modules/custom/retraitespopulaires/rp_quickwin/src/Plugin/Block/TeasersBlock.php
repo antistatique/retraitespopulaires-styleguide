@@ -31,13 +31,13 @@ class TeasersBlock extends BlockBase {
 
       // Add teasers with value
       $teasers_array[$teaser_id] = [
-        'title' => $teaser_term->name->value,
+        'title'       => $teaser_term->name->value,
         'description' => $teaser_term->field_description->value,
-        'info' => $teaser_term->field_information->value,
-        'node' => $teaser_term->field_calculator->target_id,
-        'nodeLink' => Url::fromRoute('entity.node.canonical', ['node' => $teaser_term->field_calculator->target_id]),
-        'fields' => [
-          'button' => 'Calculer',
+        'info'        => $teaser_term->field_information->value,
+        'node'        => $teaser_term->field_calculator->target_id,
+        'nodeLink'    => Url::fromRoute('entity.node.canonical', ['node' => $teaser_term->field_calculator->target_id]),
+        'fields'      => [
+          'button'    => 'Calculer',
         ],
       ];
 
@@ -45,13 +45,13 @@ class TeasersBlock extends BlockBase {
       if (!empty($teaser_term->field_field->target_id)) {
         $field = Term::load($teaser_term->field_field->target_id);
         $teasers_array[$teaser_id]['fields'][$field->field_logismata_parameter->value] = [
-          'type' => $field->field_type->value,
-          'title' => $field->field_display_name->value,
-          'withSlider' => $field->field_slider->value,
-          'min' => $field->field_minimum->value,
-          'max' => $field->field_maximum->value,
-          'step' => $field->field_increment->value,
-          'default' => $field->field_default->value,
+          'type'        => $field->field_type->value,
+          'title'       => $field->field_display_name->value,
+          'withSlider'  => $field->field_slider->value,
+          'min'         => $field->field_minimum->value,
+          'max'         => $field->field_maximum->value,
+          'step'        => $field->field_increment->value,
+          'default'     => $field->field_default->value,
         ];
       }
 
@@ -63,7 +63,7 @@ class TeasersBlock extends BlockBase {
         }
         else{
           $categories_array[$collection->tid->value] = [
-            'title' => $collection->name->value,
+            'title'   => $collection->name->value,
             'teasers' => [$teaser_id],
           ];
         }
@@ -79,7 +79,7 @@ class TeasersBlock extends BlockBase {
       '#theme'     => 'rp_quickwin_teasers_block',
       '#variables' => $variables,
       // TODO: remove when is in styleguide
-      '#attached' => [ 'library' =>  [ 'rp_quickwin/slider' ], ],
+      '#attached'  => [ 'library' =>  [ 'rp_quickwin/slider' ], ],
     ];
   }
 

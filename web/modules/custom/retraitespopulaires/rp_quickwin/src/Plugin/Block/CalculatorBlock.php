@@ -56,7 +56,7 @@ class CalculatorBlock extends BlockBase {
     return [
       '#theme'     => 'rp_quickwin_calculator_block',
       '#variables' => $variables,
-      '#cache' => [ 'max-age' => 0 ],
+      '#cache'     => [ 'max-age' => 0 ],
     ];
   }
 
