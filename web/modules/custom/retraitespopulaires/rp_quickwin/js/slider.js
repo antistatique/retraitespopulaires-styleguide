@@ -24,7 +24,7 @@ jQuery( document ).ready(function() {
     });
 
     // Listen change event for update slider
-    input.on('change', function() {
+    input.change(function() {
       element.slider('value', input.autoNumeric('get'));
     });
   });

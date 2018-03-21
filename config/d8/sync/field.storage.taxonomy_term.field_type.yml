@@ -15,8 +15,8 @@ settings:
       value: chf
       label: CHF
     -
-      value: number
-      label: Nombre
+      value: npa
+      label: NPA
   allowed_values_function: ''
 module: options
 locked: false

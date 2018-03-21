@@ -47,6 +47,12 @@ class TeaserForm extends FormBase {
               $haveSlider = $field['withSlider'] == '1';
               break;
 
+            case 'npa':
+              $form[$fieldName] = [
+                '#type' => 'number',
+              ];
+              break;
+
             default:
               $form[$fieldName] = [
                 '#type'   => $field['type'],
