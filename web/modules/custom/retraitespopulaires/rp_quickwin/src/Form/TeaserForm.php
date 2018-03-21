@@ -89,8 +89,8 @@ class TeaserForm extends FormBase {
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Save values in session
-    $temp_store = \Drupal::service('user.private_tempstore')->get('rp_quickwin');
-    $temp_store->set('submited', $form_state->getValues());
+    $session = \Drupal::request()->getSession();
+    $session->set('rp_quickwin_submited', $form_state->getValues());
 
     // Redirect to the calculator page
     $form_state->setRedirect('entity.node.canonical', ['node' => $form_state->getValue('node')]);

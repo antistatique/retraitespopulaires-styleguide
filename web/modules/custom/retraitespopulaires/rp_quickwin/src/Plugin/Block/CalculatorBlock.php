@@ -17,8 +17,8 @@ use Drupal\Core\State\StateInterface;
 class CalculatorBlock extends BlockBase {
   public function build($params = array()) {
     // Get values in session
-    $temp_store = \Drupal::service('user.private_tempstore')->get('rp_quickwin');
-    $submited = $temp_store->get('submited');
+    $session = \Drupal::request()->getSession();
+    $submited = $session->get('rp_quickwin_submited');
 
     // Create the link
     $variables['link'] = \Drupal::state()->get('rp_quickwin.settings.logismata_url'). $params['node']->field_url_logismata->value;
@@ -50,7 +50,7 @@ class CalculatorBlock extends BlockBase {
     }
 
     // Delete session values
-    $temp_store->delete('submited');
+    $session->remove('rp_quickwin_submited');
 
     // Call block for calculator
     return [
