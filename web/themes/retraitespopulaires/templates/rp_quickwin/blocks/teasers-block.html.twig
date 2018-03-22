@@ -27,7 +27,7 @@
                                 {{ teaser.description|raw }}
                             </div>
                             <div class="card-footer">
-                                {{ load_form('rp_quickwin', 'TeaserForm', {'fields': teaser.fields, 'node': teaser.node}) }}
+                                {{ load_form('rp_quickwin', 'TeaserForm', {'field': teaser.field, 'button': teaser.button, 'node': teaser.node}) }}
                             </div>
                         </div>
                     </div>

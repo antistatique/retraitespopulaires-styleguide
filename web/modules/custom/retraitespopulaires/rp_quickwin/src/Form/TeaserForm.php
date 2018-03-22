@@ -23,50 +23,49 @@ class TeaserForm extends FormBase {
   }
 
   public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
-    if (!empty($params)){
-      // Add each field needed in the teaser
-      foreach ($params['fields'] as $fieldName => $field){
-        // Don't add if it is the button "Calculer"
-        if ($fieldName !== 'button'){
-          // Default parameter for all field
-          $defaultFieldParameter = [
-            '#title'  => $field['title'],
-            '#prefix' => '<div class="form-group">',
-            '#suffix' => '</div>',
-            '#default_value'  => $field['default'],
-          ];
-          $haveSlider = false;
+    if (!empty($params)) {
+      // Don't add if it is the button "Calculer"
+      if (isset($params['field'])) {
+        $field = $params['field'];
 
-          switch($field['type']){
-            case 'chf':
-              $form[$fieldName] = [
-                '#type'         => 'textfield',
-                '#attributes'   => [ 'class' => ['form-chf-numeric', 'text-right']],
-                '#placeholder'  => 'CHF',
-              ];
-              $haveSlider = $field['withSlider'] == '1';
-              break;
+        // Default parameter for all field
+        $defaultFieldParameter = [
+          '#title' => $field['title'],
+          '#prefix' => '<div class="form-group">',
+          '#suffix' => '</div>',
+          '#default_value' => $field['default'],
+        ];
+        $haveSlider = FALSE;
 
-            case 'npa':
-              $form[$fieldName] = [
-                '#type' => 'number',
-              ];
-              break;
+        switch ($field['type']) {
+          case 'chf':
+            $form[$field['parameter']] = [
+              '#type' => 'textfield',
+              '#attributes' => [ 'class' => [ 'form-chf-numeric', 'text-right' ] ],
+              '#placeholder' => 'CHF',
+            ];
+            $haveSlider = $field['withSlider'] == '1';
+            break;
 
-            default:
-              $form[$fieldName] = [
-                '#type'   => $field['type'],
-              ];
-              break;
-          }
+          case 'npa':
+            $form[$field['parameter']] = [
+              '#type' => 'number',
+            ];
+            break;
 
-          // Add default parameter to field (what's already in $form[$fieldName] is not override)
-          $form[$fieldName] += $defaultFieldParameter;
+          default:
+            $form[$field['parameter']] = [
+              '#type' => $field['type'],
+            ];
+            break;
+        }
 
-          // If there's a slider for number type
-          if ($haveSlider){
-            $form[$fieldName]['#suffix'] = '<br><div class="ui-widget-content slider" step="'.$field['step'].'" max="'.$field['max'].'" min="'.$field['min'].'"></div></div';
-          }
+        // Add default parameter to field (what's already in $form[$fieldName] is not override)
+        $form[$field['parameter']] += $defaultFieldParameter;
+
+        // If there's a slider for number type
+        if ($haveSlider) {
+          $form[$field['parameter']]['#suffix'] = '<br><div class="ui-widget-content slider" step="' . $field['step'] . '" max="' . $field['max'] . '" min="' . $field['min'] . '"></div></div';
         }
       }
 
@@ -80,7 +79,7 @@ class TeaserForm extends FormBase {
       $form['submit'] = [
         '#type'       => 'submit',
         '#attributes' => [ 'class' => [ 'btn-group-justified' ] ],
-        '#value'      => $this->t($params['fields']['button']),
+        '#value'      => $this->t($params['button']),
       ];
     }
 

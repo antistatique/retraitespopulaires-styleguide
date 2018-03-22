@@ -36,15 +36,14 @@ class TeasersBlock extends BlockBase {
         'info'        => $teaser_term->field_information->value,
         'node'        => $teaser_term->field_calculator->target_id,
         'nodeLink'    => Url::fromRoute('entity.node.canonical', ['node' => $teaser_term->field_calculator->target_id]),
-        'fields'      => [
-          'button'    => 'Calculer',
-        ],
+        'button'      => 'Calculer',
       ];
 
       // Add field if needed
       if (!empty($teaser_term->field_field->target_id)) {
         $field = Term::load($teaser_term->field_field->target_id);
-        $teasers_array[$teaser_id]['fields'][$field->field_logismata_parameter->value] = [
+        $teasers_array[$teaser_id]['field'] = [
+          'parameter'   => $field->field_logismata_parameter->value,
           'type'        => $field->field_type->value,
           'title'       => $field->field_display_name->value,
           'withSlider'  => $field->field_slider->value,
@@ -82,5 +81,4 @@ class TeasersBlock extends BlockBase {
       '#attached'  => [ 'library' =>  [ 'rp_quickwin/slider' ], ],
     ];
   }
-
 }
