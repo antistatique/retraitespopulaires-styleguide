@@ -175,13 +175,32 @@ When you deploy on the production environment, the styleguide used for deploy is
 
 We are using solr for search index.
 
-Solr need to be configured for drupal. Follow the INSTALL.txt found in the `search_api_solr` module.
+Solr need to be configured for drupal. Follow the INSTALL.txt found in the [search_api_solr](web/modules/contrib/search_api_solr/INSTALL.txt) module.
 
 As a pre-requisite for running your own Solr server, you'll need Java 6 or higher.
 
 ### Installation
 
 Install all prerequisites and configuration from `web/modules/contrib/search_api_solr/INSTALL.txt` then
+
+We customized a bit the `schema.xml`, stopwords and synonyms for this project to improve the search ("2e pilier", "balcon du mont", ...).
+The files we overrided are stored in `config/solr` dir.
+
+Here is the the resumed instructions:
+
+   # $CORE need to be unique for each project
+   $ CORE="retraitespopulaires-website"
+
+   $ mkdir -p /data/solr/data/$CORE/conf
+   $ cp -R web/modules/contrib/search_api_solr/solr-conf/6.x/* /data/solr/data/$CORE/conf
+   $ cp -R config/solr/* /data/solr/data/$CORE/conf
+   $ echo "name=$CORE" > /data/solr/data/$CORE/core.properties
+
+  echo "> installed solr config inside $HOME_SOLR/solr/$CORE/conf"
+
+On the Retraites Populaires env, you should run the commands with the `dplmgr` user using a `sudo`.
+
+### For Unix
 
 Start Solr with:
     $ bin/solr start
@@ -212,27 +231,27 @@ Check your Solr status with `solr status` and with `http://localhost:8983/solr/#
 
 Start Solr with:
 
-  ```shell
-  $ bin/solr start
+  ```bash
+    $ bin/solr start
   ```
 
-Index all your content with:
+Debug with
 
-  ```shell
-  $ drush cron
+  ```bash
+    $ bin/solr start -f -v
   ```
 
-Clean the index:
+Manual clear and index
 
-  ```shell
-  $ drush sapi-c [index]
+  ```bash
+    $ drush sapi-c [index]
+    $ drush sapi-i [index]
   ```
 
-Index everything at once:
+Automatic index via cron
 
-  ```shell
-  $ drush sapi-i [index]
-  ```
+  ```bash
+    $ drush cron
 
 ### Drupal Configuration
 

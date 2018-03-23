@@ -1,6 +1,12 @@
 CHANGELOG
 ---------
 
+# NEXT RELEASE
+ - improve Solr search with a customs configuration in `config/solr`
+ - add documentation about Solr integration with our custom config
+ - remove unecessary processors of Search API, which override our custom config
+ - remove indexation of jpg & wma files which break Drupal postquery highlighter
+
 ## 2.3.10 (2018-03-14)
  - add name field to popin
 
