@@ -2,15 +2,16 @@ uuid: 584e679a-308a-433b-a2cc-e55b289e7ff8
 langcode: en
 status: true
 dependencies:
-  config:
-    - field.storage.node.body
-    - field.storage.node.field_file_document
-    - search_api.server.solr
   module:
+    - search_api_solr
     - file
     - search_api
     - search_api_attachments
     - node
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_file_document
+    - search_api.server.solr
 id: full_website
 name: 'Full website'
 description: ''
@@ -46,14 +47,14 @@ field_settings:
     label: Titre
     datasource_id: 'entity:node'
     property_path: title
-    type: text
-    boost: !!float 21
+    type: solr_text_unstemmed
+    boost: !!float 5
   body:
     label: Body
     datasource_id: 'entity:node'
     property_path: body
     type: text
-    boost: !!float 13
+    boost: !!float 2
     dependencies:
       config:
         - field.storage.node.body
@@ -94,14 +95,14 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
+  rendered_item:
+    plugin_id: rendered_item
+    settings: {  }
   add_url:
     plugin_id: add_url
     settings: {  }
   aggregated_field:
     plugin_id: aggregated_field
-    settings: {  }
-  entity_status:
-    plugin_id: node_status
     settings: {  }
   highlight:
     highlight: always
@@ -113,28 +114,11 @@ processor_settings:
     suffix: '</mark>'
     weights:
       postprocess_query: 0
-  html_filter:
-    fields:
-      - url
-      - saa_field_file_document
-      - saa_field_file_page
-      - saa_field_file_news
-      - title
-      - body
-      - type
-      - filename
-    title: true
-    alt: true
-    tags:
-      h1: 5
-      h2: 3
-      h3: 2
-      strong: 2
-      b: 2
-    weights:
-      preprocess_index: -10
-      preprocess_query: -10
+  entity_status:
+    plugin_id: node_status
+    settings: {  }
   ignorecase:
+    all_fields: false
     fields:
       - url
       - saa_field_file_document
@@ -147,12 +131,25 @@ processor_settings:
     weights:
       preprocess_index: -10
       preprocess_query: -10
-  ignore_character:
+  transliteration:
+    all_fields: false
     fields:
-      - url
+      - saa_field_file_document
+      - saa_field_file_page
+      - saa_field_file_news
+      - title
       - body
-      - type
       - filename
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  ignore_character:
+    all_fields: false
+    fields:
+      - saa_field_file_document
+      - saa_field_file_page
+      - saa_field_file_news
+      - body
     ignorable: '[''¿¡!?,.:;]'
     strip:
       character_sets:
@@ -179,745 +176,8 @@ processor_settings:
     weights:
       preprocess_index: -10
       preprocess_query: -10
-  rendered_item:
-    plugin_id: rendered_item
-    settings: {  }
-  stopwords:
-    fields:
-      - saa_field_file_document
-      - saa_field_file_page
-      - saa_field_file_news
-      - title
-      - body
-    stopwords:
-      - a
-      - an
-      - and
-      - are
-      - as
-      - at
-      - be
-      - but
-      - by
-      - for
-      - if
-      - in
-      - into
-      - is
-      - it
-      - 'no'
-      - not
-      - of
-      - 'on'
-      - or
-      - s
-      - such
-      - t
-      - that
-      - the
-      - their
-      - then
-      - there
-      - these
-      - they
-      - this
-      - to
-      - was
-      - will
-      - with
-      - a
-      - abord
-      - absolument
-      - afin
-      - ah
-      - ai
-      - aie
-      - aient
-      - aies
-      - ailleurs
-      - ainsi
-      - ait
-      - allaient
-      - allo
-      - allons
-      - allô
-      - alors
-      - anterieur
-      - anterieure
-      - anterieures
-      - apres
-      - après
-      - as
-      - assez
-      - attendu
-      - au
-      - aucun
-      - aucune
-      - aucuns
-      - aujourd
-      - 'aujourd''hui'
-      - aupres
-      - auquel
-      - aura
-      - aurai
-      - auraient
-      - aurais
-      - aurait
-      - auras
-      - aurez
-      - auriez
-      - aurions
-      - aurons
-      - auront
-      - aussi
-      - autre
-      - autrefois
-      - autrement
-      - autres
-      - autrui
-      - aux
-      - auxquelles
-      - auxquels
-      - avaient
-      - avais
-      - avait
-      - avant
-      - avec
-      - avez
-      - aviez
-      - avions
-      - avoir
-      - avons
-      - ayant
-      - ayez
-      - ayons
-      - b
-      - bah
-      - bas
-      - basee
-      - bat
-      - beau
-      - beaucoup
-      - bien
-      - bigre
-      - bon
-      - boum
-      - bravo
-      - brrr
-      - c
-      - car
-      - ce
-      - ceci
-      - cela
-      - celle
-      - celle-ci
-      - celle-là
-      - celles
-      - celles-ci
-      - celles-là
-      - celui
-      - celui-ci
-      - celui-là
-      - celà
-      - cent
-      - cependant
-      - certain
-      - certaine
-      - certaines
-      - certains
-      - certes
-      - ces
-      - cet
-      - cette
-      - ceux
-      - ceux-ci
-      - ceux-là
-      - chacun
-      - chacune
-      - chaque
-      - cher
-      - chers
-      - chez
-      - chiche
-      - chut
-      - chère
-      - chères
-      - ci
-      - cinq
-      - cinquantaine
-      - cinquante
-      - cinquantième
-      - cinquième
-      - clac
-      - clic
-      - combien
-      - comme
-      - comment
-      - comparable
-      - comparables
-      - compris
-      - concernant
-      - contre
-      - couic
-      - crac
-      - d
-      - da
-      - dans
-      - de
-      - debout
-      - dedans
-      - dehors
-      - deja
-      - delà
-      - depuis
-      - dernier
-      - derniere
-      - derriere
-      - derrière
-      - des
-      - desormais
-      - desquelles
-      - desquels
-      - dessous
-      - dessus
-      - deux
-      - deuxième
-      - deuxièmement
-      - devant
-      - devers
-      - devra
-      - devrait
-      - different
-      - differentes
-      - differents
-      - différent
-      - différente
-      - différentes
-      - différents
-      - dire
-      - directe
-      - directement
-      - dit
-      - dite
-      - dits
-      - divers
-      - diverse
-      - diverses
-      - dix
-      - dix-huit
-      - dix-neuf
-      - dix-sept
-      - dixième
-      - doit
-      - doivent
-      - donc
-      - dont
-      - dos
-      - douze
-      - douzième
-      - dring
-      - droite
-      - du
-      - duquel
-      - durant
-      - dès
-      - début
-      - désormais
-      - e
-      - effet
-      - egale
-      - egalement
-      - egales
-      - eh
-      - elle
-      - elle-même
-      - elles
-      - elles-mêmes
-      - en
-      - encore
-      - enfin
-      - entre
-      - envers
-      - environ
-      - es
-      - essai
-      - est
-      - et
-      - etant
-      - etc
-      - etre
-      - eu
-      - eue
-      - eues
-      - euh
-      - eurent
-      - eus
-      - eusse
-      - eussent
-      - eusses
-      - eussiez
-      - eussions
-      - eut
-      - eux
-      - eux-mêmes
-      - exactement
-      - excepté
-      - extenso
-      - exterieur
-      - eûmes
-      - eût
-      - eûtes
-      - f
-      - fais
-      - faisaient
-      - faisant
-      - fait
-      - faites
-      - façon
-      - feront
-      - fi
-      - flac
-      - floc
-      - fois
-      - font
-      - force
-      - furent
-      - fus
-      - fusse
-      - fussent
-      - fusses
-      - fussiez
-      - fussions
-      - fut
-      - fûmes
-      - fût
-      - fûtes
-      - g
-      - gens
-      - h
-      - ha
-      - haut
-      - hein
-      - hem
-      - hep
-      - hi
-      - ho
-      - holà
-      - hop
-      - hormis
-      - hors
-      - hou
-      - houp
-      - hue
-      - hui
-      - huit
-      - huitième
-      - hum
-      - hurrah
-      - hé
-      - hélas
-      - i
-      - ici
-      - il
-      - ils
-      - importe
-      - j
-      - je
-      - jusqu
-      - jusque
-      - juste
-      - k
-      - l
-      - la
-      - laisser
-      - laquelle
-      - las
-      - le
-      - lequel
-      - les
-      - lesquelles
-      - lesquels
-      - leur
-      - leurs
-      - longtemps
-      - lors
-      - lorsque
-      - lui
-      - lui-meme
-      - lui-même
-      - là
-      - lès
-      - m
-      - ma
-      - maint
-      - maintenant
-      - mais
-      - malgre
-      - malgré
-      - maximale
-      - me
-      - meme
-      - memes
-      - merci
-      - mes
-      - mien
-      - mienne
-      - miennes
-      - miens
-      - mille
-      - mince
-      - mine
-      - minimale
-      - moi
-      - moi-meme
-      - moi-même
-      - moindres
-      - moins
-      - mon
-      - mot
-      - moyennant
-      - multiple
-      - multiples
-      - même
-      - mêmes
-      - 'n'
-      - na
-      - naturel
-      - naturelle
-      - naturelles
-      - ne
-      - neanmoins
-      - necessaire
-      - necessairement
-      - neuf
-      - neuvième
-      - ni
-      - nombreuses
-      - nombreux
-      - nommés
-      - non
-      - nos
-      - notamment
-      - notre
-      - nous
-      - nous-mêmes
-      - nouveau
-      - nouveaux
-      - nul
-      - néanmoins
-      - nôtre
-      - nôtres
-      - o
-      - oh
-      - ohé
-      - ollé
-      - olé
-      - 'on'
-      - ont
-      - onze
-      - onzième
-      - ore
-      - ou
-      - ouf
-      - ouias
-      - oust
-      - ouste
-      - outre
-      - ouvert
-      - ouverte
-      - ouverts
-      - o|
-      - où
-      - p
-      - paf
-      - pan
-      - par
-      - parce
-      - parfois
-      - parle
-      - parlent
-      - parler
-      - parmi
-      - parole
-      - parseme
-      - partant
-      - particulier
-      - particulière
-      - particulièrement
-      - pas
-      - passé
-      - pendant
-      - pense
-      - permet
-      - personne
-      - personnes
-      - peu
-      - peut
-      - peuvent
-      - peux
-      - pff
-      - pfft
-      - pfut
-      - pif
-      - pire
-      - pièce
-      - plein
-      - plouf
-      - plupart
-      - plus
-      - plusieurs
-      - plutôt
-      - possessif
-      - possessifs
-      - possible
-      - possibles
-      - pouah
-      - pour
-      - pourquoi
-      - pourrais
-      - pourrait
-      - pouvait
-      - prealable
-      - precisement
-      - premier
-      - première
-      - premièrement
-      - pres
-      - probable
-      - probante
-      - procedant
-      - proche
-      - près
-      - psitt
-      - pu
-      - puis
-      - puisque
-      - pur
-      - pure
-      - q
-      - qu
-      - quand
-      - quant
-      - quant-à-soi
-      - quanta
-      - quarante
-      - quatorze
-      - quatre
-      - quatre-vingt
-      - quatrième
-      - quatrièmement
-      - que
-      - quel
-      - quelconque
-      - quelle
-      - quelles
-      - 'quelqu''un'
-      - quelque
-      - quelques
-      - quels
-      - qui
-      - quiconque
-      - quinze
-      - quoi
-      - quoique
-      - r
-      - rare
-      - rarement
-      - rares
-      - relative
-      - relativement
-      - remarquable
-      - rend
-      - rendre
-      - restant
-      - reste
-      - restent
-      - restrictif
-      - retour
-      - revoici
-      - revoilà
-      - rien
-      - s
-      - sa
-      - sacrebleu
-      - sait
-      - sans
-      - sapristi
-      - sauf
-      - se
-      - sein
-      - seize
-      - selon
-      - semblable
-      - semblaient
-      - semble
-      - semblent
-      - sent
-      - sept
-      - septième
-      - sera
-      - serai
-      - seraient
-      - serais
-      - serait
-      - seras
-      - serez
-      - seriez
-      - serions
-      - serons
-      - seront
-      - ses
-      - seul
-      - seule
-      - seulement
-      - si
-      - sien
-      - sienne
-      - siennes
-      - siens
-      - sinon
-      - six
-      - sixième
-      - soi
-      - soi-même
-      - soient
-      - sois
-      - soit
-      - soixante
-      - sommes
-      - son
-      - sont
-      - sous
-      - souvent
-      - soyez
-      - soyons
-      - specifique
-      - specifiques
-      - speculatif
-      - stop
-      - strictement
-      - subtiles
-      - suffisant
-      - suffisante
-      - suffit
-      - suis
-      - suit
-      - suivant
-      - suivante
-      - suivantes
-      - suivants
-      - suivre
-      - sujet
-      - superpose
-      - sur
-      - surtout
-      - t
-      - ta
-      - tac
-      - tandis
-      - tant
-      - tardive
-      - te
-      - tel
-      - telle
-      - tellement
-      - telles
-      - tels
-      - tenant
-      - tend
-      - tenir
-      - tente
-      - tes
-      - tic
-      - tien
-      - tienne
-      - tiennes
-      - tiens
-      - toc
-      - toi
-      - toi-même
-      - ton
-      - touchant
-      - toujours
-      - tous
-      - tout
-      - toute
-      - toutefois
-      - toutes
-      - treize
-      - trente
-      - tres
-      - trois
-      - troisième
-      - troisièmement
-      - trop
-      - très
-      - tsoin
-      - tsouin
-      - tu
-      - té
-      - u
-      - un
-      - une
-      - unes
-      - uniformement
-      - unique
-      - uniques
-      - uns
-      - v
-      - va
-      - vais
-      - valeur
-      - vas
-      - vers
-      - via
-      - vif
-      - vifs
-      - vingt
-      - vivat
-      - vive
-      - vives
-      - vlan
-      - voici
-      - voie
-      - voient
-      - voilà
-      - vont
-      - vos
-      - votre
-      - vous
-      - vous-mêmes
-      - vu
-      - vé
-      - vôtre
-      - vôtres
-      - w
-      - x
-      - 'y'
-      - z
-      - zut
-      - à
-      - â
-      - ça
-      - ès
-      - étaient
-      - étais
-      - était
-      - étant
-      - état
-      - étiez
-      - étions
-      - été
-      - étée
-      - étées
-      - étés
-      - êtes
-      - être
-      - ô
-    weights:
-      preprocess_index: -5
-      preprocess_query: -2
-  transliteration:
+  html_filter:
+    all_fields: false
     fields:
       - url
       - saa_field_file_document
@@ -927,28 +187,23 @@ processor_settings:
       - body
       - type
       - filename
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
     weights:
       preprocess_index: -10
       preprocess_query: -10
   file_attachments:
-    excluded_extensions: 'aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv'
+    excluded_extensions: 'aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv jpg mp4 wma'
     number_indexed: 0
     max_filesize: '0'
     excluded_private: 1
-    excluded_mimes: 'audio/x-aiff image/x-jg video/x-msvideo image/x-ms-bmp image/gif image/vnd.microsoft.icon video/quicktime audio/ogg video/ogg image/png image/x-photoshop audio/x-realaudio audio/x-pn-realaudio image/x-rgb video/x-flv'
-  tokenizer:
-    fields:
-      - saa_field_file_document
-      - saa_field_file_page
-      - saa_field_file_news
-      - title
-      - body
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
-    weights:
-      preprocess_index: -6
-      preprocess_query: -6
+    excluded_mimes: 'audio/x-aiff image/x-jg video/x-msvideo image/x-ms-bmp image/gif image/vnd.microsoft.icon video/quicktime audio/ogg video/ogg image/png image/x-photoshop audio/x-realaudio audio/x-pn-realaudio image/x-rgb video/x-flv image/jpeg video/mp4 audio/x-ms-wma'
 tracker_settings:
   default:
     plugin_id: default
