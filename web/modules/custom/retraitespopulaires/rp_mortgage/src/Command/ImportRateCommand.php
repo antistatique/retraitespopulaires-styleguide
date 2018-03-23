@@ -85,6 +85,12 @@ class ImportRateCommand {
 
         $this->cache_tags_invalidator->invalidateTags(['rp_mortage_rates']);
         drush_print('Tags cleaned');
+
+        // If rp_quickwin module is enable export new rate to Logismata
+        $moduleHandler = \Drupal::service('module_handler');
+        if ($moduleHandler->moduleExists('rp_quickwin')) {
+          drush_rp_quickwin_export_rates_logismata();
+        }
     }
 
     /**

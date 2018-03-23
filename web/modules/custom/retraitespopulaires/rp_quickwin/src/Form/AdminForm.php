@@ -60,6 +60,18 @@ class AdminForm extends FormBase {
             '#default_value' => $this->state->get('rp_quickwin.settings.logismata_url')
         );
 
+        $form['quickwin']['logismata_url_auth'] = array(
+          '#type'          => 'textfield',
+          '#title' => $this->t('Url Token Auth Logismata'),
+          '#default_value' => $this->state->get('rp_quickwin.settings.logismata_url_auth'),
+        );
+
+        $form['quickwin']['logismata_url_set_list'] = [
+          '#type' => 'textfield',
+          '#title' => $this->t('Url Set List Logismata'),
+          '#default_value' => $this->state->get('rp_quickwin.settings.logismata_url_set_list'),
+        ];
+
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => $this->t('Save'),
@@ -83,5 +95,7 @@ class AdminForm extends FormBase {
     */
     public function submitForm(array &$form, FormStateInterface $form_state) {
         $this->state->set('rp_quickwin.settings.logismata_url', trim($form_state->getValue('logismata_url')));
+        $this->state->set('rp_quickwin.settings.logismata_url_auth', trim($form_state->getValue('logismata_url_auth')));
+        $this->state->set('rp_quickwin.settings.logismata_url_set_list', trim($form_state->getValue('logismata_url_set_list')));
     }
 }
