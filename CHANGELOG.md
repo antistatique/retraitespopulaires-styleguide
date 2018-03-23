@@ -6,7 +6,6 @@ CHANGELOG
  - add documentation about Solr integration with our custom config
  - remove unecessary processors of Search API, which override our custom config
  - remove indexation of jpg & wma files which break Drupal postquery highlighter
- - Add a new field Name in Popin
 
 ## 2.3.10 (2018-03-14)
  - add name field to popin
