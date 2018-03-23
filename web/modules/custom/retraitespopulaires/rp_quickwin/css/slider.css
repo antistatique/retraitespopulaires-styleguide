@@ -135,6 +135,10 @@
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+.collapse-title.collapsed .button-bubble i:before{
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
 .collapse-title .inline-block{
   display: inline-block;
   vertical-align: middle;
