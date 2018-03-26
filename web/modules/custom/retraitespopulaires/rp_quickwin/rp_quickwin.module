@@ -8,6 +8,25 @@
 /**
  * Implements hook_form_alter().
  */
+function rp_quickwin_form_taxonomy_term_teaser_calculator_quickwin_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Get all entity of page type
+  $nids = \Drupal::entityQuery('node')
+    ->condition('type', 'page')
+    ->execute();
+  $nodes = \Drupal::entityTypeManager()
+    ->getStorage('node')
+    ->loadMultiple($nids);
+
+  // Override field_calculator options for only have page with a calculator
+  $form['field_calculator']['widget']['#options'] = [];
+  foreach ($nodes as $node) {
+    if (!empty($node->field_url_logismata->value)) {
+      $form['field_calculator']['widget']['#options'][$node->nid->value] = $node->title->value;
+    }
+  }
+}
+
+
 function rp_quickwin_form_taxonomy_term_teaser_field_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   // Condition for display some field in field taxonomy form
   $number_field_condition =
