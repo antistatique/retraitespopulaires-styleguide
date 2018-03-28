@@ -7,6 +7,9 @@ CHANGELOG
  - remove unecessary processors of Search API, which override our custom config
  - remove indexation of jpg & wma files which break Drupal postquery highlighter
 
+## 2.3.11 (2018-03-28)
+ - HOTFIX: Drupal Security Update Patch - https://www.drupal.org/sa-core-2018-002
+
 ## 2.3.10 (2018-03-14)
  - add name field to popin
 
