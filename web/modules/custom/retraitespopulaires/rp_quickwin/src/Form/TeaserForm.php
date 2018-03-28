@@ -36,13 +36,9 @@ class TeaserForm extends FormBase {
           '#default_value' => $field->default,
         ];
         $haveSlider = FALSE;
-        /*$form['test']  = [
-          '#type' => 'rp_quickwin_teaser_field_type',
-        ];
-        echo '0';*/
         switch ($field->type) {
           case 'chf':
-            $form[$field->parameter] = [
+            $form[$field->logismata_parameter] = [
               '#type' => 'textfield',
               '#attributes' => [ 'class' => [ 'form-chf-numeric', 'text-right' ] ],
               '#placeholder' => 'CHF',
@@ -51,24 +47,24 @@ class TeaserForm extends FormBase {
             break;
 
           case 'npa':
-            $form[$field->parameter] = [
+            $form[$field->logismata_parameter] = [
               '#type' => 'number',
             ];
             break;
 
           default:
-            $form[$field->parameter] = [
+            $form[$field->logismata_parameter] = [
               '#type' => $field->type,
             ];
             break;
         }
 
         // Add default parameter to field (what's already in $form[$fieldName] is not override)
-        $form[$field->parameter] += $defaultFieldParameter;
+        $form[$field->logismata_parameter] += $defaultFieldParameter;
 
         // If there's a slider for number type
         if ($haveSlider) {
-          $form[$field->parameter]['#suffix'] = '<br><div class="ui-widget-content slider" step="' . $field->increment . '" max="' . $field->max . '" min="' . $field->min . '"></div></div';
+          $form[$field->logismata_parameter]['#suffix'] = '<br><div class="ui-widget-content slider" step="' . $field->increment . '" max="' . $field->max . '" min="' . $field->min . '"></div></div';
         }
       }
 

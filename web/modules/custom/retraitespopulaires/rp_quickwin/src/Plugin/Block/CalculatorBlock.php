@@ -49,11 +49,7 @@ class CalculatorBlock extends BlockBase {
     foreach ($teasers as $teaser){
       // Verify that the teaser target calculator is the current page
       if (!empty($teaser->get('field_calculator')->target_id) && $teaser->get('field_calculator')->target_id == $params['node']->nid->value) {
-        // Get field on the teaser and the logismata parameter
-        $field = Term::load($teaser->get('field_field')->target_id);
-        $parameter = $field->field_logismata_parameter->value;
-
-        $parameters[$parameter] = $submited[$parameter];
+        $parameter = $teaser->field_field->logismata_parameter;
 
         // Add to link if needed
         if (!empty($submited[$parameter])) {
