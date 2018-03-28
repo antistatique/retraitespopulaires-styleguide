@@ -40,18 +40,9 @@ class TeasersBlock extends BlockBase {
       ];
 
       // Add field if needed
-      if (!empty($teaser_term->field_field->target_id)) {
-        $field = Term::load($teaser_term->field_field->target_id);
-        $teasers_array[$teaser_id]['field'] = [
-          'parameter'   => $field->field_logismata_parameter->value,
-          'type'        => $field->field_type->value,
-          'title'       => $field->field_display_name->value,
-          'withSlider'  => $field->field_slider->value,
-          'min'         => $field->field_minimum->value,
-          'max'         => $field->field_maximum->value,
-          'step'        => $field->field_increment->value,
-          'default'     => $field->field_default->value,
-        ];
+      if (!$teaser_term->field_field->isEmpty()) {
+        $field = $teaser_term->field_field;
+        $teasers_array[$teaser_id]['field'] = $field;
       }
 
       // Get categories were the teaser is

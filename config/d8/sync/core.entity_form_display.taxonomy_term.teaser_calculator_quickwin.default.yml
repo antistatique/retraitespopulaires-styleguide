@@ -9,6 +9,8 @@ dependencies:
     - field.field.taxonomy_term.teaser_calculator_quickwin.field_field
     - field.field.taxonomy_term.teaser_calculator_quickwin.field_information
     - taxonomy.vocabulary.teaser_calculator_quickwin
+  module:
+    - rp_quickwin
 id: taxonomy_term.teaser_calculator_quickwin.default
 targetEntityType: taxonomy_term
 bundle: teaser_calculator_quickwin
@@ -35,10 +37,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_field:
-    weight: 5
-    settings: {  }
+    weight: 7
+    settings:
+      size: 20
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: rp_quickwin_teaser_widget_type
     region: content
   field_information:
     weight: 2

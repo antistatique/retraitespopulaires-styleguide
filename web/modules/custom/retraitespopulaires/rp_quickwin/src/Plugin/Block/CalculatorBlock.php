@@ -16,17 +16,36 @@ use Drupal\Core\State\StateInterface;
  */
 class CalculatorBlock extends BlockBase {
   public function build($params = array()) {
+    // Get Http Client
+    $httpClient = \Drupal::httpClient();
+
     // Get values in session
     $session = \Drupal::request()->getSession();
     $submited = $session->get('rp_quickwin_submited');
 
+    // Get the token
+    try {
+      $response = $httpClient->get(\Drupal::state()->get('rp_quickwin.settings.logismata_url_auth'));
+      $data = json_decode($response->getBody());
+      if (!empty($data->authToken)) {
+        $token = $data->authToken;
+      }
+    }
+    catch (\Exception $e) {
+      watchdog_exception('rp_quickwin', $e);
+    }
+
     // Create the link
-    $variables['link'] = \Drupal::state()->get('rp_quickwin.settings.logismata_url'). $params['node']->field_url_logismata->value;
+    // TODO: change zipAndLocation for better way
+    $variables['link'] = \Drupal::state()->get('rp_quickwin.settings.logismata_url'). $params['node']->field_url_logismata->value . '?zipAndLocation=lausanne&language=' . t('fr');
 
     // Get teasers
     $teasers = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('teaser_calculator_quickwin', 0, NULL, TRUE);
 
-    $isFirst = TRUE;
+    if (!empty($token)) {
+      $variables['link'] .= '&calculatorservicetoken=' .$token;
+    }
+
     foreach ($teasers as $teaser){
       // Verify that the teaser target calculator is the current page
       if (!empty($teaser->get('field_calculator')->target_id) && $teaser->get('field_calculator')->target_id == $params['node']->nid->value) {
@@ -34,17 +53,11 @@ class CalculatorBlock extends BlockBase {
         $field = Term::load($teaser->get('field_field')->target_id);
         $parameter = $field->field_logismata_parameter->value;
 
+        $parameters[$parameter] = $submited[$parameter];
+
         // Add to link if needed
         if (!empty($submited[$parameter])) {
-          if ($isFirst) {
-            // Start of link GET parameters
-            $variables['link'] .= '?';
-            $isFirst = FALSE;
-          }
-          else {
-            $variables['link'] .= '&';
-          }
-          $variables['link'] .= $parameter . '=' . $submited[$parameter];
+          $variables['link'] .= '&'. $parameter . '=' . $submited[$parameter];
         }
       }
     }

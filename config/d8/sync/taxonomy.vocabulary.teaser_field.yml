@@ -1,9 +1,0 @@
-uuid: 0a424837-18b6-443b-b488-9e3c597a2f69
-langcode: fr
-status: true
-dependencies: {  }
-name: 'Teaser Field'
-vid: teaser_field
-description: ''
-hierarchy: 0
-weight: 0

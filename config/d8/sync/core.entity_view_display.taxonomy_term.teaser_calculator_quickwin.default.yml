@@ -10,6 +10,7 @@ dependencies:
     - field.field.taxonomy_term.teaser_calculator_quickwin.field_information
     - taxonomy.vocabulary.teaser_calculator_quickwin
   module:
+    - rp_quickwin
     - text
 id: taxonomy_term.teaser_calculator_quickwin.default
 targetEntityType: taxonomy_term
@@ -47,12 +48,11 @@ content:
     type: basic_string
     region: content
   field_field:
-    weight: 3
+    weight: 7
     label: above
-    settings:
-      link: true
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_label
+    type: rp_quickwin_teaser_formatter_type
     region: content
   field_information:
     weight: 5

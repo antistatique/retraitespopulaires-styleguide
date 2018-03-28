@@ -30,42 +30,45 @@ class TeaserForm extends FormBase {
 
         // Default parameter for all field
         $defaultFieldParameter = [
-          '#title' => $field['title'],
+          '#title' => $field->name,
           '#prefix' => '<div class="form-group">',
           '#suffix' => '</div>',
-          '#default_value' => $field['default'],
+          '#default_value' => $field->default,
         ];
         $haveSlider = FALSE;
-
-        switch ($field['type']) {
+        /*$form['test']  = [
+          '#type' => 'rp_quickwin_teaser_field_type',
+        ];
+        echo '0';*/
+        switch ($field->type) {
           case 'chf':
-            $form[$field['parameter']] = [
+            $form[$field->parameter] = [
               '#type' => 'textfield',
               '#attributes' => [ 'class' => [ 'form-chf-numeric', 'text-right' ] ],
               '#placeholder' => 'CHF',
             ];
-            $haveSlider = $field['withSlider'] == '1';
+            $haveSlider = $field->with_slider == '1';
             break;
 
           case 'npa':
-            $form[$field['parameter']] = [
+            $form[$field->parameter] = [
               '#type' => 'number',
             ];
             break;
 
           default:
-            $form[$field['parameter']] = [
-              '#type' => $field['type'],
+            $form[$field->parameter] = [
+              '#type' => $field->type,
             ];
             break;
         }
 
         // Add default parameter to field (what's already in $form[$fieldName] is not override)
-        $form[$field['parameter']] += $defaultFieldParameter;
+        $form[$field->parameter] += $defaultFieldParameter;
 
         // If there's a slider for number type
         if ($haveSlider) {
-          $form[$field['parameter']]['#suffix'] = '<br><div class="ui-widget-content slider" step="' . $field['step'] . '" max="' . $field['max'] . '" min="' . $field['min'] . '"></div></div';
+          $form[$field->parameter]['#suffix'] = '<br><div class="ui-widget-content slider" step="' . $field->increment . '" max="' . $field->max . '" min="' . $field->min . '"></div></div';
         }
       }
 
