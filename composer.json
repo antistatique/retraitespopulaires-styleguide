@@ -103,7 +103,8 @@
         },
         "patches": {
             "drupal/core": {
-              "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch"
+              "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch",
+              "Remote Code Execution - SA-CORE-2018-002": "./patches/sa-core-2018-002.patch"
             },
             "drupal/config_ignore": {
               "Fix undefined drush_config_get_storage_filters": "https://www.drupal.org/files/issues/config_ignore-remove-storage-filters.patch"
