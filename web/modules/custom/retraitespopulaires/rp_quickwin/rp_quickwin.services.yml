@@ -1,0 +1,5 @@
+services:
+  rp_quickwin.export_logismata:
+    class: Drupal\rp_quickwin\ExportLogismataService
+    arguments: []
+

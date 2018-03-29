@@ -1,0 +1,17 @@
+# Saving 3a Rate routing definition
+entity.rp_quickwin_saving_3a_rate.canonical:
+  route_name: entity.rp_quickwin_saving_3a_rate.canonical
+  base_route: entity.rp_quickwin_saving_3a_rate.canonical
+  title: 'View'
+
+entity.rp_quickwin_saving_3a_rate.edit_form:
+  route_name: entity.rp_quickwin_saving_3a_rate.edit_form
+  base_route: entity.rp_quickwin_saving_3a_rate.canonical
+  title: Edit
+
+entity.rp_quickwin_saving_3a_rate.delete_form:
+  route_name:  entity.rp_quickwin_saving_3a_rate.delete_form
+  base_route:  entity.rp_quickwin_saving_3a_rate.canonical
+  title: Delete
+  weight: 10
+

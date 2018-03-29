@@ -49,6 +49,7 @@ class AdminForm extends FormBase {
     * {@inheritdoc}
     */
     public function buildForm(array $form, FormStateInterface $form_state, $extra = NULL) {
+      drupal_set_message(get_current_user());
         $form['quickwin'] = array(
             '#type'          => 'fieldset',
             '#title'         => $this->t('QuickWin'),

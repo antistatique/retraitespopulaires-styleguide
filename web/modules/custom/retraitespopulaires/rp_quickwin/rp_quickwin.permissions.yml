@@ -2,3 +2,8 @@
   title: 'Administer Retraites Populaires QuickWin - Calculator'
   description: 'Administer Retraites Populaires QuickWin - Calculator'
   restrict access: true
+
+administer saving 3a rate entities:
+  title: 'Administer Saving 3a Rate entities'
+  description: 'Allow to access the administration form to configure Saving 3a Rate entities.'
+  restrict access: true

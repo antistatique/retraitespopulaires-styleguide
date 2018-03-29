@@ -40,51 +40,7 @@ class ExportRateCommand {
       }
     }
 
-    // Send to Logismata
-    $this->exportToLogismata($logismata_product_list);
-  }
-
-  private function exportToLogismata($productsList) {
-    drush_print('Get Token for Logismata');
-
-    // Get Http Client
-    $httpClient = \Drupal::httpClient();
-    try {
-      // Get Auth Token for update
-      $response = $httpClient->get(\Drupal::state()->get('rp_quickwin.settings.logismata_url_auth'));
-      $data = json_decode($response->getBody());
-      if (!empty($data->authToken)) {
-        $token = $data->authToken;
-        drush_print('Token is provided');
-      }
-      else {
-        drush_print('Token is not provided');
-      }
-    } catch (\Exception $e) {
-      watchdog_exception('rp_quickwin', $e);
-    }
-
-    if (isset($token)) {
-      drush_print('Send Rates to Logismata');
-      $logismata_array = [
-        'authToken' => $token,
-        'productList' => $productsList,
-      ];
-
-      try {
-        // Send data to logismata
-        $response = $httpClient->put(\Drupal::state()->get('rp_quickwin.settings.logismata_url_set_list'), ['json' => $logismata_array]);
-        $data = json_decode($response->getBody());
-        if ($data->errorCode == 0) {
-          drush_print('Export Logismata successful');
-        }
-        else {
-          drush_print('Export Logismata error code: ' . $data->errorCode);
-        }
-      } catch (\Exception $e) {
-        watchdog_exception('rp_quickwin', $e);
-      }
-    }
+    \Drupal::service('rp_quickwin.export_logismata')->exportToLogismata($logismata_product_list);
   }
 
   private function getCalculatorRates() {
