@@ -72,6 +72,12 @@ class AdminForm extends FormBase {
           '#default_value' => $this->state->get('rp_quickwin.settings.logismata_url_set_list'),
         ];
 
+        $form['quickwin']['logismata_url_location'] = [
+          '#type' => 'textfield',
+          '#title' => $this->t('Url Get location Logismata'),
+          '#default_value' => $this->state->get('rp_quickwin.settings.logismata_url_location'),
+        ];
+
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
             '#value'       => $this->t('Save'),
@@ -97,5 +103,6 @@ class AdminForm extends FormBase {
         $this->state->set('rp_quickwin.settings.logismata_url', trim($form_state->getValue('logismata_url')));
         $this->state->set('rp_quickwin.settings.logismata_url_auth', trim($form_state->getValue('logismata_url_auth')));
         $this->state->set('rp_quickwin.settings.logismata_url_set_list', trim($form_state->getValue('logismata_url_set_list')));
+        $this->state->set('rp_quickwin.settings.logismata_url_location', trim($form_state->getValue('logismata_url_location')));
     }
 }

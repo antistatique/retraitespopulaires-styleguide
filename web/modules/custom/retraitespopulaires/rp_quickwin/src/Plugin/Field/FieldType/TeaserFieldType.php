@@ -97,15 +97,19 @@ class TeaserFieldType extends FieldItemBase {
         'with_slider' => [
           'type' => 'int',
           'size' => 'tiny',
+          'not null' => false,
         ],
         'min' => [
           'type' => 'int',
+          'not null' => false,
         ],
         'max' => [
           'type' => 'int',
+          'not null' => false,
         ],
         'increment' => [
           'type' => 'int',
+          'not null' => false,
         ],
       ],
     ];

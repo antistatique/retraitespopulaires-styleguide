@@ -47,8 +47,23 @@ class TeaserForm extends FormBase {
             break;
 
           case 'npa':
+            // Get a token for search location with Logismata API
+            $httpClient = \Drupal::httpClient();
+            $token = '';
+            try {
+              $response = $httpClient->get(\Drupal::state()->get('rp_quickwin.settings.logismata_url_auth'));
+              $data = json_decode($response->getBody());
+              if (!empty($data->authToken)) {
+                $token = $data->authToken;
+              }
+            }
+            catch (\Exception $e) {
+              watchdog_exception('rp_quickwin', $e);
+            }
+
             $form[$field->logismata_parameter] = [
-              '#type' => 'number',
+              '#type' => 'textfield',
+              '#attributes' => [ 'class' => [ 'form-npa' ], 'authToken' => $token, 'url' => \Drupal::state()->get('rp_quickwin.settings.logismata_url_location') ],
             ];
             break;
 

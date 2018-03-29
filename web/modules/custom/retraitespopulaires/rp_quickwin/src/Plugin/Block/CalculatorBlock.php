@@ -22,13 +22,19 @@ class CalculatorBlock extends BlockBase {
     // Get values in session
     $session = \Drupal::request()->getSession();
     $submited = $session->get('rp_quickwin_submited');
+    $parameters = [
+      'language' => t('fr'),
+
+      // TODO: Add this with a better way
+      'zipAndLocation' => 'lausanne',
+    ];
 
     // Get the token
     try {
       $response = $httpClient->get(\Drupal::state()->get('rp_quickwin.settings.logismata_url_auth'));
       $data = json_decode($response->getBody());
       if (!empty($data->authToken)) {
-        $token = $data->authToken;
+        $parameters['calculatorservicetoken'] = $data->authToken;
       }
     }
     catch (\Exception $e) {
@@ -36,15 +42,10 @@ class CalculatorBlock extends BlockBase {
     }
 
     // Create the link
-    // TODO: change zipAndLocation for better way
-    $variables['link'] = \Drupal::state()->get('rp_quickwin.settings.logismata_url'). $params['node']->field_url_logismata->value . '?zipAndLocation=lausanne&language=' . t('fr');
+    $variables['link'] = \Drupal::state()->get('rp_quickwin.settings.logismata_url'). $params['node']->field_url_logismata->value;
 
     // Get teasers
     $teasers = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('teaser_calculator_quickwin', 0, NULL, TRUE);
-
-    if (!empty($token)) {
-      $variables['link'] .= '&calculatorservicetoken=' .$token;
-    }
 
     foreach ($teasers as $teaser){
       // Verify that the teaser target calculator is the current page
@@ -53,9 +54,13 @@ class CalculatorBlock extends BlockBase {
 
         // Add to link if needed
         if (!empty($submited[$parameter])) {
-          $variables['link'] .= '&'. $parameter . '=' . $submited[$parameter];
+          $parameters[$parameter] = $submited[$parameter];
         }
       }
+    }
+
+    if (!empty($parameters)) {
+      $variables['link'] .= '?' . http_build_query($parameters);
     }
 
     // Delete session values

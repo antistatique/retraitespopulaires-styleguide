@@ -69,7 +69,7 @@ class TeasersBlock extends BlockBase {
       '#theme'     => 'rp_quickwin_teasers_block',
       '#variables' => $variables,
       // TODO: remove when is in styleguide
-      '#attached'  => [ 'library' =>  [ 'rp_quickwin/slider' ], ],
+      '#attached'  => [ 'library' =>  [ 'rp_quickwin/field' ], ],
     ];
   }
 }

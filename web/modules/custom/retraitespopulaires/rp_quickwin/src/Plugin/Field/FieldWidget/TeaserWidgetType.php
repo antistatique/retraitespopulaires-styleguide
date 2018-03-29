@@ -72,8 +72,6 @@ class TeaserWidgetType extends WidgetBase {
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     // Condition for display slider and slider parameter
-
-    print_r($items->getName());
     $slider_visible_condition = [
         [':input[selector="type'.$items->getName().$delta.'"]' => ['value' => 'chf']],
         'or',
@@ -134,7 +132,7 @@ class TeaserWidgetType extends WidgetBase {
         ],
       ],
       '#title' => t('Valeur min du slider'),
-      '#default_value' => isset($items[$delta]->min) ? $items[$delta]->min : NULL,
+      '#default_value' => isset($items[$delta]->min) ? $items[$delta]->min : 0,
       '#size' => '20',
     ];
 
@@ -146,7 +144,7 @@ class TeaserWidgetType extends WidgetBase {
         ],
       ],
       '#title' => t('Valeur max du slider'),
-      '#default_value' => isset($items[$delta]->max) ? $items[$delta]->max : NULL,
+      '#default_value' => isset($items[$delta]->max) ? $items[$delta]->max : 0,
       '#size' => '20',
     ];
 
@@ -158,7 +156,7 @@ class TeaserWidgetType extends WidgetBase {
         ],
       ],
       '#title' => t('Incrément du slider'),
-      '#default_value' => isset($items[$delta]->increment) ? $items[$delta]->increment : NULL,
+      '#default_value' => isset($items[$delta]->increment) ? $items[$delta]->increment : 0,
       '#size' => '20',
     ];
 
