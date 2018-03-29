@@ -74,7 +74,7 @@ class ExportSaving3AForm extends ConfirmFormBase {
           'fr' => $rate->getName(),
         ],
         'interest' => $rate->getRate(),
-        'disabled' => $rate->isAlterable(),
+        'disabled' => !$rate->isAlterable(),
       ];
 
       // Set default to first rate
