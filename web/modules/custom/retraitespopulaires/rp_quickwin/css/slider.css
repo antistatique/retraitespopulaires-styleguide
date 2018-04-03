@@ -143,3 +143,13 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+/* For green information symbol and changed size for edge better support */
+.tooltip-info .tooltip-symbol.tooltip-symbol-green {
+  background: url('/modules/custom/retraitespopulaires/rp_quickwin/svg/information-green.svg');
+}
+
+.tooltip-symbol {
+  width: 20px !important;
+  height: 20px !important;
+}

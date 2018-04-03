@@ -2,6 +2,9 @@
  * This is a temp file, we will add this in the styleguide later
  */
 jQuery( document ).ready(function() {
+  // To be sure that the format is respected (when back on browser)
+  jQuery('.form-chf-numeric').autoNumeric('update');
+
   // Add slider to each div with slider class
   jQuery(".slider").each(function(index, element) {
     // Get the JQuery element and the input with the slider
