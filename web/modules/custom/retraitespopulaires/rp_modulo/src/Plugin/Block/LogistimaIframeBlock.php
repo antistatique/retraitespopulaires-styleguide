@@ -68,7 +68,8 @@ class LogistimaIframeBlock extends BlockBase implements ContainerFactoryPluginIn
       '#theme'     => 'rp_modulo_logistima_iframe_block',
       '#variables' => $variables,
       # 12 hours of cache.
-      '#cache' => ['max-age' => 43200]
+      '#cache' => ['max-age' => 43200],
+      '#attached'  => [ 'library' =>  [ 'rp_quickwin/iframe' ], ],
     ];
   }
 }

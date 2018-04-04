@@ -71,6 +71,7 @@ class CalculatorBlock extends BlockBase {
       '#theme'     => 'rp_quickwin_calculator_block',
       '#variables' => $variables,
       '#cache'     => [ 'max-age' => 0 ],
+      '#attached'  => [ 'library' =>  [ 'rp_quickwin/iframe' ], ],
     ];
   }
 

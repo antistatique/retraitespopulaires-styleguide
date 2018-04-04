@@ -1,3 +1,8 @@
+iframe:
+  version: 1.x
+  js:
+    js/iframe-communication.js: {}
+
 #Temp before add to styleguide
 field:
   version: 1.x
