@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\rp_modulo\Plugin\Block;
+namespace Drupal\rp_quickwin\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -7,14 +7,14 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use GuzzleHttp\ClientInterface;
 
 /**
- * Provides the 'Modulo Logistima Iframe' Block
+ * Provides the 'Modulo Iframe' Block
  *
  * @Block(
- *   id = "rp_modulo_logistima_iframe_block",
- *   admin_label = @Translation("Modulo Logistima Iframe"),
+ *   id = "rp_quickwin_modulo_iframe_block",
+ *   admin_label = @Translation("Modulo Iframe Block"),
  * )
  */
-class LogistimaIframeBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class ModuloIframeBlock extends BlockBase implements ContainerFactoryPluginInterface {
   /**
    * The HTTP client to fetch the feed data with.
    *
@@ -49,26 +49,24 @@ class LogistimaIframeBlock extends BlockBase implements ContainerFactoryPluginIn
   * {@inheritdoc}
   */
   public function build($params = array()) {
-    $variables['calculatorservicetoken'] = NULL;
+    $variables['link'] = '/rpopulaires/app/index.html';
 
     // Retrieive Token from Logistama.
-    $embed = NULL;
     try {
-      $response = $this->httpClient->get('https://services.logismata.ch/puma/authentication/rpopulaires/createToken');
+      $response = $this->httpClient->get(\Drupal::state()->get('rp_quickwin.settings.logismata_url_auth'));
       $data = json_decode($response->getBody());
       if (!empty($data->authToken)) {
-        $variables['calculatorservicetoken'] = $data->authToken;
+        $variables['link'] .= '?calculatorservicetoken='.$data->authToken;
       }
     }
     catch (\Exception $e) {
-      watchdog_exception('rp_modulo', $e);
+      watchdog_exception('rp_quickwin', $e);
     }
 
     return [
-      '#theme'     => 'rp_modulo_logistima_iframe_block',
+      '#theme'     => 'rp_quickwin_calculator_block',
       '#variables' => $variables,
-      # 12 hours of cache.
-      '#cache' => ['max-age' => 43200],
+      '#cache'     => [ 'max-age' => 0 ],
       '#attached'  => [ 'library' =>  [ 'rp_quickwin/iframe' ], ],
     ];
   }
