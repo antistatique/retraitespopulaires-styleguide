@@ -20,6 +20,8 @@ class TeasersBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+    $session = \Drupal::request()->getSession();
+
     // Get teasers to show
     $teasers_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('teaser_calculator_quickwin', 0, NULL, TRUE);
     $categories_array = [];
@@ -53,8 +55,9 @@ class TeasersBlock extends BlockBase {
         }
         else{
           $categories_array[$collection->tid->value] = [
-            'title'   => $collection->name->value,
-            'teasers' => [$teaser_id],
+            'title'     => $collection->name->value,
+            'teasers'   => [$teaser_id],
+            'collapsed' => $session->get('rp_quickwin_collapsed_category_'.$collection->tid->value, TRUE),
           ];
         }
       }
@@ -68,8 +71,9 @@ class TeasersBlock extends BlockBase {
     return [
       '#theme'     => 'rp_quickwin_teasers_block',
       '#variables' => $variables,
-      // TODO: remove when is in styleguide
-      '#attached'  => [ 'library' =>  [ 'rp_quickwin/field' ], ],
+      '#cache'     => [ 'max-age' => 0 ],
+      // TODO: remove field when is in styleguide
+      '#attached'  => [ 'library' =>  [ 'rp_quickwin/expand-collapse', 'rp_quickwin/field' ], ],
     ];
   }
 }

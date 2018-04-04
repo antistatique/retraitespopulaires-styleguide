@@ -3,6 +3,11 @@ iframe:
   js:
     js/iframe-communication.js: {}
 
+expand-collapse:
+  version: 1.x
+  js:
+    js/expand-collapse.js: {}
+
 #Temp before add to styleguide
 field:
   version: 1.x

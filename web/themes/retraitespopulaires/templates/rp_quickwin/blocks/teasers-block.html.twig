@@ -1,6 +1,6 @@
 {% for categoryKey, category in variables.categories %}
     <div class="collapse-wrapper">
-        <div class="collapse-title collapsed"  role="button" data-toggle="collapse" href="#{{ categoryKey }}" aria-expanded="false" aria-controls="{{ categoryKey }}" aria-label="Cliquez pour dérouler le contenu de la section {{ category.title }}.">
+        <div class="category-collapse collapse-title {{ (category.collapsed) ? 'collapsed' : '' }}" category-id="{{ categoryKey }}" role="button" data-toggle="collapse" href="#{{ categoryKey }}" aria-expanded="{{ category.collapsed ? 'false' : 'true'}}" aria-controls="{{ categoryKey }}" aria-label="Cliquez pour dérouler le contenu de la section {{ category.title }}.">
             <div class="button-bubble inline-block">
                 <div class="bubble-icon">
                     <i class="retraitespopulaires-icon retraitespopulaires-icon-arrow-right"></i>
@@ -9,7 +9,7 @@
             <h5 class="inline-block">{{ category.title }}</h5>
             <div class="clearfix"></div>
         </div>
-        <div id="{{ categoryKey }}" class="collapse-body collapse">
+        <div id="{{ categoryKey }}" class="collapse-body collapse {{ (category.collapsed) ? '' : 'in' }}">
             <div class="row flex-row">
                 {% for teaser in category.teasers %}
                     {%  set teaser = variables.teasers[teaser] %}

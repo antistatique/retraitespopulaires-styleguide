@@ -13,6 +13,19 @@ rp_quickwin.admin.settings:
     requirements:
         _permission: 'administer rp quickwin'
 
+rp_quickwin.collapse:
+  path: '/rp_quickwin/collapse/{category}'
+  defaults:
+    _controller: '\Drupal\rp_quickwin\Controller\ExpandCollapseCategoryController::collapse'
+  requirements:
+    _permission: 'access content'
+rp_quickwin.expand:
+  path: '/rp_quickwin/expand/{category}'
+  defaults:
+    _controller: '\Drupal\rp_quickwin\Controller\ExpandCollapseCategoryController::expand'
+  requirements:
+    _permission: 'access content'
+
 #Saving 3a Rate route
 rp_quickwin.admin.saving_3a_export:
     path: '/admin/retraites-populaires/quickwin/saving3arates/export'
