@@ -20,8 +20,6 @@ class TeasersBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $session = \Drupal::request()->getSession();
-
     // Get teasers to show
     $teasers_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('teaser_calculator_quickwin', 0, NULL, TRUE);
     $categories_array = [];
@@ -57,7 +55,6 @@ class TeasersBlock extends BlockBase {
           $categories_array[$collection->tid->value] = [
             'title'     => $collection->name->value,
             'teasers'   => [$teaser_id],
-            'collapsed' => $session->get('rp_quickwin_collapsed_category_'.$collection->tid->value, TRUE),
           ];
         }
       }

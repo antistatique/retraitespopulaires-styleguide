@@ -1,10 +1,15 @@
 jQuery(document).ready(function(){
+  // Save to cookie when collapse change
   jQuery('.category-collapse').click(function(event){
     var target = jQuery(event.currentTarget);
-    jQuery.ajax({
-      url: '/rp_quickwin/' + (target.hasClass('collapsed') ? 'expand' : 'collapse') + '/' + target.attr('category-id'),
-      method: 'GET',
-      dataType: 'json'
-    });
+    jQuery.cookie('rp_quickwin_category_' + target.attr('category-id'), (target.hasClass('collapsed') ? 'expand' : 'collapse'), { expires: 0.1 });
+  });
+
+  // Open needed collapse
+  jQuery('.category-collapse').each(function (index, element) {
+    element = jQuery(element);
+    if (jQuery.cookie('rp_quickwin_category_'+ element.attr('category-id')) && jQuery.cookie('rp_quickwin_category_'+ element.attr('category-id')) === 'expand'){
+      element.click();
+    }
   });
 });
