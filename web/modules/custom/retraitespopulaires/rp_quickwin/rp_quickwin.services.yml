@@ -1,5 +1,6 @@
 services:
-  rp_quickwin.export_logismata:
-    class: Drupal\rp_quickwin\ExportLogismataService
-    arguments: []
-
+  rp_quickwin.logismata:
+    class: 'Drupal\rp_quickwin\LogismataService'
+    arguments:
+      - '@http_client'
+      - '@state'

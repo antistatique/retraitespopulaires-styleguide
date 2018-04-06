@@ -3,8 +3,11 @@
 namespace Drupal\rp_quickwin\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\State\StateInterface;
+use Drupal\rp_quickwin\LogismataService;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Provides a 'CalculatorBlock' block.
@@ -14,15 +17,58 @@ use Drupal\Core\State\StateInterface;
  *  admin_label = @Translation("Calculator block"),
  * )
  */
-class CalculatorBlock extends BlockBase {
-  public function build($params = array()) {
-    // Get Http Client
-    $httpClient = \Drupal::httpClient();
+class CalculatorBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
-    // Get values in session
-    $session = \Drupal::request()->getSession();
-    $submited = $session->get('rp_quickwin_submited');
-    $parameters = [
+  /**
+   * To communicate with Logismata
+   * @var LogismataService
+   */
+  private $logismataService;
+
+  /**
+   * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
+   * @var StateInterface
+   */
+  private $state;
+
+  /**
+   * To get GET parameters
+   * @var \Symfony\Component\HttpFoundation\Request
+   */
+  private $request;
+
+  /**
+   * Class constructor.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, LogismataService $logismataService, StateInterface $state, Request $request) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->logismataService = $logismataService;
+    $this->state = $state;
+    $this->request = $request;
+  }
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    // Instantiates this form class.
+    return new static(
+    // Load the service required to construct this class.
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      // Load customs services used in this class.
+      $container->get('rp_quickwin.logismata'),
+      $container->get('state'),
+      $container->get('request_stack')->getCurrentRequest()
+    );
+  }
+
+  public function build($params = array()) {
+    // Get parameters
+    $parameters = $this->request->query->all();
+
+    // Add default parameter
+    $parameters += [
       'language' => t('fr'),
 
       // TODO: Add this with a better way
@@ -31,46 +77,23 @@ class CalculatorBlock extends BlockBase {
 
     // Get the token
     try {
-      $response = $httpClient->get(\Drupal::state()->get('rp_quickwin.settings.logismata_url_auth'));
-      $data = json_decode($response->getBody());
-      if (!empty($data->authToken)) {
-        $parameters['calculatorservicetoken'] = $data->authToken;
-      }
-    }
-    catch (\Exception $e) {
-      watchdog_exception('rp_quickwin', $e);
+      $parameters['calculatorservicetoken'] = $this->logismataService->getToken();
+    } catch (\Exception $e) {
     }
 
     // Create the link
-    $variables['link'] = \Drupal::state()->get('rp_quickwin.settings.logismata_url'). $params['node']->field_url_logismata->value;
-
-    // Get teasers
-    $teasers = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('teaser_calculator_quickwin', 0, NULL, TRUE);
-
-    foreach ($teasers as $teaser){
-      // Verify that the teaser target calculator is the current page
-      if (!empty($teaser->get('field_calculator')->target_id) && $teaser->get('field_calculator')->target_id == $params['node']->nid->value) {
-        $parameter = $teaser->field_field->logismata_parameter;
-
-        // Add to link if needed
-        if (!empty($submited[$parameter])) {
-          $parameters[$parameter] = $submited[$parameter];
-        }
-      }
-    }
+    $variables['link'] = $this->state->get('rp_quickwin.settings.logismata_url'). $params['node']->field_url_logismata->value;
 
     if (!empty($parameters)) {
       $variables['link'] .= '?' . http_build_query($parameters);
     }
 
-    // Delete session values
-    $session->remove('rp_quickwin_submited');
-
     // Call block for calculator
     return [
       '#theme'     => 'rp_quickwin_calculator_block',
       '#variables' => $variables,
-      '#cache'     => [ 'max-age' => 0 ],
+      # 12 hours of cache
+      '#cache'     => [ 'max-age' => 43200 ],
       '#attached'  => [ 'library' =>  [ 'rp_quickwin/iframe' ], ],
     ];
   }

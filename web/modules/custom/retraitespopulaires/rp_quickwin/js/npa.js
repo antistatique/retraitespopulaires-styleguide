@@ -1,7 +1,7 @@
 jQuery(document).ready(function () {
   var npaElement = jQuery('.form-npa');
-  var url = npaElement.attr('url');
-  var authToken = npaElement.attr('authToken');
+  var url = npaElement.data('url');
+  var authToken = npaElement.data('authToken');
   npaElement.change(function(event) {
     element = jQuery(event.target);
 

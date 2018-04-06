@@ -12,6 +12,7 @@ function rp_quickwin_form_taxonomy_term_teaser_calculator_quickwin_form_alter(&$
   // Get all entity of page type
   $nids = \Drupal::entityQuery('node')
     ->condition('type', 'page')
+    ->exists('field_url_logismata')
     ->execute();
   $nodes = \Drupal::entityTypeManager()
     ->getStorage('node')

@@ -2,13 +2,54 @@
 
 namespace Drupal\rp_quickwin\Form;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Entity\Query\QueryInterface;
 use Drupal\Core\Form\ConfirmFormBase;
-use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
-use Drupal\Tests\taxonomy\Functional\Views\TaxonomyRelationshipTest;
+use Drupal\rp_quickwin\LogismataService;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ExportSaving3AForm extends ConfirmFormBase {
+  /**
+   * QueryInterface to get entities
+   * @var QueryInterface
+   */
+  private $query;
+
+  /**
+   * Saving 3a entity storage
+   * @var \Drupal\Core\Entity\EntityStorageInterface
+   */
+  private $saving3ARate;
+
+  /**
+   * LogismataService to send data to Logismata
+   * @var LogismataService
+   */
+  private $logismataService;
+
+  /**
+   * Class constructor.
+   */
+  public function __construct(QueryInterface $query, EntityTypeManagerInterface $entityTypeManager, LogismataService $logismataService) {
+    $this->query = $query;
+    $this->saving3ARate = $entityTypeManager->getStorage('rp_quickwin_saving_3a_rate');
+    $this->logismataService = $logismataService;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    // Instantiates this form class.
+    return new static(
+    // Load the service required to construct this class.
+      $container->get('entity.query'),
+      $container->get('entity_type.manager'),
+      $container->get('rp_quickwin.logismata')
+    );
+  }
 
   /**
    * Returns the question to ask the user.
@@ -61,8 +102,8 @@ class ExportSaving3AForm extends ConfirmFormBase {
     ];
 
     /** @var \Drupal\rp_quickwin\Entity\Saving3ARateInterface[] $rates */
-    $rates = \Drupal::entityQuery('rp_quickwin_saving_3a_rate')->execute();
-    $rates = \Drupal::entityTypeManager()->getStorage('rp_quickwin_saving_3a_rate')->loadMultiple($rates);
+    $rates = $this->query->get('rp_quickwin_saving_3a_rate')->execute();
+    $rates = $this->saving3ARate->loadMultiple($rates);
 
     // Add each rate to the list
     foreach ($rates as $rate) {
@@ -83,6 +124,6 @@ class ExportSaving3AForm extends ConfirmFormBase {
       }
     }
 
-    \Drupal::service('rp_quickwin.export_logismata')->exportToLogismata($logismata_product_list);
+    $this->logismataService->exportToLogismata($logismata_product_list);
   }
 }

@@ -4,11 +4,46 @@ namespace Drupal\rp_quickwin\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\State\StateInterface;
+use Drupal\rp_quickwin\LogismataService;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Class TeaserForm.
  */
 class TeaserForm extends FormBase {
+
+  /**
+   * To communicate with Logismata
+   * @var LogismataService
+   */
+  private $logismataService;
+
+  /**
+   * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
+   * @var StateInterface
+   */
+  private $state;
+
+  /**
+   * Class constructor.
+   */
+  public function __construct(LogismataService $logismataService, StateInterface $state) {
+    $this->logismataService  = $logismataService;
+    $this->state = $state;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    // Instantiates this form class.
+    return new static(
+    // Load the service required to construct this class.
+      $container->get('rp_quickwin.logismata'),
+      $container->get('state')
+    );
+  }
 
   /*
    * Variable for having an unique form ID for each teaser in the page
@@ -28,6 +63,12 @@ class TeaserForm extends FormBase {
       if (isset($params['field'])) {
         $field = $params['field'];
 
+        // Save logismata parameter
+        $form['logismata_parameter'] = [
+          '#type' => 'hidden',
+          '#default_value' => $field->logismata_parameter,
+        ];
+
         // Default parameter for all field
         $defaultFieldParameter = [
           '#title' => $field->name,
@@ -35,10 +76,11 @@ class TeaserForm extends FormBase {
           '#suffix' => '</div>',
           '#default_value' => $field->default,
         ];
+
         $haveSlider = FALSE;
         switch ($field->type) {
           case 'chf':
-            $form[$field->logismata_parameter] = [
+            $form['logismata_value'] = [
               '#type' => 'textfield',
               '#attributes' => [ 'class' => [ 'form-chf-numeric', 'text-right' ] ],
               '#placeholder' => 'CHF',
@@ -47,39 +89,31 @@ class TeaserForm extends FormBase {
             break;
 
           case 'npa':
-            // Get a token for search location with Logismata API
-            $httpClient = \Drupal::httpClient();
-            $token = '';
             try {
-              $response = $httpClient->get(\Drupal::state()->get('rp_quickwin.settings.logismata_url_auth'));
-              $data = json_decode($response->getBody());
-              if (!empty($data->authToken)) {
-                $token = $data->authToken;
-              }
-            }
-            catch (\Exception $e) {
-              watchdog_exception('rp_quickwin', $e);
+              $token = $this->logismataService->getToken();
+            } catch (\Exception $e) {
+              $token = '';
             }
 
-            $form[$field->logismata_parameter] = [
+            $form['logismata_value'] = [
               '#type' => 'textfield',
-              '#attributes' => [ 'class' => [ 'form-npa' ], 'authToken' => $token, 'url' => \Drupal::state()->get('rp_quickwin.settings.logismata_url_location') ],
+              '#attributes' => [ 'class' => [ 'form-npa' ], 'data-authToken' => $token, 'data-url' => $this->state->get('rp_quickwin.settings.logismata_url_location') ],
             ];
             break;
 
           default:
-            $form[$field->logismata_parameter] = [
+            $form['logismata_value'] = [
               '#type' => $field->type,
             ];
             break;
         }
 
         // Add default parameter to field (what's already in $form[$fieldName] is not override)
-        $form[$field->logismata_parameter] += $defaultFieldParameter;
+        $form['logismata_value'] += $defaultFieldParameter;
 
         // If there's a slider for number type
         if ($haveSlider) {
-          $form[$field->logismata_parameter]['#suffix'] = '<br><div class="ui-widget-content slider" step="' . $field->increment . '" max="' . $field->max . '" min="' . $field->min . '"></div></div';
+          $form['logismata_value']['#suffix'] = '<br><div class="ui-widget-content slider" step="' . $field->increment . '" max="' . $field->max . '" min="' . $field->min . '"></div></div';
         }
       }
 
@@ -100,13 +134,9 @@ class TeaserForm extends FormBase {
     return $form;
   }
 
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-    // Save values in session
-    $session = \Drupal::request()->getSession();
-    $session->set('rp_quickwin_submited', $form_state->getValues());
-
+  public function submitForm(array &$form, FormStateInterface $form_state, $params = null) {
     // Redirect to the calculator page
-    $form_state->setRedirect('entity.node.canonical', ['node' => $form_state->getValue('node')]);
+    $form_state->setRedirect('entity.node.canonical', ['node' => $form_state->getValue('node')], ['query' => [$form_state->getValue('logismata_parameter') => $form_state->getValue('logismata_value')]]);
   }
 
 }

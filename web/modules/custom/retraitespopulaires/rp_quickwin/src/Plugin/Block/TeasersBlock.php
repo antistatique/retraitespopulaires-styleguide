@@ -3,9 +3,10 @@
 namespace Drupal\rp_quickwin\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Url;
-use Drupal\node\Entity\Node;
-use Drupal\taxonomy\Entity\Term;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'TeasersBlock' block.
@@ -15,13 +16,43 @@ use Drupal\taxonomy\Entity\Term;
  *  admin_label = @Translation("Teasers block"),
  * )
  */
-class TeasersBlock extends BlockBase {
+class TeasersBlock extends BlockBase implements ContainerFactoryPluginInterface {
+
+  /**
+   * Taxonomy entity
+   * @var \Drupal\Core\Entity\EntityStorageInterface
+   */
+  private $taxonomyEntity;
+
+  /**
+   * Class constructor.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entityTypeManager) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->taxonomyEntity  = $entityTypeManager->getStorage('taxonomy_term');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    // Instantiates this form class.
+    return new static(
+    // Load the service required to construct this class.
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+    // Load the service required to construct this class.
+      $container->get('entity_type.manager')
+    );
+  }
+
   /**
    * {@inheritdoc}
    */
   public function build() {
     // Get teasers to show
-    $teasers_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('teaser_calculator_quickwin', 0, NULL, TRUE);
+    $teasers_terms = $this->taxonomyEntity->loadTree('teaser_calculator_quickwin', 0, NULL, TRUE);
     $categories_array = [];
     $teasers_array = [];
 

@@ -3,8 +3,9 @@ namespace Drupal\rp_quickwin\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\State\StateInterface;
+use Drupal\rp_quickwin\LogismataService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use GuzzleHttp\ClientInterface;
 
 /**
  * Provides the 'Modulo Iframe' Block
@@ -15,19 +16,26 @@ use GuzzleHttp\ClientInterface;
  * )
  */
 class ModuloIframeBlock extends BlockBase implements ContainerFactoryPluginInterface {
+
   /**
-   * The HTTP client to fetch the feed data with.
-   *
-   * @var \GuzzleHttp\ClientInterface
+   * To communicate with Logismata
+   * @var LogismataService
    */
-  protected $httpClient;
+  private $logismataService;
+
+  /**
+   * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
+   * @var StateInterface
+   */
+  private $state;
 
   /**
   * {@inheritdoc}
   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ClientInterface $http_client) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, LogismataService $logismataService, StateInterface $state) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->httpClient = $http_client;
+    $this->logismataService = $logismataService;
+    $this->state = $state;
   }
 
   /**
@@ -41,7 +49,8 @@ class ModuloIframeBlock extends BlockBase implements ContainerFactoryPluginInter
       $plugin_id,
       $plugin_definition,
       // Load customs services used in this class.
-      $container->get('http_client')
+      $container->get('rp_quickwin.logismata'),
+      $container->get('state')
     );
   }
 
@@ -53,20 +62,15 @@ class ModuloIframeBlock extends BlockBase implements ContainerFactoryPluginInter
 
     // Retrieive Token from Logistama.
     try {
-      $response = $this->httpClient->get(\Drupal::state()->get('rp_quickwin.settings.logismata_url_auth'));
-      $data = json_decode($response->getBody());
-      if (!empty($data->authToken)) {
-        $variables['link'] .= '?calculatorservicetoken='.$data->authToken;
-      }
-    }
-    catch (\Exception $e) {
-      watchdog_exception('rp_quickwin', $e);
+      $variables['link'] .= '?calculatorservicetoken=' . $this->logismataService->getToken();
+    } catch (\Exception $e) {
     }
 
     return [
       '#theme'     => 'rp_quickwin_calculator_block',
       '#variables' => $variables,
-      '#cache'     => [ 'max-age' => 0 ],
+      # 12 hours of cache
+      '#cache'     => [ 'max-age' => 43200 ],
       '#attached'  => [ 'library' =>  [ 'rp_quickwin/iframe' ], ],
     ];
   }

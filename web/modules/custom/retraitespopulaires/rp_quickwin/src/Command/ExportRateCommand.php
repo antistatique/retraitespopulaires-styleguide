@@ -2,11 +2,27 @@
 
 namespace Drupal\rp_quickwin\Command;
 
+use Drupal\rp_mortgage\Service\Rate;
+use Drupal\rp_quickwin\LogismataService;
+
 class ExportRateCommand {
+
+  /**
+   * To get mortgage rates
+   * @var Rate
+   */
   private $rateService;
 
-  public function __construct() {
-    $this->rateService = \Drupal::service('rp_mortgage.rate');
+  /**
+   * To communicate with Logismata
+   * @var LogismataService
+   */
+  private $logismataService;
+
+
+  public function __construct(Rate $rateService, LogismataService $logismataService) {
+    $this->rateService = $rateService;
+    $this->logismataService = $logismataService;
   }
 
   public function export() {
@@ -40,7 +56,7 @@ class ExportRateCommand {
       }
     }
 
-    \Drupal::service('rp_quickwin.export_logismata')->exportToLogismata($logismata_product_list);
+    $this->logismataService->exportToLogismata($logismata_product_list);
   }
 
   private function getCalculatorRates() {
