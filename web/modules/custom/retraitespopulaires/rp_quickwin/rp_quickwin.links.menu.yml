@@ -1,0 +1,17 @@
+rp_quickwin.admin:
+    title: 'QuickWin'
+    parent: rp_toolbar.admin
+    route_name: rp_quickwin.admin
+    weight: 20
+
+rp_quickwin.admin.settings:
+    title: 'Settings'
+    parent: rp_quickwin.admin
+    route_name: rp_quickwin.admin.settings
+    weight: 10
+
+rp_quickwin.admin.saving3arate:
+    title: 'Saving 3a rate'
+    parent: rp_quickwin.admin
+    route_name: entity.rp_quickwin_saving_3a_rate.collection
+    weight: 20

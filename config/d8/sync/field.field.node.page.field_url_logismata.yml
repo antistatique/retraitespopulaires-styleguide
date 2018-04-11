@@ -1,0 +1,19 @@
+uuid: cdbd2aee-7353-4b09-b7be-1bbba8795c41
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_url_logismata
+    - node.type.page
+id: node.page.field_url_logismata
+field_name: field_url_logismata
+entity_type: node
+bundle: page
+label: 'URL Logismata'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

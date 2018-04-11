@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * Contains rp_quickwin.module.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function rp_quickwin_form_taxonomy_term_teaser_calculator_quickwin_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Get all entity of page type
+  $nids = \Drupal::entityQuery('node')
+    ->condition('type', 'page')
+    ->exists('field_url_logismata')
+    ->execute();
+  $nodes = \Drupal::entityTypeManager()
+    ->getStorage('node')
+    ->loadMultiple($nids);
+
+  // Override field_calculator options for only have page with a calculator
+  $form['field_calculator']['widget']['#options'] = [];
+  foreach ($nodes as $node) {
+    if (!empty($node->field_url_logismata->value)) {
+      $form['field_calculator']['widget']['#options'][$node->nid->value] = $node->title->value;
+    }
+  }
+}
+
+
+function rp_quickwin_form_taxonomy_term_teaser_field_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Condition for display some field in field taxonomy form
+  $number_field_condition =
+    [
+      [':input[name="field_type"]' => ['value' => 'chf']],
+      'or',
+      [':input[name="field_type"]' => ['value' => 'number']],
+    ];
+
+  $form['field_slider']['#states'] = [
+    'visible' => [
+      $number_field_condition,
+    ],
+  ];
+
+  $form['field_maximum']['#states'] = [
+    'visible' => [
+      ':input[name="field_slider[value]"]' => ['checked' => TRUE],
+      $number_field_condition,
+    ],
+  ];
+
+  $form['field_minimum']['#states'] = [
+    'visible' => [
+      ':input[name="field_slider[value]"]' => ['checked' => TRUE],
+      $number_field_condition,
+    ],
+  ];
+
+  $form['field_increment']['#states'] = [
+    'visible' => [
+      ':input[name="field_slider[value]"]' => ['checked' => TRUE],
+      $number_field_condition,
+    ],
+  ];
+}
+
+/**
+ * Theme hook
+ */
+function rp_quickwin_theme($existing, $type, $theme, $path) {
+  return [
+    // Blocks themes
+    // ---------------------------------------------------------------------
+    'rp_quickwin_teasers_block' => [
+      // Use the following syntax to retrieve all variables in the "variables" container
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions into a sub folder
+      // using [template].html.twig
+      'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+      'template' => 'blocks/teasers-block',
+    ],
+
+    'rp_quickwin_calculator_block' => [
+      // Use the following syntax to retrieve all variables in the "variables" container
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions into a sub folder
+      // using [template].html.twig
+      'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
+      'template' => 'blocks/calculator-block',
+    ],
+  ];
+}

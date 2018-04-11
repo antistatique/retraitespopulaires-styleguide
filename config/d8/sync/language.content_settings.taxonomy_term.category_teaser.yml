@@ -1,0 +1,11 @@
+uuid: fcc36135-ed1c-41da-8829-131f602ce211
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_teaser
+id: taxonomy_term.category_teaser
+target_entity_type_id: taxonomy_term
+target_bundle: category_teaser
+default_langcode: site_default
+language_alterable: false

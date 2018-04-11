@@ -1,0 +1,20 @@
+uuid: 0d9e503d-88d7-4f60-9f34-89a19abcab63
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: taxonomy_term.field_calculator
+field_name: field_calculator
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
