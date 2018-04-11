@@ -17,15 +17,15 @@ jQuery( document ).ready(function() {
     // Get the JQuery element and the input with the slider
     element = jQuery(element);
     var input = element.siblings('div').find('input');
-    var maxValue = Number(element.attr('max'));
+    var maxValue = Number(element.data('max'));
 
     // Init slider for this element
     element.slider({
       orientation: 'horizontal',
       range: 'min',
       max: maxValue,
-      min: Number(element.attr('min')),
-      step: Number(element.attr('step')),
+      min: Number(element.data('min')),
+      step: Number(element.data('step')),
       value: input.autoNumeric('get'),
       animate: 100,
       // For update input

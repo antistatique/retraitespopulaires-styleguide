@@ -126,3 +126,28 @@
   width: 20px !important;
   height: 20px !important;
 }
+
+.location-dropdown {
+  position: absolute;
+  background: white;
+  border: 1px #008E4F solid;
+  border-radius: 5px;
+  list-style: none;
+  padding-left: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  left: 49px;
+  right: 49px;
+}
+
+.location-dropdown li {
+  font-size: 17px;
+  border-bottom: 1px #008E4F solid;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.location-dropdown li.selected {
+  background: #00DB7A;
+}

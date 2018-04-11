@@ -97,7 +97,7 @@ class TeaserForm extends FormBase {
 
             $form['logismata_value'] = [
               '#type' => 'textfield',
-              '#attributes' => [ 'class' => [ 'form-npa' ], 'data-authToken' => $token, 'data-url' => $this->state->get('rp_quickwin.settings.logismata_url_location') ],
+              '#attributes' => [ 'class' => [ 'form-npa' ], 'autocomplete' => 'off', 'data-authToken' => $token, 'data-url' => $this->state->get('rp_quickwin.settings.logismata_url_location') ],
             ];
             break;
 
@@ -113,7 +113,7 @@ class TeaserForm extends FormBase {
 
         // If there's a slider for number type
         if ($haveSlider) {
-          $form['logismata_value']['#suffix'] = '<br><div class="ui-widget-content slider" step="' . $field->increment . '" max="' . $field->max . '" min="' . $field->min . '"></div></div';
+          $form['logismata_value']['#suffix'] = '<br><div class="ui-widget-content slider" data-step="' . $field->increment . '" data-max="' . $field->max . '" data-min="' . $field->min . '"></div></div';
         }
       }
 

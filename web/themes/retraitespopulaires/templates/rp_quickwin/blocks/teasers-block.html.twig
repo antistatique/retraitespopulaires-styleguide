@@ -1,6 +1,6 @@
 {% for categoryKey, category in variables.categories %}
     <div class="collapse-wrapper">
-        <div class="category-collapse collapse-title collapsed" category-id="{{ categoryKey }}" role="button" data-toggle="collapse" href="#{{ categoryKey }}" aria-expanded="{{ category.collapsed ? 'false' : 'true'}}" aria-controls="{{ categoryKey }}" aria-label="Cliquez pour dérouler le contenu de la section {{ category.title }}.">
+        <div class="category-collapse collapse-title collapsed" data-category-id="{{ categoryKey }}" role="button" data-toggle="collapse" href="#{{ categoryKey }}" aria-expanded="{{ category.collapsed ? 'false' : 'true'}}" aria-controls="{{ categoryKey }}" aria-label="Cliquez pour dérouler le contenu de la section {{ category.title }}.">
             <div class="button-bubble inline-block">
                 <div class="bubble-icon">
                     <i class="retraitespopulaires-icon retraitespopulaires-icon-arrow-right"></i>
