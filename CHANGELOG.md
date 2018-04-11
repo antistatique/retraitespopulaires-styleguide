@@ -6,6 +6,7 @@ CHANGELOG
  - add documentation about Solr integration with our custom config
  - remove unecessary processors of Search API, which override our custom config
  - remove indexation of jpg & wma files which break Drupal postquery highlighter
+ - New Feature: QuickWin Teaser Form (PR #209)
 
 ## 2.3.11 (2018-03-28)
  - HOTFIX: Drupal Security Update Patch - https://www.drupal.org/sa-core-2018-002
