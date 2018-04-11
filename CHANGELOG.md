@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-# NEXT RELEASE
+# 2.4.0 (2018-04-11)
  - improve Solr search with a customs configuration in `config/solr`
  - add documentation about Solr integration with our custom config
  - remove unecessary processors of Search API, which override our custom config
