@@ -1,0 +1,19 @@
+uuid: 8c6b8a89-8f64-46a0-87b0-c7ebf7d21121
+langcode: fr
+status: true
+dependencies:
+  module:
+    - rp_quickwin
+    - taxonomy
+id: taxonomy_term.field_field
+field_name: field_field
+entity_type: taxonomy_term
+type: rp_quickwin_teaser_field_type
+settings: {  }
+module: rp_quickwin
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

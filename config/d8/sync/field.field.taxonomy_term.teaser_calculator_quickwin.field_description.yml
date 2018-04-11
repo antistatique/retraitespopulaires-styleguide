@@ -1,0 +1,19 @@
+uuid: 287dccdd-c907-416a-814b-4b0e829cc58d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_description
+    - taxonomy.vocabulary.teaser_calculator_quickwin
+id: taxonomy_term.teaser_calculator_quickwin.field_description
+field_name: field_description
+entity_type: taxonomy_term
+bundle: teaser_calculator_quickwin
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

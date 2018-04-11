@@ -1,0 +1,9 @@
+uuid: bc73608f-68eb-4d64-98bf-6009cd84a241
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Teaser Calculateur QuickWin'
+vid: teaser_calculator_quickwin
+description: ''
+hierarchy: 0
+weight: 0

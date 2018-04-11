@@ -1,0 +1,11 @@
+#-----------------------------------------------------------------------
+# This file blocks words from being operated on by the stemmer and word delimiter.
+&amp;
+&lt;
+&gt;
+&#039;
+&quot;
+2e
+2a
+3e
+3a

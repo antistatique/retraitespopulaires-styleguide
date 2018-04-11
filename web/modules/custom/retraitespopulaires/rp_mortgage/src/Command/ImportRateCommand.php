@@ -4,7 +4,7 @@ namespace Drupal\rp_mortgage\Command;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\QueryFactory;
-use Drupal\KernelTests\Core\Entity\EntityQueryTest;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 
 use Drupal\Core\Cache\CacheTagsInvalidator;
 
@@ -27,17 +27,24 @@ class ImportRateCommand {
      */
     private $cacheTagsInvalidator;
 
+  /**
+   * To know if rp_quickwin module existe
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   */
+    private $moduleHandler;
+
     /**
      * Class constructor.
      *
      * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
      * @param \Drupal\Core\Entity\Query\QueryFactory         $entityQuery
      */
-    public function __construct(EntityTypeManagerInterface $entityTypeManager, QueryFactory $entityQuery, CacheTagsInvalidator $cacheTagsInvalidator)
+    public function __construct(EntityTypeManagerInterface $entityTypeManager, QueryFactory $entityQuery, CacheTagsInvalidator $cacheTagsInvalidator, ModuleHandlerInterface $moduleHandler)
     {
         $this->entity_rate            = $entityTypeManager->getStorage('rp_mortgage_rate');
         $this->entity_query           = $entityQuery;
         $this->cache_tags_invalidator = $cacheTagsInvalidator;
+        $this->moduleHandler          = $moduleHandler;
     }
 
     /**
@@ -85,6 +92,11 @@ class ImportRateCommand {
 
         $this->cache_tags_invalidator->invalidateTags(['rp_mortage_rates']);
         drush_print('Tags cleaned');
+
+        // If rp_quickwin module is enable export new rate to Logismata
+        if ($this->moduleHandler->moduleExists('rp_quickwin')) {
+          drush_rp_quickwin_export_rates_logismata();
+        }
     }
 
     /**

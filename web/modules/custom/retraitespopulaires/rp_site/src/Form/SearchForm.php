@@ -53,6 +53,9 @@ class SearchForm extends FormBase {
         $form['#action'] = Url::fromRoute('rp_site.search')->toString();
         $form['#method'] = 'GET';
 
+        $form['#token'] = FALSE;
+        $form['#build_id'] = FALSE;
+
         $form['input-group_start'] = array(
             '#markup' => '<div class="input-group full-width">',
         );

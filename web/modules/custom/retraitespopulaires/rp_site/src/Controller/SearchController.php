@@ -90,9 +90,7 @@ class SearchController extends ControllerBase {
 
             $parse_mode = $this->parseModeManager->createInstance('terms');
             $query->setParseMode($parse_mode);
-            // $parse_mode->setConjunction('OR');
             $query->keys($search);
-
             $query->sort('search_api_relevance', 'DESC');
 
             // Facets
@@ -100,15 +98,14 @@ class SearchController extends ControllerBase {
             if ($server->supportsFeature('search_api_facets')) {
               $query->setOption('search_api_facets', [
                 'type' => [
-                  'field' => 'type',
-                  'limit' => 20,
-                  'operator' => 'AND',
+                  'field'     => 'type',
+                  'limit'     => 20,
+                  'operator'  => 'AND',
                   'min_count' => 1,
-                  'missing' => TRUE,
+                  'missing'   => TRUE,
                 ],
               ]);
             }
-
             // Retrieve facets before.
             $query_facets = clone $query;
             $results_facets = $query_facets->execute();
