@@ -91,6 +91,17 @@ class PopinForm extends FormBase {
       '#value' => $request->getPathInfo(),
     ];
 
+    $form['name'] = array(
+      '#title'       => $this->t('Prénom, Nom *'),
+      '#type'        => 'textfield',
+      '#required'    => false,
+      '#prefix'      => '<div class="form-group">',
+      '#suffix'      => '</div>',
+      '#attributes' => [
+        'id' => 'tracking-popin-name',
+      ],
+    );
+
     $form['contact'] = array(
       '#title'       => $this->t('Votre e-mail ou numéro de téléphone*'),
       '#type'        => 'textfield',
@@ -107,7 +118,7 @@ class PopinForm extends FormBase {
       '#suffix' => '</div>',
     ];
 
-    $form['cols']['npa'] = array(
+    $form['cols']['zip'] = array(
       '#title'       => $this->t('Votre code postal (NPA) *'),
       '#placeholder' => $this->t('1000'),
       '#type'        => 'textfield',
@@ -120,17 +131,18 @@ class PopinForm extends FormBase {
     );
 
     $form['cols']['submit'] = array(
+      '#id'          => 'rp_popin_form_submit',
+      '#name'        => 'rp_popin_form_submit_name',
       '#type'        => 'submit',
       '#value'       => $this->t('Envoyer'),
       '#button_type' => 'primary',
       '#prefix'      => '<div class="form-group col-xs-6 col-sm-4">',
       '#suffix'      => '</div>',
-      '#attributes' => [
+      '#attributes'  => [
         'class' => array('btn-primary', 'use-ajax-submit', 'tracking-popin-submit')
       ],
       '#ajax'        => [
         'callback' => [$this, 'respondToAjax'],
-        'event'    => 'click',
         'progress' => ['type' => 'none']
       ]
     );
@@ -189,9 +201,14 @@ class PopinForm extends FormBase {
   * {@inheritdoc}
   */
   public function validateForm(array &$form, FormStateInterface $form_state) {
+    // Assert the firstname field is not empty
+    if (!$form_state->getValue('name') || empty($form_state->getValue('name'))) {
+      $form_state->setErrorByName('name', $this->t('Veuillez indiquer votre prénom et votre nom.'));
+    }
+
     // Assert the contact field is not empty.
     if (!$form_state->getValue('contact') || empty($form_state->getValue('contact'))) {
-      $form_state->setErrorByName('contact', $this->t('Veuillez indiquer votre e-mail ou votre numéro de téléphone,'));
+      $form_state->setErrorByName('contact', $this->t('Veuillez indiquer votre e-mail ou votre numéro de téléphone.'));
     }
   }
 
@@ -201,6 +218,7 @@ class PopinForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
     $data = [
+      'name'    => $form_state->getValue('name'),
       'contact' => $form_state->getValue('contact'),
       'zip'     => $form_state->getValue('zip'),
       'uri'     => $form_state->getValue('uri'),

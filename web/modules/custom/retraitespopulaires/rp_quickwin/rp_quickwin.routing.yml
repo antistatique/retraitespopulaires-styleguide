@@ -1,0 +1,63 @@
+rp_quickwin.admin:
+    path: '/admin/retraites-populaires/quickwin'
+    defaults:
+        _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+        _title: 'QuickWin - Admin'
+    requirements:
+        _permission: 'administer rp quickwin'
+rp_quickwin.admin.settings:
+    path: '/admin/retraites-populaires/quickwin/settings'
+    defaults:
+        _form: 'Drupal\rp_quickwin\Form\AdminForm'
+        _title: 'QuickWin - Admin - Settings'
+    requirements:
+        _permission: 'administer rp quickwin'
+
+#Saving 3a Rate route
+rp_quickwin.admin.saving_3a_export:
+    path: '/admin/retraites-populaires/quickwin/saving3arates/export'
+    defaults:
+        _form: 'Drupal\rp_quickwin\Form\ExportSaving3AForm'
+        _title: 'QuickWin - Export Rate'
+    requirements:
+        _permission: 'administer saving 3a rate'
+
+entity.rp_quickwin_saving_3a_rate.canonical:
+  path: '/admin/retraites-populaires/quickwin/saving3arates/{rp_quickwin_saving_3a_rate}'
+  defaults:
+    _entity_view: 'rp_quickwin_saving_3a_rate'
+    _title: 'Rate Content'
+  requirements:
+    _entity_access: 'rp_quickwin_saving_3a_rate.view'
+
+entity.rp_quickwin_saving_3a_rate.collection:
+  path: '/admin/retraites-populaires/quickwin/saving3arates'
+  defaults:
+    _entity_list: 'rp_quickwin_saving_3a_rate'
+    _title: 'Rates List'
+  requirements:
+    _permission: 'administer saving 3a rate entites'
+
+entity.rp_quickwin_saving_3a_rate.add_form:
+  path: '/admin/retraites-populaires/quickwin/saving3arates/add'
+  defaults:
+    _entity_form: rp_quickwin_saving_3a_rate.add
+    _title: 'Add Rate'
+  requirements:
+    _entity_create_access: 'rp_quickwin_saving_3a_rate'
+
+entity.rp_quickwin_saving_3a_rate.edit_form:
+  path: '/admin/retraites-populaires/quickwin/saving3arates/{rp_quickwin_saving_3a_rate}/edit'
+  defaults:
+    _entity_form: rp_quickwin_saving_3a_rate.edit
+    _title: 'Edit Rate'
+  requirements:
+    _entity_access: 'rp_quickwin_saving_3a_rate.edit'
+
+entity.rp_quickwin_saving_3a_rate.delete_form:
+  path: '/admin/retraites-populaires/quickwin/saving3arates/{rp_quickwin_saving_3a_rate}/delete'
+  defaults:
+    _entity_form: rp_quickwin_saving_3a_rate.delete
+    _title: 'Delete Rate'
+  requirements:
+    _entity_access: 'rp_quickwin_saving_3a_rate.delete'

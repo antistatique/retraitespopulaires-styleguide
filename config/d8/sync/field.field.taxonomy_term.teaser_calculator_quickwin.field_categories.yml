@@ -1,0 +1,28 @@
+uuid: 6c05be9e-791e-45c0-86d4-f89f0d73a4d8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_categories
+    - taxonomy.vocabulary.category_teaser
+    - taxonomy.vocabulary.teaser_calculator_quickwin
+id: taxonomy_term.teaser_calculator_quickwin.field_categories
+field_name: field_categories
+entity_type: taxonomy_term
+bundle: teaser_calculator_quickwin
+label: Categories
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      category_teaser: category_teaser
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

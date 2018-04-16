@@ -1,0 +1,7 @@
+uuid: 8e4ff56d-1252-435d-a75e-040f1d5024f1
+langcode: fr
+status: true
+dependencies: {  }
+id: quickwin_teasers
+name: 'QuickWin Teasers'
+suggestion: quickwin_teasers

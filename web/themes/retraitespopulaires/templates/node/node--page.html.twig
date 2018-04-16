@@ -1,5 +1,17 @@
 {% extends "@retraitespopulaires/node/node.html.twig" %}
 
+{# If there's a calculator it must be on full width #}
+{% if node.field_url_logismata is not empty %}
+  {% set node_content_width = [ 'col-xs-12' ] %}
+{% endif %}
+
+{% block node_body %}
+  {{ parent() }}
+  {% if node.field_url_logismata is not empty %}
+      {{ load_block('rp_quickwin_calculator_block', { 'node': node }) }}
+  {% endif %}
+{% endblock %}
+
 {% block node_bottom %}
   {% embed "@retraitespopulaires/node/partials/attached_documents.html.twig" with {'documents': node.field_document_page} %}{% endembed %}
 

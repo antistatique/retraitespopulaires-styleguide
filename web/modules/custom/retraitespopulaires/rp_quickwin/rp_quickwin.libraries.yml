@@ -1,0 +1,24 @@
+iframe:
+  version: 1.x
+  js:
+    js/iframe-communication.js: {}
+
+expand-collapse:
+  version: 1.x
+  js:
+    js/expand-collapse.js: {}
+  dependencies:
+    - core/jquery.cookie
+
+#Temp before add to styleguide
+field:
+  version: 1.x
+  css:
+    theme:
+      css/slider.css: {}
+  js:
+    js/slider.js: {}
+    js/npa.js: {}
+  dependencies:
+    - core/jquery.ui.slider
+    - core/jquery.ui.touch-punch

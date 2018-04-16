@@ -60,6 +60,12 @@
   $.fn.contactPopin = function(data) {
     const $popin = $(this);
 
+    // Custom GMT event for tracking.
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'popinSubmit',
+    });
+
     if (data.toggle) {
       // Toggle the popin collapse
       $popin.find('.collapse').collapse('toggle');
@@ -92,6 +98,13 @@
    */
   $.fn.scrollToMessages = function(data) {
     if ($(data.selector).length > 0) {
+
+      // Custom GMT event for tracking.
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'popinSubmitError',
+      });
+
       $('html, body').animate({
         scrollTop: $(data.selector).offset().top - 80
       }, 500);

@@ -1,0 +1,21 @@
+uuid: 049c9c52-b952-4eb7-8cc9-c7493e3d9b3f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_field
+    - taxonomy.vocabulary.teaser_calculator_quickwin
+  module:
+    - rp_quickwin
+id: taxonomy_term.teaser_calculator_quickwin.field_field
+field_name: field_field
+entity_type: taxonomy_term
+bundle: teaser_calculator_quickwin
+label: Champ
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: rp_quickwin_teaser_field_type

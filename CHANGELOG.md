@@ -1,6 +1,26 @@
 CHANGELOG
 ---------
 
+# 2.4.0 (2018-04-11)
+ - improve Solr search with a customs configuration in `config/solr`
+ - add documentation about Solr integration with our custom config
+ - remove unecessary processors of Search API, which override our custom config
+ - remove indexation of jpg & wma files which break Drupal postquery highlighter
+ - New Feature: QuickWin Teaser Form (PR #209)
+
+## 2.3.11 (2018-03-28)
+ - HOTFIX: Drupal Security Update Patch - https://www.drupal.org/sa-core-2018-002
+
+## 2.3.10 (2018-03-14)
+ - add name field to popin
+
+## 2.3.9 (2018-02-27) 
+ - fix GTM popin tracking with custom event - MD-304
+
+## 2.3.8 (2018-02-26)
+ - fix vimeo error console when no vimeo video are present in the page
+ - fix popin contact with uniq ID to avoid ajax error
+
 ## 2.3.7 (2018-02-14)
  - add new module 'rp_modulo' to provide custom code of Logistima Iframe
  - improve popin contact with validations - MD-304

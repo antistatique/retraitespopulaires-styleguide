@@ -1,0 +1,11 @@
+entity.rp_quickwin_saving_3a_rate.add_form:
+  route_name: entity.rp_quickwin_saving_3a_rate.add_form
+  title: 'Add Rate'
+  appears_on:
+    - entity.rp_quickwin_saving_3a_rate.collection
+
+entity.rp_quickwin_saving_3a_rate.export_form:
+  route_name: rp_quickwin.admin.saving_3a_export
+  title: 'Export Rate'
+  appears_on:
+    - entity.rp_quickwin_saving_3a_rate.collection

@@ -51,11 +51,11 @@ module:
   rp_homepage: 0
   rp_layout: 0
   rp_libre_passage: 0
-  rp_modulo: 0
   rp_mortgage: 0
   rp_newsletter: 0
   rp_offers: 0
   rp_product: 0
+  rp_quickwin: 0
   rp_site: 0
   rp_toolbar: 0
   search_api: 0
