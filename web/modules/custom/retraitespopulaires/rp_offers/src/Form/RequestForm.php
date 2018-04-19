@@ -9,6 +9,8 @@ namespace Drupal\rp_offers\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\Core\State\StateInterface;
+use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\rp_offers\Service\Request;
@@ -29,14 +31,21 @@ class RequestForm extends FormBase {
     protected $session;
 
     /**
+     * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
+     * @var StateInterface
+     */
+    protected $state;
+
+    /**
      * Class constructor.
      */
-    public function __construct(Request $request, PrivateTempStoreFactory $private_tempstore) {
+    public function __construct(Request $request, PrivateTempStoreFactory $private_tempstore, StateInterface $state) {
         $this->request = $request;
 
         // Init session
         // TODO Found better solution to inline errors than hack session to
         $this->session = $private_tempstore->get(self::getFormId());
+        $this->state = $state;
     }
 
     /**
@@ -47,7 +56,8 @@ class RequestForm extends FormBase {
       return new static(
         // Load the service required to construct this class.
         $container->get('rp_offers.request'),
-        $container->get('user.private_tempstore')
+        $container->get('user.private_tempstore'),
+        $container->get('state')
       );
     }
 
@@ -89,7 +99,7 @@ class RequestForm extends FormBase {
         );
 
         // Calculate the number of day(s) left to generate dynamic title
-        $title = t('Cette offre est terminée, vous ne pouvez plus participer au tirage au sort');
+        $title = $this->t('Cette offre est terminée, vous ne pouvez plus participer au tirage au sort');
         $now = new \DateTime();
         $date_end = \DateTime::createFromFormat('Y-m-d', $params['node']->field_date_end->value);
         $date_end->setTime(23,59);
@@ -97,11 +107,11 @@ class RequestForm extends FormBase {
             $interval = $now->diff($date_end);
             $days = $interval->format('%a');
             if ($days > 1) {
-                $title = t('Il vous reste @days jours pour participer au tirage au sort', ['@days' => $days] );
+                $title = $this->t('Il vous reste @days jours pour participer au tirage au sort', ['@days' => $days] );
             } elseif ($interval->format('%a') == 1) {
-                $title = t('Il vous reste 1 jour pour participer aux tirage au sort');
+                $title = $this->t('Il vous reste 1 jour pour participer aux tirage au sort');
             } else {
-                $title = t('C\'est le dernier jour pour participer au tirage au sort dépêcher vous');
+                $title = $this->t('C\'est le dernier jour pour participer au tirage au sort dépêcher vous');
             }
         }
         $form['personnal'] = array(
@@ -120,9 +130,8 @@ class RequestForm extends FormBase {
           $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['civil_state'] = array(
-          '#title'       => t('Votre état civil *'),
+          '#title'       => $this->t('Votre état civil *'),
           '#type'        => 'select',
-
           '#options'     => array('Madame' => t('Madame'), 'Monsieur' => t('Monsieur')),
           '#required'    => false,
           '#prefix'      => '<div class="form-group '.$error_class.'">',
@@ -138,8 +147,8 @@ class RequestForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['firstname'] = array(
-            '#title'       => t('Votre prénom *'),
-            '#placeholder' => t('Alain'),
+            '#title'       => $this->t('Votre prénom *'),
+            '#placeholder' => $this->t('Alain'),
             '#type'        => 'textfield',
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
@@ -155,8 +164,8 @@ class RequestForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['lastname'] = array(
-            '#title'       => t('Votre nom de famille *'),
-            '#placeholder' => t('Rochat'),
+            '#title'       => $this->t('Votre nom de famille *'),
+            '#placeholder' => $this->t('Rochat'),
             '#type'        => 'textfield',
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
@@ -172,8 +181,8 @@ class RequestForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['email'] = array(
-            '#title'       => t('Votre e-mail *'),
-            '#placeholder' => t('alain.rochat@retraitespopulaires.ch'),
+            '#title'       => $this->t('Votre e-mail *'),
+            '#placeholder' => $this->t('alain.rochat@retraitespopulaires.ch'),
             '#type'        => 'textfield',
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
@@ -189,8 +198,8 @@ class RequestForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['address'] = array(
-            '#title'       => t('Votre adresse *'),
-            '#placeholder' => t('Chemin de l\'Avenir 1'),
+            '#title'       => $this->t('Votre adresse *'),
+            '#placeholder' => $this->t('Chemin de l\'Avenir 1'),
             '#type'        => 'textfield',
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
@@ -206,8 +215,8 @@ class RequestForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['zip'] = array(
-            '#title'       => t('Votre code postal (NPA) *'),
-            '#placeholder' => t('1000'),
+            '#title'       => $this->t('Votre code postal (NPA) *'),
+            '#placeholder' => $this->t('1000'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 10],
             '#required'    => false,
@@ -224,8 +233,8 @@ class RequestForm extends FormBase {
             $error = '<div class="input-error-desc">'.$error_msg.'</div>';
         }
         $form['personnal']['city'] = array(
-            '#title'       => t('Votre localité *'),
-            '#placeholder' => t('Lausanne'),
+            '#title'       => $this->t('Votre localité *'),
+            '#placeholder' => $this->t('Lausanne'),
             '#type'        => 'textfield',
             '#attributes'  => ['size' => 30],
             '#required'    => false,
@@ -237,7 +246,7 @@ class RequestForm extends FormBase {
 
         $form['actions']['submit'] = array(
             '#type'        => 'submit',
-            '#value'       => t('Je participe'),
+            '#value'       => $this->t('Je participe'),
             '#attributes'  => ['class' => array('btn-primary pull-right')],
             '#button_type' => 'primary',
             '#prefix'      => '<div class="form-group">',
@@ -261,47 +270,47 @@ class RequestForm extends FormBase {
 
         // Assert the email is valid
         if (!$form_state->getValue('email') || !filter_var($form_state->getValue('email'), FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = t('Cette adresse e-mail semble invalide.');
+            $errors['email'] = $this->t('Cette adresse e-mail semble invalide.');
         }
 
         // Assert this email don't already request that node
         if (!$this->request->isAvailable($form_state->getValue('email'), $form_state->getValue('node'))) {
-            $errors['email'] = t('Vous avez déjà participé. Merci de tenter votre chance lors d\'un prochain concours.');
+            $errors['email'] = $this->t('Vous avez déjà participé. Merci de tenter votre chance lors d\'un prochain concours.');
         }
 
         // Assert the node is both active & currently running
         if (!$this->request->isEnable($form_state->getValue('node'))) {
-            $errors['email'] = t('Navré mais il n\'est plus possible de participer à cette offre.');
+            $errors['email'] = $this->t('Navré mais il n\'est plus possible de participer à cette offre.');
         }
 
         // Assert the civil_state is valid
         if (!$form_state->getValue('civil_state') || empty($form_state->getValue('civil_state'))) {
-           $errors['civil_state'] = t('Votre état civile est obligatoire.');
+           $errors['civil_state'] = $this->t('Votre état civile est obligatoire.');
         }
 
         // Assert Votre prénom is valid
         if (!$form_state->getValue('firstname') || empty($form_state->getValue('firstname'))) {
-            $errors['firstname'] = t('Votre prénom est obligatoire.');
+            $errors['firstname'] = $this->t('Votre prénom est obligatoire.');
         }
 
         // Assert Votre nom de famille is valid
         if (!$form_state->getValue('lastname') || empty($form_state->getValue('lastname'))) {
-            $errors['lastname'] = t('Votre nom de famille est obligatoire.');
+            $errors['lastname'] = $this->t('Votre nom de famille est obligatoire.');
         }
 
         // Assert Votre adresse is valid
         if (!$form_state->getValue('address') || empty($form_state->getValue('address'))) {
-            $errors['address'] = t('Votre adresse est obligatoire.');
+            $errors['address'] = $this->t('Votre adresse est obligatoire.');
         }
 
         // Assert Votre NPA is valid
         if (!$form_state->getValue('zip') || empty($form_state->getValue('zip'))) {
-            $errors['zip'] = t('Votre code postale (NPA) est obligatoire.');
+            $errors['zip'] = $this->t('Votre code postale (NPA) est obligatoire.');
         }
 
         // Assert Votre localite is valid
         if (!$form_state->getValue('city') || empty($form_state->getValue('city'))) {
-            $errors['city'] = t('Votre localité est obligatoire.');
+            $errors['city'] = $this->t('Votre localité est obligatoire.');
         }
 
         // Save errors in sessions to use it on the form builder
@@ -335,12 +344,9 @@ class RequestForm extends FormBase {
 
             $this->request->adminEmail($request);
 
-            $link = Link::createFromRoute(t('retour aux offres'),
-              'entity.node.canonical',
-              ['node' => \Drupal::state()->get('rp_offers.settings.collection.offers')['nid']]
-            )->toString();
+            $url = Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_offers.settings.collection.offers')['nid']]);
 
-            drupal_set_message(t('Merci de votre participation, ') . $link);
+            drupal_set_message($this->t('Merci de votre participation, <a href="@url-back">retour aux offres</a>', ['@url-back' => $url->toString()]));
 
             $form_state->setRedirect('entity.node.canonical', ['node' => $form_state->getValue('node') ]);
         }
