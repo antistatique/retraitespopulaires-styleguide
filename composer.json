@@ -48,7 +48,8 @@
         "drupal/template_whisperer": "2.x-dev",
         "drupal/addanother": "^1.0@RC",
         "drupal/entity_clone": "^1.0@alpha",
-        "drupal/health_check": "^1.0"
+        "drupal/health_check": "^1.0",
+        "drupal/bamboo_twig": "^3.2"
       },
     "require-dev": {
       "behat/mink": "~1.7",

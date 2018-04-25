@@ -3,6 +3,8 @@ module:
   antistatique_quick_edit: 0
   automated_cron: 0
   backerymails: 0
+  bamboo_twig: 0
+  bamboo_twig_config: 0
   block: 0
   block_content: 0
   breakpoint: 0
