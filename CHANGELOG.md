@@ -1,7 +1,10 @@
 CHANGELOG
 ---------
 
-# 2.4.0 (2018-04-11)
+## 2.4.1 (2018-04-26)
+ - apply patch - Remote Code Execution - SA-CORE-2018-004
+
+## 2.4.0 (2018-04-11)
  - improve Solr search with a customs configuration in `config/solr`
  - add documentation about Solr integration with our custom config
  - remove unecessary processors of Search API, which override our custom config
@@ -9,7 +12,7 @@ CHANGELOG
  - New Feature: QuickWin Teaser Form (PR #209)
 
 ## 2.3.11 (2018-03-28)
- - HOTFIX: Drupal Security Update Patch - https://www.drupal.org/sa-core-2018-002
+ - apply Drupal Security Update Patch - https://www.drupal.org/sa-core-2018-002
 
 ## 2.3.10 (2018-03-14)
  - add name field to popin
