@@ -344,9 +344,14 @@ class RequestForm extends FormBase {
 
             $this->request->adminEmail($request);
 
-            $url = Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_offers.settings.collection.offers')['nid']]);
-
-            drupal_set_message($this->t('Merci de votre participation, <a href="@url-back">retour aux offres</a>', ['@url-back' => $url->toString()]));
+            $offersNid = $this->state->get('rp_offers.settings.collection.offers')['nid']
+            if (isset($offersNid)) {
+              $url = Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_offers.settings.collection.offers')['nid']]);
+              drupal_set_message($this->t('Merci de votre participation, <a href="@url-back">retour aux offres</a>', ['@url-back' => $url->toString()]));
+            }
+            else{
+              drupal_set_message($this->t('Merci de votre participation.'));
+            }
 
             $form_state->setRedirect('entity.node.canonical', ['node' => $form_state->getValue('node') ]);
         }
