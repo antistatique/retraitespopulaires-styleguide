@@ -40,11 +40,14 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
         $type = $node->getType();
         $links = [ Link::createFromRoute(t('Home'), '<front>') ];
         if ('offer' == $type) {
+          $offersCollection = $state->get('rp_offers.settings.collection.offers')['nid'];
+          if (!empty($offersCollection)) {
             $links[] = Link::createFromRoute(
-                t('Vos offres Bella vita'),
-                'entity.node.canonical',
-                ['node' => $state->get('rp_offers.settings.collection.offers')['nid']]
+              t('Vos offres Bella vita'),
+              'entity.node.canonical',
+              ['node' => $offersCollection]
             );
+          }
         }
 
         // We add a text node (without link) with the element title

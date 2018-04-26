@@ -28,10 +28,10 @@
   {% else %}
       <div class="row">
         <div class="{{ node_content_width|join(' ')|default('col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2') }}">
-          {% if bamboo_state_get('rp_offers.settings.collection.offers')['nid'] is not null %}
-            <p>Cette offre est terminée, <a href="{{ path('entity.node.canonical', { 'node': bamboo_state_get('rp_offers.settings.collection.offers')['nid'] }) }}" class="pretty-link">retour aux offres</a></p>
+          {% if bamboo_state_get('rp_offers.settings.collection.offers')['nid'] is not empty %}
+            <p>Cette offre est terminée, <a href="{{ path('entity.node.canonical', { 'node': bamboo_state_get('rp_offers.settings.collection.offers')['nid'] }) }}" class="pretty-link">retour aux offres</a>.</p>
           {% else %}
-            <p>Cette offre est terminée</p>
+            <p>Cette offre est terminée.</p>
           {% endif %}
           <div class="spacer spacer-md"></div>
         </div>
