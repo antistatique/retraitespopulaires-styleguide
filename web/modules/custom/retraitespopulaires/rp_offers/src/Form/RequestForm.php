@@ -342,7 +342,7 @@ class RequestForm extends FormBase {
             );
             $request = $this->request->consume($data);
 
-            //$this->request->adminEmail($request);
+            $this->request->adminEmail($request);
 
             $offersCollection = $this->state->get('rp_offers.settings.collection.offers')['nid'];
             if (!empty($offersCollection)) {
