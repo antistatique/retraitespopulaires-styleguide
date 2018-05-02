@@ -12,12 +12,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ExportSaving3AForm extends ConfirmFormBase {
   /**
-   * QueryInterface to get entities
-   * @var QueryInterface
-   */
-  private $query;
-
-  /**
    * Saving 3a entity storage
    * @var \Drupal\Core\Entity\EntityStorageInterface
    */
@@ -32,8 +26,7 @@ class ExportSaving3AForm extends ConfirmFormBase {
   /**
    * Class constructor.
    */
-  public function __construct(QueryInterface $query, EntityTypeManagerInterface $entityTypeManager, LogismataService $logismataService) {
-    $this->query = $query;
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, LogismataService $logismataService) {
     $this->saving3ARate = $entityTypeManager->getStorage('rp_quickwin_saving_3a_rate');
     $this->logismataService = $logismataService;
   }
@@ -45,7 +38,6 @@ class ExportSaving3AForm extends ConfirmFormBase {
     // Instantiates this form class.
     return new static(
     // Load the service required to construct this class.
-      $container->get('entity.query')->get('rp_quickwin_saving_3a_rate'),
       $container->get('entity_type.manager'),
       $container->get('rp_quickwin.logismata')
     );
@@ -102,8 +94,7 @@ class ExportSaving3AForm extends ConfirmFormBase {
     ];
 
     /** @var \Drupal\rp_quickwin\Entity\Saving3ARateInterface[] $rates */
-    $rates = $this->query->execute();
-    $rates = $this->saving3ARate->loadMultiple($rates);
+    $rates = $this->saving3ARate->getQuery()->execute();
 
     // Add each rate to the list
     foreach ($rates as $rate) {
