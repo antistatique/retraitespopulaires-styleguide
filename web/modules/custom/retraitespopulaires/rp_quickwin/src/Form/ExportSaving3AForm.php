@@ -95,6 +95,7 @@ class ExportSaving3AForm extends ConfirmFormBase {
 
     /** @var \Drupal\rp_quickwin\Entity\Saving3ARateInterface[] $rates */
     $rates = $this->saving3ARate->getQuery()->execute();
+    $rates = $this->saving3ARate->loadMultiple($rates);
 
     // Add each rate to the list
     foreach ($rates as $rate) {
