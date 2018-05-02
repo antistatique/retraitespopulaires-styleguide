@@ -45,7 +45,7 @@ class ExportSaving3AForm extends ConfirmFormBase {
     // Instantiates this form class.
     return new static(
     // Load the service required to construct this class.
-      $container->get('entity.query'),
+      $container->get('entity.query')->get('rp_quickwin_saving_3a_rate'),
       $container->get('entity_type.manager'),
       $container->get('rp_quickwin.logismata')
     );
@@ -102,7 +102,7 @@ class ExportSaving3AForm extends ConfirmFormBase {
     ];
 
     /** @var \Drupal\rp_quickwin\Entity\Saving3ARateInterface[] $rates */
-    $rates = $this->query->get('rp_quickwin_saving_3a_rate')->execute();
+    $rates = $this->query->execute();
     $rates = $this->saving3ARate->loadMultiple($rates);
 
     // Add each rate to the list
