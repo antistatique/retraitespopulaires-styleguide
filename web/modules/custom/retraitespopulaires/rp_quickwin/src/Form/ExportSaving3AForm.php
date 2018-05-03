@@ -93,15 +93,13 @@ class ExportSaving3AForm extends ConfirmFormBase {
       'products' => [],
     ];
 
-    // Get all 3A entity ids and if it is empty stop export
-    $ids = $this->quickwinSaving3ARateStorage->getQuery()->execute();
-    if (empty($ids)){
+    // Get all 3A entity and if it is empty stop export
+    /** @var \Drupal\rp_quickwin\Entity\Saving3ARateInterface[] $rates */
+    $rates = $this->quickwinSaving3ARateStorage->loadMultiple();
+    if (empty($rates)){
       drupal_set_message(t('There is no entity to export'));
       return;
     }
-
-    /** @var \Drupal\rp_quickwin\Entity\Saving3ARateInterface[] $rates */
-    $rates = $this->quickwinSaving3ARateStorage->loadMultiple($ids);
 
     // Add each rate to the list
     foreach ($rates as $rate) {
