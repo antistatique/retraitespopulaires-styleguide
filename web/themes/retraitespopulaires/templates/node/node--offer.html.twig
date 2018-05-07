@@ -29,9 +29,10 @@
       <div class="row">
         <div class="{{ node_content_width|join(' ')|default('col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2') }}">
           {% if bamboo_state_get('rp_offers.settings.collection.offers')['nid'] is not empty %}
-            <p>Cette offre est terminée, <a href="{{ path('entity.node.canonical', { 'node': bamboo_state_get('rp_offers.settings.collection.offers')['nid'] }) }}" class="pretty-link">retour aux offres</a>.</p>
+            {% set link = path('entity.node.canonical', { 'node': bamboo_state_get('rp_offers.settings.collection.offers')['nid'] }) %}
+            <p>{% trans %}Cette offre est terminée, <a href="{{ link }}" class="pretty-link">retour aux offres</a>.{% endtrans %}</p>
           {% else %}
-            <p>Cette offre est terminée.</p>
+            <p>{% trans %}Cette offre est terminée.{% endtrans %}</p>
           {% endif %}
           <div class="spacer spacer-md"></div>
         </div>
