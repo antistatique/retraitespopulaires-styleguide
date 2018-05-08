@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d8660d0411eda4a93988117911b14d4",
+    "content-hash": "e5cf3627272dfb6cfd87f6cbcce14c24",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1310,6 +1310,67 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/backerymails",
                 "issues": "https://www.drupal.org/project/issues/2846301"
+            }
+        },
+        {
+            "name": "drupal/bamboo_twig",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/bamboo_twig",
+                "reference": "8.x-3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bamboo_twig-8.x-3.2.zip",
+                "reference": "8.x-3.2",
+                "shasum": "8ba5be19f532b07c825acc663744c9a1ee36ff3e"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "require-dev": {
+                "drupal/coder": "*",
+                "squizlabs/php_codesniffer": "^2.7",
+                "twig/extensions": "^1.4.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.2",
+                    "datestamp": "1519913884",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Antistatique",
+                    "homepage": "https://www.antistatique.net",
+                    "email": "info@antistatique.net",
+                    "role": "Sponsor"
+                },
+                {
+                    "name": "Kevin Wenger",
+                    "email": "contact@kevin-wenger.ch",
+                    "homepage": "https://www.drupal.org/u/wengerk",
+                    "role": "Author & Maintainer"
+                }
+            ],
+            "description": "Several Twig extensions with some useful functions and filters that can improve development experience.",
+            "homepage": "https://www.drupal.org/project/bamboo_twig",
+            "support": {
+                "source": "http://cgit.drupalcode.org/bamboo_twig",
+                "issues": "https://www.drupal.org/project/issues/bamboo_twig"
             }
         },
         {
@@ -2833,7 +2894,7 @@
                 "source": "http://cgit.drupalcode.org/template_whisperer",
                 "issues": "https://www.drupal.org/project/issues/template_whisperer"
             },
-            "time": "2017-10-10 05:28:50"
+            "time": "2017-10-10T05:28:50+00:00"
         },
         {
             "name": "drupal/token",

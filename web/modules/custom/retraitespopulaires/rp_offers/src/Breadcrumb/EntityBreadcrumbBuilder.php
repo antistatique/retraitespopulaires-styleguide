@@ -10,12 +10,15 @@ use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Link;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Create breadcrumb for entity page (detail offer)
  * that include the correct views as parent.
  */
 class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
+    use StringTranslationTrait;
+
     /**
      * @inheritdoc
      */
@@ -40,11 +43,14 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
         $type = $node->getType();
         $links = [ Link::createFromRoute(t('Home'), '<front>') ];
         if ('offer' == $type) {
+          $offersCollection = $state->get('rp_offers.settings.collection.offers')['nid'];
+          if (!empty($offersCollection)) {
             $links[] = Link::createFromRoute(
-                t('Vos offres Bella vita'),
-                'entity.node.canonical',
-                ['node' => $state->get('rp_offers.settings.collection.offers')['nid']]
+              $this->t('Vos offres Bella vita'),
+              'entity.node.canonical',
+              ['node' => $offersCollection]
             );
+          }
         }
 
         // We add a text node (without link) with the element title

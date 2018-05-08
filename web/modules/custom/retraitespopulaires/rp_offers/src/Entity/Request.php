@@ -131,6 +131,16 @@ class Request extends ContentEntityBase implements RequestInterface {
         ->setDescription(t('The linked offer'))
         ->setRequired(TRUE);
 
+    $fields['civil_state'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('civil_state'))
+      ->setDescription(t('the client civil state'))
+      ->setSettings([
+        'allowed_values' => [
+          'Monsieur' => 'Monsieur',
+          'Madame' => 'Madame',
+        ]
+      ]);
+
     $fields['firstname'] = BaseFieldDefinition::create('string')
         ->setLabel(t('Firstname'))
         ->setDescription(t('the client firstname'));
