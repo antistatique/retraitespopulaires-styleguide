@@ -12,16 +12,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ExportSaving3AForm extends ConfirmFormBase {
   /**
-   * QueryInterface to get entities
-   * @var QueryInterface
-   */
-  private $query;
-
-  /**
    * Saving 3a entity storage
    * @var \Drupal\Core\Entity\EntityStorageInterface
    */
-  private $saving3ARate;
+  private $quickwinSaving3ARateStorage;
 
   /**
    * LogismataService to send data to Logismata
@@ -32,9 +26,8 @@ class ExportSaving3AForm extends ConfirmFormBase {
   /**
    * Class constructor.
    */
-  public function __construct(QueryInterface $query, EntityTypeManagerInterface $entityTypeManager, LogismataService $logismataService) {
-    $this->query = $query;
-    $this->saving3ARate = $entityTypeManager->getStorage('rp_quickwin_saving_3a_rate');
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, LogismataService $logismataService) {
+    $this->quickwinSaving3ARateStorage = $entityTypeManager->getStorage('rp_quickwin_saving_3a_rate');
     $this->logismataService = $logismataService;
   }
 
@@ -45,7 +38,6 @@ class ExportSaving3AForm extends ConfirmFormBase {
     // Instantiates this form class.
     return new static(
     // Load the service required to construct this class.
-      $container->get('entity.query'),
       $container->get('entity_type.manager'),
       $container->get('rp_quickwin.logismata')
     );
@@ -101,9 +93,13 @@ class ExportSaving3AForm extends ConfirmFormBase {
       'products' => [],
     ];
 
+    // Get all 3A entity and if it is empty stop export
     /** @var \Drupal\rp_quickwin\Entity\Saving3ARateInterface[] $rates */
-    $rates = $this->query->get('rp_quickwin_saving_3a_rate')->execute();
-    $rates = $this->saving3ARate->loadMultiple($rates);
+    $rates = $this->quickwinSaving3ARateStorage->loadMultiple();
+    if (empty($rates)){
+      drupal_set_message($this->t('There is no entity to export'));
+      return;
+    }
 
     // Add each rate to the list
     foreach ($rates as $rate) {
