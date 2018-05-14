@@ -1,0 +1,14 @@
+uuid: 98735385-f16f-4c05-8815-b5608ad6fbe2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.contrib
+  module:
+    - user
+id: user_remove_role_action.contrib
+label: 'Retirer le rôle Contributeur aux utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: contrib

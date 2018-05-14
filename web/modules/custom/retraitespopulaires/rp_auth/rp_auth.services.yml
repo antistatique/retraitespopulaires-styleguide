@@ -1,0 +1,14 @@
+services:
+  rp_auth.route_subscriber:
+    class: Drupal\rp_auth\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  rp_auth.ldap:
+    class: Drupal\rp_auth\Service\LDAP
+    arguments:
+      - @settings
+  rp_auth.ldap_drupal:
+    class: Drupal\rp_auth\Service\LDAPDrupal
+    arguments:
+      - @entity.manager
+      - @state

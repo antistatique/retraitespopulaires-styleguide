@@ -1,0 +1,4 @@
+'map groups ldap':
+  title: 'Map Groups LDAP'
+  description: 'Allow to map LDAP groups'
+  restrict access: true

@@ -1,0 +1,44 @@
+uuid: 1296d211-6d89-41d7-aecf-f1d0b705ca83
+langcode: fr
+status: true
+dependencies: {  }
+id: contrib
+label: Contributeur
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access files overview'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'access webform overview'
+  - 'administer nodes'
+  - 'administer plp conversion rate entities'
+  - 'administer plp interest rate entities'
+  - 'administer rate entities'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer rp contact'
+  - 'administer rp newsletter'
+  - 'administer rp offers'
+  - 'administer rp quickwin'
+  - 'administer rp site'
+  - 'administer saving 3a rate entities'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'administer webform'
+  - 'administer webform element access'
+  - 'administer webform submission'
+  - 'bypass node access'
+  - 'create url aliases'
+  - 'create webform'
+  - 'delete any webform'
+  - 'edit any webform'
+  - 'edit any webform submission'
+  - 'edit own webform'
+  - 'edit own webform submission'
+  - 'use text format full_html'
+  - 'view any webform submission'
+  - 'view own webform submission'
+  - 'view the administration theme'
