@@ -2,13 +2,13 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
-      {{ load_block('rp_site_news_filter_block') }}
+      {{ bamboo_render_block('rp_site_news_filter_block') }}
     </div>
     <div class="col-lg-10 col-lg-offset-1">
       <div class="row flex-row">
         {% for news in variables.news %}
         <div class="col-sm-6">
-          {{ load_block('rp_site_news_teaser_block', {'news': news}) }}
+          {{ bamboo_render_block('rp_site_news_teaser_block', {'news': news}) }}
         </div>
         {% endfor %}
       </div>

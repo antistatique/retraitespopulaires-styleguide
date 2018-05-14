@@ -11,7 +11,7 @@
       {% for attachment in variables.attachments %}
         {% if attachment.links  %}
         <div class=" {{ cols|join(' ') }}">
-          {{ load_block('rp_site_attachment_block', {'type': attachment.type, 'title': attachment.title, 'links': attachment.links, 'collection': attachment.collection}) }}
+          {{ bamboo_render_block('rp_site_attachment_block', {'type': attachment.type, 'title': attachment.title, 'links': attachment.links, 'collection': attachment.collection}) }}
         </div>
         {% endif %}
       {% endfor %}
