@@ -15,9 +15,8 @@ field:
   version: 1.x
   css:
     theme:
-      css/slider.css: {}
+      css/npa.css: {}
   js:
-    js/slider.js: {}
     js/npa.js: {}
   dependencies:
     - core/jquery.ui.slider
