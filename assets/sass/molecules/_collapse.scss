@@ -32,6 +32,21 @@
     transition: transform 0.5s ease;
   }
 
+  .button-bubble .bubble-icon {
+    padding: 0.5em;
+    font-size: 30px;
+  }
+
+  .button-bubble i:before {
+    transform: rotate(90deg);
+  }
+
+  .inline-block {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &.collapsed,
   .collapsed {
     i:before {
       transform: rotate(0);

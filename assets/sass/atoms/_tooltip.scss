@@ -15,7 +15,18 @@
 
 .tooltip-info {
   .tooltip-symbol {
-    background: url('../svg/information.svg');
+    font-family: 'retraitespopulaires-icon';
+    font-size: 18px;
+    line-height: 1;
+    color: #ed3e44;
+
+    &.tooltip-symbol-green {
+      color: $brand-primary;
+    }
+
+    &:before {
+      content: $retraitespopulaires-icon-information;
+    }
   }
 }
 

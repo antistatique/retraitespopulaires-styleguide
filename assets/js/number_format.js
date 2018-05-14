@@ -20,6 +20,11 @@ export function number_format () {
     aSign: ' %'
   });
 
+  // To be sure that the format is respected (when back on browser)
+  $('.form-chf-numeric').autoNumeric('update');
+  $('.form-surface-numeric').autoNumeric('update');
+  $('.form-percent-numeric').autoNumeric('update');
+
   // Replace formatted value to raw one when submitting forms
   $(document).on('submit', 'form', function() {
     const $this = $(this);

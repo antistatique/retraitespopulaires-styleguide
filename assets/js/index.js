@@ -10,6 +10,7 @@ import { gallery } from './gallery.js';
 import { popover } from './popover.js';
 import { selectize } from './selectize.js';
 import { labels } from './labels.js';
+import { slider } from './slider.js';
 
 (function(){
   mobile_menu();
@@ -24,4 +25,5 @@ import { labels } from './labels.js';
   popover();
   selectize();
   labels();
+  slider();
 }());

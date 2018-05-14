@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+$slider-height: 0.6em;
+$handle-size: 2em;
+
+.ui-slider {
+  position: relative;
+  background: $ligthen-gray;
+  border: transparent;
+  border-radius: 6px;
+  font-size: 17px;
+
+  .ui-slider-handle {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    width: $handle-size;
+    height: $handle-size;
+    background: $white;
+    border-radius: 100%;
+    border: 1px solid $light-gray;
+    outline-color: transparent;
+    align-items: center;
+  }
+
+  .ui-slider-handle:before {
+    font-family: 'retraitespopulaires-icon';
+    content: $retraitespopulaires-icon-chevron;
+    width: 100%;
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+  }
+
+  .ui-slider-range {
+    display: block;
+    position: absolute;
+    background: $brand-primary;
+    border-radius: 6px;
+    z-index: 1;
+    border: 0;
+
+    @include theme(background);
+  }
+
+  &.ui-state-disabled .ui-slider-handle,
+  &.ui-state-disabled .ui-slider-range {
+    filter: grayscale(60%);
+  }
+
+  &.ui-slider-horizontal {
+    height: $slider-height;
+
+    .ui-slider-handle {
+      top: -$slider-height - 0.1em;
+      margin-left: -($handle-size / 2);
+    }
+
+    .ui-slider-range {
+      top: 0;
+      height: 100%;
+    }
+
+    .ui-slider-range-min {
+      left: 0;
+    }
+
+    .ui-slider-range-max {
+      right: 0;
+    }
+  }
+
+  &.ui-slider-vertical {
+    width: $slider-height;
+    height: 100px;
+
+    .ui-slider-handle {
+      left: -$slider-height - 0.1em;
+      margin-bottom: -($handle-size / 2);
+      transform: rotate(90deg);
+    }
+
+    .ui-slider-range {
+      left: 0;
+      width: 100%;
+    }
+
+    .ui-slider-range-min {
+      bottom: 0;
+    }
+
+    .ui-slider-range-max {
+      top: 0;
+    }
+  }
+}
