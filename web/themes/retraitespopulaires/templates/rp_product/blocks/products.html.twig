@@ -21,7 +21,7 @@
         {% if variables.products %}
           {% for product in variables.products %}
             <div class="col-xs-12 theme-primary">
-              {{ load_block('rp_site_product_teaser_block', {'product': product}) }}
+              {{ bamboo_render_block('rp_site_product_teaser_block', {'product': product}) }}
             </div>
           {% endfor %}
         {% endif %}

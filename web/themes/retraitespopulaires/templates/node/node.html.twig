@@ -92,7 +92,7 @@
     <div class="row">
       <div class="{{ node_content_width|join(' ')|default('col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2') }}">
         {% block node_top %}
-          {{ load_block('rp_contact_contact_cta_block') }}
+          {{ bamboo_render_block('rp_contact_contact_cta_block') }}
         {% endblock %}
 
         {% block node_summary %}

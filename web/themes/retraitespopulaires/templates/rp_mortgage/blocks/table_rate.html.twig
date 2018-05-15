@@ -8,7 +8,7 @@
 
 {% if variables.rates %}
   {% if variables.date %}
-    <h2>{{ variables.date|date_format('F Y')|capitalize }}</h2>
+    <h2>{{ variables.date|bamboo_i18n_format_date('custom', 'F Y')|capitalize }}</h2>
   {% endif %}
 
   <div>
