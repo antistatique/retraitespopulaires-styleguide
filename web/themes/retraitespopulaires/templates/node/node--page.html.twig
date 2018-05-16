@@ -8,7 +8,7 @@
 {% block node_body %}
   {{ parent() }}
   {% if node.field_url_logismata is not empty %}
-      {{ load_block('rp_quickwin_calculator_block', { 'node': node }) }}
+      {{ bamboo_render_block('rp_quickwin_calculator_block', { 'node': node }) }}
   {% endif %}
 {% endblock %}
 
@@ -40,5 +40,5 @@
     </div>
   {% endif %}
 
-  {{ load_block('rp_site_products_block') }}
+  {{ bamboo_render_block('rp_site_products_block') }}
 {% endblock %}

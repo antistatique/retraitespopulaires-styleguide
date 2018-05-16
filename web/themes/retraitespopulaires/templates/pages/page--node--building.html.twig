@@ -1,10 +1,10 @@
 {% extends "@retraitespopulaires/pages/page-fullscreen.html.twig" %}
 
 {% block cover %}
-  {{ load_block('rp_layout_cover_block') }}
+  {{ bamboo_render_block('rp_layout_cover_block') }}
   <div class="spacer"></div>
 {% endblock %}
 
-{% block attachments_contact %}{{ load_block('rp_contact_contact_attachment_block') }}{% endblock %}
-{% block attachments_attachments %} {{ load_block('rp_site_attachments_block') }}{% endblock %}
+{% block attachments_contact %}{{ bamboo_render_block('rp_contact_contact_attachment_block') }}{% endblock %}
+{% block attachments_attachments %} {{ bamboo_render_block('rp_site_attachments_block') }}{% endblock %}
 {% block attachments_news_latest %}{% endblock %}

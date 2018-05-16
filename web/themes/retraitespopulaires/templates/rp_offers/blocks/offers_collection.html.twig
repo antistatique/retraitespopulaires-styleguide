@@ -6,7 +6,7 @@
       <div class="row flex-row">
         {% for offer in variables.offers %}
         <div class="col-xs-12 col-md-6 same-height">
-          {{ load_block('rp_offers_offer_teaser_block', {'offer': offer}) }}
+          {{ bamboo_render_block('rp_offers_offer_teaser_block', {'offer': offer}) }}
         </div>
         {% if loop.index % 2 == 0 and not loop.last %}</div><div class="row flex-row">{% endif %}
         {% endfor %}

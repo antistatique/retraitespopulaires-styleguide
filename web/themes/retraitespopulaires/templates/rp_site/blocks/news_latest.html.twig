@@ -11,7 +11,7 @@
     <div class="row last-news-content same-height-group">
       {% for news in variables.news %}
         <div class="col-xs-12 col-md-6 same-height">
-          {{ load_block('rp_site_news_teaser_block', {'news': news}) }}
+          {{ bamboo_render_block('rp_site_news_teaser_block', {'news': news}) }}
         </div>
         {% if loop.index % 2 == 0 and not loop.last %}</div><div class="row same-height-group">{% endif %}
       {% endfor %}

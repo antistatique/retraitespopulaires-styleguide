@@ -2,8 +2,8 @@
 
 {% block node_top %}
   <p>
-    <time class="text-muted page-title" datetime="{{ node.field_date.date|date_format('c') }}">
-    {{ node.field_date.date|date_format('d F Y')|capitalize }}
+    <time class="text-muted page-title" datetime="{{ node.field_date.date|bamboo_i18n_format_date('custom', 'c') }}">
+    {{ node.field_date.date|bamboo_i18n_format_date('custom', 'd F Y')|capitalize }}
     </time>
   </p>
   {{ parent() }}

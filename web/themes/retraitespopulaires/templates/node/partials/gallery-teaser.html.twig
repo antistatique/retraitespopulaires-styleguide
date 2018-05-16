@@ -2,7 +2,7 @@
   <div class="wrapper-figure">
     <div class="figure-cover">
 
-      {% set details = load_image(image.entity.uri.value) %}
+      {% set details = bamboo_load_image(image.entity.uri.value) %}
       <a
         href="{{ file_url(image.entity.uri.value) }}"
         data-height="{{ details.height }}"
@@ -14,10 +14,8 @@
           <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-search" aria-hidden="true"></i>
           <p class="text-uppercase small m-b-0">{% trans %}voir l'image{% endtrans %}</p>
         </div>
-
-        {% set thumb = load_image_style_file(image.entity.fid.value, {'thumb': 'rp_gallery'}) %}
         <picture>
-          <img class="img-responsive" src="{{ file_url(thumb.thumb) }}">
+          <img class="img-responsive" src="{{ bamboo_render_image_style(image.entity.fid.value, 'rp_gallery') }}">
         </picture>
       </a>
       </div>

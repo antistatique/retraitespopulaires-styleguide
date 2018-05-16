@@ -53,7 +53,7 @@
           {% set link = path('entity.node.canonical', {'node': 179}) %}
           {% trans %}Recevez <a href="{{ link }}" class="pretty-link text-italic"><i>Savoir-faire</i></a>, le bulletin des spécialistes de Retraites&nbsp;Populaires, trois fois par année via e-mail:{% endtrans %}
         </p>
-        {{ load_form('rp_newsletter', 'SubscribeForm') }}
+        {{ bamboo_render_form('rp_newsletter', 'SubscribeForm') }}
       </div>
     </div>
   </div>
