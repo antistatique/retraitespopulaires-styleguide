@@ -76,7 +76,7 @@ class RoleSettingsForm extends FormBase {
     $form['#tree'] = TRUE;
 
     $form['ldap_roles'] = [
-      '#type' => 'fieldset',
+      '#type'  => 'fieldset',
       '#title' => $this->t('Mapping of Roles'),
     ];
 
@@ -96,7 +96,8 @@ class RoleSettingsForm extends FormBase {
       // Search groups from LDAP.
       try {
         $ldap_groups_data = $this->ldap->search('cn', $pattern, $settings_rp_ldap['groups'], '*');
-      } catch (\Exception $e) {
+      }
+      catch (\Exception $e) {
         drupal_set_message($e->getMessage(), 'error');
         continue;
       }
@@ -107,7 +108,7 @@ class RoleSettingsForm extends FormBase {
         // Create selects with ldap groups (with drupal roles as options)
         foreach ($ldap_groups_data as $group) {
           $form['ldap_roles'][$group['dn']] = [
-            '#type' => 'select',
+            '#type'  => 'select',
             '#options' => $roles_options,
             '#title' => isset($group['description'][0]) ? $group['description'][0] . ' (' . $group['cn'][0] . ')' : $group['cn'][0],
             '#default_value' => (isset($ldap_roles[$group['dn']]) && !empty($ldap_roles[$group['dn']])) ? $ldap_roles[$group['dn']] : 0,
@@ -117,11 +118,11 @@ class RoleSettingsForm extends FormBase {
     }
 
     $form['actions']['submit'] = [
-      '#type' => 'submit',
-      '#value' => $this->t('Save'),
+      '#type'        => 'submit',
+      '#value'       => $this->t('Save'),
       '#button_type' => 'primary',
-      '#prefix' => '<div class="form-group">',
-      '#suffix' => '</div>',
+      '#prefix'      => '<div class="form-group">',
+      '#suffix'      => '</div>',
     ];
 
     return $form;
@@ -139,7 +140,6 @@ class RoleSettingsForm extends FormBase {
 
     // General settings.
     $this->state->set('rp_auth.settings.ldap_roles', $form_items);
-    $this->getRequest()->getSession()->remove('rp_auth_credential');
   }
 
   public function getRoles() {

@@ -2,7 +2,10 @@
 
 namespace Drupal\rp_auth\Service;
 
+// Injection.
 use Drupal\Core\Site\Settings;
+use Drupal\rp_auth\Service\Exception\LdapConnectionException;
+use Drupal\rp_auth\Service\Exception\LdapException;
 
 /**
  * LDAP.
@@ -79,11 +82,11 @@ class LDAP {
       $this->connection = ldap_connect($this->server, $this->port);
       if (!$this->connection) {
         $connection_error = error_get_last();
-        throw new \Exception($connection_error['message'], $connection_error['type']);
+        throw new LdapConnectionException($connection_error['message'], $connection_error['type']);
       }
     }
     else {
-      throw new \Exception('Server and port arguments are required !');
+      throw new LdapConnectionException('Server and port arguments are required !');
     }
   }
 
@@ -95,9 +98,8 @@ class LDAP {
     if ($this->connection) {
       ldap_unbind($this->connection);
     }
-    else {
-      throw new \Exception('No LDAP connection available to process request.');
-    }
+
+    $this->connection = NULL;
   }
 
   /**
@@ -121,7 +123,7 @@ class LDAP {
       // Try to bind given credentials on multiple ldap paths.
       $paths = $this->settings['paths'];
       foreach ($paths as $path) {
-        $ldapdn = 'cn=' . $user . ',' . $path;
+        $ldapdn = 'cn=' . ldap_escape($user) . ',' . $path;
 
         // "@" suppresses warning messages returned by that command.
         // Since ldap_bind returns false when it doesn't succeed.
@@ -132,7 +134,7 @@ class LDAP {
       }
     }
     else {
-      throw new \Exception('No LDAP connection available to process request.');
+      throw new LdapConnectionException('No LDAP connection available to process request.');
     }
 
     return FALSE;
@@ -162,11 +164,11 @@ class LDAP {
       $result = ldap_search($this->connection, $dn, $filter);
       $info = ldap_get_entries($this->connection, $result);
       if ($info === FALSE || $info['count'] === 0) {
-        throw new \Exception('LDAP no results found.');
+        throw new LdapException('LDAP no results found.');
       }
     }
     else {
-      throw new \Exception('LDAP credentials unavailable.');
+      throw new LdapException('LDAP credentials unavailable.');
     }
     return $info;
   }

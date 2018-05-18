@@ -1,12 +1,20 @@
 <?php
 
 /**
+ * @file
+ * Legacy Drupal 7 code to implements hooks.
+ */
+
+use Drupal\rp_auth\Service\Exception\LdapException;
+
+/**
  * Module hook.
  *
  * Implements hook_form_user_login_form_alter().
  * Alter Drupal login form with custom markup and submission.
  */
 function rp_auth_form_user_login_form_alter(&$form, $form_state) {
+
   $form['#attributes']['autocomplete'] = "off";
 
   $form['name']['#title'] = t('Votre nom');
@@ -118,13 +126,16 @@ function rp_auth_user_login_form_validate_ldap($form, &$form_state) {
   }
 
   // Search the valid user into the LDAP.
+  $ldap_user_data = FALSE;
   try {
     // Try to search users on multiple ldap paths.
     $paths = $settings['users'];
     foreach ($paths as $path) {
-      $ldap_user_data = $ldap->search('cn', $form_state->getValue('name'), $path);
-      if ($ldap_user_data != FALSE && (int) $ldap_user_data['count'] >= 1) {
-        break;
+      try {
+        $ldap_user_data = $ldap->search('cn', $form_state->getValue('name'), $path);
+      }
+      catch (LdapException $e) {
+        continue;
       }
     }
   }

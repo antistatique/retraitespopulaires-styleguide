@@ -6,9 +6,9 @@ services:
   rp_auth.ldap:
     class: Drupal\rp_auth\Service\LDAP
     arguments:
-      - @settings
+      - '@settings'
   rp_auth.ldap_drupal:
     class: Drupal\rp_auth\Service\LDAPDrupal
     arguments:
-      - @entity.manager
-      - @state
+      - '@entity.manager'
+      - '@state'
