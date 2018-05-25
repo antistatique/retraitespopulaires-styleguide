@@ -13,7 +13,6 @@ use Drupal\Core\Link;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\template_whisperer\TemplateWhispererManager;
 use Drupal\template_whisperer\TemplateWhispererSuggestionUsage;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Create breadcrumb for entity page (detail offer)

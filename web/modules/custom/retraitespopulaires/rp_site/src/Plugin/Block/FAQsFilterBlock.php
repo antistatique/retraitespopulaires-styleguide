@@ -44,12 +44,6 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
     private $alias_manager;
 
     /**
-    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-    * @var StateInterface
-    */
-    private $state;
-
-    /**
      * Profession Service
      * @var Profession
      */
@@ -58,11 +52,10 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
     /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity,  AliasManagerInterface $alias_manager, StateInterface $state, Profession $profession) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity,  AliasManagerInterface $alias_manager, Profession $profession) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_taxonomy = $entity->getStorage('taxonomy_term');
         $this->alias_manager   = $alias_manager;
-        $this->state           = $state;
         $this->profession      = $profession;
     }
 
@@ -79,7 +72,6 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
             // Load customs services used in this class.
             $container->get('entity_type.manager'),
             $container->get('path.alias_manager'),
-            $container->get('state'),
             $container->get('rp_site.profession')
         );
     }
@@ -88,7 +80,7 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
     * {@inheritdoc}
     */
     public function build($params = array()) {
-        $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.faqs')['nid']);
+        $variables = array('categories' => array());
 
         $taxonomy_term_alias = \Drupal::request()->query->get('taxonomy_term_alias');
         $variables['current_aliases'] = $taxonomy_term_alias;

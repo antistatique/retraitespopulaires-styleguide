@@ -43,19 +43,12 @@ class NewsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
     private $alias_manager;
 
     /**
-    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-    * @var StateInterface
-    */
-    private $state;
-
-    /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity,  AliasManagerInterface $alias_manager, StateInterface $state) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity,  AliasManagerInterface $alias_manager) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_taxonomy = $entity->getStorage('taxonomy_term');
         $this->alias_manager   = $alias_manager;
-        $this->state           = $state;
     }
 
     /**
@@ -70,8 +63,7 @@ class NewsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
             $plugin_definition,
             // Load customs services used in this class.
             $container->get('entity_type.manager'),
-            $container->get('path.alias_manager'),
-            $container->get('state')
+            $container->get('path.alias_manager')
         );
     }
 
@@ -79,7 +71,7 @@ class NewsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
     * {@inheritdoc}
     */
     public function build($params = array()) {
-        $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.news')['nid'], 'selected' => []);
+        $variables = array('categories' => array(), 'selected' => []);
 
         $taxonomy_term_alias = \Drupal::request()->query->get('taxonomy_term_alias');
         $variables['current_aliases'] = $taxonomy_term_alias;

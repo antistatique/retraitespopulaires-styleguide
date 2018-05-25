@@ -1,6 +1,6 @@
-{% extends "@retraitespopulaires/pages/page.html.twig" %}
+{% extends "@retraitespopulaires/node/node--page.html.twig" %}
 
-{% block attachments %}
+{% block node_bottom_outer %}
   {{ bamboo_render_block('rp_site_documents_collection_block') }}
   {% block attachments_news_latest %}{% endblock %}
   {{ parent() }}

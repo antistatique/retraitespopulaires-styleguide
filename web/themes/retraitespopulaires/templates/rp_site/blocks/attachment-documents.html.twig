@@ -1,3 +1,4 @@
+{% set suggestions = tw_suggestion_entities('collection_documents') %}
 <div class="card card-white card-light">
   <div class="card-body">
     <h2 class="card-title">{% trans %}Documents utiles{% endtrans %}</h2>
@@ -14,12 +15,12 @@
       {% endfor %}
     </ul>
   </div>
-  {% if variables.collection %}
+  {% if suggestions %}
   <div class="card-footer card-berrylight-gray">
     <div class="icon-text icon-text-center">
         <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-documents-thick"></span>
         <div class="icon-text-txt">
-          <a class="text-bold pretty-link h5" href="{{ variables.collection.link }}">
+          <a class="text-bold pretty-link h5" href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'profession_alias': variables.collection.alias}) }}">
             {% if variables.collection.name %}
               {% trans %}Tous les documents {{ variables.collection.name }}{% endtrans %}
             {% else %}

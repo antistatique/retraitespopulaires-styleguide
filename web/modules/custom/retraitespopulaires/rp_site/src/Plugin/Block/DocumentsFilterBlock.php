@@ -99,7 +99,7 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
     * {@inheritdoc}
     */
     public function build($params = array()) {
-        $variables = array('categories' => array(), 'collection' => $this->state->get('rp_site.settings.collection.documents')['nid']);
+        $variables = array('categories' => array());
 
         // Get the current profession (only on sub section)
         $variables['profession_alias'] = $this->request->query->get('profession_alias');

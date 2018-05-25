@@ -10,13 +10,31 @@ use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Link;
-use Drupal\Core\Url;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\template_whisperer\TemplateWhispererManager;
+use Drupal\template_whisperer\TemplateWhispererSuggestionUsage;
 
 /**
  * Create breadcrumb for entity page (detail news)
  * that include the correct views as parent.
  */
 class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
+  use StringTranslationTrait;
+
+    protected $twManager;
+    protected $twSuggestionUsage;
+
+    /**
+     * Class constructor.
+     *
+     * @param \Drupal\template_whisperer\TemplateWhispererManager $twManager
+     * @param \Drupal\template_whisperer\TemplateWhispererSuggestionUsage $twSuggestionUsage
+     */
+    public function __construct(TemplateWhispererManager $twManager, TemplateWhispererSuggestionUsage $twSuggestionUsage) {
+      $this->twManager = $twManager;
+      $this->twSuggestionUsage = $twSuggestionUsage;
+    }
+
     /**
      * @inheritdoc
      */
@@ -33,48 +51,64 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
         $breadcrumb = new Breadcrumb();
         $breadcrumb->addCacheContexts(['route']);
 
-        $state = \Drupal::state();
-
         $node = $route_match->getParameter('node');
         $breadcrumb->addCacheTags(array('node:' . $node->id()));
 
         $type = $node->getType();
-        $links = [ Link::createFromRoute(t('Home'), '<front>') ];
-        if ('news' == $type) {
+        $links = [ Link::createFromRoute($this->t('Home'), '<front>') ];
+
+        $parent = null;
+        switch ($type){
+          case 'news':
+            $parent = [
+              'title' => 'Actualités',
+              'suggestion_name' => 'collection_news'
+            ];
+            break;
+
+          case 'faq':
+            $parent = [
+              'title' => 'Questions-réponses',
+              'suggestion_name' => 'collection_faqs'
+            ];
+            break;
+
+          case 'building':
+            // TODO: Find better way to add this link
             $links[] = Link::createFromRoute(
-                t('Actualités'),
-                'entity.node.canonical',
-                ['node' => $state->get('rp_site.settings.collection.news')['nid']]
+              $this->t('Immobilier'),
+              'entity.node.canonical',
+              ['node' => 47]
             );
+
+            $parent = [
+              'title' => 'Immobilier',
+              'suggestion_name' => 'collection_building'
+            ];
+            break;
+
+          case 'partnership':
+            $parent = [
+              'title' => 'Partenaires',
+              'suggestion_name' => 'collection_partnership'
+            ];
+            break;
         }
 
-        if ('faq' == $type) {
-            $links[] = Link::createFromRoute(
-                t('Questions-réponses'),
-                'entity.node.canonical',
-                ['node' => $state->get('rp_site.settings.collection.faqs')['nid']]
-            );
-        }
+        if (!empty($parent)){
+          $suggestion = $this->twManager->getOneBySuggestion($parent['suggestion_name']);
+          $entities = null;
+          if ($suggestion) {
+            $entities = $this->twSuggestionUsage->listUsage($suggestion);
 
-        if ('building' == $type) {
-            $links[] = Link::createFromRoute(
-                t('Immobilier'),
+            if (!empty($entities)) {
+              $links[] = Link::createFromRoute(
+                $this->t($parent['title']),
                 'entity.node.canonical',
-                ['node' => 47]
-            );
-            $links[] = Link::createFromRoute(
-                t('Parc immobilier'),
-                'entity.node.canonical',
-                ['node' => $state->get('rp_site.settings.collection.buildings')['nid']]
-            );
-        }
-
-        if ('partnership' == $type) {
-            $links[] = Link::createFromRoute(
-                t('Partenaires'),
-                'entity.node.canonical',
-                ['node' => $state->get('rp_site.settings.collection.partnerships')['nid']]
-            );
+                ['node' => $entities[0]->id]
+              );
+            }
+          }
         }
 
         // We add a text node (without link) with the element title

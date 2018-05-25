@@ -4,18 +4,21 @@ services:
   rp_site.cover:
     class: Drupal\rp_site\Service\Cover
     arguments:
-      - @entity.manager
-      - @file_system
+      - '@entity.manager'
+      - '@file_system'
   # Custom Twig extensions
   rp_site.twig.themes:
     class: Drupal\rp_site\TwigExtension\SiteExtension
     tags:
         - { name: twig.extension }
     arguments:
-      - @service_container
+      - '@service_container'
   # Custom breadcrumb applies
   rp_site.breadcrumb:
     class: Drupal\rp_site\Breadcrumb\EntityBreadcrumbBuilder
+    arguments:
+      - '@plugin.manager.template_whisperer'
+      - '@template_whisperer.suggestion.usage'
     tags:
       - { name: breadcrumb_builder, priority: 100 }
   # Custom Event Subscrbiber

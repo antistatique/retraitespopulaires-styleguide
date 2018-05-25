@@ -130,9 +130,6 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
             $variables['news'] = $this->entity_node->loadMultiple($nids);
 
             $variables['title'] = t('Actualités du métier');
-            $variables['collection'] = array(
-                'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid']])
-            );
         }
 
         // Fallback to retrieve news
@@ -147,11 +144,6 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
 
             $nids = $query->execute();
             $variables['news'] = $this->entity_node->loadMultiple($nids);
-
-            $variables['collection'] = array(
-                'name' => null,
-                'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid']])
-            );
         }
 
         return [
