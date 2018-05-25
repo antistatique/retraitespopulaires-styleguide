@@ -11,6 +11,9 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Link;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\template_whisperer\TemplateWhispererManager;
+use Drupal\template_whisperer\TemplateWhispererSuggestionUsage;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Create breadcrumb for entity page (detail offer)
@@ -18,6 +21,20 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
  */
 class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     use StringTranslationTrait;
+
+    protected $twManager;
+    protected $twSuggestionUsage;
+
+  /**
+   * Class constructor.
+   *
+   * @param \Drupal\template_whisperer\TemplateWhispererManager $twManager
+   * @param \Drupal\template_whisperer\TemplateWhispererSuggestionUsage $twSuggestionUsage
+   */
+    public function __construct(TemplateWhispererManager $twManager, TemplateWhispererSuggestionUsage $twSuggestionUsage) {
+      $this->twManager = $twManager;
+      $this->twSuggestionUsage = $twSuggestionUsage;
+    }
 
     /**
      * @inheritdoc
@@ -35,21 +52,24 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
         $breadcrumb = new Breadcrumb();
         $breadcrumb->addCacheContexts(['route']);
 
-        $state = \Drupal::state();
-
         $node = $route_match->getParameter('node');
         $breadcrumb->addCacheTags(array('node:' . $node->id()));
 
         $type = $node->getType();
         $links = [ Link::createFromRoute(t('Home'), '<front>') ];
         if ('offer' == $type) {
-          $offersCollection = $state->get('rp_offers.settings.collection.offers')['nid'];
-          if (!empty($offersCollection)) {
-            $links[] = Link::createFromRoute(
-              $this->t('Vos offres Bella vita'),
-              'entity.node.canonical',
-              ['node' => $offersCollection]
-            );
+          $suggestion = $this->twManager->getOneBySuggestion('collection_offers');
+          $entities = null;
+          if ($suggestion) {
+            $entities = $this->twSuggestionUsage->listUsage($suggestion);
+
+            if (!empty($entities)) {
+              $links[] = Link::createFromRoute(
+                $this->t('Vos offres Bella vita'),
+                'entity.node.canonical',
+                ['node' => $entities[0]->id]
+              );
+            }
           }
         }
 

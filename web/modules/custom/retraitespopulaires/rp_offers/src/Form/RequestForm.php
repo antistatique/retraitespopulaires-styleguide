@@ -353,7 +353,7 @@ class RequestForm extends FormBase {
             );
             $request = $this->request->consume($data);
 
-            //$this->request->adminEmail($request);
+            $this->request->adminEmail($request);
 
             $suggestion = $this->twManager->getOneBySuggestion('collection_offers');
             $entities = null;
