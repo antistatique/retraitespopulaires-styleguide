@@ -1,5 +1,5 @@
 name: LDAP Authentication
 type: module
-description: LDAP Authentication
+description: 'LDAP Authentication'
 core: 8.x
 package: Retraites Populaires
