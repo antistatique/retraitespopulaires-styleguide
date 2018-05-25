@@ -1,0 +1,7 @@
+uuid: a3b5592b-ac6a-4f35-bc5d-2d7b10d47ee8
+langcode: fr
+status: true
+dependencies: {  }
+id: depreciation
+name: Depreciation
+suggestion: depreciation

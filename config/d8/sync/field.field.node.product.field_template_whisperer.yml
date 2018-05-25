@@ -1,0 +1,34 @@
+uuid: 35579ee2-50f4-4c59-98de-87ee36e00d3f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_template_whisperer
+    - node.type.product
+  module:
+    - template_whisperer
+id: node.product.field_template_whisperer
+field_name: field_template_whisperer
+entity_type: node
+bundle: product
+label: template_whisperer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler:
+    suggestions:
+      collection_buildings: '0'
+      collection_documents: '0'
+      collection_faqs: '0'
+      collection_management_contracts: '0'
+      collection_news: '0'
+      collection_offers: '0'
+      collection_partnership: '0'
+      global_contact: '0'
+      libre_passage_calculator: '0'
+      modulo_calculator: '0'
+      quickwin_teasers: '0'
+field_type: template_whisperer

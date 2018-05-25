@@ -75,37 +75,6 @@ class AdminForm extends FormBase {
             '#title'         => 'Collection pages',
         );
 
-        $form['collection']['management_contracts_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Mandats de gestion - node ID',
-            '#default_value' => $this->state->get('rp_site.settings.collection.management_contracts')['nid'],
-        );
-        $form['collection']['management_contracts_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing Mandats de gestion - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.collection.management_contracts')['theme'] ? $this->state->get('rp_site.settings.collection.management_contracts')['theme'] : 'collection_management_contracts',
-            '#suffix'        => '<br/>'
-        );
-
-        // Single pages settings
-        $form['single'] = array(
-            '#type'          => 'fieldset',
-            '#title'         => 'Pages spéciales',
-        );
-
-        $form['single']['contact_nid'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Contact Global - node ID',
-            '#default_value' => $this->state->get('rp_site.settings.single.contact')['nid'],
-        );
-        $form['single']['contact_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Contact Global - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_site.settings.contact')['theme'] ? $this->state->get('rp_site.settings.single.contact')['theme'] : 'global_contact',
-        );
-
         $form['collection']['mortgage_calculator_nid'] = array(
             '#type'          => 'entity_autocomplete',
             '#target_type'  => 'node',
@@ -183,17 +152,6 @@ class AdminForm extends FormBase {
     */
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // General settings
-        $this->state->set('rp_site.settings.collection.management_contracts', array(
-            'nid' => trim($form_state->getValue('management_contracts_nid')),
-            'theme' => trim($form_state->getValue('management_contracts_theme')),
-        ));
-
-        // General settings
-        $this->state->set('rp_site.settings.single.contact', array(
-            'nid' => trim($form_state->getValue('contact_nid')),
-            'theme' => trim($form_state->getValue('contact_theme')),
-        ));
-
         $this->state->set('rp_site.settings.collection.mortgage_calculator', array(
             'nid' => trim($form_state->getValue('mortgage_calculator_nid')),
             'theme' => trim($form_state->getValue('mortgage_calculator_theme')),

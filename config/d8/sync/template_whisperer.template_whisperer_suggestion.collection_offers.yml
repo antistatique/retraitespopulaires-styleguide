@@ -3,5 +3,5 @@ langcode: fr
 status: true
 dependencies: {  }
 id: collection_offers
-name: 'Collection offer'
+name: 'Collection offers'
 suggestion: collection_offers

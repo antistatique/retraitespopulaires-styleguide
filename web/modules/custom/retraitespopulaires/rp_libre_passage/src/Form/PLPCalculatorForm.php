@@ -436,9 +436,19 @@ class PLPCalculatorForm extends FormBase {
                 $this->session->set('data', $data);
                 $this->session->set('view_result', TRUE);
 
-                $form_state->setRedirect('entity.node.canonical', [
-                    'node' => $this->state->get('rp_libre_passage.settings.page.calculator')['nid']
-                ]);
+                $suggestion = $this->twManager->getOneBySuggestion('libre_passage_calculator');
+                $entities = null;
+                if ($suggestion) {
+                  $entities = $this->twSuggestionUsage->listUsage($suggestion);
+
+                  if (!empty($entities)) {
+                    $form_state->setRedirect('entity.node.canonical', [
+                      'node' => $entities[0]->id
+                    ]);
+                  }
+                }
+
+
             } catch (\Exception $e) {
                 drupal_set_message(t('An error occurred and processing did not complete.'), 'error');
             }

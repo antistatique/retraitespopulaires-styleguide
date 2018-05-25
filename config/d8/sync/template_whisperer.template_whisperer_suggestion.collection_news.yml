@@ -1,0 +1,7 @@
+uuid: ed7702f2-2398-4c4b-a513-eba581414ab2
+langcode: fr
+status: true
+dependencies: {  }
+id: collection_news
+name: 'Collection news'
+suggestion: collection_news

@@ -1,0 +1,7 @@
+uuid: 6ea87152-137c-4437-9969-0063b081d42d
+langcode: fr
+status: true
+dependencies: {  }
+id: building
+name: Building
+suggestion: building

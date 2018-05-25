@@ -1,18 +1,10 @@
-{% extends "@retraitespopulaires/node/node--form.html.twig" %}
+{% extends "@retraitespopulaires/node/node.html.twig" %}
 
 {% block node_top %}
-  {{ bamboo_render_block('rp_contact_contact_teaser_detail_block', {'node': null, 'contact': node}) }}
-  {{ parent() }}
-{% endblock %}
-
-{% block node_body %}{% endblock %}
-
-{% block node_bottom_outer %}
-  {% if node.field_email_form.value is not empty %}
+    {{ bamboo_render_block('rp_contact_contact_teaser_detail_block', {'node': null, 'contact': node}) }}
     {{ parent() }}
-  {% endif %}
 {% endblock %}
 
-{% block node_form %}
-  {{ bamboo_render_form('rp_contact', 'ContactForm', {'node': node}) }}
+{% block attachments %}
+    {% block attachments_news_latest %}{{ bamboo_render_block('rp_site_news_latest_block') }}{% endblock %}
 {% endblock %}

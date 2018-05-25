@@ -1,0 +1,41 @@
+uuid: c74aba47-91a4-409e-9cbb-a0793efc7f1b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_template_whisperer
+    - node.type.contact
+  module:
+    - template_whisperer
+id: node.contact.field_template_whisperer
+field_name: field_template_whisperer
+entity_type: node
+bundle: contact
+label: template_whisperer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler:
+    suggestions:
+      address: '0'
+      building: '0'
+      collection_buildings: '0'
+      collection_documents: '0'
+      collection_faqs: '0'
+      collection_management_contracts: '0'
+      collection_news: '0'
+      collection_offers: '0'
+      collection_partnership: '0'
+      conversion: '0'
+      depreciation: '0'
+      documents: '0'
+      global_contact: '0'
+      libre_passage_calculator: '0'
+      loan_increase: '0'
+      modulo_calculator: '0'
+      quickwin_teasers: '0'
+      tax_attestation: '0'
+field_type: template_whisperer

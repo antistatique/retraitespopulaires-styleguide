@@ -1,33 +1,7 @@
 <?php
 
-function retraitespopulaires_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-    $state = \Drupal::state();
-
-    $route_match = \Drupal::routeMatch();
-    $node = $route_match->getParameter('node');
-
-    if (isset($node->nid->value) && $node->getType() == 'management_contracts') {
-        $suggestions[] = 'page__node__management_contracts';
-    }
-
-    if (isset($node->nid->value) && ($node->getType() == 'advisor' || $node->getType() == 'contact')) {
-        $suggestions[] = 'page__node__contact';
-    }
-
-    if (isset($node->nid->value) && $node->nid->value == $state->get('rp_site.settings.collection.management_contracts')['nid']) {
-        $suggestions[] = 'page__node__'.$state->get('rp_site.settings.collection.management_contracts')['theme'];
-    }
-
-    // Suggestions theme of rp_contact module
-    rp_contact_suggestions_pages($suggestions);
-}
-
 function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, array $variables) {
     $state = \Drupal::state();
-
-    if (isset($variables['elements']['#node']->nid->value) && $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.single.contact')['nid']) {
-        $suggestions[] = 'node__'.$state->get('rp_site.settings.single.contact')['theme'];
-    }
 
     if (isset($variables['elements']['#node']->nid->value) &&
         $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.collection.mortgage_calculator')['nid']) {
@@ -48,10 +22,4 @@ function retraitespopulaires_theme_suggestions_node_alter(array &$suggestions, a
         $variables['elements']['#node']->nid->value == $state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['nid']) {
         $suggestions[] = 'node__' . $state->get('rp_site.settings.collection.localauthoritiesloan_tablerates')['theme'];
     }
-
-    // Suggestions theme of rp_contact module
-    rp_contact_suggestions_nodes($suggestions);
-
-    // Suggestions theme of rp_libre_passage module
-    rp_libre_passage_suggestions_nodes($suggestions);
 }
