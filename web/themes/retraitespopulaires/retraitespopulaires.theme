@@ -54,13 +54,6 @@ function retraitespopulaires_theme_suggestions_page_alter(array &$suggestions, a
         $suggestions[] = 'page__node__'.$state->get('rp_site.settings.collection.documents')['theme'];
     }
 
-    if (isset($node->nid->value) && $node->getType() == 'offer') {
-        $suggestions[] = 'page__node__offer';
-    }
-
-    // Suggestions theme of rp_offers module
-    rp_offers_suggestions_pages($suggestions);
-
     // Suggestions theme of rp_contact module
     rp_contact_suggestions_pages($suggestions);
 }

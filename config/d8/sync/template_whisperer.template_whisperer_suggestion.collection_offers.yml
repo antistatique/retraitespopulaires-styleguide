@@ -1,0 +1,7 @@
+uuid: bc36b481-a729-442d-a8fa-62f47e1448f5
+langcode: fr
+status: true
+dependencies: {  }
+id: collection_offers
+name: 'Collection offer'
+suggestion: collection_offers
