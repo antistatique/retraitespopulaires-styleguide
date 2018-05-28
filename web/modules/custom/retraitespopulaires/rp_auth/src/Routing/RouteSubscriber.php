@@ -30,11 +30,6 @@ class RouteSubscriber extends RouteSubscriberBase {
       $route->setRequirement('_permission', 'access administration pages');
     }
 
-    // Always deny access to non-admin '/user/register'.
-    if ($route = $collection->get('user.register')) {
-      $route->setRequirement('_permission', 'access administration pages');
-    }
-
     // Always deny access to '/user/password'.
     if ($route = $collection->get('user.pass')) {
       $route->setRequirement('_access', 'FALSE');
