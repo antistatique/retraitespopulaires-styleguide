@@ -8,7 +8,6 @@
       <p class="media-heading text-muted">{% trans %}Nos constructions{% endtrans %}</p>
       <ul class="filters-list list-inline">
         <li class="{{ variables.building_status_alias is empty ? 'active' }}">
-          {% if suggestions %}
             {% if variables.building_status_alias is empty %}
                 <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></a>
             {% else %}
@@ -29,7 +28,6 @@
            <a class="pretty-link" href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'building_status_alias': category.alias}) }}">{{ category.term }}</a>
          </li>
         {% endfor %}
-      </ul>
       </ul>
     </div>
     {% endif %}

@@ -1,7 +1,6 @@
-{% extends "@retraitespopulaires/pages/page-fullscreen.html.twig" %}
+{% extends "@retraitespopulaires/node/node--page.html.twig" %}
 
-{% block attachments %}
+{% block node_bottom_outer %}
   {{ bamboo_render_block('rp_contact_contacts_collection_block') }}
   <div class="spacer"></div>
-  {{ parent() }}
 {% endblock %}
