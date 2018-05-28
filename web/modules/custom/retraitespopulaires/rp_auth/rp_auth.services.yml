@@ -1,15 +1,4 @@
 services:
-  extranet_auth.auth_sso:
-    class: Drupal\rp_auth\EventSubscriber\AuthSSO
-    arguments:
-      - '@current_user'
-      - '@current_route_match'
-      - '@path.current'
-      - '@settings'
-      - '@rp_auth.ldap'
-      - '@rp_auth.ldap_drupal'
-    tags:
-      - { name: event_subscriber }
   rp_auth.route_subscriber:
     class: Drupal\rp_auth\Routing\RouteSubscriber
     tags:
