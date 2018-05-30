@@ -72,4 +72,3 @@ function rp_contact_theme($existing, $type, $theme, $path) {
 }
 
 require_once('src/Mail/mails.php');
-require_once('src/Suggestion/suggestions.php');

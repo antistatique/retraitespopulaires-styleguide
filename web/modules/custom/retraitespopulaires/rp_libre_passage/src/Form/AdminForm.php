@@ -138,11 +138,6 @@ class AdminForm extends FormBase {
         // Contact settings
         $this->state->set('rp_libre_passage.settings.receivers', trim($form_state->getValue('receivers')));
 
-        $this->state->set('rp_libre_passage.settings.page.calculator', array(
-            'nid' => trim($form_state->getValue('calculator_nid')),
-            'theme' => trim($form_state->getValue('calculator_theme')),
-        ));
-
         // Save file(s)
         $files = array(
             'rp_libre_passage.settings.form_pdf' => $form_state->getValue('form_pdf') ,

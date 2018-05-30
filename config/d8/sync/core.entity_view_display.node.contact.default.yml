@@ -15,11 +15,9 @@ dependencies:
     - field.field.node.contact.field_phone
     - field.field.node.contact.field_profession
     - field.field.node.contact.field_specialty
-    - field.field.node.contact.field_template_whisperer
     - node.type.contact
   module:
     - image
-    - template_whisperer
     - text
     - user
 id: node.contact.default
@@ -118,13 +116,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_template_whisperer:
-    weight: 114
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: template_whisperer
     region: content
   links:
     weight: 100

@@ -82,7 +82,7 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
             );
 
             $parent = [
-              'title' => 'Immobilier',
+              'title' => 'Parc Immobilier',
               'suggestion_name' => 'collection_building'
             ];
             break;

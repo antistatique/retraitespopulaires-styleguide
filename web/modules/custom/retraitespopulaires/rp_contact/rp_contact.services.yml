@@ -2,5 +2,8 @@ services:
   # Custom breadcrumb applies
   rp_contact.breadcrumb:
     class: Drupal\rp_contact\Breadcrumb\EntityBreadcrumbBuilder
+    arguments:
+      - '@plugin.manager.template_whisperer'
+      - '@template_whisperer.suggestion.usage'
     tags:
       - { name: breadcrumb_builder, priority: 100 }

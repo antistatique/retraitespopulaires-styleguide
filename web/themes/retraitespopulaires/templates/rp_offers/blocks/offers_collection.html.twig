@@ -1,17 +1,12 @@
 {% if variables.offers %}
-<div class="container">
   <div class="spacer spacer-md"></div>
-  <div class="row">
-    <div class="col-xs-10 text-center">
-      <div class="row flex-row">
-        {% for offer in variables.offers %}
-        <div class="col-xs-12 col-md-6 same-height">
-          {{ bamboo_render_block('rp_offers_offer_teaser_block', {'offer': offer}) }}
-        </div>
-        {% if loop.index % 2 == 0 and not loop.last %}</div><div class="row flex-row">{% endif %}
-        {% endfor %}
-      </div>
+  <div class="row flex-row">
+    {% for offer in variables.offers %}
+    <div class="col-xs-12 col-md-6 same-height">
+      {{ bamboo_render_block('rp_offers_offer_teaser_block', {'offer': offer}) }}
     </div>
+    {% if loop.index % 2 == 0 and not loop.last %}</div><div class="row flex-row">{% endif %}
+    {% endfor %}
   </div>
 
   {% if variables.pager %}
@@ -21,5 +16,4 @@
     </div>
   </div>
   {% endif %}
-</div>
 {% endif %}

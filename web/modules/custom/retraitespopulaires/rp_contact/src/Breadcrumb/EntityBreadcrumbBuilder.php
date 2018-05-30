@@ -10,12 +10,31 @@ use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Link;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\template_whisperer\TemplateWhispererSuggestionUsage;
+use Drupal\template_whisperer\TemplateWhispererManager;
 
 /**
  * Create breadcrumb for entity page (detail advisor/contact)
  * that include the correct views as parent.
  */
 class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
+    use StringTranslationTrait;
+
+    protected $twManager;
+    protected $twSuggestionUsage;
+
+    /**
+     * Class constructor.
+     *
+     * @param \Drupal\template_whisperer\TemplateWhispererManager $twManager
+     * @param \Drupal\template_whisperer\TemplateWhispererSuggestionUsage $twSuggestionUsage
+     */
+    public function __construct(TemplateWhispererManager $twManager, TemplateWhispererSuggestionUsage $twSuggestionUsage) {
+      $this->twManager = $twManager;
+      $this->twSuggestionUsage = $twSuggestionUsage;
+    }
+
     /**
      * @inheritdoc
      */
@@ -39,20 +58,37 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
         $type = $node->getType();
         $links = [ Link::createFromRoute(t('Home'), '<front>') ];
-        if ('advisor' == $type) {
-            $links[] = Link::createFromRoute(
-                t('Conseillers'),
-                'entity.node.canonical',
-                ['node' => $state->get('rp_contact.settings.collection.advisors')['nid']]
-            );
+
+        switch ($type){
+          case 'advisor':
+            $parent = [
+              'title' => 'Conseillers',
+              'suggestion_name' => 'collection_advisor'
+            ];
+            break;
+
+          case 'contact':
+            $parent = [
+              'title' => 'Contacts',
+              'suggestion_name' => 'collection_contact'
+            ];
+            break;
         }
 
-        if ('contact' == $type) {
-            $links[] = Link::createFromRoute(
-                t('Contacts'),
+        if (!empty($parent)){
+          $suggestion = $this->twManager->getOneBySuggestion($parent['suggestion_name']);
+          $entities = null;
+          if ($suggestion) {
+            $entities = $this->twSuggestionUsage->listUsage($suggestion);
+
+            if (!empty($entities)) {
+              $links[] = Link::createFromRoute(
+                $this->t($parent['title']),
                 'entity.node.canonical',
-                ['node' => $state->get('rp_contact.settings.collection.contacts')['nid']]
-            );
+                ['node' => $entities[0]->id]
+              );
+            }
+          }
         }
 
         // We add a text node (without link) with the element title
