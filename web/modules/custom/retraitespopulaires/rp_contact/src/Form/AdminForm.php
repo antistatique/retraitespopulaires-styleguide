@@ -111,16 +111,16 @@ class AdminForm extends FormBase {
         );
 
         // Page settings
-        $form['page'] = array(
+        $form['receivers'] = array(
             '#type'          => 'fieldset',
-            '#title'         => 'Page d\'attaches des formulaires',
+            '#title'         => 'Email de contact des formulaires',
         );
 
         // Commande de documents Form
         $form['page']['documents_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.documents')['receivers'],
+            '#title'         => 'Commande de documents',
+            '#default_value' => $this->state->get('rp_contact.settings.documents'),
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
             '#suffix'        => '<br/>'
         );
@@ -128,8 +128,8 @@ class AdminForm extends FormBase {
         // Changement d'adresses Form
         $form['page']['address_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.address')['receivers'],
+            '#title'         => 'Changement d\'adresse',
+            '#default_value' => $this->state->get('rp_contact.settings.address')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
             '#suffix'        => '<br/>'
         );
@@ -137,8 +137,8 @@ class AdminForm extends FormBase {
         // Demande de réservation d\'un taux Form
         $form['page']['building_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.building')['receivers'],
+            '#title'         => 'Demande de réservation d\'un taux',
+            '#default_value' => $this->state->get('rp_contact.settings.building')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
             '#suffix'        => '<br/>'
         );
@@ -146,32 +146,32 @@ class AdminForm extends FormBase {
         // Demande de conversion d'un taux variable en taux fixe
         $form['page']['conversion_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.conversion')['receivers'],
+            '#title'         => 'Demande de conversion d\'un taux variable en taux fixe',
+            '#default_value' => $this->state->get('rp_contact.settings.conversion')['receivers'],
             '#suffix'        => '<br/>'
         );
 
         // Demande de modification de l'amortissement du 1er rang Form
         $form['page']['depreciation_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.depreciation')['receivers'],
+            '#title'         => 'Demande de modification de l\'amortissement du 1er rang',
+            '#default_value' => $this->state->get('rp_contact.settings.depreciation')['receivers'],
             '#suffix'        => '<br/>'
         );
 
         // Demande d'augmentation de prêt Form
         $form['page']['loan_increase_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.loan_increase')['receivers'],
+            '#title'         => 'Demande d\'augmentation de prêt',
+            '#default_value' => $this->state->get('rp_contact.settings.loan_increase')['receivers'],
             '#suffix'        => '<br/>'
         );
 
         // Demande d'attestation d'intérêts Form
         $form['page']['tax_attestation_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.tax_attestation')['receivers'],
+            '#title'         => 'Demande d\'attestation d\'intérêts',
+            '#default_value' => $this->state->get('rp_contact.settings.tax_attestation')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
         );
 
@@ -213,31 +213,31 @@ class AdminForm extends FormBase {
         ]);
 
         // Page with forms settings
-        $this->state->set('rp_contact.settings.page.documents', array(
+        $this->state->set('rp_contact.settings.documents', array(
             'receivers' => trim($form_state->getValue('documents_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.address', array(
+        $this->state->set('rp_contact.settings.address', array(
             'receivers' => trim($form_state->getValue('address_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.building', array(
+        $this->state->set('rp_contact.settings.building', array(
             'receivers' => trim($form_state->getValue('building_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.conversion', array(
+        $this->state->set('rp_contact.settings.conversion', array(
             'receivers' => trim($form_state->getValue('conversion_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.depreciation', array(
+        $this->state->set('rp_contact.settings.depreciation', array(
             'receivers' => trim($form_state->getValue('depreciation_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.loan_increase', array(
+        $this->state->set('rp_contact.settings.loan_increase', array(
             'receivers' => trim($form_state->getValue('loan_increase_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.tax_attestation', array(
+        $this->state->set('rp_contact.settings.tax_attestation', array(
             'receivers' => trim($form_state->getValue('tax_attestation_receivers')),
         ));
     }

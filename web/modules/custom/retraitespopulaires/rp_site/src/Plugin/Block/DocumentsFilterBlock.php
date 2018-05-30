@@ -45,13 +45,6 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
     private $alias_manager;
 
     /**
-     * State API for storing variables that shouldn't travel between instances.
-     *
-     * @var StateInterface
-     */
-    protected $state;
-
-    /**
      * Request stack that controls the lifecycle of requests.
      *
      * @var RequestStack
@@ -67,11 +60,10 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
     /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity,  AliasManagerInterface $alias_manager, StateInterface $state, RequestStack $request, Profession $profession) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity,  AliasManagerInterface $alias_manager, RequestStack $request, Profession $profession) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_taxonomy = $entity->getStorage('taxonomy_term');
         $this->alias_manager   = $alias_manager;
-        $this->state           = $state;
         $this->request        = $request->getMasterRequest();
         $this->profession      = $profession;
     }
@@ -89,7 +81,6 @@ class DocumentsFilterBlock extends BlockBase implements ContainerFactoryPluginIn
             // Load customs services used in this class.
             $container->get('entity_type.manager'),
             $container->get('path.alias_manager'),
-            $container->get('state'),
             $container->get('request_stack'),
             $container->get('rp_site.profession')
         );

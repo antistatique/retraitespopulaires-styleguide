@@ -452,7 +452,7 @@ class DocumentsForm extends FormBase {
             );
 
             // Send to admin
-            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.page.documents')['receivers']);
+            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.documents')['receivers']);
             $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_contact', 'contact_documents', $to, 'fr', $data, $reply);

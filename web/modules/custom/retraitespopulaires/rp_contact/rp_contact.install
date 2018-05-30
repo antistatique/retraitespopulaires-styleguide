@@ -23,10 +23,16 @@ function rp_contact_update_8001(&$sandbox) {
   foreach ($config_names as $config_name){
     $settings = $state->get($config_name);
 
+    if (isset($settings['receivers'])){
+      $state->set(str_replace('.page', '', $config_name), ['receivers' => $settings['receivers']]);
+    }
+
     $node = Node::load($settings['nid']);
     if (isset($node)) {
       $node->set('field_template_whisperer', $settings['theme']);
       $node->save();
     }
+
+    $state->delete($config_name);
   }
 }
