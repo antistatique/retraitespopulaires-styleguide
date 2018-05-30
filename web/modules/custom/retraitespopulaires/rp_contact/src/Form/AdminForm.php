@@ -98,26 +98,14 @@ class AdminForm extends FormBase {
             '#description'   => t('Séparer l\'e-mail et le secteur par un pipe (|).') .'<br />'. t('Séparer les différentes secteurs par un saut de ligne.'),
         );
 
-        // Popin settings
-        $form['popin'] = array(
-          '#type'  => 'fieldset',
-          '#title' => 'Popin',
-        );
-        $form['popin']['popin_receivers'] = array(
-          '#type'          => 'textfield',
-          '#title'         => 'E-mail(s) notifié(s) par défaut lors d\'une nouvelle demande',
-          '#default_value' => $this->state->get('rp_contact.settings.popin')['receivers'],
-          '#description'   => t('Séparer les adresses par le caractère point-virgule (;).<br>Il est possible de surcharger cette valeur au cas par cas lors de la création/édition d\'un contenu.'),
-        );
-
-        // Page settings
+        // Receivers settings
         $form['receivers'] = array(
             '#type'          => 'fieldset',
             '#title'         => 'Email de contact des formulaires',
         );
 
         // Commande de documents Form
-        $form['page']['documents_receivers'] = array(
+        $form['receivers']['documents_receivers'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Commande de documents',
             '#default_value' => $this->state->get('rp_contact.settings.documents'),
@@ -126,7 +114,7 @@ class AdminForm extends FormBase {
         );
 
         // Changement d'adresses Form
-        $form['page']['address_receivers'] = array(
+        $form['receivers']['address_receivers'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Changement d\'adresse',
             '#default_value' => $this->state->get('rp_contact.settings.address')['receivers'],
@@ -135,7 +123,7 @@ class AdminForm extends FormBase {
         );
 
         // Demande de réservation d\'un taux Form
-        $form['page']['building_receivers'] = array(
+        $form['receivers']['building_receivers'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Demande de réservation d\'un taux',
             '#default_value' => $this->state->get('rp_contact.settings.building')['receivers'],
@@ -144,7 +132,7 @@ class AdminForm extends FormBase {
         );
 
         // Demande de conversion d'un taux variable en taux fixe
-        $form['page']['conversion_receivers'] = array(
+        $form['receivers']['conversion_receivers'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Demande de conversion d\'un taux variable en taux fixe',
             '#default_value' => $this->state->get('rp_contact.settings.conversion')['receivers'],
@@ -152,7 +140,7 @@ class AdminForm extends FormBase {
         );
 
         // Demande de modification de l'amortissement du 1er rang Form
-        $form['page']['depreciation_receivers'] = array(
+        $form['receivers']['depreciation_receivers'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Demande de modification de l\'amortissement du 1er rang',
             '#default_value' => $this->state->get('rp_contact.settings.depreciation')['receivers'],
@@ -160,7 +148,7 @@ class AdminForm extends FormBase {
         );
 
         // Demande d'augmentation de prêt Form
-        $form['page']['loan_increase_receivers'] = array(
+        $form['receivers']['loan_increase_receivers'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Demande d\'augmentation de prêt',
             '#default_value' => $this->state->get('rp_contact.settings.loan_increase')['receivers'],
@@ -168,11 +156,18 @@ class AdminForm extends FormBase {
         );
 
         // Demande d'attestation d'intérêts Form
-        $form['page']['tax_attestation_receivers'] = array(
+        $form['receivers']['tax_attestation_receivers'] = array(
             '#type'          => 'textfield',
             '#title'         => 'Demande d\'attestation d\'intérêts',
             '#default_value' => $this->state->get('rp_contact.settings.tax_attestation')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
+        );
+
+        $form['receivers']['popin_receivers'] = array(
+            '#type'          => 'textfield',
+            '#title'         => 'E-mail(s) notifié(s) par défaut lors d\'une nouvelle demande',
+            '#default_value' => $this->state->get('rp_contact.settings.popin')['receivers'],
+            '#description'   => t('Séparer les adresses par le caractère point-virgule (;).<br>Il est possible de surcharger cette valeur au cas par cas lors de la création/édition d\'un contenu.'),
         );
 
         $form['actions']['submit'] = array(
@@ -212,7 +207,7 @@ class AdminForm extends FormBase {
           'receivers' => trim($form_state->getValue('popin_receivers')),
         ]);
 
-        // Page with forms settings
+        // Receivers settings
         $this->state->set('rp_contact.settings.documents', array(
             'receivers' => trim($form_state->getValue('documents_receivers')),
         ));
