@@ -50,8 +50,7 @@
         "drupal/entity_clone": "^1.0@alpha",
         "drupal/health_check": "^1.0",
         "drupal/bamboo_twig": "^3.3",
-        "twig/extensions": "^1.5",
-        "drupal/simple_sitemap": "^2.12"
+        "twig/extensions": "^1.5"
       },
     "require-dev": {
       "behat/mink": "~1.7",

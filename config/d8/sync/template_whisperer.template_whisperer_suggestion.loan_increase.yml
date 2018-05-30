@@ -1,7 +1,0 @@
-uuid: 95d2f32c-b848-4190-b903-cbe47a93449b
-langcode: fr
-status: true
-dependencies: {  }
-id: loan_increase
-name: 'Loan increase'
-suggestion: loan_increase

@@ -1,0 +1,7 @@
+uuid: 3af4efdb-f014-4899-971e-6abe3f40db96
+langcode: fr
+status: true
+dependencies: {  }
+id: collection_partnerships
+name: 'Collection Partnerships'
+suggestion: collection_partnerships

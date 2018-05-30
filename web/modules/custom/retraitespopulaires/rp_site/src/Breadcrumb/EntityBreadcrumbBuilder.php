@@ -62,7 +62,7 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
           case 'news':
             $parent = [
               'title' => 'Actualités',
-              'suggestion_name' => 'collection_news'
+              'suggestion_name' => 'collection_actualites'
             ];
             break;
 

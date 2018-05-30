@@ -2,6 +2,6 @@ uuid: 5cf859b9-835e-4d8b-bd5a-a19f7389d1ae
 langcode: fr
 status: true
 dependencies: {  }
-id: documents
-name: Documents
-suggestion: documents
+id: contact_documents
+name: 'Contact Documents'
+suggestion: contact_documents

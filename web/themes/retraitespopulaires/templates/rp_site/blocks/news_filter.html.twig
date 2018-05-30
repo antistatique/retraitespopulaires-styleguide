@@ -1,43 +1,45 @@
-{% set suggestions = tw_suggestion_entities('collection_news') %}
-{% if variables.selected is empty and suggestions %}
-  <div class="{{ theme_hook_original }}">
-    <p class="media-heading text-muted">
-      {% trans %}L'actualité de Retraites Populaires{% endtrans %}
-    </p>
-    <ul class="filters-list list-inline">
-      <li class="{{ variables.current_aliases is empty ? 'active' }}">
-        {% if variables.current_aliases is empty %}
-          <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></a>
-        {% else %}
-          <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked"></a>
-        {% endif %}
+{% set suggestions = tw_suggestion_entities('collection_actualites') %}
+{% if suggestions %}
+    {% if variables.selected is empty %}
+      <div class="{{ theme_hook_original }}">
+        <p class="media-heading text-muted">
+          {% trans %}L'actualité de Retraites Populaires{% endtrans %}
+        </p>
+        <ul class="filters-list list-inline">
+          <li class="{{ variables.current_aliases is empty ? 'active' }}">
+            {% if variables.current_aliases is empty %}
+              <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></a>
+            {% else %}
+              <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked"></a>
+            {% endif %}
 
-        <a class="pretty-link" href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}">{% trans %}Toutes{% endtrans %}</a>
-      </li>
-      {% for category in variables.categories %}
-       <li class="{{ category.alias in variables.current_aliases ? 'active' }}">
-         {% if category.alias in variables.current_aliases %}
-           <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></a>
-         {% else %}
-           <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked"></a>
-         {% endif %}
+            <a class="pretty-link" href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}">{% trans %}Toutes{% endtrans %}</a>
+          </li>
+          {% for category in variables.categories %}
+           <li class="{{ category.alias in variables.current_aliases ? 'active' }}">
+             {% if category.alias in variables.current_aliases %}
+               <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></a>
+             {% else %}
+               <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked"></a>
+             {% endif %}
 
-         <a class="pretty-link" href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
-       </li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div class="spacer spacer-sm"></div>
-  {% else %}
-  <div class="{{ theme_hook_original }}">
-    <p class="media-heading text-muted">
-      <div class="icon-text">
-        <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}" class="retraitespopulaires-icon retraitespopulaires-icon retraitespopulaires-icon-arrow-left no-underline"></a>
-        <div><a href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}" class="pretty-link icon-text-txt">{% trans %}Retour aux actualités{% endtrans %}</a></div>
+             <a class="pretty-link" href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
+           </li>
+          {% endfor %}
+        </ul>
       </div>
       <div class="spacer spacer-sm"></div>
-      <h2>{{ variables.selected.name.value }}</h2>
-      <p>{{ variables.selected.description.value|raw }}</p>
-    </p>
-  </div>
+      {% else %}
+      <div class="{{ theme_hook_original }}">
+        <p class="media-heading text-muted">
+          <div class="icon-text">
+            <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}" class="retraitespopulaires-icon retraitespopulaires-icon retraitespopulaires-icon-arrow-left no-underline"></a>
+            <div><a href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}" class="pretty-link icon-text-txt">{% trans %}Retour aux actualités{% endtrans %}</a></div>
+          </div>
+          <div class="spacer spacer-sm"></div>
+          <h2>{{ variables.selected.name.value }}</h2>
+          <p>{{ variables.selected.description.value|raw }}</p>
+        </p>
+      </div>
+    {% endif %}
 {% endif %}

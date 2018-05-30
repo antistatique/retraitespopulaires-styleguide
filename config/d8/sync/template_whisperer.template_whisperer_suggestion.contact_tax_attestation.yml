@@ -1,0 +1,7 @@
+uuid: b459ce0c-955e-4207-af1b-28a1774d45f2
+langcode: fr
+status: true
+dependencies: {  }
+id: contact_tax_attestation
+name: 'Contact Tax attestation'
+suggestion: contact_tax_attestation

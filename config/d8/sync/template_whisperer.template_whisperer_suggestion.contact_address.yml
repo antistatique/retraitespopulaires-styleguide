@@ -2,6 +2,6 @@ uuid: 88898786-92c1-449a-a18f-c724c93899e1
 langcode: fr
 status: true
 dependencies: {  }
-id: address
-name: Address
-suggestion: address
+id: contact_address
+name: 'Contact Address'
+suggestion: contact_address

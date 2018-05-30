@@ -1,0 +1,34 @@
+<?php
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Migrate old settings to node template whisperer field
+ */
+function rp_site_update_8001(&$sandbox) {
+  $state = \Drupal::state();
+
+  $config_names = [
+    'rp_site.settings.collection.news',
+    'rp_site.settings.collection.documents',
+    'rp_site.settings.collection.faqs',
+    'rp_site.settings.collection.buildings',
+    'rp_site.settings.collection.management_contracts',
+    'rp_site.settings.collection.partnerships',
+    'rp_site.settings.single.contact',
+    'rp_site.settings.collection.mortgage_calculator',
+    'rp_site.settings.collection.mortgage_tablerates',
+    'rp_site.settings.collection.constructionloan_tablerates',
+    'rp_site.settings.collection.localauthoritiesloan_tablerates',
+  ];
+
+  foreach ($config_names as $config_name){
+    $settings = $state->get($config_name);
+
+    $node = Node::load($settings['nid']);
+    if (isset($node)) {
+      $node->set('field_template_whisperer', $settings['theme']);
+      $node->save();
+    }
+  }
+}

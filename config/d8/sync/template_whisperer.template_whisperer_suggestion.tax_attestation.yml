@@ -1,7 +1,0 @@
-uuid: b459ce0c-955e-4207-af1b-28a1774d45f2
-langcode: fr
-status: true
-dependencies: {  }
-id: tax_attestation
-name: 'Tax attestation'
-suggestion: tax_attestation

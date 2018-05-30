@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Migrate old settings to node template whisperer field
+ */
+function rp_offers_update_8001(&$sandbox) {
+  $state = \Drupal::state();
+
+  $config_names = [
+    'rp_offers.settings.collection.offers',
+  ];
+
+  foreach ($config_names as $config_name){
+    $settings = $state->get($config_name);
+
+    $node = Node::load($settings['nid']);
+    if (isset($node)) {
+      $node->set('field_template_whisperer', $settings['theme']);
+      $node->save();
+    }
+  }
+}
