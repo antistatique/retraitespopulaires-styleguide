@@ -1,4 +1,3 @@
-{% if variables.news %}
 <div class="row">
   <div class="col-xs-10 col-xs-offset-1">
     {{ bamboo_render_block('rp_site_news_filter_block') }}
@@ -6,13 +5,19 @@
 </div>
 <div class="row">
   <div class="col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0">
-    <div class="row flex-row">
-      {% for news in variables.news %}
-      <div class="col-xs-12 col-lg-6">
-        {{ bamboo_render_block('rp_site_news_teaser_block', {'news': news}) }}
+    {% if variables.news %}
+      <div class="row flex-row">
+        {% for news in variables.news %}
+        <div class="col-xs-12 col-lg-6">
+          {{ bamboo_render_block('rp_site_news_teaser_block', {'news': news}) }}
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
+    {% else %}
+      <div>
+        <p>{% trans %}Malheureusement, il n'y a pas d'actualité disponible{% endtrans %}</p>
+      </div>
+    {% endif %}
   </div>
 </div>
 
@@ -22,6 +27,4 @@
     {{ variables.pager }}
   </div>
 </div>
-{% endif %}
-
 {% endif %}

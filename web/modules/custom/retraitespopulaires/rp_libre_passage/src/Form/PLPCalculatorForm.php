@@ -447,8 +447,6 @@ class PLPCalculatorForm extends FormBase {
                     ]);
                   }
                 }
-
-
             } catch (\Exception $e) {
                 drupal_set_message(t('An error occurred and processing did not complete.'), 'error');
             }

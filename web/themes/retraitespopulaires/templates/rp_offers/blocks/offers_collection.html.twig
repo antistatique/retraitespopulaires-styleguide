@@ -1,19 +1,25 @@
-{% if variables.offers %}
-  <div class="spacer spacer-md"></div>
-  <div class="row flex-row">
-    {% for offer in variables.offers %}
-    <div class="col-xs-12 col-md-6 same-height">
-      {{ bamboo_render_block('rp_offers_offer_teaser_block', {'offer': offer}) }}
-    </div>
-    {% if loop.index % 2 == 0 and not loop.last %}</div><div class="row flex-row">{% endif %}
-    {% endfor %}
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0">
+      {% if variables.offers %}
+        <div class="row flex-row">
+            {% for offer in variables.offers %}
+              <div class="col-xs-12 col-md-6">
+                  {{ bamboo_render_block('rp_offers_offer_teaser_block', {'offer': offer}) }}
+              </div>
+            {% endfor %}
+        </div>
+      {% else %}
+        <div>
+          <p>{% trans %}Malheureusement, il n'y a pas d'offre disponible{% endtrans %}</p>
+        </div>
+      {% endif %}
   </div>
+</div>
 
-  {% if variables.pager %}
+{% if variables.pager %}
   <div class="row">
-    <div class="col-xs-10 text-center">
-      {{ variables.pager }}
+    <div class="col-xs-offset-1 col-xs-10 text-center">
+        {{ variables.pager }}
     </div>
   </div>
-  {% endif %}
 {% endif %}
