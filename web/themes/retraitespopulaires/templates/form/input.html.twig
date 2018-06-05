@@ -10,9 +10,20 @@
  * @see template_preprocess_input()
  */
 #}
-{%
-  set classes = [
+
+{% if attributes.datepicker %}<div class="input-group">{% endif %}
+  {%
+    set classes = [
     attributes.type != 'checkbox' and attributes.type != 'radio' ? 'form-control',
+    attributes.datepicker ? 'datepicker',
   ]
-%}
-<input{{ attributes.addClass(classes) }} />{{ children }}
+  %}
+  <input{{ attributes.addClass(classes) }} />{{ children }}
+  {% if attributes.datepicker %}
+  <span class="input-group-btn">
+    <button class="btn btn-{{ attributes.datepickerbtn ? 'primary' : 'invert' }}" type="button" aria-label="{% trans %}Choisir la date{% endtrans %}">
+      <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-calendar" aria-hidden="true"></span>
+    </button>
+  </span>
+</div>
+{% endif %}
