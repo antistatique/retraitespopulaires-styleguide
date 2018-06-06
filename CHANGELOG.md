@@ -1,6 +1,12 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - add Bamboo Twig integration
+ - add LDAP integration for backend authentication - MD-162
+ - improve Bella Vita - MD-177
+ - change logout redirection
+
 ## 2.4.1 (2018-04-26)
  - apply patch - Remote Code Execution - SA-CORE-2018-004
 
