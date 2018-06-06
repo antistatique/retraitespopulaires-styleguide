@@ -1,11 +1,12 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## 2.4.2 (2018-06-06)
  - add Bamboo Twig integration
  - add LDAP integration for backend authentication - MD-162
  - improve Bella Vita - MD-177
  - change logout redirection
+ - fix Webform download issues & images generations by removing spaces before <?php on .modules files
 
 ## 2.4.1 (2018-04-26)
  - apply patch - Remote Code Execution - SA-CORE-2018-004
