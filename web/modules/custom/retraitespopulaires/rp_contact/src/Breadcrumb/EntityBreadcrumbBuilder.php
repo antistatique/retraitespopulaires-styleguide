@@ -21,14 +21,27 @@ use Drupal\template_whisperer\TemplateWhispererManager;
 class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     use StringTranslationTrait;
 
+    /**
+     * The Template Whisperer manager.
+     *
+     * @var \Drupal\template_whisperer\TemplateWhispererManager
+     */
     protected $twManager;
+
+    /**
+     * The Template Whisperer suggestion usage.
+     *
+     * @var \Drupal\template_whisperer\TemplateWhispererSuggestionUsage
+     */
     protected $twSuggestionUsage;
 
     /**
      * Class constructor.
      *
      * @param \Drupal\template_whisperer\TemplateWhispererManager $twManager
+     *   The Template Whisperer manager.
      * @param \Drupal\template_whisperer\TemplateWhispererSuggestionUsage $twSuggestionUsage
+     *   The Template Whisperer suggestion usage.
      */
     public function __construct(TemplateWhispererManager $twManager, TemplateWhispererSuggestionUsage $twSuggestionUsage) {
       $this->twManager = $twManager;
@@ -51,39 +64,37 @@ class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
         $breadcrumb = new Breadcrumb();
         $breadcrumb->addCacheContexts(['route']);
 
-        $state = \Drupal::state();
-
         $node = $route_match->getParameter('node');
         $breadcrumb->addCacheTags(array('node:' . $node->id()));
 
         $type = $node->getType();
         $links = [ Link::createFromRoute(t('Home'), '<front>') ];
 
-        switch ($type){
+        switch ($type) {
           case 'advisor':
             $parent = [
-              'title' => 'Conseillers',
-              'suggestion_name' => 'collection_advisor'
+              'title' => $this->t('Conseillers'),
+              'suggestion_name' => 'collection_advisor',
             ];
             break;
 
           case 'contact':
             $parent = [
-              'title' => 'Contacts',
-              'suggestion_name' => 'collection_contact'
+              'title' => $this->t('Contacts'),
+              'suggestion_name' => 'collection_contact',
             ];
             break;
         }
 
-        if (!empty($parent)){
+        if (!empty($parent)) {
           $suggestion = $this->twManager->getOneBySuggestion($parent['suggestion_name']);
-          $entities = null;
+          $entities = NULL;
           if ($suggestion) {
             $entities = $this->twSuggestionUsage->listUsage($suggestion);
 
             if (!empty($entities)) {
               $links[] = Link::createFromRoute(
-                $this->t($parent['title']),
+                $parent['title'],
                 'entity.node.canonical',
                 ['node' => $entities[0]->id]
               );

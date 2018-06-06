@@ -1,21 +1,29 @@
 <?php
 
-use Drupal\node\Entity\Node;
+/**
+ * @file
+ * Contains the code to generate the custom drush commands.
+ */
 
 /**
- * Migrate old settings to node template whisperer field
+ * Migrate old settings to node template whisperer field.
  */
 function rp_offers_update_8001(&$sandbox) {
   $state = \Drupal::state();
+
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+  $entity_storage = $entity_type_manager->getStorage('node');
 
   $config_names = [
     'rp_offers.settings.collection.offers',
   ];
 
-  foreach ($config_names as $config_name){
+  foreach ($config_names as $config_name) {
     $settings = $state->get($config_name);
 
-    $node = Node::load($settings['nid']);
+    /** @var \Drupal\node\Entity\Node $node */
+    $node = $entity_storage->load($settings['nid']);
     if (isset($node)) {
       $node->set('field_template_whisperer', $settings['theme']);
       $node->save();

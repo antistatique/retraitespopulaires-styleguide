@@ -21,14 +21,27 @@ use Drupal\template_whisperer\TemplateWhispererSuggestionUsage;
 class EntityBreadcrumbBuilder implements BreadcrumbBuilderInterface {
   use StringTranslationTrait;
 
+    /**
+     * The Template Whisperer manager.
+     *
+     * @var \Drupal\template_whisperer\TemplateWhispererManager
+     */
     protected $twManager;
+
+    /**
+     * The Template Whisperer suggestion usage.
+     *
+     * @var \Drupal\template_whisperer\TemplateWhispererSuggestionUsage
+     */
     protected $twSuggestionUsage;
 
     /**
      * Class constructor.
      *
      * @param \Drupal\template_whisperer\TemplateWhispererManager $twManager
+     *   The Template Whisperer manager.
      * @param \Drupal\template_whisperer\TemplateWhispererSuggestionUsage $twSuggestionUsage
+     *   The Template Whisperer suggestion usage.
      */
     public function __construct(TemplateWhispererManager $twManager, TemplateWhispererSuggestionUsage $twSuggestionUsage) {
       $this->twManager = $twManager;
