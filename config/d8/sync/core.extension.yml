@@ -52,6 +52,7 @@ module:
   path: 0
   rdf: 0
   redirect: 0
+  rp_auth: 0
   rp_ckeditor: 0
   rp_contact: 0
   rp_exchange_rates: 0

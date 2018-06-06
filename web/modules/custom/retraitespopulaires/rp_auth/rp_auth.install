@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Contains rp_auth.install.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function rp_auth_requirements($phase) {
+  $requirements = [];
+  if ($phase == 'runtime') {
+
+    $ldap_settings = \Drupal::Service('settings')->get('rp_ldap');
+
+    $requirements['rp_auth_ldap_config_connection'] = [
+      'title'       => 'LDAP - Connection',
+      'description' => t('Missing configuration in settings file.'),
+      'severity'    => REQUIREMENT_ERROR,
+      'weight'      => 1000,
+    ];
+    if (isset($ldap_settings['connection']['host']) && isset($ldap_settings['connection']['port'])) {
+      $requirements['rp_auth_ldap_config_connection']['description'] = t('host: @host<br/>port: @port', ['@host' => $ldap_settings['connection']['host'], '@port' => $ldap_settings['connection']['port']]);
+      $requirements['rp_auth_ldap_config_connection']['severity'] = REQUIREMENT_INFO;
+    }
+
+    $requirements['rp_auth_ldap_config_path'] = [
+      'title'       => 'LDAP - Paths',
+      'description' => t('Missing configuration in settings file.'),
+      'severity'    => REQUIREMENT_ERROR,
+      'weight'      => 1001,
+    ];
+    if (isset($ldap_settings['paths'])) {
+      $requirements['rp_auth_ldap_config_path']['description'] = implode($ldap_settings['paths'], '<br/>');
+      $requirements['rp_auth_ldap_config_path']['severity'] = REQUIREMENT_INFO;
+    }
+
+    $requirements['rp_auth_ldap_config_users'] = [
+      'title'       => 'LDAP - Users DN',
+      'description' => t('Missing configuration in settings file.'),
+      'severity'    => REQUIREMENT_ERROR,
+      'weight'      => 1002,
+    ];
+    if (isset($ldap_settings['users'])) {
+      $requirements['rp_auth_ldap_config_users']['description'] = implode($ldap_settings['users'], '<br/>');
+      $requirements['rp_auth_ldap_config_users']['severity'] = REQUIREMENT_INFO;
+    }
+
+    $requirements['rp_auth_ldap_config_groups'] = [
+      'title'       => 'LDAP - Groups DN',
+      'description' => t('Missing configuration in settings file.'),
+      'severity'    => REQUIREMENT_ERROR,
+      'weight'      => 1003,
+    ];
+    if (isset($ldap_settings['groups'])) {
+      $requirements['rp_auth_ldap_config_groups']['description'] = $ldap_settings['groups'];
+      $requirements['rp_auth_ldap_config_groups']['severity'] = REQUIREMENT_INFO;
+    }
+
+    $requirements['rp_auth_ldap_config_service_account'] = [
+      'title'       => 'LDAP - Service Account',
+      'description' => (!empty($ldap_settings['service_account']['username']) && !empty($ldap_settings['service_account']['pass'])) ? 'Enabled' : 'Disabled',
+      'severity'    => (!empty($ldap_settings['service_account']['username']) && !empty($ldap_settings['service_account']['pass'])) ? REQUIREMENT_OK : REQUIREMENT_WARNING,
+      'weight'      => 1004,
+    ];
+
+    $requirements['rp_auth_ldap_mapping_patterns'] = [
+      'title'       => 'LDAP - Mapping Patterns CN',
+      'description' => t('Missing configuration in settings file.'),
+      'severity'    => REQUIREMENT_ERROR,
+      'weight'      => 1003,
+    ];
+    if (isset($ldap_settings['mapping_patterns'])) {
+      $requirements['rp_auth_ldap_mapping_patterns']['description'] = implode($ldap_settings['mapping_patterns'], '<br/>');
+      $requirements['rp_auth_ldap_mapping_patterns']['severity'] = REQUIREMENT_INFO;
+    }
+  }
+
+  return $requirements;
+}

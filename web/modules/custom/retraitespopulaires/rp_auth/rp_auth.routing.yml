@@ -1,0 +1,8 @@
+# Admin link
+rp_auth.ldap_roles:
+    path: '/admin/retraites-populaires/ldap_roles'
+    defaults:
+        _form: '\Drupal\rp_auth\Form\RoleSettingsForm'
+        _title: 'LDAP Roles'
+    requirements:
+        _permission: 'administer site configuration'
