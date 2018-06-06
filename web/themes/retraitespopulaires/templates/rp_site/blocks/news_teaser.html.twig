@@ -10,9 +10,9 @@
   <div class="card-body">
     <h3 class="card-title h2">{{ variables.news.title.value }}</h3>
     <div class="text-muted">
-      <time datetime="{{ variables.news.field_date.date|date_format('c') }}">
+      <time datetime="{{ variables.news.field_date.date|bamboo_i18n_format_date('custom', 'c') }}">
         <span class="sr-only">{% trans %}Date de publication: {% endtrans %}</span>
-        {{ variables.news.field_date.date|date_format('d F Y')|capitalize }}
+        {{ variables.news.field_date.date|bamboo_i18n_format_date('custom', 'd F Y')|capitalize }}
       </time> -
       <span>
         <span class="sr-only">{% trans %}Catégorie de l'actualité: {% endtrans %}</span>

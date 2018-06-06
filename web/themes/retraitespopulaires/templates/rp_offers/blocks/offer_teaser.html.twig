@@ -13,16 +13,16 @@
     {% if variables.offer.field_available_offers.value %}
     <div>
       {% trans %}
-        {{ variables.offer.field_available_offers.value }} ticket
+        {{ variables.offer.field_available_offers.value }} billet
       {% plural variables.offer.field_available_offers.value %}
-        {{ variables.offer.field_available_offers.value }} tickets
+        {{ variables.offer.field_available_offers.value }} billets
       {% endtrans %}
     </div>
         {% endif %}
     {# Get diff days before the offer is finished #}
     {% set end_date = variables.offer.field_date_end.date|date_modify('tomorrow - 1 second') %}
-    {% set left = (end_date.timestamp - date('now').timestamp) / 60 / 60 / 24 %}
-    {% set left_days = left|number_format %}
+    {% set left = (end_date|bamboo_extensions_time_diff('now', 'd', FALSE)) %}
+    {% set left_days = left|round(0, 'floor') %}
     <div>
       {% if left >= 1 %}
         {% trans %}

@@ -59,7 +59,7 @@
 
 <div class="theme-{{ theme_guesser() }}">
 {% block cover %}
-  {{ load_block('rp_layout_cover_block') }}
+  {{ bamboo_render_block('rp_layout_cover_block') }}
 {% endblock %}
 
 {# Page Header #}
@@ -137,7 +137,7 @@
           {% block main_bottom_content %}{% endblock %}
         </div>
         <div class="{{ secondarynav_classes|join(' ') }}">
-          {{ load_block('rp_layout_secondarynav_block') }}
+          {{ bamboo_render_block('rp_layout_secondarynav_block') }}
 
           {# Sidebar First #}
           {% if page.sidebar_first %}
@@ -153,9 +153,9 @@
   {% endblock %}
 
   {% block attachments %}
-    {% block attachments_contact %}{{ load_block('rp_contact_contact_attachment_block') }}{% endblock %}
-    {% block attachments_attachments %}{{ load_block('rp_site_attachments_block') }}{% endblock %}
-    {% block attachments_news_latest %}{{ load_block('rp_site_news_latest_block') }}{% endblock %}
+    {% block attachments_contact %}{{ bamboo_render_block('rp_contact_contact_attachment_block') }}{% endblock %}
+    {% block attachments_attachments %}{{ bamboo_render_block('rp_site_attachments_block') }}{% endblock %}
+    {% block attachments_news_latest %}{{ bamboo_render_block('rp_site_news_latest_block') }}{% endblock %}
   {% endblock attachments %}
 
   {# Content Bottom #}

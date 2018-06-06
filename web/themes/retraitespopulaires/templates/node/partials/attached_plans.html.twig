@@ -15,7 +15,7 @@
         {% set file_type = file.entity.mimeType ? file.entity.mimeType %}
         <a href="{{ file_url(file.entity.uri.value) }}" target="_blank" class="pretty-link">
           {{ file_title }}
-          <span class="text-muted text-small">- {{ file_type|extension_guesser|upper }}</span>
+          <span class="text-muted text-small">- {{ file_type|bamboo_file_extension_guesser|upper }}</span>
         </a>
       </li>
   {% endfor %}

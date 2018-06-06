@@ -85,7 +85,7 @@ class Request {
     public function isEnable($node_nid) {
         $is_enable = false;
 
-        $now = new \DateTime();
+        $now = new \DateTime('today');
         $node = $this->entity_node->load($node_nid);
 
         if ($node->status->value && $now->getTimestamp() <= $node->field_date_end->date->getTimestamp()) {
@@ -104,6 +104,7 @@ class Request {
     public function consume($fields) {
         if (!empty($fields)) {
             $data = array(
+                'civil_state'     => $fields['civil_state'],
                 'firstname'       => $fields['firstname'],
                 'lastname'        => $fields['lastname'],
                 'email'           => $fields['email'],

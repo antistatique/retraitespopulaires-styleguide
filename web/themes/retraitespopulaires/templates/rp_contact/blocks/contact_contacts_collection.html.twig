@@ -13,7 +13,7 @@
       <div class="row flex-row">
         {% for contact in variables.contacts %}
         <div class="col-xs-12">
-          {{ load_block('rp_contact_contact_teaser_block', {'contact': contact, 'search_npa': false}) }}
+          {{ bamboo_render_block('rp_contact_contact_teaser_block', {'contact': contact, 'search_npa': false}) }}
         </div>
         {% endfor %}
       </div>

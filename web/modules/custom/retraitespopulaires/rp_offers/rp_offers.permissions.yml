@@ -2,3 +2,8 @@
   title: 'Administer Retraites Populaires offers - Bella vita'
   description: 'Configure Retraites Populaires offers - Bella vita.'
   restrict access: true
+
+'administer rp offers draw date field':
+  title: 'Administer Retraites Populaires offers draw at and draw send at fields - Bella vita'
+  description: 'Pour changer la date où les tirages au sort ont été éffectués et quand les mails ont été envoyé'
+  restrict access: true

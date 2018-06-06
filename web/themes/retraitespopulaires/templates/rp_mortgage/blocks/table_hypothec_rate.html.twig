@@ -7,7 +7,7 @@
 #}
 
 {% if variables.rates %}
-  {% set formatted_date = variables.date|date_format('F Y') %}
+  {% set formatted_date = variables.date|bamboo_i18n_format_date('custom', 'F Y') %}
 
   {% set variables_rates = [variables.rates|first] %}
   <table class="table table-wide tablesaw tablesaw-stack" data-tablesaw-mode="stack" id="table-{{ variable.type|clean_id }}-variables">

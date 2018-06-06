@@ -1,0 +1,6 @@
+rp_auth.admin.settings:
+    title: LDAP Roles
+    description: 'Map Drupal roles to LDAP roles'
+    parent: rp_toolbar.admin
+    route_name: rp_auth.ldap_roles
+    weight: 100

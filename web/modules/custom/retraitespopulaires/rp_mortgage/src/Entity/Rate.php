@@ -19,7 +19,7 @@ use Drupal\user\UserInterface;
  *   label = @Translation("Rate"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\rp_mortgage\RateListBuilder",*
+ *     "list_builder" = "Drupal\rp_mortgage\RateListBuilder",
  *     "form" = {
  *       "default" = "Drupal\rp_mortgage\Form\RateForm",
  *       "add" = "Drupal\rp_mortgage\Form\RateForm",

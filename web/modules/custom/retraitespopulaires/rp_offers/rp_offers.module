@@ -52,5 +52,17 @@ function rp_offers_theme($existing, $type, $theme, $path) {
     );
 }
 
+function rp_offers_form_alter(&$form, &$form_state, $form_id){
+  if ($form_id === 'node_offer_edit_form' || $form_id === 'node_offer_form'){
+    $user = \Drupal::currentUser();
+
+    if (!$user->hasPermission('administer rp offers draw date field')) {
+      unset($form['field_draw_at']);
+      unset($form['field_draw_send_at']);
+    }
+  }
+}
+
 require_once('src/Mail/mails.php');
 require_once('src/Suggestion/suggestions.php');
+

@@ -3,6 +3,13 @@ module:
   antistatique_quick_edit: 0
   automated_cron: 0
   backerymails: 0
+  bamboo_twig: 0
+  bamboo_twig_config: 0
+  bamboo_twig_extensions: 0
+  bamboo_twig_file: 0
+  bamboo_twig_i18n: 0
+  bamboo_twig_loader: 0
+  bamboo_twig_path: 0
   block: 0
   block_content: 0
   breakpoint: 0
@@ -45,6 +52,7 @@ module:
   path: 0
   rdf: 0
   redirect: 0
+  rp_auth: 0
   rp_ckeditor: 0
   rp_contact: 0
   rp_exchange_rates: 0
@@ -71,7 +79,6 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  twig_extender: 0
   update: 0
   user: 0
   views_ui: 0

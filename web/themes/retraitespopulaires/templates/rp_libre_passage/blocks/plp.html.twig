@@ -8,7 +8,7 @@
     </thead>
     <tbody>
       <tr>
-        {% set deadline = variables.results.deadline|date_format('d.m.Y') %}
+        {% set deadline = variables.results.deadline|bamboo_i18n_format_date('custom', 'd.m.Y') %}
         <td>{% trans %}Capital de retraite au {{ deadline }}{% endtrans %}</td>
         <td>
           <div class="readonly">
@@ -17,7 +17,7 @@
         </td>
       </tr>
 
-      {% set pension = variables.results.deadline|date_modify('+1 day')|date_format('d.m.Y') %}
+      {% set pension = variables.results.deadline|date_modify('+1 day')|bamboo_i18n_format_date('custom', 'd.m.Y') %}
       {% if variables.results.civil_status == 'Non' %}
         <tr>
           <td>{% trans %}Rente annuelle de retraite dès le {{ pension }}{% endtrans %}</td>
@@ -72,7 +72,7 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
           <div class="card card-white">
             <div class="card-body">
-              {{ load_form('rp_libre_passage', 'PLPContactForm', {'results': variables.results}) }}
+              {{ bamboo_render_form('rp_libre_passage', 'PLPContactForm', {'results': variables.results}) }}
             </div>
           </div>
       </div>
@@ -89,7 +89,7 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
           <div class="card card-white">
             <div class="card-body">
-              {{ load_form('rp_libre_passage', 'PLPCalculatorForm') }}
+              {{ bamboo_render_form('rp_libre_passage', 'PLPCalculatorForm') }}
             </div>
           </div>
       </div>
