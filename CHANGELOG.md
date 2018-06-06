@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## NEXT REALEASE
+ - Template Whisperer integration
+
 ## 2.4.1 (2018-04-26)
  - apply patch - Remote Code Execution - SA-CORE-2018-004
 
