@@ -38,8 +38,18 @@ class RequestForm extends FormBase {
      */
     protected $state;
 
-
+    /**
+     * The Template Whisperer manager.
+     *
+     * @var \Drupal\template_whisperer\TemplateWhispererManager
+     */
     protected $twManager;
+
+    /**
+     * The Template Whisperer suggestion usage.
+     *
+     * @var \Drupal\template_whisperer\TemplateWhispererSuggestionUsage
+     */
     protected $twSuggestionUsage;
 
     /**
