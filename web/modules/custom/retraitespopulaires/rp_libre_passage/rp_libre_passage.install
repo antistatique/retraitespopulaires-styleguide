@@ -5,6 +5,10 @@
  * Contains the code to generate the custom drush commands.
  */
 
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\Core\Entity\EntityStorageException;
+use Drupal\Core\Utility\UpdateException;
+
 /**
  * Migrate old settings to node template whisperer field.
  */
@@ -13,7 +17,21 @@ function rp_libre_passage_update_8001(&$sandbox) {
 
   /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
   $entity_type_manager = \Drupal::service('entity_type.manager');
-  $entity_storage = $entity_type_manager->getStorage('node');
+
+  try {
+    $node_storage = $entity_type_manager->getStorage('node');
+    $tw_storage = $entity_type_manager->getStorage('template_whisperer_suggestion');
+  }
+  catch (InvalidPluginDefinitionException $e) {
+    throw new UpdateException($e->getMessage());
+  }
+
+  /** @var \Drupal\template_whisperer\Entity\TemplateWhispererSuggestionEntity $tw */
+  $tw = $tw_storage->load('collection_actualites');
+
+  if (!isset($tw)) {
+    throw new UpdateException('Config is not imported');
+  }
 
   $config_names = [
     'rp_libre_passage.settings.page.calculator',
@@ -23,10 +41,15 @@ function rp_libre_passage_update_8001(&$sandbox) {
     $settings = $state->get($config_name);
 
     /** @var \Drupal\node\Entity\Node $node */
-    $node = $entity_storage->load($settings['nid']);
+    $node = $node_storage->load($settings['nid']);
     if (isset($node)) {
       $node->set('field_template_whisperer', $settings['theme']);
-      $node->save();
+      try {
+        $node->save();
+      }
+      catch (EntityStorageException $e) {
+        throw new UpdateException($e->getMessage());
+      }
     }
 
     $state->delete($config_name);
