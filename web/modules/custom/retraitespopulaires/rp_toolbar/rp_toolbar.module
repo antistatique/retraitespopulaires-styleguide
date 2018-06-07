@@ -1,9 +1,15 @@
 <?php
 
 /**
-* Toolbar hook
-* Attache the custom icons
-*/
-function rp_toolbar_toolbar_alter(&$items){
-    $items['administration']['#attached']['library'][]  = 'rp_toolbar/icons';
+ * @file
+ * Legacy Drupal 7 code to implements hooks.
+ */
+
+/**
+ * Toolbar hook.
+ *
+ * Attache the custom icons.
+ */
+function rp_toolbar_toolbar_alter(&$items) {
+  $items['administration']['#attached']['library'][] = 'rp_toolbar/icons';
 }
