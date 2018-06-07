@@ -7,16 +7,16 @@ dependencies:
 id: building
 label: Building
 type: 'canonical_entities:node'
-pattern: 'parc-immobilier/[node:field_building_type]/[node:title]'
+pattern: '[suggestion:lookup:collection_buildings:entity:url:path]/[node:field_building_type]/[node:title]'
 selection_criteria:
-  a1986952-65be-4593-8ef0-c105b45412cd:
+  28bf70a8-2250-45f6-928b-41d69b00e855:
     id: node_type
     bundles:
       building: building
     negate: false
     context_mapping:
       node: node
-    uuid: a1986952-65be-4593-8ef0-c105b45412cd
+    uuid: 28bf70a8-2250-45f6-928b-41d69b00e855
 selection_logic: and
 weight: -5
 relationships: {  }
