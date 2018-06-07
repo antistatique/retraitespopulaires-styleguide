@@ -32,13 +32,17 @@
     transition: transform 0.5s ease;
   }
 
-  .button-bubble .bubble-icon {
-    padding: 0.5em;
-    font-size: 30px;
-  }
+  .button-bubble {
+    margin-left: 0;
 
-  .button-bubble i:before {
-    transform: rotate(90deg);
+    .bubble-icon {
+      padding: 0.5em;
+      font-size: 30px;
+    }
+
+    i:before {
+      transform: rotate(90deg);
+    }
   }
 
   .inline-block {

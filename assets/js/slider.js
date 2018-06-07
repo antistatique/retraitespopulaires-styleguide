@@ -3,7 +3,7 @@ import $ from 'jquery';
 export function slider () {
   $( document ).ready(function() {
     // Check if jQuery ui is enable
-    if ($.ui.slider) {
+    if ($.ui && $.ui.slider) {
       // Override default option for that the max value of slider is max value setted and no more value of near step
       $.extend($.ui.slider.prototype, {
         _calculateNewMax: function () {

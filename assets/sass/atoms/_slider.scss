@@ -21,16 +21,16 @@ $handle-size: 2em;
     border: 1px solid $light-gray;
     outline-color: transparent;
     align-items: center;
-  }
 
-  .ui-slider-handle:before {
-    font-family: 'retraitespopulaires-icon';
-    content: $retraitespopulaires-icon-chevron;
-    width: 100%;
-    font-size: 17px;
-    font-weight: bold;
-    color: black;
-    text-align: center;
+    &:before {
+      font-family: 'retraitespopulaires-icon';
+      content: $retraitespopulaires-icon-chevron;
+      width: 100%;
+      font-size: 17px;
+      font-weight: bold;
+      color: black;
+      text-align: center;
+    }
   }
 
   .ui-slider-range {
