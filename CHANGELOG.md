@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - Add locker to mortgage import rates command
+
 ## 2.4.2 (2018-06-06)
  - add Bamboo Twig integration
  - add LDAP integration for backend authentication - MD-162
