@@ -1,27 +1,34 @@
 <?php
 
 /**
-* Theme hook
-*/
+ * @file
+ * Legacy Drupal 7 code to implements hooks.
+ */
+
+/**
+ * Theme hook.
+ */
 function rp_homepage_theme($existing, $type, $theme, $path) {
-  return array(
+  return [
     // Blocks themes
-    // ---------------------------------------------------------------------
-    'rp_homepage_blocks' => array(
-        // Use the following syntax to retrieve all variables in the "variables" container
-        'variables' => ['variables' => []],
-        // Set the template attribute to force the theme suggestions into a sub folder
-        // using [template].html.twig
-        'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-        'template'  => 'blocks/rp--homepage--blocks'
-    ),
-    'rp_homepage_highlight' => array(
-      // Use the following syntax to retrieve all variables in the "variables" container
+    // ---------------------------------------------------------------------.
+    'rp_homepage_blocks' => [
+      // Use the following syntax to retrieve all variables in
+      // the "variables" container.
       'variables' => ['variables' => []],
-      // Set the template attribute to force the theme suggestions into a sub folder
-      // using [template].html.twig
-      'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-      'template'  => 'blocks/rp--homepage--highlight'
-    ),
-  );
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/rp--homepage--blocks',
+    ],
+    'rp_homepage_highlight' => [
+      // Use the following syntax to retrieve all variables in
+      // the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/rp--homepage--highlight',
+    ],
+  ];
 }

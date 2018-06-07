@@ -1,6 +1,4 @@
-@charset 'UTF-8';
-
-.vimeo-player {
+@charset 'UTF-8'; .vimeo-player {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,10 +45,7 @@
   line-height: 0;
   cursor: pointer;
   color: white;
-  transition:
-    background .25s ease,
-    color .25s ease,
-    border-color .25s ease;
+  transition: background .25s ease, color .25s ease, border-color .25s ease;
 }
 .vimeo-player-play a:hover,
 .vimeo-player-play a:active {

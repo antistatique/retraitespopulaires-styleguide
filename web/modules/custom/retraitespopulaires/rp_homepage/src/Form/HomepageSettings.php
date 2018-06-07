@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\rp_homepage\Form;
 
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
@@ -7,26 +8,29 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\State\StateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * Homepage Settings Form.
+ */
 class HomepageSettings extends FormBase {
 
-  CONST NUMBER_OF_BLOCKS = 6;
+  const NUMBER_OF_BLOCKS = 6;
 
   /**
-   * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-   * @var StateInterface
+   * The state key value store.
+   *
+   * @var \Drupal\Core\State\StateInterface
    */
   protected $state;
 
   /**
+   * The cache tag invalidator.
+   *
    * @var \Drupal\Core\Cache\CacheTagsInvalidatorInterface
    */
   private $cacheTagsInvalidator;
 
   /**
    * Class constructor.
-   *
-   * @param \Drupal\Core\State\StateInterface                $state
-   * @param \Drupal\Core\Cache\CacheTagsInvalidatorInterface $cacheTagsInvalidator
    */
   public function __construct(StateInterface $state, CacheTagsInvalidatorInterface $cacheTagsInvalidator) {
     $this->state = $state;
@@ -56,7 +60,7 @@ class HomepageSettings extends FormBase {
   /**
    * Form constructor.
    *
-   * @param array                                $form
+   * @param array $form
    *   An associative array containing the structure of the form.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The current state of the form.
@@ -66,7 +70,7 @@ class HomepageSettings extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    // This is the magick form option to use
+    // This is the magick form option to use.
     $form['#tree'] = TRUE;
 
     $form['highlight'] = [
@@ -109,12 +113,12 @@ class HomepageSettings extends FormBase {
     $form['highlight']['vimeo_url'] = [
       '#type'          => 'textfield',
       '#title'         => $this->t('URL de la vidéo (optionnel)'),
-      '#description'   => $this->t('L\'URL doit être un lien vimeo, au format <code>https://vimeo.com/242850098</code>.'),
+      '#description'   => $this->t("L'URL doit être un lien vimeo, au format <code>https://vimeo.com/242850098</code>."),
       '#default_value' => $highlight_default_value['vimeo_url'] ?? NULL,
     ];
 
-    for($i=1; $i <= self::NUMBER_OF_BLOCKS; $i++) {
-      $block = 'block_'.$i;
+    for ($i = 1; $i <= self::NUMBER_OF_BLOCKS; $i++) {
+      $block = 'block_' . $i;
 
       $form['blocks'][$block] = [
         '#type'  => 'details',
@@ -125,12 +129,12 @@ class HomepageSettings extends FormBase {
       $form['blocks'][$block]['title'] = [
         '#type'          => 'textfield',
         '#title'         => $this->t('Titre'),
-        '#default_value' => $this->getBlockStateValue($block, 'title')
+        '#default_value' => $this->getBlockStateValue($block, 'title'),
       ];
       $form['blocks'][$block]['url'] = [
         '#type'          => 'url',
         '#title'         => $this->t('URL du Titre'),
-        '#default_value' => $this->getBlockStateValue($block, 'url')
+        '#default_value' => $this->getBlockStateValue($block, 'url'),
       ];
 
       $description_default_value = $this->getBlockStateValue($block, 'description');
@@ -169,7 +173,7 @@ class HomepageSettings extends FormBase {
   /**
    * Form submission handler.
    *
-   * @param array                                $form
+   * @param array $form
    *   An associative array containing the structure of the form.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The current state of the form.
@@ -181,17 +185,21 @@ class HomepageSettings extends FormBase {
 
     $this->cacheTagsInvalidator->invalidateTags(['front']);
 
-    drupal_set_message(t('Configuration de la home mise à jour'));
+    drupal_set_message($this->t('Configuration de la home mise à jour'));
   }
 
   /**
    * Get from the State API a value for a specified block number $blockNumber.
    *
-   * @param string $blockNumber
+   * @param string $block
+   *   Block to get.
    * @param string $key
-   * @param mixed  $default
+   *   Can you comment @WengerK.
+   * @param mixed $default
+   *   Can you comment @WengerK.
    *
    * @return mixed
+   *   Can you comment @WengerK.
    */
   private function getBlockStateValue($block, $key, $default = NULL) {
     $blockData = $this->state->get('rp_homepage.blocks', []);
@@ -202,4 +210,5 @@ class HomepageSettings extends FormBase {
 
     return $blockData[$block][$key];
   }
+
 }
