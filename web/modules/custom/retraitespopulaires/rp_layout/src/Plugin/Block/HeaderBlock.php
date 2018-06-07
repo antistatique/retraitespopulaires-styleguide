@@ -1,8 +1,4 @@
 <?php
-/**
-* @file
-* Contains \Drupal\rp_layout\Plugin\Block\HeaderBlock.
-*/
 
 namespace Drupal\rp_layout\Plugin\Block;
 
@@ -12,13 +8,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
 
 /**
-* Provides a 'Layout' Header Block
-*
-* @Block(
-*   id = "rp_layout_header_block",
-*   admin_label = @Translation("Layout Header block"),
-* )
-*/
+ * Provides a 'Layout' Header Block.
+ *
+ * @Block(
+ *   id = "rp_layout_header_block",
+ *   admin_label = @Translation("Layout Header block"),
+ * )
+ */
 class HeaderBlock extends BlockBase implements ContainerFactoryPluginInterface {
   /**
    * An interface for loading, transforming and rendering menu link trees.
@@ -48,10 +44,10 @@ class HeaderBlock extends BlockBase implements ContainerFactoryPluginInterface {
   }
 
   /**
-  * {@inheritdoc}
-  */
-  public function build($params = array()) {
-    $variables = array();
+   * {@inheritdoc}
+   */
+  public function build($params = []) {
+    $variables = [];
 
     // Transform the tree using the manipulators you want.
     $manipulators = [
@@ -87,9 +83,9 @@ class HeaderBlock extends BlockBase implements ContainerFactoryPluginInterface {
       '#variables' => $variables,
       '#cache' => [
         'contexts' => [
-          'url.path'
+          'url.path',
         ],
-      ]
+      ],
     ];
   }
 
