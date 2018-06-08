@@ -78,43 +78,43 @@ class HomepageSettings extends FormBase {
       '#title'         => $this->t('Bloc de mise en avant'),
     ];
 
-    $highlight_default_value = $this->state->get('rp_homepage.highlight', []);
+    $highlightDefVal = $this->state->get('rp_homepage.highlight', []);
 
     $form['highlight']['enabled'] = [
       '#type'          => 'checkbox',
       '#title'         => $this->t('Activé'),
-      '#default_value' => $highlight_default_value['enabled'] ?? FALSE,
+      '#default_value' => $highlightDefVal['enabled'] ?? FALSE,
     ];
 
     $form['highlight']['title'] = [
       '#type'          => 'textfield',
       '#title'         => $this->t('Titre'),
-      '#default_value' => $highlight_default_value['title'] ?? NULL,
+      '#default_value' => $highlightDefVal['title'] ?? NULL,
     ];
 
     $form['highlight']['subtitle'] = [
       '#type'          => 'textarea',
       '#title'         => $this->t('Accroche'),
-      '#default_value' => $highlight_default_value['subtitle'] ?? NULL,
+      '#default_value' => $highlightDefVal['subtitle'] ?? NULL,
     ];
 
     $form['highlight']['url'] = [
       '#type'          => 'url',
       '#title'         => $this->t('Lien'),
-      '#default_value' => $highlight_default_value['url'] ?? NULL,
+      '#default_value' => $highlightDefVal['url'] ?? NULL,
     ];
 
     $form['highlight']['btn_label'] = [
       '#type'          => 'textfield',
       '#title'         => $this->t('Label du bouton'),
-      '#default_value' => $highlight_default_value['btn_label'] ?? NULL,
+      '#default_value' => $highlightDefVal['btn_label'] ?? NULL,
     ];
 
     $form['highlight']['vimeo_url'] = [
       '#type'          => 'textfield',
       '#title'         => $this->t('URL de la vidéo (optionnel)'),
       '#description'   => $this->t("L'URL doit être un lien vimeo, au format <code>https://vimeo.com/242850098</code>."),
-      '#default_value' => $highlight_default_value['vimeo_url'] ?? NULL,
+      '#default_value' => $highlightDefVal['vimeo_url'] ?? NULL,
     ];
 
     for ($i = 1; $i <= self::NUMBER_OF_BLOCKS; $i++) {
@@ -137,12 +137,12 @@ class HomepageSettings extends FormBase {
         '#default_value' => $this->getBlockStateValue($block, 'url'),
       ];
 
-      $description_default_value = $this->getBlockStateValue($block, 'description');
+      $descriptionDefVal = $this->getBlockStateValue($block, 'description');
       $form['blocks'][$block]['description'] = [
         '#type'          => 'text_format',
         '#format'        => 'full_html',
         '#title'         => $this->t('Description'),
-        '#default_value' => $description_default_value['value'] ?? NULL,
+        '#default_value' => $descriptionDefVal['value'] ?? NULL,
       ];
 
       $form['blocks'][$block]['btn_url'] = [

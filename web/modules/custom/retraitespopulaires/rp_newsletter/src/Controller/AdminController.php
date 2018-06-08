@@ -24,13 +24,6 @@ class AdminController extends ControllerBase {
   private $state;
 
   /**
-   * The Form Builder service.
-   *
-   * @var \Drupal\Core\Form\FormBuilderInterface
-   */
-  private $formBuilder;
-
-  /**
    * Class constructor.
    */
   public function __construct(StateInterface $state, FormBuilderInterface $formBuilder) {

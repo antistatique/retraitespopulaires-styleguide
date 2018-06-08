@@ -29,10 +29,10 @@ class MenuTransformers {
    */
   public function getTopParentActiveTrail(array $tree) {
     // Get the current item's parent ID.
-    $current_item_top_parent = $this->getTopParent($tree);
+    $currentItemTopParent = $this->getTopParent($tree);
 
-    if (!empty($current_item_top_parent)) {
-      $tree = $current_item_top_parent;
+    if (!empty($currentItemTopParent)) {
+      $tree = $currentItemTopParent;
     }
 
     // Return the tree.

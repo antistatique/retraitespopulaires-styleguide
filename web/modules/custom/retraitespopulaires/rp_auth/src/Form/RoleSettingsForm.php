@@ -30,7 +30,7 @@ class RoleSettingsForm extends FormBase {
   /**
    * Read only settings that are initialized with the class.
    *
-   * @var Drupal\Core\Site\Settings
+   * @var \Drupal\Core\Site\Settings
    */
   private $settings;
 
