@@ -159,7 +159,10 @@ class LDAPDrupal {
   }
 
   /**
-   * Get all roles in Drupal without system roles (administrators and authenticated)
+   * Retrieve Drupal 8 - custom roles (removed system ones)
+   *
+   * @return array
+   *   List of customs roles
    */
   public function getRoles() {
     $roles = user_role_names(TRUE);

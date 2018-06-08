@@ -142,6 +142,12 @@ class RoleSettingsForm extends FormBase {
     $this->state->set('rp_auth.settings.ldap_roles', $form_items);
   }
 
+  /**
+   * Retrieve Drupal 8 - custom roles (removed system ones)
+   *
+   * @return array
+   *   List of customs roles
+   */
   public function getRoles() {
     $roles = user_role_names(TRUE);
 
@@ -150,4 +156,5 @@ class RoleSettingsForm extends FormBase {
 
     return $roles;
   }
+
 }
