@@ -2,6 +2,7 @@ CHANGELOG
 ---------
 
 ## NEXT RELEASE
+ - correct some triggered error on administration page
  - correct a bug with Modulo calculator token - MD-364
 
 ## 2.4.2 (2018-06-06)
