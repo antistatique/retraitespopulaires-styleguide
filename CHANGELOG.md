@@ -4,6 +4,9 @@ CHANGELOG
 ## NEXT REALEASE
  - add & configure Template Whisperer module
  - migrate dynamic page templating using Template Whisperer instead of Config/State.
+ - add locker to mortgage import rates command
+ - correct some triggered error on administration page
+ - correct a bug with Modulo calculator token - MD-364
 
 ## 2.4.2 (2018-06-06)
  - add Bamboo Twig integration
