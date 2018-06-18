@@ -2,6 +2,7 @@ CHANGELOG
 ---------
 
 ## NEXT RELEASE
+ - add locker to mortgage import rates command
  - correct some triggered error on administration page
  - correct a bug with Modulo calculator token - MD-364
 
