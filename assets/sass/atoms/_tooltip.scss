@@ -18,7 +18,7 @@
     font-family: 'retraitespopulaires-icon';
     font-size: 18px;
     line-height: 1;
-    color: #ed3e44;
+    color: lighten($brand-danger, 20%);
 
     &.tooltip-symbol-green {
       color: $brand-primary;
