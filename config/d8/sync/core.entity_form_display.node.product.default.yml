@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.product.field_profession
     - field.field.node.product.field_search_npa
     - field.field.node.product.field_subtitle
+    - field.field.node.product.field_template_whisperer
     - image.style.thumbnail
     - node.type.product
   module:
@@ -28,6 +29,7 @@ dependencies:
     - image
     - metatag
     - path
+    - template_whisperer
     - text
 third_party_settings:
   field_group:
@@ -256,6 +258,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_template_whisperer:
+    weight: 130
+    settings: {  }
+    third_party_settings: {  }
+    type: template_whisperer
     region: content
   path:
     type: path

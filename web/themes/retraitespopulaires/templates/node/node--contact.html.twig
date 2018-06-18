@@ -1,7 +1,7 @@
 {% extends "@retraitespopulaires/node/node--form.html.twig" %}
 
 {% block node_top %}
-  {{ load_block('rp_contact_contact_teaser_detail_block', {'node': null, 'contact': node}) }}
+  {{ bamboo_render_block('rp_contact_contact_teaser_detail_block', {'node': null, 'contact': node}) }}
   {{ parent() }}
 {% endblock %}
 
@@ -14,5 +14,5 @@
 {% endblock %}
 
 {% block node_form %}
-  {{ load_form('rp_contact', 'ContactForm', {'node': node}) }}
+  {{ bamboo_render_form('rp_contact', 'ContactForm', {'node': node}) }}
 {% endblock %}

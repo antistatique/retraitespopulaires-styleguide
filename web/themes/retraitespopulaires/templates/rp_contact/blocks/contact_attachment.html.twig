@@ -1,21 +1,24 @@
 {% if variables.contacts %}
-<div id="contactez-nous" class="bg-berrylight-gray">
-  <div class="container">
-    <div class="section-title">
-      <h2>{% trans %}Retraites&nbsp;Populaires est à votre disposition{% endtrans %}</h2>
-      <div><a href="{{ path('entity.node.canonical', {'node': 50 }) }}" class="pretty-link">{% trans %}Contacter Retraites&nbsp;Populaires{% endtrans %}</a></div>
-    </div>
+  {% set suggestions = tw_suggestion_entities('global_contact') %}
+  {% if suggestions %}
+    <div id="contactez-nous" class="bg-berrylight-gray">
+      <div class="container">
+        <div class="section-title">
+          <h2>{% trans %}Retraites&nbsp;Populaires est à votre disposition{% endtrans %}</h2>
+          <div><a href="{{ path('entity.node.canonical', {'node': suggestions|first.id }) }}" class="pretty-link">{% trans %}Contacter Retraites&nbsp;Populaires{% endtrans %}</a></div>
+        </div>
 
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-        {% if variables.contacts %}
-          {% for contact in variables.contacts %}
-            {{ load_block('rp_contact_contact_teaser_block', {'node': variables.node, 'contact': contact, 'search_npa': variables.node.field_search_npa.value}) }}
-          {% endfor %}
-        {% endif %}
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+            {% if variables.contacts %}
+              {% for contact in variables.contacts %}
+                {{ bamboo_render_block('rp_contact_contact_teaser_block', {'node': variables.node, 'contact': contact, 'search_npa': variables.node.field_search_npa.value}) }}
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="spacer"></div>
+    <div class="spacer"></div>
+  {% endif %}
 {% endif %}

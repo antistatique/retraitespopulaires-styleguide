@@ -130,7 +130,7 @@
         {% trans %}Taux en pourcent{% endtrans %}
         {% spaceless %}
         {% if variables.rate_date %}
-          ({{ variables.rate_date|date_format('F Y') }})
+          ({{ variables.rate_date|bamboo_i18n_format_date('custom', 'F Y') }})
         {% endif %}
         {% endspaceless %}
       </td>
@@ -147,7 +147,7 @@
   <div>
   {% if variables.rate_date %}
     <div class="alert alert-info">
-      {% set formatted_date = variables.rate_date|date_format('F Y') %}
+      {% set formatted_date = variables.rate_date|bamboo_i18n_format_date('custom', 'F Y') %}
       {% trans %}Les taux utilisés sont ceux de {{ formatted_date }}{% endtrans %}
     </div>
   {% else %}

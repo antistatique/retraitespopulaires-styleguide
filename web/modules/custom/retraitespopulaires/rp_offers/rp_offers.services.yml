@@ -3,12 +3,7 @@ services:
   rp_offers.request:
     class: Drupal\rp_offers\Service\Request
     arguments:
-      - @entity_type.manager
-      - @entity.query
-      - @state
-      - @plugin.manager.mail
-  # Custom breadcrumb applies
-  rp_offers.breadcrumb:
-    class: Drupal\rp_offers\Breadcrumb\EntityBreadcrumbBuilder
-    tags:
-      - { name: breadcrumb_builder, priority: 100 }
+      - '@entity_type.manager'
+      - '@entity.query'
+      - '@state'
+      - '@plugin.manager.mail'

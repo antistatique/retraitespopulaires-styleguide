@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * @file
+ * Legacy Drupal 7 code to implements hooks.
+ */
+
+// Includes.
+require_once 'inc/form_user_login.inc';

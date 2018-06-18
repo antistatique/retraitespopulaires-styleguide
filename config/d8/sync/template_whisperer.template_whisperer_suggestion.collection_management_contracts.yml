@@ -1,0 +1,7 @@
+uuid: 17e51df5-4704-497c-9483-03f71400d271
+langcode: fr
+status: true
+dependencies: {  }
+id: collection_management_contracts
+name: 'Collection Management Contracts'
+suggestion: collection_management_contracts

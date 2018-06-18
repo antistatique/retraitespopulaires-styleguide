@@ -16,7 +16,7 @@
         {% set document_type = document.entity.field_file_document.entity.mimeType %}
         <a href="{{ path('entity.node.canonical', {'node': document.entity.nid.value}) }}" target="_blank" class="pretty-link">
           {{ document_title }}
-          <span class="text-muted text-small">- {{ document_type|extension_guesser|upper }}</span>
+          <span class="text-muted text-small">- {{ document_type|bamboo_file_extension_guesser|upper }}</span>
         </a>
       </li>
     {% endif %}

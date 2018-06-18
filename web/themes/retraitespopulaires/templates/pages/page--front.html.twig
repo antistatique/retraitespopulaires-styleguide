@@ -30,7 +30,7 @@
                 </div>
               </div>
             </div>
-            {{ load_block('rp_homepage_blocks') }}
+            {{ bamboo_render_block('rp_homepage_blocks') }}
           </section>
         </div>
       </div>
@@ -38,6 +38,6 @@
   </div>
 {% endblock %}
 
-{% block attachments %}{{ load_block('rp_site_news_promoted_block') }}{% endblock %}
+{% block attachments %}{{ bamboo_render_block('rp_site_news_promoted_block') }}{% endblock %}
 {% block content_bottom %}{% endblock %}
 {% block content_footer %}{% endblock %}

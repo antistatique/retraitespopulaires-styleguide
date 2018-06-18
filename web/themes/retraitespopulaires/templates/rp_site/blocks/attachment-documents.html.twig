@@ -1,3 +1,4 @@
+{% set suggestions = tw_suggestion_entities('collection_documents') %}
 <div class="card card-white card-light">
   <div class="card-body">
     <h2 class="card-title">{% trans %}Documents utiles{% endtrans %}</h2>
@@ -8,23 +9,27 @@
           <a aria-hidden="true" href="{{ path('entity.node.canonical', {'node': doc.nid.value}) }}" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
         </div>
         <div class="media-body">
-          <a href="{{ path('entity.node.canonical', {'node': doc.nid.value}) }}" target="_blank" class="h5 no-underline"><span class="pretty-link">{{ doc.title.value }}</span> <span class="text-muted text-small">- {{ doc.field_file_document.entity.mimeType|extension_guesser|upper }}</span></a>
+          <a href="{{ path('entity.node.canonical', {'node': doc.nid.value}) }}" target="_blank" class="h5 no-underline"><span class="pretty-link">{{ doc.title.value }}</span> <span class="text-muted text-small">- {{ doc.field_file_document.entity.mimeType|bamboo_file_extension_guesser|upper }}</span></a>
         </div>
       </li>
       {% endfor %}
     </ul>
   </div>
-  {% if variables.collection %}
+  {% if suggestions %}
   <div class="card-footer card-berrylight-gray">
     <div class="icon-text icon-text-center">
         <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-documents-thick"></span>
         <div class="icon-text-txt">
-          <a class="text-bold pretty-link h5" href="{{ variables.collection.link }}">
-            {% if variables.collection.name %}
-              {% trans %}Tous les documents {{ variables.collection.name }}{% endtrans %}
-            {% else %}
-              {% trans %}Tous les documents{% endtrans %}
-            {% endif %}
+          {% if variales.collection.alias is empty %}
+            <a class="text-bold pretty-link h5" href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}">
+          {% else %}
+            <a class="text-bold pretty-link h5" href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'profession_alias': variables.collection.alias}) }}">
+          {% endif %}
+          {% if variables.collection.name %}
+            {% trans %}Tous les documents {{ variables.collection.name }}{% endtrans %}
+          {% else %}
+            {% trans %}Tous les documents{% endtrans %}
+          {% endif %}
           </a>
         </div>
     </div>

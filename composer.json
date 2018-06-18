@@ -34,7 +34,6 @@
         "drupal/search_api_solr": "~1.0",
         "drewm/mailchimp-api": "^2.2",
         "drupal/metatag": "~1.0",
-        "drupal/menu_breadcrumb": "~1.0",
         "drupal/editor_advanced_link": "~1.0",
         "drupal/mailsystem": "~4.1",
         "drupal/swiftmailer": "~1.0",
@@ -45,11 +44,14 @@
         "drupal/redirect": "~1.0",
         "drupal/backerymails": "~1.0",
         "drupal/webform": "^5.0@beta",
-        "drupal/template_whisperer": "2.x-dev",
+        "drupal/template_whisperer": "^2.1",
         "drupal/addanother": "^1.0@RC",
         "drupal/entity_clone": "^1.0@alpha",
         "drupal/health_check": "^1.0",
-        "drupal/bamboo_twig": "^3.2"
+        "drupal/bamboo_twig": "^3.3",
+        "twig/extensions": "^1.5",
+        "drupal/menu_trail_by_path": "^1.1",
+        "drupal/easy_breadcrumb": "^1.8"
       },
     "require-dev": {
       "behat/mink": "~1.7",

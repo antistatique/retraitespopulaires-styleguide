@@ -4,13 +4,11 @@ status: true
 dependencies: {  }
 id: immobilier
 label: Immobilier
-weight: 5
+weight: 6
 is_admin: null
 permissions:
   - 'access administration pages'
   - 'access site in maintenance mode'
   - 'access toolbar'
-  - 'access user profiles'
-  - 'change own username'
   - 'use text format full_html'
   - 'view the administration theme'

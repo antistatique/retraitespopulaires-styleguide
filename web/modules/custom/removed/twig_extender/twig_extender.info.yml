@@ -1,0 +1,5 @@
+name: twig_extender
+type: module
+description: To remove twig_extender Module
+core: 8.x
+package: To remove

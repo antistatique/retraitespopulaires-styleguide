@@ -1,0 +1,7 @@
+uuid: 9de45511-6d4c-4a1f-86a2-85842b489769
+langcode: fr
+status: true
+dependencies: {  }
+id: collection_advisors
+name: 'Collection Advisors'
+suggestion: collection_advisors

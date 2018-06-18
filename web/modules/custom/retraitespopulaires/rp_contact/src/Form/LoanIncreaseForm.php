@@ -622,7 +622,7 @@ class LoanIncreaseForm extends FormBase {
             );
 
             // Send to admin
-            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.page.loan_increase')['receivers']);
+            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.loan_increase')['receivers']);
             $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_contact', 'contact_loan_increase', $to, 'fr', $data, $reply);

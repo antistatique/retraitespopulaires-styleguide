@@ -27,7 +27,7 @@
                                 {{ teaser.description|raw }}
                             </div>
                             <div class="card-footer">
-                                {{ load_form('rp_quickwin', 'TeaserForm', {'field': teaser.field, 'button': teaser.button, 'node': teaser.node}) }}
+                                {{ bamboo_render_form('rp_quickwin', 'TeaserForm', {'field': teaser.field, 'button': teaser.button, 'node': teaser.node}) }}
                             </div>
                         </div>
                     </div>

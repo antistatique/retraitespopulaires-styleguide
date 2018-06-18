@@ -10,7 +10,7 @@
       {% for offer in variables.offers %}
         {% if loop.index0 % 2 == 0 %}</div><div class="row same-height-group">{% endif %}
         <div class="col-xs-12 col-md-6 same-height">
-          {{ load_block('rp_offers_offer_teaser_block', {'offer': offer}) }}
+          {{ bamboo_render_block('rp_offers_offer_teaser_block', {'offer': offer}) }}
         </div>
       {% endfor %}
     </div>

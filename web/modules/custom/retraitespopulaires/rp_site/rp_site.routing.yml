@@ -5,19 +5,3 @@ rp_site.search:
         _title: 'Recherche'
     requirements:
         _permission: 'access content'
-
-# Admin link
-rp_site.admin:
-    path: '/admin/retraites-populaires/site'
-    defaults:
-        _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
-        _title: 'Site - Admin'
-    requirements:
-        _permission: 'administer rp site'
-rp_site.admin.settings:
-    path: '/admin/retraites-populaires/site/settings'
-    defaults:
-        _controller: '\Drupal\rp_site\Controller\AdminController::settings'
-        _title: 'Site - Admin - Settings'
-    requirements:
-        _permission: 'administer rp site'

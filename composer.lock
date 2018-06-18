@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5cf3627272dfb6cfd87f6cbcce14c24",
+    "content-hash": "ba362207f1ca3112c6e62c069b94d48c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1314,17 +1314,17 @@
         },
         {
             "name": "drupal/bamboo_twig",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/bamboo_twig",
-                "reference": "8.x-3.2"
+                "reference": "8.x-3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bamboo_twig-8.x-3.2.zip",
-                "reference": "8.x-3.2",
-                "shasum": "8ba5be19f532b07c825acc663744c9a1ee36ff3e"
+                "url": "https://ftp.drupal.org/files/projects/bamboo_twig-8.x-3.3.zip",
+                "reference": "8.x-3.3",
+                "shasum": "a25ae096ffbcb7297d0c7a3aad9edd52090c151a"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1340,11 +1340,11 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.2",
-                    "datestamp": "1519913884",
+                    "version": "8.x-3.3",
+                    "datestamp": "1526460483",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -1879,7 +1879,9 @@
             "type": "drupal-core",
             "extra": {
                 "patches_applied": {
-                    "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch"
+                    "Assert Summary Toggle": "https://www.drupal.org/files/issues/edit-summary-not-showing-11411975-22.patch",
+                    "Remote Code Execution - SA-CORE-2018-002": "./patches/sa-core-2018-002.patch",
+                    "Remote Code Execution - SA-CORE-2018-004": "./patches/sa-core-2018-004.patch"
                 }
             },
             "autoload": {
@@ -2043,6 +2045,73 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/ctools",
                 "issues": "https://www.drupal.org/project/issues/ctools"
+            }
+        },
+        {
+            "name": "drupal/easy_breadcrumb",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/easy_breadcrumb",
+                "reference": "8.x-1.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/easy_breadcrumb-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "75be89f78e9b47daf0bb54429652180a2e6063b5"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.8",
+                    "datestamp": "1524864180",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Boggs",
+                    "homepage": "https://www.drupal.org/user/153069"
+                },
+                {
+                    "name": "RenatoG",
+                    "homepage": "https://www.drupal.org/user/3326031"
+                },
+                {
+                    "name": "loopduplicate",
+                    "homepage": "https://www.drupal.org/user/717290"
+                },
+                {
+                    "name": "sonemonu",
+                    "homepage": "https://www.drupal.org/user/1667988"
+                },
+                {
+                    "name": "tatarbj",
+                    "homepage": "https://www.drupal.org/user/649590"
+                },
+                {
+                    "name": "volkswagenchick",
+                    "homepage": "https://www.drupal.org/user/3332522"
+                }
+            ],
+            "description": "Adds configuration to the system breadcrumbs.",
+            "homepage": "https://www.drupal.org/project/easy_breadcrumb",
+            "support": {
+                "source": "http://cgit.drupalcode.org/easy_breadcrumb"
             }
         },
         {
@@ -2355,18 +2424,18 @@
             }
         },
         {
-            "name": "drupal/menu_breadcrumb",
-            "version": "1.4.0",
+            "name": "drupal/menu_trail_by_path",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/menu_breadcrumb",
-                "reference": "8.x-1.4"
+                "url": "https://git.drupal.org/project/menu_trail_by_path",
+                "reference": "8.x-1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/menu_breadcrumb-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "ffbd96d8d90235a7c1ffd9496178466339494f46"
+                "url": "https://ftp.drupal.org/files/projects/menu_trail_by_path-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "52261e3ad3630e88bfc2a147e3056844f5584f62"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2377,8 +2446,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1502101744",
+                    "version": "8.x-1.1",
+                    "datestamp": "1482006782",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2387,38 +2456,26 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "RyanPrice",
-                    "homepage": "https://www.drupal.org/user/873848"
+                    "name": "SeriousMatters",
+                    "homepage": "https://www.drupal.org/user/290439"
                 },
                 {
-                    "name": "aaron",
-                    "homepage": "https://www.drupal.org/user/33420"
+                    "name": "davy-r",
+                    "homepage": "https://www.drupal.org/user/3278771"
                 },
                 {
-                    "name": "gdevlugt",
-                    "homepage": "https://www.drupal.org/user/167273"
-                },
-                {
-                    "name": "rphair",
-                    "homepage": "https://www.drupal.org/user/3196607"
-                },
-                {
-                    "name": "vaibhavjain",
-                    "homepage": "https://www.drupal.org/user/1159692"
-                },
-                {
-                    "name": "xurizaemon",
-                    "homepage": "https://www.drupal.org/user/76026"
+                    "name": "redndahead",
+                    "homepage": "https://www.drupal.org/user/160320"
                 }
             ],
-            "description": "Create breadcrumbs from nested menu titles and/or taxonomy membership.",
-            "homepage": "https://www.drupal.org/project/menu_breadcrumb",
+            "description": "Expand menus and set active-trail according to the current path.",
+            "homepage": "https://www.drupal.org/project/menu_trail_by_path",
             "support": {
-                "source": "http://cgit.drupalcode.org/menu_breadcrumb"
+                "source": "http://cgit.drupalcode.org/menu_trail_by_path"
             }
         },
         {
@@ -2843,18 +2900,25 @@
         },
         {
             "name": "drupal/template_whisperer",
-            "version": "dev-2.x",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/template_whisperer",
-                "reference": "a08e3c8f98de8cca6daa42c0c74a4c6fdaf91a12"
+                "reference": "8.x-2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/template_whisperer-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "40faaf6317b615679774ba5d122b8bc9951f59bc"
             },
             "require": {
                 "drupal/core": "*"
             },
             "require-dev": {
                 "drupal/coder": "*",
-                "squizlabs/php_codesniffer": "^2.7"
+                "squizlabs/php_codesniffer": "^2.7",
+                "wapmorgan/php-code-fixer": "^2.0"
             },
             "type": "drupal-module",
             "extra": {
@@ -2862,23 +2926,23 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.x-dev",
-                    "datestamp": "1507613347",
+                    "version": "8.x-2.1",
+                    "datestamp": "1526485984",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
                     "name": "Antistatique",
                     "homepage": "https://www.antistatique.net",
-                    "email": "info@antistaique.net",
+                    "email": "info@antistatique.net",
                     "role": "Sponsor"
                 },
                 {
@@ -2893,8 +2957,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/template_whisperer",
                 "issues": "https://www.drupal.org/project/issues/template_whisperer"
-            },
-            "time": "2017-10-10T05:28:50+00:00"
+            }
         },
         {
             "name": "drupal/token",
@@ -6107,6 +6170,62 @@
             "time": "2017-06-01T20:52:29+00:00"
         },
         {
+            "name": "twig/extensions",
+            "version": "v1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig-extensions.git",
+                "reference": "d188c76168b853481cc75879ea045bf93d718e9c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig-extensions/zipball/d188c76168b853481cc75879ea045bf93d718e9c",
+                "reference": "d188c76168b853481cc75879ea045bf93d718e9c",
+                "shasum": ""
+            },
+            "require": {
+                "twig/twig": "~1.27|~2.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~3.3@dev",
+                "symfony/translation": "~2.3|~3.0"
+            },
+            "suggest": {
+                "symfony/translation": "Allow the time_diff output to be translated"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_Extensions_": "lib/"
+                },
+                "psr-4": {
+                    "Twig\\Extensions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Common additional features for Twig that do not directly belong in core",
+            "homepage": "http://twig.sensiolabs.org/doc/extensions/index.html",
+            "keywords": [
+                "i18n",
+                "text"
+            ],
+            "time": "2017-06-08T18:19:53+00:00"
+        },
+        {
             "name": "twig/twig",
             "version": "v1.34.4",
             "source": {
@@ -8484,7 +8603,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/webform": 10,
-        "drupal/template_whisperer": 20,
         "drupal/addanother": 5,
         "drupal/entity_clone": 15
     },

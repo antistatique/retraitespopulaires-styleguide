@@ -11,6 +11,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\Url;
+use Drupal\template_whisperer\TemplateWhispererManager;
+use Drupal\template_whisperer\TemplateWhispererSuggestionUsage;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\rp_offers\Service\Request;
@@ -37,10 +39,27 @@ class RequestForm extends FormBase {
     protected $state;
 
     /**
+     * The Template Whisperer manager.
+     *
+     * @var \Drupal\template_whisperer\TemplateWhispererManager
+     */
+    protected $twManager;
+
+    /**
+     * The Template Whisperer suggestion usage.
+     *
+     * @var \Drupal\template_whisperer\TemplateWhispererSuggestionUsage
+     */
+    protected $twSuggestionUsage;
+
+    /**
      * Class constructor.
      */
-    public function __construct(Request $request, PrivateTempStoreFactory $private_tempstore, StateInterface $state) {
+    public function __construct(Request $request, PrivateTempStoreFactory $private_tempstore, StateInterface $state,
+                                TemplateWhispererManager $twManager, TemplateWhispererSuggestionUsage $twSuggestionUsage) {
         $this->request = $request;
+        $this->twManager = $twManager;
+        $this->twSuggestionUsage = $twSuggestionUsage;
 
         // Init session
         // TODO Found better solution to inline errors than hack session to
@@ -57,7 +76,9 @@ class RequestForm extends FormBase {
         // Load the service required to construct this class.
         $container->get('rp_offers.request'),
         $container->get('user.private_tempstore'),
-        $container->get('state')
+        $container->get('state'),
+        $container->get('plugin.manager.template_whisperer'),
+        $container->get('template_whisperer.suggestion.usage')
       );
     }
 
@@ -344,9 +365,14 @@ class RequestForm extends FormBase {
 
             $this->request->adminEmail($request);
 
-            $offersCollection = $this->state->get('rp_offers.settings.collection.offers')['nid'];
-            if (!empty($offersCollection)) {
-              $url = Url::fromRoute('entity.node.canonical', ['node' => $offersCollection]);
+            $suggestion = $this->twManager->getOneBySuggestion('collection_offers');
+            $entities = null;
+            if ($suggestion) {
+              $entities = $this->twSuggestionUsage->listUsage($suggestion);
+            }
+
+            if (!empty($entities)){
+              $url = Url::fromRoute('entity.node.canonical', ['node' => $entities[0]->id]);
               drupal_set_message($this->t('Merci de votre participation, <a href="@url-back">retour aux offres</a>.', ['@url-back' => $url->toString()]));
             }
             else{
