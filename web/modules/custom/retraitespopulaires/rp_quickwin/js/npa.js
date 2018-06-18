@@ -1,18 +1,21 @@
+/**
+ * JS for NPA field with Logismata API
+ */
 jQuery(document).ready(function () {
   // Get all npa field on the page
-  var npaFieldElements = jQuery('.form-npa');
+  let npaFieldElements = jQuery('.form-npa');
 
   // Get the url and the token for logismata
-  var url = npaFieldElements.data('url');
-  var authToken = npaFieldElements.data('authtoken');
+  let url = npaFieldElements.data('url');
+  let authToken = npaFieldElements.data('authtoken');
 
   // Current selected npa field
-  var currentSelectedFieldElement = null;
+  let currentSelectedFieldElement = null;
 
   // On click for location dropdown on the page (dynamic with create later)
   jQuery(document).on('click', '.location-dropdown li', function (event) {
     // Change field value and remove list
-    var target = jQuery(event.target);
+    let target = jQuery(event.target);
     currentSelectedFieldElement.val(target.text());
     target.parent().remove();
   });
@@ -34,11 +37,11 @@ jQuery(document).ready(function () {
       // Show the list only if this is needed
       if (data.response.length > 0) {
         currentSelectedFieldElement.after('<ul class="location-dropdown"></ul>');
-        var locationDropdown = jQuery('.location-dropdown');
+        let locationDropdown = jQuery('.location-dropdown');
 
         // Add each location
-        for (var i = 0; i < data.response.length; i++) {
-          var location = data.response[i];
+        for (let i = 0; i < data.response.length; i++) {
+          let location = data.response[i];
           locationDropdown.append('<li'+ (i === 0 ? ' class="selected"': '') +'>' + location.zip + ' ' + location.city + '</li>')
         }
       }
@@ -47,15 +50,15 @@ jQuery(document).ready(function () {
 
   // To navigate in dropdown menu
   npaFieldElements.on('keydown', function (key) {
-    var currentSelectedLocation = jQuery('.location-dropdown li.selected');
+    let currentSelectedLocation = jQuery('.location-dropdown li.selected');
     if (currentSelectedLocation.length > 0) {
       switch (key.keyCode) {
           // If arrow up or down
         case 38:
         case 40:
           event.preventDefault();
-          var newSelectedLocation = null;
-          var newSelectedPosition = null;
+          let newSelectedLocation = null;
+          let newSelectedPosition = null;
           // If arrow up
           if (key.keyCode === 38) {
             // If first element go to last or if not go to prev

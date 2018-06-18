@@ -100,7 +100,6 @@ class TeasersBlock extends BlockBase implements ContainerFactoryPluginInterface 
       '#theme'     => 'rp_quickwin_teasers_block',
       '#variables' => $variables,
       '#cache'     => [ 'max-age' => 0 ],
-      // TODO: remove field when is in styleguide
       '#attached'  => [ 'library' =>  [ 'rp_quickwin/expand-collapse', 'rp_quickwin/field' ], ],
     ];
   }
