@@ -1,3 +1,4 @@
+{% set suggestions = tw_suggestion_entities('collection_faqs') %}
 <div class="card card-white card-light">
   <div class="card-body">
     <h2 class="card-title">{% trans %}Questions et réponses{% endtrans %}</h2>
@@ -9,18 +10,24 @@
       {% endfor %}
     </ul>
   </div>
+  {% if suggestions %}
   <div class="card-footer card-berrylight-gray">
     <div class="icon-text icon-text-center">
         <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-faq-thick"></span>
         <div class="icon-text-txt">
-          <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ variables.collection.link }}">
-            {% if variables.collection.name %}
-              {% trans %}Accéder à toutes les questions relatives {{ variables.collection.name }}{% endtrans %}
-            {% else %}
-              {% trans %}Accéder à toutes les questions{% endtrans %}
-            {% endif %}
+          {% if variales.collection.alias is empty %}
+            <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}">
+          {% else %}
+            <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'taxonomy_term_alias': variables.collection.alias}) }}">
+          {% endif %}
+          {% if variables.collection.name %}
+            {% trans %}Accéder à toutes les questions relatives {{ variables.collection.name }}{% endtrans %}
+          {% else %}
+            {% trans %}Accéder à toutes les questions{% endtrans %}
+          {% endif %}
           </a>
         </div>
     </div>
   </div>
+  {% endif %}
 </div>

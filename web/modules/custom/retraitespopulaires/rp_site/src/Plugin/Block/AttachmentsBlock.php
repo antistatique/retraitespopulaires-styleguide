@@ -57,23 +57,17 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
      */
     private $profession;
 
-    /**
-    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-    * @var StateInterface
-    */
-    private $state;
 
     /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession, QueryFactory $query, StateInterface $state) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession, QueryFactory $query) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_node   = $entity->getStorage('node');
         $this->route         = $route;
         $this->alias_manager = $alias_manager;
         $this->profession    = $profession;
         $this->entity_query  = $query;
-        $this->state         = $state;
     }
 
     /**
@@ -91,8 +85,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
             $container->get('current_route_match'),
             $container->get('path.alias_manager'),
             $container->get('rp_site.profession'),
-            $container->get('entity.query'),
-            $container->get('state')
+            $container->get('entity.query')
         );
     }
 
@@ -194,11 +187,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
                 }
                 $variables['collection'] = array(
                     'name' => $this->profession->name($theme_tid, 'faq'),
-                    'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.faqs')['nid'], 'taxonomy_term_alias' => $alias))
-                );
-            } else {
-                $variables['collection'] = array(
-                    'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.faqs')['nid']))
+                    'alias' => $alias,
                 );
             }
         }
@@ -268,11 +257,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
 
                 $variables['collection'] = array(
                     'name' => $this->profession->name($theme_tid, 'document'),
-                    'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.documents')['nid'], 'taxonomy_term_alias' => $alias))
-                );
-            } else {
-                $variables['collection'] = array(
-                    'link' => Url::fromRoute('entity.node.canonical', array('node' => $this->state->get('rp_site.settings.collection.documents')['nid']))
+                    'alias' => $alias,
                 );
             }
         }

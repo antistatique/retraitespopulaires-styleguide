@@ -1,7 +1,9 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## NEXT REALEASE
+ - add & configure Template Whisperer module
+ - migrate dynamic page templating using Template Whisperer instead of Config/State.
  - add locker to mortgage import rates command
  - correct some triggered error on administration page
  - correct a bug with Modulo calculator token - MD-364

@@ -1,0 +1,7 @@
+uuid: 5ee44559-a05e-4fe2-ba10-0a9133f07e0e
+langcode: fr
+status: true
+dependencies: {  }
+id: global_contact
+name: 'Global Contact'
+suggestion: global_contact

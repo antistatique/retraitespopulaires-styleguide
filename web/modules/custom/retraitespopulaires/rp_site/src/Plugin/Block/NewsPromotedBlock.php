@@ -43,19 +43,11 @@ class NewsPromotedBlock extends BlockBase implements ContainerFactoryPluginInter
     private $entity_query;
 
     /**
-    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-    * @var StateInterface
-    */
-    private $state;
-
-    /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, QueryFactory $query, StateInterface $state) {
-        parent::__construct($configuration, $plugin_id, $plugin_definition);
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, QueryFactory $query) {
         $this->entity_node   = $entity->getStorage('node');
         $this->entity_query  = $query;
-        $this->state         = $state;
     }
 
     /**
@@ -70,8 +62,7 @@ class NewsPromotedBlock extends BlockBase implements ContainerFactoryPluginInter
             $plugin_definition,
             // Load customs services used in this class.
             $container->get('entity_type.manager'),
-            $container->get('entity.query'),
-            $container->get('state')
+            $container->get('entity.query')
         );
     }
 
@@ -79,7 +70,7 @@ class NewsPromotedBlock extends BlockBase implements ContainerFactoryPluginInter
     * {@inheritdoc}
     */
     public function build($params = array()) {
-        $variables = array('news' => array(), 'title' => t('Actualités'));
+        $variables = array('news' => array(), 'title' => $this->t('Actualités'));
 
         $now = new \DateTime();
         $query = $this->entity_query->get('node')
@@ -93,11 +84,6 @@ class NewsPromotedBlock extends BlockBase implements ContainerFactoryPluginInter
 
         $nids = $query->execute();
         $variables['news'] = $this->entity_node->loadMultiple($nids);
-
-        $variables['collection'] = array(
-            'name' => null,
-            'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid']])
-        );
 
         return [
             '#theme'     => 'rp_site_news_latest_block',

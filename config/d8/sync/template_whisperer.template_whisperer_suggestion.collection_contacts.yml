@@ -1,0 +1,7 @@
+uuid: b1f0493d-0a47-4c3f-8ea9-51ce0f58d639
+langcode: fr
+status: true
+dependencies: {  }
+id: collection_contacts
+name: 'Collection Contacts'
+suggestion: collection_contacts

@@ -507,7 +507,7 @@ class AddressForm extends FormBase {
             );
 
             // Send to admin
-            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.page.address')['receivers']);
+            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.address')['receivers']);
             $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('new_email');
             $this->mail->mail('rp_contact', 'contact_address', $to, 'fr', $data, $reply);

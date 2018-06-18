@@ -481,7 +481,7 @@ class BuildingForm extends FormBase {
             );
 
             // Send to admin
-            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.page.building')['receivers']);
+            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.building')['receivers']);
             $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_contact', 'contact_building', $to, 'fr', $data, $reply);
