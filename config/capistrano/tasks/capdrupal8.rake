@@ -74,6 +74,15 @@ namespace :drupal do
     end
   end
 
+  desc 'Update database with migrations scripts and ignore possible error'
+  task :updatedb_raise_no_error do
+    on roles(:app) do
+      within current_path.join(fetch(:app_path)) do
+        execute :drush, 'updatedb -y', raise_on_non_zero_exit: false
+      end
+    end
+  end
+
   desc 'Apply pending entity schema updates'
   task :entup do
     on roles(:app) do

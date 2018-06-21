@@ -98,200 +98,76 @@ class AdminForm extends FormBase {
             '#description'   => t('Séparer l\'e-mail et le secteur par un pipe (|).') .'<br />'. t('Séparer les différentes secteurs par un saut de ligne.'),
         );
 
-        // Popin settings
-        $form['popin'] = array(
-          '#type'  => 'fieldset',
-          '#title' => 'Popin',
-        );
-        $form['popin']['popin_receivers'] = array(
-          '#type'          => 'textfield',
-          '#title'         => 'E-mail(s) notifié(s) par défaut lors d\'une nouvelle demande',
-          '#default_value' => $this->state->get('rp_contact.settings.popin')['receivers'],
-          '#description'   => t('Séparer les adresses par le caractère point-virgule (;).<br>Il est possible de surcharger cette valeur au cas par cas lors de la création/édition d\'un contenu.'),
-        );
-
-        // Page settings
-        $form['page'] = array(
+        // Receivers settings
+        $form['receivers'] = array(
             '#type'          => 'fieldset',
-            '#title'         => 'Page d\'attaches des formulaires',
+            '#title'         => 'Email de contact des formulaires',
         );
 
         // Commande de documents Form
-        $form['page']['documents_nid'] = array(
-            '#type'          => 'entity_autocomplete',
-            '#target_type'   => 'node',
-            '#title'         => 'Commande de documents - node ID',
-            '#default_value' => $this->state->get('rp_contact.settings.page.documents')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.documents')['nid']) : NULL,
-        );
-        $form['page']['documents_theme'] = array(
+        $form['receivers']['documents_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Commande de documents - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_contact.settings.page.documents')['theme'] ? $this->state->get('rp_contact.settings.page.documents')['theme'] : 'contact_documents',
-        );
-        $form['page']['documents_receivers'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.documents')['receivers'],
+            '#title'         => 'Commande de documents',
+            '#default_value' => $this->state->get('rp_contact.settings.documents'),
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
             '#suffix'        => '<br/>'
         );
 
         // Changement d'adresses Form
-        $form['page']['address_nid'] = array(
-            '#type'          => 'entity_autocomplete',
-            '#target_type'   => 'node',
-            '#title'         => 'Changement d\'adresses - node ID',
-            '#default_value' => $this->state->get('rp_contact.settings.page.address')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.address')['nid']) : NULL,
-        );
-        $form['page']['address_theme'] = array(
+        $form['receivers']['address_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Changement d\'adresses - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_contact.settings.page.address')['theme'] ? $this->state->get('rp_contact.settings.page.address')['theme'] : 'contact_address',
-        );
-        $form['page']['address_receivers'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.address')['receivers'],
+            '#title'         => 'Changement d\'adresse',
+            '#default_value' => $this->state->get('rp_contact.settings.address')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
             '#suffix'        => '<br/>'
         );
 
         // Demande de réservation d\'un taux Form
-        $form['page']['building_nid'] = array(
-            '#type'          => 'entity_autocomplete',
-            '#target_type'   => 'node',
-            '#title'         => 'Demande de réservation d\'un taux - node ID',
-            '#default_value' => $this->state->get('rp_contact.settings.page.building')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.building')['nid']) : NULL,
-        );
-        $form['page']['building_theme'] = array(
+        $form['receivers']['building_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Demande de réservation d\'un taux - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_contact.settings.page.building')['theme'] ? $this->state->get('rp_contact.settings.page.building')['theme'] : 'contact_building',
-        );
-        $form['page']['building_receivers'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.building')['receivers'],
+            '#title'         => 'Demande de réservation d\'un taux',
+            '#default_value' => $this->state->get('rp_contact.settings.building')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
             '#suffix'        => '<br/>'
         );
 
         // Demande de conversion d'un taux variable en taux fixe
-        $form['page']['conversion_nid'] = array(
-            '#type'          => 'entity_autocomplete',
-            '#target_type'   => 'node',
-            '#title'         => 'Demande de conversion d\'un taux variable en taux fixe - node ID',
-            '#default_value' => $this->state->get('rp_contact.settings.page.conversion')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.conversion')['nid']) : NULL,
-        );
-        $form['page']['conversion_theme'] = array(
+        $form['receivers']['conversion_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Demande de conversion d\'un taux variable en taux fixe - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_contact.settings.page.conversion')['theme'] ? $this->state->get('rp_contact.settings.page.conversion')['theme'] : 'contact_conversion',
-        );
-        $form['page']['conversion_receivers'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.conversion')['receivers'],
+            '#title'         => 'Demande de conversion d\'un taux variable en taux fixe',
+            '#default_value' => $this->state->get('rp_contact.settings.conversion')['receivers'],
             '#suffix'        => '<br/>'
         );
 
         // Demande de modification de l'amortissement du 1er rang Form
-        $form['page']['depreciation_nid'] = array(
-            '#type'          => 'entity_autocomplete',
-            '#target_type'   => 'node',
-            '#title'         => 'Demande de modification de l\'amortissement du 1er rang - node ID',
-            '#default_value' => $this->state->get('rp_contact.settings.page.depreciation')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.depreciation')['nid']) : NULL,
-        );
-        $form['page']['depreciation_theme'] = array(
+        $form['receivers']['depreciation_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Demande de modification de l\'amortissement du 1er rang - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_contact.settings.page.depreciation')['theme'] ? $this->state->get('rp_contact.settings.page.depreciation')['theme'] : 'contact_depreciation',
-        );
-        $form['page']['depreciation_receivers'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.depreciation')['receivers'],
+            '#title'         => 'Demande de modification de l\'amortissement du 1er rang',
+            '#default_value' => $this->state->get('rp_contact.settings.depreciation')['receivers'],
             '#suffix'        => '<br/>'
         );
 
         // Demande d'augmentation de prêt Form
-        $form['page']['loan_increase_nid'] = array(
-            '#type'          => 'entity_autocomplete',
-            '#target_type'   => 'node',
-            '#title'         => 'Demande d\'augmentation de prêt - node ID',
-            '#default_value' => $this->state->get('rp_contact.settings.page.loan_increase')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.loan_increase')['nid']) : NULL,
-        );
-        $form['page']['loan_increase_theme'] = array(
+        $form['receivers']['loan_increase_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Demande d\'augmentation de prêt - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_contact.settings.page.loan_increase')['theme'] ? $this->state->get('rp_contact.settings.page.loan_increase')['theme'] : 'contact_loan_increase',
-        );
-        $form['page']['loan_increase_receivers'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.loan_increase')['receivers'],
+            '#title'         => 'Demande d\'augmentation de prêt',
+            '#default_value' => $this->state->get('rp_contact.settings.loan_increase')['receivers'],
             '#suffix'        => '<br/>'
         );
 
         // Demande d'attestation d'intérêts Form
-        $form['page']['tax_attestation_nid'] = array(
-            '#type'          => 'entity_autocomplete',
-            '#target_type'   => 'node',
-            '#title'         => 'Demande d\'attestation d\'intérêts - node ID',
-            '#default_value' => $this->state->get('rp_contact.settings.page.tax_attestation')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.page.tax_attestation')['nid']) : NULL,
-        );
-        $form['page']['tax_attestation_theme'] = array(
+        $form['receivers']['tax_attestation_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Demande d\'attestation d\'intérêts - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_contact.settings.page.tax_attestation')['theme'] ? $this->state->get('rp_contact.settings.page.tax_attestation')['theme'] : 'contact_tax_attestation',
-        );
-        $form['page']['tax_attestation_receivers'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_contact.settings.page.tax_attestation')['receivers'],
+            '#title'         => 'Demande d\'attestation d\'intérêts',
+            '#default_value' => $this->state->get('rp_contact.settings.tax_attestation')['receivers'],
             '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
         );
 
-        // Collection pages settings
-        $form['collection'] = array(
-            '#type'          => 'fieldset',
-            '#title'         => 'Collection pages',
-        );
-
-        // Listing des conseillers
-        $form['collection']['advisors_nid'] = array(
-            '#type'          => 'entity_autocomplete',
-            '#target_type'   => 'node',
-            '#title'         => 'Listing des conseillers - node ID',
-            '#default_value' => $this->state->get('rp_contact.settings.collection.advisors')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.collection.advisors')['nid']) : NULL,
-        );
-        $form['collection']['advisors_theme'] = array(
+        $form['receivers']['popin_receivers'] = array(
             '#type'          => 'textfield',
-            '#title'         => 'Listing des conseillers - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_contact.settings.collection.advisors')['theme'] ? $this->state->get('rp_contact.settings.collection.advisors')['theme'] : 'collection_advisors',
-            '#suffix'        => '<br/>'
-        );
-
-        // Listing des contacts
-        $form['collection']['contacts_nid'] = array(
-            '#type'          => 'entity_autocomplete',
-            '#target_type'   => 'node',
-            '#title'         => 'Listing des contacts - node ID',
-            '#default_value' => $this->state->get('rp_contact.settings.collection.contacts')['nid'] ? $this->entity_node->load($this->state->get('rp_contact.settings.collection.contacts')['nid']) : NULL,
-        );
-        $form['collection']['contacts_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Listing des contacts - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_contact.settings.collection.contacts')['theme'] ? $this->state->get('rp_contact.settings.collection.contacts')['theme'] : 'collection_contacts',
+            '#title'         => 'E-mail(s) notifié(s) par défaut lors d\'une nouvelle demande',
+            '#default_value' => $this->state->get('rp_contact.settings.popin')['receivers'],
+            '#description'   => t('Séparer les adresses par le caractère point-virgule (;).<br>Il est possible de surcharger cette valeur au cas par cas lors de la création/édition d\'un contenu.'),
         );
 
         $form['actions']['submit'] = array(
@@ -331,57 +207,33 @@ class AdminForm extends FormBase {
           'receivers' => trim($form_state->getValue('popin_receivers')),
         ]);
 
-        // Page with forms settings
-        $this->state->set('rp_contact.settings.page.documents', array(
-            'nid'   => $form_state->getValue('documents_nid'),
-            'theme' => trim($form_state->getValue('documents_theme')),
+        // Receivers settings
+        $this->state->set('rp_contact.settings.documents', array(
             'receivers' => trim($form_state->getValue('documents_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.address', array(
-            'nid'   => $form_state->getValue('address_nid'),
-            'theme' => trim($form_state->getValue('address_theme')),
+        $this->state->set('rp_contact.settings.address', array(
             'receivers' => trim($form_state->getValue('address_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.building', array(
-            'nid'   => $form_state->getValue('building_nid'),
-            'theme' => trim($form_state->getValue('building_theme')),
+        $this->state->set('rp_contact.settings.building', array(
             'receivers' => trim($form_state->getValue('building_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.conversion', array(
-            'nid'   => $form_state->getValue('conversion_nid'),
-            'theme' => trim($form_state->getValue('conversion_theme')),
+        $this->state->set('rp_contact.settings.conversion', array(
             'receivers' => trim($form_state->getValue('conversion_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.depreciation', array(
-            'nid'   => $form_state->getValue('depreciation_nid'),
-            'theme' => trim($form_state->getValue('depreciation_theme')),
+        $this->state->set('rp_contact.settings.depreciation', array(
             'receivers' => trim($form_state->getValue('depreciation_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.loan_increase', array(
-            'nid'   => $form_state->getValue('loan_increase_nid'),
-            'theme' => trim($form_state->getValue('loan_increase_theme')),
+        $this->state->set('rp_contact.settings.loan_increase', array(
             'receivers' => trim($form_state->getValue('loan_increase_receivers')),
         ));
 
-        $this->state->set('rp_contact.settings.page.tax_attestation', array(
-            'nid'   => $form_state->getValue('tax_attestation_nid'),
-            'theme' => trim($form_state->getValue('tax_attestation_theme')),
+        $this->state->set('rp_contact.settings.tax_attestation', array(
             'receivers' => trim($form_state->getValue('tax_attestation_receivers')),
-        ));
-
-        // Collection pages settings
-        $this->state->set('rp_contact.settings.collection.advisors', array(
-            'nid'   => trim($form_state->getValue('advisors_nid')),
-            'theme' => trim($form_state->getValue('advisors_theme')),
-        ));
-        $this->state->set('rp_contact.settings.collection.contacts', array(
-            'nid'   => trim($form_state->getValue('contacts_nid')),
-            'theme' => trim($form_state->getValue('contacts_theme')),
         ));
     }
 }

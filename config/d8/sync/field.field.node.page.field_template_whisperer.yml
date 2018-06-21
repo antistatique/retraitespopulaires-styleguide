@@ -17,5 +17,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  handler:
+    suggestions: {  }
 field_type: template_whisperer

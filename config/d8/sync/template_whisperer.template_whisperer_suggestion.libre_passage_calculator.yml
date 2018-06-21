@@ -1,0 +1,7 @@
+uuid: 0769825c-d0a3-41f7-91aa-2776fc6ff7c3
+langcode: fr
+status: true
+dependencies: {  }
+id: libre_passage_calculator
+name: 'Libre Passage Calculator'
+suggestion: libre_passage_calculator

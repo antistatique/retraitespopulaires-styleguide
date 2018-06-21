@@ -7,16 +7,16 @@ dependencies:
 id: advisor
 label: Advisor
 type: 'canonical_entities:node'
-pattern: 'conseiller/[node:title]'
+pattern: '[suggestion:lookup:collection_advisors:entity:url:path]/[node:title]'
 selection_criteria:
-  57b3488e-4632-4596-bbe1-5e9de9784c55:
+  4c263ec6-5ae9-4831-9baa-6ea9544e33e8:
     id: node_type
     bundles:
       advisor: advisor
     negate: false
     context_mapping:
       node: node
-    uuid: 57b3488e-4632-4596-bbe1-5e9de9784c55
+    uuid: 4c263ec6-5ae9-4831-9baa-6ea9544e33e8
 selection_logic: and
 weight: -8
 relationships: {  }

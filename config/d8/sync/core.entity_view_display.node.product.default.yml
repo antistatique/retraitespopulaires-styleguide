@@ -20,11 +20,13 @@ dependencies:
     - field.field.node.product.field_profession
     - field.field.node.product.field_search_npa
     - field.field.node.product.field_subtitle
+    - field.field.node.product.field_template_whisperer
     - node.type.product
   module:
     - file
     - image
     - metatag
+    - template_whisperer
     - text
     - user
 id: node.product.default
@@ -174,6 +176,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_template_whisperer:
+    weight: 119
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: template_whisperer
     region: content
   links:
     weight: 100

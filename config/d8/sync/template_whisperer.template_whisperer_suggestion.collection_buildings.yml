@@ -1,0 +1,7 @@
+uuid: 1d4be4b5-3c45-4260-a461-55306c879dd9
+langcode: fr
+status: true
+dependencies: {  }
+id: collection_buildings
+name: 'Collection Buildings'
+suggestion: collection_buildings

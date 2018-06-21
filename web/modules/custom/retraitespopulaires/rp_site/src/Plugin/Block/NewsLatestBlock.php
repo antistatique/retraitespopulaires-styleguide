@@ -64,22 +64,15 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
     private $entity_query;
 
     /**
-    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-    * @var StateInterface
-    */
-    private $state;
-
-    /**
     * Class constructor.
     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession, QueryFactory $query, StateInterface $state) {
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession, QueryFactory $query) {
         parent::__construct($configuration, $plugin_id, $plugin_definition);
         $this->entity_node   = $entity->getStorage('node');
         $this->route         = $route;
         $this->alias_manager = $alias_manager;
         $this->profession    = $profession;
         $this->entity_query  = $query;
-        $this->state         = $state;
     }
 
     /**
@@ -97,8 +90,7 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
             $container->get('current_route_match'),
             $container->get('path.alias_manager'),
             $container->get('rp_site.profession'),
-            $container->get('entity.query'),
-            $container->get('state')
+            $container->get('entity.query')
         );
     }
 
@@ -130,9 +122,6 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
             $variables['news'] = $this->entity_node->loadMultiple($nids);
 
             $variables['title'] = t('Actualités du métier');
-            $variables['collection'] = array(
-                'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid']])
-            );
         }
 
         // Fallback to retrieve news
@@ -147,11 +136,6 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
 
             $nids = $query->execute();
             $variables['news'] = $this->entity_node->loadMultiple($nids);
-
-            $variables['collection'] = array(
-                'name' => null,
-                'link' => Url::fromRoute('entity.node.canonical', ['node' => $this->state->get('rp_site.settings.collection.news')['nid']])
-            );
         }
 
         return [

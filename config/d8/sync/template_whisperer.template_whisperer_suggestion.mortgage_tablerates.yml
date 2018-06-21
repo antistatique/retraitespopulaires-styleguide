@@ -1,0 +1,7 @@
+uuid: 9d3ec565-0131-413e-b477-3882ae38168c
+langcode: fr
+status: true
+dependencies: {  }
+id: mortgage_tablerates
+name: 'Mortgage Tablerates'
+suggestion: mortgage_tablerates
