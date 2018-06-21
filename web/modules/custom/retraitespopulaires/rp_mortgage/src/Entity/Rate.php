@@ -2,12 +2,10 @@
 
 namespace Drupal\rp_mortgage\Entity;
 
-use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\user\UserInterface;
 
 /**
  * Defines the Rate entity.
@@ -49,13 +47,6 @@ class Rate extends ContentEntityBase implements RateInterface {
   /**
    * {@inheritdoc}
    */
-  public static function preCreate(EntityStorageInterface $storage_controller, array &$values) {
-    parent::preCreate($storage_controller, $values);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function getType() {
     return $this->get('type')->value;
   }
@@ -69,13 +60,13 @@ class Rate extends ContentEntityBase implements RateInterface {
   }
 
   /**
-   * @return \DateTime|null
+   * Get date of rate.
    */
   public function getDate() {
     $timestamp = $this->get('date')->value;
 
     if (!$timestamp) {
-      return null;
+      return NULL;
     }
 
     $datetime = \DateTime::createFromFormat('U', $timestamp);
@@ -91,45 +82,60 @@ class Rate extends ContentEntityBase implements RateInterface {
     return $this;
   }
 
+  /**
+   * Get name of rate.
+   */
   public function getName() {
     return $this->get('name')->value;
   }
 
+  /**
+   * Set name of rate.
+   */
   public function setName($name) {
     $this->set('name', $name);
     return $this;
   }
 
+  /**
+   * Get first rate value.
+   */
   public function getFirstRate() {
     return (float) $this->get('first_rate')->value;
   }
 
+  /**
+   * Set first rate value.
+   */
   public function setFirstRate($rate) {
     $this->set('first_rate', $rate);
     return $this;
   }
 
+  /**
+   * Get second rate value.
+   */
   public function getSecondRate() {
     return (float) $this->get('second_rate')->value;
   }
 
+  /**
+   * Set second rate value.
+   */
   public function setSecondRate($rate) {
     $this->set('second_rate', $rate);
     return $this;
   }
 
-
   /**
-   * @return integer
+   * Get number of year for rate.
    */
   public function getYear() {
     return (int) $this->get('year')->value;
   }
 
   /**
-   * @param integer $year
-   *
-   * @return $this
+   * Set number of year for rate.
    */
   public function setYear($year) {
     $this->set('year', $year);
@@ -173,111 +179,105 @@ class Rate extends ContentEntityBase implements RateInterface {
     $fields['type'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Type of Rate'))
       ->setDescription(t('The type of the Rate. (Eq: "Prêts hypothécaires standard", "Prêts hypothécaires formulaire", "Prêts corporations")'))
-      ->setSettings(array(
+      ->setSettings([
         'max_length' => 255,
         'text_processing' => 0,
-      ))
+      ])
       ->setDefaultValue('')
-      ->setDisplayOptions('view', array(
+      ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'string',
         'weight' => -4,
-      ))
-      ->setDisplayOptions('form', array(
+      ])
+      ->setDisplayOptions('form', [
         'type' => 'string_textfield',
         'weight' => -4,
-      ))
+      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(true)
-    ;
+      ->setRequired(TRUE);
 
     $fields['name'] = BaseFieldDefinition::create('string')
-        ->setLabel(t('Name of the Rate'))
-        ->setDescription(t('Name. Eq: "Taux d\'intérêt Variable", "Fixe à 10 ans", ...'))
-        ->setDisplayOptions('view', array(
-            'label' => 'above',
-            'type' => 'string',
-            'weight' => 2,
-        ))
-        ->setDisplayOptions('form', array(
-            'type' => 'string_textfield',
-            'weight' => 2,
-        ))
-        ->setDisplayConfigurable('form', TRUE)
-        ->setDisplayConfigurable('view', TRUE)
-        ->setRequired(true)
-    ;
+      ->setLabel(t('Name of the Rate'))
+      ->setDescription(t('Name. Eq: "Taux d\'intérêt Variable", "Fixe à 10 ans", ...'))
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => 2,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 2,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
     $fields['date'] = BaseFieldDefinition::create('timestamp')
-        ->setLabel(t('Date'))
-        ->setDescription(t('Month of validity for this rate'))
-        // @TODO: Find the correct widget to set a date and transform it into a timestamp.
-//        ->setDisplayOptions('view', array(
-//            'label' => 'above',
-//            'type' => 'timestamp',
-//            'weight' => 3,
-//        ))
-//        ->setDisplayOptions('form', array(
-//            'type' => 'datetime_timestamp',
-//            'weight' => 3,
-//        ))
-//        ->setDisplayConfigurable('form', TRUE)
-//        ->setDisplayConfigurable('view', TRUE)
-        ->setRequired(true)
-    ;
+      ->setLabel(t('Date'))
+      ->setDescription(t('Month of validity for this rate'))
+    // @TODO: Find the correct widget to set a date and transform it into a timestamp.
+    /*        ->setDisplayOptions('view', array(
+     *            'label' => 'above',
+     *            'type' => 'timestamp',
+     *            'weight' => 3,
+     *        ))
+     *        ->setDisplayOptions('form', array(
+     *            'type' => 'datetime_timestamp',
+     *            'weight' => 3,
+     *        ))
+     *        ->setDisplayConfigurable('form', TRUE)
+     *        ->setDisplayConfigurable('view', TRUE)
+     */
+      ->setRequired(TRUE);
 
     $fields['first_rate'] = BaseFieldDefinition::create('decimal')
-        ->setLabel(t('First Mortgage Rate'))
-        ->setDescription(t('Taux pour le premier rang'))
-        ->setDefaultValue(0.0)
-        ->setDisplayOptions('view', array(
-            'label' => 'above',
-            'type' => 'decimal',
-            'weight' => 4,
-        ))
-        ->setDisplayOptions('form', array(
-            'weight' => 4,
-        ))
-        ->setDisplayConfigurable('form', TRUE)
-        ->setDisplayConfigurable('view', TRUE)
-        ->setRequired(true)
-    ;
+      ->setLabel(t('First Mortgage Rate'))
+      ->setDescription(t('Taux pour le premier rang'))
+      ->setDefaultValue(0.0)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'decimal',
+        'weight' => 4,
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
     $fields['second_rate'] = BaseFieldDefinition::create('decimal')
-        ->setLabel(t('Second Mortgage Rate'))
-        ->setDescription(t('Taux pour le second rang'))
-        ->setDefaultValue(0.0)
-        ->setDisplayOptions('view', array(
-            'label' => 'above',
-            'type' => 'decimal',
-            'weight' => 5,
-        ))
-        ->setDisplayOptions('form', array(
-            'weight' => 5,
-        ))
-        ->setDisplayConfigurable('form', TRUE)
-        ->setDisplayConfigurable('view', TRUE)
-        ->setRequired(true)
-    ;
+      ->setLabel(t('Second Mortgage Rate'))
+      ->setDescription(t('Taux pour le second rang'))
+      ->setDefaultValue(0.0)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'decimal',
+        'weight' => 5,
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 5,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
     $fields['year'] = BaseFieldDefinition::create('integer')
-        ->setLabel(t('Year'))
-        ->setDescription(t('Number of year. if this value is 5, this mean that the rate if for 5 years.'))
-        ->setDefaultValue(0)
-        ->setDisplayOptions('view', array(
-            'label' => 'above',
-            'type' => 'integer',
-            'weight' => 6,
-        ))
-        ->setDisplayOptions('form', array(
-            'weight' => 6,
-        ))
-        ->setDisplayConfigurable('form', TRUE)
-        ->setDisplayConfigurable('view', TRUE)
-        ->setRequired(true)
-    ;
-
+      ->setLabel(t('Year'))
+      ->setDescription(t('Number of year. if this value is 5, this mean that the rate if for 5 years.'))
+      ->setDefaultValue(0)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'integer',
+        'weight' => 6,
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 6,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
@@ -289,4 +289,5 @@ class Rate extends ContentEntityBase implements RateInterface {
 
     return $fields;
   }
+
 }

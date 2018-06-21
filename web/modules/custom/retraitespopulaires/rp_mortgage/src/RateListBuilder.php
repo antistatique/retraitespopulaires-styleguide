@@ -40,9 +40,9 @@ class RateListBuilder extends EntityListBuilder {
     $row['type'] = $this->l(
       $entity->getType(),
       new Url(
-        'entity.rp_mortgage_rate.edit_form', array(
+        'entity.rp_mortgage_rate.edit_form', [
           'rp_mortgage_rate' => $entity->id(),
-        )
+        ]
       )
     );
     $row['name'] = $entity->getName();
@@ -50,7 +50,7 @@ class RateListBuilder extends EntityListBuilder {
     $date = $entity->getDate();
     $row['date'] = '';
     if (!empty($date) && $date instanceof \DateTime) {
-        $row['date'] = $entity->getDate()->format('d/m/Y');
+      $row['date'] = $entity->getDate()->format('d/m/Y');
     }
 
     $row['first_rate'] = $entity->getFirstRate();

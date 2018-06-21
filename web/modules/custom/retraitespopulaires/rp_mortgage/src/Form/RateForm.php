@@ -18,7 +18,6 @@ class RateForm extends ContentEntityForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var $entity \Drupal\rp_mortgage\Entity\Rate */
     $form = parent::buildForm($form, $form_state);
-    $entity = $this->entity;
 
     return $form;
   }

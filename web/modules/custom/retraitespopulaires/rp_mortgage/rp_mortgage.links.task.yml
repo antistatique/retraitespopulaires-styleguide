@@ -14,4 +14,3 @@ entity.rp_mortgage_rate.delete_form:
   base_route:  entity.rp_mortgage_rate.canonical
   title: Delete
   weight: 10
-
