@@ -20,12 +20,13 @@ use Drupal\Core\TypedData\DataDefinition;
  * )
  */
 class TeaserFieldType extends FieldItemBase {
+
   /**
    * {@inheritdoc}
    */
   public static function defaultStorageSettings() {
-    // TODO to improve
-    return [ ] + parent::defaultStorageSettings();
+    // TODO to improve.
+    return [] + parent::defaultStorageSettings();
   }
 
   /**
@@ -50,7 +51,7 @@ class TeaserFieldType extends FieldItemBase {
       ->setRequired(FALSE);
 
     $properties['with_slider'] = DataDefinition::create('boolean')
-      ->setLabel(new TranslatableMarkup('Avec ou sans slider '))
+      ->setLabel(new TranslatableMarkup('Avec ou sans slider'))
       ->setRequired(FALSE);
 
     $properties['min'] = DataDefinition::create('integer')
@@ -65,7 +66,6 @@ class TeaserFieldType extends FieldItemBase {
       ->setLabel(new TranslatableMarkup('Incrementation du slider'))
       ->setRequired(FALSE);
 
-
     return $properties;
   }
 
@@ -73,7 +73,7 @@ class TeaserFieldType extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function schema(FieldStorageDefinitionInterface $field_definition) {
-    // TODO to improve
+    // TODO to improve.
     $schema = [
       'columns' => [
         'logismata_parameter' => [
@@ -95,19 +95,19 @@ class TeaserFieldType extends FieldItemBase {
         'with_slider' => [
           'type' => 'int',
           'size' => 'tiny',
-          'not null' => false,
+          'not null' => FALSE,
         ],
         'min' => [
           'type' => 'int',
-          'not null' => false,
+          'not null' => FALSE,
         ],
         'max' => [
           'type' => 'int',
-          'not null' => false,
+          'not null' => FALSE,
         ],
         'increment' => [
           'type' => 'int',
-          'not null' => false,
+          'not null' => FALSE,
         ],
       ],
     ];
@@ -115,7 +115,10 @@ class TeaserFieldType extends FieldItemBase {
     return $schema;
   }
 
-  public static function typeOptions(){
+  /**
+   * Possible type for the field.
+   */
+  public static function typeOptions() {
     return [
       'chf' => 'CHF',
       'npa' => 'NPA',
@@ -128,7 +131,7 @@ class TeaserFieldType extends FieldItemBase {
   public function getConstraints() {
     $constraints = parent::getConstraints();
 
-    // TODO
+    // TODO.
     if ($max_length = $this->getSetting('max_length')) {
       $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
       $constraints[] = $constraint_manager->create('ComplexData', [
@@ -137,7 +140,7 @@ class TeaserFieldType extends FieldItemBase {
             'max' => $max_length,
             'maxMessage' => t('%name: may not be longer than @max characters.', [
               '%name' => $this->getFieldDefinition()->getLabel(),
-              '@max' => $max_length
+              '@max' => $max_length,
             ]),
           ],
         ],
@@ -153,7 +156,7 @@ class TeaserFieldType extends FieldItemBase {
   public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data) {
     $elements = [];
 
-    // TODO
+    // TODO.
     $elements['max_length'] = [
       '#type' => 'number',
       '#title' => t('Maximum length'),

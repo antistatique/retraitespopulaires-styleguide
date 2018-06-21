@@ -38,12 +38,13 @@ class TeaserFormatterType extends FormatterBase {
       // Implement settings form.
     ] + parent::settingsForm($form, $form_state);
   }
+
   /**
    * {@inheritdoc}
    */
   public function settingsSummary() {
-    $summary = [];
     // Implement settings summary.
+    $summary = [];
 
     return $summary;
   }

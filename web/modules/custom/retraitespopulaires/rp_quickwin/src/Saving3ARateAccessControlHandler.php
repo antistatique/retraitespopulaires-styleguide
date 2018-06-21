@@ -18,7 +18,7 @@ class Saving3ARateAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
-    /** @var \Drupal\rp_quickwin\Entity\Saving3ARateInterface $entity */;
+    /** @var \Drupal\rp_quickwin\Entity\Saving3ARateInterface $entity */
     switch ($operation) {
       case 'view':
         return AccessResult::allowedIfHasPermission($account, 'administer saving 3a rate entities');

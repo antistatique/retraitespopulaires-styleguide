@@ -3,23 +3,27 @@
 namespace Drupal\rp_quickwin\Form;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryInterface;
 use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\rp_quickwin\LogismataService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * Export saving 3a Rates Form.
+ */
 class ExportSaving3AForm extends ConfirmFormBase {
   /**
-   * Saving 3a entity storage
+   * Saving 3a entity storage.
+   *
    * @var \Drupal\Core\Entity\EntityStorageInterface
    */
   private $quickwinSaving3ARateStorage;
 
   /**
-   * LogismataService to send data to Logismata
-   * @var LogismataService
+   * LogismataService to send data to Logismata.
+   *
+   * @var \Drupal\rp_quickwin\LogismataService
    */
   private $logismataService;
 
@@ -82,26 +86,29 @@ class ExportSaving3AForm extends ConfirmFormBase {
    *   The current state of the form.
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->exportSaving3ARate();
+    $this->exportSaving3aRate();
   }
 
-  public function exportSaving3ARate(){
-    // Create the list of saving 3a rates
+  /**
+   * Export saving 3a rate to Logismata.
+   */
+  public function exportSaving3aRate() {
+    // Create the list of saving 3a rates.
     $logismata_product_list = [
       'productListId' => 'saving3aInvestmentOptions',
       'default' => '',
       'products' => [],
     ];
 
-    // Get all 3A entity and if it is empty stop export
+    // Get all 3A entity and if it is empty stop export.
     /** @var \Drupal\rp_quickwin\Entity\Saving3ARateInterface[] $rates */
     $rates = $this->quickwinSaving3ARateStorage->loadMultiple();
-    if (empty($rates)){
+    if (empty($rates)) {
       drupal_set_message($this->t('There is no entity to export'));
       return;
     }
 
-    // Add each rate to the list
+    // Add each rate to the list.
     foreach ($rates as $rate) {
 
       $logismata_product_list['products'][] = [
@@ -114,7 +121,7 @@ class ExportSaving3AForm extends ConfirmFormBase {
         'disabled' => !$rate->isAlterable(),
       ];
 
-      // Set default to first rate
+      // Set default to first rate.
       if (count($logismata_product_list['products']) == 1) {
         $logismata_product_list['default'] = $logismata_product_list['products'][0]['code'];
       }
@@ -122,4 +129,5 @@ class ExportSaving3AForm extends ConfirmFormBase {
 
     $this->logismataService->exportToLogismata($logismata_product_list);
   }
+
 }
