@@ -119,7 +119,7 @@ class FAQsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
             ->condition('status', 1)
         ;
 
-        $taxonomy_term_alias = $this->request->query->get('taxonomy_term_alias');
+        $taxonomy_term_alias = $this->request->query->get('profession_alias');
 
         if (!empty($taxonomy_term_alias)) {
             // Retreive filter from slug alias
