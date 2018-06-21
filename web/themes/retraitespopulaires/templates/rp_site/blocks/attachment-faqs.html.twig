@@ -15,10 +15,10 @@
     <div class="icon-text icon-text-center">
         <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-faq-thick"></span>
         <div class="icon-text-txt">
-          {% if variales.collection.alias is empty %}
+          {% if variables.collection.alias is empty %}
             <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}">
           {% else %}
-            <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'taxonomy_term_alias': variables.collection.alias}) }}">
+            <a class="text-bold pretty-link pretty-link-berrylight-gray h5" href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'profession_alias': variables.collection.alias}) }}">
           {% endif %}
           {% if variables.collection.name %}
             {% trans %}Accéder à toutes les questions relatives {{ variables.collection.name }}{% endtrans %}
