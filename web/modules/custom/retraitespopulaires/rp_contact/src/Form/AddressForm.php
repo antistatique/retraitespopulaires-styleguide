@@ -161,11 +161,11 @@ class AddressForm extends FormBase {
             '#title'       => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
             '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
-          '#attributes'    => [
-            'class'         => [''],
-            'size' => '15',
-            'datepicker'    => TRUE,
-            'datepickerbtn' => TRUE,
+            '#attributes'    => [
+                'class'         => [''],
+                'size' => '15',
+                'datepicker'    => TRUE,
+                'datepickerbtn' => TRUE,
           ],
             '#required'    => false,
             '#prefix'      => '<div class="form-group '.$error_class.'">',
@@ -394,11 +394,11 @@ class AddressForm extends FormBase {
         $form['more']['group_start']['due_date'] = array(
             '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
-          '#attributes'    => [
-            'class'         => [''],
-            'size' => '15',
-            'datepicker'    => TRUE,
-            'datepickerbtn' => TRUE,
+            '#attributes'    => [
+                'class'         => [''],
+                'size' => '15',
+                'datepicker'    => TRUE,
+                'datepickerbtn' => TRUE,
           ],
             '#required'    => false,
         );
