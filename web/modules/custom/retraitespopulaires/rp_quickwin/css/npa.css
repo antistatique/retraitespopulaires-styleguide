@@ -3,12 +3,12 @@
  */
 .location-dropdown li {
   font-size: 17px;
-  border-bottom: 1px #008e4f solid;
+  border-bottom: 1px #008E4F solid;
   padding-bottom: 5px;
   padding-top: 5px;
   padding-left: 10px;
 }
 
 .location-dropdown li.selected {
-  background: #00db7a;
+  background: #00DB7A;
 }
