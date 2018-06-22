@@ -35,7 +35,7 @@ class PLPConversionRateAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
-      return AccessResult::allowedIfHasPermission($account, 'administer plp conversion rate entities');
+    return AccessResult::allowedIfHasPermission($account, 'administer plp conversion rate entities');
   }
 
 }

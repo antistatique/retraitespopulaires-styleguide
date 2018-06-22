@@ -11,6 +11,7 @@ use Drupal\Core\Entity\EntityListBuilder;
  * @ingroup rp_libre_passage
  */
 class PLPConversionRateListBuilder extends EntityListBuilder {
+
   /**
    * {@inheritdoc}
    */
@@ -32,9 +33,9 @@ class PLPConversionRateListBuilder extends EntityListBuilder {
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\rp_libre_passage\Entity\PLPInterestRate */
 
-    // Dont display disabled entities
+    // Dont display disabled entities.
     if (!$entity->getStatus()) {
-        return;
+      return;
     }
 
     $row['gender']   = $entity->getGender();
@@ -48,4 +49,5 @@ class PLPConversionRateListBuilder extends EntityListBuilder {
 
     return $row + parent::buildRow($entity);
   }
+
 }
