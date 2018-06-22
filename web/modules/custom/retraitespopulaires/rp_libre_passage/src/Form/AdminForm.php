@@ -85,20 +85,6 @@ class AdminForm extends FormBase {
             '#description'     => t('Merci de déposer un fichier PDF.'),
         );
 
-        $form['simulator']['calculator_nid'] = array(
-            '#type'          => 'entity_autocomplete',
-            '#target_type'  => 'node',
-            '#title'         => 'Simulateur - node ID',
-            '#default_value' => $this->state->get('rp_libre_passage.settings.page.calculator')['nid'] ? $this->entity_node->load($this->state->get('rp_libre_passage.settings.page.calculator')['nid']) : NULL,
-        );
-        $form['simulator']['calculator_theme'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Simulateur - theme hook',
-            '#disabled'      => true,
-            '#default_value' => $this->state->get('rp_libre_passage.settings.page.calculator')['theme'] ? $this->state->get('rp_libre_passage.settings.page.calculator')['theme'] : 'libre_passage_calculator',
-            '#suffix'        => '<br/>'
-        );
-
         // Contact settings
         $form['contact'] = array(
             '#type'  => 'fieldset',
@@ -151,11 +137,6 @@ class AdminForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         // Contact settings
         $this->state->set('rp_libre_passage.settings.receivers', trim($form_state->getValue('receivers')));
-
-        $this->state->set('rp_libre_passage.settings.page.calculator', array(
-            'nid' => trim($form_state->getValue('calculator_nid')),
-            'theme' => trim($form_state->getValue('calculator_theme')),
-        ));
 
         // Save file(s)
         $files = array(

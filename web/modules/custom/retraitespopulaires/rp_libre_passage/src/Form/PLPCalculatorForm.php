@@ -121,7 +121,12 @@ class PLPCalculatorForm extends FormBase {
             '#title'         => t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
             '#placeholder'   => t('jj/mm/aaaa'),
             '#type'          => 'textfield',
-            '#attributes'    => ['size' => 10],
+            '#attributes'    => [
+            'class'         => [''],
+            'size' => '15',
+            'datepicker'    => TRUE,
+            'datepickerbtn' => TRUE,
+          ],
             '#required'      => false,
             '#prefix'        => '<div class="form-group '.$error_class.'">',
             '#suffix'        => $error. '</div>',
@@ -229,13 +234,13 @@ class PLPCalculatorForm extends FormBase {
         $form['libre_passage']['group_start']['payment_date'] = array(
             '#placeholder' => t('jj/mm/aaaa'),
             '#type'        => 'textfield',
-            '#attributes'  => ['size' => 15, 'class' => array('datepicker')],
+            '#attributes'    => [
+            'class'         => [''],
+            'size' => '15',
+            'datepicker'    => TRUE,
+            'datepickerbtn' => TRUE,
+          ],
             '#required'    => false,
-        );
-        $form['libre_passage']['group_start']['picker'] = array(
-            '#prefix' => '<span class="input-group-btn no-events"><div class="btn btn-invert btn-icon">',
-            '#markup' => '<span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>',
-            '#suffix' => '</div></span>',
         );
 
         // Get error to inline it as suffix
@@ -436,9 +441,17 @@ class PLPCalculatorForm extends FormBase {
                 $this->session->set('data', $data);
                 $this->session->set('view_result', TRUE);
 
-                $form_state->setRedirect('entity.node.canonical', [
-                    'node' => $this->state->get('rp_libre_passage.settings.page.calculator')['nid']
-                ]);
+                $suggestion = $this->twManager->getOneBySuggestion('libre_passage_calculator');
+                $entities = null;
+                if ($suggestion) {
+                  $entities = $this->twSuggestionUsage->listUsage($suggestion);
+
+                  if (!empty($entities)) {
+                    $form_state->setRedirect('entity.node.canonical', [
+                      'node' => $entities[0]->id
+                    ]);
+                  }
+                }
             } catch (\Exception $e) {
                 drupal_set_message(t('An error occurred and processing did not complete.'), 'error');
             }

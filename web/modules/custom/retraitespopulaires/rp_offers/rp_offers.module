@@ -64,5 +64,4 @@ function rp_offers_form_alter(&$form, &$form_state, $form_id){
 }
 
 require_once('src/Mail/mails.php');
-require_once('src/Suggestion/suggestions.php');
 

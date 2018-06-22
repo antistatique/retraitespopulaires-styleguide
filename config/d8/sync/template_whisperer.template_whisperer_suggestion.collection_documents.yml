@@ -1,0 +1,7 @@
+uuid: f3ceb582-0759-40c9-bec8-e70820b07d2e
+langcode: fr
+status: true
+dependencies: {  }
+id: collection_documents
+name: 'Collection Documents'
+suggestion: collection_documents

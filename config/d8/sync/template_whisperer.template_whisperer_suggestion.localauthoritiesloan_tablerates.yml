@@ -1,0 +1,7 @@
+uuid: 9892d8d0-37dd-4d82-ab40-ca0d88791c38
+langcode: fr
+status: true
+dependencies: {  }
+id: localauthoritiesloan_tablerates
+name: 'Local authorities loan tablerate'
+suggestion: localauthoritiesloan_tablerates

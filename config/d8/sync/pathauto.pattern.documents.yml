@@ -7,16 +7,16 @@ dependencies:
 id: documents
 label: Documents
 type: 'canonical_entities:node'
-pattern: '/documents/[node:title]'
+pattern: '[suggestion:lookup:collection_documents:entity:url:path]/[node:title]'
 selection_criteria:
-  6674933d-5e85-40e4-b2b5-69364eff4b0a:
+  9b65cc2b-b99d-4540-83da-aa868675bcd2:
     id: node_type
     bundles:
       document: document
     negate: false
     context_mapping:
       node: node
-    uuid: 6674933d-5e85-40e4-b2b5-69364eff4b0a
+    uuid: 9b65cc2b-b99d-4540-83da-aa868675bcd2
 selection_logic: and
 weight: -5
 relationships: {  }

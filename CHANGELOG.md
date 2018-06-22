@@ -1,6 +1,23 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - add & configure Template Whisperer module
+ - migrate dynamic page templating using Template Whisperer instead of Config/State.
+ - add locker to mortgage import rates command
+ - correct some triggered error on administration page
+ - correct a bug with Modulo calculator token - MD-364
+ - remove raise error for updatedb before config-import
+ - remove quickwin css to move in styleguide
+ - update Drupal core to 8.5
+
+## 2.4.2 (2018-06-06)
+ - add Bamboo Twig integration
+ - add LDAP integration for backend authentication - MD-162
+ - improve Bella Vita - MD-177
+ - change logout redirection
+ - fix Webform download issues & images generations by removing spaces before <?php on .modules files
+
 ## 2.4.1 (2018-04-26)
  - apply patch - Remote Code Execution - SA-CORE-2018-004
 

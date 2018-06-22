@@ -558,7 +558,7 @@ class ConversionForm extends FormBase {
             );
 
             // Send to admin
-            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.page.conversion')['receivers']);
+            $to = preg_replace('/\s+/', ' ', $this->state->get('rp_contact.settings.conversion')['receivers']);
             $to = str_replace(';', ',', $to);
             $reply = $form_state->getValue('email');
             $this->mail->mail('rp_contact', 'contact_conversion', $to, 'fr', $data, $reply);

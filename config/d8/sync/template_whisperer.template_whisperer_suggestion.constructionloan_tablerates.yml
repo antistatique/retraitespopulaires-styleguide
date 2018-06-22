@@ -1,0 +1,7 @@
+uuid: bc855e01-0069-4a3b-88c9-2fdaf10c4617
+langcode: fr
+status: true
+dependencies: {  }
+id: constructionloan_tablerates
+name: 'Construction loan tablerate'
+suggestion: constructionloan_tablerates

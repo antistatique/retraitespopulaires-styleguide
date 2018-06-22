@@ -58,7 +58,7 @@ class ModuloIframeBlock extends BlockBase implements ContainerFactoryPluginInter
   * {@inheritdoc}
   */
   public function build($params = array()) {
-    $variables['link'] = '/rpopulaires/app/index.html';
+    $variables['link'] = '/rpopulaires/app/';
 
     // Retrieive Token from Logistama.
     try {
