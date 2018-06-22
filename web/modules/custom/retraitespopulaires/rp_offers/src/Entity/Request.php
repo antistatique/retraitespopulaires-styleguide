@@ -1,18 +1,11 @@
 <?php
-/**
- * @file
- * Contains \Drupal\rp_offers\Entity\Request.
- */
 
 namespace Drupal\rp_offers\Entity;
 
-use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\user\UserInterface;
-
-use Drupal\rp_offers\Entity\RequestInterface;
 
 /**
  * Defines the Request entity.
@@ -30,19 +23,8 @@ use Drupal\rp_offers\Entity\RequestInterface;
  *     "id" = "id"
  *   },
  * )
- *
  */
 class Request extends ContentEntityBase implements RequestInterface {
-
-  /**
-   * {@inheritdoc}
-   *
-   * When a new entity instance is added, set the user_id entity reference to
-   * the current user as the creator of the instance.
-   */
-  public static function preCreate(EntityStorageInterface $storage_controller, array &$values) {
-    parent::preCreate($storage_controller, $values);
-  }
 
   /**
    * {@inheritdoc}
@@ -69,9 +51,9 @@ class Request extends ContentEntityBase implements RequestInterface {
   /**
    * {@inheritdoc}
    */
-  public function getChangedTimeAcrossTranslations()  {
+  public function getChangedTimeAcrossTranslations() {
     $changed = $this->getUntranslated()->getChangedTime();
-    foreach ($this->getTranslationLanguages(FALSE) as $language)    {
+    foreach ($this->getTranslationLanguages(FALSE) as $language) {
       $translation_changed = $this->getTranslation($language->getId())->getChangedTime();
       $changed = max($translation_changed, $changed);
     }
@@ -127,9 +109,9 @@ class Request extends ContentEntityBase implements RequestInterface {
       ->setReadOnly(TRUE);
 
     $fields['offer_target_id'] = BaseFieldDefinition::create('entity_reference')
-        ->setLabel(t('Offer'))
-        ->setDescription(t('The linked offer'))
-        ->setRequired(TRUE);
+      ->setLabel(t('Offer'))
+      ->setDescription(t('The linked offer'))
+      ->setRequired(TRUE);
 
     $fields['civil_state'] = BaseFieldDefinition::create('list_string')
       ->setLabel(t('civil_state'))
@@ -138,37 +120,37 @@ class Request extends ContentEntityBase implements RequestInterface {
         'allowed_values' => [
           'Monsieur' => 'Monsieur',
           'Madame' => 'Madame',
-        ]
+        ],
       ]);
 
     $fields['firstname'] = BaseFieldDefinition::create('string')
-        ->setLabel(t('Firstname'))
-        ->setDescription(t('the client firstname'));
+      ->setLabel(t('Firstname'))
+      ->setDescription(t('the client firstname'));
 
     $fields['lastname'] = BaseFieldDefinition::create('string')
-        ->setLabel(t('Lastname'))
-        ->setDescription(t('the client lastname'));
+      ->setLabel(t('Lastname'))
+      ->setDescription(t('the client lastname'));
 
     $fields['address'] = BaseFieldDefinition::create('string')
-        ->setLabel(t('Address'))
-        ->setDescription(t('The client address'));
+      ->setLabel(t('Address'))
+      ->setDescription(t('The client address'));
 
     $fields['zip'] = BaseFieldDefinition::create('string')
-        ->setLabel(t('Zip Code'))
-        ->setDescription(t('The client zip code'));
+      ->setLabel(t('Zip Code'))
+      ->setDescription(t('The client zip code'));
 
     $fields['city'] = BaseFieldDefinition::create('string')
-        ->setLabel(t('City'))
-        ->setDescription(t('The client city'));
+      ->setLabel(t('City'))
+      ->setDescription(t('The client city'));
 
     $fields['email'] = BaseFieldDefinition::create('string')
-        ->setLabel(t('Email'))
-        ->setDescription(t('The client email'))
-        ->setRequired(TRUE);
+      ->setLabel(t('Email'))
+      ->setDescription(t('The client email'))
+      ->setRequired(TRUE);
 
     $fields['winner'] = BaseFieldDefinition::create('boolean')
-        ->setLabel(t('Winner'))
-        ->setDescription(t('The client has won'));
+      ->setLabel(t('Winner'))
+      ->setDescription(t('The client has won'));
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
@@ -180,4 +162,5 @@ class Request extends ContentEntityBase implements RequestInterface {
 
     return $fields;
   }
+
 }

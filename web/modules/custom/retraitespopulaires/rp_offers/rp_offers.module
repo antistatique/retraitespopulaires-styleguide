@@ -1,59 +1,71 @@
 <?php
 
 /**
- * Implementation of hook_query_TAG_alter
+ * @file
+ * Legacy Drupal 7 code to implements hooks.
+ */
+
+/**
+ * Implements hook_query_TAG_alter().
  */
 function rp_offers_query_random_alter($query) {
   $query->orderRandom();
 }
 
 /**
-* Theme hook
-*/
+ * Theme hook.
+ */
 function rp_offers_theme($existing, $type, $theme, $path) {
-    return array(
+  return [
         // Blocks themes
-        // ---------------------------------------------------------------------
-        'rp_offers_linked_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/offers_linked'
-        ),
-        'rp_offers_offers_collection_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/offers_collection'
-        ),
-        'rp_offers_offer_teaser_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/offer_teaser'
-        ),
+        // ---------------------------------------------------------------------.
+    'rp_offers_linked_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/offers_linked',
+    ],
+    'rp_offers_offers_collection_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/offers_collection',
+    ],
+    'rp_offers_offer_teaser_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/offer_teaser',
+    ],
 
-        // Pages admin
-        // ---------------------------------------------------------------------
-        'rp_offers_admin_request_page' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'template'  => 'admin/request'
-        ),
+    // Pages admin
+    // ---------------------------------------------------------------------.
+    'rp_offers_admin_request_page' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'template ' => 'admin/request',
+    ],
 
-    );
+  ];
 }
 
-function rp_offers_form_alter(&$form, &$form_state, $form_id){
-  if ($form_id === 'node_offer_edit_form' || $form_id === 'node_offer_form'){
+/**
+ * Implements hook_form_alter().
+ */
+function rp_offers_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id === 'node_offer_edit_form' || $form_id === 'node_offer_form') {
     $user = \Drupal::currentUser();
 
     if (!$user->hasPermission('administer rp offers draw date field')) {
@@ -63,5 +75,4 @@ function rp_offers_form_alter(&$form, &$form_state, $form_id){
   }
 }
 
-require_once('src/Mail/mails.php');
-
+require_once 'src/Mail/mails.php';
