@@ -390,7 +390,7 @@ class AddressForm extends FormBase {
       $error = '<div class="input-error-desc">' . $error_msg . '</div>';
     }
     $form['more']['group_start'] = [
-      '#prefix' => '<div class="form-group ' . $error_class . '"><div class="form-control-label">'. $this->t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</div><div class="input-group">',
+      '#prefix' => '<div class="form-group ' . $error_class . '"><div class="form-control-label">' . $this->t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</div><div class="input-group">',
       '#suffix' => '</div>' . $error . '</div>',
     ];
     $form['more']['group_start']['due_date'] = [

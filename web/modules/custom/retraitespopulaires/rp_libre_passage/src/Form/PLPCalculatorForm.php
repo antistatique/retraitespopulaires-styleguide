@@ -255,7 +255,7 @@ class PLPCalculatorForm extends FormBase {
       '#suffix' => '</div>' . $error . '</div>',
     ];
     $form['libre_passage']['group_start']['payment_date'] = [
-      '#placeholder' => t('jj/mm/aaaa'),
+      '#placeholder' => $this->t('jj/mm/aaaa'),
       '#type'        => 'textfield',
       '#attributes'  => [
         'class'         => [''],
