@@ -16,5 +16,7 @@ services:
   # Custom Event Subscrbiber
   rp_site.entity_access:
     class: Drupal\rp_site\EventSubscriber\EntityAccess
+    arguments:
+      - '@current_route_match'
     tags:
       - {name: event_subscriber}

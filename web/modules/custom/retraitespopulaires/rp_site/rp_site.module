@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @file
+ * Legacy Drupal 7 code to implements hooks.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -22,214 +28,238 @@ function rp_site_theme_suggestions_page_alter(array &$suggestions, array $variab
 }
 
 /**
- * Implementation of hook_query_TAG_alter
+ * Implements hook_query_TAG_alter().
  */
 function rp_site_query_random_alter($query) {
   $query->orderRandom();
 }
 
 /**
-* Theme hook
-*/
+ * Theme hook.
+ */
 function rp_site_theme($existing, $type, $theme, $path) {
-    return array(
+  return [
         // Blocks themes
-        // ---------------------------------------------------------------------
-        'rp_site_attachments_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/attachments'
-        ),
-        'rp_site_attachment-faqs_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/attachment-faqs'
-        ),
-        'rp_site_attachment-documents_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/attachment-documents'
-        ),
-        'rp_site_contact_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/contact'
-        ),
-        'rp_site_advisor_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/advisor'
-        ),
-        'rp_site_news_filter_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/news_filter'
-        ),
-        'rp_site_news_latest_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/news_latest'
-        ),
-        'rp_site_news_teaser_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/news_teaser'
-        ),
-        'rp_site_news_collection_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/news_collection'
-        ),
-        'rp_site_pages_collection_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/pages_collection'
-        ),
-        'rp_site_page_teaser_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/page_teaser'
-        ),
-        'rp_site_faqs_filter_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/faqs_filter'
-        ),
-        'rp_site_faq_teaser_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/faq_teaser'
-        ),
-        'rp_site_faqs_collection_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/faqs_collection'
-        ),
-        'rp_site_management_contracts_collection_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/management_contracts_collection'
-        ),
-        'rp_site_management_contract_teaser_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/management_contract_teaser'
-        ),
-        'rp_site_buildings_filter_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/buildings_filter'
-        ),
-        'rp_site_building_teaser_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/building_teaser'
-        ),
-        'rp_site_buildings_collection_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/buildings_collection'
-        ),
-        'rp_site_documents_filter_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/documents_filter'
-        ),
-        'rp_site_document_teaser_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/document_teaser'
-        ),
-        'rp_site_documents_collection_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/documents_collection'
-        ),
-        'rp_site_search_teaser_block' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'blocks/search_teaser'
-        ),
-        // Pages themes
-        // ---------------------------------------------------------------------
-        'rp_site_search_page' => array(
-            // Use the following syntax to retrieve all variables in the "variables" container
-            'variables' => ['variables' => []],
-            // Set the template attribute to force the theme suggestions into a sub folder
-            // using [template].html.twig
-            'path' => 'themes/retraitespopulaires' . '/templates/' . $theme,
-            'template'  => 'pages/search'
-        ),
-    );
+        // ---------------------------------------------------------------------.
+    'rp_site_attachments_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/attachments',
+    ],
+    'rp_site_attachment-faqs_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/attachment-faqs',
+    ],
+    'rp_site_attachment-documents_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/attachment-documents',
+    ],
+    'rp_site_contact_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/contact',
+    ],
+    'rp_site_advisor_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/advisor',
+    ],
+    'rp_site_news_filter_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/news_filter',
+    ],
+    'rp_site_news_latest_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/news_latest',
+    ],
+    'rp_site_news_teaser_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/news_teaser',
+    ],
+    'rp_site_news_collection_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/news_collection',
+    ],
+    'rp_site_pages_collection_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/pages_collection',
+    ],
+    'rp_site_page_teaser_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/page_teaser',
+    ],
+    'rp_site_faqs_filter_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/faqs_filter',
+    ],
+    'rp_site_faq_teaser_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/faq_teaser',
+    ],
+    'rp_site_faqs_collection_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/faqs_collection',
+    ],
+    'rp_site_management_contracts_collection_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/management_contracts_collection',
+    ],
+    'rp_site_management_contract_teaser_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/management_contract_teaser',
+    ],
+    'rp_site_buildings_filter_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/buildings_filter',
+    ],
+    'rp_site_building_teaser_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/building_teaser',
+    ],
+    'rp_site_buildings_collection_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/buildings_collection',
+    ],
+    'rp_site_documents_filter_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/documents_filter',
+    ],
+    'rp_site_document_teaser_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/document_teaser',
+    ],
+    'rp_site_documents_collection_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/documents_collection',
+    ],
+    'rp_site_search_teaser_block' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'blocks/search_teaser',
+    ],
+    // Pages themes
+    // ---------------------------------------------------------------------.
+    'rp_site_search_page' => [
+      // Use the following syntax to retrieve all variables
+      // in the "variables" container.
+      'variables' => ['variables' => []],
+      // Set the template attribute to force the theme suggestions
+      // into a sub folder using [template].html.twig.
+      'path' => 'themes/retraitespopulaires/templates/' . $theme,
+      'template'  => 'pages/search',
+    ],
+  ];
 }
 
 /**
@@ -240,8 +270,8 @@ function rp_site_theme($existing, $type, $theme, $path) {
  * Improve cache management by creating custom tag [entity]_list:[type]
  * Eg. node_list:news.
  */
-function rp_site_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
-    Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
+function rp_site_entity_insert(EntityInterface $entity) {
+  Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId() . '_list:' . $entity->bundle()]);
 }
 
 /**
@@ -252,8 +282,8 @@ function rp_site_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
  * Improve cache management by creating custom tag [entity]_list:[type]
  * Eg. node_list:news.
  */
-function rp_site_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
-    Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
+function rp_site_entity_update(EntityInterface $entity) {
+  Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId() . '_list:' . $entity->bundle()]);
 }
 
 /**
@@ -261,10 +291,9 @@ function rp_site_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
  *
  * Implements hook_entity_delete().
  */
-function rp_site_entity_delete(Drupal\Core\Entity\EntityInterface $entity) {
-    Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId().'_list:'.$entity->bundle()]);
+function rp_site_entity_delete(EntityInterface $entity) {
+  Drupal::service('cache_tags.invalidator')->invalidateTags([$entity->getEntityTypeId() . '_list:' . $entity->bundle()]);
 }
 
 // Includes.
 require_once 'inc/form_node_document.inc';
-
