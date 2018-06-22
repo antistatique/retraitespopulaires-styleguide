@@ -31,8 +31,7 @@ function drush_rp_contact_import_zip() {
   $file = drush_get_option('file', NULL);
 
   $cmd = new ImportZipCommand(
-    \Drupal::entityTypeManager(),
-    \Drupal::service('entity.query')
+    \Drupal::entityTypeManager()
   );
   $cmd->import($file);
 }

@@ -7,7 +7,6 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 
 /**
  * Provides a 'News Promoted' Block.
@@ -32,18 +31,10 @@ class NewsPromotedBlock extends BlockBase implements ContainerFactoryPluginInter
   private $entityNode;
 
   /**
-   * QueryFactory to execute query.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
-
-  /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, QueryFactory $query) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity) {
     $this->entityNode = $entity->getStorage('node');
-    $this->entityQuery = $query;
   }
 
   /**
@@ -57,8 +48,7 @@ class NewsPromotedBlock extends BlockBase implements ContainerFactoryPluginInter
         $plugin_id,
         $plugin_definition,
         // Load customs services used in this class.
-        $container->get('entity_type.manager'),
-        $container->get('entity.query')
+        $container->get('entity_type.manager')
     );
   }
 
@@ -69,7 +59,7 @@ class NewsPromotedBlock extends BlockBase implements ContainerFactoryPluginInter
     $variables = ['news' => [], 'title' => $this->t('Actualités')];
 
     $now = new \DateTime();
-    $query = $this->entityQuery->get('node')
+    $query = $this->entityNode->getQuery()
       ->condition('type', 'news')
       ->condition('status', 1)
       ->condition('field_date', $now->format('c'), '<=')

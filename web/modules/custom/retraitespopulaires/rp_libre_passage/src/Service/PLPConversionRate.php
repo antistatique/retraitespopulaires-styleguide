@@ -3,18 +3,11 @@
 namespace Drupal\rp_libre_passage\Service;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 
 /**
  * PLP Conversion rate class.
  */
 class PLPConversionRate {
-  /**
-   * To remove.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
 
   /**
    * Conversion rate entity storage.
@@ -26,17 +19,15 @@ class PLPConversionRate {
   /**
    * PLPConversionRate constructor.
    */
-  public function __construct(EntityTypeManagerInterface $entity, QueryFactory $entityQuery) {
+  public function __construct(EntityTypeManagerInterface $entity) {
     $this->entityConversionRate = $entity->getStorage('plp_conversion_rate');
-    $this->entityQuery = $entityQuery;
   }
 
   /**
    * Retrieve the conversion rate according the given attributes.
    */
   public function getRate($gender, $age, $percent) {
-    $id = $this->entityQuery
-      ->get('plp_conversion_rate')
+    $id = $this->entityConversionRate->getQuery()
       ->condition('gender', $gender)
       ->condition('age', $age, '<=')
       ->condition('status', 1)
@@ -63,8 +54,7 @@ class PLPConversionRate {
    * (Âge souhaité pour le versement des prestations)
    */
   public function getAges($gender) {
-    $ids = $this->entityQuery
-      ->get('plp_conversion_rate')
+    $ids = $this->entityConversionRate->getQuery()
       ->condition('gender', $gender)
       ->condition('status', 1)
       ->sort('age', 'DESC')

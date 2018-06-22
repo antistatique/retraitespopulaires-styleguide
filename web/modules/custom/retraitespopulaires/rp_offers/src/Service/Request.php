@@ -3,7 +3,6 @@
 namespace Drupal\rp_offers\Service;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\rp_offers\Entity\Request as EntityRequest;
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\Mail\MailManagerInterface;
@@ -28,13 +27,6 @@ class Request {
   private $entityNode;
 
   /**
-   * Entity_query to query Node's Request.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
-
-  /**
    * The state key value store.
    *
    * @var \Drupal\Core\State\StateInterface
@@ -51,10 +43,9 @@ class Request {
   /**
    * Class constructor.
    */
-  public function __construct(EntityTypeManagerInterface $entity, QueryFactory $query, StateInterface $state, MailManagerInterface $mail) {
+  public function __construct(EntityTypeManagerInterface $entity, StateInterface $state, MailManagerInterface $mail) {
     $this->entityOffersRequest = $entity->getStorage('rp_offers_request');
     $this->entityNode          = $entity->getStorage('node');
-    $this->entityQuery         = $query;
     $this->state               = $state;
     $this->mail                = $mail;
   }
@@ -64,7 +55,7 @@ class Request {
    */
   public function isAvailable($email, $node_nid) {
 
-    $query = $this->entityQuery->get('rp_offers_request')
+    $query = $this->entityOffersRequest->getQuery()
       ->condition('email', $email)
       ->condition('offer_target_id', $node_nid)
       ->count();

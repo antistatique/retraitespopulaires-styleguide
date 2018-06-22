@@ -7,7 +7,6 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\rp_site\Service\Profession;
 use Drupal\Core\Routing\CurrentRouteMatch;
 
@@ -34,13 +33,6 @@ class AdvisorsCollectionBlock extends BlockBase implements ContainerFactoryPlugi
   private $entityNode;
 
   /**
-   * Entity_query to query Node's Contest.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
-
-  /**
    * Profession Service.
    *
    * @var \Drupal\rp_site\Service\Profession
@@ -57,12 +49,11 @@ class AdvisorsCollectionBlock extends BlockBase implements ContainerFactoryPlugi
   /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, QueryFactory $query, Profession $profession, CurrentRouteMatch $route) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, Profession $profession, CurrentRouteMatch $route) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->entityNode  = $entity->getStorage('node');
-    $this->entityQuery = $query;
-    $this->profession  = $profession;
-    $this->route       = $route;
+    $this->entityNode = $entity->getStorage('node');
+    $this->profession = $profession;
+    $this->route      = $route;
   }
 
   /**
@@ -77,7 +68,6 @@ class AdvisorsCollectionBlock extends BlockBase implements ContainerFactoryPlugi
        $plugin_definition,
        // Load customs services used in this class.
        $container->get('entity_type.manager'),
-       $container->get('entity.query'),
        $container->get('rp_site.profession'),
        $container->get('current_route_match')
     );
@@ -89,7 +79,7 @@ class AdvisorsCollectionBlock extends BlockBase implements ContainerFactoryPlugi
   public function build($params = []) {
     $variables = [];
 
-    $query = $this->entityQuery->get('node')
+    $query = $this->entityNode->getQuery()
       ->condition('type', 'advisor')
       ->condition('status', 1)
       ->sort('field_lastname', 'ASC');

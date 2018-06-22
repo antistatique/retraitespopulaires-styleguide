@@ -8,7 +8,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
@@ -48,13 +47,6 @@ class ManagementContractsCollectionBlock extends BlockBase implements ContainerF
   private $entityTaxonomy;
 
   /**
-   * Entity_query to query Node's Contest.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
-
-  /**
    * Request stack that controls the lifecycle of requests.
    *
    * @var \Symfony\Component\HttpFoundation\RequestStack
@@ -64,12 +56,11 @@ class ManagementContractsCollectionBlock extends BlockBase implements ContainerF
   /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity, QueryFactory $query, RequestStack $request) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity, RequestStack $request) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->aliasManager   = $alias_manager;
     $this->entityNode     = $entity->getStorage('node');
     $this->entityTaxonomy = $entity->getStorage('taxonomy_term');
-    $this->entityQuery    = $query;
     $this->request        = $request->getMasterRequest();
   }
 
@@ -86,7 +77,6 @@ class ManagementContractsCollectionBlock extends BlockBase implements ContainerF
        // Load customs services used in this class.
        $container->get('path.alias_manager'),
        $container->get('entity_type.manager'),
-       $container->get('entity.query'),
        $container->get('request_stack')
     );
   }
@@ -97,7 +87,7 @@ class ManagementContractsCollectionBlock extends BlockBase implements ContainerF
   public function build($params = []) {
     $variables = [];
 
-    $query = $this->entityQuery->get('node')
+    $query = $this->entityNode->getQuery()
       ->condition('type', 'management_contracts')
       ->condition('status', 1)
       ->sort('field_weight', 'ASC');

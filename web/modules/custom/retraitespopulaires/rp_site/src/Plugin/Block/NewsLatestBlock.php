@@ -10,7 +10,6 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\rp_site\Service\Profession;
-use Drupal\Core\Entity\Query\QueryFactory;
 
 /**
  * Provides a 'News Latest' Block.
@@ -56,22 +55,14 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
   private $profession;
 
   /**
-   * QueryFactory to execute query.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
-
-  /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession, QueryFactory $query) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entityNode   = $entity->getStorage('node');
     $this->route        = $route;
     $this->aliasManager = $alias_manager;
     $this->profession   = $profession;
-    $this->entityQuery  = $query;
   }
 
   /**
@@ -88,8 +79,7 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
         $container->get('entity_type.manager'),
         $container->get('current_route_match'),
         $container->get('path.alias_manager'),
-        $container->get('rp_site.profession'),
-        $container->get('entity.query')
+        $container->get('rp_site.profession')
     );
   }
 
@@ -108,7 +98,7 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
       }
 
       $now = new \DateTime();
-      $query = $this->entityQuery->get('node')
+      $query = $this->entityNode->getQuery()
         ->condition('type', 'news')
         ->condition('status', 1)
         ->condition('field_profession', $node->field_profession->target_id)
@@ -125,7 +115,7 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
     // Fallback to retrieve news.
     if (empty($node) || empty($variables['news'])) {
       $now = new \DateTime();
-      $query = $this->entityQuery->get('node')
+      $query = $this->entityNode->getQuery()
         ->condition('type', 'news')
         ->condition('status', 1)
         ->condition('field_date', $now->format('c'), '<=')

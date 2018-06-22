@@ -10,7 +10,6 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\rp_site\Service\Profession;
-use Drupal\Core\Entity\Query\QueryFactory;
 
 /**
  * Provides a 'Attachments' Block.
@@ -56,22 +55,14 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
   private $profession;
 
   /**
-   * Entity Query.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
-
-  /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession, QueryFactory $query) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AliasManagerInterface $alias_manager, Profession $profession) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entityNode   = $entity->getStorage('node');
     $this->route        = $route;
     $this->aliasManager = $alias_manager;
     $this->profession   = $profession;
-    $this->entityQuery  = $query;
   }
 
   /**
@@ -88,8 +79,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
         $container->get('entity_type.manager'),
         $container->get('current_route_match'),
         $container->get('path.alias_manager'),
-        $container->get('rp_site.profession'),
-        $container->get('entity.query')
+        $container->get('rp_site.profession')
     );
   }
 
@@ -173,7 +163,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
       ) {
         // Check if we want to disable the FAQ random.
         // Retrieve random documents.
-        $query = $this->entityQuery->get('node')
+        $query = $this->entityNode->getQuery()
           ->condition('type', 'faq')
           ->condition('status', 1)
           ->addTag('random')
@@ -244,7 +234,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
       ) {
         // Check if we want to disable the documents random.
         // Retrieve random documents.
-        $query = $this->entityQuery->get('node')
+        $query = $this->entityNode->getQuery()
           ->condition('type', 'document')
           ->condition('status', 1)
           ->addTag('random')

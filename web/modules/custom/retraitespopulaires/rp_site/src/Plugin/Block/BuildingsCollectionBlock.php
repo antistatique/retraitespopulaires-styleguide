@@ -7,7 +7,6 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\Core\Entity\EntityFieldManagerInterface;
 
@@ -48,13 +47,6 @@ class BuildingsCollectionBlock extends BlockBase implements ContainerFactoryPlug
   private $entityField;
 
   /**
-   * Entity_query to query Node's Contest.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
-
-  /**
    * Request stack that controls the lifecycle of requests.
    *
    * @var \Symfony\Component\HttpFoundation\RequestStack
@@ -64,11 +56,10 @@ class BuildingsCollectionBlock extends BlockBase implements ContainerFactoryPlug
   /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, QueryFactory $query, RequestStack $request, EntityFieldManagerInterface $entity_field) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, RequestStack $request, EntityFieldManagerInterface $entity_field) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entityNode  = $entity->getStorage('node');
     $this->entityField = $entity_field;
-    $this->entityQuery = $query;
     $this->request     = $request->getMasterRequest();
   }
 
@@ -84,7 +75,6 @@ class BuildingsCollectionBlock extends BlockBase implements ContainerFactoryPlug
        $plugin_definition,
        // Load customs services used in this class.
        $container->get('entity_type.manager'),
-       $container->get('entity.query'),
        $container->get('request_stack'),
        $container->get('entity_field.manager')
     );
@@ -96,7 +86,7 @@ class BuildingsCollectionBlock extends BlockBase implements ContainerFactoryPlug
   public function build($params = []) {
     $variables = [];
 
-    $query = $this->entityQuery->get('node')
+    $query = $this->entityNode->getQuery()
       ->condition('type', 'building')
       ->condition('status', 1);
 

@@ -7,7 +7,6 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\rp_site\Service\Profession;
 
@@ -25,12 +24,6 @@ use Drupal\rp_site\Service\Profession;
  * </code>
  */
 class OffersLinkedBlock extends BlockBase implements ContainerFactoryPluginInterface {
-  /**
-   * Entity_query to query Node's Contest.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
 
   /**
    * EntityTypeManagerInterface to load Request Offer.
@@ -56,10 +49,9 @@ class OffersLinkedBlock extends BlockBase implements ContainerFactoryPluginInter
   /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, QueryFactory $query, CurrentRouteMatch $route, Profession $profession) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, Profession $profession) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entityOffer = $entity->getStorage('node');
-    $this->entityQuery = $query;
     $this->route       = $route;
     $this->profession  = $profession;
 
@@ -77,7 +69,6 @@ class OffersLinkedBlock extends BlockBase implements ContainerFactoryPluginInter
         $plugin_definition,
         // Load customs services used in this class.
         $container->get('entity_type.manager'),
-        $container->get('entity.query'),
         $container->get('current_route_match'),
         $container->get('rp_site.profession')
     );
@@ -97,7 +88,7 @@ class OffersLinkedBlock extends BlockBase implements ContainerFactoryPluginInter
 
       if (!empty($offers)) {
 
-        $query = $this->entityQuery->get('node')
+        $query = $this->entityOffer->getQuery()
           ->condition('type', 'offer')
           ->condition('status', 1)
           ->condition('nid', $offers, 'IN')

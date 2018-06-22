@@ -8,7 +8,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
@@ -55,13 +54,6 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
   private $entityTaxonomy;
 
   /**
-   * Entity_query to query Node's Contest.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
-
-  /**
    * Request stack that controls the lifecycle of requests.
    *
    * @var \Symfony\Component\HttpFoundation\RequestStack
@@ -71,12 +63,11 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
   /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity, QueryFactory $query, RequestStack $request) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity, RequestStack $request) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->aliasManager   = $alias_manager;
     $this->entityNode     = $entity->getStorage('node');
     $this->entityTaxonomy = $entity->getStorage('taxonomy_term');
-    $this->entityQuery    = $query;
     $this->request        = $request->getMasterRequest();
   }
 
@@ -93,7 +84,6 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
        // Load customs services used in this class.
        $container->get('path.alias_manager'),
        $container->get('entity_type.manager'),
-       $container->get('entity.query'),
        $container->get('request_stack')
     );
   }
@@ -105,7 +95,7 @@ class NewsCollectionBlock extends BlockBase implements ContainerFactoryPluginInt
     $variables = [];
 
     $now = new \DateTime();
-    $query = $this->entityQuery->get('node')
+    $query = $this->entityNode->getQuery()
       ->condition('type', 'news')
       ->condition('status', 1)
       ->condition('field_date', $now->format('c'), '<=');

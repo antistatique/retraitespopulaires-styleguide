@@ -8,7 +8,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\rp_site\Service\Profession;
 use Drupal\Core\Routing\CurrentRouteMatch;
@@ -57,13 +56,6 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
   private $entityTaxonomy;
 
   /**
-   * Entity_query to query Node's Contest.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
-
-  /**
    * Request stack that controls the lifecycle of requests.
    *
    * @var \Symfony\Component\HttpFoundation\RequestStack
@@ -87,12 +79,11 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
   /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity, QueryFactory $query, RequestStack $request, Profession $profession, CurrentRouteMatch $route) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, AliasManagerInterface $alias_manager, EntityTypeManagerInterface $entity, RequestStack $request, Profession $profession, CurrentRouteMatch $route) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->aliasManager   = $alias_manager;
     $this->entityNode     = $entity->getStorage('node');
     $this->entityTaxonomy = $entity->getStorage('taxonomy_term');
-    $this->entityQuery    = $query;
     $this->request        = $request->getMasterRequest();
     $this->profession     = $profession;
     $this->route          = $route;
@@ -111,7 +102,6 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
        // Load customs services used in this class.
        $container->get('path.alias_manager'),
        $container->get('entity_type.manager'),
-       $container->get('entity.query'),
        $container->get('request_stack'),
        $container->get('rp_site.profession'),
        $container->get('current_route_match')
@@ -129,7 +119,7 @@ class DocumentsCollectionBlock extends BlockBase implements ContainerFactoryPlug
       $variables['theme'] = $this->profession->theme($node->field_profession->target_id);
     }
 
-    $query = $this->entityQuery->get('node')
+    $query = $this->entityNode->getQuery()
       ->condition('type', 'document')
       ->condition('status', 1);
 

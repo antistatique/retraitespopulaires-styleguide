@@ -5,18 +5,11 @@ namespace Drupal\rp_libre_passage\Service;
 use DateTime;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 
 /**
  * PLP Interest Rate class.
  */
 class PLPInterestRate {
-  /**
-   * To remove.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
 
   /**
    * Interest rate interface.
@@ -28,17 +21,15 @@ class PLPInterestRate {
   /**
    * PLPInterestRate constructor.
    */
-  public function __construct(EntityTypeManagerInterface $entity, QueryFactory $entityQuery) {
+  public function __construct(EntityTypeManagerInterface $entity) {
     $this->entityInterestRate = $entity->getStorage('plp_interest_rate');
-    $this->entityQuery = $entityQuery;
   }
 
   /**
    * Retrieve the rate according the given year.
    */
   public function getRate($year) {
-    $id = $this->entityQuery
-      ->get('plp_interest_rate')
+    $id = $this->entityInterestRate->getQuery()
       ->condition('start_year', $year, '<=')
       ->condition('end_year', $year, '>=')
       ->sort('start_year', 'ASC')

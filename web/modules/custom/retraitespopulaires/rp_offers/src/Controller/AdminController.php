@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Render\MetadataBubblingUrlGenerator;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\rp_offers\Service\Request;
@@ -43,13 +42,6 @@ class AdminController extends ControllerBase {
   private $entityNode;
 
   /**
-   * Entity_query to query Node's Request.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
-
-  /**
    * Decorator for the URL generator, which bubbles bubbleable URL metadata.
    *
    * @var \Drupal\Core\Render\MetadataBubblingUrlGenerator
@@ -73,10 +65,9 @@ class AdminController extends ControllerBase {
   /**
    * Class constructor.
    */
-  public function __construct(EntityTypeManagerInterface $entity, QueryFactory $query, MetadataBubblingUrlGenerator $url, RequestStack $request_stack, Request $request) {
+  public function __construct(EntityTypeManagerInterface $entity, MetadataBubblingUrlGenerator $url, RequestStack $request_stack, Request $request) {
     $this->entityOffersRequest = $entity->getStorage('rp_offers_request');
     $this->entityNode          = $entity->getStorage('node');
-    $this->entityQuery         = $query;
     $this->url                 = $url;
     $this->requestStack        = $request_stack->getMasterRequest();
     $this->request             = $request;
@@ -90,7 +81,6 @@ class AdminController extends ControllerBase {
     return new static(
     // Load the service required to construct this class.
     $container->get('entity_type.manager'),
-    $container->get('entity.query'),
     $container->get('url_generator'),
     $container->get('request_stack'),
     $container->get('rp_offers.request')
@@ -123,7 +113,7 @@ class AdminController extends ControllerBase {
       ],
     ];
 
-    $query = $this->entityQuery->get('node')
+    $query = $this->entityNode->getQuery()
       ->condition('type', 'offer')
       ->condition('status', 1);
 
@@ -151,7 +141,7 @@ class AdminController extends ControllerBase {
       ];
 
       // Get requests.
-      $requests = $this->entityQuery->get('rp_offers_request')
+      $requests = $this->entityOffersRequest->getQuery()
         ->condition('offer_target_id', $node->nid->value)
         ->count()
         ->execute();
@@ -269,7 +259,7 @@ class AdminController extends ControllerBase {
       'Gagnant',
     ], ';');
     // Query data from database.
-    $query = $this->entityQuery->get('rp_offers_request');
+    $query = $this->entityOffersRequest->getQuery();
     // Add Filter conditions.
     $filter = $this->requestStack->get('filter');
     if (!empty($node)) {
@@ -321,7 +311,7 @@ class AdminController extends ControllerBase {
 
     $variables['search'] = $this->formBuilder()->getForm('Drupal\rp_offers\Form\AdminRequestSearchForm');
 
-    $query = $this->entityQuery->get('rp_offers_request');
+    $query = $this->entityOffersRequest->getQuery();
     $query->condition('offer_target_id', $node->nid->value);
 
     // Add Seach conditions from AdminRequestSearchForm.
@@ -369,7 +359,7 @@ class AdminController extends ControllerBase {
 
     // Check if we run draw or not depending number of tickets
     // & already winned tickets.
-    $winners = $this->entityQuery->get('rp_offers_request')
+    $winners = $this->entityOffersRequest->getQuery()
       ->condition('offer_target_id', $node->nid->value)
       ->condition('winner', 1)
       ->count()
@@ -377,7 +367,7 @@ class AdminController extends ControllerBase {
 
     if ($winners < $tickets) {
       $tickets = $tickets - $winners;
-      $ids = $this->entityQuery->get('rp_offers_request')
+      $ids = $this->entityOffersRequest->getQuery()
         ->condition('offer_target_id', $node->nid->value)
         ->addTag('random')
         ->range(0, $tickets)
@@ -408,7 +398,7 @@ class AdminController extends ControllerBase {
    */
   public function sendDraw(Node $node) {
     // Retrieve winners.
-    $ids = $this->entityQuery->get('rp_offers_request')
+    $ids = $this->entityOffersRequest->getQuery()
       ->condition('offer_target_id', $node->nid->value)
       ->condition('winner', 1)
       ->execute();

@@ -3,7 +3,6 @@
 namespace Drupal\rp_contact\Command;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 
 /**
  * Process zip code, create missing one and link to Advisor (create missing one)
@@ -25,19 +24,11 @@ class ImportZipCommand {
   private $entityTaxonomy;
 
   /**
-   * Entity_query to query Node's Code.
-   *
-   * @var \Drupal\Core\Entity\Query\QueryFactory
-   */
-  private $entityQuery;
-
-  /**
    * Class constructor.
    */
-  public function __construct(EntityTypeManagerInterface $entityTypeManager, QueryFactory $entityQuery) {
+  public function __construct(EntityTypeManagerInterface $entityTypeManager) {
     $this->entityNode     = $entityTypeManager->getStorage('node');
     $this->entityTaxonomy = $entityTypeManager->getStorage('taxonomy_term');
-    $this->entityQuery    = $entityQuery;
   }
 
   /**
@@ -83,7 +74,7 @@ class ImportZipCommand {
    */
   protected function isZipExist($zip, $district) {
     $term = NULL;
-    $query = $this->entityQuery->get('taxonomy_term')
+    $query = $this->entityTaxonomy->getQuery()
       ->condition('name', $zip)
       ->condition('field_district', $district)
       ->condition('vid', 'zip_codes');
