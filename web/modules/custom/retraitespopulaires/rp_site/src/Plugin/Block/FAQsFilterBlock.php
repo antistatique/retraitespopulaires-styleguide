@@ -82,7 +82,7 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
     public function build($params = array()) {
         $variables = array('categories' => array());
 
-        $taxonomy_term_alias = \Drupal::request()->query->get('taxonomy_term_alias');
+        $taxonomy_term_alias = \Drupal::request()->query->get('profession_alias');
         $variables['current_aliases'] = $taxonomy_term_alias;
 
         // Professions
