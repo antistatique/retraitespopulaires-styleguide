@@ -88,7 +88,7 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
   public function build($params = []) {
     $variables = ['categories' => []];
 
-    $taxonomy_term_alias = $this->request->query->get('taxonomy_term_alias');
+    $taxonomy_term_alias = $this->request->query->get('profession_alias');
     $variables['current_aliases'] = $taxonomy_term_alias;
 
     // Professions.

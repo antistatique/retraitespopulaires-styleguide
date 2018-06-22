@@ -20,7 +20,7 @@
     <div class="icon-text icon-text-center">
         <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-2x text-primary retraitespopulaires-icon-documents-thick"></span>
         <div class="icon-text-txt">
-          {% if variales.collection.alias is empty %}
+          {% if variables.collection.alias is empty %}
             <a class="text-bold pretty-link h5" href="{{ path('entity.node.canonical', {'node': suggestions|first.id}) }}">
           {% else %}
             <a class="text-bold pretty-link h5" href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'profession_alias': variables.collection.alias}) }}">

@@ -163,7 +163,12 @@ class AddressForm extends FormBase {
       '#title'       => $this->t('Votre date de naissance <span class ="text-small text-muted">(jj/mm/aaaa)</span> *'),
       '#placeholder' => $this->t('jj/mm/aaaa'),
       '#type'        => 'textfield',
-      '#attributes'  => ['size' => 10],
+      '#attributes'  => [
+        'class'         => [''],
+        'size'          => '15',
+        'datepicker'    => TRUE,
+        'datepickerbtn' => TRUE,
+      ],
       '#required'    => FALSE,
       '#prefix'      => '<div class="form-group ' . $error_class . '">',
       '#suffix'      => $error . '</div>',
@@ -385,19 +390,19 @@ class AddressForm extends FormBase {
       $error = '<div class="input-error-desc">' . $error_msg . '</div>';
     }
     $form['more']['group_start'] = [
-      '#prefix' => '<div class="form-group ' . $error_class . '"><div class="form-control-label">' . $this->t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</div><div class="input-group">',
+      '#prefix' => '<div class="form-group ' . $error_class . '"><div class="form-control-label">'. $this->t('Date de versement <span class ="text-small text-muted">(jj/mm/aaaa)</span> *') . '</div><div class="input-group">',
       '#suffix' => '</div>' . $error . '</div>',
     ];
     $form['more']['group_start']['due_date'] = [
       '#placeholder' => $this->t('jj/mm/aaaa'),
       '#type'        => 'textfield',
-      '#attributes'  => ['size' => 15, 'class' => ['datepicker']],
+      '#attributes'  => [
+        'class'         => [''],
+        'size'          => '15',
+        'datepicker'    => TRUE,
+        'datepickerbtn' => TRUE,
+      ],
       '#required'    => FALSE,
-    ];
-    $form['more']['group_start']['picker'] = [
-      '#prefix' => '<span class="input-group-btn no-events"><div class="btn btn-invert btn-icon">',
-      '#markup' => '<span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>',
-      '#suffix' => '</div></span>',
     ];
 
     $form['more']['remarque'] = [
