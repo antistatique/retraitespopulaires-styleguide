@@ -90,13 +90,13 @@ class BuildingsCollectionBlock extends BlockBase implements ContainerFactoryPlug
       ->condition('type', 'building')
       ->condition('status', 1);
 
-    $building_status_alias = $this->request->query->get('building_status_alias');
+    $buildingStatusAlias = $this->request->query->get('building_status_alias');
 
     $fields = $this->entityField->getFieldDefinitions('node', 'building');
-    $field_building_status = $fields['field_building_status']->getSetting('allowed_values');
+    $fieldBuildingStatus = $fields['field_building_status']->getSetting('allowed_values');
 
-    if (!empty($field_building_status) && array_key_exists($building_status_alias, $field_building_status)) {
-      $query->condition('field_building_status', $building_status_alias);
+    if (!empty($fieldBuildingStatus) && array_key_exists($buildingStatusAlias, $fieldBuildingStatus)) {
+      $query->condition('field_building_status', $buildingStatusAlias);
     }
 
     // Pager.

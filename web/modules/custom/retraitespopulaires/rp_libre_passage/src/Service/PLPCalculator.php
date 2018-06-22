@@ -228,7 +228,7 @@ class PLPCalculator {
   /**
    * Calc the Survivor Pension (Calcul de la rente survivant)
    *
-   * @param int|string $annual_pension_couple
+   * @param int|string $annualPensionCouple
    *   The annual pension couple given by the method calcAnnualPensionCouple.
    * @param int|string $percent
    *   The desired percent.
@@ -236,8 +236,8 @@ class PLPCalculator {
    * @return float
    *   The survivor pension (Rente survivant)
    */
-  public function calcSurvivorPension($annual_pension_couple, $percent) {
-    if (!is_numeric($annual_pension_couple)) {
+  public function calcSurvivorPension($annualPensionCouple, $percent) {
+    if (!is_numeric($annualPensionCouple)) {
       throw new \InvalidArgumentException('capital must be numeric');
     }
 
@@ -245,7 +245,7 @@ class PLPCalculator {
       throw new \InvalidArgumentException('percent must be numeric');
     }
 
-    $pension_raw = ($annual_pension_couple * $percent / 100 / 12);
+    $pension_raw = ($annualPensionCouple * $percent / 100 / 12);
     return $this->formatCents($pension_raw) * 12;
   }
 

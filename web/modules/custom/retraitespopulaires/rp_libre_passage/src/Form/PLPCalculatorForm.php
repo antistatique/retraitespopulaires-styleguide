@@ -434,16 +434,16 @@ class PLPCalculatorForm extends FormBase {
         $capital_formatted = $this->plpCalculator->formatCents($capital_raw);
 
         // Calculate the Annual pension when single.
-        $annual_pension_single_raw = $this->plpCalculator->calcAnnualPensionSingle($capital_formatted, $form_state->getValue('civil_state'), (int) $form_state->getValue('age'));
-        $annual_pension_single_formatted = $this->plpCalculator->formatCents($annual_pension_single_raw);
+        $anPensSingleRaw = $this->plpCalculator->calcAnnualPensionSingle($capital_formatted, $form_state->getValue('civil_state'), (int) $form_state->getValue('age'));
+        $anPensSingleFormat = $this->plpCalculator->formatCents($anPensSingleRaw);
 
         // Calculate the Annual pension on couple.
-        $annual_pension_couple_raw = $this->plpCalculator->calcAnnualPensionCouple($capital_formatted, $form_state->getValue('civil_state'), (int) $form_state->getValue('age'), (int) $form_state->getValue('percent'));
-        $annual_pension_couple_formatted = $this->plpCalculator->formatCents($annual_pension_couple_raw);
+        $anPensCoupleRaw = $this->plpCalculator->calcAnnualPensionCouple($capital_formatted, $form_state->getValue('civil_state'), (int) $form_state->getValue('age'), (int) $form_state->getValue('percent'));
+        $anPensCoupleFormat = $this->plpCalculator->formatCents($anPensCoupleRaw);
 
         // Calculate the Annual pension of the survivor (on couple)
-        $pension_survivor_raw = $this->plpCalculator->calcSurvivorPension($annual_pension_couple_formatted, (int) $form_state->getValue('percent'));
-        $pension_survivor_formatted = $this->plpCalculator->formatCents($pension_survivor_raw);
+        $pensSurvivorRaw = $this->plpCalculator->calcSurvivorPension($anPensCoupleFormat, (int) $form_state->getValue('percent'));
+        $pensSurvivorFormat = $this->plpCalculator->formatCents($pensSurvivorRaw);
 
         $data = [
           'birthdate' => $form_state->getValue('birthdate'),
@@ -455,9 +455,9 @@ class PLPCalculatorForm extends FormBase {
           'age' => $form_state->getValue('age'),
           'deadline' => $deadline,
           'capital' => $capital_formatted,
-          'annual_pension_single' => $annual_pension_single_formatted,
-          'annual_pension_couple' => $annual_pension_couple_formatted,
-          'pension_survivor' => $pension_survivor_formatted,
+          'annual_pension_single' => $anPensSingleFormat,
+          'annual_pension_couple' => $anPensCoupleFormat,
+          'pension_survivor' => $pensSurvivorFormat,
         ];
         $this->session->set('data', $data);
         $this->session->set('view_result', TRUE);

@@ -82,7 +82,7 @@ class TeaserForm extends FormBase {
         ];
 
         // Default parameter for all field.
-        $defaultFieldParameter = [
+        $defFieldParameter = [
           '#title' => $field->name,
           '#prefix' => '<div class="form-group">',
           '#suffix' => '</div>',
@@ -128,7 +128,7 @@ class TeaserForm extends FormBase {
 
         // Add default parameter to field
         // (what's already in $form[$fieldName] is not override)
-        $form['logismata_value'] += $defaultFieldParameter;
+        $form['logismata_value'] += $defFieldParameter;
 
         // If there's a slider for number type.
         if ($haveSlider) {

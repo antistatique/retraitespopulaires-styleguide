@@ -94,7 +94,7 @@ class ExportSaving3AForm extends ConfirmFormBase {
    */
   public function exportSaving3aRate() {
     // Create the list of saving 3a rates.
-    $logismata_product_list = [
+    $saving3aList = [
       'productListId' => 'saving3aInvestmentOptions',
       'default' => '',
       'products' => [],
@@ -111,7 +111,7 @@ class ExportSaving3AForm extends ConfirmFormBase {
     // Add each rate to the list.
     foreach ($rates as $rate) {
 
-      $logismata_product_list['products'][] = [
+      $saving3aList['products'][] = [
         'code' => strtolower(str_replace(' ', '', $rate->getName())),
         'descriptions' => [
           'de' => $rate->getName(),
@@ -122,12 +122,12 @@ class ExportSaving3AForm extends ConfirmFormBase {
       ];
 
       // Set default to first rate.
-      if (count($logismata_product_list['products']) == 1) {
-        $logismata_product_list['default'] = $logismata_product_list['products'][0]['code'];
+      if (count($saving3aList['products']) == 1) {
+        $saving3aList['default'] = $saving3aList['products'][0]['code'];
       }
     }
 
-    $this->logismataService->exportToLogismata($logismata_product_list);
+    $this->logismataService->exportToLogismata($saving3aList);
   }
 
 }

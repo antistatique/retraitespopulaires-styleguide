@@ -64,7 +64,7 @@ class ImportRateCommand {
     if ($this->lock->acquire('rp_mortgage_import', 3600)) {
       drush_print('Start Importing from: ' . $file);
 
-      $callback = function ($chunk, &$handle, $line) use ($institution) {
+      $callback = function ($chunk) use ($institution) {
         // Read the line as CSV to retrieve all details.
         $values = str_getcsv($chunk);
 
@@ -90,7 +90,7 @@ class ImportRateCommand {
       $this->deleteAll();
 
       try {
-        $success = $this->readFileLinebyLine($file, $callback);
+        $success = $this->readFileLineByLine($file, $callback);
       }
       catch (\Exception $e) {
         drush_print($e->getMessage());
@@ -140,7 +140,7 @@ class ImportRateCommand {
    *
    * @throws \Exception
    */
-  protected function readFileLinebyLine($file, callable $callback) {
+  protected function readFileLineByLine($file, callable $callback) {
     $handle = fopen($file, "r");
 
     if (!$handle) {
@@ -150,10 +150,8 @@ class ImportRateCommand {
     // Skip headers.
     fgets($handle);
 
-    $i = 0;
     while (!feof($handle)) {
-      call_user_func_array($callback, [fgets($handle), &$handle, $i]);
-      $i++;
+      call_user_func_array($callback, [fgets($handle)]);
     }
     fclose($handle);
 

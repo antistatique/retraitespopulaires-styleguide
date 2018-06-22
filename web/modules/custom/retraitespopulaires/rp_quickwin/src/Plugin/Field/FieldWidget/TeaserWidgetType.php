@@ -72,7 +72,7 @@ class TeaserWidgetType extends WidgetBase {
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     // Condition for display slider and slider parameter.
-    $slider_visible_condition = [
+    $sliderVisibleCond = [
         [':input[selector="type' . $items->getName() . $delta . '"]' => ['value' => 'chf']],
       'or',
         [':input[selector="type' . $items->getName() . $delta . '"]' => ['value' => 'number']],
@@ -113,7 +113,7 @@ class TeaserWidgetType extends WidgetBase {
       '#attributes' => ['selector' => ['slider' . $items->getName() . $delta]],
       '#states' => [
         'visible' => [
-          $slider_visible_condition,
+          $sliderVisibleCond,
         ],
       ],
       '#title' => $this->t('Slider ?'),
@@ -126,7 +126,7 @@ class TeaserWidgetType extends WidgetBase {
       '#title' => $this->t('Slider option'),
       '#states' => [
         'visible' => [
-          0 => $slider_visible_condition,
+          0 => $sliderVisibleCond,
           ':input[selector="slider' . $items->getName() . $delta . '"]' => ['checked' => TRUE],
         ],
       ],

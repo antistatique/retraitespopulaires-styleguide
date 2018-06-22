@@ -37,7 +37,7 @@ class ImportZipCommand {
   public function import($file) {
     drush_print('Start Importing from: ' . $file);
 
-    $callback = function ($chunk, &$handle, $line) {
+    $callback = function ($chunk) {
       // Read the line as CSV to retrieve all details.
       $values = str_getcsv($chunk);
       if (isset($values[0]) && !empty($values[0]) && isset($values[1]) && !empty($values[1])) {
@@ -165,10 +165,8 @@ class ImportZipCommand {
   protected function readFileLinebyLine($file, callable $callback) {
     try {
       $handle = fopen($file, "r");
-      $i = 0;
       while (!feof($handle)) {
-        call_user_func_array($callback, [fgets($handle), &$handle, $i]);
-        $i++;
+        call_user_func_array($callback, [fgets($handle)]);
       }
 
       fclose($handle);

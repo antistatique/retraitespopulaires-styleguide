@@ -37,22 +37,22 @@ class ExportRateCommand {
    */
   public function export() {
     // Create the list of mortgage rates.
-    $logismata_house_interest = [
+    $houseInterest = [
       'productListId' => 'houseInterestOptions',
       'default' => '',
       'products' => [],
     ];
 
-    $logismata_house_detailed_mortgages = [
+    $houseDetailMortgages = [
       'productListId' => 'houseDetailedMortgagesOptions',
       'default' => '',
       'products' => [],
     ];
 
-    $detailed_mortgages_first_rang = [];
-    $detailed_mortgages_second_rang = [];
+    $detMortgages1Rang = [];
+    $detMortgages2Rang = [];
 
-    $logismata_mortgages_profiles = [
+    $mortgagesProfiles = [
       'productListId' => 'mortgageProfiles',
       'default' => '',
       'products' => [],
@@ -77,54 +77,54 @@ class ExportRateCommand {
       ];
 
       // Save for first list.
-      $logismata_house_interest['products'][] = $product;
+      $houseInterest['products'][] = $product;
 
       // Save for second list in first rang with more option.
-      $detailed_mortgages_first_rang[] = [
+      $detMortgages1Rang[] = [
         'code' => $product['code'] . '_detailed_first',
         'rang' => 1,
         'type' => strpos(strtolower($rate->getName()), 'fixe') !== FALSE ? 2 : 1,
         'duration' => $rate->getYear(),
         'minAmount' => NULL,
         'manualInterest' => TRUE,
-        'sort' => count($detailed_mortgages_first_rang),
+        'sort' => count($detMortgages1Rang),
       ] + $product;
 
       // Save for second list in second rang if they are a second.
       if ($rate->getSecondRate() > 0) {
-        $detailed_mortgages_second_rang[] = [
+        $detMortgages2Rang[] = [
           'code' => $product['code'] . '_detailed_second',
           'rang' => 2,
           'interest' => $rate->getSecondRate(),
-        ] + end($detailed_mortgages_first_rang);
+        ] + end($detMortgages1Rang);
       }
     }
     // Set default interest.
-    $logismata_house_interest['default'] = $logismata_house_interest['products'][0]['code'];
-    $logismata_house_detailed_mortgages['default'] = $detailed_mortgages_first_rang[0]['code'];
+    $houseInterest['default'] = $houseInterest['products'][0]['code'];
+    $houseDetailMortgages['default'] = $detMortgages1Rang[0]['code'];
 
     // Merge second list, first and second rang.
-    $logismata_house_detailed_mortgages['products'] = array_merge($detailed_mortgages_first_rang, $detailed_mortgages_second_rang);
+    $houseDetailMortgages['products'] = array_merge($detMortgages1Rang, $detMortgages2Rang);
 
     // Create a profiles of mortgages and set it to default.
-    $logismata_mortgages_profiles['products'][] = [
+    $mortgagesProfiles['products'][] = [
       'code' => 'profiles',
       'class1Products' => [
         [
-          'code' => $detailed_mortgages_first_rang[1]['code'],
+          'code' => $detMortgages1Rang[1]['code'],
           'part' => 100,
         ],
       ],
       'class2Product' => [
-        'code' => $detailed_mortgages_second_rang[0]['code'],
+        'code' => $detMortgages2Rang[0]['code'],
       ],
     ];
-    $logismata_mortgages_profiles['default'] = $logismata_mortgages_profiles['products'][0]['code'];
+    $mortgagesProfiles['default'] = $mortgagesProfiles['products'][0]['code'];
 
     // Export the three list.
-    $this->logismataService->exportToLogismata($logismata_house_interest);
-    $this->logismataService->exportToLogismata($logismata_house_detailed_mortgages);
-    $this->logismataService->exportToLogismata($logismata_mortgages_profiles);
+    $this->logismataService->exportToLogismata($houseInterest);
+    $this->logismataService->exportToLogismata($houseDetailMortgages);
+    $this->logismataService->exportToLogismata($mortgagesProfiles);
   }
 
   /**
