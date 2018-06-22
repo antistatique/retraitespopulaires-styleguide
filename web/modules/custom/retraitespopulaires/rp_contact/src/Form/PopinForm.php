@@ -1,8 +1,4 @@
 <?php
-/**
-* @file
-* Contains \Drupal\rp_contact\Form\ContactForm.
-*/
 
 namespace Drupal\rp_contact\Form;
 
@@ -13,22 +9,25 @@ use Drupal\Core\State\StateInterface;
 use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\CssCommand;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\InvokeCommand;
 
+/**
+ * Popin Form class.
+ */
 class PopinForm extends FormBase {
   /**
-  * Composes and optionally sends an email message.
-  * @var \Drupal\Core\Mail\MailManagerInterface
-  */
+   * Composes and optionally sends an email message.
+   *
+   * @var \Drupal\Core\Mail\MailManagerInterface
+   */
   protected $mail;
 
   /**
-  * State API for storing variables that shouldn't travel between instances.
-  *
-  * @var \Drupal\Core\State\StateInterface
-  */
+   * State API for storing variables that shouldn't travel between instances.
+   *
+   * @var \Drupal\Core\State\StateInterface
+   */
   protected $state;
 
   /**
@@ -39,8 +38,8 @@ class PopinForm extends FormBase {
   protected $renderer;
 
   /**
-  * Class constructor.
-  */
+   * Class constructor.
+   */
   public function __construct(StateInterface $state, MailManagerInterface $mail, RendererInterface $renderer) {
     $this->state    = $state;
     $this->mail     = $mail;
@@ -48,8 +47,8 @@ class PopinForm extends FormBase {
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('state'),
@@ -59,19 +58,19 @@ class PopinForm extends FormBase {
   }
 
   /**
-  * {@inheritdoc}.
-  */
+   * {@inheritdoc}
+   */
   public function getFormId() {
     return 'rp_popin_form';
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
     $form['#action'] = '#rp-popin-form';
 
-    // Disable caching & HTML5 validation
+    // Disable caching & HTML5 validation.
     $form['#cache']['max-age'] = 0;
     $form['#attributes']['novalidate'] = 'novalidate';
 
@@ -80,7 +79,7 @@ class PopinForm extends FormBase {
     ];
 
     $form['messages'] = [
-      '#markup' => '<div class="status-messages"></div>'
+      '#markup' => '<div class="status-messages"></div>',
     ];
 
     $request = $this->getRequest();
@@ -91,46 +90,46 @@ class PopinForm extends FormBase {
       '#value' => $request->getPathInfo(),
     ];
 
-    $form['name'] = array(
+    $form['name'] = [
       '#title'       => $this->t('Prénom, Nom *'),
       '#type'        => 'textfield',
-      '#required'    => false,
+      '#required'    => FALSE,
       '#prefix'      => '<div class="form-group">',
       '#suffix'      => '</div>',
       '#attributes' => [
         'id' => 'tracking-popin-name',
       ],
-    );
+    ];
 
-    $form['contact'] = array(
+    $form['contact'] = [
       '#title'       => $this->t('Votre e-mail ou numéro de téléphone*'),
       '#type'        => 'textfield',
-      '#required'    => false,
+      '#required'    => FALSE,
       '#prefix'      => '<div class="form-group">',
       '#suffix'      => '</div>',
       '#attributes' => [
         'id' => 'tracking-popin-contact',
       ],
-    );
+    ];
 
     $form['cols'] = [
       '#prefix' => '<div class="row d-flex flex-align-items-end">',
       '#suffix' => '</div>',
     ];
 
-    $form['cols']['zip'] = array(
+    $form['cols']['zip'] = [
       '#title'       => $this->t('Votre code postal (NPA) *'),
       '#placeholder' => $this->t('1000'),
       '#type'        => 'textfield',
-      '#required'    => false,
+      '#required'    => FALSE,
       '#prefix'      => '<div class="form-group col-xs-6 col-sm-8">',
       '#suffix'      => '</div>',
       '#attributes' => [
-        'id' => 'tracking-popin-npa'
+        'id' => 'tracking-popin-npa',
       ],
-    );
+    ];
 
-    $form['cols']['submit'] = array(
+    $form['cols']['submit'] = [
       '#id'          => 'rp_popin_form_submit',
       '#name'        => 'rp_popin_form_submit_name',
       '#type'        => 'submit',
@@ -139,13 +138,13 @@ class PopinForm extends FormBase {
       '#prefix'      => '<div class="form-group col-xs-6 col-sm-4">',
       '#suffix'      => '</div>',
       '#attributes'  => [
-        'class' => array('btn-primary', 'use-ajax-submit', 'tracking-popin-submit')
+        'class' => ['btn-primary', 'use-ajax-submit', 'tracking-popin-submit'],
       ],
       '#ajax'        => [
         'callback' => [$this, 'respondToAjax'],
-        'progress' => ['type' => 'none']
-      ]
-    );
+        'progress' => ['type' => 'none'],
+      ],
+    ];
 
     // Make sure we have the config value by default for the popin email.
     if (empty($params['mail_to'])) {
@@ -160,9 +159,11 @@ class PopinForm extends FormBase {
   }
 
   /**
+   * Ajax response.
+   *
    * @param array $form
    *   Form API array structure.
-   * @param array $form_state
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   Form state information.
    *
    * @return \Drupal\Core\Ajax\AjaxResponse
@@ -187,7 +188,7 @@ class PopinForm extends FormBase {
     $this->setAjaxMessages($response);
 
     // Update the popin title & close the popin.
-    // TODO handle success and errors
+    // TODO handle success and errors.
     $data = [
       'title_closed' => $this->t('Merci de votre demande. Nous allons la traiter rapidement et vous recontacter.'),
       'toggle' => TRUE,
@@ -198,10 +199,10 @@ class PopinForm extends FormBase {
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    // Assert the firstname field is not empty
+    // Assert the firstname field is not empty.
     if (!$form_state->getValue('name') || empty($form_state->getValue('name'))) {
       $form_state->setErrorByName('name', $this->t('Veuillez indiquer votre prénom et votre nom.'));
     }
@@ -213,8 +214,8 @@ class PopinForm extends FormBase {
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
     $data = [
@@ -224,18 +225,18 @@ class PopinForm extends FormBase {
       'uri'     => $form_state->getValue('uri'),
     ];
 
-    // Send to admin
+    // Send to admin.
     $to = preg_replace('/\s+/', ' ', $form_state->getValue('mail_to'));
     $to = str_replace(';', ',', $to);
     $this->mail->mail('rp_contact', 'contact_popin', $to, 'fr', $data);
 
-    drupal_set_message(t('Merci de votre demande. Nous allons la traiter rapidement et vous recontacter.'));
+    drupal_set_message($this->t('Merci de votre demande. Nous allons la traiter rapidement et vous recontacter.'));
   }
 
   /**
    * Set & render flash messages.
    *
-   * @param AjaxResponse $response
+   * @param \Drupal\Core\Ajax\AjaxResponse $response
    *   The ajax response.
    */
   public function setAjaxMessages(AjaxResponse &$response) {
@@ -251,10 +252,11 @@ class PopinForm extends FormBase {
   /**
    * Scroll to the flash message container.
    *
-   * @param AjaxResponse $response
+   * @param \Drupal\Core\Ajax\AjaxResponse $response
    *   The ajax response.
    */
-  public function scrollToMessages(AjaxResponse &$response){
+  public function scrollToMessages(AjaxResponse &$response) {
     $response->addCommand(new InvokeCommand('#block-popinformblock .popin', 'scrollToMessages', [['selector' => '#rp-status-messages']]));
   }
+
 }
