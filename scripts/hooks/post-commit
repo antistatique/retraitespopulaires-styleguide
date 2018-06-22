@@ -7,4 +7,4 @@ echo "\n💩  \033[0;32mRunning PHP Mess Detector ...\033[0m"
 ./vendor/bin/phpmd ./web/modules/custom text ./phpmd.xml --suffixes php,module,inc,install,test,profile,theme,info,txt
 
 echo "\n🛂  \033[0;32mRunning PHP Copy/Paste Detector ...\033[0m"
-./vendor/bin/phpcpd ./web/modules/custom --names=*.php,*.module,*.inc,*.install,*.test,*.profile,*.theme,*.info,*.txt --names-exclude=*.css,*.md,*.info.yml --progress --ansi
+./vendor/bin/phpcpd ./web/modules/custom --names=*.php,*.module,*.inc,*.install,*.test,*.profile,*.theme,*.info,*.txt --names-exclude=*.css,*.md,*.info.yml --ansi
