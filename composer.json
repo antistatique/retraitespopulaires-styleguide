@@ -107,6 +107,9 @@
         "patches": {
             "drupal/config_ignore": {
               "Fix undefined drush_config_get_storage_filters": "https://www.drupal.org/files/issues/config_ignore-remove-storage-filters.patch"
+            },
+            "drupal/swiftmailer": {
+              "Fix undefined filter_format": "https://www.drupal.org/files/issues/2018-06-05/2948607-13.patch"
             }
         }
     }

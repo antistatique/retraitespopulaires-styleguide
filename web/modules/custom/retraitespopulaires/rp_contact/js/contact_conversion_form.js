@@ -6,7 +6,7 @@
     var $conversionForm = $('#rp-contact-conversion-form');
 
     // Form not found, skip everything
-    if (!$conversionForm.size()) {
+    if (!$conversionForm.length) {
       return;
     }
 

@@ -5,7 +5,7 @@
     var $mortgageForm = $('.js-mortgage-calculator');
 
     // Form not found, skip everything
-    if (!$mortgageForm.size()) {
+    if (!$mortgageForm.length) {
       return;
     }
 

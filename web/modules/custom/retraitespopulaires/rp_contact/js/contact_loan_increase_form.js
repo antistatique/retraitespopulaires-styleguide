@@ -6,7 +6,7 @@
     var $loanIncreaseForm = $('#rp-contact-loan-increase-form');
 
     // Form not found, skip everything
-    if (!$loanIncreaseForm.size()) {
+    if (!$loanIncreaseForm.length) {
       return;
     }
 
