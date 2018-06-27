@@ -11,7 +11,7 @@ use Drupal\template_whisperer\TemplateWhispererSuggestionUsage;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\rp_offers\Service\Request;
-use Drupal\user\PrivateTempStoreFactory;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 
 /**
  * Resquert Form class.
@@ -28,7 +28,7 @@ class RequestForm extends FormBase {
   /**
    * Stores and retrieves temporary data for a given owner.
    *
-   * @var \Drupal\user\PrivateTempStoreFactory
+   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
    */
   protected $session;
 

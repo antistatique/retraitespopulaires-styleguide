@@ -9,7 +9,7 @@ use Drupal\template_whisperer\TemplateWhispererSuggestionUsage;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use DateTime;
 
-use Drupal\user\PrivateTempStoreFactory;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\State\StateInterface;
 use Drupal\rp_libre_passage\Service\PLPCalculator;
 use Drupal\rp_libre_passage\Service\PLPConversionRate;
@@ -22,7 +22,7 @@ class PLPCalculatorForm extends FormBase {
   /**
    * Stores and retrieves temporary data for a given owner.
    *
-   * @var \Drupal\user\PrivateTempStoreFactory
+   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
    */
   protected $session;
 

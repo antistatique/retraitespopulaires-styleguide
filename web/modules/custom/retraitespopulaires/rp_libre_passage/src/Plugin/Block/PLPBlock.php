@@ -7,7 +7,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Drupal\user\PrivateTempStoreFactory;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\Core\Session\SessionManager;
@@ -30,7 +30,7 @@ class PLPBlock extends BlockBase implements ContainerFactoryPluginInterface {
   /**
    * Stores and retrieves temporary data for a given owner.
    *
-   * @var \Drupal\user\PrivateTempStoreFactory
+   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
    */
   protected $session;
 

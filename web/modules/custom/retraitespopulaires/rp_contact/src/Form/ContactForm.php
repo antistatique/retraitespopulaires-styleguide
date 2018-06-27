@@ -6,7 +6,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Drupal\user\PrivateTempStoreFactory;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
@@ -18,7 +18,7 @@ class ContactForm extends FormBase {
   /**
    * Stores and retrieves temporary data for a given owner.
    *
-   * @var \Drupal\user\PrivateTempStoreFactory
+   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
    */
   protected $session;
 
