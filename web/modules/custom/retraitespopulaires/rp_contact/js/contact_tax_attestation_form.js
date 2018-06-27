@@ -6,7 +6,7 @@
     var $taxAttestationForm = $('#rp-contact-tax-attestation-form');
 
     // Form not found, skip everything
-    if (!$taxAttestationForm.size()) {
+    if (!$taxAttestationForm.length) {
       return;
     }
 

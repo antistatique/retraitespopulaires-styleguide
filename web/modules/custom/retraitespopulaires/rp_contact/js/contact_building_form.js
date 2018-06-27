@@ -6,7 +6,7 @@
     var $buildingForm = $('#rp-contact-building-form');
 
     // Form not found, skip everything
-    if (!$buildingForm.size()) {
+    if (!$buildingForm.length) {
       return;
     }
 
