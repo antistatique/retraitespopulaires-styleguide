@@ -57,7 +57,6 @@ class ContactTeaserBlock extends BlockBase implements ContainerFactoryPluginInte
    * {@inheritdoc}
    */
   public function build($params = []) {
-    $variables = [];
     $variables = $params;
 
     $variables['btn'] = TRUE;

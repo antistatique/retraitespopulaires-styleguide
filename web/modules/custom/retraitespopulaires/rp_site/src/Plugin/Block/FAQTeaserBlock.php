@@ -23,7 +23,6 @@ class FAQTeaserBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build($params = []) {
-    $variables = [];
     $variables = $params;
 
     return [

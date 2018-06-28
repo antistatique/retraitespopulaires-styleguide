@@ -134,8 +134,6 @@ class SearchController extends ControllerBase {
         }
       }
 
-      $params = $this->request->query->all();
-
       $variables['search'] = [
         'search'    => $search,
         'count'     => $results->getResultCount(),

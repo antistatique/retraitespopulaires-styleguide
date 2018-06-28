@@ -19,9 +19,9 @@ use Drupal\Core\Menu\MenuLinkTreeInterface;
 class SecondaryNavBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * Contact Service.
+   * Menu tree Service.
    *
-   * @var Contact
+   * @var \Drupal\Core\Menu\MenuLinkTreeInterface
    */
   private $menuTree;
 

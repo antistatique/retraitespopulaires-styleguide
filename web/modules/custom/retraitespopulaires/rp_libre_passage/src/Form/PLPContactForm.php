@@ -4,6 +4,7 @@ namespace Drupal\rp_libre_passage\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 // Injection.
@@ -87,10 +88,11 @@ class PLPContactForm extends FormBase {
       '#required' => FALSE,
     ];
 
-    $status = drupal_get_messages('status');
-    if (!empty($status['status'])) {
+    $status = $this->messenger()->messagesByType(MessengerInterface::TYPE_STATUS);
+    $this->messenger()->deleteByType(MessengerInterface::TYPE_STATUS);
+    if (!empty($status[MessengerInterface::TYPE_STATUS])) {
       $form['status'] = [
-        '#markup' => '<div class="well well-success well-lg"><p>' . $status['status'][0] . '</p></div>',
+        '#markup' => '<div class="well well-success well-lg"><p>' . $status[MessengerInterface::TYPE_STATUS][0] . '</p></div>',
       ];
     }
     if (!empty($this->session->get('errors'))) {

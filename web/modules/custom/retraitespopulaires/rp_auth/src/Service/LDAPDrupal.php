@@ -40,7 +40,7 @@ class LDAPDrupal {
    * @param array $ldap_data
    *   Raw data from LDAP.
    *
-   * @return User|false
+   * @return \Drupal\user\Entity\User|false
    *   The fresh created user on successful or FALSE on error
    */
   public function create(array $ldap_data) {

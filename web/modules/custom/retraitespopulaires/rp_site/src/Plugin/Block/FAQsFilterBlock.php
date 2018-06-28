@@ -9,6 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\rp_site\Service\Profession;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Provides a 'FAQs Filter' Block.
@@ -49,7 +50,7 @@ class FAQsFilterBlock extends BlockBase implements ContainerFactoryPluginInterfa
   /**
    * The request.
    *
-   * @var \Symfony\Component\HttpFoundation\RequestStack
+   * @var \Symfony\Component\HttpFoundation\Request
    */
   private $request;
 

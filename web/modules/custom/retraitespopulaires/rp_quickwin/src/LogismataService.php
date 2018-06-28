@@ -3,12 +3,15 @@
 namespace Drupal\rp_quickwin;
 
 use Drupal\Core\State\StateInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use GuzzleHttp\ClientInterface;
 
 /**
  * Class LogismataService.
  */
 class LogismataService {
+  Use StringTranslationTrait;
+
   /**
    * ClientInterface to send http request.
    *

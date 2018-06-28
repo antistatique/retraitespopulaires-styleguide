@@ -4,6 +4,7 @@ namespace Drupal\rp_contact\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
@@ -102,10 +103,11 @@ class LoanIncreaseForm extends FormBase {
       'library' => ['rp_contact/contact_loan_increase_form'],
     ];
 
-    $status = drupal_get_messages('status');
-    if (!empty($status['status'])) {
+    $status = $this->messenger()->messagesByType(MessengerInterface::TYPE_STATUS);
+    $this->messenger()->deleteByType(MessengerInterface::TYPE_STATUS);
+    if (!empty($status[MessengerInterface::TYPE_STATUS])) {
       $form['status'] = [
-        '#markup' => '<div class="well well-success well-lg"><p class="m-b-0">' . $status['status'][0] . '</p></div>',
+        '#markup' => '<div class="well well-success well-lg"><p class="m-b-0">' . $status[MessengerInterface::TYPE_STATUS][0] . '</p></div>',
       ];
     }
     if (!empty($this->session->get('errors'))) {
@@ -455,7 +457,7 @@ class LoanIncreaseForm extends FormBase {
       '#suffix'     => '</div>',
     ];
 
-    $form['files']['file_certificat'] = [
+    $form['files']['file_certificate'] = [
       '#type'       => 'file',
       '#attributes' => ['title' => $this->t('Choisissez votre fichier'), 'label' => $this->t('Certificat de salaire')],
       '#prefix'     => '<div class="form-group form-file">',
@@ -598,10 +600,7 @@ class LoanIncreaseForm extends FormBase {
     // TODO Found better solution to inline errors than hack session to.
     if (empty($this->session->get('errors'))) {
 
-      $file_estimate   = $this->getRequest()->files->get("files[file_estimate]", NULL, TRUE);
-      $file_certificat = $this->getRequest()->files->get("files[file_certificat]", NULL, TRUE);
-      $file_tax        = $this->getRequest()->files->get("files[file_tax]", NULL, TRUE);
-      $file_other      = $this->getRequest()->files->get("files[file_other]", NULL, TRUE);
+      $files = $this->getRequest()->files->get("files", []);
 
       $rate = $this->entityRate->load($form_state->getValue('rate'));
       $data = [
@@ -622,10 +621,10 @@ class LoanIncreaseForm extends FormBase {
         'amount'           => $form_state->getValue('amount'),
         'purpose'          => $form_state->getValue('purpose'),
         'remarque'         => $form_state->getValue('remarque'),
-        'file_estimate'    => $file_estimate,
-        'file_certificat'  => $file_certificat,
-        'file_tax'         => $file_tax,
-        'file_other'       => $file_other,
+        'file_estimate'    => $files['file_estimate'],
+        'file_certificate' => $files['file_certificate'],
+        'file_tax'         => $files['file_tax'],
+        'file_other'       => $files['file_other'],
       ];
 
       // Send to admin.

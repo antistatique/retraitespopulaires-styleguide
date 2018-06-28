@@ -56,7 +56,6 @@ class NewsTeaserBlock extends BlockBase implements ContainerFactoryPluginInterfa
    * {@inheritdoc}
    */
   public function build($params = []) {
-    $variables = [];
     $variables = $params;
     $variables['cover'] = $this->cover->fromNode($params['news'], ['image' => 'rp_image_700_350']);
 

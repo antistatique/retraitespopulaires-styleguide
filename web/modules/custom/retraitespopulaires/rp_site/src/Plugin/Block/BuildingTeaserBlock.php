@@ -56,7 +56,6 @@ class BuildingTeaserBlock extends BlockBase implements ContainerFactoryPluginInt
    * {@inheritdoc}
    */
   public function build($params = []) {
-    $variables = [];
     $variables = $params;
     $variables['cover'] = $this->cover->fromNode($params['building'], ['image' => 'rp_image_700_350']);
 

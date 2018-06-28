@@ -57,7 +57,6 @@ class ContactTeaserDetailBlock extends BlockBase implements ContainerFactoryPlug
    * {@inheritdoc}
    */
   public function build($params = []) {
-    $variables = [];
     $variables = $params;
 
     $variables['cover'] = $this->cover->fromNode($params['contact'], ['xl' => 'rp_teaser_contact_xl']);

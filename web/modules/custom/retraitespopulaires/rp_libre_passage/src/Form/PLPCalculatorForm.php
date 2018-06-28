@@ -4,6 +4,7 @@ namespace Drupal\rp_libre_passage\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\template_whisperer\TemplateWhispererManager;
 use Drupal\template_whisperer\TemplateWhispererSuggestionUsage;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -113,10 +114,10 @@ class PLPCalculatorForm extends FormBase {
       'library' => ['rp_libre_passage/plp_calculator'],
     ];
 
-    $status = drupal_get_messages('status', FALSE);
-    if (!empty($status['status'])) {
+    $status = $this->messenger()->messagesByType(MessengerInterface::TYPE_STATUS);
+    if (!empty($status[MessengerInterface::TYPE_STATUS])) {
       $form['status'] = [
-        '#markup' => '<div class="well well-success well-lg"><p>' . $status['status'][0] . '</p></div>',
+        '#markup' => '<div class="well well-success well-lg"><p>' . $status[MessengerInterface::TYPE_STATUS][0] . '</p></div>',
       ];
     }
     if (!empty($this->session->get('errors'))) {

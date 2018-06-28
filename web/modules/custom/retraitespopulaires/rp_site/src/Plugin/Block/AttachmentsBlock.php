@@ -92,7 +92,7 @@ class AttachmentsBlock extends BlockBase implements ContainerFactoryPluginInterf
 
     if (isset($params['theme']) & !empty($params['theme'])) {
       $variables['theme'] = $params['theme'];
-      $theme_tid = $this->profession->theme_by_name($params['theme']);
+      $theme_tid = $this->profession->themeByName($params['theme']);
     }
 
     $node = $this->route->getParameter('node');

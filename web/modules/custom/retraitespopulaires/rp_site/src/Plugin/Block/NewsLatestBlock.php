@@ -110,6 +110,7 @@ class NewsLatestBlock extends BlockBase implements ContainerFactoryPluginInterfa
       $variables['news'] = $this->entityNode->loadMultiple($nids);
 
       $variables['title'] = $this->t('Actualités du métier');
+      $variables['alias'] = $alias;
     }
 
     // Fallback to retrieve news.

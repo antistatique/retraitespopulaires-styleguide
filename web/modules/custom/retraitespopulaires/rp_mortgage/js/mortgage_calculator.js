@@ -2,7 +2,7 @@
 
   // on domReady
   $(function() {
-    var $mortgageForm = $('.js-mortgage-calculator');
+    let $mortgageForm = $('.js-mortgage-calculator');
 
     // Form not found, skip everything
     if (!$mortgageForm.length) {
@@ -10,7 +10,7 @@
     }
 
 
-    var $amountInput = $('.js-amount-input'),
+    let $amountInput = $('.js-amount-input'),
       $amountWithFeeInput = $('.js-amount-with-fee-input'),
       $minimalIncomeForAmountInput = $('.js-minimal-income-for-amount'),
       $minimalEquityCapitalForAmount = $('.js-minimal-equity-capital-for-amount'),
@@ -25,23 +25,23 @@
       ;
 
     $amountInput.bind('keyup change', function (e) {
-      var amount = parseFloat($(this).autoNumeric('get'));
+      let amount = parseFloat($(this).autoNumeric('get'));
       updateAmountInputs(amount);
     });
 
     $equityCapitalInput.bind('keyup change', function(e) {
-      var equityCapital = parseFloat($(this).autoNumeric('get'));
+      let equityCapital = parseFloat($(this).autoNumeric('get'));
       updateEquityCapitalInputs(equityCapital);
     });
 
     $incomeInput.bind('keyup change', function(e) {
-      var income = parseFloat($(this).autoNumeric('get'));
+      let income = parseFloat($(this).autoNumeric('get'));
       updateIncomeInputs(income);
     });
 
     $rateSelect.bind('change', function (e) {
-      var firstRate = parseFloat($(this).val());
-      var secondRate = parseFloat($(this).find(':selected').data('second-rate'));
+      let firstRate = parseFloat($(this).val());
+      let secondRate = parseFloat($(this).find(':selected').data('second-rate'));
 
       updateRateInputs(firstRate, secondRate);
     });
@@ -59,7 +59,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
     /// functions
     function updateAmountInputs(amount) {
-      var amountWithFee = null,
+      let amountWithFee = null,
         minimalIncome = null,
         minimalEquityCapital = null;
 
@@ -83,7 +83,7 @@
     }
 
     function updateEquityCapitalInputs(equityCapital) {
-      var maxAmount = null,
+      let maxAmount = null,
         minIncome = null;
 
       if (!isNaN(equityCapital)) {
@@ -104,7 +104,7 @@
     }
 
     function updateIncomeInputs(income) {
-      var maxAmount = null,
+      let maxAmount = null,
         minEquityCapital = null;
 
       if (!isNaN(income)) {
@@ -128,11 +128,11 @@
     }
 
     function updateResults() {
-      var amount = parseFloat($amountInput.autoNumeric('get'));
-      var equityCapital = parseFloat($equityCapitalInput.autoNumeric('get'));
-      var income = parseFloat($incomeInput.autoNumeric('get'));
-      var firstRate = parseFloat($rateInput.autoNumeric('get'));
-      var secondRate = parseFloat($rateSelect.find(':selected').data('second-rate'));
+      let amount = parseFloat($amountInput.autoNumeric('get'));
+      let equityCapital = parseFloat($equityCapitalInput.autoNumeric('get'));
+      let income = parseFloat($incomeInput.autoNumeric('get'));
+      let firstRate = parseFloat($rateInput.autoNumeric('get'));
+      let secondRate = parseFloat($rateSelect.find(':selected').data('second-rate'));
 
       if (!amount || isNaN(amount) || !equityCapital || isNaN(equityCapital) || !income || isNaN(income)) {
         resetResult();
@@ -142,20 +142,20 @@
       // display the results
       $('.js-mortgage-results').removeClass('hidden');
 
-      var amountWithFee = getPrixAchatAvecFraisNotaire(amount, MORTGAGE_SETTINGS.notaryRateFee);
+      let amountWithFee = getPrixAchatAvecFraisNotaire(amount, MORTGAGE_SETTINGS.notaryRateFee);
 
-      var firstLoan = getPretEnPremierRang(amount, amountWithFee, equityCapital, MORTGAGE_SETTINGS.firstRateMax);
-      var secondLoan = getPretEnDeuxiemeRang(amount, amountWithFee, equityCapital, firstLoan, MORTGAGE_SETTINGS.advanceRateMax);
-      var totalLoan = getFinancementHypothecaire(firstLoan, secondLoan);
-      var firstInterestLoan = getInteretsEnPremierRang(firstLoan, firstRate/100.0);
-      var secondInterestLoan = getInteretsEnDeuxiemeRang(secondLoan, secondRate/100.0);
-      var firstAmortisation = getAmortissementEnPremierRang(firstLoan, MORTGAGE_SETTINGS.amortisationFirstRate);
-      var secondAmortisation = getAmortissementEnDeuxiemeRang(secondLoan, MORTGAGE_SETTINGS.amortistationSecondRate);
-      var maintenanceFee = MORTGAGE_SETTINGS.maintenanceFees;
-      var monthlyLivingCost = getChargeMensuelle(firstInterestLoan, secondInterestLoan, firstAmortisation, secondAmortisation, maintenanceFee);
-      var yearlyLivingCost = getChargeAnnuelle(firstInterestLoan, secondInterestLoan, firstAmortisation, secondAmortisation, maintenanceFee);
+      let firstLoan = getPretEnPremierRang(amount, amountWithFee, equityCapital, MORTGAGE_SETTINGS.firstRateMax);
+      let secondLoan = getPretEnDeuxiemeRang(amount, amountWithFee, equityCapital, firstLoan, MORTGAGE_SETTINGS.advanceRateMax);
+      let totalLoan = getFinancementHypothecaire(firstLoan, secondLoan);
+      let firstInterestLoan = getInteretsEnPremierRang(firstLoan, firstRate/100.0);
+      let secondInterestLoan = getInteretsEnDeuxiemeRang(secondLoan, secondRate/100.0);
+      let firstAmortisation = getAmortissementEnPremierRang(firstLoan, MORTGAGE_SETTINGS.amortisationFirstRate);
+      let secondAmortisation = getAmortissementEnDeuxiemeRang(secondLoan, MORTGAGE_SETTINGS.amortistationSecondRate);
+      let maintenanceFee = MORTGAGE_SETTINGS.maintenanceFees;
+      let monthlyLivingCost = getChargeMensuelle(firstInterestLoan, secondInterestLoan, firstAmortisation, secondAmortisation, maintenanceFee);
+      let yearlyLivingCost = getChargeAnnuelle(firstInterestLoan, secondInterestLoan, firstAmortisation, secondAmortisation, maintenanceFee);
 
-      var deptRate = getTauxEndettement(totalLoan, amount, 100);
+      let deptRate = getTauxEndettement(totalLoan, amount, 100);
       if (deptRate > 100) {
         deptRate = 100;
       }
@@ -163,9 +163,9 @@
         deptRate = 0;
       }
 
-      var deptRateOK = deptRate <= MORTGAGE_SETTINGS.advanceRateMax*100;
+      let deptRateOK = deptRate <= MORTGAGE_SETTINGS.advanceRateMax*100;
 
-      var costRatio = getRapportChargesRevenus(
+      let costRatio = getRapportChargesRevenus(
         firstLoan,
         MORTGAGE_SETTINGS.theoricalCostFirstRate,
         secondLoan,
@@ -182,7 +182,7 @@
         costRatio = 0;
       }
 
-      var costRatioOK = costRatio <= MORTGAGE_SETTINGS.maxCost*100;
+      let costRatioOK = costRatio <= MORTGAGE_SETTINGS.maxCost*100;
 
       $firstLoan = $('.js-first-loan');
       $secondLoan = $('.js-second-loan');
@@ -260,7 +260,7 @@
   }
 
   Number.prototype.formatMoney = function (c, d, t) {
-    var n = this,
+    let n = this,
     c = isNaN(c = Math.abs(c)) ? 2 : c,
     d = d === undefined ? '.' : d,
     t = t === undefined ? ',' : t,

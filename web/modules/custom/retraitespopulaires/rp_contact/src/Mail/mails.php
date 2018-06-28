@@ -257,12 +257,12 @@ function rp_contact_mail($key, &$message, $params) {
       $message['body'][] = Markup::create(t('E-mail: @email', ['@email' => $params['email']]) . '<br />');
       $message['body'][] = Markup::create(t('Numéro de téléphone: @phone', ['@phone' => $params['phone']]) . '<br />');
 
-      // Managing Attachments using SwiftMailler module.
+      // Managing Attachments using SwiftMailer module.
       $attachments = [];
 
       // Attache the file URI.
       if (isset($params['file_estimate']) and !empty($params['file_estimate'])) {
-        // Prepare the file to be attached with SwiftMailler.
+        // Prepare the file to be attached with SwiftMailer.
         $attachments[] = (object) [
           'uri'      => $params['file_estimate']->getRealPath(),
           'filename' => 'Devis (en cas de travaux) - ' . $params['file_estimate']->getClientOriginalName(),
@@ -270,18 +270,18 @@ function rp_contact_mail($key, &$message, $params) {
         ];
       }
       // Attache the file URI.
-      if (isset($params['file_certificat']) and !empty($params['file_certificat'])) {
-        // Prepare the file to be attached with SwiftMailler.
+      if (isset($params['file_certificate']) and !empty($params['file_certificate'])) {
+        // Prepare the file to be attached with SwiftMailer.
         $attachments[] = (object) [
-          'uri'      => $params['file_certificat']->getRealPath(),
-          'filename' => 'Certificat de salaire - ' . $params['file_certificat']->getClientOriginalName(),
-          'filemime' => $params['file_certificat']->getMimeType(),
+          'uri'      => $params['file_certificate']->getRealPath(),
+          'filename' => 'Certificat de salaire - ' . $params['file_certificate']->getClientOriginalName(),
+          'filemime' => $params['file_certificate']->getMimeType(),
         ];
       }
 
       // Attache the file URI.
       if (isset($params['file_tax']) and !empty($params['file_tax'])) {
-        // Prepare the file to be attached with SwiftMailler.
+        // Prepare the file to be attached with SwiftMailer.
         $attachments[] = (object) [
           'uri'      => $params['file_tax']->getRealPath(),
           'filename' => 'Dernière déclaration fiscale - ' . $params['file_tax']->getClientOriginalName(),
@@ -290,14 +290,14 @@ function rp_contact_mail($key, &$message, $params) {
       }
       // Attache the file URI.
       if (isset($params['file_other']) and !empty($params['file_other'])) {
-        // Prepare the file to be attached with SwiftMailler.
+        // Prepare the file to be attached with SwiftMailer.
         $attachments[] = (object) [
           'uri'      => $params['file_other']->getRealPath(),
           'filename' => 'Autre - ' . $params['file_other']->getClientOriginalName(),
           'filemime' => $params['file_other']->getMimeType(),
         ];
       }
-      // Attachements on [files] with SwiftMailler.
+      // Attachments on [files] with SwiftMailer.
       $message['params']['files'] = $attachments;
       break;
 

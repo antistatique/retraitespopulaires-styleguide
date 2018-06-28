@@ -4,6 +4,7 @@ namespace Drupal\rp_contact\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
@@ -102,10 +103,11 @@ class ConversionForm extends FormBase {
       'library' => ['rp_contact/contact_conversion_form'],
     ];
 
-    $status = drupal_get_messages('status');
-    if (!empty($status['status'])) {
+    $status = $this->messenger()->messagesByType(MessengerInterface::TYPE_STATUS);
+    $this->messenger()->deleteByType(MessengerInterface::TYPE_STATUS);
+    if (!empty($status[MessengerInterface::TYPE_STATUS])) {
       $form['status'] = [
-        '#markup' => '<div class="well well-success well-lg"><p class="m-b-0">' . $status['status'][0] . '</p></div>',
+        '#markup' => '<div class="well well-success well-lg"><p class="m-b-0">' . $status[MessengerInterface::TYPE_STATUS][0] . '</p></div>',
       ];
     }
     if (!empty($this->session->get('errors'))) {

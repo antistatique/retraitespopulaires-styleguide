@@ -38,6 +38,7 @@ class PLPInterestRate {
 
     // Fetch the result.
     $id = reset($id);
+    /** @var \Drupal\rp_libre_passage\Entity\PLPInterestRate $rate */
     $rate = $this->entityInterestRate->load($id);
 
     if (!$rate) {
@@ -45,9 +46,9 @@ class PLPInterestRate {
     }
 
     return [
-      'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-' . $rate->start_year->value . ' 00:00:00'),
-      'end' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-' . $rate->end_year->value . ' 00:00:00'),
-      'rate' => $rate->rate->value,
+      'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-' . $rate->getStartYear()->value . ' 00:00:00'),
+      'end' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-' . $rate->getEndYear()->value . ' 00:00:00'),
+      'rate' => $rate->getRate()->value,
     ];
   }
 

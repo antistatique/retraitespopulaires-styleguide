@@ -12,7 +12,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
 
 // Injection.
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\Core\Session\AccountProxyInterface;
 
@@ -47,9 +46,8 @@ class TermEditBlock extends BlockBase implements ContainerFactoryPluginInterface
   /**
    * Class constructor.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity, CurrentRouteMatch $route, AccountProxyInterface $currentUser) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route, AccountProxyInterface $currentUser) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->entity_node = $entity->getStorage('node');
     $this->route       = $route;
     $this->currentUser = $currentUser;
   }
@@ -65,7 +63,6 @@ class TermEditBlock extends BlockBase implements ContainerFactoryPluginInterface
         $plugin_id,
         $plugin_definition,
         // Load customs services used in this class.
-        $container->get('entity_type.manager'),
         $container->get('current_route_match'),
         $container->get('current_user')
     );

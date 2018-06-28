@@ -44,7 +44,6 @@ class ResponsiveTablesFilter extends FilterBase {
       $new_libxml = version_compare(PHP_VERSION, '5.4', '>=') && defined('LIBXML_HTML_NOIMPLIED') && defined('LIBXML_HTML_NODEFDTD');
     }
     if ($text != '') {
-      $tables = [];
       libxml_use_internal_errors(TRUE);
       // LibXML requires that the html is wrapped in a root node.
       $text = '<root>' . $text . '</root>';

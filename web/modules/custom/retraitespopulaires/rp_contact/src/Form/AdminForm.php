@@ -8,8 +8,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\Render\MetadataBubblingUrlGenerator;
-use Drupal\file\FileUsage\FileUsageInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Admin form class.
@@ -31,29 +29,11 @@ class AdminForm extends FormBase {
   protected $url;
 
   /**
-   * Defines the database file usage backend.
-   *
-   * This is the default Drupal backend.
-   *
-   * @var \Drupal\file\Entity\FileUsageInterface
-   */
-  protected $fileUsage;
-
-  /**
-   * Node entity storage.
-   *
-   * @var \Drupal\Core\Entity\EntityStorageInterface
-   */
-  private $entityNode;
-
-  /**
    * Class constructor.
    */
-  public function __construct(StateInterface $state, MetadataBubblingUrlGenerator $url, FileUsageInterface $file_usage, EntityTypeManagerInterface $entity) {
-    $this->state      = $state;
-    $this->url        = $url;
-    $this->fileUsage  = $file_usage;
-    $this->entityNode = $entity->getStorage('node');
+  public function __construct(StateInterface $state, MetadataBubblingUrlGenerator $url) {
+    $this->state = $state;
+    $this->url   = $url;
   }
 
   /**
@@ -64,9 +44,7 @@ class AdminForm extends FormBase {
     return new static(
     // Load the service required to construct this class.
     $container->get('state'),
-    $container->get('url_generator'),
-    $container->get('file.usage'),
-    $container->get('entity_type.manager')
+    $container->get('url_generator')
     );
   }
 

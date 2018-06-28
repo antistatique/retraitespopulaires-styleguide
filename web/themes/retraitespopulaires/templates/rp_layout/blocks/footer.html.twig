@@ -71,25 +71,25 @@
           <!-- Lausanne -->
           <div class="col-xs-12 col-sm-6 col-md-4 m-b-1">
             <h4 class="text-muted m-t-0 text-secondary">{% trans %}Lausanne{% endtrans %}</h4>
-            {% set tel = variables.contact.phone_lausanne|replace({' ': ''}) %}
-            <a href="tel:{{ tel }}" class=" text-no-wrap">{{ variables.contact.phone_lausanne }}</a><br>
+            {% set tel = variables.contact.phoneLausanne|replace({' ': ''}) %}
+            <a href="tel:{{ tel }}" class=" text-no-wrap">{{ variables.contact.phoneLausanne }}</a><br>
             <a href="mailto:{{ variables.contact.email }}" class="">{{ variables.contact.email }}</a>
           </div>
 
           <!-- Yverdon-les-Bains -->
           <div class="col-xs-12 col-sm-6 col-md-4 m-b-1">
             <h4 class="text-muted m-t-0 text-secondary">{% trans %}Yverdon-les-Bains{% endtrans %}</h4>
-            {% set tel = variables.contact.phone_yverdon|replace({' ': ''}) %}
-            <a href="tel:{{ tel }}" class=" text-no-wrap">{{ variables.contact.phone_yverdon }}</a><br>
-            <a href="mailto:{{ variables.contact.email_yverdon }}" class="">{{ variables.contact.email_yverdon }}</a>
+            {% set tel = variables.contact.phoneYverdon|replace({' ': ''}) %}
+            <a href="tel:{{ tel }}" class=" text-no-wrap">{{ variables.contact.phoneYverdon }}</a><br>
+            <a href="mailto:{{ variables.contact.emailYverdon }}" class="">{{ variables.contact.emailYverdon }}</a>
           </div>
 
           <!-- Nyon -->
           <div class="col-xs-12 col-sm-6 col-md-4 m-b-1">
             <h4 class="text-muted m-t-0 text-secondary">{% trans %}Nyon{% endtrans %}</h4>
-            {% set tel = variables.contact.phone_nyon|replace({' ': ''}) %}
-            <a href="tel:{{ tel }}" class=" text-no-wrap">{{ variables.contact.phone_nyon }}</a><br>
-            <a href="mailto:{{ variables.contact.email_nyon }}" class="">{{ variables.contact.email_nyon }}</a>
+            {% set tel = variables.contact.phoneNyon|replace({' ': ''}) %}
+            <a href="tel:{{ tel }}" class=" text-no-wrap">{{ variables.contact.phoneNyon }}</a><br>
+            <a href="mailto:{{ variables.contact.emailNyon }}" class="">{{ variables.contact.emailNyon }}</a>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ namespace Drupal\rp_offers\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\Url;
 use Drupal\template_whisperer\TemplateWhispererManager;
@@ -100,10 +101,11 @@ class RequestForm extends FormBase {
     $form['#cache']['max-age'] = 0;
     $form['#attributes']['novalidate'] = 'novalidate';
 
-    $status = drupal_get_messages('status');
-    if (!empty($status['status'])) {
+    $status = $this->messenger()->messagesByType(MessengerInterface::TYPE_STATUS);
+    $this->messenger()->deleteByType(MessengerInterface::TYPE_STATUS);
+    if (!empty($status[MessengerInterface::TYPE_STATUS])) {
       $form['status'] = [
-        '#markup' => '<div class="well well-success well-lg"><p>' . $status['status'][0] . '</p></div>',
+        '#markup' => '<div class="well well-success well-lg"><p>' . $status[MessengerInterface::TYPE_STATUS][0] . '</p></div>',
       ];
     }
     if (!empty($this->session->get('errors'))) {

@@ -2,6 +2,7 @@
 
 namespace Drupal\rp_offers\Controller;
 
+use DateTime;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\node\Entity\Node;
@@ -159,7 +160,7 @@ class AdminController extends ControllerBase {
         '#plain_text' => $node->field_date_end->date->format('d/m/Y'),
       ];
 
-      $dt = new \DateTime('tomorrow');
+      $dt = new DateTime('tomorrow');
       $output['table'][$i]['remaining']['#plain_text'] = '-';
       $node->field_date_end->date->setTime(23, 59);
       if ($node->field_date_end->date->getTimestamp() >= $dt->getTimestamp()) {
@@ -410,7 +411,7 @@ class AdminController extends ControllerBase {
       }
 
       // Set the draw date on the node.
-      $now = new \DateTime();
+      $now = new DateTime();
       $node->set('field_draw_send_at', $now->format('Y-m-d\Th:i:s'));
       $node->save();
 

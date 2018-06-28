@@ -2,13 +2,13 @@
 
 namespace Drupal\rp_site\Service;
 
-use Drupal\Console\Command\Shared\TranslationTrait;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Profession.
  */
 class Profession {
-  use TranslationTrait;
+  use StringTranslationTrait;
 
   /**
    * Get name of profession.

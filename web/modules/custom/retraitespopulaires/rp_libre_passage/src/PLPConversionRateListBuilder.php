@@ -31,7 +31,7 @@ class PLPConversionRateListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /* @var $entity \Drupal\rp_libre_passage\Entity\PLPInterestRate */
+    /* @var $entity \Drupal\rp_libre_passage\Entity\PLPConversionRate */
 
     // Dont display disabled entities.
     if (!$entity->getStatus()) {
