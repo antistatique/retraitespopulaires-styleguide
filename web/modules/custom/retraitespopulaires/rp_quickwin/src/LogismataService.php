@@ -2,6 +2,8 @@
 
 namespace Drupal\rp_quickwin;
 
+use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use GuzzleHttp\ClientInterface;
@@ -10,7 +12,8 @@ use GuzzleHttp\ClientInterface;
  * Class LogismataService.
  */
 class LogismataService {
-  Use StringTranslationTrait;
+  use StringTranslationTrait;
+  use MessengerTrait;
 
   /**
    * ClientInterface to send http request.
@@ -60,10 +63,10 @@ class LogismataService {
       $response = $this->httpClient->put($this->state->get('rp_quickwin.settings.logismata_url_set_list'), ['json' => $logismata_array]);
       $data = json_decode($response->getBody());
       if ($data->errorCode == 0) {
-        drupal_set_message($this->t('Export Logismata successful'));
+        $this->messenger()->addStatus($this->t('Export Logismata successful'));
       }
       else {
-        drupal_set_message($this->t('Export Logismata successful') . $data->errorCode);
+        $this->messenger()->addError($this->t('Export Logismata error:') . $data->errorCode);
       }
     }
     catch (\Exception $e) {
@@ -87,7 +90,7 @@ class LogismataService {
       }
     }
     catch (\Exception $e) {
-      drupal_set_message($e);
+      $this->messenger()->addError(($e));
       watchdog_exception('rp_quickwin', $e);
       throw $e;
     }

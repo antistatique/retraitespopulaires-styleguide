@@ -230,7 +230,7 @@ class PopinForm extends FormBase {
     $to = str_replace(';', ',', $to);
     $this->mail->mail('rp_contact', 'contact_popin', $to, 'fr', $data);
 
-    drupal_set_message($this->t('Merci de votre demande. Nous allons la traiter rapidement et vous recontacter.'));
+    $this->messenger()->addStatus($this->t('Merci de votre demande. Nous allons la traiter rapidement et vous recontacter.'));
   }
 
   /**

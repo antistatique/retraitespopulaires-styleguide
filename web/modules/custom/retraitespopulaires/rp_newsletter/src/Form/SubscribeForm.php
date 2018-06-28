@@ -105,10 +105,10 @@ class SubscribeForm extends FormBase {
 
     $error = $mailChimp->getLastError();
     if (isset($error) and !empty($error) && $result['title'] != 'Member Exists') {
-      drupal_set_message($this->t("Erreur lors de l'inscription.") . ' - ' . $error, 'error');
+      $this->messenger()->addError($this->t("Erreur lors de l'inscription.") . ' - ' . $error);
     }
     else {
-      drupal_set_message($this->t('Inscription réussie.') . ' - ' . $this->t('Merci de votre inscription à notre newsletter.'));
+      $this->messenger()->addStatus($this->t('Inscription réussie.') . ' - ' . $this->t('Merci de votre inscription à notre newsletter.'));
     }
   }
 

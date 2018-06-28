@@ -465,7 +465,7 @@ class DocumentsForm extends FormBase {
       // Send to client.
       $this->mail->mail('rp_contact', 'feedback_generical', $form_state->getValue('email'), 'fr');
 
-      drupal_set_message($this->t("Merci @firstname @lastname pour votre demande. Nous allons la traiter rapidement et vous recontacter à l'adresse @email.", [
+      $this->messenger()->addStatus($this->t("Merci @firstname @lastname pour votre demande. Nous allons la traiter rapidement et vous recontacter à l'adresse @email.", [
         '@firstname' => $form_state->getValue('firstname'),
         '@lastname'  => $form_state->getValue('lastname'),
         '@email'     => $form_state->getValue('email'),

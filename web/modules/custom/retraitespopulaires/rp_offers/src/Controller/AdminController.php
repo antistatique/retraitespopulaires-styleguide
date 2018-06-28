@@ -388,7 +388,7 @@ class AdminController extends ControllerBase {
       $node->save();
     }
 
-    drupal_set_message($this->t('Tirage au sort terminée, @winners gagnants sélectionnés.', ['@winners' => $tickets]));
+    $this->messenger()->addStatus($this->t('Tirage au sort terminée, @winners gagnants sélectionnés.', ['@winners' => $tickets]));
 
     $response = new RedirectResponse($this->url->generateFromRoute('rp_offers.admin.request', ['node' => $node->nid->value]));
     return $response;
@@ -415,7 +415,7 @@ class AdminController extends ControllerBase {
       $node->set('field_draw_send_at', $now->format('Y-m-d\Th:i:s'));
       $node->save();
 
-      drupal_set_message($this->t('Envoie aux gagnants du tirage au sort terminée, @winners gagnants sélectionnés.', ['@winners' => count($ids)]));
+      $this->messenger()->addStatus($this->t('Envoie aux gagnants du tirage au sort terminée, @winners gagnants sélectionnés.', ['@winners' => count($ids)]));
     }
 
     $response = new RedirectResponse($this->url->generateFromRoute('rp_offers.admin.request', ['node' => $node->nid->value]));

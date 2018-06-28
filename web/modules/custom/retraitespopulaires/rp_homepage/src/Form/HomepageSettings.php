@@ -185,7 +185,7 @@ class HomepageSettings extends FormBase {
 
     $this->cacheTagsInvalidator->invalidateTags(['front']);
 
-    drupal_set_message($this->t('Configuration de la home mise à jour'));
+    $this->messenger()->addStatus($this->t('Configuration de la home mise à jour'));
   }
 
   /**

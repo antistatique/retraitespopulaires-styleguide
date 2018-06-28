@@ -377,10 +377,10 @@ class RequestForm extends FormBase {
 
       if (!empty($entities)) {
         $url = Url::fromRoute('entity.node.canonical', ['node' => $entities[0]->id]);
-        drupal_set_message($this->t('Merci de votre participation, <a href="@url-back">retour aux offres</a>.', ['@url-back' => $url->toString()]));
+        $this->messenger()->addStatus($this->t('Merci de votre participation, <a href="@url-back">retour aux offres</a>.', ['@url-back' => $url->toString()]));
       }
       else {
-        drupal_set_message($this->t('Merci de votre participation.'));
+        $this->messenger()->addStatus($this->t('Merci de votre participation.'));
       }
 
       $form_state->setRedirect('entity.node.canonical', ['node' => $form_state->getValue('node')]);

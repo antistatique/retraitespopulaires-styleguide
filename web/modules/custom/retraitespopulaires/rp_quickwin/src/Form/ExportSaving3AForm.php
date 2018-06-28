@@ -104,7 +104,7 @@ class ExportSaving3AForm extends ConfirmFormBase {
     /** @var \Drupal\rp_quickwin\Entity\Saving3ARateInterface[] $rates */
     $rates = $this->quickwinSaving3ARateStorage->loadMultiple();
     if (empty($rates)) {
-      drupal_set_message($this->t('There is no entity to export'));
+      $this->messenger()->addStatus($this->t('There is no entity to export'));
       return;
     }
 

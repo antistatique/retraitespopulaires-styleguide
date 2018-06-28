@@ -88,7 +88,7 @@ class RoleSettingsForm extends FormBase {
     $is_bind = $this->ldap->auth($settings_rp_ldap['service_account']['username'], $settings_rp_ldap['service_account']['pass']);
 
     if (!$is_bind) {
-      drupal_set_message($this->ldap->getLastException(), 'error');
+      $this->messenger()->addError($this->ldap->getLastException());
       return $form;
     }
 
@@ -98,7 +98,7 @@ class RoleSettingsForm extends FormBase {
         $ldap_groups_data = $this->ldap->search('cn', $pattern, $settings_rp_ldap['groups'], '*');
       }
       catch (\Exception $e) {
-        drupal_set_message($e->getMessage(), 'error');
+        $this->messenger()->addError($e->getMessage());
         continue;
       }
 

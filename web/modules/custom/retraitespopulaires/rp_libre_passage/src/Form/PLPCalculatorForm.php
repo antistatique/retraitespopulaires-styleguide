@@ -481,7 +481,7 @@ class PLPCalculatorForm extends FormBase {
         }
       }
       catch (\Exception $e) {
-        drupal_set_message($this->t('An error occurred and processing did not complete.'), 'error');
+        $this->messenger()->addError($this->t('An error occurred and processing did not complete.'));
       }
     }
   }
