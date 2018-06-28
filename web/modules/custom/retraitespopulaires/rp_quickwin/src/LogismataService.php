@@ -2,7 +2,6 @@
 
 namespace Drupal\rp_quickwin;
 
-use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
