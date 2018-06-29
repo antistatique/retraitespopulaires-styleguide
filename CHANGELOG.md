@@ -1,6 +1,14 @@
 CHANGELOG
 ---------
 
+## NEXT NEXT RELEASE
+ - remove this module from removed dir
+   - kint
+   - menu_breadcrumb
+   - rp_modulo
+   - twig_extender
+   - rp_exchange_rates
+
 ## NEXT RELEASE
  - add & configure Template Whisperer module
  - migrate dynamic page templating using Template Whisperer instead of Config/State.
@@ -11,6 +19,8 @@ CHANGELOG
  - remove quickwin css to move in styleguide
  - update Drupal core to 8.5
  - correct all phpcs error
+ - remove deprecated usage
+ - remove rp_exchange_rates module that have no file
 
 ## 2.4.2 (2018-06-06)
  - add Bamboo Twig integration
