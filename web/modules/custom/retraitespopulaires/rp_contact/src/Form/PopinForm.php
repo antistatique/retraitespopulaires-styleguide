@@ -183,8 +183,6 @@ class PopinForm extends FormBase {
     // Update the popin loader.
     $response->addCommand(new InvokeCommand('#block-popinformblock .popin', 'loading'));
 
-    $this->submitForm($form, $form_state);
-
     $this->setAjaxMessages($response);
 
     // Update the popin title & close the popin.
