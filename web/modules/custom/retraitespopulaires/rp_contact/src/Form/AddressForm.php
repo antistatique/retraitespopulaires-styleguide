@@ -5,6 +5,7 @@ namespace Drupal\rp_contact\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Render\Element\Checkboxes;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
@@ -495,7 +496,7 @@ class AddressForm extends FormBase {
         'lastname'          => $form_state->getValue('lastname'),
         'birthdate'         => $form_state->getValue('birthdate'),
         'client'            => $form_state->getValue('client'),
-        'client_of'         => $form_state->getValue('client_of'),
+        'client_of'         => Checkboxes::getCheckedCheckboxes($form_state->getValue('client_of')),
         'client_number'     => $form_state->getValue('client_number'),
         'old_email'         => $form_state->getValue('old_email'),
         'old_address'       => $form_state->getValue('old_address'),

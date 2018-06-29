@@ -46,9 +46,9 @@ class PLPInterestRate {
     }
 
     return [
-      'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-' . $rate->getStartYear()->value . ' 00:00:00'),
-      'end' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-' . $rate->getEndYear()->value . ' 00:00:00'),
-      'rate' => $rate->getRate()->value,
+      'start' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-' . $rate->getStartYear() . ' 00:00:00'),
+      'end' => DateTime::createFromFormat('m-d-Y h:i:s', '01-01-' . $rate->getEndYear() . ' 00:00:00'),
+      'rate' => $rate->getRate(),
     ];
   }
 

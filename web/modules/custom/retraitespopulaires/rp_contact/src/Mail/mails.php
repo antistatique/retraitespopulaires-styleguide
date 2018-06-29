@@ -119,7 +119,7 @@ function rp_contact_mail($key, &$message, $params) {
       if ($params['client_of']) {
         $message['body'][] = Markup::create(t('Domaine(s) chez Retraites Populaires: @client_of', ['@client_of' => implode(', ', $params['client_of'])]) . '<br />');
       }
-      $message['body'][] = Markup::create(t('Référence ou numéro de client: @client_number', ['client_number' => $params['client_number']]) . '<br />');
+      $message['body'][] = Markup::create(t('Référence ou numéro de client: @client_number', ['@client_number' => $params['client_number']]) . '<br />');
 
       // Old address.
       $message['body'][] = Markup::create('<br /><br />');
@@ -131,7 +131,7 @@ function rp_contact_mail($key, &$message, $params) {
       $message['body'][] = Markup::create(t('Ancienne localité: @old_city', ['@old_city' => $params['old_city']]) . '<br />');
       $message['body'][] = Markup::create(t('Ancien n° de tél. privé: @old_phone_private', ['@old_phone_private' => $params['old_phone_private']]) . '<br />');
       $message['body'][] = Markup::create(t('Ancien n° de tél. professionnel: @old_phone_pro', ['@old_phone_pro' => $params['old_phone_pro']]) . '<br />');
-      $message['body'][] = Markup::create(t('Ancien n° de tél. mobile: @old_phone_mobile', ['old_phone_mobile' => $params['old_phone_mobile']]) . '<br />');
+      $message['body'][] = Markup::create(t('Ancien n° de tél. mobile: @old_phone_mobile', ['@old_phone_mobile' => $params['old_phone_mobile']]) . '<br />');
 
       // New address.
       $message['body'][] = Markup::create('<br /><br />');

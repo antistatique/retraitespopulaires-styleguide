@@ -4,6 +4,5 @@ services:
     class: Drupal\rp_offers\Service\Request
     arguments:
       - '@entity_type.manager'
-      - '@entity.query'
       - '@state'
       - '@plugin.manager.mail'

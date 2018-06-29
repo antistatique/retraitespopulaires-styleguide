@@ -5,6 +5,7 @@ namespace Drupal\rp_contact\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Render\Element\Checkboxes;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
@@ -449,10 +450,10 @@ class DocumentsForm extends FormBase {
         'address'      => $form_state->getValue('address'),
         'zip'          => $form_state->getValue('zip'),
         'city'         => $form_state->getValue('city'),
-        'policies'     => $form_state->getValue('policies'),
-        'attestations' => $form_state->getValue('attestations'),
+        'policies'     => Checkboxes::getCheckedCheckboxes($form_state->getValue('policies')),
+        'attestations' => Checkboxes::getCheckedCheckboxes($form_state->getValue('attestations')),
         'other_year'   => $form_state->getValue('other_year'),
-        'payments'     => $form_state->getValue('payments'),
+        'payments'     => Checkboxes::getCheckedCheckboxes($form_state->getValue('payments')),
         'message'      => $form_state->getValue('message'),
       ];
 
