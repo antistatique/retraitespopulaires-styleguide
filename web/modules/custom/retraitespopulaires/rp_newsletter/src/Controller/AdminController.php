@@ -3,7 +3,6 @@
 namespace Drupal\rp_newsletter\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Form\FormBuilderInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\State\StateInterface;
@@ -26,9 +25,8 @@ class AdminController extends ControllerBase {
   /**
    * Class constructor.
    */
-  public function __construct(StateInterface $state, FormBuilderInterface $formBuilder) {
+  public function __construct(StateInterface $state) {
     $this->state = $state;
-    $this->formBuilder = $formBuilder;
   }
 
   /**
@@ -38,8 +36,7 @@ class AdminController extends ControllerBase {
     // Instantiates this form class.
     return new static(
     // Load the service required to construct this class.
-        $container->get('state'),
-        $container->get('form_builder')
+        $container->get('state')
     );
   }
 
@@ -47,7 +44,7 @@ class AdminController extends ControllerBase {
    * Admin settings for rp_newsletter.
    */
   public function settings() {
-    return $this->formBuilder->getForm('Drupal\rp_newsletter\Form\AdminForm');
+    return $this->formBuilder()->getForm('Drupal\rp_newsletter\Form\AdminForm');
   }
 
   /**

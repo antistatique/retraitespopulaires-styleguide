@@ -65,7 +65,7 @@ class AdminForm extends FormBase {
       '#title' => 'Contact',
     ];
 
-    $link = '<a href="' . $this->url->generateFromRoute('system.site_information_settings') . '">' . $this->t('Configuration') . ' > ' . $this->t('System') . ' > ' . $this->t('Basic site settings') . '</a>';
+    $link = $this->url->generateFromRoute('system.site_information_settings');
     $form['contact']['no_reply'] = [
       '#type'          => 'textfield',
       '#title'         => 'Adresse No-reply',
