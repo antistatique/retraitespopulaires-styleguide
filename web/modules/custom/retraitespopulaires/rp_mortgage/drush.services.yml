@@ -1,0 +1,11 @@
+services:
+  rp_mortgage.import_rates:
+    class: Drupal\rp_mortgage\Command\ImportRateCommand
+    arguments:
+        - '@entity_type.manager'
+        - '@cache_tags.invalidator'
+        - '@module_handler'
+        - '@lock'
+        - '@rp_quickwin.export_rate'
+    tags:
+      - { name: drush.command }

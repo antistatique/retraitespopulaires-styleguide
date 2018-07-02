@@ -4,11 +4,12 @@ namespace Drupal\rp_quickwin\Command;
 
 use Drupal\rp_mortgage\Service\Rate;
 use Drupal\rp_quickwin\LogismataService;
+use Drush\Commands\DrushCommands;
 
 /**
  * Export rate command class.
  */
-class ExportRateCommand {
+class ExportRateCommand extends DrushCommands {
 
   /**
    * To get mortgage rates.
@@ -34,6 +35,11 @@ class ExportRateCommand {
 
   /**
    * Export rates to Logismata.
+   *
+   * @command rp:quickwin:export-rates
+   * @validate-module-enabled rp_mortgage
+   * @validate-module-enabled rp_quickwin
+   * @aliases export-rates
    */
   public function export() {
     // Create the list of mortgage rates.
@@ -58,7 +64,7 @@ class ExportRateCommand {
       'products' => [],
     ];
 
-    drush_print('Get Rates Entity');
+    $this->output()->writeln('Get Rates Entity');
 
     // Get mortgage rate to show in logismata.
     $rates = $this->getCalculatorRates();

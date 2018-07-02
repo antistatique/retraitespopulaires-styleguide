@@ -7,11 +7,13 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 
 use Drupal\Core\Cache\CacheTagsInvalidator;
 use Drupal\Core\Lock\LockBackendInterface;
+use Drupal\rp_quickwin\Command\ExportRateCommand;
+use Drush\Commands\DrushCommands;
 
 /**
  * ImportRateCommand class.
  */
-class ImportRateCommand {
+class ImportRateCommand extends DrushCommands {
   /**
    * EntityStorageInterface to load Nodes.
    *
@@ -41,28 +43,42 @@ class ImportRateCommand {
   private $lock;
 
   /**
+   * Command to export rates to logismata
+   *
+   * @var \Drupal\rp_quickwin\Command\ExportRateCommand
+   */
+  private $exportRateCommand;
+
+  /**
    * Class constructor.
    */
-  public function __construct(EntityTypeManagerInterface $entityTypeManager, CacheTagsInvalidator $cacheTagsInvalidator, ModuleHandlerInterface $moduleHandler, LockBackendInterface $lock) {
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, CacheTagsInvalidator $cacheTagsInvalidator, ModuleHandlerInterface $moduleHandler, LockBackendInterface $lock, ExportRateCommand $exportRateCommand) {
     $this->entityRate = $entityTypeManager->getStorage('rp_mortgage_rate');
     $this->cacheTagsInvalidator = $cacheTagsInvalidator;
     $this->moduleHandler = $moduleHandler;
     $this->lock = $lock;
+    $this->exportRateCommand = $exportRateCommand;
   }
 
   /**
    * Import CSV rates file.
    *
-   * @param string $file
+   * @option file
    *   CSV file.
-   * @param string $institution
-   *   Institution name to filter.
+   * @option institution
+   *   Institution name to filter
+   *
+   * @command rp:mortgage:import_rates
+   * @validate-module-enabled rp_mortgage
+   * @aliases import-rates
    *
    * @throws \Exception
    */
-  public function import($file, $institution) {
+  public function import(array $options = ['file' => '', 'institution' => 'RP']) {
+    $file = $options['file'];
+    $institution = $options['institution'];
     if ($this->lock->acquire('rp_mortgage_import', 3600)) {
-      drush_print('Start Importing from: ' . $file);
+      $this->output()->writeln('Start Importing from: ' . $file);
 
       $callback = function ($chunk) use ($institution) {
         // Read the line as CSV to retrieve all details.
@@ -84,7 +100,7 @@ class ImportRateCommand {
 
         $rate = $this->entityRate->create($data);
         $rate->save();
-        drush_print('Added ' . $values[3]);
+        $this->output()->writeln('Added ' . $values[3]);
       };
 
       $this->deleteAll();
@@ -93,7 +109,7 @@ class ImportRateCommand {
         $success = $this->readFileLineByLine($file, $callback);
       }
       catch (\Exception $e) {
-        drush_print($e->getMessage());
+        $this->output()->writeln($e->getMessage());
         $this->lock->release('rp_mortgage_import');
         return;
       }
@@ -101,15 +117,15 @@ class ImportRateCommand {
       $this->cacheTagsInvalidator->invalidateTags(['rp_mortage_rates']);
 
       if (!$success) {
-        drush_print('Failed on ' . $file);
+        $this->output()->writeln('Failed on ' . $file);
       }
 
       $this->cacheTagsInvalidator->invalidateTags(['rp_mortage_rates']);
-      drush_print('Tags cleaned');
+      $this->output()->writeln('Tags cleaned');
 
       // If rp_quickwin module is enable export new rate to Logismata.
       if ($this->moduleHandler->moduleExists('rp_quickwin')) {
-        drush_rp_quickwin_export_rates_logismata();
+        $this->exportRateCommand->export();
       }
 
       $this->lock->release('rp_mortgage_import');
