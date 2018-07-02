@@ -19,12 +19,12 @@
           {% for category in variables.categories %}
             <li class="{{ category.alias in variables.current_aliases ? 'active' }}">
              {% if category.alias in variables.current_aliases %}
-               <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ variables.theme }}"></a>
+               <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'profession_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked text-{{ variables.theme }}"></a>
              {% else %}
-               <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'taxonomy_term_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked text-{{ variables.theme }}"></a>
+               <a href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'profession_alias': category.alias}) }}" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked text-{{ variables.theme }}"></a>
              {% endif %}
 
-             <a class="pretty-link text-{{ variables.theme }}" href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'taxonomy_term_alias': category.alias}) }}">{{ category.term.name }}</a>
+             <a class="pretty-link text-{{ variables.theme }}" href="{{ path('entity.node.canonical', {'node': suggestions|first.id, 'profession_alias': category.alias}) }}">{{ category.term.name }}</a>
            </li>
           {% endfor %}
         </ul>
