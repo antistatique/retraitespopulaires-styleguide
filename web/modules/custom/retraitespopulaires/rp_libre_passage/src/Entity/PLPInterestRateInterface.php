@@ -12,8 +12,6 @@ use Drupal\Core\Entity\EntityChangedInterface;
  */
 interface PLPInterestRateInterface extends ContentEntityInterface, EntityChangedInterface {
 
-  // Add get/set methods for your configuration properties here.
-
   /**
    * Gets the PLP Interest Rate creation timestamp.
    *
@@ -32,4 +30,5 @@ interface PLPInterestRateInterface extends ContentEntityInterface, EntityChanged
    *   The called PLP Interest Rate entity.
    */
   public function setCreatedTime($timestamp);
+
 }

@@ -1,0 +1,7 @@
+uuid: bc3777dc-9905-4765-913b-fa2b07e3dc5f
+langcode: fr
+status: true
+dependencies: {  }
+id: mortgage_calculator
+name: 'Mortgage Calculator'
+suggestion: mortgage_calculator

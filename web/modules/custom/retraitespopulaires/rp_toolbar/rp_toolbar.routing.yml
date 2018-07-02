@@ -5,4 +5,4 @@ rp_toolbar.admin:
         _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
         _title: 'Retraites Populaires'
     requirements:
-        _permission: 'access administration pages'
+        _permission: 'administer site configuration'

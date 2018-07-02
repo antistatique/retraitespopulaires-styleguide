@@ -20,19 +20,22 @@ use Symfony\Component\HttpFoundation\Request;
 class CalculatorBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * To communicate with Logismata
-   * @var LogismataService
+   * To communicate with Logismata.
+   *
+   * @var \Drupal\rp_quickwin\LogismataService
    */
   private $logismataService;
 
   /**
-   * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-   * @var StateInterface
+   * The state key value store.
+   *
+   * @var \Drupal\Core\State\StateInterface
    */
   private $state;
 
   /**
-   * To get GET parameters
+   * To get GET parameters.
+   *
    * @var \Symfony\Component\HttpFoundation\Request
    */
   private $request;
@@ -46,6 +49,7 @@ class CalculatorBlock extends BlockBase implements ContainerFactoryPluginInterfa
     $this->state = $state;
     $this->request = $request;
   }
+
   /**
    * {@inheritdoc}
    */
@@ -63,38 +67,42 @@ class CalculatorBlock extends BlockBase implements ContainerFactoryPluginInterfa
     );
   }
 
-  public function build($params = array()) {
-    // Get parameters
+  /**
+   * {@inheritdoc}
+   */
+  public function build($params = []) {
+    // Get parameters.
     $parameters = $this->request->query->all();
 
-    // Add default parameter
+    // Add default parameter.
     $parameters += [
-      'language' => t('fr'),
+      'language' => $this->t('fr'),
 
-      // TODO: Add this with a better way
+      // TODO: Add this with a better way.
       'zipAndLocation' => 'lausanne',
     ];
 
-    // Get the token
+    // Get the token.
     try {
       $parameters['calculatorservicetoken'] = $this->logismataService->getToken();
-    } catch (\Exception $e) {
+    }
+    catch (\Exception $e) {
     }
 
-    // Create the link
-    $variables['link'] = $this->state->get('rp_quickwin.settings.logismata_url'). $params['node']->field_url_logismata->value;
+    // Create the link.
+    $variables['link'] = $this->state->get('rp_quickwin.settings.logismata_url') . $params['node']->field_url_logismata->value;
 
     if (!empty($parameters)) {
       $variables['link'] .= '?' . http_build_query($parameters);
     }
 
-    // Call block for calculator
+    // Call block for calculator.
     return [
       '#theme'     => 'rp_quickwin_calculator_block',
       '#variables' => $variables,
-      # 12 hours of cache
-      '#cache'     => [ 'max-age' => 43200 ],
-      '#attached'  => [ 'library' =>  [ 'rp_quickwin/iframe' ], ],
+      // 12 hours of cache.
+      '#cache'     => ['max-age' => 43200],
+      '#attached'  => ['library' => ['rp_quickwin/iframe']],
     ];
   }
 

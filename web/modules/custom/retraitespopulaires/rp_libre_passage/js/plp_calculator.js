@@ -3,26 +3,26 @@
 
   // on domReady
   $(function () {
-    var $PLPCalculatorForm = $('#rp-libre-passage-plp-calculator-form');
+    let $PLPCalculatorForm = $('#rp-libre-passage-plp-calculator-form');
 
     // Form not found, skip everything
-    if (!$PLPCalculatorForm.size()) {
+    if (!$PLPCalculatorForm.length) {
       return;
     }
 
     // /////////////////////////////////////////////////////////////////////////////////////
     // vars
 
-    var $civilStateInput = $('#edit-civil-state');
-    var $civilStatusInputs = $('#edit-civil-status input');
-    var $percentInput = $('#edit-percent');
-    var $ageInput = $('#edit-age');
+    let $civilStateInput = $('#edit-civil-state');
+    let $civilStatusInputs = $('#edit-civil-status input');
+    let $percentInput = $('#edit-percent');
+    let $ageInput = $('#edit-age');
 
     // /////////////////////////////////////////////////////////////////////////////////////
     // binding
 
     $civilStatusInputs.bind('change', function (e) {
-      var $this = $(this);
+      let $this = $(this);
       console.log($this);
 
       switch ($this.val()) {
@@ -39,14 +39,14 @@
       }
     });
     $civilStatusInputs.each(function() {
-      var $this = $(this);
+      let $this = $(this);
       if ($this.is(':checked')) {
         $this.change();
       }
     });
 
     $civilStateInput.bind('change', function (e) {
-      var $this = $(this);
+      let $this = $(this);
 
       // Remove all item of ageInput
       $ageInput.find('option').remove();
@@ -54,7 +54,7 @@
       $ageInput.removeAttr('disabled');
       $ageInput.parents('.form-group').removeClass('readonly');
 
-      var data = [];
+      let data = [];
       switch ($this.val()) {
         // Set according avaialble age
         case 'woman':
@@ -71,8 +71,8 @@
       }
 
       // Add elements to select
-      for (var key in data) {
-        var obj = data[key];
+      for (let key in data) {
+        let obj = data[key];
         $ageInput.append($('<option></option>')
           .attr('value', obj.value)
           .text(obj.value)

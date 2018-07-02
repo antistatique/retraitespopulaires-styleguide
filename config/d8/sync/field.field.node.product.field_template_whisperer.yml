@@ -1,0 +1,47 @@
+uuid: 152a1af9-5a24-44e0-b339-71be9cf0e301
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_template_whisperer
+    - node.type.product
+  module:
+    - template_whisperer
+id: node.product.field_template_whisperer
+field_name: field_template_whisperer
+entity_type: node
+bundle: product
+label: template_whisperer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler:
+    suggestions:
+      address: '0'
+      building: '0'
+      collection_actualites: '0'
+      collection_advisors: '0'
+      collection_buildings: '0'
+      collection_contacts: '0'
+      collection_documents: '0'
+      collection_faqs: '0'
+      collection_management_contracts: '0'
+      collection_offers: '0'
+      collection_partnerships: '0'
+      constructionloan_tablerates: '0'
+      conversion: '0'
+      depreciation: '0'
+      documents: '0'
+      global_contact: '0'
+      libre_passage_calculator: '0'
+      loan_increase: '0'
+      localauthoritiesloan_tablerates: '0'
+      modulo_calculator: '0'
+      mortgage_calculator: '0'
+      mortgage_tablerates: '0'
+      quickwin_teasers: '0'
+      tax_attestation: '0'
+field_type: template_whisperer

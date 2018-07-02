@@ -4,7 +4,6 @@ namespace Drupal\rp_mortgage\Entity;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
-use Drupal\user\EntityOwnerInterface;
 
 /**
  * Provides an interface for defining Rate entities.
@@ -12,8 +11,6 @@ use Drupal\user\EntityOwnerInterface;
  * @ingroup rp_mortgage
  */
 interface RateInterface extends ContentEntityInterface, EntityChangedInterface, \JsonSerializable {
-
-  // Add get/set methods for your configuration properties here.
 
   /**
    * Gets the Rate type.

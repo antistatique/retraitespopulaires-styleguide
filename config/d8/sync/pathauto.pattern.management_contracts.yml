@@ -7,16 +7,16 @@ dependencies:
 id: management_contracts
 label: 'Management contracts'
 type: 'canonical_entities:node'
-pattern: 'mandat-de-gestion/[node:title]'
+pattern: '[suggestion:lookup:collection_management_contracts:entity:url:path]/[node:title]'
 selection_criteria:
-  ed4cc35f-ca19-42be-b11b-5159b6388e1c:
+  fe071419-dbdd-47c1-8d90-36a852a595ca:
     id: node_type
     bundles:
       management_contracts: management_contracts
     negate: false
     context_mapping:
       node: node
-    uuid: ed4cc35f-ca19-42be-b11b-5159b6388e1c
+    uuid: fe071419-dbdd-47c1-8d90-36a852a595ca
 selection_logic: and
 weight: -7
 relationships: {  }

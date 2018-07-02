@@ -2,7 +2,6 @@
 
 namespace Drupal\rp_libre_passage\Entity;
 
-use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
@@ -46,32 +45,29 @@ class PLPInterestRate extends ContentEntityBase implements PLPInterestRateInterf
   use EntityChangedTrait;
 
   /**
-   * {@inheritdoc}
+   * Get interest rate value.
    */
-  public static function preCreate(EntityStorageInterface $storage_controller, array &$values) {
-    parent::preCreate($storage_controller, $values);
-  }
-
   public function getRate() {
     return (float) $this->get('rate')->value;
   }
 
+  /**
+   * Set interest rate value.
+   */
   public function setRate($rate) {
     $this->set('rate', $rate);
     return $this;
   }
 
   /**
-   * @return integer
+   * Get interest rate start year.
    */
   public function getStartYear() {
     return (int) $this->get('start_year')->value;
   }
 
   /**
-   * @param integer $start_year
-   *
-   * @return $this
+   * Set interest rate start year.
    */
   public function setStartYear($year) {
     $this->set('start_year', $year);
@@ -79,37 +75,33 @@ class PLPInterestRate extends ContentEntityBase implements PLPInterestRateInterf
   }
 
   /**
-  * @return integer
-  */
+   * Get interest rates end year.
+   */
   public function getEndYear() {
-      return (int) $this->get('end_year')->value;
+    return (int) $this->get('end_year')->value;
   }
 
   /**
-  * @param integer $end_year
-  *
-  * @return $this
-  */
+   * Set interest rates end year.
+   */
   public function setEndYear($year) {
-      $this->set('end_year', $year);
-      return $this;
+    $this->set('end_year', $year);
+    return $this;
   }
 
   /**
-  * @return integer
-  */
+   * Get interest rates status.
+   */
   public function getStatus() {
-      return $this->get('status')->value;
+    return $this->get('status')->value;
   }
 
   /**
-  * @param integer $status
-  *
-  * @return $this
-  */
+   * Set interest rates status.
+   */
   public function setStatus($status) {
-      $this->set('status', $status);
-      return $this;
+    $this->set('status', $status);
+    return $this;
   }
 
   /**
@@ -131,84 +123,81 @@ class PLPInterestRate extends ContentEntityBase implements PLPInterestRateInterf
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
-      $fields = parent::baseFieldDefinitions($entity_type);
+    $fields = parent::baseFieldDefinitions($entity_type);
 
-      $fields['rate'] = BaseFieldDefinition::create('decimal')
-          ->setLabel(t('PLP Interest Rate'))
-          ->setDescription(t('Taux d\'intérêt'))
-          ->setDefaultValue(0.0)
-          ->setDisplayOptions('view', array(
-              'label' => 'above',
-              'type' => 'decimal',
-              'weight' => 1,
-          ))
-          ->setDisplayOptions('form', array(
-              'weight' => 1,
-          ))
-          ->setDisplayConfigurable('form', TRUE)
-          ->setDisplayConfigurable('view', TRUE)
-          ->setRequired(true)
-      ;
+    $fields['rate'] = BaseFieldDefinition::create('decimal')
+      ->setLabel(t('PLP Interest Rate'))
+      ->setDescription(t("Taux d'intérêt"))
+      ->setDefaultValue(0.0)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'decimal',
+        'weight' => 1,
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 1,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
-      $fields['start_year'] = BaseFieldDefinition::create('integer')
-          ->setLabel(t('Année de début'))
-          ->setDescription(t('The start year'))
-          ->setDefaultValue(1900)
-          ->setSetting('unsigned', TRUE)
-          ->setDisplayOptions('view', array(
-              'label' => 'above',
-              'type' => 'integer',
-              'weight' => 2,
-          ))
-          ->setDisplayOptions('form', array(
-              'weight' => 2,
-          ))
-          ->setDisplayConfigurable('form', TRUE)
-          ->setDisplayConfigurable('view', TRUE)
-          ->setRequired(true)
-      ;
+    $fields['start_year'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Année de début'))
+      ->setDescription(t('The start year'))
+      ->setDefaultValue(1900)
+      ->setSetting('unsigned', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'integer',
+        'weight' => 2,
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 2,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
-      $fields['end_year'] = BaseFieldDefinition::create('integer')
-          ->setLabel(t('Année de fin'))
-          ->setDescription(t('The end year'))
-          ->setDefaultValue(9999)
-          ->setSetting('unsigned', TRUE)
-          ->setDisplayOptions('view', array(
-              'label' => 'above',
-              'type' => 'integer',
-              'weight' => 3,
-          ))
-          ->setDisplayOptions('form', array(
-              'weight' => 3,
-          ))
-          ->setDisplayConfigurable('form', TRUE)
-          ->setDisplayConfigurable('view', TRUE)
-          ->setRequired(true)
-      ;
+    $fields['end_year'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Année de fin'))
+      ->setDescription(t('The end year'))
+      ->setDefaultValue(9999)
+      ->setSetting('unsigned', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'integer',
+        'weight' => 3,
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 3,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
-      $fields['status'] = BaseFieldDefinition::create('boolean')
-        ->setLabel(t('Published'))
-        ->setDefaultValue(1)
-        ->setDescription(t('The status of this entity. 0 - disabled, 1 - enabled.'))
-        ->setDisplayOptions('view', array(
-            'label' => 'above',
-            'weight' => 100,
-        ))
-        ->setDisplayOptions('form', array(
-            'weight' => 100,
-        ))
-        ->setDisplayConfigurable('form', TRUE)
-        ->setDisplayConfigurable('view', TRUE)
-      ;
+    $fields['status'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Published'))
+      ->setDefaultValue(1)
+      ->setDescription(t('The status of this entity. 0 - disabled, 1 - enabled.'))
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'weight' => 100,
+      ])
+      ->setDisplayOptions('form', [
+        'weight' => 100,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
-      $fields['created'] = BaseFieldDefinition::create('created')
-        ->setLabel(t('Created'))
-        ->setDescription(t('The time that the entity was created.'));
+    $fields['created'] = BaseFieldDefinition::create('created')
+      ->setLabel(t('Created'))
+      ->setDescription(t('The time that the entity was created.'));
 
-      $fields['changed'] = BaseFieldDefinition::create('changed')
-        ->setLabel(t('Changed'))
-        ->setDescription(t('The time that the entity was last edited.'));
+    $fields['changed'] = BaseFieldDefinition::create('changed')
+      ->setLabel(t('Changed'))
+      ->setDescription(t('The time that the entity was last edited.'));
 
-      return $fields;
+    return $fields;
   }
+
 }

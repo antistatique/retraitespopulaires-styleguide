@@ -30,7 +30,7 @@ class RoleSettingsForm extends FormBase {
   /**
    * Read only settings that are initialized with the class.
    *
-   * @var Drupal\Core\Site\Settings
+   * @var \Drupal\Core\Site\Settings
    */
   private $settings;
 
@@ -88,7 +88,7 @@ class RoleSettingsForm extends FormBase {
     $is_bind = $this->ldap->auth($settings_rp_ldap['service_account']['username'], $settings_rp_ldap['service_account']['pass']);
 
     if (!$is_bind) {
-      drupal_set_message($this->ldap->getLastException(), 'error');
+      $this->messenger()->addError($this->ldap->getLastException());
       return $form;
     }
 
@@ -98,7 +98,7 @@ class RoleSettingsForm extends FormBase {
         $ldap_groups_data = $this->ldap->search('cn', $pattern, $settings_rp_ldap['groups'], '*');
       }
       catch (\Exception $e) {
-        drupal_set_message($e->getMessage(), 'error');
+        $this->messenger()->addError($e->getMessage());
         continue;
       }
 
@@ -142,6 +142,12 @@ class RoleSettingsForm extends FormBase {
     $this->state->set('rp_auth.settings.ldap_roles', $form_items);
   }
 
+  /**
+   * Retrieve Drupal 8 - custom roles (removed system ones)
+   *
+   * @return array
+   *   List of customs roles
+   */
   public function getRoles() {
     $roles = user_role_names(TRUE);
 
@@ -150,4 +156,5 @@ class RoleSettingsForm extends FormBase {
 
     return $roles;
   }
+
 }

@@ -17,8 +17,8 @@ class PLPInterestRateListBuilder extends EntityListBuilder {
    */
   public function buildHeader() {
     $header['start_year'] = $this->t('Date de début');
-    $header['end_year']    = $this->t('Date de fin');
-    $header['rate']        = $this->t('Taux d\'intérêt');
+    $header['end_year']   = $this->t('Date de fin');
+    $header['rate']       = $this->t("Taux d'intérêt");
     return $header + parent::buildHeader();
   }
 
@@ -27,8 +27,8 @@ class PLPInterestRateListBuilder extends EntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\rp_libre_passage\Entity\PLPInterestRate */
-    $row['start_year'] = '01.01.'.$entity->getStartYear();
-    $row['end_year']   = '31.12.'.$entity->getEndYear();
+    $row['start_year'] = '01.01.' . $entity->getStartYear();
+    $row['end_year']   = '31.12.' . $entity->getEndYear();
     $row['rate']       = $entity->getRate() . '%';
     return $row + parent::buildRow($entity);
   }

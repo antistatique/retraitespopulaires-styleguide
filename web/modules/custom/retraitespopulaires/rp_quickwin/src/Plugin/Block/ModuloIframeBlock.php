@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\rp_quickwin\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
@@ -8,7 +9,7 @@ use Drupal\rp_quickwin\LogismataService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides the 'Modulo Iframe' Block
+ * Provides the 'Modulo Iframe' Block.
  *
  * @Block(
  *   id = "rp_quickwin_modulo_iframe_block",
@@ -18,20 +19,22 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ModuloIframeBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * To communicate with Logismata
-   * @var LogismataService
+   * To communicate with Logismata.
+   *
+   * @var \Drupal\rp_quickwin\LogismataService
    */
   private $logismataService;
 
   /**
-   * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-   * @var StateInterface
+   * The state key value store.
+   *
+   * @var \Drupal\Core\State\StateInterface
    */
   private $state;
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, LogismataService $logismataService, StateInterface $state) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->logismataService = $logismataService;
@@ -39,8 +42,8 @@ class ModuloIframeBlock extends BlockBase implements ContainerFactoryPluginInter
   }
 
   /**
-  * {@inheritdoc}
-  */
+   * {@inheritdoc}
+   */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     // Instantiates this form class.
     return new static(
@@ -55,23 +58,25 @@ class ModuloIframeBlock extends BlockBase implements ContainerFactoryPluginInter
   }
 
   /**
-  * {@inheritdoc}
-  */
-  public function build($params = array()) {
-    $variables['link'] = '/rpopulaires/app/index.html';
+   * {@inheritdoc}
+   */
+  public function build($params = []) {
+    $variables['link'] = '/rpopulaires/app/';
 
     // Retrieive Token from Logistama.
     try {
       $variables['link'] .= '?calculatorservicetoken=' . $this->logismataService->getToken();
-    } catch (\Exception $e) {
+    }
+    catch (\Exception $e) {
     }
 
     return [
       '#theme'     => 'rp_quickwin_calculator_block',
       '#variables' => $variables,
-      # 12 hours of cache
-      '#cache'     => [ 'max-age' => 43200 ],
-      '#attached'  => [ 'library' =>  [ 'rp_quickwin/iframe' ], ],
+      // 12 hours of cache.
+      '#cache'     => ['max-age' => 43200],
+      '#attached'  => ['library' => ['rp_quickwin/iframe']],
     ];
   }
+
 }

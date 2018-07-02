@@ -3,26 +3,26 @@
 
   // on domReady
   $(function () {
-    var $taxAttestationForm = $('#rp-contact-tax-attestation-form');
+    let $taxAttestationForm = $('#rp-contact-tax-attestation-form');
 
     // Form not found, skip everything
-    if (!$taxAttestationForm.size()) {
+    if (!$taxAttestationForm.length) {
       return;
     }
 
     // /////////////////////////////////////////////////////////////////////////////////////
     // vars
 
-    var $titleInputs = $('#edit-title input');
-    var $firstnameInput = $('#edit-firstname');
-    var $lastnameInput = $('#edit-lastname');
-    var $companyInput = $('#edit-company');
+    let $titleInputs = $('#edit-title input');
+    let $firstnameInput = $('#edit-firstname');
+    let $lastnameInput = $('#edit-lastname');
+    let $companyInput = $('#edit-company');
 
     // /////////////////////////////////////////////////////////////////////////////////////
     // binding
 
     $titleInputs.bind('change', function (e) {
-      var $this = $(this);
+      let $this = $(this);
       switch ($this.val()) {
         case 'Madame':
         case 'Monsieur':

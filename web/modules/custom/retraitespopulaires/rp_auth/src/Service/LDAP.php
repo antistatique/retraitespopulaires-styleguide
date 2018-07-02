@@ -158,7 +158,6 @@ class LDAP {
    *   Multi-dimensionalarray on success and FALSE on error.
    */
   public function search($filter = 'cn', $search = '*', $dn = "*", $wildcard = '') {
-    $info = FALSE;
     if ($this->bind) {
       $filter = '(' . $filter . '=' . ldap_escape($search, $wildcard) . ')';
       $result = ldap_search($this->connection, $dn, $filter);

@@ -1,46 +1,40 @@
 <?php
+
 namespace Drupal\rp_mortgage\Service;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
 
-class Rate
-{
-    /**
-     * @var \Drupal\Core\Entity\Query\QueryFactory
-     */
-    private $entityQuery;
+/**
+ * Rate service class.
+ */
+class Rate {
 
-    /**
-     * @var \Drupal\Core\Entity\EntityStorageInterface
-     */
-    private $entity_rate;
+  /**
+   * Entity rate.
+   *
+   * @var \Drupal\Core\Entity\EntityStorageInterface
+   */
+  private $entityRate;
 
-    /**
-     * Rate constructor.
-     *
-     * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity
-     * @param \Drupal\Core\Entity\Query\QueryFactory         $entityQuery
-     */
-    public function __construct(EntityTypeManagerInterface $entity, QueryFactory $entityQuery) {
-        $this->entity_rate = $entity->getStorage('rp_mortgage_rate');
-        $this->entity_query = $entityQuery;
-    }
+  /**
+   * Rate constructor.
+   */
+  public function __construct(EntityTypeManagerInterface $entity) {
+    $this->entityRate = $entity->getStorage('rp_mortgage_rate');
+  }
 
-    /**
-     * @param string $type
-     *
-     * @return \Drupal\Core\Entity\EntityInterface[]
-     */
-    public function getRates($type) {
-        $query = $this->entity_query->get('rp_mortgage_rate')
-            ->condition('type', $type)
-            ->sort('year', 'ASC')
-        ;
+  /**
+   * Get all rates.
+   */
+  public function getRates($type) {
+    $query = $this->entityRate->getQuery()
+      ->condition('type', $type)
+      ->sort('year', 'ASC');
 
-        $ids = $query->execute();
-        $rates = $this->entity_rate->loadMultiple($ids);
+    $ids = $query->execute();
+    $rates = $this->entityRate->loadMultiple($ids);
 
-        return $rates;
-    }
+    return $rates;
+  }
+
 }

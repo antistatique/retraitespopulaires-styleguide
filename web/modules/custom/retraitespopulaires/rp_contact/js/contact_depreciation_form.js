@@ -3,26 +3,26 @@
 
   // on domReady
   $(function () {
-    var $depreciationForm = $('#rp-contact-depreciation-form');
+    let $depreciationForm = $('#rp-contact-depreciation-form');
 
     // Form not found, skip everything
-    if (!$depreciationForm.size()) {
+    if (!$depreciationForm.length) {
       return;
     }
 
     // /////////////////////////////////////////////////////////////////////////////////////
     // vars
 
-    var $titleInputs = $('#edit-title input');
-    var $firstnameInput = $('#edit-firstname');
-    var $lastnameInput = $('#edit-lastname');
-    var $companyInput = $('#edit-company');
+    let $titleInputs = $('#edit-title input');
+    let $firstnameInput = $('#edit-firstname');
+    let $lastnameInput = $('#edit-lastname');
+    let $companyInput = $('#edit-company');
 
     // /////////////////////////////////////////////////////////////////////////////////////
     // binding
 
     $titleInputs.bind('change', function (e) {
-      var $this = $(this);
+      let $this = $(this);
       switch ($this.val()) {
         case 'Madame':
         case 'Monsieur':

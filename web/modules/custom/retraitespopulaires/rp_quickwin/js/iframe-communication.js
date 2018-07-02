@@ -1,13 +1,13 @@
-var authorizedOrigins = ["https://uat.logismata.ch", "https://services.logismata.ch", 'http://rp.test', "http://rp.localhost", "https://www.retraitespopulaires.ch", "https://wwweti.retraitespopulaires.ch"];
-var sendOnIFrameScrollMessage = true;
+let authorizedOrigins = ["https://uat.logismata.ch", "https://services.logismata.ch", 'http://rp.test', "http://rp.localhost", "https://www.retraitespopulaires.ch", "https://wwweti.retraitespopulaires.ch"];
+let sendOnIFrameScrollMessage = true;
 
-var iFrameMessageProcessor = {
+let iFrameMessageProcessor = {
    onInnerFrameChanged: function(parameters) {
-      var calculationFrame = document.getElementById('calculationFrame');
+      let calculationFrame = document.getElementById('calculationFrame');
       if (calculationFrame) {
          //console.debug("about to set: " + parameters + "px");
          //We give some more space to ensure that the margins fit within the iframe.
-         var height = Math.max(parameters + 20, 200);
+         let height = Math.max(parameters + 20, 200);
          calculationFrame.height = height + "px";
       }
    },
@@ -62,11 +62,11 @@ function processMessage(message, parameters) {
 window.addEventListener("message", receiveMessage, false);
 
 function isAuthorized(origin) {
-   var result = false;
+   let result = false;
 
-   var authorizedOriginsToRemove = [];
+   let authorizedOriginsToRemove = [];
 
-   for (var index = 0; index < authorizedOrigins.length ; index++) {
+   for (let index = 0; index < authorizedOrigins.length ; index++) {
       if (origin === authorizedOrigins[index] ||
           authorizedOrigins[index] === "*") {
          result = true;
@@ -76,7 +76,7 @@ function isAuthorized(origin) {
       }
    }
 
-   for (var index = 0; index < authorizedOriginsToRemove.length ; index++) {
+   for (let index = 0; index < authorizedOriginsToRemove.length ; index++) {
       authorizedOrigins.splice(authorizedOrigins.indexOf(authorizedOriginsToRemove[index]), 1);
    }
 
@@ -93,13 +93,13 @@ function receiveMessage(event) {
 
 function sendMessageToiFrame(message, parameters) {
    //console.debug(">>> Sending message to main frame: " + message);
-   var calculationFrame = document.getElementById('calculationFrame');
+   let calculationFrame = document.getElementById('calculationFrame');
    if (calculationFrame) {
       message = {
          message: message,
          parameters: parameters
       };
-      for (var i = 0; i < authorizedOrigins.length; i++) {
+      for (let i = 0; i < authorizedOrigins.length; i++) {
          calculationFrame.contentWindow.postMessage(message, authorizedOrigins[i]);
       }
    }
@@ -108,7 +108,7 @@ function sendMessageToiFrame(message, parameters) {
 /* Cross Domain Messages End*/
 
 function findPosY(object) {
-   var top = 0;
+   let top = 0;
 
    if (object.offsetParent) {
       while (object.offsetParent) {
@@ -120,12 +120,11 @@ function findPosY(object) {
       top += object.y;
    }
    return top;
-};
-
+}
 if (sendOnIFrameScrollMessage) {
    setInterval(
       function() {
-         var iframeTop = findPosY(document.getElementById('calculationFrame'));
+         let iframeTop = findPosY(document.getElementById('calculationFrame'));
 
          sendMessageToiFrame("onIFrameScroll", window.scrollY - iframeTop);
       },

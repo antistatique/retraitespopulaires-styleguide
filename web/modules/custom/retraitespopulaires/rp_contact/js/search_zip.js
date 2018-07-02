@@ -3,20 +3,20 @@
 
   // on domReady
   $(function () {
-    var $searchZipForm = $('form.js-search-zip');
+    let $searchZipForm = $('form.js-search-zip');
 
     // Form not found, skip everything
-    if (!$searchZipForm.size()) {
+    if (!$searchZipForm.length) {
       return;
     }
 
     // /////////////////////////////////////////////////////////////////////////////////////
     // vars
 
-    var $zipResults = $searchZipForm.find('.js-zip-results');
-    var $zipResultsList = $searchZipForm.find('.js-zip-results-list');
-    var $zipResultsLoader = $zipResults.find('.js-zip-loader');
-    var $zipInput = $searchZipForm.find('.js-zip-input');
+    let $zipResults = $searchZipForm.find('.js-zip-results');
+    let $zipResultsList = $searchZipForm.find('.js-zip-results-list');
+    let $zipResultsLoader = $zipResults.find('.js-zip-loader');
+    let $zipInput = $searchZipForm.find('.js-zip-input');
 
     // /////////////////////////////////////////////////////////////////////////////////////
     // Binding
@@ -30,7 +30,7 @@
     // functions
 
     function searchZip() {
-      var zip = parseInt($zipInput.val());
+      let zip = parseInt($zipInput.val());
 
       if (!zip || isNaN(zip)) {
         return;

@@ -11,6 +11,7 @@ use Drupal\Core\Entity\EntityChangedInterface;
  * @ingroup rp_quickwin
  */
 interface Saving3ARateInterface extends ContentEntityInterface, EntityChangedInterface, \JsonSerializable {
+
   /**
    * Gets the Rate name.
    *

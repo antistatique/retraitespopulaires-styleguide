@@ -38,16 +38,16 @@ class TeaserWidgetType extends WidgetBase {
 
     $elements['size'] = [
       '#type' => 'number',
-      '#title' => t('Size of textfield'),
+      '#title' => $this->t('Size of textfield'),
       '#default_value' => $this->getSetting('size'),
       '#required' => TRUE,
       '#min' => 1,
     ];
     $elements['placeholder'] = [
       '#type' => 'textfield',
-      '#title' => t('Placeholder'),
+      '#title' => $this->t('Placeholder'),
       '#default_value' => $this->getSetting('placeholder'),
-      '#description' => t('Text that will be shown inside the field until a value is entered. This hint is usually a sample value or a brief description of the expected format.'),
+      '#description' => $this->t('Text that will be shown inside the field until a value is entered. This hint is usually a sample value or a brief description of the expected format.'),
     ];
 
     return $elements;
@@ -59,9 +59,9 @@ class TeaserWidgetType extends WidgetBase {
   public function settingsSummary() {
     $summary = [];
 
-    $summary[] = t('Textfield size: @size', ['@size' => $this->getSetting('size')]);
+    $summary[] = $this->t('Textfield size: @size', ['@size' => $this->getSetting('size')]);
     if (!empty($this->getSetting('placeholder'))) {
-      $summary[] = t('Placeholder: @placeholder', ['@placeholder' => $this->getSetting('placeholder')]);
+      $summary[] = $this->t('Placeholder: @placeholder', ['@placeholder' => $this->getSetting('placeholder')]);
     }
 
     return $summary;
@@ -71,28 +71,24 @@ class TeaserWidgetType extends WidgetBase {
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    // Condition for display slider and slider parameter
-    $slider_visible_condition = [
-        [':input[selector="type'.$items->getName().$delta.'"]' => ['value' => 'chf']],
-        'or',
-        [':input[selector="type'.$items->getName().$delta.'"]' => ['value' => 'number']],
-      ];
-    $slider_parms_visible_condition = [
-      ':input[selector="slider'.$items->getName().$delta.'"]' => ['checked' => TRUE],
-      $slider_visible_condition,
+    // Condition for display slider and slider parameter.
+    $sliderVisibleCond = [
+        [':input[selector="type' . $items->getName() . $delta . '"]' => ['value' => 'chf']],
+      'or',
+        [':input[selector="type' . $items->getName() . $delta . '"]' => ['value' => 'number']],
     ];
 
-    // Configure each field
+    // Configure each field.
     $element['name'] = [
       '#type' => 'textfield',
-      '#title' => t('Label du champ'),
+      '#title' => $this->t('Label du champ'),
       '#default_value' => isset($items[$delta]->name) ? $items[$delta]->name : NULL,
       '#size' => '20',
     ];
 
     $element['logismata_parameter'] = [
       '#type' => 'textfield',
-      '#title' => t('Parametre Logismata'),
+      '#title' => $this->t('Parametre Logismata'),
       '#default_value' => isset($items[$delta]->logismata_parameter) ? $items[$delta]->logismata_parameter : NULL,
       '#size' => '20',
     ];
@@ -100,62 +96,59 @@ class TeaserWidgetType extends WidgetBase {
     $element['type'] = [
       '#type' => 'select',
       '#options' => TeaserFieldType::typeOptions(),
-      '#attributes' => ['selector' => ['type'.$items->getName().$delta]],
-      '#title' => t('Type du champ'),
+      '#attributes' => ['selector' => ['type' . $items->getName() . $delta]],
+      '#title' => $this->t('Type du champ'),
       '#default_value' => isset($items[$delta]->type) ? $items[$delta]->type : NULL,
     ];
 
     $element['default'] = [
       '#type' => 'textfield',
-      '#title' => t('Valeur par défaut'),
+      '#title' => $this->t('Valeur par défaut'),
       '#default_value' => isset($items[$delta]->default) ? $items[$delta]->default : NULL,
       '#size' => '20',
     ];
 
     $element['with_slider'] = [
       '#type' => 'checkbox',
-      '#attributes' => ['selector' => ['slider'.$items->getName().$delta]],
-      '#states' => ['visible' => [
-            $slider_visible_condition,
-          ],
+      '#attributes' => ['selector' => ['slider' . $items->getName() . $delta]],
+      '#states' => [
+        'visible' => [
+          $sliderVisibleCond,
         ],
-      '#title' => t('Slider ?'),
+      ],
+      '#title' => $this->t('Slider ?'),
       '#default_value' => isset($items[$delta]->with_slider) ? $items[$delta]->with_slider : NULL,
       '#size' => '20',
     ];
 
-    $element['min'] = [
-      '#type' => 'number',
+    $element['slider'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Slider option'),
       '#states' => [
         'visible' => [
-          $slider_parms_visible_condition,
+          0 => $sliderVisibleCond,
+          ':input[selector="slider' . $items->getName() . $delta . '"]' => ['checked' => TRUE],
         ],
       ],
-      '#title' => t('Valeur min du slider'),
+    ];
+
+    $element['slider']['min'] = [
+      '#type' => 'number',
+      '#title' => $this->t('Valeur min du slider'),
       '#default_value' => isset($items[$delta]->min) ? $items[$delta]->min : 0,
       '#size' => '20',
     ];
 
-    $element['max'] = [
+    $element['slider']['max'] = [
       '#type' => 'number',
-      '#states' => [
-        'visible' => [
-          $slider_parms_visible_condition,
-        ],
-      ],
-      '#title' => t('Valeur max du slider'),
+      '#title' => $this->t('Valeur max du slider'),
       '#default_value' => isset($items[$delta]->max) ? $items[$delta]->max : 0,
       '#size' => '20',
     ];
 
-    $element['increment'] = [
+    $element['slider']['increment'] = [
       '#type' => 'number',
-      '#states' => [
-        'visible' => [
-          $slider_parms_visible_condition,
-        ],
-      ],
-      '#title' => t('Incrément du slider'),
+      '#title' => $this->t('Incrément du slider'),
       '#default_value' => isset($items[$delta]->increment) ? $items[$delta]->increment : 0,
       '#size' => '20',
     ];

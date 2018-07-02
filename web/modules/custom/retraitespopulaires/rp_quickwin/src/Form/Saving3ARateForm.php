@@ -18,7 +18,6 @@ class Saving3ARateForm extends ContentEntityForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var $entity \Drupal\rp_quickwin\Entity\Saving3ARate */
     $form = parent::buildForm($form, $form_state);
-    $entity = $this->entity;
 
     return $form;
   }
@@ -32,13 +31,13 @@ class Saving3ARateForm extends ContentEntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the %label Rate.', [
+        $this->messenger()->addStatus($this->t('Created the %label Rate.', [
           '%label' => $entity->label(),
         ]));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the %label Rate.', [
+        $this->messenger()->addStatus($this->t('Saved the %label Rate.', [
           '%label' => $entity->label(),
         ]));
     }

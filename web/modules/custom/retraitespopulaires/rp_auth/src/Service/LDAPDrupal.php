@@ -40,7 +40,7 @@ class LDAPDrupal {
    * @param array $ldap_data
    *   Raw data from LDAP.
    *
-   * @return User|false
+   * @return \Drupal\user\Entity\User|false
    *   The fresh created user on successful or FALSE on error
    */
   public function create(array $ldap_data) {
@@ -159,7 +159,10 @@ class LDAPDrupal {
   }
 
   /**
-   * Get all roles in Drupal without system roles (administrators and authenticated)
+   * Retrieve Drupal 8 - custom roles (removed system ones)
+   *
+   * @return array
+   *   List of customs roles
    */
   public function getRoles() {
     $roles = user_role_names(TRUE);

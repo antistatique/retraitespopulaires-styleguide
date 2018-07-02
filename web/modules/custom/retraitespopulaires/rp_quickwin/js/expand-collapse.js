@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){
   // Save to cookie when collapse change
   jQuery('.category-collapse').click(function(event){
-    var target = jQuery(event.currentTarget);
+    let target = jQuery(event.currentTarget);
     jQuery.cookie('rp_quickwin_category_' + target.data('categoryId'), (target.hasClass('collapsed') ? 'expand' : 'collapse'), { expires: 0.1 });
   });
 

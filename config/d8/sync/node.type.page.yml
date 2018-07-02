@@ -8,7 +8,6 @@ third_party_settings:
   menu_ui:
     available_menus:
       - main
-      - profil
       - secondary
     parent: 'main:'
 _core:

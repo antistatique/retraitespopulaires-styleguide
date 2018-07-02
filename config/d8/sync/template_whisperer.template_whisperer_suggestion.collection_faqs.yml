@@ -1,0 +1,7 @@
+uuid: b34731d2-e479-4735-84e8-0e7db1685e13
+langcode: fr
+status: true
+dependencies: {  }
+id: collection_faqs
+name: 'Collection FAQs'
+suggestion: collection_faqs
