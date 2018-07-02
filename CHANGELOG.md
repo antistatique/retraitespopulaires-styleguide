@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-## NEXT NEXT RELEASE
+## NEXT RELEASE
  - remove this module from removed dir
    - kint
    - menu_breadcrumb
@@ -9,7 +9,7 @@ CHANGELOG
    - twig_extender
    - rp_exchange_rates
 
-## NEXT RELEASE
+## 2.4.3 (2018-07-02)
  - add & configure Template Whisperer module - MD-374
  - migrate dynamic page templating using Template Whisperer instead of Config/State. - MD-374
  - add locker to mortgage import rates command - MD-351
