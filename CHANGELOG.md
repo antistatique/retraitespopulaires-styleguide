@@ -23,6 +23,7 @@ CHANGELOG
  - remove rp_exchange_rates module that have no file - MD-380
  - add mail to arc-en-ciel - MD-376
  - fix datepicker - MD-372
+ - update to styleguide 3.2.6
 
 ## 2.4.2 (2018-06-06)
  - add Bamboo Twig integration
