@@ -9,6 +9,7 @@ CHANGELOG
  - correct a bug with Modulo calculator token - MD-364
  - remove raise error for updatedb before config-import
  - remove quickwin css to move in styleguide
+ - update Drupal core to 8.5
 
 ## 2.4.2 (2018-06-06)
  - add Bamboo Twig integration

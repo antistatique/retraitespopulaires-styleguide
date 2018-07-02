@@ -8,6 +8,8 @@ namespace Drupal\rp_libre_passage\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\template_whisperer\TemplateWhispererManager;
+use Drupal\template_whisperer\TemplateWhispererSuggestionUsage;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use \DateTime;
 
@@ -45,10 +47,12 @@ class PLPCalculatorForm extends FormBase {
     /**
      * Class constructor.
      */
-    public function __construct(PrivateTempStoreFactory $private_tempstore, StateInterface $state, PLPCalculator $plp_calculator, PLPConversionRate $plp_conversion_rate) {
+    public function __construct(PrivateTempStoreFactory $private_tempstore, StateInterface $state, PLPCalculator $plp_calculator, PLPConversionRate $plp_conversion_rate, TemplateWhispererManager $twManager, TemplateWhispererSuggestionUsage $twSuggestionUsage) {
         $this->state = $state;
         $this->plp_calculator = $plp_calculator;
         $this->plp_conversion_rate = $plp_conversion_rate;
+       $this->twManager = $twManager;
+       $this->twSuggestionUsage = $twSuggestionUsage;
 
         // Init session
         // TODO Found better solution to inline errors than hack session to
@@ -65,7 +69,9 @@ class PLPCalculatorForm extends FormBase {
         $container->get('user.private_tempstore'),
         $container->get('state'),
         $container->get('rp_libre_passage.plp_calculator'),
-        $container->get('rp_libre_passage.plp_conversion_rate')
+        $container->get('rp_libre_passage.plp_conversion_rate'),
+        $container->get('plugin.manager.template_whisperer'),
+        $container->get('template_whisperer.suggestion.usage')
       );
     }
 

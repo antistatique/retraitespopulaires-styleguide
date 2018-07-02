@@ -6,7 +6,7 @@
     var $PLPCalculatorForm = $('#rp-libre-passage-plp-calculator-form');
 
     // Form not found, skip everything
-    if (!$PLPCalculatorForm.size()) {
+    if (!$PLPCalculatorForm.length) {
       return;
     }
 

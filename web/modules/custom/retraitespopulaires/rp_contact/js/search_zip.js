@@ -6,7 +6,7 @@
     var $searchZipForm = $('form.js-search-zip');
 
     // Form not found, skip everything
-    if (!$searchZipForm.size()) {
+    if (!$searchZipForm.length) {
       return;
     }
 

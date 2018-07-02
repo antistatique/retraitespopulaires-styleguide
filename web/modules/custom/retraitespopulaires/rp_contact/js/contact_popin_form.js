@@ -36,7 +36,7 @@
     const $popinForm = $('#rp-popin-form');
 
     // Form not found, skip everything
-    if (!$popinForm.size()) {
+    if (!$popinForm.length) {
       return;
     }
 

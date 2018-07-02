@@ -6,7 +6,7 @@
     var $depreciationForm = $('#rp-contact-depreciation-form');
 
     // Form not found, skip everything
-    if (!$depreciationForm.size()) {
+    if (!$depreciationForm.length) {
       return;
     }
 
