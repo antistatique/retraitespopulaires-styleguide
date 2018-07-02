@@ -14,4 +14,3 @@ entity.rp_quickwin_saving_3a_rate.delete_form:
   base_route:  entity.rp_quickwin_saving_3a_rate.canonical
   title: Delete
   weight: 10
-

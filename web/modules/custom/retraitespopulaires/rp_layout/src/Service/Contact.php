@@ -1,86 +1,94 @@
 <?php
-/**
-* @file
-* Contains \Drupal\rp_layout\Service\Contact
-*/
 
 namespace Drupal\rp_layout\Service;
 
 /**
-* Contact
-*/
+ * Contact.
+ */
 class Contact {
 
-    /**
-    * Mail contact global
-    * @var String
-    */
-    public $email = 'info@retraitespopulaires.ch';
+  /**
+   * Mail contact global.
+   *
+   * @var string
+   */
+  public $email = 'info@retraitespopulaires.ch';
 
-    /**
-    * Phone number global
-    * @var String
-    */
-    public $phone = '+41 21 348 21 11';
+  /**
+   * Phone number global.
+   *
+   * @var string
+   */
+  public $phone = '+41 21 348 21 11';
 
-    /**
-    * Lausanne phone number
-    * @var String
-    */
-    public $phone_lausanne = '+41 21 348 21 11';
+  /**
+   * Lausanne phone number.
+   *
+   * @var string
+   */
+  public $phoneLausanne = '+41 21 348 21 11';
 
-    /**
-    * Yverdon phone number
-    * @var String
-    */
-    public $phone_yverdon = '+41 21 348 28 21';
+  /**
+   * Yverdon phone number.
+   *
+   * @var string
+   */
+  public $phoneYverdon = '+41 21 348 28 21';
 
-    /**
-    * Nyon phone number
-    * @var String
-    */
-    public $phone_nyon = '+41 21 348 20 20';
+  /**
+   * Nyon phone number.
+   *
+   * @var string
+   */
+  public $phoneNyon = '+41 21 348 20 20';
 
-    /**
-    * Yverdon mail contact
-    * @var String
-    */
-    public $email_yverdon = 'yverdon@retraitespopulaires.ch';
+  /**
+   * Yverdon mail contact.
+   *
+   * @var string
+   */
+  public $emailYverdon = 'yverdon@retraitespopulaires.ch';
 
-    /**
-    * Nyon mail contact
-    * @var String
-    */
-    public $email_nyon = 'nyon@retraitespopulaires.ch';
+  /**
+   * Nyon mail contact.
+   *
+   * @var string
+   */
+  public $emailNyon = 'nyon@retraitespopulaires.ch';
 
-    /**
-    * Twitter url
-    * @var String
-    */
-    public $twitter = 'https://twitter.com/RetraitesPop';
+  /**
+   * Twitter url.
+   *
+   * @var string
+   */
+  public $twitter = 'https://twitter.com/RetraitesPop';
 
-    /**
-    * Facebook url
-    * @var String
-    */
-    public $facebook = 'https://www.facebook.com/retraitespopulaires';
+  /**
+   * Facebook url.
+   *
+   * @var string
+   */
+  public $facebook = 'https://www.facebook.com/retraitespopulaires';
 
-    /**
-    * Linkedin url
-    * @var String
-    */
-    public $linkedin = 'https://www.linkedin.com/company/retraites-populaires';
+  /**
+   * Linkedin url.
+   *
+   * @var string
+   */
+  public $linkedin = 'https://www.linkedin.com/company/retraites-populaires';
 
-    /**
-    * Youtube url
-    * @var String
-    */
-    public $youtube = 'https://www.youtube.com/user/RetraitesPopulaires';
+  /**
+   * Youtube url.
+   *
+   * @var string
+   */
+  public $youtube = 'https://www.youtube.com/user/RetraitesPopulaires';
 
-    /**
-    * Instagram url
-    * @var String
-    */
-    public $instagram = 'https://www.instagram.com/retraitespopulaires';
+  /**
+   * Instagram url.
+   *
+   * @var string
+   */
+  public $instagram = 'https://www.instagram.com/retraitespopulaires';
 
 }

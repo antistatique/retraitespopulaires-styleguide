@@ -2,7 +2,6 @@
 
 namespace Drupal\rp_quickwin\Entity;
 
-use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
@@ -46,34 +45,45 @@ class Saving3ARate extends ContentEntityBase implements Saving3ARateInterface {
   use EntityChangedTrait;
 
   /**
-   * {@inheritdoc}
+   * To get name of entity.
    */
-  public static function preCreate(EntityStorageInterface $storage_controller, array &$values) {
-    parent::preCreate($storage_controller, $values);
-  }
-
   public function getName() {
     return $this->get('name')->value;
   }
 
+  /**
+   * To set name of entity.
+   */
   public function setName($name) {
     $this->set('name', $name);
     return $this;
   }
 
+  /**
+   * To get rate value of entity.
+   */
   public function getRate() {
     return (float) $this->get('rate')->value;
   }
 
+  /**
+   * To set rate value of entity.
+   */
   public function setRate($rate) {
     $this->set('rate', $rate);
     return $this;
   }
 
+  /**
+   * To get if value can be altered by user.
+   */
   public function isAlterable() {
-    return (float) $this->get('alterable')->value;
+    return $this->get('alterable')->value;
   }
 
+  /**
+   * To set if value can be altered by user.
+   */
   public function setAlterable($alterable) {
     $this->set('alterable', $alterable);
     return $this;
@@ -114,50 +124,49 @@ class Saving3ARate extends ContentEntityBase implements Saving3ARateInterface {
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name of the Rate'))
-      ->setDisplayOptions('view', array(
+      ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'string',
         'weight' => 1,
-      ))
-      ->setDisplayOptions('form', array(
+      ])
+      ->setDisplayOptions('form', [
         'type' => 'string_textfield',
         'weight' => 1,
-      ))
+      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(true);
+      ->setRequired(TRUE);
 
     $fields['rate'] = BaseFieldDefinition::create('decimal')
-      ->setLabel(t('Rate'))
-      ->setDescription(t('Taux pour l\'épargne'))
+      ->setLabel(t("Rate"))
+      ->setDescription(t("Taux pour l'épargne"))
       ->setDefaultValue(0.0)
-      ->setDisplayOptions('view', array(
+      ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'decimal',
         'weight' => 2,
-      ))
-      ->setDisplayOptions('form', array(
+      ])
+      ->setDisplayOptions('form', [
         'weight' => 2,
-      ))
+      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(true);
+      ->setRequired(TRUE);
 
     $fields['alterable'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Alterable'))
-      ->setDescription(t('L\'utilisateur peut changer la valeur'))
+      ->setDescription(t("L'utilisateur peut changer la valeur"))
       ->setDefaultValue(0.0)
-      ->setDisplayOptions('view', array(
+      ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'checkbox',
         'weight' => 3,
-      ))
-      ->setDisplayOptions('form', array(
+      ])
+      ->setDisplayOptions('form', [
         'weight' => 3,
-      ))
+      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
@@ -169,4 +178,5 @@ class Saving3ARate extends ContentEntityBase implements Saving3ARateInterface {
 
     return $fields;
   }
+
 }

@@ -10,8 +10,7 @@ use Drupal\Core\Entity\EntityChangedInterface;
  *
  * @ingroup rp_libre_passage
  */
-interface PLPConversionRateInterface extends  ContentEntityInterface, EntityChangedInterface {
-  // Add get/set methods for your configuration properties here.
+interface PLPConversionRateInterface extends ContentEntityInterface, EntityChangedInterface {
 
   /**
    * Gets the PLP Interest Rate creation timestamp.
@@ -31,4 +30,5 @@ interface PLPConversionRateInterface extends  ContentEntityInterface, EntityChan
    *   The called PLP Interest Rate entity.
    */
   public function setCreatedTime($timestamp);
+
 }

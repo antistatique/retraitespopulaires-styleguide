@@ -14,14 +14,16 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class TeaserForm extends FormBase {
 
   /**
-   * To communicate with Logismata
-   * @var LogismataService
+   * To communicate with Logismata.
+   *
+   * @var \Drupal\rp_quickwin\LogismataService
    */
   private $logismataService;
 
   /**
-   * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-   * @var StateInterface
+   * The state key value store.
+   *
+   * @var \Drupal\Core\State\StateInterface
    */
   private $state;
 
@@ -29,7 +31,7 @@ class TeaserForm extends FormBase {
    * Class constructor.
    */
   public function __construct(LogismataService $logismataService, StateInterface $state) {
-    $this->logismataService  = $logismataService;
+    $this->logismataService = $logismataService;
     $this->state = $state;
   }
 
@@ -45,32 +47,42 @@ class TeaserForm extends FormBase {
     );
   }
 
-  /*
-   * Variable for having an unique form ID for each teaser in the page
-   * See https://www.drupal.org/project/drupal/issues/766146 for more info on the problem
+  /**
+   * Variable for having an unique form ID for each teaser in the page.
+   *
+   * See https://www.drupal.org/project/drupal/issues/766146
+   * for more info on the problem.
+   *
+   * @var int
    */
   private static $i = 1;
 
+  /**
+   * Get the form id.
+   */
   public function getFormId() {
-    // Increase i for unique form id
+    // Increase i for unique form id.
     self::$i++;
     return 'rp_quickwin_teaser_form_' . self::$i;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function buildForm(array $form, FormStateInterface $form_state, $params = NULL) {
     if (!empty($params)) {
-      // Don't add if it is the button "Calculer"
+      // Don't add if it is the button "Calculer".
       if (isset($params['field'])) {
         $field = $params['field'];
 
-        // Save logismata parameter
+        // Save logismata parameter.
         $form['logismata_parameter'] = [
           '#type' => 'hidden',
           '#default_value' => $field->logismata_parameter,
         ];
 
-        // Default parameter for all field
-        $defaultFieldParameter = [
+        // Default parameter for all field.
+        $defFieldParameter = [
           '#title' => $field->name,
           '#prefix' => '<div class="form-group">',
           '#suffix' => '</div>',
@@ -82,7 +94,7 @@ class TeaserForm extends FormBase {
           case 'chf':
             $form['logismata_value'] = [
               '#type' => 'textfield',
-              '#attributes' => [ 'class' => [ 'form-chf-numeric', 'text-right' ] ],
+              '#attributes' => ['class' => ['form-chf-numeric', 'text-right']],
               '#placeholder' => 'CHF',
             ];
             $haveSlider = $field->with_slider == '1';
@@ -91,13 +103,19 @@ class TeaserForm extends FormBase {
           case 'npa':
             try {
               $token = $this->logismataService->getToken();
-            } catch (\Exception $e) {
+            }
+            catch (\Exception $e) {
               $token = '';
             }
 
             $form['logismata_value'] = [
               '#type' => 'textfield',
-              '#attributes' => [ 'class' => [ 'form-npa' ], 'autocomplete' => 'off', 'data-authToken' => $token, 'data-url' => $this->state->get('rp_quickwin.settings.logismata_url_location') ],
+              '#attributes' => [
+                'class' => ['form-npa'],
+                'autocomplete' => 'off',
+                'data-authToken' => $token,
+                'data-url' => $this->state->get('rp_quickwin.settings.logismata_url_location'),
+              ],
             ];
             break;
 
@@ -108,34 +126,38 @@ class TeaserForm extends FormBase {
             break;
         }
 
-        // Add default parameter to field (what's already in $form[$fieldName] is not override)
-        $form['logismata_value'] += $defaultFieldParameter;
+        // Add default parameter to field
+        // (what's already in $form[$fieldName] is not override)
+        $form['logismata_value'] += $defFieldParameter;
 
-        // If there's a slider for number type
+        // If there's a slider for number type.
         if ($haveSlider) {
           $form['logismata_value']['#suffix'] = '<br><div class="ui-widget-content slider" data-step="' . $field->increment . '" data-max="' . $field->max . '" data-min="' . $field->min . '"></div></div';
         }
       }
 
-      // Save the target node id
+      // Save the target node id.
       $form['node'] = [
         '#type' => 'hidden',
         '#default_value' => $params['node'],
       ];
 
-      // Add the submit button
+      // Add the submit button.
       $form['submit'] = [
         '#type'       => 'submit',
-        '#attributes' => [ 'class' => [ 'btn-group-justified' ] ],
-        '#value'      => $this->t($params['button']),
+        '#attributes' => ['class' => ['btn-group-justified']],
+        '#value'      => $params['button'],
       ];
     }
 
     return $form;
   }
 
-  public function submitForm(array &$form, FormStateInterface $form_state, $params = null) {
-    // Redirect to the calculator page
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state, $params = NULL) {
+    // Redirect to the calculator page.
     $form_state->setRedirect('entity.node.canonical', ['node' => $form_state->getValue('node')], ['query' => [$form_state->getValue('logismata_parameter') => $form_state->getValue('logismata_value')]]);
   }
 

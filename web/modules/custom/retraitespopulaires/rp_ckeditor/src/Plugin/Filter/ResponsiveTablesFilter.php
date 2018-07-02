@@ -21,7 +21,7 @@ class ResponsiveTablesFilter extends FilterBase {
    * {@inheritdoc}
    */
   public function process($text, $langcode) {
-    if ($filtered = $this->_responsive_tables_filter_process($text)) {
+    if ($filtered = $this->responsiveTablesFilterProcess($text)) {
       $result = new FilterProcessResult($filtered);
     }
     else {
@@ -31,11 +31,10 @@ class ResponsiveTablesFilter extends FilterBase {
     return $result;
   }
 
-
   /**
    * Business logic for adding classes & attributes to <table> tags.
    */
-  private function _responsive_tables_filter_process($text) {
+  private function responsiveTablesFilterProcess($text) {
     // Older versions of libxml always add DOCTYPE, <html>, and <body> tags.
     // See http://www.php.net/manual/en/libxml.constants.php.
     // Sometimes, PHP is >= 5.4, but libxml is old enough that the constants are
@@ -45,7 +44,6 @@ class ResponsiveTablesFilter extends FilterBase {
       $new_libxml = version_compare(PHP_VERSION, '5.4', '>=') && defined('LIBXML_HTML_NOIMPLIED') && defined('LIBXML_HTML_NODEFDTD');
     }
     if ($text != '') {
-      $tables = array();
       libxml_use_internal_errors(TRUE);
       // LibXML requires that the html is wrapped in a root node.
       $text = '<root>' . $text . '</root>';
@@ -68,16 +66,16 @@ class ResponsiveTablesFilter extends FilterBase {
           $new_classes = !empty($existing_classes) ? $existing_classes . ' tablesaw tablesaw-stack' : 'tablesaw tablesaw-stack';
           $table->setAttribute('class', $new_classes);
 
-          // remove width attributes and replace nbsp.
+          // Remove width attributes and replace nbsp.
           $tds = $table->getElementsByTagName('td');
           $ths = $table->getElementsByTagName('th');
 
           foreach ($tds as $td) {
-            $td->setAttribute('width', null);
+            $td->setAttribute('width', NULL);
           }
 
           foreach ($ths as $th) {
-            $th->setAttribute('width', null);
+            $th->setAttribute('width', NULL);
             $th->nodeValue = str_replace(" ", ' ', $th->nodeValue);
           }
 
@@ -102,4 +100,5 @@ class ResponsiveTablesFilter extends FilterBase {
     }
     return FALSE;
   }
+
 }

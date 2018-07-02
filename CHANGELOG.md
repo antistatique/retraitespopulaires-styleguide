@@ -1,6 +1,14 @@
 CHANGELOG
 ---------
 
+## NEXT NEXT RELEASE
+ - remove this module from removed dir
+   - kint
+   - menu_breadcrumb
+   - rp_modulo
+   - twig_extender
+   - rp_exchange_rates
+
 ## NEXT RELEASE
  - add & configure Template Whisperer module - MD-374
  - migrate dynamic page templating using Template Whisperer instead of Config/State. - MD-374
@@ -10,6 +18,9 @@ CHANGELOG
  - remove raise error for updatedb before config-import - MD-351
  - remove quickwin css to move in styleguide - MD-359
  - update Drupal core to 8.5 - MD-379
+ - correct all phpcs error - MD-380
+ - remove deprecated usage - MD-380
+ - remove rp_exchange_rates module that have no file - MD-380
  - add mail to arc-en-ciel - MD-376
  - fix datepicker - MD-372
 

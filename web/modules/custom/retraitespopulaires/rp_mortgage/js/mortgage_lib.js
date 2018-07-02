@@ -36,8 +36,8 @@ function getFondsPropresMinPourRevenuAnnuel(montant, pourcentage1) {
 
 function getPret(prixAchat, prixAchatTotal, fonds, pourcentage) {
 
-  var target = Math.max(prixAchatTotal - fonds, 0);
-  var maxPret = (pourcentage) * prixAchat;
+  let target = Math.max(prixAchatTotal - fonds, 0);
+  let maxPret = (pourcentage) * prixAchat;
 
   return Math.floor(Math.min(target, maxPret));
 }

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\rp_homepage\Plugin\Block\HighlightBlock.
- */
-
 namespace Drupal\rp_homepage\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
@@ -16,7 +11,7 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\TransferException;
 
 /**
- * Provides a Block to display the six blocks on the homepage
+ * Provides a Block to display the six blocks on the homepage.
  *
  * @Block(
  *   id = "rp_homepage_highlight",
@@ -25,11 +20,12 @@ use GuzzleHttp\Exception\TransferException;
  */
 class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
-  CONST VIMEO_API = 'https://vimeo.com/api/oembed.json';
+  const VIMEO_API = 'https://vimeo.com/api/oembed.json';
 
   /**
-   * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-   * @var StateInterface
+   * The state key value store.
+   *
+   * @var \Drupal\Core\State\StateInterface
    */
   private $state;
 
@@ -77,7 +73,7 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
   /**
    * {@inheritdoc}
    */
-  public function build($params = array()) {
+  public function build($params = []) {
     $renderer = [
       '#theme'     => 'rp_homepage_highlight',
       '#variables' => [],
@@ -115,7 +111,7 @@ class HighlightBlock extends BlockBase implements ContainerFactoryPluginInterfac
         'query' => [
           'url' => $highlight['vimeo_url'],
           'width' => '640',
-        ]
+        ],
       ]);
       $embed = json_decode($response->getBody());
     }

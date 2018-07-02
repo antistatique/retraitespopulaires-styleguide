@@ -6,4 +6,3 @@ entity.rp_mortgage_rate.collection:
   description: 'List Rate entities'
   parent: system.admin_structure
   weight: 50
-

@@ -4,8 +4,7 @@ namespace Drupal\rp_mortgage;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;
-use Drupal\Core\Routing\LinkGeneratorTrait;
-use Drupal\Core\Url;
+use Drupal\Core\Link;
 
 /**
  * Defines a class to build a listing of Rate entities.
@@ -13,8 +12,6 @@ use Drupal\Core\Url;
  * @ingroup rp_mortgage
  */
 class RateListBuilder extends EntityListBuilder {
-
-  use LinkGeneratorTrait;
 
   /**
    * {@inheritdoc}
@@ -37,20 +34,13 @@ class RateListBuilder extends EntityListBuilder {
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\rp_mortgage\Entity\Rate */
     $row['id'] = $entity->id();
-    $row['type'] = $this->l(
-      $entity->getType(),
-      new Url(
-        'entity.rp_mortgage_rate.edit_form', array(
-          'rp_mortgage_rate' => $entity->id(),
-        )
-      )
-    );
+    $row['type'] = Link::createFromRoute($entity->getType(), 'entity.rp_mortgage_rate.edit_form', ['rp_mortgage_rate' => $entity->id()]);
     $row['name'] = $entity->getName();
 
     $date = $entity->getDate();
     $row['date'] = '';
     if (!empty($date) && $date instanceof \DateTime) {
-        $row['date'] = $entity->getDate()->format('d/m/Y');
+      $row['date'] = $entity->getDate()->format('d/m/Y');
     }
 
     $row['first_rate'] = $entity->getFirstRate();

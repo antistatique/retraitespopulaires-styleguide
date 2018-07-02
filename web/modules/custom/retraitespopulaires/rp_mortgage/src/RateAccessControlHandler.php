@@ -18,7 +18,7 @@ class RateAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
-    /** @var \Drupal\rp_mortgage\Entity\RateInterface $entity */;
+    /** @var \Drupal\rp_mortgage\Entity\RateInterface $entity */
     switch ($operation) {
       case 'view':
         return AccessResult::allowedIfHasPermission($account, 'administer rate entities');

@@ -1,4 +1,12 @@
 <?php
+
+/**
+ * @file
+ * Implements hook_drush_command().
+ */
+
+use Drupal\rp_quickwin\Command\ExportRateCommand;
+
 /**
  * Implements hook_drush_command().
  */
@@ -12,13 +20,11 @@ function rp_quickwin_drush_command() {
   return $items;
 }
 
-
 /**
- * The call back function name in the  following format
- *   drush_{module_name}_{item_id_for_command}()
+ * Call back function drush_{module_name}_{item_id_for_command}()
  */
 function drush_rp_quickwin_export_rates_logismata() {
-  $cmd = new Drupal\rp_quickwin\Command\ExportRateCommand(
+  $cmd = new ExportRateCommand(
     \Drupal::service('rp_mortgage.rate'),
     \Drupal::service('rp_quickwin.logismata')
   );

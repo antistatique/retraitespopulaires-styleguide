@@ -1,8 +1,4 @@
 <?php
-/**
-* @file
-* Contains \Drupal\rp_libre_passage\Form\AdminForm.
-*/
 
 namespace Drupal\rp_libre_passage\Form;
 
@@ -11,162 +7,177 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\file\Entity\File;
 
-// Use Static Url instead of MetadataBubblingUrlGenerator -> According Drupal doc "@internal, MetadataBubblingUrlGenerator, Should not be used in user code"
-Use Drupal\Core\Url;
+use Drupal\Core\Url;
 
 use Drupal\Core\State\StateInterface;
 use Drupal\file\FileUsage\FileUsageInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
+/**
+ * Admin form class.
+ */
 class AdminForm extends FormBase {
 
-    /**
-    * State API, not Configuration API, for storing local variables that shouldn't travel between instances.
-    * @var StateInterface
-    */
-    protected $state;
+  /**
+   * The state key value store.
+   *
+   * @var \Drupal\Core\State\StateInterface
+   */
+  protected $state;
 
-    /**
-    * Defines the database file usage backend. This is the default Drupal backend.
-    * @var FileUsageInterface
-    */
-    protected $file_usage;
+  /**
+   * Defines the database file usage backend.
+   *
+   * This is the default Drupal backend.
+   *
+   * @var \Drupal\file\FileUsage\FileUsageInterface
+   */
+  protected $fileUsage;
 
-    /**
-    * EntityTypeManagerInterface to load Nodes
-    * @var EntityTypeManagerInterface
-    */
-    private $entity_node;
+  /**
+   * Entity Storage interface to load Nodes.
+   *
+   * @var \Drupal\Core\Entity\EntityStorageInterface
+   */
+  private $entityNode;
 
-    /**
-     * Class constructor.
-     */
-    public function __construct(StateInterface $state, FileUsageInterface $file_usage, EntityTypeManagerInterface $entity) {
-        $this->state       = $state;
-        $this->file_usage  = $file_usage;
-        $this->entity_node = $entity->getStorage('node');
+  /**
+   * Entity Storage interface to load File.
+   *
+   * @var \Drupal\Core\Entity\EntityStorageInterface
+   */
+  private $entityFile;
+
+  /**
+   * Class constructor.
+   */
+  public function __construct(StateInterface $state, FileUsageInterface $file_usage, EntityTypeManagerInterface $entity) {
+    $this->state      = $state;
+    $this->fileUsage  = $file_usage;
+    $this->entityNode = $entity->getStorage('node');
+    $this->entityFile = $entity->getStorage('file');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    // Instantiates this form class.
+    return new static(
+    // Load the service required to construct this class.
+    $container->get('state'),
+    $container->get('file.usage'),
+    $container->get('entity_type.manager')
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFormId() {
+    return 'rp_libre_passage_admin_form';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildForm(array $form, FormStateInterface $form_state, $extra = NULL) {
+    // Simulator settings.
+    $form['simulator'] = [
+      '#type'  => 'fieldset',
+      '#title' => $this->t('Simulateur de libre passage Arc-en-ciel'),
+    ];
+
+    $form['simulator']['form_pdf'] = [
+      '#type'            => 'managed_file',
+      '#title'           => $this->t("Demande d\'affiliation"),
+      '#default_value'   => !empty($this->state->get('rp_libre_passage.settings.form_pdf')) ? [$this->state->get('rp_libre_passage.settings.form_pdf')] : NULL,
+      '#upload_location' => 'public://rp_libre_passage/form_pdf',
+      '#description'     => $this->t('Merci de déposer un fichier PDF.'),
+    ];
+
+    // Contact settings.
+    $form['contact'] = [
+      '#type'  => 'fieldset',
+      '#title' => 'Contact',
+    ];
+
+    $link = Url::fromRoute('system.site_information_settings')->toString();
+    $form['contact']['no_reply'] = [
+      '#type'          => 'textfield',
+      '#title'         => 'Adresse No-reply',
+      '#disabled'      => TRUE,
+      '#default_value' => $this->config('system.site')->get('mail'),
+      '#description'  => $this->t('Changer votre configuration ici: <a href="@link">Configuration > Système > Paramètres de base du site</a>', ['@link' => $link]),
+    ];
+
+    $form['contact']['receivers'] = [
+      '#type'          => 'textfield',
+      '#title'         => "E-mail(s) notifié(s) lors d'une nouvelle demande",
+      '#default_value' => $this->state->get('rp_libre_passage.settings.receivers'),
+      '#description'   => $this->t('Séparer les adresses par le caractère point-virgule (;).'),
+    ];
+
+    $form['actions']['submit'] = [
+      '#type'        => 'submit',
+      '#value'       => $this->t('Sauvegarder'),
+      '#button_type' => 'primary',
+      '#prefix'      => '<div class="form-group">',
+      '#suffix'      => '</div>',
+    ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    $mails = explode(';', $form_state->getValue('receivers'));
+    $mails = array_map('trim', $mails);
+    foreach ($mails as $mail) {
+      if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+        $form_state->setErrorByName('receivers', $this->t("@email n'est pas une adresse valide.", ['@email' => $mail]));
+      }
     }
+  }
 
-    /**
-     * {@inheritdoc}
-     */
-    public static function create(ContainerInterface $container) {
-      // Instantiates this form class.
-      return new static(
-        // Load the service required to construct this class.
-        $container->get('state'),
-        $container->get('file.usage'),
-        $container->get('entity_type.manager')
-      );
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    // Contact settings.
+    $this->state->set('rp_libre_passage.settings.receivers', trim($form_state->getValue('receivers')));
+
+    // Save file(s)
+    $files = [
+      'rp_libre_passage.settings.form_pdf' => $form_state->getValue('form_pdf') ,
+    ];
+    foreach ($files as $key => $value) {
+      if (!empty($value)) {
+        $file = reset($value);
+        $this->state->set($key, $file);
+        $file = $this->entityFile->load($file);
+        $this->saveFileAsPermanent($file);
+      }
+      elseif (!empty($this->state->get($key))) {
+        $deleted = $this->state->get($key);
+        file_delete($deleted);
+        $this->state->set($key, '');
+      }
     }
+  }
 
-    /**
-    * {@inheritdoc}.
-    */
-    public function getFormId() {
-        return 'rp_libre_passage_admin_form';
+  /**
+   * Chane the $file objects status to FILE_STATUS_PERMANENT.
+   */
+  protected function saveFileAsPermanent(File $file) {
+    if (!$file->isPermanent()) {
+      $file->setPermanent();
+      $file->save();
+      // Add entry to file_usage.
+      $this->fileUsage->add($file, 'rp_libre_passage', 'module', 1);
     }
+  }
 
-    /**
-    * {@inheritdoc}
-    */
-    public function buildForm(array $form, FormStateInterface $form_state, $extra = NULL) {
-        // Simulator settings
-        $form['simulator'] = array(
-            '#type'  => 'fieldset',
-            '#title' => t('Simulateur de libre passage Arc-en-ciel'),
-        );
-
-        $form['simulator']['form_pdf'] = array(
-            '#type'            => 'managed_file',
-            '#title'           => t('Demande d\'affiliation'),
-            '#default_value'   => !empty($this->state->get('rp_libre_passage.settings.form_pdf')) ? array($this->state->get('rp_libre_passage.settings.form_pdf')) : null,
-            '#upload_location' => 'public://rp_libre_passage/form_pdf',
-            '#description'     => t('Merci de déposer un fichier PDF.'),
-        );
-
-        // Contact settings
-        $form['contact'] = array(
-            '#type'  => 'fieldset',
-            '#title' => 'Contact',
-        );
-
-        $link = '<a href="'.Url::fromRoute('system.site_information_settings')->toString().'">'. t('Configuration') .' > '. t('System') .' > '. t('Basic site settings') . '</a>';
-        $form['contact']['no_reply'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'Adresse No-reply',
-            '#disabled'      => true,
-            '#default_value' => \Drupal::config('system.site')->get('mail'),
-            '#description'  => t('Changer votre configuration ici: ') . $link
-        );
-
-        $form['contact']['receivers'] = array(
-            '#type'          => 'textfield',
-            '#title'         => 'E-mail(s) notifié(s) lors d\'une nouvelle demande',
-            '#default_value' => $this->state->get('rp_libre_passage.settings.receivers'),
-            '#description'   => t('Séparer les adresses par le caractère point-virgule (;).'),
-        );
-
-        $form['actions']['submit'] = array(
-            '#type'        => 'submit',
-            '#value'       => t('Sauvegarder'),
-            '#button_type' => 'primary',
-            '#prefix'      => '<div class="form-group">',
-            '#suffix'      => '</div>',
-        );
-
-        return $form;
-    }
-
-    /**
-    * {@inheritdoc}
-    */
-    public function validateForm(array &$form, FormStateInterface $form_state) {
-        $mails = explode(';', $form_state->getValue('receivers'));
-        $mails = array_map('trim', $mails);
-        foreach($mails as $mail) {
-            if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-                $form_state->setErrorByName('receivers', t('@email n\'est pas une adresse valide.', array('@email' => $mail)));
-            }
-        }
-    }
-
-    /**
-    * {@inheritdoc}
-    */
-    public function submitForm(array &$form, FormStateInterface $form_state) {
-        // Contact settings
-        $this->state->set('rp_libre_passage.settings.receivers', trim($form_state->getValue('receivers')));
-
-        // Save file(s)
-        $files = array(
-            'rp_libre_passage.settings.form_pdf' => $form_state->getValue('form_pdf') ,
-        );
-        foreach ($files as $key => $value) {
-            if (!empty($value)) {
-                $file = reset($value);
-                $this->state->set($key, $file);
-                $file = File::load($file);
-                $this->saveFileAsPermanent($file);
-            }elseif (!empty($this->state->get($key))) {
-                $deleted = $this->state->get($key);
-                file_delete($deleted);
-                $this->state->set($key, '');
-            }
-        }
-    }
-
-    /**
-     * Chane the $file objects status to FILE_STATUS_PERMANENT
-     * @method saveFile
-     * @param  File $file
-     */
-    protected function saveFileAsPermanent(File $file) {
-        if( !$file->isPermanent() ){
-            $file->setPermanent();
-            $file->save();
-            // Add entry to file_usage
-            $this->file_usage->add($file, 'rp_libre_passage', 'module', 1);
-        }
-    }
 }
