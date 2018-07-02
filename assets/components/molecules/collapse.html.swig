@@ -4,18 +4,33 @@ name: collapse
 collection: molecules
 notes: |
   Can be wrapped in `.theme-[theme]` to change look.
+
+variants:
+  default: Default
+  bubble: Bubble
 ---
 <div class="collapse-wrapper">
-  <div class="collapse-title">
-    <h5 class="inline-block">
-      <a class="text-primary" href="#">Assurance vie</a>
-    </h5>
-    <a class="inline-block pull-right collapse-button" role="button" data-toggle="collapse" href="#assurance-vie" aria-expanded="true" aria-controls="assurance-vie" aria-label="Cliquez pour dérouler le contenu de la section assurance-vie.">
-      <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
-    </a>
-    <div class="clearfix"></div>
-  </div>
-  <div id="assurance-vie" class="collapse-body collapse in">
+  {%  if variant|default('default') == 'default' %}
+    <div class="collapse-title">
+      <h5 class="inline-block">
+        <a class="text-primary" href="#">Assurance vie</a>
+      </h5>
+      <a class="inline-block pull-right collapse-button" role="button" data-toggle="collapse" href="#assurance-vie-default" aria-expanded="true" aria-controls="assurance-vie" aria-label="Cliquez pour dérouler le contenu de la section assurance-vie.">
+        <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
+      </a>
+      <div class="clearfix"></div>
+    </div>
+  {% elseif variant == 'bubble' %}
+    <div class="collapse-title" role="button" data-toggle="collapse" href="#assurance-vie-bubble" aria-expanded="true" aria-controls="assurance-vie" aria-label="Cliquez pour dérouler le contenu de la section assurance-vie.">
+      <div class="button-bubble inline-block">
+        <div class="bubble-icon">
+          <i class="retraitespopulaires-icon retraitespopulaires-icon-arrow-right"></i>
+        </div>
+      </div>
+      <h5 class="inline-block">Assurance vie</h5>
+    </div>
+  {% endif %}
+  <div id="assurance-vie-{{ variant|default('default') }}" class="collapse-body collapse in">
     <ul class="unordered-list">
       <li>Ut efficitur mattis</li>
       <li>Ut efficitur mattis</li>
