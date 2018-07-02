@@ -43,7 +43,7 @@ class ImportRateCommand extends DrushCommands {
   private $lock;
 
   /**
-   * Command to export rates to logismata
+   * Command to export rates to logismata.
    *
    * @var \Drupal\rp_quickwin\Command\ExportRateCommand
    */
