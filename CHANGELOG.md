@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## 3.2.6 (2018-07-02)
+ - add components QuickWin - MD-359
+
 ## 3.2.5 (2018-03-20)
  - fix uppy integration to be builded
 
