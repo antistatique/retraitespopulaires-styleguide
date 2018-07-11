@@ -9,6 +9,9 @@ CHANGELOG
    - twig_extender
    - rp_exchange_rates
 
+## 2.4.4 (2018-07-11)
+ - update repo url for webbucket
+
 ## 2.4.3 (2018-07-02)
  - add & configure Template Whisperer module - MD-374
  - migrate dynamic page templating using Template Whisperer instead of Config/State. - MD-374
