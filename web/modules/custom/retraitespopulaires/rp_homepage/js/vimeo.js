@@ -12,13 +12,12 @@
       const ratio = $('#vimeo-player').data('ratio');
 
       let options = {
-        width: $('.vimeo-player').width(),
+        width: parseInt($('.vimeo-player').width(), 10),
         byline: false,
         title: false,
         autoplay: false,
         color: "008e4f",
       };
-
 
       const initPlayer = function() {
         vimeoPlayer = new Vimeo.Player('vimeo-player', options);
@@ -56,8 +55,8 @@
           const newWidth = $('.vimeo-player').width();
 
           $video
-            .width(newWidth)
-            .height(newWidth * ratio);
+            .width(parseInt(newWidth, 10))
+            .height(parseInt(newWidth * ratio, 10));
         }
       });
     },
