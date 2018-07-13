@@ -9,6 +9,10 @@ CHANGELOG
    - twig_extender
    - rp_exchange_rates
 
+## 2.4.5 (2018-07-13)
+ - fix Vimeo breaking change on Player Width/Height calculation
+ - add new remote Bitbucket on README instruction
+
 ## 2.4.4 (2018-07-11)
  - update repo url for webbucket
 
