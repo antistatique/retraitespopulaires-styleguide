@@ -38,7 +38,7 @@ It's because you need to connect to the VPN. Open Firefox (and not Safari or Chr
 
 ### Tips
 
-To run any drush command, you need to be on a hight bootstrapped drupal directory, such `/web`.
+To run any drush command, you need to be on a highest bootstrapped drupal directory, such `/web`.
 
   ```bash
   $ cd /web
