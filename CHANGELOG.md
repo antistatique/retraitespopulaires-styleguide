@@ -8,6 +8,10 @@ CHANGELOG
    - rp_modulo
    - twig_extender
    - rp_exchange_rates
+   
+## 2.4.7 (2018-07-19)
+ - Remove a 500 error on /offers/requests/nid  
+   
 ## 2.4.6 (2018-07-16)
  - Fix Typo 
 
