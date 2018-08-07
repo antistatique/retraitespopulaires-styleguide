@@ -8,6 +8,8 @@ CHANGELOG
    - rp_modulo
    - twig_extender
    - rp_exchange_rates
+ - update to Drupal 8.5.6 - MD-385
+ - remove all deprecation
    
 ## 2.4.7 (2018-07-19)
  - Remove a 500 error on /offers/requests/nid  
