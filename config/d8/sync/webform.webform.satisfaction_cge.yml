@@ -6,6 +6,7 @@ open: null
 close: null
 uid: 1
 template: false
+archive: false
 id: satisfaction_cge
 title: 'Votre opinion nous intéresse: enquête de satisfaction'
 description: 'formulaire de satisfaction pour Offres.'

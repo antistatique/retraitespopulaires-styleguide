@@ -2,14 +2,14 @@
 lock '3.5.0'
 
 set :application, 'retraites-populaires'
-set :repo_url, 'dplmgr@192.168.188.51:/data/git/retraitespopulaires.git'
+set :repo_url, 'ssh://git@webbucket:7999/sp/retraitespopulaires.git'
 
 set :app_path, "web"
 set :theme_path, "themes/retraitespopulaires"
 set :build_path, "build"
 
 set :styleguide_path, "node_modules/@antistatique/retraitespopulaires-styleguide"
-set :styleguide_repo, 'https://github.com/antistatique/retraitespopulaires-styleguide.git'
+set :styleguide_repo, 'ssh://git@webbucket:7999/sp/styleguide.git'
 
 # Link file settings.php & drushcr.php
 set :linked_files, fetch(:linked_files, []).push("#{fetch(:app_path)}/sites/default/settings.php", "#{fetch(:app_path)}/sites/default/drushrc.php")

@@ -51,7 +51,8 @@
         "drupal/bamboo_twig": "^3.3",
         "twig/extensions": "^1.5",
         "drupal/menu_trail_by_path": "^1.1",
-        "drupal/easy_breadcrumb": "^1.8"
+        "drupal/easy_breadcrumb": "^1.8",
+        "drupal/yoast_seo": "^1.3"
       },
     "require-dev": {
       "behat/mink": "~1.7",

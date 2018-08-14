@@ -8,6 +8,21 @@ CHANGELOG
    - rp_modulo
    - twig_extender
    - rp_exchange_rates
+ - update to Drupal 8.5.6 - MD-385
+ - remove all deprecation
+   
+## 2.4.7 (2018-07-19)
+ - Remove a 500 error on /offers/requests/nid  
+   
+## 2.4.6 (2018-07-16)
+ - Fix Typo 
+
+## 2.4.5 (2018-07-13)
+ - fix Vimeo breaking change on Player Width/Height calculation
+ - add new remote Bitbucket on README instruction
+
+## 2.4.4 (2018-07-11)
+ - update repo url for webbucket
 
 ## 2.4.3 (2018-07-02)
  - add & configure Template Whisperer module - MD-374

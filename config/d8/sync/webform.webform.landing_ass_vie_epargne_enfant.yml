@@ -6,6 +6,7 @@ open: null
 close: null
 uid: 1
 template: false
+archive: false
 id: landing_ass_vie_epargne_enfant
 title: 'Landing Page - Assurance Vie - Epargne pour enfant'
 description: 'Formulaire des landings pages pour Assurance Vie'
@@ -110,6 +111,7 @@ handlers:
     label: 'Courriel - Admin'
     handler_id: courriel_admin
     status: true
+    conditions: {  }
     weight: 0
     settings:
       states:
@@ -120,9 +122,9 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: default
+      from_mail: _default
       from_options: {  }
-      from_name: default
+      from_name: _default
       subject: 'Nouvelle prise de contact - [webform_submission:values:votre_code_postal_npa_] - [current-page:title] - Assurance Vie'
       body: "<b>Nouvelle prise de contact - [current-page:title] - Assurance Vie par [webform_submission:values:prenom] [webform_submission:values:nom_de_famille].</b>\n\n<p><b>Demande</b></p><br />\n[webform_submission:values]\n\n<br /><br />\n<p>Retraites Populaires</p>"
       excluded_elements: {  }
@@ -133,11 +135,16 @@ handlers:
       return_path: ''
       ignore_access: false
       exclude_empty: true
+      exclude_empty_checkbox: false
+      twig: false
+      sender_mail: ''
+      sender_name: ''
   courriel_feedback:
     id: email
     label: 'Courriel - Feedback'
     handler_id: courriel_feedback
     status: true
+    conditions: {  }
     weight: 1
     settings:
       states:
@@ -148,9 +155,9 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: default
+      from_mail: _default
       from_options: {  }
-      from_name: default
+      from_name: _default
       subject: 'Retraites Populaires - mail de confirmation'
       body: "<p>Madame, Monsieur</p> <br />\n\n<p>Nous vous remercions pour votre demande. Nous allons la traiter dans les plus brefs délais.</p> <br />\n\n<p>Recevez, Madame, Monsieur, nos meilleures salutations.</p>\n\n<br /><br />\n<p>Retraites Populaires</p>"
       excluded_elements: {  }
@@ -161,3 +168,7 @@ handlers:
       return_path: ''
       ignore_access: false
       exclude_empty: true
+      exclude_empty_checkbox: false
+      twig: false
+      sender_mail: ''
+      sender_name: ''
