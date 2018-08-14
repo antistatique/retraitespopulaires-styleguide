@@ -105,9 +105,9 @@ class LoanIncreaseForm extends FormBase {
 
     $status = $this->messenger()->messagesByType(MessengerInterface::TYPE_STATUS);
     $this->messenger()->deleteByType(MessengerInterface::TYPE_STATUS);
-    if (!empty($status[MessengerInterface::TYPE_STATUS])) {
+    if (!empty($status)) {
       $form['status'] = [
-        '#markup' => '<div class="well well-success well-lg"><p class="m-b-0">' . $status[MessengerInterface::TYPE_STATUS][0] . '</p></div>',
+        '#markup' => '<div class="well well-success well-lg"><p class="m-b-0">' . $status[0] . '</p></div>',
       ];
     }
     if (!empty($this->session->get('errors'))) {

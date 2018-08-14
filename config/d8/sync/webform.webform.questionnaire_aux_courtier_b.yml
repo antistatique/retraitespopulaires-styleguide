@@ -6,6 +6,7 @@ open: null
 close: null
 uid: 35
 template: false
+archive: false
 id: questionnaire_aux_courtier_b
 title: 'Votre opinion nous intéresse : enquête de satisfaction'
 description: 'Formulaire de satisfaction pour les courtiers B.'
