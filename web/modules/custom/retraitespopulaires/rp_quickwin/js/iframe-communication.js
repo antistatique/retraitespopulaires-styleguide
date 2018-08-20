@@ -76,8 +76,10 @@ function isAuthorized(origin) {
       }
    }
 
-   for (let index = 0; index < authorizedOriginsToRemove.length ; index++) {
-      authorizedOrigins.splice(authorizedOrigins.indexOf(authorizedOriginsToRemove[index]), 1);
+   if (authorizedOrigins.length != authorizedOriginsToRemove.length) {
+     for (let index = 0; index < authorizedOriginsToRemove.length; index++) {
+       authorizedOrigins.splice(authorizedOrigins.indexOf(authorizedOriginsToRemove[index]), 1);
+     }
    }
 
    return result;
