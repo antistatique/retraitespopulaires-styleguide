@@ -177,6 +177,7 @@ permissions:
   - 'revert page revisions'
   - 'revert partnership revisions'
   - 'revert product revisions'
+  - 'show rp toolbar'
   - 'translate any entity'
   - 'translate interface'
   - 'update content translations'

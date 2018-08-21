@@ -4,4 +4,4 @@ rp_homepage.admin.settings:
         _form: '\Drupal\rp_homepage\Form\HomepageSettings'
         _title: 'Homepage Settings'
     requirements:
-        _permission: 'administer site configuration'
+        _permission: 'administer rp site'

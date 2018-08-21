@@ -25,6 +25,7 @@ permissions:
   - 'edit own offer content'
   - 'revert news revisions'
   - 'revert offer revisions'
+  - 'show rp toolbar'
   - 'use text format full_html'
   - 'view news revisions'
   - 'view offer revisions'
