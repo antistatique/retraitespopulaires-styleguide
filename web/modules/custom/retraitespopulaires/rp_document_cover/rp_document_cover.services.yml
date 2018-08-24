@@ -1,0 +1,4 @@
+services:
+  rp_document_cover.generation:
+    class: Drupal\rp_document_cover\Service\Generation
+    arguments: ['@file_system']

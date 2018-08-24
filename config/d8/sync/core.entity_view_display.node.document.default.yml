@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.document.field_doc_cover
     - field.field.node.document.field_document_type
     - field.field.node.document.field_document_type_institution
     - field.field.node.document.field_file_document
@@ -10,12 +11,22 @@ dependencies:
     - node.type.document
   module:
     - file
+    - image
     - user
 id: node.document.default
 targetEntityType: node
 bundle: document
 mode: default
 content:
+  field_doc_cover:
+    weight: 105
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
   field_document_type:
     weight: 103
     label: above

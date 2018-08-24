@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains rp_document_cover.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_insert().
+ */
+function rp_document_cover_entity_insert(EntityInterface $entity) {
+  if ($entity->bundle() === 'document' && $entity->get('field_doc_cover')->isEmpty()) {
+    rp_document_cover_add_to_queue($entity);
+
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function rp_document_cover_entity_update(EntityInterface $entity) {
+  if ($entity->bundle() === 'document' && $entity->get('field_doc_cover')->isEmpty()) {
+    rp_document_cover_add_to_queue($entity);
+  }
+}
+
+/**
+ * Adds entity to queue.
+ */
+function rp_document_cover_add_to_queue(EntityInterface $entity) {
+  $queue_service = \Drupal::service('queue');
+  $queue = $queue_service->get('queue_generation');
+  $queue->createItem($entity);
+}
