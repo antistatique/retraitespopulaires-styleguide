@@ -80,7 +80,7 @@ class Generation {
     }
     $image = [
       'data' => file_get_contents($image_path),
-      'uri' => $dest_uri . $file_name . 'jpg',
+      'uri' => $dest_uri . $file_name . '.jpg',
     ];
 
     return $image;
