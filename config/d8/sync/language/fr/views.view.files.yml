@@ -37,7 +37,7 @@ display:
           label: 'Date de modification'
         count:
           label: 'Utilisé dans'
-          format_plural_string: "@count place\x03@count places"
+          format_plural_string: !!binary QGNvdW50IHBsYWNlA0Bjb3VudCBwbGFjZXM=
       filters:
         filename:
           expose:
@@ -77,7 +77,7 @@ display:
           label: 'Enregistrement du module'
         count:
           label: 'Nombre d''utilisations'
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
       title: 'Utilisation du fichier'
       arguments:
         fid:

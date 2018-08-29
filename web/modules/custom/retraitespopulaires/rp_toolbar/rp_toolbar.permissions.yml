@@ -1,0 +1,4 @@
+'show rp toolbar':
+  title: 'Show Retraites Populaires toolbar menu'
+  description: 'To show the menu of Retraites Populaires'
+  restrict access: false

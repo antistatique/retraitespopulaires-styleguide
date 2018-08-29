@@ -1,13 +1,18 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## 2.4.8 (2018-08-29)
  - remove this module from removed dir
    - kint
    - menu_breadcrumb
    - rp_modulo
    - twig_extender
    - rp_exchange_rates
+ - update to Drupal 8.5.6 - MD-385
+ - remove all deprecation
+ - update contrib role
+ - update Bella Vita role to show toolbar menu
+ - add permission to see Retraites Populaires in toolbar
    
 ## 2.4.7 (2018-07-19)
  - Remove a 500 error on /offers/requests/nid  

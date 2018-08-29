@@ -103,9 +103,9 @@ class RequestForm extends FormBase {
 
     $status = $this->messenger()->messagesByType(MessengerInterface::TYPE_STATUS);
     $this->messenger()->deleteByType(MessengerInterface::TYPE_STATUS);
-    if (!empty($status[MessengerInterface::TYPE_STATUS])) {
+    if (!empty($status)) {
       $form['status'] = [
-        '#markup' => '<div class="well well-success well-lg"><p>' . $status[MessengerInterface::TYPE_STATUS][0] . '</p></div>',
+        '#markup' => '<div class="well well-success well-lg"><p>' . $status[0] . '</p></div>',
       ];
     }
     if (!empty($this->session->get('errors'))) {

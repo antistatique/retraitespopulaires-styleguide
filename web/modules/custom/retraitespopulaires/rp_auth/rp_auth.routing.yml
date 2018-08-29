@@ -5,4 +5,4 @@ rp_auth.ldap_roles:
         _form: '\Drupal\rp_auth\Form\RoleSettingsForm'
         _title: 'LDAP Roles'
     requirements:
-        _permission: 'administer site configuration'
+        _permission: 'administer rp site'
