@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## 2.4.8 (2018-08-29)
  - remove this module from removed dir
    - kint
    - menu_breadcrumb
