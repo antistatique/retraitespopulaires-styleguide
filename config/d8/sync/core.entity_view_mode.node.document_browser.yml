@@ -1,0 +1,10 @@
+uuid: 9bef2886-230d-4d19-ab50-2d3337948ca8
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.document_browser
+label: 'Document Browser'
+targetEntityType: node
+cache: true

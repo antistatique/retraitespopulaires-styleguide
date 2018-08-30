@@ -98,7 +98,7 @@ class Generation {
   /**
    * Saves the generated image in the field_doc_cover field.
    *
-   * @param Drupal\node\NodeInterface $entity
+   * @param Drupal\node\NodeInterface $node
    *   The document node.
    * @param array $image
    *   The image infos.

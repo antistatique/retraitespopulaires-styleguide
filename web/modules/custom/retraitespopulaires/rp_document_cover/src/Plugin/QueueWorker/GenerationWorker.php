@@ -33,6 +33,8 @@ class GenerationWorker extends QueueWorkerBase implements ContainerFactoryPlugin
   }
 
   /**
+   * Inject cover generation service.
+   *
    * @inheritdoc
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
@@ -42,6 +44,8 @@ class GenerationWorker extends QueueWorkerBase implements ContainerFactoryPlugin
   }
 
   /**
+   * Process nod in queue.
+   *
    * @inheritdoc
    */
   public function processItem($entity) {

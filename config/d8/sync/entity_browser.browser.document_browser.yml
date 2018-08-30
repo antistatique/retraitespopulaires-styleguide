@@ -1,0 +1,31 @@
+uuid: d9cf76f8-fb20-4e0a-8b2a-479d31e4c6af
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.document_browser
+  module:
+    - views
+name: document_browser
+label: 'Document Browser'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select documents'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  401cd5c3-a92f-4a6c-9840-4e66508011c1:
+    settings:
+      view: document_browser
+      view_display: entity_browser_1
+      submit_text: 'Choisir le(s) document(s)'
+      auto_select: false
+    uuid: 401cd5c3-a92f-4a6c-9840-4e66508011c1
+    weight: 1
+    label: view
+    id: view

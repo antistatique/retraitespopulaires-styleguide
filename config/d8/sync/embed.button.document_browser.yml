@@ -1,0 +1,24 @@
+uuid: 9f7fe4ba-5c40-41e0-b548-f09bc57e7d8e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.document
+  content:
+    - 'file:file:9346baf9-f453-4b14-9784-65454b51b0db'
+  module:
+    - entity_embed
+    - node
+label: 'Document Browser'
+id: document_browser
+type_id: entity
+type_settings:
+  entity_type: node
+  bundles:
+    - document
+  display_plugins:
+    - 'view_mode:node.document_browser'
+  entity_browser: document_browser
+  entity_browser_settings:
+    display_review: true
+icon_uuid: 9346baf9-f453-4b14-9784-65454b51b0db
