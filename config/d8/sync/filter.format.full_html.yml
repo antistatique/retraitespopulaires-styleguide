@@ -5,6 +5,7 @@ dependencies:
   module:
     - ckeditor_media_embed
     - editor
+    - entity_embed
     - rp_ckeditor
 _core:
   default_config_hash: hewPmBgni9jlDK_IjLxUx1HsTbinK-hdl0lOwjbteIY
@@ -79,6 +80,12 @@ filters:
   filter_ckeditor_media_embed:
     id: filter_ckeditor_media_embed
     provider: ckeditor_media_embed
+    status: true
+    weight: 0
+    settings: {  }
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
     status: true
     weight: 0
     settings: {  }

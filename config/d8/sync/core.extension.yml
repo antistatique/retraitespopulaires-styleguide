@@ -28,7 +28,10 @@ module:
   easy_breadcrumb: 0
   editor: 0
   editor_advanced_link: 0
+  embed: 0
+  entity_browser: 0
   entity_clone: 0
+  entity_embed: 0
   field: 0
   field_group: 0
   field_ui: 0

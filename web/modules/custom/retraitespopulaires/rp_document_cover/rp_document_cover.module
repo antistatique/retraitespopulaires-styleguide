@@ -31,6 +31,6 @@ function rp_document_cover_entity_update(EntityInterface $entity) {
  */
 function rp_document_cover_add_to_queue(EntityInterface $entity) {
   $queue_service = \Drupal::service('queue');
-  $queue = $queue_service->get('queue_generation');
+  $queue = $queue_service->get('rp_document_cover_generation');
   $queue->createItem($entity);
 }

@@ -50,6 +50,7 @@ settings:
           items:
             - Blockquote
             - DrupalImage
+            - document_browser
             - Table
             - HorizontalRule
             - EmbedSemantic
