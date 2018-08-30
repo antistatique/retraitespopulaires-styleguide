@@ -1,0 +1,7 @@
+services:
+  rp_contact.import_zip:
+    class: Drupal\rp_contact\Command\ImportZipCommand
+    arguments:
+        - '@entity_type.manager'
+    tags:
+      - { name: drush.command }
