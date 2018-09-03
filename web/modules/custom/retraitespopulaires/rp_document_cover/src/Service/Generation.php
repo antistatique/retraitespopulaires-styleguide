@@ -37,7 +37,7 @@ class Generation {
   /**
    * Creates an image from a given file at the given destination.
    *
-   * @param \Drupal\file\\FileInterface $file
+   * @param \Drupal\file\FileInterface $file
    *   PDF to generate the cover from.
    * @param string $dest_uri
    *   The location of the generated image.
@@ -60,6 +60,7 @@ class Generation {
       $imgk->setInterlaceScheme(\Imagick::INTERLACE_PLANE);
       $imgk->setBackgroundColor('white');
       $imgk->readimage($source_path . '[0]');
+      $imgk = $imgk->mergeImageLayers(\Imagick::LAYERMETHOD_FLATTEN);
       $imgk->setImageFormat('jpg');
 
       $imgk_width = $imgk->getImageWidth();
