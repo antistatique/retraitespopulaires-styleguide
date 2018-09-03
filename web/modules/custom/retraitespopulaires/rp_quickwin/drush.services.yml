@@ -1,0 +1,8 @@
+services:
+  rp_quickwin.export_rate:
+    class: Drupal\rp_quickwin\Command\ExportRateCommand
+    arguments:
+        - '@rp_mortgage.rate'
+        - '@rp_quickwin.logismata'
+    tags:
+      - { name: drush.command }
