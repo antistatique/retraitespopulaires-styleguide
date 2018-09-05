@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - correct image was not loaded correctly in teaser of gallery
+
 ## 2.4.8 (2018-08-29)
  - remove this module from removed dir
    - kint
