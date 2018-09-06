@@ -1,6 +1,9 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - add possibility to put document anywhere in text - MD-373
+
 ## 2.4.8 (2018-08-29)
  - remove this module from removed dir
    - kint
