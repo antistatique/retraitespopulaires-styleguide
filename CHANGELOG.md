@@ -3,6 +3,7 @@ CHANGELOG
 
 ## NEXT RELEASE
  - correct image was not loaded correctly in teaser of gallery
+ - update Drush to 9.3 - MD-391
 
 ## 2.4.8 (2018-08-29)
  - remove this module from removed dir
