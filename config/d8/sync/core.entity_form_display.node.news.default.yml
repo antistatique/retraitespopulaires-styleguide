@@ -31,7 +31,7 @@ dependencies:
     - datetime
     - field_group
     - file
-    - image
+    - focal_point
     - metatag
     - path
     - text
@@ -73,7 +73,6 @@ third_party_settings:
         - field_contact_cta
         - field_popin
         - field_email_popin
-        - group_flex
         - field_search_npa
         - field_advisor
         - field_contact
@@ -192,8 +191,10 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
     third_party_settings: {  }
-    type: image_image
+    type: image_focal_point
     region: content
   field_date:
     weight: 9
@@ -350,6 +351,8 @@ content:
   url_redirects:
     weight: 50
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   langcode: true
