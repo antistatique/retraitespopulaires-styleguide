@@ -56,7 +56,9 @@ class GenerationWorker extends QueueWorkerBase implements ContainerFactoryPlugin
 
     $image = $this->generation->generateImage($file, $dest_uri);
 
-    $this->generation->saveImage($entity, $image);
+    if ($image) {
+      $this->generation->saveImage($entity, $image);
+    }
   }
 
 }
