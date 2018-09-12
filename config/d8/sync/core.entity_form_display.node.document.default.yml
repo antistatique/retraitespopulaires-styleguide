@@ -3,14 +3,17 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.document.field_doc_cover
     - field.field.node.document.field_document_type
     - field.field.node.document.field_document_type_institution
     - field.field.node.document.field_file_document
     - field.field.node.document.field_profession
+    - image.style.thumbnail
     - node.type.document
   module:
     - field_group
     - file
+    - image
     - path
 third_party_settings:
   field_group:
@@ -47,6 +50,14 @@ targetEntityType: node
 bundle: document
 mode: default
 content:
+  field_doc_cover:
+    weight: 121
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   field_document_type:
     weight: 4
     settings: {  }

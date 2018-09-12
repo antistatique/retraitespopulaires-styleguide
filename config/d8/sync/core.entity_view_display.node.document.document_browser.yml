@@ -1,0 +1,36 @@
+uuid: d9a46904-987e-40fe-8bcb-e7251b200181
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.document_browser
+    - field.field.node.document.field_doc_cover
+    - field.field.node.document.field_document_type
+    - field.field.node.document.field_document_type_institution
+    - field.field.node.document.field_file_document
+    - field.field.node.document.field_profession
+    - node.type.document
+  module:
+    - image
+    - user
+id: node.document.document_browser
+targetEntityType: node
+bundle: document
+mode: document_browser
+content:
+  field_doc_cover:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  field_document_type: true
+  field_document_type_institution: true
+  field_file_document: true
+  field_profession: true
+  langcode: true
+  links: true
