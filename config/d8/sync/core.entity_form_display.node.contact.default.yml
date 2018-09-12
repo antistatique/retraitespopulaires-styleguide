@@ -19,7 +19,7 @@ dependencies:
     - node.type.contact
   module:
     - field_group
-    - image
+    - focal_point
     - path
     - telephone
     - text
@@ -39,7 +39,6 @@ third_party_settings:
         - field_specialty
         - field_entity
         - body
-        - field_zip
         - field_profession
       parent_name: group_tabs
       weight: 111
@@ -81,8 +80,10 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
     third_party_settings: {  }
-    type: image_image
+    type: image_focal_point
     region: content
   field_email:
     weight: 4
@@ -184,6 +185,8 @@ content:
   url_redirects:
     weight: 50
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   langcode: true

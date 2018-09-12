@@ -2,12 +2,13 @@
 
 namespace Drupal\rp_contact\Command;
 
+use Drush\Commands\DrushCommands;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Process zip code, create missing one and link to Advisor (create missing one)
  */
-class ImportZipCommand {
+class ImportZipCommand extends DrushCommands {
 
   /**
    * EntityTypeManagerInterface to load Nodes.
@@ -33,9 +34,17 @@ class ImportZipCommand {
 
   /**
    * Import zips code in Drupal.
+   *
+   * @option file
+   *   The full file path that contain zips to be imported.
+   *
+   * @command rp:contact:import_zip
+   * @validate-module-enabled rp_contact
+   * @aliases import_zip
    */
-  public function import($file) {
-    drush_print('Start Importing from: ' . $file);
+  public function import(array $options = ['file' => '']) {
+    $file = $options['file'];
+    $this->output()->writeln('Start Importing from: ' . $file);
 
     $callback = function ($chunk) {
       // Read the line as CSV to retrieve all details.
@@ -43,8 +52,8 @@ class ImportZipCommand {
       if (isset($values[0]) && !empty($values[0]) && isset($values[1]) && !empty($values[1])) {
         if (!$zip = $this->isZipExist($values[0], $values[1])) {
           $data = [
-            'vid'            => 'zip_codes',
-            'name'           => $values[0] . ' ' . $values[1],
+            'vid' => 'zip_codes',
+            'name' => $values[0] . ' ' . $values[1],
             'field_zip_code' => $values[0],
             'field_district' => $values[1],
           ];
@@ -59,13 +68,14 @@ class ImportZipCommand {
           'target_id' => $this->mapRegions($values[3]),
         ]);
         $advisor->save();
-        drush_print('Added ' . $values[0] . ' ' . $values[1] . ' to ' . $advisor->field_firstname->value);
+        $this->output()
+          ->writeln('Added ' . $values[0] . ' ' . $values[1] . ' to ' . $advisor->field_firstname->value);
       }
     };
 
     $success = $this->readFileLinebyLine($file, $callback);
     if (!$success) {
-      drush_print('Failed on ' . $file);
+      $this->output()->writeln('Failed on ' . $file);
     }
   }
 
