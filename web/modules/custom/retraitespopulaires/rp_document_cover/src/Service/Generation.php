@@ -67,10 +67,10 @@ class Generation {
       $imgk_height = $imgk->getImageHeight();
 
       if ($imgk_width < $imgk_height) {
-        $imgk->thumbnailImage(0, 300);
+        $imgk->thumbnailImage(0, 150);
       }
       else {
-        $imgk->thumbnailImage(300, 0);
+        $imgk->thumbnailImage(150, 0);
       }
 
       $imgk->writeImage($image_path);
