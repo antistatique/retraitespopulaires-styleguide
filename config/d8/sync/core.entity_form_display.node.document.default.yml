@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.document.field_document_type
     - field.field.node.document.field_document_type_institution
     - field.field.node.document.field_file_document
+    - field.field.node.document.field_meta_tags
     - field.field.node.document.field_profession
+    - field.field.node.document.field_yoast_seo
     - image.style.thumbnail
     - node.type.document
   module:
@@ -51,7 +53,7 @@ bundle: document
 mode: default
 content:
   field_doc_cover:
-    weight: 121
+    weight: 4
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -93,7 +95,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 3
     region: content
     third_party_settings: {  }
   title:
@@ -105,10 +107,14 @@ content:
     third_party_settings: {  }
     region: content
   url_redirects:
-    weight: 50
+    weight: 2
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
+  field_meta_tags: true
+  field_yoast_seo: true
   langcode: true
   promote: true
   sticky: true

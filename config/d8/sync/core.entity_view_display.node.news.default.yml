@@ -19,12 +19,14 @@ dependencies:
     - field.field.node.news.field_firstname
     - field.field.node.news.field_function
     - field.field.node.news.field_lastname
+    - field.field.node.news.field_meta_tags
     - field.field.node.news.field_metatags
     - field.field.node.news.field_news_type
     - field.field.node.news.field_offer
     - field.field.node.news.field_popin
     - field.field.node.news.field_profession
     - field.field.node.news.field_search_npa
+    - field.field.node.news.field_yoast_seo
     - node.type.news
   module:
     - datetime
@@ -33,6 +35,7 @@ dependencies:
     - metatag
     - text
     - user
+    - yoast_seo
 id: node.news.default
 targetEntityType: node
 bundle: news
@@ -41,12 +44,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_advisor:
-    weight: 115
+    weight: 11
     label: above
     settings:
       link: true
@@ -54,7 +57,7 @@ content:
     type: entity_reference_label
     region: content
   field_contact:
-    weight: 114
+    weight: 10
     label: above
     settings:
       link: true
@@ -62,7 +65,7 @@ content:
     type: entity_reference_label
     region: content
   field_contact_cta:
-    weight: 123
+    weight: 19
     label: above
     settings:
       format: default
@@ -72,7 +75,7 @@ content:
     type: boolean
     region: content
   field_cover:
-    weight: 103
+    weight: 2
     label: above
     settings:
       image_style: ''
@@ -81,7 +84,7 @@ content:
     type: image
     region: content
   field_date:
-    weight: 106
+    weight: 4
     label: above
     settings:
       format_type: medium
@@ -90,7 +93,7 @@ content:
     type: datetime_default
     region: content
   field_document:
-    weight: 120
+    weight: 16
     label: above
     settings:
       link: true
@@ -98,7 +101,7 @@ content:
     type: entity_reference_label
     region: content
   field_document_news:
-    weight: 122
+    weight: 18
     label: above
     settings:
       link: true
@@ -106,7 +109,7 @@ content:
     type: entity_reference_label
     region: content
   field_document_random:
-    weight: 118
+    weight: 14
     label: above
     settings:
       format: default
@@ -116,14 +119,14 @@ content:
     type: boolean
     region: content
   field_email_popin:
-    weight: 125
+    weight: 21
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_faq:
-    weight: 121
+    weight: 17
     label: above
     settings:
       link: true
@@ -131,7 +134,7 @@ content:
     type: entity_reference_label
     region: content
   field_faq_random:
-    weight: 119
+    weight: 15
     label: above
     settings:
       format: default
@@ -141,14 +144,15 @@ content:
     type: boolean
     region: content
   field_file_news:
-    weight: 104
+    weight: 3
     label: above
-    settings: {  }
+    settings:
+      use_description_as_link_text: true
     third_party_settings: {  }
     type: file_default
     region: content
   field_firstname:
-    weight: 109
+    weight: 5
     label: above
     settings:
       link_to_entity: false
@@ -156,7 +160,7 @@ content:
     type: string
     region: content
   field_function:
-    weight: 111
+    weight: 7
     label: above
     settings:
       link_to_entity: false
@@ -164,22 +168,22 @@ content:
     type: string
     region: content
   field_lastname:
-    weight: 110
+    weight: 6
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  field_metatags:
-    weight: 118
+  field_meta_tags:
+    weight: 22
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   field_news_type:
-    weight: 112
+    weight: 8
     label: above
     settings:
       link: true
@@ -187,7 +191,7 @@ content:
     type: entity_reference_label
     region: content
   field_offer:
-    weight: 116
+    weight: 12
     label: above
     settings:
       link: true
@@ -195,7 +199,7 @@ content:
     type: entity_reference_label
     region: content
   field_popin:
-    weight: 124
+    weight: 20
     label: above
     settings:
       format: default
@@ -205,7 +209,7 @@ content:
     type: boolean
     region: content
   field_profession:
-    weight: 113
+    weight: 9
     label: above
     settings:
       link: true
@@ -213,7 +217,7 @@ content:
     type: entity_reference_label
     region: content
   field_search_npa:
-    weight: 117
+    weight: 13
     label: above
     settings:
       format: default
@@ -222,8 +226,18 @@ content:
     third_party_settings: {  }
     type: boolean
     region: content
-  links:
-    weight: 100
+  field_yoast_seo:
+    weight: 23
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: yoastseo_formatter
     region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_metatags: true
   langcode: true

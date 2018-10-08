@@ -11,10 +11,12 @@ dependencies:
     - field.field.node.advisor.field_firstname
     - field.field.node.advisor.field_function
     - field.field.node.advisor.field_lastname
+    - field.field.node.advisor.field_meta_tags
     - field.field.node.advisor.field_phone
     - field.field.node.advisor.field_profession
     - field.field.node.advisor.field_region
     - field.field.node.advisor.field_specialty
+    - field.field.node.advisor.field_yoast_seo
     - field.field.node.advisor.field_zip_codes
     - node.type.advisor
   module:
@@ -27,14 +29,14 @@ bundle: advisor
 mode: default
 content:
   body:
-    weight: 113
+    weight: 13
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_cover:
-    weight: 101
+    weight: 1
     label: above
     settings:
       image_style: ''
@@ -43,21 +45,21 @@ content:
     type: image
     region: content
   field_email:
-    weight: 107
+    weight: 7
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_email_form:
-    weight: 110
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_entity:
-    weight: 109
+    weight: 9
     label: above
     settings:
       link_to_entity: false
@@ -65,7 +67,7 @@ content:
     type: string
     region: content
   field_firstname:
-    weight: 103
+    weight: 3
     label: above
     settings:
       link_to_entity: false
@@ -73,7 +75,7 @@ content:
     type: string
     region: content
   field_function:
-    weight: 106
+    weight: 6
     label: above
     settings:
       link_to_entity: false
@@ -81,7 +83,7 @@ content:
     type: string
     region: content
   field_lastname:
-    weight: 104
+    weight: 4
     label: above
     settings:
       link_to_entity: false
@@ -89,14 +91,15 @@ content:
     type: string
     region: content
   field_phone:
-    weight: 108
+    weight: 8
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: basic_string
+    type: string
     region: content
   field_profession:
-    weight: 112
+    weight: 12
     label: above
     settings:
       link: true
@@ -104,7 +107,7 @@ content:
     type: entity_reference_label
     region: content
   field_region:
-    weight: 102
+    weight: 2
     label: above
     settings:
       link: true
@@ -112,7 +115,7 @@ content:
     type: entity_reference_label
     region: content
   field_specialty:
-    weight: 105
+    weight: 5
     label: above
     settings:
       link_to_entity: false
@@ -120,7 +123,7 @@ content:
     type: string
     region: content
   field_zip_codes:
-    weight: 111
+    weight: 11
     label: above
     settings:
       link: true
@@ -128,7 +131,11 @@ content:
     type: entity_reference_label
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_meta_tags: true
+  field_yoast_seo: true
   langcode: true

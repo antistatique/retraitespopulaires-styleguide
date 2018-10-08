@@ -19,12 +19,14 @@ dependencies:
     - field.field.node.news.field_firstname
     - field.field.node.news.field_function
     - field.field.node.news.field_lastname
+    - field.field.node.news.field_meta_tags
     - field.field.node.news.field_metatags
     - field.field.node.news.field_news_type
     - field.field.node.news.field_offer
     - field.field.node.news.field_popin
     - field.field.node.news.field_profession
     - field.field.node.news.field_search_npa
+    - field.field.node.news.field_yoast_seo
     - image.style.thumbnail
     - node.type.news
   module:
@@ -35,6 +37,7 @@ dependencies:
     - metatag
     - path
     - text
+    - yoast_seo
 third_party_settings:
   field_group:
     group_author:
@@ -282,8 +285,8 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_metatags:
-    weight: 2
+  field_meta_tags:
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -320,6 +323,13 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_yoast_seo:
+    weight: 6
+    settings:
+      body: body
+    third_party_settings: {  }
+    type: yoast_seo_widget
+    region: content
   path:
     type: path
     weight: 1
@@ -328,7 +338,7 @@ content:
     region: content
   promote:
     type: boolean_checkbox
-    weight: 3
+    weight: 2
     settings:
       display_label: true
     third_party_settings: {  }
@@ -337,7 +347,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 4
     region: content
     third_party_settings: {  }
   title:
@@ -349,12 +359,13 @@ content:
     third_party_settings: {  }
     region: content
   url_redirects:
-    weight: 50
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
+  field_metatags: true
   langcode: true
   sticky: true
   uid: true

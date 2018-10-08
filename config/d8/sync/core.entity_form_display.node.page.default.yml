@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.page.field_file_page
     - field.field.node.page.field_form
     - field.field.node.page.field_full_screen_content
+    - field.field.node.page.field_meta_tags
     - field.field.node.page.field_metatags
     - field.field.node.page.field_popin
     - field.field.node.page.field_products
@@ -24,6 +25,7 @@ dependencies:
     - field.field.node.page.field_search_npa
     - field.field.node.page.field_template_whisperer
     - field.field.node.page.field_url_logismata
+    - field.field.node.page.field_yoast_seo
     - image.style.thumbnail
     - node.type.page
   module:
@@ -35,6 +37,7 @@ dependencies:
     - template_whisperer
     - text
     - webform
+    - yoast_seo
 third_party_settings:
   field_group:
     group_attachments:
@@ -44,7 +47,7 @@ third_party_settings:
         - group_attachment
         - group_logismata
       parent_name: ''
-      weight: 5
+      weight: 0
       label: 'Linked Contents'
       format_type: tabs
       format_settings:
@@ -278,8 +281,8 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
-  field_metatags:
-    weight: 29
+  field_meta_tags:
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -314,7 +317,7 @@ content:
     type: boolean_checkbox
     region: content
   field_template_whisperer:
-    weight: 36
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: template_whisperer
@@ -327,9 +330,16 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_yoast_seo:
+    weight: 6
+    settings:
+      body: body
+    third_party_settings: {  }
+    type: yoast_seo_widget
+    region: content
   path:
     type: path
-    weight: 6
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -337,7 +347,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 4
     region: content
     third_party_settings: {  }
   title:
@@ -349,12 +359,13 @@ content:
     third_party_settings: {  }
     region: content
   url_redirects:
-    weight: 50
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
+  field_metatags: true
   langcode: true
   promote: true
   sticky: true

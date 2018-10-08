@@ -14,16 +14,19 @@ dependencies:
     - field.field.node.faq.field_faq_random
     - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
+    - field.field.node.faq.field_meta_tags
     - field.field.node.faq.field_metatags
     - field.field.node.faq.field_popin
     - field.field.node.faq.field_profession
     - field.field.node.faq.field_search_npa
+    - field.field.node.faq.field_yoast_seo
     - node.type.faq
   module:
     - file
     - metatag
     - text
     - user
+    - yoast_seo
 id: node.faq.default
 targetEntityType: node
 bundle: faq
@@ -32,12 +35,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_advisor:
-    weight: 110
+    weight: 6
     label: above
     settings:
       link: true
@@ -45,7 +48,7 @@ content:
     type: entity_reference_label
     region: content
   field_contact:
-    weight: 109
+    weight: 5
     label: above
     settings:
       link: true
@@ -53,7 +56,7 @@ content:
     type: entity_reference_label
     region: content
   field_contact_cta:
-    weight: 116
+    weight: 12
     label: above
     settings:
       format: default
@@ -63,7 +66,7 @@ content:
     type: boolean
     region: content
   field_document:
-    weight: 112
+    weight: 8
     label: above
     settings:
       link: true
@@ -71,7 +74,7 @@ content:
     type: entity_reference_label
     region: content
   field_document_random:
-    weight: 113
+    weight: 9
     label: above
     settings:
       format: default
@@ -81,14 +84,14 @@ content:
     type: boolean
     region: content
   field_email_popin:
-    weight: 118
+    weight: 14
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_faq:
-    weight: 115
+    weight: 11
     label: above
     settings:
       link: true
@@ -96,7 +99,7 @@ content:
     type: entity_reference_label
     region: content
   field_faq_random:
-    weight: 114
+    weight: 10
     label: above
     settings:
       format: default
@@ -106,7 +109,7 @@ content:
     type: boolean
     region: content
   field_faq_type:
-    weight: 108
+    weight: 4
     label: above
     settings:
       link: true
@@ -114,21 +117,22 @@ content:
     type: entity_reference_label
     region: content
   field_file_faq:
-    weight: 107
+    weight: 3
     label: above
-    settings: {  }
+    settings:
+      use_description_as_link_text: true
     third_party_settings: {  }
     type: file_default
     region: content
-  field_metatags:
-    weight: 112
+  field_meta_tags:
+    weight: 15
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   field_popin:
-    weight: 117
+    weight: 13
     label: above
     settings:
       format: default
@@ -138,7 +142,7 @@ content:
     type: boolean
     region: content
   field_profession:
-    weight: 104
+    weight: 2
     label: above
     settings:
       link: true
@@ -146,7 +150,7 @@ content:
     type: entity_reference_label
     region: content
   field_search_npa:
-    weight: 111
+    weight: 7
     label: above
     settings:
       format: default
@@ -155,8 +159,18 @@ content:
     third_party_settings: {  }
     type: boolean
     region: content
-  links:
-    weight: 100
+  field_yoast_seo:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: yoastseo_formatter
     region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_metatags: true
   langcode: true

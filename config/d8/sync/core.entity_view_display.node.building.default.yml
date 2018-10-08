@@ -20,12 +20,14 @@ dependencies:
     - field.field.node.building.field_file_plan
     - field.field.node.building.field_latitude
     - field.field.node.building.field_longitude
+    - field.field.node.building.field_meta_tags
     - field.field.node.building.field_metatags
     - field.field.node.building.field_popin
     - field.field.node.building.field_search_npa
     - field.field.node.building.field_situation
     - field.field.node.building.field_virtual_image
     - field.field.node.building.field_virtual_visit
+    - field.field.node.building.field_yoast_seo
     - node.type.building
   module:
     - datetime
@@ -36,6 +38,7 @@ dependencies:
     - options
     - text
     - user
+    - yoast_seo
 id: node.building.default
 targetEntityType: node
 bundle: building
@@ -44,19 +47,19 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_building_status:
-    weight: 114
+    weight: 13
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_building_type:
-    weight: 112
+    weight: 11
     label: above
     settings:
       link: true
@@ -64,7 +67,7 @@ content:
     type: entity_reference_label
     region: content
   field_city:
-    weight: 105
+    weight: 4
     label: above
     settings:
       link: true
@@ -72,7 +75,7 @@ content:
     type: entity_reference_label
     region: content
   field_contact:
-    weight: 107
+    weight: 6
     label: above
     settings:
       link: true
@@ -80,7 +83,7 @@ content:
     type: entity_reference_label
     region: content
   field_contact_cta:
-    weight: 120
+    weight: 20
     label: above
     settings:
       format: default
@@ -90,7 +93,7 @@ content:
     type: boolean
     region: content
   field_cover:
-    weight: 102
+    weight: 2
     label: above
     settings:
       image_style: ''
@@ -99,7 +102,7 @@ content:
     type: image
     region: content
   field_date:
-    weight: 115
+    weight: 14
     label: above
     settings:
       format_type: medium
@@ -108,7 +111,7 @@ content:
     type: datetime_default
     region: content
   field_document:
-    weight: 116
+    weight: 16
     label: above
     settings:
       link: true
@@ -116,7 +119,7 @@ content:
     type: entity_reference_label
     region: content
   field_document_random:
-    weight: 117
+    weight: 17
     label: above
     settings:
       format: default
@@ -126,14 +129,14 @@ content:
     type: boolean
     region: content
   field_email_popin:
-    weight: 122
+    weight: 22
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_faq:
-    weight: 119
+    weight: 19
     label: above
     settings:
       link: true
@@ -141,7 +144,7 @@ content:
     type: entity_reference_label
     region: content
   field_faq_random:
-    weight: 118
+    weight: 18
     label: above
     settings:
       format: default
@@ -151,21 +154,23 @@ content:
     type: boolean
     region: content
   field_file_building:
-    weight: 103
+    weight: 3
     label: above
-    settings: {  }
+    settings:
+      use_description_as_link_text: true
     third_party_settings: {  }
     type: file_default
     region: content
   field_file_plan:
-    weight: 106
+    weight: 5
     label: above
-    settings: {  }
+    settings:
+      use_description_as_link_text: true
     third_party_settings: {  }
     type: file_default
     region: content
   field_latitude:
-    weight: 109
+    weight: 8
     label: above
     settings:
       thousand_separator: ''
@@ -176,7 +181,7 @@ content:
     type: number_decimal
     region: content
   field_longitude:
-    weight: 108
+    weight: 7
     label: above
     settings:
       thousand_separator: ''
@@ -186,15 +191,15 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: content
-  field_metatags:
-    weight: 116
+  field_meta_tags:
+    weight: 23
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   field_popin:
-    weight: 121
+    weight: 21
     label: above
     settings:
       format: default
@@ -204,7 +209,7 @@ content:
     type: boolean
     region: content
   field_search_npa:
-    weight: 115
+    weight: 15
     label: above
     settings:
       format: default
@@ -214,14 +219,14 @@ content:
     type: boolean
     region: content
   field_situation:
-    weight: 111
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_virtual_image:
-    weight: 113
+    weight: 12
     label: above
     settings:
       image_style: ''
@@ -230,7 +235,7 @@ content:
     type: image
     region: content
   field_virtual_visit:
-    weight: 110
+    weight: 9
     label: above
     settings:
       trim_length: 80
@@ -241,8 +246,18 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  links:
-    weight: 100
+  field_yoast_seo:
+    weight: 24
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: yoastseo_formatter
     region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_metatags: true
   langcode: true

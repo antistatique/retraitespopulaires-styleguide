@@ -16,11 +16,13 @@ dependencies:
     - field.field.node.partnership.field_faq_random
     - field.field.node.partnership.field_latitude
     - field.field.node.partnership.field_longitude
+    - field.field.node.partnership.field_meta_tags
     - field.field.node.partnership.field_partnership
     - field.field.node.partnership.field_popin
     - field.field.node.partnership.field_search_npa
     - field.field.node.partnership.field_situation
     - field.field.node.partnership.field_web_site
+    - field.field.node.partnership.field_yoast_seo
     - image.style.thumbnail
     - node.type.partnership
   module:
@@ -75,7 +77,7 @@ third_party_settings:
         - group_attachments
         - group_attachment
       parent_name: ''
-      weight: 114
+      weight: 2
       label: Tabs
       format_type: tabs
       format_settings:
@@ -269,7 +271,7 @@ content:
     region: content
   path:
     type: path
-    weight: 11
+    weight: 0
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -277,7 +279,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 3
     region: content
     third_party_settings: {  }
   title:
@@ -289,12 +291,14 @@ content:
     third_party_settings: {  }
     region: content
   url_redirects:
-    weight: 50
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
+  field_meta_tags: true
+  field_yoast_seo: true
   langcode: true
   promote: true
   sticky: true
