@@ -74,6 +74,7 @@ function rp_site_update_8002(&$sandbox) {
   /** @var \Drupal\Core\Extension\ModuleHandler $moduleHandler */
   $moduleHandler = \Drupal::service('module_handler');
 
+  // Ensure that Real-Time SEO for Drupal module is enable.
   if (!$moduleHandler->moduleExists('yoast_seo')) {
     throw new UpdateException('Module Real Time SEO (yoast_seo) isn\'t install');
   }
@@ -81,11 +82,14 @@ function rp_site_update_8002(&$sandbox) {
   /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
   $entity_type_manager = \Drupal::entityTypeManager();
 
+  // Get all content type where there's the field_metatag.
   $field = FieldStorageConfig::loadByName('node', 'field_metatags');
   $node_bundles = $field->getBundles();
 
   /** @var \Drupal\Core\Entity\EntityStorageInterface $node_storage */
   $node_storage = $entity_type_manager->getStorage('node');
+
+  // Initialise $sanbox for the first execution.
   if (!isset($sandbox['max'])) {
     $sandbox['current'] = 0;
     $sandbox['count'] = 0;
@@ -94,6 +98,8 @@ function rp_site_update_8002(&$sandbox) {
       ->condition('type', $node_bundles, 'in')
       ->count()->execute();
   }
+
+  // Get the 50 next nodes.
   $nids = $node_storage->getQuery()
     ->accessCheck(FALSE)
     ->range(0, 50)
@@ -115,5 +121,7 @@ function rp_site_update_8002(&$sandbox) {
     $sandbox['current'] = $node->id();
     $sandbox['count']++;
   }
+
+  // Get if all batch has been passed.
   $sandbox['#finished'] = empty($sandbox['max']) ? 1 : $sandbox['count'] / $sandbox['max'];
 }

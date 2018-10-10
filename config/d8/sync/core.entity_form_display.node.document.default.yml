@@ -51,7 +51,7 @@ bundle: document
 mode: default
 content:
   field_doc_cover:
-    weight: 4
+    weight: 121
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -93,7 +93,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 120
     region: content
     third_party_settings: {  }
   title:
@@ -105,10 +105,8 @@ content:
     third_party_settings: {  }
     region: content
   url_redirects:
-    weight: 2
+    weight: 50
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   created: true
   langcode: true
