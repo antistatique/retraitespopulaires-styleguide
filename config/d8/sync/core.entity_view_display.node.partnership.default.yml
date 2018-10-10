@@ -16,13 +16,11 @@ dependencies:
     - field.field.node.partnership.field_faq_random
     - field.field.node.partnership.field_latitude
     - field.field.node.partnership.field_longitude
-    - field.field.node.partnership.field_meta_tags
     - field.field.node.partnership.field_partnership
     - field.field.node.partnership.field_popin
     - field.field.node.partnership.field_search_npa
     - field.field.node.partnership.field_situation
     - field.field.node.partnership.field_web_site
-    - field.field.node.partnership.field_yoast_seo
     - node.type.partnership
   module:
     - datetime
@@ -38,12 +36,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 101
     settings: {  }
     third_party_settings: {  }
     region: content
   field_contact:
-    weight: 2
+    weight: 102
     label: above
     settings:
       link: true
@@ -51,7 +49,7 @@ content:
     type: entity_reference_label
     region: content
   field_contact_cta:
-    weight: 16
+    weight: 117
     label: above
     settings:
       format: default
@@ -61,7 +59,7 @@ content:
     type: boolean
     region: content
   field_cover:
-    weight: 3
+    weight: 104
     label: above
     settings:
       image_style: ''
@@ -70,7 +68,7 @@ content:
     type: image
     region: content
   field_date_end:
-    weight: 9
+    weight: 110
     label: above
     settings:
       format_type: medium
@@ -79,7 +77,7 @@ content:
     type: datetime_default
     region: content
   field_date_start:
-    weight: 8
+    weight: 109
     label: above
     settings:
       format_type: medium
@@ -88,7 +86,7 @@ content:
     type: datetime_default
     region: content
   field_document:
-    weight: 12
+    weight: 113
     label: above
     settings:
       link: true
@@ -96,7 +94,7 @@ content:
     type: entity_reference_label
     region: content
   field_document_random:
-    weight: 13
+    weight: 114
     label: above
     settings:
       format: default
@@ -106,14 +104,14 @@ content:
     type: boolean
     region: content
   field_email_popin:
-    weight: 18
+    weight: 119
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_faq:
-    weight: 15
+    weight: 116
     label: above
     settings:
       link: true
@@ -121,7 +119,7 @@ content:
     type: entity_reference_label
     region: content
   field_faq_random:
-    weight: 14
+    weight: 115
     label: above
     settings:
       format: default
@@ -131,7 +129,7 @@ content:
     type: boolean
     region: content
   field_latitude:
-    weight: 5
+    weight: 106
     label: above
     settings:
       thousand_separator: ''
@@ -142,7 +140,7 @@ content:
     type: number_decimal
     region: content
   field_longitude:
-    weight: 6
+    weight: 107
     label: above
     settings:
       thousand_separator: ''
@@ -153,7 +151,7 @@ content:
     type: number_decimal
     region: content
   field_partnership:
-    weight: 7
+    weight: 108
     label: above
     settings:
       link: true
@@ -161,7 +159,7 @@ content:
     type: entity_reference_label
     region: content
   field_popin:
-    weight: 17
+    weight: 118
     label: above
     settings:
       format: default
@@ -171,7 +169,7 @@ content:
     type: boolean
     region: content
   field_search_npa:
-    weight: 11
+    weight: 112
     label: above
     settings:
       format: default
@@ -181,14 +179,14 @@ content:
     type: boolean
     region: content
   field_situation:
-    weight: 10
+    weight: 111
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_web_site:
-    weight: 4
+    weight: 105
     label: above
     settings:
       trim_length: 80
@@ -200,11 +198,7 @@ content:
     type: link
     region: content
   links:
-    weight: 0
+    weight: 100
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
-  field_meta_tags: true
-  field_yoast_seo: true
   langcode: true

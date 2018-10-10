@@ -12,11 +12,9 @@ dependencies:
     - field.field.node.contact.field_firstname
     - field.field.node.contact.field_function
     - field.field.node.contact.field_lastname
-    - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_phone
     - field.field.node.contact.field_profession
     - field.field.node.contact.field_specialty
-    - field.field.node.contact.field_yoast_seo
     - node.type.contact
   module:
     - image
@@ -28,14 +26,14 @@ bundle: contact
 mode: default
 content:
   body:
-    weight: 12
+    weight: 113
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_cover:
-    weight: 4
+    weight: 104
     label: above
     settings:
       image_style: ''
@@ -44,21 +42,21 @@ content:
     type: image
     region: content
   field_email:
-    weight: 2
+    weight: 102
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_email_form:
-    weight: 3
+    weight: 103
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_entity:
-    weight: 8
+    weight: 109
     label: above
     settings:
       link_to_entity: false
@@ -66,15 +64,14 @@ content:
     type: string
     region: content
   field_fax:
-    weight: 7
+    weight: 107
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: basic_string
     region: content
   field_firstname:
-    weight: 5
+    weight: 105
     label: above
     settings:
       link_to_entity: false
@@ -82,7 +79,7 @@ content:
     type: string
     region: content
   field_function:
-    weight: 9
+    weight: 110
     label: above
     settings:
       link_to_entity: false
@@ -90,7 +87,7 @@ content:
     type: string
     region: content
   field_lastname:
-    weight: 6
+    weight: 106
     label: above
     settings:
       link_to_entity: false
@@ -98,15 +95,14 @@ content:
     type: string
     region: content
   field_phone:
-    weight: 1
+    weight: 101
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: basic_string
     region: content
   field_profession:
-    weight: 11
+    weight: 112
     label: above
     settings:
       link: true
@@ -114,7 +110,7 @@ content:
     type: entity_reference_label
     region: content
   field_specialty:
-    weight: 10
+    weight: 111
     label: above
     settings:
       link_to_entity: false
@@ -122,11 +118,7 @@ content:
     type: string
     region: content
   links:
-    weight: 0
+    weight: 100
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
-  field_meta_tags: true
-  field_yoast_seo: true
   langcode: true

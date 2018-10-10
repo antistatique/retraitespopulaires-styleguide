@@ -11,12 +11,10 @@ dependencies:
     - field.field.node.advisor.field_firstname
     - field.field.node.advisor.field_function
     - field.field.node.advisor.field_lastname
-    - field.field.node.advisor.field_meta_tags
     - field.field.node.advisor.field_phone
     - field.field.node.advisor.field_profession
     - field.field.node.advisor.field_region
     - field.field.node.advisor.field_specialty
-    - field.field.node.advisor.field_yoast_seo
     - field.field.node.advisor.field_zip_codes
     - image.style.thumbnail
     - node.type.advisor
@@ -33,7 +31,7 @@ third_party_settings:
         - group_info
         - group_area
       parent_name: ''
-      weight: 2
+      weight: 114
       label: Tabs
       format_type: tabs
       format_settings:
@@ -188,7 +186,7 @@ content:
     region: content
   path:
     type: path
-    weight: 0
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -196,7 +194,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 120
     region: content
     third_party_settings: {  }
   title:
@@ -208,14 +206,12 @@ content:
     third_party_settings: {  }
     region: content
   url_redirects:
-    weight: 1
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
-  field_meta_tags: true
-  field_yoast_seo: true
   langcode: true
   promote: true
   sticky: true

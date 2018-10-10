@@ -7,9 +7,7 @@ dependencies:
     - field.field.node.document.field_document_type
     - field.field.node.document.field_document_type_institution
     - field.field.node.document.field_file_document
-    - field.field.node.document.field_meta_tags
     - field.field.node.document.field_profession
-    - field.field.node.document.field_yoast_seo
     - image.style.thumbnail
     - node.type.document
   module:
@@ -113,8 +111,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_meta_tags: true
-  field_yoast_seo: true
   langcode: true
   promote: true
   sticky: true

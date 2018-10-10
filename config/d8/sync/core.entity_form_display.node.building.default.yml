@@ -285,7 +285,13 @@ content:
     type: number
     region: content
   field_meta_tags:
-    weight: 4
+    weight: 121
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_metatags:
+    weight: 28
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -331,7 +337,7 @@ content:
     type: link_default
     region: content
   field_yoast_seo:
-    weight: 5
+    weight: 122
     settings:
       body: body
     third_party_settings: {  }
@@ -339,7 +345,7 @@ content:
     region: content
   path:
     type: path
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -347,7 +353,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 120
     region: content
     third_party_settings: {  }
   title:
@@ -359,13 +365,12 @@ content:
     third_party_settings: {  }
     region: content
   url_redirects:
-    weight: 2
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
-  field_metatags: true
   langcode: true
   promote: true
   sticky: true

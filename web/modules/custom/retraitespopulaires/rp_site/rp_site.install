@@ -8,6 +8,7 @@
 use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Utility\UpdateException;
+use Drupal\field\Entity\FieldStorageConfig;
 
 /**
  * Migrate old settings to node template whisperer field.
@@ -64,4 +65,55 @@ function rp_site_update_8001(&$sandbox) {
 
     $state->delete($config_name);
   }
+}
+
+/**
+ * Copy old metatags field to new one meta_tags for yoast seo.
+ */
+function rp_site_update_8002(&$sandbox) {
+  /** @var \Drupal\Core\Extension\ModuleHandler $moduleHandler */
+  $moduleHandler = \Drupal::service('module_handler');
+
+  if (!$moduleHandler->moduleExists('yoast_seo')) {
+    throw new UpdateException('Module Real Time SEO (yoast_seo) isn\'t install');
+  }
+
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
+  $entity_type_manager = \Drupal::entityTypeManager();
+
+  $field = FieldStorageConfig::loadByName('node', 'field_metatags');
+  $node_bundles = $field->getBundles();
+
+  /** @var \Drupal\Core\Entity\EntityStorageInterface $node_storage */
+  $node_storage = $entity_type_manager->getStorage('node');
+  if (!isset($sandbox['max'])) {
+    $sandbox['current'] = 0;
+    $sandbox['count'] = 0;
+    $sandbox['max'] = $node_storage->getQuery()
+      ->accessCheck(FALSE)
+      ->condition('type', $node_bundles, 'in')
+      ->count()->execute();
+  }
+  $nids = $node_storage->getQuery()
+    ->accessCheck(FALSE)
+    ->range(0, 50)
+    ->condition('nid', $sandbox['current'], '>')
+    ->condition('type', $node_bundles, 'in')
+    ->sort('nid')
+    ->execute();
+
+  $nodes = $node_storage->loadMultiple($nids);
+
+  /** @var \Drupal\node\NodeInterface $node */
+  foreach ($nodes as $node) {
+    if ($node->hasField('field_metatags')) {
+      $node->field_meta_tags = $node->field_metatags;
+      $node->setNewRevision();
+      $node->save();
+    }
+
+    $sandbox['current'] = $node->id();
+    $sandbox['count']++;
+  }
+  $sandbox['#finished'] = empty($sandbox['max']) ? 1 : $sandbox['count'] / $sandbox['max'];
 }
