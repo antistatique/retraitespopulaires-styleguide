@@ -8,7 +8,7 @@ set :app_path, "web"
 set :theme_path, "themes/retraitespopulaires"
 set :build_path, "build"
 
-set :db_dump_file, "dump_rp_#{Time.now.strftime("%Y%m%d_%H%M%S")}.sql"
+set :db_dump_file, "/data/Backup/MySQL_dep/dump_rp_#{Time.now.strftime("%Y%m%d_%H%M%S")}.sql"
 
 set :styleguide_path, "node_modules/@antistatique/retraitespopulaires-styleguide"
 set :styleguide_repo, 'ssh://git@webbucket:7999/sp/styleguide.git'
