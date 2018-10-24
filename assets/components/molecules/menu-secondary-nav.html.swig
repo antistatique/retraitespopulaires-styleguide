@@ -4,7 +4,7 @@ name: menu-secondary-nav
 collection: molecules
 notes: |
   Can be wrapped in `.theme-[theme]` to change look. <br />
-  This component is visible into the [basic page](/basic-page).
+  **This component is visible on the [basic page](/basic-page)**.
 ---
 <div class="bg-berrylight-gray">
   <div class="container">

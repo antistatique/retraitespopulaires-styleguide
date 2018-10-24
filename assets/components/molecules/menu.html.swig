@@ -3,7 +3,7 @@ title: Menu
 name: menu
 collection: molecules
 notes: |
-  This component is visible into the [basic page](/basic-page).
+  **This component is visible on the [basic page](/basic-page)**.
 ---
 <nav class="rp-access-nav">
   <ul>

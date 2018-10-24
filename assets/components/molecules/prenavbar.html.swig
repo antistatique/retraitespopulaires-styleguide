@@ -4,7 +4,7 @@ name: prenavbar
 collection: molecules
 notes: |
   Can be wrapped in `.theme-[theme]` to change look. <br />
-  This component is visible into the [basic page](/basic-page).
+  **This component is visible on the [basic page](/basic-page)**.
 ---
 <ul class="prenavbar list-unstyled list-inline m-0" id="secondary-navigation" role="navigation" aria-label="Navigation secondaire">
   <li>
