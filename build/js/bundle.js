@@ -107,6 +107,8 @@ var _selectize = require('./selectize.js');
 
 var _labels = require('./labels.js');
 
+var _slider = require('./slider.js');
+
 (function () {
   (0, _mobile_menu.mobile_menu)();
   (0, _navbar.navbar)();
@@ -120,9 +122,10 @@ var _labels = require('./labels.js');
   (0, _popover.popover)();
   (0, _selectize.selectize)();
   (0, _labels.labels)();
+  (0, _slider.slider)();
 })();
 
-},{"./datepicker.js":1,"./gallery.js":2,"./input_dynamic_label.js":4,"./input_files.js":5,"./labels.js":6,"./mobile_menu.js":7,"./navbar.js":8,"./number_format.js":9,"./organicJS.js":10,"./popover.js":11,"./selectize.js":12,"./smoothscroll.js":13}],4:[function(require,module,exports){
+},{"./datepicker.js":1,"./gallery.js":2,"./input_dynamic_label.js":4,"./input_files.js":5,"./labels.js":6,"./mobile_menu.js":7,"./navbar.js":8,"./number_format.js":9,"./organicJS.js":10,"./popover.js":11,"./selectize.js":12,"./slider.js":13,"./smoothscroll.js":14}],4:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -382,6 +385,11 @@ function number_format() {
     aSign: ' %'
   });
 
+  // To be sure that the format is respected (when back on browser)
+  (0, _jquery2.default)('.form-chf-numeric').autoNumeric('update');
+  (0, _jquery2.default)('.form-surface-numeric').autoNumeric('update');
+  (0, _jquery2.default)('.form-percent-numeric').autoNumeric('update');
+
   // Replace formatted value to raw one when submitting forms
   (0, _jquery2.default)(document).on('submit', 'form', function () {
     var $this = (0, _jquery2.default)(this);
@@ -597,6 +605,74 @@ function selectize() {
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],13:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.slider = slider;
+
+var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function slider() {
+  (0, _jquery2.default)(document).ready(function () {
+    // Check if jQuery ui is enable
+    if (_jquery2.default.ui && _jquery2.default.ui.slider) {
+      // Override default option for that the max value of slider is max value setted and no more value of near step
+      _jquery2.default.extend(_jquery2.default.ui.slider.prototype, {
+        _calculateNewMax: function _calculateNewMax() {
+          this.max = this.options.max;
+        }
+      });
+
+      // Add slider to each div with slider class
+      (0, _jquery2.default)('.slider').each(function (index, element) {
+        // Get the JQuery element and the input with the slider
+        element = (0, _jquery2.default)(element);
+        var input = element.closest('.form-group').find('input');
+        var maxValue = Number(element.data('max'));
+
+        // Init slider for this element
+        element.slider({
+          orientation: element.hasClass('slider-vertical') ? 'vertical' : 'horizontal',
+          range: 'min',
+          max: maxValue,
+          min: Number(element.data('min')),
+          step: Number(element.data('step')),
+          value: input.length > 0 ? input.autoNumeric('get') : Number(element.data('value')),
+          animate: 100,
+          disabled: element.hasClass('disabled'),
+          // For update input
+          slide: function slide(event, ui) {
+            // To be sure that slide don't go out of slider max value (sometimes it did when the last step wasn't a full step)
+            if (ui.value > maxValue) {
+              ui.value = maxValue;
+            }
+
+            if (input.length > 0) {
+              input.autoNumeric('set', ui.value);
+            }
+          }
+        });
+
+        if (input.length > 0) {
+          // Listen change event for update slider
+          input.change(function () {
+            element.slider('value', input.autoNumeric('get'));
+          });
+        }
+      });
+    }
+  });
+}
+
+}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],14:[function(require,module,exports){
 (function (global){
 'use strict';
 
