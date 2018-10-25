@@ -1,60 +1,79 @@
 @charset 'UTF-8';
 
-.popin {
-  display: none;
+.popin-container {
   position: fixed;
   z-index: 99;
   bottom: $grid-gutter-width;
-  width: calc(100% - #{$grid-gutter-width});
-  padding: 0;
-  background-color: map-deep-get($themes, 'primary', 'color');
-  border-radius: 4px;
+  width: 100%;
+  max-height: calc(100% - 2 * #{$grid-gutter-width});
 
-  @media (min-width: $screen-sm-min) {
+  @media (max-width: $screen-xs-max) {
+    display: flex;
+    flex-wrap: wrap;
+    bottom: 0;
+    left: 0;
+  }
+
+  @media (min-width: $screen-xs-max) {
     right: $grid-gutter-width;
-    width: 100%;
     max-width: 414px;
-  }
-
-  &.alert {
-    margin-bottom: 0;
-  }
-
-  .popin-title-closed,
-  a {
-    color: $white;
-  }
-
-  .close {
-    margin-right: $grid-gutter-width;
-    color: $white;
   }
 
   .btn-primary {
     background-color: darken($brand-primary, 10%);
   }
 
+  .form-group label {
+    color: $white;
+  }
+
   // Override for connected users (move the popin to the left to avoid overlap with edit button)
   .toolbar-fixed & {
     right: 205px;
   }
+}
 
-  .form-group label {
+.popin {
+  display: flex;
+  margin-bottom: 0;
+  padding: 16px 10px;
+  background-color: map-deep-get($themes, 'primary', 'hover-color');
+  border-right: 1px solid $shadow-gray;
+  border-bottom: 1px solid $shadow-gray;
+
+  @media (max-width: $screen-xs-max) {
+    flex: 1;
+    order: 1;
+    text-align: center;
+  }
+
+  .popin-title-closed,
+  a {
     color: $white;
   }
 }
 
-.popin-header {
+.popin-collapse {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: map-deep-get($themes, 'primary', 'color');
+  order: 2;
+
+  > * {
+    border-bottom: 1px solid $shadow-gray;
+  }
+
+  .popin-body {
+    padding: 15px 20px 0;
+  }
+}
+
+.popin-collapse-title,
+.popin-title-closed {
   padding: 16px 10px;
-}
-
-.popin-body {
-  padding: 0 10px;
-}
-
-.popin-header {
-  display: flex;
   background-color: map-deep-get($themes, 'primary', 'hover-color');
+  color: $white;
 }
 
 .popin-title-container {
@@ -62,6 +81,14 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+
+  .popin-icon {
+    margin-right: 15px;
+
+    @media (max-width: $screen-xs-max) {
+      margin: auto;
+    }
+  }
 
   &.collapsed {
     .retraitespopulaires-icon-angle {
