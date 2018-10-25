@@ -11,6 +11,7 @@ import { popover } from './popover.js';
 import { selectize } from './selectize.js';
 import { labels } from './labels.js';
 import { slider } from './slider.js';
+import { popin } from './popin.js';
 
 (function(){
   mobile_menu();
@@ -26,4 +27,5 @@ import { slider } from './slider.js';
   selectize();
   labels();
   slider();
+  popin();
 }());

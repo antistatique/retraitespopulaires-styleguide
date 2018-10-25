@@ -3,20 +3,35 @@
 .popin-container {
   position: fixed;
   z-index: 99;
-  bottom: $grid-gutter-width;
   width: 100%;
-  max-height: calc(100% - 2 * #{$grid-gutter-width});
+  padding: 0;
+  max-width: 414px;
 
   @media (max-width: $screen-xs-max) {
     display: flex;
     flex-wrap: wrap;
+    position: fixed;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   @media (min-width: $screen-xs-max) {
-    right: $grid-gutter-width;
-    max-width: 414px;
+    top: 50%;
+    right: 0;
+
+    // To show only the icon that at 16px left and right
+    // For IE with can't use calc(100% - 32px - 1em) instead of seperate this...
+    transform: translate(100%, -50%) translate(-32px) translate(-1em);
+    transition: 0.5s;
+
+    &.popin-container-collapsing {
+      transform: translate(-#{$grid-gutter-width}, -50%);
+
+      .popin-collapse-desktop {
+        transform: scaleX(-1);
+      }
+    }
   }
 
   .btn-primary {
@@ -26,30 +41,42 @@
   .form-group label {
     color: $white;
   }
-
-  // Override for connected users (move the popin to the left to avoid overlap with edit button)
-  .toolbar-fixed & {
-    right: 205px;
-  }
 }
 
 .popin {
-  display: flex;
   margin-bottom: 0;
-  padding: 16px 10px;
-  background-color: map-deep-get($themes, 'primary', 'hover-color');
-  border-right: 1px solid $shadow-gray;
-  border-bottom: 1px solid $shadow-gray;
+  background-color: map-deep-get($themes, 'primary', 'color');
 
   @media (max-width: $screen-xs-max) {
-    flex: 1;
+    flex: 1 1 auto;
     order: 1;
     text-align: center;
+
+    &.show {
+      order: 2;
+      flex: inherit;
+      width: 100%;
+
+      .popin-title-container {
+        display: inherit;
+      }
+
+      .popin-collapse-show-mobile {
+        display: none;
+      }
+    }
+
+    &:not(.show) {
+      .popin-collapse {
+        display: none;
+      }
+    }
   }
 
-  .popin-title-closed,
-  a {
-    color: $white;
+  @media (min-width: $screen-xs-max) {
+    .popin-collapse-show-mobile {
+      display: none;
+    }
   }
 }
 
@@ -57,23 +84,27 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: map-deep-get($themes, 'primary', 'color');
-  order: 2;
-
-  > * {
-    border-bottom: 1px solid $shadow-gray;
-  }
+  text-align: left;
 
   .popin-body {
     padding: 15px 20px 0;
   }
 }
 
-.popin-collapse-title,
+.popin-header,
 .popin-title-closed {
-  padding: 16px 10px;
+  display: flex;
+  width: 100%;
+  padding: 16px;
   background-color: map-deep-get($themes, 'primary', 'hover-color');
+  border-right: 1px solid $shadow-gray;
+  border-bottom: 1px solid $shadow-gray;
   color: $white;
+
+  a {
+    width: 100%;
+    color: $white;
+  }
 }
 
 .popin-title-container {
@@ -82,17 +113,17 @@
   align-items: center;
   width: 100%;
 
-  .popin-icon {
-    margin-right: 15px;
-
-    @media (max-width: $screen-xs-max) {
-      margin: auto;
-    }
-  }
-
   &.collapsed {
     .retraitespopulaires-icon-angle {
       transform: scaleY(-1);
     }
   }
+
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+}
+
+.popin-icon {
+  margin-right: 16px;
 }
