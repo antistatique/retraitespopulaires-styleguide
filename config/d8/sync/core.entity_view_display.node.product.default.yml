@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.product.field_faq
     - field.field.node.product.field_faq_random
     - field.field.node.product.field_file_product
+    - field.field.node.product.field_meta_tags
     - field.field.node.product.field_metatags
     - field.field.node.product.field_popin
     - field.field.node.product.field_product_plan
@@ -21,6 +22,7 @@ dependencies:
     - field.field.node.product.field_search_npa
     - field.field.node.product.field_subtitle
     - field.field.node.product.field_template_whisperer
+    - field.field.node.product.field_yoast_seo
     - node.type.product
   module:
     - file
@@ -126,6 +128,13 @@ content:
     third_party_settings: {  }
     type: file_default
     region: content
+  field_meta_tags:
+    weight: 120
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_metatags:
     weight: 113
     label: above
@@ -183,6 +192,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: template_whisperer
+    region: content
+  field_yoast_seo:
+    weight: 121
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 100
