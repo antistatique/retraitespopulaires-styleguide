@@ -8,6 +8,8 @@ set :app_path, "web"
 set :theme_path, "themes/retraitespopulaires"
 set :build_path, "build"
 
+set :db_dump_file, "/data/Backup/MySQL_dep/dump_rp_#{Time.now.strftime("%Y%m%d_%H%M%S")}.sql"
+
 set :styleguide_path, "node_modules/@antistatique/retraitespopulaires-styleguide"
 set :styleguide_repo, 'ssh://git@webbucket:7999/sp/styleguide.git'
 
@@ -52,6 +54,8 @@ set :slackistrano, {
 # Rake::Task['deploy:updated'];
 
 namespace :deploy do
+  before :updated, "drupal:database:dump"
+
   after :updated, "styleguide:deploy_build"
 
   # Must updatedb before import configurations, E.g. when composer install new
@@ -67,6 +71,8 @@ namespace :deploy do
   after :updated, "drupal:entup"
   after :updated, "drupal:cache:clear"
   after :updated, "drupal:set_permissions"
+
+  after :failed, "drupal:database:restore"
 
   before :cleanup, :fix_permission do
     on roles(:app) do

@@ -132,6 +132,43 @@ namespace :drupal do
       end
     end
   end
+
+  namespace :database do
+    desc 'Dump database with Drush'
+    task :dump do
+      on roles(:app) do
+        within current_path.join(fetch(:app_path)) do
+          execute :drush, "sql:dump --gzip --result-file=#{fetch(:db_dump_file)}"
+        end
+      end
+    end
+
+    desc 'Drop all tables with Drush'
+    task :drop do
+      on roles(:app) do
+        within current_path.join(fetch(:app_path)) do
+          execute :drush, "sql:drop -y"
+        end
+      end
+    end
+
+    desc 'Restore database with Drush (drop and import)'
+    task :restore do
+      on roles(:app) do
+        within current_path.join(fetch(:app_path)) do
+          if test("[[ -f #{fetch(:db_dump_file)}.gz ]]")
+            invoke 'drupal:database:drop'
+
+            # Drush automatically adds .gz with --gzip option on filename even if it already has one so we have to add this here
+            execute :drush, "sql:query --file=#{fetch(:db_dump_file)}.gz"
+
+            # Drush uncompress the file, we want keep it so recompress the file to keep disk free
+            execute "gzip #{fetch(:db_dump_file)}"
+          end
+        end
+      end
+    end
+  end
 end
 
 namespace :files do
