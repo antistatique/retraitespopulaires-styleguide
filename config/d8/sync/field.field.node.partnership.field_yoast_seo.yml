@@ -1,16 +1,16 @@
-uuid: c00299a3-c2c4-4554-b334-e28064c6e66e
+uuid: ff5b3ff0-578d-4f68-9ea2-b4d58f220bdd
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.node.field_yoast_seo
-    - node.type.product
+    - node.type.partnership
   module:
     - yoast_seo
-id: node.product.field_yoast_seo
+id: node.partnership.field_yoast_seo
 field_name: field_yoast_seo
 entity_type: node
-bundle: product
+bundle: partnership
 label: 'Real-time SEO'
 description: ''
 required: false

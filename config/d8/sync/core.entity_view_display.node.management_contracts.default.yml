@@ -13,15 +13,18 @@ dependencies:
     - field.field.node.management_contracts.field_faq
     - field.field.node.management_contracts.field_faq_random
     - field.field.node.management_contracts.field_logo
+    - field.field.node.management_contracts.field_meta_tags
     - field.field.node.management_contracts.field_popin
     - field.field.node.management_contracts.field_profession
     - field.field.node.management_contracts.field_search_npa
     - field.field.node.management_contracts.field_web_site
     - field.field.node.management_contracts.field_weight
+    - field.field.node.management_contracts.field_yoast_seo
     - node.type.management_contracts
   module:
     - image
     - link
+    - metatag
     - text
     - user
 id: node.management_contracts.default
@@ -114,6 +117,13 @@ content:
     third_party_settings: {  }
     type: image
     region: content
+  field_meta_tags:
+    weight: 115
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_popin:
     weight: 113
     label: above
@@ -162,6 +172,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
+  field_yoast_seo:
+    weight: 116
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 100

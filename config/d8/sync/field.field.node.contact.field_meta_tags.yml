@@ -1,16 +1,16 @@
-uuid: 93726e2d-8fce-47b5-8217-68ede72810df
+uuid: a8c10006-613d-4b61-96ee-2a199cfda63a
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.node.field_meta_tags
-    - node.type.building
+    - node.type.contact
   module:
     - metatag
-id: node.building.field_meta_tags
+id: node.contact.field_meta_tags
 field_name: field_meta_tags
 entity_type: node
-bundle: building
+bundle: contact
 label: 'Meta tags'
 description: ''
 required: false

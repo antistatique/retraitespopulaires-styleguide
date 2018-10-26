@@ -1,16 +1,16 @@
-uuid: c00299a3-c2c4-4554-b334-e28064c6e66e
+uuid: 20fab12b-8805-4d5d-a58f-19085784f96c
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.node.field_yoast_seo
-    - node.type.product
+    - node.type.advisor
   module:
     - yoast_seo
-id: node.product.field_yoast_seo
+id: node.advisor.field_yoast_seo
 field_name: field_yoast_seo
 entity_type: node
-bundle: product
+bundle: advisor
 label: 'Real-time SEO'
 description: ''
 required: false

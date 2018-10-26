@@ -7,14 +7,18 @@ dependencies:
     - field.field.node.document.field_document_type
     - field.field.node.document.field_document_type_institution
     - field.field.node.document.field_file_document
+    - field.field.node.document.field_meta_tags
     - field.field.node.document.field_profession
+    - field.field.node.document.field_yoast_seo
     - image.style.thumbnail
     - node.type.document
   module:
     - field_group
     - file
     - image
+    - metatag
     - path
+    - yoast_seo
 third_party_settings:
   field_group:
     group_tabs:
@@ -77,11 +81,24 @@ content:
     third_party_settings: {  }
     type: file_generic
     region: content
+  field_meta_tags:
+    weight: 122
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_profession:
     weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_yoast_seo:
+    weight: 123
+    settings:
+      body: body
+    third_party_settings: {  }
+    type: yoast_seo_widget
     region: content
   path:
     type: path
