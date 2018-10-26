@@ -20,7 +20,6 @@ dependencies:
     - field.field.node.news.field_function
     - field.field.node.news.field_lastname
     - field.field.node.news.field_meta_tags
-    - field.field.node.news.field_metatags
     - field.field.node.news.field_news_type
     - field.field.node.news.field_offer
     - field.field.node.news.field_popin
@@ -287,12 +286,6 @@ content:
     region: content
   field_meta_tags:
     weight: 135
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_firehose
-    region: content
-  field_metatags:
-    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose

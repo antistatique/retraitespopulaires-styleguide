@@ -7,15 +7,19 @@ dependencies:
     - field.field.node.faq.body
     - field.field.node.faq.field_advisor
     - field.field.node.faq.field_contact
+    - field.field.node.faq.field_contact_cta
     - field.field.node.faq.field_document
     - field.field.node.faq.field_document_random
+    - field.field.node.faq.field_email_popin
     - field.field.node.faq.field_faq
     - field.field.node.faq.field_faq_random
     - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
-    - field.field.node.faq.field_metatags
+    - field.field.node.faq.field_meta_tags
+    - field.field.node.faq.field_popin
     - field.field.node.faq.field_profession
     - field.field.node.faq.field_search_npa
+    - field.field.node.faq.field_yoast_seo
     - node.type.faq
   module:
     - text
@@ -39,14 +43,18 @@ content:
 hidden:
   field_advisor: true
   field_contact: true
+  field_contact_cta: true
   field_document: true
   field_document_random: true
+  field_email_popin: true
   field_faq: true
   field_faq_random: true
   field_faq_type: true
   field_file_faq: true
-  field_metatags: true
+  field_meta_tags: true
+  field_popin: true
   field_profession: true
   field_profil: true
   field_search_npa: true
+  field_yoast_seo: true
   langcode: true
