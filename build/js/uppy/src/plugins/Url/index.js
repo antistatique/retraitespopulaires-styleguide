@@ -29,8 +29,7 @@ module.exports = class Url extends Plugin {
         addUrl: 'Add url',
         import: 'Import',
         enterUrlToImport: 'Enter file url to import',
-        failedToFetch: 'Uppy Server failed to fetch this URL, please make sure it’s correct',
-        enterCorrectUrl: 'Please enter correct URL to add file'
+        failedToFetch: 'Uppy Server failed to fetch this URL'
       }
     }
 
@@ -84,12 +83,6 @@ module.exports = class Url extends Plugin {
   }
 
   addFile (url) {
-    if (!url) {
-      this.uppy.log('[URL] Incorrect URL entered')
-      this.uppy.info(this.i18n('enterCorrectUrl'), 'error', 4000)
-      return
-    }
-
     return this.getMeta(url).then((meta) => {
       const tagFile = {
         source: this.id,

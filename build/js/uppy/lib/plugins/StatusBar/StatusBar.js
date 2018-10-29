@@ -1,3 +1,5 @@
+'use strict';
+
 var throttle = require('lodash.throttle');
 
 var _require = require('preact'),

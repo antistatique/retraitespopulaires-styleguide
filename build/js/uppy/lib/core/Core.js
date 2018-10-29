@@ -1,3 +1,5 @@
+'use strict';
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -69,7 +71,6 @@ var Uppy = function () {
 
       // Merge default options with the ones set by user
     };this.opts = _extends({}, defaultOptions, opts);
-    this.opts.restrictions = _extends({}, defaultOptions.restrictions, this.opts.restrictions);
 
     this.locale = _extends({}, defaultLocale, this.opts.locale);
     this.locale.strings = _extends({}, defaultLocale.strings, this.opts.locale.strings);
@@ -570,25 +571,8 @@ var Uppy = function () {
   };
 
   Uppy.prototype.cancelAll = function cancelAll() {
-    var _this4 = this;
-
     this.emit('cancel-all');
-
-    // TODO Or should we just call removeFile on all files?
-
-    var _getState = this.getState(),
-        currentUploads = _getState.currentUploads;
-
-    var uploadIDs = Object.keys(currentUploads);
-
-    uploadIDs.forEach(function (id) {
-      _this4._removeUpload(id);
-    });
-
-    this.setState({
-      files: {},
-      totalProgress: 0
-    });
+    this.setState({ files: {}, totalProgress: 0 });
   };
 
   Uppy.prototype.retryUpload = function retryUpload(fileID) {
@@ -655,7 +639,7 @@ var Uppy = function () {
 
 
   Uppy.prototype.actions = function actions() {
-    var _this5 = this;
+    var _this4 = this;
 
     // const log = this.log
     // this.on('*', function (payload) {
@@ -669,31 +653,31 @@ var Uppy = function () {
     // }, 20)
 
     this.on('error', function (error) {
-      _this5.setState({ error: error.message });
+      _this4.setState({ error: error.message });
     });
 
     this.on('upload-error', function (file, error) {
-      _this5.setFileState(file.id, { error: error.message });
-      _this5.setState({ error: error.message });
+      _this4.setFileState(file.id, { error: error.message });
+      _this4.setState({ error: error.message });
 
       var message = 'Failed to upload ' + file.name;
       if ((typeof error === 'undefined' ? 'undefined' : _typeof(error)) === 'object' && error.message) {
         message = { message: message, details: error.message };
       }
-      _this5.info(message, 'error', 5000);
+      _this4.info(message, 'error', 5000);
     });
 
     this.on('upload', function () {
-      _this5.setState({ error: null });
+      _this4.setState({ error: null });
     });
 
     this.on('upload-started', function (file, upload) {
-      if (!_this5.getFile(file.id)) {
-        _this5.log('Not setting progress for a file that has been removed: ' + file.id);
+      if (!_this4.getFile(file.id)) {
+        _this4.log('Not setting progress for a file that has been removed: ' + file.id);
         return;
       }
-      _this5.setFileState(file.id, {
-        progress: _extends({}, _this5.getFile(file.id), {
+      _this4.setFileState(file.id, {
+        progress: _extends({}, _this4.getFile(file.id), {
           uploadStarted: Date.now(),
           uploadComplete: false,
           percentage: 0,
@@ -712,8 +696,8 @@ var Uppy = function () {
     this.on('upload-progress', _throttledCalculateProgress);
 
     this.on('upload-success', function (file, uploadResp, uploadURL) {
-      _this5.setFileState(file.id, {
-        progress: _extends({}, _this5.getFile(file.id).progress, {
+      _this4.setFileState(file.id, {
+        progress: _extends({}, _this4.getFile(file.id).progress, {
           uploadComplete: true,
           percentage: 100
         }),
@@ -721,53 +705,53 @@ var Uppy = function () {
         isPaused: false
       });
 
-      _this5._calculateTotalProgress();
+      _this4._calculateTotalProgress();
     });
 
     this.on('preprocess-progress', function (file, progress) {
-      if (!_this5.getFile(file.id)) {
-        _this5.log('Not setting progress for a file that has been removed: ' + file.id);
+      if (!_this4.getFile(file.id)) {
+        _this4.log('Not setting progress for a file that has been removed: ' + file.id);
         return;
       }
-      _this5.setFileState(file.id, {
-        progress: _extends({}, _this5.getFile(file.id).progress, {
+      _this4.setFileState(file.id, {
+        progress: _extends({}, _this4.getFile(file.id).progress, {
           preprocess: progress
         })
       });
     });
 
     this.on('preprocess-complete', function (file) {
-      if (!_this5.getFile(file.id)) {
-        _this5.log('Not setting progress for a file that has been removed: ' + file.id);
+      if (!_this4.getFile(file.id)) {
+        _this4.log('Not setting progress for a file that has been removed: ' + file.id);
         return;
       }
-      var files = _extends({}, _this5.getState().files);
+      var files = _extends({}, _this4.getState().files);
       files[file.id] = _extends({}, files[file.id], {
         progress: _extends({}, files[file.id].progress)
       });
       delete files[file.id].progress.preprocess;
 
-      _this5.setState({ files: files });
+      _this4.setState({ files: files });
     });
 
     this.on('postprocess-progress', function (file, progress) {
-      if (!_this5.getFile(file.id)) {
-        _this5.log('Not setting progress for a file that has been removed: ' + file.id);
+      if (!_this4.getFile(file.id)) {
+        _this4.log('Not setting progress for a file that has been removed: ' + file.id);
         return;
       }
-      _this5.setFileState(file.id, {
-        progress: _extends({}, _this5.getState().files[file.id].progress, {
+      _this4.setFileState(file.id, {
+        progress: _extends({}, _this4.getState().files[file.id].progress, {
           postprocess: progress
         })
       });
     });
 
     this.on('postprocess-complete', function (file) {
-      if (!_this5.getFile(file.id)) {
-        _this5.log('Not setting progress for a file that has been removed: ' + file.id);
+      if (!_this4.getFile(file.id)) {
+        _this4.log('Not setting progress for a file that has been removed: ' + file.id);
         return;
       }
-      var files = _extends({}, _this5.getState().files);
+      var files = _extends({}, _this4.getState().files);
       files[file.id] = _extends({}, files[file.id], {
         progress: _extends({}, files[file.id].progress)
       });
@@ -776,24 +760,24 @@ var Uppy = function () {
       // so it's easier to see that the file is upload…fully complete…rather than
       // what we have to do now (`uploadComplete && !postprocess`)
 
-      _this5.setState({ files: files });
+      _this4.setState({ files: files });
     });
 
     this.on('restored', function () {
       // Files may have changed--ensure progress is still accurate.
-      _this5._calculateTotalProgress();
+      _this4._calculateTotalProgress();
     });
 
     // show informer if offline
     if (typeof window !== 'undefined') {
       window.addEventListener('online', function () {
-        return _this5.updateOnlineStatus();
+        return _this4.updateOnlineStatus();
       });
       window.addEventListener('offline', function () {
-        return _this5.updateOnlineStatus();
+        return _this4.updateOnlineStatus();
       });
       setTimeout(function () {
-        return _this5.updateOnlineStatus();
+        return _this4.updateOnlineStatus();
       }, 3000);
     }
   };
@@ -885,10 +869,10 @@ var Uppy = function () {
 
 
   Uppy.prototype.iteratePlugins = function iteratePlugins(method) {
-    var _this6 = this;
+    var _this5 = this;
 
     Object.keys(this.plugins).forEach(function (pluginType) {
-      _this6.plugins[pluginType].forEach(method);
+      _this5.plugins[pluginType].forEach(method);
     });
   };
 
@@ -1117,7 +1101,7 @@ var Uppy = function () {
 
 
   Uppy.prototype._runUpload = function _runUpload(uploadID) {
-    var _this7 = this;
+    var _this6 = this;
 
     var uploadData = this.getState().currentUploads[uploadID];
     var fileIDs = uploadData.fileIDs;
@@ -1134,13 +1118,13 @@ var Uppy = function () {
       lastStep = lastStep.then(function () {
         var _extends5;
 
-        var _getState2 = _this7.getState(),
-            currentUploads = _getState2.currentUploads;
+        var _getState = _this6.getState(),
+            currentUploads = _getState.currentUploads;
 
         var currentUpload = _extends({}, currentUploads[uploadID], {
           step: step
         });
-        _this7.setState({
+        _this6.setState({
           currentUploads: _extends({}, currentUploads, (_extends5 = {}, _extends5[uploadID] = currentUpload, _extends5))
         });
         // TODO give this the `currentUpload` object as its only parameter maybe?
@@ -1154,14 +1138,14 @@ var Uppy = function () {
     // Not returning the `catch`ed promise, because we still want to return a rejected
     // promise from this method if the upload failed.
     lastStep.catch(function (err) {
-      _this7.emit('error', err);
+      _this6.emit('error', err);
 
-      _this7._removeUpload(uploadID);
+      _this6._removeUpload(uploadID);
     });
 
     return lastStep.then(function () {
       var files = fileIDs.map(function (fileID) {
-        return _this7.getFile(fileID);
+        return _this6.getFile(fileID);
       });
       var successful = files.filter(function (file) {
         return file && !file.error;
@@ -1169,20 +1153,20 @@ var Uppy = function () {
       var failed = files.filter(function (file) {
         return file && file.error;
       });
-      _this7.addResultData(uploadID, { successful: successful, failed: failed, uploadID: uploadID });
+      _this6.addResultData(uploadID, { successful: successful, failed: failed, uploadID: uploadID });
 
-      var _getState3 = _this7.getState(),
-          currentUploads = _getState3.currentUploads;
+      var _getState2 = _this6.getState(),
+          currentUploads = _getState2.currentUploads;
 
       if (!currentUploads[uploadID]) {
-        _this7.log('Not setting result for an upload that has been removed: ' + uploadID);
+        _this6.log('Not setting result for an upload that has been removed: ' + uploadID);
         return;
       }
 
       var result = currentUploads[uploadID].result;
-      _this7.emit('complete', result);
+      _this6.emit('complete', result);
 
-      _this7._removeUpload(uploadID);
+      _this6._removeUpload(uploadID);
 
       return result;
     });
@@ -1196,19 +1180,19 @@ var Uppy = function () {
 
 
   Uppy.prototype.upload = function upload() {
-    var _this8 = this;
+    var _this7 = this;
 
     if (!this.plugins.uploader) {
       this.log('No uploader type plugins are used', 'warning');
     }
 
     return _Promise.resolve().then(function () {
-      return _this8.opts.onBeforeUpload(_this8.getState().files);
+      return _this7.opts.onBeforeUpload(_this7.getState().files);
     }).then(function () {
-      return _this8._checkMinNumberOfFiles();
+      return _this7._checkMinNumberOfFiles();
     }).then(function () {
-      var _getState4 = _this8.getState(),
-          currentUploads = _getState4.currentUploads;
+      var _getState3 = _this7.getState(),
+          currentUploads = _getState3.currentUploads;
       // get a list of files that are currently assigned to uploads
 
 
@@ -1217,20 +1201,20 @@ var Uppy = function () {
       }, []);
 
       var waitingFileIDs = [];
-      Object.keys(_this8.getState().files).forEach(function (fileID) {
-        var file = _this8.getFile(fileID);
+      Object.keys(_this7.getState().files).forEach(function (fileID) {
+        var file = _this7.getFile(fileID);
         // if the file hasn't started uploading and hasn't already been assigned to an upload..
         if (!file.progress.uploadStarted && currentlyUploadingFiles.indexOf(fileID) === -1) {
           waitingFileIDs.push(file.id);
         }
       });
 
-      var uploadID = _this8._createUpload(waitingFileIDs);
-      return _this8._runUpload(uploadID);
+      var uploadID = _this7._createUpload(waitingFileIDs);
+      return _this7._runUpload(uploadID);
     }).catch(function (err) {
       var message = (typeof err === 'undefined' ? 'undefined' : _typeof(err)) === 'object' ? err.message : err;
-      _this8.log(message);
-      _this8.info(message, 'error', 4000);
+      _this7.log(message);
+      _this7.info(message, 'error', 4000);
       return _Promise.reject((typeof err === 'undefined' ? 'undefined' : _typeof(err)) === 'object' ? err : new Error(err));
     });
   };

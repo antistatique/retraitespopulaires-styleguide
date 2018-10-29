@@ -1,3 +1,5 @@
+"use strict";
+
 var _require = require('preact'),
     h = _require.h;
 

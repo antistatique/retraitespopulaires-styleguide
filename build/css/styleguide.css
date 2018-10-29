@@ -132,6 +132,7 @@ pre[class*='language-'] {
   cursor: pointer;
   vertical-align: middle;
   opacity: 0.8;
+  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s; }
   .styleguide-menu-toggle:hover {
     opacity: 1; }
@@ -427,6 +428,7 @@ body {
     padding: 0.2em 1em 0.1em;
     font-size: 80%;
     color: #424242;
+    -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out; }
     .styleguide-menu a.styleguide-active {
       padding-left: 2rem; }
@@ -509,6 +511,7 @@ body {
   bottom: 20px;
   left: calc(100% - 3em);
   padding-left: 2em;
+  -webkit-transition: padding-left 0.2s;
   transition: padding-left 0.2s;
   will-change: padding-left; }
   .styleguide-toggle-theme-hide:hover {

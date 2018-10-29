@@ -1,3 +1,5 @@
+'use strict';
+
 /* eslint camelcase: 0 */
 
 var tr_TR = {};

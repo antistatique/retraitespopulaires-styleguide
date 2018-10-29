@@ -52,7 +52,6 @@ class Uppy {
 
     // Merge default options with the ones set by user
     this.opts = Object.assign({}, defaultOptions, opts)
-    this.opts.restrictions = Object.assign({}, defaultOptions.restrictions, this.opts.restrictions)
 
     this.locale = Object.assign({}, defaultLocale, this.opts.locale)
     this.locale.strings = Object.assign({}, defaultLocale.strings, this.opts.locale.strings)
@@ -529,19 +528,7 @@ class Uppy {
 
   cancelAll () {
     this.emit('cancel-all')
-
-    // TODO Or should we just call removeFile on all files?
-    const { currentUploads } = this.getState()
-    const uploadIDs = Object.keys(currentUploads)
-
-    uploadIDs.forEach((id) => {
-      this._removeUpload(id)
-    })
-
-    this.setState({
-      files: {},
-      totalProgress: 0
-    })
+    this.setState({ files: {}, totalProgress: 0 })
   }
 
   retryUpload (fileID) {

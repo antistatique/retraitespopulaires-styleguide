@@ -1,6 +1,6 @@
-const Plugin = require('../../src/core/Plugin')
+import Plugin from '../../src/core/Plugin'
 
-module.exports = class InvalidPluginWithoutType extends Plugin {
+export default class InvalidPluginWithoutType extends Plugin {
   constructor (uppy, opts) {
     super(uppy, opts)
     this.id = 'InvalidPluginWithoutType'

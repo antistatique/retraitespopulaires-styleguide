@@ -1,7 +1,16 @@
-var _Promise = typeof Promise === 'undefined' ? require('es6-promise').Promise : Promise;
+'use strict';
 
-var ThumbnailGeneratorPlugin = require('./index');
-var Plugin = require('../../core/Plugin');
+var _index = require('./index');
+
+var _index2 = _interopRequireDefault(_index);
+
+var _Plugin = require('../../core/Plugin');
+
+var _Plugin2 = _interopRequireDefault(_Plugin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _Promise = typeof Promise === 'undefined' ? require('es6-promise').Promise : Promise;
 
 var delay = function delay(duration) {
   return new _Promise(function (resolve) {
@@ -11,15 +20,15 @@ var delay = function delay(duration) {
 
 describe('uploader/ThumbnailGeneratorPlugin', function () {
   it('should initialise successfully', function () {
-    var plugin = new ThumbnailGeneratorPlugin(null, {});
-    expect(plugin instanceof Plugin).toEqual(true);
+    var plugin = new _index2.default(null, {});
+    expect(plugin instanceof _Plugin2.default).toEqual(true);
   });
 
   it('should accept the thumbnailWidth option and override the default', function () {
-    var plugin1 = new ThumbnailGeneratorPlugin(null); // eslint-disable-line no-new
+    var plugin1 = new _index2.default(null); // eslint-disable-line no-new
     expect(plugin1.opts.thumbnailWidth).toEqual(200);
 
-    var plugin2 = new ThumbnailGeneratorPlugin(null, { thumbnailWidth: 100 }); // eslint-disable-line no-new
+    var plugin2 = new _index2.default(null, { thumbnailWidth: 100 }); // eslint-disable-line no-new
     expect(plugin2.opts.thumbnailWidth).toEqual(100);
   });
 
@@ -29,7 +38,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
         on: jest.fn()
       };
 
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
       plugin.addToQueue = jest.fn();
       plugin.install();
 
@@ -45,7 +54,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
         off: jest.fn()
       };
 
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
       plugin.addToQueue = jest.fn();
       plugin.install();
 
@@ -61,7 +70,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
   describe('queue', function () {
     it('should add a new file to the queue and start processing the queue when queueProcessing is false', function () {
       var core = {};
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
       plugin.processQueue = jest.fn();
 
       var file = { foo: 'bar' };
@@ -79,7 +88,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
 
     it('should process items in the queue one by one', function () {
       var core = {};
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
 
       plugin.requestThumbnail = jest.fn(function () {
         return delay(100);
@@ -113,7 +122,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
   describe('requestThumbnail', function () {
     it('should call createThumbnail if it is a supported filetype', function () {
       var core = {};
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
 
       plugin.createThumbnail = jest.fn().mockReturnValue(_Promise.resolve('preview'));
       plugin.setPreviewURL = jest.fn();
@@ -127,7 +136,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
 
     it('should not call createThumbnail if it is not a supported filetype', function () {
       var core = {};
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
 
       plugin.createThumbnail = jest.fn().mockReturnValue(_Promise.resolve('preview'));
       plugin.setPreviewURL = jest.fn();
@@ -140,7 +149,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
 
     it('should not call createThumbnail if the file is remote', function () {
       var core = {};
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
 
       plugin.createThumbnail = jest.fn().mockReturnValue(_Promise.resolve('preview'));
       plugin.setPreviewURL = jest.fn();
@@ -153,7 +162,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
 
     it('should call setPreviewURL with the thumbnail image', function () {
       var core = {};
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
 
       plugin.createThumbnail = jest.fn().mockReturnValue(_Promise.resolve('preview'));
       plugin.setPreviewURL = jest.fn();
@@ -181,7 +190,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
         },
         setState: jest.fn()
       };
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
       plugin.setPreviewURL('file1', 'moo');
       expect(core.setState).toHaveBeenCalledTimes(1);
       expect(core.setState).toHaveBeenCalledWith({
@@ -193,7 +202,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
   describe('getProportionalHeight', function () {
     it('should calculate the resized height based on the specified width of the image whilst keeping aspect ratio', function () {
       var core = {};
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
       expect(plugin.getProportionalHeight({ width: 200, height: 100 }, 50)).toEqual(25);
       expect(plugin.getProportionalHeight({ width: 66, height: 66 }, 33)).toEqual(33);
       expect(plugin.getProportionalHeight({ width: 201.2, height: 198.2 }, 47)).toEqual(46);
@@ -203,7 +212,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
   describe('canvasToBlob', function () {
     it('should use canvas.toBlob if available', function () {
       var core = {};
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
       var canvas = {
         toBlob: jest.fn()
       };
@@ -230,7 +239,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
 
     xit('should scale down the image by the specified number of steps', function () {
       var core = {};
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
       var image = {
         width: 1000,
         height: 800
@@ -263,7 +272,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
   describe('resizeImage', function () {
     it('should return a canvas with the resized image on it', function () {
       var core = {};
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
       var image = {
         width: 1000,
         height: 800
@@ -288,7 +297,7 @@ describe('uploader/ThumbnailGeneratorPlugin', function () {
 
     it('should upsize if original image is smaller than target size', function () {
       var core = {};
-      var plugin = new ThumbnailGeneratorPlugin(core);
+      var plugin = new _index2.default(core);
       var image = {
         width: 100,
         height: 80

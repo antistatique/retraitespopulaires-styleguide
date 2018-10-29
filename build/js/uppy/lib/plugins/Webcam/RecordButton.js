@@ -1,3 +1,5 @@
+'use strict';
+
 var RecordStartIcon = require('./RecordStartIcon');
 var RecordStopIcon = require('./RecordStopIcon');
 

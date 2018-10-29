@@ -1,3 +1,5 @@
+'use strict';
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -51,8 +53,7 @@ module.exports = function (_Plugin) {
         addUrl: 'Add url',
         import: 'Import',
         enterUrlToImport: 'Enter file url to import',
-        failedToFetch: 'Uppy Server failed to fetch this URL, please make sure it’s correct',
-        enterCorrectUrl: 'Please enter correct URL to add file'
+        failedToFetch: 'Uppy Server failed to fetch this URL'
       }
     };
 
@@ -108,12 +109,6 @@ module.exports = function (_Plugin) {
 
   Url.prototype.addFile = function addFile(url) {
     var _this2 = this;
-
-    if (!url) {
-      this.uppy.log('[URL] Incorrect URL entered');
-      this.uppy.info(this.i18n('enterCorrectUrl'), 'error', 4000);
-      return;
-    }
 
     return this.getMeta(url).then(function (meta) {
       var tagFile = {

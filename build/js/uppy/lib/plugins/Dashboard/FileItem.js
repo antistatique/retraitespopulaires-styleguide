@@ -1,3 +1,5 @@
+'use strict';
+
 var _require = require('../../core/Utils'),
     getETA = _require.getETA,
     getSpeed = _require.getSpeed,
@@ -92,7 +94,7 @@ module.exports = function fileItem(props) {
           'button',
           { 'class': 'uppy-DashboardItem-progressIndicator',
             type: 'button',
-            title: isUploaded ? 'upload complete' : props.resumableUploads ? file.isPaused ? 'resume upload' : 'pause upload' : error ? 'retry upload' : 'cancel upload',
+            title: isUploaded ? 'upload complete' : props.resumableUploads ? file.isPaused ? 'resume upload' : 'pause upload' : 'cancel upload',
             onclick: onPauseResumeCancelRetry },
           error ? iconRetry() : FileItemProgress({
             progress: file.progress.percentage,

@@ -3,41 +3,41 @@
 const it_IT = {}
 
 it_IT.strings = {
-  chooseFile: 'Seleziona un file',
+  chooseFile: 'Seleziona file',
   youHaveChosen: 'Hai scelto: %{fileName}',
-  orDragDrop: 'oppure trascinalo qui',
+  orDragDrop: 'oppure trascina qui',
   filesChosen: {
     0: '%{smart_count} file selezionato',
-    1: '%{smart_count} file selezionati'
+    1: '%{smart_count} files selezionati'
   },
   filesUploaded: {
     0: '%{smart_count} file caricato',
-    1: '%{smart_count} file caricati'
+    1: '%{smart_count} files caricati'
   },
   files: {
     0: '%{smart_count} file',
-    1: '%{smart_count} file'
+    1: '%{smart_count} files'
   },
   uploadFiles: {
     0: 'Carica %{smart_count} file',
-    1: 'Carica %{smart_count} file'
+    1: 'Carica %{smart_count} files'
   },
-  selectToUpload: 'Seleziona i file da caricare',
-  closeModal: 'Chiudi la finestra',
+  selectToUpload: 'Seleziona i files da caricare',
+  closeModal: 'Chiudi finestra',
   upload: 'Carica',
-  importFrom: 'Importa i file da',
+  importFrom: 'Importa files da',
   dashboardWindowTitle: 'Uppy Dashboard Window (Premi escape per chiuderla)',
   dashboardTitle: 'Uppy Dashboard',
   copyLinkToClipboardSuccess: 'Collegamento copiato negli appunti.',
   copyLinkToClipboardFallback: 'Copia il seguente indirizzo',
   done: 'Fatto',
   localDisk: 'Disco locale',
-  dropPasteImport: 'Trascina i file qui, incolla, importa da uno dei servizi sopra oppure',
-  dropPaste: 'Trascina i file qui, incolla oppure',
+  dropPasteImport: 'Trascina i files qui, incolla, importa da uno dei servizi sopra oppure',
+  dropPaste: 'Trascina i files qui, incolla oppure',
   browse: 'sfoglia',
-  fileProgress: 'Avanzamento del file: velocità di caricamento e tempo rimanente',
-  numberOfSelectedFiles: 'Numero di file selezionati',
-  uploadAllNewFiles: 'Carica tutti i nuovi file'
+  fileProgress: 'Progresso: velocità di caricamento e tempo rimanente',
+  numberOfSelectedFiles: 'Numero di files selezionati',
+  uploadAllNewFiles: 'Carica tutti i nuovi files'
 }
 
 it_IT.pluralize = function (n) {

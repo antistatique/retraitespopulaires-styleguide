@@ -1,6 +1,12 @@
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+'use strict';
 
-var UppySocket = require('./UppySocket');
+var _UppySocket = require('./UppySocket');
+
+var _UppySocket2 = _interopRequireDefault(_UppySocket);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 describe('core/uppySocket', function () {
   var webSocketConstructorSpy = void 0;
@@ -43,19 +49,19 @@ describe('core/uppySocket', function () {
   });
 
   it('should expose a class', function () {
-    expect(UppySocket.name).toEqual('UppySocket');
-    expect(new UppySocket({
+    expect(_UppySocket2.default.name).toEqual('UppySocket');
+    expect(new _UppySocket2.default({
       target: 'foo'
-    }) instanceof UppySocket);
+    }) instanceof _UppySocket2.default);
   });
 
   it('should setup a new WebSocket', function () {
-    new UppySocket({ target: 'foo' }); // eslint-disable-line no-new
+    new _UppySocket2.default({ target: 'foo' }); // eslint-disable-line no-new
     expect(webSocketConstructorSpy.mock.calls[0][0]).toEqual('foo');
   });
 
   it('should send a message via the websocket if the connection is open', function () {
-    var uppySocket = new UppySocket({ target: 'foo' });
+    var uppySocket = new _UppySocket2.default({ target: 'foo' });
     var webSocketInstance = uppySocket.socket;
     webSocketInstance.triggerOpen();
 
@@ -65,7 +71,7 @@ describe('core/uppySocket', function () {
   });
 
   it('should queue the message for the websocket if the connection is not open', function () {
-    var uppySocket = new UppySocket({ target: 'foo' });
+    var uppySocket = new _UppySocket2.default({ target: 'foo' });
 
     uppySocket.send('bar', 'boo');
     expect(uppySocket.queued).toEqual([{ action: 'bar', payload: 'boo' }]);
@@ -73,7 +79,7 @@ describe('core/uppySocket', function () {
   });
 
   it('should queue any messages for the websocket if the connection is not open, then send them when the connection is open', function () {
-    var uppySocket = new UppySocket({ target: 'foo' });
+    var uppySocket = new _UppySocket2.default({ target: 'foo' });
     var webSocketInstance = uppySocket.socket;
 
     uppySocket.send('bar', 'boo');
@@ -90,7 +96,7 @@ describe('core/uppySocket', function () {
   });
 
   it('should start queuing any messages when the websocket connection is closed', function () {
-    var uppySocket = new UppySocket({ target: 'foo' });
+    var uppySocket = new _UppySocket2.default({ target: 'foo' });
     var webSocketInstance = uppySocket.socket;
     webSocketInstance.triggerOpen();
     uppySocket.send('bar', 'boo');
@@ -102,7 +108,7 @@ describe('core/uppySocket', function () {
   });
 
   it('should close the websocket when it is force closed', function () {
-    var uppySocket = new UppySocket({ target: 'foo' });
+    var uppySocket = new _UppySocket2.default({ target: 'foo' });
     var webSocketInstance = uppySocket.socket;
     webSocketInstance.triggerOpen();
 
@@ -111,7 +117,7 @@ describe('core/uppySocket', function () {
   });
 
   it('should be able to subscribe to messages received on the websocket', function () {
-    var uppySocket = new UppySocket({ target: 'foo' });
+    var uppySocket = new _UppySocket2.default({ target: 'foo' });
     var webSocketInstance = uppySocket.socket;
 
     var emitterListenerMock = jest.fn();
@@ -125,7 +131,7 @@ describe('core/uppySocket', function () {
   });
 
   it('should be able to emit messages and subscribe to them', function () {
-    var uppySocket = new UppySocket({ target: 'foo' });
+    var uppySocket = new _UppySocket2.default({ target: 'foo' });
 
     var emitterListenerMock = jest.fn();
     uppySocket.on('hi', emitterListenerMock);
@@ -138,7 +144,7 @@ describe('core/uppySocket', function () {
   });
 
   it('should be able to subscribe to the first event for a particular action', function () {
-    var uppySocket = new UppySocket({ target: 'foo' });
+    var uppySocket = new _UppySocket2.default({ target: 'foo' });
 
     var emitterListenerMock = jest.fn();
     uppySocket.once('hi', emitterListenerMock);

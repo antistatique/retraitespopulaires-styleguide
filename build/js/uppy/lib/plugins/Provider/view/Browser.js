@@ -1,3 +1,5 @@
+'use strict';
+
 var Breadcrumbs = require('./Breadcrumbs');
 var Filter = require('./Filter');
 var Table = require('./Table');

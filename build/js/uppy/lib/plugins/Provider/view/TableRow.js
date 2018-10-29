@@ -1,3 +1,5 @@
+'use strict';
+
 var cuid = require('cuid');
 
 var _require = require('preact'),

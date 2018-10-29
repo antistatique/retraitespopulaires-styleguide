@@ -1,3 +1,5 @@
+'use strict';
+
 var supportsMediaRecorder = require('./supportsMediaRecorder');
 
 describe('supportsMediaRecorder', function () {

@@ -1,3 +1,5 @@
+'use strict';
+
 var _Promise = typeof Promise === 'undefined' ? require('es6-promise').Promise : Promise;
 
 var Core = require('../../core');
@@ -97,7 +99,7 @@ describe('Transloadit', function () {
     });
   });
 
-  it('Should merge files with same parameters into one Assembly', function () {
+  it('Should merge files with same parameters into one assembly', function () {
     var uppy = new Core({ autoProceed: false });
 
     uppy.use(Transloadit, {
@@ -138,11 +140,11 @@ describe('Transloadit', function () {
     });
   });
 
-  it('Does not create an Assembly if no files are being uploaded', function () {
+  it('Does not create an assembly if no files are being uploaded', function () {
     var uppy = new Core();
     uppy.use(Transloadit, {
       getAssemblyOptions: function getAssemblyOptions() {
-        throw new Error('should not create Assembly');
+        throw new Error('should not create assembly');
       }
     });
     uppy.run();
@@ -150,7 +152,7 @@ describe('Transloadit', function () {
     return uppy.upload();
   });
 
-  it('Creates an Assembly if no files are being uploaded but `alwaysRunAssembly` is enabled', function () {
+  it('Creates an assembly if no files are being uploaded but `alwaysRunAssembly` is enabled', function () {
     var uppy = new Core();
     uppy.use(Transloadit, {
       alwaysRunAssembly: true,

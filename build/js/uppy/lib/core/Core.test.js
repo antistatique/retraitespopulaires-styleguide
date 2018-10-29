@@ -1,15 +1,42 @@
+'use strict';
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _Promise = typeof Promise === 'undefined' ? require('es6-promise').Promise : Promise;
+var _Core = require('./Core');
 
-var Core = require('./Core');
-var utils = require('./Utils');
-var Plugin = require('./Plugin');
-var AcquirerPlugin1 = require('../../test/mocks/acquirerPlugin1');
-var AcquirerPlugin2 = require('../../test/mocks/acquirerPlugin2');
-var InvalidPlugin = require('../../test/mocks/invalidPlugin');
-var InvalidPluginWithoutId = require('../../test/mocks/invalidPluginWithoutId');
-var InvalidPluginWithoutType = require('../../test/mocks/invalidPluginWithoutType');
+var _Core2 = _interopRequireDefault(_Core);
+
+var _Utils = require('./Utils');
+
+var _Utils2 = _interopRequireDefault(_Utils);
+
+var _Plugin = require('./Plugin');
+
+var _Plugin2 = _interopRequireDefault(_Plugin);
+
+var _acquirerPlugin = require('../../test/mocks/acquirerPlugin1');
+
+var _acquirerPlugin2 = _interopRequireDefault(_acquirerPlugin);
+
+var _acquirerPlugin3 = require('../../test/mocks/acquirerPlugin2');
+
+var _acquirerPlugin4 = _interopRequireDefault(_acquirerPlugin3);
+
+var _invalidPlugin = require('../../test/mocks/invalidPlugin');
+
+var _invalidPlugin2 = _interopRequireDefault(_invalidPlugin);
+
+var _invalidPluginWithoutId = require('../../test/mocks/invalidPluginWithoutId');
+
+var _invalidPluginWithoutId2 = _interopRequireDefault(_invalidPluginWithoutId);
+
+var _invalidPluginWithoutType = require('../../test/mocks/invalidPluginWithoutType');
+
+var _invalidPluginWithoutType2 = _interopRequireDefault(_invalidPluginWithoutType);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _Promise = typeof Promise === 'undefined' ? require('es6-promise').Promise : Promise;
 
 jest.mock('cuid', function () {
   return function () {
@@ -22,13 +49,13 @@ var sampleImageDataURI = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QC
 describe('src/Core', function () {
   var RealCreateObjectUrl = global.URL.createObjectURL;
   beforeEach(function () {
-    jest.spyOn(utils, 'findDOMElement').mockImplementation(function (path) {
+    jest.spyOn(_Utils2.default, 'findDOMElement').mockImplementation(function (path) {
       return 'some config...';
     });
-    jest.spyOn(utils, 'createThumbnail').mockImplementation(function (path) {
+    jest.spyOn(_Utils2.default, 'createThumbnail').mockImplementation(function (path) {
       return _Promise.resolve(sampleImageDataURI);
     });
-    utils.createThumbnail.mockClear();
+    _Utils2.default.createThumbnail.mockClear();
 
     global.URL.createObjectURL = jest.fn().mockReturnValue('newUrl');
   });
@@ -38,72 +65,72 @@ describe('src/Core', function () {
   });
 
   it('should expose a class', function () {
-    var core = Core();
+    var core = (0, _Core2.default)();
     expect(core.constructor.name).toEqual('Uppy');
   });
 
   it('should have a string `id` option that defaults to "uppy"', function () {
-    var core = Core();
+    var core = (0, _Core2.default)();
     expect(core.getID()).toEqual('uppy');
 
-    var core2 = Core({ id: 'profile' });
+    var core2 = (0, _Core2.default)({ id: 'profile' });
     expect(core2.getID()).toEqual('profile');
   });
 
   describe('plugins', function () {
     it('should add a plugin to the plugin stack', function () {
-      var core = Core();
-      core.use(AcquirerPlugin1);
+      var core = (0, _Core2.default)();
+      core.use(_acquirerPlugin2.default);
       expect(Object.keys(core.plugins.acquirer).length).toEqual(1);
     });
 
     it('should prevent the same plugin from being added more than once', function () {
-      var core = Core();
-      core.use(AcquirerPlugin1);
+      var core = (0, _Core2.default)();
+      core.use(_acquirerPlugin2.default);
 
       expect(function () {
-        core.use(AcquirerPlugin1);
+        core.use(_acquirerPlugin2.default);
       }).toThrowErrorMatchingSnapshot();
     });
 
     it('should not be able to add an invalid plugin', function () {
-      var core = Core();
+      var core = (0, _Core2.default)();
 
       expect(function () {
-        core.use(InvalidPlugin);
+        core.use(_invalidPlugin2.default);
       }).toThrowErrorMatchingSnapshot();
     });
 
     it('should not be able to add a plugin that has no id', function () {
-      var core = Core();
+      var core = (0, _Core2.default)();
 
       expect(function () {
-        return core.use(InvalidPluginWithoutId);
+        return core.use(_invalidPluginWithoutId2.default);
       }).toThrowErrorMatchingSnapshot();
     });
 
     it('should not be able to add a plugin that has no type', function () {
-      var core = Core();
+      var core = (0, _Core2.default)();
 
       expect(function () {
-        return core.use(InvalidPluginWithoutType);
+        return core.use(_invalidPluginWithoutType2.default);
       }).toThrowErrorMatchingSnapshot();
     });
 
     it('should return the plugin that matches the specified name', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       expect(core.getPlugin('foo')).toEqual(false);
 
-      core.use(AcquirerPlugin1);
+      core.use(_acquirerPlugin2.default);
       var plugin = core.getPlugin('TestSelector1');
       expect(plugin.id).toEqual('TestSelector1');
-      expect(plugin instanceof Plugin);
+      expect(plugin instanceof _Plugin2.default);
     });
 
     it('should call the specified method on all the plugins', function () {
-      var core = new Core();
-      core.use(AcquirerPlugin1);
-      core.use(AcquirerPlugin2);
+      var core = new _Core2.default();
+      core.use(_acquirerPlugin2.default);
+      core.use(_acquirerPlugin4.default);
       core.iteratePlugins(function (plugin) {
         plugin.run('hello');
       });
@@ -114,9 +141,9 @@ describe('src/Core', function () {
     });
 
     it('should uninstall and the remove the specified plugin', function () {
-      var core = new Core();
-      core.use(AcquirerPlugin1);
-      core.use(AcquirerPlugin2);
+      var core = new _Core2.default();
+      core.use(_acquirerPlugin2.default);
+      core.use(_acquirerPlugin4.default);
       expect(Object.keys(core.plugins.acquirer).length).toEqual(2);
 
       var plugin = core.getPlugin('TestSelector1');
@@ -129,9 +156,9 @@ describe('src/Core', function () {
 
   describe('state', function () {
     it('should update all the plugins with the new state when the updateAll method is called', function () {
-      var core = new Core();
-      core.use(AcquirerPlugin1);
-      core.use(AcquirerPlugin2);
+      var core = new _Core2.default();
+      core.use(_acquirerPlugin2.default);
+      core.use(_acquirerPlugin4.default);
       core.updateAll({ foo: 'bar' });
       expect(core.plugins.acquirer[0].mocks.update.mock.calls.length).toEqual(1);
       expect(core.plugins.acquirer[0].mocks.update.mock.calls[0]).toEqual([{ foo: 'bar' }]);
@@ -140,11 +167,11 @@ describe('src/Core', function () {
     });
 
     it('should update the state', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       var stateUpdateEventMock = jest.fn();
       core.on('state-update', stateUpdateEventMock);
-      core.use(AcquirerPlugin1);
-      core.use(AcquirerPlugin2);
+      core.use(_acquirerPlugin2.default);
+      core.use(_acquirerPlugin4.default);
 
       core.setState({ foo: 'bar', bee: 'boo' });
       core.setState({ foo: 'baar' });
@@ -194,7 +221,7 @@ describe('src/Core', function () {
     });
 
     it('should get the state', function () {
-      var core = new Core();
+      var core = new _Core2.default();
 
       core.setState({ foo: 'bar' });
 
@@ -212,7 +239,7 @@ describe('src/Core', function () {
   });
 
   it('should reset when the reset method is called', function () {
-    var core = new Core();
+    var core = new _Core2.default();
     // const corePauseEventMock = jest.fn()
     var coreCancelEventMock = jest.fn();
     var coreStateUpdateEventMock = jest.fn();
@@ -237,20 +264,9 @@ describe('src/Core', function () {
     });
   });
 
-  it('should clear all uploads on cancelAll()', function () {
-    var core = new Core();
-    var id = core._createUpload(['a', 'b']);
-
-    expect(core.state.currentUploads[id]).toBeDefined();
-
-    core.cancelAll();
-
-    expect(core.state.currentUploads[id]).toBeUndefined();
-  });
-
   it('should close, reset and uninstall when the close method is called', function () {
-    var core = new Core();
-    core.use(AcquirerPlugin1);
+    var core = new _Core2.default();
+    core.use(_acquirerPlugin2.default);
 
     // const corePauseEventMock = jest.fn()
     var coreCancelEventMock = jest.fn();
@@ -278,7 +294,7 @@ describe('src/Core', function () {
 
   describe('upload hooks', function () {
     it('should add data returned from upload hooks to the .upload() result', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       core.addPreProcessor(function (fileIDs, uploadID) {
         core.addResultData(uploadID, { pre: 'ok' });
       });
@@ -299,14 +315,14 @@ describe('src/Core', function () {
 
   describe('preprocessors', function () {
     it('should add a preprocessor', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       var preprocessor = function preprocessor() {};
       core.addPreProcessor(preprocessor);
       expect(core.preProcessors[0]).toEqual(preprocessor);
     });
 
     it('should remove a preprocessor', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       var preprocessor1 = function preprocessor1() {};
       var preprocessor2 = function preprocessor2() {};
       var preprocessor3 = function preprocessor3() {};
@@ -319,7 +335,7 @@ describe('src/Core', function () {
     });
 
     it('should execute all the preprocessors when uploading a file', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       var preprocessor1 = jest.fn();
       var preprocessor2 = jest.fn();
       core.addPreProcessor(preprocessor1);
@@ -329,7 +345,7 @@ describe('src/Core', function () {
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         return core.upload();
       }).then(function () {
@@ -345,13 +361,13 @@ describe('src/Core', function () {
     });
 
     it('should update the file progress state when preprocess-progress event is fired', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         var fileId = Object.keys(core.state.files)[0];
         var file = core.getFile(fileId);
@@ -372,13 +388,13 @@ describe('src/Core', function () {
     });
 
     it('should update the file progress state when preprocess-complete event is fired', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         var fileID = Object.keys(core.state.files)[0];
         var file = core.state.files[fileID];
@@ -400,14 +416,14 @@ describe('src/Core', function () {
 
   describe('postprocessors', function () {
     it('should add a postprocessor', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       var postprocessor = function postprocessor() {};
       core.addPostProcessor(postprocessor);
       expect(core.postProcessors[0]).toEqual(postprocessor);
     });
 
     it('should remove a postprocessor', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       var postprocessor1 = function postprocessor1() {};
       var postprocessor2 = function postprocessor2() {};
       var postprocessor3 = function postprocessor3() {};
@@ -420,7 +436,7 @@ describe('src/Core', function () {
     });
 
     it('should execute all the postprocessors when uploading a file', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       var postprocessor1 = jest.fn();
       var postprocessor2 = jest.fn();
       core.addPostProcessor(postprocessor1);
@@ -430,7 +446,7 @@ describe('src/Core', function () {
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         return core.upload();
       }).then(function () {
@@ -448,13 +464,13 @@ describe('src/Core', function () {
     });
 
     it('should update the file progress state when postprocess-progress event is fired', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         var fileId = Object.keys(core.state.files)[0];
         var file = core.getFile(fileId);
@@ -475,13 +491,13 @@ describe('src/Core', function () {
     });
 
     it('should update the file progress state when postprocess-complete event is fired', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         var fileId = Object.keys(core.state.files)[0];
         var file = core.state.files[fileId];
@@ -503,14 +519,14 @@ describe('src/Core', function () {
 
   describe('uploaders', function () {
     it('should add an uploader', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       var uploader = function uploader() {};
       core.addUploader(uploader);
       expect(core.uploaders[0]).toEqual(uploader);
     });
 
     it('should remove an uploader', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       var uploader1 = function uploader1() {};
       var uploader2 = function uploader2() {};
       var uploader3 = function uploader3() {};
@@ -528,14 +544,14 @@ describe('src/Core', function () {
       var onBeforeFileAdded = jest.fn(function (value) {
         return _Promise.resolve();
       });
-      var core = new Core({
+      var core = new _Core2.default({
         onBeforeFileAdded: onBeforeFileAdded
       });
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         expect(onBeforeFileAdded.mock.calls.length).toEqual(1);
         expect(onBeforeFileAdded.mock.calls[0][0].name).toEqual('foo.jpg');
@@ -544,9 +560,9 @@ describe('src/Core', function () {
     });
 
     it('should add a file', function () {
-      var fileData = utils.dataURItoFile(sampleImageDataURI, {});
+      var fileData = _Utils2.default.dataURItoFile(sampleImageDataURI, {});
       var fileAddedEventMock = jest.fn();
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       core.on('file-added', fileAddedEventMock);
       return core.addFile({
@@ -582,7 +598,7 @@ describe('src/Core', function () {
     });
 
     it('should not allow a file that does not meet the restrictions', function () {
-      var core = new Core({
+      var core = new _Core2.default({
         restrictions: {
           allowedFileTypes: ['image/gif']
         }
@@ -591,7 +607,7 @@ describe('src/Core', function () {
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         throw new Error('File was allowed through');
       }).catch(function (e) {
@@ -600,7 +616,7 @@ describe('src/Core', function () {
     });
 
     it('should work with restriction errors that are not Error class instances', function () {
-      var core = new Core({
+      var core = new _Core2.default({
         onBeforeFileAdded: function onBeforeFileAdded() {
           return _Promise.reject('a plain string'); // eslint-disable-line prefer-promise-reject-errors
         }
@@ -616,7 +632,7 @@ describe('src/Core', function () {
 
   describe('uploading a file', function () {
     it('should return a { successful, failed } pair containing file objects', function () {
-      var core = new Core().run();
+      var core = new _Core2.default().run();
       core.addUploader(function (fileIDs) {
         return _Promise.resolve();
       });
@@ -629,7 +645,7 @@ describe('src/Core', function () {
     });
 
     it('should return files with errors in the { failed } key', function () {
-      var core = new Core().run();
+      var core = new _Core2.default().run();
       core.addUploader(function (fileIDs) {
         fileIDs.forEach(function (fileID) {
           var file = core.getFile(fileID);
@@ -649,7 +665,7 @@ describe('src/Core', function () {
     });
 
     it('should only upload files that are not already assigned to another upload id', function () {
-      var core = new Core().run();
+      var core = new _Core2.default().run();
       core.store.state.currentUploads = {
         upload1: {
           fileIDs: ['uppy-file1jpg-image/jpeg', 'uppy-file2jpg-image/jpeg', 'uppy-file3jpg-image/jpeg']
@@ -673,14 +689,14 @@ describe('src/Core', function () {
     it('should remove the file', function () {
       var fileRemovedEventMock = jest.fn();
 
-      var core = new Core();
+      var core = new _Core2.default();
       core.on('file-removed', fileRemovedEventMock);
       core.run();
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         var fileId = Object.keys(core.state.files)[0];
         expect(Object.keys(core.state.files).length).toEqual(1);
@@ -706,12 +722,12 @@ describe('src/Core', function () {
 
   describe('get a file', function () {
     it('should get the specified file', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         var fileId = Object.keys(core.state.files)[0];
         expect(core.getFile(fileId).name).toEqual('foo.jpg');
@@ -723,7 +739,7 @@ describe('src/Core', function () {
 
   describe('meta data', function () {
     it('should set meta data by calling setMeta', function () {
-      var core = new Core({
+      var core = new _Core2.default({
         meta: { foo2: 'bar2' }
       });
       core.setMeta({ foo: 'bar', bur: 'mur' });
@@ -737,12 +753,12 @@ describe('src/Core', function () {
     });
 
     it('should update meta data for a file by calling updateMeta', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         var fileId = Object.keys(core.state.files)[0];
         core.setFileMeta(fileId, { foo: 'bar', bur: 'mur' });
@@ -760,12 +776,12 @@ describe('src/Core', function () {
 
   describe('progress', function () {
     it('should calculate the progress of a file upload', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         var fileId = Object.keys(core.state.files)[0];
         var file = core.getFile(fileId);
@@ -796,18 +812,18 @@ describe('src/Core', function () {
     });
 
     it('should calculate the total progress of all file uploads', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         return core.addFile({
           source: 'jest',
           name: 'foo2.jpg',
           type: 'image/jpeg',
-          data: utils.dataURItoFile(sampleImageDataURI, {})
+          data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
         });
       }).then(function () {
         var fileId1 = Object.keys(core.state.files)[0];
@@ -834,20 +850,20 @@ describe('src/Core', function () {
 
     it('should reset the progress', function () {
       var resetProgressEvent = jest.fn();
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       core.on('reset-progress', resetProgressEvent);
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         return core.addFile({
           source: 'jest',
           name: 'foo2.jpg',
           type: 'image/jpeg',
-          data: utils.dataURItoFile(sampleImageDataURI, {})
+          data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
         });
       }).then(function () {
         var fileId1 = Object.keys(core.state.files)[0];
@@ -895,7 +911,7 @@ describe('src/Core', function () {
 
   describe('checkRestrictions', function () {
     it('should enforce the maxNumberOfFiles rule', function () {
-      var core = new Core({
+      var core = new _Core2.default({
         autoProceed: false,
         restrictions: {
           maxNumberOfFiles: 1
@@ -907,13 +923,13 @@ describe('src/Core', function () {
         source: 'jest',
         name: 'foo1.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       });
       return expect(core.addFile({
         source: 'jest',
         name: 'foo2.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       })).rejects.toMatchObject(new Error('You can only upload 1 file')).then(function () {
         expect(core.state.info.message).toEqual('You can only upload 1 file');
       });
@@ -922,7 +938,7 @@ describe('src/Core', function () {
     xit('should enforce the minNumberOfFiles rule', function () {});
 
     it('should enfore the allowedFileTypes rule', function () {
-      var core = new Core({
+      var core = new _Core2.default({
         autoProceed: false,
         restrictions: {
           allowedFileTypes: ['image/gif', 'image/png']
@@ -933,14 +949,14 @@ describe('src/Core', function () {
         source: 'jest',
         name: 'foo2.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       })).rejects.toMatchObject(new Error('You can only upload: image/gif, image/png')).then(function () {
         expect(core.state.info.message).toEqual('You can only upload: image/gif, image/png');
       });
     });
 
     it('should enforce the maxFileSize rule', function () {
-      var core = new Core({
+      var core = new _Core2.default({
         autoProceed: false,
         restrictions: {
           maxFileSize: 1234
@@ -951,7 +967,7 @@ describe('src/Core', function () {
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       })).rejects.toMatchObject(new Error('This file exceeds maximum allowed size of 1.2 KB')).then(function () {
         expect(core.state.info.message).toEqual('This file exceeds maximum allowed size of 1.2 KB');
       });
@@ -960,14 +976,14 @@ describe('src/Core', function () {
 
   describe('actions', function () {
     it('should update the state when receiving the error event', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       core.emit('error', new Error('foooooo'));
       expect(core.state.error).toEqual('foooooo');
     });
 
     it('should update the state when receiving the upload-error event', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       core.state.files['fileId'] = {
         name: 'filename'
@@ -977,7 +993,7 @@ describe('src/Core', function () {
     });
 
     it('should reset the error state when receiving the upload event', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       core.emit('error', { foo: 'bar' });
       core.emit('upload');
@@ -1003,7 +1019,7 @@ describe('src/Core', function () {
       var onlineEventMock = jest.fn();
       var offlineEventMock = jest.fn();
       var backOnlineEventMock = jest.fn();
-      var core = new Core();
+      var core = new _Core2.default();
       core.on('is-offline', offlineEventMock);
       core.on('is-online', onlineEventMock);
       core.on('back-online', backOnlineEventMock);
@@ -1031,7 +1047,7 @@ describe('src/Core', function () {
   describe('info', function () {
     it('should set a string based message to be displayed infinitely', function () {
       var infoVisibleEvent = jest.fn();
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       core.on('info-visible', infoVisibleEvent);
 
@@ -1048,7 +1064,7 @@ describe('src/Core', function () {
 
     it('should set a object based message to be displayed infinitely', function () {
       var infoVisibleEvent = jest.fn();
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       core.on('info-visible', infoVisibleEvent);
 
@@ -1073,7 +1089,7 @@ describe('src/Core', function () {
     it('should set an info message to be displayed for a period of time before hiding', function (done) {
       var infoVisibleEvent = jest.fn();
       var infoHiddenEvent = jest.fn();
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       core.on('info-visible', infoVisibleEvent);
       core.on('info-hidden', infoHiddenEvent);
@@ -1096,7 +1112,7 @@ describe('src/Core', function () {
     it('should hide an info message', function () {
       var infoVisibleEvent = jest.fn();
       var infoHiddenEvent = jest.fn();
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       core.on('info-visible', infoVisibleEvent);
       core.on('info-hidden', infoHiddenEvent);
@@ -1117,13 +1133,13 @@ describe('src/Core', function () {
 
   describe('createUpload', function () {
     it('should assign the specified files to a new upload', function () {
-      var core = new Core();
+      var core = new _Core2.default();
       core.run();
       return core.addFile({
         source: 'jest',
         name: 'foo.jpg',
         type: 'image/jpeg',
-        data: utils.dataURItoFile(sampleImageDataURI, {})
+        data: _Utils2.default.dataURItoFile(sampleImageDataURI, {})
       }).then(function () {
         core._createUpload(Object.keys(core.state.files));
         var uploadId = Object.keys(core.state.currentUploads)[0];
@@ -1140,7 +1156,7 @@ describe('src/Core', function () {
 
   describe('i18n', function () {
     it('merges in custom locale strings', function () {
-      var core = new Core({
+      var core = new _Core2.default({
         locale: {
           strings: {
             test: 'beep boop'
@@ -1150,19 +1166,6 @@ describe('src/Core', function () {
 
       expect(core.i18n('exceedsSize')).toBe('This file exceeds maximum allowed size of');
       expect(core.i18n('test')).toBe('beep boop');
-    });
-  });
-
-  describe('default restrictions', function () {
-    it('should be merged with supplied restrictions', function () {
-      var core = new Core({
-        restrictions: {
-          maxNumberOfFiles: 3
-        }
-      });
-
-      expect(core.opts.restrictions.maxNumberOfFiles).toBe(3);
-      expect(core.opts.restrictions.minNumberOfFiles).toBe(false);
     });
   });
 });

@@ -15,7 +15,8 @@ const Form = require('../../src/plugins/Form')
 // const DragDrop = require('../../src/plugins/DragDrop')
 // const GoldenRetriever = require('../../src/plugins/GoldenRetriever')
 
-const TUS_ENDPOINT = 'https://master.tus.io/files/'
+const PROTOCOL = location.protocol === 'https:' ? 'https' : 'http'
+const TUS_ENDPOINT = PROTOCOL + '://master.tus.io/files/'
 
 const uppy = Uppy({
   debug: true,

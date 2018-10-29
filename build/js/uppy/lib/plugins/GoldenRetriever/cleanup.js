@@ -1,3 +1,5 @@
+'use strict';
+
 var IndexedDBStore = require('./IndexedDBStore');
 var MetaDataStore = require('./MetaDataStore');
 

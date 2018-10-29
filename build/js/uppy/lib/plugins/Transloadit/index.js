@@ -1,3 +1,5 @@
+'use strict';
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40,7 +42,7 @@ module.exports = function (_Plugin) {
     var defaultLocale = {
       strings: {
         creatingAssembly: 'Preparing upload...',
-        creatingAssemblyFailed: 'Transloadit: Could not create Assembly',
+        creatingAssemblyFailed: 'Transloadit: Could not create assembly',
         encoding: 'Encoding...'
       }
     };
@@ -169,7 +171,7 @@ module.exports = function (_Plugin) {
 
     var pluginOptions = this.opts;
 
-    this.uppy.log('[Transloadit] create Assembly');
+    this.uppy.log('[Transloadit] create assembly');
 
     return this.client.createAssembly({
       params: options.params,
@@ -251,7 +253,7 @@ module.exports = function (_Plugin) {
         return assembly;
       });
     }).then(function (assembly) {
-      _this3.uppy.log('[Transloadit] Created Assembly');
+      _this3.uppy.log('[Transloadit] Created assembly');
       return assembly;
     }).catch(function (err) {
       _this3.uppy.info(_this3.i18n('creatingAssemblyFailed'), 'error', 0);
@@ -448,7 +450,7 @@ module.exports = function (_Plugin) {
 
       var newAssemblies = state.assemblies;
       var previousAssemblies = prevState.assemblies;
-      _this7.uppy.log('[Transloadit] Current Assembly status after restore');
+      _this7.uppy.log('[Transloadit] Current assembly status after restore');
       _this7.uppy.log(newAssemblies);
       _this7.uppy.log('[Transloadit] Assembly status before restore');
       _this7.uppy.log(previousAssemblies);
@@ -751,10 +753,10 @@ module.exports = function (_Plugin) {
       var onAssemblyFinished = function onAssemblyFinished(assembly) {
         // An assembly for a different upload just finished. We can ignore it.
         if (assemblyIDs.indexOf(assembly.assembly_id) === -1) {
-          _this11.uppy.log('[Transloadit] afterUpload(): Ignoring finished Assembly ' + assembly.assembly_id);
+          _this11.uppy.log('[Transloadit] afterUpload(): Ignoring finished assembly ' + assembly.assembly_id);
           return;
         }
-        _this11.uppy.log('[Transloadit] afterUpload(): Got Assembly finish ' + assembly.assembly_id);
+        _this11.uppy.log('[Transloadit] afterUpload(): Got assembly finish ' + assembly.assembly_id);
 
         // TODO set the `file.uploadURL` to a result?
         // We will probably need an option here so the plugin user can tell us
@@ -771,10 +773,10 @@ module.exports = function (_Plugin) {
       var onAssemblyError = function onAssemblyError(assembly, error) {
         // An assembly for a different upload just errored. We can ignore it.
         if (assemblyIDs.indexOf(assembly.assembly_id) === -1) {
-          _this11.uppy.log('[Transloadit] afterUpload(): Ignoring errored Assembly ' + assembly.assembly_id);
+          _this11.uppy.log('[Transloadit] afterUpload(): Ignoring errored assembly ' + assembly.assembly_id);
           return;
         }
-        _this11.uppy.log('[Transloadit] afterUpload(): Got Assembly error ' + assembly.assembly_id);
+        _this11.uppy.log('[Transloadit] afterUpload(): Got assembly error ' + assembly.assembly_id);
         _this11.uppy.log(error);
 
         // Clear postprocessing state for all our files.

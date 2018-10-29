@@ -1,3 +1,5 @@
+'use strict';
+
 var _require = require('./icons'),
     iconText = _require.iconText,
     iconAudio = _require.iconAudio,

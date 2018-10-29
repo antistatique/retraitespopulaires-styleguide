@@ -1,3 +1,5 @@
+'use strict';
+
 var Core = require('./core');
 
 // Parent
@@ -29,6 +31,7 @@ var Form = require('./plugins/Form');
 var ThumbnailGenerator = require('./plugins/ThumbnailGenerator');
 var GoldenRetriever = require('./plugins/GoldenRetriever');
 var ReduxDevTools = require('./plugins/ReduxDevTools');
+var ReduxStore = require('./plugins/Redux');
 
 module.exports = {
   Core: Core,
@@ -51,6 +54,7 @@ module.exports = {
   Form: Form,
   ThumbnailGenerator: ThumbnailGenerator,
   GoldenRetriever: GoldenRetriever,
-  ReduxDevTools: ReduxDevTools
+  ReduxDevTools: ReduxDevTools,
+  ReduxStore: ReduxStore
 };
 //# sourceMappingURL=index.js.map

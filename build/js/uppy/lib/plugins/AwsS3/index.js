@@ -1,3 +1,5 @@
+'use strict';
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -19,7 +21,7 @@ var _require = require('../../core/Utils'),
 var XHRUpload = require('../XHRUpload');
 
 function isXml(xhr) {
-  var contentType = xhr.headers ? xhr.headers['content-type'] : xhr.getResponseHeader('Content-Type');
+  var contentType = xhr.getResponseHeader('Content-Type');
   return typeof contentType === 'string' && contentType.toLowerCase() === 'application/xml';
 }
 
@@ -184,25 +186,10 @@ module.exports = function (_Plugin) {
         if (!isXml(xhr)) {
           return { location: xhr.responseURL };
         }
-
-        var getValue = function getValue() {
-          return '';
-        };
-        if (xhr.responseXML) {
-          getValue = function getValue(key) {
-            var el = xhr.responseXML.querySelector(key);
-            return el ? el.textContent : '';
-          };
+        function getValue(key) {
+          var el = xhr.responseXML.querySelector(key);
+          return el ? el.textContent : '';
         }
-
-        if (xhr.responseText) {
-          getValue = function getValue(key) {
-            var start = xhr.responseText.indexOf('<' + key + '>');
-            var end = xhr.responseText.indexOf('</' + key + '>');
-            return start !== -1 && end !== -1 ? xhr.responseText.slice(start + key.length + 2, end) : '';
-          };
-        }
-
         return {
           location: getValue('Location'),
           bucket: getValue('Bucket'),

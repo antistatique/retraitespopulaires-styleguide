@@ -124,9 +124,7 @@ function getFileType (file) {
     'svg': 'image/svg+xml',
     'jpg': 'image/jpeg',
     'png': 'image/png',
-    'gif': 'image/gif',
-    'yaml': 'text/yaml',
-    'yml': 'text/yaml'
+    'gif': 'image/gif'
   }
 
   const fileExtension = file.name ? getFileNameAndExtension(file.name).extension : null

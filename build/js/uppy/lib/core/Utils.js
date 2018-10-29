@@ -1,3 +1,5 @@
+'use strict';
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _Promise = typeof Promise === 'undefined' ? require('es6-promise').Promise : Promise;
@@ -130,9 +132,7 @@ function getFileType(file) {
     'svg': 'image/svg+xml',
     'jpg': 'image/jpeg',
     'png': 'image/png',
-    'gif': 'image/gif',
-    'yaml': 'text/yaml',
-    'yml': 'text/yaml'
+    'gif': 'image/gif'
   };
 
   var fileExtension = file.name ? getFileNameAndExtension(file.name).extension : null;

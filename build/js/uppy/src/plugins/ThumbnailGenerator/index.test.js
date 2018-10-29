@@ -1,5 +1,5 @@
-const ThumbnailGeneratorPlugin = require('./index')
-const Plugin = require('../../core/Plugin')
+import ThumbnailGeneratorPlugin from './index'
+import Plugin from '../../core/Plugin'
 
 const delay = duration => new Promise(resolve => setTimeout(resolve, duration))
 

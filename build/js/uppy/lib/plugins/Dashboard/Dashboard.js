@@ -1,3 +1,5 @@
+'use strict';
+
 var FileList = require('./FileList');
 var Tabs = require('./Tabs');
 var FileCard = require('./FileCard');

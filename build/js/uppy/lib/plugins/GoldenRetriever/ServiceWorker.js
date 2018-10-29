@@ -1,3 +1,5 @@
+'use strict';
+
 var _Promise = typeof Promise === 'undefined' ? require('es6-promise').Promise : Promise;
 
 /* globals clients */

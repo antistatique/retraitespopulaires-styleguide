@@ -1,3 +1,5 @@
+'use strict';
+
 var Row = require('./TableRow');
 
 var _require = require('preact'),

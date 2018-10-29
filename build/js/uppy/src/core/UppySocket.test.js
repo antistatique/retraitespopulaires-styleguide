@@ -1,4 +1,4 @@
-const UppySocket = require('./UppySocket')
+import UppySocket from './UppySocket'
 
 describe('core/uppySocket', () => {
   let webSocketConstructorSpy

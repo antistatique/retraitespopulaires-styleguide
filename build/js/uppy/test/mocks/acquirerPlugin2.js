@@ -1,6 +1,6 @@
-const Plugin = require('../../src/core/Plugin')
+import Plugin from '../../src/core/Plugin'
 
-module.exports = class TestSelector2 extends Plugin {
+export default class TestSelector2 extends Plugin {
   constructor (uppy, opts) {
     super(uppy, opts)
     this.type = 'acquirer'
