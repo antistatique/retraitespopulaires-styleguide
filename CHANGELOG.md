@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## 3.2.6 (2018-07-02)
+## 3.2.6 (2018-07-02)
  - add components QuickWin - MD-359
 
 ## 3.2.5 (2018-03-20)
@@ -10,7 +10,7 @@ CHANGELOG
 ## 3.2.4 (2018-03-20)
  - add uppy as new dependency - needed for advanced file uploader
 
-## 3.2.3 (2018-01-31)
+## 3.2.3 (2018-01-31)
  - add new icon `retraitespopulaires-icon-external-link`
  - update all favicons for extranets (portailca, mp, accueil, regies & courtiers)
 
