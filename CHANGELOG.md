@@ -2,6 +2,7 @@ CHANGELOG
 ---------
 
 ## NEXT RELEASE
+ - remove target="_blank" on faq's teasers - MD-384
  - add possibility to put document anywhere in text - MD-373
  - enable Real-Time SEO module (include move field_metatags values to field_meta_tags) - MD-390
  - add automatic dump and restore on build
