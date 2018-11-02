@@ -43,4 +43,14 @@ variants:
       <li>Ut efficitur mattis</li>
     </ul>
   </div>
-</div>
+  </div>
+  <div class="ckeditor-accordion-container"><dl class="styled"><dt class="active"><span class="ckeditor-accordion-toggle active"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 1</a></dt>
+  	<dd class="active" style="display: block;">
+  	<p>Accordion content 1.</p>
+  	</dd>
+  	<dt><span class="ckeditor-accordion-toggle"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 2</a></dt>
+  	<dd>
+  	<p>Accordion content 2.</p>
+  	</dd>
+  </dl>
+  </div>

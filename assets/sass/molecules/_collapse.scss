@@ -69,3 +69,37 @@
     padding: 0 1em 1em;
   }
 }
+
+.ckeditor-accordion-container {
+  @extend .collapse-wrapper;
+  dt {
+    @extend .collapse-title;
+    font-size: $font-size-h5;
+  }
+  dd{
+    @extend .collapse-body;
+  }
+}
+
+.ckeditor-accordion-toggle {
+  @extend .button-bubble;
+  @extend .inline-block;
+  font-size: 30px;
+
+  &:before {
+    height: 62px;
+    width:62px;
+    padding: 0.5em;
+    background: $green;
+    border-radius: 4em;
+    @include theme(background-color);
+    font-family: 'retraitespopulaires-icon';
+    font-style: normal;
+    font-weight: normal;
+    content: $retraitespopulaires-icon-arrow-right;
+    color: $white;
+  }
+  .ckeditor-accordion-toggler {
+    @extend .inline-block;
+  }
+}
