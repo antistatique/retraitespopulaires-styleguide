@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 export function popin () {
   // Move popin to show on desktop
-  $(document).on('click', '[data-toggle="popins-collapse"]', function (e) {
+  $(document).on('click', '[data-toggle="popins-collapse"]', function () {
     let $this = $(this);
 
     $this.parents('.popin-container.popin-container-collapsing').find('.popin-collapse').collapse('hide');
@@ -10,14 +10,14 @@ export function popin () {
   });
 
   // Move popin when a collapse is open
-  $(document).on('click', '[data-toggle="collapse"]', function (e) {
+  $(document).on('click', '[data-toggle="collapse"]', function () {
     let $this = $(this);
     $this.parents('.popin-container').removeClass('popin-container-collapse');
     $this.parents('.popin-container').addClass('popin-container-collapsing');
   });
 
   // Hide current showed element on mobile
-  $(document).on('click', '[data-toggle="popin-collapse-hide-mobile"]', function (e) {
+  $(document).on('click', '[data-toggle="popin-collapse-hide-mobile"]', function () {
     let $this = $(this);
 
     $this.parents('.popin').addClass('hidden');
@@ -30,7 +30,7 @@ export function popin () {
   });
 
   // Show clicked element on mobile
-  $(document).on('click', '[data-toggle="popin-collapse-show-mobile"]', function (e){
+  $(document).on('click', '[data-toggle="popin-collapse-show-mobile"]', function (){
     let $this = $(this);
     let $currentShow = $this.parents('.popin').siblings('.show');
 
