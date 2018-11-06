@@ -71,24 +71,45 @@
 }
 
 .ckeditor-accordion-container {
-  @extend .collapse-wrapper;
   dt {
+    @extend .collapse-wrapper;
     @extend .collapse-title;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-size: $font-size-h5;
+
+    &.active {
+      .ckeditor-accordion-toggle {
+        transform: rotate(90deg);
+      }
+    }
+    a {
+      @extend h5;
+      display: flex;
+      width: 100%;
+    }
   }
-  dd{
+
+  dd {
     @extend .collapse-body;
+    @extend .collapse-wrapper;
+    display: none;
   }
+
 }
 
 .ckeditor-accordion-toggle {
   @extend .button-bubble;
   @extend .inline-block;
   font-size: 30px;
-
+  transform: rotate(0);
+  transition: transform 0.5s ease;
   &:before {
     height: 62px;
-    width:62px;
+    width: 62px;
+    display: flex;
+    align-items: center;
     padding: 0.5em;
     background: $green;
     border-radius: 4em;
@@ -98,8 +119,5 @@
     font-weight: normal;
     content: $retraitespopulaires-icon-arrow-right;
     color: $white;
-  }
-  .ckeditor-accordion-toggler {
-    @extend .inline-block;
   }
 }
