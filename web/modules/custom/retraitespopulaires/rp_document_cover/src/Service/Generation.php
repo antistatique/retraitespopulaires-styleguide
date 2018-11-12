@@ -3,9 +3,9 @@
 namespace Drupal\rp_document_cover\Service;
 
 use Drupal\Core\File\FileSystemInterface;
-use Drupal\node\NodeInterface;
-use Drupal\file\FileInterface;
 use Drupal\Core\Logger\LoggerChannelFactory;
+use Drupal\file\FileInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Class Generation.
@@ -52,6 +52,15 @@ class Generation {
     $source_path = $this->fileSystem->realpath($source_uri);
     $dest_path = $this->fileSystem->realpath($dest_uri);
     $image_path = $dest_path . DIRECTORY_SEPARATOR . $file_name . '.jpg';
+
+    if (!file_exists($source_path)) {
+      $this->logger->get('rp_document_cover')
+        ->error('imagickException: @source doesn\'t exist on this server. Generation aborted',
+          [
+            '@source' => $source_path,
+          ]);
+      return FALSE;
+    }
 
     try {
       $imgk = new \Imagick();
