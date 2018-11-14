@@ -73,20 +73,21 @@
 .ckeditor-accordion-container {
   dt {
     @extend .collapse-wrapper;
-    @extend .collapse-title;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: $font-size-h5;
+
+    div{
+      @extend .collapse-title;
+    }
 
     &.active {
       .ckeditor-accordion-toggle {
-        transform: rotate(90deg);
+        @include rotate(90deg);
       }
     }
     a {
       @extend h5;
-      display: flex;
+      pointer-events: none;
+      background: none !important;
+      vertical-align: middle;
     }
   }
 
@@ -101,9 +102,9 @@
 .ckeditor-accordion-toggle {
   @extend .button-bubble;
   @extend .inline-block;
-  font-size: 30px;
-  transform: rotate(0);
-  transition: transform 0.5s ease;
+  @include rotate(0);
+  @include transition(transform 0.5s ease);
+
   &:before {
     height: 62px;
     width: 62px;
@@ -116,6 +117,7 @@
     font-family: 'retraitespopulaires-icon';
     font-style: normal;
     font-weight: normal;
+    font-size: 30px;
     content: $retraitespopulaires-icon-arrow-right;
     color: $white;
   }
