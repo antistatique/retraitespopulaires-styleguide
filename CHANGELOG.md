@@ -1,11 +1,11 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## 2.4.10 (2018-11-14)
  - remove target="_blank" on faq's teasers - MD-384
  - add possibility to put document anywhere in text - MD-373
  - enable Real-Time SEO module (include move field_metatags values to field_meta_tags) - MD-390
- - add automatic dump and restore on build
+ - add automatic dump and restore on build - MD-402
 
 ## 2.4.9 (2018-09-12)
  - correct focal point wasn't show in form - MD-400
