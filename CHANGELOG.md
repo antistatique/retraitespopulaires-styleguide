@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - remove no more wanted field metatags - MD-390
+
+<<<<<<< HEAD
 ## 2.4.10 (2018-11-14)
  - remove target="_blank" on faq's teasers - MD-384
  - add possibility to put document anywhere in text - MD-373

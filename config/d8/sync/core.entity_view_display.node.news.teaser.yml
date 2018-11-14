@@ -13,17 +13,20 @@ dependencies:
     - field.field.node.news.field_document
     - field.field.node.news.field_document_news
     - field.field.node.news.field_document_random
+    - field.field.node.news.field_email_popin
     - field.field.node.news.field_faq
     - field.field.node.news.field_faq_random
     - field.field.node.news.field_file_news
     - field.field.node.news.field_firstname
     - field.field.node.news.field_function
     - field.field.node.news.field_lastname
-    - field.field.node.news.field_metatags
+    - field.field.node.news.field_meta_tags
     - field.field.node.news.field_news_type
     - field.field.node.news.field_offer
+    - field.field.node.news.field_popin
     - field.field.node.news.field_profession
     - field.field.node.news.field_search_npa
+    - field.field.node.news.field_yoast_seo
     - node.type.news
   module:
     - text
@@ -53,18 +56,21 @@ hidden:
   field_document: true
   field_document_news: true
   field_document_random: true
+  field_email_popin: true
   field_faq: true
   field_faq_random: true
   field_file_news: true
   field_firstname: true
   field_function: true
   field_lastname: true
-  field_metatags: true
+  field_meta_tags: true
   field_news_type: true
   field_offer: true
+  field_popin: true
   field_present_end_date: true
   field_profession: true
   field_reference: true
   field_search_npa: true
   field_video: true
+  field_yoast_seo: true
   langcode: true

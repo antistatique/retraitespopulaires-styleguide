@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.product.field_faq_random
     - field.field.node.product.field_file_product
     - field.field.node.product.field_meta_tags
-    - field.field.node.product.field_metatags
     - field.field.node.product.field_popin
     - field.field.node.product.field_product_plan
     - field.field.node.product.field_profession
@@ -225,12 +224,6 @@ content:
     region: content
   field_meta_tags:
     weight: 131
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_firehose
-    region: content
-  field_metatags:
-    weight: 121
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose

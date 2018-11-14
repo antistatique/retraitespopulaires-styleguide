@@ -12,15 +12,20 @@ dependencies:
     - field.field.node.page.field_document
     - field.field.node.page.field_document_page
     - field.field.node.page.field_document_random
+    - field.field.node.page.field_email_popin
     - field.field.node.page.field_faq
     - field.field.node.page.field_faq_random
     - field.field.node.page.field_file_page
     - field.field.node.page.field_form
     - field.field.node.page.field_full_screen_content
-    - field.field.node.page.field_metatags
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_popin
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
     - field.field.node.page.field_search_npa
+    - field.field.node.page.field_template_whisperer
+    - field.field.node.page.field_url_logismata
+    - field.field.node.page.field_yoast_seo
     - node.type.page
   module:
     - image
@@ -80,11 +85,16 @@ hidden:
   field_document: true
   field_document_page: true
   field_document_random: true
+  field_email_popin: true
   field_faq: true
   field_faq_random: true
   field_file_page: true
   field_form: true
   field_full_screen_content: true
-  field_metatags: true
+  field_meta_tags: true
+  field_popin: true
   field_search_npa: true
+  field_template_whisperer: true
+  field_url_logismata: true
+  field_yoast_seo: true
   langcode: true

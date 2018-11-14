@@ -12,21 +12,17 @@ dependencies:
     - field.field.node.contact.field_firstname
     - field.field.node.contact.field_function
     - field.field.node.contact.field_lastname
-    - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_phone
     - field.field.node.contact.field_profession
     - field.field.node.contact.field_specialty
-    - field.field.node.contact.field_yoast_seo
     - image.style.thumbnail
     - node.type.contact
   module:
     - field_group
     - focal_point
-    - metatag
     - path
     - telephone
     - text
-    - yoast_seo
 third_party_settings:
   field_group:
     group_info:
@@ -144,12 +140,6 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_meta_tags:
-    weight: 121
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_phone:
     weight: 6
     settings:
@@ -170,13 +160,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
-  field_yoast_seo:
-    weight: 122
-    settings:
-      body: body
-    third_party_settings: {  }
-    type: yoast_seo_widget
     region: content
   path:
     type: path
