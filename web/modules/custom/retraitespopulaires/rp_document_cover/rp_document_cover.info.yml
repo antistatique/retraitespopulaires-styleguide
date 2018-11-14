@@ -1,0 +1,5 @@
+name: 'RP Document Cover'
+type: module
+description: 'PDF cover generator'
+core: 8.x
+package: 'Retraites Populaires'

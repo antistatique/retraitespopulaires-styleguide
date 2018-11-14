@@ -8,7 +8,9 @@ weight: 3
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access content'
   - 'access content overview'
+  - 'access document_browser entity browser pages'
   - 'access files overview'
   - 'access site in maintenance mode'
   - 'access taxonomy overview'

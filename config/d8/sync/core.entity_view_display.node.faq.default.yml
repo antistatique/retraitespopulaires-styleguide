@@ -14,10 +14,12 @@ dependencies:
     - field.field.node.faq.field_faq_random
     - field.field.node.faq.field_faq_type
     - field.field.node.faq.field_file_faq
+    - field.field.node.faq.field_meta_tags
     - field.field.node.faq.field_metatags
     - field.field.node.faq.field_popin
     - field.field.node.faq.field_profession
     - field.field.node.faq.field_search_npa
+    - field.field.node.faq.field_yoast_seo
     - node.type.faq
   module:
     - file
@@ -120,6 +122,13 @@ content:
     third_party_settings: {  }
     type: file_default
     region: content
+  field_meta_tags:
+    weight: 119
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_metatags:
     weight: 112
     label: above
@@ -154,6 +163,14 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_yoast_seo:
+    weight: 120
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 100
