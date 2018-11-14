@@ -15,12 +15,14 @@ dependencies:
     - field.field.node.product.field_faq
     - field.field.node.product.field_faq_random
     - field.field.node.product.field_file_product
-    - field.field.node.product.field_metatags
+    - field.field.node.product.field_meta_tags
     - field.field.node.product.field_popin
     - field.field.node.product.field_product_plan
     - field.field.node.product.field_profession
     - field.field.node.product.field_search_npa
     - field.field.node.product.field_subtitle
+    - field.field.node.product.field_template_whisperer
+    - field.field.node.product.field_yoast_seo
     - node.type.product
   module:
     - text
@@ -53,11 +55,13 @@ hidden:
   field_faq: true
   field_faq_random: true
   field_file_product: true
-  field_metatags: true
+  field_meta_tags: true
   field_popin: true
   field_product_plan: true
   field_profession: true
   field_profil: true
   field_search_npa: true
   field_subtitle: true
+  field_template_whisperer: true
+  field_yoast_seo: true
   langcode: true

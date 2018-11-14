@@ -18,7 +18,6 @@ dependencies:
     - field.field.node.page.field_form
     - field.field.node.page.field_full_screen_content
     - field.field.node.page.field_meta_tags
-    - field.field.node.page.field_metatags
     - field.field.node.page.field_popin
     - field.field.node.page.field_products
     - field.field.node.page.field_profession
@@ -283,12 +282,6 @@ content:
     region: content
   field_meta_tags:
     weight: 121
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_firehose
-    region: content
-  field_metatags:
-    weight: 29
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose

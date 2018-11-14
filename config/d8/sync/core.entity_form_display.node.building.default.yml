@@ -21,7 +21,6 @@ dependencies:
     - field.field.node.building.field_latitude
     - field.field.node.building.field_longitude
     - field.field.node.building.field_meta_tags
-    - field.field.node.building.field_metatags
     - field.field.node.building.field_popin
     - field.field.node.building.field_search_npa
     - field.field.node.building.field_situation
@@ -286,12 +285,6 @@ content:
     region: content
   field_meta_tags:
     weight: 121
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_firehose
-    region: content
-  field_metatags:
-    weight: 28
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
