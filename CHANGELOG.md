@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## 3.2.7 (2018-11-14)
+ - add class to center caption under pdf thumbnails - MD-373
+
 ## 3.2.6 (2018-07-02)
  - add components QuickWin - MD-359
 
