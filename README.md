@@ -49,7 +49,7 @@ Retraites Populaires Styleguide.
 
   <script src="/build/js/bundle.js"></script>
 </body>
-</html>  
+</html>
 ````
 
 
@@ -70,6 +70,12 @@ First of all, you need to have the following tools installed globally on your en
 $ npm install
 $ npm run build
 ````
+
+The git repository of Retraites Populaires is:
+
+```
+ $ git remote add rp ssh://git@webbucket:7999/sp/styleguide.git
+```
 
 You will need some global dependencies such as:
 
