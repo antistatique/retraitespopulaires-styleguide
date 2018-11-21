@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## 3.2.7 (2018-11-14)
+ - add class to center caption under pdf thumbnails - MD-373
+
 ## 3.2.6 (2018-07-02)
  - add components QuickWin - MD-359
 
@@ -29,7 +32,7 @@ CHANGELOG
  - remove link-only variant of hamburger menu
  - remove themes colors of professions (assurance, prevoyance, immobilier, hypotheque, institutionnel)
  - fix card as CTA variant
- - fix organic-lines doc 
+ - fix organic-lines doc
  - rewamp the mobile menu with better design
  - fix organic-wrapper to allow click
  - improve pop-in
@@ -39,7 +42,7 @@ CHANGELOG
  - add a popin component
  - refactor the navigation component with a simpler mobile menu ⚠️ **BREAKING**
  - remove big-menu components
- - remove swiper components 
+ - remove swiper components
 
 ## 3.1.10 (2017-11-13)
  - fix pretty-link for IE10+ using border-bottom
