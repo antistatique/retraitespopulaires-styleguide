@@ -87,8 +87,14 @@
     a {
       @extend h5;
       pointer-events: none;
-      background: none !important;
       vertical-align: middle;
+      //hide the link format
+      background: none !important;
+      border-bottom: none !important;
+
+
+      //to make pointer-events:none functional for IE and Edge
+      display: inline-block;
     }
   }
 
