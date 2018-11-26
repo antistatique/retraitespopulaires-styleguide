@@ -18,12 +18,10 @@
 
   @media (min-width: $screen-xs-max) {
     top: 50%;
-    right: 0;
-
-    // To show only the icon that at 16px left and right
-    // For IE with can't use calc(100% - 32px - 1em) instead of seperate this...
-    transform: translate(100%, -50%) translate(-32px) translate(-1em);
+    right: calc(#{$grid-gutter-width} + #{$font-size-large});
+    transform: translate(100%, -50%);
     transition: 0.5s;
+    z-index: 2000;
 
     &.popin-container-collapsing {
       transform: translate(-#{$grid-gutter-width}, -50%);
@@ -38,7 +36,8 @@
     background-color: darken($brand-primary, 10%);
   }
 
-  .form-group label {
+  .form-group label,
+  a {
     color: $white;
   }
 }
@@ -87,7 +86,7 @@
   text-align: left;
 
   .popin-body {
-    padding: 15px 20px 0;
+    padding: 15px 20px;
   }
 }
 
@@ -103,6 +102,7 @@
 
   a {
     width: 100%;
+    line-height: 0;
     color: $white;
   }
 }
@@ -113,7 +113,7 @@
   align-items: center;
   width: 100%;
 
-  &.collapsed {
+  &:not(.collapsed) {
     .retraitespopulaires-icon-angle {
       transform: scaleY(-1);
     }
@@ -125,5 +125,5 @@
 }
 
 .popin-icon {
-  margin-right: 16px;
+  margin-right: 17px;
 }
