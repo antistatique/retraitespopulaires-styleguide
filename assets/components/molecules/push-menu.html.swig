@@ -4,7 +4,7 @@ name: push-menu
 collection: molecules
 notes: |
   Responsive tray for mobile. Specially used as mobile main navigation. <br />
-  This component is visible into the [basic page header alternative](/basic-page-header-alt).
+  **This component is visible on the [basic page header alternative](/basic-page-header-alt)**.
 ---
 <nav class="push-menu" aria-label="Navigation principale - Mobile">
   <ul class="list-unstyled m-b-1 main-navigation">

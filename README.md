@@ -49,7 +49,7 @@ Retraites Populaires Styleguide.
 
   <script src="/build/js/bundle.js"></script>
 </body>
-</html>  
+</html>
 ````
 
 
@@ -59,17 +59,23 @@ Retraites Populaires Styleguide.
 
 First of all, you need to have the following tools installed globally on your environment:
 
-* node
-* npm
+* node (version 8)
+* npm (version 5.6)
 * gulp
 * yarn
 
 ## Install
 
 ````shell
-$ yarn install
-$ gulp build
+$ npm install
+$ npm run build
 ````
+
+The git repository of Retraites Populaires is:
+
+```
+ $ git remote add rp ssh://git@webbucket:7999/sp/styleguide.git
+```
 
 You will need some global dependencies such as:
 
@@ -84,7 +90,7 @@ $ npm install -g metalsmith
 First you have to launch Gulp to watch your files
 
 ````shell
-$ gulp serve
+$ npm start
 ````
 
 To then access the styleguide, go to [http://localhost:3000/retraitespopulaires-styleguide/](http://localhost:3000/retraitespopulaires-styleguide/) (`/retraitespopulaires-styleguide/` is added here because the styleguide is published on npm)

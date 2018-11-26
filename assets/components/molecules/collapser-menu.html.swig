@@ -5,7 +5,7 @@ collection: molecules
 wrapper: col-xs-4
 notes: |
   Collapser-menu is used in place of the Swiper menu from 3.2.0 and up. <br />
-  This component is visible into the [basic page](/basic-page).
+  **This component is visible on the [basic page](/basic-page)**.
 ---
 <div class="collapser-menu">
   <ul class="list-no-style list-no-padding">
