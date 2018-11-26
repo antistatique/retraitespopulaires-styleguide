@@ -1,7 +1,12 @@
 CHANGELOG
 =========
+## 3.2.8 (2018-11-26)
+ - add display for accordion module - MD-411
 
-## 3.2.6 (2018-07-02)
+## 3.2.7 (2018-11-14)
+ - add class to center caption under pdf thumbnails - MD-373
+
+## 3.2.6 (2018-07-02)
  - add components QuickWin - MD-359
 
 ## 3.2.5 (2018-03-20)
@@ -10,7 +15,7 @@ CHANGELOG
 ## 3.2.4 (2018-03-20)
  - add uppy as new dependency - needed for advanced file uploader
 
-## 3.2.3 (2018-01-31)
+## 3.2.3 (2018-01-31)
  - add new icon `retraitespopulaires-icon-external-link`
  - update all favicons for extranets (portailca, mp, accueil, regies & courtiers)
 
@@ -29,7 +34,7 @@ CHANGELOG
  - remove link-only variant of hamburger menu
  - remove themes colors of professions (assurance, prevoyance, immobilier, hypotheque, institutionnel)
  - fix card as CTA variant
- - fix organic-lines doc 
+ - fix organic-lines doc
  - rewamp the mobile menu with better design
  - fix organic-wrapper to allow click
  - improve pop-in
@@ -39,7 +44,7 @@ CHANGELOG
  - add a popin component
  - refactor the navigation component with a simpler mobile menu ⚠️ **BREAKING**
  - remove big-menu components
- - remove swiper components 
+ - remove swiper components
 
 ## 3.1.10 (2017-11-13)
  - fix pretty-link for IE10+ using border-bottom
