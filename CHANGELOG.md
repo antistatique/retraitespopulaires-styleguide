@@ -1,5 +1,7 @@
 CHANGELOG
 =========
+## 3.2.8 (2018-11-26)
+ - add display for accordion module - MD-411
 
 ## 3.2.7 (2018-11-14)
  - add class to center caption under pdf thumbnails - MD-373
