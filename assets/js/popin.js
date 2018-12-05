@@ -12,8 +12,7 @@ export function popin () {
   // Move popin when a collapse is open
   $(document).on('click', '[data-toggle="collapse"]', function () {
     let $this = $(this);
-    $this.parents('.popin-container').removeClass('popin-container-collapse');
-    $this.parents('.popin-container').addClass('popin-container-collapsing');
+    $this.parents('.popin-container').removeClass('popin-container-collapse').addClass('popin-container-collapsing');
   });
 
   // Hide current showed element on mobile
@@ -47,7 +46,6 @@ export function popin () {
       $($this.attr('data-target')).toggleClass('hidden');
     }
 
-    $this.parents('.popin').addClass('show');
-    $this.parents('.popin').children('.popin-collapse').collapse('show');
+    $this.parents('.popin').addClass('show').children('.popin-collapse').collapse('show');
   });
 }
