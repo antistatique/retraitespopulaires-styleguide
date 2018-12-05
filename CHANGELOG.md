@@ -1,5 +1,9 @@
 CHANGELOG
 =========
+
+## NEXT RELEASE
+ - improve pop-in - MD-361
+
 ## 3.2.8 (2018-11-26)
  - add display for accordion module - MD-411
 

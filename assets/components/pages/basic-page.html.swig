@@ -61,6 +61,7 @@ layout: page.html.swig
       {% include '../molecules/secondary-nav.html.swig' %}
     </div>
   </div>
+  {% include '../molecules/popin.html.swig' %}
 </div>
 
 <div class="spacer spacer-lg"></div>
