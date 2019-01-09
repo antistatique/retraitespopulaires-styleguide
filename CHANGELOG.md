@@ -1,5 +1,10 @@
 CHANGELOG
 =========
+
+## NEXT RELEASE
+ - improve pop-in - MD-361
+ - add pager icon for first/last - MD-424
+
 ## 3.2.8 (2018-11-26)
  - add display for accordion module - MD-411
 
