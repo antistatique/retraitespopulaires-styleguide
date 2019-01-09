@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-## NEXT RELEASE
+## 3.2.9 (2019-01-09)
  - improve pop-in - MD-361
  - add pager icon for first/last - MD-424
 
