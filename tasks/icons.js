@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import config from '../gulp_config.json';
 import slug from 'slug';
+import {version} from '../package.json';
 
 import loadPlugins from 'gulp-load-plugins';
 const $ = loadPlugins();
@@ -25,13 +26,13 @@ export const icons = () => {
             return { name: glyph.name, codepoint: glyph.unicode[0].charCodeAt(0) };
           }),
           fontName: name,
-          fontPath: '../fonts/',
+          fontPath: `../fonts/${version}/`,
           className: name
         }))
         .pipe($.rename(`${name}.scss`))
         .pipe(gulp.dest(`${config.assets}sass/`));
     })
-    .pipe(gulp.dest(`${config.build}fonts`));
+    .pipe(gulp.dest(`${config.build}fonts/${version}`));
 };
 
 export const iconsTask = gulp.task('icons', icons);
