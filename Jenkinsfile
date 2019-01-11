@@ -8,6 +8,11 @@ pipeline {
   options {
     disableConcurrentBuilds()
   }
+  environment {
+    WEB_USER = 'dplweb'
+    WEB_SERVER = 'slxti068'
+    SITE_DIR = '~/styleguide'
+  }
   stages {
     stage('Prepare') {
       steps {
@@ -22,6 +27,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh './node_modules/.bin/gulp deploy'
+        sh "ssh $WEB_USER@$WEB_SERVER 'cd $SITE_DIR && git pull'"
       }
     }
   }
