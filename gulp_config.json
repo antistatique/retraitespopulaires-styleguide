@@ -82,7 +82,7 @@
   "metalsmith": {
     "assets": "node_modules/toolbox-utils/styleguide/",
     "dist": "styleguide/",
-    "url": "https://antistatique.github.io/retraitespopulaires-styleguide/",
+    "url": "http://ghpages.test/",
     "plugins": {
       "permalinks": {
         "pattern": ":title",
