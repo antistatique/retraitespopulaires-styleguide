@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## 3.2.11 (2019-01-16)
+ - correct styleguide build order to build icon before
+
 ## 3.2.10 (2019-01-16)
  - correct cache problem when release new icons font - MD-437
 
