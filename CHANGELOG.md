@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## 3.2.10 (2019-01-16)
+ - correct cache problem when release new icons font - MD-437
+
 ## 3.2.9 (2019-01-09)
  - improve pop-in - MD-361
  - add pager icon for first/last - MD-424
