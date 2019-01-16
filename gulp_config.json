@@ -82,7 +82,7 @@
   "metalsmith": {
     "assets": "node_modules/toolbox-utils/styleguide/",
     "dist": "styleguide/",
-    "url": "http://ghpages.test/",
+    "url": "http://styleguide.retraitespopulaires.ch/",
     "plugins": {
       "permalinks": {
         "pattern": ":title",
