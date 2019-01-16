@@ -40,7 +40,7 @@ gulp.task('init', function() {
 /**
 * Task to build assets on production server
 */
-const build = gulp.series(clean, vendors, single, styles, scripts, img, favicons, icons);
+const build = gulp.series(clean, vendors, icons, single, styles, scripts, img, favicons);
 gulp.task('build', build);
 
 /**
