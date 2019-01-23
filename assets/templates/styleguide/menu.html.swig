@@ -14,7 +14,7 @@
       <ul>
         {% for doc in collections.docs %}
         <li>
-          <a href="{{data.path}}{{doc.title|lower}}">{{doc.title}}</a>
+          <a href="{{data.path}}{{doc.title|lower}}/">{{doc.title}}</a>
         </li>
         {% endfor %}
       </ul>
@@ -25,7 +25,7 @@
       <ul>
         {% for example in collections.examples %}
         <li>
-          <a href="{{data.path}}{{example.title|lower}}">{{example.title}}</a>
+          <a href="{{data.path}}{{example.title|lower}}/">{{example.title}}</a>
         </li>
         {% endfor %}
       </ul>
@@ -68,7 +68,7 @@
     <ul>
       {% for page in collections.pages %}
       <li>
-        <a href="{{data.path}}{{page.name}}">{{page.title}}</a>
+        <a href="{{data.path}}{{page.name}}/">{{page.title}}</a>
       </li>
       {% endfor %}
     </ul>

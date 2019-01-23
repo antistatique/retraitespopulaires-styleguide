@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+## 3.2.12 (2019-01-23)
+ - add Jenkinsfile - MD-440
+ - correct title for popin in mobile mode - MD-443
+
 ## 3.2.11 (2019-01-16)
  - correct styleguide build order to build icon before
 

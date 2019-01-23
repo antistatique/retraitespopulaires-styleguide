@@ -82,7 +82,7 @@
   "metalsmith": {
     "assets": "node_modules/toolbox-utils/styleguide/",
     "dist": "styleguide/",
-    "url": "https://antistatique.github.io/retraitespopulaires-styleguide/",
+    "url": "https://styleguide.retraitespopulaires.ch/",
     "plugins": {
       "permalinks": {
         "pattern": ":title",
