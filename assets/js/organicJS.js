@@ -48,8 +48,6 @@ export function organic_generate() {
 
             for (let i = 0; i < base.options.small; i++) {
                 let pattern = _getPattern();
-                console.log(base.$el.attr('class'));
-                console.log(base.$el.hasClass('fixed-lines'))
                 let $svg = base.generate('small', pattern.start,base.$el.hasClass('fixed-lines') ? pattern.start : pattern.end);
                 $container.append($svg);
             }
