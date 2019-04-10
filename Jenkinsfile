@@ -10,7 +10,7 @@ pipeline {
   }
   environment {
     WEB_USER = 'dplweb'
-    WEB_SERVER = 'slxpr058'
+    WEB_SERVER = 'slxpr088'
     SITE_DIR = '/data/sites/styleguide.retraitespopulaires.ch/'
   }
   stages {
