@@ -9,6 +9,17 @@ $handle-size: 2em;
   border: transparent;
   border-radius: 6px;
   font-size: 17px;
+  cursor: pointer;
+
+  &.no-range {
+    background: $brand-primary;
+
+    @include theme(background);
+  }
+
+  &.labels {
+    margin-bottom: 40px;
+  }
 
   .ui-slider-handle {
     display: flex;
@@ -92,6 +103,45 @@ $handle-size: 2em;
 
     .ui-slider-range-max {
       top: 0;
+    }
+  }
+
+  .ui-slider-pip {
+    position: absolute;
+    margin-top: 15px;
+    text-align: center;
+
+    &.active {
+      .ui-slider-line {
+        background: $brand-primary;
+
+        @include theme(background);
+      }
+
+      .ui-slider-label {
+        color: $brand-primary;
+
+        @include theme(color);
+      }
+    }
+
+    .ui-slider-line {
+      position: absolute;
+      left: 50%;
+      width: 1px;
+      height: 8px;
+      margin-left: -50%;
+      background: $black;
+    }
+
+    .ui-slider-label {
+      position: relative;
+      top: 5px;
+      width: 100%;
+      margin-left: -100%;
+      text-align: center;
+      font-size: 0.9em;
+      cursor: pointer;
     }
   }
 }
