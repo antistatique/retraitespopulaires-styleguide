@@ -18,6 +18,7 @@ export function slider () {
 
         // Get the data parameters
         let input = element.closest('.form-group').find('input');
+        let currentValue = Number(input.length > 0 && input.value !== '' ? input.autoNumeric('get') : element.data('value'));
         let maxValue = Number(element.data('max'));
         let minValue = Number(element.data('min'));
         let step = Number(element.data('step'));
@@ -36,7 +37,8 @@ export function slider () {
           range = element.data('range');
 
           // If range is null add class no-range.
-          if (range == null) {
+          if (range === 'no-range') {
+            range = null;
             element.addClass('no-range');
           }
         }
@@ -48,7 +50,7 @@ export function slider () {
           max: maxValue,
           min: minValue,
           step: step,
-          value: input.length > 0 ? input.autoNumeric('get') : Number(element.data('value')),
+          value: currentValue,
           animate: 100,
           disabled: element.hasClass('disabled'),
           // For update input
@@ -74,14 +76,7 @@ export function slider () {
           element.addClass('labels');
 
           for (let labelValue in labels) {
-            // Calculate the position of the label.
-            let percent = (labelValue - minValue) / (maxValue - minValue) * 100;
-            let label = labels[labelValue];
-
-            // Create label and add it to the slider.
-            let newEl = $('<div class="ui-slider-pip" data-active-value="' + labelValue + '"><span class="ui-slider-line"></span><span class="ui-slider-label">' + label + '</span></div>')
-                .css('left', percent + '%');
-            element.append(newEl);
+            newPips(labelValue);
           }
         }
 
@@ -90,13 +85,7 @@ export function slider () {
           for (let i = minValue; i <= maxValue; i += step) {
             // Only show if there's no label at the position.
             if (!labels || !(labels.hasOwnProperty(i))) {
-              // Calculate the position of the pips.
-              let percent = (i - minValue) / (maxValue - minValue) * 100;
-
-              // Create pips and add it to the slider.
-              let newEl = $('<div class="ui-slider-pip" data-active-value="' + i + '"><span class="ui-slider-line"></span></div>')
-                  .css('left', percent + '%');
-              element.append(newEl);
+              newPips(i);
             }
           }
         }
@@ -107,7 +96,34 @@ export function slider () {
             element.slider('value', input.autoNumeric('get'));
           });
         }
+
+        function newPips(value) {
+          value = Number(value);
+
+          // Calculate the position of the pip.
+          let percent = (value - minValue) / (maxValue - minValue) * 100 - 5;
+
+          // Create pip.
+          let newEl = $('<div class="ui-slider-pip" data-active-value="' + value + '"><span class="ui-slider-line"></span></div>')
+              .data('active-value', value)
+              .css('left', percent + '%');
+
+          // If there's a label add it to the pip.
+          if (labels[value]) {
+            newEl.append('<span class="ui-slider-label">' + labels[value] + '</span>');
+          }
+
+          // If it's the current selectionned value set to active.
+          if (value === currentValue) {
+            newEl.addClass('active');
+          }
+
+          // Add the pip to the slider.
+          element.append(newEl);
+        }
       });
     }
   });
 }
+
+

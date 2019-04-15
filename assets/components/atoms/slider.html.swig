@@ -35,5 +35,5 @@ variants:
 {% elseif variant == 'vertical' %}
 <div class="slider slider-vertical" data-value="50" data-step="1" data-max="100" data-min="0" style="height: 200px"></div>
 {% elseif variant == 'labels' %}
-<div class="slider" data-value="1" data-step="1" data-max="6" data-min="0" data-range="null" data-labels='{"0":"Bad","3":"Good","6":"Very Good"}' data-show-pips="true"></div>
+<div class="slider" data-value="3" data-step="1" data-max="6" data-min="0" data-range="no-range" data-labels='{"0":"Bad","3":"Good","6":"Very Good"}' data-show-pips="true"></div>
 {% endif %}

@@ -41,6 +41,7 @@ $handle-size: 2em;
       font-weight: bold;
       color: black;
       text-align: center;
+      cursor: pointer;
     }
   }
 
@@ -107,11 +108,17 @@ $handle-size: 2em;
   }
 
   .ui-slider-pip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
+    width: 10%;
     margin-top: 15px;
     text-align: center;
 
     &.active {
+      font-weight: bold;
+
       .ui-slider-line {
         background: $brand-primary;
 
@@ -126,20 +133,12 @@ $handle-size: 2em;
     }
 
     .ui-slider-line {
-      position: absolute;
-      left: 50%;
       width: 1px;
       height: 8px;
-      margin-left: -50%;
       background: $black;
     }
 
     .ui-slider-label {
-      position: relative;
-      top: 5px;
-      width: 100%;
-      margin-left: -100%;
-      text-align: center;
       font-size: 0.9em;
       cursor: pointer;
     }
