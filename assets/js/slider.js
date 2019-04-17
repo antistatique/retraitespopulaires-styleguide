@@ -32,6 +32,7 @@ export function slider () {
       let labels = element.data('labels');
       let range = 'min';
       let showPips = element.data('show-pips');
+      let selected = element.data('selected-label');
       let isAutoNumeric = false;
 
       // Get current value from input if there's is one otherwise get from data on slider.
@@ -146,6 +147,11 @@ export function slider () {
         // If it is the current selected value set to active.
         if (value === currentValue) {
           newEl.addClass('active');
+
+          // If current value is selected.
+          if (selected) {
+            newEl.addClass('selected');
+          }
         }
 
         // Add the pip to the slider.

@@ -19,6 +19,12 @@ $handle-size: 2em;
 
   &.labels {
     margin-bottom: 40px;
+
+    @media (max-width: $screen-sm-min) {
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 80px;
+    }
   }
 
   .ui-slider-handle {
@@ -129,6 +135,22 @@ $handle-size: 2em;
         color: $brand-primary;
 
         @include theme(color);
+      }
+    }
+
+    &.selected {
+      font-weight: bold;
+
+      .ui-slider-line {
+        background: darken($brand-primary, 10%);
+
+        @include theme(background, hover-color);
+      }
+
+      .ui-slider-label {
+        color: darken($brand-primary, 10%);
+
+        @include theme(color, hover-color);
       }
     }
 
