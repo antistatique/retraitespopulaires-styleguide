@@ -92,6 +92,7 @@ export function slider () {
 
           if (input.length > 0) {
             isAutoNumeric ? input.autoNumeric('set', ui.value) : input.val(ui.value);
+            input.change();
           }
 
           // Add active class to the only label
