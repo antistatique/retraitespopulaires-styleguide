@@ -1,6 +1,8 @@
 CHANGELOG
 =========
-
+## 3.3.0 (2019-07-01)
+ - MD-493: Mandants themes for popin
+ 
 ## 3.2.13 (2019-07-01)
  - MD-492: Fix accordion display
  
