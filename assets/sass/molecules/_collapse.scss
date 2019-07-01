@@ -74,6 +74,11 @@
   dt {
     @extend .collapse-wrapper;
 
+    .ckeditor-accordion-toggler {
+      display: flex;
+      align-items: center;
+    }
+
     div {
       @extend .collapse-title;
     }
