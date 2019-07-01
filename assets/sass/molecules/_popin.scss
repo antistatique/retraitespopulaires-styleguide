@@ -35,6 +35,8 @@
 
   .btn-primary {
     background-color: darken($brand-primary, 10%);
+
+    @include theme(background-color, hover-color);
   }
 
   .form-group label,
@@ -46,6 +48,8 @@
 .popin {
   margin-bottom: 0;
   background-color: map-deep-get($themes, 'primary', 'color');
+
+  @include theme(background-color);
 
   @media (max-width: $screen-xs-max) {
     flex: 1 1 auto;
@@ -78,6 +82,10 @@
       display: none;
     }
   }
+
+  a:hover {
+    color: $white;
+  }
 }
 
 .popin-collapse {
@@ -97,6 +105,9 @@
   width: 100%;
   padding: 18px;
   background-color: map-deep-get($themes, 'primary', 'hover-color');
+
+  @include theme(background-color, hover-color);
+
   border-right: 1px solid $shadow-gray;
   border-bottom: 1px solid $shadow-gray;
   color: $white;
@@ -123,9 +134,9 @@
   }
 
   .popin-title {
-    line-height: 1;
     margin-left: 19px;
     margin-right: 19px;
+    line-height: 1;
   }
 
   @media (max-width: $screen-xs-max) {
