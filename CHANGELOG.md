@@ -1,5 +1,9 @@
 CHANGELOG
 =========
+
+## 3.3.1 (2019-07-30)
+ - MD-448: Adapt button color when menu collapse is open
+ 
 ## 3.3.0 (2019-07-01)
  - MD-493: Mandants themes for popin
  
