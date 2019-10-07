@@ -71,10 +71,10 @@
 }
 
 .ckeditor-accordion-container {
-  margin: 0 0 20px 0;
+
   dt {
     @extend .collapse-wrapper;
-    margin: 0 0 20px 0 ;
+    margin: 0 0 20px;
 
     .ckeditor-accordion-toggler {
       display: flex;
@@ -107,6 +107,8 @@
   }
 
   dd {
+
+    margin: 20px 0 0;
     @extend .collapse-body;
     @extend .collapse-wrapper;
 
