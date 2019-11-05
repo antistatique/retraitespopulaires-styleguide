@@ -32,6 +32,42 @@ layout: page.html.swig
                   <li>Interlocuteur de proximité et fiable</li>
                 </ul>
                 <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées. La flexibilité du système permet à chaque mandant de conserver son autonomie juridique et disposer de son propre Conseil d'administration ou Conseil de fondation. Retraites&nbsp;Populaires propose au Conseil d'administration du mandant la stratégie à adopter en fonction de l'objectif à atteindre. Elle suit et contrôle la parfaite application des stratégies définies dans le respect du mandat confié.</p>
+                <h2>Exemple d'image avec légende</h2>
+                <figure>
+                  <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
+                  <figcaption class="text-muted">Fig.1 - Trulli, Puglia, Italy. Crédits © Prénom Nom</figcaption>
+                </figure>
+                <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
+                <h2>Exemple sur 2 colonnes</h2>
+                <div class="row">
+                  <div class="col-md-5">
+                    <img class="img-responsive center-block" src="https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80" alt="">
+                  </div>
+                  <div class="col-md-7">
+                    <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
+                    <ul>
+                      <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
+                      <li>Plus de synergies pour des prestations de qualité</li>
+                      <li>Meilleure capacité d'investissement</li>
+                      <li>Conseils personnalisés et adaptés aux besoins de chaque institution</li>
+                    </ul>
+                  </div>
+                </div>
+                <h2>Exemple sur 2 colonnes inversées</h2>
+                <div class="row">
+                  <div class="col-md-7">
+                    <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
+                    <ul>
+                      <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
+                      <li>Plus de synergies pour des prestations de qualité</li>
+                      <li>Meilleure capacité d'investissement</li>
+                      <li>Conseils personnalisés et adaptés aux besoins de chaque institution</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-5">
+                    <img class="img-responsive center-block" src="https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80" alt="">
+                  </div>
+                </div>
                 <h2>Exemple de tableau</h2>
                 <table class=" table-assurance tablesaw tablesaw-stack" data-tablesaw-mode="stack">
                   <thead>
@@ -61,20 +97,6 @@ layout: page.html.swig
                 <h2>Exemple de vidéo</h2>
                 <div style="margin: 0px auto; width: 100%; height: 100%;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="400" src="https://www.youtube.com/embed/IkWAnO1ZMuo" width="100%"></iframe></div>
                 <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
-                <h2>Exemple d'image</h2>
-                <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées. La flexibilité du système permet à chaque mandant de conserver son autonomie juridique et disposer de son propre Conseil d'administration ou Conseil de fondation. Retraites&nbsp;Populaires propose au Conseil d'administration du mandant la stratégie à adopter en fonction de l'objectif à atteindre. Elle suit et contrôle la parfaite application des stratégies définies dans le respect du mandat confié.</p>
-                <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
-                <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées. La flexibilité du système permet à chaque mandant de conserver son autonomie juridique et disposer de son propre Conseil d'administration ou Conseil de fondation. Retraites&nbsp;Populaires propose au Conseil d'administration du mandant la stratégie à adopter en fonction de l'objectif à atteindre. Elle suit et contrôle la parfaite application des stratégies définies dans le respect du mandat confié.</p>
-                <h2>Exemple d'image avec légende</h2>
-                <figure>
-                  <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
-                  <figcaption class="text-muted">Fig.1 - Trulli, Puglia, Italy. Crédits © Prénom Nom</figcaption>
-                </figure>
-                <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
-                <h2>Exemple de séparateur</h2>
-                <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
-                <hr>
-                <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées. La flexibilité du système permet à chaque mandant de conserver son autonomie juridique et disposer de son propre Conseil d'administration ou Conseil de fondation. Retraites&nbsp;Populaires propose au Conseil d'administration du mandant la stratégie à adopter en fonction de l'objectif à atteindre. Elle suit et contrôle la parfaite application des stratégies définies dans le respect du mandat confié.</p>
                 <h2>Exemple d'image pleine largeur</h2>
                 <img class="img-fluid" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/facades-yverdon-pharmacie.jpg?h=660a20cf&amp;itok=Z95QK3xZ" alt="">
                 <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
@@ -92,21 +114,27 @@ layout: page.html.swig
                     <dd><p>Accordion content 2.</p></dd>
                   </dl>
                 </div>
-                <h2>Exemple sur 2 colonnes</h2>
-                <div class="row">
-                  <div class="col-md-5">
-                    <img class="img-responsive center-block" src="https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80" alt="">
+                <h2>Exemple 2 colonnes pleine largeur</h2>
+                <div class="img-fluid cols-fluid">
+                  <div>
+                    <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
                   </div>
-                  <div class="col-md-7">
-                    <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
+                  <div>
+                    <h2>Exemple de liste</h2>
                     <ul>
                       <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
                       <li>Plus de synergies pour des prestations de qualité</li>
                       <li>Meilleure capacité d'investissement</li>
-                      <li>Conseils personnalisés et adaptés aux besoins de chaque institution</li>
                     </ul>
+                    <a class="btn btn-lg btn-primary" href="/contactaide/calculateurs/calculateur-dhypotheque" title="Calculateur">Calculer mon hypothèque</a>
                   </div>
                 </div>
+                <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
+                <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
+                <h2>Exemple de séparateur</h2>
+                <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
+                <hr>
+                <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
                 <h2>Exemple de Call-to-action</h2>
                 <p>Pour commencer, utilisez notre calculateur d'hypothèque pour savoir en quelques clics si vous pouvez vous permettre l'achat de ce bien immobilier.&nbsp;&nbsp;</p>
                 <a class="btn btn-lg btn-primary" href="/contactaide/calculateurs/calculateur-dhypotheque" title="Calculateur">Calculer mon hypothèque</a>
