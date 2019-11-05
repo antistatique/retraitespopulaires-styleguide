@@ -120,6 +120,23 @@ layout: page.html.swig
                     <dd><p>Accordion content 2.</p></dd>
                   </dl>
                 </div>
+                <h2>Exemple 2 colonnes pleine largeur</h2>
+                <div class="img-fluid cols-fluid">
+                  <div>
+                    <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
+                  </div>
+                  <div>
+                    <h2>Exemple de liste</h2>
+                    <ul>
+                      <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
+                      <li>Plus de synergies pour des prestations de qualité</li>
+                      <li>Meilleure capacité d'investissement</li>
+                    </ul>
+                    <a class="btn btn-lg btn-primary" href="/contactaide/calculateurs/calculateur-dhypotheque" title="Calculateur">Calculer mon hypothèque</a>
+                  </div>
+                </div>
+                <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
+                <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
                 <h2>Exemple de Call-to-action</h2>
                 <p>Pour commencer, utilisez notre calculateur d'hypothèque pour savoir en quelques clics si vous pouvez vous permettre l'achat de ce bien immobilier.&nbsp;&nbsp;</p>
                 <a class="btn btn-lg btn-primary" href="/contactaide/calculateurs/calculateur-dhypotheque" title="Calculateur">Calculer mon hypothèque</a>

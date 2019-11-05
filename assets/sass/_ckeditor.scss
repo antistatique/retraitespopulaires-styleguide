@@ -69,4 +69,48 @@
       left: 50%;
     }
   }
+
+  .cols-fluid {
+    margin-bottom: 3rem;
+
+    @media screen and (min-width: $screen-md-min) {
+      display: flex;
+    }
+
+    > div {
+      &:first-of-type {
+        @media screen and (min-width: $screen-md-min) {
+          height: 480px;
+        }
+      }
+
+      @media screen and (min-width: $screen-md-min) {
+        width: 50%;
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: 0;
+      }
+
+      h2 {
+        margin-top: 2rem;
+
+        @media screen and (min-width: $screen-md-min) {
+          margin-top: 2em;
+        }
+      }
+
+      &:last-of-type {
+        padding: 2rem;
+        background: #eee;
+
+        @media screen and (min-width: $screen-md-min) {
+          height: 480px;
+          padding: 3rem 6rem;
+        }
+      }
+    }
+  }
 }
