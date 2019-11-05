@@ -8,12 +8,14 @@ h1,
 .h1,
 h2,
 .h2 {
+  margin-top: 2em;
   margin-bottom: 1em;
   font-weight: 500;
 
   @include font-secondary;
 
   &.page-title {
+    font-weight: 700;
     margin-top: 0;
   }
 }

@@ -1,6 +1,16 @@
 @charset 'UTF-8';
 
 .breadcrumb {
+  padding-top: 2.5rem;
+
+  @media screen and (min-width: $screen-md-min) {
+    margin-bottom: 6rem;
+  }
+
+  li {
+    font-size: 16px;
+  }
+
   .dropdown-toggle {
     padding: 4px 12px;
     border: 1px solid $brand-primary;

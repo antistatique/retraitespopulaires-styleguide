@@ -11,11 +11,7 @@ notes: |
 <div class="theme-{{ secondary_nav_json }}">
   <div class="secondary-nav">
     <h2 class="sr-only">Navigation secondaire</h2>
-    <div class="back">
-      <a aria-label="Back" href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></a>
-    </div>
-    <div class="secondary-nav-content">
-
+    <div class="secondary-nav-content" >
       {% set nav = null %}
       {% if secondary_nav_json == 'particuliers'  %}
         {% set nav = data.nav.particuliers %}
@@ -31,7 +27,7 @@ notes: |
         {% set nav = data.nav.lorem %}
       {% endif %}
 
-      <div class="title h5 text-secondary">{{ nav.title }}</div>
+      <div class="title h5 text-secondary"><a href="#">{{ nav.title }}</a></div>
       <ul class="links list-no-style list-no-padding">
         {% for link in nav.links %}
 
@@ -63,7 +59,23 @@ notes: |
             </li>
           {% endif %}
         {% endfor %}
+        <li>
+          <a href="#" class="btn btn-primary btn-lg btn-contact">
+            <div class="retraitespopulaires-icon retraitespopulaires-icon retraitespopulaires-icon-contact-us-borderless text-white" style="margin-right: 1rem" aria-hidden="true"></div>
+            Nous contacter
+          </a>
+        </li>
       </ul>
+       <div class="card-cta-container" style="display: none">
+        <a href="#contactez-nous" class="card card-white card-md">
+          <div class="card-cta">
+            <div class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-contact-us-borderless text-primary" aria-hidden="true"></div>
+          </div>
+          <div class="card-body text-secondary">
+            <div class="btn btn-primary">Nous contacter</div>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </div>

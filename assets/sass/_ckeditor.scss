@@ -8,7 +8,22 @@
   }
 
   ul {
-    @extend .unordered-list;
+    // @extend .unordered-list;
+    list-style: none;
+    padding-left: 2.5rem;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  ul li:before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: $brand-primary; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1.25em; /* Also needed for space (tweak if needed) */
+    margin-left: -1.25em; /* Also needed for space (tweak if needed) */
   }
 
   ol {
@@ -24,5 +39,34 @@
     height: auto;
     margin: 0 auto 10px;
     max-width: 100%;
+  }
+
+  p,
+  img,
+  ul,
+  ol,
+  iframe,
+  table {
+    margin-bottom: 3rem;
+  }
+
+  img + figcaption {
+    margin-bottom: 3rem;
+    margin-top: -2rem;
+  }
+
+  .img-fluid {
+    position: relative;
+
+    @media screen and (min-width: $screen-md-min) {
+      left: 33.33333%;
+      width: 100vw;
+      max-width: none;
+      margin-left: -50vw;
+    }
+
+    @media screen and (min-width: $screen-xl-min) {
+      left: 50%;
+    }
   }
 }

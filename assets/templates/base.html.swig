@@ -11,6 +11,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="HTML,CSS,XML,JavaScript">
     <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="noindex">
 
     {% if styleguide %}
       <link rel="stylesheet" href="{{data.path}}build/css/styleguide.css">

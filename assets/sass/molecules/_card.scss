@@ -5,9 +5,14 @@
   flex-direction: column;
   flex: 1 1 auto;
   margin-bottom: 50px;
-  border: 1px solid $brand-primary;
+  // border: 1px solid $brand-primary;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.015),
+              0 2px 2px rgba(0,0,0,0.015),
+              0 4px 4px rgba(0,0,0,0.015),
+              0 8px 8px rgba(0,0,0,0.015),
+              0 16px 16px rgba(0,0,0,0.015);
   border-radius: $border-radius-base;
-  box-shadow: 0 50px 75px -45px $shadow-gray;
+  // box-shadow: 0 50px 75px -45px $shadow-gray;
   overflow: hidden;
 
   @include theme(border-color);
@@ -43,7 +48,12 @@ a.card,
     border-color: darken($brand-primary, 10);
 
     & {
-      box-shadow: 0 65px 75px -45px darken($shadow-gray, 0.3);
+      box-shadow: 0 1px 1px rgba(0,0,0,0.02), 
+              0 2px 2px rgba(0,0,0,0.02), 
+              0 4px 4px rgba(0,0,0,0.02), 
+              0 8px 8px rgba(0,0,0,0.02), 
+              0 16px 16px rgba(0,0,0,0.02), 
+              0 32px 32px rgba(0,0,0,0.02);
     }
 
     @include theme(border-color, hover-color);
@@ -231,6 +241,10 @@ a.card-img-top {
   padding: $grid-gutter-width;
 
   > *:last-child {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
     margin-bottom: 0;
   }
 }
