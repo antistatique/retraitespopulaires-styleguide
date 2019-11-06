@@ -3,7 +3,7 @@
 * Fonts
 */
 
-$font-primary: 'Frutiger Neue', arial, sans-serif !default;
+$font-primary: 'Proxima Nova', arial, sans-serif !default;
 $font-secondary: 'Cocon Pro', arial, sans-serif !default;
 $font-mandant: 'Maven Pro', arial, sans-serif !default;
 
@@ -58,6 +58,54 @@ body.font-mandant {
     url('../fonts/CoconLight.woff') format('woff'),
     url('../fonts/CoconLight.ttf') format('truetype');
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Proxima-Nova-Light.eot');
+  src:
+          url('../fonts/Proxima-Nova-Light.eot?#iefix') format('embedded-opentype'),
+          url('../fonts/Proxima-Nova-Light.woff') format('woff'),
+          url('../fonts/Proxima-Nova-Light.ttf') format('truetype'),
+          url('../fonts/Proxima-Nova-Light.svg#frutigernewregular') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Proxima-Nova.eot');
+  src:
+          url('../fonts/Proxima-Nova.eot?#iefix') format('embedded-opentype'),
+          url('../fonts/Proxima-Nova.woff') format('woff'),
+          url('../fonts/Proxima-Nova.ttf') format('truetype'),
+          url('../fonts/Proxima-Nova.svg#frutigernewregular') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Proxima-Nova-Semibold.eot');
+  src:
+          url('../fonts/Proxima-Nova-Semibold.eot?#iefix') format('embedded-opentype'),
+          url('../fonts/Proxima-Nova-Semibold.woff') format('woff'),
+          url('../fonts/Proxima-Nova-Semibold.ttf') format('truetype'),
+          url('../fonts/Proxima-Nova-Semibold.svg#frutigernewlight') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Proxima-Nova-Bold.eot');
+  src:
+          url('../fonts/Proxima-Nova-Bold.eot?#iefix') format('embedded-opentype'),
+          url('../fonts/Proxima-Nova-Bold.woff') format('woff'),
+          url('../fonts/Proxima-Nova-Bold.ttf') format('truetype'),
+          url('../fonts/Proxima-Nova-Bold.svg#frutigernewlight') format('svg');
+  font-weight: 700;
   font-style: normal;
 }
 
