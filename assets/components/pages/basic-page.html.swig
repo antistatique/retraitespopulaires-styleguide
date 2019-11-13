@@ -8,7 +8,7 @@ layout: page.html.swig
 {% include '../organisms/header.html.swig' %}
 {% include '../atoms/funky-waves.html.swig' %}
 
-<div class="container-fluid layout-hero">
+<div class="container-fluid main-wrapper-hero">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-8 col-xl-push-2">
       <a name="startcontent"></a>

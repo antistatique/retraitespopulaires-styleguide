@@ -7,10 +7,7 @@ layout: page.html.swig
 ---
 {% include '../organisms/header.html.swig' %}
 
-<div class="container layout">
-</div>
-
-<div class="container-fluid">
+<div class="container-fluid main-wrapper">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-8 col-xl-push-2">
       <a name="startcontent"></a>

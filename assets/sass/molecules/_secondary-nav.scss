@@ -5,64 +5,45 @@ $active-border-width: 4px;
 .secondary-nav {
   position: relative;
 
-  .back {
-    position: absolute;
-    top: 0;
-    width: $grid-gutter-width * 1.5;
-    min-height: $grid-gutter-width * 4;
-    padding-top: $grid-gutter-width / 2;
-    background: $brand-primary;
-    text-align: center;
-
-    @include theme(background-color);
-
-    .retraitespopulaires-icon {
-      display: block;
-      color: $white;
-    }
-  }
-
   @media only screen and (min-width: $screen-md-min) {
-    margin-left: -16px;
+    margin-left: -1.5rem;
   }
 
   .btn-contact {
     display: none;
-    align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    justify-content: center;
 
     @media only screen and (min-width: $screen-md-min) {
       display: flex;
+      align-items: center;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+    }
+
+    .retraitespopulaires-icon {
+      margin-right: 1rem;
+      color: $white;
     }
   }
 }
 
 .secondary-nav-content {
   display: block;
+  margin-bottom: 1.5rem;
   background: $white;
   border: 1px solid $ligthen-gray;
-  margin-bottom: 16px;
-  // box-shadow: 0 1px 1px rgba(0,0,0,0.015),
-  //             0 2px 2px rgba(0,0,0,0.015),
-  //             0 4px 4px rgba(0,0,0,0.015),
-  //             0 8px 8px rgba(0,0,0,0.015),
-  //             0 16px 16px rgba(0,0,0,0.015);
 
   @media only screen and (min-width: $screen-md-min) {
     display: inline-block;
     width: 320px;
-    margin-left: $grid-gutter-width * 1.5;
     margin-bottom: 0;
+    margin-left: $grid-gutter-width * 1.5;
   }
 
   .title {
     margin-top: 0;
-    // margin-bottom: 2rem;
     padding: $grid-gutter-width / 1.5;
     padding-bottom: 1rem;
-    // border-bottom: 1px solid $ligthen-gray;
     color: $brand-primary;
 
     @include theme(color);
@@ -74,7 +55,7 @@ $active-border-width: 4px;
     border-left: $active-border-width solid transparent;
 
     &.active {
-      background-color: #eee;
+      background-color: $berrylight-gray;
       border-left: $active-border-width solid $brand-primary;
 
       .pretty-link {

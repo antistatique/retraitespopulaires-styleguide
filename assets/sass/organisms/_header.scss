@@ -3,15 +3,16 @@
 .header {
   z-index: $zindex-navbar-fixed + 2;
   background: $white;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.015),
-              0 2px 2px rgba(0,0,0,0.015),
-              0 4px 4px rgba(0,0,0,0.015),
-              0 8px 8px rgba(0,0,0,0.015),
-              0 16px 16px rgba(0,0,0,0.015);
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.015),
+    0 2px 2px rgba(0, 0, 0, 0.015),
+    0 4px 4px rgba(0, 0, 0, 0.015),
+    0 8px 8px rgba(0, 0, 0, 0.015),
+    0 16px 16px rgba(0, 0, 0, 0.015);
 
   @media screen and (min-width: $screen-md-min) {
     position: sticky;
-    top: -104px;
+    top: -104px; /* ! Hardcoded header height */
   }
 
   &.active {
@@ -116,16 +117,4 @@
 
 .wrapper-navbar {
   margin-top: $grid-gutter-width / 2;
-}
-
-.layout {
-  @media screen and (min-width: $screen-md-min) {
-    margin-top: 48px;
-  }
-}
-
-.layout-hero {
-  @media screen and (min-width: $screen-md-min) {
-    margin-top: -48px;
-  }
 }

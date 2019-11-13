@@ -61,21 +61,11 @@ notes: |
         {% endfor %}
         <li>
           <a href="#" class="btn btn-primary btn-lg btn-contact">
-            <div class="retraitespopulaires-icon retraitespopulaires-icon retraitespopulaires-icon-contact-us-borderless text-white" style="margin-right: 1rem" aria-hidden="true"></div>
+            <div class="retraitespopulaires-icon retraitespopulaires-icon-contact-us-borderless" aria-hidden="true"></div>
             Nous contacter
           </a>
         </li>
       </ul>
-       <div class="card-cta-container" style="display: none">
-        <a href="#contactez-nous" class="card card-white card-md">
-          <div class="card-cta">
-            <div class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-contact-us-borderless text-primary" aria-hidden="true"></div>
-          </div>
-          <div class="card-body text-secondary">
-            <div class="btn btn-primary">Nous contacter</div>
-          </div>
-        </a>
-      </div>
     </div>
   </div>
 </div>
