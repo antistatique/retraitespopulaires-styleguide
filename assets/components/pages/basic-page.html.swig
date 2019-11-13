@@ -98,7 +98,7 @@ layout: page.html.swig
                 <div style="margin: 0px auto; width: 100%; height: 100%;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="400" src="https://www.youtube.com/embed/IkWAnO1ZMuo" width="100%"></iframe></div>
                 <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
                 <h2>Exemple d'image pleine largeur</h2>
-                <img class="img-fluid" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/facades-yverdon-pharmacie.jpg?h=660a20cf&amp;itok=Z95QK3xZ" alt="">
+                <img class="full-width" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/facades-yverdon-pharmacie.jpg?h=660a20cf&amp;itok=Z95QK3xZ" alt="">
                 <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
                 <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
                 <h2>Exemple d'accordéon</h2>
@@ -115,7 +115,7 @@ layout: page.html.swig
                   </dl>
                 </div>
                 <h2>Exemple 2 colonnes pleine largeur</h2>
-                <div class="img-fluid cols-fluid">
+                <div class="full-width cols-fluid">
                   <div>
                     <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
                   </div>

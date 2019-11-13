@@ -59,15 +59,18 @@
     width: 100%;
   }
 
-  /* TODO: refactoring and responsive */
-  .img-fluid {
+  .full-width {
     position: relative;
 
     @media screen and (min-width: $screen-md-min) {
-      left: 33.33333%;
+      left: 27.4%; /* Magic number */
       width: 100vw;
       max-width: none;
       margin-left: -50vw;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+      left: 34.4%; /* Magic number */
     }
 
     @media screen and (min-width: $screen-xl-min) {
