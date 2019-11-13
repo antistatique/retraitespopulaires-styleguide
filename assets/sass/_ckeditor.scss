@@ -78,49 +78,39 @@
     }
   }
 
-  /* TODO: refactoring */
-  .cols-fluid {
+  .full-width-row {
     margin-bottom: 3rem;
 
     @media screen and (min-width: $screen-md-min) {
       display: flex;
+      min-height: 480px;
+    }
+  }
+
+  .full-width-row .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+
+    @media screen and (min-width: $screen-md-min) {
+      width: 50%;
     }
 
-    > div {
-      &:first-of-type {
-        @media screen and (min-width: $screen-md-min) {
-          height: 480px;
-        }
-      }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Needs IE polyfill */
+      margin-bottom: 0;
+    }
+  }
 
-      @media screen and (min-width: $screen-md-min) {
-        width: 50%;
-      }
+  .full-width .col-text {
+    padding: 2rem;
+    background: $gray-lighter;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Needs IE polyfill */
-        margin-bottom: 0;
-      }
-
-      h2 {
-        margin-top: 2rem;
-
-        @media screen and (min-width: $screen-md-min) {
-          margin-top: 2em;
-        }
-      }
-
-      &:last-of-type {
-        padding: 2rem;
-        background: $gray-lighter;
-
-        @media screen and (min-width: $screen-md-min) {
-          height: 480px;
-          padding: 3rem 6rem;
-        }
-      }
+    @media screen and (min-width: $screen-md-min) {
+      padding: 3rem 6rem;
     }
   }
 }

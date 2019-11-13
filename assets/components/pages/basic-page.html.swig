@@ -115,11 +115,11 @@ layout: page.html.swig
                   </dl>
                 </div>
                 <h2>Exemple 2 colonnes pleine largeur</h2>
-                <div class="full-width cols-fluid">
-                  <div>
+                <div class="full-width full-width-row">
+                  <div class="col">
                     <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
                   </div>
-                  <div>
+                  <div class="col col-text">
                     <h2>Exemple de liste</h2>
                     <ul>
                       <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
