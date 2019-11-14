@@ -35,9 +35,13 @@ $active-border-width: 4px;
 
   @media only screen and (min-width: $screen-md-min) {
     display: inline-block;
-    width: 320px;
+    width: 240px;
     margin-bottom: 0;
     margin-left: $grid-gutter-width * 1.5;
+  }
+
+  @media only screen and (min-width: $screen-lg-min) {
+    width: 320px;
   }
 
   .title {
