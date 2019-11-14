@@ -59,12 +59,6 @@ notes: |
             </li>
           {% endif %}
         {% endfor %}
-        <li>
-          <a href="#" class="btn btn-primary btn-lg btn-contact">
-            <div class="retraitespopulaires-icon retraitespopulaires-icon-contact-us-borderless" aria-hidden="true"></div>
-            Nous contacter
-          </a>
-        </li>
       </ul>
     </div>
   </div>
