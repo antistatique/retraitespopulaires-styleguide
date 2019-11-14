@@ -1,7 +1,14 @@
 @charset 'UTF-8';
 
-// Specific for drupal CKEditor
+.entity-content {
+  padding-top: 5rem;
 
+  @media screen and (min-width: $screen-md-min) {
+    padding-top: 2rem;
+  }
+}
+
+// Specific for drupal CKEditor
 .entity-body {
   table {
     margin-bottom: 20px;

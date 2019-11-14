@@ -12,11 +12,9 @@ layout: page.html.swig
     <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-8 col-xl-push-2">
       <a name="startcontent"></a>
       <article class="page full clearfix">
-        <div class="content">
+        <div class="content entity-content">
           <div class="row">
             <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
-              {% include '../molecules/breadcrumb.html.swig' %}
-              <div class="spacer spacer-xs"></div>
               <h1 class="page-title">Quel est votre projet ?</h1>
               <div class="entity-body clearfix">
                 <p class="lead text-secondary">Retraites Populaires met au service des collectivités publiques une palette de possibilités.</p>
