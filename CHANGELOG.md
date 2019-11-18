@@ -1,5 +1,8 @@
 CHANGELOG
 =========
+## 3.3.2 (2019-11-18)
+ - MD-524: adapted space before and after collapse button 
+ - MD-513: made body-font and mandants-font proxima-nova
 
 ## 3.3.1 (2019-07-30)
  - MD-448: Adapt button color when menu collapse is open
