@@ -3,6 +3,36 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.ckeditor_accordion = ckeditor_accordion;
+
+var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * This JS is only use with the CKeditor Accordion module.
+ * It adds a div around the head of each tab of the accordion to make the whole head clickable.
+ *
+ *  @see {@link https://www.drupal.org/project/ckeditor_accordion}
+ */
+function ckeditor_accordion() {
+
+    (0, _jquery2.default)(document).ready(function () {
+        // wait otherwise it's in conflict with the JS of module
+        (0, _jquery2.default)('.ckeditor-accordion-container').find('dt').wrapInner("<div class='ckeditor-accordion-toggler'></div>");
+    });
+}
+
+}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],2:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.datepicker = datepicker;
@@ -29,7 +59,7 @@ function datepicker() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -80,7 +110,7 @@ function gallery() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
 var _mobile_menu = require('./mobile_menu.js');
@@ -109,6 +139,8 @@ var _labels = require('./labels.js');
 
 var _slider = require('./slider.js');
 
+var _ckeditor_accordion = require('./ckeditor_accordion.js');
+
 (function () {
   (0, _mobile_menu.mobile_menu)();
   (0, _navbar.navbar)();
@@ -123,9 +155,10 @@ var _slider = require('./slider.js');
   (0, _selectize.selectize)();
   (0, _labels.labels)();
   (0, _slider.slider)();
+  (0, _ckeditor_accordion.ckeditor_accordion)();
 })();
 
-},{"./datepicker.js":1,"./gallery.js":2,"./input_dynamic_label.js":4,"./input_files.js":5,"./labels.js":6,"./mobile_menu.js":7,"./navbar.js":8,"./number_format.js":9,"./organicJS.js":10,"./popover.js":11,"./selectize.js":12,"./slider.js":13,"./smoothscroll.js":14}],4:[function(require,module,exports){
+},{"./ckeditor_accordion.js":1,"./datepicker.js":2,"./gallery.js":3,"./input_dynamic_label.js":5,"./input_files.js":6,"./labels.js":7,"./mobile_menu.js":8,"./navbar.js":9,"./number_format.js":10,"./organicJS.js":11,"./popover.js":12,"./selectize.js":13,"./slider.js":14,"./smoothscroll.js":15}],5:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -156,7 +189,7 @@ function input_dynamic_label() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -201,7 +234,7 @@ function input_files() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -224,7 +257,7 @@ function labels() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -301,7 +334,7 @@ function mobile_menu() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -350,7 +383,7 @@ function navbar() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -412,7 +445,7 @@ function number_format() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -545,7 +578,7 @@ function organic_generate() {
 })(jQuery);
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -565,7 +598,7 @@ function popover() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -604,7 +637,7 @@ function selectize() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -672,7 +705,7 @@ function slider() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -720,5 +753,5 @@ var smoothscroll_to = function smoothscroll_to(dest) {
 };
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}]},{},[3])
+},{}]},{},[4])
 //# sourceMappingURL=bundle.js.map
