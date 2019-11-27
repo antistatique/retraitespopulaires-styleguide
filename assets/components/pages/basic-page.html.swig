@@ -31,6 +31,11 @@ layout: page.html.swig
                   <li>Interlocuteur de proximité et fiable</li>
                 </ul>
                 <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées. La flexibilité du système permet à chaque mandant de conserver son autonomie juridique et disposer de son propre Conseil d'administration ou Conseil de fondation. Retraites&nbsp;Populaires propose au Conseil d'administration du mandant la stratégie à adopter en fonction de l'objectif à atteindre. Elle suit et contrôle la parfaite application des stratégies définies dans le respect du mandat confié.</p>
+                <h2>Exemple d'image</h2>
+                <figure>
+                  <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
+                </figure>
+                <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
                 <h2>Exemple d'image avec légende</h2>
                 <figure>
                   <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
