@@ -39,10 +39,10 @@ layout: page.html.swig
                 <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
                 <h2>Exemple sur 2 colonnes</h2>
                 <div class="row">
-                  <div class="col-md-5">
+                  <div class="col-md-6">
                     <img class="img-responsive center-block" src="https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80" alt="">
                   </div>
-                  <div class="col-md-7">
+                  <div class="col-md-6">
                     <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
                     <ul>
                       <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
@@ -52,9 +52,22 @@ layout: page.html.swig
                     </ul>
                   </div>
                 </div>
-                <h2>Exemple sur 2 colonnes inversées</h2>
+                <h2>Exemple sur 2 colonnes centrées verticalement</h2>
+                <div class="row align-center">
+                  <div class="col-md-6">
+                    <img class="img-responsive center-block" src="https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80" alt="">
+                  </div>
+                  <div class="col-md-6">
+                    <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
+                  </div>
+                </div>
+                <h2>Exemple sur 2 colonnes avec texte</h2>
                 <div class="row">
-                  <div class="col-md-7">
+                  <div class="col-md-6">
+                    <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
+                    <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
+                  </div>
+                  <div class="col-md-6">
                     <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
                     <ul>
                       <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
@@ -62,9 +75,6 @@ layout: page.html.swig
                       <li>Meilleure capacité d'investissement</li>
                       <li>Conseils personnalisés et adaptés aux besoins de chaque institution</li>
                     </ul>
-                  </div>
-                  <div class="col-md-5">
-                    <img class="img-responsive center-block" src="https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80" alt="">
                   </div>
                 </div>
                 <h2>Exemple de tableau</h2>
@@ -95,6 +105,16 @@ layout: page.html.swig
                 <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
                 <h2>Exemple de vidéo</h2>
                 <div style="margin: 0px auto; width: 100%; height: 100%;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="400" src="https://www.youtube.com/embed/IkWAnO1ZMuo" width="100%"></iframe></div>
+                <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
+                <h2>Exemple sur 2 colonnes avec vidéos</h2>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div style="margin: 0px auto; width: 100%; height: 100%;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="220" src="https://www.youtube.com/embed/IkWAnO1ZMuo" width="100%"></iframe></div>
+                  </div>
+                  <div class="col-md-6">
+                    <div style="margin: 0px auto; width: 100%; height: 100%;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="220" src="https://www.youtube.com/embed/IkWAnO1ZMuo" width="100%"></iframe></div>
+                  </div>
+                </div>
                 <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
                 <h2>Exemple d'image pleine largeur</h2>
                 <img class="full-width" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/facades-yverdon-pharmacie.jpg?h=660a20cf&amp;itok=Z95QK3xZ" alt="">

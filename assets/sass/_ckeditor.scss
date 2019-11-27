@@ -58,6 +58,13 @@
     width: 100%;
   }
 
+  .row.align-center {
+    @media screen and (min-width: $screen-md-min) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   .full-width {
     position: relative;
 
