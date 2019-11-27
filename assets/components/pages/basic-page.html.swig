@@ -83,30 +83,32 @@ layout: page.html.swig
                   </div>
                 </div>
                 <h2>Exemple de tableau</h2>
-                <table class=" table-assurance tablesaw tablesaw-stack" data-tablesaw-mode="stack">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>Je suis en <strong>formation</strong></th>
-                      <th>J'ai un <strong>emploi</strong></th>
-                      <th>Je suis à la <strong>retraite</strong></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Epargner en toute sécurité</td>
-                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                    </tr>
-                    <tr>
-                      <td>Epargner en toute sécurité</td>
-                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="table-responsive">
+                  <table class="table tablesaw table-assurance">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>Je suis en <strong>formation</strong></th>
+                        <th>J'ai un <strong>emploi</strong></th>
+                        <th>Je suis à la <strong>retraite</strong></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Epargner en toute sécurité</td>
+                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                      </tr>
+                      <tr>
+                        <td>Epargner en toute sécurité</td>
+                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
                 <h2>Exemple de vidéo</h2>
                 <div style="margin: 0px auto; width: 100%; height: 100%;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="400" src="https://www.youtube.com/embed/IkWAnO1ZMuo" width="100%"></iframe></div>
