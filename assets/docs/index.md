@@ -455,6 +455,43 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
             <div class="text-muted">.retraitespopulaires-icon-external-link</div>
           </div>
         </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-calculator"></i>
+            <div class="text-muted">.retraitespopulaires-icon-calculator</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-chevron"></i>
+            <div class="text-muted">.retraitespopulaires-icon-chevron</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-edit"></i>
+            <div class="text-muted">.retraitespopulaires-icon-edit</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-frontdesk"></i>
+            <div class="text-muted">.retraitespopulaires-icon-frontdesk</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-information"></i>
+            <div class="text-muted">.retraitespopulaires-icon-information</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x 
+            retraitespopulaires-icon-arrow-last-thin"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-last-thin</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

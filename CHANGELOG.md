@@ -1,5 +1,32 @@
 CHANGELOG
 =========
+## 3.3.2 (2019-11-18)
+ - MD-524: adapted space before and after collapse button 
+ - MD-513: made body-font and mandants-font proxima-nova
+
+## 3.3.1 (2019-07-30)
+ - MD-448: Adapt button color when menu collapse is open
+ 
+## 3.3.0 (2019-07-01)
+ - MD-493: Mandants themes for popin
+ 
+## 3.2.13 (2019-07-01)
+ - MD-492: Fix accordion display
+ 
+## 3.2.12 (2019-01-23)
+ - add Jenkinsfile - MD-440
+ - correct title for popin in mobile mode - MD-443
+
+## 3.2.11 (2019-01-16)
+ - correct styleguide build order to build icon before
+
+## 3.2.10 (2019-01-16)
+ - correct cache problem when release new icons font - MD-437
+
+## 3.2.9 (2019-01-09)
+ - improve pop-in - MD-361
+ - add pager icon for first/last - MD-424
+
 ## 3.2.8 (2018-11-26)
  - add display for accordion module - MD-411
 

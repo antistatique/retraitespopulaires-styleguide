@@ -233,6 +233,7 @@ layout: page.html.swig
       </div>
     </div>
   </div>
+  {% include '../molecules/popin.html.swig' %}
 </div>
 
 <div class="spacer"></div>

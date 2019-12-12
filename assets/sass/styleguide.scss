@@ -191,9 +191,8 @@
 
 .styleguide-item-preview {
   // Override for Popin
-  .popin {
-    display: block;
-    position: static;
+  .popin-container {
+    visibility: hidden;
   }
 
   // Override for Managed-By link

@@ -98,6 +98,8 @@ ul.collapser-menu {
   }
 
   .collapser-first-level.toggled > & .btn-circle {
+    @include theme(background-color);
+
     background: $brand-primary;
     color: $white;
   }

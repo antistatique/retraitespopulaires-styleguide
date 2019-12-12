@@ -74,6 +74,11 @@
   dt {
     @extend .collapse-wrapper;
 
+    .ckeditor-accordion-toggler {
+      display: flex;
+      align-items: center;
+    }
+
     div {
       @extend .collapse-title;
     }
@@ -86,46 +91,51 @@
 
     a {
       @extend h5;
+
       pointer-events: none;
       vertical-align: middle;
-      //hide the link format
-      background: none !important;
-      border-bottom: none !important;
-
 
       //to make pointer-events:none functional for IE and Edge
       display: inline-block;
+
+      //hide the link format
+      background: none !important;
+      border-bottom: none !important;
     }
   }
 
   dd {
     @extend .collapse-body;
     @extend .collapse-wrapper;
-    display: none;
-  }
 
+    display: none;
+    margin: 20px 0 0;
+    padding-bottom: 7.5px;
+  }
 }
 
 .ckeditor-accordion-toggle {
   @extend .button-bubble;
   @extend .inline-block;
+
   @include rotate(0);
   @include transition(transform 0.5s ease);
 
   &:before {
-    height: 62px;
-    width: 62px;
+    @include theme(background-color);
+
+    content: $retraitespopulaires-icon-arrow-right;
     display: flex;
+    width: 62px;
+    height: 62px;
     align-items: center;
     padding: 0.5em;
     background: $green;
     border-radius: 4em;
-    @include theme(background-color);
     font-family: 'retraitespopulaires-icon';
-    font-style: normal;
-    font-weight: normal;
     font-size: 30px;
-    content: $retraitespopulaires-icon-arrow-right;
+    font-weight: normal;
+    font-style: normal;
     color: $white;
   }
 }
