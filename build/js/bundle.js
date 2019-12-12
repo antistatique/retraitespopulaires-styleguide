@@ -141,6 +141,8 @@ var _slider = require('./slider.js');
 
 var _ckeditor_accordion = require('./ckeditor_accordion.js');
 
+var _popin = require('./popin.js');
+
 (function () {
   (0, _mobile_menu.mobile_menu)();
   (0, _navbar.navbar)();
@@ -156,9 +158,10 @@ var _ckeditor_accordion = require('./ckeditor_accordion.js');
   (0, _labels.labels)();
   (0, _slider.slider)();
   (0, _ckeditor_accordion.ckeditor_accordion)();
+  (0, _popin.popin)();
 })();
 
-},{"./ckeditor_accordion.js":1,"./datepicker.js":2,"./gallery.js":3,"./input_dynamic_label.js":5,"./input_files.js":6,"./labels.js":7,"./mobile_menu.js":8,"./navbar.js":9,"./number_format.js":10,"./organicJS.js":11,"./popover.js":12,"./selectize.js":13,"./slider.js":14,"./smoothscroll.js":15}],5:[function(require,module,exports){
+},{"./ckeditor_accordion.js":1,"./datepicker.js":2,"./gallery.js":3,"./input_dynamic_label.js":5,"./input_files.js":6,"./labels.js":7,"./mobile_menu.js":8,"./navbar.js":9,"./number_format.js":10,"./organicJS.js":11,"./popin.js":12,"./popover.js":13,"./selectize.js":14,"./slider.js":15,"./smoothscroll.js":16}],5:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -585,6 +588,72 @@ function organic_generate() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.popin = popin;
+
+var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function popin() {
+  // Move popin to show on desktop
+  (0, _jquery2.default)(document).on('click', '[data-toggle="popins-collapse"]', function () {
+    var $this = (0, _jquery2.default)(this);
+
+    $this.parents('.popin-container.popin-container-collapsing').find('.popin-collapse').collapse('hide');
+    $this.parents('.popin-container').toggleClass('popin-container-collapse popin-container-collapsing');
+  });
+
+  // Move popin when a collapse is open
+  (0, _jquery2.default)(document).on('click', '[data-toggle="collapse"]', function () {
+    var $this = (0, _jquery2.default)(this);
+    $this.parents('.popin-container').removeClass('popin-container-collapse').addClass('popin-container-collapsing');
+  });
+
+  // Hide current showed element on mobile
+  (0, _jquery2.default)(document).on('click', '[data-toggle="popin-collapse-hide-mobile"]', function () {
+    var $this = (0, _jquery2.default)(this);
+
+    $this.parents('.popin').addClass('hidden');
+    $this.parents('.popin-container').children('.popin').removeClass('show');
+
+    var dataTarget = $this.parents('.popin').find('[data-toggle="popin-collapse-show-mobile"]').attr('data-target');
+    if (dataTarget) {
+      (0, _jquery2.default)(dataTarget).addClass('hidden');
+    }
+  });
+
+  // Show clicked element on mobile
+  (0, _jquery2.default)(document).on('click', '[data-toggle="popin-collapse-show-mobile"]', function () {
+    var $this = (0, _jquery2.default)(this);
+    var $currentShow = $this.parents('.popin').siblings('.show');
+
+    if ($currentShow.length > 0) {
+      $currentShow.removeClass('show');
+      $currentShow.find('.popin-collapse').collapse('hide');
+      var dataTarget = $currentShow.find('[data-toggle="popin-collapse-show-mobile"]').attr('data-target');
+      if (dataTarget) {
+        (0, _jquery2.default)(dataTarget).addClass('hidden');
+      }
+    }
+
+    if ($this.attr('data-target')) {
+      (0, _jquery2.default)($this.attr('data-target')).toggleClass('hidden');
+    }
+
+    $this.parents('.popin').addClass('show').children('.popin-collapse').collapse('show');
+  });
+}
+
+}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],13:[function(require,module,exports){
+(function (global){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.popover = popover;
 
 var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
@@ -598,7 +667,7 @@ function popover() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -637,7 +706,7 @@ function selectize() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -705,7 +774,7 @@ function slider() {
 }
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 (function (global){
 'use strict';
 

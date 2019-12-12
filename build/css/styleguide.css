@@ -517,9 +517,8 @@ body {
   .styleguide-toggle-theme-hide:hover {
     padding-left: 0; }
 
-.styleguide-item-preview .popin {
-  display: block;
-  position: static; }
+.styleguide-item-preview .popin-container {
+  visibility: hidden; }
 
 .styleguide-item-preview#element-managed-by-link {
   margin-top: 53px; }
