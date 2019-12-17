@@ -55,6 +55,7 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
     </div>
   </div>
 
+<!-- Typography -->
   <div class="row">
     <div class="col-xs-12">
       <h2>Typographie</h2>
@@ -64,18 +65,18 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
       <!-- Heading 2  -->
       <h2>H2 - Cocon Pro Light - Notre raison sociale, notre identité</h2>
       <!-- Heading 3  -->
-      <h3>H3 - Frutiger Neue Bold - Plus de cent ans au service des Vaudoises et des Vaudois</h3>
+      <h3>H3 - Proxima Nova Bold - Plus de cent ans au service des Vaudoises et des Vaudois</h3>
       <!-- Heading 4  -->
-      <h4>H4 - Frutiger Neue Bold - Partenaire de vos projets</h4>
+      <h4>H4 - Proxima Nova Bold - Partenaire de vos projets</h4>
       <!-- Heading 5  -->
-      <h5>H5 - Frutiger Neue Bold - Les mêmes conditions pour tous les clients</h5>
+      <h5>H5 - Proxima Nova Bold - Les mêmes conditions pour tous les clients</h5>
       <!-- Heading 6  -->
-      <h6>H6 - Frutiger Neue Bold - Labels obtenus par Retraites Populaires</h6>
+      <h6>H6 - Proxima Nova Bold - Labels obtenus par Retraites Populaires</h6>
       <!-- Paragraphe  -->
       <div class="row">
         <div class="col-md-2">
           <b>Paragraphe</b>
-          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="text-muted">Proxima Nova Regular</div>
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
@@ -87,7 +88,7 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
       <div class="row">
         <div class="col-md-2">
           <b>Citation</b>
-          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="text-muted">Proxima Nova Regular</div>
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
@@ -98,7 +99,7 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
       <div class="row">
         <div class="col-md-2">
           <b>Surligner</b>
-          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="text-muted">Proxima Nova Regular</div>
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
@@ -109,7 +110,7 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
       <div class="row">
         <div class="col-md-2">
           <b>Liste non ordonnée</b>
-          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="text-muted">Proxima Nova Regular</div>
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
@@ -127,7 +128,7 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
       <div class="row">
         <div class="col-md-2">
           <b>Liste ordonnée</b>
-          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="text-muted">Proxima Nova Regular</div>
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
@@ -145,7 +146,7 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
       <div class="row">
         <div class="col-md-2">
           <b>Liste en arbre</b>
-          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="text-muted">Proxima Nova Regular</div>
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
@@ -163,7 +164,7 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
       <div class="row">
         <div class="col-md-2">
           <b>Liste en facettes</b>
-          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="text-muted">Proxima Nova Regular</div>
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
@@ -180,8 +181,8 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
       <!-- Filters List  -->
       <div class="row">
         <div class="col-md-2">
-          <b>Liste en facettes</b>
-          <div class="text-muted">Frutiger Neue Regular</div>
+          <b>Liste filtrée</b>
+          <div class="text-muted">Proxima Nova Regular</div>
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
@@ -199,7 +200,7 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
       <div class="row">
         <div class="col-md-2">
           <b>Tableau</b>
-          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="text-muted">Proxima Nova Regular</div>
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
@@ -223,7 +224,7 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
       <div class="row">
         <div class="col-md-2">
           <b>Nombres</b>
-          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="text-muted">Proxima Nova Regular</div>
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
@@ -234,12 +235,172 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
       <div class="row">
         <div class="col-md-2">
           <b>Exposant et Indice</b>
-          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="text-muted">Proxima Nova Regular</div>
           <div class="spacer spacer-sm"></div>
         </div>
         <div class="col-md-10">
           <div class="">D'une surface de 150m<sup>3</sup>.</div>
           <div class="">Nouvelle mollecule découverte: Hlop<sub>22</sub>, révolution scientifique en vue.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+<!-- Typography smaller -->
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Typographie (smaller)</h2>
+      <div class="spacer spacer-xs"></div>
+      <!-- Heading 1  -->
+      <h1 class="text-smaller">H1 - Cocon Pro Light - Le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle</h1>
+      <!-- Heading 2  -->
+      <h2 class="text-smaller">H2 - Cocon Pro Light - Notre raison sociale, notre identité</h2>
+      <!-- Heading 3  -->
+      <h3 class="text-smaller">H3 - Proxima Nova Bold - Plus de cent ans au service des Vaudoises et des Vaudois</h3>
+      <!-- Heading 4  -->
+      <h4 class="text-smaller">H4 - Proxima Nova Bold - Partenaire de vos projets</h4>
+      <!-- Heading 5  -->
+      <h5 class="text-smaller">H5 - Proxima Nova Bold - Les mêmes conditions pour tous les clients</h5>
+      <!-- Heading 6  -->
+      <h6 class="text-smaller">H6 - Proxima Nova Bold - Labels obtenus par Retraites Populaires</h6>
+      <!-- Paragraphe  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Paragraphe</b>
+          <div class="text-muted">Proxima Nova Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <p class="text-small">Fondée il y a plus de <b>100 ans</b>, <a href="http://retraites-populaires.ch">Retraites Populaires</a> cultive des valeurs humaines fortes et un esprit de mutualité. <br/> Notre mission: être le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle. Notre détermination: demeurer toujours ce partenaire proche sur lequel vous pouvez compter. Active également dans l’immobilier, l'hypothèque et crédit et la gestion d'institutions de prévoyance, Retraites Populaires met au service des personnes, des entreprises et des institutions une plateforme de compétences et tout son savoir-faire.</p>
+          <p class="text-small"><a href="http://retraites-populaires.ch">Retraites Populaires</a> est proche de ses clients. Avec son siège de <i>Lausanne</i> et ses deux agences à <i>Yverdon-les-Bains</i> et <i>Nyon</i>, elle offre des <b>prestations simples</b> et <b>de qualité</b> pour chacune des étapes de la vie.</p>
+        </div>
+      </div>
+      <!-- Highlight  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Surligner</b>
+          <div class="text-muted">Proxima Nova Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <p class="text-small">Retraites Populaires est <mark>responsable</mark>. Au coeur de sa raison d’être se trouve le <mark>respect des engagements</mark>.</p>
+        </div>
+      </div>
+      <!-- Labelled List -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste de labels</b>
+          <div class="text-muted">Proxima Nova</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <div class="col-md-5">
+            <ul class="list-inline">
+              <li class="text-small">
+                <a class="label label-primary text-smaller">Situation de prévoyance</a>
+              </li>
+              <li class="text-small">
+                <a class="label label-primary text-smaller">3ème pilier</a>
+              </li>
+              <li class="text-small">
+                <a class="label label-primary text-smaller">Immobilier</a>
+              </li>
+              <li class="text-small">
+                <a class="label label-primary text-smaller">Assurance</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Unordered List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste non ordonnée</b>
+          <div class="text-muted">Proxima Nova Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ul class="unordered-list">
+            <li class="text-small">Maintien de votre 2e pilier</li>
+            <li class="text-small">Possibilité de financer une couverture décès et invalidité</li>
+            <ul class="unordered-list">
+              <li class="text-small">Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ul>
+            <li class="text-small">Flexibilité du produit: prestations et financement en fonction de votre situation</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Ordered List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste ordonnée</b>
+          <div class="text-muted">Proxima Nova Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ol class="ordered-list">
+            <li class="text-small">Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
+            <li class="text-small">Calcul des intérêts uniquement sur les fonds utilisés</li>
+            <ol class="ordered-list">
+              <li class="text-small">Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ol>
+            <li class="text-small">Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Treeview List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste en arbre</b>
+          <div class="text-muted">Proxima Nova Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ul class="treeview-list">
+            <li class="text-small">Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
+            <li class="text-small">Calcul des intérêts uniquement sur les fonds utilisés</li>
+            <ul class="treeview-list">
+              <li class="text-small">Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ul>
+            <li class="text-small">Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Facets List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste en facettes</b>
+          <div class="text-muted">Proxima Nova Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ul class="facets-list">
+            <li class="text-small">Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
+            <li class="text-small">Calcul des intérêts uniquement sur les fonds utilisés</li>
+            <ul class="facets-list">
+              <li class="text-small">Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ul>
+            <li class="text-small">Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Filters List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste filtrée</b>
+          <div class="text-muted">Proxima Nova Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ul class="filters-list">
+            <li class="text-small"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checkbox"></i> Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
+            <li class="active text-small"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checkbox-checked"></i> Calcul des intérêts uniquement sur les fonds utilisés</li>
+            <ul class="filters-list">
+              <li class="text-small"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checkbox"></i> Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ul>
+            <li class="text-small"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checkbox"></i> Consolidation partielle possible pendant construction (tranche min. CHF 100'000)</li>
+          </ul>
         </div>
       </div>
     </div>
