@@ -38,7 +38,7 @@ notes: |
 
           <li class="{{ classes }}">
             {% if link.active  %}
-              {{ link.label }}
+              <a class="pretty-link" href="{{ link.url }}">{{ link.label }}</a>
             {% else %}
               <a class="pretty-link" href="{{ link.url }}">{{ link.label }}</a>
             {% endif %}
