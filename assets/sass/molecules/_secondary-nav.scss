@@ -81,6 +81,10 @@ $active-border-width: 4px;
     }
   }
 
+  .links .no-padding {
+    border-left: none;
+  }
+
   .links-children li { padding-left: $grid-gutter-width * 1.5; }
 
   .links-children .links-children li { padding-left: $grid-gutter-width * 2.25; }
