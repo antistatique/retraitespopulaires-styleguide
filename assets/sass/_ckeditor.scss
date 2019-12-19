@@ -7,22 +7,11 @@
   }
 
   ul {
-    list-style: none;
     padding-left: 2.5rem;
   }
 
   ul li {
     margin-bottom: 0.5rem;
-  }
-
-  /* Custom bullets */
-  ul li:before {
-    content: "\2022";
-    display: inline-block;
-    width: 1.25em;
-    margin-left: -1.25em;
-    font-weight: bold;
-    color: $brand-primary;
   }
 
   ol {
