@@ -208,10 +208,10 @@ layout: page.html.swig
   </div>
 </div>
 
-<div id="contactez-nous" class="bg-berrylight-gray" style="padding-top:2rem;padding-bottom:3rem">
+<div id="contactez-nous" class="section contact-section bg-berrylight-gray">
   <div class="container">
-    <div class="section-title text-center">
-      <h2 style="margin-right: auto;margin-left: auto">Retraites&nbsp;Populaires est à votre disposition</h2>
+    <div class="section-title">
+      <h2>Retraites&nbsp;Populaires est à votre disposition</h2>
     </div>
     <div class="row">
       <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
@@ -238,7 +238,7 @@ layout: page.html.swig
 
 <div class="spacer"></div>
 
-<div class="bg-berrylight-gray" style="padding-top:2rem;padding-bottom:3rem">
+<div class="section bg-berrylight-gray">
   <div class="container">
     <div class="section-title">
       <h2>Actualités</h2>
