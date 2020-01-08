@@ -23,72 +23,36 @@ layout: page.html.swig
                 <p>Accédez d'un coup à tous les documents que Retraites Populaires vous propose à différents endroits de son site.</p>
 
                 <div class="row">
-                  <div class="col-xs-10  col-sm-offset-1 col-md-offset-0 col-lg-5">
-                    <h4 class="m-t-0">Filtrer par:</h4>
-                    <div class="rp_site_documents_filter_block">
-                      <ul class="filters-list">
-                        <li class="">
-                          <a href="#"></a>
-                          <a class="pretty-link use-ajax" href="#">Document institutionnel</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="rp_site_documents_filter_block">
-                      <p class="media-heading text-muted">Nos métiers</p>
-                      <ul class="filters-list">
-                        <li class="active">
-                          <a aria-hidden="true" href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked use-ajax"></a>
-                          <a class="pretty-link use-ajax" href="#">Tous</a>
-                        </li>
-                        <li class="">
-                          <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked  use-ajax"></a>
-                          <a class="pretty-link use-ajax" href="#">Prévoyance particuliers (3ème et 2ème pilier)</a>
-                        </li>
-                        <li class="">
-                          <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked  use-ajax"></a>
-                          <a class="pretty-link use-ajax" href="#">Prévoyance professionnelle entreprise</a>
-                        </li>
-                        <li class="">
-                          <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked  use-ajax"></a>
-                          <a class="pretty-link use-ajax" href="#">Immobilier</a>
-                        </li>
-                        <li class="">
-                          <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked  use-ajax"></a>
-                          <a class="pretty-link use-ajax" href="#">Prêts</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="rp_site_documents_filter_block">
-                      <p class="media-heading text-muted">Nos catégories</p>
-                      <ul class="filters-list">
-                        <li class="active">
-                          <a aria-hidden="true" href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked use-ajax"></a>
-                          <a class="pretty-link use-ajax" href="#">Toutes</a>
-                        </li>
-                        <li class="">
-                          <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked  use-ajax"></a>
-                          <a class="pretty-link use-ajax" href="#">Brochures et fiches explicatives</a>
-                        </li>
-                        <li class="">
-                          <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked  use-ajax"></a>
-                          <a class="pretty-link use-ajax" href="#">Formulaires</a>
-                        </li>
-                        <li class="">
-                          <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked  use-ajax"></a>
-                          <a class="pretty-link use-ajax" href="#">Rapports annuels</a>
-                        </li>
-                        <li class="">
-                          <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked  use-ajax"></a>
-                          <a class="pretty-link use-ajax" href="#">Etudes</a>
-                        </li>
-                        <li class="">
-                          <a href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked  use-ajax"></a>
-                          <a class="pretty-link use-ajax" href="#">Réglementation</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="spacer visible-xs visible-sm visible-md"></div>
+                  <div class="col-sm-6 col-md-7 col-lg-8">
+                    <label for="#categorySelect" class="h5">Filtrer par catégorie:</label>
+                    <select id="categorySelect" class="form-control" style="width:100%">
+                      <option value="toutes" selected>Toutes</option>
+                      <option value="prevoyance-particuliers">Prévoyance particuliers (3ème et 2ème pilier)</option>
+                      <option value="prevoyance-professionnelle-entreprise">Prévoyance professionnelle entreprise</option>
+                      <option value="immobiler">Immobilier</option>
+                      <option value="prets">Prêts</option>
+                      <option value="brochures-et-fiches-explicatives">Brochures et fiches explicatives</option>
+                      <option value="formulaires">Formulaires</option>
+                      <option value="rapports-annuels">Rapports annuels</option>
+                      <option value="etudes">Etudes</option>
+                      <option value="reglementation">Réglementation</option>
+                    </select>
                   </div>
+                  <div class="col-sm-6 col-md-5 col-lg-4">
+                    <label for="#yearSelect" class="h5">Filtrer par année:</label>
+                    <select id="yearSelect" class="form-control" style="width:100%">
+                      <option selected>Année</option>
+                      <option value="2019">2019</option>
+                      <option value="2018">2018</option>
+                      <option value="2017">2017</option>
+                      <option value="2016">2016</option>
+                      <option value="2015">2015</option>
+                      <option value="2014">2014</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="spacer spacer-lg"></div>
+                <div class="row">
                   <div class="col-xs-10 col-sm-offset-1 col-md-12 col-md-offset-0 col-lg-7">
                     <div class="media">
                       <div class="media-left">
