@@ -22,7 +22,6 @@ layout: page.html.swig
                 <p class="lead text-secondary">Trois, deux, un, téléchargez!</p>
                 <p>Accédez d'un coup à tous les documents que Retraites Populaires vous propose à différents endroits de son site.</p>
               </div>
-
               <div class="row">
                 <div class="col-sm-6 col-md-7 col-lg-8">
                   <label for="#categorySelect" class="h5">Filtrer par catégorie:</label>
@@ -52,131 +51,50 @@ layout: page.html.swig
                   </select>
                 </div>
               </div>
-              <div class="spacer spacer-lg"></div>
-              <h2 class="h5">Résultats</h2>
-              {% include '../molecules/document-card.html.swig' %}
-              <div class="row">
-                <div class="col-xs-10 col-sm-offset-1 col-md-12 col-md-offset-0 col-lg-7">
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-                    </div>
-                    <div class="media-body">
-                      <a href="#" target="_blank" class="pretty-link h5">20170515 Communiqué de presse Vortex de l'Etat de Vaud et de la CPEV <span class="text-muted text-small">- PDF</span></a>
-                    </div>
-                  </div>
-                  <div class="spacer spacer-sm"></div>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-                    </div>
-                    <div class="media-body">
-                      <a href="#" target="_blank" class="pretty-link h5">Affiliation [005] <span class="text-muted text-small">- PDF</span></a>
-                    </div>
-                  </div>
-                  <div class="spacer spacer-sm"></div>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-                    </div>
-                    <div class="media-body">
-                      <a href="#" target="_blank" class="pretty-link h5">Aide mémoire pour les employeurs <span class="text-muted text-small">- PDF</span></a>
-                    </div>
-                  </div>
-                  <div class="spacer spacer-sm"></div>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-                    </div>
-                    <div class="media-body">
-                      <a href="#" target="_blank" class="pretty-link h5">Ajournement d'échéance de la rente - police de rentes [307] <span class="text-muted text-small">- PDF</span></a>
-                    </div>
-                  </div>
-                  <div class="spacer spacer-sm"></div>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-                    </div>
-                    <div class="media-body">
-                      <a href="#" target="_blank" class="pretty-link h5">Analyse des résultats 2006 des caisses de pension publiques romandes <span class="text-muted text-small">- PDF</span></a>
-                    </div>
-                  </div>
-                  <div class="spacer spacer-sm"></div>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-                    </div>
-                    <div class="media-body">
-                      <a href="#" target="_blank" class="pretty-link h5">Analyse des résultats 2007 des caisses de pension publiques romandes <span class="text-muted text-small">- PDF</span></a>
-                    </div>
-                  </div>
-                  <div class="spacer spacer-sm"></div>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-                    </div>
-                    <div class="media-body">
-                      <a href="#" target="_blank" class="pretty-link h5">Analyse des résultats 2008 des caisses de pension publiques romandes <span class="text-muted text-small">- PDF</span></a>
-                    </div>
-                  </div>
-                  <div class="spacer spacer-sm"></div>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-                    </div>
-                    <div class="media-body">
-                      <a href="#" target="_blank" class="pretty-link h5">Analyse des résultats 2009 des caisses de pension publiques romandes <span class="text-muted text-small">- PDF</span></a>
-                    </div>
-                  </div>
-                  <div class="spacer spacer-sm"></div>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-                    </div>
-                    <div class="media-body">
-                      <a href="#" target="_blank" class="pretty-link h5">Analyse des résultats 2010 des caisses de pension publiques romandes <span class="text-muted text-small">- PDF</span></a>
-                    </div>
-                  </div>
-                  <div class="spacer spacer-sm"></div>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#" target="_blank" class="retraitespopulaires-icon retraitespopulaires-icon-document-file retraitespopulaires-icon-2x"></a>
-                    </div>
-                    <div class="media-body">
-                      <a href="#" target="_blank" class="pretty-link h5">Analyse des résultats 2011 des caisses de pension publiques romandes <span class="text-muted text-small">- PDF</span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <div class="spacer spacer-md"></div>
-              <div class="row">
-                <div class="col-xs-10 col-xs-offset-1 text-center">
-                  <h4 id="pagination-heading" class="visually-hidden hidden">Pagination</h4>
-                  <nav aria-label="Pagination">
-                    <ul class="pagination">
-                      <li class="active">
-                        <a class="btn btn-outline btn-primary btn-circle use-ajax" href="#" title="Page courante">
-                        <span class="sr-only">Page courante</span>1</a>
-                      </li>
-                      <li>
-                        <a class="btn btn-outline btn-primary btn-circle use-ajax" href="#" title="Aller à la page 2">
-                        <span class="sr-only">Page</span>2</a>
-                      </li>
-                      <li>
-                        <a class="btn btn-outline btn-primary btn-circle use-ajax" href="#" title="Aller à la page 3">
-                        <span class="sr-only">Page</span>3</a>
-                      </li>
-                      <li>
-                        <a href="#" class="btn btn-outline btn-primary btn-circle use-ajax" title="Aller à la page suivante" rel="next">
-                        <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin"></span>
-                        <span class="sr-only">Page suivante</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                  <div class="spacer spacer-md"></div>
+              <div class="spacer spacer-md"></div>
+              <section class="document-card-list-section">
+                <div class="document-card-list-bg"></div>
+                <div class="spacer spacer-md"></div>
+                <h2 class="h5">Résultats</h2>
+                <div class="document-card-list">
+                  {% include '../molecules/document-card.html.swig' %}
+                  {% include '../molecules/document-card.html.swig' %}
+                  {% include '../molecules/document-card.html.swig' %}
+                  {% include '../molecules/document-card.html.swig' %}
+                  {% include '../molecules/document-card.html.swig' %}
                 </div>
-              </div>
+                <div class="spacer spacer-md"></div>
+                <div class="row">
+                  <div class="col-xs-10 col-xs-offset-1 text-center">
+                    <h4 id="pagination-heading" class="visually-hidden hidden">Pagination</h4>
+                    <nav aria-label="Pagination">
+                      <ul class="pagination">
+                        <li class="active">
+                          <a class="btn btn-outline btn-primary btn-circle use-ajax" href="#" title="Page courante">
+                          <span class="sr-only">Page courante</span>1</a>
+                        </li>
+                        <li>
+                          <a class="btn btn-outline btn-primary btn-circle use-ajax" href="#" title="Aller à la page 2">
+                          <span class="sr-only">Page</span>2</a>
+                        </li>
+                        <li>
+                          <a class="btn btn-outline btn-primary btn-circle use-ajax" href="#" title="Aller à la page 3">
+                          <span class="sr-only">Page</span>3</a>
+                        </li>
+                        <li>
+                          <a href="#" class="btn btn-outline btn-primary btn-circle use-ajax" title="Aller à la page suivante" rel="next">
+                          <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-arrow-thin"></span>
+                          <span class="sr-only">Page suivante</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                    <div class="spacer spacer-md"></div>
+                  </div>
+                </div>
+              </section>
+              <div class="spacer spacer-md"></div>
             </div>
           </div>
         </div>
@@ -187,6 +105,8 @@ layout: page.html.swig
     </div>
   </div>
 </div>
+
+<div class="spacer spacer-md"></div>
 
 <div id="contactez-nous" class="section contact-section bg-berrylight-gray">
   <div class="container">
