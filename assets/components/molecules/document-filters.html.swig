@@ -23,7 +23,7 @@ collection: molecules
     </div>
     <div class="col-sm-6 col-md-5 col-lg-4">
       <label for="#yearSelect" class="h5">Filtrer par année:</label>
-      <select id="yearSelect" class="form-control" style="width:100%">
+      <select id="yearSelect" class="form-control">
         <option selected>Année</option>
         <option value="2019">2019</option>
         <option value="2018">2018</option>
