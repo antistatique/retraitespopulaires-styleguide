@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    
+      <link rel="stylesheet" href="https://styleguide.retraitespopulaires.ch/build/css/styleguide.css">
+    
+
+    <link rel="stylesheet" href="https://styleguide.retraitespopulaires.ch/build/css/vendors.min.css">
+    <link rel="stylesheet" href="https://styleguide.retraitespopulaires.ch/build/css/main.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://styleguide.retraitespopulaires.ch/build/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://styleguide.retraitespopulaires.ch/build/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://styleguide.retraitespopulaires.ch/build/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://styleguide.retraitespopulaires.ch/build/favicons/manifest.json">
+    <link rel="mask-icon" href="https://styleguide.retraitespopulaires.ch/build/favicons/safari-pinned-tab.svg" color="#008e4f">
+    <meta name="theme-color" content="#008e4f">
+
+    <!--[if lt IE 9]>
+      <script src="https://styleguide.retraitespopulaires.ch/build/js/polyfills.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+      <div class="styleguide-toggle-container">
+        <div class="styleguide-toggle-theme-hide">
+          <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
+        </div>
+      </div>
+
+      <!-- fabricator icons -->
+<svg style="display: none;">
+  <symbol id="styleguide-icon-code" viewBox="0 0 512 512">
+    <path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
+  </symbol>
+  <symbol id="styleguide-icon-notes" viewBox="0 0 512 512">
+    <path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
+  </symbol>
+  <symbol id="styleguide-icon-labels" viewBox="0 0 512 512">
+    <path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
+  </symbol>
+  <symbol id="styleguide-icon-menu" viewBox="0 0 512 512">
+    <path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
+  </symbol>
+  <symbol id="styleguide-icon-settings" viewBox="0 0 512 512">
+    <path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
+  </symbol>
+  <symbol id="styleguide-icon-bootstrap" viewBox="0 0 256 256"><path d="M0 222.991C0 241.223 14.779 256 33.009 256H222.99C241.223 256 256 241.221 256 222.991V33.01C256 14.777 241.221 0 222.991 0H33.01C14.777 0 0 14.779 0 33.009V222.99z" fill="#563D7C"/><path d="M106.158 113.238V76.985h31.911c3.04 0 5.97.253 8.792.76 2.822.506 5.319 1.41 7.49 2.713 2.17 1.303 3.907 3.112 5.21 5.427 1.302 2.316 1.954 5.283 1.954 8.9 0 6.513-1.954 11.217-5.862 14.111-3.907 2.895-8.9 4.342-14.979 4.342h-34.516zM72.075 50.5v155h75.112c6.947 0 13.713-.868 20.298-2.605 6.585-1.737 12.446-4.414 17.584-8.032 5.137-3.618 9.226-8.286 12.265-14.002 3.04-5.717 4.559-12.483 4.559-20.298 0-9.697-2.352-17.982-7.055-24.856-4.704-6.875-11.832-11.687-21.384-14.437 6.947-3.328 12.194-7.598 15.74-12.808 3.545-5.21 5.318-11.722 5.318-19.538 0-7.236-1.194-13.314-3.582-18.235-2.388-4.92-5.753-8.864-10.095-11.831-4.341-2.967-9.551-5.102-15.63-6.404-6.078-1.303-12.808-1.954-20.189-1.954H72.075zm34.083 128.515v-42.549h37.121c7.381 0 13.315 1.7 17.802 5.102 4.486 3.401 6.73 9.081 6.73 17.041 0 4.053-.688 7.381-2.063 9.986-1.375 2.605-3.22 4.668-5.536 6.187-2.315 1.52-4.993 2.605-8.032 3.257-3.04.65-6.223.976-9.552.976h-36.47z" fill="#FFF"/></symbol>
+</svg>
+<!-- /fabricator icons -->
+
+      <!-- fabricator menu -->
+<div class="styleguide-menu">
+
+  <div class="styleguide-controls">
+  <div class="styleguide-control styleguide-global-control" data-styleguide-toggle-control="labels" title="Toggle Labels">
+    <svg>
+      <use xlink:href="#styleguide-icon-labels" />
+    </svg>
+  </div>
+  <div class="styleguide-control styleguide-global-control" data-styleguide-toggle-control="notes" title="Toggle Notes">
+    <svg>
+      <use xlink:href="#styleguide-icon-notes" />
+    </svg>
+  </div>
+  <div class="styleguide-control styleguide-global-control" data-styleguide-toggle-control="code" title="Toggle Code">
+    <svg>
+      <use xlink:href="#styleguide-icon-code" />
+    </svg>
+  </div>
+</div>
+
+
+  <ul>
+
+    <li>
+      <a href="https://styleguide.retraitespopulaires.ch/index.html" class="styleguide-menu-heading">Styleguide</a>
+    </li>
+
+    <li>
+      <span class="styleguide-menu-heading">Documentation</span>
+      <ul>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/helpers/">Helpers</a>
+        </li>
+        
+      </ul>
+    </li>
+
+    <li>
+      <span class="styleguide-menu-heading">Examples</span>
+      <ul>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/alerts/">Alerts</a>
+        </li>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/buttons/">Buttons</a>
+        </li>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/inputs/">Inputs</a>
+        </li>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/links/">Links</a>
+        </li>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/navigations/">Navigations</a>
+        </li>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/tables/">Tables</a>
+        </li>
+        
+      </ul>
+    </li>
+   <li>
+    <a href="https://styleguide.retraitespopulaires.ch/atoms/" class="styleguide-menu-heading">Atoms</a>
+    <ul>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#alert">Alert</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#block-link">Block Link</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#blockquote">Blockquote</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#button">Button</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#button-bubble">Button Bubble</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#funky-waves">Funky Waves</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#hamburger">Hamburger</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#highlight">Highlight</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#icon-text">Icon Text</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-checkbox">Input Checkbox</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-datepicker">Input Datepicker</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-file">Input File</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-group">Input Group</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-radio">Input Radio</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-radio-btn">Input Radio Button</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-select">Input Select</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-text">Input Text</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-textarea">Input Textarea</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#label">Label</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#list">List</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#loader">Loader</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#managed-by-link">Managed-by Link</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#meta-box">Meta Box</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#organic-lines">Organic Lines</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#pagination">Pagination</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#search-box">Search Box</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#slider">Slider</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#socials">Socials</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#spacer">Spacer</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#throbber">Throbber</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#tooltip">Tooltip</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#well">Well</a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <a href="https://styleguide.retraitespopulaires.ch/molecules/" class="styleguide-menu-heading">Molecules</a>
+    <ul>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#actions-bar">Actions Bar</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#breadcrumb">Breadcrumb</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#card">Card</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#card-result">Card Result</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#collapse">Collapse</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#collapser-menu">Collapser Menu</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#document-card">Document card</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#document-filters">Document filters</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#dropdown">Dropdown</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#fieldset">Fieldset</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#immo-results">Immo Results</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#input-slider">Input Slider</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#media">Media</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#menu">Menu</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#navbar">Navbar</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#popin">Popin</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#prenavbar">Prenavbar</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#progresschart">Progresschart</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#push-menu">Push Menu</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#menu-secondary-nav">Secondary Nav</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#secondary-nav">Secondary Nav</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#selectize">Selectize</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#table">Table</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#tabs">Tabs</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#teaser-gallery">Teaser Gallery</a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <a href="https://styleguide.retraitespopulaires.ch/organisms/" class="styleguide-menu-heading">Organisms</a>
+    <ul>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/organisms/#footer">Footer</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/organisms/#gallery">Gallery</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/organisms/#header">Header</a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <span class="styleguide-menu-heading">Pages</span>
+    <ul>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/basic-page/">Basic Page</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/basic-page-header-alt/">Basic Page (Header Alt)</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/basic-page-hero/">Basic Page (hero)</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/documents-utiles-page/">Documents utiles page</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/mail/">Mail</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/mail-light/">Mail light</a>
+      </li>
+      
+    </ul>
+  </li>
+
+</ul>
+
+
+</div>
+<!-- /fabricator menu -->
+
+      <div class="styleguide-container">
+        <div class="styleguide-header-container">
+          <div class="styleguide-control-bar">
+  <div class="styleguide-control styleguide-menu-toggle">
+    <svg>
+      <use xlink:href="#styleguide-icon-menu" />
+    </svg>
+  </div>
+</div>
+
+          <h1>Retraites Populaires</h1>
+        </div>
+    
+
+
+    
+  
+  <h2 id="styleguide-span-class-label-label-primary-version-3-x-span-">Styleguide - <span class="label label-primary">VERSION 3.X</span></h2>
+<p>Cette nouvelle version du styleguide apporte différentes améliorations au niveau du code (maintenabilité et clarté). Les exemples de pages ne sont plus inclus dans le styleguide et sont fournis sur demande via Codepen.</p>
+<div class="moodboard">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Couleurs principales</h2>
+      <div class="spacer spacer-xs"></div>
+      <div class="f-color-chips">
+        <div class="f-color-chip" style="border-top-color: #008e4f; border-bottom-color: #008e4f;">
+          <h5 class="">$green</h5>
+          <h5 class="">#008e4f</h5>
+          <code>.brand-primary</code>
+        </div>
+        <div class="f-color-chip" style="border-top-color: #747476; border-bottom-color: #747476;">
+          <h5 class="">$grey</h5>
+          <h5 class="">#747476</h5>
+          <code>.text-muted</code>
+        </div>
+        <div class="f-color-chip" style="border-top-color: #eee; border-bottom-color: #eee;">
+          <h5 class="">$light-grey</h5>
+          <h5 class="">#eee</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Couleurs des instituions et annexes</h2>
+      <div class="spacer spacer-xs"></div>
+      <div class="f-color-chips">
+        <div class="f-color-chip" style="border-top-color: #009966; border-bottom-color: #009966;">
+          <h5 class="">$deep-green</h5>
+          <h5 class="">#009966</h5>
+          <code>.x-profelia</code>
+        </div>
+        <div class="f-color-chip" style="border-top-color: #00a261; border-bottom-color: #00a261;">
+          <h5 class="">$light-green</h5>
+          <h5 class="">#00a261</h5>
+          <code>.x-cpev</code>
+        </div>
+        <div class="f-color-chip" style="border-top-color: #00a3e3; border-bottom-color: #00a3e3;">
+          <h5 class="">$light-blue</h5>
+          <h5 class="">#00a3e3</h5>
+          <code>.x-cip</code>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Typographie</h2>
+      <div class="spacer spacer-xs"></div>
+      <!-- Heading 1  -->
+      <h1>H1 - Cocon Pro Light - Le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle</h1>
+      <!-- Heading 2  -->
+      <h2>H2 - Cocon Pro Light - Notre raison sociale, notre identité</h2>
+      <!-- Heading 3  -->
+      <h3>H3 - Frutiger Neue Bold - Plus de cent ans au service des Vaudoises et des Vaudois</h3>
+      <!-- Heading 4  -->
+      <h4>H4 - Frutiger Neue Bold - Partenaire de vos projets</h4>
+      <!-- Heading 5  -->
+      <h5>H5 - Frutiger Neue Bold - Les mêmes conditions pour tous les clients</h5>
+      <!-- Heading 6  -->
+      <h6>H6 - Frutiger Neue Bold - Labels obtenus par Retraites Populaires</h6>
+      <!-- Paragraphe  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Paragraphe</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <p>Fondée il y a plus de <b>100 ans</b>, <a href="http://retraites-populaires.ch">Retraites Populaires</a> cultive des valeurs humaines fortes et un esprit de mutualité. <br/> Notre mission: être le spécialiste vaudois de l’assurance vie et de la prévoyance professionnelle. Notre détermination: demeurer toujours ce partenaire proche sur lequel vous pouvez compter. Active également dans l’immobilier, l&#39;hypothèque et crédit et la gestion d&#39;institutions de prévoyance, Retraites Populaires met au service des personnes, des entreprises et des institutions une plateforme de compétences et tout son savoir-faire.</p>
+          <p><a href="http://retraites-populaires.ch">Retraites Populaires</a> est proche de ses clients. Avec son siège de <i>Lausanne</i> et ses deux agences à <i>Yverdon-les-Bains</i> et <i>Nyon</i>, elle offre des <b>prestations simples</b> et <b>de qualité</b> pour chacune des étapes de la vie.</p>
+        </div>
+      </div>
+      <!-- Quote  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Citation</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <blockquote>Retraites Populaires est fiable. Fondée il y a plus de 100 ans, elle est une partenaire de confiance sur laquelle la population et les entreprises peuvent compter en toute sécurité, en tant qu’institution de droit public avec des prestations garanties.</blockquote>
+        </div>
+      </div>
+      <!-- Highlight  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Surligner</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <p>Retraites Populaires est <mark>responsable</mark>. Au coeur de sa raison d’être se trouve le <mark>respect des engagements</mark>.</p>
+        </div>
+      </div>
+      <!-- Unordered List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste non ordonnée</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ul class="unordered-list">
+            <li>Maintien de votre 2e pilier</li>
+            <li>Possibilité de financer une couverture décès et invalidité</li>
+            <ul class="unordered-list">
+              <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ul>
+            <li>Flexibilité du produit: prestations et financement en fonction de votre situation</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Ordered List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste ordonnée</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ol class="ordered-list">
+            <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
+            <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
+            <ol class="ordered-list">
+              <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ol>
+            <li>Consolidation partielle possible pendant construction (tranche min. CHF 100&#39;000)</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Treeview List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste en arbre</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ul class="treeview-list">
+            <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
+            <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
+            <ul class="treeview-list">
+              <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ul>
+            <li>Consolidation partielle possible pendant construction (tranche min. CHF 100&#39;000)</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Facets List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste en facettes</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ul class="facets-list">
+            <li>Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
+            <li>Calcul des intérêts uniquement sur les fonds utilisés</li>
+            <ul class="facets-list">
+              <li>Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ul>
+            <li>Consolidation partielle possible pendant construction (tranche min. CHF 100&#39;000)</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Filters List  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Liste en facettes</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <ul class="filters-list">
+            <li><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checkbox"></i> Transmission gratuite des avis de crédit et de débit relatifs à chaque mouvement</li>
+            <li class="active"><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checkbox-checked"></i> Calcul des intérêts uniquement sur les fonds utilisés</li>
+            <ul class="filters-list">
+              <li><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checkbox"></i> Integer gravida velit sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget finibus magna. Mauris scelerisque ullamcorper mi eget laoreet. Morbi eget nisl dui. Quisque varius.</li>
+            </ul>
+            <li><i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checkbox"></i> Consolidation partielle possible pendant construction (tranche min. CHF 100&#39;000)</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Table  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Tableau</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <table>
+           <thead>
+            <tr>
+               <th>Option 1</th>
+               <th>Option 2</th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+               <td>Toucher pendant 7 ans une rente mensuelle de CHF 300</td>
+               <td>Toucher un capital de CHF 24/480</td>
+            </tr>
+           </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Number  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Nombres</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <div class="">1&#39;000.10</div>
+        </div>
+      </div>
+      <!-- SuperScript & SubScript  -->
+      <div class="row">
+        <div class="col-md-2">
+          <b>Exposant et Indice</b>
+          <div class="text-muted">Frutiger Neue Regular</div>
+          <div class="spacer spacer-sm"></div>
+        </div>
+        <div class="col-md-10">
+          <div class="">D&#39;une surface de 150m<sup>3</sup>.</div>
+          <div class="">Nouvelle mollecule découverte: Hlop<sub>22</sub>, révolution scientifique en vue.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Iconographie</h2>
+      <div class="spacer spacer-xs"></div>
+      <div class="icons">
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-collectivites"></i>
+            <div class="text-muted">.retraitespopulaires-icon-collectivites</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-entreprises"></i>
+            <div class="text-muted">.retraitespopulaires-icon-entreprises</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-particuliers"></i>
+            <div class="text-muted">.retraitespopulaires-icon-particuliers</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-document-file"></i>
+            <div class="text-muted">.retraitespopulaires-icon-document-file</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-document-group"></i>
+            <div class="text-muted">.retraitespopulaires-icon-document-group</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-instagram"></i>
+            <div class="text-muted">.retraitespopulaires-icon-instagram</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-twitter"></i>
+            <div class="text-muted">.retraitespopulaires-icon-twitter</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-linkedin"></i>
+            <div class="text-muted">.retraitespopulaires-icon-linkedin</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-youtube"></i>
+            <div class="text-muted">.retraitespopulaires-icon-youtube</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-facebook"></i>
+            <div class="text-muted">.retraitespopulaires-icon-facebook</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-angle"></i>
+            <div class="text-muted">.retraitespopulaires-icon-angle</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-search"></i>
+            <div class="text-muted">.retraitespopulaires-icon-search</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-location-pin"></i>
+            <div class="text-muted">.retraitespopulaires-icon-location-pin</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-mail"></i>
+            <div class="text-muted">.retraitespopulaires-icon-mail</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-phone"></i>
+            <div class="text-muted">.retraitespopulaires-icon-phone</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-up"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-up</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-up-right"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-up-right</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-right"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-right</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-down-right"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-down-right</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-down"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-down</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-down-left"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-down-left</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-left</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-up-left"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-up-left</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-thin"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-thin</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-lock"></i>
+            <div class="text-muted">.retraitespopulaires-icon-lock</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-calendar"></i>
+            <div class="text-muted">.retraitespopulaires-icon-calendar</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-faq-thick"></i>
+            <div class="text-muted">.retraitespopulaires-icon-faq-thick</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-documents-thick"></i>
+            <div class="text-muted">.retraitespopulaires-icon-documents-thick</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-placeholder"></i>
+            <div class="text-muted">.retraitespopulaires-icon-placeholder</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-contact-us"></i>
+            <div class="text-muted">.retraitespopulaires-icon-contact-us</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-contact-us-borderless"></i>
+            <div class="text-muted">.retraitespopulaires-icon-contact-us-borderless</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-checked"></i>
+            <div class="text-muted">.retraitespopulaires-icon-checked</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-unchecked"></i>
+            <div class="text-muted">.retraitespopulaires-icon-unchecked</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-external-link"></i>
+            <div class="text-muted">.retraitespopulaires-icon-external-link</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-calculator"></i>
+            <div class="text-muted">.retraitespopulaires-icon-calculator</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-chevron"></i>
+            <div class="text-muted">.retraitespopulaires-icon-chevron</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-edit"></i>
+            <div class="text-muted">.retraitespopulaires-icon-edit</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-frontdesk"></i>
+            <div class="text-muted">.retraitespopulaires-icon-frontdesk</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-information"></i>
+            <div class="text-muted">.retraitespopulaires-icon-information</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x 
+            retraitespopulaires-icon-arrow-last-thin"></i>
+            <div class="text-muted">.retraitespopulaires-icon-arrow-last-thin</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+
+    
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          </button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          </button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+      </div>
+    
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js" crossorigin="anonymous"></script>
+    <script src="https://styleguide.retraitespopulaires.ch/build/js/selectize.min.js"></script>
+    <script src="https://styleguide.retraitespopulaires.ch/build/js/vendors.min.js"></script>
+    <script src="https://styleguide.retraitespopulaires.ch/build/js/bundle.js"></script>
+
+    
+      <script>
+        (function($){
+          $(document).ready(function(){
+            $('.styleguide-item-code code').each(function(){
+              $(this).html($(this).html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'));
+            });
+
+            // Toggle theme
+            $('.styleguide-toggle-theme').on('click', function() {
+              $('.styleguide-item-preview, .styleguide-toggle-container').toggleClass('theme-cip');
+            });
+          });
+        }(jQuery));
+      </script>
+      <script src="https://styleguide.retraitespopulaires.ch/build/js/styleguide.min.js"></script>
+    
+
+    
+  </body>
+</html>

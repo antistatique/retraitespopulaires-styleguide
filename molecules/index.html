@@ -1,0 +1,4688 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    
+      <link rel="stylesheet" href="https://styleguide.retraitespopulaires.ch/build/css/styleguide.css">
+    
+
+    <link rel="stylesheet" href="https://styleguide.retraitespopulaires.ch/build/css/vendors.min.css">
+    <link rel="stylesheet" href="https://styleguide.retraitespopulaires.ch/build/css/main.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://styleguide.retraitespopulaires.ch/build/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://styleguide.retraitespopulaires.ch/build/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://styleguide.retraitespopulaires.ch/build/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://styleguide.retraitespopulaires.ch/build/favicons/manifest.json">
+    <link rel="mask-icon" href="https://styleguide.retraitespopulaires.ch/build/favicons/safari-pinned-tab.svg" color="#008e4f">
+    <meta name="theme-color" content="#008e4f">
+
+    <!--[if lt IE 9]>
+      <script src="https://styleguide.retraitespopulaires.ch/build/js/polyfills.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+      <div class="styleguide-toggle-container">
+        <div class="styleguide-toggle-theme-hide">
+          <button class="styleguide-toggle-theme btn btn-primary btn-sm" title="Toggle theme"><span class="fa fa-paint-brush"></span></button>
+        </div>
+      </div>
+
+      <!-- fabricator icons -->
+<svg style="display: none;">
+  <symbol id="styleguide-icon-code" viewBox="0 0 512 512">
+    <path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
+  </symbol>
+  <symbol id="styleguide-icon-notes" viewBox="0 0 512 512">
+    <path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
+  </symbol>
+  <symbol id="styleguide-icon-labels" viewBox="0 0 512 512">
+    <path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
+  </symbol>
+  <symbol id="styleguide-icon-menu" viewBox="0 0 512 512">
+    <path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
+  </symbol>
+  <symbol id="styleguide-icon-settings" viewBox="0 0 512 512">
+    <path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
+  </symbol>
+  <symbol id="styleguide-icon-bootstrap" viewBox="0 0 256 256"><path d="M0 222.991C0 241.223 14.779 256 33.009 256H222.99C241.223 256 256 241.221 256 222.991V33.01C256 14.777 241.221 0 222.991 0H33.01C14.777 0 0 14.779 0 33.009V222.99z" fill="#563D7C"/><path d="M106.158 113.238V76.985h31.911c3.04 0 5.97.253 8.792.76 2.822.506 5.319 1.41 7.49 2.713 2.17 1.303 3.907 3.112 5.21 5.427 1.302 2.316 1.954 5.283 1.954 8.9 0 6.513-1.954 11.217-5.862 14.111-3.907 2.895-8.9 4.342-14.979 4.342h-34.516zM72.075 50.5v155h75.112c6.947 0 13.713-.868 20.298-2.605 6.585-1.737 12.446-4.414 17.584-8.032 5.137-3.618 9.226-8.286 12.265-14.002 3.04-5.717 4.559-12.483 4.559-20.298 0-9.697-2.352-17.982-7.055-24.856-4.704-6.875-11.832-11.687-21.384-14.437 6.947-3.328 12.194-7.598 15.74-12.808 3.545-5.21 5.318-11.722 5.318-19.538 0-7.236-1.194-13.314-3.582-18.235-2.388-4.92-5.753-8.864-10.095-11.831-4.341-2.967-9.551-5.102-15.63-6.404-6.078-1.303-12.808-1.954-20.189-1.954H72.075zm34.083 128.515v-42.549h37.121c7.381 0 13.315 1.7 17.802 5.102 4.486 3.401 6.73 9.081 6.73 17.041 0 4.053-.688 7.381-2.063 9.986-1.375 2.605-3.22 4.668-5.536 6.187-2.315 1.52-4.993 2.605-8.032 3.257-3.04.65-6.223.976-9.552.976h-36.47z" fill="#FFF"/></symbol>
+</svg>
+<!-- /fabricator icons -->
+
+      <!-- fabricator menu -->
+<div class="styleguide-menu">
+
+  <div class="styleguide-controls">
+  <div class="styleguide-control styleguide-global-control" data-styleguide-toggle-control="labels" title="Toggle Labels">
+    <svg>
+      <use xlink:href="#styleguide-icon-labels" />
+    </svg>
+  </div>
+  <div class="styleguide-control styleguide-global-control" data-styleguide-toggle-control="notes" title="Toggle Notes">
+    <svg>
+      <use xlink:href="#styleguide-icon-notes" />
+    </svg>
+  </div>
+  <div class="styleguide-control styleguide-global-control" data-styleguide-toggle-control="code" title="Toggle Code">
+    <svg>
+      <use xlink:href="#styleguide-icon-code" />
+    </svg>
+  </div>
+</div>
+
+
+  <ul>
+
+    <li>
+      <a href="https://styleguide.retraitespopulaires.ch/index.html" class="styleguide-menu-heading">Styleguide</a>
+    </li>
+
+    <li>
+      <span class="styleguide-menu-heading">Documentation</span>
+      <ul>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/helpers/">Helpers</a>
+        </li>
+        
+      </ul>
+    </li>
+
+    <li>
+      <span class="styleguide-menu-heading">Examples</span>
+      <ul>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/alerts/">Alerts</a>
+        </li>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/buttons/">Buttons</a>
+        </li>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/inputs/">Inputs</a>
+        </li>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/links/">Links</a>
+        </li>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/navigations/">Navigations</a>
+        </li>
+        
+        <li>
+          <a href="https://styleguide.retraitespopulaires.ch/tables/">Tables</a>
+        </li>
+        
+      </ul>
+    </li>
+   <li>
+    <a href="https://styleguide.retraitespopulaires.ch/atoms/" class="styleguide-menu-heading">Atoms</a>
+    <ul>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#alert">Alert</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#block-link">Block Link</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#blockquote">Blockquote</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#button">Button</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#button-bubble">Button Bubble</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#funky-waves">Funky Waves</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#hamburger">Hamburger</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#highlight">Highlight</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#icon-text">Icon Text</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-checkbox">Input Checkbox</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-datepicker">Input Datepicker</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-file">Input File</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-group">Input Group</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-radio">Input Radio</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-radio-btn">Input Radio Button</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-select">Input Select</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-text">Input Text</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#input-textarea">Input Textarea</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#label">Label</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#list">List</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#loader">Loader</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#managed-by-link">Managed-by Link</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#meta-box">Meta Box</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#organic-lines">Organic Lines</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#pagination">Pagination</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#search-box">Search Box</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#slider">Slider</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#socials">Socials</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#spacer">Spacer</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#throbber">Throbber</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#tooltip">Tooltip</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/atoms/#well">Well</a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <a href="https://styleguide.retraitespopulaires.ch/molecules/" class="styleguide-menu-heading">Molecules</a>
+    <ul>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#actions-bar">Actions Bar</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#breadcrumb">Breadcrumb</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#card">Card</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#card-result">Card Result</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#collapse">Collapse</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#collapser-menu">Collapser Menu</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#document-card">Document card</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#document-filters">Document filters</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#dropdown">Dropdown</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#fieldset">Fieldset</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#immo-results">Immo Results</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#input-slider">Input Slider</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#media">Media</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#menu">Menu</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#navbar">Navbar</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#popin">Popin</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#prenavbar">Prenavbar</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#progresschart">Progresschart</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#push-menu">Push Menu</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#menu-secondary-nav">Secondary Nav</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#secondary-nav">Secondary Nav</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#selectize">Selectize</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#table">Table</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#tabs">Tabs</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/molecules/#teaser-gallery">Teaser Gallery</a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <a href="https://styleguide.retraitespopulaires.ch/organisms/" class="styleguide-menu-heading">Organisms</a>
+    <ul>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/organisms/#footer">Footer</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/organisms/#gallery">Gallery</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/organisms/#header">Header</a>
+      </li>
+      
+    </ul>
+  </li>
+
+  <li>
+    <span class="styleguide-menu-heading">Pages</span>
+    <ul>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/basic-page/">Basic Page</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/basic-page-header-alt/">Basic Page (Header Alt)</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/basic-page-hero/">Basic Page (hero)</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/documents-utiles-page/">Documents utiles page</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/mail/">Mail</a>
+      </li>
+      
+      <li>
+        <a href="https://styleguide.retraitespopulaires.ch/mail-light/">Mail light</a>
+      </li>
+      
+    </ul>
+  </li>
+
+</ul>
+
+
+</div>
+<!-- /fabricator menu -->
+
+      <div class="styleguide-container">
+        <div class="styleguide-header-container">
+          <div class="styleguide-control-bar">
+  <div class="styleguide-control styleguide-menu-toggle">
+    <svg>
+      <use xlink:href="#styleguide-icon-menu" />
+    </svg>
+  </div>
+</div>
+
+          <h1>Molecules</h1>
+        </div>
+    
+
+
+    
+  <div class="styleguide-item-group" id="molecules">
+
+  
+    <div class="lead"><p>Les Molécules sont des groupes d&#39;atomes</p>
+</div>
+    
+      
+<div class="styleguide-item-group" id="actions-bar">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#actions-bar">Actions Bar</a></h3>
+    
+  <div class="styleguide-item-controls">
+    
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+
+</div>
+
+
+
+
+  
+<div id="element-actions-bar" class="styleguide-item-preview">
+  
+    <div class="actions-bar">
+  <h2 class="h4 actions-bar-title">1 rubrique, 13 éléments</h2>
+  <div class="actions">
+    <a href="#" class="btn btn-primary btn-xs">Ajouter un document</a>
+    <a href="#" class="btn btn-primary btn-xs">Ajouter une sous-rubrique</a>
+    <a href="#" class="btn btn-outline btn-xs">Modifier</a>
+  </div>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="actions-bar">
+  <h2 class="h4 actions-bar-title">1 rubrique, 13 éléments</h2>
+  <div class="actions">
+    <a href="#" class="btn btn-primary btn-xs">Ajouter un document</a>
+    <a href="#" class="btn btn-primary btn-xs">Ajouter une sous-rubrique</a>
+    <a href="#" class="btn btn-outline btn-xs">Modifier</a>
+  </div>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="breadcrumb">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#breadcrumb">Breadcrumb</a></h3>
+    
+  <div class="styleguide-item-controls">
+    
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+
+</div>
+
+
+  
+    
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#breadcrumb-default" role="tab">Default</a>
+    </li>
+  
+    
+      <li>
+        <a data-toggle="tab" href="#dropdown" role="tab">With Dropdown</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="breadcrumb-default">
+      
+<div id="element-breadcrumb" class="styleguide-item-preview">
+  
+    <nav role="breadcrumb" aria-label="Vous êtes ici:">
+  <h2 class="hidden" aria-level="3">Vous êtes ici:</h2>
+  <ul class="breadcrumb">
+    <li><a href="#">Accueil</a></li>
+    <li><a class="pretty-link" href="#">Emploi</a></li>
+    <li class="active"><span class="sr-only">Page active:</span>Connexion</li>
+  </ul>
+</nav>
+
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><nav role="breadcrumb" aria-label="Vous êtes ici:">
+  <h2 class="hidden" aria-level="3">Vous êtes ici:</h2>
+  <ul class="breadcrumb">
+    <li><a href="#">Accueil</a></li>
+    <li><a class="pretty-link" href="#">Emploi</a></li>
+    <li class="active"><span class="sr-only">Page active:</span>Connexion</li>
+  </ul>
+</nav>
+</code></pre>
+</div>
+
+    </div>
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="dropdown">
+          
+<div id="element-breadcrumbdropdown" class="styleguide-item-preview">
+  
+    <nav role="breadcrumb" aria-label="Vous êtes ici:">
+  <h2 class="hidden" aria-level="3">Vous êtes ici:</h2>
+  <ul class="breadcrumb">
+    <li><a href="#">Accueil</a></li>
+    <li>
+      <div class="btn-group">
+        <button type="button" class="btn btn-outline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Retraites Populaires <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">CIP</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="active">PV</li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><nav role="breadcrumb" aria-label="Vous êtes ici:">
+  <h2 class="hidden" aria-level="3">Vous êtes ici:</h2>
+  <ul class="breadcrumb">
+    <li><a href="#">Accueil</a></li>
+    <li>
+      <div class="btn-group">
+        <button type="button" class="btn btn-outline dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Retraites Populaires <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">CIP</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="active">PV</li>
+    
+  </ul>
+</nav>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+  </div>
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="card">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#card">Card</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <ul>
+<li><code>card</code> (<code>card-light</code>, <code>card-horizontal</code>): modifiers to have a light border or horizontal layout</li>
+<li><code>card-img-top</code> &gt; <code>card-img-bg</code>/<code>card-img</code> (<code>card-img-top-center</code> to center small image), fallback to loader (if broken) or icon</li>
+<li><code>card-subhead</code>: creates a simple subtitle with gray color</li>
+<li><code>card-title</code>: can be whatever size ou want, with classes or semantically</li>
+<li><code>card-body</code> (<code>card-justify</code>): can hold rows and cols, all the content</li>
+<li><code>card-footer</code> (<code>card-justify</code>): add modifiers to change color, or justify (flex) content</li>
+<li><code>card-white</code> or <code>card-berrylight-gray</code> to set background colors</li>
+<li><code>card-sm</code> to have a small card of maximum 150px width</li>
+<li><code>card-no-border</code> to remove borders</li>
+<li><code>card-no-shadow</code> to remove shadow</li>
+<li><code>card-separator</code> to a <code>&lt;hr&gt;</code> to add a separator</li>
+<li><code>card-hover</code> to shadow hover effects on a <code>div.card</code></li>
+<li><code>card-bg-hover</code> to background hover effects on a <code>div.card</code></li>
+</ul>
+
+    </div>
+  
+
+</div>
+
+
+  
+    
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#card-default" role="tab">Standard Card</a>
+    </li>
+  
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#img-bg" role="tab">Image as Background</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#card-icon" role="tab">Icon</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#card-light" role="tab">Card Light</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#card-justify" role="tab">Card Justify</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#card-horizontal" role="tab">Card Horizontal</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#card-logo" role="tab">Card Logo</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#card-cta" role="tab">Call-to-Action</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="card-default">
+      
+<div id="element-card" class="styleguide-item-preview">
+  
+    <div class="col-sm-6">
+      <a href="#" class="card card-white">
+  
+    <div class="card-img-top ">
+      <img class="card-img" src="https://unsplash.it/780/380?image=1005" alt="card image">
+      <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div>
+</div>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+  </a>
+  
+    </div>
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><a href="#" class="card card-white">
+  
+    <div class="card-img-top ">
+      <img class="card-img" src="https://unsplash.it/780/380?image=1005" alt="card image">
+      <div class="loader-image"><div class="loader"><div class="loader-snake"></div></div>
+</div>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+  </a>
+  </code></pre>
+</div>
+
+    </div>
+    
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="img-bg">
+          
+<div id="element-cardimg-bg" class="styleguide-item-preview">
+  
+    <div class="col-sm-6">
+      <a href="#" class="card card-white">
+  
+    <div class="card-img-top ">
+      <div class="card-img-bg" style="background-image: url('https://unsplash.it/512/512?image=1005');"></div>
+      <div class="loader-image"><div class="loader"><div class="img-bg"></div></div>
+</div>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+  </a>
+  
+    </div>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><a href="#" class="card card-white">
+  
+    <div class="card-img-top ">
+      <div class="card-img-bg" style="background-image: url('https://unsplash.it/512/512?image=1005');"></div>
+      <div class="loader-image"><div class="loader"><div class="img-bg"></div></div>
+</div>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+  </a>
+  </code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="card-icon">
+          
+<div id="element-cardcard-icon" class="styleguide-item-preview">
+  
+    <div class="col-sm-6">
+      <a href="#" class="card card-white">
+  
+    <div class="card-img-top">
+      <span class="retraitespopulaires-icon retraitespopulaires-icon-5x retraitespopulaires-icon-contact-us-borderless" aria-hidden="true"></span>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+  </a>
+  
+    </div>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><a href="#" class="card card-white">
+  
+    <div class="card-img-top">
+      <span class="retraitespopulaires-icon retraitespopulaires-icon-5x retraitespopulaires-icon-contact-us-borderless" aria-hidden="true"></span>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+  </a>
+  </code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="card-light">
+          
+<div id="element-cardcard-light" class="styleguide-item-preview">
+  
+    <div class="col-sm-6">
+      <div class="card card-white card-light">
+  <div class="card-body">
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+    <div class="card-footer card-berrylight-gray">
+      Footer here
+    </div>
+    
+  </div>
+  
+    </div>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="card card-white card-light">
+  <div class="card-body">
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+    <div class="card-footer card-berrylight-gray">
+      Footer here
+    </div>
+    
+  </div>
+  </code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="card-justify">
+          
+<div id="element-cardcard-justify" class="styleguide-item-preview">
+  
+    <div class="col-sm-6">
+      <a href="#" class="card card-white">
+  
+    <div class="card-img-top ">
+      <img class="card-img" src="https://unsplash.it/780/380?image=1005" alt="card image">
+      <div class="loader-image"><div class="loader"><div class="card-justify"></div></div>
+</div>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+    <div class="card-footer card-justify">
+      <span>Décembre 2015</span>
+      <span>Bella Vita</span>
+    </div>
+    
+  </a>
+  
+    </div>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><a href="#" class="card card-white">
+  
+    <div class="card-img-top ">
+      <img class="card-img" src="https://unsplash.it/780/380?image=1005" alt="card image">
+      <div class="loader-image"><div class="loader"><div class="card-justify"></div></div>
+</div>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+    <div class="card-footer card-justify">
+      <span>Décembre 2015</span>
+      <span>Bella Vita</span>
+    </div>
+    
+  </a>
+  </code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="card-horizontal">
+          
+<div id="element-cardcard-horizontal" class="styleguide-item-preview">
+  
+    <div class="col-sm-6">
+      <div class="card card-white card-horizontal">
+  
+    <div class="card-img-top ">
+      <div class="card-img-bg" style="background-image: url('https://unsplash.it/512/512?image=1005');"></div>
+      <div class="loader-image"><div class="loader"><div class="card-horizontal"></div></div>
+</div>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+  </div>
+  
+    </div>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="card card-white card-horizontal">
+  
+    <div class="card-img-top ">
+      <div class="card-img-bg" style="background-image: url('https://unsplash.it/512/512?image=1005');"></div>
+      <div class="loader-image"><div class="loader"><div class="card-horizontal"></div></div>
+</div>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+  </div>
+  </code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="card-logo">
+          
+<div id="element-cardcard-logo" class="styleguide-item-preview">
+  
+    <div class="col-sm-6">
+      <a href="#" class="card card-white">
+  
+    <div class="card-img-top card-img-top-center card-berrylight-gray">
+      
+      <img class="card-img" src="https://3.bp.blogspot.com/-AJNG3A2-QIw/VjTFNFpJjsI/AAAAAAAAACQ/3lkytAva6oY/s600-c/NoImage.png" alt="card logo">
+      <div class="loader-image"><div class="loader"><div class="card-logo"></div></div>
+</div>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+  </a>
+  
+    </div>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><a href="#" class="card card-white">
+  
+    <div class="card-img-top card-img-top-center card-berrylight-gray">
+      
+      <img class="card-img" src="https://3.bp.blogspot.com/-AJNG3A2-QIw/VjTFNFpJjsI/AAAAAAAAACQ/3lkytAva6oY/s600-c/NoImage.png" alt="card logo">
+      <div class="loader-image"><div class="loader"><div class="card-logo"></div></div>
+</div>
+    </div>
+    <div class="card-body">
+      <p class="card-subhead">Subheading</p>
+      <h3 class="card-title h1">Lorem Ipsum Dolor Sit Amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde debitis, consequuntur dolor neque eveniet velit.</p>
+    </div>
+  </a>
+  </code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="card-cta">
+          
+<div id="element-cardcard-cta" class="styleguide-item-preview">
+  
+    <div class="col-sm-6">
+      <div class="pull-right">
+  <a href="#" class="card card-white card-md">
+    <div class="card-cta">
+      <div class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-contact-us-borderless text-primary" aria-hidden="true"></div>
+    </div>
+    <div class="card-body text-secondary">
+      <div class="btn btn-primary">Nous contacter</div>
+    </div>
+  </a>
+</div>
+
+    </div>
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="pull-right">
+  <a href="#" class="card card-white card-md">
+    <div class="card-cta">
+      <div class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-contact-us-borderless text-primary" aria-hidden="true"></div>
+    </div>
+    <div class="card-body text-secondary">
+      <div class="btn btn-primary">Nous contacter</div>
+    </div>
+  </a>
+</div>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+  </div>
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="card-result">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#card-result">Card Result</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>This is an implementation of the card component.</p>
+
+    </div>
+  
+
+</div>
+
+
+  
+    
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#card-result-default" role="tab">Default</a>
+    </li>
+  
+    
+      <li>
+        <a data-toggle="tab" href="#file" role="tab">File Result</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="card-result-default">
+      
+<div id="element-card-result" class="styleguide-item-preview">
+  
+    <div class="card card-light card-hover card-no-shadow">
+  <div class="card-body">
+    <div class="card-justify">
+      <h3 class="card-title">
+        <a href="#0">Titre du document de presse ou d'information</a>
+      </h3>
+      <div class="card-actions">
+        <a href="#0" class="btn btn-sm btn-outline text-uppercase btn-normal">Détails</a>
+        <a href="#0" class="btn btn-sm btn-primary text-uppercase btn-normal">Télécharger</a>
+      </div>
+    </div>
+    <hr class="card-separator">
+    <p class="text-muted">
+      <strong>Assurance vie</strong>
+      <span class="text-square-bullet">Le 24 avril 2017, par Lorraine Clément</span>
+    </p>
+    <h4 class="title-mini">Extrait</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <mark>Impedit</mark> ipsa, temporibus necessitatibus ipsum dignissimos quas accusamus quos in tenetur aut autem aliquid doloribus veniam fugit ea vel. Deleniti ipsam, cum tempore ratione asperiores consequuntur, adipisci vitae minus aut porro nulla, delectus, provident obcaecati ad modi dolores ducimus et repellat reiciendis.</p>
+    <h4 class="title-mini">Thèmes</h4>
+    <ul class="unordered-list list-inline"><li><a href="" class="pretty-link">Économie</a></li><li><a href="" class="pretty-link">Devises</a></li><li><a href="" class="pretty-link">Banques centrales</a></li></ul>
+  </div>
+</div>
+
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="card card-light card-hover card-no-shadow">
+  <div class="card-body">
+    <div class="card-justify">
+      <h3 class="card-title">
+        <a href="#0">Titre du document de presse ou d'information</a>
+      </h3>
+      <div class="card-actions">
+        <a href="#0" class="btn btn-sm btn-outline text-uppercase btn-normal">Détails</a>
+        <a href="#0" class="btn btn-sm btn-primary text-uppercase btn-normal">Télécharger</a>
+      </div>
+    </div>
+    <hr class="card-separator">
+    <p class="text-muted">
+      <strong>Assurance vie</strong>
+      <span class="text-square-bullet">Le 24 avril 2017, par Lorraine Clément</span>
+    </p>
+    <h4 class="title-mini">Extrait</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <mark>Impedit</mark> ipsa, temporibus necessitatibus ipsum dignissimos quas accusamus quos in tenetur aut autem aliquid doloribus veniam fugit ea vel. Deleniti ipsam, cum tempore ratione asperiores consequuntur, adipisci vitae minus aut porro nulla, delectus, provident obcaecati ad modi dolores ducimus et repellat reiciendis.</p>
+    <h4 class="title-mini">Thèmes</h4>
+    <ul class="unordered-list list-inline"><li><a href="" class="pretty-link">Économie</a></li><li><a href="" class="pretty-link">Devises</a></li><li><a href="" class="pretty-link">Banques centrales</a></li></ul>
+  </div>
+</div>
+</code></pre>
+</div>
+
+    </div>
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="file">
+          
+<div id="element-card-resultfile" class="styleguide-item-preview">
+  
+    <div class="card card-light card-hover card-no-shadow">
+  <div class="card-body">
+    <h3 class="card-title">
+      <a href="#0">Titre du document qui correspond à la recherche</a>
+    </h3>
+    <p class="tooltip-container">
+      <button class="btn btn-circle btn-primary btn-outline btn-xs tooltip-shift" data-toggle="popover" data-placement="bottom" data-content="Accueil › Catégorie ou autre › Dossier ou taxonomie">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-angle retraitespopulaires-icon-flip-vertical" aria-hidden="true"></span>
+      </button>
+      <span class="text-muted" title="accueil › catégorie ou autre › dossier ou taxonomie › nom_du_fichier_telechargeable.pdf"><span class="sr-only">Chemin du fichier: accueil, catégorie ou autre, dossier ou taxonomie, </span>nom_du_fichier_telechargeable.pdf</span>
+    </p>
+    <h4 class="title-mini">Extrait</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <mark>Impedit</mark> ipsa, temporibus necessitatibus ipsum dignissimos quas accusamus quos in tenetur aut autem aliquid doloribus veniam fugit ea vel. Deleniti ipsam, cum tempore ratione asperiores consequuntur, adipisci vitae minus aut porro nulla, delectus, provident obcaecati ad modi dolores ducimus et repellat reiciendis.</p>
+    <h4 class="title-mini">Thèmes</h4>
+    <ul class="unordered-list list-inline"><li><a href="" class="pretty-link">Économie</a></li><li><a href="" class="pretty-link">Devises</a></li><li><a href="" class="pretty-link">Banques centrales</a></li></ul>
+  </div>
+</div>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="card card-light card-hover card-no-shadow">
+  <div class="card-body">
+    <h3 class="card-title">
+      <a href="#0">Titre du document qui correspond à la recherche</a>
+    </h3>
+    <p class="tooltip-container">
+      <button class="btn btn-circle btn-primary btn-outline btn-xs tooltip-shift" data-toggle="popover" data-placement="bottom" data-content="Accueil › Catégorie ou autre › Dossier ou taxonomie">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-angle retraitespopulaires-icon-flip-vertical" aria-hidden="true"></span>
+      </button>
+      <span class="text-muted" title="accueil › catégorie ou autre › dossier ou taxonomie › nom_du_fichier_telechargeable.pdf"><span class="sr-only">Chemin du fichier: accueil, catégorie ou autre, dossier ou taxonomie, </span>nom_du_fichier_telechargeable.pdf</span>
+    </p>
+    <h4 class="title-mini">Extrait</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <mark>Impedit</mark> ipsa, temporibus necessitatibus ipsum dignissimos quas accusamus quos in tenetur aut autem aliquid doloribus veniam fugit ea vel. Deleniti ipsam, cum tempore ratione asperiores consequuntur, adipisci vitae minus aut porro nulla, delectus, provident obcaecati ad modi dolores ducimus et repellat reiciendis.</p>
+    <h4 class="title-mini">Thèmes</h4>
+    <ul class="unordered-list list-inline"><li><a href="" class="pretty-link">Économie</a></li><li><a href="" class="pretty-link">Devises</a></li><li><a href="" class="pretty-link">Banques centrales</a></li></ul>
+  </div>
+</div>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+  </div>
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="collapse">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#collapse">Collapse</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look.</p>
+
+    </div>
+  
+
+</div>
+
+
+  
+    
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#collapse-default" role="tab">Default</a>
+    </li>
+  
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#bubble" role="tab">Bubble</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="collapse-default">
+      
+<div id="element-collapse" class="styleguide-item-preview">
+  
+    <div class="collapse-wrapper">
+  
+    <div class="collapse-title">
+      <h5 class="inline-block">
+        <a class="text-primary" href="#">Assurance vie</a>
+      </h5>
+      <a class="inline-block pull-right collapse-button" role="button" data-toggle="collapse" href="#assurance-vie-default" aria-expanded="true" aria-controls="assurance-vie" aria-label="Cliquez pour dérouler le contenu de la section assurance-vie.">
+        <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
+      </a>
+      <div class="clearfix"></div>
+    </div>
+  
+  <div id="assurance-vie-default" class="collapse-body collapse in">
+    <ul class="unordered-list">
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+    </ul>
+  </div>
+  </div>
+  <div class="ckeditor-accordion-container"><dl class="styled"><dt class="active"><span class="ckeditor-accordion-toggle active"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 1</a></dt>
+  	<dd class="active" style="display: block;">
+  	<p>Accordion content 1.</p>
+  	</dd>
+  	<dt><span class="ckeditor-accordion-toggle"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 2</a></dt>
+  	<dd>
+  	<p>Accordion content 2.</p>
+  	</dd>
+  </dl>
+  </div>
+
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="collapse-wrapper">
+  
+    <div class="collapse-title">
+      <h5 class="inline-block">
+        <a class="text-primary" href="#">Assurance vie</a>
+      </h5>
+      <a class="inline-block pull-right collapse-button" role="button" data-toggle="collapse" href="#assurance-vie-default" aria-expanded="true" aria-controls="assurance-vie" aria-label="Cliquez pour dérouler le contenu de la section assurance-vie.">
+        <i class="retraitespopulaires-icon retraitespopulaires-icon-angle"></i>
+      </a>
+      <div class="clearfix"></div>
+    </div>
+  
+  <div id="assurance-vie-default" class="collapse-body collapse in">
+    <ul class="unordered-list">
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+    </ul>
+  </div>
+  </div>
+  <div class="ckeditor-accordion-container"><dl class="styled"><dt class="active"><span class="ckeditor-accordion-toggle active"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 1</a></dt>
+  	<dd class="active" style="display: block;">
+  	<p>Accordion content 1.</p>
+  	</dd>
+  	<dt><span class="ckeditor-accordion-toggle"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 2</a></dt>
+  	<dd>
+  	<p>Accordion content 2.</p>
+  	</dd>
+  </dl>
+  </div>
+</code></pre>
+</div>
+
+    </div>
+    
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="bubble">
+          
+<div id="element-collapsebubble" class="styleguide-item-preview">
+  
+    <div class="collapse-wrapper">
+  
+    <div class="collapse-title" role="button" data-toggle="collapse" href="#assurance-vie-bubble" aria-expanded="true" aria-controls="assurance-vie" aria-label="Cliquez pour dérouler le contenu de la section assurance-vie.">
+      <div class="button-bubble inline-block">
+        <div class="bubble-icon">
+          <i class="retraitespopulaires-icon retraitespopulaires-icon-arrow-right"></i>
+        </div>
+      </div>
+      <h5 class="inline-block">Assurance vie</h5>
+    </div>
+  
+  <div id="assurance-vie-bubble" class="collapse-body collapse in">
+    <ul class="unordered-list">
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+    </ul>
+  </div>
+  </div>
+  <div class="ckeditor-accordion-container"><dl class="styled"><dt class="active"><span class="ckeditor-accordion-toggle active"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 1</a></dt>
+  	<dd class="active" style="display: block;">
+  	<p>Accordion content 1.</p>
+  	</dd>
+  	<dt><span class="ckeditor-accordion-toggle"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 2</a></dt>
+  	<dd>
+  	<p>Accordion content 2.</p>
+  	</dd>
+  </dl>
+  </div>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="collapse-wrapper">
+  
+    <div class="collapse-title" role="button" data-toggle="collapse" href="#assurance-vie-bubble" aria-expanded="true" aria-controls="assurance-vie" aria-label="Cliquez pour dérouler le contenu de la section assurance-vie.">
+      <div class="button-bubble inline-block">
+        <div class="bubble-icon">
+          <i class="retraitespopulaires-icon retraitespopulaires-icon-arrow-right"></i>
+        </div>
+      </div>
+      <h5 class="inline-block">Assurance vie</h5>
+    </div>
+  
+  <div id="assurance-vie-bubble" class="collapse-body collapse in">
+    <ul class="unordered-list">
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+      <li>Ut efficitur mattis</li>
+    </ul>
+  </div>
+  </div>
+  <div class="ckeditor-accordion-container"><dl class="styled"><dt class="active"><span class="ckeditor-accordion-toggle active"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 1</a></dt>
+  	<dd class="active" style="display: block;">
+  	<p>Accordion content 1.</p>
+  	</dd>
+  	<dt><span class="ckeditor-accordion-toggle"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 2</a></dt>
+  	<dd>
+  	<p>Accordion content 2.</p>
+  	</dd>
+  </dl>
+  </div>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+  </div>
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="collapser-menu">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#collapser-menu">Collapser Menu</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Collapser-menu is used in place of the Swiper menu from 3.2.0 and up. <br />
+<strong>This component is visible on the <a href="/basic-page">basic page</a></strong>.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-collapser-menu" class="styleguide-item-preview">
+  
+    <div class="col-xs-4">
+      <div class="collapser-menu">
+  <ul class="list-no-style list-no-padding">
+    <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">Epargne et prévoyance</a></span>
+        <button class="btn btn-sm btn-circle btn-outline btn-primary collapsed " title="Ouvrir le sous-menu Epargne et prévoyance" type="button" data-toggle="collapse" data-target="#menu-link-1" aria-expanded="false" aria-controls="menu-link-1">
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="collapser-menu-collapse collapse" id="menu-link-1" aria-expanded="false">
+        <ul>
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Modulo</a>
+              </span>
+            </div>
+          </li>
+
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Jeune</a>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">À propos</a></span>
+      </div>
+    </li>
+
+   <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">Entreprises</a></span>
+        <button class="btn btn-sm btn-circle btn-outline btn-primary collapsed " title="Ouvrir le sous-menu Entreprises" type="button" data-toggle="collapse" data-target="#menu-link-2" aria-expanded="false" aria-controls="menu-link-2">
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="collapser-menu-collapse collapse" id="menu-link-2" aria-expanded="false">
+        <ul>
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Prévoyance des employés</a>
+              </span>
+              <button class="btn btn-sm btn-circle btn-outline btn-primary" title="Ouvrir le sous-menu Prévoyance des employés" type="button" data-toggle="collapse" data-target="#menu-link-2-1" aria-expanded="true" aria-controls="menu-link-2-1">
+                <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <div class="collapser-menu-collapse collapse in" id="menu-link-2-1" aria-expanded="true" style="">
+              <ul>
+                <li class="">
+                  <div class="collapser-menu-item">
+                    <span>
+                      <a href="#" class="pretty-link">Notre organisation</a>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Jeune</a>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="collapser-menu">
+  <ul class="list-no-style list-no-padding">
+    <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">Epargne et prévoyance</a></span>
+        <button class="btn btn-sm btn-circle btn-outline btn-primary collapsed " title="Ouvrir le sous-menu Epargne et prévoyance" type="button" data-toggle="collapse" data-target="#menu-link-1" aria-expanded="false" aria-controls="menu-link-1">
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="collapser-menu-collapse collapse" id="menu-link-1" aria-expanded="false">
+        <ul>
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Modulo</a>
+              </span>
+            </div>
+          </li>
+
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Jeune</a>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">À propos</a></span>
+      </div>
+    </li>
+
+   <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">Entreprises</a></span>
+        <button class="btn btn-sm btn-circle btn-outline btn-primary collapsed " title="Ouvrir le sous-menu Entreprises" type="button" data-toggle="collapse" data-target="#menu-link-2" aria-expanded="false" aria-controls="menu-link-2">
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="collapser-menu-collapse collapse" id="menu-link-2" aria-expanded="false">
+        <ul>
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Prévoyance des employés</a>
+              </span>
+              <button class="btn btn-sm btn-circle btn-outline btn-primary" title="Ouvrir le sous-menu Prévoyance des employés" type="button" data-toggle="collapse" data-target="#menu-link-2-1" aria-expanded="true" aria-controls="menu-link-2-1">
+                <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <div class="collapser-menu-collapse collapse in" id="menu-link-2-1" aria-expanded="true" style="">
+              <ul>
+                <li class="">
+                  <div class="collapser-menu-item">
+                    <span>
+                      <a href="#" class="pretty-link">Notre organisation</a>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Jeune</a>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="document-card">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#document-card">Document card</a></h3>
+    
+  <div class="styleguide-item-controls">
+    
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+
+</div>
+
+
+
+
+  
+<div id="element-document-card" class="styleguide-item-preview">
+  
+    <div class="document-card">
+  <a href="#">
+    <span class="document-card-icon retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-document-file"></span>
+  </a>
+  <div class="document-card-content">
+    <div class="document-card-text">
+      <a href="#"><h3 class="document-card-title">	Analyse des résultats 2011 des caisses de pension publiques romandes</h3></a>
+      <p class="document-card-subtitle">Villa - Prêt hypothécaire</p>
+      <small class="document-card-number text-muted">No200737.1</small>
+    </div>
+    <a class="document-card-btn btn btn-primary btn-outline" href="#">Consulter</a>
+  </div>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="document-card">
+  <a href="#">
+    <span class="document-card-icon retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-document-file"></span>
+  </a>
+  <div class="document-card-content">
+    <div class="document-card-text">
+      <a href="#"><h3 class="document-card-title">	Analyse des résultats 2011 des caisses de pension publiques romandes</h3></a>
+      <p class="document-card-subtitle">Villa - Prêt hypothécaire</p>
+      <small class="document-card-number text-muted">No200737.1</small>
+    </div>
+    <a class="document-card-btn btn btn-primary btn-outline" href="#">Consulter</a>
+  </div>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="document-filters">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#document-filters">Document filters</a></h3>
+    
+  <div class="styleguide-item-controls">
+    
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+
+</div>
+
+
+
+
+  
+<div id="element-document-filters" class="styleguide-item-preview">
+  
+    <form class="document-filters">
+  <div class="row">
+    <div class="col-sm-6 col-md-7 col-lg-8">
+      <label for="#categorySelect" class="h5">Filtrer par catégorie:</label>
+      <select id="categorySelect" class="form-control">
+        <option value="toutes" selected>Toutes</option>
+        <option value="document-institutionnel">Document institutionnel</option>
+        <option value="prevoyance-particuliers">Prévoyance particuliers (3ème et 2ème pilier)</option>
+        <option value="prevoyance-professionnelle-entreprise">Prévoyance professionnelle entreprise</option>
+        <option value="immobiler">Immobilier</option>
+        <option value="prets">Prêts</option>
+        <option value="brochures-et-fiches-explicatives">Brochures et fiches explicatives</option>
+        <option value="formulaires">Formulaires</option>
+        <option value="rapports-annuels">Rapports annuels</option>
+        <option value="etudes">Etudes</option>
+        <option value="reglementation">Réglementation</option>
+      </select>
+    </div>
+    <div class="col-sm-6 col-md-5 col-lg-4">
+      <label for="#yearSelect" class="h5">Filtrer par année:</label>
+      <select id="yearSelect" class="form-control">
+        <option selected>Année</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+      </select>
+    </div>
+  </div>
+</form>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><form class="document-filters">
+  <div class="row">
+    <div class="col-sm-6 col-md-7 col-lg-8">
+      <label for="#categorySelect" class="h5">Filtrer par catégorie:</label>
+      <select id="categorySelect" class="form-control">
+        <option value="toutes" selected>Toutes</option>
+        <option value="document-institutionnel">Document institutionnel</option>
+        <option value="prevoyance-particuliers">Prévoyance particuliers (3ème et 2ème pilier)</option>
+        <option value="prevoyance-professionnelle-entreprise">Prévoyance professionnelle entreprise</option>
+        <option value="immobiler">Immobilier</option>
+        <option value="prets">Prêts</option>
+        <option value="brochures-et-fiches-explicatives">Brochures et fiches explicatives</option>
+        <option value="formulaires">Formulaires</option>
+        <option value="rapports-annuels">Rapports annuels</option>
+        <option value="etudes">Etudes</option>
+        <option value="reglementation">Réglementation</option>
+      </select>
+    </div>
+    <div class="col-sm-6 col-md-5 col-lg-4">
+      <label for="#yearSelect" class="h5">Filtrer par année:</label>
+      <select id="yearSelect" class="form-control">
+        <option selected>Année</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+      </select>
+    </div>
+  </div>
+</form>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="dropdown">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#dropdown">Dropdown</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    <a title="View Bootstrap documentation" target="_blank" href="http://getbootstrap.com/javascript/#dropdowns" class="styleguide-control styleguide-icon">
+      <svg>
+        <use xlink:href="#styleguide-icon-bootstrap" />
+      </svg>
+    </a>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-dropdown" class="styleguide-item-preview">
+  
+    <div class="dropdown open">
+  <a href="#" class="dropdown-toggle btn btn-primary" id="drop5" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    Dropdown <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" id="menu2" aria-labelledby="drop5">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="dropdown open">
+  <a href="#" class="dropdown-toggle btn btn-primary" id="drop5" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    Dropdown <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" id="menu2" aria-labelledby="drop5">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="fieldset">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#fieldset">Fieldset</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be used with the modifier <code>fieldset-bordered</code> to add border left. <br></p>
+
+    </div>
+  
+
+</div>
+
+
+  
+    
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#fieldset-default" role="tab">Default</a>
+    </li>
+  
+    
+      <li>
+        <a data-toggle="tab" href="#fieldset-bordered" role="tab">Bordered</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="fieldset-default">
+      
+<div id="element-fieldset" class="styleguide-item-preview">
+  
+    <form>
+  <h3>Vos données personnelles</h3>
+  <fieldset class="">
+    <div class="form-group">
+  <label for="inputID">Label</label>
+  <input class="form-control" id="inputID" type="text" placeholder="Placeholder"></input>
+</div>
+
+    <div class="form-group">
+  <label for="dateinput" >label</label>
+  <div class="input-group">
+    <input id="dateinput" size="15" class="datepicker form-text form-control" type="text" value="02/12/2016" maxlength="10" placeholder="jj/mm/aaaa">
+    <span class="input-group-btn no-events" aria-hidden="true">
+      <div class="btn btn-invert btn-icon">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>
+      </div>
+    </span>
+  </div>
+</div>
+
+    <div class="form-group">
+  <div class="input-radio-btn">
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn  btn-primary active">
+        <input type="radio" name="options" id="caramel_beurre-sale" aria-label="Parfum caramel beurre salé" autocomplete="off" checked> Caramel beurre salé
+      </label>
+      <label class="btn btn-primary ">
+        <input type="radio" name="options" id="stracciatella" aria-label="Parfum stracciatella" autocomplete="off"> Stracciatella
+      </label>
+      <label class="btn btn-primary ">
+        <input type="radio" name="options" id="framboise" aria-label="Parfum framboise" autocomplete="off"> Framboise
+      </label>
+    </div>
+    <div class="input-radio-btn-unit"> parfums</div>
+  </div>
+</div>
+
+  </fieldset>
+</form>
+
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><form>
+  <h3>Vos données personnelles</h3>
+  <fieldset class="">
+    <div class="form-group">
+  <label for="inputID">Label</label>
+  <input class="form-control" id="inputID" type="text" placeholder="Placeholder"></input>
+</div>
+
+    <div class="form-group">
+  <label for="dateinput" >label</label>
+  <div class="input-group">
+    <input id="dateinput" size="15" class="datepicker form-text form-control" type="text" value="02/12/2016" maxlength="10" placeholder="jj/mm/aaaa">
+    <span class="input-group-btn no-events" aria-hidden="true">
+      <div class="btn btn-invert btn-icon">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>
+      </div>
+    </span>
+  </div>
+</div>
+
+    <div class="form-group">
+  <div class="input-radio-btn">
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn  btn-primary active">
+        <input type="radio" name="options" id="caramel_beurre-sale" aria-label="Parfum caramel beurre salé" autocomplete="off" checked> Caramel beurre salé
+      </label>
+      <label class="btn btn-primary ">
+        <input type="radio" name="options" id="stracciatella" aria-label="Parfum stracciatella" autocomplete="off"> Stracciatella
+      </label>
+      <label class="btn btn-primary ">
+        <input type="radio" name="options" id="framboise" aria-label="Parfum framboise" autocomplete="off"> Framboise
+      </label>
+    </div>
+    <div class="input-radio-btn-unit"> parfums</div>
+  </div>
+</div>
+
+  </fieldset>
+</form>
+</code></pre>
+</div>
+
+    </div>
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="fieldset-bordered">
+          
+<div id="element-fieldsetfieldset-bordered" class="styleguide-item-preview">
+  
+    <form>
+  <h3>Vos données personnelles</h3>
+  <fieldset class="fieldset-bordered">
+    <div class="form-group">
+  <label for="inputID">Label</label>
+  <input class="form-control" id="inputID" type="text" placeholder="Placeholder"></input>
+</div>
+
+    <div class="form-group">
+  <label for="dateinput" >label</label>
+  <div class="input-group">
+    <input id="dateinput" size="15" class="datepicker form-text form-control" type="text" value="02/12/2016" maxlength="10" placeholder="jj/mm/aaaa">
+    <span class="input-group-btn no-events" aria-hidden="true">
+      <div class="btn btn-invert btn-icon">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>
+      </div>
+    </span>
+  </div>
+</div>
+
+    <div class="form-group">
+  <div class="input-radio-btn">
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn  btn-primary active">
+        <input type="radio" name="options" id="caramel_beurre-sale" aria-label="Parfum caramel beurre salé" autocomplete="off" checked> Caramel beurre salé
+      </label>
+      <label class="btn btn-primary ">
+        <input type="radio" name="options" id="stracciatella" aria-label="Parfum stracciatella" autocomplete="off"> Stracciatella
+      </label>
+      <label class="btn btn-primary ">
+        <input type="radio" name="options" id="framboise" aria-label="Parfum framboise" autocomplete="off"> Framboise
+      </label>
+    </div>
+    <div class="input-radio-btn-unit"> parfums</div>
+  </div>
+</div>
+
+  </fieldset>
+</form>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><form>
+  <h3>Vos données personnelles</h3>
+  <fieldset class="fieldset-bordered">
+    <div class="form-group">
+  <label for="inputID">Label</label>
+  <input class="form-control" id="inputID" type="text" placeholder="Placeholder"></input>
+</div>
+
+    <div class="form-group">
+  <label for="dateinput" >label</label>
+  <div class="input-group">
+    <input id="dateinput" size="15" class="datepicker form-text form-control" type="text" value="02/12/2016" maxlength="10" placeholder="jj/mm/aaaa">
+    <span class="input-group-btn no-events" aria-hidden="true">
+      <div class="btn btn-invert btn-icon">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-calendar"></span>
+      </div>
+    </span>
+  </div>
+</div>
+
+    <div class="form-group">
+  <div class="input-radio-btn">
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn  btn-primary active">
+        <input type="radio" name="options" id="caramel_beurre-sale" aria-label="Parfum caramel beurre salé" autocomplete="off" checked> Caramel beurre salé
+      </label>
+      <label class="btn btn-primary ">
+        <input type="radio" name="options" id="stracciatella" aria-label="Parfum stracciatella" autocomplete="off"> Stracciatella
+      </label>
+      <label class="btn btn-primary ">
+        <input type="radio" name="options" id="framboise" aria-label="Parfum framboise" autocomplete="off"> Framboise
+      </label>
+    </div>
+    <div class="input-radio-btn-unit"> parfums</div>
+  </div>
+</div>
+
+  </fieldset>
+</form>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+  </div>
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="immo-results">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#immo-results">Immo Results</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-immo-results" class="styleguide-item-preview">
+  
+    <div class="immo-results">
+  <div class="immo-result pull-left">Résultats: <span class="text-bold">105</span> objet(s) trouvé(s)</div>
+  <div class="immo-results-sorts pull-right">
+    <div class="d-inline-block">Tri:</div>
+    <ul class="d-inline-block list-no-style list-no-padding list-inline">
+      <li> <a class="pretty-link text-immobilier" href="#"><span class="text-small">►</span> Loyer</a> </li>
+      <li> <a class="pretty-link text-immobilier" href="#"><span class="text-small">▼</span> Pièces</a> </li>
+      <li> <a class="pretty-link text-immobilier" href="#"><span class="text-small">▲</span> Surface</a> </li>
+    </ul>
+  </div>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="immo-results">
+  <div class="immo-result pull-left">Résultats: <span class="text-bold">105</span> objet(s) trouvé(s)</div>
+  <div class="immo-results-sorts pull-right">
+    <div class="d-inline-block">Tri:</div>
+    <ul class="d-inline-block list-no-style list-no-padding list-inline">
+      <li> <a class="pretty-link text-immobilier" href="#"><span class="text-small">►</span> Loyer</a> </li>
+      <li> <a class="pretty-link text-immobilier" href="#"><span class="text-small">▼</span> Pièces</a> </li>
+      <li> <a class="pretty-link text-immobilier" href="#"><span class="text-small">▲</span> Surface</a> </li>
+    </ul>
+  </div>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="input-slider">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#input-slider">Input Slider</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>The slider div must be in the same <code>&lt;div class=&quot;form-group&quot;&gt;&lt;/div&gt;</code> that the input</p>
+<p>Needs <code>jQuery.ui.slider</code> for working and <code>jQuery.ui.touch-punch</code> for mobile support.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-input-slider" class="styleguide-item-preview">
+  
+    <form>
+    <div class="form-group">
+        <label>Revenu annuel</label>
+        <input class="form-chf-numeric text-right form-text form-control" type="text" value="3000" maxlength="128" placeholder="CHF">
+        <br>
+        <div class="slider" data-step="5000" data-max="300000" data-min="0"></div>
+    </div>
+</form>
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><form>
+    <div class="form-group">
+        <label>Revenu annuel</label>
+        <input class="form-chf-numeric text-right form-text form-control" type="text" value="3000" maxlength="128" placeholder="CHF">
+        <br>
+        <div class="slider" data-step="5000" data-max="300000" data-min="0"></div>
+    </div>
+</form></code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="media">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#media">Media</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    <a title="View Bootstrap documentation" target="_blank" href="http://getbootstrap.com/components/#media" class="styleguide-control styleguide-icon">
+      <svg>
+        <use xlink:href="#styleguide-icon-bootstrap" />
+      </svg>
+    </a>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Abstract object styles for building various types of components (like files, Tweets, etc) that feature a left- or right-aligned image alongside textual content.</p>
+
+    </div>
+  
+
+</div>
+
+
+  
+    
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#media-default" role="tab">Default</a>
+    </li>
+  
+    
+      <li>
+        <a data-toggle="tab" href="#single_file" role="tab">File</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#grp_files" role="tab">Group files</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="media-default">
+      
+<div id="element-media" class="styleguide-item-preview">
+  
+    <div class="media">
+  <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNWMzYTkyMTM1NSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1YzNhOTIxMzU1Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="">
+      </a>
+    
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Media heading</h4>
+      <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+    
+  </div>
+</div>
+
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="media">
+  <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNWMzYTkyMTM1NSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1YzNhOTIxMzU1Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="">
+      </a>
+    
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Media heading</h4>
+      <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+    
+  </div>
+</div>
+</code></pre>
+</div>
+
+    </div>
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="single_file">
+          
+<div id="element-mediasingle_file" class="styleguide-item-preview">
+  
+    <div class="media">
+  <div class="media-left">
+      <span class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-document-file"></span>
+    
+    </div>
+    <div class="media-body">
+      <a target="_blank" href="#" class="pretty-link h5">All inclusive de la séance du 01 janvier 2017
+        <span class="text-muted text-small"> - PDF</span>
+      </a>
+    
+      <div class="text-muted text-square-separation">
+        <small class="text-small">V. 20160215-001</small>
+        <small class="text-small">20 Mars, 17:42</small>
+      </div>
+
+      <div class="text-square-separation">
+        <small><a href="#" class="pretty-link">Mettre à jour</a></small>
+        <small><a href="#" class="pretty-link">Voir l'historique</a></small>
+        <small><a href="#" class="pretty-link text-danger">Supprimer</a></small>
+      </div>
+    
+  </div>
+</div>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="media">
+  <div class="media-left">
+      <span class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-document-file"></span>
+    
+    </div>
+    <div class="media-body">
+      <a target="_blank" href="#" class="pretty-link h5">All inclusive de la séance du 01 janvier 2017
+        <span class="text-muted text-small"> - PDF</span>
+      </a>
+    
+      <div class="text-muted text-square-separation">
+        <small class="text-small">V. 20160215-001</small>
+        <small class="text-small">20 Mars, 17:42</small>
+      </div>
+
+      <div class="text-square-separation">
+        <small><a href="#" class="pretty-link">Mettre à jour</a></small>
+        <small><a href="#" class="pretty-link">Voir l'historique</a></small>
+        <small><a href="#" class="pretty-link text-danger">Supprimer</a></small>
+      </div>
+    
+  </div>
+</div>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="grp_files">
+          
+<div id="element-mediagrp_files" class="styleguide-item-preview">
+  
+    <div class="media">
+  <div class="media-left">
+      <button class="btn btn-invisible btn-collapse btn-xs" data-toggle="collapse" data-target="#card-file--1" aria-expanded="true" aria-hidden="true">
+        <span class="caret" aria-hidden="true"></span>
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-document-group text-primary aria-hidden="true""></span>
+      </button>
+    
+    </div>
+    <div class="media-body">
+      <span class="pretty-link h5" data-toggle="collapse" data-target="#card-file--1" aria-expanded="true">All inclusive de la séance du 15 février 2017</span>
+    
+      <div class="text-muted text-square-separation">
+        <small class="text-small">V. 20160215-001</small>
+        <small class="text-small">20 Mars, 17:42</small>
+      </div>
+
+      <div class="text-square-separation"><small><a href="#" class="pretty-link">Télécharger</a></small>
+        <small><a href="#" class="pretty-link">Mettre à jour</a></small>
+        <small><a href="#" class="pretty-link">Voir l'historique</a></small>
+        <small><a href="#" class="pretty-link text-danger">Supprimer</a></small>
+      </div>
+    
+      <div class="collapse in" id="card-file--1" aria-expanded="true">
+        <div class="spacer spacer-sm"></div>
+
+        <a target="_blank" href="#" class="pretty-link">
+          <small class="text-bold">PV 4 20160523<span class="text-muted text-small"> - PDF</span></small>
+        </a>
+        <div class="text-muted text-square-separation">
+            <small class="text-small">V. 20170101-001</small>
+            <small class="text-small">28 Mars, 07:29</small>
+        </div>
+        <a href="#" class="pretty-link text-danger"><small>Supprimer</small></a>
+        <div class="spacer spacer-sm"></div>
+
+        <a target="_blank" href="#" class="pretty-link">
+          <small class="text-bold">PV 4 20160523<span class="text-muted text-small"> - PDF</span></small>
+        </a>
+        <div class="text-muted text-square-separation">
+            <small class="text-small">V. 20170101-001</small>
+            <small class="text-small">28 Mars, 07:29</small>
+        </div>
+        <a href="#" class="pretty-link text-danger"><small>Supprimer</small></a>
+      </div>
+    
+  </div>
+</div>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="media">
+  <div class="media-left">
+      <button class="btn btn-invisible btn-collapse btn-xs" data-toggle="collapse" data-target="#card-file--1" aria-expanded="true" aria-hidden="true">
+        <span class="caret" aria-hidden="true"></span>
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-document-group text-primary aria-hidden="true""></span>
+      </button>
+    
+    </div>
+    <div class="media-body">
+      <span class="pretty-link h5" data-toggle="collapse" data-target="#card-file--1" aria-expanded="true">All inclusive de la séance du 15 février 2017</span>
+    
+      <div class="text-muted text-square-separation">
+        <small class="text-small">V. 20160215-001</small>
+        <small class="text-small">20 Mars, 17:42</small>
+      </div>
+
+      <div class="text-square-separation"><small><a href="#" class="pretty-link">Télécharger</a></small>
+        <small><a href="#" class="pretty-link">Mettre à jour</a></small>
+        <small><a href="#" class="pretty-link">Voir l'historique</a></small>
+        <small><a href="#" class="pretty-link text-danger">Supprimer</a></small>
+      </div>
+    
+      <div class="collapse in" id="card-file--1" aria-expanded="true">
+        <div class="spacer spacer-sm"></div>
+
+        <a target="_blank" href="#" class="pretty-link">
+          <small class="text-bold">PV 4 20160523<span class="text-muted text-small"> - PDF</span></small>
+        </a>
+        <div class="text-muted text-square-separation">
+            <small class="text-small">V. 20170101-001</small>
+            <small class="text-small">28 Mars, 07:29</small>
+        </div>
+        <a href="#" class="pretty-link text-danger"><small>Supprimer</small></a>
+        <div class="spacer spacer-sm"></div>
+
+        <a target="_blank" href="#" class="pretty-link">
+          <small class="text-bold">PV 4 20160523<span class="text-muted text-small"> - PDF</span></small>
+        </a>
+        <div class="text-muted text-square-separation">
+            <small class="text-small">V. 20170101-001</small>
+            <small class="text-small">28 Mars, 07:29</small>
+        </div>
+        <a href="#" class="pretty-link text-danger"><small>Supprimer</small></a>
+      </div>
+    
+  </div>
+</div>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+  </div>
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="menu">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#menu">Menu</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p><strong>This component is visible on the <a href="/basic-page">basic page</a></strong>.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-menu" class="styleguide-item-preview">
+  
+    <nav class="rp-access-nav">
+  <ul>
+    <li><a class="btn btn-primary" href="/" accesskey="1">Page d'accueil du site Retraites Populaires</a></li>
+    <li><a class="btn btn-primary" href="#main-content" accesskey="2" >Passer la navigation</a></li>
+    <li><a class="btn btn-primary" href="#full-accessible-navigation" accesskey="3" >Accéder à la navigation</a></li>
+    <li><a class="btn btn-primary" href="/recherche" accesskey="4" >Accéder au champ de recherche</a></li>
+    <li><a class="btn btn-primary" href="mailto:info@retraitespopulaires.ch" accesskey="9">Contacter un conseiller</a></li>
+  </ul>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="container-collapser-menu">
+    <div class="collapser-menu">
+
+      <!-- Search -->
+      <div class="container">
+        <div class="spacer spacer-md"></div>
+        <form class="rp-site-search-form" action="/recherche" method="GET" id="rp-site-search-form" accept-charset="UTF-8">
+          <div class="input-group full-width">
+            <div class="form-group form-no-label">
+              <input class="full-width form-text required form-control" type="text" name="q" value="" size="60" maxlength="128" placeholder="Chercher un produit, un document, un contact, ..." required="required" aria-required="true">
+            </div>
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-primary" icon="retraitespopulaires-icon retraitespopulaires-icon-search" type="submit">
+                <i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div class="container">
+        <div class="collapser-menu">
+  <ul class="list-no-style list-no-padding">
+    <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">Epargne et prévoyance</a></span>
+        <button class="btn btn-sm btn-circle btn-outline btn-primary collapsed " title="Ouvrir le sous-menu Epargne et prévoyance" type="button" data-toggle="collapse" data-target="#menu-link-1" aria-expanded="false" aria-controls="menu-link-1">
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="collapser-menu-collapse collapse" id="menu-link-1" aria-expanded="false">
+        <ul>
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Modulo</a>
+              </span>
+            </div>
+          </li>
+
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Jeune</a>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">À propos</a></span>
+      </div>
+    </li>
+
+   <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">Entreprises</a></span>
+        <button class="btn btn-sm btn-circle btn-outline btn-primary collapsed " title="Ouvrir le sous-menu Entreprises" type="button" data-toggle="collapse" data-target="#menu-link-2" aria-expanded="false" aria-controls="menu-link-2">
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="collapser-menu-collapse collapse" id="menu-link-2" aria-expanded="false">
+        <ul>
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Prévoyance des employés</a>
+              </span>
+              <button class="btn btn-sm btn-circle btn-outline btn-primary" title="Ouvrir le sous-menu Prévoyance des employés" type="button" data-toggle="collapse" data-target="#menu-link-2-1" aria-expanded="true" aria-controls="menu-link-2-1">
+                <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <div class="collapser-menu-collapse collapse in" id="menu-link-2-1" aria-expanded="true" style="">
+              <ul>
+                <li class="">
+                  <div class="collapser-menu-item">
+                    <span>
+                      <a href="#" class="pretty-link">Notre organisation</a>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Jeune</a>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+    <div class="spacer spacer-md"></div>
+
+    <div class="bg-berrylight-gray">
+  <div class="container">
+    <div class="spacer"></div>
+    <div class="col-xs-12">
+      <ul class="list-no-style list-no-padding two-cols">
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">À propos</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Documents</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">FAQ</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Offres Bella vita</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Emploi</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</div>
+
+  </div>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><nav class="rp-access-nav">
+  <ul>
+    <li><a class="btn btn-primary" href="/" accesskey="1">Page d'accueil du site Retraites Populaires</a></li>
+    <li><a class="btn btn-primary" href="#main-content" accesskey="2" >Passer la navigation</a></li>
+    <li><a class="btn btn-primary" href="#full-accessible-navigation" accesskey="3" >Accéder à la navigation</a></li>
+    <li><a class="btn btn-primary" href="/recherche" accesskey="4" >Accéder au champ de recherche</a></li>
+    <li><a class="btn btn-primary" href="mailto:info@retraitespopulaires.ch" accesskey="9">Contacter un conseiller</a></li>
+  </ul>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="container-collapser-menu">
+    <div class="collapser-menu">
+
+      <!-- Search -->
+      <div class="container">
+        <div class="spacer spacer-md"></div>
+        <form class="rp-site-search-form" action="/recherche" method="GET" id="rp-site-search-form" accept-charset="UTF-8">
+          <div class="input-group full-width">
+            <div class="form-group form-no-label">
+              <input class="full-width form-text required form-control" type="text" name="q" value="" size="60" maxlength="128" placeholder="Chercher un produit, un document, un contact, ..." required="required" aria-required="true">
+            </div>
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-primary" icon="retraitespopulaires-icon retraitespopulaires-icon-search" type="submit">
+                <i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div class="container">
+        <div class="collapser-menu">
+  <ul class="list-no-style list-no-padding">
+    <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">Epargne et prévoyance</a></span>
+        <button class="btn btn-sm btn-circle btn-outline btn-primary collapsed " title="Ouvrir le sous-menu Epargne et prévoyance" type="button" data-toggle="collapse" data-target="#menu-link-1" aria-expanded="false" aria-controls="menu-link-1">
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="collapser-menu-collapse collapse" id="menu-link-1" aria-expanded="false">
+        <ul>
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Modulo</a>
+              </span>
+            </div>
+          </li>
+
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Jeune</a>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">À propos</a></span>
+      </div>
+    </li>
+
+   <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">Entreprises</a></span>
+        <button class="btn btn-sm btn-circle btn-outline btn-primary collapsed " title="Ouvrir le sous-menu Entreprises" type="button" data-toggle="collapse" data-target="#menu-link-2" aria-expanded="false" aria-controls="menu-link-2">
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="collapser-menu-collapse collapse" id="menu-link-2" aria-expanded="false">
+        <ul>
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Prévoyance des employés</a>
+              </span>
+              <button class="btn btn-sm btn-circle btn-outline btn-primary" title="Ouvrir le sous-menu Prévoyance des employés" type="button" data-toggle="collapse" data-target="#menu-link-2-1" aria-expanded="true" aria-controls="menu-link-2-1">
+                <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <div class="collapser-menu-collapse collapse in" id="menu-link-2-1" aria-expanded="true" style="">
+              <ul>
+                <li class="">
+                  <div class="collapser-menu-item">
+                    <span>
+                      <a href="#" class="pretty-link">Notre organisation</a>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Jeune</a>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+    <div class="spacer spacer-md"></div>
+
+    <div class="bg-berrylight-gray">
+  <div class="container">
+    <div class="spacer"></div>
+    <div class="col-xs-12">
+      <ul class="list-no-style list-no-padding two-cols">
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">À propos</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Documents</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">FAQ</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Offres Bella vita</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Emploi</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</div>
+
+  </div>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="navbar">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#navbar">Navbar</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look. <br />
+<strong>This component is visible on the <a href="/basic-page">basic page</a></strong>.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-navbar" class="styleguide-item-preview">
+  
+    <nav class="navbar" id="bs-example-navbar-collapse-1" aria-label="Navigation principale">
+  <ul class="list-unstyled m-0">
+    <li><a href="#">Prévoyance</a></li>
+    <li class="active">
+      <a href="#main-content"><span class="sr-only">Page active</span> Immobilier</a>
+    </li>
+    <li><a href="#">Prêts</a></li>
+    <li><a href="#">Actualités <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">CIP</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><nav class="navbar" id="bs-example-navbar-collapse-1" aria-label="Navigation principale">
+  <ul class="list-unstyled m-0">
+    <li><a href="#">Prévoyance</a></li>
+    <li class="active">
+      <a href="#main-content"><span class="sr-only">Page active</span> Immobilier</a>
+    </li>
+    <li><a href="#">Prêts</a></li>
+    <li><a href="#">Actualités <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">CIP</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="popin">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#popin">Popin</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>This component is visible into the <a href="/basic-page">basic page</a>.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-popin" class="styleguide-item-preview">
+  
+    <div class="popin-container" id="popins">
+  <div class="popin popin-collapse-desktop hidden-xs" role="dialog">
+    <div class="panel-heading popin-header">
+        <span class="tracking-popin-desktop-collapse" data-toggle="popins-collapse" title="Ouvrir/fermer la pop-in">
+          <span class="popin-icon retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-arrow-left" aria-hidden="true"></span>
+        </span>
+    </div>
+  </div>
+  <div id="popin-1" class="panel popin" role="dialog" aria-labelledby="popin-title" aria-describedby="popin-body">
+    <div class="panel-heading popin-header">
+          <span class="popin-collapse-show-mobile" title="Nous prenons contact avec vous" data-toggle="popin-collapse-show-mobile" data-target="#popin-collapse-hide-mobile-1">
+            <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-mail" aria-hidden="true"></span>
+          </span>
+      <a href="#content-body-1" title="Nous prenons contact avec vous" data-parent="#popins" id="popin-title-1" class="tracking-popin-collapse popin-title-container collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="popin-body" tabindex="-1">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-mail popin-icon" aria-hidden="true"></span>
+        <p class="popin-title m-y-0" id="popin-title">Nous prenons contact avec vous</p>
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-angle m-l-auto" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="panel-collapse collapse popin-collapse" id="content-body-1">
+      <p class="popin-title-closed m-y-0 hidden"></p>
+      <div class="panel-body popin-body">
+        <form class="rp-popin-form" novalidate="novalidate" data-drupal-selector="rp-popin-form" action="#rp-popin-form" method="post" id="rp-popin-form" accept-charset="UTF-8">
+          <div class="form-group">
+            <div class="js-form-item form-item js-form-type-textfield form-item-name js-form-item-name">
+              <div class="js-form-item form-item js-form-type-textfield form-item-name js-form-item-name">
+                <label for="edit-name">Prénom, Nom *</label>
+              </div>
+              <input id="edit-name" type="text" name="name" value="" size="60" maxlength="128" class="form-text form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="js-form-item form-item js-form-type-textfield form-item-contact js-form-item-contact">
+              <div class="js-form-item form-item js-form-type-textfield form-item-contact js-form-item-contact">
+                <label for="edit-contact">Votre e-mail ou numéro de téléphone*</label>
+              </div>
+              <input id="edit-contact" type="text" name="contact" value="" size="60" maxlength="128" class="form-text form-control">
+            </div>
+          </div>
+          <div class="row d-flex flex-align-items-end">
+            <div class="form-group col-xs-6 col-sm-8">
+              <div class="js-form-item form-item js-form-type-textfield form-item-zip js-form-item-zip">
+                <div class="js-form-item form-item js-form-type-textfield form-item-zip js-form-item-zip">
+                  <label for="edit-zip">Votre code postal (NPA) *</label>
+                </div>
+                <input id="edit-zip" type="text" name="zip" value="" size="60" maxlength="128" placeholder="1000" class="form-text form-control">
+              </div>
+            </div>
+            <div class="form-group col-xs-6 col-sm-4">
+              <input class="btn-primary use-ajax-submit tracking-popin-submit button button--primary js-form-submit form-submit btn" data-drupal-selector="rp-popin-form-submit" type="submit" id="rp_popin_form_submit" name="rp_popin_form_submit_name" value="Envoyer">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="popin popin-collapse-hide-mobile hidden" role="dialog" id="popin-collapse-hide-mobile-1" style="display: block;">
+    <div class="popin-header">
+      <span data-toggle="popin-collapse-hide-mobile">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-arrow-down" aria-hidden="true"></span>
+      </span>
+    </div>
+  </div>
+  <div id="popin-2" class="panel popin" role="dialog" aria-labelledby="popin-title" aria-describedby="popin-body">
+    <div class="panel-heading popin-header">
+      <span class="popin-collapse-show-mobile" title="Accéder au calculateur" data-toggle="popin-collapse-show-mobile" data-target="#popin-collapse-hide-mobile-2">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-calculator" aria-hidden="true"></span>
+      </span>
+      <a href="#" title="Accéder au calculateur" id="popin-title-2" class="popin-title-container" aria-controls="popin-body" tabindex="-1">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-calculator popin-icon" aria-hidden="true"></span>
+        <p class="popin-title m-y-0" id="popin-title">Accéder au calculateur</p>
+      </a>
+    </div>
+  </div>
+  <div class="popin popin-collapse-hide-mobile hidden" role="dialog" id="popin-collapse-hide-mobile-2" style="display: block;">
+    <div class="popin-header">
+      <span data-toggle="popin-collapse-hide-mobile">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-arrow-down" aria-hidden="true"></span>
+      </span>
+    </div>
+  </div>
+  <div id="popin-3" class="panel popin" role="dialog" aria-labelledby="popin-title" aria-describedby="popin-body">
+    <div class="panel-heading popin-header">
+      <span class="popin-collapse-show-mobile" title="Appelez nous" data-toggle="popin-collapse-show-mobile" data-target="#popin-collapse-hide-mobile-3">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-phone" aria-hidden="true"></span>
+      </span>
+      <a href="#content-body-3" title="Appelez nous" data-parent="#popins" id="popin-title-3" class="tracking-popin-collapse popin-title-container collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="popin-body" tabindex="-1">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-phone popin-icon" aria-hidden="true"></span>
+        <p class="popin-title m-y-0" id="popin-title">Appelez nous</p>
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-angle m-l-auto" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="panel-collapse collapse popin-collapse" id="content-body-3">
+      <p class="popin-title-closed m-y-0 hidden"></p>
+      <div class="panel-body popin-body">
+        <a href="tel:021 348 21 11">021 348 21 11</a>
+      </div>
+    </div>
+  </div>
+  <div class="popin popin-collapse-hide-mobile hidden" role="dialog" id="popin-collapse-hide-mobile-3" style="display: block;">
+    <div class="popin-header">
+      <span data-toggle="popin-collapse-hide-mobile">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-arrow-down" aria-hidden="true"></span>
+      </span>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="popin-container" id="popins">
+  <div class="popin popin-collapse-desktop hidden-xs" role="dialog">
+    <div class="panel-heading popin-header">
+        <span class="tracking-popin-desktop-collapse" data-toggle="popins-collapse" title="Ouvrir/fermer la pop-in">
+          <span class="popin-icon retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-arrow-left" aria-hidden="true"></span>
+        </span>
+    </div>
+  </div>
+  <div id="popin-1" class="panel popin" role="dialog" aria-labelledby="popin-title" aria-describedby="popin-body">
+    <div class="panel-heading popin-header">
+          <span class="popin-collapse-show-mobile" title="Nous prenons contact avec vous" data-toggle="popin-collapse-show-mobile" data-target="#popin-collapse-hide-mobile-1">
+            <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-mail" aria-hidden="true"></span>
+          </span>
+      <a href="#content-body-1" title="Nous prenons contact avec vous" data-parent="#popins" id="popin-title-1" class="tracking-popin-collapse popin-title-container collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="popin-body" tabindex="-1">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-mail popin-icon" aria-hidden="true"></span>
+        <p class="popin-title m-y-0" id="popin-title">Nous prenons contact avec vous</p>
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-angle m-l-auto" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="panel-collapse collapse popin-collapse" id="content-body-1">
+      <p class="popin-title-closed m-y-0 hidden"></p>
+      <div class="panel-body popin-body">
+        <form class="rp-popin-form" novalidate="novalidate" data-drupal-selector="rp-popin-form" action="#rp-popin-form" method="post" id="rp-popin-form" accept-charset="UTF-8">
+          <div class="form-group">
+            <div class="js-form-item form-item js-form-type-textfield form-item-name js-form-item-name">
+              <div class="js-form-item form-item js-form-type-textfield form-item-name js-form-item-name">
+                <label for="edit-name">Prénom, Nom *</label>
+              </div>
+              <input id="edit-name" type="text" name="name" value="" size="60" maxlength="128" class="form-text form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="js-form-item form-item js-form-type-textfield form-item-contact js-form-item-contact">
+              <div class="js-form-item form-item js-form-type-textfield form-item-contact js-form-item-contact">
+                <label for="edit-contact">Votre e-mail ou numéro de téléphone*</label>
+              </div>
+              <input id="edit-contact" type="text" name="contact" value="" size="60" maxlength="128" class="form-text form-control">
+            </div>
+          </div>
+          <div class="row d-flex flex-align-items-end">
+            <div class="form-group col-xs-6 col-sm-8">
+              <div class="js-form-item form-item js-form-type-textfield form-item-zip js-form-item-zip">
+                <div class="js-form-item form-item js-form-type-textfield form-item-zip js-form-item-zip">
+                  <label for="edit-zip">Votre code postal (NPA) *</label>
+                </div>
+                <input id="edit-zip" type="text" name="zip" value="" size="60" maxlength="128" placeholder="1000" class="form-text form-control">
+              </div>
+            </div>
+            <div class="form-group col-xs-6 col-sm-4">
+              <input class="btn-primary use-ajax-submit tracking-popin-submit button button--primary js-form-submit form-submit btn" data-drupal-selector="rp-popin-form-submit" type="submit" id="rp_popin_form_submit" name="rp_popin_form_submit_name" value="Envoyer">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="popin popin-collapse-hide-mobile hidden" role="dialog" id="popin-collapse-hide-mobile-1" style="display: block;">
+    <div class="popin-header">
+      <span data-toggle="popin-collapse-hide-mobile">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-arrow-down" aria-hidden="true"></span>
+      </span>
+    </div>
+  </div>
+  <div id="popin-2" class="panel popin" role="dialog" aria-labelledby="popin-title" aria-describedby="popin-body">
+    <div class="panel-heading popin-header">
+      <span class="popin-collapse-show-mobile" title="Accéder au calculateur" data-toggle="popin-collapse-show-mobile" data-target="#popin-collapse-hide-mobile-2">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-calculator" aria-hidden="true"></span>
+      </span>
+      <a href="#" title="Accéder au calculateur" id="popin-title-2" class="popin-title-container" aria-controls="popin-body" tabindex="-1">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-calculator popin-icon" aria-hidden="true"></span>
+        <p class="popin-title m-y-0" id="popin-title">Accéder au calculateur</p>
+      </a>
+    </div>
+  </div>
+  <div class="popin popin-collapse-hide-mobile hidden" role="dialog" id="popin-collapse-hide-mobile-2" style="display: block;">
+    <div class="popin-header">
+      <span data-toggle="popin-collapse-hide-mobile">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-arrow-down" aria-hidden="true"></span>
+      </span>
+    </div>
+  </div>
+  <div id="popin-3" class="panel popin" role="dialog" aria-labelledby="popin-title" aria-describedby="popin-body">
+    <div class="panel-heading popin-header">
+      <span class="popin-collapse-show-mobile" title="Appelez nous" data-toggle="popin-collapse-show-mobile" data-target="#popin-collapse-hide-mobile-3">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-phone" aria-hidden="true"></span>
+      </span>
+      <a href="#content-body-3" title="Appelez nous" data-parent="#popins" id="popin-title-3" class="tracking-popin-collapse popin-title-container collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="popin-body" tabindex="-1">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-phone popin-icon" aria-hidden="true"></span>
+        <p class="popin-title m-y-0" id="popin-title">Appelez nous</p>
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-angle m-l-auto" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="panel-collapse collapse popin-collapse" id="content-body-3">
+      <p class="popin-title-closed m-y-0 hidden"></p>
+      <div class="panel-body popin-body">
+        <a href="tel:021 348 21 11">021 348 21 11</a>
+      </div>
+    </div>
+  </div>
+  <div class="popin popin-collapse-hide-mobile hidden" role="dialog" id="popin-collapse-hide-mobile-3" style="display: block;">
+    <div class="popin-header">
+      <span data-toggle="popin-collapse-hide-mobile">
+        <span class="retraitespopulaires-icon retraitespopulaires-icon-lg retraitespopulaires-icon-arrow-down" aria-hidden="true"></span>
+      </span>
+    </div>
+  </div>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="prenavbar">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#prenavbar">Prenavbar</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look. <br />
+<strong>This component is visible on the <a href="/basic-page">basic page</a></strong>.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-prenavbar" class="styleguide-item-preview">
+  
+    <ul class="prenavbar list-unstyled list-inline m-0" id="secondary-navigation" role="navigation" aria-label="Navigation secondaire">
+  <li>
+    <a href="#" class="text-muted small" target="">À propos</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Déjà client</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Connexion</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Emploi</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Contact/aide</a>
+  </li>
+</ul>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><ul class="prenavbar list-unstyled list-inline m-0" id="secondary-navigation" role="navigation" aria-label="Navigation secondaire">
+  <li>
+    <a href="#" class="text-muted small" target="">À propos</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Déjà client</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Connexion</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Emploi</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Contact/aide</a>
+  </li>
+</ul>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="progresschart">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#progresschart">Progresschart</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    <a title="View Bootstrap documentation" target="_blank" href="https://getbootstrap.com/components/#progress" class="styleguide-control styleguide-icon">
+      <svg>
+        <use xlink:href="#styleguide-icon-bootstrap" />
+      </svg>
+    </a>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-progresschart" class="styleguide-item-preview">
+  
+    <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">95%</div>
+  <div class="progress-pipe" role="progresspipe" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">95%</div>
+  <div class="progress-pipe" role="progresspipe" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="push-menu">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#push-menu">Push Menu</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Responsive tray for mobile. Specially used as mobile main navigation. <br />
+<strong>This component is visible on the <a href="/basic-page-header-alt">basic page header alternative</a></strong>.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-push-menu" class="styleguide-item-preview">
+  
+    <nav class="push-menu" aria-label="Navigation principale - Mobile">
+  <ul class="list-unstyled m-b-1 main-navigation">
+
+    <!-- Search -->
+    <li>
+      <form class="rp-site-search-form" action="#" method="GET" id="rp-site-search-form" accept-charset="UTF-8">
+        <div class="form-group">
+          <div class="input-group full-width">
+            <div class="form-item form-no-label">
+              <input class="full-width form-text required form-control" type="text" name="q" value="" size="60" maxlength="128" placeholder="Chercher un produit, un document, un contact, ..." required="required" aria-required="true">
+            </div>
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-primary" icon="retraitespopulaires-icon retraitespopulaires-icon-search" type="submit">
+                <i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
+              </button>
+            </span>
+          </div>
+        </div>
+      </form>
+    </li>
+
+    <li><a class="h3" href="#">Prévoyance</a></li>
+    <li class="active">
+      <a class="h3" href="#main-content"><span class="sr-only">Page active</span> Immobilier</a>
+    </li>
+    <li><a class="h3" href="#">Prêts</a></li>
+    <li><a class="h3" href="#">Actualités</a></li>
+    <li><a class="h3" href="#">CIP</a></li>
+    <li><a class="h3" href="#">Contact</a></li>
+  </ul>
+
+  <ul class="prenavbar list-unstyled m-0 secondary-navigation" role="navigation" aria-label="Navigation d'en-tête">
+    <li class="active">
+      <a href="#" class="active h6" target=""><span class="sr-only">Page active</span> Contact</a>
+    </li>
+    <li>
+      <a href="#" class="h6" target="">Presse</a>
+    </li>
+    <li>
+      <a href="#" class="h6" target="">Extranet</a>
+    </li>
+  </ul>
+</nav>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><nav class="push-menu" aria-label="Navigation principale - Mobile">
+  <ul class="list-unstyled m-b-1 main-navigation">
+
+    <!-- Search -->
+    <li>
+      <form class="rp-site-search-form" action="#" method="GET" id="rp-site-search-form" accept-charset="UTF-8">
+        <div class="form-group">
+          <div class="input-group full-width">
+            <div class="form-item form-no-label">
+              <input class="full-width form-text required form-control" type="text" name="q" value="" size="60" maxlength="128" placeholder="Chercher un produit, un document, un contact, ..." required="required" aria-required="true">
+            </div>
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-primary" icon="retraitespopulaires-icon retraitespopulaires-icon-search" type="submit">
+                <i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
+              </button>
+            </span>
+          </div>
+        </div>
+      </form>
+    </li>
+
+    <li><a class="h3" href="#">Prévoyance</a></li>
+    <li class="active">
+      <a class="h3" href="#main-content"><span class="sr-only">Page active</span> Immobilier</a>
+    </li>
+    <li><a class="h3" href="#">Prêts</a></li>
+    <li><a class="h3" href="#">Actualités</a></li>
+    <li><a class="h3" href="#">CIP</a></li>
+    <li><a class="h3" href="#">Contact</a></li>
+  </ul>
+
+  <ul class="prenavbar list-unstyled m-0 secondary-navigation" role="navigation" aria-label="Navigation d'en-tête">
+    <li class="active">
+      <a href="#" class="active h6" target=""><span class="sr-only">Page active</span> Contact</a>
+    </li>
+    <li>
+      <a href="#" class="h6" target="">Presse</a>
+    </li>
+    <li>
+      <a href="#" class="h6" target="">Extranet</a>
+    </li>
+  </ul>
+</nav>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="menu-secondary-nav">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#menu-secondary-nav">Secondary Nav</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look. <br />
+<strong>This component is visible on the <a href="/basic-page">basic page</a></strong>.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-menu-secondary-nav" class="styleguide-item-preview">
+  
+    <div class="bg-berrylight-gray">
+  <div class="container">
+    <div class="spacer"></div>
+    <div class="col-xs-12">
+      <ul class="list-no-style list-no-padding two-cols">
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">À propos</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Documents</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">FAQ</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Offres Bella vita</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Emploi</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="bg-berrylight-gray">
+  <div class="container">
+    <div class="spacer"></div>
+    <div class="col-xs-12">
+      <ul class="list-no-style list-no-padding two-cols">
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">À propos</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Documents</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">FAQ</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Offres Bella vita</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Emploi</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="secondary-nav">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#secondary-nav">Secondary Nav</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look</p>
+<h5 id="options-">Options :</h5>
+<ul>
+<li><strong>secondary_nav_json</strong> - <i>String</i></li>
+</ul>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-secondary-nav" class="styleguide-item-preview">
+  
+    <div class="theme-">
+  <div class="secondary-nav">
+    <h2 class="sr-only">Navigation secondaire</h2>
+    <div class="secondary-nav-content" >
+      
+      
+        
+      
+
+      <div class="title h5 text-secondary"><a href="#">Lorem Ipsum</a></div>
+      <ul class="links list-no-style list-no-padding">
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">In eleifend</a>
+            
+          </li>
+        
+        
+
+          
+          
+            
+          
+
+          <li class="active text-bold">
+            
+              <a class="pretty-link" href="#">Purus ut nulla</a>
+            
+          </li>
+        
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">Aliquam lobortis</a>
+            
+          </li>
+        
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">Nam tristique</a>
+            
+          </li>
+        
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">Fringilla</a>
+            
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="theme-">
+  <div class="secondary-nav">
+    <h2 class="sr-only">Navigation secondaire</h2>
+    <div class="secondary-nav-content" >
+      
+      
+        
+      
+
+      <div class="title h5 text-secondary"><a href="#">Lorem Ipsum</a></div>
+      <ul class="links list-no-style list-no-padding">
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">In eleifend</a>
+            
+          </li>
+        
+        
+
+          
+          
+            
+          
+
+          <li class="active text-bold">
+            
+              <a class="pretty-link" href="#">Purus ut nulla</a>
+            
+          </li>
+        
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">Aliquam lobortis</a>
+            
+          </li>
+        
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">Nam tristique</a>
+            
+          </li>
+        
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">Fringilla</a>
+            
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="selectize">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#selectize">Selectize</a></h3>
+    
+  <div class="styleguide-item-controls">
+    
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+
+</div>
+
+
+
+
+  
+<div id="element-selectize" class="styleguide-item-preview">
+  
+    <div class="form-group">
+  <label for="edit-keyword" class="control-label form-control-label">Mots-clés</label>
+  <select selectize class="selectize" data-options="[{&quot;name&quot;:&quot;Actions&quot;},{&quot;name&quot;:&quot;ass&quot;},{&quot;name&quot;:&quot;Assureurs priv\u00e9s&quot;},{&quot;name&quot;:&quot;Courtiers&quot;}]" multiple="multiple" id="edit-keyword">
+    <option>Actions</option>
+    <option>ass</option>
+    <option>Assureurs privés</option>
+    <option>Courtiers</option>
+  </select>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><div class="form-group">
+  <label for="edit-keyword" class="control-label form-control-label">Mots-clés</label>
+  <select selectize class="selectize" data-options="[{&quot;name&quot;:&quot;Actions&quot;},{&quot;name&quot;:&quot;ass&quot;},{&quot;name&quot;:&quot;Assureurs priv\u00e9s&quot;},{&quot;name&quot;:&quot;Courtiers&quot;}]" multiple="multiple" id="edit-keyword">
+    <option>Actions</option>
+    <option>ass</option>
+    <option>Assureurs privés</option>
+    <option>Courtiers</option>
+  </select>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="table">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#table">Table</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>We use the <code>jQuery</code> plugin <a href="https://github.com/filamentgroup/tablesaw">Tablesaw</a> for responsivness, check the documentation for advanced usage &amp; parameters. <br>
+Can be used with the modifier <code>table-[&#39;wide&#39;|&#39;condensed&#39;]</code> to change look. <br>
+Can be used with the modifier <code>table-borderless</code> to remove borders.</p>
+
+    </div>
+  
+
+</div>
+
+
+  
+    
+  
+
+  <ul class="styleguide-tabs nav nav-tabs" role="tablist">
+    <li class="active">
+      <a data-toggle="tab" href="#table-default" role="tab">Default</a>
+    </li>
+  
+    
+      <li>
+        <a data-toggle="tab" href="#tablesaw" role="tab">Tablesaw</a>
+      </li>
+    
+  
+    
+      <li>
+        <a data-toggle="tab" href="#table-borderless" role="tab">Borderless</a>
+      </li>
+    
+  
+  </ul>
+
+
+
+  <div class="tab-content styleguide-tab-content">
+    <div class="styleguide-tab-pane tab-pane active" id="table-default">
+      
+<div id="element-table" class="styleguide-item-preview">
+  
+    <table class="table  " >
+ <thead>
+  <tr>
+     <th><strong>Entête importante</strong></th>
+     <th>A gauche</th>
+     <th><div class="text-center">Centré</div></th>
+     <th><div class="text-right">Chiffres #1</div></th>
+     <th><div class="text-right">Chiffres #2</div></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+     <td>Première ligne</td>
+     <td>Carmin</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche rouge orienté vers la droite en bas" class="text-danger retraitespopulaires-icon retraitespopulaires-icon-arrow-down-right"></span></div></td>
+     <td><div class="text-right">-2,2%</div></td>
+     <td><div class="text-right">12'0400.-</div></td>
+  </tr>
+  <tr>
+     <td>Une sconde information</td>
+     <td>Ocre</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche verte orienté vers la gauche en haut" class="text-success angle angle-force-top retraitespopulaires-icon retraitespopulaires-icon-arrow-up-right"></span></div></td>
+     <td><div class="text-right">+0,2%</div></td>
+     <td><div class="text-right">1'1050.-</div></td>
+  </tr>
+  <tr>
+     <td>Et de trois</td>
+     <td>Turquoise</td>
+     <td><div aria-label="Flèche" class="text-center text-icon"><span class="text-muted retraitespopulaires-icon retraitespopulaires-icon-arrow"></span></div></td>
+     <td><div class="text-right">—</div></td>
+     <td><div class="text-right">127'746.-</div></td>
+  </tr>
+ </tbody>
+</table>
+
+  
+</div>
+
+      
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><table class="table  " >
+ <thead>
+  <tr>
+     <th><strong>Entête importante</strong></th>
+     <th>A gauche</th>
+     <th><div class="text-center">Centré</div></th>
+     <th><div class="text-right">Chiffres #1</div></th>
+     <th><div class="text-right">Chiffres #2</div></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+     <td>Première ligne</td>
+     <td>Carmin</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche rouge orienté vers la droite en bas" class="text-danger retraitespopulaires-icon retraitespopulaires-icon-arrow-down-right"></span></div></td>
+     <td><div class="text-right">-2,2%</div></td>
+     <td><div class="text-right">12'0400.-</div></td>
+  </tr>
+  <tr>
+     <td>Une sconde information</td>
+     <td>Ocre</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche verte orienté vers la gauche en haut" class="text-success angle angle-force-top retraitespopulaires-icon retraitespopulaires-icon-arrow-up-right"></span></div></td>
+     <td><div class="text-right">+0,2%</div></td>
+     <td><div class="text-right">1'1050.-</div></td>
+  </tr>
+  <tr>
+     <td>Et de trois</td>
+     <td>Turquoise</td>
+     <td><div aria-label="Flèche" class="text-center text-icon"><span class="text-muted retraitespopulaires-icon retraitespopulaires-icon-arrow"></span></div></td>
+     <td><div class="text-right">—</div></td>
+     <td><div class="text-right">127'746.-</div></td>
+  </tr>
+ </tbody>
+</table>
+</code></pre>
+</div>
+
+    </div>
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="tablesaw">
+          
+<div id="element-tabletablesaw" class="styleguide-item-preview">
+  
+    <table class="table tablesaw tablesaw-stack " data-tablesaw-mode="stack">
+ <thead>
+  <tr>
+     <th><strong>Entête importante</strong></th>
+     <th>A gauche</th>
+     <th><div class="text-center">Centré</div></th>
+     <th><div class="text-right">Chiffres #1</div></th>
+     <th><div class="text-right">Chiffres #2</div></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+     <td>Première ligne</td>
+     <td>Carmin</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche rouge orienté vers la droite en bas" class="text-danger retraitespopulaires-icon retraitespopulaires-icon-arrow-down-right"></span></div></td>
+     <td><div class="text-right">-2,2%</div></td>
+     <td><div class="text-right">12'0400.-</div></td>
+  </tr>
+  <tr>
+     <td>Une sconde information</td>
+     <td>Ocre</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche verte orienté vers la gauche en haut" class="text-success angle angle-force-top retraitespopulaires-icon retraitespopulaires-icon-arrow-up-right"></span></div></td>
+     <td><div class="text-right">+0,2%</div></td>
+     <td><div class="text-right">1'1050.-</div></td>
+  </tr>
+  <tr>
+     <td>Et de trois</td>
+     <td>Turquoise</td>
+     <td><div aria-label="Flèche" class="text-center text-icon"><span class="text-muted retraitespopulaires-icon retraitespopulaires-icon-arrow"></span></div></td>
+     <td><div class="text-right">—</div></td>
+     <td><div class="text-right">127'746.-</div></td>
+  </tr>
+ </tbody>
+</table>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><table class="table tablesaw tablesaw-stack " data-tablesaw-mode="stack">
+ <thead>
+  <tr>
+     <th><strong>Entête importante</strong></th>
+     <th>A gauche</th>
+     <th><div class="text-center">Centré</div></th>
+     <th><div class="text-right">Chiffres #1</div></th>
+     <th><div class="text-right">Chiffres #2</div></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+     <td>Première ligne</td>
+     <td>Carmin</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche rouge orienté vers la droite en bas" class="text-danger retraitespopulaires-icon retraitespopulaires-icon-arrow-down-right"></span></div></td>
+     <td><div class="text-right">-2,2%</div></td>
+     <td><div class="text-right">12'0400.-</div></td>
+  </tr>
+  <tr>
+     <td>Une sconde information</td>
+     <td>Ocre</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche verte orienté vers la gauche en haut" class="text-success angle angle-force-top retraitespopulaires-icon retraitespopulaires-icon-arrow-up-right"></span></div></td>
+     <td><div class="text-right">+0,2%</div></td>
+     <td><div class="text-right">1'1050.-</div></td>
+  </tr>
+  <tr>
+     <td>Et de trois</td>
+     <td>Turquoise</td>
+     <td><div aria-label="Flèche" class="text-center text-icon"><span class="text-muted retraitespopulaires-icon retraitespopulaires-icon-arrow"></span></div></td>
+     <td><div class="text-right">—</div></td>
+     <td><div class="text-right">127'746.-</div></td>
+  </tr>
+ </tbody>
+</table>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+      
+        <div class="styleguide-tab-pane tab-pane" id="table-borderless">
+          
+<div id="element-tabletable-borderless" class="styleguide-item-preview">
+  
+    <table class="table  table-borderless" >
+ <thead>
+  <tr>
+     <th><strong>Entête importante</strong></th>
+     <th>A gauche</th>
+     <th><div class="text-center">Centré</div></th>
+     <th><div class="text-right">Chiffres #1</div></th>
+     <th><div class="text-right">Chiffres #2</div></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+     <td>Première ligne</td>
+     <td>Carmin</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche rouge orienté vers la droite en bas" class="text-danger retraitespopulaires-icon retraitespopulaires-icon-arrow-down-right"></span></div></td>
+     <td><div class="text-right">-2,2%</div></td>
+     <td><div class="text-right">12'0400.-</div></td>
+  </tr>
+  <tr>
+     <td>Une sconde information</td>
+     <td>Ocre</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche verte orienté vers la gauche en haut" class="text-success angle angle-force-top retraitespopulaires-icon retraitespopulaires-icon-arrow-up-right"></span></div></td>
+     <td><div class="text-right">+0,2%</div></td>
+     <td><div class="text-right">1'1050.-</div></td>
+  </tr>
+  <tr>
+     <td>Et de trois</td>
+     <td>Turquoise</td>
+     <td><div aria-label="Flèche" class="text-center text-icon"><span class="text-muted retraitespopulaires-icon retraitespopulaires-icon-arrow"></span></div></td>
+     <td><div class="text-right">—</div></td>
+     <td><div class="text-right">127'746.-</div></td>
+  </tr>
+ </tbody>
+</table>
+
+  
+</div>
+
+          
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><table class="table  table-borderless" >
+ <thead>
+  <tr>
+     <th><strong>Entête importante</strong></th>
+     <th>A gauche</th>
+     <th><div class="text-center">Centré</div></th>
+     <th><div class="text-right">Chiffres #1</div></th>
+     <th><div class="text-right">Chiffres #2</div></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+     <td>Première ligne</td>
+     <td>Carmin</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche rouge orienté vers la droite en bas" class="text-danger retraitespopulaires-icon retraitespopulaires-icon-arrow-down-right"></span></div></td>
+     <td><div class="text-right">-2,2%</div></td>
+     <td><div class="text-right">12'0400.-</div></td>
+  </tr>
+  <tr>
+     <td>Une sconde information</td>
+     <td>Ocre</td>
+     <td><div class="text-center text-icon"><span aria-label="Flèche verte orienté vers la gauche en haut" class="text-success angle angle-force-top retraitespopulaires-icon retraitespopulaires-icon-arrow-up-right"></span></div></td>
+     <td><div class="text-right">+0,2%</div></td>
+     <td><div class="text-right">1'1050.-</div></td>
+  </tr>
+  <tr>
+     <td>Et de trois</td>
+     <td>Turquoise</td>
+     <td><div aria-label="Flèche" class="text-center text-icon"><span class="text-muted retraitespopulaires-icon retraitespopulaires-icon-arrow"></span></div></td>
+     <td><div class="text-right">—</div></td>
+     <td><div class="text-right">127'746.-</div></td>
+  </tr>
+ </tbody>
+</table>
+</code></pre>
+</div>
+
+        </div>
+      
+    
+  </div>
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="tabs">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#tabs">Tabs</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    <a title="View Bootstrap documentation" target="_blank" href="https://getbootstrap.com/javascript/#tabs" class="styleguide-control styleguide-icon">
+      <svg>
+        <use xlink:href="#styleguide-icon-bootstrap" />
+      </svg>
+    </a>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-tabs" class="styleguide-item-preview">
+  
+    <ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#lausanne" aria-controls="lausanne" role="tab" data-toggle="tab">Lausanne (siège)</a></li>
+  <li role="presentation"><a href="#yverdon" aria-controls="yverdon" role="tab" data-toggle="tab">Yverdon-les-Bains</a></li>
+  <li role="presentation"><a href="#nyon" aria-controls="nyon" role="tab" data-toggle="tab">Nyon</a></li>
+</ul>
+
+<div class="spacer spacer-sm"></div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="lausanne">
+        <a href="tel:+41213482111" class="text-large text-no-wrap d-block">021 348 <strong>21 11</strong></a>
+        <a href="mailto:info@retraitespopulaires.ch" class="text-large d-block">info@retraitespopulaires.ch</a>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="yverdon">
+        <a href="tel:+41213482821" class="text-large text-no-wrap d-block">021 348 <strong>28 21</strong></a>
+        <a href="mailto:yverdon@retraitespopulaires.ch" class="text-large d-block">yverdon@retraitespopulaires.ch</a>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="nyon">
+        <a href="tel:+41213482020" class="text-large text-no-wrap d-block">021 348 <strong>20 20</strong></a>
+        <a href="mailto:nyon@retraitespopulaires.ch" class="text-large d-block">nyon@retraitespopulaires.ch</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#lausanne" aria-controls="lausanne" role="tab" data-toggle="tab">Lausanne (siège)</a></li>
+  <li role="presentation"><a href="#yverdon" aria-controls="yverdon" role="tab" data-toggle="tab">Yverdon-les-Bains</a></li>
+  <li role="presentation"><a href="#nyon" aria-controls="nyon" role="tab" data-toggle="tab">Nyon</a></li>
+</ul>
+
+<div class="spacer spacer-sm"></div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="lausanne">
+        <a href="tel:+41213482111" class="text-large text-no-wrap d-block">021 348 <strong>21 11</strong></a>
+        <a href="mailto:info@retraitespopulaires.ch" class="text-large d-block">info@retraitespopulaires.ch</a>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="yverdon">
+        <a href="tel:+41213482821" class="text-large text-no-wrap d-block">021 348 <strong>28 21</strong></a>
+        <a href="mailto:yverdon@retraitespopulaires.ch" class="text-large d-block">yverdon@retraitespopulaires.ch</a>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="nyon">
+        <a href="tel:+41213482020" class="text-large text-no-wrap d-block">021 348 <strong>20 20</strong></a>
+        <a href="mailto:nyon@retraitespopulaires.ch" class="text-large d-block">nyon@retraitespopulaires.ch</a>
+      </div>
+    </div>
+  </div>
+</div>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+      
+<div class="styleguide-item-group" id="teaser-gallery">
+  <div class="styleguide-item-heading-group" data-styleguide-toggle="labels">
+    <h3 class="styleguide-item-heading"><a href="#teaser-gallery">Teaser Gallery</a></h3>
+    
+  <div class="styleguide-item-controls">
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="notes" title="Toggle Notes">
+      <svg>
+        <use xlink:href="#styleguide-icon-notes" />
+      </svg>
+    </span>
+    <span class="styleguide-control styleguide-icon" data-styleguide-toggle-control="code" title="Toggle Code">
+      <svg>
+        <use xlink:href="#styleguide-icon-code" />
+      </svg>
+    </span>
+    
+  </div>
+
+  </div>
+
+
+<div class="styleguide-description clearfix" data-styleguide-toggle="notes">
+  
+    <div class="styleguide-item-notes">
+    
+    <p>Can be wrapped in <code>.theme-[theme]</code> to change look. <br>
+We use the <code>jQuery</code> plugin <a href="http://photoswipe.com/documentation/getting-started.html">Photoswipe</a>, check the documentation for advanced usage &amp; parameters.</p>
+
+    </div>
+  
+
+</div>
+
+
+
+
+  
+<div id="element-teaser-gallery" class="styleguide-item-preview">
+  
+    <div class="col-xs-4">
+      <figure itemprop="associatedMedia" class="teaser-gallery teaser-gallery-primary" itemscope itemtype="http://schema.org/ImageObject">
+  <div class="wrapper-figure">
+    <div class="figure-cover">
+      <a
+        href="https://unsplash.it/200/200"
+        data-height="800"
+        data-width="800"
+        data-size="800x800"
+        data-index="0"
+      >
+        <div class="figure-overlay">
+          <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-search" aria-hidden="true"></i>
+          <p class="text-uppercase small m-b-0">voir l'image</p>
+        </div>
+        <picture>
+          <img class="img-responsive" src="https://unsplash.it/200/200">
+        </picture>
+      </a>
+      </div>
+  </div>
+</figure>
+
+    </div>
+  
+</div>
+
+  
+<div class="styleguide-item-code styleguide-item-hidden" data-styleguide-toggle="code">
+  <pre><code class="language-markup"><figure itemprop="associatedMedia" class="teaser-gallery teaser-gallery-primary" itemscope itemtype="http://schema.org/ImageObject">
+  <div class="wrapper-figure">
+    <div class="figure-cover">
+      <a
+        href="https://unsplash.it/200/200"
+        data-height="800"
+        data-width="800"
+        data-size="800x800"
+        data-index="0"
+      >
+        <div class="figure-overlay">
+          <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-search" aria-hidden="true"></i>
+          <p class="text-uppercase small m-b-0">voir l'image</p>
+        </div>
+        <picture>
+          <img class="img-responsive" src="https://unsplash.it/200/200">
+        </picture>
+      </a>
+      </div>
+  </div>
+</figure>
+</code></pre>
+</div>
+
+
+
+
+
+</div>
+
+    
+  
+
+  </div>
+
+
+    
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          </button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          </button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+      </div>
+    
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js" crossorigin="anonymous"></script>
+    <script src="https://styleguide.retraitespopulaires.ch/build/js/selectize.min.js"></script>
+    <script src="https://styleguide.retraitespopulaires.ch/build/js/vendors.min.js"></script>
+    <script src="https://styleguide.retraitespopulaires.ch/build/js/bundle.js"></script>
+
+    
+      <script>
+        (function($){
+          $(document).ready(function(){
+            $('.styleguide-item-code code').each(function(){
+              $(this).html($(this).html().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'));
+            });
+
+            // Toggle theme
+            $('.styleguide-toggle-theme').on('click', function() {
+              $('.styleguide-item-preview, .styleguide-toggle-container').toggleClass('theme-cip');
+            });
+          });
+        }(jQuery));
+      </script>
+      <script src="https://styleguide.retraitespopulaires.ch/build/js/styleguide.min.js"></script>
+    
+
+    
+  </body>
+</html>

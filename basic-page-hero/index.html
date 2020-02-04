@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width">
+
+    
+
+    <link rel="stylesheet" href="https://styleguide.retraitespopulaires.ch/build/css/vendors.min.css">
+    <link rel="stylesheet" href="https://styleguide.retraitespopulaires.ch/build/css/main.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://styleguide.retraitespopulaires.ch/build/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://styleguide.retraitespopulaires.ch/build/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://styleguide.retraitespopulaires.ch/build/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://styleguide.retraitespopulaires.ch/build/favicons/manifest.json">
+    <link rel="mask-icon" href="https://styleguide.retraitespopulaires.ch/build/favicons/safari-pinned-tab.svg" color="#008e4f">
+    <meta name="theme-color" content="#008e4f">
+
+    <!--[if lt IE 9]>
+      <script src="https://styleguide.retraitespopulaires.ch/build/js/polyfills.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+
+
+    
+  
+  <div id="page-wrapper">
+    
+<nav class="rp-access-nav">
+  <ul>
+    <li><a class="btn btn-primary" href="/" accesskey="1">Page d'accueil du site Retraites Populaires</a></li>
+    <li><a class="btn btn-primary" href="#main-content" accesskey="2" >Passer la navigation</a></li>
+    <li><a class="btn btn-primary" href="#full-accessible-navigation" accesskey="3" >Accéder à la navigation</a></li>
+    <li><a class="btn btn-primary" href="/recherche" accesskey="4" >Accéder au champ de recherche</a></li>
+    <li><a class="btn btn-primary" href="mailto:info@retraitespopulaires.ch" accesskey="9">Contacter un conseiller</a></li>
+  </ul>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="container-collapser-menu">
+    <div class="collapser-menu">
+
+      <!-- Search -->
+      <div class="container">
+        <div class="spacer spacer-md"></div>
+        <form class="rp-site-search-form" action="/recherche" method="GET" id="rp-site-search-form" accept-charset="UTF-8">
+          <div class="input-group full-width">
+            <div class="form-group form-no-label">
+              <input class="full-width form-text required form-control" type="text" name="q" value="" size="60" maxlength="128" placeholder="Chercher un produit, un document, un contact, ..." required="required" aria-required="true">
+            </div>
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-primary" icon="retraitespopulaires-icon retraitespopulaires-icon-search" type="submit">
+                <i class="retraitespopulaires-icon retraitespopulaires-icon-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div class="container">
+        <div class="collapser-menu">
+  <ul class="list-no-style list-no-padding">
+    <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">Epargne et prévoyance</a></span>
+        <button class="btn btn-sm btn-circle btn-outline btn-primary collapsed " title="Ouvrir le sous-menu Epargne et prévoyance" type="button" data-toggle="collapse" data-target="#menu-link-1" aria-expanded="false" aria-controls="menu-link-1">
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="collapser-menu-collapse collapse" id="menu-link-1" aria-expanded="false">
+        <ul>
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Modulo</a>
+              </span>
+            </div>
+          </li>
+
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Jeune</a>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">À propos</a></span>
+      </div>
+    </li>
+
+   <li class="collapser-first-level">
+      <div class="collapser-menu-item">
+        <span><a href="#" class="pretty-link">Entreprises</a></span>
+        <button class="btn btn-sm btn-circle btn-outline btn-primary collapsed " title="Ouvrir le sous-menu Entreprises" type="button" data-toggle="collapse" data-target="#menu-link-2" aria-expanded="false" aria-controls="menu-link-2">
+          <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="collapser-menu-collapse collapse" id="menu-link-2" aria-expanded="false">
+        <ul>
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Prévoyance des employés</a>
+              </span>
+              <button class="btn btn-sm btn-circle btn-outline btn-primary" title="Ouvrir le sous-menu Prévoyance des employés" type="button" data-toggle="collapse" data-target="#menu-link-2-1" aria-expanded="true" aria-controls="menu-link-2-1">
+                <span class="retraitespopulaires-icon retraitespopulaires-icon-angle" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <div class="collapser-menu-collapse collapse in" id="menu-link-2-1" aria-expanded="true" style="">
+              <ul>
+                <li class="">
+                  <div class="collapser-menu-item">
+                    <span>
+                      <a href="#" class="pretty-link">Notre organisation</a>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="">
+            <div class="collapser-menu-item">
+              <span>
+                <a href="#" class="pretty-link">Epargne Jeune</a>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+    <div class="spacer spacer-md"></div>
+
+    <div class="bg-berrylight-gray">
+  <div class="container">
+    <div class="spacer"></div>
+    <div class="col-xs-12">
+      <ul class="list-no-style list-no-padding two-cols">
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">À propos</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Documents</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">FAQ</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Offres Bella vita</a>
+        </li>
+        <li class="m-b-1">
+          <a class="pretty-link pretty-link-berrylight-gray" href="#">Emploi</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</div>
+
+  </div>
+</div>
+
+<header class="header hidden-print">
+  <div class="container container-offset">
+    <div class="row">
+      <div class="col-xs-12 col-xl-8 col-xl-offset-2">
+        <div class="header-container">
+          <div class="logo-retraitespopulaires logo-retraitespopulaires-lg logo-retraitespopulaires-offset svg-responsive">
+            <a class="" href="#">
+              <a href="#"><img src="https://styleguide.retraitespopulaires.ch/build/svg/logo-retraitespopulaires.svg" alt="Retraites Populaires" aria-label="Retraites Populaires"></a>
+            </a>
+          </div>
+          <div class="wrapper-prenavbar m-t-1 hidden-sm hidden-xs">
+            <ul class="prenavbar list-unstyled list-inline m-0" id="secondary-navigation" role="navigation" aria-label="Navigation secondaire">
+  <li>
+    <a href="#" class="text-muted small" target="">À propos</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Déjà client</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Connexion</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Emploi</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Contact/aide</a>
+  </li>
+</ul>
+
+            <div class="prenavbar-separator prenavbar-separator-invisible" aria-hidden="true"></div>
+            <div class="search-box">
+              <a href="#" class="search-toggle">
+                <span aria-hidden="true" class="retraitespopulaires-icon retraitespopulaires-icon-search"></span>
+                <div class="sr-only">Recherche</div>
+              </a>
+            </div>
+          </div>
+          <div class="visible-xs-block visible-sm-block" aria-hidden="true">
+            <button class="hamburger-wrapper" id="collapser-menu-toggler">
+              <div class="hamburger-button">
+                <svg class="hamburger-circle" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+                  <circle fill="white" stroke="#656e79" stroke-width="1.5" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+                </svg>
+                <div class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div class="hamburger-helper text-secondary">
+                <div class="helper-when-close">Menu</div>
+                <div class="helper-when-open">Fermer</div>
+              </div>
+            </button>
+          </div>
+        </div>
+        <nav class="navbar hidden-sm hidden-xs" aria-label="Navigation principale">
+          <a id="main-navigation" aria-label="Navigation principale"></a>
+          <h2 class="sr-only">Navigation principale</h2>
+          <ul class="list-unstyled m-0">
+            <li>
+              <a href="#">Prévoyance & 3ème pilier</a>
+            </li>
+            <li class="active">
+              <a href="#">Prêts</a>
+            </li>
+            <li>
+              <a href="#">Immobilier</a>
+            </li>
+            <li>
+              <a href="#">Entreprises</a>
+            </li>
+            <li>
+              <a href="#">Caisses de pension</a>
+            </li>
+            <li>
+              <a href="#">Collectivités</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="wrapper-funky-waves wrapper-funky-waves-with-cover">
+  <picture>
+      <source srcset="https://unsplash.it/544/250?image=1057" media="(max-width: 544px)">
+      <source srcset="https://unsplash.it/992/350?image=1057" media="(max-width: 992px)">
+      <source srcset="https://unsplash.it/1600/436?image=1057" media="(max-width: 1600px)">
+      <img class="img-responsive center-block" src="https://unsplash.it/2200/600?image=1057" alt="Image de couverture">
+    </picture>
+  
+
+  <div class="funky-waves-container">
+      <svg class="wave-1" version="1.1" viewBox="0 0 1920 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+          <path fill="#FFFFFF" d="M1920,136V73 c-189,83-636,77-980-6 C504-40,274-1,0,65.0277l0,70.7052L1920,136z"/>
+          <rect fill="#FFFFFF" y="133" width="100%" height="80px" />
+      </svg>
+
+      
+      <svg class="wave-2" version="1.1" viewBox="0 0 3840 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+       
+        <path opacity="0.33" fill="#FFFFFF" d="M2378.24,133.4C2131.57,125.71,1923,74.22,1920,73.48h0C1425.73-36.43,706.86,141.16,458.41,133.4S0,74.21,0,74.21V261.48H3839.83v-188C3345.56-36.43,2626.69,141.16,2378.24,133.4Z"/>
+      </svg>
+
+      
+      <svg class="wave-3" version="1.1" viewBox="0 0 3840 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+       
+        <path opacity="0.33" fill="#FFFFFF" d="M3839.76,105.23c-318.75,96.5-566.89,87.44-884.92,6.43C2598.46,20.88,2223,8.74,1919.76,105c-318.75,96.5-566.89,87.43-884.92,6.43C678.45,20.61,303,8.47-.24,104.69L0,273l1920,.27,1920,.27Z"/>
+      </svg>
+    </div>
+  
+</div>
+
+<div class="spacer spacer-xs"></div>
+
+
+
+<div class="container-fluid main-wrapper-hero">
+  <div class="row">
+    <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-8 col-xl-push-2">
+      <a name="startcontent"></a>
+      <article class="page full clearfix">
+        <div class="content">
+          <div class="row">
+            <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
+              <nav role="breadcrumb" aria-label="Vous êtes ici:">
+  <h2 class="hidden" aria-level="3">Vous êtes ici:</h2>
+  <ul class="breadcrumb">
+    <li><a href="#">Accueil</a></li>
+    <li><a class="pretty-link" href="#">Emploi</a></li>
+    <li class="active"><span class="sr-only">Page active:</span>Connexion</li>
+  </ul>
+</nav>
+
+              <div class="spacer spacer-xs"></div>
+              <h1 class="page-title">Quel est votre projet ?</h1>
+              <div class="entity-body clearfix">
+                <p class="lead text-secondary">Retraites Populaires met au service des collectivités publiques une palette de possibilités.</p>
+                <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
+                <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/facades-yverdon-pharmacie.jpg?h=660a20cf&amp;itok=Z95QK3xZ" alt="">
+                <h2>Exemple de liste</h2>
+                <ul>
+                  <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
+                  <li>Plus de synergies pour des prestations de qualité</li>
+                  <li>Meilleure capacité d'investissement</li>
+                  <li>Conseils personnalisés et adaptés aux besoins de chaque institution</li>
+                  <li>Interlocuteur de proximité et fiable</li>
+                </ul>
+                <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées. La flexibilité du système permet à chaque mandant de conserver son autonomie juridique et disposer de son propre Conseil d'administration ou Conseil de fondation. Retraites&nbsp;Populaires propose au Conseil d'administration du mandant la stratégie à adopter en fonction de l'objectif à atteindre. Elle suit et contrôle la parfaite application des stratégies définies dans le respect du mandat confié.</p>
+                <h2>Exemple d'image avec légende</h2>
+                <figure>
+                  <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
+                  <figcaption class="text-muted">Fig.1 - Trulli, Puglia, Italy. Crédits © Prénom Nom</figcaption>
+                </figure>
+                <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
+                <h2>Exemple sur 2 colonnes</h2>
+                <div class="row">
+                  <div class="col-md-5">
+                    <img class="img-responsive center-block" src="https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80" alt="">
+                  </div>
+                  <div class="col-md-7">
+                    <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
+                    <ul>
+                      <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
+                      <li>Plus de synergies pour des prestations de qualité</li>
+                      <li>Meilleure capacité d'investissement</li>
+                      <li>Conseils personnalisés et adaptés aux besoins de chaque institution</li>
+                    </ul>
+                  </div>
+                </div>
+                <h2>Exemple sur 2 colonnes inversées</h2>
+                <div class="row">
+                  <div class="col-md-7">
+                    <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
+                    <ul>
+                      <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
+                      <li>Plus de synergies pour des prestations de qualité</li>
+                      <li>Meilleure capacité d'investissement</li>
+                      <li>Conseils personnalisés et adaptés aux besoins de chaque institution</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-5">
+                    <img class="img-responsive center-block" src="https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80" alt="">
+                  </div>
+                </div>
+                <h2>Exemple de tableau</h2>
+                <table class=" table-assurance tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Je suis en <strong>formation</strong></th>
+                      <th>J'ai un <strong>emploi</strong></th>
+                      <th>Je suis à la <strong>retraite</strong></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Epargner en toute sécurité</td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                    </tr>
+                    <tr>
+                      <td>Epargner en toute sécurité</td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
+                <h2>Exemple de vidéo</h2>
+                <div style="margin: 0px auto; width: 100%; height: 100%;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="400" src="https://www.youtube.com/embed/IkWAnO1ZMuo" width="100%"></iframe></div>
+                <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
+                <h2>Exemple d'image pleine largeur</h2>
+                <img class="full-width" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/facades-yverdon-pharmacie.jpg?h=660a20cf&amp;itok=Z95QK3xZ" alt="">
+                <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
+                <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
+                <h2>Exemple d'accordéon</h2>
+                <div class="ckeditor-accordion-container">
+                  <dl class="styled">
+                    <dt ><span class="ckeditor-accordion-toggle active"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 1</a></dt>
+                    <dd ><p>Accordion content 1.</p></dd>
+                    <dt><span class="ckeditor-accordion-toggle"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 2</a></dt>
+                    <dd><p>Accordion content 2.</p></dd>
+                    <dt><span class="ckeditor-accordion-toggle"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 2</a></dt>
+                    <dd><p>Accordion content 2.</p></dd>
+                    <dt><span class="ckeditor-accordion-toggle"></span><a class="ckeditor-accordion-toggler" href="#" tabindex="-1">Accordion title 2</a></dt>
+                    <dd><p>Accordion content 2.</p></dd>
+                  </dl>
+                </div>
+                <h2>Exemple 2 colonnes pleine largeur</h2>
+                <div class="full-width full-width-row">
+                  <div class="col">
+                    <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
+                  </div>
+                  <div class="col col-text">
+                    <h2>Exemple de liste</h2>
+                    <ul>
+                      <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
+                      <li>Plus de synergies pour des prestations de qualité</li>
+                      <li>Meilleure capacité d'investissement</li>
+                    </ul>
+                    <a class="btn btn-lg btn-primary" href="/contactaide/calculateurs/calculateur-dhypotheque" title="Calculateur">Calculer mon hypothèque</a>
+                  </div>
+                </div>
+                <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
+                <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
+                <h2>Exemple de séparateur</h2>
+                <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
+                <hr>
+                <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
+                <h2>Exemple de Call-to-action</h2>
+                <p>Pour commencer, utilisez notre calculateur d'hypothèque pour savoir en quelques clics si vous pouvez vous permettre l'achat de ce bien immobilier.&nbsp;&nbsp;</p>
+                <a class="btn btn-lg btn-primary" href="/contactaide/calculateurs/calculateur-dhypotheque" title="Calculateur">Calculer mon hypothèque</a>
+                <h2>Exemple de documents utiles</h2>
+                <p class="media-heading text-muted" style="margin-bottom: 1rem">Rapport de gestion Complea</p>
+                <ul class="">
+                  <li>
+                    <a href="/documents/demande-modification-acomptes-de-charges" target="_blank" class="pretty-link">
+                    Demande modification acomptes de charges [131]
+                    <span class="text-muted text-small">- PDF</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/documents/solutions-de-paiement-du-loyer" target="_blank" class="pretty-link">
+                    Solutions de paiement du loyer
+                    <span class="text-muted text-small">- PDF</span>
+                    </a>
+                  </li>
+                </ul>
+                <p class="media-heading text-muted" style="margin-bottom: 1rem">Rapport de gestion Profelia</p>
+                <ul class="">
+                  <li>
+                    <a href="/documents/demande-modification-acomptes-de-charges" target="_blank" class="pretty-link">
+                    Demande modification acomptes de charges [131]
+                    <span class="text-muted text-small">- PDF</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/documents/solutions-de-paiement-du-loyer" target="_blank" class="pretty-link">
+                    Solutions de paiement du loyer
+                    <span class="text-muted text-small">- PDF</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="spacer spacer-lg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="col-xs-12 col-md-4 col-md-pull-7 col-lg-3 col-lg-pull-8 col-xl-2 col-xl-pull-8">
+      <div class="theme-">
+  <div class="secondary-nav">
+    <h2 class="sr-only">Navigation secondaire</h2>
+    <div class="secondary-nav-content" >
+      
+      
+        
+      
+
+      <div class="title h5 text-secondary"><a href="#">Lorem Ipsum</a></div>
+      <ul class="links list-no-style list-no-padding">
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">In eleifend</a>
+            
+          </li>
+        
+        
+
+          
+          
+            
+          
+
+          <li class="active text-bold">
+            
+              <a class="pretty-link" href="#">Purus ut nulla</a>
+            
+          </li>
+        
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">Aliquam lobortis</a>
+            
+          </li>
+        
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">Nam tristique</a>
+            
+          </li>
+        
+        
+
+          
+          
+
+          <li class="">
+            
+              <a class="pretty-link" href="#">Fringilla</a>
+            
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<div id="contactez-nous" class="bg-berrylight-gray" style="padding-top:2rem;padding-bottom:3rem">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2 style="margin-right: auto;margin-left: auto">Retraites&nbsp;Populaires est à votre disposition</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+        <div class="card card-horizontal card-white">
+          <a href="#" class="card-img-top">
+            <div class="card-img-bg" style="background-image:url(https://www.retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Retraites-Populaires.png?h=c9b3df4f&amp;itok=BATvdfLG);"></div>
+          </a>
+          <div class="card-body">
+            <p class="sr-only">Information de contact pour Retraites Populaires</p>
+            <h3 class="card-title">
+              <a href="#">Retraites Populaires</a>
+            </h3>
+            <p>N'hésitez pas à nous contacter                    au <a class="pretty-link text-bold text-no-wrap" href="tel:0213482111">021 348 21 11</a>.</p>
+            <p>
+              <a href="#" class="btn btn-primary">Contacter</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="bg-berrylight-gray" style="padding-top:2rem;padding-bottom:3rem">
+  <div class="container">
+    <div class="section-title">
+      <h2>Actualités</h2>
+      <div>
+        <a href="/a-propos/actualites" class="pretty-link pretty-link-berrylight-gray">Voir toutes les actualités</a>
+      </div>
+    </div>
+    <div class="row last-news-content same-height-group">
+      <div class="col-xs-12 col-md-6 same-height">
+        <a href="/a-propos/actualites/les-assurances-sociales-en-bref" class="card card-white">
+          <div class="card-img-top">
+            <img class="card-img" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_image_700_350/public/covers-faq/2019-09/bandeau%20actualit%C3%A9.png?h=abc3698d&amp;itok=7OJx5zdl" alt="Les assurances sociales en bref...">
+            <div class="loader-image">
+              <div class="loader">
+                <div class="loader-snake"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title h2">Les assurances sociales en bref...</h3>
+            <div class="text-muted">
+              <time datetime="2019-10-16T11:30:00+02:00">
+              <span class="sr-only">Date de publication:</span>
+              16 octobre 2019
+              </time> -
+              <span>
+              <span class="sr-only">Catégorie de l'actualité:</span>
+              Infos
+              </span>
+            </div>
+            <div class="spacer spacer-sm"></div>
+            <p>Tu as des questions concernant les assurances sociales ? Quelques notions t'échappent ? Alors cette actualité est faite pour toi. </p>
+          </div>
+        </a>
+      </div>
+      <div class="col-xs-12 col-md-6 same-height">
+        <a href="/a-propos/actualites/comment-profiter-de-sa-retraite-deux" class="card card-white">
+          <div class="card-img-top">
+            <img class="card-img" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_image_700_350/public/covers-faq/2019-10/Profiter%20de%20sa%20retraite.png?h=abc3698d&amp;itok=e2Rdp1px" alt="Comment profiter de sa retraite à deux?">
+            <div class="loader-image">
+              <div class="loader">
+                <div class="loader-snake"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title h2">Comment profiter de sa retraite à deux?</h3>
+            <div class="text-muted">
+              <time datetime="2019-10-09T08:28:51+02:00">
+              <span class="sr-only">Date de publication:</span>
+              09 octobre 2019
+              </time> -
+              <span>
+              <span class="sr-only">Catégorie de l'actualité:</span>
+              Dans les médias
+              </span>
+            </div>
+            <div class="spacer spacer-sm"></div>
+            <p>Louise et Victor, 58 et 60 ans, réfléchissent à conclure un 3e pilier. Ils souhaitent en effet investir une partie de leur épargne pour améliorer leur retraite et se demandent quelles sont leurs options.
+              Chez Retraites Populaires, nous assurons la prévoyance de nos clients depuis plus de 110 ans et les aidons à trouver la solution adaptée à leur situation. Louise et Victor sont donc venus nous demander conseil et obtenir des réponses concrètes.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+<div class="footer hidden-print">
+
+  
+  <div class="container">
+    <div class="row">
+      <!-- Socialnetwork -->
+      <div class="col-xs-12 col-md-6">
+        <h4>Réseaux sociaux</h4>
+        <p>Suivez-nous en temps réel sur Twitter, Facebook et vos plateformes préférées!</p>
+        <div class="spacer spacer-xs"></div>
+
+        <div class="social-list">
+          <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+            <div class="spacer spacer-xs"></div>
+            <div class="bubble-icon">
+              <a aria-label="Cliquez pour accéder au compte Twitter de Retraites Populaires" href="https://twitter.com/RetraitesPop" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-twitter retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+            <div class="spacer spacer-xs"></div>
+            <div class="bubble-icon">
+              <a aria-label="Cliquez pour accéder au compte Facebook de Retraites Populaires" href="https://www.facebook.com/retraitespopulaires" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-facebook retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+            <div class="spacer spacer-xs"></div>
+            <div class="bubble-icon">
+              <a aria-label="Cliquez pour accéder au compte YouTube de Retraites Populaires" href="https://www.youtube.com/user/RetraitesPopulaires" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-youtube retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+            <div class="spacer spacer-xs"></div>
+            <div class="bubble-icon">
+              <a aria-label="Cliquez pour accéder au compte Instagram de Retraites Populaires" href="https://www.instagram.com/retraitespopulaires" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-instagram retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="button-bubble button-bubble-social inline-block button-bubble-outline text-center">
+            <div class="spacer spacer-xs"></div>
+            <div class="bubble-icon">
+              <a aria-label="Cliquez pour accéder au compte LinkedIn de Retraites Populaires" href="https://www.linkedin.com/company/retraites-populaires" target="blank"><i class="retraitespopulaires-icon retraitespopulaires-icon-3x retraitespopulaires-icon-linkedin retraitespopulaires-icon-color" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-xs-12 col-md-5 col-md-offset-1">
+        <div class="spacer spacer-md visible-xs visible-sm"></div>
+        <h4>Newsletter</h4>
+        <p>Recevez <a href="#" class="pretty-link text-italic"><i>Savoir-faire</i></a>, le bulletin des spécialistes de Retraites&nbsp;Populaires, trois fois par année via e-mail:</p>
+
+        <form class="rp-newsletter-form" action="#" method="post" id="rp-newsletter-form" accept-charset="UTF-8">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="form-group form-no-label">
+                <input class="full-width form-text required form-control" type="text" id="edit-email" name="email" value="" size="60" maxlength="128" placeholder="Ex: alain.rochat@retraitespopulaires.ch" required="required" aria-required="true">
+              </div>
+              <span class="input-group-btn">
+                <input class="btn btn-default button btn-primary" type="submit" id="edit-submit--2" name="op" value="Je m'inscris">
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <!-- Contacts -->
+      <div class="col-xs-12">
+        <div class="spacer"></div>
+        <h4>Contactez-nous</h4>
+        <div class="spacer spacer-xs"></div>
+
+        <div class="row">
+          <!-- Lausanne -->
+          <div class="col-xs-12 col-sm-6 col-md-4 m-b-1">
+            <h4 class="text-muted m-t-0 text-secondary">Lausanne</h4>
+            <a href="tel:+41213482111" class=" text-no-wrap">+41 21 348 21 11</a><br>
+            <a href="mailto:info@retraitespopulaires.ch" class="">info@retraitespopulaires.ch</a>
+          </div>
+
+          <!-- Yverdon-les-Bains -->
+          <div class="col-xs-12 col-sm-6 col-md-4 m-b-1">
+            <h4 class="text-muted m-t-0 text-secondary">Yverdon-les-Bains</h4>
+            <a href="tel:+41213482821" class=" text-no-wrap">+41 21 348 28 21</a><br>
+            <a href="mailto:yverdon@retraitespopulaires.ch" class="">yverdon@retraitespopulaires.ch</a>
+          </div>
+
+          <!-- Nyon -->
+          <div class="col-xs-12 col-sm-6 col-md-4 m-b-1">
+            <h4 class="text-muted m-t-0 text-secondary">Nyon</h4>
+            <a href="tel:+41213482020" class=" text-no-wrap">+41 21 348 20 20</a><br>
+            <a href="mailto:nyon@retraitespopulaires.ch" class="">nyon@retraitespopulaires.ch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer spacer-xs"></div>
+  
+
+  <div class="organic-lines"></div>
+
+
+  <div class="spacer"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <ul class="menu-footer unordered-list list-inline list-unstyle-first">
+          <li><a class="pretty-link" href="/impressum" target="">Impressum</a></li>
+          <li><a class="pretty-link" href="/mentions-juridiques" target="">Mentions juridiques</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+    
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          </button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          </button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js" crossorigin="anonymous"></script>
+    <script src="https://styleguide.retraitespopulaires.ch/build/js/selectize.min.js"></script>
+    <script src="https://styleguide.retraitespopulaires.ch/build/js/vendors.min.js"></script>
+    <script src="https://styleguide.retraitespopulaires.ch/build/js/bundle.js"></script>
+
+    
+
+    
+
+  </body>
+</html>
