@@ -237,7 +237,7 @@ a.card-img-top {
 .card-body {
   padding: $grid-gutter-width;
 
-  > *:last-child {
+  .last-news-content & > *:last-child {
     /* Truncate on 3rd line - needs a polyfill for IE11 */
     /* stylelint-disable */
     display: -webkit-box;
