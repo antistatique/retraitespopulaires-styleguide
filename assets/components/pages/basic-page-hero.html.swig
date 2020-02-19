@@ -16,7 +16,6 @@ layout: page.html.swig
         <div class="content">
           <div class="row">
             <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
-              {% include '../molecules/breadcrumb.html.swig' %}
               <div class="spacer spacer-xs"></div>
               <h1 class="page-title">Quel est votre projet ?</h1>
               <div class="entity-body clearfix">
