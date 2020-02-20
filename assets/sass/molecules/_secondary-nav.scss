@@ -8,23 +8,6 @@ $active-border-width: 4px;
   @media only screen and (min-width: $screen-md-min) {
     margin-left: -1.5rem;
   }
-
-  .btn-contact {
-    display: none;
-
-    @media only screen and (min-width: $screen-md-min) {
-      display: flex;
-      align-items: center;
-      margin-top: 2rem;
-      margin-bottom: 1.5rem;
-      justify-content: center;
-    }
-
-    .retraitespopulaires-icon {
-      margin-right: 1rem;
-      color: $white;
-    }
-  }
 }
 
 .secondary-nav-content {
