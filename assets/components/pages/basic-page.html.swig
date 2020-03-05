@@ -15,10 +15,17 @@ layout: page.html.swig
         <div class="content">
           <div class="row">
             <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
-              {% include '../molecules/breadcrumb.html.swig' %}
               <div class="spacer spacer-xs"></div>
               <h1 class="page-title">Quel est votre projet ?</h1>
               <div class="entity-body clearfix">
+                <div class="text-right">
+                  <a href="#" class="btn btn-contact">
+                    <div class="icon-container">
+                      <div class="retraitespopulaires-icon retraitespopulaires-icon-contact-us-borderless" aria-hidden="true"></div>
+                    </div>
+                    Nous contacter
+                  </a>
+                </div>
                 <p class="lead text-secondary">Retraites Populaires met au service des collectivités publiques une palette de possibilités.</p>
                 <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
                 <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/facades-yverdon-pharmacie.jpg?h=660a20cf&amp;itok=Z95QK3xZ" alt="">

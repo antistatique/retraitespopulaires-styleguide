@@ -236,17 +236,17 @@ a.card-img-top {
 
 .card-body {
   padding: $grid-gutter-width;
+}
 
-  > *:last-child {
-    /* Truncate on 3rd line - needs a polyfill for IE11 */
-    /* stylelint-disable */
-    display: -webkit-box;
-    margin-bottom: 0;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    /* stylelint-enable */
-  }
+.card-truncated .card-body > *:last-child {
+  /* Truncate on 3rd line - needs a polyfill for IE11 */
+  /* stylelint-disable */
+  display: -webkit-box;
+  margin-bottom: 0;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* stylelint-enable */
 }
 
 /**
