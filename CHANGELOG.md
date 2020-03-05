@@ -1,6 +1,8 @@
 CHANGELOG
 =========
 ## Next release
+ - Improve "Documents utiles" filters style
+ - Improve "Documents utiles" cards list style
  - Make navbar sticky
  - Improve box-shadow style
  - Truncate cards text
