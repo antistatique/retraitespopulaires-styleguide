@@ -1,6 +1,7 @@
 CHANGELOG
 =========
-## Next release
+## 3.4.0 (2020-03-12)
+ - Improve slider JS component with labels
  - Improve "Documents utiles" filters style
  - Improve "Documents utiles" cards list style
  - Make navbar sticky
