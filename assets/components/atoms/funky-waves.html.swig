@@ -42,5 +42,5 @@ notes: |
 </div>
 
 {% if variant != 'no-funky' -%}
-  <div class="spacer"></div>
+  <div class="spacer spacer-xs"></div>
 {% endif %}
