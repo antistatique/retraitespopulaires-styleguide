@@ -48,6 +48,10 @@
     0 4px 4px rgba(0, 0, 0, 0.015),
     0 8px 8px rgba(0, 0, 0, 0.015),
     0 16px 16px rgba(0, 0, 0, 0.015);
+
+  @media screen and (min-width: $screen-sm-min) {
+    align-items: center;
+  }
 }
 
 .document-card-icon {
@@ -55,41 +59,10 @@
   color: $brand-primary;
 }
 
-.document-card-content {
-  flex-grow: 1;
-
-  @media (min-width: $screen-sm-min) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-.document-card-text {
-  padding-top: 0.5rem;
-}
-
 .document-card-title {
+  flex-grow: 1;
   margin-top: 0;
+  margin-bottom: 0;
   font-size: $font-size-h5;
   color: $text-color;
-}
-
-.document-card-subtitle {
-  margin-bottom: 0;
-  font-size: $font-size-base;
-}
-
-.document-card-number {
-  margin-top: 0.5rem;
-  color: $text-muted;
-}
-
-.document-card-btn {
-  margin-top: 1rem;
-
-  @media (min-width: $screen-sm-min) {
-    margin-top: 0;
-    margin-left: 1.5rem;
-  }
 }
