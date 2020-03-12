@@ -11,15 +11,15 @@ notes: |
     <a href="#" class="text-muted small" target="">À propos</a>
   </li>
   <li>
-    <a href="#" class="text-muted small" target="">Documents</a>
+    <a href="#" class="text-muted small" target="">Déjà client</a>
   </li>
   <li>
-    <a href="#" class="text-muted small" target="">FAQ</a>
-  </li>
-  <li>
-    <a href="#" class="text-muted small" target="">Offres Bella vita</a>
+    <a href="#" class="text-muted small" target="">Connexion</a>
   </li>
   <li>
     <a href="#" class="text-muted small" target="">Emploi</a>
+  </li>
+  <li>
+    <a href="#" class="text-muted small" target="">Contact/aide</a>
   </li>
 </ul>
