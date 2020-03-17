@@ -1,5 +1,18 @@
 CHANGELOG
 =========
+## 3.4.0 (2020-03-12)
+ - Improve slider JS component with labels
+ - Improve "Documents utiles" filters style
+ - Improve "Documents utiles" cards list style
+ - Make navbar sticky
+ - Improve box-shadow style
+ - Truncate cards text
+ - Improve secondary-nav style
+ - Remove back button
+ - Remove hero image
+ - Improve rich-text content style
+ - Add some variant components to rich-text content
+
 ## 3.3.2 (2019-11-18)
  - MD-524: adapted space before and after collapse button 
  - MD-513: made body-font and mandants-font proxima-nova

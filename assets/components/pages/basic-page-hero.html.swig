@@ -1,13 +1,14 @@
 ---
-title: Basic Page
-name: basic-page
+title: Basic Page (hero)
+name: basic-page-hero
 collection: pages
 styleguide: false
 layout: page.html.swig
 ---
 {% include '../organisms/header.html.swig' %}
+{% include '../atoms/funky-waves.html.swig' %}
 
-<div class="container-fluid main-wrapper">
+<div class="container-fluid main-wrapper-hero">
   <div class="row">
     <div class="col-xs-12 col-md-7 col-md-push-4 col-lg-8 col-lg-push-3 col-xl-8 col-xl-push-2">
       <a name="startcontent"></a>
@@ -18,14 +19,6 @@ layout: page.html.swig
               <div class="spacer spacer-xs"></div>
               <h1 class="page-title">Quel est votre projet ?</h1>
               <div class="entity-body clearfix">
-                <div class="text-right">
-                  <a href="#" class="btn btn-contact">
-                    <div class="icon-container">
-                      <div class="retraitespopulaires-icon retraitespopulaires-icon-contact-us-borderless" aria-hidden="true"></div>
-                    </div>
-                    Nous contacter
-                  </a>
-                </div>
                 <p class="lead text-secondary">Retraites Populaires met au service des collectivités publiques une palette de possibilités.</p>
                 <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
                 <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/facades-yverdon-pharmacie.jpg?h=660a20cf&amp;itok=Z95QK3xZ" alt="">
@@ -38,11 +31,6 @@ layout: page.html.swig
                   <li>Interlocuteur de proximité et fiable</li>
                 </ul>
                 <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées. La flexibilité du système permet à chaque mandant de conserver son autonomie juridique et disposer de son propre Conseil d'administration ou Conseil de fondation. Retraites&nbsp;Populaires propose au Conseil d'administration du mandant la stratégie à adopter en fonction de l'objectif à atteindre. Elle suit et contrôle la parfaite application des stratégies définies dans le respect du mandat confié.</p>
-                <h2>Exemple d'image</h2>
-                <figure>
-                  <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
-                </figure>
-                <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
                 <h2>Exemple d'image avec légende</h2>
                 <figure>
                   <img class="img-responsive center-block" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_teaser_contact_xl/public/2016-10/Jumelles.jpg?h=10229cea&itok=M7djDQqa" alt="">
@@ -51,10 +39,10 @@ layout: page.html.swig
                 <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
                 <h2>Exemple sur 2 colonnes</h2>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-5">
                     <img class="img-responsive center-block" src="https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80" alt="">
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-7">
                     <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
                     <ul>
                       <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
@@ -64,22 +52,9 @@ layout: page.html.swig
                     </ul>
                   </div>
                 </div>
-                <h2>Exemple sur 2 colonnes centrées verticalement</h2>
-                <div class="row align-center">
-                  <div class="col-md-6">
-                    <img class="img-responsive center-block" src="https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80" alt="">
-                  </div>
-                  <div class="col-md-6">
-                    <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
-                  </div>
-                </div>
-                <h2>Exemple sur 2 colonnes avec texte</h2>
+                <h2>Exemple sur 2 colonnes inversées</h2>
                 <div class="row">
-                  <div class="col-md-6">
-                    <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
-                    <p>Chaque étape du parcours d’une personne est marquée de désirs, ambitions et actions. Retraites Populaires accompagne les Vaudois tout le long de la vie, avec des produits de 3e pilier simples, adaptés à chaque situation et chaque projet.</p>
-                  </div>
-                  <div class="col-md-6">
+                  <div class="col-md-7">
                     <p>Retraites&nbsp;Populaires&nbsp;est un partenaire fort des institutions de prévoyance publiques et privées.</p>
                     <ul>
                       <li>Soutien administratif et stratégique pour les membres de votre Conseil</li>
@@ -87,48 +62,39 @@ layout: page.html.swig
                       <li>Meilleure capacité d'investissement</li>
                       <li>Conseils personnalisés et adaptés aux besoins de chaque institution</li>
                     </ul>
+                  </div>
+                  <div class="col-md-5">
+                    <img class="img-responsive center-block" src="https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80" alt="">
                   </div>
                 </div>
                 <h2>Exemple de tableau</h2>
-                <div class="table-responsive">
-                  <table class="table tablesaw table-assurance">
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <th>Je suis en <strong>formation</strong></th>
-                        <th>J'ai un <strong>emploi</strong></th>
-                        <th>Je suis à la <strong>retraite</strong></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Epargner en toute sécurité</td>
-                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                      </tr>
-                      <tr>
-                        <td>Epargner en toute sécurité</td>
-                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                        <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                <table class=" table-assurance tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Je suis en <strong>formation</strong></th>
+                      <th>J'ai un <strong>emploi</strong></th>
+                      <th>Je suis à la <strong>retraite</strong></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Epargner en toute sécurité</td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                    </tr>
+                    <tr>
+                      <td>Epargner en toute sécurité</td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                      <td><div class="text-center"><span class="text-danger retraitespopulaires-icon retraitespopulaires-icon-placeholder"></span></div></td>
+                    </tr>
+                  </tbody>
+                </table>
                 <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
                 <h2>Exemple de vidéo</h2>
                 <div style="margin: 0px auto; width: 100%; height: 100%;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="400" src="https://www.youtube.com/embed/IkWAnO1ZMuo" width="100%"></iframe></div>
-                <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
-                <h2>Exemple sur 2 colonnes avec vidéos</h2>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div style="margin: 0px auto; width: 100%; height: 100%;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="220" src="https://www.youtube.com/embed/IkWAnO1ZMuo" width="100%"></iframe></div>
-                  </div>
-                  <div class="col-md-6">
-                    <div style="margin: 0px auto; width: 100%; height: 100%;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="220" src="https://www.youtube.com/embed/IkWAnO1ZMuo" width="100%"></iframe></div>
-                  </div>
-                </div>
                 <p>Et si vous nécessitez des locaux pour votre entreprise, Retraites&nbsp;Populaires, sous sa casquette de gérant immobilier, propose la <a href="/commerces"><strong>location de surfaces commerciales</strong></a>&nbsp;de différentes tailles, modulables et à des tarifs compétitifs.</p>
                 <h2>Exemple d'image pleine largeur</h2>
                 <img class="full-width" src="https://retraitespopulaires.ch/sites/default/files/styles/rp_full_screen_xl/public/covers-page/2016-11/facades-yverdon-pharmacie.jpg?h=660a20cf&amp;itok=Z95QK3xZ" alt="">
@@ -215,10 +181,10 @@ layout: page.html.swig
   </div>
 </div>
 
-<div id="contactez-nous" class="section contact-section bg-berrylight-gray">
+<div id="contactez-nous" class="bg-berrylight-gray" style="padding-top:2rem;padding-bottom:3rem">
   <div class="container">
-    <div class="section-title">
-      <h2>Retraites&nbsp;Populaires est à votre disposition</h2>
+    <div class="section-title text-center">
+      <h2 style="margin-right: auto;margin-left: auto">Retraites&nbsp;Populaires est à votre disposition</h2>
     </div>
     <div class="row">
       <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
@@ -240,12 +206,11 @@ layout: page.html.swig
       </div>
     </div>
   </div>
-  {% include '../molecules/popin.html.swig' %}
 </div>
 
 <div class="spacer"></div>
 
-<div class="section bg-berrylight-gray">
+<div class="bg-berrylight-gray" style="padding-top:2rem;padding-bottom:3rem">
   <div class="container">
     <div class="section-title">
       <h2>Actualités</h2>

@@ -11,11 +11,7 @@ notes: |
 <div class="theme-{{ secondary_nav_json }}">
   <div class="secondary-nav">
     <h2 class="sr-only">Navigation secondaire</h2>
-    <div class="back">
-      <a aria-label="Back" href="#" class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-arrow-left"></a>
-    </div>
-    <div class="secondary-nav-content">
-
+    <div class="secondary-nav-content" >
       {% set nav = null %}
       {% if secondary_nav_json == 'particuliers'  %}
         {% set nav = data.nav.particuliers %}
@@ -31,7 +27,7 @@ notes: |
         {% set nav = data.nav.lorem %}
       {% endif %}
 
-      <div class="title h5 text-secondary">{{ nav.title }}</div>
+      <div class="title h5 text-secondary"><a href="#">{{ nav.title }}</a></div>
       <ul class="links list-no-style list-no-padding">
         {% for link in nav.links %}
 
@@ -42,7 +38,7 @@ notes: |
 
           <li class="{{ classes }}">
             {% if link.active  %}
-              {{ link.label }}
+              <a class="pretty-link" href="{{ link.url }}">{{ link.label }}</a>
             {% else %}
               <a class="pretty-link" href="{{ link.url }}">{{ link.label }}</a>
             {% endif %}
