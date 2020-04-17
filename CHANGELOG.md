@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
+- MD-613: Add icon for connect button
 
 ## 3.4.1 (2020-04-07)
 - MD-610: Popover on hover
