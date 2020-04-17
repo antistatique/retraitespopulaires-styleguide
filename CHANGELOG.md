@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
+- MD-612: Add gray shadow style for links
 
 ## 3.4.1 (2020-04-07)
 - MD-610: Popover on hover
