@@ -1,5 +1,10 @@
 CHANGELOG
 =========
+## NEXT RELEASE
+
+## 3.4.1 (2020-04-07)
+- MD-610: Popover on hover
+
 ## 3.4.0 (2020-03-12)
  - Improve slider JS component with labels
  - Improve "Documents utiles" filters style
