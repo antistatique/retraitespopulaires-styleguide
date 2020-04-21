@@ -1,6 +1,8 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
+
+## 3.4.2 (2020-04-21)
 - MD-612: Add gray shadow style for links
 - MD-613: Add icon for connect button
 
