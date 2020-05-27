@@ -1,0 +1,73 @@
+.section {
+  $this: &;
+
+  &--bellavita {
+    padding-top: 0;
+
+    &-home {
+      a:hover { text-decoration: none; }
+    }
+
+    &-category {
+      a:hover { text-decoration: none; }
+    }
+
+    .article {
+      &--home {
+        &-lead {
+          background: map-get($bv-colors, 'grey-light');
+
+          .article__content {
+            padding: 40px 80px 40px 20px;
+
+            p:last-child {
+              width: 80%;
+            }
+          }
+        }
+
+        &-index {
+          position: relative;
+
+          .col-lg-6 { position: static; }
+
+          .p--underline {
+            position: absolute;
+            bottom: 0;
+          }
+
+          @media (max-width: 991px){
+            .p--underline {
+              position: relative;
+            }
+          }
+        }
+      }
+
+      &--category {
+        &-lead {
+          .article__content {
+            position: relative;
+            margin: 40px -60px 40px 0;
+            padding: 50px 100px;
+            z-index: 2;
+            background: map-get($bv-colors, 'white');
+          }
+        }
+      }
+
+      &--view {
+        .article__nav {
+          position: relative;
+          margin: -47px 50px 0 50px;
+          z-index: 2;
+
+          > div {
+            display: inline-block;
+            padding: 6px 8px 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -87,6 +87,77 @@ h6,
   @extend %square-bullet;
 }
 
+/* Bellavita - Typography */
+.section--bellavita {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  h4,
+  blockquote {
+    @include font-secondary;
+
+    font-weight: 700;
+    color: map-get($bv-colors, 'black');
+  }
+
+  h1,
+  .h1 {
+    font-size: 60px;
+    line-height: 68px;
+  }
+
+  h2,
+  .h2 {
+    font-size: 44px;
+    line-height: 52px;
+  }
+
+  h3,
+  .h3 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  p {
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 32px;
+    font-weight: 300;
+
+    strong { font-weight: bold; }
+
+    &.p--sm {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1.75px;
+    }
+
+    &.p--xs {
+      font-size: 12px;
+      letter-spacing: 0;
+      line-height: 14px;
+    }
+
+    &.p--upper {
+      text-transform: uppercase;
+    }
+
+    &.p--underline {
+      padding-bottom: 5px;
+      border-bottom: 1px solid map-get($bv-colors, 'green');
+    }
+  }
+
+  .article {
+    h1,
+    h2,
+    h3,
+    p { margin: 0; }
+  }
+}
+
 /**
 * Responsive Typography
 */

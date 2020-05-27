@@ -356,6 +356,10 @@ $screen-xl-min: 1600px;
   @media screen and (min-width: $screen-md-min) {
     margin-top: 48px;
   }
+
+  &--bellavita {
+    margin-top: 0;
+  }
 }
 
 .main-wrapper-hero {

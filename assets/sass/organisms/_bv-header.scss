@@ -1,0 +1,42 @@
+.header {
+  $this: &;
+
+  &--bellavita {
+    #{$this}__title {
+      padding: 20px;
+      background: linear-gradient(to left, map-get($bv-colors, 'green-dark'), map-get($bv-colors, 'green'));
+      color: white;
+
+      img { width: 120px; }
+
+      * { margin: 0 !important; }
+
+      p { line-height: 73px; }
+    }
+
+    #{$this}__nav {
+      padding: 15px 0;
+
+      a,
+      a:hover,
+      a:focus {
+        font-size: 18px;
+        line-height: 22px;
+        color: map-get($bv-colors, 'grey-text');
+      }
+    }
+  }
+
+  &--bellavita-view {
+    position: absolute;
+    width: 100%;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.85);
+
+    img {
+      float: left;
+      width: 97px;
+      margin: 4px 15px 0 0;
+    }
+  }
+}
