@@ -4,15 +4,26 @@
   &--bellavita {
     padding-top: 0;
 
-    &-home {
-      a:hover { text-decoration: none; }
-    }
-
-    &-category {
-      a:hover { text-decoration: none; }
+    &-home,
+    &-category,
+    &-related {
+      a:hover,
+      a:hover * { text-decoration: none; }
     }
 
     .article {
+      h1,
+      h2,
+      h3,
+      p { margin: 0; }
+
+      .article__link {
+        .retraitespopulaires-icon {
+          padding-bottom: 1px;
+          vertical-align: bottom;
+        }
+      }
+
       &--home {
         &-lead {
           background: map-get($bv-colors, 'grey-light');
@@ -20,8 +31,17 @@
           .article__content {
             padding: 40px 80px 40px 20px;
 
-            p:last-child {
+            .article__link {
               width: 80%;
+            }
+
+            @media (max-width: 991px) {
+              padding: 30px 20px;
+            }
+
+            @media (max-width: 767px) {
+              max-width: 540px;
+              margin: 0 auto;
             }
           }
         }
@@ -29,17 +49,18 @@
         &-index {
           position: relative;
 
-          .col-lg-6 { position: static; }
+          .article__content { position: static; }
 
-          .p--underline {
+          .article__link {
             position: absolute;
             bottom: 0;
           }
 
-          @media (max-width: 991px){
-            .p--underline {
-              position: relative;
-            }
+          @media (max-width: 767px) {
+            max-width: 540px;
+            margin: 0 auto;
+
+            .article__link { position: relative; }
           }
         }
       }
@@ -47,11 +68,85 @@
       &--category {
         &-lead {
           .article__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             position: relative;
-            margin: 40px -60px 40px 0;
+            height: 620px;
+            margin: 40px -70px 40px 0;
             padding: 50px 100px;
             z-index: 2;
             background: map-get($bv-colors, 'white');
+
+            .article__link {
+              width: 60%;
+            }
+          }
+
+          .article__back {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 6px 8px 0;
+          }
+
+          @media (max-width: 1600px) {
+            .article__content { height: 430px; }
+          }
+
+          @media (max-width: 1200px) {
+            .article__content {
+              height: 340px;
+              padding: 50px;
+            }
+
+            .article__back {
+              .retraitespopulaires-icon { font-size: 1em !important; }
+            }
+          }
+
+          @media (max-width: 991px) {
+            .article__content {
+              height: 310px;
+              padding: 25px;
+            }
+          }
+
+          @media (max-width: 767px) {
+            max-width: 540px;
+            margin: 0 auto;
+
+            .article__content {
+              height: auto;
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+
+        &-index {
+          .article__content {
+            &-container { position: static; }
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: absolute;
+            top: 0;
+            bottom: 38.70968px;
+            width: 60%;
+          }
+
+          @media (max-width: 767px) {
+            max-width: 540px;
+            margin: 0 auto;
+
+            .article__content {
+              position: relative;
+              width: 100%;
+              max-width: 540px;
+            }
           }
         }
       }
@@ -65,6 +160,27 @@
           > div {
             display: inline-block;
             padding: 6px 8px 0;
+          }
+        }
+
+        @media (max-width: 1200px) {
+          .article__nav {
+            margin: -31px 50px 0 50px;
+
+            .retraitespopulaires-icon { font-size: 1em !important; }
+          }
+        }
+
+        @media (max-width: 991px) {
+          .article__nav { margin: 0; }
+        }
+      }
+
+      &--related {
+        &-index {
+          @media (max-width: 1200px) {
+            max-width: 540px;
+            margin: 0 auto;
           }
         }
       }
