@@ -271,6 +271,19 @@
 @include bg-variant('.bg-light-gray', $light-gray);
 @include bg-variant('.bg-white', $white);
 
+/**
+ * Bellavita - Background & Colors helpers
+ */
+@each $name, $hexa in $bv-colors {
+  .bv-color--#{$name} {
+    color: #{$hexa} !important;
+  }
+
+  .bv-bg--#{$name} {
+    background: #{$hexa} !important;
+  }
+}
+
 // Add a `<div class="bg-special-waves"></div>` inside a `.background-overflow.bg-berrylight-gray` element.
 .bg-special-waves {
   position: absolute;

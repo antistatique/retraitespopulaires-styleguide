@@ -87,6 +87,46 @@ h6,
   @extend %square-bullet;
 }
 
+/* Bellavita - Typography */
+.section--bellavita {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  h4,
+  blockquote {
+    @include font-secondary;
+
+    font-weight: 700;
+    color: map-get($bv-colors, 'black');
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 300;
+
+    strong,
+    &.text-bold { font-weight: 700; }
+
+    &.p--sm {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    &.p--xs {
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    &.p--underline {
+      padding-bottom: 5px;
+      border-bottom: 1px solid map-get($bv-colors, 'green');
+    }
+  }
+}
+
 /**
 * Responsive Typography
 */
@@ -176,6 +216,43 @@ Extra Small Devices, Phones */
 
   h6,
   .h6 { font-size: floor(($font-size-h6 * 1.18)); }
+}
+
+@media only screen and (min-width: 1600px) {
+  .section--bellavita {
+    h1,
+    .h1 {
+      font-size: 60px;
+      line-height: 68px;
+    }
+
+    h2,
+    .h2 {
+      font-size: 44px;
+      line-height: 52px;
+    }
+
+    h3,
+    .h3 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 32px;
+
+      &.p--sm {
+        font-size: 18px;
+        line-height: 20px;
+      }
+
+      &.p--xs {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
 }
 
 /* Very Large Devices, Wide/TV Screens */
