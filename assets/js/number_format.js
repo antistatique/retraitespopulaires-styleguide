@@ -14,6 +14,13 @@ export function number_format () {
     aSign: ' m2'
   });
 
+  $('.form-month-numeric').autoNumeric('init',{
+    aSep: '\'',
+    mDec: '0',
+    pSign: 's',
+    aSign: ' Mois'
+  });
+
   $('.form-percent-numeric').autoNumeric('init',{
     aSep: '\'',
     pSign: 's',
@@ -23,6 +30,7 @@ export function number_format () {
   // To be sure that the format is respected (when back on browser)
   $('.form-chf-numeric').autoNumeric('update');
   $('.form-surface-numeric').autoNumeric('update');
+  $('.form-month-numeric').autoNumeric('update');
   $('.form-percent-numeric').autoNumeric('update');
 
   // Replace formatted value to raw one when submitting forms
@@ -35,6 +43,11 @@ export function number_format () {
     });
 
     $this.find('.form-surface-numeric').each(function(i, el){
+      const $el = $(el);
+      $el.val($el.autoNumeric('get'));
+    });
+
+    $this.find('.form-percent-numeric').each(function(i, el){
       const $el = $(el);
       $el.val($el.autoNumeric('get'));
     });
