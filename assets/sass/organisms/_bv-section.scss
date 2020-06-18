@@ -142,6 +142,7 @@
               height: auto;
               margin: 0;
               padding: 0;
+              background: white !important;
             }
           }
         }
@@ -178,7 +179,7 @@
 
         .article__nav {
           position: relative;
-          margin: -47px 50px 0 50px;
+          margin: -46px 50px 0 50px;
           z-index: 2;
 
           > div {
@@ -211,7 +212,7 @@
 
         @media (max-width: 1200px) {
           .article__nav {
-            margin: -31px 50px 0 50px;
+            margin: -30px 50px 0 50px;
 
             .retraitespopulaires-icon { font-size: 1em !important; }
           }
