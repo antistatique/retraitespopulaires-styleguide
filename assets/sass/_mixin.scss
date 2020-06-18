@@ -60,14 +60,14 @@
   }
 }
 
-@mixin pretty-link-text-shadow($color) {
+@mixin pretty-link-text-shadow($color, $important:"") {
   text-shadow:
     3px 0 $color,
     2px 0 $color,
     1px 0 $color,
     -1px 0 $color,
     -2px 0 $color,
-    -3px 0 $color;
+    -3px 0 $color unquote($important);
 }
 
 @mixin btn-outline-variant($color) {

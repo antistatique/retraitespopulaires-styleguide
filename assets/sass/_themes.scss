@@ -133,6 +133,11 @@ a.no-underline {
 a.no-style {
   background: none !important;
 }
+
+a.gray-shadow {
+  @include pretty-link-text-shadow($berrylight-gray, "!important");
+}
+
 /* stylelint-enable declaration-no-important */
 
 .text-danger {

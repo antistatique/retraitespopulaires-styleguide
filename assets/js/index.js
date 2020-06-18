@@ -11,6 +11,7 @@ import { popover } from './popover.js';
 import { selectize } from './selectize.js';
 import { labels } from './labels.js';
 import { slider } from './slider.js';
+import { bv_gallery } from './bv_gallery.js';
 import { ckeditor_accordion } from './ckeditor_accordion.js';
 import { popin } from './popin.js';
 
@@ -28,6 +29,7 @@ import { popin } from './popin.js';
   selectize();
   labels();
   slider();
+  bv_gallery();
   ckeditor_accordion();
   popin();
 }());

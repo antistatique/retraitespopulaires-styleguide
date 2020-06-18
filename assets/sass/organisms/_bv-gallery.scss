@@ -1,0 +1,100 @@
+.gallery {
+  $this: &;
+
+  &--bellavita {
+    position: relative;
+    padding-top: 50%;
+
+    #{$this}__items {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    #{$this}__item {
+      display: none;
+      top: 50%;
+      width: 50%;
+      padding: 40px;
+      transform: translateY(-50%);
+      transition: all ease 0.7s;
+
+      &.first {
+        display: block;
+        position: absolute;
+        left: -75%;
+        opacity: 0.2;
+        width: 45%;
+      }
+
+      &.prev {
+        display: block;
+        position: absolute;
+        left: -20%;
+        opacity: 0.2;
+        width: 45%;
+      }
+
+      &.active {
+        display: block;
+        position: absolute;
+        left: 25%;
+        opacity: 1;
+      }
+
+      &.next {
+        display: block;
+        position: absolute;
+        left: 75%;
+        opacity: 0.2;
+        width: 45%;
+      }
+
+      &.last {
+        display: block;
+        position: absolute;
+        left: 125%;
+        opacity: 0.2;
+        width: 45%;
+      }
+    }
+
+    #{$this}__nav {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 20;
+
+      > div {
+        position: absolute;
+        cursor: pointer;
+
+        &[data-direction="prev"] {
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+
+        &[data-direction="next"] {
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    @media (max-width: 991px) {
+      #{$this}__item {
+        width: 80%;
+        padding: 15px;
+
+        &.active { left: 10%; }
+      }
+    }
+  }
+}
