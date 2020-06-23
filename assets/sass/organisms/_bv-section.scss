@@ -32,6 +32,31 @@
       }
     }
 
+    &-offers {
+      padding: 0;
+
+      h2,
+      p { margin: 0; }
+
+      .container { position: relative; }
+
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        height: calc(100% + 40px);
+      }
+
+      @media (max-width: 991px) {
+        img {
+          position: absolute;
+          bottom: 0;
+          left: 15px;
+          height: calc(100% + 10px);
+        }
+      }
+    }
+
     .article {
       h1,
       h2,
