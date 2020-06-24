@@ -1,5 +1,33 @@
 CHANGELOG
 =========
+## NEXT RELEASE
+- MD-628 : Fix rp homepage title margin
+
+## 3.5.1 (2020-06-23)
+- Forget to bump package.json version
+## 3.5.0 (2020-06-23)
+- Add new Bella vita pages
+
+## 3.4.2 (2020-04-21)
+- MD-612: Add gray shadow style for links
+- MD-613: Add icon for connect button
+
+## 3.4.1 (2020-04-07)
+- MD-610: Popover on hover
+
+## 3.4.0 (2020-03-12)
+ - Improve slider JS component with labels
+ - Improve "Documents utiles" filters style
+ - Improve "Documents utiles" cards list style
+ - Make navbar sticky
+ - Improve box-shadow style
+ - Truncate cards text
+ - Improve secondary-nav style
+ - Remove back button
+ - Remove hero image
+ - Improve rich-text content style
+ - Add some variant components to rich-text content
+
 ## 3.3.2 (2019-11-18)
  - MD-524: adapted space before and after collapse button 
  - MD-513: made body-font and mandants-font proxima-nova

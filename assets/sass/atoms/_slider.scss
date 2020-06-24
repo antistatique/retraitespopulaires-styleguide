@@ -9,6 +9,23 @@ $handle-size: 2em;
   border: transparent;
   border-radius: 6px;
   font-size: 17px;
+  cursor: pointer;
+
+  &.no-range {
+    background: $brand-primary;
+
+    @include theme(background);
+  }
+
+  &.labels {
+    margin-bottom: 40px;
+
+    @media (max-width: $screen-sm-min) {
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 80px;
+    }
+  }
 
   .ui-slider-handle {
     display: flex;
@@ -30,6 +47,7 @@ $handle-size: 2em;
       font-weight: bold;
       color: black;
       text-align: center;
+      cursor: pointer;
     }
   }
 
@@ -92,6 +110,59 @@ $handle-size: 2em;
 
     .ui-slider-range-max {
       top: 0;
+    }
+  }
+
+  .ui-slider-pip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 10%;
+    margin-top: 15px;
+    text-align: center;
+
+    &.active {
+      font-weight: bold;
+
+      .ui-slider-line {
+        background: $brand-primary;
+
+        @include theme(background);
+      }
+
+      .ui-slider-label {
+        color: $brand-primary;
+
+        @include theme(color);
+      }
+    }
+
+    &.selected {
+      font-weight: bold;
+
+      .ui-slider-line {
+        background: darken($brand-primary, 10%);
+
+        @include theme(background, hover-color);
+      }
+
+      .ui-slider-label {
+        color: darken($brand-primary, 10%);
+
+        @include theme(color, hover-color);
+      }
+    }
+
+    .ui-slider-line {
+      width: 1px;
+      height: 8px;
+      background: $black;
+    }
+
+    .ui-slider-label {
+      font-size: 0.9em;
+      cursor: pointer;
     }
   }
 }

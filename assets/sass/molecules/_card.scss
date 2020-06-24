@@ -5,9 +5,14 @@
   flex-direction: column;
   flex: 1 1 auto;
   margin-bottom: 50px;
-  border: 1px solid $brand-primary;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.015),
+    0 2px 2px rgba(0, 0, 0, 0.015),
+    0 4px 4px rgba(0, 0, 0, 0.015),
+    0 8px 8px rgba(0, 0, 0, 0.015),
+    0 16px 16px rgba(0, 0, 0, 0.015);
+  border: 1px solid #e8e8e8;
   border-radius: $border-radius-base;
-  box-shadow: 0 50px 75px -45px $shadow-gray;
   overflow: hidden;
 
   @include theme(border-color);
@@ -40,14 +45,16 @@ a.card,
     box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:hover {
-    border-color: darken($brand-primary, 10);
-
-    & {
-      box-shadow: 0 65px 75px -45px darken($shadow-gray, 0.3);
-    }
-
-    @include theme(border-color, hover-color);
+    box-shadow:
+      0 1px 1px rgba(0, 0, 0, 0.03),
+      0 2px 2px rgba(0, 0, 0, 0.03),
+      0 4px 4px rgba(0, 0, 0, 0.03),
+      0 8px 8px rgba(0, 0, 0, 0.03),
+      0 16px 16px rgba(0, 0, 0, 0.03),
+      0 32px 32px rgba(0, 0, 0, 0.03);
   }
+
+  @include theme(border-color, hover-color);
 }
 
 a.card {
@@ -229,10 +236,17 @@ a.card-img-top {
 
 .card-body {
   padding: $grid-gutter-width;
+}
 
-  > *:last-child {
-    margin-bottom: 0;
-  }
+.card-truncated .card-body > *:last-child {
+  /* Truncate on 3rd line - needs a polyfill for IE11 */
+  /* stylelint-disable */
+  display: -webkit-box;
+  margin-bottom: 0;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* stylelint-enable */
 }
 
 /**

@@ -1,43 +1,37 @@
 @charset 'UTF-8';
 
+$active-border-width: 4px;
+
 .secondary-nav {
   position: relative;
 
-  .back {
-    position: absolute;
-    top: 0;
-    width: $grid-gutter-width * 1.5;
-    min-height: $grid-gutter-width * 4;
-    padding-top: $grid-gutter-width / 2;
-    background: $brand-primary;
-    text-align: center;
-
-    @include theme(background-color);
-
-    .retraitespopulaires-icon {
-      display: block;
-      color: $white;
-    }
-  }
-
   @media only screen and (min-width: $screen-md-min) {
-    margin-left: -16px;
+    margin-left: -1.5rem;
   }
 }
 
 .secondary-nav-content {
   display: block;
-  margin-left: $grid-gutter-width * 1.5;
+  margin-bottom: 1.5rem;
+  padding-bottom: 2.5rem;
   background: $white;
   border: 1px solid $ligthen-gray;
 
   @media only screen and (min-width: $screen-md-min) {
     display: inline-block;
+    width: 240px;
+    margin-bottom: 0;
+    margin-left: $grid-gutter-width * 1.5;
+  }
+
+  @media only screen and (min-width: $screen-lg-min) {
+    width: 320px;
   }
 
   .title {
+    margin-top: 0;
     padding: $grid-gutter-width / 1.5;
-    border-bottom: 1px solid $ligthen-gray;
+    padding-bottom: 1rem;
     color: $brand-primary;
 
     @include theme(color);
@@ -45,12 +39,17 @@
 
   .links li {
     padding: 8px $grid-gutter-width / 1.5;
+    padding-left: ($grid-gutter-width / 1.5) - $active-border-width;
+    border-left: $active-border-width solid transparent;
 
     &.active {
-      background-color: $brand-primary;
+      background-color: $berrylight-gray;
+      border-left: $active-border-width solid $brand-primary;
 
       .pretty-link {
-        @include pretty-link($white, $brand-primary, $white);
+        text-decoration: none;
+        background-image: none;
+        text-shadow: none;
       }
 
       @include theme-custom() {
@@ -63,6 +62,10 @@
         }
       }
     }
+  }
+
+  .links .no-padding {
+    border-left: none;
   }
 
   .links-children li { padding-left: $grid-gutter-width * 1.5; }

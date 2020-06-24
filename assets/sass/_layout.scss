@@ -350,6 +350,24 @@ $screen-xl-min: 1600px;
   }
 }
 
+.main-wrapper {
+  margin-top: 2.5rem;
+
+  @media screen and (min-width: $screen-md-min) {
+    margin-top: 48px;
+  }
+
+  &--bellavita {
+    margin-top: 0;
+  }
+}
+
+.main-wrapper-hero {
+  @media screen and (min-width: $screen-md-min) {
+    margin-top: -48px;
+  }
+}
+
 /* stylelint-enable declaration-no-important, media-feature-no-missing-punctuation */
 
 .retraitespopulaires-icon:before {

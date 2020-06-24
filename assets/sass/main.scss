@@ -73,10 +73,16 @@
 @import 'molecules/popin';
 @import 'molecules/alerts';
 @import 'molecules/collapser-menu';
+@import 'molecules/document-card';
+@import 'molecules/document-filters';
 
 // organisms:
 @import 'organisms/gallery';
+@import 'organisms/bv-gallery';
 @import 'organisms/footer';
 @import 'organisms/header';
+@import 'organisms/bv-header';
 @import 'organisms/attachments-job';
 @import 'organisms/attachments-offers';
+@import 'organisms/section';
+@import 'organisms/bv-section';

@@ -57,18 +57,24 @@ variants:
           <h2 class="sr-only">Navigation principale</h2>
           <ul class="list-unstyled m-0">
             <li>
-              <a href="#">Assurance vie</a>
+              <a href="#">Prévoyance & 3ème pilier</a>
             </li>
-            <li>
-              <a href="#">Prévoyance professionnelle</a>
+            <li class="active">
+              <a href="#">Prêts</a>
             </li>
             <li>
               <a href="#">Immobilier</a>
             </li>
             <li>
-              <a href="#">Prêts</a>
+              <a href="#">Entreprises</a>
             </li>
-              </ul>
+            <li>
+              <a href="#">Caisses de pension</a>
+            </li>
+            <li>
+              <a href="#">Collectivités</a>
+            </li>
+          </ul>
         </nav>
       </div>
     </div>

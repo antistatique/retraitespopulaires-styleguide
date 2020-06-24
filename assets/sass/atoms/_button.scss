@@ -214,3 +214,35 @@
   font-family: $font-family-base;
   font-weight: 700;
 }
+
+.btn-contact {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+  background-image: none;
+  color: $mine-shaft;
+  text-shadow: none;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: $brand-primary;
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+    background-color: $brand-primary;
+    border-radius: 50%;
+  }
+
+  .retraitespopulaires-icon {
+    color: $white;
+  }
+}

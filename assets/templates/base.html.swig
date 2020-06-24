@@ -97,6 +97,7 @@
 
     <script src="//code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
     <script src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" crossorigin="anonymous"></script>
     <script src="{{data.path}}build/js/selectize.min.js"></script>
     <script src="{{data.path}}build/js/vendors.min.js"></script>
     <script src="{{data.path}}build/js/bundle.js"></script>

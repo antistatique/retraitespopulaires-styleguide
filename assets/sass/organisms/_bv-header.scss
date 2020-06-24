@@ -1,0 +1,79 @@
+.header {
+  $this: &;
+
+  &--bellavita {
+    #{$this}__title {
+      padding: 20px;
+      background: linear-gradient(to left, map-get($bv-colors, 'green-dark'), map-get($bv-colors, 'green'));
+      color: white;
+
+      * { margin: 0; }
+
+      #{$this}__logo { width: 120px; }
+
+      #{$this}__caption {
+        line-height: 73px;
+        text-align: right;
+      }
+
+      @media (max-width: 991px) {
+        #{$this}__logo { width: 100px; }
+
+        #{$this}__caption { line-height: 55px; }
+      }
+
+      @media (max-width: 767px) {
+        padding: 20px 10px 15px;
+
+        #{$this}__logo { width: 80px; }
+
+        #{$this}__caption {
+          margin-top: 10px;
+          font-size: 14px;
+          line-height: 1;
+          text-align: left;
+        }
+      }
+    }
+
+    #{$this}__nav {
+      padding: 15px 0;
+
+      a {
+        font-size: 18px;
+        line-height: 22px;
+
+        &,
+        &:hover,
+        &:focus { color: map-get($bv-colors, 'grey-text'); }
+      }
+
+      @media (max-width: 767px) {
+        padding: 10px 0;
+
+        a {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+
+  &--bellavita-view {
+    position: absolute;
+    width: 100%;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.85);
+
+    img {
+      float: left;
+      width: 97px;
+      margin: 4px 15px 0 0;
+    }
+
+    @media (max-width: 991px) {
+      position: relative;
+      padding: 10px 0;
+    }
+  }
+}

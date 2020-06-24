@@ -30,7 +30,8 @@
 
   img {
     width: 100%;
-    height: auto;
+    height: 300px;
+    object-fit: cover; /* Needs IE polyfill */
   }
 
   @include theme(background-color);
