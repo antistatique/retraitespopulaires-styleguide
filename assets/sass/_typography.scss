@@ -8,6 +8,7 @@ h1,
 .h1,
 h2,
 .h2 {
+  margin-top: 2em;
   margin-bottom: 1em;
   font-weight: 500;
 
@@ -19,13 +20,13 @@ h2,
   }
 }
 
-//For rp
-body:not(.font-mandant) {
+//For mandants
+body.font-mandant {
   h1,
   .h1,
   h2,
   .h2 {
-    margin-top: 2em;
+    margin-top: 25px;
   }
 }
 

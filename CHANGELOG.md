@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
+- MD-628 : Fix rp homepage title margin
 
 ## 3.5.1 (2020-06-23)
 - Forget to bump package.json version
