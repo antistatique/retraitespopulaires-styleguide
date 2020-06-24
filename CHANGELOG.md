@@ -1,10 +1,12 @@
 CHANGELOG
 =========
-## NEXT RELEASE
+## 3.5.2 (2020-06-24)
 - MD-628 : Fix rp homepage title margin
+- MD-572 : add text-smaller class for mp font
 
 ## 3.5.1 (2020-06-23)
 - Forget to bump package.json version
+
 ## 3.5.0 (2020-06-23)
 - Add new Bella vita pages
 
