@@ -1,5 +1,10 @@
 CHANGELOG
 =========
+## NEXT RELEASE
+
+## 3.5.3 (2020-07-23)
+- MD-626: Fix banner stretching on IE.
+
 ## 3.5.2 (2020-06-24)
 - MD-628 : Fix rp homepage title margin
 - MD-572 : add text-smaller class for mp font
