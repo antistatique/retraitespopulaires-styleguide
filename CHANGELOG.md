@@ -2,6 +2,9 @@ CHANGELOG
 =========
 ## NEXT RELEASE
 
+## 3.5.4 (2020-08-26)
+- Changes to make new version of ckeditor-accordion compatible
+
 ## 3.5.3 (2020-07-23)
 - MD-626: Fix banner stretching on IE.
 
