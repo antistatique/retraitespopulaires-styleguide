@@ -11,6 +11,8 @@
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-family: "Proxima Nova", sans-serif;
     font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
   p, ul, ol {
@@ -80,6 +82,7 @@
       height: 100%;
       color: inherit;
       text-decoration: none;
+      cursor: pointer;
     }
 
     .step-nav-button {
@@ -605,7 +608,7 @@
       border: 2px solid $ph-secondary;
       border-radius: 3px;
       font-size: 2rem;
-      font-family: $font-primary;
+      font-family: Arial;
 
       &:focus {
         box-shadow: none;
@@ -658,6 +661,11 @@
         border: none;
         cursor: grab;
 
+        &:before {
+          font-family: $font-primary;
+          content: none;
+        }
+
         &:active {
           cursor: grabbing;
         }
@@ -686,6 +694,7 @@
       border: none;
       border-top: 2px solid rgba(205, 189, 175, .2);
       border-radius: 0;
+      font-family: Arial;
 
       &, i {
         font-size: 1.6rem;
