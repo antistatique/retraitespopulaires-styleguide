@@ -168,6 +168,18 @@ a.card-bg-hover,
   .retraitespopulaires-icon {
     margin: ($grid-gutter-width / 2) auto 0;
   }
+
+  .ribbon {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 150px;
+    height: 26px;
+    padding-left: 10px;
+    background-color: $brand-primary;
+    color: $white;
+    z-index: 3;
+  }
 }
 
 .card-img-top-left .retraitespopulaires-icon {
