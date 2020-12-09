@@ -47,6 +47,7 @@ notes: |
     {%- if variant != 'card-light' -%}
     {%- if variant != 'card-icon' %}
     <div class="card-img-top {% if variant == 'card-logo' -%}card-img-top-center card-berrylight-gray{% endif -%}">
+    <div class="ribbon">A louer</div>
       {% if variant == 'img-bg' or variant == 'card-horizontal' -%}
       <div class="card-img-bg" style="background-image: url('https://unsplash.it/512/512?image=1005');"></div>
       {% elseif variant == 'card-logo' %}
