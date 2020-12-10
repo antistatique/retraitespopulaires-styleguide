@@ -2,6 +2,9 @@ CHANGELOG
 =========
 ## NEXT RELEASE
 
+## 3.5.5 (2020-12-10)
+MD-665: Ribbon on building card
+
 ## 3.5.4 (2020-08-26)
 - Changes to make new version of ckeditor-accordion compatible
 
