@@ -1,6 +1,6 @@
 /* stylelint-disable */
 
-.forms.module {
+.ph-forms.module {
   margin: 4em 0;
   font-family: "Proxima Nova", sans-serif;
   font-weight: 500;
@@ -21,6 +21,10 @@
     color: #333333;
     letter-spacing: 0.21px;
     line-height: 24px;
+  }
+
+  p {
+    margin: 0 0 10px;
   }
 
   ul, ol {
@@ -230,7 +234,7 @@
     &.validated {
       hr,
       .repeater,
-      .form-text-description:not(.small) {
+      .form-text-label-description:not(.small) {
         display: none;
       }
 
@@ -242,11 +246,11 @@
           font-family: $font-primary;
         }
 
-        .form-text:not(.small) {
+        .form-text-label:not(.small) {
           display: none;
         }
 
-        .form-text.small,
+        .form-text-label.small,
         label {
           display: inline-block;
           position: relative;
@@ -266,8 +270,8 @@
 
         }
 
-        .form-text.small > .radio,
-        .form-text.small > .checkbox {
+        .form-text-label.small > .radio,
+        .form-text-label.small > .checkbox {
           display: block;
         }
 
@@ -325,18 +329,18 @@
 
     &.todo {
       hr,
-      .form-text-description:not(.small),
+      .form-text-label-description:not(.small),
       .form-group {
         display: none;
       }
     }
   }
 
-  .form-text-description {
+  .form-text-label-description {
     margin-top: 3em;
   }
 
-  .form-text {
+  .form-text-label {
     line-height: 1.1;
   }
 
@@ -579,6 +583,10 @@
         &.primary:checked ~ .cr::before {
           background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23008E4F'/%3E%3C/svg%3E");
         }
+
+        &:checked:checked ~ .cr.calculator-threshold-exceeded::before {
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='red'/%3E%3C/svg%3E");
+        }
       }
 
       .cr {
@@ -720,7 +728,7 @@
     }
   }
 
-  fieldset {
+  fieldset.ph-fieldset {
     position: relative;
     background: #FFFFFF;
     border: 1px solid rgba(61, 61, 61, .10);
@@ -779,7 +787,7 @@
 
 
 
-.calculator.forms.module {
+.calculator.ph-forms.module {
   padding: 8em 0;
   margin: 0;
 
@@ -823,7 +831,7 @@
     }
   }
 
-  fieldset {
+  fieldset.ph-fieldset {
     position: relative;
     padding: 3em 0 0 0;
     margin: 0;
@@ -954,6 +962,13 @@
     line-height: 16px;
     text-shadow: 0 1px 4px rgba(0,0,0,0.67);
   }
+
+  .calculator-threshold-exceeded{
+    color: red;
+  }
+  .calculator-threshold-successful{
+    color: $green;
+  }
 }
 
 body.debug {
@@ -980,8 +995,8 @@ body.debug {
 
 
 @media (max-width: 991.98px) {
-  .forms.module {
-    fieldset {
+  .ph-forms.module {
+    fieldset.ph-fieldset {
       .form-group {
         .editable-value {
           text-align: left;
@@ -990,8 +1005,8 @@ body.debug {
     }
   }
 
-  .calculator.forms.module {
-    fieldset {
+  .calculator.ph-forms.module {
+    fieldset.ph-fieldset {
       .offer-content {
         .editable-value {
           order: 1;
@@ -1006,8 +1021,8 @@ body.debug {
 }
 
 @media (max-width: 767.98px) {
-  .forms.module {
-    fieldset {
+  .ph-forms.module {
+    fieldset.ph-fieldset {
       .form-group {
         margin-top: 1em;
         margin-bottom: 1em;
@@ -1045,7 +1060,7 @@ body.debug {
     }
   }
 
-  .calculator.forms.module {
+  .calculator.ph-forms.module {
     font-family: "Proxima Nova",sans-serif;
 
     .sub-step {
@@ -1061,7 +1076,7 @@ body.debug {
       }
     }
 
-    fieldset {
+    fieldset.ph-fieldset {
       .offer-content {
         display: block;
 
@@ -1103,7 +1118,7 @@ body.debug {
 }
 
 @media (max-width: 719.98px) {
-  .calculator.forms.module {
+  .calculator.ph-forms.module {
     .sub-step {
       .container-calculator {
         .button-overlap {
@@ -1122,8 +1137,16 @@ body.debug {
   }
 }
 
+@media (min-width: 1600px){
+  .calculator.ph-forms.module {
+    .container {
+      width: 1170px;
+    }
+  }
+}
+
 @media (max-width: 479.98px) {
-  .forms.module {
+  .ph-forms.module {
     #steps-overview-large {
       text-align: center;
 
