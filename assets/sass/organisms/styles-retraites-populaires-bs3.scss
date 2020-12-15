@@ -25,7 +25,29 @@
 
   p {
     margin: 0 0 10px;
+
+    &.form-text.small {
+      margin:0;
+    }
   }
+
+  .pristine-error {
+    color:red;
+    font-family: Arial;
+    font-size: small;
+  }
+
+  .has-success {
+    .check-label {
+      color:#000000;
+    }
+  }
+  .has-error {
+    .check-label {
+      color:red;
+    }
+  }
+
 
   ul, ol {
     padding: 0 0 0 1.5em;
@@ -315,7 +337,16 @@
           border: none;
           border-radius: 0;
           color: $ph-primary;
+
+          &:-webkit-autofill,
+          &:-webkit-autofill:active,
+          &:-webkit-autofill:focus,
+          &:-webkit-autofill:hover{
+            box-shadow: 0 0 0 1000px #fff inset;
+            -webkit-text-fill-color: $ph-primary !important;
+          }
         }
+
 
         select.custom-select {
           background: none;
@@ -619,6 +650,13 @@
       font-size: 2rem;
       font-family: Arial;
 
+      &:-webkit-autofill,
+      &:-webkit-autofill:active,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:hover{
+        box-shadow: 0 0 0 1000px #fff inset;
+      }
+
       &:focus {
         box-shadow: none;
         border-color: $ph-primary;
@@ -750,11 +788,11 @@
         background: #FFFFFF;
         border: 2px solid $ph-secondary;
         border-radius: 32px;
+        cursor: default;
 
         &:hover,
         &:focus {
           text-decoration: none;
-          transform: scale(1.1);
           border-color: $ph-primary;
         }
 
@@ -1039,6 +1077,7 @@ body.debug {
         a {
           width: 24px;
           height: 24px;
+          cursor: default;
 
           i {
             font-size: 0.5em;
