@@ -31,7 +31,7 @@
     }
   }
 
-  .pristine-error {
+  .text-help {
     color:red;
     font-family: Arial;
     font-size: small;
@@ -48,6 +48,18 @@
     }
   }
 
+  ::placeholder {
+    color: #999999;
+    opacity: 1;
+  }
+
+  :-ms-input-placeholder {
+    color: #999999;
+  }
+
+  ::-ms-input-placeholder {
+    color: #999999;
+  }
 
   ul, ol {
     padding: 0 0 0 1.5em;
@@ -221,14 +233,15 @@
   }
 
   #steps-overview-large {
-    padding: 5em 0 2.5em 0;
+    padding: 3em 0 1em 0;
+    text-align: center;
 
     text {
       font-weight: 700;
     }
 
     img {
-      width: 100%;
+      width: 80%;
     }
   }
 
@@ -347,6 +360,10 @@
           }
         }
 
+        .funding-total-price{
+          color: $ph-primary;
+        }
+
 
         select.custom-select {
           background: none;
@@ -377,8 +394,12 @@
 
   .form-groups {
     display: flex;
-    align-items: flex-end;
+    align-items: baseline;
     flex-flow: row wrap;
+
+    &.form-groups-no-baseline{
+      align-items: flex-end;
+    }
   }
 
   .form-group {
@@ -398,6 +419,10 @@
       font-weight: 400;
       letter-spacing: 0.14px;
       line-height: 1.16667;
+    }
+
+    &.parther-checkbox label {
+      font-weight: 700;
     }
 
     .checkbox,
