@@ -45,6 +45,7 @@ $active-border-width: 4px;
     &.active {
       background-color: $berrylight-gray;
       border-left: $active-border-width solid $brand-primary;
+      @include theme(border-color);
 
       .pretty-link {
         text-decoration: none;
