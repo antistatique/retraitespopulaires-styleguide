@@ -2,6 +2,9 @@ CHANGELOG
 =========
 ## NEXT RELEASE
 
+## 3.5.6 (2021-01-20)
+MD-666: Styleguide - Bugfix couleurs
+
 ## 3.5.5 (2020-12-10)
 MD-665: Ribbon on building card
 
