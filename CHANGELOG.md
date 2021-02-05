@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
+- MD-682: Add images for new mail template
 
 ## 3.4.2 (2020-04-21)
 - MD-612: Add gray shadow style for links
