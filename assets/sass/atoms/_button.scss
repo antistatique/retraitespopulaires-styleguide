@@ -238,7 +238,7 @@
     width: 4rem;
     height: 4rem;
     margin-right: 1rem;
-    background-color: $brand-primary;
+    @include theme(background-color);
     border-radius: 50%;
   }
 

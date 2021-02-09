@@ -32,6 +32,31 @@
       }
     }
 
+    &-offers {
+      padding: 0;
+
+      h2,
+      p { margin: 0; }
+
+      .container { position: relative; }
+
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        height: calc(100% + 40px);
+      }
+
+      @media (max-width: 991px) {
+        img {
+          position: absolute;
+          bottom: 0;
+          left: 15px;
+          height: calc(100% + 10px);
+        }
+      }
+    }
+
     .article {
       h1,
       h2,
@@ -142,6 +167,7 @@
               height: auto;
               margin: 0;
               padding: 0;
+              background: white !important;
             }
           }
         }
@@ -178,7 +204,7 @@
 
         .article__nav {
           position: relative;
-          margin: -47px 50px 0 50px;
+          margin: -46px 50px 0 50px;
           z-index: 2;
 
           > div {
@@ -211,7 +237,7 @@
 
         @media (max-width: 1200px) {
           .article__nav {
-            margin: -31px 50px 0 50px;
+            margin: -30px 50px 0 50px;
 
             .retraitespopulaires-icon { font-size: 1em !important; }
           }

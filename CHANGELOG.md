@@ -3,6 +3,28 @@ CHANGELOG
 ## NEXT RELEASE
 - MD-682: Add images for new mail template
 
+## 3.5.6 (2021-01-20)
+MD-666: Styleguide - Bugfix couleurs
+
+## 3.5.5 (2020-12-10)
+MD-665: Ribbon on building card
+
+## 3.5.4 (2020-08-26)
+- Changes to make new version of ckeditor-accordion compatible
+
+## 3.5.3 (2020-07-23)
+- MD-626: Fix banner stretching on IE.
+
+## 3.5.2 (2020-06-24)
+- MD-628 : Fix rp homepage title margin
+- MD-572 : add text-smaller class for mp font
+
+## 3.5.1 (2020-06-23)
+- Forget to bump package.json version
+
+## 3.5.0 (2020-06-23)
+- Add new Bella vita pages
+
 ## 3.4.2 (2020-04-21)
 - MD-612: Add gray shadow style for links
 - MD-613: Add icon for connect button

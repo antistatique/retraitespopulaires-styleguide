@@ -8,7 +8,11 @@ import $ from 'jquery';
  */
 export function ckeditor_accordion() {
 
-    $(document).ready(function () { // wait otherwise it's in conflict with the JS of module
-        $('.ckeditor-accordion-container').find('dt').wrapInner("<div class='ckeditor-accordion-toggler'></div>");
+  $(document).ready(function () { // wait otherwise it's in conflict with the JS of module
+    $('.ckeditor-accordion-container').find('dt').wrapInner("<div class='ckeditor-accordion-toggler'></div>");
+    // had no-style class to hide link aspect
+    $('.ckeditor-accordion-container').find('dt').find('a').each(function () {
+      $(this).addClass('no-style');
     });
+  });
 }
