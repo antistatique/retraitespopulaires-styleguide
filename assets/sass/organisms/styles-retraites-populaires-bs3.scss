@@ -266,7 +266,8 @@
       }
     }
 
-    &.validated {
+    &.validated,
+    .recap {
       hr,
       .repeater,
       .form-text-label-description:not(.small) {
@@ -364,6 +365,9 @@
           color: $ph-primary;
         }
 
+        .recap-content {
+          margin-top: 12px;
+        }
 
         select.custom-select {
           background: none;
