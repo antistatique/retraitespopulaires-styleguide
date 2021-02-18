@@ -367,6 +367,7 @@
 
         .recap-content {
           margin-top: 12px;
+          word-break: break-all;
         }
 
         select.custom-select {
@@ -375,12 +376,6 @@
 
         .step-link {
           display: none;
-        }
-      }
-
-      .right-column {
-        @media (min-width: 768px) {
-          border-left: 1px rgba(0, 0, 0, .06) solid;
         }
       }
     }
