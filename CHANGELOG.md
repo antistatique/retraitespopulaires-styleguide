@@ -1,8 +1,10 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
-- MD-682: Add images for new mail template
 - MD-601: Add Mortgage form style
+
+## 3.5.7 (2021-03-01)
+- MD 682: Add images for new mail template
 
 ## 3.5.6 (2021-01-20)
 MD-666: Styleguide - Bugfix couleurs
