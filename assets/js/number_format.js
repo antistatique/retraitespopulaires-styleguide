@@ -14,16 +14,31 @@ export function number_format () {
     aSign: ' m2'
   });
 
+  $('.form-year-numeric').autoNumeric('init',{
+    aSep: '\'',
+    mDec: '0',
+    pSign: 's',
+    aSign: ' Ans'
+  });
+
   $('.form-percent-numeric').autoNumeric('init',{
     aSep: '\'',
     pSign: 's',
     aSign: ' %'
   });
 
+  $('.form-separator-numeric').autoNumeric('init',{
+    aSep: '\'',
+    pSign: 's',
+    aSign: ''
+  });
+
   // To be sure that the format is respected (when back on browser)
   $('.form-chf-numeric').autoNumeric('update');
   $('.form-surface-numeric').autoNumeric('update');
+  $('.form-year-numeric').autoNumeric('update');
   $('.form-percent-numeric').autoNumeric('update');
+  $('.form-separator-numeric').autoNumeric('update');
 
   // Replace formatted value to raw one when submitting forms
   $(document).on('submit', 'form', function() {
@@ -39,7 +54,17 @@ export function number_format () {
       $el.val($el.autoNumeric('get'));
     });
 
+    $this.find('.form-year-numeric').each(function(i, el){
+      const $el = $(el);
+      $el.val($el.autoNumeric('get'));
+    });
+
     $this.find('.form-percent-numeric').each(function(i, el){
+      const $el = $(el);
+      $el.val($el.autoNumeric('get'));
+    });
+
+    $this.find('.form-separator-numeric').each(function(i, el){
       const $el = $(el);
       $el.val($el.autoNumeric('get'));
     });

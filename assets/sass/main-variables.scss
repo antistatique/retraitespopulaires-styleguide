@@ -44,6 +44,25 @@ $bv-colors: (
   'green-dark': #008E4F
 );
 
+
+/**
+* Colors and variables Formulaire des prets
+*/
+// Defaults
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+// Global colors primary & secondary and more
+$ph-primary: #F4834E !default;
+$ph-secondary: #FDC8AF !default;
+
+// Custom range
+$custom-range-track-height: 0.125rem !default;
+$custom-range-track-bg: rgba(0, 0, 0, 0.06) !default;
+/**
+* END Colors and variables Formulaire des prets
+*/
+
 // Socials
 $color-twitter: #55acee;
 $color-facebook: #3b5998;
