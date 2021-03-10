@@ -1,0 +1,16 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 40 40' version='1.1'  >
+    <defs>
+        <path d='M12.7071068,4.70710678 L17.7071068,9.70710678 C17.8946432,9.89464316 18,10.1489971 18,10.4142136 L18,15 C18,15.5522847 17.5522847,16 17,16 L7,16 C6.44771525,16 6,15.5522847 6,15 L6,10.4142136 C6,10.1489971 6.10535684,9.89464316 6.29289322,9.70710678 L11.2928932,4.70710678 C11.6834175,4.31658249 12.3165825,4.31658249 12.7071068,4.70710678 Z' id='path'></path>
+        <filter x='-104.2%' y='-84.0%' width='341.7%' height='338.2%' filterUnits='objectBoundingBox' id='filter'>
+            <feMorphology radius='0.5' operator='dilate' in='SourceAlpha' result='shadowSpreadOuter1'></feMorphology>
+            <feOffset dx='2' dy='4' in='shadowSpreadOuter1' result='shadowOffsetOuter1'></feOffset>
+            <feGaussianBlur stdDeviation='4' in='shadowOffsetOuter1' result='shadowBlurOuter1'></feGaussianBlur>
+            <feComposite in='shadowBlurOuter1' in2='SourceAlpha' operator='out' result='shadowBlurOuter1'></feComposite>
+            <feColorMatrix values='0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0' type='matrix' in='shadowBlurOuter1'></feColorMatrix>
+        </filter>
+    </defs>
+    <g id='handle' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' transform='translate(8,6)'>
+        <use fill='black' fill-opacity='1' filter='url(#filter)' xlink:href='#path'></use>
+        <use stroke='#f4834e' stroke-width='1' fill='#fff' fill-rule='evenodd' xlink:href='#path'></use>
+    </g>
+</svg>
