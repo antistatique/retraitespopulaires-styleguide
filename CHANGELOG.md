@@ -1,6 +1,8 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
+- MD-691: Fix small forms bacckground
+
 ## 3.5.8 (2021-03-10)
 - MD-601: Add Mortgage form style
 
