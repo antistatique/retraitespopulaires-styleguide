@@ -240,8 +240,16 @@
       font-weight: 700;
     }
 
-    img {
+    img, .picture-caption {
       width: 80%;
+      margin: auto;
+
+      p {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 16px;
+        opacity: 1;
+      }
     }
   }
 
