@@ -240,8 +240,16 @@
       font-weight: 700;
     }
 
-    img {
+    img, .picture-caption {
       width: 80%;
+      margin: auto;
+
+      p {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 16px;
+        opacity: 1;
+      }
     }
   }
 
@@ -1135,14 +1143,6 @@ body.debug {
       }
     }
 
-    #steps-overview-large {
-      text-align: center;
-
-      picture, img {
-        width: 50%;
-      }
-    }
-
     #fixed-footer .step-nav-button {
       display: none;
     }
@@ -1234,13 +1234,4 @@ body.debug {
 }
 
 @media (max-width: 479.98px) {
-  .ph-forms.module {
-    #steps-overview-large {
-      text-align: center;
-
-      picture, img {
-        width: 75%;
-      }
-    }
-  }
 }
