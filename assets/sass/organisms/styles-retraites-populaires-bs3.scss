@@ -249,6 +249,11 @@
         font-weight: bold;
         line-height: 16px;
         opacity: 1;
+
+        @media screen and (max-width: $screen-sm-max) {
+          font-size: 1vw;
+          line-height: 10px;
+        }
       }
     }
   }
