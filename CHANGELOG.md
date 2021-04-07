@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
+## 3.5.9 (2021-04-07)
 - MD-698: Update mortgage form. Related to MD-698 of rp.
 - MD-691: Fix small forms bacckground
 
