@@ -243,6 +243,9 @@
     img, .picture-caption {
       width: 80%;
       margin: auto;
+      @media screen and (max-width: $screen-sm-max) {
+        width: 100%;
+      }
 
       p {
         font-size: 14px;
@@ -251,8 +254,8 @@
         opacity: 1;
 
         @media screen and (max-width: $screen-sm-max) {
-          font-size: 1vw;
-          line-height: 10px;
+          font-size: 3vw;
+          line-height: 12px;
         }
       }
     }
