@@ -5,12 +5,30 @@
   min-height: inherit;
   border: 0;
 
+
+  .sticky-navbar {
+
+    display:flex;
+
+    #img-sticky {
+      width: 40px;
+      //float: left;
+      display:none;
+    }
+  }
+
   ul {
     display: flex;
     justify-content: space-between;
+    width:100%;
   }
 
+
+
   li {
+
+
+
     a {
       display: inline-block;
       position: relative;
