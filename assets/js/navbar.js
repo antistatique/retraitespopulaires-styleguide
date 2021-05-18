@@ -35,8 +35,8 @@ export function navbar () {
   window.addEventListener("scroll", function()
   {
     let stickyLogo = document.getElementById("img-sticky");
-    let stickyNavBar = document.getElementsByClassName("sticky-navbar");
-    if(window.scrollY > 119) {
+    let headerContainer = document.getElementsByClassName("header-container")[0];
+    if(window.scrollY > headerContainer.clientHeight) {
       stickyLogo.style.display = "initial";
     }else
     {
