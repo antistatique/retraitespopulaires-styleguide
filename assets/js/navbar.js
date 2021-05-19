@@ -31,4 +31,17 @@ export function navbar () {
     $menu.toggleClass('menu-open');
     $overlay.toggleClass('visible');
   }
+
+  window.addEventListener("scroll", function()
+  {
+    let stickyLogo = document.getElementById("img-sticky");
+    let headerContainer = document.getElementsByClassName("header-container")[0];
+    if(window.scrollY > headerContainer.clientHeight) {
+      stickyLogo.style.display = "initial";
+    }else
+    {
+      stickyLogo.style.display = "none";
+    }
+  }
+  );
 }

@@ -10,14 +10,17 @@
     0 8px 8px rgba(0, 0, 0, 0.015),
     0 16px 16px rgba(0, 0, 0, 0.015);
 
+  position: sticky;
+  top:0;
+
   @media screen and (min-width: $screen-md-min) {
-    position: sticky;
     top: -104px; /* ! Hardcoded header height */
   }
 
   &.active {
     background: none;
   }
+
 }
 
 // To use when you have an offseted logo
