@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
+## 3.5.11 (2021-05-26)
+- MD-707: Sticky header
+- MD-694: Integrate new video layout in page editor
+
 ## 3.5.10 (2021-05-10)
 - MD-708 change template for phone user
 - MD-693 formated entering value for datepicker
