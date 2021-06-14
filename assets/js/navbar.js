@@ -34,13 +34,29 @@ export function navbar () {
 
   window.addEventListener("scroll", function()
   {
-    let stickyLogo = document.getElementById("img-sticky");
+    let stickyLogo = document.querySelectorAll('[id^="img-sticky"]')[0];
     let headerContainer = document.getElementsByClassName("header-container")[0];
+    let imgHeader = document.getElementsByClassName("logo-retraitespopulaires")[0];
+    let listHeader = document.getElementsByClassName("wrapper-navs col-xs-8 col-lg-12")[0];
+
     if(window.scrollY > headerContainer.clientHeight) {
-      stickyLogo.style.display = "initial";
+        if(screen.width > 992 ) {
+          if(typeof listHeader !== "undefined"){
+            listHeader.style.flex = "0 1 100%";
+          }
+          imgHeader.style.display = "none";
+          stickyLogo.style.display = "initial";
+        }else{
+          imgHeader.style.display = "initial";
+          stickyLogo.style.display = "none";
+        }
     }else
     {
       stickyLogo.style.display = "none";
+      imgHeader.style.display = "initial";
+      if(typeof listHeader !== "undefined"){
+        listHeader.style.flex = "0 1 800px";
+      }
     }
   }
   );

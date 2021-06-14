@@ -12,7 +12,7 @@ export function mobile_menu () {
       $navbar.css({'display': 'block'});
     }
 
-    $body.toggleClass('no-scroll');
+    //$body.toggleClass('no-scroll');
     $header.toggleClass('active');
     $wrapper.toggleClass('active');
     $navbar.toggleClass('active');

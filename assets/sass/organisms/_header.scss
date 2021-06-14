@@ -14,13 +14,23 @@
   top:0;
 
   @media screen and (min-width: $screen-md-min) {
-    top: -104px; /* ! Hardcoded header height */
+    top: -62px; /* ! Hardcoded header height */
   }
 
   &.active {
     background: none;
   }
 
+}
+
+div[id$="-layoutheaderblock"]{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  @media screen and (min-width: $screen-md-min) {
+    top: -74px; /* ! Hardcoded header height */
+  }
 }
 
 // To use when you have an offseted logo
