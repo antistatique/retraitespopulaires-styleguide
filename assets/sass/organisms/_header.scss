@@ -1,7 +1,9 @@
 @charset 'UTF-8';
 
 .header {
+  position: sticky;
   z-index: $zindex-navbar-fixed + 2;
+  top: 0;
   background: $white;
   box-shadow:
     0 1px 1px rgba(0, 0, 0, 0.015),
@@ -10,9 +12,6 @@
     0 8px 8px rgba(0, 0, 0, 0.015),
     0 16px 16px rgba(0, 0, 0, 0.015);
 
-  position: sticky;
-  top:0;
-
   @media screen and (min-width: $screen-md-min) {
     top: -62px; /* ! Hardcoded header height */
   }
@@ -20,10 +19,9 @@
   &.active {
     background: none;
   }
-
 }
 
-div[id$="-layoutheaderblock"]{
+div[id$="-layoutheaderblock"] {
   position: sticky;
   top: 0;
   z-index: 10;

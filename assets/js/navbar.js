@@ -38,8 +38,9 @@ export function navbar () {
     let headerContainer = $(".header-container")[0];
     let imgHeader = $(".logo-retraitespopulaires")[0];
     let listHeader = $(".wrapper-navs")[0];
+    let containerMandant = $('[id$="-layoutheaderblock"]')[0];
 
-    if(window.scrollY > headerContainer.clientHeight) {
+    if(window.scrollY > headerContainer.clientHeight && typeof listHeader == "undefined" || MandantHeaderChecker(window.scrollY,containerMandant, headerContainer)) {
         if(screen.width > 992 ) {
           if(typeof listHeader !== "undefined"){
             listHeader.style.flex = "0 1 100%";
@@ -58,6 +59,16 @@ export function navbar () {
         listHeader.style.flex = "0 1 800px";
       }
     }
+
+
+  });
+
+  function MandantHeaderChecker(scroll,containerMandant,headerContainer){
+
+    if(typeof containerMandant !== "undefined") {
+      return scroll > (headerContainer.clientHeight + parseInt(getComputedStyle(containerMandant).top));
+    }
+    return false;
   }
-  );
+
 }
