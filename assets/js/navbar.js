@@ -34,10 +34,10 @@ export function navbar () {
 
   window.addEventListener("scroll", function()
   {
-    let stickyLogo = document.querySelectorAll('[id^="img-sticky"]')[0];
-    let headerContainer = document.getElementsByClassName("header-container")[0];
-    let imgHeader = document.getElementsByClassName("logo-retraitespopulaires")[0];
-    let listHeader = document.getElementsByClassName("wrapper-navs col-xs-8 col-lg-12")[0];
+    let stickyLogo = $('[class^="img-sticky"]')[0];
+    let headerContainer = $(".header-container")[0];
+    let imgHeader = $(".logo-retraitespopulaires")[0];
+    let listHeader = $(".wrapper-navs")[0];
 
     if(window.scrollY > headerContainer.clientHeight) {
         if(screen.width > 992 ) {

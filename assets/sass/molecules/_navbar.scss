@@ -8,7 +8,7 @@
   .sticky-navbar {
     display:flex;
 
-    #img-sticky {
+    .img-sticky {
       width: 40px;
       display:none;
     }
@@ -72,7 +72,7 @@
   }
 }
 
-#img-sticky-mandant {
+.img-sticky-mandant {
   width: 95px;
   display:none;
   margin-top: 70px;
