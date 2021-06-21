@@ -40,6 +40,10 @@ export function navbar () {
     let listHeader = $(".wrapper-navs")[0];
     let containerMandant = $('[id$="-layoutheaderblock"]')[0];
 
+    if(typeof stickyLogo == "undefined"){
+      return null;
+    }
+
     if(window.scrollY > headerContainer.clientHeight && typeof listHeader == "undefined" || MandantHeaderChecker(window.scrollY,containerMandant, headerContainer)) {
         if(screen.width > 992 ) {
           if(typeof listHeader !== "undefined"){
