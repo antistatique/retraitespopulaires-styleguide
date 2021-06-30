@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
+## 3.5.12 (2021-06-30)
+- MD-707: Sticky header
+
 ## 3.5.11 (2021-05-26)
 - MD-707: Sticky header
 - MD-694: Integrate new video layout in page editor

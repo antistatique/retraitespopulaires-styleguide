@@ -34,14 +34,46 @@ export function navbar () {
 
   window.addEventListener("scroll", function()
   {
-    let stickyLogo = document.getElementById("img-sticky");
-    let headerContainer = document.getElementsByClassName("header-container")[0];
-    if(window.scrollY > headerContainer.clientHeight) {
-      stickyLogo.style.display = "initial";
+    let stickyLogo = $('[class^="img-sticky"]')[0];
+    let headerContainer = $(".header-container")[0];
+    let imgHeader = $(".logo-retraitespopulaires")[0];
+    let listHeader = $(".wrapper-navs")[0];
+    let containerMandant = $('[id$="-layoutheaderblock"]')[0];
+
+    if(typeof stickyLogo == "undefined"){
+      return null;
+    }
+
+
+    if(window.scrollY > headerContainer.clientHeight && typeof listHeader == "undefined" || MandantHeaderChecker(window.scrollY,containerMandant, headerContainer)) {
+        if($(document).width() > 992 ) {
+          if(typeof listHeader !== "undefined"){
+            listHeader.style.flex = "0 1 100%";
+          }
+          imgHeader.style.display = "none";
+          stickyLogo.style.display = "initial";
+        }else{
+          imgHeader.style.display = "initial";
+          stickyLogo.style.display = "none";
+        }
     }else
     {
       stickyLogo.style.display = "none";
+      imgHeader.style.display = "initial";
+      if(typeof listHeader !== "undefined"){
+        listHeader.style.flex = "0 1 800px";
+      }
     }
+
+
+  });
+
+  function MandantHeaderChecker(scroll,containerMandant,headerContainer){
+
+    if(typeof containerMandant !== "undefined") {
+      return scroll > (headerContainer.clientHeight + parseInt(getComputedStyle(containerMandant).top));
+    }
+    return false;
   }
-  );
+
 }
