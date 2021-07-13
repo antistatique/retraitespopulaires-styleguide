@@ -16,9 +16,10 @@
   },
   "scripts": {
     "start": "gulp serve",
-    "build": "npm install && gulp --production"
+    "build": "yarn install && gulp --production"
   },
   "engines": {
+    "node": ">= 10",
     "npm": "3.10.3"
   },
   "dependencies": {
