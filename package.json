@@ -19,7 +19,7 @@
     "build": "yarn install && gulp --production"
   },
   "engines": {
-    "node": ">= 10",
+    "node": ">= 6",
     "npm": "3.10.3"
   },
   "dependencies": {
