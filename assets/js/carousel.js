@@ -218,7 +218,6 @@ export function carousel () {
     var $target = $(document).find(target)
     var indicator = $(document).find('.carousel-indicators');
     var items = document.getElementsByClassName('item');
-    indicator.text('3/' + items.length);
     for(let i = 0; i < items.length; i++){
       if(items[i].classList.contains("prev") || items[i].classList.contains("next")){
         indicator.text((i+1) + '/' + items.length);

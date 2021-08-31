@@ -41,15 +41,51 @@ $bp: (
 .carousel {
 
   &-indicators {
+
     border: $color-rp-black 1px solid;
     border-radius: 10px;
     font-size: 10px;
     width: 40px;
-    margin: 0 auto -50px;
+    margin: 0 0 0 50%;
+    z-index: 15;
+    padding-left: 0;
+    text-align: center;
+    list-style: none;
     transform: translateX(-50%);
     breakpoint(0 bp(sm)) {
       margin: 0 auto -40px;
     }
+
+    li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 1px;
+      text-indent: -999px;
+      cursor: pointer;
+      // IE8-9 hack for event handling
+      //
+      // Internet Explorer 8-9 does not support clicks on elements without a set
+      // `background-color`. We cannot use `filter` since that's not viewed as a
+      // background color by the browser. Thus, a hack is needed.
+      // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Internet_Explorer
+      //
+      // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
+      // set alpha transparency for the best results possible.
+      background-color: #000 \9; // IE8
+      background-color: rgba(0, 0, 0, 0); // IE9
+
+      border: 1px solid $carousel-indicator-border-color;
+      border-radius: 10px;
+    }
+
+    .active {
+      width: 12px;
+      height: 12px;
+      margin: 0;
+      background-color: $carousel-indicator-active-bg;
+    }
+
   }
 
   &-inner {
@@ -367,61 +403,6 @@ $bp: (
     }
   }
 
-}
-
-// Optional indicator pips
-//
-// Add an unordered list with the following class and add a list item for each
-// slide your carousel holds.
-
-
-
-.carousel-indicators {
-  border: #333 1px solid;
-  border-radius: 10px;
-  font-size: 10px;
-  width: 40px;
-  margin: 0 0 0 50%;
-  //-ms-transform: translateX(-50%);
-  //transform: translateX(-50%);
-  //position: absolute;
-  //bottom: 10px;
-  //left: 50%;
-  z-index: 15;
-  padding-left: 0;
-  text-align: center;
-  list-style: none;
-
-
-  li {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 1px;
-    text-indent: -999px;
-    cursor: pointer;
-    // IE8-9 hack for event handling
-    //
-    // Internet Explorer 8-9 does not support clicks on elements without a set
-    // `background-color`. We cannot use `filter` since that's not viewed as a
-    // background color by the browser. Thus, a hack is needed.
-    // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Internet_Explorer
-    //
-    // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
-    // set alpha transparency for the best results possible.
-    background-color: #000 \9; // IE8
-    background-color: rgba(0, 0, 0, 0); // IE9
-
-    border: 1px solid $carousel-indicator-border-color;
-    border-radius: 10px;
-  }
-
-  .active {
-    width: 12px;
-    height: 12px;
-    margin: 0;
-    background-color: $carousel-indicator-active-bg;
-  }
 }
 
 // Optional captions
