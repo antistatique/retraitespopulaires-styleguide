@@ -4,7 +4,7 @@
 $color-rp-black: #333;
 $color-white: #fff;
 $color-black: #000;
-$shadow-gray-medium-light: rgba(0, 0, 0, .1);
+$shadow-gray-medium-light: rgba(0, 0, 0, 0.1);
 
 $bp-xxsm: 320px;
 $bp-xsm: 480px;
@@ -30,7 +30,9 @@ $bp: (
   @if map-has-key($bp, $key) {
     @return map-get($bp, $key);
   }
+
   @warn "Unknown `#{$key}` in `#{$bp}`.";
+
   @return null;
 }
 
@@ -39,16 +41,14 @@ $bp: (
 }
 
 .carousel {
-
   &-indicators {
-
+    width: 40px;
+    margin: 0 0 0 50%;
+    padding-left: 0;
     border: $color-rp-black 1px solid;
     border-radius: 10px;
     font-size: 10px;
-    width: 40px;
-    margin: 0 0 0 50%;
     z-index: 15;
-    padding-left: 0;
     text-align: center;
     list-style: none;
     transform: translateX(-50%);
@@ -85,7 +85,6 @@ $bp: (
       margin: 0;
       background-color: $carousel-indicator-active-bg;
     }
-
   }
 
   &-inner {
@@ -93,16 +92,6 @@ $bp: (
   }
 
   &-control {
-    @include shadow-carousel;
-    opacity: 1;
-    width: 30px;
-    height: 70px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    z-index: 11;
-    text-shadow: none;
-
     &.left {
       left: -5px;
     }
@@ -120,43 +109,42 @@ $bp: (
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      color: $color-black;
       font-size: small;
+      color: $color-black;
+      transform: translate(-50%, -50%);
     }
   }
 
   .immo-offers-card-title {
-    font-family: "Cocon Pro", arial, sans-serif;
-    font-weight: 300;
     margin-top: 30px;
     margin-left: -15px;
+    font-family: "Cocon Pro", arial, sans-serif;
+    font-weight: 300;
     color: #02a163;
 
     @media screen and (max-width: $screen-xs-max) {
       margin-top: 15px;
       margin-left: 10px;
     }
-
   }
 
   //début de la fin
 
-  .imm-label{
+  .imm-label {
     float: left;
     color: #bfbfbf;
   }
 
-  .imm-value{
+  .imm-value {
     float: right;
-    color: #333;
     font-weight: 600;
+    color: #333;
   }
 
   .imm-price {
     float: right;
-    color: #02a163;
     font-weight: 600;
+    color: #02a163;
   }
 
   .immo-offers-tile .immo-offers-card-btn {
@@ -164,83 +152,87 @@ $bp: (
     margin-left: 15px;
     margin-top: 25px;
     padding-top: 12px;
+
     @media screen and (max-width: 640px) {
       height: 75px;
     }
   }
 
   .immo-offers-tile .immo-offers-card-img {
+    display: inline-block;
     max-width: inherit;
     max-height: 100%;
     height: 280px;
-    display: inline-block;
+
+    @media screen and (min-width: 1600px) {
+      height: 350px;
+    }
   }
 
   .retraitespopulaires-icon-portal-chevron-left:before {
     content: "<";
   }
+
   .retraitespopulaires-icon-portal-chevron-right:before {
     content: ">";
   }
 
-  .carousel-control.left, .carousel-control.right {
+  .carousel-control.left,
+  .carousel-control.right {
     background: #fff;
   }
+
   .carousel-control.left {
     left: -5px;
   }
 
   .carousel-control {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.10);
-    opacity: 1;
-    width: 30px;
-    height: 70px;
     position: absolute;
     top: 50%;
+    width: 30px;
+    height: 70px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    font-size: 20px;
+    color: #fff;
     transform: translate(0, -50%);
     z-index: 11;
     text-shadow: none;
-  }
-  .carousel-control {
-    font-size: 20px;
-    color: #fff;
     text-align: center;
   }
 
-  .item {
-    //height: 320px;
-  }
-
   .immo-offers-tile {
-    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.10);
-    box-shadow: 0 0 15px rgba(0, 0, 0, .10);
-    position: relative;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     display: inline-block;
+    position: relative;
     width: 100%;
     min-height: 280px;
-    margin: 12px 0px;
+    margin: 12px 0;
     overflow: hidden;
     border-radius: 5px;
   }
 
-  .immo-offers-card-data{
+  .immo-offers-card-data {
     margin-left: 30px;
+
     @media screen and (max-width: $screen-xs-max) {
       margin-left: 0;
     }
   }
 
-  .immo-offers-card{
-    display:flex;
+  .immo-offers-card {
+    display: flex;
+
     @media screen and (max-width: $screen-xs-max) {
       flex-direction: column-reverse;
       padding-bottom: 15px;
+
       div:last-child {
         padding: 0;
       }
     }
   }
-
 }
 
 .carousel {
@@ -253,14 +245,16 @@ $bp: (
   overflow: hidden;
 
   > .item {
-    position: relative;
     display: none;
-    @include transition(.6s ease-in-out left);
+    position: relative;
+
+    @include transition(0.6s ease-in-out left);
 
     // Account for jankitude on images
     > img,
     > a > img {
       @include img-responsive;
+
       line-height: 1;
     }
 
@@ -273,17 +267,22 @@ $bp: (
       &.next,
       &.active.right {
         @include translate3d(100%, 0, 0);
+
         left: 0;
       }
+
       &.prev,
       &.active.left {
         @include translate3d(-100%, 0, 0);
+
         left: 0;
       }
+
       &.next.left,
       &.prev.right,
       &.active {
         @include translate3d(0, 0, 0);
+
         left: 0;
       }
     }
@@ -309,9 +308,11 @@ $bp: (
   > .next {
     left: 100%;
   }
+
   > .prev {
     left: -100%;
   }
+
   > .next.left,
   > .prev.right {
     left: 0;
@@ -320,10 +321,10 @@ $bp: (
   > .active.left {
     left: -100%;
   }
+
   > .active.right {
     left: 100%;
   }
-
 }
 
 // Left/right controls for nav
@@ -335,23 +336,26 @@ $bp: (
   bottom: 0;
   left: 0;
   width: $carousel-control-width;
+  background-color: rgba(0, 0, 0, 0); // Fix IE9 click-thru bug
   font-size: $carousel-control-font-size;
   color: $carousel-control-color;
   text-align: center;
   text-shadow: $carousel-text-shadow;
-  background-color: rgba(0, 0, 0, 0); // Fix IE9 click-thru bug
+
   @include opacity($carousel-control-opacity);
   // We can't have this transition here because WebKit cancels the carousel
   // animation if you trip this while in the middle of another animation.
 
   // Set gradients for backgrounds
   &.left {
-    @include gradient-horizontal($start-color: rgba(0, 0, 0, .5), $end-color: rgba(0, 0, 0, .0001));
+    @include gradient-horizontal($start-color: rgba(0, 0, 0, 0.5), $end-color: rgba(0, 0, 0, 0.0001));
   }
+
   &.right {
     right: 0;
     left: auto;
-    @include gradient-horizontal($start-color: rgba(0, 0, 0, .0001), $end-color: rgba(0, 0, 0, .5));
+
+    @include gradient-horizontal($start-color: rgba(0, 0, 0, 0.0001), $end-color: rgba(0, 0, 0, 0.5));
   }
 
   // Hover/focus state
@@ -360,7 +364,8 @@ $bp: (
     color: $carousel-control-color;
     text-decoration: none;
     outline: 0;
-    @include opacity(.9);
+
+    @include opacity(0.9);
   }
 
   // Toggles
@@ -368,22 +373,25 @@ $bp: (
   .icon-next,
   .glyphicon-chevron-left,
   .glyphicon-chevron-right {
+    display: inline-block;
     position: absolute;
     top: 50%;
     z-index: 5;
-    display: inline-block;
     margin-top: -10px;
   }
+
   .icon-prev,
   .glyphicon-chevron-left {
     left: 50%;
     margin-left: -10px;
   }
+
   .icon-next,
   .glyphicon-chevron-right {
     right: 50%;
     margin-right: -10px;
   }
+
   .icon-prev,
   .icon-next {
     width: 20px;
@@ -397,12 +405,12 @@ $bp: (
       content: "\2039";// SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
     }
   }
+
   .icon-next {
     &:before {
       content: "\203a";// SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
     }
   }
-
 }
 
 // Optional captions
@@ -425,7 +433,6 @@ $bp: (
   }
 }
 
-
 // Scale up controls for tablets and up
 @media screen and (min-width: $screen-sm-min) {
 
@@ -440,10 +447,12 @@ $bp: (
       margin-top: ($carousel-control-font-size / -2);
       font-size: ($carousel-control-font-size * 1.5);
     }
+
     .glyphicon-chevron-left,
     .icon-prev {
       margin-left: ($carousel-control-font-size / -2);
     }
+
     .glyphicon-chevron-right,
     .icon-next {
       margin-right: ($carousel-control-font-size / -2);
@@ -456,6 +465,4 @@ $bp: (
     left: 20%;
     padding-bottom: 30px;
   }
-
-
 }
