@@ -100,9 +100,7 @@ $bp: (
   .immo-offers-card-title {
     margin-top: 30px;
     margin-left: -15px;
-    font-family: "Cocon Pro", arial, sans-serif;
-    font-weight: 300;
-    color: #02a163;
+    //font-weight: 300;
 
     @media screen and (max-width: $screen-xs-max) {
       margin-top: 15px;
@@ -110,11 +108,28 @@ $bp: (
     }
   }
 
-  //début de la fin
+  .pills {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding-left: 30px;
+    padding-top: 15px;
+  }
+
+  .notification-pill {
+    display: flex;
+    padding: 0 2px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    color: white;
+  }
 
   .imm-label {
     float: left;
-    color: #bfbfbf;
+    color: #1a1a1a;
+    opacity: 60%;
   }
 
   .imm-value {
@@ -184,7 +199,6 @@ $bp: (
   }
 
   .immo-offers-tile {
-    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     display: inline-block;
     position: relative;
