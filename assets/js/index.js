@@ -14,6 +14,7 @@ import { slider } from './slider.js';
 import { bv_gallery } from './bv_gallery.js';
 import { ckeditor_accordion } from './ckeditor_accordion.js';
 import { popin } from './popin.js';
+import { carousel } from './carousel.js';
 
 (function(){
   mobile_menu();
@@ -32,4 +33,5 @@ import { popin } from './popin.js';
   bv_gallery();
   ckeditor_accordion();
   popin();
+  carousel();
 }());

@@ -1,6 +1,6 @@
 {
   "name": "@antistatique/retraitespopulaires-styleguide",
-  "version": "3.5.12",
+  "version": "3.5.13",
   "main": "index.html",
   "browserify-shim": {
     "jquery": "global:jQuery"
@@ -16,9 +16,10 @@
   },
   "scripts": {
     "start": "gulp serve",
-    "build": "npm install && gulp --production"
+    "build": "yarn install && gulp --production"
   },
   "engines": {
+    "node": ">= 6",
     "npm": "3.10.3"
   },
   "dependencies": {
