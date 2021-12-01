@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
+## 3.5.13 (2021-12-01)
+- MD-677: Mise en avant des annonces immobilière sur la homepage
+
 ## 3.5.12 (2021-06-30)
 - MD-707: Sticky header
 
