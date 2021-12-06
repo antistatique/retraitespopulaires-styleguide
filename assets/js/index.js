@@ -15,6 +15,7 @@ import { bv_gallery } from './bv_gallery.js';
 import { ckeditor_accordion } from './ckeditor_accordion.js';
 import { popin } from './popin.js';
 import { carousel } from './carousel.js';
+import { accessibility } from './accessibility.js';
 
 (function(){
   mobile_menu();
@@ -34,4 +35,5 @@ import { carousel } from './carousel.js';
   ckeditor_accordion();
   popin();
   carousel();
+  accessibility();
 }());

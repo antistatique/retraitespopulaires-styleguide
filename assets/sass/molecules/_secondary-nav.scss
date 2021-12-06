@@ -8,6 +8,26 @@ $active-border-width: 4px;
   @media only screen and (min-width: $screen-md-min) {
     margin-left: -1.5rem;
   }
+
+  &-mobile {
+    display: block;
+
+    @media only screen and (min-width: $screen-md-min) {
+      display: none;
+    }
+
+    .spacer {
+      height: 0;
+    }
+
+  }
+  &-desktop {
+    display: none;
+
+    @media only screen and (min-width: $screen-md-min) {
+      display: block;
+    }
+  }
 }
 
 .secondary-nav-content {
