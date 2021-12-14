@@ -16,7 +16,7 @@ export function carousel () {
 
   var Carousel = function (element, options) {
     this.$element    = $(element)
-    this.$indicators = this.$element.find('.carousel-indicators')
+    this.$indicators = this.$element.find('.home-carousel-indicators')
     this.options     = options
     this.paused      = null
     this.sliding     = null
@@ -216,7 +216,7 @@ export function carousel () {
     }
     var target  = $this.attr('data-target') || href
     var $target = $(document).find(target)
-    var indicator = $(document).find('.carousel-indicators');
+    var indicator = $(document).find('.home-carousel-indicators');
     var items = document.getElementsByClassName('item');
     for(let i = 0; i < items.length; i++){
       if(items[i].classList.contains("prev") || items[i].classList.contains("next")){
