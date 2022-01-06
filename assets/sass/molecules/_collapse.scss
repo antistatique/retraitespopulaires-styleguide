@@ -85,7 +85,7 @@
 
     &.active {
       .ckeditor-accordion-toggle {
-        @include rotate(90deg);
+        @include rotate(-180deg);
       }
     }
 
@@ -124,17 +124,16 @@
   &:before {
     @include theme(background-color);
 
-    content: $retraitespopulaires-icon-arrow-right;
+    content: $retraitespopulaires-icon-angle;
     display: flex;
     width: 62px;
     height: 62px;
-    align-items: center;
-    padding: 0.5em;
+    padding: 0.51em;
     background: $green;
     border-radius: 4em;
-    font-family: 'retraitespopulaires-icon';
+    font-family: "retraitespopulaires-icon";
     font-size: 30px;
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
     color: $white;
   }
