@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 ## NEXT RELEASE
+## 3.5.14 (2022-01-12)
+- MD-776: Formulaire prêts : correction messages
+- MD-801: Carrousel image annonce immobilière - modification
+- MD-805: Modifier ordre contact et menu (sur mobile)
+
 ## 3.5.13 (2021-12-01)
 - MD-677: Mise en avant des annonces immobilière sur la homepage
 
