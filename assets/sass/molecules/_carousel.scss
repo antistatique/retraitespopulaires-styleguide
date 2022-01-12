@@ -40,7 +40,7 @@ $bp: (
   box-shadow: 0 0 15px $shadow-gray-medium-light;
 }
 
-.carousel {
+.home-carousel {
   &-indicators {
     width: 40px;
     margin: 0 0 0 50%;
@@ -174,16 +174,16 @@ $bp: (
     content: ">";
   }
 
-  .carousel-control.left,
-  .carousel-control.right {
+  .home-carousel-control.left,
+  .home-carousel-control.right {
     background: #fff;
   }
 
-  .carousel-control.left {
+  .home-carousel-control.left {
     left: -5px;
   }
 
-  .carousel-control {
+  .home-carousel-control {
     position: absolute;
     top: 50%;
     width: 30px;
@@ -232,11 +232,11 @@ $bp: (
   }
 }
 
-.carousel {
+.home-carousel {
   position: relative;
 }
 
-.carousel-inner {
+.home-carousel-inner {
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -327,7 +327,7 @@ $bp: (
 // Left/right controls for nav
 // ---------------------------
 
-.carousel-control {
+.home-carousel-control {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -413,7 +413,7 @@ $bp: (
 // Optional captions
 // -----------------------------
 // Hidden by default for smaller viewports
-.carousel-caption {
+.home-carousel-caption {
   position: absolute;
   right: 15%;
   bottom: 20px;
@@ -434,7 +434,7 @@ $bp: (
 @media screen and (min-width: $screen-sm-min) {
 
   // Scale up the controls a smidge
-  .carousel-control {
+  .home-carousel-control {
     .glyphicon-chevron-left,
     .glyphicon-chevron-right,
     .icon-prev,
@@ -457,7 +457,7 @@ $bp: (
   }
 
   // Show and left align the captions
-  .carousel-caption {
+  .home-carousel-caption {
     right: 20%;
     left: 20%;
     padding-bottom: 30px;
