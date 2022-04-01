@@ -19,7 +19,8 @@
     "build": "npm install && gulp --production"
   },
   "engines": {
-    "npm": "3.10.3"
+    "npm": "3.10.3",
+    "node": "8.17.0"
   },
   "dependencies": {
     "autonumeric": "^1.9.46",
