@@ -38,7 +38,7 @@
     "font-awesome": "^4.6.3",
     "gemini-babel": "^1.0.0",
     "gsap": "^1.19.0",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^2.0.13",
     "gulp-concat": "^2.6.0",
     "gulp-iconfont": "^8.0.1",
