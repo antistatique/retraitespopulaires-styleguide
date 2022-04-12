@@ -10,4 +10,20 @@
     {"type": "test", "hidden": true}
   ],
   "commitUrlFormat": "http://webbucket:7990/projects/SP/repos/styleguide/commits/{{hash}}"
+  "packageFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    }
+  ],
+  "bumpFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    },
+    {
+      "filename": "package-lock.json",
+      "type": "json"
+    }
+  ]
 }
