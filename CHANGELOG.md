@@ -1,6 +1,20 @@
-CHANGELOG
-=========
-## NEXT RELEASE
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [3.6.0](https://github.com/antistatique/retraitespopulaires-styleguide/compare/v2.1.1...v3.6.0) (2022-04-27)
+
+
+### Features
+
+* **MD-833:** add conventional commits ([333e34a](http://webbucket:7990/projects/SP/repos/styleguide/commits/333e34a3520ef8b4a838753718332fd5a50790db))
+
+
+### Bug Fixes
+
+* typo ([6aaeff8](http://webbucket:7990/projects/SP/repos/styleguide/commits/6aaeff85dee11e1acc6c8322df8387ba87033545))
+* version reading and bumping of standard-version tool ([f96a2d2](http://webbucket:7990/projects/SP/repos/styleguide/commits/f96a2d2b698e5e495e793186ec2d6ea464413ca7))
+
 ## 3.5.14 (2022-01-12)
 - MD-776: Formulaire prêts : correction messages
 - MD-801: Carrousel image annonce immobilière - modification
