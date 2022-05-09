@@ -653,6 +653,13 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
             <div class="text-muted">.retraitespopulaires-icon-arrow-last-thin</div>
           </div>
         </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x 
+            retraitespopulaires-icon-close"></i>
+            <div class="text-muted">.retraitespopulaires-icon-close</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

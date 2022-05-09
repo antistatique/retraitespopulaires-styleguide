@@ -47,7 +47,7 @@
 
 .popin {
   margin-bottom: 0;
-  background-color: map-deep-get($themes, 'primary', 'color');
+  background-color: map-deep-get($themes, "primary", "color");
 
   @include theme(background-color);
 
@@ -104,7 +104,7 @@
   display: flex;
   width: 100%;
   padding: 18px;
-  background-color: map-deep-get($themes, 'primary', 'hover-color');
+  background-color: map-deep-get($themes, "primary", "hover-color");
 
   @include theme(background-color, hover-color);
 
