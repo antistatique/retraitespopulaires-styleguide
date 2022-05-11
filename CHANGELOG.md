@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.7.0](https://github.com/antistatique/retraitespopulaires-styleguide/compare/v3.6.0...v3.7.0) (2022-05-11)
+
+
+### Features
+
+* **MD-849:** close icon for popin style ([8ece40f](http://webbucket:7990/projects/SP/repos/styleguide/commits/8ece40f60800509dd808c8eaace8b2f75b7529fa))
+
 ## [3.6.0](https://github.com/antistatique/retraitespopulaires-styleguide/compare/v2.1.1...v3.6.0) (2022-04-27)
 
 
