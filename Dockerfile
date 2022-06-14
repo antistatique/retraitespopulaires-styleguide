@@ -1,12 +1,20 @@
-FROM node:16-alpine
+FROM node:8
 
 RUN mkdir -p /app
 WORKDIR /app
 
-COPY ./.yarn ./.yarn
-ADD ./package.json ./yarn.lock ./.yarnrc.yml ./
 
-RUN set -eux; \
-  yarn install;
+#RUN set -eux; \
+#  yarn set version latest; \
+#  yarn install;\
+#  yarn cache clean;
 
-CMD ["npm run dev-server --port 9090"]
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends \
+  vim
+
+RUN npm install
+#RUN npm build
+#RUN npm rebuild node-sass --force
+#CMD ["npm", "start"]
+CMD tail -f /dev/null
