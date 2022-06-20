@@ -4,6 +4,7 @@ import gulp from 'gulp';
 import yargs from 'yargs';
 import config from '../gulp_config.json';
 import autoprefixer from 'autoprefixer';
+const sass = require('gulp-sass')(require('sass'));
 
 import loadPlugins from 'gulp-load-plugins';
 const $ = loadPlugins();
@@ -34,9 +35,7 @@ function errorAlert(error){
 */
 export const metalsmithStyles = () => {
   return gulp.src(`${config.assets}sass/styleguide.scss`)
-  .pipe($.sass({
-    errLogToConsole: true
-  }))
+  .pipe(sass())
   .pipe($.postcss([
     autoprefixer({
       browsers: config.browsers,
