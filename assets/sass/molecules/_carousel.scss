@@ -52,9 +52,9 @@ $bp: (
     text-align: center;
     list-style: none;
     transform: translateX(-50%);
-    breakpoint(0 bp(sm)) {
-      margin: 0 auto -40px;
-    }
+    // breakpoint(0 bp(sm)) {
+    //   margin: 0 auto -40px;
+    // }
 
     .active {
       width: 12px;

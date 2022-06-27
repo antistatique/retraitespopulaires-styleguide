@@ -4,6 +4,7 @@ import autoprefixer from 'autoprefixer';
 // required -> import stylelint from 'stylelint';
 import reporter from 'postcss-reporter';
 import config from '../gulp_config.json';
+const sass = require('gulp-sass')(require('sass'));
 
 import loadPlugins from 'gulp-load-plugins';
 const $ = loadPlugins();
@@ -26,11 +27,7 @@ export const stylesBuild = () => {
   return gulp.src([`${config.assets}sass/main.scss`])
     .pipe($.plumber({ errorHandler: errorAlert }))
     .pipe(yargs.argv.production ? $.util.noop() : $.sourcemaps.init())
-    .pipe($.sass({
-      outputStyle: 'compact',
-      precision: 5,
-      includePaths: ['.'],
-    }))
+    .pipe(sass())
     .pipe($.postcss([
       autoprefixer({
         browsers: config.browsers,
