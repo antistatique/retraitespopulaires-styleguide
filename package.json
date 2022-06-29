@@ -16,7 +16,8 @@
   },
   "scripts": {
     "start": "gulp serve",
-    "build": "yarn install && gulp --production"
+    "build": "yarn install && gulp --production",
+    "watch": "gulp watch"
   },
   "dependencies": {
     "autonumeric": "^1.9.46",
