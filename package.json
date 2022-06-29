@@ -17,7 +17,7 @@
   "scripts": {
     "start": "gulp serve",
     "build": "yarn install && gulp --production",
-    "watch": "gulp watch"
+    "watch-docker": "gulp build-no-clean && gulp watch-docker"
   },
   "dependencies": {
     "autonumeric": "^1.9.46",

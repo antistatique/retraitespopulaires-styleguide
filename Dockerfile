@@ -16,4 +16,4 @@ RUN set -eux; \
 
 RUN npm link gulp
 
-CMD yarn build ; yarn watch
+CMD yarn watch-docker
