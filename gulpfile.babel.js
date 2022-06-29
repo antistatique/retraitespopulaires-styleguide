@@ -4,6 +4,7 @@
 import gulp from 'gulp';
 import config from './gulp_config.json';
 import yargs from 'yargs';
+import watch from 'gulp-watch'
 
 import NodeESModuleLoader from 'node-es-module-loader';
 const loader = new NodeESModuleLoader();
@@ -50,7 +51,7 @@ const defaultFunc = (done, isServe) => loader.import(conditionalStyleguide)
  .then(m => {
    $.util.log('DEVELOPMENT MODE');
    if (isServe) {
-     done(gulp.series(build, favicons, m.default.metalsmith, serve));
+     done(gulp.series(favicons, m.default.metalsmith, watch));
    } else {
      done(gulp.series(build, favicons, m.default.metalsmith));
    }
@@ -75,3 +76,12 @@ const serveTask = gulp.task('serve', () => defaultFunc(res => res(), true));
  * Metalsmith task
  */
 const metalsmithTask = gulp.task('metalsmith', yargs.argv.production ? inprod : require('./tasks/metalsmith').metalsmith);
+
+/**
+ * Watch task
+ */
+gulp.task('watch', function (done) {
+  watch('./assets/**/*', {interval: 2000, usePolling: true}, gulp.series('build'));
+  done();
+});
+

@@ -44,6 +44,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-size": "^2.1.0",
     "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^5.0.1",
     "html5shiv": "^3.7.3",
     "jquery": "^2.2.4",
     "merge-stream": "^1.0.0",
