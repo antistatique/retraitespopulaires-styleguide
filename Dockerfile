@@ -10,10 +10,10 @@ RUN apt-get install -y --no-install-recommends \
 
 RUN set -eux; \
   yarn set version latest; \
-  yarn install;\
-  yarn cache clean;\
-  yarn build;
+  # yarn install;\
+  yarn cache clean;
 
 RUN npm link gulp
 
 CMD yarn watch-docker
+#CMD tail -f /dev/null
