@@ -5,6 +5,7 @@ node_modules
 
 /dist
 /build/*
+!/build/.gitkeep
 /styleguide
 
 tests/regression/compare
