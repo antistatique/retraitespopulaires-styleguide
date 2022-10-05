@@ -71,7 +71,7 @@ const defaultFunc = (done, isServe) =>
     .then((m) => {
       $.util.log("DEVELOPMENT MODE");
       if (isServe) {
-        done(gulp.series(favicons, m.default.metalsmith, watch));
+        done(gulp.series(favicons, m.default.metalsmith, serve));
       } else {
         done(gulp.series(build, favicons, m.default.metalsmith));
       }
