@@ -14,6 +14,9 @@ layout: examples.html.swig
       <a href="#" class="btn btn-primary">Assurance vie</a>
     </p>
     <p>
+      <a href="#" class="btn btn-secondary">Bouton secondaire</a>
+    </p>
+    <p>
       <a href="#" class="btn btn-outline">Bouton outline [deprecated]</a>
     </p>
     <p>
