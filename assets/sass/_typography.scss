@@ -10,7 +10,7 @@ h2,
 .h2 {
   margin-top: 2em;
   margin-bottom: 1em;
-  font-weight: 500;
+  font-weight: 700;
 
   @include font-secondary;
 
@@ -72,8 +72,8 @@ h6,
 /**
  * Text color variants
  */
-@include text-emphasis-variant('.text-gray', $gray);
-@include text-emphasis-variant('.text-gray-dark', $gray-dark);
+@include text-emphasis-variant(".text-gray", $gray);
+@include text-emphasis-variant(".text-gray-dark", $gray-dark);
 
 .text-primary {
   @include theme(color);
@@ -84,7 +84,7 @@ h6,
   padding-left: 1em;
 
   &:before {
-    content: '\0025A0'; // ■
+    content: "\0025A0"; // ■
     position: absolute;
     top: -0.1em;
     left: 0.25em;
@@ -109,7 +109,7 @@ h6,
     @include font-secondary;
 
     font-weight: 700;
-    color: map-get($bv-colors, 'black');
+    color: map-get($bv-colors, "black");
   }
 
   p {
@@ -118,7 +118,9 @@ h6,
     font-weight: 300;
 
     strong,
-    &.text-bold { font-weight: 700; }
+    &.text-bold {
+      font-weight: 700;
+    }
 
     &.p--sm {
       font-size: 14px;
@@ -132,7 +134,7 @@ h6,
 
     &.p--underline {
       padding-bottom: 5px;
-      border-bottom: 1px solid map-get($bv-colors, 'green');
+      border-bottom: 1px solid map-get($bv-colors, "green");
     }
   }
 }
@@ -236,7 +238,7 @@ Extra Small Devices, Phones */
   cite,
   li,
   ol {
-    font-size: floor(($font-size-base * 1.18));
+    font-size: floor(($font-size-base * 1.18)); //~18px
 
     &.text-smaller {
       font-size: floor(($font-size-base * 0.98));
@@ -358,12 +360,12 @@ Extra Small Devices, Phones */
   cite,
   li,
   ol {
-    font-size: floor(($font-size-base * 1.28));
+    font-size: floor(($font-size-base * 1.18));
   }
 
   h1,
   .h1 {
-    font-size: floor(($font-size-h1 * 1.22));
+    font-size: floor(($font-size-h1 * 1.27));
   }
 
   h2,
@@ -373,7 +375,7 @@ Extra Small Devices, Phones */
 
   h3,
   .h3 {
-    font-size: floor(($font-size-h3 * 1.22));
+    font-size: floor(($font-size-h3 * 1.15));
   }
 
   h4,
