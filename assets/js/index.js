@@ -1,23 +1,23 @@
-import { mobile_menu } from './mobile_menu.js';
-import { navbar } from './navbar.js';
-import { input_dynamic_label } from './input_dynamic_label.js';
-import { input_files } from './input_files.js';
-import { organic_generate } from './organicJS.js';
-import { datepicker } from './datepicker.js';
-import { number_format } from './number_format.js';
-import { smoothscroll_load } from './smoothscroll.js';
-import { gallery } from './gallery.js';
-import { popover } from './popover.js';
-import { selectize } from './selectize.js';
-import { labels } from './labels.js';
-import { slider } from './slider.js';
-import { bv_gallery } from './bv_gallery.js';
-import { ckeditor_accordion } from './ckeditor_accordion.js';
-import { popin } from './popin.js';
-import { carousel } from './carousel.js';
-import { accessibility } from './accessibility.js';
+import { mobile_menu } from "./mobile_menu.js";
+import { navbar } from "./navbar.js";
+import { input_dynamic_label } from "./input_dynamic_label.js";
+import { input_files } from "./input_files.js";
+import { organic_generate } from "./organicJS.js";
+import { datepicker } from "./datepicker.js";
+import { number_format } from "./number_format.js";
+import { smoothscroll_load } from "./smoothscroll.js";
+import { gallery } from "./gallery.js";
+import { popover } from "./popover.js";
+import { selectize } from "./selectize.js";
+import { labels } from "./labels.js";
+import { slider } from "./slider.js";
+import { bv_gallery } from "./bv_gallery.js";
+import { ckeditor_accordion } from "./ckeditor_accordion.js";
+import { popin } from "./popin.js";
+import { carousel } from "./carousel.js";
+import { accessibility } from "./accessibility.js";
 
-(function(){
+(function () {
   mobile_menu();
   navbar();
   smoothscroll_load();
@@ -36,4 +36,4 @@ import { accessibility } from './accessibility.js';
   popin();
   carousel();
   accessibility();
-}());
+})();

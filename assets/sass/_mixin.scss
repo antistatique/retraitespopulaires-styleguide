@@ -60,14 +60,9 @@
   }
 }
 
-@mixin pretty-link-text-shadow($color, $important:"") {
-  text-shadow:
-    3px 0 $color,
-    2px 0 $color,
-    1px 0 $color,
-    -1px 0 $color,
-    -2px 0 $color,
-    -3px 0 $color unquote($important);
+@mixin pretty-link-text-shadow($color, $important: "") {
+  text-shadow: 3px 0 $color, 2px 0 $color, 1px 0 $color, -1px 0 $color,
+    -2px 0 $color, -3px 0 $color unquote($important);
 }
 
 @mixin btn-outline-variant($color) {
@@ -78,7 +73,7 @@
   @include theme(border-color color);
 
   &:hover,
-  &:focus, {
+  &:focus {
     background-color: $link-color;
     border-color: $link-color;
     color: $white !important;
@@ -114,7 +109,6 @@
 // Font Cocon Pro always has a font-weight: 300
 @mixin font-secondary {
   font-family: $font-secondary;
-  font-weight: 300;
 }
 
 @function tint($color, $percent) {
@@ -128,20 +122,25 @@
 
 // Calculeate brightness of a given color.
 @function brightness($color) {
-  @return ((red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114)) / 255 * 100%;
+  @return (
+      (red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114)
+    ) / 255 * 100%;
 }
 
 // Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
 @function color-contrast($color, $dark: $text-color, $light: $white) {
   @if $color == null {
     @return null;
-  }
-
-  @else {
+  } @else {
     $color-brightness: brightness($color);
     $light-text-brightness: brightness($light);
     $dark-text-brightness: brightness($dark);
 
-    @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
+    @return if(
+      abs($color-brightness - $light-text-brightness) >
+        abs($color-brightness - $dark-text-brightness),
+      $light,
+      $dark
+    );
   }
 }
