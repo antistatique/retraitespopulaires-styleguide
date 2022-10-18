@@ -30,7 +30,7 @@
       transition: color 0.25s ease-in-out;
 
       &:after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         right: 0;
@@ -69,6 +69,10 @@
         @include theme(color);
       }
     }
+  }
+
+  .mega-menu {
+    display: none;
   }
 }
 
