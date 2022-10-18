@@ -5,11 +5,8 @@
   z-index: $zindex-navbar-fixed + 2;
   top: 0;
   background: $white;
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.015),
-    0 2px 2px rgba(0, 0, 0, 0.015),
-    0 4px 4px rgba(0, 0, 0, 0.015),
-    0 8px 8px rgba(0, 0, 0, 0.015),
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.015), 0 2px 2px rgba(0, 0, 0, 0.015),
+    0 4px 4px rgba(0, 0, 0, 0.015), 0 8px 8px rgba(0, 0, 0, 0.015),
     0 16px 16px rgba(0, 0, 0, 0.015);
 
   @media screen and (min-width: $screen-md-min) {
@@ -75,8 +72,17 @@ div[id$="-layoutheaderblock"] {
     }
   }
 
-  [class*=theme-] & {
+  [class*="theme-"] & {
     margin-bottom: 0;
+  }
+
+  .main-menu-root {
+    display: flex;
+    list-style: none;
+
+    li {
+      margin-right: 20px;
+    }
   }
 }
 
@@ -113,6 +119,7 @@ div[id$="-layoutheaderblock"] {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-left: auto;
 
   .prenavbar-separator {
     width: 2px;
