@@ -652,6 +652,12 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
         </div>
         <div class="square">
           <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-chevron-rounded"></i>
+            <div class="text-muted">.retraitespopulaires-icon-chevron-rounded</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-edit"></i>
             <div class="text-muted">.retraitespopulaires-icon-edit</div>
           </div>
@@ -680,6 +686,13 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x 
             retraitespopulaires-icon-close"></i>
             <div class="text-muted">.retraitespopulaires-icon-close</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x 
+            retraitespopulaires-icon-bi-arrow-right"></i>
+            <div class="text-muted">.retraitespopulaires-icon-bi-arrow-right</div>
           </div>
         </div>
       </div>
