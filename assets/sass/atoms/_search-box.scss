@@ -9,10 +9,10 @@
 
   .retraitespopulaires-icon {
     font-size: 29px;
-    color: $white;
+    color: $black;
 
     &:hover {
-      color: $white;
+      color: $light-gray;
     }
 
     @media screen and (min-width: $screen-md-min) {
@@ -23,7 +23,7 @@
       @include theme(color);
 
       &:hover {
-        color: $black;
+        color: $light-gray;
       }
     }
   }
