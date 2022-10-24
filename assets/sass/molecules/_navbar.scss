@@ -104,9 +104,13 @@
       display: block;
       padding-bottom: 0;
 
+      &.active {
+        color: $brand-primary;
+      }
+
       &:hover,
       &:focus,
-      &:active {
+      &.active {
         &:after {
           height: 0px;
         }
