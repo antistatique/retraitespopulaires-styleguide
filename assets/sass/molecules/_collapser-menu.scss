@@ -6,22 +6,9 @@ ul.collapser-menu {
 }
 
 .collapser-menu {
-  margin-top: 85px;
+  margin-top: 152px;
 
   .collapser-first-level {
-    &:after {
-      content: '';
-      display: block;
-      position: relative;
-      left: 50%;
-      width: 100vw;
-      margin-left: -50vw;
-      border-bottom: 0 solid transparent;
-      transition:
-        margin 0.2s ease,
-        border-bottom 0.2s ease;
-    }
-
     &.toggled {
       position: relative;
       margin-right: ($grid-gutter-width / -2);
@@ -31,7 +18,7 @@ ul.collapser-menu {
       border-left: ($grid-gutter-width / 2) solid $white;
 
       &:before {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         z-index: -1;
@@ -50,20 +37,15 @@ ul.collapser-menu {
     }
   }
 
+  ul#main-navigation > li {
+    border-bottom: 1px solid $black;
+  }
+
   ul ul {
     padding-left: 1.3em;
 
     li {
       position: relative;
-
-      &:before {
-        content: '•';
-        position: absolute;
-        top: 0.3em;
-        left: -1.1em;
-        font-size: 1.2em;
-        color: $light-gray;
-      }
     }
   }
 
@@ -82,6 +64,19 @@ ul.collapser-menu {
   }
 }
 
+.collapser-first-level {
+  .collapser-menu-collapse {
+    li:not(:last-child) {
+      border-bottom: 1px solid $light-gray;
+    }
+
+    a {
+      font-weight: 300;
+      color: $black;
+    }
+  }
+}
+
 .collapser-menu-item {
   display: flex;
   justify-content: space-between;
@@ -89,19 +84,25 @@ ul.collapser-menu {
   min-height: 2.666em;
   margin-bottom: $grid-gutter-width * 0.35;
 
+  a {
+    font-weight: 700;
+    background: none;
+    color: $black;
+  }
+
   &:hover {
     text-decoration: none;
   }
 
-  .btn-circle {
+  .btn {
     background: $white;
-  }
 
-  .collapser-first-level.toggled > & .btn-circle {
-    @include theme(background-color);
-
-    background: $brand-primary;
-    color: $white;
+    &:focus,
+    &:hover,
+    &:active {
+      outline: none;
+      color: $gray;
+    }
   }
 
   .btn:not(.collapsed) {
