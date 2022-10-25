@@ -66,6 +66,14 @@ ul.collapser-menu {
 
 .collapser-first-level {
   .collapser-menu-collapse {
+    li {
+      margin-right: 18px;
+    }
+
+    .collapser-menu-item {
+      margin-bottom: 0px;
+    }
+
     li:not(:last-child) {
       border-bottom: 1px solid $light-gray;
     }
@@ -110,6 +118,10 @@ ul.collapser-menu {
       transform: scaleY(-1);
     }
   }
+}
+
+.container-collapser-menu .bg-berrylight-gray a {
+  color: $black;
 }
 
 // When Drupal admin bar is display horizontal - add bigger margin
