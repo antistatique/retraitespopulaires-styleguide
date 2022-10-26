@@ -1,5 +1,78 @@
 @charset 'UTF-8';
 
+.footer {
+  background-color: $beige;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .col-md-3,
+  .col-md-8 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .first-level {
+    font-weight: 700;
+    font-size: $font-size-large;
+  }
+
+  a {
+    color: $black;
+
+    .retraitespopulaires-icon-angle {
+      float: right;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .btn-primary {
+    margin-top: 12px;
+    color: $white;
+  }
+
+  ul {
+    margin-top: 32px;
+    padding-left: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  ul.second-level li {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid $light-gray;
+
+    .retraitespopulaires-icon-location-pin-filled {
+      vertical-align: text-top;
+      margin-right: 9px;
+    }
+  }
+
+  .social-networks {
+    display: flex; //todo que on desktop
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .first-level {
+      margin-top: 6px;
+      margin-right: 32px;
+    }
+
+    ul {
+      display: flex;
+      margin-top: 0;
+    }
+  }
+
+  .list-inline li {
+    margin-right: 37px;
+  }
+}
+
 .menu-footer {
   li {
     display: block;
