@@ -16,11 +16,13 @@
 
   ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     width: 100%;
   }
 
   li {
+    margin-right: 76px;
+
     a {
       display: inline-block;
       position: relative;

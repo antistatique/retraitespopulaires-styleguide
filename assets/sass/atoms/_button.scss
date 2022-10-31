@@ -257,12 +257,8 @@
   &.cta-secondary {
     font-size: $font-size-large;
 
-    &:hover {
-      .retraitespopulaires-icon {
-        font-size: 26px;
-        margin-left: 6px;
-        margin-bottom: 0px;
-      }
+    &:hover .retraitespopulaires-icon {
+      transform: scale(1.2);
     }
 
     .retraitespopulaires-icon {
@@ -270,6 +266,7 @@
       font-size: 22px;
       margin-left: 8px;
       margin-bottom: 2px;
+      transition: 0.2s;
     }
   }
 
