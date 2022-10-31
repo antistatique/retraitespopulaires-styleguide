@@ -1,8 +1,6 @@
 @charset 'UTF-8';
 
 .search-box {
-  margin: 0 $grid-gutter-width;
-
   @media screen and (min-width: $screen-md-min) {
     margin: 0;
   }
