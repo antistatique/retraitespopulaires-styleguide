@@ -75,11 +75,17 @@
     }
   }
 
-  .social-networks {
-    display: flex; //todo que on desktop
+  .mobile-connexion-btn {
+    margin-left: 30px;
+  }
 
-    h3 {
-      margin-top: 0;
+  h2 {
+    margin-top: 0;
+  }
+
+  .social-networks {
+    ul {
+      display: flex;
     }
 
     .first-level {
@@ -87,13 +93,21 @@
       margin-right: 32px;
     }
 
-    ul {
+    @media only screen and (min-width: 991px) {
       display: flex;
-      margin-top: 0;
+
+      ul {
+        margin-top: 0;
+      }
     }
   }
 
   .list-inline li {
     margin-right: 37px;
+  }
+
+  .border {
+    border-top: 1px solid $light-gray;
+    margin: 15px;
   }
 }
