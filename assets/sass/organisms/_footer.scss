@@ -14,7 +14,6 @@
 
       .menu-group {
         border-bottom: 1px solid $black;
-        padding-bottom: 17px;
       }
     }
   }
@@ -64,6 +63,18 @@
     }
   }
 
+  .collapse-menu-item > .retraitespopulaires-icon:not(.collapsed) {
+    transform: scaleY(-1);
+  }
+
+  .collapser-menu-collapse {
+    @media only screen and (min-width: 991px) {
+      &.collapse {
+        display: block;
+      }
+    }
+  }
+
   .social-networks {
     display: flex; //todo que on desktop
 
@@ -84,23 +95,5 @@
 
   .list-inline li {
     margin-right: 37px;
-  }
-}
-
-.menu-footer {
-  li {
-    display: block;
-
-    &:before {
-      display: none;
-    }
-
-    @media only screen and (min-width: $screen-sm-min) {
-      display: inline-block;
-
-      &:before {
-        display: inline;
-      }
-    }
   }
 }
