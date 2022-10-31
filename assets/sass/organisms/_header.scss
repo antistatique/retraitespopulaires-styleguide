@@ -80,6 +80,8 @@ div[id$="-layoutheaderblock"] {
   margin-bottom: 0;
 
   @media screen and (max-width: $screen-md-min) {
+    margin-bottom: 9.5px;
+
     &:not(.mobile) {
       display: none;
     }
