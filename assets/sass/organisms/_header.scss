@@ -10,7 +10,7 @@
     0 16px 16px rgba(0, 0, 0, 0.015);
 
   @media screen and (min-width: $screen-md-min) {
-    top: -104px; /* ! Hardcoded header height */
+    top: -79px; /* ! Hardcoded header height */
   }
 
   &.active {
@@ -24,7 +24,7 @@ div[id$="-layoutheaderblock"] {
   z-index: 10;
 
   @media screen and (min-width: $screen-md-min) {
-    top: -74px; /* ! Hardcoded header height */
+    top: -79px; /* ! Hardcoded header height */
   }
 }
 
@@ -83,6 +83,7 @@ div[id$="-layoutheaderblock"] {
   margin-bottom: 2px;
 
   @media screen and (max-width: $screen-md-min) {
+    margin-bottom: 9.5px;
     &:not(.mobile) {
       display: none;
     }
