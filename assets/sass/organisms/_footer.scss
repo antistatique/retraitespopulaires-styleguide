@@ -14,7 +14,6 @@
 
       .menu-group {
         border-bottom: 1px solid $black;
-        padding-bottom: 17px;
       }
     }
   }
@@ -64,11 +63,29 @@
     }
   }
 
-  .social-networks {
-    display: flex; //todo que on desktop
+  .collapse-menu-item > .retraitespopulaires-icon:not(.collapsed) {
+    transform: scaleY(-1);
+  }
 
-    h3 {
-      margin-top: 0;
+  .collapser-menu-collapse {
+    @media only screen and (min-width: 991px) {
+      &.collapse {
+        display: block;
+      }
+    }
+  }
+
+  .mobile-connexion-btn {
+    margin-left: 30px;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .social-networks {
+    ul {
+      display: flex;
     }
 
     .first-level {
@@ -76,31 +93,21 @@
       margin-right: 32px;
     }
 
-    ul {
+    @media only screen and (min-width: 991px) {
       display: flex;
-      margin-top: 0;
+
+      ul {
+        margin-top: 0;
+      }
     }
   }
 
   .list-inline li {
     margin-right: 37px;
   }
-}
 
-.menu-footer {
-  li {
-    display: block;
-
-    &:before {
-      display: none;
-    }
-
-    @media only screen and (min-width: $screen-sm-min) {
-      display: inline-block;
-
-      &:before {
-        display: inline;
-      }
-    }
+  .border {
+    border-top: 1px solid $light-gray;
+    margin: 15px;
   }
 }
