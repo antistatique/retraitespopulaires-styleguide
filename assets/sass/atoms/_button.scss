@@ -1,10 +1,7 @@
 @charset 'UTF-8';
 
 .btn {
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease,
     opacity 0.5s ease;
 
   @media screen and (max-width: $screen-xs-max) {
@@ -35,7 +32,11 @@
 }
 
 .btn-secondary {
-  @include button-variant($btn-default-color, $deep-yellow, $btn-default-border);
+  @include button-variant(
+    $btn-default-color,
+    $deep-yellow,
+    $btn-default-border
+  );
 }
 
 .btn-invert {
@@ -49,15 +50,33 @@
 }
 
 .btn-lg {
-  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-base, $line-height-base, $btn-border-radius-large);
+  @include button-size(
+    $padding-large-vertical,
+    $padding-large-horizontal,
+    $font-size-base,
+    $line-height-base,
+    $btn-border-radius-large
+  );
 
   @media screen and (min-width: $screen-sm-min) {
-    @include button-size($padding-large-vertical, $padding-large-horizontal * 4, $font-size-base, $line-height-base, $btn-border-radius-large);
+    @include button-size(
+      $padding-large-vertical,
+      $padding-large-horizontal * 4,
+      $font-size-base,
+      $line-height-base,
+      $btn-border-radius-large
+    );
   }
 }
 
 .btn-xs {
-  @include button-size($padding-xs-vertical * 2, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+  @include button-size(
+    $padding-xs-vertical * 2,
+    $padding-xs-horizontal,
+    $font-size-small,
+    $line-height-small,
+    $btn-border-radius-small
+  );
 
   &.dropdown-toggle {
     .retraitespopulaires-icon {
@@ -82,7 +101,7 @@
   background-color: transparent;
 
   &:hover,
-  &:focus, {
+  &:focus {
     color: $white !important;
   }
 
@@ -94,7 +113,7 @@
     @include theme(border-color color);
 
     &:hover,
-    &:focus, {
+    &:focus {
       background-color: $link-color;
       border-color: $link-color;
       color: $white !important;
@@ -115,35 +134,45 @@
     border-color: $btn-default-bg;
     color: $btn-default-bg;
 
-    &:hover { background: $btn-default-bg; }
+    &:hover {
+      background: $btn-default-bg;
+    }
   }
 
   &.btn-success {
     border-color: $btn-success-bg;
     color: $btn-success-bg;
 
-    &:hover { background: $btn-success-bg; }
+    &:hover {
+      background: $btn-success-bg;
+    }
   }
 
   &.btn-danger {
     border-color: $btn-danger-bg;
     color: $btn-danger-bg;
 
-    &:hover { background: $btn-danger-bg; }
+    &:hover {
+      background: $btn-danger-bg;
+    }
   }
 
   &.btn-info {
     border-color: $btn-info-bg;
     color: $btn-info-bg;
 
-    &:hover { background: $btn-info-bg; }
+    &:hover {
+      background: $btn-info-bg;
+    }
   }
 
   &.btn-warning {
     border-color: $btn-warning-bg;
     color: $btn-warning-bg;
 
-    &:hover { background: $btn-warning-bg; }
+    &:hover {
+      background: $btn-warning-bg;
+    }
   }
 }
 
@@ -157,7 +186,9 @@
   justify-content: center;
   align-items: center;
 
-  .retraitespopulaires-icon { line-height: 0; }
+  .retraitespopulaires-icon {
+    line-height: 0;
+  }
 
   .caret {
     color: $brand-primary;
@@ -205,6 +236,44 @@
 
   .retraitespopulaires-icon {
     margin: 0 auto;
+  }
+}
+
+.btn-cta {
+  background: none;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:active {
+    outline: none;
+    color: black;
+  }
+
+  .retraitespopulaires-icon {
+    vertical-align: middle;
+  }
+
+  &.cta-secondary {
+    font-size: $font-size-large;
+
+    &:hover .retraitespopulaires-icon {
+      transform: scale(1.2);
+    }
+
+    .retraitespopulaires-icon {
+      color: $link-color;
+      font-size: 22px;
+      margin-left: 8px;
+      margin-bottom: 2px;
+      transition: 0.2s;
+    }
+  }
+
+  &.cta-tertiary {
+    .retraitespopulaires-icon {
+      font-size: 20px;
+    }
   }
 }
 

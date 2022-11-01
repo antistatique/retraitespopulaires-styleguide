@@ -1,19 +1,113 @@
 @charset 'UTF-8';
 
-.menu-footer {
-  li {
-    display: block;
+.footer {
+  background-color: $beige;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
-    &:before {
-      display: none;
-    }
+  .row > div {
+    padding-left: 30px;
+    padding-right: 30px;
 
-    @media only screen and (min-width: $screen-sm-min) {
-      display: inline-block;
+    @media only screen and (max-width: 990px) {
+      margin-top: 17px;
 
-      &:before {
-        display: inline;
+      .menu-group {
+        border-bottom: 1px solid $black;
       }
     }
+  }
+
+  .first-level {
+    font-weight: 700;
+    font-size: $font-size-large;
+  }
+
+  a {
+    color: $black;
+
+    .retraitespopulaires-icon-angle {
+      float: right;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .btn-primary {
+    margin-top: 12px;
+    color: $white;
+  }
+
+  ul {
+    margin-top: 16px;
+    padding-left: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  ul.second-level li {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid $light-gray;
+
+    @media only screen and (max-width: 990px) {
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    .retraitespopulaires-icon-location-pin-filled {
+      vertical-align: text-top;
+      margin-right: 9px;
+    }
+  }
+
+  .collapser-menu-item > .retraitespopulaires-icon:not(.collapsed) {
+    transform: scaleY(-1);
+  }
+
+  .collapser-menu-collapse {
+    @media only screen and (min-width: 991px) {
+      &.collapse {
+        display: block;
+      }
+    }
+  }
+
+  .mobile-connexion-btn {
+    margin-left: 30px;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .social-networks {
+    ul {
+      display: flex;
+    }
+
+    .first-level {
+      margin-top: 6px;
+      margin-right: 32px;
+    }
+
+    @media only screen and (min-width: 991px) {
+      display: flex;
+
+      ul {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .list-inline li {
+    margin-right: 37px;
+  }
+
+  .border {
+    border-top: 1px solid $light-gray;
+    margin: 15px;
   }
 }

@@ -56,38 +56,40 @@ $retraitespopulaires-icon-arrow-thin: "\EA08";
 $retraitespopulaires-icon-arrow-up-left: "\EA09";
 $retraitespopulaires-icon-arrow-up-right: "\EA0A";
 $retraitespopulaires-icon-arrow-up: "\EA0B";
-$retraitespopulaires-icon-calculator: "\EA0C";
-$retraitespopulaires-icon-calendar: "\EA0D";
-$retraitespopulaires-icon-checked: "\EA0E";
-$retraitespopulaires-icon-chevron: "\EA0F";
-$retraitespopulaires-icon-close: "\EA10";
-$retraitespopulaires-icon-collectivites: "\EA11";
-$retraitespopulaires-icon-connect-button: "\EA12";
-$retraitespopulaires-icon-contact-us-borderless: "\EA13";
-$retraitespopulaires-icon-contact-us: "\EA14";
-$retraitespopulaires-icon-document-file: "\EA15";
-$retraitespopulaires-icon-document-group: "\EA16";
-$retraitespopulaires-icon-documents-thick: "\EA17";
-$retraitespopulaires-icon-edit: "\EA18";
-$retraitespopulaires-icon-entreprises: "\EA19";
-$retraitespopulaires-icon-external-link: "\EA1A";
-$retraitespopulaires-icon-facebook: "\EA1B";
-$retraitespopulaires-icon-faq-thick: "\EA1C";
-$retraitespopulaires-icon-frontdesk: "\EA1D";
-$retraitespopulaires-icon-information: "\EA1E";
-$retraitespopulaires-icon-instagram: "\EA1F";
-$retraitespopulaires-icon-linkedin: "\EA20";
-$retraitespopulaires-icon-location-pin: "\EA21";
-$retraitespopulaires-icon-lock: "\EA22";
-$retraitespopulaires-icon-mail: "\EA23";
-$retraitespopulaires-icon-particuliers: "\EA24";
-$retraitespopulaires-icon-phone: "\EA25";
-$retraitespopulaires-icon-piggybank-green: "\EA26";
-$retraitespopulaires-icon-placeholder: "\EA27";
-$retraitespopulaires-icon-search: "\EA28";
-$retraitespopulaires-icon-twitter: "\EA29";
-$retraitespopulaires-icon-unchecked: "\EA2A";
-$retraitespopulaires-icon-youtube: "\EA2B";
+$retraitespopulaires-icon-bi-arrow-right: "\EA0C";
+$retraitespopulaires-icon-calculator: "\EA0D";
+$retraitespopulaires-icon-calendar: "\EA0E";
+$retraitespopulaires-icon-checked: "\EA0F";
+$retraitespopulaires-icon-chevron-rounded: "\EA10";
+$retraitespopulaires-icon-chevron: "\EA11";
+$retraitespopulaires-icon-close: "\EA12";
+$retraitespopulaires-icon-collectivites: "\EA13";
+$retraitespopulaires-icon-connect-button: "\EA14";
+$retraitespopulaires-icon-contact-us-borderless: "\EA15";
+$retraitespopulaires-icon-contact-us: "\EA16";
+$retraitespopulaires-icon-document-file: "\EA17";
+$retraitespopulaires-icon-document-group: "\EA18";
+$retraitespopulaires-icon-documents-thick: "\EA19";
+$retraitespopulaires-icon-edit: "\EA1A";
+$retraitespopulaires-icon-entreprises: "\EA1B";
+$retraitespopulaires-icon-external-link: "\EA1C";
+$retraitespopulaires-icon-facebook: "\EA1D";
+$retraitespopulaires-icon-faq-thick: "\EA1E";
+$retraitespopulaires-icon-frontdesk: "\EA1F";
+$retraitespopulaires-icon-information: "\EA20";
+$retraitespopulaires-icon-instagram: "\EA21";
+$retraitespopulaires-icon-linkedin: "\EA22";
+$retraitespopulaires-icon-location-pin-filled: "\EA23";
+$retraitespopulaires-icon-location-pin: "\EA24";
+$retraitespopulaires-icon-lock: "\EA25";
+$retraitespopulaires-icon-mail: "\EA26";
+$retraitespopulaires-icon-particuliers: "\EA27";
+$retraitespopulaires-icon-phone: "\EA28";
+$retraitespopulaires-icon-placeholder: "\EA29";
+$retraitespopulaires-icon-search: "\EA2A";
+$retraitespopulaires-icon-twitter: "\EA2B";
+$retraitespopulaires-icon-unchecked: "\EA2C";
+$retraitespopulaires-icon-youtube: "\EA2D";
 
 
 .retraitespopulaires-icon-angle:before { content: $retraitespopulaires-icon-angle; }
@@ -101,9 +103,11 @@ $retraitespopulaires-icon-youtube: "\EA2B";
 .retraitespopulaires-icon-arrow-up-left:before { content: $retraitespopulaires-icon-arrow-up-left; }
 .retraitespopulaires-icon-arrow-up-right:before { content: $retraitespopulaires-icon-arrow-up-right; }
 .retraitespopulaires-icon-arrow-up:before { content: $retraitespopulaires-icon-arrow-up; }
+.retraitespopulaires-icon-bi-arrow-right:before { content: $retraitespopulaires-icon-bi-arrow-right; }
 .retraitespopulaires-icon-calculator:before { content: $retraitespopulaires-icon-calculator; }
 .retraitespopulaires-icon-calendar:before { content: $retraitespopulaires-icon-calendar; }
 .retraitespopulaires-icon-checked:before { content: $retraitespopulaires-icon-checked; }
+.retraitespopulaires-icon-chevron-rounded:before { content: $retraitespopulaires-icon-chevron-rounded; }
 .retraitespopulaires-icon-chevron:before { content: $retraitespopulaires-icon-chevron; }
 .retraitespopulaires-icon-close:before { content: $retraitespopulaires-icon-close; }
 .retraitespopulaires-icon-collectivites:before { content: $retraitespopulaires-icon-collectivites; }
@@ -122,12 +126,12 @@ $retraitespopulaires-icon-youtube: "\EA2B";
 .retraitespopulaires-icon-information:before { content: $retraitespopulaires-icon-information; }
 .retraitespopulaires-icon-instagram:before { content: $retraitespopulaires-icon-instagram; }
 .retraitespopulaires-icon-linkedin:before { content: $retraitespopulaires-icon-linkedin; }
+.retraitespopulaires-icon-location-pin-filled:before { content: $retraitespopulaires-icon-location-pin-filled; }
 .retraitespopulaires-icon-location-pin:before { content: $retraitespopulaires-icon-location-pin; }
 .retraitespopulaires-icon-lock:before { content: $retraitespopulaires-icon-lock; }
 .retraitespopulaires-icon-mail:before { content: $retraitespopulaires-icon-mail; }
 .retraitespopulaires-icon-particuliers:before { content: $retraitespopulaires-icon-particuliers; }
 .retraitespopulaires-icon-phone:before { content: $retraitespopulaires-icon-phone; }
-.retraitespopulaires-icon-piggybank-green:before { content: $retraitespopulaires-icon-piggybank-green; }
 .retraitespopulaires-icon-placeholder:before { content: $retraitespopulaires-icon-placeholder; }
 .retraitespopulaires-icon-search:before { content: $retraitespopulaires-icon-search; }
 .retraitespopulaires-icon-twitter:before { content: $retraitespopulaires-icon-twitter; }

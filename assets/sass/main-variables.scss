@@ -9,6 +9,9 @@ $black: #000;
 $transparent: rgba(255, 255, 255, 0);
 
 $green: #008e4f;
+$primary-dark-green: #005e58;
+$primary-orange: #ef8354;
+$primary-blue: #44bad8;
 $gray: #747476;
 $light-gray: #ccc;
 $ligthen-gray: #e8e8e8;
@@ -28,22 +31,28 @@ $deep-brown: #663d07;
 $deep-green: #009966;
 $light-green: #00a261;
 $light-blue: #00a3e3;
+$dark-blue: #193a74;
+$new-red: #d9505b;
 
 /**
 * Colors Bellvita
 */
 $bv-colors: (
-  'white': #FFFFFF,
-  'black': #313131,
-  'grey': #474747,
-  'grey-light': #EBEBEB,
-  'grey-lighter': #FAFAFA,
-  'grey-text': #777777,
-  'grey-text-light': #959595,
-  'green': #0AB468,
-  'green-dark': #008E4F
+  "white": #ffffff,
+  "black": #313131,
+  "grey": #474747,
+  "grey-light": #ebebeb,
+  "grey-lighter": #fafafa,
+  "grey-text": #777777,
+  "grey-text-light": #959595,
+  "green": #0ab468,
+  "green-dark": #008e4f,
 );
 
+/**
+* Colors Mega-menu
+*/
+$beige: #f8f7f2;
 
 /**
 * Colors and variables Formulaire des prets
@@ -53,8 +62,8 @@ $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
 
 // Global colors primary & secondary and more
-$ph-primary: #F4834E !default;
-$ph-secondary: #FDC8AF !default;
+$ph-primary: #f4834e !default;
+$ph-secondary: #fdc8af !default;
 
 // Custom range
 $custom-range-track-height: 0.125rem !default;
@@ -81,10 +90,10 @@ $spacer-y: 15px !default;
 $spacers: (
   0: (
     x: 0,
-    y: 0
+    y: 0,
   ),
   1: (
     x: $spacer-x,
-    y: $spacer-y
+    y: $spacer-y,
   ),
 ) !default;

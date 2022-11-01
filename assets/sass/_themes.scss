@@ -5,19 +5,31 @@
 $themes: (
   profelia: (
     color: $deep-green,
-    hover-color: darken($deep-green, 10%)
+    hover-color: darken($deep-green, 10%),
   ),
   cpev: (
     color: $light-green,
-    hover-color: darken($light-green, 10%)
+    hover-color: darken($light-green, 10%),
   ),
   cip: (
     color: $light-blue,
-    hover-color: darken($light-blue, 10%)
+    hover-color: darken($light-blue, 10%),
   ),
   primary: (
     color: $brand-primary,
-    hover-color: darken($brand-primary, 10%)
+    hover-color: darken($brand-primary, 10%),
+  ),
+  primary-dark-green: (
+    color: $primary-dark-green,
+    hover-color: darken($primary-dark-green, 10%),
+  ),
+  primary-orange: (
+    color: $primary-orange,
+    hover-color: darken($primary-orange, 10%),
+  ),
+  primary-blue: (
+    color: $primary-blue,
+    hover-color: darken($primary-blue, 10%),
   ),
 ) !default;
 
@@ -34,7 +46,11 @@ $themes: (
 @mixin btn-theme($key: color) {
   @each $theme in map-keys($themes) {
     .theme-#{$theme} & {
-      @include button-variant($white, map-deep-get($themes, $theme, $key), transparent);
+      @include button-variant(
+        $white,
+        map-deep-get($themes, $theme, $key),
+        transparent
+      );
     }
   }
 }
@@ -119,12 +135,16 @@ a {
 }
 
 .text-invert,
-a.text-invert { color: $white; }
+a.text-invert {
+  color: $white;
+}
 
 .no-underline,
 a.no-underline {
   text-decoration: none;
-  &:hover { text-decoration: none; }
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 /* stylelint-disable declaration-no-important */

@@ -27,6 +27,18 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
           <h5 class="">$light-grey</h5>
           <h5 class="">#eee</h5>
         </div>
+        <div class="f-color-chip" style="border-top-color: #005e58; border-bottom-color: #005e58;">
+          <h5 class="">$primary-dark-green</h5>
+          <h5 class="">#005e58</h5>
+        </div>
+        <div class="f-color-chip" style="border-top-color: #ef8354; border-bottom-color: #ef8354;">
+          <h5 class="">$primary-orange</h5>
+          <h5 class="">#ef8354</h5>
+        </div>
+        <div class="f-color-chip" style="border-top-color: #44bad8; border-bottom-color: #44bad8;">
+          <h5 class="">$primary-blue</h5>
+          <h5 class="">#44bad8</h5>
+        </div>
       </div>
     </div>
   </div>
@@ -50,6 +62,16 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
           <h5 class="">$light-blue</h5>
           <h5 class="">#00a3e3</h5>
           <code>.x-cip</code>
+        </div>
+        <div class="f-color-chip" style="border-top-color: #193a74; border-bottom-color: #193a74;">
+          <h5 class="">$dark-blue</h5>
+          <h5 class="">#00a261</h5>
+          <code>.dark-blue</code>
+        </div>
+        <div class="f-color-chip" style="border-top-color: #D9505B; border-bottom-color: #D9505B;">
+          <h5 class="">$new-red</h5>
+          <h5 class="">#D9505B</h5>
+          <code>.new-red</code>
         </div>
       </div>
     </div>
@@ -492,6 +514,12 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
         </div>
         <div class="square">
           <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-location-pin-filled"></i>
+            <div class="text-muted">.retraitespopulaires-icon-location-pin</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-mail"></i>
             <div class="text-muted">.retraitespopulaires-icon-mail</div>
           </div>
@@ -630,6 +658,12 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
         </div>
         <div class="square">
           <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-chevron-rounded"></i>
+            <div class="text-muted">.retraitespopulaires-icon-chevron-rounded</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-edit"></i>
             <div class="text-muted">.retraitespopulaires-icon-edit</div>
           </div>
@@ -658,6 +692,13 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x 
             retraitespopulaires-icon-close"></i>
             <div class="text-muted">.retraitespopulaires-icon-close</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x 
+            retraitespopulaires-icon-bi-arrow-right"></i>
+            <div class="text-muted">.retraitespopulaires-icon-bi-arrow-right</div>
           </div>
         </div>
       </div>
