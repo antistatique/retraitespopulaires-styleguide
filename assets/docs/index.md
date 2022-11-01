@@ -514,6 +514,12 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
         </div>
         <div class="square">
           <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-location-pin-filled"></i>
+            <div class="text-muted">.retraitespopulaires-icon-location-pin</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
             <i class="retraitespopulaires-icon retraitespopulaires-icon-2x retraitespopulaires-icon-mail"></i>
             <div class="text-muted">.retraitespopulaires-icon-mail</div>
           </div>
