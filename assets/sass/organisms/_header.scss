@@ -157,7 +157,7 @@ div[id$="-layoutheaderblock"] {
   align-items: center;
   margin-left: auto;
 
-  @media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @media screen and (min-width: $screen-md-min) {
     text-align: right;
   }
 
