@@ -1,29 +1,27 @@
 @charset 'UTF-8';
 
 .search-box {
-  margin: 0 $grid-gutter-width;
-
   @media screen and (min-width: $screen-md-min) {
     margin: 0;
   }
 
   .retraitespopulaires-icon {
-    font-size: 40px;
-    color: $white;
+    font-size: 29px;
+    color: $black;
 
     &:hover {
-      color: $white;
+      color: $light-gray;
     }
 
     @media screen and (min-width: $screen-md-min) {
       & {
-        color: $brand-primary;
+        color: $black;
       }
 
       @include theme(color);
 
       &:hover {
-        color: $black;
+        color: $light-gray;
       }
     }
   }

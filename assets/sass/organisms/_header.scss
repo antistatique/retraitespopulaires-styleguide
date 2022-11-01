@@ -5,15 +5,12 @@
   z-index: $zindex-navbar-fixed + 2;
   top: 0;
   background: $white;
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.015),
-    0 2px 2px rgba(0, 0, 0, 0.015),
-    0 4px 4px rgba(0, 0, 0, 0.015),
-    0 8px 8px rgba(0, 0, 0, 0.015),
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.015), 0 2px 2px rgba(0, 0, 0, 0.015),
+    0 4px 4px rgba(0, 0, 0, 0.015), 0 8px 8px rgba(0, 0, 0, 0.015),
     0 16px 16px rgba(0, 0, 0, 0.015);
 
   @media screen and (min-width: $screen-md-min) {
-    top: -62px; /* ! Hardcoded header height */
+    top: -79px; /* ! Hardcoded header height */
   }
 
   &.active {
@@ -27,7 +24,7 @@ div[id$="-layoutheaderblock"] {
   z-index: 10;
 
   @media screen and (min-width: $screen-md-min) {
-    top: -74px; /* ! Hardcoded header height */
+    top: -79px; /* ! Hardcoded header height */
   }
 }
 
@@ -69,14 +66,59 @@ div[id$="-layoutheaderblock"] {
 
   .logo-retraitespopulaires-offset {
     margin-left: -20px;
-
-    @media screen and (min-width: $screen-md-min) {
-      margin-left: -6.5rem;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-right: 60px;
     }
   }
 
-  [class*=theme-] & {
+  [class*="theme-"] & {
     margin-bottom: 0;
+  }
+}
+
+.main-menu-root {
+  display: -webkit-box;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2px;
+
+  @media screen and (max-width: $screen-md-min) {
+    margin-bottom: 9.5px;
+    &:not(.mobile) {
+      display: none;
+    }
+  }
+
+  :not(.mobile) {
+    margin-top: 9.5px;
+  }
+
+  li {
+    margin-right: 20px;
+
+    &.active {
+      background-color: green;
+      padding: 3px 9px;
+      border-radius: 4px;
+
+      a {
+        color: white;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &.mobile {
+    @media screen and (min-width: $screen-md-min) {
+      display: none;
+    }
+
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+
+    li {
+      scroll-snap-align: center;
+    }
   }
 }
 
@@ -113,6 +155,11 @@ div[id$="-layoutheaderblock"] {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-left: auto;
+
+  @media screen and (min-width: $screen-md-min) {
+    text-align: right;
+  }
 
   .prenavbar-separator {
     width: 2px;
