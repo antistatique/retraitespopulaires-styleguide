@@ -1098,6 +1098,20 @@
   }
 }
 
+.carousel-banner {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-top: 13px;
+  padding-bottom: 13px;
+  text-align: center;
+  @include theme(background-color);
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
 body.debug {
   .debug.grid {
     position: relative;
