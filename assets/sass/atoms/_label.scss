@@ -53,6 +53,10 @@
   padding: 7.5px 14px;
   color: $black;
 
+  &:not(.active) {
+    background-color: $light-gray !important;
+  }
+
   &.active {
     background-color: $label-primary-bg;
     font-weight: 700;
