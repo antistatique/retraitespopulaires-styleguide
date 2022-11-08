@@ -5,11 +5,8 @@
   flex-direction: column;
   flex: 1 1 auto;
   margin-bottom: 50px;
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.015),
-    0 2px 2px rgba(0, 0, 0, 0.015),
-    0 4px 4px rgba(0, 0, 0, 0.015),
-    0 8px 8px rgba(0, 0, 0, 0.015),
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.015), 0 2px 2px rgba(0, 0, 0, 0.015),
+    0 4px 4px rgba(0, 0, 0, 0.015), 0 8px 8px rgba(0, 0, 0, 0.015),
     0 16px 16px rgba(0, 0, 0, 0.015);
   border: 1px solid #e8e8e8;
   border-radius: $border-radius-base;
@@ -31,8 +28,12 @@
  * Border variants
  */
 
-.card-light { border-color: $ligthen-gray !important; }
-.card-no-border { border: none; }
+.card-light {
+  border-color: $ligthen-gray !important;
+}
+.card-no-border {
+  border: none;
+}
 
 /**
  * Card as a Link
@@ -40,18 +41,13 @@
 
 a.card,
 .card-hover {
-  transition:
-    border 0.25s ease-in-out,
+  transition: border 0.25s ease-in-out,
     box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:hover {
-    box-shadow:
-      0 1px 1px rgba(0, 0, 0, 0.03),
-      0 2px 2px rgba(0, 0, 0, 0.03),
-      0 4px 4px rgba(0, 0, 0, 0.03),
-      0 8px 8px rgba(0, 0, 0, 0.03),
-      0 16px 16px rgba(0, 0, 0, 0.03),
-      0 32px 32px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(0, 0, 0, 0.03),
+      0 4px 4px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.03),
+      0 16px 16px rgba(0, 0, 0, 0.03), 0 32px 32px rgba(0, 0, 0, 0.03);
   }
 
   @include theme(border-color, hover-color);
@@ -114,9 +110,7 @@ a.card-bg-hover,
 .card-bg-hover {
   background-color: $white;
   color: $brand-primary;
-  transition:
-    color 0.25s ease-in-out,
-    background 0.25s ease-in-out,
+  transition: color 0.25s ease-in-out, background 0.25s ease-in-out,
     box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   @include theme(color, color);
@@ -143,19 +137,27 @@ a.card-bg-hover,
   min-height: 100px;
 
   &:before {
-    content: ' ';
+    content: " ";
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     z-index: 4;
     width: 100%;
-    background: linear-gradient(to bottom, $brand-primary 0%, $transparent 100%);
+    background: linear-gradient(
+      to bottom,
+      $brand-primary 0%,
+      $transparent 100%
+    );
     opacity: 0;
     transition: all 0.5s ease-in-out;
 
     @include theme-custom() {
-      background-image: linear-gradient(to bottom, $color 0%, $transparent 100%);
+      background-image: linear-gradient(
+        to bottom,
+        $color 0%,
+        $transparent 100%
+      );
     }
   }
 
@@ -221,6 +223,12 @@ a.card-img-top {
 
   .card-img-top-center & {
     background-size: initial;
+  }
+}
+
+.card-product {
+  .card-body {
+    display: flex;
   }
 }
 
@@ -310,17 +318,25 @@ a.card-img-top {
 @mixin card-bg-variant($color) {
   background-color: $color;
 
-  .pretty-link { @include pretty-link-text-shadow($color); }
+  .pretty-link {
+    @include pretty-link-text-shadow($color);
+  }
 }
 
-.card-white { @include card-bg-variant($white); }
-.card-berrylight-gray { @include card-bg-variant($berrylight-gray); }
+.card-white {
+  @include card-bg-variant($white);
+}
+.card-berrylight-gray {
+  @include card-bg-variant($berrylight-gray);
+}
 
 /**
  * Styles
  */
 
-.card-no-shadow { box-shadow: none; }
+.card-no-shadow {
+  box-shadow: none;
+}
 
 .card-funky-waves {
   margin-top: -70px;

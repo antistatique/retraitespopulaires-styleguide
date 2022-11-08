@@ -4,9 +4,7 @@
   border: 1px solid transparent;
   border-radius: 20px;
   font-weight: normal;
-  transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 
   .list-inline & {
     display: inline-block;
@@ -14,11 +12,21 @@
   }
 }
 
-.label-default { border-color: $label-default-bg; }
-.label-success { border-color: $label-success-bg; }
-.label-info { border-color: $label-info-bg; }
-.label-danger { border-color: $label-danger-bg; }
-.label-warning { border-color: $label-warning-bg; }
+.label-default {
+  border-color: $label-default-bg;
+}
+.label-success {
+  border-color: $label-success-bg;
+}
+.label-info {
+  border-color: $label-info-bg;
+}
+.label-danger {
+  border-color: $label-danger-bg;
+}
+.label-warning {
+  border-color: $label-warning-bg;
+}
 
 .label-primary {
   border-color: $label-primary-bg;
@@ -34,5 +42,20 @@
       background-color: $color;
       color: $white;
     }
+  }
+}
+
+.label-btn-products {
+  border: 0px;
+  background-color: $light-gray;
+  font-size: $font-size-large;
+  font-weight: 400;
+  padding: 7.5px 14px;
+  color: $black;
+
+  &.active {
+    background-color: $label-primary-bg;
+    font-weight: 700;
+    color: $white;
   }
 }
