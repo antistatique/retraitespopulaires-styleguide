@@ -66,7 +66,7 @@ notes: |
     {% endif -%}
     <div class="card-body">
       {% if variant == 'card-product' %}
-        {% set icon = 'piggybank' %}
+        {% set icon = 'tirelire' %}
         {% include "../../icons/homepage-icons.html.swig" with icon %}
         <h3 class="h4 m-l-1">Lorem Ipsum Dolor Sit Amet</h3>
       {% else %}
