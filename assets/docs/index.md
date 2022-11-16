@@ -701,6 +701,34 @@ Cette nouvelle version du styleguide apporte différentes améliorations au nive
             <div class="text-muted">.retraitespopulaires-icon-bi-arrow-right</div>
           </div>
         </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x 
+            retraitespopulaires-icon-home"></i>
+            <div class="text-muted">.retraitespopulaires-icon-home</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x 
+            retraitespopulaires-icon-persons"></i>
+            <div class="text-muted">.retraitespopulaires-icon-persons</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x 
+            retraitespopulaires-icon-shield"></i>
+            <div class="text-muted">.retraitespopulaires-icon-shield</div>
+          </div>
+        </div>
+        <div class="square">
+          <div class="thebox">
+            <i class="retraitespopulaires-icon retraitespopulaires-icon-2x 
+            retraitespopulaires-icon-rainbow"></i>
+            <div class="text-muted">.retraitespopulaires-icon-rainbow</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
